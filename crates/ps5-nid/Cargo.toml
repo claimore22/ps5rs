@@ -1,0 +1,9 @@
+[package]
+name = "ps5-nid"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "PS5 NID hash algorithm, name catalog, and resolver"
+
+[dependencies]
+sha1 = "0.10"

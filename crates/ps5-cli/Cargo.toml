@@ -1,0 +1,17 @@
+[package]
+name = "ps5-cli"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Command-line interface for PS5 binary inspection"
+
+[[bin]]
+name = "ps5rs"
+path = "src/main.rs"
+
+[dependencies]
+ps5-format = { path = "../ps5-format" }
+ps5-self = { path = "../ps5-self" }
+ps5-elf = { path = "../ps5-elf" }
+ps5-nid = { path = "../ps5-nid" }
+clap = { version = "4", features = ["derive"] }

@@ -1,0 +1,9 @@
+[package]
+name = "ps5-format"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Shared types, errors, and constants for PS5 binary parsing"
+
+[dependencies]
+thiserror = "2"

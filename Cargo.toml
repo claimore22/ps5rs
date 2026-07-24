@@ -1,0 +1,14 @@
+[workspace]
+resolver = "3"
+members = [
+    "crates/ps5-format",
+    "crates/ps5-self",
+    "crates/ps5-elf",
+    "crates/ps5-nid",
+    "crates/ps5-cli",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
