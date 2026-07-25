@@ -1,0 +1,386 @@
+use ps5_image::BinaryImageDocument;
+use serde::{Deserialize, Serialize};
+use std::path::Path;
+
+pub const DATASET_SCHEMA_VERSION: u32 = 1;
+
+// ---------------------------------------------------------------------------
+// Manifest
+// ---------------------------------------------------------------------------
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct Manifest {
+    pub schema_version: u32,
+    pub tool: String,
+    pub created_at: String,
+    pub image_count: usize,
+}
+
+// ---------------------------------------------------------------------------
+// Errors
+// ---------------------------------------------------------------------------
+
+#[derive(Debug)]
+pub enum DatasetError {
+    Io(std::io::Error),
+    Json(serde_json::Error),
+    UnsupportedSchemaVersion(u32),
+    MissingManifest,
+    MissingImagesDir,
+}
+
+impl std::fmt::Display for DatasetError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            Self::Io(e) => write!(f, "I/O error: {e}"),
+            Self::Json(e) => write!(f, "JSON error: {e}"),
+            Self::UnsupportedSchemaVersion(v) => {
+                write!(f, "Unsupported dataset schema version {v} (max supported: {DATASET_SCHEMA_VERSION})")
+            }
+            Self::MissingManifest => write!(f, "Missing manifest.json in dataset directory"),
+            Self::MissingImagesDir => write!(f, "Missing images/ directory in dataset"),
+        }
+    }
+}
+
+impl std::error::Error for DatasetError {}
+
+impl From<std::io::Error> for DatasetError {
+    fn from(e: std::io::Error) -> Self {
+        Self::Io(e)
+    }
+}
+
+impl From<serde_json::Error> for DatasetError {
+    fn from(e: serde_json::Error) -> Self {
+        Self::Json(e)
+    }
+}
+
+// ---------------------------------------------------------------------------
+// AnalysisDataset
+// ---------------------------------------------------------------------------
+
+#[derive(Debug)]
+pub struct AnalysisDataset {
+    pub manifest: Manifest,
+    pub images: Vec<(String, BinaryImageDocument)>,
+}
+
+impl AnalysisDataset {
+    /// Open a dataset directory (reads manifest.json + images/*.json).
+    pub fn open(root: &Path) -> Result<Self, DatasetError> {
+        let manifest_path = root.join("manifest.json");
+        if !manifest_path.exists() {
+            return Err(DatasetError::MissingManifest);
+        }
+        let manifest_data = std::fs::read_to_string(&manifest_path)?;
+        let manifest: Manifest = serde_json::from_str(&manifest_data)?;
+
+        if manifest.schema_version > DATASET_SCHEMA_VERSION {
+            return Err(DatasetError::UnsupportedSchemaVersion(manifest.schema_version));
+        }
+
+        let images_dir = root.join("images");
+        if !images_dir.exists() {
+            return Err(DatasetError::MissingImagesDir);
+        }
+
+        let mut images = Vec::new();
+        let mut entries: Vec<_> = std::fs::read_dir(&images_dir)?
+            .filter_map(|e| e.ok())
+            .filter(|e| {
+                e.path()
+                    .extension()
+                    .and_then(|ext| ext.to_str())
+                    .map(|ext| ext.eq_ignore_ascii_case("json"))
+                    .unwrap_or(false)
+            })
+            .collect();
+        entries.sort_by_key(|e| e.path());
+
+        for entry in &entries {
+            let data = std::fs::read_to_string(entry.path())?;
+            let doc: BinaryImageDocument = serde_json::from_str(&data)?;
+            let name = entry
+                .path()
+                .file_stem()
+                .and_then(|s| s.to_str())
+                .unwrap_or("unknown")
+                .to_string();
+            images.push((name, doc));
+        }
+
+        Ok(AnalysisDataset { manifest, images })
+    }
+
+    pub fn total_imports(&self) -> usize {
+        self.images.iter().map(|(_, doc)| doc.image.imports.len()).sum()
+    }
+
+    pub fn unique_nids(&self) -> usize {
+        let mut seen = std::collections::HashSet::new();
+        for (_, doc) in &self.images {
+            for imp in &doc.image.imports {
+                seen.insert(&imp.nid_hash);
+            }
+        }
+        seen.len()
+    }
+
+    pub fn unique_libs(&self) -> usize {
+        let mut seen = std::collections::HashSet::new();
+        for (_, doc) in &self.images {
+            for imp in &doc.image.imports {
+                seen.insert(&imp.library_name);
+            }
+        }
+        seen.len()
+    }
+
+    pub fn resolved_count(&self) -> usize {
+        self.images
+            .iter()
+            .flat_map(|(_, doc)| doc.image.imports.iter())
+            .filter(|imp| imp.resolved_name.is_some())
+            .count()
+    }
+
+    pub fn resolution_rate(&self) -> f64 {
+        let total = self.total_imports();
+        if total == 0 {
+            return 0.0;
+        }
+        self.resolved_count() as f64 / total as f64 * 100.0
+    }
+}
+
+// ---------------------------------------------------------------------------
+// Tests
+// ---------------------------------------------------------------------------
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use ps5_image::{BinaryImage, ImportEntry, Platform};
+    use std::path::PathBuf;
+
+    fn make_image_doc(sha256: &str, imports: Vec<ImportEntry>) -> BinaryImageDocument {
+        BinaryImageDocument {
+            schema_version: 1,
+            tool: "ps5rs".to_string(),
+            image: BinaryImage {
+                sha256: sha256.to_string(),
+                platform: Platform::Ps5,
+                is_self: true,
+                file_size: 1024,
+                entry_point: 0x80000000,
+                segments: vec![],
+                imports,
+                exports: vec![],
+                relocations: vec![],
+                tls: None,
+                init_va: 0,
+                init_array_va: 0,
+                init_array_sz: 0,
+                fini_va: 0,
+                fini_array_va: 0,
+                fini_array_sz: 0,
+                preinit_array_va: 0,
+                preinit_array_sz: 0,
+                import_libs: std::collections::HashMap::new(),
+                needed_files: vec![],
+            },
+        }
+    }
+
+    fn tempdir_for_test(label: &str) -> PathBuf {
+        let dir = std::env::temp_dir().join(format!("ps5rs_dataset_test_{label}_{}", std::process::id()));
+        let _ = std::fs::remove_dir_all(&dir);
+        dir
+    }
+
+    fn make_dataset_dir(root: &Path, docs: &[(&str, BinaryImageDocument)]) {
+        std::fs::create_dir_all(root.join("images")).unwrap();
+
+        let manifest = Manifest {
+            schema_version: DATASET_SCHEMA_VERSION,
+            tool: "ps5rs".to_string(),
+            created_at: "2026-07-25T00:00:00Z".to_string(),
+            image_count: docs.len(),
+        };
+        let manifest_json = serde_json::to_string_pretty(&manifest).unwrap();
+        std::fs::write(root.join("manifest.json"), manifest_json).unwrap();
+
+        for (name, doc) in docs {
+            let json = serde_json::to_string_pretty(doc).unwrap();
+            std::fs::write(root.join("images").join(format!("{name}.json")), json).unwrap();
+        }
+    }
+
+    #[test]
+    fn open_dataset_roundtrip() {
+        let root = tempdir_for_test("roundtrip");
+        let doc1 = make_image_doc(
+            &"aa".repeat(32),
+            vec![ImportEntry {
+                nid_hash: "abc".into(),
+                resolved_name: Some("funcA".into()),
+                library_id: 1,
+                library_name: "libA".into(),
+            }],
+        );
+        let doc2 = make_image_doc(&"bb".repeat(32), vec![]);
+        make_dataset_dir(&root, &[("game1", doc1), ("game2", doc2)]);
+
+        let ds = AnalysisDataset::open(&root).unwrap();
+        assert_eq!(ds.manifest.schema_version, DATASET_SCHEMA_VERSION);
+        assert_eq!(ds.manifest.image_count, 2);
+        assert_eq!(ds.images.len(), 2);
+        assert_eq!(ds.images[0].0, "game1");
+        assert_eq!(ds.images[0].1.image.imports.len(), 1);
+        assert_eq!(ds.images[1].0, "game2");
+        assert!(ds.images[1].1.image.imports.is_empty());
+
+        let _ = std::fs::remove_dir_all(&root);
+    }
+
+    #[test]
+    fn open_dataset_missing_manifest() {
+        let root = tempdir_for_test("no_manifest");
+        std::fs::create_dir_all(root.join("images")).unwrap();
+
+        let result = AnalysisDataset::open(&root);
+        assert!(matches!(result, Err(DatasetError::MissingManifest)));
+
+        let _ = std::fs::remove_dir_all(&root);
+    }
+
+    #[test]
+    fn open_dataset_missing_images_dir() {
+        let root = tempdir_for_test("no_images");
+        std::fs::create_dir_all(&root).unwrap();
+        let manifest = Manifest {
+            schema_version: 1,
+            tool: "ps5rs".to_string(),
+            created_at: "2026-01-01T00:00:00Z".to_string(),
+            image_count: 0,
+        };
+        std::fs::write(
+            root.join("manifest.json"),
+            serde_json::to_string_pretty(&manifest).unwrap(),
+        )
+        .unwrap();
+
+        let result = AnalysisDataset::open(&root);
+        assert!(matches!(result, Err(DatasetError::MissingImagesDir)));
+
+        let _ = std::fs::remove_dir_all(&root);
+    }
+
+    #[test]
+    fn open_dataset_rejects_future_schema() {
+        let root = tempdir_for_test("future_schema");
+        std::fs::create_dir_all(root.join("images")).unwrap();
+        let manifest = Manifest {
+            schema_version: 999,
+            tool: "ps5rs".to_string(),
+            created_at: "2026-01-01T00:00:00Z".to_string(),
+            image_count: 0,
+        };
+        std::fs::write(
+            root.join("manifest.json"),
+            serde_json::to_string_pretty(&manifest).unwrap(),
+        )
+        .unwrap();
+
+        let result = AnalysisDataset::open(&root);
+        assert!(matches!(result, Err(DatasetError::UnsupportedSchemaVersion(999))));
+
+        let _ = std::fs::remove_dir_all(&root);
+    }
+
+    #[test]
+    fn stats_empty_dataset() {
+        let root = tempdir_for_test("stats_empty");
+        make_dataset_dir(&root, &[]);
+
+        let ds = AnalysisDataset::open(&root).unwrap();
+        assert_eq!(ds.total_imports(), 0);
+        assert_eq!(ds.unique_nids(), 0);
+        assert_eq!(ds.unique_libs(), 0);
+        assert_eq!(ds.resolution_rate(), 0.0);
+
+        let _ = std::fs::remove_dir_all(&root);
+    }
+
+    #[test]
+    fn stats_with_imports() {
+        let root = tempdir_for_test("stats_imports");
+        let doc = make_image_doc(
+            &"cc".repeat(32),
+            vec![
+                ImportEntry {
+                    nid_hash: "aaa".into(),
+                    resolved_name: Some("funcA".into()),
+                    library_id: 1,
+                    library_name: "libA".into(),
+                },
+                ImportEntry {
+                    nid_hash: "bbb".into(),
+                    resolved_name: None,
+                    library_id: 1,
+                    library_name: "libA".into(),
+                },
+                ImportEntry {
+                    nid_hash: "aaa".into(),
+                    resolved_name: Some("funcA".into()),
+                    library_id: 2,
+                    library_name: "libB".into(),
+                },
+            ],
+        );
+        make_dataset_dir(&root, &[("game1", doc)]);
+
+        let ds = AnalysisDataset::open(&root).unwrap();
+        assert_eq!(ds.total_imports(), 3);
+        assert_eq!(ds.unique_nids(), 2); // aaa, bbb
+        assert_eq!(ds.unique_libs(), 2); // libA, libB
+        assert_eq!(ds.resolved_count(), 2);
+        assert!((ds.resolution_rate() - 66.66).abs() < 0.1);
+
+        let _ = std::fs::remove_dir_all(&root);
+    }
+
+    #[test]
+    fn dataset_images_sorted_by_filename() {
+        let root = tempdir_for_test("sorted");
+        let d1 = make_image_doc(&"11".repeat(32), vec![]);
+        let d2 = make_image_doc(&"22".repeat(32), vec![]);
+        let d3 = make_image_doc(&"33".repeat(32), vec![]);
+        make_dataset_dir(&root, &[("game-c", d3), ("game-a", d1), ("game-b", d2)]);
+
+        let ds = AnalysisDataset::open(&root).unwrap();
+        assert_eq!(ds.images.len(), 3);
+        assert_eq!(ds.images[0].0, "game-a");
+        assert_eq!(ds.images[1].0, "game-b");
+        assert_eq!(ds.images[2].0, "game-c");
+
+        let _ = std::fs::remove_dir_all(&root);
+    }
+
+    #[test]
+    fn manifest_serde_roundtrip() {
+        let m = Manifest {
+            schema_version: 1,
+            tool: "ps5rs".to_string(),
+            created_at: "2026-07-25T12:00:00Z".to_string(),
+            image_count: 42,
+        };
+        let json = serde_json::to_string(&m).unwrap();
+        let back: Manifest = serde_json::from_str(&json).unwrap();
+        assert_eq!(back.schema_version, 1);
+        assert_eq!(back.image_count, 42);
+        assert_eq!(back.created_at, "2026-07-25T12:00:00Z");
+    }
+}

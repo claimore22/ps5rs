@@ -341,6 +341,7 @@ dependencies = [
  "ps5-nid",
  "ps5-self",
  "serde",
+ "serde_json",
 ]
 
 [[package]]
