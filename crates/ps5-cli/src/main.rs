@@ -371,62 +371,54 @@ fn cmd_inspect(path: &PathBuf) {
     println!("Size: {} bytes", data.len());
     println!();
 
-    match ps5_self::SelfImage::parse(&data) {
-        Ok(img) => {
-            println!("Platform: {:?}", img.platform);
-            if img.is_self() {
-                println!("SELF segments: {}", img.segments.len());
-                for (i, seg) in img.segments.iter().enumerate() {
-                    let flags = if seg.is_data() { "DATA" } else if seg.is_encrypted() { "ENCRYPTED" } else { "CODE" };
-                    println!("  [{i}] offset={:#x} file_size={:#x} mem_size={:#x} flags={}",
-                        seg.file_offset, seg.file_size, seg.mem_size, flags);
-                }
-            }
-            println!();
+    let sha256 = ps5_format::sha256_hex(&data);
+    let catalog = load_catalog();
+    let image = ps5_image::BinaryImageBuilder::build_from_file(data, &sha256, &catalog);
 
-            let elf = &img.elf;
-            println!("ELF type: {:#x}", elf.header.e_type);
-            println!("Machine: {:#x}", elf.header.e_machine);
-            println!("Entry point: {:#x}", elf.header.e_entry);
-            println!("Program headers: {}", elf.program_headers.len());
-            println!("Dynamic entries: {}", elf.dynamic_entries.len());
-            println!("Symbols: {}", elf.symbols.len());
-            println!("Relocations: {}", elf.relocations.len());
-            if let Some(ref tls) = elf.tls {
-                println!("TLS: vaddr={:#x} filesz={:#x} memsz={:#x}", tls.vaddr, tls.filesz, tls.memsz);
-            }
+    println!("Platform: {}", image.platform);
+    println!("SELF: {}", image.is_self);
+    println!("SHA-256: {}", &image.sha256[..16]);
+    println!("Entry point: {:#x}", image.entry_point);
+    println!("Segments: {}", image.segments.len());
+    println!("Imports: {}", image.imports.len());
+    println!("Exports: {}", image.exports.len());
+    println!("Relocations: {}", image.relocations.len());
+    if let Some(ref tls) = image.tls {
+        println!("TLS: vaddr={:#x} filesz={:#x} memsz={:#x}", tls.vaddr, tls.filesz, tls.memsz);
+    }
+    if image.init_va != 0 {
+        println!("init: {:#x}", image.init_va);
+    }
+    if image.fini_va != 0 {
+        println!("fini: {:#x}", image.fini_va);
+    }
 
-            let imports: Vec<_> = elf.symbols.iter().filter(|s| s.is_import).collect();
-            println!("Imports: {}", imports.len());
-
-            let catalog = load_catalog();
-            let mut lib_counts: std::collections::HashMap<String, usize> = std::collections::HashMap::new();
-            for sym in &imports {
-                let parts: Vec<&str> = sym.resolved_name.split('#').collect();
-                let nid = parts[0];
-                let lib_name = if parts.len() >= 2 {
-                    ps5_nid::lib_id_from_nid(&sym.resolved_name)
-                        .and_then(|id| elf.import_libs.get(&id).cloned())
-                        .unwrap_or_else(|| format!("lib_{}", parts[1]))
-                } else {
-                    "?".to_string()
-                };
-                let resolved = catalog.resolve(nid).unwrap_or("?");
-                *lib_counts.entry(format!("{lib_name}: {resolved}")).or_insert(0) += 1;
-            }
-
-            if !lib_counts.is_empty() {
-                println!("\nBy library + resolved name:");
-                let mut sorted: Vec<_> = lib_counts.iter().collect();
-                sorted.sort_by(|a, b| b.1.cmp(a.1));
-                for (lib, count) in sorted {
-                    println!("  {lib}: {count}");
-                }
-            }
+    if !image.import_libs.is_empty() {
+        println!("\nImport libraries:");
+        for (id, name) in &image.import_libs {
+            println!("  [{id}] {name}");
         }
-        Err(e) => {
-            eprintln!("parse error: {e}");
-            std::process::exit(1);
+    }
+
+    if !image.needed_files.is_empty() {
+        println!("\nNeeded files:");
+        for f in &image.needed_files {
+            println!("  {f}");
+        }
+    }
+
+    if !image.imports.is_empty() {
+        let mut lib_counts: std::collections::HashMap<String, usize> = std::collections::HashMap::new();
+        for imp in &image.imports {
+            let label = format!("{}: {}", imp.library_name,
+                imp.resolved_name.as_deref().unwrap_or("?"));
+            *lib_counts.entry(label).or_insert(0) += 1;
+        }
+        println!("\nBy library + resolved name:");
+        let mut sorted: Vec<_> = lib_counts.iter().collect();
+        sorted.sort_by(|a, b| b.1.cmp(a.1));
+        for (lib, count) in sorted {
+            println!("  {lib}: {count}");
         }
     }
 }
@@ -434,31 +426,17 @@ fn cmd_inspect(path: &PathBuf) {
 #[allow(clippy::print_literal)]
 fn cmd_imports(path: &PathBuf) {
     let data = load_file(path);
-    let img = ps5_self::SelfImage::parse(&data).unwrap_or_else(|e| {
-        eprintln!("parse error: {e}");
-        std::process::exit(1);
-    });
-
+    let sha256 = ps5_format::sha256_hex(&data);
     let catalog = ps5_nid::Catalog::new();
-    let imports: Vec<_> = img.elf.symbols.iter().filter(|s| s.is_import).collect();
+    let image = ps5_image::BinaryImageBuilder::build_from_file(data, &sha256, &catalog);
 
-    println!("Imports from {} ({})", path.display(), imports.len());
+    println!("Imports from {} ({})", path.display(), image.imports.len());
     println!("{:<64} {:<16} {}", "NID", "Resolved", "Library");
     println!("{}", "-".repeat(100));
 
-    for sym in &imports {
-        let parts: Vec<&str> = sym.resolved_name.split('#').collect();
-        let nid = parts[0];
-        let lib_name = if parts.len() >= 2 {
-            ps5_nid::lib_id_from_nid(&sym.resolved_name)
-                .and_then(|id| img.elf.import_libs.get(&id).cloned())
-                .unwrap_or_else(|| format!("lib_{}", parts[1]))
-        } else {
-            "?".to_string()
-        };
-
-        let resolved = catalog.resolve(nid).unwrap_or("?");
-        println!("{:<64} {:<16} {}", nid, resolved, lib_name);
+    for imp in &image.imports {
+        let resolved = imp.resolved_name.as_deref().unwrap_or("?");
+        println!("{:<64} {:<16} {}", imp.nid_hash, resolved, imp.library_name);
     }
 }
 

@@ -1,5 +1,6 @@
 use crate::model::*;
-use ps5_nid::{Catalog, lib_id_from_nid};
+use ps5_nid::Catalog;
+use ps5_image::{BinaryImageBuilder, Platform as ImagePlatform};
 use std::path::{Path, PathBuf};
 
 #[derive(Default)]
@@ -70,38 +71,28 @@ fn find_binaries(game_dir: &Path, options: &CollectorOptions) -> Vec<PathBuf> {
 
 fn analyze_binary(path: &Path, catalog: &Catalog, game_dir: &Path) -> Option<GameAnalysis> {
     let data = std::fs::read(path).ok()?;
-    let sha256 = compute_sha256(&data);
+    let sha256 = ps5_format::sha256_hex(&data);
     let file_size = data.len() as u64;
 
-    let img = ps5_self::SelfImage::parse(&data).ok()?;
+    let image = BinaryImageBuilder::build_from_file(data, &sha256, catalog);
 
-    let platform = match img.platform {
-        ps5_self::SelfPlatform::Ps4 => Platform::Ps4,
-        ps5_self::SelfPlatform::Ps5 => Platform::Ps5,
-        ps5_self::SelfPlatform::RawElf => Platform::RawElf,
-        ps5_self::SelfPlatform::Unknown(_) => Platform::Unknown,
+    let platform = match image.platform {
+        ImagePlatform::Ps4 => Platform::Ps4,
+        ImagePlatform::Ps5 => Platform::Ps5,
+        ImagePlatform::RawElf => Platform::RawElf,
+        ImagePlatform::Unknown => Platform::Unknown,
     };
 
-    let imports: Vec<ImportInfo> = img.elf.symbols.iter()
-        .filter(|s| s.is_import)
-        .map(|sym| {
-            let parts: Vec<&str> = sym.resolved_name.split('#').collect();
-            let nid = parts[0];
-            let lib_id = lib_id_from_nid(&sym.resolved_name).unwrap_or(0);
-            let lib_name = img.elf.import_libs.get(&lib_id).cloned()
-                .unwrap_or_else(|| format!("lib_{}", parts.get(1).unwrap_or(&"?")));
-            let resolved = catalog.resolve(nid).unwrap_or("?").to_string();
-
-            ImportInfo {
-                nid_hash: nid.to_string(),
-                resolved_name: resolved,
-                library_id: lib_id,
-                library_name: lib_name,
-            }
+    let imports: Vec<ImportInfo> = image.imports.iter()
+        .map(|imp| ImportInfo {
+            nid_hash: imp.nid_hash.clone(),
+            resolved_name: imp.resolved_name.clone().unwrap_or_else(|| "?".into()),
+            library_id: imp.library_id,
+            library_name: imp.library_name.clone(),
         })
         .collect();
 
-    let import_libs: Vec<LibInfo> = img.elf.import_libs.iter()
+    let import_libs: Vec<LibInfo> = image.import_libs.iter()
         .map(|(id, name)| LibInfo { id: *id, name: name.clone() })
         .collect();
 
@@ -116,36 +107,20 @@ fn analyze_binary(path: &Path, catalog: &Catalog, game_dir: &Path) -> Option<Gam
         sha256,
         file_size,
         platform,
-        entry_point: img.elf.header.e_entry,
-        is_self: img.is_self(),
+        entry_point: image.entry_point,
+        is_self: image.is_self,
         imports,
         import_libs,
-        needed_files: img.elf.needed_files,
-        num_relocations: img.elf.relocations.len(),
-        num_symbols: img.elf.symbols.len(),
-        has_tls: img.elf.tls.is_some(),
+        needed_files: image.needed_files,
+        num_relocations: image.relocations.len(),
+        num_symbols: image.imports.len() + image.exports.len(),
+        has_tls: image.tls.is_some(),
     })
-}
-
-fn compute_sha256(data: &[u8]) -> String {
-    ps5_format::sha256_hex(data)
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
-
-    #[test]
-    fn compute_sha256_matches_known_vectors() {
-        assert_eq!(
-            compute_sha256(b""),
-            "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-        );
-        assert_eq!(
-            compute_sha256(b"hello"),
-            "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824"
-        );
-    }
 
     #[test]
     fn find_binaries_eboot_only() {

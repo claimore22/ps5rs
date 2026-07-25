@@ -322,10 +322,9 @@ dependencies = [
 name = "ps5-analysis"
 version = "0.1.0"
 dependencies = [
- "ps5-elf",
  "ps5-format",
+ "ps5-image",
  "ps5-nid",
- "ps5-self",
  "serde",
  "serde_json",
 ]
@@ -338,6 +337,7 @@ dependencies = [
  "ps5-analysis",
  "ps5-elf",
  "ps5-format",
+ "ps5-image",
  "ps5-nid",
  "ps5-self",
  "serde",
