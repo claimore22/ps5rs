@@ -26,17 +26,134 @@ cargo build --release
 ## Usage
 
 ```sh
-# Inspect a SELF/ELF binary
-ps5-cli inspect path/to/eboot.bin
+# Build
+cargo build --release
 
-# List imports with NID resolution
-ps5-cli imports path/to/eboot.bin
-
-# Analyze a directory of game dumps
-ps5-cli analyze collect --dir /path/to/games
-ps5-cli analyze stats --dir /path/to/games
-ps5-cli analyze heatmap --dir /path/to/games
+# Binary is at:
+./target/release/ps5rs.exe   # Windows
+./target/release/ps5rs       # Linux/macOS
 ```
+
+### Inspect a binary
+
+```sh
+ps5rs inspect path/to/eboot.bin
+```
+
+Shows platform, SELF segments (offsets, sizes, flags), ELF header fields (entry point, program headers, symbols, relocations, TLS), and a summary of imports by library + resolved name.
+
+```
+ps5rs v0.1.0 — PS5 binary inspector
+File: eboot.bin
+Size: 52428800 bytes
+
+Platform: Ps5
+SELF segments: 4
+  [0] offset=0x1000 file_size=0x3a0000 mem_size=0x3a0000 flags=DATA
+  [1] offset=0x3a1000 file_size=0x1800000 mem_size=0x1800000 flags=CODE
+  ...
+
+ELF type: 0x3
+Entry point: 0x800001000
+Imports: 1423
+```
+
+### List imports
+
+```sh
+ps5rs imports path/to/eboot.bin
+```
+
+Lists all NID imports with resolved function names and source libraries.
+
+```
+NID                                                    Resolved          Library
+---------------------------------------------------------------------------
+mFq1M6vw-JM                                            sceKernelLoad     libkernel
+...
+```
+
+### Show segments
+
+```sh
+ps5rs segments path/to/eboot.bin
+```
+
+Lists ELF program headers with type, flags (RWX), offsets, vaddr, file/mem sizes. Also shows SELF data segment mappings when present.
+
+### Show dynamic entries
+
+```sh
+ps5rs dynamic path/to/eboot.bin
+```
+
+Lists all dynamic section entries (DT_NEEDED, DT_STRTAB, DT_SCE_* tags, etc.) and resolved import library names.
+
+### Show symbols
+
+```sh
+ps5rs symbols path/to/eboot.bin
+```
+
+Lists symbol table entries with section index, bind type, value, size, and resolved names.
+
+### Hash a function name to NID
+
+```sh
+ps5rs nid sceKernelLoadStartModule
+```
+
+Computes the NID hash for a given function name using Sony's SHA1 + custom base64 algorithm.
+
+```
+sceKernelLoadStartModule -> 4ZjF4RQH3k8
+```
+
+### Analyze a game directory
+
+The `analyze` subcommand scans a directory of game dumps and produces reports. Each command accepts `--format` (terminal/csv/json/dot) and `--output` (file path).
+
+```sh
+# Collect all games into a JSON database
+ps5rs analyze collect /path/to/games -o database.json
+
+# Statistics (total imports, resolution rate, most common NID)
+ps5rs analyze stats /path/to/games
+ps5rs analyze stats /path/to/games --format json -o stats.json
+
+# Library x game heatmap
+ps5rs analyze heatmap /path/to/games
+ps5rs analyze heatmap /path/to/games --format csv -o heatmap.csv
+
+# NID frequency ranking (top 50)
+ps5rs analyze frequency /path/to/games
+
+# Unresolved NIDs (not in the name catalog)
+ps5rs analyze unresolved /path/to/games
+ps5rs analyze unresolved /path/to/games --format json -o unresolved.json
+
+# Dependency graph (Graphviz DOT or JSON)
+ps5rs analyze graph /path/to/games -o graph.dot
+ps5rs analyze graph /path/to/games --include-nids --format json -o graph.json
+
+# Raw imports (all games)
+ps5rs analyze imports /path/to/games
+ps5rs analyze imports /path/to/games --format csv -o imports.csv
+```
+
+Expected directory structure:
+```
+/path/to/games/
+  GameTitle-PPSA00000/
+    eboot.bin           # main game binary
+    sce_module/         # optional PRX modules
+      libc.prx
+      libScePfs.prx
+  AnotherGame-PPSA00001/
+    eboot.bin
+```
+
+By default only `eboot.bin` is analyzed (PRX modules in `sce_module/` are skipped). Add `--include-prx` to the collector if you want system modules included.
 
 ## Analysis
 
