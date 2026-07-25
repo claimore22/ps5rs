@@ -355,7 +355,18 @@ dependencies = [
 name = "ps5-format"
 version = "0.1.0"
 dependencies = [
+ "sha2",
  "thiserror",
+]
+
+[[package]]
+name = "ps5-image"
+version = "0.1.0"
+dependencies = [
+ "ps5-elf",
+ "ps5-format",
+ "ps5-nid",
+ "ps5-self",
 ]
 
 [[package]]
@@ -517,6 +528,17 @@ name = "sha1"
 version = "0.10.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a978451301f4db1d02937a4ab3ccce137717b81826e79b7d49ffe3244a13c3b8"
+dependencies = [
+ "cfg-if",
+ "cpufeatures",
+ "digest",
+]
+
+[[package]]
+name = "sha2"
+version = "0.10.9"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a7507d819769d01a365ab707794a4084392c824f54a7a6a7862f8c3d0892b283"
 dependencies = [
  "cfg-if",
  "cpufeatures",

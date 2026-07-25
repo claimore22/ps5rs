@@ -1,5 +1,5 @@
 use crate::model::*;
-use ps5_nid::Catalog;
+use ps5_nid::{Catalog, lib_id_from_nid};
 use std::path::{Path, PathBuf};
 
 #[derive(Default)]
@@ -128,36 +128,7 @@ fn analyze_binary(path: &Path, catalog: &Catalog, game_dir: &Path) -> Option<Gam
 }
 
 fn compute_sha256(data: &[u8]) -> String {
-    let mut hash = [0u8; 32];
-    for (i, chunk) in data.chunks(64).enumerate() {
-        for (j, &byte) in chunk.iter().enumerate() {
-            let idx = (i * 64 + j) % 32;
-            hash[idx] = hash[idx].wrapping_add(byte).wrapping_mul(0x9E);
-        }
-    }
-    let mut s = String::with_capacity(64);
-    for b in &hash {
-        s.push_str(&format!("{:02x}", b));
-    }
-    s
-}
-
-fn lib_id_from_nid(nid: &str) -> Option<u16> {
-    if let Some(hash_end) = nid.find('#') {
-        let lib_str = &nid[hash_end + 1..];
-        const B64: &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-";
-        let mut val: u16 = 0;
-        for ch in lib_str.bytes() {
-            if let Some(pos) = B64.iter().position(|&b| b == ch) {
-                val = val * 64 + pos as u16;
-            } else {
-                return None;
-            }
-        }
-        Some(val)
-    } else {
-        None
-    }
+    ps5_format::sha256_hex(data)
 }
 
 #[cfg(test)]
@@ -165,53 +136,15 @@ mod tests {
     use super::*;
 
     #[test]
-    fn lib_id_from_nid_valid() {
-        // 'A' = 0, 'B' = 1, ...
-        let id = lib_id_from_nid("abc123#A").unwrap();
-        assert_eq!(id, 0);
-
-        let id = lib_id_from_nid("abc123#B").unwrap();
-        assert_eq!(id, 1);
-
-        // Two chars: 'A' 'A' = 0*64 + 0 = 0
-        let id = lib_id_from_nid("abc123#AA").unwrap();
-        assert_eq!(id, 0);
-
-        // 'A' 'B' = 0*64 + 1 = 1
-        let id = lib_id_from_nid("abc123#AB").unwrap();
-        assert_eq!(id, 1);
-    }
-
-    #[test]
-    fn lib_id_from_nid_no_hash() {
-        assert_eq!(lib_id_from_nid("abc123"), None);
-    }
-
-    #[test]
-    fn lib_id_from_nid_invalid_char() {
-        assert_eq!(lib_id_from_nid("abc#@invalid"), None); // '@' not in B64
-    }
-
-    #[test]
-    fn compute_sha256_deterministic() {
-        let data = b"hello world";
-        let h1 = compute_sha256(data);
-        let h2 = compute_sha256(data);
-        assert_eq!(h1, h2);
-        assert_eq!(h1.len(), 64); // hex encoded
-    }
-
-    #[test]
-    fn compute_sha256_empty() {
-        let h = compute_sha256(b"");
-        assert_eq!(h.len(), 64);
-    }
-
-    #[test]
-    fn compute_sha256_different_data() {
-        let h1 = compute_sha256(b"foo");
-        let h2 = compute_sha256(b"bar");
-        assert_ne!(h1, h2);
+    fn compute_sha256_matches_known_vectors() {
+        assert_eq!(
+            compute_sha256(b""),
+            "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        );
+        assert_eq!(
+            compute_sha256(b"hello"),
+            "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824"
+        );
     }
 
     #[test]

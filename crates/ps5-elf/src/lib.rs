@@ -31,6 +31,11 @@ pub struct ElfImage<'a> {
     pub init_va: u64,
     pub init_array_va: u64,
     pub init_array_sz: u64,
+    pub fini_va: u64,
+    pub fini_array_va: u64,
+    pub fini_array_sz: u64,
+    pub preinit_array_va: u64,
+    pub preinit_array_sz: u64,
     pub strtab_offset: u64,
     pub strtab_size: u64,
     pub symtab_offset: u64,
@@ -76,6 +81,11 @@ impl<'a> ElfImage<'a> {
         let mut init_va = 0u64;
         let mut init_array_va = 0u64;
         let mut init_array_sz = 0u64;
+        let mut fini_va = 0u64;
+        let mut fini_array_va = 0u64;
+        let mut fini_array_sz = 0u64;
+        let mut preinit_array_va = 0u64;
+        let mut preinit_array_sz = 0u64;
         let mut dynamic_phdr = None;
 
         for ph in &program_headers {
@@ -125,8 +135,13 @@ impl<'a> ElfImage<'a> {
                 ps5_format::elf_constants::DT_JMPREL => jmprel_vaddr = entry.d_val,
                 ps5_format::elf_constants::DT_PLTRELSZ => jmprel_size = entry.d_val,
                 ps5_format::elf_constants::DT_INIT => init_va = entry.d_val,
+                ps5_format::elf_constants::DT_FINI => fini_va = entry.d_val,
                 ps5_format::elf_constants::DT_INIT_ARRAY => init_array_va = entry.d_val,
                 ps5_format::elf_constants::DT_INIT_ARRAYSZ => init_array_sz = entry.d_val,
+                ps5_format::elf_constants::DT_FINI_ARRAY => fini_array_va = entry.d_val,
+                ps5_format::elf_constants::DT_FINI_ARRAYSZ => fini_array_sz = entry.d_val,
+                ps5_format::elf_constants::DT_PREINIT_ARRAY => preinit_array_va = entry.d_val,
+                ps5_format::elf_constants::DT_PREINIT_ARRAYSZ => preinit_array_sz = entry.d_val,
                 ps5_format::self_constants::DT_SCE_STRTAB if strtab_vaddr == 0 => strtab_vaddr = entry.d_val,
                 ps5_format::self_constants::DT_SCE_STRSZ if strtab_size == 0 => strtab_size = entry.d_val,
                 ps5_format::self_constants::DT_SCE_SYMTAB if symtab_vaddr == 0 => symtab_vaddr = entry.d_val,
@@ -182,6 +197,11 @@ impl<'a> ElfImage<'a> {
             init_va,
             init_array_va,
             init_array_sz,
+            fini_va,
+            fini_array_va,
+            fini_array_sz,
+            preinit_array_va,
+            preinit_array_sz,
             strtab_offset,
             strtab_size,
             symtab_offset,
@@ -626,6 +646,47 @@ mod tests {
         assert_eq!(img.init_va, 0x1050);
         assert_eq!(img.init_array_va, 0x1060);
         assert_eq!(img.init_array_sz, 2);
+    }
+
+    #[test]
+    fn parse_fini_and_preinit() {
+        let mut data = vec![0u8; 0x200];
+        let dynamic = build_dynamic_entries(&[
+            (DT_FINI, 0x2050),
+            (DT_FINI_ARRAY, 0x2060),
+            (DT_FINI_ARRAYSZ, 3),
+            (DT_PREINIT_ARRAY, 0x3000),
+            (DT_PREINIT_ARRAYSZ, 1),
+        ]);
+        data[0..dynamic.len()].copy_from_slice(&dynamic);
+
+        let elf = ElfBuilder::new()
+            .with_load(0x1000, data)
+            .with_dynamic(0x1000, dynamic.len() as u64)
+            .build();
+
+        let img = ElfImage::parse(&elf, None).unwrap();
+        assert_eq!(img.fini_va, 0x2050);
+        assert_eq!(img.fini_array_va, 0x2060);
+        assert_eq!(img.fini_array_sz, 3);
+        assert_eq!(img.preinit_array_va, 0x3000);
+        assert_eq!(img.preinit_array_sz, 1);
+    }
+
+    #[test]
+    fn parse_wrong_machine() {
+        let mut elf = ElfBuilder::new()
+            .with_load(0x1000, vec![0xCC; 64])
+            .build();
+        // e_machine is at offset 18 (2 bytes LE), overwrite EM_X86_64 (0x3e) with 0x28 (ARM)
+        elf[18] = 0x28;
+        elf[19] = 0x00;
+        let result = ElfImage::parse(&elf, None);
+        assert!(result.is_err());
+        match result.unwrap_err() {
+            ps5_format::ParseError::NotX86_64(m) => assert_eq!(m, 0x28),
+            other => panic!("expected NotX86_64, got: {other:?}"),
+        }
     }
 
     #[test]

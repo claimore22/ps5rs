@@ -50,6 +50,10 @@ impl ElfHeader {
         let e_type = read_u16(data, base + 16);
         let e_machine = read_u16(data, base + 18);
 
+        if e_machine != EM_X86_64 {
+            return Err(ParseError::NotX86_64(e_machine));
+        }
+
         Ok(Self {
             class,
             endian,

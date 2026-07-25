@@ -20,6 +20,8 @@ enum Commands {
     Symbols { file: PathBuf },
     Nid { name: String },
     Analyze {
+        #[arg(long)]
+        include_modules: bool,
         #[command(subcommand)]
         command: AnalyzeCommand,
     },
@@ -96,7 +98,7 @@ fn main() {
         Commands::Dynamic { file } => cmd_dynamic(&file),
         Commands::Symbols { file } => cmd_symbols(&file),
         Commands::Nid { name } => cmd_nid(&name),
-        Commands::Analyze { command } => cmd_analyze(command),
+        Commands::Analyze { include_modules, command } => cmd_analyze(command, include_modules),
     }
 }
 
@@ -112,24 +114,6 @@ fn load_catalog() -> ps5_nid::Catalog {
     let loaded = cat.load_nids_csv(NIDS_CSV);
     eprintln!("Loaded {} NID mappings from built-in catalog", loaded);
     cat
-}
-
-fn lib_id_from_nid(nid: &str) -> Option<u16> {
-    if let Some(hash_end) = nid.find('#') {
-        let lib_str = &nid[hash_end + 1..];
-        const B64: &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-";
-        let mut val: u16 = 0;
-        for ch in lib_str.bytes() {
-            if let Some(pos) = B64.iter().position(|&b| b == ch) {
-                val = val * 64 + pos as u16;
-            } else {
-                return None;
-            }
-        }
-        Some(val)
-    } else {
-        None
-    }
 }
 
 fn write_to_output_or_stdout(
@@ -149,9 +133,11 @@ fn write_to_output_or_stdout(
     }
 }
 
-fn cmd_analyze(command: AnalyzeCommand) {
+fn cmd_analyze(command: AnalyzeCommand, include_modules: bool) {
     let catalog = load_catalog();
-    let options = ps5_analysis::CollectorOptions::default();
+    let options = ps5_analysis::CollectorOptions {
+        include_prx: include_modules,
+    };
 
     match command {
         AnalyzeCommand::Collect { path, output } => {
@@ -419,7 +405,7 @@ fn cmd_inspect(path: &PathBuf) {
                 let parts: Vec<&str> = sym.resolved_name.split('#').collect();
                 let nid = parts[0];
                 let lib_name = if parts.len() >= 2 {
-                    lib_id_from_nid(&sym.resolved_name)
+                    ps5_nid::lib_id_from_nid(&sym.resolved_name)
                         .and_then(|id| elf.import_libs.get(&id).cloned())
                         .unwrap_or_else(|| format!("lib_{}", parts[1]))
                 } else {
@@ -464,7 +450,7 @@ fn cmd_imports(path: &PathBuf) {
         let parts: Vec<&str> = sym.resolved_name.split('#').collect();
         let nid = parts[0];
         let lib_name = if parts.len() >= 2 {
-            lib_id_from_nid(&sym.resolved_name)
+            ps5_nid::lib_id_from_nid(&sym.resolved_name)
                 .and_then(|id| img.elf.import_libs.get(&id).cloned())
                 .unwrap_or_else(|| format!("lib_{}", parts[1]))
         } else {
