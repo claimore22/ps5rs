@@ -1,5 +1,8 @@
-use clap::{Parser, Subcommand};
+use clap::{Parser, Subcommand, ValueHint};
+use std::io::Write;
 use std::path::PathBuf;
+
+const NIDS_CSV: &str = include_str!("../../../data/nids.csv");
 
 #[derive(Parser)]
 #[command(name = "ps5rs", version, about = "PS5 binary inspector")]
@@ -16,6 +19,71 @@ enum Commands {
     Dynamic { file: PathBuf },
     Symbols { file: PathBuf },
     Nid { name: String },
+    Analyze {
+        #[command(subcommand)]
+        command: AnalyzeCommand,
+    },
+}
+
+#[derive(Subcommand)]
+enum AnalyzeCommand {
+    Stats {
+        path: PathBuf,
+        #[arg(long, value_enum, default_value = "terminal")]
+        format: OutputFormat,
+        #[arg(short, long, value_hint = ValueHint::FilePath)]
+        output: Option<PathBuf>,
+    },
+    Heatmap {
+        path: PathBuf,
+        #[arg(long, value_enum, default_value = "terminal")]
+        format: OutputFormat,
+        #[arg(short, long, value_hint = ValueHint::FilePath)]
+        output: Option<PathBuf>,
+    },
+    Frequency {
+        path: PathBuf,
+        #[arg(long, value_enum, default_value = "terminal")]
+        format: OutputFormat,
+        #[arg(short, long, value_hint = ValueHint::FilePath)]
+        output: Option<PathBuf>,
+    },
+    Unresolved {
+        path: PathBuf,
+        #[arg(long, value_enum, default_value = "terminal")]
+        format: OutputFormat,
+        #[arg(short, long, value_hint = ValueHint::FilePath)]
+        output: Option<PathBuf>,
+    },
+    Graph {
+        path: PathBuf,
+        #[arg(long)]
+        include_nids: bool,
+        #[arg(long, value_enum, default_value = "dot")]
+        format: OutputFormat,
+        #[arg(short, long, value_hint = ValueHint::FilePath)]
+        output: Option<PathBuf>,
+    },
+    Imports {
+        path: PathBuf,
+        #[arg(long, value_enum, default_value = "csv")]
+        format: OutputFormat,
+        #[arg(short, long, value_hint = ValueHint::FilePath)]
+        output: Option<PathBuf>,
+    },
+    Collect {
+        path: PathBuf,
+        #[arg(short, long, value_hint = ValueHint::FilePath)]
+        output: Option<PathBuf>,
+    },
+}
+
+#[derive(Clone, Copy, clap::ValueEnum)]
+enum OutputFormat {
+    Terminal,
+    Csv,
+    Json,
+    Dot,
 }
 
 fn main() {
@@ -28,6 +96,7 @@ fn main() {
         Commands::Dynamic { file } => cmd_dynamic(&file),
         Commands::Symbols { file } => cmd_symbols(&file),
         Commands::Nid { name } => cmd_nid(&name),
+        Commands::Analyze { command } => cmd_analyze(command),
     }
 }
 
@@ -38,10 +107,16 @@ fn load_file(path: &PathBuf) -> Vec<u8> {
     })
 }
 
+fn load_catalog() -> ps5_nid::Catalog {
+    let mut cat = ps5_nid::Catalog::new();
+    let loaded = cat.load_nids_csv(NIDS_CSV);
+    eprintln!("Loaded {} NID mappings from built-in catalog", loaded);
+    cat
+}
+
 fn lib_id_from_nid(nid: &str) -> Option<u16> {
     if let Some(hash_end) = nid.find('#') {
         let lib_str = &nid[hash_end + 1..];
-        // Sony base64: ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-
         const B64: &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-";
         let mut val: u16 = 0;
         for ch in lib_str.bytes() {
@@ -57,6 +132,252 @@ fn lib_id_from_nid(nid: &str) -> Option<u16> {
     }
 }
 
+fn write_to_output_or_stdout(
+    output: &Option<PathBuf>,
+    write_fn: &dyn Fn(&mut dyn Write) -> std::io::Result<()>,
+) {
+    if let Some(out_path) = output {
+        let mut file = std::fs::File::create(out_path).unwrap_or_else(|e| {
+            eprintln!("error: cannot create {}: {e}", out_path.display());
+            std::process::exit(1);
+        });
+        write_fn(&mut file).unwrap();
+        eprintln!("Written to {}", out_path.display());
+    } else {
+        let stdout = std::io::stdout();
+        write_fn(&mut stdout.lock()).unwrap();
+    }
+}
+
+fn cmd_analyze(command: AnalyzeCommand) {
+    let catalog = load_catalog();
+    let options = ps5_analysis::CollectorOptions::default();
+
+    match command {
+        AnalyzeCommand::Collect { path, output } => {
+            eprintln!("Collecting analysis from {}...", path.display());
+            let db = ps5_analysis::collect(&path, &catalog, &options);
+            eprintln!("Collected {} games", db.games.len());
+
+            write_to_output_or_stdout(&output, &|w| {
+                ps5_analysis::export::json::export_analysis(&db, w)
+            });
+        }
+
+        AnalyzeCommand::Stats { path, format, output } => {
+            eprintln!("Collecting analysis from {}...", path.display());
+            let db = ps5_analysis::collect(&path, &catalog, &options);
+            let stats = ps5_analysis::reports::compute_stats(&db);
+
+            match format {
+                OutputFormat::Terminal => print_stats_terminal(&stats),
+                OutputFormat::Json => write_to_output_or_stdout(&output, &|w| {
+                    ps5_analysis::export::json::export_stats(&stats, w)
+                }),
+                OutputFormat::Csv => write_to_output_or_stdout(&output, &|w| {
+                    writeln!(w, "metric,value")?;
+                    writeln!(w, "total_games,{}", stats.total_games)?;
+                    writeln!(w, "total_imports,{}", stats.total_imports)?;
+                    writeln!(w, "unique_nids,{}", stats.unique_nids)?;
+                    writeln!(w, "unique_libs,{}", stats.unique_libs)?;
+                    writeln!(w, "resolution_rate,{:.1}", stats.resolution_rate)?;
+                    Ok(())
+                }),
+                _ => eprintln!("unsupported format for stats"),
+            }
+        }
+
+        AnalyzeCommand::Heatmap { path, format, output } => {
+            eprintln!("Collecting analysis from {}...", path.display());
+            let db = ps5_analysis::collect(&path, &catalog, &options);
+            let heatmap = ps5_analysis::reports::build_heatmap(&db);
+
+            match format {
+                OutputFormat::Terminal => print_heatmap_terminal(&heatmap),
+                OutputFormat::Json => write_to_output_or_stdout(&output, &|w| {
+                    ps5_analysis::export::json::export_heatmap(&heatmap, w)
+                }),
+                OutputFormat::Csv => write_to_output_or_stdout(&output, &|w| {
+                    ps5_analysis::export::csv::export_heatmap(&heatmap, w)
+                }),
+                _ => eprintln!("unsupported format for heatmap"),
+            }
+        }
+
+        AnalyzeCommand::Frequency { path, format, output } => {
+            eprintln!("Collecting analysis from {}...", path.display());
+            let db = ps5_analysis::collect(&path, &catalog, &options);
+            let freq = ps5_analysis::reports::build_frequency(&db);
+
+            match format {
+                OutputFormat::Terminal => print_frequency_terminal(&freq),
+                OutputFormat::Json => write_to_output_or_stdout(&output, &|w| {
+                    ps5_analysis::export::json::export_nid_frequency(&freq, w)
+                }),
+                OutputFormat::Csv => write_to_output_or_stdout(&output, &|w| {
+                    ps5_analysis::export::csv::export_nid_frequency(&freq, w)
+                }),
+                _ => eprintln!("unsupported format for frequency"),
+            }
+        }
+
+        AnalyzeCommand::Unresolved { path, format, output } => {
+            eprintln!("Collecting analysis from {}...", path.display());
+            let db = ps5_analysis::collect(&path, &catalog, &options);
+            let entries = ps5_analysis::reports::find_unresolved(&db);
+
+            match format {
+                OutputFormat::Terminal => print_unresolved_terminal(&entries),
+                OutputFormat::Json => write_to_output_or_stdout(&output, &|w| {
+                    ps5_analysis::export::json::export_unresolved(&entries, w)
+                }),
+                OutputFormat::Csv => write_to_output_or_stdout(&output, &|w| {
+                    ps5_analysis::export::csv::export_unresolved(&entries, w)
+                }),
+                _ => eprintln!("unsupported format for unresolved"),
+            }
+        }
+
+        AnalyzeCommand::Graph { path, include_nids, format, output } => {
+            eprintln!("Collecting analysis from {}...", path.display());
+            let db = ps5_analysis::collect(&path, &catalog, &options);
+            let graph = ps5_analysis::reports::build_graph(&db, include_nids);
+
+            match format {
+                OutputFormat::Dot => write_to_output_or_stdout(&output, &|w| {
+                    ps5_analysis::export::dot::export_graph(&graph, w)
+                }),
+                OutputFormat::Json => write_to_output_or_stdout(&output, &|w| {
+                    ps5_analysis::export::json::export_graph(&graph, w)
+                }),
+                _ => eprintln!("unsupported format for graph (use --format dot or --format json)"),
+            }
+        }
+
+        AnalyzeCommand::Imports { path, format, output } => {
+            eprintln!("Collecting analysis from {}...", path.display());
+            let db = ps5_analysis::collect(&path, &catalog, &options);
+
+            match format {
+                OutputFormat::Csv => write_to_output_or_stdout(&output, &|w| {
+                    ps5_analysis::export::csv::export_imports(&db, w)
+                }),
+                OutputFormat::Terminal => print_imports_terminal(&db),
+                _ => eprintln!("unsupported format for imports (use --format csv or --format terminal)"),
+            }
+        }
+    }
+}
+
+fn print_stats_terminal(stats: &ps5_analysis::AnalysisStats) {
+    println!("Analysis Statistics");
+    println!("{}", "=".repeat(40));
+    println!("  Games analyzed:     {}", stats.total_games);
+    println!("  Total imports:      {}", stats.total_imports);
+    println!("  Unique NIDs:        {}", stats.unique_nids);
+    println!("  Unique libraries:   {}", stats.unique_libs);
+    println!("  Resolution rate:    {:.1}%", stats.resolution_rate);
+    if let Some(ref name) = stats.most_common_nid {
+        println!("  Most common NID:    {} ({}) — {} imports",
+            name,
+            stats.most_common_nid_name.as_deref().unwrap_or("?"),
+            stats.most_common_nid_count);
+    }
+    if let Some(ref lib) = stats.most_used_lib {
+        println!("  Most used library:  {} — {} imports", lib, stats.most_used_lib_count);
+    }
+}
+
+fn print_heatmap_terminal(heatmap: &ps5_analysis::LibraryHeatmap) {
+    if heatmap.libraries.is_empty() {
+        println!("No libraries found.");
+        return;
+    }
+
+    let max_lib_width = heatmap.libraries.iter().map(|l| l.len()).max().unwrap_or(20).min(30);
+    let game_width = 10;
+
+    print!("{:<width$}", "Library", width = max_lib_width + 2);
+    for game in &heatmap.games {
+        let short = if game.len() > game_width {
+            &game[..game_width]
+        } else {
+            game
+        };
+        print!("{:>width$} ", short, width = game_width);
+    }
+    println!();
+    println!("{}", "-".repeat(max_lib_width + 2 + (game_width + 1) * heatmap.games.len()));
+
+    for (i, lib) in heatmap.libraries.iter().enumerate() {
+        let display_lib = if lib.len() > max_lib_width { &lib[..max_lib_width] } else { lib };
+        print!("{:<width$} ", display_lib, width = max_lib_width + 2);
+        for count in &heatmap.matrix[i] {
+            if *count > 0 {
+                print!("{:>width$} ", count, width = game_width);
+            } else {
+                print!("{:>width$} ", ".", width = game_width);
+            }
+        }
+        println!();
+    }
+}
+
+#[allow(clippy::print_literal)]
+fn print_frequency_terminal(freq: &ps5_analysis::NidFrequency) {
+    println!("NID Frequency (top 50 of {} unique, {} total imports)",
+        freq.unique_nids, freq.total_imports);
+    println!("{}", "=".repeat(80));
+    println!("{:<44} {:<20} {:>6}  {}", "NID", "Name", "Count", "Games");
+    println!("{}", "-".repeat(80));
+
+    for entry in freq.entries.iter().take(50) {
+        let games_str = if entry.games.len() > 3 {
+            format!("{}, +{} more", entry.games[..3].join(", "), entry.games.len() - 3)
+        } else {
+            entry.games.join(", ")
+        };
+        println!("{:<44} {:<20} {:>6}  {}",
+            entry.nid_hash, entry.name, entry.count, games_str);
+    }
+}
+
+#[allow(clippy::print_literal)]
+fn print_unresolved_terminal(entries: &[ps5_analysis::UnresolvedEntry]) {
+    println!("Unresolved NIDs ({} total)", entries.len());
+    println!("{}", "=".repeat(60));
+    println!("{:<20} {:<20} {}", "Game", "Library", "NID");
+    println!("{}", "-".repeat(60));
+
+    for entry in entries.iter().take(100) {
+        println!("{:<20} {:<20} {}", entry.game, entry.library, entry.nid_hash);
+    }
+    if entries.len() > 100 {
+        println!("... and {} more", entries.len() - 100);
+    }
+}
+
+#[allow(clippy::print_literal)]
+fn print_imports_terminal(db: &ps5_analysis::AnalysisDatabase) {
+    println!("Raw imports ({} games, {} total imports)",
+        db.games.len(),
+        db.games.iter().map(|g| g.imports.len()).sum::<usize>());
+    println!("{}", "=".repeat(80));
+    println!("{:<20} {:<20} {:<44} {}", "Game", "Library", "NID", "Name");
+    println!("{}", "-".repeat(80));
+
+    for game in &db.games {
+        for imp in game.imports.iter().take(5) {
+            println!("{:<20} {:<20} {:<44} {}",
+                game.name, imp.library_name, imp.nid_hash, imp.resolved_name);
+        }
+        if game.imports.len() > 5 {
+            println!("{:<20} ... and {} more imports", "", game.imports.len() - 5);
+        }
+    }
+}
+
+#[allow(clippy::print_literal)]
 fn cmd_inspect(path: &PathBuf) {
     let data = load_file(path);
     println!("ps5rs v{} — PS5 binary inspector", env!("CARGO_PKG_VERSION"));
@@ -92,7 +413,7 @@ fn cmd_inspect(path: &PathBuf) {
             let imports: Vec<_> = elf.symbols.iter().filter(|s| s.is_import).collect();
             println!("Imports: {}", imports.len());
 
-            let catalog = ps5_nid::Catalog::new();
+            let catalog = load_catalog();
             let mut lib_counts: std::collections::HashMap<String, usize> = std::collections::HashMap::new();
             for sym in &imports {
                 let parts: Vec<&str> = sym.resolved_name.split('#').collect();
@@ -124,6 +445,7 @@ fn cmd_inspect(path: &PathBuf) {
     }
 }
 
+#[allow(clippy::print_literal)]
 fn cmd_imports(path: &PathBuf) {
     let data = load_file(path);
     let img = ps5_self::SelfImage::parse(&data).unwrap_or_else(|e| {
@@ -154,6 +476,7 @@ fn cmd_imports(path: &PathBuf) {
     }
 }
 
+#[allow(clippy::print_literal)]
 fn cmd_segments(path: &PathBuf) {
     let data = load_file(path);
     let img = ps5_self::SelfImage::parse(&data).unwrap_or_else(|e| {
@@ -184,6 +507,7 @@ fn cmd_segments(path: &PathBuf) {
     }
 }
 
+#[allow(clippy::print_literal)]
 fn cmd_dynamic(path: &PathBuf) {
     let data = load_file(path);
     let img = ps5_self::SelfImage::parse(&data).unwrap_or_else(|e| {
@@ -234,6 +558,7 @@ fn cmd_dynamic(path: &PathBuf) {
     }
 }
 
+#[allow(clippy::print_literal)]
 fn cmd_symbols(path: &PathBuf) {
     let data = load_file(path);
     let img = ps5_self::SelfImage::parse(&data).unwrap_or_else(|e| {

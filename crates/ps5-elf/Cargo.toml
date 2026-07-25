@@ -7,3 +7,6 @@ description = "ELF64 binary format parser (zero-copy)"
 
 [dependencies]
 ps5-format = { path = "../ps5-format" }
+
+[dev-dependencies]
+proptest = "1"

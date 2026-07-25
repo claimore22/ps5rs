@@ -5,6 +5,7 @@ members = [
     "crates/ps5-self",
     "crates/ps5-elf",
     "crates/ps5-nid",
+    "crates/ps5-analysis",
     "crates/ps5-cli",
 ]
 

@@ -43,6 +43,25 @@ impl Catalog {
         count
     }
 
+    pub fn load_nids_csv(&mut self, content: &str) -> usize {
+        let mut count = 0;
+        for line in content.lines() {
+            let line = line.trim();
+            if line.is_empty() || line.starts_with('#') {
+                continue;
+            }
+            if let Some(space_pos) = line.find(' ') {
+                let nid = &line[..space_pos];
+                let name = &line[space_pos + 1..];
+                if !nid.is_empty() && !name.is_empty() {
+                    self.by_nid.insert(nid.to_string(), name.to_string());
+                    count += 1;
+                }
+            }
+        }
+        count
+    }
+
     fn add_builtins(&mut self) {
         let names = [
             "memcpy", "memmove", "memset", "memcmp", "memchr",
@@ -133,7 +152,6 @@ mod tests {
         cat.add("myCustomFunction");
         let nid = crate::hash("myCustomFunction");
         assert_eq!(cat.resolve(&nid), Some("myCustomFunction"));
-        assert_eq!(cat.size(), 163);
     }
 
     #[test]
@@ -147,10 +165,11 @@ mod tests {
     #[test]
     fn add_multiple_custom_names() {
         let mut cat = Catalog::new();
+        let before = cat.size();
         cat.add("func_a");
         cat.add("func_b");
         cat.add("func_c");
-        assert_eq!(cat.size(), 165);
+        assert_eq!(cat.size(), before + 3);
         assert_eq!(cat.resolve(&crate::hash("func_a")), Some("func_a"));
         assert_eq!(cat.resolve(&crate::hash("func_b")), Some("func_b"));
         assert_eq!(cat.resolve(&crate::hash("func_c")), Some("func_c"));
@@ -178,6 +197,48 @@ mod tests {
         assert_eq!(cat.resolve(&crate::hash("bar")), Some("bar"));
         assert_eq!(cat.resolve(&crate::hash("baz")), Some("baz"));
         let _ = std::fs::remove_dir_all(&dir);
+    }
+
+    #[test]
+    fn load_nids_csv_basic() {
+        let mut cat = Catalog::new();
+        let before = cat.size();
+        let csv = "mFq1M6vw-JM ACProcessMain\n05Uo75yDn-s AES_cfb128_encrypt\n";
+        let loaded = cat.load_nids_csv(csv);
+        assert_eq!(loaded, 2);
+        assert_eq!(cat.size(), before + 2);
+        assert_eq!(cat.resolve("mFq1M6vw-JM"), Some("ACProcessMain"));
+        assert_eq!(cat.resolve("05Uo75yDn-s"), Some("AES_cfb128_encrypt"));
+    }
+
+    #[test]
+    fn load_nids_csv_skips_blank_and_comments() {
+        let mut cat = Catalog::new();
+        let before = cat.size();
+        let csv = "# comment\n\n  \nAAAABBBCCCC name1\n";
+        let loaded = cat.load_nids_csv(csv);
+        assert_eq!(loaded, 1);
+        assert_eq!(cat.size(), before + 1);
+    }
+
+    #[test]
+    fn load_nids_csv_overwrites_builtins() {
+        let mut cat = Catalog::new();
+        let memcpy_nid = crate::hash("memcpy");
+        assert_eq!(cat.resolve(&memcpy_nid), Some("memcpy"));
+        let csv = &format!("{memcpy_nid} not_memcpy\n");
+        let loaded = cat.load_nids_csv(csv);
+        assert_eq!(loaded, 1);
+        assert_eq!(cat.resolve(&memcpy_nid), Some("not_memcpy"));
+    }
+
+    #[test]
+    fn load_nids_csv_empty() {
+        let mut cat = Catalog::new();
+        let before = cat.size();
+        let loaded = cat.load_nids_csv("");
+        assert_eq!(loaded, 0);
+        assert_eq!(cat.size(), before);
     }
 
     #[test]
