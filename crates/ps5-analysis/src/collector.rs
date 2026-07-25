@@ -1,5 +1,6 @@
 use crate::model::*;
 use ps5_nid::Catalog;
+use ps5_image::{BinaryImageBuilder, Platform as ImagePlatform};
 use std::path::{Path, PathBuf};
 
 #[derive(Default)]
@@ -70,38 +71,28 @@ fn find_binaries(game_dir: &Path, options: &CollectorOptions) -> Vec<PathBuf> {
 
 fn analyze_binary(path: &Path, catalog: &Catalog, game_dir: &Path) -> Option<GameAnalysis> {
     let data = std::fs::read(path).ok()?;
-    let sha256 = compute_sha256(&data);
+    let sha256 = ps5_format::sha256_hex(&data);
     let file_size = data.len() as u64;
 
-    let img = ps5_self::SelfImage::parse(&data).ok()?;
+    let image = BinaryImageBuilder::build_from_file(data, &sha256, catalog);
 
-    let platform = match img.platform {
-        ps5_self::SelfPlatform::Ps4 => Platform::Ps4,
-        ps5_self::SelfPlatform::Ps5 => Platform::Ps5,
-        ps5_self::SelfPlatform::RawElf => Platform::RawElf,
-        ps5_self::SelfPlatform::Unknown(_) => Platform::Unknown,
+    let platform = match image.platform {
+        ImagePlatform::Ps4 => Platform::Ps4,
+        ImagePlatform::Ps5 => Platform::Ps5,
+        ImagePlatform::RawElf => Platform::RawElf,
+        ImagePlatform::Unknown => Platform::Unknown,
     };
 
-    let imports: Vec<ImportInfo> = img.elf.symbols.iter()
-        .filter(|s| s.is_import)
-        .map(|sym| {
-            let parts: Vec<&str> = sym.resolved_name.split('#').collect();
-            let nid = parts[0];
-            let lib_id = lib_id_from_nid(&sym.resolved_name).unwrap_or(0);
-            let lib_name = img.elf.import_libs.get(&lib_id).cloned()
-                .unwrap_or_else(|| format!("lib_{}", parts.get(1).unwrap_or(&"?")));
-            let resolved = catalog.resolve(nid).unwrap_or("?").to_string();
-
-            ImportInfo {
-                nid_hash: nid.to_string(),
-                resolved_name: resolved,
-                library_id: lib_id,
-                library_name: lib_name,
-            }
+    let imports: Vec<ImportInfo> = image.imports.iter()
+        .map(|imp| ImportInfo {
+            nid_hash: imp.nid_hash.clone(),
+            resolved_name: imp.resolved_name.clone().unwrap_or_else(|| "?".into()),
+            library_id: imp.library_id,
+            library_name: imp.library_name.clone(),
         })
         .collect();
 
-    let import_libs: Vec<LibInfo> = img.elf.import_libs.iter()
+    let import_libs: Vec<LibInfo> = image.import_libs.iter()
         .map(|(id, name)| LibInfo { id: *id, name: name.clone() })
         .collect();
 
@@ -116,103 +107,20 @@ fn analyze_binary(path: &Path, catalog: &Catalog, game_dir: &Path) -> Option<Gam
         sha256,
         file_size,
         platform,
-        entry_point: img.elf.header.e_entry,
-        is_self: img.is_self(),
+        entry_point: image.entry_point,
+        is_self: image.is_self,
         imports,
         import_libs,
-        needed_files: img.elf.needed_files,
-        num_relocations: img.elf.relocations.len(),
-        num_symbols: img.elf.symbols.len(),
-        has_tls: img.elf.tls.is_some(),
+        needed_files: image.needed_files,
+        num_relocations: image.relocations.len(),
+        num_symbols: image.imports.len() + image.exports.len(),
+        has_tls: image.tls.is_some(),
     })
-}
-
-fn compute_sha256(data: &[u8]) -> String {
-    let mut hash = [0u8; 32];
-    for (i, chunk) in data.chunks(64).enumerate() {
-        for (j, &byte) in chunk.iter().enumerate() {
-            let idx = (i * 64 + j) % 32;
-            hash[idx] = hash[idx].wrapping_add(byte).wrapping_mul(0x9E);
-        }
-    }
-    let mut s = String::with_capacity(64);
-    for b in &hash {
-        s.push_str(&format!("{:02x}", b));
-    }
-    s
-}
-
-fn lib_id_from_nid(nid: &str) -> Option<u16> {
-    if let Some(hash_end) = nid.find('#') {
-        let lib_str = &nid[hash_end + 1..];
-        const B64: &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-";
-        let mut val: u16 = 0;
-        for ch in lib_str.bytes() {
-            if let Some(pos) = B64.iter().position(|&b| b == ch) {
-                val = val * 64 + pos as u16;
-            } else {
-                return None;
-            }
-        }
-        Some(val)
-    } else {
-        None
-    }
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
-
-    #[test]
-    fn lib_id_from_nid_valid() {
-        // 'A' = 0, 'B' = 1, ...
-        let id = lib_id_from_nid("abc123#A").unwrap();
-        assert_eq!(id, 0);
-
-        let id = lib_id_from_nid("abc123#B").unwrap();
-        assert_eq!(id, 1);
-
-        // Two chars: 'A' 'A' = 0*64 + 0 = 0
-        let id = lib_id_from_nid("abc123#AA").unwrap();
-        assert_eq!(id, 0);
-
-        // 'A' 'B' = 0*64 + 1 = 1
-        let id = lib_id_from_nid("abc123#AB").unwrap();
-        assert_eq!(id, 1);
-    }
-
-    #[test]
-    fn lib_id_from_nid_no_hash() {
-        assert_eq!(lib_id_from_nid("abc123"), None);
-    }
-
-    #[test]
-    fn lib_id_from_nid_invalid_char() {
-        assert_eq!(lib_id_from_nid("abc#@invalid"), None); // '@' not in B64
-    }
-
-    #[test]
-    fn compute_sha256_deterministic() {
-        let data = b"hello world";
-        let h1 = compute_sha256(data);
-        let h2 = compute_sha256(data);
-        assert_eq!(h1, h2);
-        assert_eq!(h1.len(), 64); // hex encoded
-    }
-
-    #[test]
-    fn compute_sha256_empty() {
-        let h = compute_sha256(b"");
-        assert_eq!(h.len(), 64);
-    }
-
-    #[test]
-    fn compute_sha256_different_data() {
-        let h1 = compute_sha256(b"foo");
-        let h2 = compute_sha256(b"bar");
-        assert_ne!(h1, h2);
-    }
 
     #[test]
     fn find_binaries_eboot_only() {

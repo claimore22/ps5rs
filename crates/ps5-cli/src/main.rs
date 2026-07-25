@@ -13,13 +13,34 @@ struct Cli {
 
 #[derive(Subcommand)]
 enum Commands {
-    Inspect { file: PathBuf },
-    Imports { file: PathBuf },
+    Inspect {
+        file: PathBuf,
+        #[arg(long)]
+        json: bool,
+        #[arg(short, long, value_hint = ValueHint::FilePath)]
+        output: Option<PathBuf>,
+    },
+    Imports {
+        file: PathBuf,
+        #[arg(long)]
+        json: bool,
+        #[arg(short, long, value_hint = ValueHint::FilePath)]
+        output: Option<PathBuf>,
+    },
     Segments { file: PathBuf },
     Dynamic { file: PathBuf },
     Symbols { file: PathBuf },
     Nid { name: String },
+    Scan {
+        path: PathBuf,
+        #[arg(short, long, value_hint = ValueHint::DirPath)]
+        output: PathBuf,
+        #[arg(long)]
+        include_modules: bool,
+    },
     Analyze {
+        #[arg(long)]
+        include_modules: bool,
         #[command(subcommand)]
         command: AnalyzeCommand,
     },
@@ -66,7 +87,14 @@ enum AnalyzeCommand {
     },
     Imports {
         path: PathBuf,
-        #[arg(long, value_enum, default_value = "csv")]
+        #[arg(long, value_enum, default_value = "terminal")]
+        format: OutputFormat,
+        #[arg(short, long, value_hint = ValueHint::FilePath)]
+        output: Option<PathBuf>,
+    },
+    Unknown {
+        path: PathBuf,
+        #[arg(long, value_enum, default_value = "terminal")]
         format: OutputFormat,
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
@@ -90,13 +118,16 @@ fn main() {
     let cli = Cli::parse();
 
     match cli.command {
-        Commands::Inspect { file } => cmd_inspect(&file),
-        Commands::Imports { file } => cmd_imports(&file),
+        Commands::Inspect { file, json, output } => cmd_inspect(&file, json, &output),
+        Commands::Imports { file, json, output } => cmd_imports(&file, json, &output),
         Commands::Segments { file } => cmd_segments(&file),
         Commands::Dynamic { file } => cmd_dynamic(&file),
         Commands::Symbols { file } => cmd_symbols(&file),
         Commands::Nid { name } => cmd_nid(&name),
-        Commands::Analyze { command } => cmd_analyze(command),
+        Commands::Scan { path, output, include_modules } => {
+            cmd_scan(&path, &output, include_modules)
+        }
+        Commands::Analyze { include_modules, command } => cmd_analyze(command, include_modules),
     }
 }
 
@@ -112,24 +143,6 @@ fn load_catalog() -> ps5_nid::Catalog {
     let loaded = cat.load_nids_csv(NIDS_CSV);
     eprintln!("Loaded {} NID mappings from built-in catalog", loaded);
     cat
-}
-
-fn lib_id_from_nid(nid: &str) -> Option<u16> {
-    if let Some(hash_end) = nid.find('#') {
-        let lib_str = &nid[hash_end + 1..];
-        const B64: &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-";
-        let mut val: u16 = 0;
-        for ch in lib_str.bytes() {
-            if let Some(pos) = B64.iter().position(|&b| b == ch) {
-                val = val * 64 + pos as u16;
-            } else {
-                return None;
-            }
-        }
-        Some(val)
-    } else {
-        None
-    }
 }
 
 fn write_to_output_or_stdout(
@@ -149,13 +162,126 @@ fn write_to_output_or_stdout(
     }
 }
 
-fn cmd_analyze(command: AnalyzeCommand) {
+fn is_dataset_dir(path: &std::path::Path) -> bool {
+    path.join("manifest.json").exists() && path.join("images").is_dir()
+}
+
+fn dataset_to_database_real(ds: &ps5_analysis::AnalysisDataset) -> ps5_analysis::AnalysisDatabase {
+    let games: Vec<ps5_analysis::GameAnalysis> = ds
+        .images
+        .iter()
+        .map(|(name, doc)| {
+            let img = &doc.image;
+
+            let platform = match img.platform {
+                ps5_image::Platform::Ps4 => ps5_analysis::Platform::Ps4,
+                ps5_image::Platform::Ps5 => ps5_analysis::Platform::Ps5,
+                ps5_image::Platform::RawElf => ps5_analysis::Platform::RawElf,
+                ps5_image::Platform::Unknown => ps5_analysis::Platform::Unknown,
+            };
+
+            let imports: Vec<ps5_analysis::ImportInfo> = img
+                .imports
+                .iter()
+                .map(|imp| ps5_analysis::ImportInfo {
+                    nid_hash: imp.nid_hash.clone(),
+                    resolved_name: imp
+                        .resolved_name
+                        .clone()
+                        .unwrap_or_else(|| "?".into()),
+                    library_id: imp.library_id,
+                    library_name: imp.library_name.clone(),
+                })
+                .collect();
+
+            let import_libs: Vec<ps5_analysis::LibInfo> = img
+                .import_libs
+                .iter()
+                .map(|(id, name)| ps5_analysis::LibInfo {
+                    id: *id,
+                    name: name.clone(),
+                })
+                .collect();
+
+            ps5_analysis::GameAnalysis {
+                name: name.clone(),
+                path: String::new(),
+                sha256: img.sha256.clone(),
+                file_size: img.file_size,
+                platform,
+                entry_point: img.entry_point,
+                is_self: img.is_self,
+                imports,
+                import_libs,
+                needed_files: img.needed_files.clone(),
+                num_relocations: img.relocations.len(),
+                num_symbols: img.imports.len() + img.exports.len(),
+                has_tls: img.tls.is_some(),
+            }
+        })
+        .collect();
+
+    ps5_analysis::AnalysisDatabase {
+        schema_version: 1,
+        tool: "ps5rs".to_string(),
+        games,
+    }
+}
+
+fn load_dataset_or_collect(
+    path: &std::path::Path,
+    catalog: &ps5_nid::Catalog,
+    include_modules: bool,
+) -> ps5_analysis::AnalysisDatabase {
+    if is_dataset_dir(path) {
+        eprintln!("Loading dataset from {}...", path.display());
+        let ds = ps5_analysis::AnalysisDataset::open(path).unwrap_or_else(|e| {
+            eprintln!("error: {e}");
+            std::process::exit(1);
+        });
+        eprintln!("Loaded {} images from dataset", ds.images.len());
+        dataset_to_database_real(&ds)
+    } else {
+        eprintln!("Collecting analysis from {}...", path.display());
+        let options = ps5_analysis::CollectorOptions {
+            include_prx: include_modules,
+        };
+        ps5_analysis::collect(path, catalog, &options)
+    }
+}
+
+fn cmd_scan(path: &std::path::Path, output: &std::path::Path, include_modules: bool) {
     let catalog = load_catalog();
-    let options = ps5_analysis::CollectorOptions::default();
+    let options = ps5_analysis::ScanOptions {
+        include_prx: include_modules,
+    };
+
+    eprintln!("Scanning {} for game binaries...", path.display());
+    let result = ps5_analysis::scan(path, output, &catalog, &options).unwrap_or_else(|e| {
+        eprintln!("error: {e}");
+        std::process::exit(1);
+    });
+
+    eprintln!(
+        "Wrote {} images to {}",
+        result.manifest.image_count,
+        output.display()
+    );
+    eprintln!(
+        "Dataset schema version: {}",
+        result.manifest.schema_version
+    );
+}
+
+fn cmd_analyze(command: AnalyzeCommand, include_modules: bool) {
+    let catalog = load_catalog();
 
     match command {
         AnalyzeCommand::Collect { path, output } => {
             eprintln!("Collecting analysis from {}...", path.display());
+            let options = ps5_analysis::CollectorOptions {
+                include_prx: include_modules,
+            };
             let db = ps5_analysis::collect(&path, &catalog, &options);
             eprintln!("Collected {} games", db.games.len());
 
@@ -165,8 +291,7 @@ fn cmd_analyze(command: AnalyzeCommand) {
         }
 
         AnalyzeCommand::Stats { path, format, output } => {
-            eprintln!("Collecting analysis from {}...", path.display());
-            let db = ps5_analysis::collect(&path, &catalog, &options);
+            let db = load_dataset_or_collect(&path, &catalog, include_modules);
             let stats = ps5_analysis::reports::compute_stats(&db);
 
             match format {
@@ -188,8 +313,7 @@ fn cmd_analyze(command: AnalyzeCommand) {
         }
 
         AnalyzeCommand::Heatmap { path, format, output } => {
-            eprintln!("Collecting analysis from {}...", path.display());
-            let db = ps5_analysis::collect(&path, &catalog, &options);
+            let db = load_dataset_or_collect(&path, &catalog, include_modules);
             let heatmap = ps5_analysis::reports::build_heatmap(&db);
 
             match format {
@@ -205,8 +329,7 @@ fn cmd_analyze(command: AnalyzeCommand) {
         }
 
         AnalyzeCommand::Frequency { path, format, output } => {
-            eprintln!("Collecting analysis from {}...", path.display());
-            let db = ps5_analysis::collect(&path, &catalog, &options);
+            let db = load_dataset_or_collect(&path, &catalog, include_modules);
             let freq = ps5_analysis::reports::build_frequency(&db);
 
             match format {
@@ -222,8 +345,7 @@ fn cmd_analyze(command: AnalyzeCommand) {
         }
 
         AnalyzeCommand::Unresolved { path, format, output } => {
-            eprintln!("Collecting analysis from {}...", path.display());
-            let db = ps5_analysis::collect(&path, &catalog, &options);
+            let db = load_dataset_or_collect(&path, &catalog, include_modules);
             let entries = ps5_analysis::reports::find_unresolved(&db);
 
             match format {
@@ -239,8 +361,7 @@ fn cmd_analyze(command: AnalyzeCommand) {
         }
 
         AnalyzeCommand::Graph { path, include_nids, format, output } => {
-            eprintln!("Collecting analysis from {}...", path.display());
-            let db = ps5_analysis::collect(&path, &catalog, &options);
+            let db = load_dataset_or_collect(&path, &catalog, include_modules);
             let graph = ps5_analysis::reports::build_graph(&db, include_nids);
 
             match format {
@@ -255,15 +376,64 @@ fn cmd_analyze(command: AnalyzeCommand) {
         }
 
         AnalyzeCommand::Imports { path, format, output } => {
-            eprintln!("Collecting analysis from {}...", path.display());
-            let db = ps5_analysis::collect(&path, &catalog, &options);
+            if is_dataset_dir(&path) {
+                let ds = ps5_analysis::AnalysisDataset::open(&path).unwrap_or_else(|e| {
+                    eprintln!("error: {e}");
+                    std::process::exit(1);
+                });
+                let inv = ps5_analysis::reports::build_import_inventory(&ds);
+                match format {
+                    OutputFormat::Terminal => print_import_inventory_terminal(&inv),
+                    OutputFormat::Json => write_to_output_or_stdout(&output, &|w| {
+                        let json = serde_json::to_string_pretty(&inv).unwrap();
+                        writeln!(w, "{json}")
+                    }),
+                    OutputFormat::Csv => write_to_output_or_stdout(&output, &|w| {
+                        writeln!(w, "library,games,imports")?;
+                        for e in &inv.entries {
+                            writeln!(w, "{},{},{}", e.library, e.games, e.imports)?;
+                        }
+                        Ok(())
+                    }),
+                    _ => eprintln!("unsupported format for imports inventory"),
+                }
+            } else {
+                let db = load_dataset_or_collect(&path, &catalog, include_modules);
+                match format {
+                    OutputFormat::Csv => write_to_output_or_stdout(&output, &|w| {
+                        ps5_analysis::export::csv::export_imports(&db, w)
+                    }),
+                    OutputFormat::Terminal => print_imports_terminal(&db),
+                    _ => eprintln!("unsupported format for imports (use --format csv or --format terminal)"),
+                }
+            }
+        }
 
-            match format {
-                OutputFormat::Csv => write_to_output_or_stdout(&output, &|w| {
-                    ps5_analysis::export::csv::export_imports(&db, w)
-                }),
-                OutputFormat::Terminal => print_imports_terminal(&db),
-                _ => eprintln!("unsupported format for imports (use --format csv or --format terminal)"),
+        AnalyzeCommand::Unknown { path, format, output } => {
+            if is_dataset_dir(&path) {
+                let ds = ps5_analysis::AnalysisDataset::open(&path).unwrap_or_else(|e| {
+                    eprintln!("error: {e}");
+                    std::process::exit(1);
+                });
+                let report = ps5_analysis::reports::build_unknown_nids(&ds);
+                match format {
+                    OutputFormat::Terminal => print_unknown_nids_terminal(&report),
+                    OutputFormat::Json => write_to_output_or_stdout(&output, &|w| {
+                        let json = serde_json::to_string_pretty(&report).unwrap();
+                        writeln!(w, "{json}")
+                    }),
+                    OutputFormat::Csv => write_to_output_or_stdout(&output, &|w| {
+                        writeln!(w, "nid,count,libraries")?;
+                        for e in &report.entries {
+                            writeln!(w, "{},{},{}", e.nid_hash, e.count, e.libraries.join(";"))?;
+                        }
+                        Ok(())
+                    }),
+                    _ => eprintln!("unsupported format for unknown NIDs"),
+                }
+            } else {
+                eprintln!("error: analyze unknown requires a dataset directory (run 'ps5rs scan' first)");
+                std::process::exit(1);
             }
         }
     }
@@ -378,101 +548,135 @@ fn print_imports_terminal(db: &ps5_analysis::AnalysisDatabase) {
 }
 
 #[allow(clippy::print_literal)]
-fn cmd_inspect(path: &PathBuf) {
+fn print_import_inventory_terminal(inv: &ps5_analysis::reports::LibraryInventory) {
+    println!("Import Inventory ({} games)", inv.total_games);
+    println!("{}", "=".repeat(60));
+    println!("{:<30} {:>8} {:>10}", "Library", "Games", "Imports");
+    println!("{}", "-".repeat(60));
+
+    for entry in &inv.entries {
+        println!("{:<30} {:>8} {:>10}", entry.library, entry.games, entry.imports);
+    }
+}
+
+#[allow(clippy::print_literal)]
+fn print_unknown_nids_terminal(report: &ps5_analysis::reports::UnknownNidReport) {
+    println!(
+        "Unknown NIDs ({} unique, {} total, {:.1}% of {} imports)",
+        report.entries.len(),
+        report.total_unknown,
+        if report.total_imports > 0 {
+            report.total_unknown as f64 / report.total_imports as f64 * 100.0
+        } else {
+            0.0
+        },
+        report.total_imports,
+    );
+    println!("{}", "=".repeat(70));
+    println!("{:<44} {:>6}  {}", "NID", "Count", "Libraries");
+    println!("{}", "-".repeat(70));
+
+    for entry in report.entries.iter().take(100) {
+        println!(
+            "{:<44} {:>6}  {}",
+            entry.nid_hash,
+            entry.count,
+            entry.libraries.join(", ")
+        );
+    }
+    if report.entries.len() > 100 {
+        println!("... and {} more", report.entries.len() - 100);
+    }
+}
+
+#[allow(clippy::print_literal)]
+fn cmd_inspect(path: &PathBuf, json: bool, output: &Option<PathBuf>) {
     let data = load_file(path);
+    let sha256 = ps5_format::sha256_hex(&data);
+    let catalog = load_catalog();
+    let image = ps5_image::BinaryImageBuilder::build_from_file(data, &sha256, &catalog);
+
+    if json {
+        write_to_output_or_stdout(output, &|w| {
+            ps5_image::json::export_json(&image, w).map_err(std::io::Error::other)
+        });
+        return;
+    }
+
     println!("ps5rs v{} — PS5 binary inspector", env!("CARGO_PKG_VERSION"));
     println!("File: {}", path.display());
-    println!("Size: {} bytes", data.len());
+    println!("Size: {} bytes", image.file_size);
     println!();
 
-    match ps5_self::SelfImage::parse(&data) {
-        Ok(img) => {
-            println!("Platform: {:?}", img.platform);
-            if img.is_self() {
-                println!("SELF segments: {}", img.segments.len());
-                for (i, seg) in img.segments.iter().enumerate() {
-                    let flags = if seg.is_data() { "DATA" } else if seg.is_encrypted() { "ENCRYPTED" } else { "CODE" };
-                    println!("  [{i}] offset={:#x} file_size={:#x} mem_size={:#x} flags={}",
-                        seg.file_offset, seg.file_size, seg.mem_size, flags);
-                }
-            }
-            println!();
+    println!("Platform: {}", image.platform);
+    println!("SELF: {}", image.is_self);
+    println!("SHA-256: {}", &image.sha256[..16]);
+    println!("Entry point: {:#x}", image.entry_point);
+    println!("Segments: {}", image.segments.len());
+    println!("Imports: {}", image.imports.len());
+    println!("Exports: {}", image.exports.len());
+    println!("Relocations: {}", image.relocations.len());
+    if let Some(ref tls) = image.tls {
+        println!("TLS: vaddr={:#x} filesz={:#x} memsz={:#x}", tls.vaddr, tls.filesz, tls.memsz);
+    }
+    if image.init_va != 0 {
+        println!("init: {:#x}", image.init_va);
+    }
+    if image.fini_va != 0 {
+        println!("fini: {:#x}", image.fini_va);
+    }
 
-            let elf = &img.elf;
-            println!("ELF type: {:#x}", elf.header.e_type);
-            println!("Machine: {:#x}", elf.header.e_machine);
-            println!("Entry point: {:#x}", elf.header.e_entry);
-            println!("Program headers: {}", elf.program_headers.len());
-            println!("Dynamic entries: {}", elf.dynamic_entries.len());
-            println!("Symbols: {}", elf.symbols.len());
-            println!("Relocations: {}", elf.relocations.len());
-            if let Some(ref tls) = elf.tls {
-                println!("TLS: vaddr={:#x} filesz={:#x} memsz={:#x}", tls.vaddr, tls.filesz, tls.memsz);
-            }
-
-            let imports: Vec<_> = elf.symbols.iter().filter(|s| s.is_import).collect();
-            println!("Imports: {}", imports.len());
-
-            let catalog = load_catalog();
-            let mut lib_counts: std::collections::HashMap<String, usize> = std::collections::HashMap::new();
-            for sym in &imports {
-                let parts: Vec<&str> = sym.resolved_name.split('#').collect();
-                let nid = parts[0];
-                let lib_name = if parts.len() >= 2 {
-                    lib_id_from_nid(&sym.resolved_name)
-                        .and_then(|id| elf.import_libs.get(&id).cloned())
-                        .unwrap_or_else(|| format!("lib_{}", parts[1]))
-                } else {
-                    "?".to_string()
-                };
-                let resolved = catalog.resolve(nid).unwrap_or("?");
-                *lib_counts.entry(format!("{lib_name}: {resolved}")).or_insert(0) += 1;
-            }
-
-            if !lib_counts.is_empty() {
-                println!("\nBy library + resolved name:");
-                let mut sorted: Vec<_> = lib_counts.iter().collect();
-                sorted.sort_by(|a, b| b.1.cmp(a.1));
-                for (lib, count) in sorted {
-                    println!("  {lib}: {count}");
-                }
-            }
+    if !image.import_libs.is_empty() {
+        println!("\nImport libraries:");
+        for (id, name) in &image.import_libs {
+            println!("  [{id}] {name}");
         }
-        Err(e) => {
-            eprintln!("parse error: {e}");
-            std::process::exit(1);
+    }
+
+    if !image.needed_files.is_empty() {
+        println!("\nNeeded files:");
+        for f in &image.needed_files {
+            println!("  {f}");
+        }
+    }
+
+    if !image.imports.is_empty() {
+        let mut lib_counts: std::collections::HashMap<String, usize> = std::collections::HashMap::new();
+        for imp in &image.imports {
+            let label = format!("{}: {}", imp.library_name,
+                imp.resolved_name.as_deref().unwrap_or("?"));
+            *lib_counts.entry(label).or_insert(0) += 1;
+        }
+        println!("\nBy library + resolved name:");
+        let mut sorted: Vec<_> = lib_counts.iter().collect();
+        sorted.sort_by(|a, b| b.1.cmp(a.1));
+        for (lib, count) in sorted {
+            println!("  {lib}: {count}");
         }
     }
 }
 
 #[allow(clippy::print_literal)]
-fn cmd_imports(path: &PathBuf) {
+fn cmd_imports(path: &PathBuf, json: bool, output: &Option<PathBuf>) {
     let data = load_file(path);
-    let img = ps5_self::SelfImage::parse(&data).unwrap_or_else(|e| {
-        eprintln!("parse error: {e}");
-        std::process::exit(1);
-    });
-
+    let sha256 = ps5_format::sha256_hex(&data);
     let catalog = ps5_nid::Catalog::new();
-    let imports: Vec<_> = img.elf.symbols.iter().filter(|s| s.is_import).collect();
+    let image = ps5_image::BinaryImageBuilder::build_from_file(data, &sha256, &catalog);
 
-    println!("Imports from {} ({})", path.display(), imports.len());
+    if json {
+        write_to_output_or_stdout(output, &|w| {
+            ps5_image::json::export_json(&image, w).map_err(std::io::Error::other)
+        });
+        return;
+    }
+
+    println!("Imports from {} ({})", path.display(), image.imports.len());
     println!("{:<64} {:<16} {}", "NID", "Resolved", "Library");
     println!("{}", "-".repeat(100));
 
-    for sym in &imports {
-        let parts: Vec<&str> = sym.resolved_name.split('#').collect();
-        let nid = parts[0];
-        let lib_name = if parts.len() >= 2 {
-            lib_id_from_nid(&sym.resolved_name)
-                .and_then(|id| img.elf.import_libs.get(&id).cloned())
-                .unwrap_or_else(|| format!("lib_{}", parts[1]))
-        } else {
-            "?".to_string()
-        };
-
-        let resolved = catalog.resolve(nid).unwrap_or("?");
-        println!("{:<64} {:<16} {}", nid, resolved, lib_name);
+    for imp in &image.imports {
+        let resolved = imp.resolved_name.as_deref().unwrap_or("?");
+        println!("{:<64} {:<16} {}", imp.nid_hash, resolved, imp.library_name);
     }
 }
 
@@ -532,9 +736,12 @@ fn cmd_dynamic(path: &PathBuf) {
             0xa => "DT_STRSZ",
             0xb => "DT_SYMENT",
             0xc => "DT_INIT",
+            0xd => "DT_FINI",
             0x17 => "DT_JMPREL",
             0x19 => "DT_INIT_ARRAY",
+            0x1a => "DT_FINI_ARRAY",
             0x1b => "DT_INIT_ARRAYSZ",
+            0x1c => "DT_FINI_ARRAYSZ",
             0x61000029 => "DT_SCE_JMPREL",
             0x6100002D => "DT_SCE_PLTRELSZ",
             0x6100002F => "DT_SCE_RELA",

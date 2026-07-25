@@ -37,9 +37,12 @@ pub const DT_RELASZ: u64 = 8;
 pub const DT_STRSZ: u64 = 0xa;
 pub const DT_SYMENT: u64 = 0xb;
 pub const DT_INIT: u64 = 0xc;
+pub const DT_FINI: u64 = 0xd;
 pub const DT_JMPREL: u64 = 0x17;
 pub const DT_INIT_ARRAY: u64 = 0x19;
 pub const DT_INIT_ARRAYSZ: u64 = 0x1b;
+pub const DT_FINI_ARRAY: u64 = 0x1a;
+pub const DT_FINI_ARRAYSZ: u64 = 0x1c;
 pub const DT_PREINIT_ARRAY: u64 = 0x20;
 pub const DT_PREINIT_ARRAYSZ: u64 = 0x21;
 
