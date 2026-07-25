@@ -59,3 +59,116 @@ pub fn build_graph(db: &AnalysisDatabase, include_nids: bool) -> DependencyGraph
 
     DependencyGraph { game_nodes, lib_nodes, edges }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::model::{make_game, make_db, make_import};
+
+    #[test]
+    fn graph_empty() {
+        let db = make_db(vec![]);
+        let g = build_graph(&db, false);
+        assert!(g.game_nodes.is_empty());
+        assert!(g.lib_nodes.is_empty());
+        assert!(g.edges.is_empty());
+    }
+
+    #[test]
+    fn graph_single_game_single_lib() {
+        let db = make_db(vec![
+            make_game("GameA", vec![
+                make_import("aaa", "funcA", 1, "libA"),
+                make_import("bbb", "funcB", 1, "libA"),
+            ]),
+        ]);
+        let g = build_graph(&db, false);
+        assert_eq!(g.game_nodes, vec!["GameA"]);
+        assert_eq!(g.lib_nodes, vec!["libA"]);
+        assert_eq!(g.edges.len(), 1);
+        assert_eq!(g.edges[0].from, "GameA");
+        assert_eq!(g.edges[0].to, "libA");
+        assert_eq!(g.edges[0].weight, 2);
+    }
+
+    #[test]
+    fn graph_multi_game_multi_lib() {
+        let db = make_db(vec![
+            make_game("GameA", vec![
+                make_import("aaa", "funcA", 1, "libA"),
+                make_import("bbb", "funcB", 2, "libB"),
+            ]),
+            make_game("GameB", vec![
+                make_import("aaa", "funcA", 1, "libA"),
+            ]),
+        ]);
+        let g = build_graph(&db, false);
+        assert_eq!(g.game_nodes.len(), 2);
+        assert_eq!(g.lib_nodes, vec!["libA", "libB"]);
+        // GameA -> libA (1), GameA -> libB (1), GameB -> libA (1)
+        let game_a_to_liba = g.edges.iter().find(|e| e.from == "GameA" && e.to == "libA");
+        assert_eq!(game_a_to_liba.unwrap().weight, 1);
+        let game_a_to_libb = g.edges.iter().find(|e| e.from == "GameA" && e.to == "libB");
+        assert_eq!(game_a_to_libb.unwrap().weight, 1);
+        let game_b_to_liba = g.edges.iter().find(|e| e.from == "GameB" && e.to == "libA");
+        assert_eq!(game_b_to_liba.unwrap().weight, 1);
+    }
+
+    #[test]
+    fn graph_lib_nodes_sorted() {
+        let db = make_db(vec![
+            make_game("GameA", vec![
+                make_import("a", "f", 3, "libC"),
+                make_import("b", "f", 1, "libA"),
+                make_import("c", "f", 2, "libB"),
+            ]),
+        ]);
+        let g = build_graph(&db, false);
+        assert_eq!(g.lib_nodes, vec!["libA", "libB", "libC"]);
+    }
+
+    #[test]
+    fn graph_with_nids() {
+        let db = make_db(vec![
+            make_game("GameA", vec![
+                make_import("aaa", "funcA", 1, "libA"),
+            ]),
+        ]);
+        let g = build_graph(&db, true);
+        assert_eq!(g.game_nodes, vec!["GameA"]);
+        assert_eq!(g.lib_nodes, vec!["libA"]);
+        // GameA -> libA edge
+        let game_edge = g.edges.iter().find(|e| e.from == "GameA" && e.to == "libA");
+        assert!(game_edge.is_some());
+        // libA -> funcA edge (resolved != "?")
+        let lib_edge = g.edges.iter().find(|e| e.from == "libA" && e.to == "funcA");
+        assert!(lib_edge.is_some());
+        assert_eq!(lib_edge.unwrap().weight, 1);
+    }
+
+    #[test]
+    fn graph_without_nids_no_nid_edges() {
+        let db = make_db(vec![
+            make_game("GameA", vec![
+                make_import("aaa", "funcA", 1, "libA"),
+            ]),
+        ]);
+        let g = build_graph(&db, false);
+        // Only GameA -> libA, no libA -> funcA
+        let lib_edge = g.edges.iter().find(|e| e.from == "libA" && e.to == "funcA");
+        assert!(lib_edge.is_none());
+    }
+
+    #[test]
+    fn graph_unresolved_nid_not_in_nid_edges() {
+        let db = make_db(vec![
+            make_game("GameA", vec![
+                make_import("aaa", "?", 1, "libA"),
+            ]),
+        ]);
+        let g = build_graph(&db, true);
+        // No libA -> ? edge
+        let bad_edge = g.edges.iter().find(|e| e.to == "?");
+        assert!(bad_edge.is_none());
+    }
+}

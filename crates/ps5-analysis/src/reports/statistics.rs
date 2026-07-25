@@ -59,3 +59,94 @@ pub fn compute_stats(db: &AnalysisDatabase) -> AnalysisStats {
         most_used_lib_count: most_lib_count,
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::model::{make_game, make_db, make_import};
+
+    #[test]
+    fn stats_empty_database() {
+        let db = make_db(vec![]);
+        let s = compute_stats(&db);
+        assert_eq!(s.total_games, 0);
+        assert_eq!(s.total_imports, 0);
+        assert_eq!(s.unique_nids, 0);
+        assert_eq!(s.unique_libs, 0);
+        assert_eq!(s.resolution_rate, 0.0);
+    }
+
+    #[test]
+    fn stats_single_game() {
+        let db = make_db(vec![
+            make_game("GameA", vec![
+                make_import("aaa", "funcA", 1, "libA"),
+                make_import("bbb", "funcB", 2, "libB"),
+                make_import("aaa", "funcA", 1, "libA"),
+            ]),
+        ]);
+        let s = compute_stats(&db);
+        assert_eq!(s.total_games, 1);
+        assert_eq!(s.total_imports, 3);
+        assert_eq!(s.unique_nids, 2); // aaa, bbb
+        assert_eq!(s.unique_libs, 2); // libA, libB
+        assert_eq!(s.most_common_nid.as_deref(), Some("aaa"));
+        assert_eq!(s.most_common_nid_count, 2);
+        assert_eq!(s.most_used_lib.as_deref(), Some("libA"));
+        assert_eq!(s.most_used_lib_count, 2);
+    }
+
+    #[test]
+    fn stats_resolution_rate() {
+        let db = make_db(vec![
+            make_game("GameA", vec![
+                make_import("aaa", "funcA", 1, "libA"),
+                make_import("bbb", "?", 1, "libA"),
+                make_import("ccc", "?", 1, "libA"),
+            ]),
+        ]);
+        let s = compute_stats(&db);
+        // 1 resolved out of 3 = 33.33%
+        assert!((s.resolution_rate - 33.33).abs() < 0.1);
+    }
+
+    #[test]
+    fn stats_all_unresolved() {
+        let db = make_db(vec![
+            make_game("GameA", vec![
+                make_import("aaa", "?", 1, "libA"),
+            ]),
+        ]);
+        let s = compute_stats(&db);
+        assert_eq!(s.resolution_rate, 0.0);
+    }
+
+    #[test]
+    fn stats_multi_game_tiebreaker() {
+        let db = make_db(vec![
+            make_game("GameA", vec![
+                make_import("aaa", "funcA", 1, "libA"),
+            ]),
+            make_game("GameB", vec![
+                make_import("aaa", "funcA", 1, "libA"),
+                make_import("ccc", "funcC", 2, "libB"),
+            ]),
+        ]);
+        let s = compute_stats(&db);
+        assert_eq!(s.total_imports, 3);
+        assert_eq!(s.unique_nids, 2);
+        // 'aaa' appears in both games = 2 occurrences
+        assert_eq!(s.most_common_nid.as_deref(), Some("aaa"));
+        assert_eq!(s.most_common_nid_count, 2);
+        assert_eq!(s.most_used_lib.as_deref(), Some("libA"));
+        assert_eq!(s.most_used_lib_count, 2);
+    }
+
+    #[test]
+    fn stats_empty_database_fields_are_none() {
+        let db = make_db(vec![]);
+        let s = compute_stats(&db);
+        assert!(s.most_common_nid.is_none() || s.most_common_nid.as_deref() == Some(""));
+        assert!(s.most_used_lib.is_none() || s.most_used_lib.as_deref() == Some(""));
+    }
+}

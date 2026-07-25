@@ -159,3 +159,119 @@ fn lib_id_from_nid(nid: &str) -> Option<u16> {
         None
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn lib_id_from_nid_valid() {
+        // 'A' = 0, 'B' = 1, ...
+        let id = lib_id_from_nid("abc123#A").unwrap();
+        assert_eq!(id, 0);
+
+        let id = lib_id_from_nid("abc123#B").unwrap();
+        assert_eq!(id, 1);
+
+        // Two chars: 'A' 'A' = 0*64 + 0 = 0
+        let id = lib_id_from_nid("abc123#AA").unwrap();
+        assert_eq!(id, 0);
+
+        // 'A' 'B' = 0*64 + 1 = 1
+        let id = lib_id_from_nid("abc123#AB").unwrap();
+        assert_eq!(id, 1);
+    }
+
+    #[test]
+    fn lib_id_from_nid_no_hash() {
+        assert_eq!(lib_id_from_nid("abc123"), None);
+    }
+
+    #[test]
+    fn lib_id_from_nid_invalid_char() {
+        assert_eq!(lib_id_from_nid("abc#@invalid"), None); // '@' not in B64
+    }
+
+    #[test]
+    fn compute_sha256_deterministic() {
+        let data = b"hello world";
+        let h1 = compute_sha256(data);
+        let h2 = compute_sha256(data);
+        assert_eq!(h1, h2);
+        assert_eq!(h1.len(), 64); // hex encoded
+    }
+
+    #[test]
+    fn compute_sha256_empty() {
+        let h = compute_sha256(b"");
+        assert_eq!(h.len(), 64);
+    }
+
+    #[test]
+    fn compute_sha256_different_data() {
+        let h1 = compute_sha256(b"foo");
+        let h2 = compute_sha256(b"bar");
+        assert_ne!(h1, h2);
+    }
+
+    #[test]
+    fn find_binaries_eboot_only() {
+        let tmp = tempdir_for_test().join("eboot_only");
+        let game_dir = tmp.join("MyGame");
+        let sce_dir = game_dir.join("sce_module");
+        std::fs::create_dir_all(&sce_dir).unwrap();
+        std::fs::write(game_dir.join("eboot.bin"), b"fake").unwrap();
+        std::fs::write(sce_dir.join("libc.prx"), b"fake").unwrap();
+        std::fs::write(sce_dir.join("libScePfs.prx"), b"fake").unwrap();
+
+        let opts = CollectorOptions { include_prx: false };
+        let bins = find_binaries(&game_dir, &opts);
+        assert_eq!(bins.len(), 1);
+        assert!(bins[0].file_name().unwrap().to_str().unwrap().eq_ignore_ascii_case("eboot.bin"));
+    }
+
+    #[test]
+    fn find_binaries_include_prx() {
+        let tmp = tempdir_for_test().join("include_prx");
+        let game_dir = tmp.join("MyGame");
+        let sce_dir = game_dir.join("sce_module");
+        std::fs::create_dir_all(&sce_dir).unwrap();
+        std::fs::write(game_dir.join("eboot.bin"), b"fake").unwrap();
+        std::fs::write(sce_dir.join("libc.prx"), b"fake").unwrap();
+
+        let opts = CollectorOptions { include_prx: true };
+        let bins = find_binaries(&game_dir, &opts);
+        assert_eq!(bins.len(), 2);
+    }
+
+    #[test]
+    fn find_binaries_empty_dir() {
+        let tmp = tempdir_for_test().join("empty_dir");
+        let game_dir = tmp.join("EmptyGame");
+        std::fs::create_dir_all(&game_dir).unwrap();
+
+        let opts = CollectorOptions { include_prx: false };
+        let bins = find_binaries(&game_dir, &opts);
+        assert!(bins.is_empty());
+    }
+
+    #[test]
+    fn find_binaries_skips_non_game_files() {
+        let tmp = tempdir_for_test().join("skips_non_game");
+        let game_dir = tmp.join("Game");
+        std::fs::create_dir_all(&game_dir).unwrap();
+        std::fs::write(game_dir.join("README.txt"), b"text").unwrap();
+        std::fs::write(game_dir.join("icon.png"), b"png").unwrap();
+        std::fs::write(game_dir.join("eboot.bin"), b"fake").unwrap();
+
+        let opts = CollectorOptions { include_prx: false };
+        let bins = find_binaries(&game_dir, &opts);
+        assert_eq!(bins.len(), 1);
+    }
+
+    fn tempdir_for_test() -> PathBuf {
+        let dir = std::env::temp_dir().join(format!("ps5rs_test_{}", std::process::id()));
+        let _ = std::fs::create_dir_all(&dir);
+        dir
+    }
+}

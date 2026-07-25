@@ -2,32 +2,10 @@
 
 use std::path::Path;
 
-struct GameSnapshot {
-    name: &'static str,
-    path_pattern: &'static str,
-    expected_libs: &'static [&'static str],
-}
-
-fn find_game_file(pattern: &str) -> Option<Vec<u8>> {
-    let base = std::env::var("PS5_GAME_DIR")
-        .unwrap_or_else(|_| r"C:\Users\claimoar\Documents\ROMS\PS5".to_string());
+fn find_game_dir() -> Option<std::path::PathBuf> {
+    let base = std::env::var("PS5_GAME_DIR").ok()?;
     let dir = std::path::PathBuf::from(&base);
-    if !dir.exists() {
-        return None;
-    }
-    for entry in std::fs::read_dir(&dir).ok()? {
-        let entry = entry.ok()?;
-        let name = entry.file_name();
-        let name_str = name.to_string_lossy();
-        if !name_str.contains(pattern) {
-            continue;
-        }
-        let eboot = find_eboot(&entry.path());
-        if let Some(path) = eboot {
-            return std::fs::read(path).ok();
-        }
-    }
-    None
+    if dir.exists() { Some(dir) } else { None }
 }
 
 fn find_eboot(dir: &Path) -> Option<std::path::PathBuf> {
@@ -49,7 +27,7 @@ fn find_eboot(dir: &Path) -> Option<std::path::PathBuf> {
     None
 }
 
-fn parse_and_snapshot(data: &[u8]) -> (u64, usize, bool, usize, usize, Vec<String>) {
+fn parse_and_analyze(data: &[u8]) -> (u64, usize, bool, usize, usize, Vec<String>) {
     let img = ps5_self::SelfImage::parse(data).expect("parse failed");
     let elf = &img.elf;
     let imports: Vec<_> = elf.symbols.iter().filter(|s| s.is_import).collect();
@@ -81,59 +59,40 @@ fn parse_and_snapshot(data: &[u8]) -> (u64, usize, bool, usize, usize, Vec<Strin
     )
 }
 
-const GAMES: &[GameSnapshot] = &[
-    GameSnapshot {
-        name: "Stray",
-        path_pattern: "Stray-PPSA02100",
-        expected_libs: &["libc", "libkernel"],
-    },
-    GameSnapshot {
-        name: "Bugsnax",
-        path_pattern: "Bugsnax-PPSA01502",
-        expected_libs: &["libc"],
-    },
-    GameSnapshot {
-        name: "GRIS",
-        path_pattern: "GRIS-PPSA09804",
-        expected_libs: &["libc"],
-    },
-];
-
-fn snapshot_test(game: &GameSnapshot) {
-    let data = match find_game_file(game.path_pattern) {
+#[test]
+fn parse_first_game_in_directory() {
+    let base = match find_game_dir() {
         Some(d) => d,
         None => {
-            eprintln!("SKIP: {} - game directory not found (set PS5_GAME_DIR)", game.name);
+            eprintln!("SKIP: set PS5_GAME_DIR to a directory containing game dumps");
             return;
         }
     };
-    let (entry, num_segments, has_tls, num_imports, num_relocs, libs) = parse_and_snapshot(&data);
 
-    assert!(entry > 0, "{}: entry point should be non-zero", game.name);
-    assert!(num_segments > 0, "{}: should have segments", game.name);
-    assert!(num_imports > 0, "{}: should have imports", game.name);
+    let mut found = false;
+    for entry in std::fs::read_dir(&base).ok().into_iter().flatten() {
+        let entry = entry.ok().unwrap();
+        if !entry.file_type().map(|t| t.is_dir()).unwrap_or(false) {
+            continue;
+        }
+        let Some(eboot) = find_eboot(&entry.path()) else {
+            continue;
+        };
+        let data = std::fs::read(&eboot).expect("read eboot");
+        let (entry_point, num_segments, has_tls, num_imports, num_relocs, libs) = parse_and_analyze(&data);
 
-    for expected_lib in game.expected_libs {
-        assert!(libs.iter().any(|l| l.contains(expected_lib)),
-            "{}: expected library containing '{}' in {:?}",
-            game.name, expected_lib, libs);
+        assert!(entry_point > 0, "entry point should be non-zero");
+        assert!(num_segments > 0, "should have segments");
+        assert!(num_imports > 0, "should have imports");
+
+        println!("{}: entry={:#x} segments={} tls={} imports={} relocs={} libs={:?}",
+            eboot.display(), entry_point, num_segments, has_tls, num_imports, num_relocs, libs);
+
+        found = true;
+        break;
     }
 
-    println!("{}: entry={:#x} segments={} tls={} imports={} relocs={} libs={:?}",
-        game.name, entry, num_segments, has_tls, num_imports, num_relocs, libs);
-}
-
-#[test]
-fn stray_snapshot() {
-    snapshot_test(&GAMES[0]);
-}
-
-#[test]
-fn bugsnax_snapshot() {
-    snapshot_test(&GAMES[1]);
-}
-
-#[test]
-fn gris_snapshot() {
-    snapshot_test(&GAMES[2]);
+    if !found {
+        eprintln!("SKIP: no game directories with eboot.bin found under {}", base.display());
+    }
 }

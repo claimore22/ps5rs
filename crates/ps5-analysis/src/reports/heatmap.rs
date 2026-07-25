@@ -38,3 +38,81 @@ pub fn build_heatmap(db: &AnalysisDatabase) -> LibraryHeatmap {
         matrix,
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::model::{make_game, make_db, make_import};
+
+    #[test]
+    fn heatmap_empty() {
+        let db = make_db(vec![]);
+        let h = build_heatmap(&db);
+        assert!(h.libraries.is_empty());
+        assert!(h.games.is_empty());
+        assert!(h.matrix.is_empty());
+    }
+
+    #[test]
+    fn heatmap_single_game_single_lib() {
+        let db = make_db(vec![
+            make_game("GameA", vec![
+                make_import("aaa", "fA", 1, "libA"),
+                make_import("bbb", "fB", 1, "libA"),
+            ]),
+        ]);
+        let h = build_heatmap(&db);
+        assert_eq!(h.games, vec!["GameA"]);
+        assert_eq!(h.libraries, vec!["libA"]);
+        assert_eq!(h.matrix, vec![vec![2]]);
+    }
+
+    #[test]
+    fn heatmap_multi_game_multi_lib() {
+        let db = make_db(vec![
+            make_game("GameA", vec![
+                make_import("aaa", "fA", 1, "libA"),
+                make_import("bbb", "fB", 2, "libB"),
+            ]),
+            make_game("GameB", vec![
+                make_import("aaa", "fA", 1, "libA"),
+                make_import("ccc", "fC", 1, "libA"),
+            ]),
+        ]);
+        let h = build_heatmap(&db);
+        assert_eq!(h.games, vec!["GameA", "GameB"]);
+        assert_eq!(h.libraries, vec!["libA", "libB"]);
+        // libA: GameA=1, GameB=2
+        // libB: GameA=1, GameB=0
+        assert_eq!(h.matrix, vec![vec![1, 2], vec![1, 0]]);
+    }
+
+    #[test]
+    fn heatmap_game_not_in_lib() {
+        let db = make_db(vec![
+            make_game("GameA", vec![
+                make_import("aaa", "fA", 1, "libX"),
+            ]),
+            make_game("GameB", vec![
+                make_import("bbb", "fB", 2, "libY"),
+            ]),
+        ]);
+        let h = build_heatmap(&db);
+        assert_eq!(h.games, vec!["GameA", "GameB"]);
+        assert_eq!(h.libraries, vec!["libX", "libY"]);
+        assert_eq!(h.matrix, vec![vec![1, 0], vec![0, 1]]);
+    }
+
+    #[test]
+    fn heatmap_libraries_sorted() {
+        let db = make_db(vec![
+            make_game("GameA", vec![
+                make_import("a", "f", 3, "libC"),
+                make_import("b", "f", 1, "libA"),
+                make_import("c", "f", 2, "libB"),
+            ]),
+        ]);
+        let h = build_heatmap(&db);
+        assert_eq!(h.libraries, vec!["libA", "libB", "libC"]);
+    }
+}
