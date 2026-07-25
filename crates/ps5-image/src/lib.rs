@@ -1,12 +1,90 @@
 use std::collections::HashMap;
 
+use serde::{Deserialize, Deserializer, Serialize, Serializer};
+
 mod builder;
+pub mod json;
+
 pub use builder::BinaryImageBuilder;
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+pub const BINARY_IMAGE_VERSION: u32 = 1;
+
+// ---------------------------------------------------------------------------
+// JSON document wrapper — versions the interchange format, not the Rust struct
+// ---------------------------------------------------------------------------
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct BinaryImageDocument {
+    pub schema_version: u32,
+    pub tool: String,
+    pub image: BinaryImage,
+}
+
+// ---------------------------------------------------------------------------
+// Hex serde helpers — addresses and offsets serialize as "0x..." strings
+// ---------------------------------------------------------------------------
+
+pub(crate) mod hex {
+    use serde::{Deserialize, Deserializer, Serializer};
+
+    pub fn serialize<S: Serializer>(v: &u64, s: S) -> Result<S::Ok, S::Error> {
+        s.serialize_str(&format!("{:#x}", v))
+    }
+
+    pub fn deserialize<'de, D: Deserializer<'de>>(d: D) -> Result<u64, D::Error> {
+        let s = String::deserialize(d)?;
+        parse_u64(&s).map_err(serde::de::Error::custom)
+    }
+
+    pub(crate) fn parse_u64(s: &str) -> Result<u64, String> {
+        if let Some(rest) = s.strip_prefix("0x").or_else(|| s.strip_prefix("0X")) {
+            u64::from_str_radix(rest, 16).map_err(|e| format!("{e}"))
+        } else {
+            s.parse::<u64>().map_err(|e| format!("{e}"))
+        }
+    }
+}
+
+pub(crate) mod hex_signed {
+    use serde::{Deserialize, Deserializer, Serializer};
+
+    pub fn serialize<S: Serializer>(v: &i64, s: S) -> Result<S::Ok, S::Error> {
+        if *v < 0 {
+            s.serialize_str(&format!("-{:#x}", v.wrapping_neg()))
+        } else {
+            s.serialize_str(&format!("{:#x}", v))
+        }
+    }
+
+    pub fn deserialize<'de, D: Deserializer<'de>>(d: D) -> Result<i64, D::Error> {
+        let s = String::deserialize(d)?;
+        let (neg, rest) = if let Some(r) = s.strip_prefix('-') {
+            (true, r)
+        } else {
+            (false, s.as_str())
+        };
+        let abs = if let Some(hex) = rest.strip_prefix("0x").or_else(|| rest.strip_prefix("0X")) {
+            u64::from_str_radix(hex, 16).map_err(serde::de::Error::custom)?
+        } else {
+            rest.parse::<u64>().map_err(serde::de::Error::custom)?
+        };
+        if neg {
+            Ok(-(abs as i64))
+        } else {
+            Ok(abs as i64)
+        }
+    }
+}
+
+// ---------------------------------------------------------------------------
+// Platform
+// ---------------------------------------------------------------------------
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
 pub enum Platform {
     Ps4,
     Ps5,
+    #[serde(rename = "RawELF")]
     RawElf,
     Unknown,
 }
@@ -33,13 +111,22 @@ impl std::fmt::Display for Platform {
     }
 }
 
-#[derive(Debug, Clone)]
+// ---------------------------------------------------------------------------
+// TlsInfo
+// ---------------------------------------------------------------------------
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct TlsInfo {
+    #[serde(with = "hex")]
     pub vaddr: u64,
     pub filesz: u64,
     pub memsz: u64,
     pub align: u64,
 }
+
+// ---------------------------------------------------------------------------
+// LoadedSegment — custom Serialize/Deserialize for flags as ELF-style string
+// ---------------------------------------------------------------------------
 
 #[derive(Debug, Clone)]
 pub struct LoadedSegment {
@@ -51,7 +138,76 @@ pub struct LoadedSegment {
     pub is_writable: bool,
 }
 
-#[derive(Debug, Clone)]
+impl LoadedSegment {
+    pub fn flags(&self) -> String {
+        let mut s = String::with_capacity(3);
+        s.push('R');
+        if self.is_writable {
+            s.push('W');
+        }
+        if self.is_executable {
+            s.push('X');
+        }
+        s
+    }
+}
+
+impl Serialize for LoadedSegment {
+    fn serialize<S: Serializer>(&self, serializer: S) -> Result<S::Ok, S::Error> {
+        use serde::ser::SerializeStruct;
+
+        let mut state = serializer.serialize_struct("LoadedSegment", 6)?;
+        state.serialize_field("vaddr", &format!("{:#x}", self.vaddr))?;
+        state.serialize_field("file_offset", &format!("{:#x}", self.file_offset))?;
+        state.serialize_field("filesz", &self.filesz)?;
+        state.serialize_field("memsz", &self.memsz)?;
+        state.serialize_field("flags", &self.flags())?;
+        state.end()
+    }
+}
+
+impl<'de> Deserialize<'de> for LoadedSegment {
+    fn deserialize<D: Deserializer<'de>>(deserializer: D) -> Result<Self, D::Error> {
+        #[derive(Deserialize)]
+        struct Helper {
+            vaddr: String,
+            file_offset: String,
+            filesz: u64,
+            memsz: u64,
+            flags: String,
+        }
+
+        let h = Helper::deserialize(deserializer)?;
+
+        let vaddr = hex::parse_u64(&h.vaddr).map_err(serde::de::Error::custom)?;
+        let file_offset = hex::parse_u64(&h.file_offset).map_err(serde::de::Error::custom)?;
+
+        let mut is_writable = false;
+        let mut is_executable = false;
+        for ch in h.flags.chars() {
+            match ch {
+                'W' => is_writable = true,
+                'X' => is_executable = true,
+                _ => {}
+            }
+        }
+
+        Ok(LoadedSegment {
+            vaddr,
+            file_offset,
+            filesz: h.filesz,
+            memsz: h.memsz,
+            is_executable,
+            is_writable,
+        })
+    }
+}
+
+// ---------------------------------------------------------------------------
+// ImportEntry
+// ---------------------------------------------------------------------------
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct ImportEntry {
     pub nid_hash: String,
     pub resolved_name: Option<String>,
@@ -59,47 +215,78 @@ pub struct ImportEntry {
     pub library_name: String,
 }
 
-#[derive(Debug, Clone)]
+// ---------------------------------------------------------------------------
+// ExportEntry
+// ---------------------------------------------------------------------------
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct ExportEntry {
     pub nid_hash: String,
     pub resolved_name: Option<String>,
+    #[serde(with = "hex")]
     pub vaddr: u64,
     pub size: u64,
 }
 
-#[derive(Debug, Clone)]
+// ---------------------------------------------------------------------------
+// RelocationEntry
+// ---------------------------------------------------------------------------
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct RelocationEntry {
+    #[serde(with = "hex")]
     pub offset: u64,
     pub info: u64,
+    #[serde(with = "hex_signed")]
     pub addend: i64,
     pub r_type: u32,
     pub r_sym: u32,
     pub is_plt: bool,
 }
 
-#[derive(Debug, Clone)]
+// ---------------------------------------------------------------------------
+// BinaryImage
+// ---------------------------------------------------------------------------
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct BinaryImage {
     pub sha256: String,
     pub platform: Platform,
     pub is_self: bool,
     pub file_size: u64,
+    #[serde(with = "hex")]
     pub entry_point: u64,
     pub segments: Vec<LoadedSegment>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
     pub imports: Vec<ImportEntry>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
     pub exports: Vec<ExportEntry>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
     pub relocations: Vec<RelocationEntry>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
     pub tls: Option<TlsInfo>,
+    #[serde(with = "hex")]
     pub init_va: u64,
+    #[serde(with = "hex")]
     pub init_array_va: u64,
     pub init_array_sz: u64,
+    #[serde(with = "hex")]
     pub fini_va: u64,
+    #[serde(with = "hex")]
     pub fini_array_va: u64,
     pub fini_array_sz: u64,
+    #[serde(with = "hex")]
     pub preinit_array_va: u64,
     pub preinit_array_sz: u64,
+    #[serde(default, skip_serializing_if = "HashMap::is_empty")]
     pub import_libs: HashMap<u16, String>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
     pub needed_files: Vec<String>,
 }
+
+// ---------------------------------------------------------------------------
+// Tests
+// ---------------------------------------------------------------------------
 
 #[cfg(test)]
 mod tests {
@@ -109,43 +296,37 @@ mod tests {
     fn build_synthetic_elf() -> Vec<u8> {
         let strtab = {
             let mut buf = vec![0u8];
-            buf.extend_from_slice(b"hello#A"); // NID "hello" from lib with ID 0 (base64 'A')
+            buf.extend_from_slice(b"hello#A");
             buf.push(0);
-            buf.extend_from_slice(b"libSceFoo"); // library name at offset 8
+            buf.extend_from_slice(b"libSceFoo");
             buf.push(0);
             buf
         };
 
         let symtab = {
             let mut buf = Vec::new();
-            // sym[0] = null symbol
             buf.extend_from_slice(&0u32.to_le_bytes());
             buf.push(0); buf.push(0);
             buf.extend_from_slice(&0u16.to_le_bytes());
             buf.extend_from_slice(&0u64.to_le_bytes());
             buf.extend_from_slice(&0u64.to_le_bytes());
-            // sym[1] = import: "hello#A" (st_shndx=0, st_value=0)
-            buf.extend_from_slice(&1u32.to_le_bytes()); // st_name=1
-            buf.push(0); buf.push(0); // st_info, st_other
-            buf.extend_from_slice(&0u16.to_le_bytes()); // st_shndx=0 (import)
-            buf.extend_from_slice(&0u64.to_le_bytes()); // st_value=0
-            buf.extend_from_slice(&0u64.to_le_bytes()); // st_size
+            buf.extend_from_slice(&1u32.to_le_bytes());
+            buf.push(0); buf.push(0);
+            buf.extend_from_slice(&0u16.to_le_bytes());
+            buf.extend_from_slice(&0u64.to_le_bytes());
+            buf.extend_from_slice(&0u64.to_le_bytes());
             buf
         };
 
-        // First compute layout to get correct vaddrs
         let dynamic_entries = {
             let mut entries = Vec::new();
-            // We need to compute strtab_vaddr and symtab_vaddr after knowing dynamic size
-            // So build a placeholder dynamic first to measure its size
-            entries.push((DT_STRTAB, 0u64)); // placeholder
+            entries.push((DT_STRTAB, 0u64));
             entries.push((DT_STRSZ, strtab.len() as u64));
-            entries.push((DT_SYMTAB, 0u64)); // placeholder
+            entries.push((DT_SYMTAB, 0u64));
             entries.push((DT_SYMENT, 24u64));
-            entries.push((0x6100003Fu64, symtab.len() as u64)); // DT_SCE_SYMTABSZ
-            // DT_SCE_NEEDED_LIB: lib_id=0 (base64 'A'), name_offset=9 for "libSceFoo"
+            entries.push((0x6100003Fu64, symtab.len() as u64));
             entries.push((0x61000049u64, 9 | (0u64 << 48)));
-            entries.push((0u64, 0u64)); // DT_NULL
+            entries.push((0u64, 0u64));
             entries
         };
 
@@ -154,7 +335,6 @@ mod tests {
         let strtab_vaddr = load_vaddr + dyn_byte_size as u64;
         let symtab_vaddr = strtab_vaddr + strtab.len() as u64;
 
-        // Now build the real dynamic entries with correct vaddrs
         let dynamic = {
             let mut buf = Vec::new();
             let write_u64 = |buf: &mut Vec<u8>, v: u64| { buf.extend_from_slice(&v.to_le_bytes()); };
@@ -204,7 +384,6 @@ mod tests {
             data[off..off + 8].copy_from_slice(&v.to_le_bytes());
         };
 
-        // ELF header
         file[0..4].copy_from_slice(&ELF_MAGIC);
         file[EI_CLASS] = ELFCLASS64;
         file[EI_DATA] = ELFDATA2LSB;
@@ -218,7 +397,6 @@ mod tests {
         write_u16(&mut file, 54, 56);
         write_u16(&mut file, 56, phdr_count);
 
-        // Phdr 0: PT_LOAD
         let off0 = e_phoff as usize;
         write_u32(&mut file, off0, PT_LOAD);
         write_u32(&mut file, off0 + 4, PF_R | PF_X);
@@ -229,7 +407,6 @@ mod tests {
         write_u64(&mut file, off0 + 40, load_data.len() as u64);
         write_u64(&mut file, off0 + 48, 0x1000);
 
-        // Phdr 1: PT_DYNAMIC
         let off1 = off0 + 56;
         write_u32(&mut file, off1, PT_DYNAMIC);
         write_u32(&mut file, off1 + 4, PF_R | PF_W);
@@ -240,7 +417,6 @@ mod tests {
         write_u64(&mut file, off1 + 40, dyn_filesz);
         write_u64(&mut file, off1 + 48, 8);
 
-        // Load data
         let data_start = load_offset as usize;
         file[data_start..data_start + load_data.len()].copy_from_slice(&load_data);
 
@@ -345,5 +521,51 @@ mod tests {
         assert!(img.exports.is_empty());
         assert!(img.relocations.is_empty());
         assert!(img.tls.is_none());
+    }
+
+    #[test]
+    fn loaded_segment_roundtrip() {
+        let seg = LoadedSegment {
+            vaddr: 0x100000,
+            file_offset: 0x1000,
+            filesz: 4096,
+            memsz: 8192,
+            is_executable: true,
+            is_writable: false,
+        };
+        let json = serde_json::to_string(&seg).unwrap();
+        assert!(json.contains("\"flags\":\"RX\""));
+        let back: LoadedSegment = serde_json::from_str(&json).unwrap();
+        assert_eq!(back.vaddr, 0x100000);
+        assert!(back.is_executable);
+        assert!(!back.is_writable);
+    }
+
+    #[test]
+    fn loaded_segment_flags_rwx() {
+        let seg = LoadedSegment {
+            vaddr: 0,
+            file_offset: 0,
+            filesz: 0,
+            memsz: 0,
+            is_executable: true,
+            is_writable: true,
+        };
+        let json = serde_json::to_string(&seg).unwrap();
+        assert!(json.contains("\"flags\":\"RWX\""));
+    }
+
+    #[test]
+    fn loaded_segment_flags_r_only() {
+        let seg = LoadedSegment {
+            vaddr: 0,
+            file_offset: 0,
+            filesz: 100,
+            memsz: 100,
+            is_executable: false,
+            is_writable: false,
+        };
+        let json = serde_json::to_string(&seg).unwrap();
+        assert!(json.contains("\"flags\":\"R\""));
     }
 }

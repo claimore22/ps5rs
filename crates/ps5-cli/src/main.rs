@@ -13,8 +13,20 @@ struct Cli {
 
 #[derive(Subcommand)]
 enum Commands {
-    Inspect { file: PathBuf },
-    Imports { file: PathBuf },
+    Inspect {
+        file: PathBuf,
+        #[arg(long)]
+        json: bool,
+        #[arg(short, long, value_hint = ValueHint::FilePath)]
+        output: Option<PathBuf>,
+    },
+    Imports {
+        file: PathBuf,
+        #[arg(long)]
+        json: bool,
+        #[arg(short, long, value_hint = ValueHint::FilePath)]
+        output: Option<PathBuf>,
+    },
     Segments { file: PathBuf },
     Dynamic { file: PathBuf },
     Symbols { file: PathBuf },
@@ -92,8 +104,8 @@ fn main() {
     let cli = Cli::parse();
 
     match cli.command {
-        Commands::Inspect { file } => cmd_inspect(&file),
-        Commands::Imports { file } => cmd_imports(&file),
+        Commands::Inspect { file, json, output } => cmd_inspect(&file, json, &output),
+        Commands::Imports { file, json, output } => cmd_imports(&file, json, &output),
         Commands::Segments { file } => cmd_segments(&file),
         Commands::Dynamic { file } => cmd_dynamic(&file),
         Commands::Symbols { file } => cmd_symbols(&file),
@@ -364,16 +376,23 @@ fn print_imports_terminal(db: &ps5_analysis::AnalysisDatabase) {
 }
 
 #[allow(clippy::print_literal)]
-fn cmd_inspect(path: &PathBuf) {
+fn cmd_inspect(path: &PathBuf, json: bool, output: &Option<PathBuf>) {
     let data = load_file(path);
-    println!("ps5rs v{} — PS5 binary inspector", env!("CARGO_PKG_VERSION"));
-    println!("File: {}", path.display());
-    println!("Size: {} bytes", data.len());
-    println!();
-
     let sha256 = ps5_format::sha256_hex(&data);
     let catalog = load_catalog();
     let image = ps5_image::BinaryImageBuilder::build_from_file(data, &sha256, &catalog);
+
+    if json {
+        write_to_output_or_stdout(output, &|w| {
+            ps5_image::json::export_json(&image, w).map_err(std::io::Error::other)
+        });
+        return;
+    }
+
+    println!("ps5rs v{} — PS5 binary inspector", env!("CARGO_PKG_VERSION"));
+    println!("File: {}", path.display());
+    println!("Size: {} bytes", image.file_size);
+    println!();
 
     println!("Platform: {}", image.platform);
     println!("SELF: {}", image.is_self);
@@ -424,11 +443,18 @@ fn cmd_inspect(path: &PathBuf) {
 }
 
 #[allow(clippy::print_literal)]
-fn cmd_imports(path: &PathBuf) {
+fn cmd_imports(path: &PathBuf, json: bool, output: &Option<PathBuf>) {
     let data = load_file(path);
     let sha256 = ps5_format::sha256_hex(&data);
     let catalog = ps5_nid::Catalog::new();
     let image = ps5_image::BinaryImageBuilder::build_from_file(data, &sha256, &catalog);
+
+    if json {
+        write_to_output_or_stdout(output, &|w| {
+            ps5_image::json::export_json(&image, w).map_err(std::io::Error::other)
+        });
+        return;
+    }
 
     println!("Imports from {} ({})", path.display(), image.imports.len());
     println!("{:<64} {:<16} {}", "NID", "Resolved", "Library");
