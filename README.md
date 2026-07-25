@@ -10,12 +10,13 @@ The PS5 runs on x86-64 (AMD Zen 2), so PS5 game code can execute natively on any
 
 | Crate | Purpose |
 |---|---|
-| `ps5-format` | Shared types, error enums, ELF/SELF constants |
+| `ps5-format` | Shared types, error enums, ELF/SELF constants, SHA-256 utility |
 | `ps5-self` | SELF container parsing (PS4/PS5 wrappers around ELF) |
 | `ps5-elf` | ELF64 binary format parsing (headers, segments, symbols, relocations) |
 | `ps5-nid` | NID hash algorithm (SHA1 + Sony custom base64), name catalog, resolver |
-| `ps5-analysis` | Analysis engine: collect imports, build heatmaps, dependency graphs |
-| `ps5-cli` | Command-line interface (inspect, imports, segments, analysis) |
+| `ps5-image` | BinaryImage IR: normalized abstraction with JSON serialization |
+| `ps5-analysis` | Analysis engine: scanner, dataset, reports, export |
+| `ps5-cli` | Command-line interface (inspect, scan, analyze) |
 
 ## Building
 
@@ -33,6 +34,54 @@ cargo build --release
 ./target/release/ps5rs.exe   # Windows
 ./target/release/ps5rs       # Linux/macOS
 ```
+
+### Scan a game directory (creates dataset)
+
+The primary workflow: scan game binaries once, then run any number of reports instantly without re-parsing.
+
+```sh
+# Scan games into a dataset directory
+ps5rs scan ./games --output analysis/
+
+# The dataset is a portable directory of JSON files:
+# analysis/
+#   manifest.json       # schema version, tool, timestamp, image count
+#   images/
+#     GameTitle.json     # BinaryImageDocument per game
+#     AnotherGame.json
+```
+
+Each game's `eboot.bin` is parsed into a `BinaryImage` and serialized as an individual JSON file. The manifest tracks schema version for forward compatibility.
+
+### Analyze a dataset
+
+All `analyze` subcommands read from a dataset directory (no binary parsing). If a dataset doesn't exist, they fall back to scanning from raw binaries.
+
+```sh
+# Statistics (total imports, resolution rate, most common NID)
+ps5rs analyze stats analysis/
+
+# Import inventory: which libraries are used by how many games
+ps5rs analyze imports analysis/
+
+# Unknown NIDs: unresolved hashes sorted by frequency (catalog growth targets)
+ps5rs analyze unknown analysis/
+
+# Library x game heatmap
+ps5rs analyze heatmap analysis/
+
+# NID frequency ranking (top 50)
+ps5rs analyze frequency analysis/
+
+# Unresolved NIDs (per game)
+ps5rs analyze unresolved analysis/
+
+# Dependency graph (Graphviz DOT or JSON)
+ps5rs analyze graph analysis/ -o graph.dot
+ps5rs analyze graph analysis/ --include-nids --format json -o graph.json
+```
+
+All report commands accept `--format` (terminal/csv/json/dot) and `-o` (output file).
 
 ### Inspect a binary
 
@@ -109,36 +158,12 @@ Computes the NID hash for a given function name using Sony's SHA1 + custom base6
 sceKernelLoadStartModule -> 4ZjF4RQH3k8
 ```
 
-### Analyze a game directory
+### Analyze a game directory (legacy)
 
-The `analyze` subcommand scans a directory of game dumps and produces reports. Each command accepts `--format` (terminal/csv/json/dot) and `--output` (file path).
+The `analyze collect` command still works directly against raw game dumps (without creating a dataset):
 
 ```sh
-# Collect all games into a JSON database
 ps5rs analyze collect /path/to/games -o database.json
-
-# Statistics (total imports, resolution rate, most common NID)
-ps5rs analyze stats /path/to/games
-ps5rs analyze stats /path/to/games --format json -o stats.json
-
-# Library x game heatmap
-ps5rs analyze heatmap /path/to/games
-ps5rs analyze heatmap /path/to/games --format csv -o heatmap.csv
-
-# NID frequency ranking (top 50)
-ps5rs analyze frequency /path/to/games
-
-# Unresolved NIDs (not in the name catalog)
-ps5rs analyze unresolved /path/to/games
-ps5rs analyze unresolved /path/to/games --format json -o unresolved.json
-
-# Dependency graph (Graphviz DOT or JSON)
-ps5rs analyze graph /path/to/games -o graph.dot
-ps5rs analyze graph /path/to/games --include-nids --format json -o graph.json
-
-# Raw imports (all games)
-ps5rs analyze imports /path/to/games
-ps5rs analyze imports /path/to/games --format csv -o imports.csv
 ```
 
 Expected directory structure:
@@ -155,15 +180,39 @@ Expected directory structure:
 
 By default only `eboot.bin` is analyzed (PRX modules in `sce_module/` are skipped). Add `--include-prx` to the collector if you want system modules included.
 
-## Analysis
+## Architecture
 
-The `ps5-analysis` crate collects import data from game dumps and produces:
+```
+                 eboot.bin
+                     |
+                     v
+              ps5-image builder
+                     |
+                     v
+             BinaryImage JSON
+                     |
+                     v
+              AnalysisDataset
+                     |
+        +------------+-------------+
+        |            |             |
+      stats      inventory     heatmaps
+```
 
+The `BinaryImage` IR decouples raw parsers from consumers. The `scan` command produces a dataset of `BinaryImageDocument` JSON files. All `analyze` reports consume the dataset without touching raw binaries, making iteration fast and portable.
+
+## Analysis Reports
+
+The `ps5-analysis` crate provides two report pipelines:
+
+**Dataset reports** (read from JSON files, no binary parsing):
 - **Statistics**: total imports, unique NIDs, resolution rate, most common symbols
-- **Heatmap**: library x game usage matrix
+- **Import inventory**: which libraries are used by how many games and how often
+- **Unknown NIDs**: unresolved hashes sorted by frequency (directly feeds catalog growth)
+- **Heatmap**: library × game usage matrix
 - **Frequency**: NID usage ranking across all games
-- **Unresolved**: NIDs not found in the name catalog
-- **Dependency graph**: game -> library -> NID relationships (Graphviz DOT export)
+- **Unresolved**: NIDs not found in the name catalog (per game)
+- **Dependency graph**: game → library → NID relationships (Graphviz DOT export)
 
 Export formats: JSON (versioned), CSV, Graphviz DOT.
 
