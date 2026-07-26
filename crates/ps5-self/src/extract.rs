@@ -61,6 +61,13 @@ pub fn extract_elf(data: &[u8]) -> Result<ExtractResult> {
     let copy_len = 64.min(elf_slice.len());
     output[0..copy_len].copy_from_slice(&elf_slice[..copy_len]);
 
+    // Patch: zero out section header table references. The SELF-embedded ELF's
+    // e_shoff/e_shnum/e_shstrndx point to a section header table that does not
+    // exist in the SELF file, so the extracted standalone ELF has no sections.
+    output[40..48].copy_from_slice(&0u64.to_le_bytes());
+    output[60..62].copy_from_slice(&0u16.to_le_bytes());
+    output[62..64].copy_from_slice(&0u16.to_le_bytes());
+
     let phoff = img.elf.header.e_phoff as usize;
     let phdr_table_size = phdr_count * img.elf.header.phentsize as usize;
     if phoff + phdr_table_size <= elf_slice.len() && phoff + phdr_table_size <= output.len() {
@@ -69,7 +76,12 @@ pub fn extract_elf(data: &[u8]) -> Result<ExtractResult> {
     }
 
     for (i, ph) in img.elf.program_headers.iter().enumerate() {
-        if ph.p_filesz == 0 || ph.p_type == PT_NULL {
+        // Only copy PT_LOAD segments. Non-LOAD segments (DYNAMIC, TLS, NOTE,
+        // GNU_RELRO, GNU_EH_FRAME, SCE_*) describe regions that live within
+        // LOAD segments and must not be independently copied from SELF segment
+        // tables. Without this guard, phdr_file_offsets[i]==0 for non-LOAD
+        // segments caused ELF header bytes to overwrite correct data.
+        if ph.p_type != PT_LOAD || ph.p_filesz == 0 {
             continue;
         }
 
@@ -286,6 +298,58 @@ mod tests {
     #[test]
     fn unknown_magic_returns_error() {
         assert!(extract_elf(&[0xFF; 100]).is_err());
+    }
+
+    #[test]
+    fn self_embedded_dynamic_not_corrupted() {
+        let strtab_vaddr = 0x1200u64;
+        let dynamic = build_dynamic_entries(&[
+            (DT_STRTAB, strtab_vaddr),
+            (DT_STRSZ, 0x10),
+            (DT_NEEDED, 1),
+        ]);
+        let dyn_len = dynamic.len();
+
+        let mut load_data = Vec::new();
+        load_data.extend_from_slice(&dynamic);
+        load_data.resize(dyn_len.next_multiple_of(16), 0);
+
+        let elf = build_elf(0x80001000, &[
+            (PT_LOAD, PF_R | PF_W, 0x1000, 0x80001000, load_data.len() as u64, load_data.len() as u64),
+            (PT_DYNAMIC, PF_R, 0x1000, 0x80001000, dyn_len as u64, dyn_len as u64),
+            (PT_TLS, PF_R, 0x1000, 0x80002000, 0, 0x100),
+        ], &load_data);
+
+        let elf_base: u64 = (32 + 1 * 32) as u64;
+        let data_offset = elf_base + 0x1000;
+        let segments = vec![
+            (0u64 << 20 | SELF_SEGMENT_FLAG_DATA, data_offset, load_data.len() as u64, load_data.len() as u64),
+        ];
+
+        let self_data = build_self(SELF_MAGIC_PS5, &segments, &elf);
+        let result = extract_elf(&self_data).unwrap();
+        assert!(result.was_self);
+
+        let parsed = ps5_elf::ElfImage::parse(&result.elf, None).unwrap();
+
+        // Find DYNAMIC segment offset in extracted ELF
+        let dyn_ph = parsed.program_headers.iter().find(|ph| ph.p_type == PT_DYNAMIC).unwrap();
+        let dyn_offset = dyn_ph.p_offset as usize;
+        let dyn_size = dyn_ph.p_filesz as usize;
+        let dynamic_bytes = &result.elf[dyn_offset..dyn_offset + dyn_size];
+
+        // Historical bug: DYNAMIC data was ELF header bytes (7f 45 4c 46 = \x7fELF)
+        assert_ne!(
+            &dynamic_bytes[0..4],
+            &[0x7f, b'E', b'L', b'F'],
+            "DYNAMIC segment must not contain ELF header bytes (extraction bug)"
+        );
+
+        // DYNAMIC entries must parse correctly
+        assert!(!parsed.dynamic_entries.is_empty());
+        let strtab_entry = parsed.dynamic_entries.iter().find(|e| e.d_tag == DT_STRTAB);
+        assert!(strtab_entry.is_some());
+        assert_eq!(strtab_entry.unwrap().d_val, strtab_vaddr);
     }
 
     #[test]

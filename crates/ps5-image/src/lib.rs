@@ -144,6 +144,8 @@ pub enum SegmentType {
     GNU_Relro,
     SCE_Dynlibdata,
     SCE_Procparam,
+    SCE_Comment,
+    SCE_Libversion,
     SCE_Relro,
     SCE_Rela,
     Note,
@@ -166,6 +168,8 @@ impl SegmentType {
             0x6474e552 => Self::GNU_Relro,
             0x61000000 => Self::SCE_Dynlibdata,
             0x61000001 => Self::SCE_Procparam,
+            0x61000002 => Self::SCE_Comment,
+            0x61000003 => Self::SCE_Libversion,
             0x61000010 => Self::SCE_Relro,
             0x60000000 => Self::SCE_Rela,
             other => Self::Other(other),
@@ -185,6 +189,8 @@ impl SegmentType {
             Self::GNU_Relro => 0x6474e552,
             Self::SCE_Dynlibdata => 0x61000000,
             Self::SCE_Procparam => 0x61000001,
+            Self::SCE_Comment => 0x61000002,
+            Self::SCE_Libversion => 0x61000003,
             Self::SCE_Relro => 0x61000010,
             Self::SCE_Rela => 0x60000000,
             Self::Other(v) => v,
@@ -563,6 +569,18 @@ pub struct TlsInfo {
 }
 
 // ---------------------------------------------------------------------------
+// LibVersionEntry — from PT_SCE_LIBVERSION segment
+// ---------------------------------------------------------------------------
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct LibVersionEntry {
+    pub name: String,
+    #[serde(with = "hex_u32")]
+    pub version_raw: u32,
+    pub version_string: String,
+}
+
+// ---------------------------------------------------------------------------
 // LoadedSegment — custom Serialize/Deserialize for flags as ELF-style string
 // ---------------------------------------------------------------------------
 
@@ -777,6 +795,8 @@ pub struct BinaryMetadata {
     pub elf_type: u16,
     pub elf_flags: u32,
     pub osabi: u8,
+    pub ei_abi_version: u8,
+    pub e_version: u32,
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub self_key_type: Option<u32>,
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -837,6 +857,8 @@ pub struct BinaryImage {
     pub dynamic_entries: Vec<DynamicEntry>,
     #[serde(default, skip_serializing_if = "Vec::is_empty")]
     pub version_defs: Vec<VersionDef>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub lib_versions: Vec<LibVersionEntry>,
 }
 
 // ---------------------------------------------------------------------------
@@ -1252,6 +1274,7 @@ mod tests {
             needed_files: vec![],
             dynamic_entries: vec![],
             version_defs: vec![],
+            lib_versions: vec![],
         };
         let json = serde_json::to_string(&img).unwrap();
         assert!(!json.contains("metadata"));

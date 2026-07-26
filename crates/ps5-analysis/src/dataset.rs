@@ -2,7 +2,7 @@ use ps5_image::BinaryImageDocument;
 use serde::{Deserialize, Serialize};
 use std::path::Path;
 
-pub const DATASET_SCHEMA_VERSION: u32 = 1;
+pub const DATASET_SCHEMA_VERSION: u32 = 2;
 
 // ---------------------------------------------------------------------------
 // Manifest
@@ -14,6 +14,8 @@ pub struct Manifest {
     pub tool: String,
     pub created_at: String,
     pub image_count: usize,
+    #[serde(default)]
+    pub games: Vec<crate::param_json::GameParam>,
 }
 
 // ---------------------------------------------------------------------------
@@ -193,6 +195,7 @@ mod tests {
                 metadata: ps5_image::BinaryMetadata::default(),
                 dynamic_entries: vec![],
                 version_defs: vec![],
+                lib_versions: vec![],
             },
         }
     }
@@ -211,6 +214,7 @@ mod tests {
             tool: "ps5rs".to_string(),
             created_at: "2026-07-25T00:00:00Z".to_string(),
             image_count: docs.len(),
+            games: vec![],
         };
         let manifest_json = serde_json::to_string_pretty(&manifest).unwrap();
         std::fs::write(root.join("manifest.json"), manifest_json).unwrap();
@@ -275,6 +279,7 @@ mod tests {
             tool: "ps5rs".to_string(),
             created_at: "2026-01-01T00:00:00Z".to_string(),
             image_count: 0,
+            games: vec![],
         };
         std::fs::write(
             root.join("manifest.json"),
@@ -297,6 +302,7 @@ mod tests {
             tool: "ps5rs".to_string(),
             created_at: "2026-01-01T00:00:00Z".to_string(),
             image_count: 0,
+            games: vec![],
         };
         std::fs::write(
             root.join("manifest.json"),
@@ -407,6 +413,7 @@ mod tests {
             tool: "ps5rs".to_string(),
             created_at: "2026-07-25T12:00:00Z".to_string(),
             image_count: 42,
+            games: vec![],
         };
         let json = serde_json::to_string(&m).unwrap();
         let back: Manifest = serde_json::from_str(&json).unwrap();

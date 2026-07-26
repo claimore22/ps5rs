@@ -132,6 +132,7 @@ mod tests {
             needed_files: vec![],
             dynamic_entries: Vec::new(),
             version_defs: Vec::new(),
+            lib_versions: Vec::new(),
         }
     }
 
@@ -227,6 +228,7 @@ mod tests {
             needed_files: vec![],
             dynamic_entries: Vec::new(),
             version_defs: Vec::new(),
+            lib_versions: Vec::new(),
         };
         let mut buf = Vec::new();
         export_json(&img, &mut buf).unwrap();
@@ -262,6 +264,7 @@ mod tests {
             needed_files: vec![],
             dynamic_entries: Vec::new(),
             version_defs: Vec::new(),
+            lib_versions: Vec::new(),
         };
         let mut buf = Vec::new();
         export_json(&img, &mut buf).unwrap();
@@ -330,6 +333,7 @@ mod tests {
             needed_files: vec![],
             dynamic_entries: Vec::new(),
             version_defs: Vec::new(),
+            lib_versions: Vec::new(),
         };
         let mut buf = Vec::new();
         export_json(&img, &mut buf).unwrap();
@@ -374,6 +378,7 @@ mod tests {
             needed_files: vec![],
             dynamic_entries: Vec::new(),
             version_defs: Vec::new(),
+            lib_versions: Vec::new(),
         };
         let mut buf = Vec::new();
         export_json(&img, &mut buf).unwrap();

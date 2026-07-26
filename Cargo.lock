@@ -325,6 +325,7 @@ dependencies = [
  "ps5-format",
  "ps5-image",
  "ps5-nid",
+ "ps5-self",
  "serde",
  "serde_json",
 ]

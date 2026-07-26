@@ -31,6 +31,13 @@ pub const PT_TLS: u32 = 7;
 pub const PT_GNU_EH_FRAME: u32 = 0x6474e550;
 pub const PT_GNU_RELRO: u32 = 0x6474e552;
 
+pub const PT_SCE_DYNLIBDATA: u32 = 0x61000000;
+pub const PT_SCE_PROCPARAM: u32 = 0x61000001;
+pub const PT_SCE_COMMENT: u32 = 0x61000002;
+pub const PT_SCE_LIBVERSION: u32 = 0x61000003;
+pub const PT_SCE_RELRO: u32 = 0x61000010;
+pub const PT_SCE_RELA: u32 = 0x60000000;
+
 pub const PF_X: u32 = 1;
 pub const PF_W: u32 = 2;
 pub const PF_R: u32 = 4;

@@ -49,6 +49,30 @@ pub fn export_graph(graph: &DependencyGraph, writer: &mut dyn Write) -> std::io:
     Ok(())
 }
 
+pub fn export_validation(report: &crate::reports::ValidationReport, writer: &mut dyn Write) -> std::io::Result<()> {
+    let json = serde_json::to_string_pretty(report)
+        .map_err(std::io::Error::other)?;
+    writer.write_all(json.as_bytes())?;
+    writer.write_all(b"\n")?;
+    Ok(())
+}
+
+pub fn export_library_versions(report: &crate::reports::LibraryVersionReport, writer: &mut dyn Write) -> std::io::Result<()> {
+    let json = serde_json::to_string_pretty(report)
+        .map_err(std::io::Error::other)?;
+    writer.write_all(json.as_bytes())?;
+    writer.write_all(b"\n")?;
+    Ok(())
+}
+
+pub fn export_engine_hints(report: &crate::reports::EngineHintReport, writer: &mut dyn Write) -> std::io::Result<()> {
+    let json = serde_json::to_string_pretty(report)
+        .map_err(std::io::Error::other)?;
+    writer.write_all(json.as_bytes())?;
+    writer.write_all(b"\n")?;
+    Ok(())
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -1,4 +1,5 @@
 use crate::dataset::{Manifest, DATASET_SCHEMA_VERSION};
+use crate::param_json::{self, GameParam};
 use ps5_image::{BinaryImageBuilder, BinaryImageDocument};
 use ps5_nid::Catalog;
 use std::path::{Path, PathBuf};
@@ -24,6 +25,7 @@ pub fn scan(
 
     let mut image_paths = Vec::new();
     let mut seen_names: std::collections::HashSet<String> = std::collections::HashSet::new();
+    let mut game_params: Vec<GameParam> = Vec::new();
 
     let game_dirs = find_game_dirs(root);
     for game_dir in &game_dirs {
@@ -43,6 +45,10 @@ pub fn scan(
                 let json = serde_json::to_string_pretty(&doc)?;
                 std::fs::write(&json_path, format!("{json}\n"))?;
                 image_paths.push(json_path);
+
+                let param = param_json::read_param(game_dir)
+                    .unwrap_or_default();
+                game_params.push(param);
             }
         }
     }
@@ -52,6 +58,7 @@ pub fn scan(
         tool: "ps5rs".to_string(),
         created_at: utc_now_iso8601(),
         image_count: image_paths.len(),
+        games: game_params,
     };
     let manifest_json = serde_json::to_string_pretty(&manifest)?;
     std::fs::write(output.join("manifest.json"), format!("{manifest_json}\n"))?;
@@ -139,7 +146,7 @@ fn analyze_binary(
     })
 }
 
-fn sanitize_filename(name: &str) -> String {
+pub(crate) fn sanitize_filename(name: &str) -> String {
     name.chars()
         .map(|c| {
             if c.is_ascii_alphanumeric() || c == '-' || c == '_' || c == '.' {
@@ -151,7 +158,7 @@ fn sanitize_filename(name: &str) -> String {
         .collect()
 }
 
-fn utc_now_iso8601() -> String {
+pub(crate) fn utc_now_iso8601() -> String {
     use std::time::{SystemTime, UNIX_EPOCH};
     let secs = SystemTime::now()
         .duration_since(UNIX_EPOCH)

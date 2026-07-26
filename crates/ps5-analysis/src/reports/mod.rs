@@ -5,6 +5,9 @@ mod graph;
 mod frequency;
 pub mod imports;
 pub mod unknown_nids;
+pub mod validation;
+pub mod library_versions;
+pub mod engine_hints;
 
 pub use statistics::compute_stats;
 pub use heatmap::build_heatmap;
@@ -13,3 +16,6 @@ pub use graph::build_graph;
 pub use frequency::build_frequency;
 pub use imports::{build_import_inventory, LibraryInventory, LibraryInventoryEntry};
 pub use unknown_nids::{build_unknown_nids, UnknownNidReport, UnknownNidEntry};
+pub use validation::{validate_dataset, ValidationReport, GameValidation, ParseError};
+pub use library_versions::{build_library_versions, LibraryVersionReport, LibraryVersionEntry};
+pub use engine_hints::{build_engine_hints, EngineHintReport, EngineHint};

@@ -30,6 +30,7 @@ impl BinaryImageBuilder {
                 needed_files: Vec::new(),
                 dynamic_entries: Vec::new(),
                 version_defs: Vec::new(),
+                lib_versions: Vec::new(),
             },
         }
     }
@@ -94,7 +95,9 @@ impl BinaryImageBuilder {
             build_id: ps5_elf::section::find_build_id(img.elf.data, &img.elf.section_headers),
             elf_type: img.elf.header.e_type,
             elf_flags: img.elf.header.e_flags,
-            osabi: img.data.get(7).copied().unwrap_or(0),
+            osabi: img.elf.header.ei_osabi,
+            ei_abi_version: img.elf.header.ei_abi_version,
+            e_version: img.elf.header.e_version,
             self_key_type: if img.is_self() { Some(img.self_header.key_type) } else { None },
             self_attr: if img.is_self() { Some(img.self_header.attr) } else { None },
             self_mode: if img.is_self() { Some(img.self_header.mode) } else { None },
@@ -113,6 +116,13 @@ impl BinaryImageBuilder {
 
         // Build version defs (empty for now — PS5 ELF may not use standard .gnu.version_d)
         let version_defs = Vec::new();
+
+        // Build lib versions from PT_SCE_LIBVERSION segment
+        let lib_versions = img.elf.lib_versions.iter().map(|lv| crate::LibVersionEntry {
+            name: lv.name.clone(),
+            version_raw: lv.version_raw,
+            version_string: lv.guessed_version_string(),
+        }).collect();
 
         BinaryImage {
             sha256: sha256.to_string(),
@@ -138,6 +148,7 @@ impl BinaryImageBuilder {
             needed_files,
             dynamic_entries,
             version_defs,
+            lib_versions,
         }
     }
 

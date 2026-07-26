@@ -4,6 +4,7 @@ mod dynamic;
 mod relocation;
 pub mod section;
 mod symbol;
+pub mod libversion;
 
 pub use header::ElfHeader;
 pub use program::ProgramHeader;
@@ -11,6 +12,7 @@ pub use dynamic::DynEntry;
 pub use relocation::RelaEntry;
 pub use section::ElfSectionHeader;
 pub use symbol::SymEntry;
+pub use libversion::LibVersionEntry;
 
 #[derive(Debug, Clone)]
 pub struct TlsInfo {
@@ -45,6 +47,7 @@ pub struct ElfImage<'a> {
     pub symtab_size: u64,
     pub import_libs: std::collections::HashMap<u16, String>,
     pub needed_files: Vec<String>,
+    pub lib_versions: Vec<LibVersionEntry>,
 }
 
 impl<'a> ElfImage<'a> {
@@ -98,6 +101,7 @@ impl<'a> ElfImage<'a> {
         let mut preinit_array_va = 0u64;
         let mut preinit_array_sz = 0u64;
         let mut dynamic_phdr = None;
+        let mut libversion_phdr = None;
 
         for ph in &program_headers {
             match ph.p_type {
@@ -111,6 +115,9 @@ impl<'a> ElfImage<'a> {
                 }
                 ps5_format::elf_constants::PT_DYNAMIC => {
                     dynamic_phdr = Some(ph.clone());
+                }
+                ps5_format::elf_constants::PT_SCE_LIBVERSION => {
+                    libversion_phdr = Some(ph.clone());
                 }
                 _ => {}
             }
@@ -196,6 +203,18 @@ impl<'a> ElfImage<'a> {
             Vec::new()
         };
 
+        let lib_versions = if let Some(ref lv_ph) = libversion_phdr {
+            let lv_offset = Self::vaddr_to_offset(&program_headers, phdr_file_offsets, lv_ph.p_vaddr);
+            let lv_end = lv_offset as usize + lv_ph.p_filesz as usize;
+            if (lv_offset as usize) < data.len() && lv_end <= data.len() {
+                libversion::parse_libversion(&data[lv_offset as usize..lv_end])
+            } else {
+                Vec::new()
+            }
+        } else {
+            Vec::new()
+        };
+
         Ok(Self {
             data,
             elf_base: 0,
@@ -220,6 +239,7 @@ impl<'a> ElfImage<'a> {
             symtab_size,
             import_libs,
             needed_files,
+            lib_versions,
         })
     }
 

@@ -49,6 +49,18 @@ enum Commands {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
+    BatchExtract {
+        path: PathBuf,
+        #[arg(short, long, value_hint = ValueHint::DirPath)]
+        output: PathBuf,
+        #[arg(long)]
+        include_modules: bool,
+    },
+    Validate {
+        path: PathBuf,
+        #[arg(short, long, value_hint = ValueHint::FilePath)]
+        output: Option<PathBuf>,
+    },
 }
 
 #[derive(Subcommand)]
@@ -109,6 +121,20 @@ enum AnalyzeCommand {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
+    LibraryVersions {
+        path: PathBuf,
+        #[arg(long, value_enum, default_value = "terminal")]
+        format: OutputFormat,
+        #[arg(short, long, value_hint = ValueHint::FilePath)]
+        output: Option<PathBuf>,
+    },
+    Engines {
+        path: PathBuf,
+        #[arg(long, value_enum, default_value = "terminal")]
+        format: OutputFormat,
+        #[arg(short, long, value_hint = ValueHint::FilePath)]
+        output: Option<PathBuf>,
+    },
 }
 
 #[derive(Clone, Copy, clap::ValueEnum)]
@@ -134,6 +160,10 @@ fn main() {
         }
         Commands::Analyze { include_modules, command } => cmd_analyze(command, include_modules),
         Commands::Extract { file, output } => cmd_extract(&file, &output),
+        Commands::BatchExtract { path, output, include_modules } => {
+            cmd_batch_extract(&path, &output, include_modules)
+        }
+        Commands::Validate { path, output } => cmd_validate(&path, &output),
     }
 }
 
@@ -170,6 +200,26 @@ fn write_to_output_or_stdout(
 
 fn is_dataset_dir(path: &std::path::Path) -> bool {
     path.join("manifest.json").exists() && path.join("images").is_dir()
+}
+
+fn osabi_name(osabi: u8) -> &'static str {
+    use ps5_format::elf_constants::*;
+    match osabi {
+        ELFOSABI_NONE => "UNIX System V",
+        ELFOSABI_HPUX => "HP-UX",
+        ELFOSABI_NETBSD => "NetBSD",
+        ELFOSABI_LINUX => "Linux",
+        ELFOSABI_FREEBSD => "UNIX - FreeBSD",
+        ELFOSABI_OPENBSD => "OpenBSD",
+        _ => "Unknown",
+    }
+}
+
+fn e_version_name(v: u32) -> &'static str {
+    match v {
+        1 => "Current",
+        _ => "Unknown",
+    }
 }
 
 fn dataset_to_database_real(ds: &ps5_analysis::AnalysisDataset) -> ps5_analysis::AnalysisDatabase {
@@ -442,6 +492,49 @@ fn cmd_analyze(command: AnalyzeCommand, include_modules: bool) {
                 std::process::exit(1);
             }
         }
+
+        AnalyzeCommand::LibraryVersions { path, format, output } => {
+            if is_dataset_dir(&path) {
+                let ds = ps5_analysis::AnalysisDataset::open(&path).unwrap_or_else(|e| {
+                    eprintln!("error: {e}");
+                    std::process::exit(1);
+                });
+                let report = ps5_analysis::reports::build_library_versions(&ds);
+                match format {
+                    OutputFormat::Terminal => print_library_versions_terminal(&report),
+                    OutputFormat::Json => write_to_output_or_stdout(&output, &|w| {
+                        ps5_analysis::export::json::export_library_versions(&report, w)
+                    }),
+                    OutputFormat::Csv => write_to_output_or_stdout(&output, &|w| {
+                        ps5_analysis::export::csv::export_library_versions(&report, w)
+                    }),
+                    _ => eprintln!("unsupported format for library versions"),
+                }
+            } else {
+                eprintln!("error: analyze library-versions requires a dataset directory (run 'ps5rs scan' first)");
+                std::process::exit(1);
+            }
+        }
+
+        AnalyzeCommand::Engines { path, format, output } => {
+            if is_dataset_dir(&path) {
+                let ds = ps5_analysis::AnalysisDataset::open(&path).unwrap_or_else(|e| {
+                    eprintln!("error: {e}");
+                    std::process::exit(1);
+                });
+                let report = ps5_analysis::reports::build_engine_hints(&ds);
+                match format {
+                    OutputFormat::Terminal => print_engines_terminal(&report),
+                    OutputFormat::Json => write_to_output_or_stdout(&output, &|w| {
+                        ps5_analysis::export::json::export_engine_hints(&report, w)
+                    }),
+                    _ => eprintln!("unsupported format for engine hints (use --format json or terminal)"),
+                }
+            } else {
+                eprintln!("error: analyze engines requires a dataset directory (run 'ps5rs scan' first)");
+                std::process::exit(1);
+            }
+        }
     }
 }
 
@@ -620,6 +713,9 @@ fn cmd_inspect(path: &PathBuf, json: bool, output: &Option<PathBuf>) {
     println!("Entry point: {:#x}", image.entry_point);
     println!("ELF type: {:#x}", image.metadata.elf_type);
     println!("ELF flags: {:#x}", image.metadata.elf_flags);
+    println!("OS/ABI: {} ({:#x})", osabi_name(image.metadata.osabi), image.metadata.osabi);
+    println!("ABI Version: {}", image.metadata.ei_abi_version);
+    println!("ELF Version: {} ({})", image.metadata.e_version, e_version_name(image.metadata.e_version));
     if let Some(ref bid) = image.metadata.build_id {
         println!("Build ID: {bid}");
     }
@@ -629,6 +725,9 @@ fn cmd_inspect(path: &PathBuf, json: bool, output: &Option<PathBuf>) {
     println!("Exports: {}", image.exports.len());
     println!("Relocations: {}", image.relocations.len());
     println!("Dynamic entries: {}", image.dynamic_entries.len());
+    if !image.lib_versions.is_empty() {
+        println!("Library versions: {}", image.lib_versions.len());
+    }
     if let Some(ref tls) = image.tls {
         println!("TLS: vaddr={:#x} filesz={:#x} memsz={:#x}", tls.vaddr, tls.filesz, tls.memsz);
     }
@@ -650,6 +749,13 @@ fn cmd_inspect(path: &PathBuf, json: bool, output: &Option<PathBuf>) {
         println!("\nNeeded files:");
         for f in &image.needed_files {
             println!("  {f}");
+        }
+    }
+
+    if !image.lib_versions.is_empty() {
+        println!("\nLibrary versions:");
+        for lv in &image.lib_versions {
+            println!("  {:<36} {}", lv.name, lv.version_string);
         }
     }
 
@@ -852,5 +958,118 @@ fn cmd_extract(path: &PathBuf, output: &Option<PathBuf>) {
         if result.compressed_segments > 0 {
             println!("  {} compressed segment(s) — data may be invalid", result.compressed_segments);
         }
+    }
+}
+
+fn cmd_batch_extract(path: &std::path::Path, output: &std::path::Path, include_modules: bool) {
+    let options = ps5_analysis::BatchExtractOptions {
+        include_modules,
+    };
+
+    eprintln!("Batch extracting from {}...", path.display());
+    let result = ps5_analysis::batch_extract(path, output, &options).unwrap_or_else(|e| {
+        eprintln!("error: {e}");
+        std::process::exit(1);
+    });
+
+    eprintln!();
+    eprintln!(
+        "Extracted {}/{} games to {}",
+        result.manifest.succeeded,
+        result.manifest.total,
+        result.output_dir.display()
+    );
+
+    if !result.failures.is_empty() {
+        eprintln!();
+        eprintln!("Failed:");
+        for (game, reason) in &result.failures {
+            eprintln!("  {game}: {reason}");
+        }
+    }
+}
+
+fn cmd_validate(path: &std::path::Path, output: &Option<PathBuf>) {
+    if !is_dataset_dir(path) {
+        eprintln!("error: {} is not a dataset directory (run 'ps5rs scan' first)", path.display());
+        std::process::exit(1);
+    }
+
+    let ds = ps5_analysis::AnalysisDataset::open(path).unwrap_or_else(|e| {
+        eprintln!("error: {e}");
+        std::process::exit(1);
+    });
+
+    let extracted_dir = path.join("analysis").join("extracted");
+    let extracted_path = if extracted_dir.exists() {
+        Some(extracted_dir.as_path())
+    } else {
+        None
+    };
+
+    let mut report = ps5_analysis::reports::validate_dataset(&ds, extracted_path);
+    report.dataset_path = path.display().to_string();
+
+    eprintln!("Validated {} games", report.total_games);
+    eprintln!("  Valid ELF:    {}/{}", report.elf_valid, report.total_games);
+    eprintln!("  Lib versions: {}", report.libversion_found);
+    eprintln!("  NID resolution: {:.1}%", report.nid_resolution_avg);
+
+    if !report.parse_errors.is_empty() {
+        eprintln!("\nParse errors:");
+        for err in &report.parse_errors {
+            eprintln!("  {}: {}", err.name, err.error);
+        }
+    }
+
+    write_to_output_or_stdout(output, &|w| {
+        ps5_analysis::export::json::export_validation(&report, w)
+    });
+}
+
+#[allow(clippy::print_literal)]
+fn print_library_versions_terminal(report: &ps5_analysis::LibraryVersionReport) {
+    if report.entries.is_empty() {
+        println!("No library versions found.");
+        return;
+    }
+
+    println!(
+        "Library Versions ({} unique, across {} games)",
+        report.entries.len(),
+        report.entries.iter().map(|e| e.game_count).max().unwrap_or(0)
+    );
+    println!("{}", "=".repeat(80));
+    println!("{:<36} {:>12} {:>12}  {}", "Library", "Version", "Games", "Game List");
+    println!("{}", "-".repeat(80));
+
+    for entry in &report.entries {
+        let games_str = if entry.games.len() > 3 {
+            format!("{}, +{} more", entry.games[..3].join(", "), entry.games.len() - 3)
+        } else {
+            entry.games.join(", ")
+        };
+        println!(
+            "{:<36} {:>12} {:>12}  {}",
+            entry.library, entry.version_string, entry.game_count, games_str
+        );
+    }
+}
+
+#[allow(clippy::print_literal)]
+fn print_engines_terminal(report: &ps5_analysis::EngineHintReport) {
+    println!("Engine Hints ({} games)", report.games.len());
+    println!("{}", "=".repeat(70));
+    println!("{:<30} {:<16} {}", "Game", "Engine", "SCE Libraries");
+    println!("{}", "-".repeat(70));
+
+    for game in &report.games {
+        let engine = game.engines.join(", ");
+        let sce = if game.sce_libraries.len() > 4 {
+            format!("{}, +{} more", game.sce_libraries[..4].join(", "), game.sce_libraries.len() - 4)
+        } else {
+            game.sce_libraries.join(", ")
+        };
+        println!("{:<30} {:<16} {}", game.name, engine, sce);
     }
 }

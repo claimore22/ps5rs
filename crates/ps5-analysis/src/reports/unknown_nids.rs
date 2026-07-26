@@ -88,6 +88,7 @@ mod tests {
                 metadata: ps5_image::BinaryMetadata::default(),
                 dynamic_entries: vec![],
                 version_defs: vec![],
+                lib_versions: vec![],
             },
         }
     }
@@ -108,6 +109,7 @@ mod tests {
             tool: "test".into(),
             created_at: "2026-01-01T00:00:00Z".into(),
             image_count: docs.len(),
+            games: vec![],
         };
         std::fs::write(
             root.join("manifest.json"),

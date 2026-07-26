@@ -1,2 +1,16 @@
 /target
 /src
+
+# PS5 executable binaries
+*.elf
+*.self
+*.sprx
+
+# Generated dataset output (from scan/extract with --output .)
+/images/
+/analysis/extracted/
+/manifest.json
+
+# IDE
+.vscode/
+.idea/

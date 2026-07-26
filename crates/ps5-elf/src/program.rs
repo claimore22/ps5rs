@@ -68,10 +68,12 @@ impl ProgramHeader {
             PT_TLS => "TLS",
             PT_GNU_EH_FRAME => "GNU_EH_FRAME",
             PT_GNU_RELRO => "GNU_RELRO",
-            0x61000000 => "SCE_DYNLIBDATA",
-            0x61000001 => "SCE_PROCPARAM",
-            0x61000010 => "SCE_RELRO",
-            0x60000000 => "SCE_RELA",
+            PT_SCE_DYNLIBDATA => "SCE_DYNLIBDATA",
+            PT_SCE_PROCPARAM => "SCE_PROCPARAM",
+            PT_SCE_COMMENT => "SCE_COMMENT",
+            PT_SCE_LIBVERSION => "SCE_LIBVERSION",
+            PT_SCE_RELRO => "SCE_RELRO",
+            PT_SCE_RELA => "SCE_RELA",
             _ => "UNKNOWN",
         }
     }

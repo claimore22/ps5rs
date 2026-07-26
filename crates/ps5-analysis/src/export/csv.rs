@@ -75,6 +75,22 @@ pub fn export_imports(db: &AnalysisDatabase, writer: &mut dyn Write) -> std::io:
     Ok(())
 }
 
+pub fn export_library_versions(report: &crate::reports::LibraryVersionReport, writer: &mut dyn Write) -> std::io::Result<()> {
+    writeln!(writer, "library,version_raw,version_string,game_count,games")?;
+    for entry in &report.entries {
+        writeln!(
+            writer,
+            "{},{},{},{},{}",
+            entry.library,
+            entry.version_raw,
+            entry.version_string,
+            entry.game_count,
+            entry.games.join(";"),
+        )?;
+    }
+    Ok(())
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
