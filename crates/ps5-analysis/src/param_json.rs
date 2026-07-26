@@ -83,6 +83,27 @@ fn find_param_json(start: &Path) -> Option<std::path::PathBuf> {
             break;
         }
     }
+
+    find_param_json_recursive(start, 3)
+}
+
+fn find_param_json_recursive(dir: &Path, depth: usize) -> Option<std::path::PathBuf> {
+    if depth == 0 {
+        return None;
+    }
+    let entries = std::fs::read_dir(dir).ok()?;
+    for entry in entries.flatten() {
+        let path = entry.path();
+        if path.is_dir() {
+            let candidate = path.join("sce_sys").join("param.json");
+            if candidate.exists() {
+                return Some(candidate);
+            }
+            if let Some(found) = find_param_json_recursive(&path, depth - 1) {
+                return Some(found);
+            }
+        }
+    }
     None
 }
 
@@ -223,5 +244,25 @@ mod tests {
         let param = GameParam::default();
         assert!(param.title_id.is_none());
         assert!(param.content_version.is_none());
+    }
+
+    #[test]
+    fn read_param_nested_subdir() {
+        let tmp = tempdir_for_test().join("nested_subdir");
+        let game_dir = tmp.join("outer-game-dir");
+        let inner_dir = game_dir.join("Inner Game Name PPSA00001");
+        let sce_sys = inner_dir.join("sce_sys");
+        fs::create_dir_all(&sce_sys).unwrap();
+        fs::write(
+            sce_sys.join("param.json"),
+            r#"{"titleId": "PPSA00001", "contentVersion": "01.000.000"}"#,
+        )
+        .unwrap();
+
+        let param = read_param(&game_dir).unwrap();
+        assert_eq!(param.title_id.as_deref(), Some("PPSA00001"));
+        assert_eq!(param.content_version.as_deref(), Some("01.000.000"));
+
+        let _ = fs::remove_dir_all(&tmp);
     }
 }
