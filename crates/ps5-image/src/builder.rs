@@ -12,6 +12,7 @@ impl BinaryImageBuilder {
                 is_self: false,
                 file_size: data.len() as u64,
                 entry_point: 0,
+                metadata: BinaryMetadata::default(),
                 segments: Vec::new(),
                 imports: Vec::new(),
                 exports: Vec::new(),
@@ -27,6 +28,8 @@ impl BinaryImageBuilder {
                 preinit_array_sz: 0,
                 import_libs: HashMap::new(),
                 needed_files: Vec::new(),
+                dynamic_entries: Vec::new(),
+                version_defs: Vec::new(),
             },
         }
     }
@@ -41,7 +44,14 @@ impl BinaryImageBuilder {
         let file_size = img.data.len() as u64;
         let entry_point = img.elf.header.e_entry;
 
-        let segments = img.elf.program_headers.iter().map(|ph| {
+        let segments = img.elf.program_headers.iter().enumerate().map(|(i, ph)| {
+            let is_data_seg = img.segments.iter().any(|s| {
+                s.is_data() && s.phdr_index() as usize == i
+            });
+            let self_seg = img.segments.iter().find(|s| {
+                s.is_data() && s.phdr_index() as usize == i
+            });
+
             LoadedSegment {
                 vaddr: ph.p_vaddr,
                 file_offset: ph.p_offset,
@@ -49,6 +59,16 @@ impl BinaryImageBuilder {
                 memsz: ph.p_memsz,
                 is_executable: ph.is_executable(),
                 is_writable: ph.is_writable(),
+                seg_type: SegmentType::from_u32(ph.p_type),
+                p_paddr: ph.p_paddr,
+                p_align: ph.p_align,
+                is_encrypted: self_seg.is_some_and(|s| s.is_encrypted()),
+                is_compressed: self_seg.is_some_and(|s| s.is_compressed()),
+                phdr_index: if is_data_seg {
+                    self_seg.map(|s| s.phdr_index() as u16)
+                } else {
+                    None
+                },
             }
         }).collect();
 
@@ -66,12 +86,41 @@ impl BinaryImageBuilder {
         let needed_files = img.elf.needed_files.clone();
         let import_libs = img.elf.import_libs.clone();
 
+        // Build section headers
+        let sections = Self::build_section_headers(&img.elf);
+
+        // Build metadata
+        let metadata = BinaryMetadata {
+            build_id: ps5_elf::section::find_build_id(img.elf.data, &img.elf.section_headers),
+            elf_type: img.elf.header.e_type,
+            elf_flags: img.elf.header.e_flags,
+            osabi: img.data.get(7).copied().unwrap_or(0),
+            self_key_type: if img.is_self() { Some(img.self_header.key_type) } else { None },
+            self_attr: if img.is_self() { Some(img.self_header.attr) } else { None },
+            self_mode: if img.is_self() { Some(img.self_header.mode) } else { None },
+            self_endian: if img.is_self() { Some(img.self_header.endian) } else { None },
+            self_version: if img.is_self() { Some(img.self_header.version) } else { None },
+            self_flags: if img.is_self() { Some(img.self_header.flags) } else { None },
+            sections,
+        };
+
+        // Build dynamic entries
+        let dynamic_entries = img.elf.dynamic_entries.iter().map(|e| DynamicEntry {
+            tag: e.d_tag,
+            value: e.d_val,
+            resolved_tag: DynamicEntry::tag_name(e.d_tag).map(|s| s.to_string()),
+        }).collect();
+
+        // Build version defs (empty for now — PS5 ELF may not use standard .gnu.version_d)
+        let version_defs = Vec::new();
+
         BinaryImage {
             sha256: sha256.to_string(),
             platform,
             is_self,
             file_size,
             entry_point,
+            metadata,
             segments,
             imports,
             exports,
@@ -87,13 +136,16 @@ impl BinaryImageBuilder {
             preinit_array_sz: img.elf.preinit_array_sz,
             import_libs,
             needed_files,
+            dynamic_entries,
+            version_defs,
         }
     }
 
     fn build_imports(elf: &ps5_elf::ElfImage, catalog: &ps5_nid::Catalog) -> Vec<ImportEntry> {
         elf.symbols.iter()
             .filter(|s| s.is_import)
-            .map(|sym| {
+            .enumerate()
+            .map(|(idx, sym)| {
                 let parts: Vec<&str> = sym.resolved_name.split('#').collect();
                 let nid = parts[0];
                 let lib_id = ps5_nid::lib_id_from_nid(&sym.resolved_name).unwrap_or(0);
@@ -106,6 +158,13 @@ impl BinaryImageBuilder {
                     resolved_name: resolved,
                     library_id: lib_id,
                     library_name: lib_name,
+                    value: sym.st_value,
+                    size: sym.st_size,
+                    shndx: sym.st_shndx,
+                    binding: SymbolBinding::from_u8(sym.st_info >> 4),
+                    sym_type: SymbolType::from_u8(sym.st_info & 0xf),
+                    visibility: SymbolVisibility::from_u8(sym.st_other & 0x3),
+                    ordinal: idx as u32,
                 }
             })
             .collect()
@@ -138,11 +197,44 @@ impl BinaryImageBuilder {
     fn build_relocations(elf: &ps5_elf::ElfImage) -> Vec<RelocationEntry> {
         elf.relocations.iter().map(|r| RelocationEntry {
             offset: r.r_offset,
-            info: r.r_info,
             addend: r.r_addend,
-            r_type: r.r_type(),
-            r_sym: r.r_sym(),
+            kind: RelocationKind::from_u32(r.r_type()),
+            symbol_index: r.r_sym(),
             is_plt: r.is_plt,
+        }).collect()
+    }
+
+    fn build_section_headers(elf: &ps5_elf::ElfImage) -> Vec<SectionHeader> {
+        if elf.section_headers.is_empty() {
+            return Vec::new();
+        }
+
+        // Find shstrtab section to resolve names
+        let shstrtab_section = elf.section_headers.iter()
+            .find(|s| s.sh_type == ps5_format::elf_constants::SHT_STRTAB
+                && elf.header.shstrndx != u16::MAX
+                && elf.section_headers.get(elf.header.shstrndx as usize)
+                    .map(|ss| ss.sh_offset == s.sh_offset && ss.sh_size == s.sh_size)
+                    .unwrap_or(false))
+            .or_else(|| elf.section_headers.get(elf.header.shstrndx as usize).filter(|s| s.sh_type == ps5_format::elf_constants::SHT_STRTAB));
+
+        let shstrtab_offset = shstrtab_section.map(|s| s.sh_offset).unwrap_or(0);
+
+        elf.section_headers.iter().map(|sh| {
+            let name = ps5_elf::section::resolve_section_name(elf.data, shstrtab_offset, sh.sh_name);
+            SectionHeader {
+                name,
+                sh_type: sh.sh_type,
+                sh_addr: sh.sh_addr,
+                sh_offset: sh.sh_offset,
+                sh_size: sh.sh_size,
+                sh_flags: sh.sh_flags,
+                sh_flags_str: SectionHeader::flags_string(sh.sh_flags),
+                sh_info: sh.sh_info,
+                sh_link: sh.sh_link,
+                sh_addralign: sh.sh_addralign,
+                sh_entsize: sh.sh_entsize,
+            }
         }).collect()
     }
 }

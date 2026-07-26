@@ -612,10 +612,17 @@ fn cmd_inspect(path: &PathBuf, json: bool, output: &Option<PathBuf>) {
     println!("SELF: {}", image.is_self);
     println!("SHA-256: {}", &image.sha256[..16]);
     println!("Entry point: {:#x}", image.entry_point);
+    println!("ELF type: {:#x}", image.metadata.elf_type);
+    println!("ELF flags: {:#x}", image.metadata.elf_flags);
+    if let Some(ref bid) = image.metadata.build_id {
+        println!("Build ID: {bid}");
+    }
     println!("Segments: {}", image.segments.len());
+    println!("Sections: {}", image.metadata.sections.len());
     println!("Imports: {}", image.imports.len());
     println!("Exports: {}", image.exports.len());
     println!("Relocations: {}", image.relocations.len());
+    println!("Dynamic entries: {}", image.dynamic_entries.len());
     if let Some(ref tls) = image.tls {
         println!("TLS: vaddr={:#x} filesz={:#x} memsz={:#x}", tls.vaddr, tls.filesz, tls.memsz);
     }
