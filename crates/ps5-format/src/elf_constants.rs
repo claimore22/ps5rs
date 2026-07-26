@@ -4,9 +4,18 @@ pub const EI_CLASS: usize = 4;
 pub const EI_DATA: usize = 5;
 pub const EI_VERSION: usize = 6;
 pub const EI_OSABI: usize = 7;
+pub const EI_ABIVERSION: usize = 8;
 
 pub const ELFCLASS64: u8 = 2;
 pub const ELFDATA2LSB: u8 = 1;
+
+pub const ELFOSABI_NONE: u8 = 0;
+pub const ELFOSABI_SYSV: u8 = 0;
+pub const ELFOSABI_HPUX: u8 = 1;
+pub const ELFOSABI_NETBSD: u8 = 2;
+pub const ELFOSABI_LINUX: u8 = 3;
+pub const ELFOSABI_FREEBSD: u8 = 9;
+pub const ELFOSABI_OPENBSD: u8 = 12;
 
 pub const ET_EXEC: u16 = 2;
 pub const ET_DYN: u16 = 3;
