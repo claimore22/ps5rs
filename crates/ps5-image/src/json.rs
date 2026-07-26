@@ -76,7 +76,7 @@ pub fn import_json(reader: &mut dyn Read) -> Result<BinaryImageDocument, JsonErr
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::{LoadedSegment, Platform};
+    use crate::{BinaryMetadata, LoadedSegment, Platform, RelocationKind, SegmentType};
 
     fn make_test_image() -> BinaryImage {
         BinaryImage {
@@ -85,6 +85,7 @@ mod tests {
             is_self: false,
             file_size: 4096,
             entry_point: 0x1000,
+            metadata: BinaryMetadata::default(),
             segments: vec![
                 LoadedSegment {
                     vaddr: 0x1000,
@@ -93,6 +94,12 @@ mod tests {
                     memsz: 512,
                     is_executable: true,
                     is_writable: false,
+                    seg_type: SegmentType::Load,
+                    p_paddr: 0,
+                    p_align: 0x1000,
+                    is_encrypted: false,
+                    is_compressed: false,
+                    phdr_index: None,
                 },
                 LoadedSegment {
                     vaddr: 0x2000,
@@ -101,6 +108,12 @@ mod tests {
                     memsz: 1024,
                     is_executable: false,
                     is_writable: true,
+                    seg_type: SegmentType::Load,
+                    p_paddr: 0,
+                    p_align: 0x1000,
+                    is_encrypted: false,
+                    is_compressed: false,
+                    phdr_index: None,
                 },
             ],
             imports: vec![],
@@ -117,6 +130,8 @@ mod tests {
             preinit_array_sz: 0,
             import_libs: std::collections::HashMap::new(),
             needed_files: vec![],
+            dynamic_entries: Vec::new(),
+            version_defs: Vec::new(),
         }
     }
 
@@ -194,6 +209,7 @@ mod tests {
             is_self: false,
             file_size: 0,
             entry_point: 0,
+            metadata: BinaryMetadata::default(),
             segments: vec![],
             imports: vec![],
             exports: vec![],
@@ -209,6 +225,8 @@ mod tests {
             preinit_array_sz: 0,
             import_libs: std::collections::HashMap::new(),
             needed_files: vec![],
+            dynamic_entries: Vec::new(),
+            version_defs: Vec::new(),
         };
         let mut buf = Vec::new();
         export_json(&img, &mut buf).unwrap();
@@ -226,6 +244,7 @@ mod tests {
             is_self: false,
             file_size: 0,
             entry_point: 0,
+            metadata: BinaryMetadata::default(),
             segments: vec![],
             imports: vec![],
             exports: vec![],
@@ -241,6 +260,8 @@ mod tests {
             preinit_array_sz: 0,
             import_libs: std::collections::HashMap::new(),
             needed_files: vec![],
+            dynamic_entries: Vec::new(),
+            version_defs: Vec::new(),
         };
         let mut buf = Vec::new();
         export_json(&img, &mut buf).unwrap();
@@ -278,6 +299,7 @@ mod tests {
             is_self: true,
             file_size: 1024,
             entry_point: 0,
+            metadata: BinaryMetadata::default(),
             segments: vec![LoadedSegment {
                 vaddr: 0,
                 file_offset: 0,
@@ -285,6 +307,12 @@ mod tests {
                 memsz: 0,
                 is_executable: false,
                 is_writable: false,
+                seg_type: SegmentType::Load,
+                p_paddr: 0,
+                p_align: 0x1000,
+                is_encrypted: false,
+                is_compressed: false,
+                phdr_index: None,
             }],
             imports: vec![],
             exports: vec![],
@@ -300,6 +328,8 @@ mod tests {
             preinit_array_sz: 0,
             import_libs: std::collections::HashMap::new(),
             needed_files: vec![],
+            dynamic_entries: Vec::new(),
+            version_defs: Vec::new(),
         };
         let mut buf = Vec::new();
         export_json(&img, &mut buf).unwrap();
@@ -320,15 +350,15 @@ mod tests {
             is_self: false,
             file_size: 0,
             entry_point: 0,
+            metadata: BinaryMetadata::default(),
             segments: vec![],
             imports: vec![],
             exports: vec![],
             relocations: vec![crate::RelocationEntry {
                 offset: 0x1000,
-                info: 41,
+                kind: RelocationKind::Relative,
                 addend: -16,
-                r_type: 8,
-                r_sym: 1,
+                symbol_index: 1,
                 is_plt: false,
             }],
             tls: None,
@@ -342,6 +372,8 @@ mod tests {
             preinit_array_sz: 0,
             import_libs: std::collections::HashMap::new(),
             needed_files: vec![],
+            dynamic_entries: Vec::new(),
+            version_defs: Vec::new(),
         };
         let mut buf = Vec::new();
         export_json(&img, &mut buf).unwrap();

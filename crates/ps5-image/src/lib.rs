@@ -45,6 +45,23 @@ pub(crate) mod hex {
     }
 }
 
+pub(crate) mod hex_u32 {
+    use serde::{Deserialize, Deserializer, Serializer};
+
+    pub fn serialize<S: Serializer>(v: &u32, s: S) -> Result<S::Ok, S::Error> {
+        s.serialize_str(&format!("{:#x}", v))
+    }
+
+    pub fn deserialize<'de, D: Deserializer<'de>>(d: D) -> Result<u32, D::Error> {
+        let s = String::deserialize(d)?;
+        if let Some(rest) = s.strip_prefix("0x").or_else(|| s.strip_prefix("0X")) {
+            u32::from_str_radix(rest, 16).map_err(serde::de::Error::custom)
+        } else {
+            s.parse::<u32>().map_err(serde::de::Error::custom)
+        }
+    }
+}
+
 pub(crate) mod hex_signed {
     use serde::{Deserialize, Deserializer, Serializer};
 
@@ -112,6 +129,427 @@ impl std::fmt::Display for Platform {
 }
 
 // ---------------------------------------------------------------------------
+// SegmentType
+// ---------------------------------------------------------------------------
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(rename_all = "snake_case")]
+#[allow(non_camel_case_types)]
+pub enum SegmentType {
+    Null,
+    Load,
+    Dynamic,
+    Tls,
+    GNU_EhFrame,
+    GNU_Relro,
+    SCE_Dynlibdata,
+    SCE_Procparam,
+    SCE_Relro,
+    SCE_Rela,
+    Note,
+    Phdr,
+    Interp,
+    Other(u32),
+}
+
+impl SegmentType {
+    pub fn from_u32(v: u32) -> Self {
+        match v {
+            0 => Self::Null,
+            1 => Self::Load,
+            2 => Self::Dynamic,
+            7 => Self::Tls,
+            4 => Self::Note,
+            6 => Self::Phdr,
+            3 => Self::Interp,
+            0x6474e550 => Self::GNU_EhFrame,
+            0x6474e552 => Self::GNU_Relro,
+            0x61000000 => Self::SCE_Dynlibdata,
+            0x61000001 => Self::SCE_Procparam,
+            0x61000010 => Self::SCE_Relro,
+            0x60000000 => Self::SCE_Rela,
+            other => Self::Other(other),
+        }
+    }
+
+    pub fn to_u32(self) -> u32 {
+        match self {
+            Self::Null => 0,
+            Self::Load => 1,
+            Self::Dynamic => 2,
+            Self::Tls => 7,
+            Self::Note => 4,
+            Self::Phdr => 6,
+            Self::Interp => 3,
+            Self::GNU_EhFrame => 0x6474e550,
+            Self::GNU_Relro => 0x6474e552,
+            Self::SCE_Dynlibdata => 0x61000000,
+            Self::SCE_Procparam => 0x61000001,
+            Self::SCE_Relro => 0x61000010,
+            Self::SCE_Rela => 0x60000000,
+            Self::Other(v) => v,
+        }
+    }
+}
+
+// ---------------------------------------------------------------------------
+// SymbolBinding / SymbolType / SymbolVisibility
+// ---------------------------------------------------------------------------
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(rename_all = "lowercase")]
+pub enum SymbolBinding {
+    Local,
+    Global,
+    Weak,
+    Other(u8),
+}
+
+impl SymbolBinding {
+    pub fn from_u8(v: u8) -> Self {
+        match v {
+            0 => Self::Local,
+            1 => Self::Global,
+            2 => Self::Weak,
+            other => Self::Other(other),
+        }
+    }
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(rename_all = "lowercase")]
+pub enum SymbolType {
+    Notype,
+    Object,
+    Func,
+    Section,
+    File,
+    Other(u8),
+}
+
+impl SymbolType {
+    pub fn from_u8(v: u8) -> Self {
+        match v {
+            0 => Self::Notype,
+            1 => Self::Object,
+            2 => Self::Func,
+            3 => Self::Section,
+            4 => Self::File,
+            other => Self::Other(other),
+        }
+    }
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(rename_all = "lowercase")]
+pub enum SymbolVisibility {
+    Default,
+    Internal,
+    Hidden,
+    Protected,
+    Other(u8),
+}
+
+impl SymbolVisibility {
+    pub fn from_u8(v: u8) -> Self {
+        match v {
+            0 => Self::Default,
+            1 => Self::Internal,
+            2 => Self::Hidden,
+            3 => Self::Protected,
+            other => Self::Other(other),
+        }
+    }
+}
+
+// ---------------------------------------------------------------------------
+// RelocationKind
+// ---------------------------------------------------------------------------
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[allow(non_camel_case_types)]
+pub enum RelocationKind {
+    None,
+    _64,
+    PC32,
+    GOT32,
+    PLT32,
+    Copy,
+    GlobDat,
+    JumpSlot,
+    Relative,
+    Direct32,
+    Direct32S,
+    Direct16,
+    PC16,
+    Direct8,
+    PC8,
+    TPOff64,
+    TPOff32,
+    DTPMod64,
+    DTPOff64,
+    TLSDESC,
+    TlsModOff,
+    TlsOffset,
+    Other(u32),
+}
+
+impl Serialize for RelocationKind {
+    fn serialize<S: Serializer>(&self, serializer: S) -> Result<S::Ok, S::Error> {
+        match self {
+            Self::None => serializer.serialize_str("none"),
+            Self::_64 => serializer.serialize_str("_64"),
+            Self::PC32 => serializer.serialize_str("pc32"),
+            Self::GOT32 => serializer.serialize_str("got32"),
+            Self::PLT32 => serializer.serialize_str("plt32"),
+            Self::Copy => serializer.serialize_str("copy"),
+            Self::GlobDat => serializer.serialize_str("glob_dat"),
+            Self::JumpSlot => serializer.serialize_str("jump_slot"),
+            Self::Relative => serializer.serialize_str("relative"),
+            Self::Direct32 => serializer.serialize_str("direct32"),
+            Self::Direct32S => serializer.serialize_str("direct32s"),
+            Self::Direct16 => serializer.serialize_str("direct16"),
+            Self::PC16 => serializer.serialize_str("pc16"),
+            Self::Direct8 => serializer.serialize_str("direct8"),
+            Self::PC8 => serializer.serialize_str("pc8"),
+            Self::TPOff64 => serializer.serialize_str("tpoff64"),
+            Self::TPOff32 => serializer.serialize_str("tpoff32"),
+            Self::DTPMod64 => serializer.serialize_str("dtpmod64"),
+            Self::DTPOff64 => serializer.serialize_str("dtpoff64"),
+            Self::TLSDESC => serializer.serialize_str("tlsdesc"),
+            Self::TlsModOff => serializer.serialize_str("tls_mod_off"),
+            Self::TlsOffset => serializer.serialize_str("tls_offset"),
+            Self::Other(v) => serializer.serialize_u32(*v),
+        }
+    }
+}
+
+impl<'de> Deserialize<'de> for RelocationKind {
+    fn deserialize<D: Deserializer<'de>>(deserializer: D) -> Result<Self, D::Error> {
+        struct RelocationKindVisitor;
+
+        impl<'de> serde::de::Visitor<'de> for RelocationKindVisitor {
+            type Value = RelocationKind;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter) -> std::fmt::Result {
+                formatter.write_str("a string relocation name or integer relocation type")
+            }
+
+            fn visit_u64<E>(self, v: u64) -> Result<RelocationKind, E>
+            where
+                E: serde::de::Error,
+            {
+                Ok(RelocationKind::from_u32(v as u32))
+            }
+
+            fn visit_u32<E>(self, v: u32) -> Result<RelocationKind, E>
+            where
+                E: serde::de::Error,
+            {
+                Ok(RelocationKind::from_u32(v))
+            }
+
+            fn visit_str<E>(self, v: &str) -> Result<RelocationKind, E>
+            where
+                E: serde::de::Error,
+            {
+                match v {
+                    "none" => Ok(RelocationKind::None),
+                    "_64" => Ok(RelocationKind::_64),
+                    "pc32" => Ok(RelocationKind::PC32),
+                    "got32" => Ok(RelocationKind::GOT32),
+                    "plt32" => Ok(RelocationKind::PLT32),
+                    "copy" => Ok(RelocationKind::Copy),
+                    "glob_dat" => Ok(RelocationKind::GlobDat),
+                    "jump_slot" => Ok(RelocationKind::JumpSlot),
+                    "relative" => Ok(RelocationKind::Relative),
+                    "direct32" => Ok(RelocationKind::Direct32),
+                    "direct32s" => Ok(RelocationKind::Direct32S),
+                    "direct16" => Ok(RelocationKind::Direct16),
+                    "pc16" => Ok(RelocationKind::PC16),
+                    "direct8" => Ok(RelocationKind::Direct8),
+                    "pc8" => Ok(RelocationKind::PC8),
+                    "tpoff64" => Ok(RelocationKind::TPOff64),
+                    "tpoff32" => Ok(RelocationKind::TPOff32),
+                    "dtpmod64" => Ok(RelocationKind::DTPMod64),
+                    "dtpoff64" => Ok(RelocationKind::DTPOff64),
+                    "tlsdesc" => Ok(RelocationKind::TLSDESC),
+                    "tls_mod_off" => Ok(RelocationKind::TlsModOff),
+                    "tls_offset" => Ok(RelocationKind::TlsOffset),
+                    _ => Ok(RelocationKind::Other(0)),
+                }
+            }
+        }
+
+        deserializer.deserialize_any(RelocationKindVisitor)
+    }
+}
+
+impl RelocationKind {
+    pub fn from_u32(v: u32) -> Self {
+        match v {
+            0 => Self::None,
+            1 => Self::_64,
+            2 => Self::PC32,
+            3 => Self::GOT32,
+            4 => Self::PLT32,
+            5 => Self::Copy,
+            6 => Self::GlobDat,
+            7 => Self::JumpSlot,
+            8 => Self::Relative,
+            10 => Self::Direct32,
+            11 => Self::Direct32S,
+            12 => Self::Direct16,
+            13 => Self::PC16,
+            14 => Self::Direct8,
+            15 => Self::PC8,
+            16 => Self::DTPMod64,
+            17 => Self::DTPOff64,
+            18 => Self::TPOff64,
+            23 => Self::TPOff32,
+            36 => Self::TLSDESC,
+            42 => Self::TlsModOff,
+            43 => Self::TlsOffset,
+            other => Self::Other(other),
+        }
+    }
+
+    pub fn to_u32(self) -> u32 {
+        match self {
+            Self::None => 0,
+            Self::_64 => 1,
+            Self::PC32 => 2,
+            Self::GOT32 => 3,
+            Self::PLT32 => 4,
+            Self::Copy => 5,
+            Self::GlobDat => 6,
+            Self::JumpSlot => 7,
+            Self::Relative => 8,
+            Self::Direct32 => 10,
+            Self::Direct32S => 11,
+            Self::Direct16 => 12,
+            Self::PC16 => 13,
+            Self::Direct8 => 14,
+            Self::PC8 => 15,
+            Self::DTPMod64 => 16,
+            Self::DTPOff64 => 17,
+            Self::TPOff64 => 18,
+            Self::TPOff32 => 23,
+            Self::TLSDESC => 36,
+            Self::TlsModOff => 42,
+            Self::TlsOffset => 43,
+            Self::Other(v) => v,
+        }
+    }
+}
+
+// ---------------------------------------------------------------------------
+// SectionHeader
+// ---------------------------------------------------------------------------
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct SectionHeader {
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub name: Option<String>,
+    #[serde(with = "hex_u32")]
+    pub sh_type: u32,
+    #[serde(with = "hex")]
+    pub sh_addr: u64,
+    #[serde(with = "hex")]
+    pub sh_offset: u64,
+    #[serde(with = "hex")]
+    pub sh_size: u64,
+    pub sh_flags: u64,
+    pub sh_flags_str: String,
+    pub sh_info: u32,
+    pub sh_link: u32,
+    pub sh_addralign: u64,
+    pub sh_entsize: u64,
+}
+
+impl SectionHeader {
+    pub fn flags_string(flags: u64) -> String {
+        let mut s = String::with_capacity(3);
+        if flags & 0x2 != 0 { s.push('A'); } // SHF_ALLOC
+        if flags & 0x1 != 0 { s.push('W'); } // SHF_WRITE
+        if flags & 0x4 != 0 { s.push('X'); } // SHF_EXECINSTR
+        if flags & 0x10 != 0 { s.push('M'); } // SHF_MERGE
+        if flags & 0x20 != 0 { s.push('S'); } // SHF_STRINGS
+        if s.is_empty() {
+            s.push(' ');
+        }
+        s
+    }
+}
+
+// ---------------------------------------------------------------------------
+// DynamicEntry — tag serialized as hex
+// ---------------------------------------------------------------------------
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct DynamicEntry {
+    #[serde(with = "hex")]
+    pub tag: u64,
+    #[serde(with = "hex")]
+    pub value: u64,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub resolved_tag: Option<String>,
+}
+
+impl DynamicEntry {
+    pub fn tag_name(tag: u64) -> Option<&'static str> {
+        match tag {
+            0 => Some("DT_NULL"),
+            1 => Some("DT_NEEDED"),
+            2 => Some("DT_PLTRELSZ"),
+            3 => Some("DT_PLTGOT"),
+            5 => Some("DT_STRTAB"),
+            6 => Some("DT_SYMTAB"),
+            7 => Some("DT_RELA"),
+            8 => Some("DT_RELASZ"),
+            0xa => Some("DT_STRSZ"),
+            0xb => Some("DT_SYMENT"),
+            0xc => Some("DT_INIT"),
+            0xd => Some("DT_FINI"),
+            0x17 => Some("DT_JMPREL"),
+            0x19 => Some("DT_INIT_ARRAY"),
+            0x1a => Some("DT_FINI_ARRAY"),
+            0x1b => Some("DT_INIT_ARRAYSZ"),
+            0x1c => Some("DT_FINI_ARRAYSZ"),
+            0x20 => Some("DT_PREINIT_ARRAY"),
+            0x21 => Some("DT_PREINIT_ARRAYSZ"),
+            0x61000029 => Some("DT_SCE_JMPREL"),
+            0x6100002d => Some("DT_SCE_PLTRELSZ"),
+            0x6100002f => Some("DT_SCE_RELA"),
+            0x61000031 => Some("DT_SCE_RELASZ"),
+            0x61000035 => Some("DT_SCE_STRTAB"),
+            0x61000037 => Some("DT_SCE_STRSZ"),
+            0x61000039 => Some("DT_SCE_SYMTAB"),
+            0x6100003f => Some("DT_SCE_SYMTABSZ"),
+            0x61000045 => Some("DT_SCE_NEEDED_MOD"),
+            0x61000049 => Some("DT_SCE_NEEDED_LIB"),
+            0x6fffffff0 => Some("DT_VERSYM"),
+            0x6fffffffe => Some("DT_VERNEED"),
+            0x6fffffff => Some("DT_VERNEEDNUM"),
+            _ => None,
+        }
+    }
+}
+
+// ---------------------------------------------------------------------------
+// VersionDef
+// ---------------------------------------------------------------------------
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct VersionDef {
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub name: Option<String>,
+    pub hash: u32,
+    pub flags: u16,
+    pub index: u16,
+}
+
+// ---------------------------------------------------------------------------
 // TlsInfo
 // ---------------------------------------------------------------------------
 
@@ -136,6 +574,12 @@ pub struct LoadedSegment {
     pub memsz: u64,
     pub is_executable: bool,
     pub is_writable: bool,
+    pub seg_type: SegmentType,
+    pub p_paddr: u64,
+    pub p_align: u64,
+    pub is_encrypted: bool,
+    pub is_compressed: bool,
+    pub phdr_index: Option<u16>,
 }
 
 impl LoadedSegment {
@@ -156,12 +600,26 @@ impl Serialize for LoadedSegment {
     fn serialize<S: Serializer>(&self, serializer: S) -> Result<S::Ok, S::Error> {
         use serde::ser::SerializeStruct;
 
-        let mut state = serializer.serialize_struct("LoadedSegment", 6)?;
+        let mut state = serializer.serialize_struct("LoadedSegment", 11)?;
         state.serialize_field("vaddr", &format!("{:#x}", self.vaddr))?;
         state.serialize_field("file_offset", &format!("{:#x}", self.file_offset))?;
         state.serialize_field("filesz", &self.filesz)?;
         state.serialize_field("memsz", &self.memsz)?;
         state.serialize_field("flags", &self.flags())?;
+        state.serialize_field("seg_type", &self.seg_type)?;
+        if self.p_paddr != 0 {
+            state.serialize_field("p_paddr", &format!("{:#x}", self.p_paddr))?;
+        }
+        state.serialize_field("p_align", &self.p_align)?;
+        if self.is_encrypted {
+            state.serialize_field("is_encrypted", &true)?;
+        }
+        if self.is_compressed {
+            state.serialize_field("is_compressed", &true)?;
+        }
+        if let Some(idx) = self.phdr_index {
+            state.serialize_field("phdr_index", &idx)?;
+        }
         state.end()
     }
 }
@@ -175,6 +633,18 @@ impl<'de> Deserialize<'de> for LoadedSegment {
             filesz: u64,
             memsz: u64,
             flags: String,
+            #[serde(default)]
+            seg_type: Option<SegmentType>,
+            #[serde(default)]
+            p_paddr: Option<String>,
+            #[serde(default)]
+            p_align: Option<u64>,
+            #[serde(default)]
+            is_encrypted: Option<bool>,
+            #[serde(default)]
+            is_compressed: Option<bool>,
+            #[serde(default)]
+            phdr_index: Option<u16>,
         }
 
         let h = Helper::deserialize(deserializer)?;
@@ -192,6 +662,11 @@ impl<'de> Deserialize<'de> for LoadedSegment {
             }
         }
 
+        let p_paddr = h.p_paddr
+            .map(|s| hex::parse_u64(&s).map_err(serde::de::Error::custom))
+            .transpose()?
+            .unwrap_or(0);
+
         Ok(LoadedSegment {
             vaddr,
             file_offset,
@@ -199,6 +674,12 @@ impl<'de> Deserialize<'de> for LoadedSegment {
             memsz: h.memsz,
             is_executable,
             is_writable,
+            seg_type: h.seg_type.unwrap_or(SegmentType::Load),
+            p_paddr,
+            p_align: h.p_align.unwrap_or(0),
+            is_encrypted: h.is_encrypted.unwrap_or(false),
+            is_compressed: h.is_compressed.unwrap_or(false),
+            phdr_index: h.phdr_index,
         })
     }
 }
@@ -213,6 +694,46 @@ pub struct ImportEntry {
     pub resolved_name: Option<String>,
     pub library_id: u16,
     pub library_name: String,
+    #[serde(default)]
+    pub value: u64,
+    #[serde(default)]
+    pub size: u64,
+    #[serde(default)]
+    pub shndx: u16,
+    #[serde(default = "default_binding")]
+    pub binding: SymbolBinding,
+    #[serde(default = "default_sym_type")]
+    pub sym_type: SymbolType,
+    #[serde(default = "default_visibility")]
+    pub visibility: SymbolVisibility,
+    #[serde(default)]
+    pub ordinal: u32,
+}
+
+fn default_binding() -> SymbolBinding {
+    SymbolBinding::Global
+}
+
+fn default_sym_type() -> SymbolType {
+    SymbolType::Func
+}
+
+fn default_visibility() -> SymbolVisibility {
+    SymbolVisibility::Default
+}
+
+fn is_default_metadata(m: &BinaryMetadata) -> bool {
+    m.build_id.is_none()
+        && m.elf_type == 0
+        && m.elf_flags == 0
+        && m.osabi == 0
+        && m.self_key_type.is_none()
+        && m.self_attr.is_none()
+        && m.self_mode.is_none()
+        && m.self_endian.is_none()
+        && m.self_version.is_none()
+        && m.self_flags.is_none()
+        && m.sections.is_empty()
 }
 
 // ---------------------------------------------------------------------------
@@ -236,12 +757,40 @@ pub struct ExportEntry {
 pub struct RelocationEntry {
     #[serde(with = "hex")]
     pub offset: u64,
-    pub info: u64,
     #[serde(with = "hex_signed")]
     pub addend: i64,
-    pub r_type: u32,
-    pub r_sym: u32,
+    #[serde(alias = "r_type")]
+    pub kind: RelocationKind,
+    #[serde(default, alias = "r_sym")]
+    pub symbol_index: u32,
     pub is_plt: bool,
+}
+
+// ---------------------------------------------------------------------------
+// BinaryMetadata — ELF identity, build ID, sections
+// ---------------------------------------------------------------------------
+
+#[derive(Debug, Clone, Default, Serialize, Deserialize)]
+pub struct BinaryMetadata {
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub build_id: Option<String>,
+    pub elf_type: u16,
+    pub elf_flags: u32,
+    pub osabi: u8,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub self_key_type: Option<u32>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub self_attr: Option<u8>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub self_mode: Option<u8>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub self_endian: Option<u8>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub self_version: Option<u8>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub self_flags: Option<u16>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub sections: Vec<SectionHeader>,
 }
 
 // ---------------------------------------------------------------------------
@@ -256,6 +805,8 @@ pub struct BinaryImage {
     pub file_size: u64,
     #[serde(with = "hex")]
     pub entry_point: u64,
+    #[serde(default, skip_serializing_if = "is_default_metadata")]
+    pub metadata: BinaryMetadata,
     pub segments: Vec<LoadedSegment>,
     #[serde(default, skip_serializing_if = "Vec::is_empty")]
     pub imports: Vec<ImportEntry>,
@@ -282,6 +833,10 @@ pub struct BinaryImage {
     pub import_libs: HashMap<u16, String>,
     #[serde(default, skip_serializing_if = "Vec::is_empty")]
     pub needed_files: Vec<String>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub dynamic_entries: Vec<DynamicEntry>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub version_defs: Vec<VersionDef>,
 }
 
 // ---------------------------------------------------------------------------
@@ -474,6 +1029,9 @@ mod tests {
         assert_eq!(img.imports[0].nid_hash, "hello");
         assert_eq!(img.imports[0].library_name, "libSceFoo");
         assert_eq!(img.imports[0].library_id, 0);
+
+        assert_eq!(img.metadata.elf_type, ET_SCE_DYNAMIC);
+        assert_eq!(img.metadata.elf_flags, 0);
     }
 
     #[test]
@@ -532,6 +1090,12 @@ mod tests {
             memsz: 8192,
             is_executable: true,
             is_writable: false,
+            seg_type: SegmentType::Load,
+            p_paddr: 0,
+            p_align: 0x1000,
+            is_encrypted: false,
+            is_compressed: false,
+            phdr_index: None,
         };
         let json = serde_json::to_string(&seg).unwrap();
         assert!(json.contains("\"flags\":\"RX\""));
@@ -539,6 +1103,7 @@ mod tests {
         assert_eq!(back.vaddr, 0x100000);
         assert!(back.is_executable);
         assert!(!back.is_writable);
+        assert_eq!(back.seg_type, SegmentType::Load);
     }
 
     #[test]
@@ -550,6 +1115,12 @@ mod tests {
             memsz: 0,
             is_executable: true,
             is_writable: true,
+            seg_type: SegmentType::Load,
+            p_paddr: 0,
+            p_align: 0,
+            is_encrypted: false,
+            is_compressed: false,
+            phdr_index: None,
         };
         let json = serde_json::to_string(&seg).unwrap();
         assert!(json.contains("\"flags\":\"RWX\""));
@@ -564,8 +1135,134 @@ mod tests {
             memsz: 100,
             is_executable: false,
             is_writable: false,
+            seg_type: SegmentType::Load,
+            p_paddr: 0,
+            p_align: 0,
+            is_encrypted: false,
+            is_compressed: false,
+            phdr_index: None,
         };
         let json = serde_json::to_string(&seg).unwrap();
         assert!(json.contains("\"flags\":\"R\""));
+    }
+
+    #[test]
+    fn segment_type_roundtrip() {
+        let cases = [
+            SegmentType::Null,
+            SegmentType::Load,
+            SegmentType::Dynamic,
+            SegmentType::Tls,
+            SegmentType::SCE_Dynlibdata,
+            SegmentType::Other(0x1234),
+        ];
+        for st in cases {
+            let json = serde_json::to_string(&st).unwrap();
+            let back: SegmentType = serde_json::from_str(&json).unwrap();
+            assert_eq!(st, back);
+        }
+    }
+
+    #[test]
+    fn relocation_kind_roundtrip() {
+        let cases = [
+            RelocationKind::None,
+            RelocationKind::_64,
+            RelocationKind::Relative,
+            RelocationKind::GlobDat,
+            RelocationKind::JumpSlot,
+            RelocationKind::Copy,
+            RelocationKind::TPOff64,
+            RelocationKind::Other(0x999),
+        ];
+        for rk in cases {
+            let json = serde_json::to_string(&rk).unwrap();
+            let back: RelocationKind = serde_json::from_str(&json).unwrap();
+            assert_eq!(rk, back);
+        }
+    }
+
+    #[test]
+    fn relocation_backward_compat_r_type() {
+        let json = r#"{"offset":"0x1000","addend":"0x0","r_type":7,"symbol_index":3,"is_plt":true}"#;
+        let rel: RelocationEntry = serde_json::from_str(json).unwrap();
+        assert_eq!(rel.kind, RelocationKind::JumpSlot);
+        assert_eq!(rel.symbol_index, 3);
+        assert!(rel.is_plt);
+    }
+
+    #[test]
+    fn import_entry_defaults() {
+        let json = r#"{"nid_hash":"abc","library_id":1,"library_name":"lib"}"#;
+        let imp: ImportEntry = serde_json::from_str(json).unwrap();
+        assert_eq!(imp.binding, SymbolBinding::Global);
+        assert_eq!(imp.sym_type, SymbolType::Func);
+        assert_eq!(imp.visibility, SymbolVisibility::Default);
+        assert_eq!(imp.value, 0);
+        assert_eq!(imp.ordinal, 0);
+    }
+
+    #[test]
+    fn section_header_flags_string() {
+        assert_eq!(SectionHeader::flags_string(0x2 | 0x4), "AX");
+        assert_eq!(SectionHeader::flags_string(0x2 | 0x1), "AW");
+        assert_eq!(SectionHeader::flags_string(0x2 | 0x1 | 0x4), "AWX");
+        assert_eq!(SectionHeader::flags_string(0), " ");
+    }
+
+    #[test]
+    fn dynamic_entry_tag_names() {
+        assert_eq!(DynamicEntry::tag_name(0), Some("DT_NULL"));
+        assert_eq!(DynamicEntry::tag_name(1), Some("DT_NEEDED"));
+        assert_eq!(DynamicEntry::tag_name(0x61000049), Some("DT_SCE_NEEDED_LIB"));
+        assert_eq!(DynamicEntry::tag_name(0xDEAD), None);
+    }
+
+    #[test]
+    fn binary_metadata_defaults() {
+        let m = BinaryMetadata::default();
+        assert_eq!(m.elf_type, 0);
+        assert!(m.sections.is_empty());
+        assert!(m.build_id.is_none());
+    }
+
+    #[test]
+    fn binary_metadata_skip_empty() {
+        let img = BinaryImage {
+            sha256: "0".repeat(64),
+            platform: Platform::Unknown,
+            is_self: false,
+            file_size: 0,
+            entry_point: 0,
+            metadata: BinaryMetadata::default(),
+            segments: vec![],
+            imports: vec![],
+            exports: vec![],
+            relocations: vec![],
+            tls: None,
+            init_va: 0,
+            init_array_va: 0,
+            init_array_sz: 0,
+            fini_va: 0,
+            fini_array_va: 0,
+            fini_array_sz: 0,
+            preinit_array_va: 0,
+            preinit_array_sz: 0,
+            import_libs: HashMap::new(),
+            needed_files: vec![],
+            dynamic_entries: vec![],
+            version_defs: vec![],
+        };
+        let json = serde_json::to_string(&img).unwrap();
+        assert!(!json.contains("metadata"));
+    }
+
+    #[test]
+    fn backward_compat_no_new_fields() {
+        let json = r#"{"sha256":"aa","platform":"Unknown","is_self":false,"file_size":0,"entry_point":"0x0","segments":[],"init_va":"0x0","init_array_va":"0x0","init_array_sz":0,"fini_va":"0x0","fini_array_va":"0x0","fini_array_sz":0,"preinit_array_va":"0x0","preinit_array_sz":0}"#;
+        let img: BinaryImage = serde_json::from_str(json).unwrap();
+        assert!(img.dynamic_entries.is_empty());
+        assert!(img.version_defs.is_empty());
+        assert_eq!(img.metadata.elf_type, 0);
     }
 }

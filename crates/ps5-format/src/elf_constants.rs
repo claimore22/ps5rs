@@ -60,6 +60,39 @@ pub const STB_LOCAL: u8 = 0;
 pub const STB_GLOBAL: u8 = 1;
 pub const STB_WEAK: u8 = 2;
 
+pub const STV_DEFAULT: u8 = 0;
+pub const STV_INTERNAL: u8 = 1;
+pub const STV_HIDDEN: u8 = 2;
+pub const STV_PROTECTED: u8 = 3;
+
 pub const STT_NOTYPE: u8 = 0;
 pub const STT_OBJECT: u8 = 1;
 pub const STT_FUNC: u8 = 2;
+pub const STT_SECTION: u8 = 3;
+pub const STT_FILE: u8 = 4;
+
+pub const SHT_NULL: u32 = 0;
+pub const SHT_PROGBITS: u32 = 1;
+pub const SHT_SYMTAB: u32 = 2;
+pub const SHT_STRTAB: u32 = 3;
+pub const SHT_RELA: u32 = 4;
+pub const SHT_HASH: u32 = 5;
+pub const SHT_DYNAMIC: u32 = 6;
+pub const SHT_NOTE: u32 = 7;
+pub const SHT_NOBITS: u32 = 8;
+pub const SHT_REL: u32 = 9;
+pub const SHT_DYNSYM: u32 = 11;
+
+pub const SHF_WRITE: u64 = 0x1;
+pub const SHF_ALLOC: u64 = 0x2;
+pub const SHF_EXECINSTR: u64 = 0x4;
+pub const SHF_MERGE: u64 = 0x10;
+pub const SHF_STRINGS: u64 = 0x20;
+pub const SHF_INFO_LINK: u64 = 0x40;
+pub const SHF_LINK_ORDER: u64 = 0x80;
+
+pub const DT_VERSYM: u64 = 0x6FFFFFF0;
+pub const DT_VERNEED: u64 = 0x6FFFFFFE;
+pub const DT_VERNEEDNUM: u64 = 0x6FFFFFFF;
+
+pub const NT_GNU_BUILD_ID: u32 = 3;

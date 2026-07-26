@@ -2,12 +2,14 @@ mod header;
 mod program;
 mod dynamic;
 mod relocation;
+pub mod section;
 mod symbol;
 
 pub use header::ElfHeader;
 pub use program::ProgramHeader;
 pub use dynamic::DynEntry;
 pub use relocation::RelaEntry;
+pub use section::ElfSectionHeader;
 pub use symbol::SymEntry;
 
 #[derive(Debug, Clone)]
@@ -24,6 +26,7 @@ pub struct ElfImage<'a> {
     pub elf_base: usize,
     pub header: ElfHeader,
     pub program_headers: Vec<ProgramHeader>,
+    pub section_headers: Vec<ElfSectionHeader>,
     pub dynamic_entries: Vec<DynEntry>,
     pub relocations: Vec<RelaEntry>,
     pub symbols: Vec<SymEntry>,
@@ -76,6 +79,14 @@ impl<'a> ElfImage<'a> {
             let offset = header.e_phoff as usize + i as usize * header.phentsize as usize;
             program_headers.push(ProgramHeader::parse(data, offset)?);
         }
+
+        let section_headers = section::parse_section_headers(
+            data,
+            header.e_shoff,
+            header.shnum,
+            header.shentsize,
+            header.shstrndx,
+        )?;
 
         let mut tls = None;
         let mut init_va = 0u64;
@@ -190,6 +201,7 @@ impl<'a> ElfImage<'a> {
             elf_base: 0,
             header,
             program_headers,
+            section_headers,
             dynamic_entries: dyn_entries,
             relocations,
             symbols,
