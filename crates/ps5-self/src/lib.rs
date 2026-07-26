@@ -3,9 +3,11 @@ use ps5_format::elf_constants::ELF_MAGIC;
 use ps5_format::self_constants::*;
 
 mod segment;
+pub mod extract;
 #[cfg(test)]
 mod tests;
 pub use segment::SelfSegmentEntry;
+pub use extract::ExtractResult;
 
 fn read_u16(data: &[u8], offset: usize) -> u16 {
     if offset + 2 > data.len() { return 0; }

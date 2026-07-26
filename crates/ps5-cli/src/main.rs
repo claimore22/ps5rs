@@ -44,6 +44,11 @@ enum Commands {
         #[command(subcommand)]
         command: AnalyzeCommand,
     },
+    Extract {
+        file: PathBuf,
+        #[arg(short, long, value_hint = ValueHint::FilePath)]
+        output: Option<PathBuf>,
+    },
 }
 
 #[derive(Subcommand)]
@@ -128,6 +133,7 @@ fn main() {
             cmd_scan(&path, &output, include_modules)
         }
         Commands::Analyze { include_modules, command } => cmd_analyze(command, include_modules),
+        Commands::Extract { file, output } => cmd_extract(&file, &output),
     }
 }
 
@@ -810,4 +816,41 @@ fn cmd_symbols(path: &PathBuf) {
 fn cmd_nid(name: &str) {
     let nid = ps5_nid::hash(name);
     println!("{name} -> {nid}");
+}
+
+fn cmd_extract(path: &PathBuf, output: &Option<PathBuf>) {
+    let data = load_file(path);
+
+    let result = ps5_self::extract::extract_elf(&data).unwrap_or_else(|e| {
+        eprintln!("error: {e}");
+        std::process::exit(1);
+    });
+
+    let out_path = output.clone().unwrap_or_else(|| {
+        let mut p = path.clone();
+        let stem = p.file_stem().unwrap_or_default().to_owned();
+        p.set_file_name(stem);
+        p.set_extension("elf");
+        p
+    });
+
+    std::fs::write(&out_path, &result.elf).unwrap_or_else(|e| {
+        eprintln!("error: cannot write {}: {e}", out_path.display());
+        std::process::exit(1);
+    });
+
+    println!("Format:  {}", if result.was_self { "SELF" } else { "Raw ELF (passthrough)" });
+    println!("Output:  {}", out_path.display());
+    println!("Size:    {} bytes", result.elf.len());
+
+    if result.encrypted_segments > 0 || result.compressed_segments > 0 {
+        println!();
+        println!("Warnings:");
+        if result.encrypted_segments > 0 {
+            println!("  {} encrypted segment(s) — data may be invalid", result.encrypted_segments);
+        }
+        if result.compressed_segments > 0 {
+            println!("  {} compressed segment(s) — data may be invalid", result.compressed_segments);
+        }
+    }
 }
