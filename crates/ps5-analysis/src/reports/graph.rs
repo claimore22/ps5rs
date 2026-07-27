@@ -8,7 +8,8 @@ pub fn build_graph(db: &AnalysisDatabase, include_nids: bool) -> DependencyGraph
     let mut edges: Vec<GraphEdge> = Vec::new();
 
     for game in &db.games {
-        game_nodes.push(game.name.clone());
+        let gname = game.display_name.as_deref().unwrap_or(&game.name).to_string();
+        game_nodes.push(gname.clone());
 
         let mut lib_counts: HashMap<String, usize> = HashMap::new();
         for imp in &game.imports {
@@ -18,7 +19,7 @@ pub fn build_graph(db: &AnalysisDatabase, include_nids: bool) -> DependencyGraph
         for (lib, count) in &lib_counts {
             lib_nodes_set.insert(lib.clone());
             edges.push(GraphEdge {
-                from: game.name.clone(),
+                from: gname.clone(),
                 to: lib.clone(),
                 weight: *count,
             });

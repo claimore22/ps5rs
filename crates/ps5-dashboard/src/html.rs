@@ -303,7 +303,7 @@ document.addEventListener('keydown', e => {{ if (e.key === 'Escape') $('#detailP
 
   function renderGames() {{
     $('#gamesBody').innerHTML = filteredRows.map(r => `<tr class="clickable" data-game="${{r[0]}}">
-      <td title="${{r[8]}}">${{trunc(r[0],28)}}</td>
+      <td title="${{r[8]}}">${{trunc(r[8] || r[0],28)}}</td>
       <td>${{r[1]}}</td>
       <td><span class="pill ${{r[2]==='SELF'?'pill-self':'pill-elf'}}">${{r[2]}}</span></td>
       <td>${{r[3]?`<span class="pill pill-eng">${{r[3]}}</span>`:'-'}}</td>
@@ -323,7 +323,7 @@ document.addEventListener('keydown', e => {{ if (e.key === 'Escape') $('#detailP
 
       openDetail(d.title_name || d.name, `
         <div class="detail-section"><h3>General</h3><div class="detail-kv">
-          <div class="k">Name</div><div class="v">${{d.name}}</div>
+          <div class="k">Name</div><div class="v">${{d.title_name || d.name}}</div>
           <div class="k">Platform</div><div class="v">${{d.platform}}</div>
           <div class="k">Type</div><div class="v">${{d.is_self?'SELF':'Raw ELF'}}</div>
           <div class="k">Engine</div><div class="v">${{d.engine||'Unknown'}}</div>
@@ -567,7 +567,7 @@ document.addEventListener('keydown', e => {{ if (e.key === 'Escape') $('#detailP
   games.forEach(g => {{
     const p = gamePositions[g.name];
     svg += `<rect x="${{p.x-60}}" y="${{p.y-6}}" width="120" height="12" rx="3" fill="#238636" opacity="0.7" class="graph-node" data-type="game" data-name="${{g.name}}" style="cursor:pointer"/>`;
-    svg += `<text x="${{p.x}}" y="${{p.y+3}}" text-anchor="middle" fill="#e6edf3" font-size="7">${{trunc(g.name,16)}}</text>`;
+    svg += `<text x="${{p.x}}" y="${{p.y+3}}" text-anchor="middle" fill="#e6edf3" font-size="7">${{trunc(g.title_name || g.name,16)}}</text>`;
   }});
 
   svg += '</svg>';

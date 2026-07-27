@@ -30,6 +30,8 @@ pub struct ImportInfo {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct GameAnalysis {
     pub name: String,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub display_name: Option<String>,
     pub path: String,
     pub sha256: String,
     pub file_size: u64,
@@ -128,6 +130,7 @@ pub(crate) fn make_import(nid: &str, resolved: &str, lib_id: u16, lib_name: &str
 pub(crate) fn make_game(name: &str, imports: Vec<ImportInfo>) -> GameAnalysis {
     GameAnalysis {
         name: name.to_string(),
+        display_name: None,
         path: format!("/fake/{}.bin", name),
         sha256: "aabb".to_string(),
         file_size: 1024,

@@ -101,8 +101,12 @@ fn analyze_binary(path: &Path, catalog: &Catalog, game_dir: &Path) -> Option<Gam
         .unwrap_or("unknown")
         .to_string();
 
+    let display_name = crate::param_json::read_param(game_dir)
+        .and_then(|p| p.display_name);
+
     Some(GameAnalysis {
         name: game_name,
+        display_name,
         path: path.display().to_string(),
         sha256,
         file_size,

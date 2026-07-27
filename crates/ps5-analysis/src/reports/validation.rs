@@ -19,6 +19,8 @@ pub struct ValidationReport {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct GameValidation {
     pub name: String,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub display_name: Option<String>,
     pub input_sha256: String,
     pub elf_sha256: Option<String>,
     pub self_detected: bool,
@@ -113,6 +115,7 @@ pub fn validate_dataset(ds: &AnalysisDataset, extracted_dir: Option<&Path>) -> V
 
         games.push(GameValidation {
             name: name.clone(),
+            display_name: Some(ds.display_name_for(name).to_string()),
             input_sha256: img.sha256.clone(),
             elf_sha256,
             self_detected: img.is_self,
@@ -237,6 +240,7 @@ mod tests {
                 games: vec![],
             },
             images,
+            display_names: std::collections::HashMap::new(),
         }
     }
 

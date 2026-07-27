@@ -21,7 +21,15 @@ pub fn scan(
     options: &ScanOptions,
 ) -> Result<ScanResult, std::io::Error> {
     std::fs::create_dir_all(output)?;
-    std::fs::create_dir_all(output.join("images"))?;
+    let images_dir = output.join("images");
+    if images_dir.exists() {
+        for entry in std::fs::read_dir(&images_dir).into_iter().flatten().flatten() {
+            if entry.path().extension().map_or(false, |e| e == "json") {
+                let _ = std::fs::remove_file(entry.path());
+            }
+        }
+    }
+    std::fs::create_dir_all(&images_dir)?;
 
     let mut image_paths = Vec::new();
     let mut seen_names: std::collections::HashSet<String> = std::collections::HashSet::new();
@@ -48,6 +56,10 @@ pub fn scan(
 
                 let param = param_json::read_param(game_dir)
                     .unwrap_or_default();
+                let mut param = param;
+                if param.name.is_none() {
+                    param.name = Some(game_name.to_string());
+                }
                 game_params.push(param);
             }
         }
@@ -75,12 +87,34 @@ fn find_game_dirs(root: &Path) -> Vec<PathBuf> {
         for entry in entries.flatten() {
             let path = entry.path();
             if path.is_dir() {
-                dirs.push(path);
+                resolve_game_dir(&path, &mut dirs);
             }
         }
     }
     dirs.sort();
     dirs
+}
+
+fn resolve_game_dir(dir: &Path, result: &mut Vec<PathBuf>) {
+    if has_eboot(dir) {
+        result.push(dir.to_path_buf());
+        return;
+    }
+    let children: Vec<PathBuf> = match std::fs::read_dir(dir) {
+        Ok(rd) => rd
+            .flatten()
+            .map(|e| e.path())
+            .filter(|p| p.is_dir())
+            .collect(),
+        Err(_) => return,
+    };
+    if children.len() == 1 {
+        resolve_game_dir(&children[0], result);
+    }
+}
+
+fn has_eboot(dir: &Path) -> bool {
+    dir.join("eboot.bin").exists()
 }
 
 fn find_binaries(game_dir: &Path, options: &ScanOptions) -> Vec<PathBuf> {
@@ -230,7 +264,7 @@ mod tests {
     }
 
     #[test]
-    fn find_game_dirs_returns_directories() {
+    fn find_game_dirs_finds_eboot() {
         let tmp = std::env::temp_dir().join(format!(
             "ps5rs_scan_test_dirs_{}",
             std::process::id()
@@ -238,6 +272,8 @@ mod tests {
         let _ = std::fs::remove_dir_all(&tmp);
         std::fs::create_dir_all(tmp.join("GameA")).unwrap();
         std::fs::create_dir_all(tmp.join("GameB")).unwrap();
+        std::fs::write(tmp.join("GameA").join("eboot.bin"), "x").unwrap();
+        std::fs::write(tmp.join("GameB").join("eboot.bin"), "x").unwrap();
         std::fs::write(tmp.join("not_a_dir.txt"), "x").unwrap();
 
         let mut dirs = find_game_dirs(&tmp);
@@ -245,6 +281,38 @@ mod tests {
         assert_eq!(dirs.len(), 2);
         assert!(dirs[0].ends_with("GameA"));
         assert!(dirs[1].ends_with("GameB"));
+
+        let _ = std::fs::remove_dir_all(&tmp);
+    }
+
+    #[test]
+    fn find_game_dirs_skips_dirs_without_eboot() {
+        let tmp = std::env::temp_dir().join(format!(
+            "ps5rs_scan_test_no_eboot_{}",
+            std::process::id()
+        ));
+        let _ = std::fs::remove_dir_all(&tmp);
+        std::fs::create_dir_all(tmp.join("Empty")).unwrap();
+
+        let dirs = find_game_dirs(&tmp);
+        assert!(dirs.is_empty());
+
+        let _ = std::fs::remove_dir_all(&tmp);
+    }
+
+    #[test]
+    fn find_game_dirs_drills_through_single_child() {
+        let tmp = std::env::temp_dir().join(format!(
+            "ps5rs_scan_test_drill_{}",
+            std::process::id()
+        ));
+        let _ = std::fs::remove_dir_all(&tmp);
+        std::fs::create_dir_all(tmp.join("Wrapper").join("Game")).unwrap();
+        std::fs::write(tmp.join("Wrapper").join("Game").join("eboot.bin"), "x").unwrap();
+
+        let dirs = find_game_dirs(&tmp);
+        assert_eq!(dirs.len(), 1);
+        assert!(dirs[0].ends_with("Game"));
 
         let _ = std::fs::remove_dir_all(&tmp);
     }

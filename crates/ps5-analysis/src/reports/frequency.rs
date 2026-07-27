@@ -5,12 +5,13 @@ pub fn build_frequency(db: &AnalysisDatabase) -> NidFrequency {
     let mut nid_info: HashMap<String, (String, usize, Vec<String>)> = HashMap::new();
 
     for game in &db.games {
+        let gname = game.display_name.as_deref().unwrap_or(&game.name).to_string();
         for imp in &game.imports {
             let entry = nid_info.entry(imp.nid_hash.clone())
                 .or_insert_with(|| (imp.resolved_name.clone(), 0, Vec::new()));
             entry.1 += 1;
-            if !entry.2.contains(&game.name) {
-                entry.2.push(game.name.clone());
+            if !entry.2.contains(&gname) {
+                entry.2.push(gname.clone());
             }
         }
     }

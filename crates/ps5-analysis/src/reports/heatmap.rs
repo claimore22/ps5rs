@@ -7,15 +7,16 @@ pub fn build_heatmap(db: &AnalysisDatabase) -> LibraryHeatmap {
     let mut seen_games: std::collections::HashSet<String> = std::collections::HashSet::new();
 
     for game in &db.games {
-        if !seen_games.contains(&game.name) {
-            all_games.push(game.name.clone());
-            seen_games.insert(game.name.clone());
+        let gname = game.display_name.as_deref().unwrap_or(&game.name).to_string();
+        if !seen_games.contains(&gname) {
+            all_games.push(gname.clone());
+            seen_games.insert(gname.clone());
         }
         for imp in &game.imports {
             lib_game_counts
                 .entry(imp.library_name.clone())
                 .or_default()
-                .entry(game.name.clone())
+                .entry(gname.clone())
                 .and_modify(|c| *c += 1)
                 .or_insert(1);
         }

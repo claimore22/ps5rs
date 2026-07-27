@@ -3,14 +3,28 @@ use std::path::Path;
 
 #[derive(Debug, Clone, Serialize, Deserialize, Default)]
 pub struct GameParam {
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub name: Option<String>,
     pub title_id: Option<String>,
     pub content_version: Option<String>,
     pub master_version: Option<String>,
     pub sdk_version: Option<String>,
     pub title_name: Option<String>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub display_name: Option<String>,
     pub drm_type: Option<String>,
     pub content_id: Option<String>,
     pub creation_date: Option<String>,
+}
+
+impl GameParam {
+    pub fn compute_display_name(&self) -> Option<String> {
+        match (&self.title_name, &self.title_id) {
+            (Some(name), Some(id)) => Some(format!("{name} - [{id}]")),
+            (None, Some(id)) => Some(format!("[{id}]")),
+            _ => None,
+        }
+    }
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -60,16 +74,20 @@ pub fn read_param(game_dir: &Path) -> Option<GameParam> {
         .and_then(|cd| cd.as_str())
         .map(|s| s.to_string());
 
-    Some(GameParam {
+    let mut param = GameParam {
+        name: None,
         title_id: raw.title_id,
         content_version: raw.content_version,
         master_version: raw.master_version,
         sdk_version: raw.sdk_version,
         title_name,
+        display_name: None,
         drm_type: raw.application_drm_type,
         content_id: raw.content_id,
         creation_date,
-    })
+    };
+    param.display_name = param.compute_display_name();
+    Some(param)
 }
 
 fn find_param_json(start: &Path) -> Option<std::path::PathBuf> {
@@ -152,6 +170,7 @@ mod tests {
         assert_eq!(param.master_version.as_deref(), Some("02.00"));
         assert_eq!(param.sdk_version.as_deref(), Some("0x0700000000000000"));
         assert_eq!(param.title_name.as_deref(), Some("Jusant"));
+        assert_eq!(param.display_name.as_deref(), Some("Jusant - [PPSA10264]"));
         assert_eq!(param.drm_type.as_deref(), Some("standard"));
         assert_eq!(
             param.content_id.as_deref(),
@@ -198,6 +217,7 @@ mod tests {
         assert_eq!(param.title_id.as_deref(), Some("PPSA01502"));
         assert!(param.content_version.is_none());
         assert!(param.title_name.is_none());
+        assert_eq!(param.display_name.as_deref(), Some("[PPSA01502]"));
 
         let _ = fs::remove_dir_all(&tmp);
     }
@@ -224,11 +244,13 @@ mod tests {
     #[test]
     fn serde_roundtrip() {
         let param = GameParam {
+            name: None,
             title_id: Some("PPSA10264".to_string()),
             content_version: Some("02.000.000".to_string()),
             master_version: None,
             sdk_version: None,
             title_name: Some("Jusant".to_string()),
+            display_name: Some("Jusant - [PPSA10264]".to_string()),
             drm_type: Some("standard".to_string()),
             content_id: None,
             creation_date: None,
@@ -236,6 +258,7 @@ mod tests {
         let json = serde_json::to_string(&param).unwrap();
         let back: GameParam = serde_json::from_str(&json).unwrap();
         assert_eq!(back.title_id.as_deref(), Some("PPSA10264"));
+        assert_eq!(back.display_name.as_deref(), Some("Jusant - [PPSA10264]"));
         assert!(back.master_version.is_none());
     }
 
@@ -244,6 +267,24 @@ mod tests {
         let param = GameParam::default();
         assert!(param.title_id.is_none());
         assert!(param.content_version.is_none());
+    }
+
+    #[test]
+    fn compute_display_name_both() {
+        let p = GameParam { title_name: Some("Bugsnax".into()), title_id: Some("PPSA01502".into()), ..Default::default() };
+        assert_eq!(p.compute_display_name().as_deref(), Some("Bugsnax - [PPSA01502]"));
+    }
+
+    #[test]
+    fn compute_display_name_id_only() {
+        let p = GameParam { title_id: Some("PPSA01502".into()), ..Default::default() };
+        assert_eq!(p.compute_display_name().as_deref(), Some("[PPSA01502]"));
+    }
+
+    #[test]
+    fn compute_display_name_neither() {
+        let p = GameParam::default();
+        assert!(p.compute_display_name().is_none());
     }
 
     #[test]

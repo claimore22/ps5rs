@@ -1,8 +1,9 @@
 use ps5_image::BinaryImageDocument;
 use serde::{Deserialize, Serialize};
+use std::collections::HashMap;
 use std::path::Path;
 
-pub const DATASET_SCHEMA_VERSION: u32 = 2;
+pub const DATASET_SCHEMA_VERSION: u32 = 3;
 
 // ---------------------------------------------------------------------------
 // Manifest
@@ -67,9 +68,16 @@ impl From<serde_json::Error> for DatasetError {
 pub struct AnalysisDataset {
     pub manifest: Manifest,
     pub images: Vec<(String, BinaryImageDocument)>,
+    pub display_names: HashMap<String, String>,
 }
 
 impl AnalysisDataset {
+    pub fn display_name_for<'a>(&'a self, name: &'a str) -> &'a str {
+        self.display_names
+            .get(name)
+            .map(String::as_str)
+            .unwrap_or(name)
+    }
     /// Open a dataset directory (reads manifest.json + images/*.json).
     pub fn open(root: &Path) -> Result<Self, DatasetError> {
         let manifest_path = root.join("manifest.json");
@@ -113,7 +121,22 @@ impl AnalysisDataset {
             images.push((name, doc));
         }
 
-        Ok(AnalysisDataset { manifest, images })
+        let mut display_names = HashMap::new();
+        for (name, _) in &images {
+            let name_upper = name.to_ascii_uppercase();
+            let display = manifest.games.iter().find_map(|g| {
+                g.display_name.as_ref().filter(|_| {
+                    g.title_id.as_ref().map_or(false, |tid| {
+                        name_upper.contains(&tid.to_ascii_uppercase())
+                    })
+                })
+            });
+            if let Some(d) = display {
+                display_names.insert(name.clone(), d.clone());
+            }
+        }
+
+        Ok(AnalysisDataset { manifest, images, display_names })
     }
 
     pub fn total_imports(&self) -> usize {
@@ -255,6 +278,7 @@ mod tests {
         assert_eq!(ds.images[0].1.image.imports.len(), 1);
         assert_eq!(ds.images[1].0, "game2");
         assert!(ds.images[1].1.image.imports.is_empty());
+        assert_eq!(ds.display_name_for("game1"), "game1");
 
         let _ = std::fs::remove_dir_all(&root);
     }

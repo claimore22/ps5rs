@@ -9,6 +9,8 @@ pub struct EngineHintReport {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct EngineHint {
     pub name: String,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub display_name: Option<String>,
     pub unreal: bool,
     pub unity: bool,
     pub godot: bool,
@@ -17,7 +19,11 @@ pub struct EngineHint {
 }
 
 pub fn build_engine_hints(ds: &AnalysisDataset) -> EngineHintReport {
-    let games = ds.images.iter().map(|(name, doc)| analyze_engine(name, doc)).collect();
+    let games = ds.images.iter().map(|(name, doc)| {
+        let mut hint = analyze_engine(name, doc);
+        hint.display_name = Some(ds.display_name_for(name).to_string());
+        hint
+    }).collect();
     EngineHintReport { games }
 }
 
@@ -75,6 +81,7 @@ fn analyze_engine(name: &str, doc: &ps5_image::BinaryImageDocument) -> EngineHin
 
     EngineHint {
         name: name.to_string(),
+        display_name: None,
         unreal,
         unity,
         godot,
@@ -172,6 +179,7 @@ mod tests {
                 games: vec![],
             },
             images,
+            display_names: std::collections::HashMap::new(),
         }
     }
 

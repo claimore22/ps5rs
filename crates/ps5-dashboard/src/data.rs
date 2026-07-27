@@ -281,10 +281,7 @@ fn compute_games(ds: &AnalysisDataset) -> Vec<GameRow> {
         let (rx, r, rw, _other) = sum_segment_sizes(img);
         let engine = detect_engine(&img.imports);
 
-        let title_name = ds.manifest.games.iter()
-            .find(|g| g.title_id.as_deref() == Some(name.split('-').next_back().unwrap_or("")))
-            .and_then(|g| g.title_name.clone())
-            .or_else(|| extract_title_from_name(name));
+        let title_name = Some(ds.display_name_for(name).to_string());
 
         GameRow {
             name: name.clone(),
@@ -345,9 +342,7 @@ fn compute_game_details(ds: &AnalysisDataset) -> Vec<GameDetail> {
         let meta = &img.metadata;
         GameDetail {
             name: name.clone(),
-            title_name: ds.manifest.games.iter()
-                .find(|g| g.title_id.as_deref() == Some(name.split('-').next_back().unwrap_or("")))
-                .and_then(|g| g.title_name.clone()),
+            title_name: Some(ds.display_name_for(name).to_string()),
             platform: img.platform.to_string(),
             is_self: img.is_self,
             file_size_mb: img.file_size as f64 / (1024.0 * 1024.0),
@@ -512,14 +507,7 @@ fn compute_library_details(ds: &AnalysisDataset) -> Vec<LibraryDetail> {
         let unique_nid_count = all_nids.len();
 
         let mut games: Vec<LibGameEntry> = games_map.iter().map(|(game, (count, nids))| {
-            let title = ds.images.iter()
-                .find(|(n, _)| n == game)
-                .and_then(|(_, _doc)| {
-                    ds.manifest.games.iter()
-                        .find(|g| g.title_id.as_deref() == Some(game.split('-').next_back().unwrap_or("")))
-                        .and_then(|g| g.title_name.clone())
-                        .or_else(|| extract_title_from_name(game))
-                });
+            let title = Some(ds.display_name_for(game).to_string());
             LibGameEntry {
                 game: game.clone(),
                 title_name: title,
@@ -719,16 +707,6 @@ fn sum_segment_sizes(img: &ps5_image::BinaryImage) -> (u64, u64, u64, u64) {
     (rx, r, rw, other)
 }
 
-fn extract_title_from_name(name: &str) -> Option<String> {
-    let parts: Vec<&str> = name.split('-').collect();
-    if parts.len() >= 2 {
-        let title = parts[0..parts.len()-1].join(" ").replace('.', " ");
-        Some(title)
-    } else {
-        None
-    }
-}
-
 fn now_iso8601() -> String {
     let now = std::time::SystemTime::now()
         .duration_since(std::time::UNIX_EPOCH)
@@ -822,7 +800,7 @@ mod tests {
     }
 
     fn make_dataset(docs: Vec<(&str, BinaryImageDocument)>) -> AnalysisDataset {
-        use ps5_analysis::dataset::{Manifest, DATASET_SCHEMA_VERSION};
+    use ps5_analysis::dataset::{Manifest, DATASET_SCHEMA_VERSION};
         let mut images = Vec::new();
         for (name, doc) in docs {
             images.push((name.to_string(), doc));
@@ -837,6 +815,7 @@ mod tests {
                 games: vec![],
             },
             images,
+            display_names: std::collections::HashMap::new(),
         }
     }
 
@@ -955,5 +934,33 @@ mod tests {
         assert_eq!(stats.top_5_largest.len(), 2);
         assert_eq!(stats.top_5_most_imports.len(), 2);
         assert!(stats.avg_code_size_mb > 0.0);
+    }
+
+    use ps5_analysis::param_json::GameParam;
+
+    #[test]
+    fn display_name_for_resolves_from_manifest() {
+        let mut ds = make_dataset(vec![("Bugsnax-PPSA01502-USA-PS5", make_doc(&"a".repeat(64), vec![], vec![]))]);
+        ds.manifest.games = vec![GameParam {
+            title_id: Some("PPSA01502".to_string()),
+            title_name: Some("Bugsnax".to_string()),
+            display_name: Some("Bugsnax - [PPSA01502]".to_string()),
+            ..Default::default()
+        }];
+        ds.display_names.insert("Bugsnax-PPSA01502-USA-PS5".to_string(), "Bugsnax - [PPSA01502]".to_string());
+        assert_eq!(ds.display_name_for("Bugsnax-PPSA01502-USA-PS5"), "Bugsnax - [PPSA01502]");
+    }
+
+    #[test]
+    fn display_name_for_falls_back_to_name() {
+        let ds = make_dataset(vec![("SomeGame-ABC", make_doc(&"a".repeat(64), vec![], vec![]))]);
+        assert_eq!(ds.display_name_for("SomeGame-ABC"), "SomeGame-ABC");
+    }
+
+    #[test]
+    fn display_name_for_case_insensitive() {
+        let mut ds = make_dataset(vec![("trek-to-yomi-ppsa02629", make_doc(&"a".repeat(64), vec![], vec![]))]);
+        ds.display_names.insert("trek-to-yomi-ppsa02629".to_string(), "Trek To Yomi - [PPSA02629]".to_string());
+        assert_eq!(ds.display_name_for("trek-to-yomi-ppsa02629"), "Trek To Yomi - [PPSA02629]");
     }
 }

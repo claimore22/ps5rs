@@ -267,6 +267,7 @@ fn dataset_to_database_real(ds: &ps5_analysis::AnalysisDataset) -> ps5_analysis:
 
             ps5_analysis::GameAnalysis {
                 name: name.clone(),
+                display_name: Some(ds.display_name_for(name).to_string()),
                 path: String::new(),
                 sha256: img.sha256.clone(),
                 file_size: img.file_size,
@@ -642,9 +643,10 @@ fn print_imports_terminal(db: &ps5_analysis::AnalysisDatabase) {
     println!("{}", "-".repeat(80));
 
     for game in &db.games {
+        let gname = game.display_name.as_deref().unwrap_or(&game.name);
         for imp in game.imports.iter().take(5) {
             println!("{:<20} {:<20} {:<44} {}",
-                game.name, imp.library_name, imp.nid_hash, imp.resolved_name);
+                gname, imp.library_name, imp.nid_hash, imp.resolved_name);
         }
         if game.imports.len() > 5 {
             println!("{:<20} ... and {} more imports", "", game.imports.len() - 5);
@@ -1076,7 +1078,7 @@ fn print_engines_terminal(report: &ps5_analysis::EngineHintReport) {
         } else {
             game.sce_libraries.join(", ")
         };
-        println!("{:<30} {:<16} {}", game.name, engine, sce);
+        println!("{:<30} {:<16} {}", game.display_name.as_deref().unwrap_or(&game.name), engine, sce);
     }
 }
 

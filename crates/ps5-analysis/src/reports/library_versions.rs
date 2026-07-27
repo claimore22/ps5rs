@@ -20,6 +20,7 @@ pub fn build_library_versions(ds: &AnalysisDataset) -> LibraryVersionReport {
     let mut map: HashMap<(String, u32), LibraryVersionEntry> = HashMap::new();
 
     for (name, doc) in &ds.images {
+        let display = ds.display_name_for(name).to_string();
         for lv in &doc.image.lib_versions {
             let key = (lv.name.clone(), lv.version_raw);
             let entry = map.entry(key).or_insert_with(|| LibraryVersionEntry {
@@ -29,8 +30,8 @@ pub fn build_library_versions(ds: &AnalysisDataset) -> LibraryVersionReport {
                 game_count: 0,
                 games: Vec::new(),
             });
-            if !entry.games.contains(name) {
-                entry.games.push(name.clone());
+            if !entry.games.contains(&display) {
+                entry.games.push(display.clone());
                 entry.game_count = entry.games.len();
             }
         }
@@ -113,6 +114,7 @@ mod tests {
                 games: vec![],
             },
             images,
+            display_names: std::collections::HashMap::new(),
         }
     }
 
