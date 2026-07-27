@@ -336,11 +336,23 @@ version = "0.1.0"
 dependencies = [
  "clap",
  "ps5-analysis",
+ "ps5-dashboard",
  "ps5-elf",
  "ps5-format",
  "ps5-image",
  "ps5-nid",
  "ps5-self",
+ "serde",
+ "serde_json",
+]
+
+[[package]]
+name = "ps5-dashboard"
+version = "0.1.0"
+dependencies = [
+ "ps5-analysis",
+ "ps5-image",
+ "ps5-nid",
  "serde",
  "serde_json",
 ]

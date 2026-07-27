@@ -61,6 +61,11 @@ enum Commands {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
+    Dashboard {
+        path: PathBuf,
+        #[arg(short, long, value_hint = ValueHint::DirPath, default_value = "analysis/dashboard")]
+        output: PathBuf,
+    },
 }
 
 #[derive(Subcommand)]
@@ -164,6 +169,7 @@ fn main() {
             cmd_batch_extract(&path, &output, include_modules)
         }
         Commands::Validate { path, output } => cmd_validate(&path, &output),
+        Commands::Dashboard { path, output } => cmd_dashboard(&path, &output),
     }
 }
 
@@ -1072,4 +1078,31 @@ fn print_engines_terminal(report: &ps5_analysis::EngineHintReport) {
         };
         println!("{:<30} {:<16} {}", game.name, engine, sce);
     }
+}
+
+fn cmd_dashboard(path: &std::path::Path, output: &PathBuf) {
+    let ds = ps5_analysis::AnalysisDataset::open(path).unwrap_or_else(|e| {
+        eprintln!("error: failed to load dataset from {}: {e}", path.display());
+        std::process::exit(1);
+    });
+
+    eprintln!("Computing dashboard data from {} games...", ds.images.len());
+    let data = ps5_dashboard::data::compute(&ds);
+    let html = ps5_dashboard::html::generate_html(&data);
+
+    std::fs::create_dir_all(output).unwrap_or_else(|e| {
+        eprintln!("error: cannot create {}: {e}", output.display());
+        std::process::exit(1);
+    });
+
+    let out_file = output.join("index.html");
+    std::fs::write(&out_file, &html).unwrap_or_else(|e| {
+        eprintln!("error: cannot write {}: {e}", out_file.display());
+        std::process::exit(1);
+    });
+
+    eprintln!("Dashboard written to {}", out_file.display());
+    eprintln!("  Games: {}", data.overview.total_games);
+    eprintln!("  Libraries: {}", data.overview.unique_libs);
+    eprintln!("  NIDs: {} ({:.1}% resolved)", data.overview.unique_nids, data.overview.resolution_rate);
 }
