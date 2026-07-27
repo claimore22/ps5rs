@@ -348,7 +348,7 @@ document.addEventListener('keydown', e => {{ if (e.key === 'Escape') $('#detailP
           <div class="table-wrap"><table class="detail-table"><thead><tr><th>NID Hash</th><th>Resolved Name</th><th>Library</th></tr></thead><tbody>${{importsHtml}}</tbody></table></div></div>
         ${{d.unresolved_nids.length > 0 ? `<div class="detail-section"><h3>Unknown NIDs (${{d.unresolved_nids.length}})</h3><div class="table-wrap"><table class="detail-table"><thead><tr><th>NID Hash</th><th>Library</th></tr></thead><tbody>${{unresolvedHtml}}</tbody></table></div></div>` : ''}}
       `);
-    }});
+    }}));
   }}
 
   let sortState = {{ col: -1, asc: true }};
@@ -408,7 +408,7 @@ document.addEventListener('keydown', e => {{ if (e.key === 'Escape') $('#detailP
         ${{d.unknown_nids.length > 0 ? `<div class="detail-section"><h3>Unknown NIDs (${{d.unknown_nids.length}})</h3><div class="table-wrap"><table class="detail-table">
           <thead><tr><th>NID Hash</th><th>Count</th></tr></thead><tbody>${{unkHtml}}</tbody></table></div></div>` : ''}}
       `);
-    }});
+    }}));
   }}
   render(rows);
   let sortState = {{ col: -1, asc: true }};
@@ -846,5 +846,16 @@ mod tests {
         assert!(!html.contains("https://"));
         assert!(html.contains("<style>"));
         assert!(html.contains("<script>"));
+    }
+
+    #[test]
+    fn html_js_has_balanced_parens() {
+        let html = generate_html(&sample_data());
+        let script_start = html.find("<script>").unwrap() + 8;
+        let script_end = html.find("</script>").unwrap();
+        let js = &html[script_start..script_end];
+        let open = js.matches('(').count();
+        let close = js.matches(')').count();
+        assert_eq!(open, close, "unbalanced parens: {} open vs {} close", open, close);
     }
 }
