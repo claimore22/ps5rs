@@ -56,7 +56,7 @@ tr.clickable:hover{{background:#1c2128;outline:1px solid #30363d;}}
 .filter-input:focus,.filter-select:focus{{outline:none;border-color:#58a6ff;}}
 .filter-select{{cursor:pointer;}}
 .hbar{{display:flex;align-items:center;margin-bottom:4px;}}
-.hbar-label{{width:180px;font-size:0.78rem;color:#c9d1d9;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;}}
+.hbar-label{{width:260px;font-size:0.78rem;color:#c9d1d9;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;display:flex;align-items:center;}}
 .hbar-track{{flex:1;height:14px;background:#21262d;border-radius:3px;overflow:hidden;}}
 .hbar-fill{{height:100%;border-radius:3px;min-width:1px;transition:width 0.3s;}}
 .hbar-count{{width:60px;text-align:right;font-size:0.75rem;color:#8b949e;margin-left:6px;}}
@@ -466,16 +466,16 @@ document.addEventListener('keydown', e => {{ if (e.key === 'Escape') $('#detailP
   $('#nidBars').innerHTML = ns.top_nids.slice(0, 20).map(n => {{
     const w = (n.count / maxCount * 100).toFixed(1);
     const label = n.resolved_name || n.nid_hash;
-    return `<div class="hbar"><div class="hbar-label" title="${{n.nid_hash}} &rarr; ${{label}}">${{trunc(label,24)}}</div><div class="hbar-track"><div class="hbar-fill fill-blue" style="width:${{w}}%"></div></div><div class="hbar-count">${{fmt(n.count)}}</div></div>`;
+    return `<div class="hbar"><div class="hbar-label" title="${{n.nid_hash}} &rarr; ${{label}}"><code style="font-size:0.7rem;color:#8b949e;margin-right:6px">${{n.nid_hash}}</code>${{trunc(label,24)}}</div><div class="hbar-track"><div class="hbar-fill fill-blue" style="width:${{w}}%"></div></div><div class="hbar-count">${{fmt(n.count)}}</div></div>`;
   }}).join('');
 
   const groups = D.library_nid_breakdown;
   $('#libNidBreakdown').innerHTML = groups.map((g, i) => {{
-    const nidRows = g.top_nids.map(n => {{
+      const nidRows = g.top_nids.map(n => {{
       const label = n.resolved_name || n.nid_hash;
       const mc = g.top_nids[0].count;
       const w = mc > 0 ? (n.count / mc * 100).toFixed(1) : '0';
-      return `<div class="hbar"><div class="hbar-label" title="${{n.nid_hash}}">${{trunc(label,24)}}</div><div class="hbar-track"><div class="hbar-fill fill-blue" style="width:${{w}}%"></div></div><div class="hbar-count">${{fmt(n.count)}}</div></div>`;
+      return `<div class="hbar"><div class="hbar-label" title="${{n.nid_hash}}"><code style="font-size:0.7rem;color:#8b949e;margin-right:6px">${{n.nid_hash}}</code>${{trunc(label,24)}}</div><div class="hbar-track"><div class="hbar-fill fill-blue" style="width:${{w}}%"></div></div><div class="hbar-count">${{fmt(n.count)}}</div></div>`;
     }}).join('');
     return `<details style="margin-bottom:8px" ${{i < 5 ? 'open' : ''}}>
       <summary style="cursor:pointer;padding:8px 12px;background:#0d1117;border:1px solid #30363d;border-radius:6px;font-size:0.88rem;color:#c9d1d9">

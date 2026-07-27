@@ -1090,12 +1090,22 @@ fn cmd_dashboard(path: &std::path::Path, output: &PathBuf) {
     let data = ps5_dashboard::data::compute(&ds);
     let html = ps5_dashboard::html::generate_html(&data);
 
-    std::fs::create_dir_all(output).unwrap_or_else(|e| {
-        eprintln!("error: cannot create {}: {e}", output.display());
-        std::process::exit(1);
-    });
+    let out_file = if output.to_string_lossy().ends_with(".html") {
+        if let Some(parent) = output.parent() {
+            std::fs::create_dir_all(parent).unwrap_or_else(|e| {
+                eprintln!("error: cannot create {}: {e}", parent.display());
+                std::process::exit(1);
+            });
+        }
+        output.clone()
+    } else {
+        std::fs::create_dir_all(output).unwrap_or_else(|e| {
+            eprintln!("error: cannot create {}: {e}", output.display());
+            std::process::exit(1);
+        });
+        output.join("index.html")
+    };
 
-    let out_file = output.join("index.html");
     std::fs::write(&out_file, &html).unwrap_or_else(|e| {
         eprintln!("error: cannot write {}: {e}", out_file.display());
         std::process::exit(1);
