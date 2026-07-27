@@ -274,6 +274,9 @@ The CLI ships with an embedded NID database (`data/nids.csv`) containing ~154K h
 
 ## Acknowledgements
 
+### Acelogic 
+Proposed the idea of a NId heatmap on SharpEmu Discord.
+
 ### Prosper (ps5ys)
 
 [Prosper](https://github.com/mattias800/ps5ys) by mattias800 is a user-space PS5 to PC compatibility layer -- think Proton/Wine, but for PS5. It runs PS5 game binaries on Linux and Windows by reimplementing the console's OS, ABI, and GPU stack natively, without CPU emulation. Prosper was the primary inspiration for this project's SELF/ELF parsing approach and NID resolution strategy. Its clean-room reimplementation of Sony's system libraries demonstrates that PS5 binary compatibility is achievable through careful reverse engineering without using any copyrighted Sony code.
