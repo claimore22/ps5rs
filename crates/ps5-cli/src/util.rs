@@ -49,7 +49,9 @@ pub(crate) fn e_version_name(v: u32) -> &'static str {
     }
 }
 
-pub(crate) fn dataset_to_database_real(ds: &ps5_analysis::AnalysisDataset) -> ps5_analysis::AnalysisDatabase {
+pub(crate) fn dataset_to_database_real(
+    ds: &ps5_analysis::AnalysisDataset,
+) -> ps5_analysis::AnalysisDatabase {
     let games: Vec<ps5_analysis::GameAnalysis> = ds
         .images
         .iter()
@@ -68,10 +70,7 @@ pub(crate) fn dataset_to_database_real(ds: &ps5_analysis::AnalysisDataset) -> ps
                 .iter()
                 .map(|imp| ps5_analysis::ImportInfo {
                     nid_hash: imp.nid_hash.clone(),
-                    resolved_name: imp
-                        .resolved_name
-                        .clone()
-                        .unwrap_or_else(|| "?".into()),
+                    resolved_name: imp.resolved_name.clone().unwrap_or_else(|| "?".into()),
                     library_id: imp.library_id,
                     library_name: imp.library_name.clone(),
                 })

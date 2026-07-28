@@ -1,6 +1,6 @@
-use ps5_format::error::{ParseError, Result};
 use crate::{read_u32, read_u64};
 use ps5_format::elf_constants::*;
+use ps5_format::error::{ParseError, Result};
 
 #[derive(Debug, Clone)]
 pub struct ProgramHeader {

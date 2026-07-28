@@ -17,7 +17,8 @@ pub struct LibraryInventory {
 pub fn build_import_inventory(ds: &AnalysisDataset) -> LibraryInventory {
     let mut lib_games: std::collections::HashMap<String, std::collections::HashSet<usize>> =
         std::collections::HashMap::new();
-    let mut lib_imports: std::collections::HashMap<String, usize> = std::collections::HashMap::new();
+    let mut lib_imports: std::collections::HashMap<String, usize> =
+        std::collections::HashMap::new();
 
     for (i, (_, doc)) in ds.images.iter().enumerate() {
         for imp in &doc.image.imports {
@@ -84,10 +85,8 @@ mod tests {
     }
 
     fn tempdir_for_test(label: &str) -> std::path::PathBuf {
-        let dir = std::env::temp_dir().join(format!(
-            "ps5rs_imports_test_{label}_{}",
-            std::process::id()
-        ));
+        let dir =
+            std::env::temp_dir().join(format!("ps5rs_imports_test_{label}_{}", std::process::id()));
         let _ = std::fs::remove_dir_all(&dir);
         dir
     }
@@ -195,21 +194,19 @@ mod tests {
                 ordinal: 0,
             },
         ]);
-        let doc2 = make_doc_with_imports(vec![
-            ImportEntry {
-                nid_hash: "a".into(),
-                resolved_name: None,
-                library_id: 1,
-                library_name: "libA".into(),
-                value: 0,
-                size: 0,
-                shndx: 0,
-                binding: ps5_image::SymbolBinding::Global,
-                sym_type: ps5_image::SymbolType::Func,
-                visibility: ps5_image::SymbolVisibility::Default,
-                ordinal: 0,
-            },
-        ]);
+        let doc2 = make_doc_with_imports(vec![ImportEntry {
+            nid_hash: "a".into(),
+            resolved_name: None,
+            library_id: 1,
+            library_name: "libA".into(),
+            value: 0,
+            size: 0,
+            shndx: 0,
+            binding: ps5_image::SymbolBinding::Global,
+            sym_type: ps5_image::SymbolType::Func,
+            visibility: ps5_image::SymbolVisibility::Default,
+            ordinal: 0,
+        }]);
         make_dataset(&root, vec![doc1, doc2]);
         let ds = AnalysisDataset::open(&root).unwrap();
         let inv = build_import_inventory(&ds);

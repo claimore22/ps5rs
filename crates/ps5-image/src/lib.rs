@@ -476,11 +476,21 @@ pub struct SectionHeader {
 impl SectionHeader {
     pub fn flags_string(flags: u64) -> String {
         let mut s = String::with_capacity(3);
-        if flags & 0x2 != 0 { s.push('A'); } // SHF_ALLOC
-        if flags & 0x1 != 0 { s.push('W'); } // SHF_WRITE
-        if flags & 0x4 != 0 { s.push('X'); } // SHF_EXECINSTR
-        if flags & 0x10 != 0 { s.push('M'); } // SHF_MERGE
-        if flags & 0x20 != 0 { s.push('S'); } // SHF_STRINGS
+        if flags & 0x2 != 0 {
+            s.push('A');
+        } // SHF_ALLOC
+        if flags & 0x1 != 0 {
+            s.push('W');
+        } // SHF_WRITE
+        if flags & 0x4 != 0 {
+            s.push('X');
+        } // SHF_EXECINSTR
+        if flags & 0x10 != 0 {
+            s.push('M');
+        } // SHF_MERGE
+        if flags & 0x20 != 0 {
+            s.push('S');
+        } // SHF_STRINGS
         if s.is_empty() {
             s.push(' ');
         }
@@ -680,7 +690,8 @@ impl<'de> Deserialize<'de> for LoadedSegment {
             }
         }
 
-        let p_paddr = h.p_paddr
+        let p_paddr = h
+            .p_paddr
             .map(|s| hex::parse_u64(&s).map_err(serde::de::Error::custom))
             .transpose()?
             .unwrap_or(0);
@@ -883,12 +894,14 @@ mod tests {
         let symtab = {
             let mut buf = Vec::new();
             buf.extend_from_slice(&0u32.to_le_bytes());
-            buf.push(0); buf.push(0);
+            buf.push(0);
+            buf.push(0);
             buf.extend_from_slice(&0u16.to_le_bytes());
             buf.extend_from_slice(&0u64.to_le_bytes());
             buf.extend_from_slice(&0u64.to_le_bytes());
             buf.extend_from_slice(&1u32.to_le_bytes());
-            buf.push(0); buf.push(0);
+            buf.push(0);
+            buf.push(0);
             buf.extend_from_slice(&0u16.to_le_bytes());
             buf.extend_from_slice(&0u64.to_le_bytes());
             buf.extend_from_slice(&0u64.to_le_bytes());
@@ -896,15 +909,15 @@ mod tests {
         };
 
         let dynamic_entries = {
-            let mut entries = Vec::new();
-            entries.push((DT_STRTAB, 0u64));
-            entries.push((DT_STRSZ, strtab.len() as u64));
-            entries.push((DT_SYMTAB, 0u64));
-            entries.push((DT_SYMENT, 24u64));
-            entries.push((0x6100003Fu64, symtab.len() as u64));
-            entries.push((0x61000049u64, 9 | (0u64 << 48)));
-            entries.push((0u64, 0u64));
-            entries
+            vec![
+                (DT_STRTAB, 0u64),
+                (DT_STRSZ, strtab.len() as u64),
+                (DT_SYMTAB, 0u64),
+                (DT_SYMENT, 24u64),
+                (0x6100003Fu64, symtab.len() as u64),
+                (0x61000049u64, 9),
+                (0u64, 0u64),
+            ]
         };
 
         let dyn_byte_size = dynamic_entries.len() * 16;
@@ -914,7 +927,9 @@ mod tests {
 
         let dynamic = {
             let mut buf = Vec::new();
-            let write_u64 = |buf: &mut Vec<u8>, v: u64| { buf.extend_from_slice(&v.to_le_bytes()); };
+            let write_u64 = |buf: &mut Vec<u8>, v: u64| {
+                buf.extend_from_slice(&v.to_le_bytes());
+            };
             write_u64(&mut buf, DT_STRTAB);
             write_u64(&mut buf, strtab_vaddr);
             write_u64(&mut buf, DT_STRSZ);
@@ -926,7 +941,7 @@ mod tests {
             write_u64(&mut buf, 0x6100003F);
             write_u64(&mut buf, symtab.len() as u64);
             write_u64(&mut buf, 0x61000049);
-            write_u64(&mut buf, 9 | (0u64 << 48));
+            write_u64(&mut buf, 9);
             write_u64(&mut buf, 0);
             write_u64(&mut buf, 0);
             buf
@@ -1010,10 +1025,22 @@ mod tests {
 
     #[test]
     fn platform_from_self() {
-        assert_eq!(Platform::from_self(ps5_self::SelfPlatform::Ps5), Platform::Ps5);
-        assert_eq!(Platform::from_self(ps5_self::SelfPlatform::Ps4), Platform::Ps4);
-        assert_eq!(Platform::from_self(ps5_self::SelfPlatform::RawElf), Platform::RawElf);
-        assert_eq!(Platform::from_self(ps5_self::SelfPlatform::Unknown(99)), Platform::Unknown);
+        assert_eq!(
+            Platform::from_self(ps5_self::SelfPlatform::Ps5),
+            Platform::Ps5
+        );
+        assert_eq!(
+            Platform::from_self(ps5_self::SelfPlatform::Ps4),
+            Platform::Ps4
+        );
+        assert_eq!(
+            Platform::from_self(ps5_self::SelfPlatform::RawElf),
+            Platform::RawElf
+        );
+        assert_eq!(
+            Platform::from_self(ps5_self::SelfPlatform::Unknown(99)),
+            Platform::Unknown
+        );
     }
 
     #[test]
@@ -1042,9 +1069,10 @@ mod tests {
         assert_eq!(img.entry_point, 0x1000);
         assert!(img.segments.len() >= 2);
 
-        let dyn_seg = img.segments.iter().find(|s| {
-            s.vaddr == 0x1000 && s.filesz < 200
-        });
+        let dyn_seg = img
+            .segments
+            .iter()
+            .find(|s| s.vaddr == 0x1000 && s.filesz < 200);
         assert!(dyn_seg.is_some(), "should have DYNAMIC segment");
 
         assert_eq!(img.imports.len(), 1);
@@ -1206,7 +1234,8 @@ mod tests {
 
     #[test]
     fn relocation_backward_compat_r_type() {
-        let json = r#"{"offset":"0x1000","addend":"0x0","r_type":7,"symbol_index":3,"is_plt":true}"#;
+        let json =
+            r#"{"offset":"0x1000","addend":"0x0","r_type":7,"symbol_index":3,"is_plt":true}"#;
         let rel: RelocationEntry = serde_json::from_str(json).unwrap();
         assert_eq!(rel.kind, RelocationKind::JumpSlot);
         assert_eq!(rel.symbol_index, 3);
@@ -1236,7 +1265,10 @@ mod tests {
     fn dynamic_entry_tag_names() {
         assert_eq!(DynamicEntry::tag_name(0), Some("DT_NULL"));
         assert_eq!(DynamicEntry::tag_name(1), Some("DT_NEEDED"));
-        assert_eq!(DynamicEntry::tag_name(0x61000049), Some("DT_SCE_NEEDED_LIB"));
+        assert_eq!(
+            DynamicEntry::tag_name(0x61000049),
+            Some("DT_SCE_NEEDED_LIB")
+        );
         assert_eq!(DynamicEntry::tag_name(0xDEAD), None);
     }
 

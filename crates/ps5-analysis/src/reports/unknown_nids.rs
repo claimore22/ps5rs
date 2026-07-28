@@ -18,7 +18,14 @@ pub struct UnknownNidReport {
 }
 
 pub fn build_unknown_nids(ds: &AnalysisDataset) -> UnknownNidReport {
-    let mut nid_data: HashMap<String, (usize, std::collections::HashSet<String>, std::collections::HashSet<String>)> = HashMap::new();
+    let mut nid_data: HashMap<
+        String,
+        (
+            usize,
+            std::collections::HashSet<String>,
+            std::collections::HashSet<String>,
+        ),
+    > = HashMap::new();
     let mut total_unknown = 0usize;
     let total_imports = ds.total_imports();
 
@@ -26,9 +33,13 @@ pub fn build_unknown_nids(ds: &AnalysisDataset) -> UnknownNidReport {
         for imp in &doc.image.imports {
             if imp.resolved_name.is_none() {
                 total_unknown += 1;
-                let entry = nid_data
-                    .entry(imp.nid_hash.clone())
-                    .or_insert_with(|| (0, std::collections::HashSet::new(), std::collections::HashSet::new()));
+                let entry = nid_data.entry(imp.nid_hash.clone()).or_insert_with(|| {
+                    (
+                        0,
+                        std::collections::HashSet::new(),
+                        std::collections::HashSet::new(),
+                    )
+                });
                 entry.0 += 1;
                 entry.1.insert(imp.library_name.clone());
                 entry.2.insert(name.clone());
@@ -100,10 +111,8 @@ mod tests {
     }
 
     fn tempdir_for_test(label: &str) -> std::path::PathBuf {
-        let dir = std::env::temp_dir().join(format!(
-            "ps5rs_unknown_test_{label}_{}",
-            std::process::id()
-        ));
+        let dir =
+            std::env::temp_dir().join(format!("ps5rs_unknown_test_{label}_{}", std::process::id()));
         let _ = std::fs::remove_dir_all(&dir);
         dir
     }
@@ -132,7 +141,7 @@ mod tests {
     fn unknown_empty_when_all_resolved() {
         let root = tempdir_for_test("all_resolved");
         let doc = make_doc(
-            vec![            ImportEntry {
+            vec![ImportEntry {
                 nid_hash: "aaa".into(),
                 resolved_name: Some("funcA".into()),
                 library_id: 1,
@@ -160,7 +169,7 @@ mod tests {
     fn unknown_single_nid() {
         let root = tempdir_for_test("single_nid");
         let doc = make_doc(
-            vec![            ImportEntry {
+            vec![ImportEntry {
                 nid_hash: "deadbeef".into(),
                 resolved_name: None,
                 library_id: 1,

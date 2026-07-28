@@ -1,3 +1,5 @@
+#![allow(clippy::identity_op)]
+
 use super::*;
 use ps5_format::elf_constants::*;
 
@@ -140,9 +142,11 @@ fn parse_raw_elf() {
     let dynamic = build_dynamic_entries(&[(DT_STRTAB, 0x1200), (DT_STRSZ, 0x10)]);
     data[0..dynamic.len()].copy_from_slice(&dynamic);
 
-    let elf = build_elf_bytes(0x1000, &[
-        (PT_LOAD, PF_R | PF_X, 0x1000, 0x1000, 0x200, 0x200),
-    ], &data);
+    let elf = build_elf_bytes(
+        0x1000,
+        &[(PT_LOAD, PF_R | PF_X, 0x1000, 0x1000, 0x200, 0x200)],
+        &data,
+    );
 
     let img = SelfImage::parse(&elf).unwrap();
     assert_eq!(img.platform, SelfPlatform::RawElf);
@@ -158,14 +162,14 @@ fn parse_ps4_self_single_segment() {
     let dynamic = build_dynamic_entries(&[(DT_STRTAB, 0x1200), (DT_STRSZ, 0x10)]);
     elf_data[0..dynamic.len()].copy_from_slice(&dynamic);
 
-    let elf = build_elf_bytes(0x1000, &[
-        (PT_LOAD, PF_R | PF_X, 0x1000, 0x1000, 0x400, 0x400),
-    ], &elf_data);
+    let elf = build_elf_bytes(
+        0x1000,
+        &[(PT_LOAD, PF_R | PF_X, 0x1000, 0x1000, 0x400, 0x400)],
+        &elf_data,
+    );
 
     let elf_base: u64 = (32 + 1 * 32) as u64;
-    let segments = vec![
-        (0u64 << 20 | SELF_SEGMENT_FLAG_DATA, elf_base, 0x400, 0x400),
-    ];
+    let segments = vec![(0u64 << 20 | SELF_SEGMENT_FLAG_DATA, elf_base, 0x400, 0x400)];
 
     let self_data = build_self(SELF_MAGIC_PS4, &segments, &elf);
     let img = SelfImage::parse(&self_data).unwrap();
@@ -182,14 +186,14 @@ fn parse_ps4_self_single_segment() {
 #[test]
 fn parse_ps5_self() {
     let elf_data = vec![0u8; 0x100];
-    let elf = build_elf_bytes(0x1000, &[
-        (PT_LOAD, PF_R | PF_X, 0x1000, 0x1000, 0x100, 0x100),
-    ], &elf_data);
+    let elf = build_elf_bytes(
+        0x1000,
+        &[(PT_LOAD, PF_R | PF_X, 0x1000, 0x1000, 0x100, 0x100)],
+        &elf_data,
+    );
 
     let elf_base: u64 = (32 + 1 * 32) as u64;
-    let segments = vec![
-        (0u64 << 20 | SELF_SEGMENT_FLAG_DATA, elf_base, 0x100, 0x100),
-    ];
+    let segments = vec![(0u64 << 20 | SELF_SEGMENT_FLAG_DATA, elf_base, 0x100, 0x100)];
 
     let self_data = build_self(SELF_MAGIC_PS5, &segments, &elf);
     let img = SelfImage::parse(&self_data).unwrap();
@@ -199,9 +203,11 @@ fn parse_ps5_self() {
 
 #[test]
 fn parse_self_multiple_segments() {
-    let elf = build_elf_bytes(0x1000, &[
-        (PT_LOAD, PF_R, 0x1000, 0x1000, 0x100, 0x100),
-    ], &vec![0u8; 0x100]);
+    let elf = build_elf_bytes(
+        0x1000,
+        &[(PT_LOAD, PF_R, 0x1000, 0x1000, 0x100, 0x100)],
+        &vec![0u8; 0x100],
+    );
 
     let elf_base: u64 = (32 + 2 * 32) as u64;
     let segments = vec![

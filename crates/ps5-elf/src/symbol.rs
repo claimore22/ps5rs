@@ -1,5 +1,5 @@
+use crate::{read_u16, read_u32, read_u64};
 use ps5_format::error::Result;
-use crate::{read_u32, read_u16, read_u64};
 
 #[derive(Debug, Clone)]
 pub struct SymEntry {

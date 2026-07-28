@@ -7,7 +7,11 @@ pub fn build_heatmap(db: &AnalysisDatabase) -> LibraryHeatmap {
     let mut seen_games: std::collections::HashSet<String> = std::collections::HashSet::new();
 
     for game in &db.games {
-        let gname = game.display_name.as_deref().unwrap_or(&game.name).to_string();
+        let gname = game
+            .display_name
+            .as_deref()
+            .unwrap_or(&game.name)
+            .to_string();
         if !seen_games.contains(&gname) {
             all_games.push(gname.clone());
             seen_games.insert(gname.clone());
@@ -27,7 +31,8 @@ pub fn build_heatmap(db: &AnalysisDatabase) -> LibraryHeatmap {
 
     let mut matrix = Vec::with_capacity(lib_names.len());
     for lib in &lib_names {
-        let row: Vec<usize> = all_games.iter()
+        let row: Vec<usize> = all_games
+            .iter()
             .map(|game| lib_game_counts[lib].get(game).copied().unwrap_or(0))
             .collect();
         matrix.push(row);
@@ -43,7 +48,7 @@ pub fn build_heatmap(db: &AnalysisDatabase) -> LibraryHeatmap {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::model::{make_game, make_db, make_import};
+    use crate::model::{make_db, make_game, make_import};
 
     #[test]
     fn heatmap_empty() {
@@ -56,12 +61,13 @@ mod tests {
 
     #[test]
     fn heatmap_single_game_single_lib() {
-        let db = make_db(vec![
-            make_game("GameA", vec![
+        let db = make_db(vec![make_game(
+            "GameA",
+            vec![
                 make_import("aaa", "fA", 1, "libA"),
                 make_import("bbb", "fB", 1, "libA"),
-            ]),
-        ]);
+            ],
+        )]);
         let h = build_heatmap(&db);
         assert_eq!(h.games, vec!["GameA"]);
         assert_eq!(h.libraries, vec!["libA"]);
@@ -71,14 +77,20 @@ mod tests {
     #[test]
     fn heatmap_multi_game_multi_lib() {
         let db = make_db(vec![
-            make_game("GameA", vec![
-                make_import("aaa", "fA", 1, "libA"),
-                make_import("bbb", "fB", 2, "libB"),
-            ]),
-            make_game("GameB", vec![
-                make_import("aaa", "fA", 1, "libA"),
-                make_import("ccc", "fC", 1, "libA"),
-            ]),
+            make_game(
+                "GameA",
+                vec![
+                    make_import("aaa", "fA", 1, "libA"),
+                    make_import("bbb", "fB", 2, "libB"),
+                ],
+            ),
+            make_game(
+                "GameB",
+                vec![
+                    make_import("aaa", "fA", 1, "libA"),
+                    make_import("ccc", "fC", 1, "libA"),
+                ],
+            ),
         ]);
         let h = build_heatmap(&db);
         assert_eq!(h.games, vec!["GameA", "GameB"]);
@@ -91,12 +103,8 @@ mod tests {
     #[test]
     fn heatmap_game_not_in_lib() {
         let db = make_db(vec![
-            make_game("GameA", vec![
-                make_import("aaa", "fA", 1, "libX"),
-            ]),
-            make_game("GameB", vec![
-                make_import("bbb", "fB", 2, "libY"),
-            ]),
+            make_game("GameA", vec![make_import("aaa", "fA", 1, "libX")]),
+            make_game("GameB", vec![make_import("bbb", "fB", 2, "libY")]),
         ]);
         let h = build_heatmap(&db);
         assert_eq!(h.games, vec!["GameA", "GameB"]);
@@ -106,13 +114,14 @@ mod tests {
 
     #[test]
     fn heatmap_libraries_sorted() {
-        let db = make_db(vec![
-            make_game("GameA", vec![
+        let db = make_db(vec![make_game(
+            "GameA",
+            vec![
                 make_import("a", "f", 3, "libC"),
                 make_import("b", "f", 1, "libA"),
                 make_import("c", "f", 2, "libB"),
-            ]),
-        ]);
+            ],
+        )]);
         let h = build_heatmap(&db);
         assert_eq!(h.libraries, vec!["libA", "libB", "libC"]);
     }

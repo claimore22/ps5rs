@@ -1,6 +1,6 @@
 use crate::model::*;
-use ps5_nid::Catalog;
 use ps5_image::{BinaryImageBuilder, Platform as ImagePlatform};
+use ps5_nid::Catalog;
 use std::path::{Path, PathBuf};
 
 #[derive(Default)]
@@ -60,12 +60,15 @@ fn find_binaries(game_dir: &Path, options: &CollectorOptions) -> Vec<PathBuf> {
     if options.include_prx {
         result
     } else {
-        result.into_iter().filter(|p| {
-            p.file_name()
-                .and_then(|n| n.to_str())
-                .map(|n| n.eq_ignore_ascii_case("eboot.bin"))
-                .unwrap_or(false)
-        }).collect()
+        result
+            .into_iter()
+            .filter(|p| {
+                p.file_name()
+                    .and_then(|n| n.to_str())
+                    .map(|n| n.eq_ignore_ascii_case("eboot.bin"))
+                    .unwrap_or(false)
+            })
+            .collect()
     }
 }
 
@@ -83,7 +86,9 @@ fn analyze_binary(path: &Path, catalog: &Catalog, game_dir: &Path) -> Option<Gam
         ImagePlatform::Unknown => Platform::Unknown,
     };
 
-    let imports: Vec<ImportInfo> = image.imports.iter()
+    let imports: Vec<ImportInfo> = image
+        .imports
+        .iter()
         .map(|imp| ImportInfo {
             nid_hash: imp.nid_hash.clone(),
             resolved_name: imp.resolved_name.clone().unwrap_or_else(|| "?".into()),
@@ -92,17 +97,22 @@ fn analyze_binary(path: &Path, catalog: &Catalog, game_dir: &Path) -> Option<Gam
         })
         .collect();
 
-    let import_libs: Vec<LibInfo> = image.import_libs.iter()
-        .map(|(id, name)| LibInfo { id: *id, name: name.clone() })
+    let import_libs: Vec<LibInfo> = image
+        .import_libs
+        .iter()
+        .map(|(id, name)| LibInfo {
+            id: *id,
+            name: name.clone(),
+        })
         .collect();
 
-    let game_name = game_dir.file_name()
+    let game_name = game_dir
+        .file_name()
         .and_then(|n| n.to_str())
         .unwrap_or("unknown")
         .to_string();
 
-    let display_name = crate::param_json::read_param(game_dir)
-        .and_then(|p| p.display_name);
+    let display_name = crate::param_json::read_param(game_dir).and_then(|p| p.display_name);
 
     Some(GameAnalysis {
         name: game_name,
@@ -139,7 +149,14 @@ mod tests {
         let opts = CollectorOptions { include_prx: false };
         let bins = find_binaries(&game_dir, &opts);
         assert_eq!(bins.len(), 1);
-        assert!(bins[0].file_name().unwrap().to_str().unwrap().eq_ignore_ascii_case("eboot.bin"));
+        assert!(
+            bins[0]
+                .file_name()
+                .unwrap()
+                .to_str()
+                .unwrap()
+                .eq_ignore_ascii_case("eboot.bin")
+        );
     }
 
     #[test]

@@ -8,7 +8,11 @@ pub fn build_graph(db: &AnalysisDatabase, include_nids: bool) -> DependencyGraph
     let mut edges: Vec<GraphEdge> = Vec::new();
 
     for game in &db.games {
-        let gname = game.display_name.as_deref().unwrap_or(&game.name).to_string();
+        let gname = game
+            .display_name
+            .as_deref()
+            .unwrap_or(&game.name)
+            .to_string();
         game_nodes.push(gname.clone());
 
         let mut lib_counts: HashMap<String, usize> = HashMap::new();
@@ -45,7 +49,9 @@ pub fn build_graph(db: &AnalysisDatabase, include_nids: bool) -> DependencyGraph
         for game in &db.games {
             for imp in &game.imports {
                 if imp.resolved_name != "?" {
-                    *nid_lib_counts.entry((imp.library_name.clone(), imp.resolved_name.clone())).or_insert(0) += 1;
+                    *nid_lib_counts
+                        .entry((imp.library_name.clone(), imp.resolved_name.clone()))
+                        .or_insert(0) += 1;
                 }
             }
         }
@@ -58,13 +64,17 @@ pub fn build_graph(db: &AnalysisDatabase, include_nids: bool) -> DependencyGraph
         }
     }
 
-    DependencyGraph { game_nodes, lib_nodes, edges }
+    DependencyGraph {
+        game_nodes,
+        lib_nodes,
+        edges,
+    }
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::model::{make_game, make_db, make_import};
+    use crate::model::{make_db, make_game, make_import};
 
     #[test]
     fn graph_empty() {
@@ -77,12 +87,13 @@ mod tests {
 
     #[test]
     fn graph_single_game_single_lib() {
-        let db = make_db(vec![
-            make_game("GameA", vec![
+        let db = make_db(vec![make_game(
+            "GameA",
+            vec![
                 make_import("aaa", "funcA", 1, "libA"),
                 make_import("bbb", "funcB", 1, "libA"),
-            ]),
-        ]);
+            ],
+        )]);
         let g = build_graph(&db, false);
         assert_eq!(g.game_nodes, vec!["GameA"]);
         assert_eq!(g.lib_nodes, vec!["libA"]);
@@ -95,13 +106,14 @@ mod tests {
     #[test]
     fn graph_multi_game_multi_lib() {
         let db = make_db(vec![
-            make_game("GameA", vec![
-                make_import("aaa", "funcA", 1, "libA"),
-                make_import("bbb", "funcB", 2, "libB"),
-            ]),
-            make_game("GameB", vec![
-                make_import("aaa", "funcA", 1, "libA"),
-            ]),
+            make_game(
+                "GameA",
+                vec![
+                    make_import("aaa", "funcA", 1, "libA"),
+                    make_import("bbb", "funcB", 2, "libB"),
+                ],
+            ),
+            make_game("GameB", vec![make_import("aaa", "funcA", 1, "libA")]),
         ]);
         let g = build_graph(&db, false);
         assert_eq!(g.game_nodes.len(), 2);
@@ -117,24 +129,24 @@ mod tests {
 
     #[test]
     fn graph_lib_nodes_sorted() {
-        let db = make_db(vec![
-            make_game("GameA", vec![
+        let db = make_db(vec![make_game(
+            "GameA",
+            vec![
                 make_import("a", "f", 3, "libC"),
                 make_import("b", "f", 1, "libA"),
                 make_import("c", "f", 2, "libB"),
-            ]),
-        ]);
+            ],
+        )]);
         let g = build_graph(&db, false);
         assert_eq!(g.lib_nodes, vec!["libA", "libB", "libC"]);
     }
 
     #[test]
     fn graph_with_nids() {
-        let db = make_db(vec![
-            make_game("GameA", vec![
-                make_import("aaa", "funcA", 1, "libA"),
-            ]),
-        ]);
+        let db = make_db(vec![make_game(
+            "GameA",
+            vec![make_import("aaa", "funcA", 1, "libA")],
+        )]);
         let g = build_graph(&db, true);
         assert_eq!(g.game_nodes, vec!["GameA"]);
         assert_eq!(g.lib_nodes, vec!["libA"]);
@@ -149,11 +161,10 @@ mod tests {
 
     #[test]
     fn graph_without_nids_no_nid_edges() {
-        let db = make_db(vec![
-            make_game("GameA", vec![
-                make_import("aaa", "funcA", 1, "libA"),
-            ]),
-        ]);
+        let db = make_db(vec![make_game(
+            "GameA",
+            vec![make_import("aaa", "funcA", 1, "libA")],
+        )]);
         let g = build_graph(&db, false);
         // Only GameA -> libA, no libA -> funcA
         let lib_edge = g.edges.iter().find(|e| e.from == "libA" && e.to == "funcA");
@@ -162,11 +173,10 @@ mod tests {
 
     #[test]
     fn graph_unresolved_nid_not_in_nid_edges() {
-        let db = make_db(vec![
-            make_game("GameA", vec![
-                make_import("aaa", "?", 1, "libA"),
-            ]),
-        ]);
+        let db = make_db(vec![make_game(
+            "GameA",
+            vec![make_import("aaa", "?", 1, "libA")],
+        )]);
         let g = build_graph(&db, true);
         // No libA -> ? edge
         let bad_edge = g.edges.iter().find(|e| e.to == "?");

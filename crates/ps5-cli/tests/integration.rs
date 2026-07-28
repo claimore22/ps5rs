@@ -43,7 +43,9 @@ fn parse_and_analyze(data: &[u8]) -> (u64, usize, bool, usize, usize, Vec<String
         } else {
             "?".to_string()
         };
-        *lib_counts.entry(format!("{lib_name}: {resolved}")).or_insert(0) += 1;
+        *lib_counts
+            .entry(format!("{lib_name}: {resolved}"))
+            .or_insert(0) += 1;
     }
 
     let mut libs: Vec<String> = elf.import_libs.values().cloned().collect();
@@ -79,20 +81,32 @@ fn parse_first_game_in_directory() {
             continue;
         };
         let data = std::fs::read(&eboot).expect("read eboot");
-        let (entry_point, num_segments, has_tls, num_imports, num_relocs, libs) = parse_and_analyze(&data);
+        let (entry_point, num_segments, has_tls, num_imports, num_relocs, libs) =
+            parse_and_analyze(&data);
 
         assert!(entry_point > 0, "entry point should be non-zero");
         assert!(num_segments > 0, "should have segments");
         assert!(num_imports > 0, "should have imports");
 
-        println!("{}: entry={:#x} segments={} tls={} imports={} relocs={} libs={:?}",
-            eboot.display(), entry_point, num_segments, has_tls, num_imports, num_relocs, libs);
+        println!(
+            "{}: entry={:#x} segments={} tls={} imports={} relocs={} libs={:?}",
+            eboot.display(),
+            entry_point,
+            num_segments,
+            has_tls,
+            num_imports,
+            num_relocs,
+            libs
+        );
 
         found = true;
         break;
     }
 
     if !found {
-        eprintln!("SKIP: no game directories with eboot.bin found under {}", base.display());
+        eprintln!(
+            "SKIP: no game directories with eboot.bin found under {}",
+            base.display()
+        );
     }
 }

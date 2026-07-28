@@ -1,6 +1,6 @@
+use crate::SelfImage;
 use ps5_format::elf_constants::*;
 use ps5_format::error::{ParseError, Result};
-use crate::SelfImage;
 
 pub struct ExtractResult {
     pub elf: Vec<u8>,
@@ -15,8 +15,12 @@ pub fn extract_elf(data: &[u8]) -> Result<ExtractResult> {
     let mut encrypted_segments = 0usize;
     let mut compressed_segments = 0usize;
     for seg in &img.segments {
-        if seg.is_encrypted() { encrypted_segments += 1; }
-        if seg.is_compressed() { compressed_segments += 1; }
+        if seg.is_encrypted() {
+            encrypted_segments += 1;
+        }
+        if seg.is_compressed() {
+            compressed_segments += 1;
+        }
     }
 
     if !img.is_self() {
@@ -35,7 +39,9 @@ pub fn extract_elf(data: &[u8]) -> Result<ExtractResult> {
 
     let mut phdr_file_offsets = vec![0u64; phdr_count];
     for seg in &img.segments {
-        if !seg.is_data() { continue; }
+        if !seg.is_data() {
+            continue;
+        }
         let idx = seg.phdr_index() as usize;
         if idx < phdr_count {
             phdr_file_offsets[idx] = seg.file_offset.saturating_sub(elf_base as u64);
@@ -107,16 +113,29 @@ pub fn extract_elf(data: &[u8]) -> Result<ExtractResult> {
 }
 
 #[cfg(test)]
+#[allow(clippy::identity_op)]
 mod tests {
     use super::*;
     use ps5_format::self_constants::*;
 
-    fn wu16(buf: &mut Vec<u8>, v: u16) { buf.extend_from_slice(&v.to_le_bytes()); }
-    fn wu32(buf: &mut Vec<u8>, v: u32) { buf.extend_from_slice(&v.to_le_bytes()); }
-    fn wu64(buf: &mut Vec<u8>, v: u64) { buf.extend_from_slice(&v.to_le_bytes()); }
-    fn wu16_at(buf: &mut [u8], off: usize, v: u16) { buf[off..off+2].copy_from_slice(&v.to_le_bytes()); }
-    fn wu32_at(buf: &mut [u8], off: usize, v: u32) { buf[off..off+4].copy_from_slice(&v.to_le_bytes()); }
-    fn wu64_at(buf: &mut [u8], off: usize, v: u64) { buf[off..off+8].copy_from_slice(&v.to_le_bytes()); }
+    fn wu16(buf: &mut Vec<u8>, v: u16) {
+        buf.extend_from_slice(&v.to_le_bytes());
+    }
+    fn wu32(buf: &mut Vec<u8>, v: u32) {
+        buf.extend_from_slice(&v.to_le_bytes());
+    }
+    fn wu64(buf: &mut Vec<u8>, v: u64) {
+        buf.extend_from_slice(&v.to_le_bytes());
+    }
+    fn wu16_at(buf: &mut [u8], off: usize, v: u16) {
+        buf[off..off + 2].copy_from_slice(&v.to_le_bytes());
+    }
+    fn wu32_at(buf: &mut [u8], off: usize, v: u32) {
+        buf[off..off + 4].copy_from_slice(&v.to_le_bytes());
+    }
+    fn wu64_at(buf: &mut [u8], off: usize, v: u64) {
+        buf[off..off + 8].copy_from_slice(&v.to_le_bytes());
+    }
 
     fn build_dynamic_entries(entries: &[(u64, u64)]) -> Vec<u8> {
         let mut buf = Vec::new();
@@ -147,7 +166,9 @@ mod tests {
         wu16_at(&mut file, 54, 56);
         wu16_at(&mut file, 56, phdrs.len() as u16);
 
-        for (i, &(p_type, p_flags, p_offset, p_vaddr, p_filesz, p_memsz)) in phdrs.iter().enumerate() {
+        for (i, &(p_type, p_flags, p_offset, p_vaddr, p_filesz, p_memsz)) in
+            phdrs.iter().enumerate()
+        {
             let off = 64 + i * 56;
             wu32_at(&mut file, off, p_type);
             wu32_at(&mut file, off + 4, p_flags);
@@ -196,9 +217,11 @@ mod tests {
         let mut data = vec![0u8; 0x200];
         data[0..dynamic.len()].copy_from_slice(&dynamic);
 
-        let elf = build_elf(0x1000, &[
-            (PT_LOAD, PF_R | PF_X, 0x1000, 0x1000, 0x200, 0x200),
-        ], &data);
+        let elf = build_elf(
+            0x1000,
+            &[(PT_LOAD, PF_R | PF_X, 0x1000, 0x1000, 0x200, 0x200)],
+            &data,
+        );
 
         let result = extract_elf(&elf).unwrap();
         assert!(!result.was_self);
@@ -211,15 +234,20 @@ mod tests {
     fn self_single_load_segment() {
         let load_data = vec![0xAA; 0x100];
 
-        let elf = build_elf(0x1000, &[
-            (PT_LOAD, PF_R | PF_X, 0x1000, 0x1000, 0x100, 0x100),
-        ], &load_data);
+        let elf = build_elf(
+            0x1000,
+            &[(PT_LOAD, PF_R | PF_X, 0x1000, 0x1000, 0x100, 0x100)],
+            &load_data,
+        );
 
         let elf_base: u64 = (32 + 1 * 32) as u64;
         let data_offset = elf_base + 0x1000;
-        let segments = vec![
-            (0u64 << 20 | SELF_SEGMENT_FLAG_DATA, data_offset, 0x100, 0x100),
-        ];
+        let segments = vec![(
+            0u64 << 20 | SELF_SEGMENT_FLAG_DATA,
+            data_offset,
+            0x100,
+            0x100,
+        )];
 
         let self_data = build_self(SELF_MAGIC_PS5, &segments, &elf);
         let result = extract_elf(&self_data).unwrap();
@@ -241,17 +269,31 @@ mod tests {
         let code = vec![0xCC; 0x200];
         let data_seg = vec![0xDD; 0x100];
 
-        let elf = build_elf(0x1000, &[
-            (PT_LOAD, PF_R | PF_X, 0x1000, 0x80001000, 0x200, 0x200),
-            (PT_LOAD, PF_R | PF_W, 0x1200, 0x80501000, 0x100, 0x200),
-        ], &[code.as_slice(), data_seg.as_slice()].concat());
+        let elf = build_elf(
+            0x1000,
+            &[
+                (PT_LOAD, PF_R | PF_X, 0x1000, 0x80001000, 0x200, 0x200),
+                (PT_LOAD, PF_R | PF_W, 0x1200, 0x80501000, 0x100, 0x200),
+            ],
+            &[code.as_slice(), data_seg.as_slice()].concat(),
+        );
 
         let elf_base: u64 = (32 + 2 * 32) as u64;
         let code_offset = elf_base + 0x1000;
         let data_offset = elf_base + 0x1200;
         let segments = vec![
-            (0u64 << 20 | SELF_SEGMENT_FLAG_DATA, code_offset, 0x200, 0x200),
-            (1u64 << 20 | SELF_SEGMENT_FLAG_DATA, data_offset, 0x100, 0x200),
+            (
+                0u64 << 20 | SELF_SEGMENT_FLAG_DATA,
+                code_offset,
+                0x200,
+                0x200,
+            ),
+            (
+                1u64 << 20 | SELF_SEGMENT_FLAG_DATA,
+                data_offset,
+                0x100,
+                0x200,
+            ),
         ];
 
         let self_data = build_self(SELF_MAGIC_PS5, &segments, &elf);
@@ -272,15 +314,20 @@ mod tests {
         elf_payload.resize(0x200, 0);
         elf_payload.extend_from_slice(&load_data);
 
-        let elf = build_elf(0x1000, &[
-            (PT_LOAD, PF_R | PF_X, 0x1000, 0x1000, 0x100, 0x100),
-        ], &elf_payload);
+        let elf = build_elf(
+            0x1000,
+            &[(PT_LOAD, PF_R | PF_X, 0x1000, 0x1000, 0x100, 0x100)],
+            &elf_payload,
+        );
 
         let elf_base: u64 = (32 + 1 * 32) as u64;
         let data_offset = elf_base + 0x1000;
-        let segments = vec![
-            (SELF_SEGMENT_FLAG_ENCRYPTED | SELF_SEGMENT_FLAG_DATA, data_offset, 0x100, 0x100),
-        ];
+        let segments = vec![(
+            SELF_SEGMENT_FLAG_ENCRYPTED | SELF_SEGMENT_FLAG_DATA,
+            data_offset,
+            0x100,
+            0x100,
+        )];
 
         let self_data = build_self(SELF_MAGIC_PS5, &segments, &elf);
         let result = extract_elf(&self_data).unwrap();
@@ -303,28 +350,46 @@ mod tests {
     #[test]
     fn self_embedded_dynamic_not_corrupted() {
         let strtab_vaddr = 0x1200u64;
-        let dynamic = build_dynamic_entries(&[
-            (DT_STRTAB, strtab_vaddr),
-            (DT_STRSZ, 0x10),
-            (DT_NEEDED, 1),
-        ]);
+        let dynamic =
+            build_dynamic_entries(&[(DT_STRTAB, strtab_vaddr), (DT_STRSZ, 0x10), (DT_NEEDED, 1)]);
         let dyn_len = dynamic.len();
 
         let mut load_data = Vec::new();
         load_data.extend_from_slice(&dynamic);
         load_data.resize(dyn_len.next_multiple_of(16), 0);
 
-        let elf = build_elf(0x80001000, &[
-            (PT_LOAD, PF_R | PF_W, 0x1000, 0x80001000, load_data.len() as u64, load_data.len() as u64),
-            (PT_DYNAMIC, PF_R, 0x1000, 0x80001000, dyn_len as u64, dyn_len as u64),
-            (PT_TLS, PF_R, 0x1000, 0x80002000, 0, 0x100),
-        ], &load_data);
+        let elf = build_elf(
+            0x80001000,
+            &[
+                (
+                    PT_LOAD,
+                    PF_R | PF_W,
+                    0x1000,
+                    0x80001000,
+                    load_data.len() as u64,
+                    load_data.len() as u64,
+                ),
+                (
+                    PT_DYNAMIC,
+                    PF_R,
+                    0x1000,
+                    0x80001000,
+                    dyn_len as u64,
+                    dyn_len as u64,
+                ),
+                (PT_TLS, PF_R, 0x1000, 0x80002000, 0, 0x100),
+            ],
+            &load_data,
+        );
 
         let elf_base: u64 = (32 + 1 * 32) as u64;
         let data_offset = elf_base + 0x1000;
-        let segments = vec![
-            (0u64 << 20 | SELF_SEGMENT_FLAG_DATA, data_offset, load_data.len() as u64, load_data.len() as u64),
-        ];
+        let segments = vec![(
+            0u64 << 20 | SELF_SEGMENT_FLAG_DATA,
+            data_offset,
+            load_data.len() as u64,
+            load_data.len() as u64,
+        )];
 
         let self_data = build_self(SELF_MAGIC_PS5, &segments, &elf);
         let result = extract_elf(&self_data).unwrap();
@@ -333,7 +398,11 @@ mod tests {
         let parsed = ps5_elf::ElfImage::parse(&result.elf, None).unwrap();
 
         // Find DYNAMIC segment offset in extracted ELF
-        let dyn_ph = parsed.program_headers.iter().find(|ph| ph.p_type == PT_DYNAMIC).unwrap();
+        let dyn_ph = parsed
+            .program_headers
+            .iter()
+            .find(|ph| ph.p_type == PT_DYNAMIC)
+            .unwrap();
         let dyn_offset = dyn_ph.p_offset as usize;
         let dyn_size = dyn_ph.p_filesz as usize;
         let dynamic_bytes = &result.elf[dyn_offset..dyn_offset + dyn_size];
@@ -372,16 +441,37 @@ mod tests {
         load_data.extend_from_slice(&strtab);
         load_data.resize(0x400, 0);
 
-        let elf = build_elf(0x80001000, &[
-            (PT_LOAD, PF_R | PF_X, 0x1000, 0x80001000, 0x400, 0x400),
-            (PT_DYNAMIC, PF_R, 0x1000, 0x80001000, dynamic.len() as u64, dynamic.len() as u64),
-        ], &load_data);
+        let elf = build_elf(
+            0x80001000,
+            &[
+                (PT_LOAD, PF_R | PF_X, 0x1000, 0x80001000, 0x400, 0x400),
+                (
+                    PT_DYNAMIC,
+                    PF_R,
+                    0x1000,
+                    0x80001000,
+                    dynamic.len() as u64,
+                    dynamic.len() as u64,
+                ),
+            ],
+            &load_data,
+        );
 
         let elf_base: u64 = (32 + 2 * 32) as u64;
         let data_offset = elf_base + 0x1000;
         let segments = vec![
-            (0u64 << 20 | SELF_SEGMENT_FLAG_DATA, data_offset, 0x400, 0x400),
-            (1u64 << 20 | SELF_SEGMENT_FLAG_DATA, data_offset, 0x400, 0x400),
+            (
+                0u64 << 20 | SELF_SEGMENT_FLAG_DATA,
+                data_offset,
+                0x400,
+                0x400,
+            ),
+            (
+                1u64 << 20 | SELF_SEGMENT_FLAG_DATA,
+                data_offset,
+                0x400,
+                0x400,
+            ),
         ];
 
         let self_data = build_self(SELF_MAGIC_PS5, &segments, &elf);

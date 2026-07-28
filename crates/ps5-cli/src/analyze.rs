@@ -1,10 +1,15 @@
-use std::path::PathBuf;
-use crate::cli::{AnalyzeCommand, OutputFormat};
 use crate::catalog::load_catalog;
+use crate::cli::{AnalyzeCommand, OutputFormat};
 use crate::terminal;
 use crate::util::{is_dataset_dir, load_dataset_or_collect, write_to_output_or_stdout};
+use std::path::PathBuf;
 
-pub(crate) fn cmd_scan(path: &std::path::Path, output: &std::path::Path, extra_nids: &[PathBuf], include_modules: bool) {
+pub(crate) fn cmd_scan(
+    path: &std::path::Path,
+    output: &std::path::Path,
+    extra_nids: &[PathBuf],
+    include_modules: bool,
+) {
     let catalog = load_catalog(extra_nids);
     let options = ps5_analysis::ScanOptions {
         include_prx: include_modules,
@@ -21,10 +26,7 @@ pub(crate) fn cmd_scan(path: &std::path::Path, output: &std::path::Path, extra_n
         result.manifest.image_count,
         output.display()
     );
-    eprintln!(
-        "Dataset schema version: {}",
-        result.manifest.schema_version
-    );
+    eprintln!("Dataset schema version: {}", result.manifest.schema_version);
 }
 
 pub(crate) fn cmd_analyze(command: AnalyzeCommand, extra_nids: &[PathBuf], include_modules: bool) {
@@ -44,7 +46,11 @@ pub(crate) fn cmd_analyze(command: AnalyzeCommand, extra_nids: &[PathBuf], inclu
             });
         }
 
-        AnalyzeCommand::Stats { path, format, output } => {
+        AnalyzeCommand::Stats {
+            path,
+            format,
+            output,
+        } => {
             let db = load_dataset_or_collect(&path, &catalog, include_modules);
             let stats = ps5_analysis::reports::compute_stats(&db);
 
@@ -66,7 +72,11 @@ pub(crate) fn cmd_analyze(command: AnalyzeCommand, extra_nids: &[PathBuf], inclu
             }
         }
 
-        AnalyzeCommand::Heatmap { path, format, output } => {
+        AnalyzeCommand::Heatmap {
+            path,
+            format,
+            output,
+        } => {
             let db = load_dataset_or_collect(&path, &catalog, include_modules);
             let heatmap = ps5_analysis::reports::build_heatmap(&db);
 
@@ -82,7 +92,11 @@ pub(crate) fn cmd_analyze(command: AnalyzeCommand, extra_nids: &[PathBuf], inclu
             }
         }
 
-        AnalyzeCommand::Frequency { path, format, output } => {
+        AnalyzeCommand::Frequency {
+            path,
+            format,
+            output,
+        } => {
             let db = load_dataset_or_collect(&path, &catalog, include_modules);
             let freq = ps5_analysis::reports::build_frequency(&db);
 
@@ -98,7 +112,11 @@ pub(crate) fn cmd_analyze(command: AnalyzeCommand, extra_nids: &[PathBuf], inclu
             }
         }
 
-        AnalyzeCommand::Unresolved { path, format, output } => {
+        AnalyzeCommand::Unresolved {
+            path,
+            format,
+            output,
+        } => {
             let db = load_dataset_or_collect(&path, &catalog, include_modules);
             let entries = ps5_analysis::reports::find_unresolved(&db);
 
@@ -114,7 +132,12 @@ pub(crate) fn cmd_analyze(command: AnalyzeCommand, extra_nids: &[PathBuf], inclu
             }
         }
 
-        AnalyzeCommand::Graph { path, include_nids, format, output } => {
+        AnalyzeCommand::Graph {
+            path,
+            include_nids,
+            format,
+            output,
+        } => {
             let db = load_dataset_or_collect(&path, &catalog, include_modules);
             let graph = ps5_analysis::reports::build_graph(&db, include_nids);
 
@@ -129,7 +152,11 @@ pub(crate) fn cmd_analyze(command: AnalyzeCommand, extra_nids: &[PathBuf], inclu
             }
         }
 
-        AnalyzeCommand::Imports { path, format, output } => {
+        AnalyzeCommand::Imports {
+            path,
+            format,
+            output,
+        } => {
             if is_dataset_dir(&path) {
                 let ds = ps5_analysis::AnalysisDataset::open(&path).unwrap_or_else(|e| {
                     eprintln!("error: {e}");
@@ -158,12 +185,18 @@ pub(crate) fn cmd_analyze(command: AnalyzeCommand, extra_nids: &[PathBuf], inclu
                         ps5_analysis::export::csv::export_imports(&db, w)
                     }),
                     OutputFormat::Terminal => terminal::print_imports_terminal(&db),
-                    _ => eprintln!("unsupported format for imports (use --format csv or --format terminal)"),
+                    _ => eprintln!(
+                        "unsupported format for imports (use --format csv or --format terminal)"
+                    ),
                 }
             }
         }
 
-        AnalyzeCommand::Unknown { path, format, output } => {
+        AnalyzeCommand::Unknown {
+            path,
+            format,
+            output,
+        } => {
             if is_dataset_dir(&path) {
                 let ds = ps5_analysis::AnalysisDataset::open(&path).unwrap_or_else(|e| {
                     eprintln!("error: {e}");
@@ -186,12 +219,18 @@ pub(crate) fn cmd_analyze(command: AnalyzeCommand, extra_nids: &[PathBuf], inclu
                     _ => eprintln!("unsupported format for unknown NIDs"),
                 }
             } else {
-                eprintln!("error: analyze unknown requires a dataset directory (run 'ps5rs scan' first)");
+                eprintln!(
+                    "error: analyze unknown requires a dataset directory (run 'ps5rs scan' first)"
+                );
                 std::process::exit(1);
             }
         }
 
-        AnalyzeCommand::LibraryVersions { path, format, output } => {
+        AnalyzeCommand::LibraryVersions {
+            path,
+            format,
+            output,
+        } => {
             if is_dataset_dir(&path) {
                 let ds = ps5_analysis::AnalysisDataset::open(&path).unwrap_or_else(|e| {
                     eprintln!("error: {e}");
@@ -209,12 +248,18 @@ pub(crate) fn cmd_analyze(command: AnalyzeCommand, extra_nids: &[PathBuf], inclu
                     _ => eprintln!("unsupported format for library versions"),
                 }
             } else {
-                eprintln!("error: analyze library-versions requires a dataset directory (run 'ps5rs scan' first)");
+                eprintln!(
+                    "error: analyze library-versions requires a dataset directory (run 'ps5rs scan' first)"
+                );
                 std::process::exit(1);
             }
         }
 
-        AnalyzeCommand::Engines { path, format, output } => {
+        AnalyzeCommand::Engines {
+            path,
+            format,
+            output,
+        } => {
             if is_dataset_dir(&path) {
                 let ds = ps5_analysis::AnalysisDataset::open(&path).unwrap_or_else(|e| {
                     eprintln!("error: {e}");
@@ -226,10 +271,14 @@ pub(crate) fn cmd_analyze(command: AnalyzeCommand, extra_nids: &[PathBuf], inclu
                     OutputFormat::Json => write_to_output_or_stdout(&output, &|w| {
                         ps5_analysis::export::json::export_engine_hints(&report, w)
                     }),
-                    _ => eprintln!("unsupported format for engine hints (use --format json or terminal)"),
+                    _ => eprintln!(
+                        "unsupported format for engine hints (use --format json or terminal)"
+                    ),
                 }
             } else {
-                eprintln!("error: analyze engines requires a dataset directory (run 'ps5rs scan' first)");
+                eprintln!(
+                    "error: analyze engines requires a dataset directory (run 'ps5rs scan' first)"
+                );
                 std::process::exit(1);
             }
         }

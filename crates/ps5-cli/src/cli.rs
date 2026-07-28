@@ -24,10 +24,18 @@ pub enum Commands {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
-    Segments { file: PathBuf },
-    Dynamic { file: PathBuf },
-    Symbols { file: PathBuf },
-    Nid { name: String },
+    Segments {
+        file: PathBuf,
+    },
+    Dynamic {
+        file: PathBuf,
+    },
+    Symbols {
+        file: PathBuf,
+    },
+    Nid {
+        name: String,
+    },
     Scan {
         path: PathBuf,
         #[arg(short, long, value_hint = ValueHint::DirPath)]

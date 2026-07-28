@@ -1,5 +1,5 @@
 use crate::scanner::{sanitize_filename, utc_now_iso8601};
-use ps5_self::extract::{extract_elf, ExtractResult};
+use ps5_self::extract::{ExtractResult, extract_elf};
 use serde::{Deserialize, Serialize};
 use std::path::{Path, PathBuf};
 
@@ -115,15 +115,14 @@ pub fn batch_extract(
     };
 
     let manifest_json = serde_json::to_string_pretty(&manifest)?;
-    std::fs::write(extracted_dir.join("manifest.json"), format!("{manifest_json}\n"))?;
+    std::fs::write(
+        extracted_dir.join("manifest.json"),
+        format!("{manifest_json}\n"),
+    )?;
 
     let failures: Vec<(String, String)> = entries
         .iter()
-        .filter_map(|e| {
-            e.error
-                .as_ref()
-                .map(|err| (e.game.clone(), err.clone()))
-        })
+        .filter_map(|e| e.error.as_ref().map(|err| (e.game.clone(), err.clone())))
         .collect();
 
     Ok(BatchExtractResult {
@@ -205,11 +204,11 @@ fn walk_for_eboot(dir: &Path, result: &mut Vec<PathBuf>, depth: usize) {
             let path = entry.path();
             if path.is_dir() {
                 walk_for_eboot(&path, result, depth + 1);
-                } else if let Some(name) = path.file_name().and_then(|n| n.to_str())
-                    && name.eq_ignore_ascii_case("eboot.bin")
-                {
-                    result.push(path);
-                }
+            } else if let Some(name) = path.file_name().and_then(|n| n.to_str())
+                && name.eq_ignore_ascii_case("eboot.bin")
+            {
+                result.push(path);
+            }
         }
     }
 }
@@ -284,10 +283,8 @@ mod tests {
 
     #[test]
     fn batch_extract_empty_dir() {
-        let tmp = std::env::temp_dir().join(format!(
-            "ps5rs_batch_extract_empty_{}",
-            std::process::id()
-        ));
+        let tmp =
+            std::env::temp_dir().join(format!("ps5rs_batch_extract_empty_{}", std::process::id()));
         let _ = std::fs::remove_dir_all(&tmp);
         std::fs::create_dir_all(&tmp).unwrap();
 
@@ -302,10 +299,8 @@ mod tests {
 
     #[test]
     fn batch_extract_real_binary() {
-        let tmp = std::env::temp_dir().join(format!(
-            "ps5rs_batch_extract_real_{}",
-            std::process::id()
-        ));
+        let tmp =
+            std::env::temp_dir().join(format!("ps5rs_batch_extract_real_{}", std::process::id()));
         let _ = std::fs::remove_dir_all(&tmp);
 
         let game_dir = tmp.join("TestGame");
@@ -319,7 +314,13 @@ mod tests {
         assert_eq!(result.manifest.total, 1);
         assert_eq!(result.manifest.succeeded, 1);
         assert!(result.failures.is_empty());
-        assert!(output.join("analysis").join("extracted").join("TestGame.elf").exists());
+        assert!(
+            output
+                .join("analysis")
+                .join("extracted")
+                .join("TestGame.elf")
+                .exists()
+        );
 
         let _ = std::fs::remove_dir_all(&tmp);
     }

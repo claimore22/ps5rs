@@ -8,3 +8,6 @@ description = "PS5/PS4 SELF container parser (zero-copy)"
 [dependencies]
 ps5-format = { path = "../ps5-format" }
 ps5-elf = { path = "../ps5-elf" }
+
+[lints]
+workspace = true

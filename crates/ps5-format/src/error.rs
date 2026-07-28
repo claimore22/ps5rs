@@ -2,9 +2,16 @@ use std::fmt;
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub enum ParseError {
-    InvalidMagic { expected: u32, actual: u32 },
+    InvalidMagic {
+        expected: u32,
+        actual: u32,
+    },
     UnsupportedVersion(u16),
-    Truncated { offset: u64, needed: u64, available: u64 },
+    Truncated {
+        offset: u64,
+        needed: u64,
+        available: u64,
+    },
     UnsupportedElfClass(u8),
     UnsupportedElfEndian(u8),
     NotX86_64(u16),
@@ -20,32 +27,30 @@ pub enum ParseError {
 impl fmt::Display for ParseError {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         match self {
-            Self::InvalidMagic { expected, actual } =>
-                write!(f, "invalid magic: expected {expected:#x}, got {actual:#x}"),
-            Self::UnsupportedVersion(v) =>
-                write!(f, "unsupported version: {v}"),
-            Self::Truncated { offset, needed, available } =>
-                write!(f, "file truncated: need {needed} bytes at offset {offset}, have {available}"),
-            Self::UnsupportedElfClass(c) =>
-                write!(f, "unsupported ELF class: {c}"),
-            Self::UnsupportedElfEndian(e) =>
-                write!(f, "unsupported ELF endianness: {e}"),
-            Self::NotX86_64(m) =>
-                write!(f, "not x86-64 (machine: {m:#x})"),
-            Self::MissingProgramHeader(name) =>
-                write!(f, "missing required program header: {name}"),
-            Self::NoDynamicSection =>
-                write!(f, "no PT_DYNAMIC program header found"),
-            Self::InvalidStringTable =>
-                write!(f, "invalid or missing string table"),
-            Self::InvalidSymbolTable =>
-                write!(f, "invalid or missing symbol table"),
-            Self::InvalidRelocationTable =>
-                write!(f, "invalid or missing relocation table"),
-            Self::MalformedDynamic =>
-                write!(f, "malformed dynamic section"),
-            Self::Custom(msg) =>
-                write!(f, "{msg}"),
+            Self::InvalidMagic { expected, actual } => {
+                write!(f, "invalid magic: expected {expected:#x}, got {actual:#x}")
+            }
+            Self::UnsupportedVersion(v) => write!(f, "unsupported version: {v}"),
+            Self::Truncated {
+                offset,
+                needed,
+                available,
+            } => write!(
+                f,
+                "file truncated: need {needed} bytes at offset {offset}, have {available}"
+            ),
+            Self::UnsupportedElfClass(c) => write!(f, "unsupported ELF class: {c}"),
+            Self::UnsupportedElfEndian(e) => write!(f, "unsupported ELF endianness: {e}"),
+            Self::NotX86_64(m) => write!(f, "not x86-64 (machine: {m:#x})"),
+            Self::MissingProgramHeader(name) => {
+                write!(f, "missing required program header: {name}")
+            }
+            Self::NoDynamicSection => write!(f, "no PT_DYNAMIC program header found"),
+            Self::InvalidStringTable => write!(f, "invalid or missing string table"),
+            Self::InvalidSymbolTable => write!(f, "invalid or missing symbol table"),
+            Self::InvalidRelocationTable => write!(f, "invalid or missing relocation table"),
+            Self::MalformedDynamic => write!(f, "malformed dynamic section"),
+            Self::Custom(msg) => write!(f, "{msg}"),
         }
     }
 }
@@ -60,7 +65,10 @@ mod tests {
 
     #[test]
     fn invalid_magic_display() {
-        let e = ParseError::InvalidMagic { expected: 0x7f454c46, actual: 0x4f153d1d };
+        let e = ParseError::InvalidMagic {
+            expected: 0x7f454c46,
+            actual: 0x4f153d1d,
+        };
         let msg = format!("{e}");
         assert!(msg.contains("0x7f454c46"), "got: {msg}");
         assert!(msg.contains("0x4f153d1d"), "got: {msg}");
@@ -68,7 +76,11 @@ mod tests {
 
     #[test]
     fn truncated_display() {
-        let e = ParseError::Truncated { offset: 64, needed: 128, available: 80 };
+        let e = ParseError::Truncated {
+            offset: 64,
+            needed: 128,
+            available: 80,
+        };
         let msg = format!("{e}");
         assert!(msg.contains("64"), "got: {msg}");
         assert!(msg.contains("128"), "got: {msg}");

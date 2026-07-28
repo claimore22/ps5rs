@@ -2,72 +2,75 @@ use crate::model::*;
 use std::io::Write;
 
 pub fn export_analysis(db: &AnalysisDatabase, writer: &mut dyn Write) -> std::io::Result<()> {
-    let json = serde_json::to_string_pretty(db)
-        .map_err(std::io::Error::other)?;
+    let json = serde_json::to_string_pretty(db).map_err(std::io::Error::other)?;
     writer.write_all(json.as_bytes())?;
     writer.write_all(b"\n")?;
     Ok(())
 }
 
 pub fn export_stats(stats: &AnalysisStats, writer: &mut dyn Write) -> std::io::Result<()> {
-    let json = serde_json::to_string_pretty(stats)
-        .map_err(std::io::Error::other)?;
+    let json = serde_json::to_string_pretty(stats).map_err(std::io::Error::other)?;
     writer.write_all(json.as_bytes())?;
     writer.write_all(b"\n")?;
     Ok(())
 }
 
 pub fn export_heatmap(heatmap: &LibraryHeatmap, writer: &mut dyn Write) -> std::io::Result<()> {
-    let json = serde_json::to_string_pretty(heatmap)
-        .map_err(std::io::Error::other)?;
+    let json = serde_json::to_string_pretty(heatmap).map_err(std::io::Error::other)?;
     writer.write_all(json.as_bytes())?;
     writer.write_all(b"\n")?;
     Ok(())
 }
 
 pub fn export_nid_frequency(freq: &NidFrequency, writer: &mut dyn Write) -> std::io::Result<()> {
-    let json = serde_json::to_string_pretty(freq)
-        .map_err(std::io::Error::other)?;
+    let json = serde_json::to_string_pretty(freq).map_err(std::io::Error::other)?;
     writer.write_all(json.as_bytes())?;
     writer.write_all(b"\n")?;
     Ok(())
 }
 
-pub fn export_unresolved(entries: &[UnresolvedEntry], writer: &mut dyn Write) -> std::io::Result<()> {
-    let json = serde_json::to_string_pretty(entries)
-        .map_err(std::io::Error::other)?;
+pub fn export_unresolved(
+    entries: &[UnresolvedEntry],
+    writer: &mut dyn Write,
+) -> std::io::Result<()> {
+    let json = serde_json::to_string_pretty(entries).map_err(std::io::Error::other)?;
     writer.write_all(json.as_bytes())?;
     writer.write_all(b"\n")?;
     Ok(())
 }
 
 pub fn export_graph(graph: &DependencyGraph, writer: &mut dyn Write) -> std::io::Result<()> {
-    let json = serde_json::to_string_pretty(graph)
-        .map_err(std::io::Error::other)?;
+    let json = serde_json::to_string_pretty(graph).map_err(std::io::Error::other)?;
     writer.write_all(json.as_bytes())?;
     writer.write_all(b"\n")?;
     Ok(())
 }
 
-pub fn export_validation(report: &crate::reports::ValidationReport, writer: &mut dyn Write) -> std::io::Result<()> {
-    let json = serde_json::to_string_pretty(report)
-        .map_err(std::io::Error::other)?;
+pub fn export_validation(
+    report: &crate::reports::ValidationReport,
+    writer: &mut dyn Write,
+) -> std::io::Result<()> {
+    let json = serde_json::to_string_pretty(report).map_err(std::io::Error::other)?;
     writer.write_all(json.as_bytes())?;
     writer.write_all(b"\n")?;
     Ok(())
 }
 
-pub fn export_library_versions(report: &crate::reports::LibraryVersionReport, writer: &mut dyn Write) -> std::io::Result<()> {
-    let json = serde_json::to_string_pretty(report)
-        .map_err(std::io::Error::other)?;
+pub fn export_library_versions(
+    report: &crate::reports::LibraryVersionReport,
+    writer: &mut dyn Write,
+) -> std::io::Result<()> {
+    let json = serde_json::to_string_pretty(report).map_err(std::io::Error::other)?;
     writer.write_all(json.as_bytes())?;
     writer.write_all(b"\n")?;
     Ok(())
 }
 
-pub fn export_engine_hints(report: &crate::reports::EngineHintReport, writer: &mut dyn Write) -> std::io::Result<()> {
-    let json = serde_json::to_string_pretty(report)
-        .map_err(std::io::Error::other)?;
+pub fn export_engine_hints(
+    report: &crate::reports::EngineHintReport,
+    writer: &mut dyn Write,
+) -> std::io::Result<()> {
+    let json = serde_json::to_string_pretty(report).map_err(std::io::Error::other)?;
     writer.write_all(json.as_bytes())?;
     writer.write_all(b"\n")?;
     Ok(())
@@ -76,15 +79,16 @@ pub fn export_engine_hints(report: &crate::reports::EngineHintReport, writer: &m
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::model::{make_game, make_db, make_import};
+    use crate::model::{make_db, make_game, make_import};
 
     fn test_db() -> AnalysisDatabase {
-        make_db(vec![
-            make_game("GameA", vec![
+        make_db(vec![make_game(
+            "GameA",
+            vec![
                 make_import("aaa", "funcA", 1, "libA"),
                 make_import("bbb", "?", 1, "libA"),
-            ]),
-        ])
+            ],
+        )])
     }
 
     #[test]
@@ -122,8 +126,8 @@ mod tests {
         export_heatmap(&heatmap, &mut buf).unwrap();
         let s = String::from_utf8(buf).unwrap();
         let parsed: serde_json::Value = serde_json::from_str(&s).unwrap();
-        assert!(parsed["libraries"].as_array().unwrap().len() > 0);
-        assert!(parsed["matrix"].as_array().unwrap().len() > 0);
+        assert!(!parsed["libraries"].as_array().unwrap().is_empty());
+        assert!(!parsed["matrix"].as_array().unwrap().is_empty());
     }
 
     #[test]
@@ -136,7 +140,7 @@ mod tests {
         let s = String::from_utf8(buf).unwrap();
         let parsed: serde_json::Value = serde_json::from_str(&s).unwrap();
         assert_eq!(parsed["total_imports"], 2);
-        assert!(parsed["entries"].as_array().unwrap().len() > 0);
+        assert!(!parsed["entries"].as_array().unwrap().is_empty());
     }
 
     #[test]

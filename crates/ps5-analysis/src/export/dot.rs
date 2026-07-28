@@ -9,20 +9,31 @@ pub fn export_graph(graph: &DependencyGraph, writer: &mut dyn Write) -> std::io:
 
     writeln!(writer, "    // Game nodes")?;
     for game in &graph.game_nodes {
-        writeln!(writer, "    \"{}\" [shape=box,style=filled,fillcolor=lightblue];", game)?;
+        writeln!(
+            writer,
+            "    \"{}\" [shape=box,style=filled,fillcolor=lightblue];",
+            game
+        )?;
     }
     writeln!(writer)?;
 
     writeln!(writer, "    // Library nodes")?;
     for lib in &graph.lib_nodes {
-        writeln!(writer, "    \"{}\" [shape=ellipse,style=filled,fillcolor=lightyellow];", lib)?;
+        writeln!(
+            writer,
+            "    \"{}\" [shape=ellipse,style=filled,fillcolor=lightyellow];",
+            lib
+        )?;
     }
     writeln!(writer)?;
 
     writeln!(writer, "    // Edges")?;
     for edge in &graph.edges {
-        writeln!(writer, "    \"{}\" -> \"{}\" [label=\"{}\"];",
-            edge.from, edge.to, edge.weight)?;
+        writeln!(
+            writer,
+            "    \"{}\" -> \"{}\" [label=\"{}\"];",
+            edge.from, edge.to, edge.weight
+        )?;
     }
 
     writeln!(writer, "}}")?;
@@ -32,16 +43,15 @@ pub fn export_graph(graph: &DependencyGraph, writer: &mut dyn Write) -> std::io:
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::model::{make_game, make_db, make_import, DependencyGraph};
+    use crate::model::{DependencyGraph, make_db, make_game, make_import};
     use crate::reports::build_graph;
 
     #[test]
     fn dot_graph_valid_syntax() {
-        let db = make_db(vec![
-            make_game("GameA", vec![
-                make_import("aaa", "funcA", 1, "libA"),
-            ]),
-        ]);
+        let db = make_db(vec![make_game(
+            "GameA",
+            vec![make_import("aaa", "funcA", 1, "libA")],
+        )]);
         let graph = build_graph(&db, false);
         let mut buf = Vec::new();
         export_graph(&graph, &mut buf).unwrap();
@@ -54,11 +64,10 @@ mod tests {
 
     #[test]
     fn dot_graph_contains_game_node() {
-        let db = make_db(vec![
-            make_game("GameA", vec![
-                make_import("aaa", "funcA", 1, "libA"),
-            ]),
-        ]);
+        let db = make_db(vec![make_game(
+            "GameA",
+            vec![make_import("aaa", "funcA", 1, "libA")],
+        )]);
         let graph = build_graph(&db, false);
         let mut buf = Vec::new();
         export_graph(&graph, &mut buf).unwrap();
@@ -68,11 +77,10 @@ mod tests {
 
     #[test]
     fn dot_graph_contains_lib_node() {
-        let db = make_db(vec![
-            make_game("GameA", vec![
-                make_import("aaa", "funcA", 1, "libA"),
-            ]),
-        ]);
+        let db = make_db(vec![make_game(
+            "GameA",
+            vec![make_import("aaa", "funcA", 1, "libA")],
+        )]);
         let graph = build_graph(&db, false);
         let mut buf = Vec::new();
         export_graph(&graph, &mut buf).unwrap();
@@ -82,12 +90,13 @@ mod tests {
 
     #[test]
     fn dot_graph_contains_edges() {
-        let db = make_db(vec![
-            make_game("GameA", vec![
+        let db = make_db(vec![make_game(
+            "GameA",
+            vec![
                 make_import("aaa", "funcA", 1, "libA"),
                 make_import("bbb", "funcB", 1, "libA"),
-            ]),
-        ]);
+            ],
+        )]);
         let graph = build_graph(&db, false);
         let mut buf = Vec::new();
         export_graph(&graph, &mut buf).unwrap();

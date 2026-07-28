@@ -8,3 +8,6 @@ description = "Shared types, errors, and constants for PS5 binary parsing"
 [dependencies]
 thiserror = "2"
 sha2 = "0.10"
+
+[lints]
+workspace = true

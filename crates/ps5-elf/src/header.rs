@@ -1,6 +1,6 @@
-use ps5_format::error::{ParseError, Result};
 use crate::{read_u16, read_u32, read_u64};
 use ps5_format::elf_constants::*;
+use ps5_format::error::{ParseError, Result};
 
 #[derive(Debug, Clone, Copy)]
 pub struct ElfHeader {
@@ -34,7 +34,7 @@ impl ElfHeader {
             });
         }
 
-        if &data[base..base+4] != &ELF_MAGIC {
+        if data[base..base + 4] != ELF_MAGIC {
             return Err(ParseError::InvalidMagic {
                 expected: u32::from_le_bytes(ELF_MAGIC),
                 actual: read_u32(data, base),
@@ -112,12 +112,7 @@ impl ElfHeader {
 mod tests {
     use super::*;
 
-    fn build_header_bytes(
-        osabi: u8,
-        abi_version: u8,
-        e_version: u32,
-        e_type: u16,
-    ) -> Vec<u8> {
+    fn build_header_bytes(osabi: u8, abi_version: u8, e_version: u32, e_type: u16) -> Vec<u8> {
         let mut buf = vec![0u8; 64];
         buf[0..4].copy_from_slice(&ELF_MAGIC);
         buf[EI_CLASS] = ELFCLASS64;

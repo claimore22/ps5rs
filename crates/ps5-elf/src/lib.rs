@@ -1,18 +1,18 @@
-mod header;
-mod program;
 mod dynamic;
+mod header;
+pub mod libversion;
+mod program;
 mod relocation;
 pub mod section;
 mod symbol;
-pub mod libversion;
 
-pub use header::ElfHeader;
-pub use program::ProgramHeader;
 pub use dynamic::DynEntry;
+pub use header::ElfHeader;
+pub use libversion::LibVersionEntry;
+pub use program::ProgramHeader;
 pub use relocation::RelaEntry;
 pub use section::ElfSectionHeader;
 pub use symbol::SymEntry;
-pub use libversion::LibVersionEntry;
 
 #[derive(Debug, Clone)]
 pub struct TlsInfo {
@@ -126,7 +126,8 @@ impl<'a> ElfImage<'a> {
         let dyn_entries = if let Some(ref dyn_ph) = dynamic_phdr {
             // For SELF files, p_offset is logical. Resolve DYNAMIC's file offset
             // via vaddr mapping (it typically lives inside a LOAD segment).
-            let dyn_file_offset = Self::vaddr_to_offset(&program_headers, phdr_file_offsets, dyn_ph.p_vaddr);
+            let dyn_file_offset =
+                Self::vaddr_to_offset(&program_headers, phdr_file_offsets, dyn_ph.p_vaddr);
             dynamic::parse_dynamic(data, dyn_ph, dyn_file_offset)?
         } else {
             Vec::new()
@@ -143,7 +144,7 @@ impl<'a> ElfImage<'a> {
         let mut syment = 24u64;
 
         for entry in &dyn_entries {
-            match entry.d_tag as u64 {
+            match entry.d_tag {
                 ps5_format::elf_constants::DT_STRTAB => strtab_vaddr = entry.d_val,
                 ps5_format::elf_constants::DT_STRSZ => strtab_size = entry.d_val,
                 ps5_format::elf_constants::DT_SYMTAB => symtab_vaddr = entry.d_val,
@@ -160,22 +161,39 @@ impl<'a> ElfImage<'a> {
                 ps5_format::elf_constants::DT_FINI_ARRAYSZ => fini_array_sz = entry.d_val,
                 ps5_format::elf_constants::DT_PREINIT_ARRAY => preinit_array_va = entry.d_val,
                 ps5_format::elf_constants::DT_PREINIT_ARRAYSZ => preinit_array_sz = entry.d_val,
-                ps5_format::self_constants::DT_SCE_STRTAB if strtab_vaddr == 0 => strtab_vaddr = entry.d_val,
-                ps5_format::self_constants::DT_SCE_STRSZ if strtab_size == 0 => strtab_size = entry.d_val,
-                ps5_format::self_constants::DT_SCE_SYMTAB if symtab_vaddr == 0 => symtab_vaddr = entry.d_val,
+                ps5_format::self_constants::DT_SCE_STRTAB if strtab_vaddr == 0 => {
+                    strtab_vaddr = entry.d_val
+                }
+                ps5_format::self_constants::DT_SCE_STRSZ if strtab_size == 0 => {
+                    strtab_size = entry.d_val
+                }
+                ps5_format::self_constants::DT_SCE_SYMTAB if symtab_vaddr == 0 => {
+                    symtab_vaddr = entry.d_val
+                }
                 ps5_format::self_constants::DT_SCE_SYMTABSZ => symtab_size = entry.d_val,
-                ps5_format::self_constants::DT_SCE_RELA if rela_vaddr == 0 => rela_vaddr = entry.d_val,
-                ps5_format::self_constants::DT_SCE_RELASZ if rela_size == 0 => rela_size = entry.d_val,
-                ps5_format::self_constants::DT_SCE_JMPREL if jmprel_vaddr == 0 => jmprel_vaddr = entry.d_val,
-                ps5_format::self_constants::DT_SCE_PLTRELSZ if jmprel_size == 0 => jmprel_size = entry.d_val,
+                ps5_format::self_constants::DT_SCE_RELA if rela_vaddr == 0 => {
+                    rela_vaddr = entry.d_val
+                }
+                ps5_format::self_constants::DT_SCE_RELASZ if rela_size == 0 => {
+                    rela_size = entry.d_val
+                }
+                ps5_format::self_constants::DT_SCE_JMPREL if jmprel_vaddr == 0 => {
+                    jmprel_vaddr = entry.d_val
+                }
+                ps5_format::self_constants::DT_SCE_PLTRELSZ if jmprel_size == 0 => {
+                    jmprel_size = entry.d_val
+                }
                 _ => {}
             }
         }
 
-        let strtab_offset = Self::vaddr_to_offset(&program_headers, phdr_file_offsets, strtab_vaddr);
-        let symtab_offset = Self::vaddr_to_offset(&program_headers, phdr_file_offsets, symtab_vaddr);
+        let strtab_offset =
+            Self::vaddr_to_offset(&program_headers, phdr_file_offsets, strtab_vaddr);
+        let symtab_offset =
+            Self::vaddr_to_offset(&program_headers, phdr_file_offsets, symtab_vaddr);
         let rela_offset = Self::vaddr_to_offset(&program_headers, phdr_file_offsets, rela_vaddr);
-        let jmprel_offset = Self::vaddr_to_offset(&program_headers, phdr_file_offsets, jmprel_vaddr);
+        let jmprel_offset =
+            Self::vaddr_to_offset(&program_headers, phdr_file_offsets, jmprel_vaddr);
 
         symtab_size = if symtab_size == 0 && symtab_vaddr > 0 && strtab_vaddr > symtab_vaddr {
             strtab_vaddr - symtab_vaddr
@@ -190,7 +208,8 @@ impl<'a> ElfImage<'a> {
             Vec::new()
         };
 
-        let relocations = relocation::parse_all_relocs(data, rela_offset, rela_size, jmprel_offset, jmprel_size)?;
+        let relocations =
+            relocation::parse_all_relocs(data, rela_offset, rela_size, jmprel_offset, jmprel_size)?;
 
         let import_libs = if (strtab_offset as usize) < data.len() {
             dynamic::parse_import_libs(&dyn_entries, &data[strtab_offset as usize..])
@@ -204,7 +223,8 @@ impl<'a> ElfImage<'a> {
         };
 
         let lib_versions = if let Some(ref lv_ph) = libversion_phdr {
-            let lv_offset = Self::vaddr_to_offset(&program_headers, phdr_file_offsets, lv_ph.p_vaddr);
+            let lv_offset =
+                Self::vaddr_to_offset(&program_headers, phdr_file_offsets, lv_ph.p_vaddr);
             let lv_end = lv_offset as usize + lv_ph.p_filesz as usize;
             if (lv_offset as usize) < data.len() && lv_end <= data.len() {
                 libversion::parse_libversion(&data[lv_offset as usize..lv_end])
@@ -254,12 +274,47 @@ impl<'a> ElfImage<'a> {
     }
 }
 
+fn read_u16(data: &[u8], offset: usize) -> u16 {
+    if offset + 2 > data.len() {
+        return 0;
+    }
+    u16::from_le_bytes([data[offset], data[offset + 1]])
+}
+
+fn read_u32(data: &[u8], offset: usize) -> u32 {
+    if offset + 4 > data.len() {
+        return 0;
+    }
+    u32::from_le_bytes([
+        data[offset],
+        data[offset + 1],
+        data[offset + 2],
+        data[offset + 3],
+    ])
+}
+
+fn read_u64(data: &[u8], offset: usize) -> u64 {
+    if offset + 8 > data.len() {
+        return 0;
+    }
+    u64::from_le_bytes([
+        data[offset],
+        data[offset + 1],
+        data[offset + 2],
+        data[offset + 3],
+        data[offset + 4],
+        data[offset + 5],
+        data[offset + 6],
+        data[offset + 7],
+    ])
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
+    use proptest::prelude::*;
     use ps5_format::elf_constants::*;
     use ps5_format::self_constants::DT_SCE_SYMTABSZ;
-    use proptest::prelude::*;
 
     struct ElfBuilder {
         entry: u64,
@@ -422,9 +477,7 @@ mod tests {
 
     #[test]
     fn parse_minimal_elf_header() {
-        let elf = ElfBuilder::new()
-            .with_load(0x1000, vec![0xCC; 256])
-            .build();
+        let elf = ElfBuilder::new().with_load(0x1000, vec![0xCC; 256]).build();
         let img = ElfImage::parse(&elf, None).unwrap();
         assert_eq!(img.header.class, ELFCLASS64);
         assert_eq!(img.header.endian, ELFDATA2LSB);
@@ -435,9 +488,7 @@ mod tests {
 
     #[test]
     fn parse_program_headers() {
-        let elf = ElfBuilder::new()
-            .with_load(0x1000, vec![0xCC; 256])
-            .build();
+        let elf = ElfBuilder::new().with_load(0x1000, vec![0xCC; 256]).build();
         let img = ElfImage::parse(&elf, None).unwrap();
         assert_eq!(img.program_headers.len(), 1);
         assert_eq!(img.program_headers[0].p_type, PT_LOAD);
@@ -447,9 +498,7 @@ mod tests {
 
     #[test]
     fn parse_load_helpers() {
-        let elf = ElfBuilder::new()
-            .with_load(0x1000, vec![0xCC; 64])
-            .build();
+        let elf = ElfBuilder::new().with_load(0x1000, vec![0xCC; 64]).build();
         let img = ElfImage::parse(&elf, None).unwrap();
         assert!(img.program_headers[0].is_load());
         assert!(!img.program_headers[0].is_dynamic());
@@ -502,7 +551,10 @@ mod tests {
     fn parse_needed_files() {
         let strtab = build_strtab(&[b"libSceFoo", b"libSceBar"]);
         let placeholder_dynamic = build_dynamic_entries(&[
-            (DT_STRTAB, 0), (DT_STRSZ, 0), (DT_NEEDED, 0), (DT_NEEDED, 0),
+            (DT_STRTAB, 0),
+            (DT_STRSZ, 0),
+            (DT_NEEDED, 0),
+            (DT_NEEDED, 0),
         ]);
         let dyn_size = placeholder_dynamic.len();
         let strtab_vaddr = 0x1000u64 + dyn_size as u64;
@@ -556,9 +608,7 @@ mod tests {
 
     #[test]
     fn parse_no_dynamic() {
-        let elf = ElfBuilder::new()
-            .with_load(0x1000, vec![0; 64])
-            .build();
+        let elf = ElfBuilder::new().with_load(0x1000, vec![0; 64]).build();
         let img = ElfImage::parse(&elf, None).unwrap();
         assert!(img.dynamic_entries.is_empty());
         assert_eq!(img.symbols.len(), 0);
@@ -571,8 +621,11 @@ mod tests {
         let symtab = build_symtab_entry(1, 0, 0, 0);
 
         let placeholder_dynamic = build_dynamic_entries(&[
-            (DT_STRTAB, 0), (DT_STRSZ, 0), (DT_SYMTAB, 0),
-            (DT_SYMENT, 0), (DT_SCE_SYMTABSZ, 0),
+            (DT_STRTAB, 0),
+            (DT_STRSZ, 0),
+            (DT_SYMTAB, 0),
+            (DT_SYMENT, 0),
+            (DT_SCE_SYMTABSZ, 0),
         ]);
         let dyn_size = placeholder_dynamic.len();
         let strtab_vaddr = 0x1000u64 + dyn_size as u64;
@@ -610,10 +663,7 @@ mod tests {
         let dyn_size = placeholder_dynamic.len();
         let rela_vaddr = 0x1000u64 + dyn_size as u64;
 
-        let dynamic = build_dynamic_entries(&[
-            (DT_RELA, rela_vaddr),
-            (DT_RELASZ, 24),
-        ]);
+        let dynamic = build_dynamic_entries(&[(DT_RELA, rela_vaddr), (DT_RELASZ, 24)]);
 
         let mut data = Vec::new();
         data.extend_from_slice(&dynamic);
@@ -639,10 +689,7 @@ mod tests {
         let dyn_size = placeholder_dynamic.len();
         let rela_vaddr = 0x1000u64 + dyn_size as u64;
 
-        let dynamic = build_dynamic_entries(&[
-            (DT_JMPREL, rela_vaddr),
-            (DT_PLTRELSZ, 24),
-        ]);
+        let dynamic = build_dynamic_entries(&[(DT_JMPREL, rela_vaddr), (DT_PLTRELSZ, 24)]);
 
         let mut data = Vec::new();
         data.extend_from_slice(&dynamic);
@@ -707,9 +754,7 @@ mod tests {
 
     #[test]
     fn parse_wrong_machine() {
-        let mut elf = ElfBuilder::new()
-            .with_load(0x1000, vec![0xCC; 64])
-            .build();
+        let mut elf = ElfBuilder::new().with_load(0x1000, vec![0xCC; 64]).build();
         // e_machine is at offset 18 (2 bytes LE), overwrite EM_X86_64 (0x3e) with 0x28 (ARM)
         elf[18] = 0x28;
         elf[19] = 0x00;
@@ -723,28 +768,33 @@ mod tests {
 
     #[test]
     fn vaddr_to_offset_roundtrip() {
-        let elf = ElfBuilder::new()
-            .with_load(0x1000, vec![0; 0x400])
-            .build();
+        let elf = ElfBuilder::new().with_load(0x1000, vec![0; 0x400]).build();
         let img = ElfImage::parse(&elf, None).unwrap();
 
         let offsets = [0x1000u64, 0x1100, 0x1200, 0x13FF];
         for vaddr in offsets {
             let offset = ElfImage::vaddr_to_offset(&img.program_headers, None, vaddr);
-            assert!(offset >= 0x1000 && offset < 0x1400, "vaddr {vaddr:#x} → offset {offset:#x}");
-            assert_eq!(offset, vaddr, "for raw ELF p_offset==p_vaddr, so vaddr==offset");
+            assert!(
+                (0x1000..0x1400).contains(&offset),
+                "vaddr {vaddr:#x} → offset {offset:#x}"
+            );
+            assert_eq!(
+                offset, vaddr,
+                "for raw ELF p_offset==p_vaddr, so vaddr==offset"
+            );
         }
     }
 
     #[test]
     fn vaddr_to_offset_outside_load() {
-        let elf = ElfBuilder::new()
-            .with_load(0x1000, vec![0; 0x100])
-            .build();
+        let elf = ElfBuilder::new().with_load(0x1000, vec![0; 0x100]).build();
         let img = ElfImage::parse(&elf, None).unwrap();
 
         let offset = ElfImage::vaddr_to_offset(&img.program_headers, None, 0x5000);
-        assert_eq!(offset, 0x5000, "vaddr outside any LOAD returns vaddr itself");
+        assert_eq!(
+            offset, 0x5000,
+            "vaddr outside any LOAD returns vaddr itself"
+        );
     }
 
     #[test]
@@ -752,9 +802,7 @@ mod tests {
         let mut data = vec![0u8; 0x500];
         data[0x100] = 0x42;
 
-        let elf = ElfBuilder::new()
-            .with_load(0x1000, data)
-            .build();
+        let elf = ElfBuilder::new().with_load(0x1000, data).build();
 
         let img = ElfImage::parse(&elf, None).unwrap();
         let custom_offsets = [0x100u64];
@@ -769,10 +817,8 @@ mod tests {
         let dyn_size = placeholder_dynamic.len();
         let strtab_vaddr = 0x1000u64 + dyn_size as u64;
 
-        let dynamic = build_dynamic_entries(&[
-            (DT_STRTAB, strtab_vaddr),
-            (DT_STRSZ, strtab.len() as u64),
-        ]);
+        let dynamic =
+            build_dynamic_entries(&[(DT_STRTAB, strtab_vaddr), (DT_STRSZ, strtab.len() as u64)]);
 
         let mut data = Vec::new();
         data.extend_from_slice(&dynamic);
@@ -929,10 +975,8 @@ mod tests {
     #[test]
     fn strtab_outside_load_returns_empty() {
         let strtab = build_strtab(&[b"ghost"]);
-        let dynamic = build_dynamic_entries(&[
-            (DT_STRTAB, 0xDEAD0000),
-            (DT_STRSZ, strtab.len() as u64),
-        ]);
+        let dynamic =
+            build_dynamic_entries(&[(DT_STRTAB, 0xDEAD0000), (DT_STRSZ, strtab.len() as u64)]);
         let mut data = Vec::new();
         data.extend_from_slice(&dynamic);
         data.resize(0x100, 0);
@@ -949,10 +993,7 @@ mod tests {
         let placeholder = build_dynamic_entries(&[(DT_RELA, 0), (DT_RELASZ, 0)]);
         let dyn_size = placeholder.len();
         let rela_vaddr = 0x1000u64 + dyn_size as u64;
-        let dynamic = build_dynamic_entries(&[
-            (DT_RELA, rela_vaddr + 0x100000),
-            (DT_RELASZ, 9999),
-        ]);
+        let dynamic = build_dynamic_entries(&[(DT_RELA, rela_vaddr + 0x100000), (DT_RELASZ, 9999)]);
         let mut data = Vec::new();
         data.extend_from_slice(&dynamic);
         data.resize(0x200, 0);
@@ -988,8 +1029,11 @@ mod tests {
     fn empty_strtab_no_symbols() {
         let strtab = vec![0u8];
         let placeholder_dynamic = build_dynamic_entries(&[
-            (DT_STRTAB, 0), (DT_STRSZ, 0), (DT_SYMTAB, 0),
-            (DT_SYMENT, 0), (DT_SCE_SYMTABSZ, 0),
+            (DT_STRTAB, 0),
+            (DT_STRSZ, 0),
+            (DT_SYMTAB, 0),
+            (DT_SYMENT, 0),
+            (DT_SCE_SYMTABSZ, 0),
         ]);
         let dyn_size = placeholder_dynamic.len();
         let strtab_vaddr = 0x1000u64 + dyn_size as u64;
@@ -1038,10 +1082,8 @@ mod tests {
         let placeholder = build_dynamic_entries(&[(DT_STRTAB, 0), (DT_STRSZ, 0)]);
         let dyn_size = placeholder.len();
         let strtab_vaddr = 0x1000u64 + dyn_size as u64;
-        let dynamic = build_dynamic_entries(&[
-            (DT_STRTAB, strtab_vaddr),
-            (DT_STRSZ, strtab.len() as u64),
-        ]);
+        let dynamic =
+            build_dynamic_entries(&[(DT_STRTAB, strtab_vaddr), (DT_STRSZ, strtab.len() as u64)]);
         let mut data = Vec::new();
         data.extend_from_slice(&dynamic);
         data.extend_from_slice(&strtab);
@@ -1059,7 +1101,10 @@ mod tests {
         let rela1 = build_rela_entry(0x400000, R_X86_64_GLOB_DAT as u64, 0);
         let rela2 = build_rela_entry(0x400008, R_X86_64_JUMP_SLOT as u64, 0);
         let placeholder = build_dynamic_entries(&[
-            (DT_RELA, 0), (DT_RELASZ, 0), (DT_JMPREL, 0), (DT_PLTRELSZ, 0),
+            (DT_RELA, 0),
+            (DT_RELASZ, 0),
+            (DT_JMPREL, 0),
+            (DT_PLTRELSZ, 0),
         ]);
         let dyn_size = placeholder.len();
         let rela_vaddr = 0x1000u64 + dyn_size as u64;
@@ -1228,22 +1273,4 @@ mod tests {
             assert_eq!(o2, n2);
         }
     }
-}
-
-fn read_u16(data: &[u8], offset: usize) -> u16 {
-    if offset + 2 > data.len() { return 0; }
-    u16::from_le_bytes([data[offset], data[offset + 1]])
-}
-
-fn read_u32(data: &[u8], offset: usize) -> u32 {
-    if offset + 4 > data.len() { return 0; }
-    u32::from_le_bytes([data[offset], data[offset+1], data[offset+2], data[offset+3]])
-}
-
-fn read_u64(data: &[u8], offset: usize) -> u64 {
-    if offset + 8 > data.len() { return 0; }
-    u64::from_le_bytes([
-        data[offset], data[offset+1], data[offset+2], data[offset+3],
-        data[offset+4], data[offset+5], data[offset+6], data[offset+7],
-    ])
 }

@@ -38,7 +38,10 @@ impl std::fmt::Display for DatasetError {
             Self::Io(e) => write!(f, "I/O error: {e}"),
             Self::Json(e) => write!(f, "JSON error: {e}"),
             Self::UnsupportedSchemaVersion(v) => {
-                write!(f, "Unsupported dataset schema version {v} (max supported: {DATASET_SCHEMA_VERSION})")
+                write!(
+                    f,
+                    "Unsupported dataset schema version {v} (max supported: {DATASET_SCHEMA_VERSION})"
+                )
             }
             Self::MissingManifest => write!(f, "Missing manifest.json in dataset directory"),
             Self::MissingImagesDir => write!(f, "Missing images/ directory in dataset"),
@@ -88,7 +91,9 @@ impl AnalysisDataset {
         let manifest: Manifest = serde_json::from_str(&manifest_data)?;
 
         if manifest.schema_version > DATASET_SCHEMA_VERSION {
-            return Err(DatasetError::UnsupportedSchemaVersion(manifest.schema_version));
+            return Err(DatasetError::UnsupportedSchemaVersion(
+                manifest.schema_version,
+            ));
         }
 
         let images_dir = root.join("images");
@@ -126,9 +131,9 @@ impl AnalysisDataset {
             let name_upper = name.to_ascii_uppercase();
             let display = manifest.games.iter().find_map(|g| {
                 g.display_name.as_ref().filter(|_| {
-                    g.title_id.as_ref().map_or(false, |tid| {
-                        name_upper.contains(&tid.to_ascii_uppercase())
-                    })
+                    g.title_id
+                        .as_ref()
+                        .is_some_and(|tid| name_upper.contains(&tid.to_ascii_uppercase()))
                 })
             });
             if let Some(d) = display {
@@ -136,11 +141,18 @@ impl AnalysisDataset {
             }
         }
 
-        Ok(AnalysisDataset { manifest, images, display_names })
+        Ok(AnalysisDataset {
+            manifest,
+            images,
+            display_names,
+        })
     }
 
     pub fn total_imports(&self) -> usize {
-        self.images.iter().map(|(_, doc)| doc.image.imports.len()).sum()
+        self.images
+            .iter()
+            .map(|(_, doc)| doc.image.imports.len())
+            .sum()
     }
 
     pub fn unique_nids(&self) -> usize {
@@ -224,7 +236,8 @@ mod tests {
     }
 
     fn tempdir_for_test(label: &str) -> PathBuf {
-        let dir = std::env::temp_dir().join(format!("ps5rs_dataset_test_{label}_{}", std::process::id()));
+        let dir =
+            std::env::temp_dir().join(format!("ps5rs_dataset_test_{label}_{}", std::process::id()));
         let _ = std::fs::remove_dir_all(&dir);
         dir
     }
@@ -335,7 +348,10 @@ mod tests {
         .unwrap();
 
         let result = AnalysisDataset::open(&root);
-        assert!(matches!(result, Err(DatasetError::UnsupportedSchemaVersion(999))));
+        assert!(matches!(
+            result,
+            Err(DatasetError::UnsupportedSchemaVersion(999))
+        ));
 
         let _ = std::fs::remove_dir_all(&root);
     }

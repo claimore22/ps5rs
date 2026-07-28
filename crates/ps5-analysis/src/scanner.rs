@@ -1,4 +1,4 @@
-use crate::dataset::{Manifest, DATASET_SCHEMA_VERSION};
+use crate::dataset::{DATASET_SCHEMA_VERSION, Manifest};
 use crate::param_json::{self, GameParam};
 use ps5_image::{BinaryImageBuilder, BinaryImageDocument};
 use ps5_nid::Catalog;
@@ -23,8 +23,12 @@ pub fn scan(
     std::fs::create_dir_all(output)?;
     let images_dir = output.join("images");
     if images_dir.exists() {
-        for entry in std::fs::read_dir(&images_dir).into_iter().flatten().flatten() {
-            if entry.path().extension().map_or(false, |e| e == "json") {
+        for entry in std::fs::read_dir(&images_dir)
+            .into_iter()
+            .flatten()
+            .flatten()
+        {
+            if entry.path().extension().is_some_and(|e| e == "json") {
                 let _ = std::fs::remove_file(entry.path());
             }
         }
@@ -54,8 +58,7 @@ pub fn scan(
                 std::fs::write(&json_path, format!("{json}\n"))?;
                 image_paths.push(json_path);
 
-                let param = param_json::read_param(game_dir)
-                    .unwrap_or_default();
+                let param = param_json::read_param(game_dir).unwrap_or_default();
                 let mut param = param;
                 if param.name.is_none() {
                     param.name = Some(game_name.to_string());
@@ -131,10 +134,7 @@ fn find_binaries(game_dir: &Path, options: &ScanOptions) -> Vec<PathBuf> {
                     walk(&path, result, depth + 1);
                 } else if let Some(name) = path.file_name().and_then(|n| n.to_str()) {
                     let lower = name.to_ascii_lowercase();
-                    if lower == "eboot.bin"
-                        || lower.ends_with(".prx")
-                        || lower.ends_with(".so")
-                    {
+                    if lower == "eboot.bin" || lower.ends_with(".prx") || lower.ends_with(".so") {
                         result.push(path);
                     }
                 }
@@ -159,11 +159,7 @@ fn find_binaries(game_dir: &Path, options: &ScanOptions) -> Vec<PathBuf> {
     }
 }
 
-fn analyze_binary(
-    path: &Path,
-    catalog: &Catalog,
-    game_dir: &Path,
-) -> Option<BinaryImageDocument> {
+fn analyze_binary(path: &Path, catalog: &Catalog, game_dir: &Path) -> Option<BinaryImageDocument> {
     let data = std::fs::read(path).ok()?;
     let sha256 = ps5_format::sha256_hex(&data);
     let image = BinaryImageBuilder::build_from_file(data, &sha256, catalog);
@@ -217,9 +213,7 @@ pub(crate) fn utc_now_iso8601() -> String {
     let m = if mp < 10 { mp + 3 } else { mp - 9 };
     let y = if m <= 2 { y + 1 } else { y };
 
-    format!(
-        "{y:04}-{m:02}-{d:02}T{hours:02}:{minutes:02}:{seconds:02}Z"
-    )
+    format!("{y:04}-{m:02}-{d:02}T{hours:02}:{minutes:02}:{seconds:02}Z")
 }
 
 #[cfg(test)]
@@ -253,10 +247,8 @@ mod tests {
 
     #[test]
     fn find_game_dirs_empty() {
-        let tmp = std::env::temp_dir().join(format!(
-            "ps5rs_scan_test_empty_{}",
-            std::process::id()
-        ));
+        let tmp =
+            std::env::temp_dir().join(format!("ps5rs_scan_test_empty_{}", std::process::id()));
         let _ = std::fs::create_dir_all(&tmp);
         let dirs = find_game_dirs(&tmp);
         assert!(dirs.is_empty());
@@ -265,10 +257,7 @@ mod tests {
 
     #[test]
     fn find_game_dirs_finds_eboot() {
-        let tmp = std::env::temp_dir().join(format!(
-            "ps5rs_scan_test_dirs_{}",
-            std::process::id()
-        ));
+        let tmp = std::env::temp_dir().join(format!("ps5rs_scan_test_dirs_{}", std::process::id()));
         let _ = std::fs::remove_dir_all(&tmp);
         std::fs::create_dir_all(tmp.join("GameA")).unwrap();
         std::fs::create_dir_all(tmp.join("GameB")).unwrap();
@@ -287,10 +276,8 @@ mod tests {
 
     #[test]
     fn find_game_dirs_skips_dirs_without_eboot() {
-        let tmp = std::env::temp_dir().join(format!(
-            "ps5rs_scan_test_no_eboot_{}",
-            std::process::id()
-        ));
+        let tmp =
+            std::env::temp_dir().join(format!("ps5rs_scan_test_no_eboot_{}", std::process::id()));
         let _ = std::fs::remove_dir_all(&tmp);
         std::fs::create_dir_all(tmp.join("Empty")).unwrap();
 
@@ -302,10 +289,8 @@ mod tests {
 
     #[test]
     fn find_game_dirs_drills_through_single_child() {
-        let tmp = std::env::temp_dir().join(format!(
-            "ps5rs_scan_test_drill_{}",
-            std::process::id()
-        ));
+        let tmp =
+            std::env::temp_dir().join(format!("ps5rs_scan_test_drill_{}", std::process::id()));
         let _ = std::fs::remove_dir_all(&tmp);
         std::fs::create_dir_all(tmp.join("Wrapper").join("Game")).unwrap();
         std::fs::write(tmp.join("Wrapper").join("Game").join("eboot.bin"), "x").unwrap();

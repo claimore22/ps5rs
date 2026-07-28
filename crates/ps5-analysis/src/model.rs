@@ -169,7 +169,12 @@ mod tests {
 
     #[test]
     fn platform_roundtrip_serde() {
-        for p in [Platform::Ps4, Platform::Ps5, Platform::RawElf, Platform::Unknown] {
+        for p in [
+            Platform::Ps4,
+            Platform::Ps5,
+            Platform::RawElf,
+            Platform::Unknown,
+        ] {
             let json = serde_json::to_string(&p).unwrap();
             let back: Platform = serde_json::from_str(&json).unwrap();
             assert_eq!(p, back);
@@ -179,13 +184,22 @@ mod tests {
     #[test]
     fn analysis_database_serde_roundtrip() {
         let db = make_db(vec![
-            make_game("GameA", vec![
-                make_import("abc123", "sceKernelLoadStartModule", 1, "libkernel"),
-                make_import("def456", "sceDisplaySetFrameBuf", 2, "libSceDisplay"),
-            ]),
-            make_game("GameB", vec![
-                make_import("abc123", "sceKernelLoadStartModule", 1, "libkernel"),
-            ]),
+            make_game(
+                "GameA",
+                vec![
+                    make_import("abc123", "sceKernelLoadStartModule", 1, "libkernel"),
+                    make_import("def456", "sceDisplaySetFrameBuf", 2, "libSceDisplay"),
+                ],
+            ),
+            make_game(
+                "GameB",
+                vec![make_import(
+                    "abc123",
+                    "sceKernelLoadStartModule",
+                    1,
+                    "libkernel",
+                )],
+            ),
         ]);
         let json = serde_json::to_string(&db).unwrap();
         let back: AnalysisDatabase = serde_json::from_str(&json).unwrap();

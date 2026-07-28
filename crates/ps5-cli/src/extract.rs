@@ -23,7 +23,14 @@ pub(crate) fn cmd_extract(path: &PathBuf, output: &Option<PathBuf>) {
         std::process::exit(1);
     });
 
-    println!("Format:  {}", if result.was_self { "SELF" } else { "Raw ELF (passthrough)" });
+    println!(
+        "Format:  {}",
+        if result.was_self {
+            "SELF"
+        } else {
+            "Raw ELF (passthrough)"
+        }
+    );
     println!("Output:  {}", out_path.display());
     println!("Size:    {} bytes", result.elf.len());
 
@@ -31,18 +38,27 @@ pub(crate) fn cmd_extract(path: &PathBuf, output: &Option<PathBuf>) {
         println!();
         println!("Warnings:");
         if result.encrypted_segments > 0 {
-            println!("  {} encrypted segment(s) — data may be invalid", result.encrypted_segments);
+            println!(
+                "  {} encrypted segment(s) — data may be invalid",
+                result.encrypted_segments
+            );
         }
         if result.compressed_segments > 0 {
-            println!("  {} compressed segment(s) — data may be invalid", result.compressed_segments);
+            println!(
+                "  {} compressed segment(s) — data may be invalid",
+                result.compressed_segments
+            );
         }
     }
 }
 
-pub(crate) fn cmd_batch_extract(path: &std::path::Path, output: &std::path::Path, _extra_nids: &[PathBuf], include_modules: bool) {
-    let options = ps5_analysis::BatchExtractOptions {
-        include_modules,
-    };
+pub(crate) fn cmd_batch_extract(
+    path: &std::path::Path,
+    output: &std::path::Path,
+    _extra_nids: &[PathBuf],
+    include_modules: bool,
+) {
+    let options = ps5_analysis::BatchExtractOptions { include_modules };
 
     eprintln!("Batch extracting from {}...", path.display());
     let result = ps5_analysis::batch_extract(path, output, &options).unwrap_or_else(|e| {

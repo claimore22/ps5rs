@@ -19,11 +19,15 @@ pub struct EngineHint {
 }
 
 pub fn build_engine_hints(ds: &AnalysisDataset) -> EngineHintReport {
-    let games = ds.images.iter().map(|(name, doc)| {
-        let mut hint = analyze_engine(name, doc);
-        hint.display_name = Some(ds.display_name_for(name).to_string());
-        hint
-    }).collect();
+    let games = ds
+        .images
+        .iter()
+        .map(|(name, doc)| {
+            let mut hint = analyze_engine(name, doc);
+            hint.display_name = Some(ds.display_name_for(name).to_string());
+            hint
+        })
+        .collect();
     EngineHintReport { games }
 }
 
@@ -48,23 +52,24 @@ fn analyze_engine(name: &str, doc: &ps5_image::BinaryImageDocument) -> EngineHin
     let mut engines = Vec::new();
 
     let unreal = {
-        let lib_match = all_libs.iter().any(|l| {
-            l.contains("Unreal") || l.contains("UE4") || l.contains("UE5")
-        });
-        let name_match = lib_names.iter().any(|l| {
-            l.contains("Unreal") || l.contains("UE4") || l.contains("UE5")
-        });
+        let lib_match = all_libs
+            .iter()
+            .any(|l| l.contains("Unreal") || l.contains("UE4") || l.contains("UE5"));
+        let name_match = lib_names
+            .iter()
+            .any(|l| l.contains("Unreal") || l.contains("UE4") || l.contains("UE5"));
         lib_match || name_match
     };
     if unreal {
         engines.push("Unreal Engine".to_string());
     }
 
-    let unity = all_libs.iter().any(|l| {
-        l.contains("Unity")
-            || l.contains("UnityEngine")
-            || l.contains("UnityMain")
-    }) || lib_names.iter().any(|l| l.contains("Unity") || l.contains("UnityEngine"));
+    let unity = all_libs
+        .iter()
+        .any(|l| l.contains("Unity") || l.contains("UnityEngine") || l.contains("UnityMain"))
+        || lib_names
+            .iter()
+            .any(|l| l.contains("Unity") || l.contains("UnityEngine"));
     if unity {
         engines.push("Unity".to_string());
     }
@@ -93,31 +98,33 @@ fn analyze_engine(name: &str, doc: &ps5_image::BinaryImageDocument) -> EngineHin
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::dataset::{Manifest, DATASET_SCHEMA_VERSION};
-    use ps5_image::{
-        BinaryImage, BinaryImageDocument, LoadedSegment, Platform, SegmentType,
-    };
+    use crate::dataset::{DATASET_SCHEMA_VERSION, Manifest};
+    use ps5_image::{BinaryImage, BinaryImageDocument, LoadedSegment, Platform, SegmentType};
 
     fn make_image_with_libs(name: &str, libs: Vec<String>) -> (String, BinaryImageDocument) {
         let mut import_libs = std::collections::HashMap::new();
         for (i, lib) in libs.iter().enumerate() {
             import_libs.insert(i as u16, lib.clone());
         }
-        let imports = libs.iter().enumerate().flat_map(|(i, lib)| {
-            (0..2).map(move |j| ps5_image::ImportEntry {
-                nid_hash: format!("nid_{i}_{j}"),
-                resolved_name: Some(format!("func_{i}_{j}")),
-                library_id: i as u16,
-                library_name: lib.clone(),
-                value: 0,
-                size: 0,
-                shndx: 1,
-                binding: ps5_image::SymbolBinding::Global,
-                sym_type: ps5_image::SymbolType::Func,
-                visibility: ps5_image::SymbolVisibility::Default,
-                ordinal: (i * 2 + j) as u32,
+        let imports = libs
+            .iter()
+            .enumerate()
+            .flat_map(|(i, lib)| {
+                (0..2).map(move |j| ps5_image::ImportEntry {
+                    nid_hash: format!("nid_{i}_{j}"),
+                    resolved_name: Some(format!("func_{i}_{j}")),
+                    library_id: i as u16,
+                    library_name: lib.clone(),
+                    value: 0,
+                    size: 0,
+                    shndx: 1,
+                    binding: ps5_image::SymbolBinding::Global,
+                    sym_type: ps5_image::SymbolType::Func,
+                    visibility: ps5_image::SymbolVisibility::Default,
+                    ordinal: (i * 2 + j) as u32,
+                })
             })
-        }).collect();
+            .collect();
 
         let image = BinaryImage {
             sha256: format!("sha256_{name}"),
@@ -205,7 +212,11 @@ mod tests {
         let report = build_engine_hints(&ds);
         assert!(report.games[0].unreal);
         assert!(!report.games[0].unity);
-        assert!(report.games[0].engines.contains(&"Unreal Engine".to_string()));
+        assert!(
+            report.games[0]
+                .engines
+                .contains(&"Unreal Engine".to_string())
+        );
     }
 
     #[test]
@@ -224,7 +235,11 @@ mod tests {
     fn sce_libraries_collected() {
         let ds = test_dataset(vec![make_image_with_libs(
             "GameA",
-            vec!["libScePad".into(), "libSceGnmDriver".into(), "libkernel".into()],
+            vec![
+                "libScePad".into(),
+                "libSceGnmDriver".into(),
+                "libkernel".into(),
+            ],
         )]);
         let report = build_engine_hints(&ds);
         let sce = &report.games[0].sce_libraries;

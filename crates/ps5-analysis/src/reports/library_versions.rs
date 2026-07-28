@@ -38,7 +38,11 @@ pub fn build_library_versions(ds: &AnalysisDataset) -> LibraryVersionReport {
     }
 
     let mut entries: Vec<LibraryVersionEntry> = map.into_values().collect();
-    entries.sort_by(|a, b| b.game_count.cmp(&a.game_count).then(a.library.cmp(&b.library)));
+    entries.sort_by(|a, b| {
+        b.game_count
+            .cmp(&a.game_count)
+            .then(a.library.cmp(&b.library))
+    });
 
     LibraryVersionReport { entries }
 }
@@ -46,7 +50,7 @@ pub fn build_library_versions(ds: &AnalysisDataset) -> LibraryVersionReport {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::dataset::{Manifest, DATASET_SCHEMA_VERSION};
+    use crate::dataset::{DATASET_SCHEMA_VERSION, Manifest};
     use ps5_image::{
         BinaryImage, BinaryImageDocument, LibVersionEntry, LoadedSegment, Platform, SegmentType,
     };

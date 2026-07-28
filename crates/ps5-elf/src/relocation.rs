@@ -1,5 +1,5 @@
-use ps5_format::error::Result;
 use crate::read_u64;
+use ps5_format::error::Result;
 
 #[derive(Debug, Clone)]
 pub struct RelaEntry {

@@ -3,14 +3,20 @@ use crate::model::*;
 pub fn compute_stats(db: &AnalysisDatabase) -> AnalysisStats {
     let total_games = db.games.len();
     let total_imports: usize = db.games.iter().map(|g| g.imports.len()).sum();
-    let unique_nids: std::collections::HashSet<&str> = db.games.iter()
+    let unique_nids: std::collections::HashSet<&str> = db
+        .games
+        .iter()
         .flat_map(|g| g.imports.iter().map(|i| i.nid_hash.as_str()))
         .collect();
-    let unique_libs: std::collections::HashSet<&str> = db.games.iter()
+    let unique_libs: std::collections::HashSet<&str> = db
+        .games
+        .iter()
         .flat_map(|g| g.imports.iter().map(|i| i.library_name.as_str()))
         .collect();
 
-    let resolved = db.games.iter()
+    let resolved = db
+        .games
+        .iter()
         .flat_map(|g| g.imports.iter())
         .filter(|i| i.resolved_name != "?")
         .count();
@@ -22,14 +28,18 @@ pub fn compute_stats(db: &AnalysisDatabase) -> AnalysisStats {
     };
 
     // Most common NID
-    let mut nid_counts: std::collections::HashMap<&str, (usize, &str)> = std::collections::HashMap::new();
+    let mut nid_counts: std::collections::HashMap<&str, (usize, &str)> =
+        std::collections::HashMap::new();
     for game in &db.games {
         for imp in &game.imports {
-            let entry = nid_counts.entry(&imp.nid_hash).or_insert((0, &imp.resolved_name));
+            let entry = nid_counts
+                .entry(&imp.nid_hash)
+                .or_insert((0, &imp.resolved_name));
             entry.0 += 1;
         }
     }
-    let (most_nid_hash, most_nid_name, most_nid_count) = nid_counts.iter()
+    let (most_nid_hash, most_nid_name, most_nid_count) = nid_counts
+        .iter()
         .max_by_key(|(_, (count, _))| count)
         .map(|(hash, (count, name))| (hash.to_string(), name.to_string(), *count))
         .unwrap_or_default();
@@ -41,7 +51,8 @@ pub fn compute_stats(db: &AnalysisDatabase) -> AnalysisStats {
             *lib_counts.entry(&imp.library_name).or_insert(0) += 1;
         }
     }
-    let (most_lib_name, most_lib_count) = lib_counts.iter()
+    let (most_lib_name, most_lib_count) = lib_counts
+        .iter()
         .max_by_key(|(_, count)| **count)
         .map(|(name, count)| (name.to_string(), *count))
         .unwrap_or_default();
@@ -63,7 +74,7 @@ pub fn compute_stats(db: &AnalysisDatabase) -> AnalysisStats {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::model::{make_game, make_db, make_import};
+    use crate::model::{make_db, make_game, make_import};
 
     #[test]
     fn stats_empty_database() {
@@ -78,13 +89,14 @@ mod tests {
 
     #[test]
     fn stats_single_game() {
-        let db = make_db(vec![
-            make_game("GameA", vec![
+        let db = make_db(vec![make_game(
+            "GameA",
+            vec![
                 make_import("aaa", "funcA", 1, "libA"),
                 make_import("bbb", "funcB", 2, "libB"),
                 make_import("aaa", "funcA", 1, "libA"),
-            ]),
-        ]);
+            ],
+        )]);
         let s = compute_stats(&db);
         assert_eq!(s.total_games, 1);
         assert_eq!(s.total_imports, 3);
@@ -98,13 +110,14 @@ mod tests {
 
     #[test]
     fn stats_resolution_rate() {
-        let db = make_db(vec![
-            make_game("GameA", vec![
+        let db = make_db(vec![make_game(
+            "GameA",
+            vec![
                 make_import("aaa", "funcA", 1, "libA"),
                 make_import("bbb", "?", 1, "libA"),
                 make_import("ccc", "?", 1, "libA"),
-            ]),
-        ]);
+            ],
+        )]);
         let s = compute_stats(&db);
         // 1 resolved out of 3 = 33.33%
         assert!((s.resolution_rate - 33.33).abs() < 0.1);
@@ -112,11 +125,10 @@ mod tests {
 
     #[test]
     fn stats_all_unresolved() {
-        let db = make_db(vec![
-            make_game("GameA", vec![
-                make_import("aaa", "?", 1, "libA"),
-            ]),
-        ]);
+        let db = make_db(vec![make_game(
+            "GameA",
+            vec![make_import("aaa", "?", 1, "libA")],
+        )]);
         let s = compute_stats(&db);
         assert_eq!(s.resolution_rate, 0.0);
     }
@@ -124,13 +136,14 @@ mod tests {
     #[test]
     fn stats_multi_game_tiebreaker() {
         let db = make_db(vec![
-            make_game("GameA", vec![
-                make_import("aaa", "funcA", 1, "libA"),
-            ]),
-            make_game("GameB", vec![
-                make_import("aaa", "funcA", 1, "libA"),
-                make_import("ccc", "funcC", 2, "libB"),
-            ]),
+            make_game("GameA", vec![make_import("aaa", "funcA", 1, "libA")]),
+            make_game(
+                "GameB",
+                vec![
+                    make_import("aaa", "funcA", 1, "libA"),
+                    make_import("ccc", "funcC", 2, "libB"),
+                ],
+            ),
         ]);
         let s = compute_stats(&db);
         assert_eq!(s.total_imports, 3);

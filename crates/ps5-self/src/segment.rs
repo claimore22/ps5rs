@@ -2,10 +2,18 @@ use ps5_format::error::{ParseError, Result};
 use ps5_format::self_constants::*;
 
 fn read_u64(data: &[u8], offset: usize) -> u64 {
-    if offset + 8 > data.len() { return 0; }
+    if offset + 8 > data.len() {
+        return 0;
+    }
     u64::from_le_bytes([
-        data[offset], data[offset+1], data[offset+2], data[offset+3],
-        data[offset+4], data[offset+5], data[offset+6], data[offset+7],
+        data[offset],
+        data[offset + 1],
+        data[offset + 2],
+        data[offset + 3],
+        data[offset + 4],
+        data[offset + 5],
+        data[offset + 6],
+        data[offset + 7],
     ])
 }
 

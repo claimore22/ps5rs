@@ -21,20 +21,30 @@ fn main() {
         Commands::Dynamic { file } => inspect::cmd_dynamic(&file),
         Commands::Symbols { file } => inspect::cmd_symbols(&file),
         Commands::Nid { name } => inspect::cmd_nid(&name),
-        Commands::Scan { path, output, nids, include_modules } => {
-            analyze::cmd_scan(&path, &output, &nids, include_modules)
-        }
-        Commands::Analyze { nids, include_modules, command } => {
-            analyze::cmd_analyze(command, &nids, include_modules)
-        }
+        Commands::Scan {
+            path,
+            output,
+            nids,
+            include_modules,
+        } => analyze::cmd_scan(&path, &output, &nids, include_modules),
+        Commands::Analyze {
+            nids,
+            include_modules,
+            command,
+        } => analyze::cmd_analyze(command, &nids, include_modules),
         Commands::Extract { file, output } => extract::cmd_extract(&file, &output),
-        Commands::BatchExtract { path, output, nids, include_modules } => {
-            extract::cmd_batch_extract(&path, &output, &nids, include_modules)
-        }
+        Commands::BatchExtract {
+            path,
+            output,
+            nids,
+            include_modules,
+        } => extract::cmd_batch_extract(&path, &output, &nids, include_modules),
         Commands::Validate { path, output } => dataset::cmd_validate(&path, &output),
         Commands::Dashboard { path, output } => dataset::cmd_dashboard(&path, &output),
-        Commands::ExportUnknown { path, group_by, output } => {
-            dataset::cmd_export_unknown(&path, &group_by, &output)
-        }
+        Commands::ExportUnknown {
+            path,
+            group_by,
+            output,
+        } => dataset::cmd_export_unknown(&path, &group_by, &output),
     }
 }

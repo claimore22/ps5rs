@@ -696,24 +696,22 @@ mod tests {
                 resolution_rate: 95.0,
                 avg_imports_per_game: 50.0,
             },
-            games: vec![
-                GameRow {
-                    name: "game1".to_string(),
-                    title_name: Some("Game One".to_string()),
-                    platform: "PS5".to_string(),
-                    is_self: true,
-                    segments: 14,
-                    imports: 60,
-                    unique_imports: 50,
-                    resolved: 57,
-                    nid_resolution: 95.0,
-                    file_size_mb: 45.2,
-                    rx_mb: 30.0,
-                    r_mb: 5.0,
-                    rw_mb: 10.0,
-                    engine: Some("Native".to_string()),
-                },
-            ],
+            games: vec![GameRow {
+                name: "game1".to_string(),
+                title_name: Some("Game One".to_string()),
+                platform: "PS5".to_string(),
+                is_self: true,
+                segments: 14,
+                imports: 60,
+                unique_imports: 50,
+                resolved: 57,
+                nid_resolution: 95.0,
+                file_size_mb: 45.2,
+                rx_mb: 30.0,
+                r_mb: 5.0,
+                rw_mb: 10.0,
+                engine: Some("Native".to_string()),
+            }],
             game_details: vec![GameDetail {
                 name: "game1".to_string(),
                 title_name: Some("Game One".to_string()),
@@ -728,8 +726,12 @@ mod tests {
                 elf_version: 1,
                 build_id: None,
                 segments: vec![SegmentDetail {
-                    index: 0, seg_type: "Load".to_string(), vaddr: "0x80000000".to_string(),
-                    filesz: 30*1024*1024, memsz: 30*1024*1024, flags: "RX".to_string(),
+                    index: 0,
+                    seg_type: "Load".to_string(),
+                    vaddr: "0x80000000".to_string(),
+                    filesz: 30 * 1024 * 1024,
+                    memsz: 30 * 1024 * 1024,
+                    flags: "RX".to_string(),
                 }],
                 imports: vec![ImportDetail {
                     nid_hash: "ABCDEF0123456789".to_string(),
@@ -737,7 +739,10 @@ mod tests {
                     library_name: "libkernel".to_string(),
                 }],
                 unresolved_nids: vec![],
-                import_summary: vec![LibImportCount { library: "libkernel".to_string(), count: 1 }],
+                import_summary: vec![LibImportCount {
+                    library: "libkernel".to_string(),
+                    count: 1,
+                }],
                 relocations: 0,
                 has_tls: false,
                 engine: Some("Native".to_string()),
@@ -760,41 +765,70 @@ mod tests {
             },
             segments: vec![SegmentRow {
                 game: "game1".to_string(),
-                rx_mb: 30.0, r_mb: 5.0, rw_mb: 10.0, other_mb: 2.0, total_mb: 47.0,
+                rx_mb: 30.0,
+                r_mb: 5.0,
+                rw_mb: 10.0,
+                other_mb: 2.0,
+                total_mb: 47.0,
             }],
             library_priority: vec![LibraryPriority {
                 name: "libkernel".to_string(),
-                game_count: 2, import_count: 30, unique_nid_count: 25,
+                game_count: 2,
+                import_count: 30,
+                unique_nid_count: 25,
             }],
             library_details: vec![LibraryDetail {
                 name: "libkernel".to_string(),
-                game_count: 2, total_imports: 30, unique_nid_count: 25,
+                game_count: 2,
+                total_imports: 30,
+                unique_nid_count: 25,
                 games: vec![LibGameEntry {
-                    game: "game1".to_string(), title_name: Some("Game One".to_string()),
-                    import_count: 30, unique_nid_count: 25,
+                    game: "game1".to_string(),
+                    title_name: Some("Game One".to_string()),
+                    import_count: 30,
+                    unique_nid_count: 25,
                 }],
                 top_nids: vec![TopNid {
                     nid_hash: "ABCDEF0123456789".to_string(),
                     resolved_name: "sceKernelOpen".to_string(),
-                    count: 15, game_count: 2,
+                    count: 15,
+                    game_count: 2,
                 }],
                 unknown_nids: vec![],
             }],
             library_nid_breakdown: vec![LibraryNidGroup {
                 library: "libkernel".to_string(),
-                game_count: 2, total_imports: 30, unique_nid_count: 25,
+                game_count: 2,
+                total_imports: 30,
+                unique_nid_count: 25,
                 top_nids: vec![TopNid {
                     nid_hash: "ABCDEF0123456789".to_string(),
                     resolved_name: "sceKernelOpen".to_string(),
-                    count: 15, game_count: 2,
+                    count: 15,
+                    game_count: 2,
                 }],
             }],
             statistics: Some(DashboardStatistics {
-                top_5_largest: vec![StatEntry { game: "game1".to_string(), value: 47.0 }],
-                top_5_smallest: vec![StatEntry { game: "game1".to_string(), value: 47.0 }],
-                top_5_most_imports: vec![StatEntry { game: "game1".to_string(), value: 60.0 }],
-                top_5_most_libs: vec![StatEntry { game: "game1".to_string(), value: 10.0 }],
-                top_5_highest_unknown: vec![StatEntry { game: "game1".to_string(), value: 8.3 }],
+                top_5_largest: vec![StatEntry {
+                    game: "game1".to_string(),
+                    value: 47.0,
+                }],
+                top_5_smallest: vec![StatEntry {
+                    game: "game1".to_string(),
+                    value: 47.0,
+                }],
+                top_5_most_imports: vec![StatEntry {
+                    game: "game1".to_string(),
+                    value: 60.0,
+                }],
+                top_5_most_libs: vec![StatEntry {
+                    game: "game1".to_string(),
+                    value: 10.0,
+                }],
+                top_5_highest_unknown: vec![StatEntry {
+                    game: "game1".to_string(),
+                    value: 8.3,
+                }],
                 avg_code_size_mb: 30.0,
                 avg_data_size_mb: 10.0,
                 avg_rodata_size_mb: 5.0,
@@ -856,6 +890,10 @@ mod tests {
         let js = &html[script_start..script_end];
         let open = js.matches('(').count();
         let close = js.matches(')').count();
-        assert_eq!(open, close, "unbalanced parens: {} open vs {} close", open, close);
+        assert_eq!(
+            open, close,
+            "unbalanced parens: {} open vs {} close",
+            open, close
+        );
     }
 }

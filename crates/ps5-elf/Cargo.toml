@@ -10,3 +10,6 @@ ps5-format = { path = "../ps5-format" }
 
 [dev-dependencies]
 proptest = "1"
+
+[lints]
+workspace = true

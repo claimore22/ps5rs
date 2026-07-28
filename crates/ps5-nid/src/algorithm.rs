@@ -1,8 +1,7 @@
-use sha1::{Sha1, Digest};
+use sha1::{Digest, Sha1};
 
 const SALT: [u8; 16] = [
-    0x51, 0x8D, 0x64, 0xA6, 0x35, 0xDE, 0xD8, 0xC1,
-    0xE6, 0xB0, 0x39, 0xB1, 0xC3, 0xE5, 0x52, 0x30,
+    0x51, 0x8D, 0x64, 0xA6, 0x35, 0xDE, 0xD8, 0xC1, 0xE6, 0xB0, 0x39, 0xB1, 0xC3, 0xE5, 0x52, 0x30,
 ];
 
 const B64_ALPHABET: &[u8; 64] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-";
@@ -10,7 +9,7 @@ const B64_ALPHABET: &[u8; 64] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrst
 pub fn hash(name: &str) -> String {
     let mut hasher = Sha1::new();
     hasher.update(name.as_bytes());
-    hasher.update(&SALT);
+    hasher.update(SALT);
     let result = hasher.finalize();
 
     let mut reversed = [0u8; 8];

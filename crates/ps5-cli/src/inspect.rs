@@ -1,7 +1,7 @@
 use std::path::PathBuf;
 
 use crate::catalog::load_catalog;
-use crate::util::{load_file, osabi_name, e_version_name, write_to_output_or_stdout};
+use crate::util::{e_version_name, load_file, osabi_name, write_to_output_or_stdout};
 
 #[allow(clippy::print_literal)]
 pub(crate) fn cmd_inspect(path: &PathBuf, json: bool, output: &Option<PathBuf>) {
@@ -17,7 +17,10 @@ pub(crate) fn cmd_inspect(path: &PathBuf, json: bool, output: &Option<PathBuf>) 
         return;
     }
 
-    println!("ps5rs v{} — PS5 binary inspector", env!("CARGO_PKG_VERSION"));
+    println!(
+        "ps5rs v{} — PS5 binary inspector",
+        env!("CARGO_PKG_VERSION")
+    );
     println!("File: {}", path.display());
     println!("Size: {} bytes", image.file_size);
     println!();
@@ -28,9 +31,17 @@ pub(crate) fn cmd_inspect(path: &PathBuf, json: bool, output: &Option<PathBuf>) 
     println!("Entry point: {:#x}", image.entry_point);
     println!("ELF type: {:#x}", image.metadata.elf_type);
     println!("ELF flags: {:#x}", image.metadata.elf_flags);
-    println!("OS/ABI: {} ({:#x})", osabi_name(image.metadata.osabi), image.metadata.osabi);
+    println!(
+        "OS/ABI: {} ({:#x})",
+        osabi_name(image.metadata.osabi),
+        image.metadata.osabi
+    );
     println!("ABI Version: {}", image.metadata.ei_abi_version);
-    println!("ELF Version: {} ({})", image.metadata.e_version, e_version_name(image.metadata.e_version));
+    println!(
+        "ELF Version: {} ({})",
+        image.metadata.e_version,
+        e_version_name(image.metadata.e_version)
+    );
     if let Some(ref bid) = image.metadata.build_id {
         println!("Build ID: {bid}");
     }
@@ -44,7 +55,10 @@ pub(crate) fn cmd_inspect(path: &PathBuf, json: bool, output: &Option<PathBuf>) 
         println!("Library versions: {}", image.lib_versions.len());
     }
     if let Some(ref tls) = image.tls {
-        println!("TLS: vaddr={:#x} filesz={:#x} memsz={:#x}", tls.vaddr, tls.filesz, tls.memsz);
+        println!(
+            "TLS: vaddr={:#x} filesz={:#x} memsz={:#x}",
+            tls.vaddr, tls.filesz, tls.memsz
+        );
     }
     if image.init_va != 0 {
         println!("init: {:#x}", image.init_va);
@@ -75,10 +89,14 @@ pub(crate) fn cmd_inspect(path: &PathBuf, json: bool, output: &Option<PathBuf>) 
     }
 
     if !image.imports.is_empty() {
-        let mut lib_counts: std::collections::HashMap<String, usize> = std::collections::HashMap::new();
+        let mut lib_counts: std::collections::HashMap<String, usize> =
+            std::collections::HashMap::new();
         for imp in &image.imports {
-            let label = format!("{}: {}", imp.library_name,
-                imp.resolved_name.as_deref().unwrap_or("?"));
+            let label = format!(
+                "{}: {}",
+                imp.library_name,
+                imp.resolved_name.as_deref().unwrap_or("?")
+            );
             *lib_counts.entry(label).or_insert(0) += 1;
         }
         println!("\nBy library + resolved name:");
@@ -123,24 +141,42 @@ pub(crate) fn cmd_segments(path: &PathBuf) {
     });
 
     println!("Program headers from {}", path.display());
-    println!("{:<4} {:<16} {:<12} {:<18} {:<18} {:<18} {:<18} {}", "#", "Type", "Flags", "Offset", "VAddr", "FileSz", "MemSz", "Mapped File Offset");
+    println!(
+        "{:<4} {:<16} {:<12} {:<18} {:<18} {:<18} {:<18} {}",
+        "#", "Type", "Flags", "Offset", "VAddr", "FileSz", "MemSz", "Mapped File Offset"
+    );
     println!("{}", "-".repeat(140));
 
     for (i, ph) in img.elf.program_headers.iter().enumerate() {
-        let flags_str = format!("{}{}{}",
+        let flags_str = format!(
+            "{}{}{}",
             if ph.is_readable() { "R" } else { "-" },
             if ph.is_writable() { "W" } else { "-" },
-            if ph.is_executable() { "X" } else { "-" });
+            if ph.is_executable() { "X" } else { "-" }
+        );
 
-        println!("{:<4} {:<16} {:<12} {:#018x} {:#018x} {:#018x} {:#018x}",
-            i, ph.type_name(), flags_str, ph.p_offset, ph.p_vaddr, ph.p_filesz, ph.p_memsz);
+        println!(
+            "{:<4} {:<16} {:<12} {:#018x} {:#018x} {:#018x} {:#018x}",
+            i,
+            ph.type_name(),
+            flags_str,
+            ph.p_offset,
+            ph.p_vaddr,
+            ph.p_filesz,
+            ph.p_memsz
+        );
     }
 
     if !img.segments.is_empty() {
         println!("\nSELF data segments:");
         for (i, seg) in img.segments.iter().enumerate() {
-            println!("  [{i}] phdr_index={} offset={:#x} file_size={:#x} mem_size={:#x}",
-                seg.phdr_index(), seg.file_offset, seg.file_size, seg.mem_size);
+            println!(
+                "  [{i}] phdr_index={} offset={:#x} file_size={:#x} mem_size={:#x}",
+                seg.phdr_index(),
+                seg.file_offset,
+                seg.file_size,
+                seg.mem_size
+            );
         }
     }
 }
@@ -209,11 +245,15 @@ pub(crate) fn cmd_symbols(path: &PathBuf) {
 
     let elf = &img.elf;
     println!("Symbols from {} ({})", path.display(), elf.symbols.len());
-    println!("symtab_offset={:#x} strtab_offset={:#x} strtab_size={:#x} symtab_size={:#x}",
-        elf.symtab_offset, elf.strtab_offset, elf.strtab_size, elf.symtab_size);
+    println!(
+        "symtab_offset={:#x} strtab_offset={:#x} strtab_size={:#x} symtab_size={:#x}",
+        elf.symtab_offset, elf.strtab_offset, elf.strtab_size, elf.symtab_size
+    );
     println!();
-    println!("{:<6} {:<10} {:<10} {:<6} {:<18} {:<18} {:<8} {}",
-        "#", "shndx", "info", "bind", "value", "size", "name_off", "name");
+    println!(
+        "{:<6} {:<10} {:<10} {:<6} {:<18} {:<18} {:<8} {}",
+        "#", "shndx", "info", "bind", "value", "size", "name_off", "name"
+    );
     println!("{}", "-".repeat(120));
 
     let limit = elf.symbols.len().min(50);
@@ -225,8 +265,17 @@ pub(crate) fn cmd_symbols(path: &PathBuf) {
             2 => "WEAK",
             _ => "??",
         };
-        println!("{:<6} {:<#10x} {:<#10x} {:<6} {:#018x} {:#018x} {:<#10x} \"{}\"",
-            i, sym.st_shndx, sym.st_info, bind_str, sym.st_value, sym.st_size, sym.st_name, sym.resolved_name);
+        println!(
+            "{:<6} {:<#10x} {:<#10x} {:<6} {:#018x} {:#018x} {:<#10x} \"{}\"",
+            i,
+            sym.st_shndx,
+            sym.st_info,
+            bind_str,
+            sym.st_value,
+            sym.st_size,
+            sym.st_name,
+            sym.resolved_name
+        );
     }
 
     if elf.symbols.len() > limit {

@@ -1,29 +1,46 @@
-use ps5_format::error::{ParseError, Result};
 use ps5_format::elf_constants::ELF_MAGIC;
+use ps5_format::error::{ParseError, Result};
 use ps5_format::self_constants::*;
 
-mod segment;
 pub mod extract;
+mod segment;
 #[cfg(test)]
 mod tests;
-pub use segment::SelfSegmentEntry;
 pub use extract::ExtractResult;
+pub use segment::SelfSegmentEntry;
 
 fn read_u16(data: &[u8], offset: usize) -> u16 {
-    if offset + 2 > data.len() { return 0; }
+    if offset + 2 > data.len() {
+        return 0;
+    }
     u16::from_le_bytes([data[offset], data[offset + 1]])
 }
 
 fn read_u32(data: &[u8], offset: usize) -> u32 {
-    if offset + 4 > data.len() { return 0; }
-    u32::from_le_bytes([data[offset], data[offset+1], data[offset+2], data[offset+3]])
+    if offset + 4 > data.len() {
+        return 0;
+    }
+    u32::from_le_bytes([
+        data[offset],
+        data[offset + 1],
+        data[offset + 2],
+        data[offset + 3],
+    ])
 }
 
 fn read_u64(data: &[u8], offset: usize) -> u64 {
-    if offset + 8 > data.len() { return 0; }
+    if offset + 8 > data.len() {
+        return 0;
+    }
     u64::from_le_bytes([
-        data[offset], data[offset+1], data[offset+2], data[offset+3],
-        data[offset+4], data[offset+5], data[offset+6], data[offset+7],
+        data[offset],
+        data[offset + 1],
+        data[offset + 2],
+        data[offset + 3],
+        data[offset + 4],
+        data[offset + 5],
+        data[offset + 6],
+        data[offset + 7],
     ])
 }
 
@@ -37,8 +54,10 @@ pub enum SelfPlatform {
 
 impl SelfPlatform {
     pub fn from_bytes(data: &[u8]) -> Self {
-        if data.len() < 4 { return Self::Unknown(0); }
-        if &data[0..4] == &ELF_MAGIC {
+        if data.len() < 4 {
+            return Self::Unknown(0);
+        }
+        if data[0..4] == ELF_MAGIC {
             return Self::RawElf;
         }
         let be_magic = u32::from_be_bytes([data[0], data[1], data[2], data[3]]);
@@ -128,7 +147,9 @@ impl<'a> SelfImage<'a> {
         let mut phdr_file_offsets = vec![0u64; elf_header.phnum as usize];
         let mut have_any = false;
         for seg in &segments {
-            if !seg.is_data() { continue; }
+            if !seg.is_data() {
+                continue;
+            }
             let phdr_idx = ((seg.flags >> 20) & 0xFFF) as usize;
             if phdr_idx < phdr_file_offsets.len() {
                 phdr_file_offsets[phdr_idx] = seg.file_offset.saturating_sub(elf_base as u64);
@@ -136,7 +157,11 @@ impl<'a> SelfImage<'a> {
             }
         }
 
-        let offsets_ref = if have_any { Some(phdr_file_offsets.as_slice()) } else { None };
+        let offsets_ref = if have_any {
+            Some(phdr_file_offsets.as_slice())
+        } else {
+            None
+        };
         let elf = ps5_elf::ElfImage::parse(elf_slice, offsets_ref)?;
 
         Ok(Self {

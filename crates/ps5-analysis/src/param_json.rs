@@ -131,10 +131,8 @@ mod tests {
     use std::fs;
 
     fn tempdir_for_test() -> std::path::PathBuf {
-        let dir = std::env::temp_dir().join(format!(
-            "ps5rs_param_json_test_{}",
-            std::process::id()
-        ));
+        let dir =
+            std::env::temp_dir().join(format!("ps5rs_param_json_test_{}", std::process::id()));
         let _ = fs::create_dir_all(&dir);
         dir
     }
@@ -176,10 +174,7 @@ mod tests {
             param.content_id.as_deref(),
             Some("EP8091-PPSA10264_00-4648066903011525")
         );
-        assert_eq!(
-            param.creation_date.as_deref(),
-            Some("2024-07-04 10:53:05")
-        );
+        assert_eq!(param.creation_date.as_deref(), Some("2024-07-04 10:53:05"));
 
         let _ = fs::remove_dir_all(&tmp);
     }
@@ -207,11 +202,7 @@ mod tests {
         let tmp = tempdir_for_test().join("partial");
         let sce_sys = tmp.join("sce_sys");
         fs::create_dir_all(&sce_sys).unwrap();
-        fs::write(
-            sce_sys.join("param.json"),
-            r#"{"titleId": "PPSA01502"}"#,
-        )
-        .unwrap();
+        fs::write(sce_sys.join("param.json"), r#"{"titleId": "PPSA01502"}"#).unwrap();
 
         let param = read_param(&tmp).unwrap();
         assert_eq!(param.title_id.as_deref(), Some("PPSA01502"));
@@ -229,11 +220,7 @@ mod tests {
         let sce_sys = tmp.join("sce_sys");
         fs::create_dir_all(&game_dir).unwrap();
         fs::create_dir_all(&sce_sys).unwrap();
-        fs::write(
-            sce_sys.join("param.json"),
-            r#"{"titleId": "PPSA00001"}"#,
-        )
-        .unwrap();
+        fs::write(sce_sys.join("param.json"), r#"{"titleId": "PPSA00001"}"#).unwrap();
 
         let param = read_param(&game_dir).unwrap();
         assert_eq!(param.title_id.as_deref(), Some("PPSA00001"));
@@ -271,13 +258,23 @@ mod tests {
 
     #[test]
     fn compute_display_name_both() {
-        let p = GameParam { title_name: Some("Bugsnax".into()), title_id: Some("PPSA01502".into()), ..Default::default() };
-        assert_eq!(p.compute_display_name().as_deref(), Some("Bugsnax - [PPSA01502]"));
+        let p = GameParam {
+            title_name: Some("Bugsnax".into()),
+            title_id: Some("PPSA01502".into()),
+            ..Default::default()
+        };
+        assert_eq!(
+            p.compute_display_name().as_deref(),
+            Some("Bugsnax - [PPSA01502]")
+        );
     }
 
     #[test]
     fn compute_display_name_id_only() {
-        let p = GameParam { title_id: Some("PPSA01502".into()), ..Default::default() };
+        let p = GameParam {
+            title_id: Some("PPSA01502".into()),
+            ..Default::default()
+        };
         assert_eq!(p.compute_display_name().as_deref(), Some("[PPSA01502]"));
     }
 

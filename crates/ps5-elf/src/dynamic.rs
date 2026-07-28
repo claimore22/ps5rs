@@ -8,7 +8,11 @@ pub struct DynEntry {
     pub d_val: u64,
 }
 
-pub fn parse_dynamic(data: &[u8], phdr: &crate::ProgramHeader, file_offset: u64) -> Result<Vec<DynEntry>> {
+pub fn parse_dynamic(
+    data: &[u8],
+    phdr: &crate::ProgramHeader,
+    file_offset: u64,
+) -> Result<Vec<DynEntry>> {
     let mut entries = Vec::new();
     let start = file_offset as usize;
     let end = start + phdr.p_filesz as usize;
@@ -21,7 +25,10 @@ pub fn parse_dynamic(data: &[u8], phdr: &crate::ProgramHeader, file_offset: u64)
         }
         let tag = read_u64(data, offset);
         let val = read_u64(data, offset + 8);
-        entries.push(DynEntry { d_tag: tag, d_val: val });
+        entries.push(DynEntry {
+            d_tag: tag,
+            d_val: val,
+        });
         if tag == 0 {
             break;
         }
@@ -31,7 +38,10 @@ pub fn parse_dynamic(data: &[u8], phdr: &crate::ProgramHeader, file_offset: u64)
     Ok(entries)
 }
 
-pub fn parse_import_libs(entries: &[DynEntry], strtab: &[u8]) -> std::collections::HashMap<u16, String> {
+pub fn parse_import_libs(
+    entries: &[DynEntry],
+    strtab: &[u8],
+) -> std::collections::HashMap<u16, String> {
     let mut libs = std::collections::HashMap::new();
     for entry in entries {
         if entry.d_tag == ps5_format::self_constants::DT_SCE_NEEDED_LIB {
@@ -56,7 +66,9 @@ pub fn parse_needed_files(entries: &[DynEntry], strtab: &[u8]) -> Vec<String> {
 }
 
 fn read_cstr(data: &[u8], offset: usize) -> String {
-    if offset >= data.len() { return String::new(); }
+    if offset >= data.len() {
+        return String::new();
+    }
     let slice = &data[offset..];
     let end = slice.iter().position(|&b| b == 0).unwrap_or(slice.len());
     String::from_utf8_lossy(&slice[..end]).into_owned()

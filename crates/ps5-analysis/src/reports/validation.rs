@@ -73,7 +73,17 @@ pub fn validate_dataset(ds: &AnalysisDataset, extracted_dir: Option<&Path>) -> V
         let sce_segments: Vec<String> = img
             .segments
             .iter()
-            .filter(|s| matches!(s.seg_type, ps5_image::SegmentType::SCE_Dynlibdata | ps5_image::SegmentType::SCE_Procparam | ps5_image::SegmentType::SCE_Comment | ps5_image::SegmentType::SCE_Libversion | ps5_image::SegmentType::SCE_Relro | ps5_image::SegmentType::SCE_Rela))
+            .filter(|s| {
+                matches!(
+                    s.seg_type,
+                    ps5_image::SegmentType::SCE_Dynlibdata
+                        | ps5_image::SegmentType::SCE_Procparam
+                        | ps5_image::SegmentType::SCE_Comment
+                        | ps5_image::SegmentType::SCE_Libversion
+                        | ps5_image::SegmentType::SCE_Relro
+                        | ps5_image::SegmentType::SCE_Rela
+                )
+            })
             .map(|s| format!("{:?}", s.seg_type))
             .collect();
 
@@ -151,10 +161,16 @@ pub fn validate_dataset(ds: &AnalysisDataset, extracted_dir: Option<&Path>) -> V
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::dataset::{Manifest, DATASET_SCHEMA_VERSION};
-    use ps5_image::{BinaryImage, BinaryImageDocument, LibVersionEntry, LoadedSegment, Platform, SegmentType};
+    use crate::dataset::{DATASET_SCHEMA_VERSION, Manifest};
+    use ps5_image::{
+        BinaryImage, BinaryImageDocument, LibVersionEntry, LoadedSegment, Platform, SegmentType,
+    };
 
-    fn make_test_image(name: &str, imports_count: usize, lib_version_count: usize) -> (String, BinaryImageDocument) {
+    fn make_test_image(
+        name: &str,
+        imports_count: usize,
+        lib_version_count: usize,
+    ) -> (String, BinaryImageDocument) {
         let imports = (0..imports_count)
             .map(|i| ps5_image::ImportEntry {
                 nid_hash: format!("nid_{i}"),

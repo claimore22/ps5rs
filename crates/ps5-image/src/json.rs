@@ -1,6 +1,6 @@
 use std::io::{Read, Write};
 
-use crate::{BinaryImage, BinaryImageDocument, BINARY_IMAGE_VERSION};
+use crate::{BINARY_IMAGE_VERSION, BinaryImage, BinaryImageDocument};
 
 // ---------------------------------------------------------------------------
 // Error type
@@ -19,7 +19,10 @@ impl std::fmt::Display for JsonError {
             Self::Io(e) => write!(f, "I/O error: {e}"),
             Self::Serde(e) => write!(f, "JSON parse error: {e}"),
             Self::UnsupportedVersion(v) => {
-                write!(f, "Unsupported schema version {v} (max supported: {BINARY_IMAGE_VERSION})")
+                write!(
+                    f,
+                    "Unsupported schema version {v} (max supported: {BINARY_IMAGE_VERSION})"
+                )
             }
         }
     }

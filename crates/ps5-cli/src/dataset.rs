@@ -4,7 +4,10 @@ use crate::util::{is_dataset_dir, write_to_output_or_stdout};
 
 pub(crate) fn cmd_validate(path: &std::path::Path, output: &Option<PathBuf>) {
     if !is_dataset_dir(path) {
-        eprintln!("error: {} is not a dataset directory (run 'ps5rs scan' first)", path.display());
+        eprintln!(
+            "error: {} is not a dataset directory (run 'ps5rs scan' first)",
+            path.display()
+        );
         std::process::exit(1);
     }
 
@@ -24,7 +27,10 @@ pub(crate) fn cmd_validate(path: &std::path::Path, output: &Option<PathBuf>) {
     report.dataset_path = path.display().to_string();
 
     eprintln!("Validated {} games", report.total_games);
-    eprintln!("  Valid ELF:    {}/{}", report.elf_valid, report.total_games);
+    eprintln!(
+        "  Valid ELF:    {}/{}",
+        report.elf_valid, report.total_games
+    );
     eprintln!("  Lib versions: {}", report.libversion_found);
     eprintln!("  NID resolution: {:.1}%", report.nid_resolution_avg);
 
@@ -74,7 +80,10 @@ pub(crate) fn cmd_dashboard(path: &std::path::Path, output: &PathBuf) {
     eprintln!("Dashboard written to {}", out_file.display());
     eprintln!("  Games: {}", data.overview.total_games);
     eprintln!("  Libraries: {}", data.overview.unique_libs);
-    eprintln!("  NIDs: {} ({:.1}% resolved)", data.overview.unique_nids, data.overview.resolution_rate);
+    eprintln!(
+        "  NIDs: {} ({:.1}% resolved)",
+        data.overview.unique_nids, data.overview.resolution_rate
+    );
 }
 
 pub(crate) fn cmd_export_unknown(path: &std::path::Path, group_by: &str, output: &Option<PathBuf>) {
@@ -92,7 +101,9 @@ pub(crate) fn cmd_export_unknown(path: &std::path::Path, group_by: &str, output:
 
     if group_by == "library" {
         report.entries.sort_by(|a, b| {
-            a.libraries.first().cmp(&b.libraries.first())
+            a.libraries
+                .first()
+                .cmp(&b.libraries.first())
                 .then(b.count.cmp(&a.count))
         });
     }

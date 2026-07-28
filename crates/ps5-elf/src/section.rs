@@ -1,5 +1,5 @@
-use ps5_format::error::{ParseError, Result};
 use crate::read_u64;
+use ps5_format::error::{ParseError, Result};
 
 #[derive(Debug, Clone)]
 pub struct ElfSectionHeader {
@@ -71,11 +71,10 @@ pub fn resolve_section_name(data: &[u8], shstrtab_offset: u64, name_offset: u32)
     String::from_utf8_lossy(&slice[..end]).into_owned().into()
 }
 
-pub fn find_build_id(
-    data: &[u8],
-    sections: &[ElfSectionHeader],
-) -> Option<String> {
-    let note_section = sections.iter().find(|s| s.sh_type == ps5_format::elf_constants::SHT_NOTE)?;
+pub fn find_build_id(data: &[u8], sections: &[ElfSectionHeader]) -> Option<String> {
+    let note_section = sections
+        .iter()
+        .find(|s| s.sh_type == ps5_format::elf_constants::SHT_NOTE)?;
     let start = note_section.sh_offset as usize;
     let end = start + note_section.sh_size as usize;
     if end > data.len() {
@@ -124,22 +123,22 @@ mod tests {
         let shentsize: u16 = 64;
 
         // Section 0: SHT_NULL
-        data[64..64+64].fill(0);
+        data[64..64 + 64].fill(0);
 
         // Section 1: SHT_PROGBITS named ".text"
         let off2 = 64 + 64;
         // sh_name at offset 0
-        data[off2..off2+4].copy_from_slice(&0u32.to_le_bytes());
+        data[off2..off2 + 4].copy_from_slice(&0u32.to_le_bytes());
         // sh_type = SHT_PROGBITS = 1
-        data[off2+4..off2+8].copy_from_slice(&1u32.to_le_bytes());
+        data[off2 + 4..off2 + 8].copy_from_slice(&1u32.to_le_bytes());
         // sh_flags = SHF_ALLOC | SHF_EXECINSTR = 0x6
-        data[off2+8..off2+16].copy_from_slice(&0x6u64.to_le_bytes());
+        data[off2 + 8..off2 + 16].copy_from_slice(&0x6u64.to_le_bytes());
         // sh_addr
-        data[off2+16..off2+24].copy_from_slice(&0x1000u64.to_le_bytes());
+        data[off2 + 16..off2 + 24].copy_from_slice(&0x1000u64.to_le_bytes());
         // sh_offset
-        data[off2+24..off2+32].copy_from_slice(&0x1000u64.to_le_bytes());
+        data[off2 + 24..off2 + 32].copy_from_slice(&0x1000u64.to_le_bytes());
         // sh_size
-        data[off2+32..off2+40].copy_from_slice(&0x200u64.to_le_bytes());
+        data[off2 + 32..off2 + 40].copy_from_slice(&0x200u64.to_le_bytes());
 
         let sections = parse_section_headers(&data, shoff, shnum, shentsize, 0).unwrap();
         assert_eq!(sections.len(), 2);
@@ -181,10 +180,10 @@ mod tests {
         let namesz: u32 = 4; // "GNU\0"
         let descsz: u32 = 20;
         let ntype: u32 = 3; // NT_GNU_BUILD_ID
-        data[note_start..note_start+4].copy_from_slice(&namesz.to_le_bytes());
-        data[note_start+4..note_start+8].copy_from_slice(&descsz.to_le_bytes());
-        data[note_start+8..note_start+12].copy_from_slice(&ntype.to_le_bytes());
-        data[note_start+12..note_start+16].copy_from_slice(b"GNU\0");
+        data[note_start..note_start + 4].copy_from_slice(&namesz.to_le_bytes());
+        data[note_start + 4..note_start + 8].copy_from_slice(&descsz.to_le_bytes());
+        data[note_start + 8..note_start + 12].copy_from_slice(&ntype.to_le_bytes());
+        data[note_start + 12..note_start + 16].copy_from_slice(b"GNU\0");
         // desc at offset 16 (already aligned since 12+4=16)
         for i in 0..20 {
             data[note_start + 16 + i] = (i + 1) as u8;
