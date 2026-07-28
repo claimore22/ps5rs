@@ -84,6 +84,15 @@ pub enum Commands {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
+    Strings {
+        file: PathBuf,
+        #[arg(short = 'n', long, default_value_t = 4)]
+        min_length: u8,
+        #[arg(long)]
+        offsets: bool,
+        #[arg(short, long, value_hint = ValueHint::FilePath)]
+        output: Option<PathBuf>,
+    },
 }
 
 #[derive(Subcommand)]

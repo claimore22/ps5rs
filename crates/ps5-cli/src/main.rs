@@ -6,6 +6,7 @@ mod cli;
 mod dataset;
 mod extract;
 mod inspect;
+mod strings;
 mod terminal;
 mod util;
 
@@ -46,5 +47,11 @@ fn main() {
             group_by,
             output,
         } => dataset::cmd_export_unknown(&path, &group_by, &output),
+        Commands::Strings {
+            file,
+            min_length,
+            offsets,
+            output,
+        } => strings::cmd_strings(&file, min_length, offsets, &output),
     }
 }
