@@ -7,6 +7,7 @@ pub struct UnknownNidEntry {
     pub nid_hash: String,
     pub count: usize,
     pub libraries: Vec<String>,
+    pub games: Vec<String>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -17,32 +18,37 @@ pub struct UnknownNidReport {
 }
 
 pub fn build_unknown_nids(ds: &AnalysisDataset) -> UnknownNidReport {
-    let mut nid_data: HashMap<String, (usize, std::collections::HashSet<String>)> = HashMap::new();
+    let mut nid_data: HashMap<String, (usize, std::collections::HashSet<String>, std::collections::HashSet<String>)> = HashMap::new();
     let mut total_unknown = 0usize;
     let total_imports = ds.total_imports();
 
-    for (_, doc) in &ds.images {
+    for (name, doc) in &ds.images {
         for imp in &doc.image.imports {
             if imp.resolved_name.is_none() {
                 total_unknown += 1;
                 let entry = nid_data
                     .entry(imp.nid_hash.clone())
-                    .or_insert_with(|| (0, std::collections::HashSet::new()));
+                    .or_insert_with(|| (0, std::collections::HashSet::new(), std::collections::HashSet::new()));
                 entry.0 += 1;
                 entry.1.insert(imp.library_name.clone());
+                entry.2.insert(name.clone());
             }
         }
     }
 
     let mut entries: Vec<UnknownNidEntry> = nid_data
         .into_iter()
-        .map(|(nid_hash, (count, libs))| {
+        .map(|(nid_hash, (count, libs, games))| {
             let mut libraries: Vec<String> = libs.into_iter().collect();
             libraries.sort();
+            let mut games: Vec<String> = games.into_iter().collect();
+            games.sort();
+            games.dedup();
             UnknownNidEntry {
                 nid_hash,
                 count,
                 libraries,
+                games,
             }
         })
         .collect();
@@ -176,6 +182,7 @@ mod tests {
         assert_eq!(report.entries[0].nid_hash, "deadbeef");
         assert_eq!(report.entries[0].count, 1);
         assert_eq!(report.entries[0].libraries, vec!["libkernel"]);
+        assert_eq!(report.entries[0].games, vec!["game0"]);
         let _ = std::fs::remove_dir_all(&root);
     }
 
@@ -235,6 +242,7 @@ mod tests {
         assert_eq!(report.entries.len(), 1);
         assert_eq!(report.entries[0].count, 3);
         assert_eq!(report.entries[0].libraries, vec!["libX", "libY"]);
+        assert_eq!(report.entries[0].games, vec!["game0", "game1"]);
         let _ = std::fs::remove_dir_all(&root);
     }
 
@@ -303,8 +311,53 @@ mod tests {
         let report = build_unknown_nids(&ds);
         assert_eq!(report.entries[0].nid_hash, "common");
         assert_eq!(report.entries[0].count, 3);
+        assert_eq!(report.entries[0].games, vec!["game0"]);
         assert_eq!(report.entries[1].nid_hash, "rare");
         assert_eq!(report.entries[1].count, 1);
+        assert_eq!(report.entries[1].games, vec!["game0"]);
+        let _ = std::fs::remove_dir_all(&root);
+    }
+
+    #[test]
+    fn unknown_deduplicates_games_within_single_title() {
+        let root = tempdir_for_test("dedup_games");
+        let doc = make_doc(
+            vec![
+                ImportEntry {
+                    nid_hash: "dup".into(),
+                    resolved_name: None,
+                    library_id: 1,
+                    library_name: "libA".into(),
+                    value: 0,
+                    size: 0,
+                    shndx: 0,
+                    binding: ps5_image::SymbolBinding::Global,
+                    sym_type: ps5_image::SymbolType::Func,
+                    visibility: ps5_image::SymbolVisibility::Default,
+                    ordinal: 0,
+                },
+                ImportEntry {
+                    nid_hash: "dup".into(),
+                    resolved_name: None,
+                    library_id: 1,
+                    library_name: "libA".into(),
+                    value: 0,
+                    size: 0,
+                    shndx: 0,
+                    binding: ps5_image::SymbolBinding::Global,
+                    sym_type: ps5_image::SymbolType::Func,
+                    visibility: ps5_image::SymbolVisibility::Default,
+                    ordinal: 0,
+                },
+            ],
+            "a",
+        );
+        make_dataset(&root, vec![doc]);
+        let ds = AnalysisDataset::open(&root).unwrap();
+        let report = build_unknown_nids(&ds);
+        assert_eq!(report.entries.len(), 1);
+        assert_eq!(report.entries[0].count, 2);
+        assert_eq!(report.entries[0].games, vec!["game0"]);
         let _ = std::fs::remove_dir_all(&root);
     }
 
@@ -347,6 +400,7 @@ mod tests {
         let report = build_unknown_nids(&ds);
         assert_eq!(report.entries.len(), 1);
         assert_eq!(report.entries[0].nid_hash, "unknown_hash");
+        assert_eq!(report.entries[0].games, vec!["game0"]);
         assert_eq!(report.total_unknown, 1);
         assert_eq!(report.total_imports, 2);
         let _ = std::fs::remove_dir_all(&root);

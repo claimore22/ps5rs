@@ -91,6 +91,23 @@ pub fn export_library_versions(report: &crate::reports::LibraryVersionReport, wr
     Ok(())
 }
 
+pub fn export_unknown_nids(report: &crate::reports::unknown_nids::UnknownNidReport, writer: &mut dyn Write) -> std::io::Result<()> {
+    writeln!(writer, "library,nid,count,games")?;
+    for entry in &report.entries {
+        for lib in &entry.libraries {
+            writeln!(
+                writer,
+                "{},{},{},{}",
+                lib,
+                entry.nid_hash,
+                entry.count,
+                entry.games.join(";"),
+            )?;
+        }
+    }
+    Ok(())
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;

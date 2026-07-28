@@ -1,4 +1,5 @@
 use std::collections::HashMap;
+use std::path::Path;
 
 pub struct Catalog {
     by_nid: HashMap<String, String>,
@@ -60,6 +61,14 @@ impl Catalog {
             }
         }
         count
+    }
+
+    pub fn load_nids_csv_file<P: AsRef<Path>>(
+        &mut self,
+        path: P,
+    ) -> Result<usize, std::io::Error> {
+        let data = std::fs::read_to_string(path)?;
+        Ok(self.load_nids_csv(&data))
     }
 
     fn add_builtins(&mut self) {
@@ -239,6 +248,46 @@ mod tests {
         let loaded = cat.load_nids_csv("");
         assert_eq!(loaded, 0);
         assert_eq!(cat.size(), before);
+    }
+
+    #[test]
+    fn load_nids_csv_file_missing() {
+        let mut cat = Catalog::new();
+        let result = cat.load_nids_csv_file("nonexistent_file.csv");
+        assert!(result.is_err());
+    }
+
+    #[test]
+    fn load_nids_csv_file_valid() {
+        let dir = std::env::temp_dir().join("ps5rs_test_catalog_csv");
+        let _ = std::fs::create_dir_all(&dir);
+        let path = dir.join("extra.csv");
+        std::fs::write(&path, "AAAABBBCCCC funcX\nDDDDEEEEFFFF funcY\n").unwrap();
+        let mut cat = Catalog::new();
+        let before = cat.size();
+        let result = cat.load_nids_csv_file(&path);
+        assert!(result.is_ok());
+        assert_eq!(result.unwrap(), 2);
+        assert_eq!(cat.size(), before + 2);
+        assert_eq!(cat.resolve("AAAABBBCCCC"), Some("funcX"));
+        assert_eq!(cat.resolve("DDDDEEEEFFFF"), Some("funcY"));
+        let _ = std::fs::remove_dir_all(&dir);
+    }
+
+    #[test]
+    fn load_nids_csv_file_accepts_pathbuf() {
+        let dir = std::env::temp_dir().join("ps5rs_test_catalog_pathbuf");
+        let _ = std::fs::create_dir_all(&dir);
+        let path = dir.join("extra.csv");
+        std::fs::write(&path, "111122223333 testfunc\n").unwrap();
+        let mut cat = Catalog::new();
+        let before = cat.size();
+        let result = cat.load_nids_csv_file(path.clone());
+        assert!(result.is_ok());
+        assert_eq!(result.unwrap(), 1);
+        assert_eq!(cat.size(), before + 1);
+        assert_eq!(cat.resolve("111122223333"), Some("testfunc"));
+        let _ = std::fs::remove_dir_all(&dir);
     }
 
     #[test]
