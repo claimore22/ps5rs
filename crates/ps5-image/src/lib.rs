@@ -17,6 +17,8 @@ pub const BINARY_IMAGE_VERSION: u32 = 1;
 pub struct Detection {
     pub value: String,
     #[serde(default)]
+    pub score: u32,
+    #[serde(default)]
     pub confidence: u8,
     #[serde(default, skip_serializing_if = "Vec::is_empty")]
     pub evidence: Vec<String>,

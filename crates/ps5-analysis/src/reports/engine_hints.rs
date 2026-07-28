@@ -336,6 +336,7 @@ mod tests {
         let sa = StringAnalysis {
             engine: Some(Detection {
                 value: "Unreal Engine 4".to_string(),
+                score: 0,
                 confidence: 0,
                 evidence: vec!["UnrealEngine4Runtime".to_string()],
             }),
@@ -360,6 +361,7 @@ mod tests {
         let sa = StringAnalysis {
             build_system: Some(Detection {
                 value: "Jenkins".to_string(),
+                score: 0,
                 confidence: 0,
                 evidence: vec!["X:/Jenkins/sharedspace/".to_string()],
             }),
@@ -383,6 +385,7 @@ mod tests {
         let sa = StringAnalysis {
             third_party_libs: vec![Detection {
                 value: "PhysX".to_string(),
+                score: 0,
                 confidence: 0,
                 evidence: vec!["PhysX 3.4".to_string()],
             }],

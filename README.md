@@ -1,6 +1,6 @@
 # ps5rs
 
-A PS5 binary analysis toolkit written in Rust. Parses SELF/ELF containers, resolves NID imports, extracts clean ELFs, and analyzes collections of PS5 game dumps.
+A PS5 binary intelligence and fingerprinting framework written in Rust. Parses SELF/ELF containers, resolves NID imports, extracts clean ELFs, fingerprints game binaries via string analysis, detects engines and middleware, and analyzes collections of PS5 game dumps through an interactive dashboard.
 
 ## Why Rust?
 
@@ -13,9 +13,9 @@ The PS5 runs on x86-64 (AMD Zen 2), so PS5 game code can execute natively on any
 | `ps5-format` | Shared types, error enums, ELF/SELF constants, SHA-256 utility |
 | `ps5-self` | SELF container parsing (PS4/PS5 wrappers around ELF) |
 | `ps5-elf` | ELF64 binary format parsing (headers, segments, symbols, relocations) |
-| `ps5-nid` | NID hash algorithm (SHA1 + Sony custom base64), name catalog, resolver |
-| `ps5-image` | BinaryImage IR: normalized abstraction with JSON serialization |
-| `ps5-analysis` | Analysis engine: scanner, dataset, batch extraction, reports, export |
+| `ps5-nid` | NID hash algorithm (SHA1 + Sony custom base64), name catalog (v2 with merge semantics), resolver |
+| `ps5-image` | BinaryImage IR: normalized abstraction with JSON serialization, `Detection` with confidence/evidence |
+| `ps5-analysis` | Analysis engine: scanner, dataset, string fingerprinting, engine detection, reports, export |
 | `ps5-dashboard` | Static HTML dashboard generator (self-contained, no CDN dependencies) |
 | `ps5-cli` | Command-line interface |
 
@@ -25,9 +25,11 @@ The PS5 runs on x86-64 (AMD Zen 2), so PS5 game code can execute natively on any
 cargo build --release
 ```
 
+MSRV: Rust 1.85 (edition 2024).
+
 ## Quick Start
 
-The full analysis pipeline — scan game dumps, extract clean ELFs, validate, and generate a dashboard:
+The full analysis pipeline — scan game dumps, extract clean ELFs, analyze engines, and generate a dashboard:
 
 ```sh
 # 1. Scan games into a dataset
@@ -56,16 +58,21 @@ The primary workflow: scan game binaries once, then run any number of reports in
 
 ```sh
 ps5rs scan ./games --output analysis/
+
+# Include PRX system modules alongside eboot.bin
+ps5rs scan ./games --output analysis/ --include-modules
+
+# Load external NID catalogs for higher resolution
+ps5rs scan ./games --output analysis/ --nids extra_nids.csv
 ```
 
-Each game's `eboot.bin` is parsed into a `BinaryImage` and serialized as an individual JSON file. The manifest tracks schema version and game metadata (from `sce_sys/param.json`) for forward compatibility.
+Each game's `eboot.bin` is parsed into a `BinaryImage` and serialized as an individual JSON file. String analysis runs on raw bytes (no cloning) to detect engines, middleware, build systems, and SDK versions. The manifest tracks schema version and game metadata.
 
 ```
 analysis/
-  manifest.json       # schema v2: tool, timestamp, image count, game metadata
+  manifest.json       # schema v5: tool, timestamp, image count, game metadata
   images/
-    GameTitle.json    # BinaryImageDocument per game
-    AnotherGame.json
+    GameTitle.json    # BinaryImageDocument per game (imports, exports, string analysis)
 ```
 
 ### Extract clean ELFs from SELF containers
@@ -80,43 +87,6 @@ ps5rs extract path/to/eboot.bin -o output.elf
 ps5rs batch-extract ./games --output analysis/
 ```
 
-Batch extract produces:
-```
-analysis/extracted/
-  manifest.json       # SHA256 linkage between source and extracted ELFs
-  Game1.elf
-  Game2.elf
-  ...
-```
-
-### Validate a dataset
-
-Cross-references dataset images with extracted ELFs via SHA256 checksums.
-
-```sh
-ps5rs validate analysis/
-```
-
-Produces `analysis/reports/validation.json` with per-game pass/fail status, NID resolution rates, and SHA256 match results.
-
-### Generate a dashboard
-
-Produces a self-contained HTML dashboard with no external dependencies — works offline.
-
-```sh
-ps5rs dashboard analysis/
-# Output: analysis/dashboard/index.html
-```
-
-The dashboard includes:
-- **Overview cards**: total games, imports, unique NIDs, resolution rate
-- **Games table**: sortable by name, segments, imports, NID resolution, memory segments
-- **Library heatmap**: log-scaled import frequency across all games
-- **NID analysis**: pie chart (resolved vs unknown), top 20 NIDs by frequency
-- **Library NID breakdown**: top 10 NIDs per library with resolved names
-- **Segment sizes**: stacked bar chart (RX/R/RW/Other) per game
-- **Library priority**: sorted by game count with unique NID counts
-
 ### Analyze a dataset
 
 All `analyze` subcommands read from a dataset directory (no binary parsing). If a dataset doesn't exist, they fall back to scanning from raw binaries.
@@ -128,8 +98,8 @@ ps5rs analyze stats analysis/
 # Import inventory: which libraries are used by how many games
 ps5rs analyze imports analysis/
 
-# Unknown NIDs: unresolved hashes sorted by frequency (catalog growth targets)
-ps5rs analyze unknown analysis/
+# Engine detection (Unity/Unreal/Godot/native with confidence scores)
+ps5rs analyze engines analysis/
 
 # Library x game heatmap
 ps5rs analyze heatmap analysis/
@@ -147,11 +117,23 @@ ps5rs analyze graph analysis/ --include-nids --format json -o graph.json
 # Library versions across games
 ps5rs analyze library-versions analysis/
 
-# Engine detection (Unity/Unreal/Godot/native)
-ps5rs analyze engines analysis/
+# Validation (SHA256 cross-reference)
+ps5rs validate analysis/
 ```
 
-All report commands accept `--format` (terminal/csv/json/dot) and `-o` (output file). Add `--include-modules` to `scan` or `analyze` to include PRX system modules alongside `eboot.bin`.
+All report commands accept `--format` (terminal/csv/json/dot) and `-o` (output file).
+
+### Export unknown NIDs
+
+Export unresolved NID hashes as CSV for catalog growth. Each row shows the library, NID hash, occurrence count, and semicolon-separated list of games.
+
+```sh
+# Group by frequency (default)
+ps5rs export-unknown analysis/ -o unknown_nids.csv
+
+# Group by library
+ps5rs export-unknown analysis/ --group-by library -o unknown_by_lib.csv
+```
 
 ### Inspect a binary
 
@@ -159,7 +141,7 @@ All report commands accept `--format` (terminal/csv/json/dot) and `-o` (output f
 ps5rs inspect path/to/eboot.bin
 ```
 
-Shows platform, SELF segments (offsets, sizes, flags), ELF header fields (entry point, program headers, symbols, relocations, TLS), and a summary of imports by library + resolved name.
+Shows platform, SELF segments, ELF header fields, and a summary of imports by library + resolved name.
 
 ### List imports
 
@@ -169,45 +151,32 @@ ps5rs imports path/to/eboot.bin
 
 Lists all NID imports with resolved function names and source libraries.
 
+### String extraction and fingerprinting
+
+Extract printable strings from any binary (encrypted eboots, extracted ELFs, PRX modules) and optionally run engine/middleware detection:
+
+```sh
+# Basic string extraction (minimum 4 characters)
+ps5rs strings path/to/eboot.bin
+
+# With offset tracking
+ps5rs strings path/to/eboot.bin --offsets
+
+# With engine/middleware detection
+ps5rs strings path/to/eboot.bin --detect
+
+# Custom minimum length, output to file
+ps5rs strings path/to/eboot.bin -n 8 -o strings.txt
+```
+
+The `--detect` flag prints a structured summary including detected engine, SCE libraries, third-party middleware, build system, SDK hints, source depot paths, and custom engine forks.
+
 ### Hash a function name to NID
 
 ```sh
 ps5rs nid sceKernelLoadStartModule
 # -> 4ZjF4RQH3k8
 ```
-
-Computes the NID hash for a given function name using Sony's SHA1 + custom base64 algorithm.
-
-## Dataset Structure
-
-```
-analysis/
-  manifest.json               # schema v2, tool version, game metadata (param.json)
-  images/
-    GameTitle.json            # BinaryImageDocument per game (BinaryImage IR)
-  reports/
-    validation.json           # SHA256 cross-reference results
-    engine_hints.json         # Engine detection (Unity/Unreal/Godot/native)
-    library_versions.json     # Aggregated library versions
-  extracted/
-    manifest.json             # SHA256 linkage between source and extracted ELFs
-    GameTitle.elf             # Clean ELF extracted from SELF
-  dashboard/
-    index.html                # Self-contained interactive dashboard
-```
-
-Expected game dump directory:
-```
-/path/to/games/
-  GameTitle-PPSA00000/
-    sce_sys/param.json        # Game metadata (title, version, SDK)
-    eboot.bin                 # main game binary (SELF or raw ELF)
-  AnotherGame-PPSA00001/
-    sce_sys/param.json
-    eboot.bin
-```
-
-By default only `eboot.bin` is analyzed. Add `--include-modules` to include PRX modules in `sce_module/`.
 
 ## Architecture
 
@@ -226,33 +195,70 @@ By default only `eboot.bin` is analyzed. Add `--include-modules` to include PRX 
                            |
               +------------+------------+
               |                         |
-           scan /                  extract /
-        batch-extract             batch-extract
+           scan /                 extract /
+        batch-extract            batch-extract
               |                         |
-       AnalysisDataset           Extracted ELFs
+       AnalysisDataset          Extracted ELFs
               |                         |
-    +---------+---------+        validate (SHA256)
+    +---------+---------+       validate (SHA256)
     |    |    |    |    |
   stats  imports  heatmap  ...  dashboard
+              |
+     +--------+--------+
+     |                  |
+  string           engine
+  patterns         fingerprints
+     |                  |
+  SCE libs         UE4/UE5/Unity/Godot
+  middleware       confidence scores
+  SDK hints        custom forks
+  build system     evidence chains
+  source depot
 ```
 
-The `BinaryImage` IR decouples raw parsers from consumers. The `scan` command produces a dataset of `BinaryImageDocument` JSON files. All `analyze` reports and the `dashboard` command consume the dataset without touching raw binaries, making iteration fast and portable.
+The `BinaryImage` IR decouples raw parsers from consumers. The `scan` command produces a dataset of `BinaryImageDocument` JSON files. String analysis runs on raw bytes during scanning — no cloning of hundred-MB binaries. All `analyze` reports and the `dashboard` command consume the dataset without touching raw binaries, making iteration fast and portable.
 
-## Analysis Reports
+## String-Based Fingerprinting
 
-**Dataset reports** (read from JSON files, no binary parsing):
-- **Statistics**: total imports, unique NIDs, resolution rate, most common symbols
-- **Import inventory**: which libraries are used by how many games and how often
-- **Unknown NIDs**: unresolved hashes sorted by frequency (directly feeds catalog growth)
-- **Heatmap**: library x game usage matrix
-- **Frequency**: NID usage ranking across all games
-- **Unresolved**: NIDs not found in the name catalog (per game)
-- **Dependency graph**: game -> library -> NID relationships (Graphviz DOT export)
-- **Library versions**: aggregated SDK/library versions across games
-- **Engine hints**: detects game engines from library patterns (Unity, Unreal, Godot)
-- **Validation**: SHA256 cross-reference between dataset images and extracted ELFs
+During scanning, `ps5-analysis` extracts printable strings from raw binary bytes and runs a series of detectors:
 
-Export formats: JSON (versioned), CSV, Graphviz DOT.
+| Detector | What it finds |
+|---|---|
+| `detect_engine()` | UE4/UE5/Unity/Godot via weighted pattern scoring |
+| `detect_sce_libraries()` | `libSce*` libraries from embedded paths |
+| `detect_third_party()` | PhysX, Bink, FMOD, libpng, OpenSSL, etc. |
+| `detect_build_system()` | Jenkins, build server paths |
+| `detect_depot()` | Source depot paths (`U:/P4Damascus/...`) |
+| `detect_custom_forks()` | P4Damascus, HK_Project_Delivery, HK_EngineSources |
+| `detect_sdk_hints()` | Prospero SDK references |
+| `detect_versions()` | Library version strings (PhysX 3.4, libpng 1.5.2, etc.) |
+| `detect_source_paths()` | Embedded source file paths |
+
+Engine detection uses weighted fingerprints. Each pattern contributes a score, and the engine with the highest total wins. Ties prefer the newer engine version.
+
+```
+UnrealEngine4Runtime    +100
+FShaderPipelineCache    +80
+UObject                 +50
+FName                   +50
+                        ----
+Total: 280  →  UE4 (confidence: 100%)
+```
+
+## NID Database
+
+The CLI ships with an embedded NID catalog (`data/nids.csv`) containing ~154K hash-to-name mappings. The catalog uses merge semantics — loading multiple files combines entries rather than overwriting.
+
+```sh
+# Load additional community NID files
+ps5rs scan ./games --output analysis/ --nids community_nids.csv --nids more_nids.csv
+```
+
+Catalog format supports two modes:
+- **Legacy** (space-separated): `NID name`
+- **Rich CSV** (comma-separated): `nid,name,library,tag,source`
+
+Rich CSV files auto-detect header rows and merge library/tag/source metadata per NID.
 
 ## Dashboard
 
@@ -264,18 +270,23 @@ The `ps5-dashboard` crate generates a self-contained HTML file with all data emb
 - CSS-only charts (conic-gradient pie, stacked bars, horizontal bar charts)
 - Vanilla JS for interactivity (no frameworks)
 
-## NID Database
+![Overview](screenshots/overview.png)
+![Games](screenshots/games.png)
+![Engines](screenshots/engines.png)
+![NIDs](screenshots/nids.png)
+![Segments](screenshots/segments.png)
+![Statistics](screenshots/statistics.png)
 
-The CLI ships with an embedded NID database (`data/nids.csv`) containing ~154K hash-to-name mappings with 97.8% resolution rate across 28 tested games. This file is not tracked in git -- you must provide it for building.
+Tabs: Overview, Games, Engines, Libraries, NIDs, Segments, Statistics, Graph
 
 ## Test Suite
 
-268 tests across 8 crates covering ELF parsing, SELF extraction, NID hashing, BinaryImage IR, analysis reports, dataset operations, batch extraction, and dashboard generation.
+371 tests across 8 crates covering ELF parsing, SELF extraction, NID hashing/caching, BinaryImage IR, string fingerprinting, engine detection, analysis reports, dataset operations, batch extraction, and dashboard generation.
 
 ## Acknowledgements
 
-### Acelogic 
-Proposed the idea of a NId heatmap on SharpEmu Discord.
+### Acelogic
+Proposed the idea of a NID heatmap on SharpEmu Discord.
 
 ### Prosper (ps5ys)
 

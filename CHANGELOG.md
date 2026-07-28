@@ -7,17 +7,34 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [Unreleased]
 
 ### Added
-- `ps5rs scan` command: produces versioned dataset directory with individual `BinaryImageDocument` JSON files per game
-- `ps5rs analyze unknown` command: reports unresolved NID hashes across the dataset, sorted by frequency
-- Import inventory report: Library × Games × Imports table via `ps5rs analyze imports`
-- `AnalysisDataset` type with `open()` for loading dataset directories
-- `Manifest` type with schema versioning for forward compatibility
-- `DatasetError` enum for extensible dataset error handling
-- Scanner deduplication: only first eboot.bin per game directory (skips patch/DLC subdirs)
+- **NID Catalog v2** (`ps5-nid`): `NidEntry` struct with `names`, `libraries`, `tags`, `sources` as `BTreeSet<String>`; `resolve()` returns `Option<&NidEntry>` instead of `Option<&str>`; `primary_name()` convenience method; `insert()` for rich metadata with merge semantics
+- **Rich CSV catalog format**: auto-detects legacy space-separated (`NID name`) vs new comma-separated (`nid,name,library,tag,source`) with optional header row; later files override earlier ones via merge
+- **String-based fingerprinting** (`ps5-analysis::string_patterns`): `extract_strings()`, `detect_sce_libraries()`, `detect_engine()`, `detect_third_party()`, `detect_build_system()`, `detect_depot()`, `detect_project_paths()`, `detect_custom_forks()`, `detect_sdk_hints()`, `detect_versions()`, `detect_source_paths()`, `analyze_strings()` orchestrator
+- **Weighted engine fingerprints** (`ps5-analysis::engine_fingerprints`): `EngineFingerprint` struct with `score()` method; const definitions for `UNREAL4`, `UNREAL5`, `UNITY`, `GODOT`; tie-breaking prefers newer engine; `detect_engine()` returns `Detection` with computed confidence; `detect_custom_forks()` for P4Damascus, HK_Project_Delivery, HK_EngineSources
+- **Detection confidence and evidence**: `Detection` struct gains `confidence: u8` and `evidence: Vec<String>` fields (backward compatible with `#[serde(default)]`)
+- **`StringAnalysis` on BinaryImageDocument**: `sce_libs`, `engine`, `build_system`, `depot`, `third_party`, `sdk_hints`, `versions`, `source_paths`, `custom_forks` fields
+- **`custom_forks` on `EngineHint`**: merged from ELF-based and string-based detection
+- **`strings` subcommand**: `ps5rs strings <FILE> [-n MIN] [--offsets] [--detect] [-o OUTPUT]` for byte-level string extraction from any binary; `--detect` prints structured summary (SCE libs, engine, build system, depot, third-party, SDK, versions, source paths, custom forks)
+- **`export-unknown` command**: `ps5rs export-unknown <path> --group-by frequency|library` outputs unknown NIDs as CSV (`library,nid,count,games`) with semicolon-separated games
+- **`--nids` flag**: external NID catalog files on `scan`, `analyze`, and `batch-extract`; later files override earlier ones
+- **`display_name` field**: cached derived display name on manifest games; `display_name_for()` helper with case-insensitive lookup; `--display-name` flag on `inspect`
+- **Schema v5**: bumped from v3 for `confidence` field on `Detection`, `custom_forks` on `StringAnalysis`
+- **Workspace infrastructure**: `unsafe_code = "forbid"`, MSRV 1.85, `rustfmt.toml`, `.editorconfig`, CI lint→test pipeline, `CONTRIBUTING.md`, PR/issue templates, `CODEOWNERS`, `justfile`
 
 ### Changed
-- `analyze stats`, `analyze heatmap`, `analyze imports` now auto-detect dataset directories (loads from JSON files instead of parsing binaries)
-- `AnalysisDataset.images` stores `(String, BinaryImageDocument)` tuples with game names derived from filenames
+- **`BinaryImageBuilder::build_from_file`** now takes `&[u8]` instead of `Vec<u8>` — borrows instead of cloning hundred-MB binaries; all callers updated
+- **`build_engine_hints()`** merges ELF-based + string-based engine detection; `EngineHint` struct gains `engines`, `third_party_libs`, `build_system`, `source_depot`, `sdk_hints`, `detected_versions`, `source_paths`, `project_paths`, `custom_forks` fields
+- **Engine detection**: UE5 detection uses strong patterns only (`UnrealEngine5Runtime`, `UE5Runtime`, `Nanite`, `Lumen`); UE4 detection uses `UnrealEngine4Runtime`, `Engine/Source/Runtime`, `Engine/Plugins`, `PhysXCooking`, `QuickHullConvexHullLib`; Unity confidence: `UnityEngine` = 90, `UnityPlayer` = +5, `il2cpp` = +5, `global-metadata.dat` = +5
+- **SCE library detection**: `contains("libSce")` not `starts_with("libSce")` for embedded paths
+- **Source depot filtering**: first path component must be >=2 chars, alphanumeric/underscore/dash only (filters binary noise like `F:\!`, `A:\5`)
+- **`extract_strings()`**: capped at `MAX_STRING_LENGTH = 4096`
+- **Source depot split**: handles both `/` and `\` path separators
+- **28 games re-scanned**: 197 unique unknown NIDs (2.2% of 29,977 imports) — down from 3,008 before string-based fingerprinting
+
+### Fixed
+- **P4Damascus custom fork detection**: "Unreal Engine 4 custom fork (P4Damascus depot)" at 90% confidence on 8 UE4 games
+- **UE5 false positive prevention**: weak patterns no longer trigger UE5 detection
+- **Source depot noise**: binary garbage in `F:\!`-style paths no longer detected as source depots
 
 ## [0.1.0-alpha] - 2025-07-25
 
@@ -38,7 +55,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - GPL-2.0-only license, README with credits and comprehensive CLI usage docs
 
 ### Fixed
-- **SELF→ELF offset mapping**: `phdr_file_offsets` array correctly maps ELF phdr indices to SELF data segment file offsets
+- **SELF->ELF offset mapping**: `phdr_file_offsets` array correctly maps ELF phdr indices to SELF data segment file offsets
 - **DYNAMIC section resolution**: uses `vaddr_to_offset` through LOAD segments instead of trusting `p_offset` directly in SELF files
 - **strtab bounds checking**: `parse_import_libs` and `parse_needed_files` verify `strtab_offset < data.len()` before slicing
 - **SHA-256 computation**: replaced non-crypto accumulator with real SHA-256 via `sha2` crate
