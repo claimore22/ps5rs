@@ -51,7 +51,8 @@ fn main() {
             file,
             min_length,
             offsets,
+            detect,
             output,
-        } => strings::cmd_strings(&file, min_length, offsets, &output),
+        } => strings::cmd_strings(&file, min_length, offsets, detect, &output),
     }
 }

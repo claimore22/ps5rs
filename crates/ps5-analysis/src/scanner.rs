@@ -1,5 +1,6 @@
 use crate::dataset::{DATASET_SCHEMA_VERSION, Manifest};
 use crate::param_json::{self, GameParam};
+use crate::string_patterns;
 use ps5_image::{BinaryImageBuilder, BinaryImageDocument};
 use ps5_nid::Catalog;
 use std::path::{Path, PathBuf};
@@ -162,7 +163,8 @@ fn find_binaries(game_dir: &Path, options: &ScanOptions) -> Vec<PathBuf> {
 fn analyze_binary(path: &Path, catalog: &Catalog, game_dir: &Path) -> Option<BinaryImageDocument> {
     let data = std::fs::read(path).ok()?;
     let sha256 = ps5_format::sha256_hex(&data);
-    let image = BinaryImageBuilder::build_from_file(data, &sha256, catalog);
+    let string_analysis = string_patterns::analyze_strings(&data);
+    let image = BinaryImageBuilder::build_from_file(&data, &sha256, catalog);
 
     let _game_name = game_dir
         .file_name()
@@ -173,6 +175,7 @@ fn analyze_binary(path: &Path, catalog: &Catalog, game_dir: &Path) -> Option<Bin
         schema_version: DATASET_SCHEMA_VERSION,
         tool: "ps5rs".to_string(),
         image,
+        string_analysis: Some(string_analysis),
     })
 }
 

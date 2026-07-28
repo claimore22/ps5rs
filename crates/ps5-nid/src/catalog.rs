@@ -1,8 +1,28 @@
-use std::collections::HashMap;
+use std::collections::{BTreeSet, HashMap};
 use std::path::Path;
 
+#[derive(Default)]
+pub struct NidEntry {
+    pub names: BTreeSet<String>,
+    pub libraries: BTreeSet<String>,
+    pub tags: BTreeSet<String>,
+    pub sources: BTreeSet<String>,
+}
+
+impl NidEntry {
+    /// Returns an arbitrary name from the catalog.
+    /// Name ranking is deferred to a future version.
+    pub fn primary_name(&self) -> Option<&str> {
+        self.names.iter().next().map(|s| s.as_str())
+    }
+
+    pub fn has_name(&self, name: &str) -> bool {
+        self.names.contains(name)
+    }
+}
+
 pub struct Catalog {
-    by_nid: HashMap<String, String>,
+    by_nid: HashMap<String, NidEntry>,
 }
 
 impl Default for Catalog {
@@ -22,11 +42,33 @@ impl Catalog {
 
     pub fn add(&mut self, name: &str) {
         let nid = super::hash(name);
-        self.by_nid.insert(nid, name.to_string());
+        let entry = self.by_nid.entry(nid).or_default();
+        entry.names.insert(name.to_string());
     }
 
-    pub fn resolve(&self, nid: &str) -> Option<&str> {
-        self.by_nid.get(nid).map(|s| s.as_str())
+    pub fn insert(
+        &mut self,
+        name: &str,
+        library: Option<&str>,
+        tag: Option<&str>,
+        source: Option<&str>,
+    ) {
+        let nid = super::hash(name);
+        let entry = self.by_nid.entry(nid).or_default();
+        entry.names.insert(name.to_string());
+        if let Some(lib) = library {
+            entry.libraries.insert(lib.to_string());
+        }
+        if let Some(tag) = tag {
+            entry.tags.insert(tag.to_string());
+        }
+        if let Some(src) = source {
+            entry.sources.insert(src.to_string());
+        }
+    }
+
+    pub fn resolve(&self, nid: &str) -> Option<&NidEntry> {
+        self.by_nid.get(nid)
     }
 
     pub fn size(&self) -> usize {
@@ -51,6 +93,57 @@ impl Catalog {
     }
 
     pub fn load_nids_csv(&mut self, content: &str) -> usize {
+        let first_non_empty = content.lines().find(|l| {
+            let t = l.trim();
+            !t.is_empty() && !t.starts_with('#')
+        });
+
+        match first_non_empty {
+            Some(line) if line.contains(',') => self.load_nids_csv_rich(line, content),
+            _ => self.load_nids_csv_legacy(content),
+        }
+    }
+
+    fn load_nids_csv_rich(&mut self, first_line: &str, content: &str) -> usize {
+        let first_col = first_line.split(',').next().unwrap_or("").trim();
+        let skip_header = first_col == "nid";
+
+        let mut count = 0;
+        for line in content.lines() {
+            let line = line.trim();
+            if line.is_empty() || line.starts_with('#') {
+                continue;
+            }
+            if skip_header && line == first_line.trim() {
+                continue;
+            }
+
+            let mut cols = line.splitn(5, ',');
+            let nid = cols.next().unwrap_or("").trim();
+            let name = cols.next().unwrap_or("").trim();
+            let library = cols.next().unwrap_or("").trim();
+            let tag = cols.next().unwrap_or("").trim();
+            let source = cols.next().unwrap_or("").trim();
+
+            if !nid.is_empty() && !name.is_empty() {
+                let entry = self.by_nid.entry(nid.to_string()).or_default();
+                entry.names.insert(name.to_string());
+                if !library.is_empty() {
+                    entry.libraries.insert(library.to_string());
+                }
+                if !tag.is_empty() {
+                    entry.tags.insert(tag.to_string());
+                }
+                if !source.is_empty() {
+                    entry.sources.insert(source.to_string());
+                }
+                count += 1;
+            }
+        }
+        count
+    }
+
+    fn load_nids_csv_legacy(&mut self, content: &str) -> usize {
         let mut count = 0;
         for line in content.lines() {
             let line = line.trim();
@@ -61,7 +154,8 @@ impl Catalog {
                 let nid = &line[..space_pos];
                 let name = &line[space_pos + 1..];
                 if !nid.is_empty() && !name.is_empty() {
-                    self.by_nid.insert(nid.to_string(), name.to_string());
+                    let entry = self.by_nid.entry(nid.to_string()).or_default();
+                    entry.names.insert(name.to_string());
                     count += 1;
                 }
             }
@@ -264,20 +358,22 @@ mod tests {
     fn resolve_memcpy() {
         let cat = Catalog::new();
         let nid = crate::hash("memcpy");
-        assert_eq!(cat.resolve(&nid), Some("memcpy"));
+        let entry = cat.resolve(&nid).unwrap();
+        assert_eq!(entry.primary_name(), Some("memcpy"));
     }
 
     #[test]
     fn resolve_sce_pthread_create() {
         let cat = Catalog::new();
         let nid = crate::hash("scePthreadCreate");
-        assert_eq!(cat.resolve(&nid), Some("scePthreadCreate"));
+        let entry = cat.resolve(&nid).unwrap();
+        assert_eq!(entry.primary_name(), Some("scePthreadCreate"));
     }
 
     #[test]
     fn resolve_unknown_returns_none() {
         let cat = Catalog::new();
-        assert_eq!(cat.resolve("ZZZZZZZZZZZ"), None);
+        assert!(cat.resolve("ZZZZZZZZZZZ").is_none());
     }
 
     #[test]
@@ -285,7 +381,8 @@ mod tests {
         let mut cat = Catalog::new();
         cat.add("myCustomFunction");
         let nid = crate::hash("myCustomFunction");
-        assert_eq!(cat.resolve(&nid), Some("myCustomFunction"));
+        let entry = cat.resolve(&nid).unwrap();
+        assert!(entry.has_name("myCustomFunction"));
     }
 
     #[test]
@@ -304,9 +401,50 @@ mod tests {
         cat.add("func_b");
         cat.add("func_c");
         assert_eq!(cat.size(), before + 3);
-        assert_eq!(cat.resolve(&crate::hash("func_a")), Some("func_a"));
-        assert_eq!(cat.resolve(&crate::hash("func_b")), Some("func_b"));
-        assert_eq!(cat.resolve(&crate::hash("func_c")), Some("func_c"));
+        assert!(
+            cat.resolve(&crate::hash("func_a"))
+                .unwrap()
+                .has_name("func_a")
+        );
+        assert!(
+            cat.resolve(&crate::hash("func_b"))
+                .unwrap()
+                .has_name("func_b")
+        );
+        assert!(
+            cat.resolve(&crate::hash("func_c"))
+                .unwrap()
+                .has_name("func_c")
+        );
+    }
+
+    #[test]
+    fn insert_with_metadata() {
+        let mut cat = Catalog::new();
+        cat.insert(
+            "myFunc",
+            Some("libSceMyLib"),
+            Some("filesystem"),
+            Some("sdk"),
+        );
+        let entry = cat.resolve(&crate::hash("myFunc")).unwrap();
+        assert!(entry.has_name("myFunc"));
+        assert!(entry.libraries.contains("libSceMyLib"));
+        assert!(entry.tags.contains("filesystem"));
+        assert!(entry.sources.contains("sdk"));
+    }
+
+    #[test]
+    fn insert_merges_metadata() {
+        let mut cat = Catalog::new();
+        cat.insert("myFunc", Some("libA"), None, None);
+        cat.insert("myFunc", Some("libB"), Some("audio"), None);
+        let entry = cat.resolve(&crate::hash("myFunc")).unwrap();
+        assert!(entry.has_name("myFunc"));
+        assert!(entry.libraries.contains("libA"));
+        assert!(entry.libraries.contains("libB"));
+        assert!(entry.tags.contains("audio"));
+        assert!(entry.sources.is_empty());
     }
 
     #[test]
@@ -327,26 +465,28 @@ mod tests {
         let loaded = cat.load_names_file(path.to_str().unwrap());
         assert_eq!(loaded, 3);
         assert_eq!(cat.size(), before + 3);
-        assert_eq!(cat.resolve(&crate::hash("foo")), Some("foo"));
-        assert_eq!(cat.resolve(&crate::hash("bar")), Some("bar"));
-        assert_eq!(cat.resolve(&crate::hash("baz")), Some("baz"));
+        assert!(cat.resolve(&crate::hash("foo")).unwrap().has_name("foo"));
+        assert!(cat.resolve(&crate::hash("bar")).unwrap().has_name("bar"));
+        assert!(cat.resolve(&crate::hash("baz")).unwrap().has_name("baz"));
         let _ = std::fs::remove_dir_all(&dir);
     }
 
     #[test]
-    fn load_nids_csv_basic() {
+    fn load_nids_csv_legacy_basic() {
         let mut cat = Catalog::new();
         let before = cat.size();
         let csv = "mFq1M6vw-JM ACProcessMain\n05Uo75yDn-s AES_cfb128_encrypt\n";
         let loaded = cat.load_nids_csv(csv);
         assert_eq!(loaded, 2);
         assert_eq!(cat.size(), before + 2);
-        assert_eq!(cat.resolve("mFq1M6vw-JM"), Some("ACProcessMain"));
-        assert_eq!(cat.resolve("05Uo75yDn-s"), Some("AES_cfb128_encrypt"));
+        let e1 = cat.resolve("mFq1M6vw-JM").unwrap();
+        assert!(e1.has_name("ACProcessMain"));
+        let e2 = cat.resolve("05Uo75yDn-s").unwrap();
+        assert!(e2.has_name("AES_cfb128_encrypt"));
     }
 
     #[test]
-    fn load_nids_csv_skips_blank_and_comments() {
+    fn load_nids_csv_legacy_skips_blank_and_comments() {
         let mut cat = Catalog::new();
         let before = cat.size();
         let csv = "# comment\n\n  \nAAAABBBCCCC name1\n";
@@ -356,14 +496,15 @@ mod tests {
     }
 
     #[test]
-    fn load_nids_csv_overwrites_builtins() {
+    fn load_nids_csv_legacy_overwrites_builtins() {
         let mut cat = Catalog::new();
         let memcpy_nid = crate::hash("memcpy");
-        assert_eq!(cat.resolve(&memcpy_nid), Some("memcpy"));
+        assert!(cat.resolve(&memcpy_nid).unwrap().has_name("memcpy"));
         let csv = &format!("{memcpy_nid} not_memcpy\n");
         let loaded = cat.load_nids_csv(csv);
         assert_eq!(loaded, 1);
-        assert_eq!(cat.resolve(&memcpy_nid), Some("not_memcpy"));
+        let entry = cat.resolve(&memcpy_nid).unwrap();
+        assert!(entry.has_name("not_memcpy"));
     }
 
     #[test]
@@ -373,6 +514,58 @@ mod tests {
         let loaded = cat.load_nids_csv("");
         assert_eq!(loaded, 0);
         assert_eq!(cat.size(), before);
+    }
+
+    #[test]
+    fn load_nids_csv_rich_with_header() {
+        let mut cat = Catalog::new();
+        let csv =
+            "nid,name,library,tag,source\n246322a3edb52f87,posix_mkdir,libkernel,filesystem,sdk\n";
+        let loaded = cat.load_nids_csv(csv);
+        assert_eq!(loaded, 1);
+        let entry = cat.resolve("246322a3edb52f87").unwrap();
+        assert!(entry.has_name("posix_mkdir"));
+        assert!(entry.libraries.contains("libkernel"));
+        assert!(entry.tags.contains("filesystem"));
+        assert!(entry.sources.contains("sdk"));
+    }
+
+    #[test]
+    fn load_nids_csv_rich_without_header() {
+        let mut cat = Catalog::new();
+        let csv = "246322a3edb52f87,posix_mkdir,libkernel,filesystem,sdk\n";
+        let loaded = cat.load_nids_csv(csv);
+        assert_eq!(loaded, 1);
+        let entry = cat.resolve("246322a3edb52f87").unwrap();
+        assert!(entry.has_name("posix_mkdir"));
+        assert!(entry.libraries.contains("libkernel"));
+    }
+
+    #[test]
+    fn load_nids_csv_rich_partial_columns() {
+        let mut cat = Catalog::new();
+        let csv = "nid,name,library\nAAAABBBCCCC,myFunc,libFoo\n";
+        let loaded = cat.load_nids_csv(csv);
+        assert_eq!(loaded, 1);
+        let entry = cat.resolve("AAAABBBCCCC").unwrap();
+        assert!(entry.has_name("myFunc"));
+        assert!(entry.libraries.contains("libFoo"));
+        assert!(entry.tags.is_empty());
+        assert!(entry.sources.is_empty());
+    }
+
+    #[test]
+    fn load_nids_csv_rich_merges() {
+        let mut cat = Catalog::new();
+        let csv = "nid,name,library,tag,source\nAAAABBBCCCC,myFunc,libA,,sdk\nAAAABBBCCCC,myFunc,libB,audio,\n";
+        let loaded = cat.load_nids_csv(csv);
+        assert_eq!(loaded, 2);
+        let entry = cat.resolve("AAAABBBCCCC").unwrap();
+        assert!(entry.has_name("myFunc"));
+        assert!(entry.libraries.contains("libA"));
+        assert!(entry.libraries.contains("libB"));
+        assert!(entry.tags.contains("audio"));
+        assert!(entry.sources.contains("sdk"));
     }
 
     #[test]
@@ -394,8 +587,10 @@ mod tests {
         assert!(result.is_ok());
         assert_eq!(result.unwrap(), 2);
         assert_eq!(cat.size(), before + 2);
-        assert_eq!(cat.resolve("AAAABBBCCCC"), Some("funcX"));
-        assert_eq!(cat.resolve("DDDDEEEEFFFF"), Some("funcY"));
+        let e1 = cat.resolve("AAAABBBCCCC").unwrap();
+        assert!(e1.has_name("funcX"));
+        let e2 = cat.resolve("DDDDEEEEFFFF").unwrap();
+        assert!(e2.has_name("funcY"));
         let _ = std::fs::remove_dir_all(&dir);
     }
 
@@ -411,7 +606,8 @@ mod tests {
         assert!(result.is_ok());
         assert_eq!(result.unwrap(), 1);
         assert_eq!(cat.size(), before + 1);
-        assert_eq!(cat.resolve("111122223333"), Some("testfunc"));
+        let entry = cat.resolve("111122223333").unwrap();
+        assert!(entry.has_name("testfunc"));
         let _ = std::fs::remove_dir_all(&dir);
     }
 
@@ -430,7 +626,10 @@ mod tests {
         ];
         for name in &names {
             let nid = crate::hash(name);
-            assert_eq!(cat.resolve(&nid), Some(*name), "failed to resolve {name}");
+            let entry = cat.resolve(&nid).unwrap_or_else(|| {
+                panic!("failed to resolve {name}");
+            });
+            assert!(entry.has_name(name), "entry for {name} missing name");
         }
     }
 }

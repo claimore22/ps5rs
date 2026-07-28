@@ -9,6 +9,10 @@
 # Generated dataset output (from scan/extract with --output .)
 /images/
 /analysis/extracted/
+/analysis/images/
+/analysis/reports/
+/analysis/unknown_nids.csv
+/analysis/dashboard/
 /manifest.json
 
 # IDE

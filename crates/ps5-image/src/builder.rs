@@ -3,8 +3,8 @@ use crate::*;
 pub struct BinaryImageBuilder;
 
 impl BinaryImageBuilder {
-    pub fn build_from_file(data: Vec<u8>, sha256: &str, catalog: &ps5_nid::Catalog) -> BinaryImage {
-        match ps5_self::SelfImage::parse(&data) {
+    pub fn build_from_file(data: &[u8], sha256: &str, catalog: &ps5_nid::Catalog) -> BinaryImage {
+        match ps5_self::SelfImage::parse(data) {
             Ok(img) => Self::build_from_self(&img, sha256, catalog),
             Err(_) => BinaryImage {
                 sha256: sha256.to_string(),
@@ -208,7 +208,9 @@ impl BinaryImageBuilder {
                     .get(&lib_id)
                     .cloned()
                     .unwrap_or_else(|| format!("lib_{}", parts.get(1).unwrap_or(&"?")));
-                let resolved = catalog.resolve(nid).map(|s| s.to_string());
+                let resolved = catalog
+                    .resolve(nid)
+                    .and_then(|e| e.primary_name().map(str::to_string));
 
                 ImportEntry {
                     nid_hash: nid.to_string(),
@@ -234,7 +236,9 @@ impl BinaryImageBuilder {
             .map(|sym| {
                 let resolved = if sym.resolved_name.contains('#') {
                     let nid = sym.resolved_name.split('#').next().unwrap_or("");
-                    catalog.resolve(nid).map(|s| s.to_string())
+                    catalog
+                        .resolve(nid)
+                        .and_then(|e| e.primary_name().map(str::to_string))
                 } else {
                     Some(sym.resolved_name.clone())
                 };

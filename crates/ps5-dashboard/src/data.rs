@@ -898,6 +898,7 @@ mod tests {
         BinaryImageDocument {
             schema_version: 1,
             tool: "test".to_string(),
+            string_analysis: None,
             image: BinaryImage {
                 sha256: sha.to_string(),
                 platform: Platform::Ps5,

@@ -10,6 +10,47 @@ pub use builder::BinaryImageBuilder;
 pub const BINARY_IMAGE_VERSION: u32 = 1;
 
 // ---------------------------------------------------------------------------
+// Detection — value + evidence for reverse engineering datasets
+// ---------------------------------------------------------------------------
+
+#[derive(Debug, Clone, Default, Serialize, Deserialize)]
+pub struct Detection {
+    pub value: String,
+    #[serde(default)]
+    pub confidence: u8,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub evidence: Vec<String>,
+}
+
+// ---------------------------------------------------------------------------
+// StringAnalysis — string-based fingerprints extracted from raw binary
+// ---------------------------------------------------------------------------
+
+#[derive(Debug, Clone, Default, Serialize, Deserialize)]
+pub struct StringAnalysis {
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub sce_libraries: Vec<String>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub third_party_libs: Vec<Detection>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub engine: Option<Detection>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub build_system: Option<Detection>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub source_depot: Option<Detection>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub sdk_hints: Vec<Detection>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub detected_versions: Vec<Detection>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub source_paths: Vec<String>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub project_paths: Vec<Detection>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub custom_forks: Vec<Detection>,
+}
+
+// ---------------------------------------------------------------------------
 // JSON document wrapper — versions the interchange format, not the Rust struct
 // ---------------------------------------------------------------------------
 
@@ -18,6 +59,8 @@ pub struct BinaryImageDocument {
     pub schema_version: u32,
     pub tool: String,
     pub image: BinaryImage,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub string_analysis: Option<StringAnalysis>,
 }
 
 // ---------------------------------------------------------------------------
@@ -1047,7 +1090,7 @@ mod tests {
     fn builder_produces_valid_image() {
         let catalog = ps5_nid::Catalog::new();
         let img = BinaryImageBuilder::build_from_file(
-            b"not a real file".to_vec(),
+            b"not a real file",
             "0000000000000000000000000000000000000000000000000000000000000000",
             &catalog,
         );
@@ -1062,7 +1105,7 @@ mod tests {
         let catalog = ps5_nid::Catalog::new();
 
         let sha256 = ps5_format::sha256_hex(&elf_data);
-        let img = BinaryImageBuilder::build_from_file(elf_data, &sha256, &catalog);
+        let img = BinaryImageBuilder::build_from_file(&elf_data, &sha256, &catalog);
 
         assert_eq!(img.platform, Platform::RawElf);
         assert!(!img.is_self);
@@ -1122,7 +1165,7 @@ mod tests {
 
         let catalog = ps5_nid::Catalog::new();
         let sha256 = ps5_format::sha256_hex(&file);
-        let img = BinaryImageBuilder::build_from_file(file, &sha256, &catalog);
+        let img = BinaryImageBuilder::build_from_file(&file, &sha256, &catalog);
 
         assert_eq!(img.platform, Platform::RawElf);
         assert!(img.imports.is_empty());

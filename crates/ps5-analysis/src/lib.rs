@@ -1,11 +1,13 @@
 pub mod batch_extract;
 pub mod collector;
 pub mod dataset;
+pub mod engine_fingerprints;
 pub mod export;
 pub mod model;
 pub mod param_json;
 pub mod reports;
 pub mod scanner;
+pub mod string_patterns;
 
 pub use batch_extract::{
     BatchExtractOptions, BatchExtractResult, ExtractionEntry, ExtractionManifest, batch_extract,

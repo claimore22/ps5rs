@@ -55,6 +55,7 @@ mod tests {
         BinaryImageDocument {
             schema_version: 1,
             tool: "test".into(),
+            string_analysis: None,
             image: BinaryImage {
                 sha256: "aa".repeat(32),
                 platform: Platform::Ps5,

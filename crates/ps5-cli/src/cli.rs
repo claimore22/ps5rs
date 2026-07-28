@@ -90,6 +90,8 @@ pub enum Commands {
         min_length: u8,
         #[arg(long)]
         offsets: bool,
+        #[arg(long)]
+        detect: bool,
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
