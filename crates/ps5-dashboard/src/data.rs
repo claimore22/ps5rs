@@ -1,4 +1,5 @@
 use ps5_analysis::dataset::AnalysisDataset;
+use ps5_analysis::reports::build_engine_hints;
 use ps5_image::SegmentType;
 use serde::{Deserialize, Serialize};
 use std::collections::{HashMap, HashSet};
@@ -19,6 +20,10 @@ pub struct DashboardData {
     pub library_nid_breakdown: Vec<LibraryNidGroup>,
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub statistics: Option<DashboardStatistics>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub engine_hints: Vec<DashboardEngineHint>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub engine_summary: Vec<EngineSummary>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -45,16 +50,11 @@ pub struct GameRow {
     pub title_name: Option<String>,
     pub platform: String,
     pub is_self: bool,
-    pub segments: usize,
-    pub imports: usize,
-    pub unique_imports: usize,
-    pub resolved: usize,
-    pub nid_resolution: f64,
+    pub engine: String,
+    pub engine_confidence: u8,
+    pub library_count: usize,
+    pub unknown_nid_count: usize,
     pub file_size_mb: f64,
-    pub rx_mb: f64,
-    pub r_mb: f64,
-    pub rw_mb: f64,
-    pub engine: Option<String>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -77,7 +77,25 @@ pub struct GameDetail {
     pub import_summary: Vec<LibImportCount>,
     pub relocations: usize,
     pub has_tls: bool,
-    pub engine: Option<String>,
+    pub engine: String,
+    pub engine_score: u32,
+    pub engine_confidence: u8,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub engine_evidence: Vec<String>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub sce_libraries: Vec<String>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub third_party_libs: Vec<String>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub custom_forks: Vec<String>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub build_system: Option<String>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub source_depot: Option<String>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub sdk_hints: Vec<String>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub detected_versions: Vec<String>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -199,6 +217,39 @@ pub struct StatEntry {
     pub value: f64,
 }
 
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct DashboardEngineHint {
+    pub name: String,
+    pub display_name: String,
+    pub engine: String,
+    pub score: u32,
+    pub confidence: u8,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub evidence: Vec<String>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub sce_libraries: Vec<String>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub third_party_libs: Vec<String>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub custom_forks: Vec<String>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub build_system: Option<String>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub source_depot: Option<String>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub sdk_hints: Vec<String>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub detected_versions: Vec<String>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct EngineSummary {
+    pub engine: String,
+    pub game_count: usize,
+    pub avg_score: f64,
+    pub avg_confidence: f64,
+}
+
 pub fn compute(ds: &AnalysisDataset) -> DashboardData {
     let meta = DashboardMeta {
         generated_at: now_iso8601(),
@@ -206,9 +257,62 @@ pub fn compute(ds: &AnalysisDataset) -> DashboardData {
         tool_version: env!("CARGO_PKG_VERSION").to_string(),
     };
 
+    let engine_hint_report = build_engine_hints(ds);
+    let engine_hints: Vec<DashboardEngineHint> = engine_hint_report
+        .games
+        .iter()
+        .map(|hint| {
+            let img = ds.images.iter().find(|(n, _)| n == &hint.name);
+            let sa = img.and_then(|(_, doc)| doc.string_analysis.as_ref());
+
+            let (engine, score, confidence, evidence) =
+                if let Some(engine_det) = sa.and_then(|sa| sa.engine.as_ref()) {
+                    (
+                        engine_det.value.clone(),
+                        engine_det.score,
+                        engine_det.confidence,
+                        engine_det.evidence.clone(),
+                    )
+                } else if let Some(first) = hint.engines.first() {
+                    (first.clone(), 0, 0, vec![])
+                } else {
+                    ("Unknown".to_string(), 0, 0, vec![])
+                };
+
+            DashboardEngineHint {
+                name: hint.name.clone(),
+                display_name: hint
+                    .display_name
+                    .clone()
+                    .unwrap_or_else(|| hint.name.clone()),
+                engine,
+                score,
+                confidence,
+                evidence,
+                sce_libraries: hint.sce_libraries.clone(),
+                third_party_libs: hint
+                    .third_party_libs
+                    .iter()
+                    .map(|d| d.value.clone())
+                    .collect(),
+                custom_forks: hint.custom_forks.iter().map(|d| d.value.clone()).collect(),
+                build_system: hint.build_system.as_ref().map(|d| d.value.clone()),
+                source_depot: hint.source_depot.as_ref().map(|d| d.value.clone()),
+                sdk_hints: hint.sdk_hints.iter().map(|d| d.value.clone()).collect(),
+                detected_versions: hint
+                    .detected_versions
+                    .iter()
+                    .map(|d| d.value.clone())
+                    .collect(),
+            }
+        })
+        .collect();
+
+    let engine_summary = compute_engine_summary(&engine_hints);
+
     let overview = compute_overview(ds);
-    let games = compute_games(ds);
-    let game_details = compute_game_details(ds);
+    let games = compute_games(ds, &engine_hints);
+    let game_details = compute_game_details(ds, &engine_hints);
     let heatmap = compute_heatmap(ds);
     let nid_stats = compute_nid_stats(ds);
     let segments = compute_segments(ds);
@@ -229,6 +333,8 @@ pub fn compute(ds: &AnalysisDataset) -> DashboardData {
         library_details,
         library_nid_breakdown,
         statistics: Some(statistics),
+        engine_hints,
+        engine_summary,
     }
 }
 
@@ -276,48 +382,28 @@ fn compute_overview(ds: &AnalysisDataset) -> Overview {
     }
 }
 
-fn detect_engine(imports: &[ps5_image::ImportEntry]) -> Option<String> {
-    let libs: Vec<&str> = imports.iter().map(|i| i.library_name.as_str()).collect();
-    let lib_set: HashSet<&str> = libs.iter().copied().collect();
-    if lib_set.contains("Il2CppUserAssemblies") || lib_set.contains("Il2cppUserAssemblies") {
-        Some("Unity".to_string())
-    } else if lib_set.contains("libSceAgcDriver")
-        && imports.iter().any(|i| {
-            i.resolved_name
-                .as_deref()
-                .is_some_and(|n| n.starts_with("sceAgc"))
-        })
-    {
-        Some("Native/SCE".to_string())
-    } else {
-        Some("Native".to_string())
-    }
-}
+fn compute_games(ds: &AnalysisDataset, engine_hints: &[DashboardEngineHint]) -> Vec<GameRow> {
+    let hint_map: HashMap<&str, &DashboardEngineHint> =
+        engine_hints.iter().map(|h| (h.name.as_str(), h)).collect();
 
-fn compute_games(ds: &AnalysisDataset) -> Vec<GameRow> {
     ds.images
         .iter()
         .map(|(name, doc)| {
             let img = &doc.image;
-            let total = img.imports.len();
-            let unique_imports = img
+            let hint = hint_map.get(name.as_str());
+            let engine = hint.map(|h| h.engine.clone()).unwrap_or_default();
+            let engine_confidence = hint.map(|h| h.confidence).unwrap_or(0);
+
+            let library_count: HashSet<&str> = img
                 .imports
                 .iter()
-                .map(|i| i.nid_hash.as_str())
-                .collect::<HashSet<&str>>()
-                .len();
-            let resolved = img
+                .map(|i| i.library_name.as_str())
+                .collect();
+            let unknown_nid_count = img
                 .imports
                 .iter()
-                .filter(|i| i.resolved_name.is_some())
+                .filter(|i| i.resolved_name.is_none())
                 .count();
-            let nid_resolution = if total > 0 {
-                resolved as f64 / total as f64 * 100.0
-            } else {
-                0.0
-            };
-            let (rx, r, rw, _other) = sum_segment_sizes(img);
-            let engine = detect_engine(&img.imports);
 
             let title_name = Some(ds.display_name_for(name).to_string());
 
@@ -326,27 +412,42 @@ fn compute_games(ds: &AnalysisDataset) -> Vec<GameRow> {
                 title_name,
                 platform: img.platform.to_string(),
                 is_self: img.is_self,
-                segments: img.segments.len(),
-                imports: total,
-                unique_imports,
-                resolved,
-                nid_resolution,
-                file_size_mb: img.file_size as f64 / (1024.0 * 1024.0),
-                rx_mb: rx as f64 / (1024.0 * 1024.0),
-                r_mb: r as f64 / (1024.0 * 1024.0),
-                rw_mb: rw as f64 / (1024.0 * 1024.0),
                 engine,
+                engine_confidence,
+                library_count: library_count.len(),
+                unknown_nid_count,
+                file_size_mb: img.file_size as f64 / (1024.0 * 1024.0),
             }
         })
         .collect()
 }
 
-fn compute_game_details(ds: &AnalysisDataset) -> Vec<GameDetail> {
+fn compute_game_details(
+    ds: &AnalysisDataset,
+    engine_hints: &[DashboardEngineHint],
+) -> Vec<GameDetail> {
+    let hint_map: HashMap<&str, &DashboardEngineHint> =
+        engine_hints.iter().map(|h| (h.name.as_str(), h)).collect();
+
     ds.images
         .iter()
         .map(|(name, doc)| {
             let img = &doc.image;
-            let engine = detect_engine(&img.imports);
+            let hint = hint_map.get(name.as_str());
+
+            let engine = hint.map(|h| h.engine.clone()).unwrap_or_default();
+            let engine_score = hint.map(|h| h.score).unwrap_or(0);
+            let engine_confidence = hint.map(|h| h.confidence).unwrap_or(0);
+            let engine_evidence = hint.map(|h| h.evidence.clone()).unwrap_or_default();
+            let sce_libraries = hint.map(|h| h.sce_libraries.clone()).unwrap_or_default();
+            let third_party_libs = hint.map(|h| h.third_party_libs.clone()).unwrap_or_default();
+            let custom_forks = hint.map(|h| h.custom_forks.clone()).unwrap_or_default();
+            let build_system = hint.and_then(|h| h.build_system.clone());
+            let source_depot = hint.and_then(|h| h.source_depot.clone());
+            let sdk_hints = hint.map(|h| h.sdk_hints.clone()).unwrap_or_default();
+            let detected_versions = hint
+                .map(|h| h.detected_versions.clone())
+                .unwrap_or_default();
 
             let segments = img
                 .segments
@@ -413,6 +514,16 @@ fn compute_game_details(ds: &AnalysisDataset) -> Vec<GameDetail> {
                 relocations: img.relocations.len(),
                 has_tls: img.tls.is_some(),
                 engine,
+                engine_score,
+                engine_confidence,
+                engine_evidence,
+                sce_libraries,
+                third_party_libs,
+                custom_forks,
+                build_system,
+                source_depot,
+                sdk_hints,
+                detected_versions,
             }
         })
         .collect()
@@ -850,6 +961,35 @@ fn compute_statistics(ds: &AnalysisDataset, segments: &[SegmentRow]) -> Dashboar
     }
 }
 
+fn compute_engine_summary(hints: &[DashboardEngineHint]) -> Vec<EngineSummary> {
+    let mut by_engine: HashMap<String, (usize, u64, u64)> = HashMap::new();
+    for h in hints {
+        let e = by_engine.entry(h.engine.clone()).or_insert((0, 0, 0));
+        e.0 += 1;
+        e.1 += h.score as u64;
+        e.2 += h.confidence as u64;
+    }
+    let mut result: Vec<EngineSummary> = by_engine
+        .into_iter()
+        .map(|(engine, (count, total_score, total_conf))| EngineSummary {
+            engine,
+            game_count: count,
+            avg_score: if count > 0 {
+                total_score as f64 / count as f64
+            } else {
+                0.0
+            },
+            avg_confidence: if count > 0 {
+                total_conf as f64 / count as f64
+            } else {
+                0.0
+            },
+        })
+        .collect();
+    result.sort_by_key(|b| std::cmp::Reverse(b.game_count));
+    result
+}
+
 fn sum_segment_sizes(img: &ps5_image::BinaryImage) -> (u64, u64, u64, u64) {
     let mut rx = 0u64;
     let mut r = 0u64;
@@ -1117,13 +1257,15 @@ mod tests {
                 vec![make_seg("RX", 1024 * 1024), make_seg("RW", 512 * 1024)],
             ),
         )]);
-        let details = compute_game_details(&ds);
+        let details = compute_game_details(&ds, &[]);
         assert_eq!(details.len(), 1);
         assert_eq!(details[0].segments.len(), 2);
         assert_eq!(details[0].imports.len(), 2);
         assert_eq!(details[0].unresolved_nids.len(), 1);
         assert_eq!(details[0].import_summary.len(), 1);
         assert_eq!(details[0].import_summary[0].count, 2);
+        assert_eq!(details[0].engine, "");
+        assert_eq!(details[0].engine_confidence, 0);
     }
 
     #[test]

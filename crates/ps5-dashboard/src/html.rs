@@ -122,6 +122,7 @@ tr.clickable:hover{{background:#1c2128;outline:1px solid #30363d;}}
 <div class="tabs" id="tabBar">
 <div class="tab active" data-tab="overview">Overview</div>
 <div class="tab" data-tab="games">Games</div>
+<div class="tab" data-tab="engines">Engines</div>
 <div class="tab" data-tab="libraries">Libraries</div>
 <div class="tab" data-tab="nids">NIDs</div>
 <div class="tab" data-tab="segments">Segments</div>
@@ -143,23 +144,37 @@ tr.clickable:hover{{background:#1c2128;outline:1px solid #30363d;}}
 <input type="text" class="filter-input" id="gameFilterText" placeholder="Filter games...">
 <select class="filter-select" id="filterPlatform"><option value="">All Platforms</option></select>
 <select class="filter-select" id="filterEngine"><option value="">All Engines</option></select>
-<select class="filter-select" id="filterRes"><option value="">All Resolution</option><option value="high">&ge;95%</option><option value="mid">80-95%</option><option value="low">&lt;80%</option></select>
 <select class="filter-select" id="filterSelf"><option value="">SELF + ELF</option><option value="self">SELF only</option><option value="elf">ELF only</option></select>
 <select class="filter-select" id="filterHasUnknown"><option value="">All</option><option value="yes">Has Unknown NIDs</option><option value="no">No Unknown NIDs</option></select>
 </div>
 <div class="table-wrap"><table id="gamesTable">
 <thead><tr>
 <th data-col="0">Game <span class="arrow">&#9650;</span></th>
-<th data-col="1">Platform <span class="arrow">&#9650;</span></th>
-<th data-col="2">Type <span class="arrow">&#9650;</span></th>
-<th data-col="3">Engine <span class="arrow">&#9650;</span></th>
-<th data-col="4">Imports <span class="arrow">&#9650;</span></th>
-<th data-col="5">Unique <span class="arrow">&#9650;</span></th>
-<th data-col="6">Resolved % <span class="arrow">&#9650;</span></th>
-<th data-col="7">Size MB <span class="arrow">&#9650;</span></th>
+<th data-col="1">Engine <span class="arrow">&#9650;</span></th>
+<th data-col="2">Confidence <span class="arrow">&#9650;</span></th>
+<th data-col="3">Libraries <span class="arrow">&#9650;</span></th>
+<th data-col="4">Unknown NIDs <span class="arrow">&#9650;</span></th>
+<th data-col="5">Size MB <span class="arrow">&#9650;</span></th>
 </tr></thead>
 <tbody id="gamesBody"></tbody>
 </table></div>
+</div>
+
+<div class="tab-content" id="tab-engines">
+<div class="cards" id="engineOverviewCards"></div>
+<div class="section"><h2>Engine Distribution</h2><div id="engineDistBars"></div></div>
+<div class="section"><h2>Per-Game Engine Forensics</h2><div class="table-wrap"><table id="engineTable">
+<thead><tr>
+<th data-col="0">Game <span class="arrow">&#9650;</span></th>
+<th data-col="1">Engine <span class="arrow">&#9650;</span></th>
+<th data-col="2">Score <span class="arrow">&#9650;</span></th>
+<th data-col="3">Confidence <span class="arrow">&#9650;</span></th>
+<th data-col="4">Third-Party Libs <span class="arrow">&#9650;</span></th>
+<th data-col="5">Custom Forks <span class="arrow">&#9650;</span></th>
+<th data-col="6">Build System <span class="arrow">&#9650;</span></th>
+</tr></thead>
+<tbody id="engineBody"></tbody>
+</table></div></div>
 </div>
 
 <div class="tab-content" id="tab-libraries">
@@ -256,9 +271,9 @@ document.addEventListener('keydown', e => {{ if (e.key === 'Escape') $('#detailP
   ).join('');
 
   const engines = {{}};
-  D.games.forEach(g => {{ const e = g.engine || 'Unknown'; engines[e] = (engines[e]||0) + 1; }});
+  D.games.forEach(g => {{ engines[g.engine] = (engines[g.engine]||0) + 1; }});
   const eMax = Math.max(...Object.values(engines));
-  const eColors = {{ 'Native': 'fill-green', 'Native/SCE': 'fill-blue', 'Unity': 'fill-purple' }};
+  const eColors = {{ 'Native': 'fill-green', 'Native/SCE': 'fill-blue', 'Unity': 'fill-purple', 'Unreal Engine 4': 'fill-yellow', 'Unreal Engine 5': 'fill-red' }};
   $('#engineBar').innerHTML = Object.entries(engines).sort((a,b) => b[1]-a[1]).map(([k,v]) =>
     `<div class="hbar"><div class="hbar-label">${{k}}</div><div class="hbar-track"><div class="hbar-fill ${{eColors[k]||'fill-yellow'}}" style="width:${{eMax>0?(v/eMax*100).toFixed(1):'0'}}%"></div></div><div class="hbar-count">${{v}}</div></div>`
   ).join('');
@@ -270,7 +285,7 @@ document.addEventListener('keydown', e => {{ if (e.key === 'Escape') $('#detailP
   const detailMap = {{}};
   details.forEach(d => {{ detailMap[d.name] = d; }});
 
-  let allRows = D.games.map(g => [g.name, g.platform, g.is_self?'SELF':'ELF', g.engine||'', g.imports, g.unique_imports, g.nid_resolution, g.file_size_mb, g.title_name||'']);
+  let allRows = D.games.map(g => [g.name, g.engine||'', g.engine_confidence, g.library_count, g.unknown_nid_count, g.file_size_mb, g.title_name||'', g.platform, g.is_self]);
   let filteredRows = [...allRows];
 
   const platforms = [...new Set(D.games.map(g=>g.platform))].sort();
@@ -282,35 +297,36 @@ document.addEventListener('keydown', e => {{ if (e.key === 'Escape') $('#detailP
     const q = $('#gameFilterText').value.toLowerCase();
     const fp = $('#filterPlatform').value;
     const fe = $('#filterEngine').value;
-    const fr = $('#filterRes').value;
     const fs = $('#filterSelf').value;
     const fu = $('#filterHasUnknown').value;
     filteredRows = allRows.filter(r => {{
-      if (q && !r[0].toLowerCase().includes(q) && !r[8].toLowerCase().includes(q)) return false;
-      if (fp && r[1] !== fp) return false;
-      if (fe && r[3] !== fe) return false;
-      if (fr === 'high' && r[6] < 95) return false;
-      if (fr === 'mid' && (r[6] < 80 || r[6] >= 95)) return false;
-      if (fr === 'low' && r[6] >= 80) return false;
-      if (fs === 'self' && r[2] !== 'SELF') return false;
-      if (fs === 'elf' && r[2] !== 'ELF') return false;
-      if (fu === 'yes' && r[5] === r[4]) return false;
-      if (fu === 'no' && r[5] !== r[4]) return false;
+      if (q && !r[0].toLowerCase().includes(q) && !r[6].toLowerCase().includes(q)) return false;
+      if (fp && r[7] !== fp) return false;
+      if (fe && r[1] !== fe) return false;
+      if (fs === 'self' && !r[8]) return false;
+      if (fs === 'elf' && r[8]) return false;
+      if (fu === 'yes' && r[4] === 0) return false;
+      if (fu === 'no' && r[4] > 0) return false;
       return true;
     }});
     renderGames();
   }}
 
+  function confPill(c) {{
+    if (c >= 90) return `<span class="pill pill-self">${{c}}</span>`;
+    if (c >= 50) return `<span class="pill pill-eng">${{c}}</span>`;
+    if (c > 0) return `<span class="pill pill-elf">${{c}}</span>`;
+    return '<span style="color:#8b949e">-</span>';
+  }}
+
   function renderGames() {{
     $('#gamesBody').innerHTML = filteredRows.map(r => `<tr class="clickable" data-game="${{r[0]}}">
-      <td title="${{r[8]}}">${{trunc(r[8] || r[0],28)}}</td>
-      <td>${{r[1]}}</td>
-      <td><span class="pill ${{r[2]==='SELF'?'pill-self':'pill-elf'}}">${{r[2]}}</span></td>
-      <td>${{r[3]?`<span class="pill pill-eng">${{r[3]}}</span>`:'-'}}</td>
-      <td>${{fmt(r[4])}}</td>
-      <td>${{fmt(r[5])}}</td>
-      <td class="pct ${{pctCls(r[6])}}">${{r[6].toFixed(1)}}%</td>
-      <td>${{r[7].toFixed(1)}}</td>
+      <td title="${{r[6]}}">${{trunc(r[6] || r[0],32)}}</td>
+      <td>${{r[1]?`<span class="pill pill-eng">${{r[1]}}</span>`:'-'}}</td>
+      <td>${{confPill(r[2])}}</td>
+      <td>${{r[3]}}</td>
+      <td class="pct ${{r[4]>0?'pct-low':'pct-high'}}">${{r[4]}}</td>
+      <td>${{r[5].toFixed(1)}}</td>
     </tr>`).join('');
 
     $$('#gamesBody tr.clickable').forEach(tr => tr.addEventListener('click', () => {{
@@ -321,16 +337,31 @@ document.addEventListener('keydown', e => {{ if (e.key === 'Escape') $('#detailP
       const importsHtml = d.imports.slice(0, 200).map(i => `<tr><td style="font-family:monospace;font-size:0.72rem">${{i.nid_hash}}</td><td>${{i.resolved_name||'<span style="color:#f85149">unknown</span>'}}</td><td style="color:#8b949e">${{i.library_name}}</td></tr>`).join('');
       const unresolvedHtml = d.unresolved_nids.slice(0, 100).map(i => `<tr><td style="font-family:monospace;font-size:0.72rem">${{i.nid_hash}}</td><td style="color:#8b949e">${{i.library_name}}</td></tr>`).join('');
 
+      const engineHtml = `
+        <div class="detail-section"><h3>Engine Forensics</h3><div class="detail-kv">
+          <div class="k">Engine</div><div class="v">${{d.engine||'Unknown'}}</div>
+          <div class="k">Score</div><div class="v" style="font-family:monospace">${{d.engine_score}}</div>
+          <div class="k">Confidence</div><div class="v">${{d.engine_confidence}}%</div>
+          ${{d.build_system ? `<div class="k">Build System</div><div class="v">${{d.build_system}}</div>` : ''}}
+          ${{d.source_depot ? `<div class="k">Source Depot</div><div class="v">${{d.source_depot}}</div>` : ''}}
+          ${{(d.sce_libraries||[]).length ? `<div class="k">SCE Libraries</div><div class="v">${{(d.sce_libraries||[]).length}} detected</div>` : ''}}
+          ${{(d.third_party_libs||[]).length ? `<div class="k">Third-Party Libs</div><div class="v">${{(d.third_party_libs||[]).join(', ')}}</div>` : ''}}
+          ${{(d.custom_forks||[]).length ? `<div class="k">Custom Forks</div><div class="v" style="color:#f85149">${{(d.custom_forks||[]).join(', ')}}</div>` : ''}}
+          ${{(d.sdk_hints||[]).length ? `<div class="k">SDK Hints</div><div class="v">${{(d.sdk_hints||[]).join(', ')}}</div>` : ''}}
+          ${{(d.detected_versions||[]).length ? `<div class="k">Versions</div><div class="v">${{(d.detected_versions||[]).join(', ')}}</div>` : ''}}
+        </div></div>
+        ${{(d.engine_evidence||[]).length ? `<div class="detail-section"><h3>Engine Evidence</h3><div class="table-wrap"><table class="detail-table"><thead><tr><th>String</th></tr></thead><tbody>${{(d.engine_evidence||[]).map(e => `<tr><td style="font-family:monospace;font-size:0.72rem">${{e}}</td></tr>`).join('')}}</tbody></table></div></div>` : ''}}`;
+
       openDetail(d.title_name || d.name, `
         <div class="detail-section"><h3>General</h3><div class="detail-kv">
           <div class="k">Name</div><div class="v">${{d.title_name || d.name}}</div>
           <div class="k">Platform</div><div class="v">${{d.platform}}</div>
           <div class="k">Type</div><div class="v">${{d.is_self?'SELF':'Raw ELF'}}</div>
-          <div class="k">Engine</div><div class="v">${{d.engine||'Unknown'}}</div>
           <div class="k">File Size</div><div class="v">${{d.file_size_mb.toFixed(1)}} MB</div>
           <div class="k">Entry Point</div><div class="v" style="font-family:monospace">${{d.entry_point}}</div>
           <div class="k">SHA-256</div><div class="v" style="font-family:monospace;font-size:0.72rem">${{d.sha256.slice(0,32)}}...</div>
         </div></div>
+        ${{engineHtml}}
         <div class="detail-section"><h3>ELF Header</h3><div class="detail-kv">
           <div class="k">ELF Type</div><div class="v">0x${{d.elf_type.toString(16)}}</div>
           <div class="k">OS/ABI</div><div class="v">0x${{d.osabi.toString(16)}}</div>
@@ -369,12 +400,93 @@ document.addEventListener('keydown', e => {{ if (e.key === 'Escape') $('#detailP
     renderGames();
   }});
 
-  ['gameFilterText','filterPlatform','filterEngine','filterRes','filterSelf','filterHasUnknown'].forEach(id => {{
+  ['gameFilterText','filterPlatform','filterEngine','filterSelf','filterHasUnknown'].forEach(id => {{
     const el = $('#'+id);
     el.addEventListener('input', applyFilters);
     el.addEventListener('change', applyFilters);
   }});
   renderGames();
+}})();
+
+// --- ENGINES ---
+(function() {{
+  const hints = D.engine_hints || [];
+  const summary = D.engine_summary || [];
+
+  const totalGames = hints.length;
+  const avgScore = hints.length > 0 ? hints.reduce((s,h) => s + h.score, 0) / hints.length : 0;
+  const avgConf = hints.length > 0 ? hints.reduce((s,h) => s + h.confidence, 0) / hints.length : 0;
+  const withThirdParty = hints.filter(h => (h.third_party_libs||[]).length > 0).length;
+  const withForks = hints.filter(h => (h.custom_forks||[]).length > 0).length;
+
+  $('#engineOverviewCards').innerHTML = [
+    ['Total Games', totalGames, 'blue'],
+    ['Avg Score', avgScore.toFixed(0), 'yellow'],
+    ['Avg Confidence', avgConf.toFixed(1) + '%', 'green'],
+    ['With Third-Party', withThirdParty, ''],
+    ['With Custom Forks', withForks, ''],
+  ].map(([l, v, c]) => `<div class="card"><div class="card-label">${{l}}</div><div class="card-value ${{c}}">${{v}}</div></div>`).join('');
+
+  const maxGameCount = summary.length > 0 ? summary[0].game_count : 1;
+  const eColors = {{ 'Native/SCE': 'fill-green', 'Native': 'fill-blue', 'Unity': 'fill-purple', 'Unreal Engine 4': 'fill-yellow', 'Unreal Engine 5': 'fill-red' }};
+  $('#engineDistBars').innerHTML = summary.map(s =>
+    `<div class="hbar"><div class="hbar-label">${{s.engine}}</div><div class="hbar-track"><div class="hbar-fill ${{eColors[s.engine]||'fill-blue'}}" style="width:${{maxGameCount>0?(s.game_count/maxGameCount*100).toFixed(1):'0'}}%"></div></div><div class="hbar-count">${{s.game_count}} (${{s.avg_confidence.toFixed(0)}}% avg)</div></div>`
+  ).join('');
+
+  let rows = hints.map(h => [h.display_name||h.name, h.engine, h.score, h.confidence, (h.third_party_libs||[]).join(', '), (h.custom_forks||[]).join(', '), h.build_system||'']);
+  let filtered = [...rows];
+
+  function renderEngineTable() {{
+    $('#engineBody').innerHTML = filtered.map(r => `<tr class="clickable" data-game="${{r[0]}}">
+      <td title="${{r[0]}}">${{trunc(r[0],32)}}</td>
+      <td>${{r[1]?`<span class="pill pill-eng">${{r[1]}}</span>`:'-'}}</td>
+      <td style="font-family:monospace">${{r[2]}}</td>
+      <td class="pct ${{pctCls(r[3])}}">${{r[3]}}%</td>
+      <td style="font-size:0.72rem">${{r[4]?trunc(r[4],40):'-'}}</td>
+      <td style="font-size:0.72rem;color:${{r[5]?'#f85149':'#8b949e'}}">${{r[5]?trunc(r[5],40):'-'}}</td>
+      <td>${{r[6]||'-'}}</td>
+    </tr>`).join('');
+
+    $$('#engineBody tr.clickable').forEach(tr => tr.addEventListener('click', () => {{
+      const gameName = tr.dataset.game;
+      const h = hints.find(x => (x.display_name||x.name) === gameName);
+      if (!h) return;
+      openDetail(h.display_name || h.name, `
+        <div class="detail-section"><h3>Engine Overview</h3><div class="detail-kv">
+          <div class="k">Engine</div><div class="v">${{h.engine}}</div>
+          <div class="k">Score</div><div class="v" style="font-family:monospace">${{h.score}}</div>
+          <div class="k">Confidence</div><div class="v">${{h.confidence}}%</div>
+          ${{h.build_system ? `<div class="k">Build System</div><div class="v">${{h.build_system}}</div>` : ''}}
+          ${{h.source_depot ? `<div class="k">Source Depot</div><div class="v">${{h.source_depot}}</div>` : ''}}
+        </div></div>
+        ${{(h.sce_libraries||[]).length ? `<div class="detail-section"><h3>SCE Libraries (${{(h.sce_libraries||[]).length}})</h3><p style="color:#8b949e;font-size:0.82rem">${{(h.sce_libraries||[]).join(', ')}}</p></div>` : ''}}
+        ${{(h.third_party_libs||[]).length ? `<div class="detail-section"><h3>Third-Party Libraries</h3><p style="color:#8b949e;font-size:0.82rem">${{(h.third_party_libs||[]).join(', ')}}</p></div>` : ''}}
+        ${{(h.custom_forks||[]).length ? `<div class="detail-section"><h3 style="color:#f85149">Custom Forks</h3><p style="color:#f85149;font-size:0.82rem">${{(h.custom_forks||[]).join(', ')}}</p></div>` : ''}}
+        ${{(h.sdk_hints||[]).length ? `<div class="detail-section"><h3>SDK Hints</h3><p style="color:#8b949e;font-size:0.82rem">${{(h.sdk_hints||[]).join(', ')}}</p></div>` : ''}}
+        ${{(h.detected_versions||[]).length ? `<div class="detail-section"><h3>Detected Versions</h3><p style="color:#8b949e;font-size:0.82rem">${{(h.detected_versions||[]).join(', ')}}</p></div>` : ''}}
+        ${{(h.evidence||[]).length ? `<div class="detail-section"><h3>Evidence Strings (${{(h.evidence||[]).length}})</h3><div class="table-wrap"><table class="detail-table"><thead><tr><th>String</th></tr></thead><tbody>${{(h.evidence||[]).slice(0,30).map(e => `<tr><td style="font-family:monospace;font-size:0.72rem">${{e}}</td></tr>`).join('')}}</tbody></table></div></div>` : ''}}
+      `);
+    }}));
+  }}
+
+  let sortState = {{ col: -1, asc: true }};
+  $('#engineTable thead').addEventListener('click', e => {{
+    const th = e.target.closest('th');
+    if (!th) return;
+    const col = +th.dataset.col;
+    if (sortState.col === col) sortState.asc = !sortState.asc;
+    else {{ sortState.col = col; sortState.asc = true; }}
+    $$('#engineTable th').forEach(h => h.classList.remove('sorted'));
+    th.classList.add('sorted');
+    th.querySelector('.arrow').innerHTML = sortState.asc ? '&#9650;' : '&#9660;';
+    filtered.sort((a, b) => {{
+      let va = a[col], vb = b[col];
+      if (typeof va === 'number') return sortState.asc ? va - vb : vb - va;
+      return sortState.asc ? String(va).localeCompare(String(vb)) : String(vb).localeCompare(String(va));
+    }});
+    renderEngineTable();
+  }});
+  renderEngineTable();
 }})();
 
 // --- LIBRARIES ---
@@ -701,16 +813,11 @@ mod tests {
                 title_name: Some("Game One".to_string()),
                 platform: "PS5".to_string(),
                 is_self: true,
-                segments: 14,
-                imports: 60,
-                unique_imports: 50,
-                resolved: 57,
-                nid_resolution: 95.0,
+                engine: "Native".to_string(),
+                engine_confidence: 0,
+                library_count: 5,
+                unknown_nid_count: 3,
                 file_size_mb: 45.2,
-                rx_mb: 30.0,
-                r_mb: 5.0,
-                rw_mb: 10.0,
-                engine: Some("Native".to_string()),
             }],
             game_details: vec![GameDetail {
                 name: "game1".to_string(),
@@ -745,7 +852,17 @@ mod tests {
                 }],
                 relocations: 0,
                 has_tls: false,
-                engine: Some("Native".to_string()),
+                engine: "Native".to_string(),
+                engine_score: 0,
+                engine_confidence: 0,
+                engine_evidence: vec![],
+                sce_libraries: vec![],
+                third_party_libs: vec![],
+                custom_forks: vec![],
+                build_system: None,
+                source_depot: None,
+                sdk_hints: vec![],
+                detected_versions: vec![],
             }],
             heatmap: HeatmapData {
                 libraries: vec!["libkernel".to_string()],
@@ -836,6 +953,8 @@ mod tests {
                 total_code_mb: 30.0,
                 total_data_mb: 10.0,
             }),
+            engine_hints: vec![],
+            engine_summary: vec![],
         }
     }
 
@@ -852,6 +971,7 @@ mod tests {
         let html = generate_html(&sample_data());
         assert!(html.contains("tab-overview"));
         assert!(html.contains("tab-games"));
+        assert!(html.contains("tab-engines"));
         assert!(html.contains("tab-libraries"));
         assert!(html.contains("tab-nids"));
         assert!(html.contains("tab-segments"));

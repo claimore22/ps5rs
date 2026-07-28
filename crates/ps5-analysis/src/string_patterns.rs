@@ -114,6 +114,7 @@ pub fn detect_build_system(strings: &[String]) -> Option<Detection> {
     if !evidence.is_empty() {
         return Some(Detection {
             value: "Jenkins".to_string(),
+            score: 0,
             confidence: 0,
             evidence,
         });
@@ -127,6 +128,7 @@ pub fn detect_build_system(strings: &[String]) -> Option<Detection> {
     if !evidence.is_empty() {
         return Some(Detection {
             value: "BuildServer".to_string(),
+            score: 0,
             confidence: 0,
             evidence,
         });
@@ -163,6 +165,7 @@ pub fn detect_depot(strings: &[String]) -> Option<Detection> {
         evidence.truncate(10);
         return Some(Detection {
             value: depot_name.unwrap_or_else(|| "Unknown".to_string()),
+            score: 0,
             confidence: 0,
             evidence,
         });
@@ -201,6 +204,7 @@ pub fn detect_project_paths(strings: &[String]) -> Vec<Detection> {
         evidence.truncate(10);
         detections.push(Detection {
             value: project_name.unwrap_or_else(|| "Unknown".to_string()),
+            score: 0,
             confidence: 0,
             evidence,
         });
@@ -316,6 +320,7 @@ fn detect_pattern(
         evidence.truncate(10);
         detections.push(Detection {
             value: name.to_string(),
+            score: 0,
             confidence: 0,
             evidence,
         });
@@ -338,6 +343,7 @@ fn detect_version_pattern(
         evidence.truncate(5);
         detections.push(Detection {
             value: name.to_string(),
+            score: 0,
             confidence: 0,
             evidence,
         });

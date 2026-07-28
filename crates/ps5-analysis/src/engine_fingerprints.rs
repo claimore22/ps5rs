@@ -6,15 +6,15 @@ pub struct EngineFingerprint {
 }
 
 impl EngineFingerprint {
-    pub fn score(&self, strings: &[String]) -> (u8, Vec<String>) {
+    pub fn score(&self, strings: &[String]) -> (u32, u8, Vec<String>) {
         let mut evidence = Vec::new();
-        let mut total: u16 = 0;
+        let mut total: u32 = 0;
 
         for &(pattern, weight) in self.patterns {
             for s in strings {
                 if s.contains(pattern) {
                     evidence.push(s.clone());
-                    total += weight as u16;
+                    total += weight as u32;
                     break;
                 }
             }
@@ -26,7 +26,7 @@ impl EngineFingerprint {
             total.min(100) as u8
         };
 
-        (confidence, evidence)
+        (total, confidence, evidence)
     }
 }
 
@@ -87,7 +87,7 @@ pub fn detect_engine(strings: &[String]) -> Option<Detection> {
     let mut best: Option<Detection> = None;
 
     for fp in ALL {
-        let (confidence, evidence) = fp.score(strings);
+        let (score, confidence, evidence) = fp.score(strings);
         if confidence == 0 {
             continue;
         }
@@ -98,6 +98,7 @@ pub fn detect_engine(strings: &[String]) -> Option<Detection> {
                 // tie-break: prefer the later entry (newer engine)
                 best = Some(Detection {
                     value: fp.name.to_string(),
+                    score,
                     confidence,
                     evidence,
                 });
@@ -105,6 +106,7 @@ pub fn detect_engine(strings: &[String]) -> Option<Detection> {
             Some(_) => {
                 best = Some(Detection {
                     value: fp.name.to_string(),
+                    score,
                     confidence,
                     evidence,
                 });
@@ -112,6 +114,7 @@ pub fn detect_engine(strings: &[String]) -> Option<Detection> {
             None => {
                 best = Some(Detection {
                     value: fp.name.to_string(),
+                    score,
                     confidence,
                     evidence,
                 });
@@ -154,6 +157,7 @@ pub fn detect_custom_forks(strings: &[String]) -> Vec<Detection> {
             evidence.truncate(10);
             detections.push(Detection {
                 value: label.to_string(),
+                score: confidence as u32,
                 confidence,
                 evidence,
             });
@@ -177,24 +181,27 @@ mod tests {
             "FName".to_string(),
             "SlateRHIRenderer".to_string(),
         ];
-        let (confidence, evidence) = UNREAL4.score(&strings);
+        let (score, confidence, evidence) = UNREAL4.score(&strings);
         assert_eq!(confidence, 100);
+        assert!(score >= 200);
         assert!(evidence.len() >= 5);
     }
 
     #[test]
     fn score_unreal4_weak() {
         let strings = vec!["Engine/Source/Runtime/Core/".to_string()];
-        let (confidence, evidence) = UNREAL4.score(&strings);
+        let (score, confidence, evidence) = UNREAL4.score(&strings);
         assert!(confidence > 0);
+        assert!(score > 0);
         assert_eq!(evidence.len(), 1);
     }
 
     #[test]
     fn score_no_match() {
         let strings = vec!["hello world".to_string()];
-        let (confidence, evidence) = UNREAL4.score(&strings);
+        let (score, confidence, evidence) = UNREAL4.score(&strings);
         assert_eq!(confidence, 0);
+        assert_eq!(score, 0);
         assert!(evidence.is_empty());
     }
 
