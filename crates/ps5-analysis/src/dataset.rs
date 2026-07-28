@@ -3,7 +3,7 @@ use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::path::Path;
 
-pub const DATASET_SCHEMA_VERSION: u32 = 3;
+pub const DATASET_SCHEMA_VERSION: u32 = 5;
 
 // ---------------------------------------------------------------------------
 // Manifest
@@ -206,6 +206,7 @@ mod tests {
         BinaryImageDocument {
             schema_version: 1,
             tool: "ps5rs".to_string(),
+            string_analysis: None,
             image: BinaryImage {
                 sha256: sha256.to_string(),
                 platform: Platform::Ps5,

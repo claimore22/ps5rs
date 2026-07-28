@@ -77,7 +77,7 @@ fn analyze_binary(path: &Path, catalog: &Catalog, game_dir: &Path) -> Option<Gam
     let sha256 = ps5_format::sha256_hex(&data);
     let file_size = data.len() as u64;
 
-    let image = BinaryImageBuilder::build_from_file(data, &sha256, catalog);
+    let image = BinaryImageBuilder::build_from_file(&data, &sha256, catalog);
 
     let platform = match image.platform {
         ImagePlatform::Ps4 => Platform::Ps4,

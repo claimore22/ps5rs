@@ -8,7 +8,7 @@ pub(crate) fn cmd_inspect(path: &PathBuf, json: bool, output: &Option<PathBuf>) 
     let data = load_file(path);
     let sha256 = ps5_format::sha256_hex(&data);
     let catalog = load_catalog(&[]);
-    let image = ps5_image::BinaryImageBuilder::build_from_file(data, &sha256, &catalog);
+    let image = ps5_image::BinaryImageBuilder::build_from_file(&data, &sha256, &catalog);
 
     if json {
         write_to_output_or_stdout(output, &|w| {
@@ -113,7 +113,7 @@ pub(crate) fn cmd_imports(path: &PathBuf, json: bool, output: &Option<PathBuf>) 
     let data = load_file(path);
     let sha256 = ps5_format::sha256_hex(&data);
     let catalog = ps5_nid::Catalog::new();
-    let image = ps5_image::BinaryImageBuilder::build_from_file(data, &sha256, &catalog);
+    let image = ps5_image::BinaryImageBuilder::build_from_file(&data, &sha256, &catalog);
 
     if json {
         write_to_output_or_stdout(output, &|w| {

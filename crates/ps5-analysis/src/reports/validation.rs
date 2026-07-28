@@ -241,6 +241,7 @@ mod tests {
             schema_version: DATASET_SCHEMA_VERSION,
             tool: "ps5rs-test".to_string(),
             image,
+            string_analysis: None,
         };
 
         (name.to_string(), doc)

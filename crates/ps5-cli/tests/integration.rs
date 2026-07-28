@@ -37,7 +37,10 @@ fn parse_and_analyze(data: &[u8]) -> (u64, usize, bool, usize, usize, Vec<String
     for sym in &imports {
         let parts: Vec<&str> = sym.resolved_name.split('#').collect();
         let nid = parts[0];
-        let resolved = catalog.resolve(nid).unwrap_or("?");
+        let resolved = catalog
+            .resolve(nid)
+            .and_then(|e| e.primary_name())
+            .unwrap_or("?");
         let lib_name = if parts.len() >= 2 {
             parts[1].to_string()
         } else {
