@@ -1,10 +1,14 @@
 # ps5rs
 
-A PS5 binary intelligence and fingerprinting framework written in Rust. Parses SELF/ELF containers, resolves NID imports, extracts clean ELFs, fingerprints game binaries via string analysis, detects engines and middleware, and analyzes collections of PS5 game dumps through an interactive dashboard.
+A PS5 binary intelligence and fingerprinting framework written in Rust.
+Parses SELF/ELF containers and PRX/SPRX modules, resolves NID imports,
+extracts clean ELFs, fingerprints game binaries through string analysis,
+detects engines and middleware, tracks SDK/library dependencies, and
+analyzes collections of PS5 game binaries through an interactive dashboard.
 
 ## Why Rust?
 
-The PS5 runs on x86-64 (AMD Zen 2), so PS5 game code can execute natively on any modern PC without CPU emulation. The hard part is everything around the CPU: parsing Sony's SELF/ELF module format, resolving NID-hashed imports, HLE of system libraries, and ABI translation. Rust eliminates an entire class of memory safety bugs (buffer overflows, use-after-free, data races, null pointer dereferences) that plague unsafe native code, while matching C++ performance. For a project that parses untrusted binary data from third-party game dumps, this safety guarantee is critical.
+The PS5 uses an x86-64 AMD Zen 2 CPU, which means CPU instruction compatibility is not the primary challenge. The main difficulties are the PS5 ABI, system libraries, graphics stack, kernel interfaces, and runtime services. Rust eliminates an entire class of memory safety bugs (buffer overflows, use-after-free, data races, null pointer dereferences) that plague unsafe native code, while matching C++ performance. For a project that parses untrusted binary data from third-party game dumps, this safety guarantee is critical.
 
 ## Crates
 
@@ -15,7 +19,7 @@ The PS5 runs on x86-64 (AMD Zen 2), so PS5 game code can execute natively on any
 | `ps5-elf` | ELF64 binary format parsing (headers, segments, symbols, relocations) |
 | `ps5-nid` | NID hash algorithm (SHA1 + Sony custom base64), name catalog (v2 with merge semantics), resolver |
 | `ps5-image` | BinaryImage IR: normalized abstraction with JSON serialization, `Detection` with confidence/evidence |
-| `ps5-analysis` | Analysis engine: scanner, dataset, string fingerprinting, engine detection, reports, export |
+| `ps5-analysis` | Analysis engine: scanner, dataset, PRX module discovery, dependency analysis, string fingerprinting, engine detection, reports, and export |
 | `ps5-dashboard` | Static HTML dashboard generator (self-contained, no CDN dependencies) |
 | `ps5-cli` | Command-line interface |
 
@@ -32,8 +36,11 @@ MSRV: Rust 1.85 (edition 2024).
 The full analysis pipeline — scan game dumps, extract clean ELFs, analyze engines, and generate a dashboard:
 
 ```sh
-# 1. Scan games into a dataset
+# 1a. Scan eboot.bin only
 ps5rs scan ./games --output analysis/
+
+# 1b. Scan eboot.bin + sce_module/*.prx modules
+ps5rs scan ./games --output analysis/ --include-modules
 
 # 2. Extract clean ELFs from SELF containers
 ps5rs batch-extract ./games --output analysis/
@@ -66,13 +73,18 @@ ps5rs scan ./games --output analysis/ --include-modules
 ps5rs scan ./games --output analysis/ --nids extra_nids.csv
 ```
 
-Each game's `eboot.bin` is parsed into a `BinaryImage` and serialized as an individual JSON file. String analysis runs on raw bytes (no cloning) to detect engines, middleware, build systems, and SDK versions. The manifest tracks schema version and game metadata.
+Each game's `eboot.bin` is parsed into a `BinaryImage` and serialized as an individual JSON file. When module scanning is enabled, PRX/SPRX files from `sce_module/` are stored as individual `BinaryImage` documents linked back to their parent game.
+
+Each binary component is analyzed independently — eboot, PRX modules, and extracted SELF images each retain their own imports, NIDs, strings, library versions, and detection evidence.
 
 ```
 analysis/
-  manifest.json       # schema v5: tool, timestamp, image count, game metadata
+  manifest.json       # schema v6: tool, timestamp, image count, module count, game metadata
   images/
-    GameTitle.json    # BinaryImageDocument per game (imports, exports, string analysis)
+    GameTitle/
+      eboot.json            # eboot.bin analysis
+      libScePad.prx.json    # PRX module analysis
+      libSceVideoOut.prx.json
 ```
 
 ### Extract clean ELFs from SELF containers
@@ -178,45 +190,88 @@ ps5rs nid sceKernelLoadStartModule
 # -> 4ZjF4RQH3k8
 ```
 
-## Architecture
+## Binary Dependency Intelligence
+
+ps5rs does not treat a game as a single executable. A PS5 title is analyzed as a collection:
 
 ```
-                    eboot.bin (SELF or ELF)
-                           |
-              +------------+------------+
-              |                         |
-         ps5-self                  ps5-elf
-      (SELF → clean ELF)       (ELF parsing)
-              |                         |
-              +------------+------------+
-                           |
-                      ps5-image
-                   (BinaryImage IR)
-                           |
-              +------------+------------+
-              |                         |
-           scan /                 extract /
-        batch-extract            batch-extract
-              |                         |
-       AnalysisDataset          Extracted ELFs
-              |                         |
-    +---------+---------+       validate (SHA256)
-    |    |    |    |    |
-  stats  imports  heatmap  ...  dashboard
-              |
-     +--------+--------+
-     |                  |
-  string           engine
-  patterns         fingerprints
-     |                  |
-  SCE libs         UE4/UE5/Unity/Godot
-  middleware       confidence scores
-  SDK hints        custom forks
-  build system     evidence chains
-  source depot
+Game
+ |
+ +-- eboot.bin
+ |
+ +-- sce_module/
+       +-- libGame.prx
+       +-- libSceVideoOut.prx
+       +-- libSceGnmDriver.prx
 ```
 
-The `BinaryImage` IR decouples raw parsers from consumers. The `scan` command produces a dataset of `BinaryImageDocument` JSON files. String analysis runs on raw bytes during scanning — no cloning of hundred-MB binaries. All `analyze` reports and the `dashboard` command consume the dataset without touching raw binaries, making iteration fast and portable.
+Each dependency records:
+
+- Imported libraries and resolved NIDs
+- SDK version identifiers
+- Engine and middleware fingerprints
+- String evidence and source paths
+
+This allows answering questions like:
+
+- Which games use `libSceGnmDriver`?
+- Which modules require a specific SDK version?
+- Which binaries contain Unreal Engine runtime code?
+
+## Architecture Overview
+
+```
+                         PS5 binaries
+                              |
+              +---------------+---------------+
+              |                               |
+          eboot.bin                    sce_module/*
+        (SELF or ELF)                 (*.prx/*.sprx)
+              |                               |
+              +---------------+---------------+
+                              |
+                 +------------+------------+
+                 |                         |
+             ps5-self                  ps5-elf
+        (SELF → clean ELF)        (ELF parsing)
+                 |                         |
+                 +------------+------------+
+                              |
+                         ps5-image
+                    (BinaryImage IR)
+                              |
+          +-------------------+-------------------+
+          |                                       |
+       scan /                               extract /
+    batch-extract                         batch-extract
+          |                                       |
+  AnalysisDataset                         Extracted ELFs
+          |
+  +-------+------------------------------------------------+
+  |                |                 |                      |
+stats          imports          heatmap              dashboard
+  |
+  +----------------------+-------------------------------+
+                         |
+                 Binary intelligence
+                         |
+        +----------------+----------------+
+        |                                 |
+ string analysis                 ELF/SELF analysis
+        |                                 |
+ +------+-------+                 +-------+--------+
+ |              |                 |                |
+Engine       Middleware       NID resolution   Libraries
+fingerprints detections       imports          versions
+ |              |                 |                |
+UE4/UE5       PhysX/Bink       Functions       libSce*
+Unity         FMOD             aliases        SDK versions
+Godot         OpenSSL          metadata
+ |
+confidence + evidence
+```
+
+Each executable component (eboot, PRX, SPRX) becomes an independent `BinaryImageDocument` while preserving relationships between modules and their parent game. The `BinaryImage` IR decouples raw parsers from consumers. The `scan` command produces a dataset of `BinaryImageDocument` JSON files for eboot binaries and their accompanying PRX/SPRX modules. String analysis runs on raw bytes during scanning — no cloning of hundred-MB binaries. All `analyze` reports and the `dashboard` command consume the dataset without touching raw binaries, making iteration fast and portable.
 
 ## String-Based Fingerprinting
 
@@ -225,7 +280,6 @@ During scanning, `ps5-analysis` extracts printable strings from raw binary bytes
 | Detector | What it finds |
 |---|---|
 | `detect_engine()` | UE4/UE5/Unity/Godot via weighted pattern scoring |
-| `detect_sce_libraries()` | `libSce*` libraries from embedded paths |
 | `detect_third_party()` | PhysX, Bink, FMOD, libpng, OpenSSL, etc. |
 | `detect_build_system()` | Jenkins, build server paths |
 | `detect_depot()` | Source depot paths (`U:/P4Damascus/...`) |
@@ -233,6 +287,17 @@ During scanning, `ps5-analysis` extracts printable strings from raw binary bytes
 | `detect_sdk_hints()` | Prospero SDK references |
 | `detect_versions()` | Library version strings (PhysX 3.4, libpng 1.5.2, etc.) |
 | `detect_source_paths()` | Embedded source file paths |
+
+Library detection combines multiple evidence sources:
+
+| Source | Example |
+|---|---|
+| ELF dynamic imports | `libScePad` |
+| PRX module imports | `libSceVideoOut` |
+| SELF metadata | module dependencies |
+| String extraction | embedded library paths |
+
+Each detection retains provenance and confidence information.
 
 Engine detection uses weighted fingerprints. Each pattern contributes a score, and the engine with the highest total wins. Ties prefer the newer engine version.
 
@@ -260,6 +325,8 @@ Catalog format supports two modes:
 
 Rich CSV files auto-detect header rows and merge library/tag/source metadata per NID.
 
+Future catalog expansion may include richer relationships such as multiple aliases per NID, library associations, tags, source references, and usage statistics.
+
 ## Dashboard
 
 The `ps5-dashboard` crate generates a self-contained HTML file with all data embedded as a JSON blob. No CDN, no external dependencies — fully offline.
@@ -269,6 +336,9 @@ The `ps5-dashboard` crate generates a self-contained HTML file with all data emb
 - Log-scaled heatmap (handles skewed import counts: 12K libkernel vs 40 libSceAudio3d)
 - CSS-only charts (conic-gradient pie, stacked bars, horizontal bar charts)
 - Vanilla JS for interactivity (no frameworks)
+- Module-aware game views with per-module import/SDK breakdown
+- SDK library version tracking across the dataset
+- Binary dependency exploration
 
 ![Overview](screenshots/overview.png)
 ![Games](screenshots/games.png)
@@ -279,9 +349,29 @@ The `ps5-dashboard` crate generates a self-contained HTML file with all data emb
 
 Tabs: Overview, Games, Engines, Libraries, NIDs, Segments, Statistics, Graph
 
+## Compatibility Research
+
+ps5rs is intentionally focused on binary understanding rather than execution. The extracted information provides the foundation for future compatibility work:
+
+```
+Binary analysis
+        |
+        v
+Dependency graph
+        |
+        v
+Required system APIs
+        |
+        v
+HLE implementation targets
+        |
+        v
+Compatibility runtime
+```
+
 ## Test Suite
 
-371 tests across 8 crates covering ELF parsing, SELF extraction, NID hashing/caching, BinaryImage IR, string fingerprinting, engine detection, analysis reports, dataset operations, batch extraction, and dashboard generation.
+331 tests across 8 crates covering ELF parsing, SELF extraction, NID hashing/caching, BinaryImage IR, string fingerprinting, engine detection, analysis reports, dataset operations, batch extraction, dashboard generation, and PRX module scanning.
 
 ## Acknowledgements
 
