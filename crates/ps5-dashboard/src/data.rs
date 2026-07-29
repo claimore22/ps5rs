@@ -1,6 +1,6 @@
 use ps5_analysis::dataset::AnalysisDataset;
 use ps5_analysis::reports::build_engine_hints;
-use ps5_image::SegmentType;
+use ps5_image::{LibVersionEntry, SegmentType};
 use serde::{Deserialize, Serialize};
 use std::collections::{HashMap, HashSet};
 
@@ -24,6 +24,8 @@ pub struct DashboardData {
     pub engine_hints: Vec<DashboardEngineHint>,
     #[serde(default, skip_serializing_if = "Vec::is_empty")]
     pub engine_summary: Vec<EngineSummary>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub library_versions: Vec<DashboardLibraryVersion>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -96,6 +98,8 @@ pub struct GameDetail {
     pub sdk_hints: Vec<String>,
     #[serde(default, skip_serializing_if = "Vec::is_empty")]
     pub detected_versions: Vec<String>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub lib_versions: Vec<LibVersionEntry>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -240,6 +244,8 @@ pub struct DashboardEngineHint {
     pub sdk_hints: Vec<String>,
     #[serde(default, skip_serializing_if = "Vec::is_empty")]
     pub detected_versions: Vec<String>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub lib_versions: Vec<LibVersionEntry>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -248,6 +254,16 @@ pub struct EngineSummary {
     pub game_count: usize,
     pub avg_score: f64,
     pub avg_confidence: f64,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct DashboardLibraryVersion {
+    pub library: String,
+    pub version_raw: u32,
+    pub version_string: String,
+    pub game_count: usize,
+    pub games: Vec<String>,
+    pub game_ids: Vec<String>,
 }
 
 pub fn compute(ds: &AnalysisDataset) -> DashboardData {
@@ -304,6 +320,9 @@ pub fn compute(ds: &AnalysisDataset) -> DashboardData {
                     .iter()
                     .map(|d| d.value.clone())
                     .collect(),
+                lib_versions: img
+                    .map(|(_, doc)| doc.image.lib_versions.clone())
+                    .unwrap_or_default(),
             }
         })
         .collect();
@@ -321,6 +340,8 @@ pub fn compute(ds: &AnalysisDataset) -> DashboardData {
     let library_nid_breakdown = compute_library_nid_breakdown(ds);
     let statistics = compute_statistics(ds, &segments);
 
+    let library_versions = compute_library_versions(ds);
+
     DashboardData {
         meta,
         overview,
@@ -335,6 +356,7 @@ pub fn compute(ds: &AnalysisDataset) -> DashboardData {
         statistics: Some(statistics),
         engine_hints,
         engine_summary,
+        library_versions,
     }
 }
 
@@ -524,6 +546,7 @@ fn compute_game_details(
                 source_depot,
                 sdk_hints,
                 detected_versions,
+                lib_versions: doc.image.lib_versions.clone(),
             }
         })
         .collect()
@@ -988,6 +1011,36 @@ fn compute_engine_summary(hints: &[DashboardEngineHint]) -> Vec<EngineSummary> {
         .collect();
     result.sort_by_key(|b| std::cmp::Reverse(b.game_count));
     result
+}
+
+fn compute_library_versions(ds: &AnalysisDataset) -> Vec<DashboardLibraryVersion> {
+    let mut map: HashMap<(String, u32), DashboardLibraryVersion> = HashMap::new();
+    for (name, doc) in &ds.images {
+        let display = ds.display_name_for(name).to_string();
+        for lv in &doc.image.lib_versions {
+            let key = (lv.name.clone(), lv.version_raw);
+            let entry = map.entry(key).or_insert_with(|| DashboardLibraryVersion {
+                library: lv.name.clone(),
+                version_raw: lv.version_raw,
+                version_string: lv.version_string.clone(),
+                game_count: 0,
+                games: Vec::new(),
+                game_ids: Vec::new(),
+            });
+            if !entry.games.contains(&display) {
+                entry.games.push(display.clone());
+                entry.game_ids.push(name.clone());
+                entry.game_count = entry.games.len();
+            }
+        }
+    }
+    let mut entries: Vec<DashboardLibraryVersion> = map.into_values().collect();
+    entries.sort_by(|a, b| {
+        b.game_count
+            .cmp(&a.game_count)
+            .then(a.library.cmp(&b.library))
+    });
+    entries
 }
 
 fn sum_segment_sizes(img: &ps5_image::BinaryImage) -> (u64, u64, u64, u64) {
