@@ -55,6 +55,7 @@ pub struct GameRow {
     pub engine: String,
     pub engine_confidence: u8,
     pub library_count: usize,
+    pub sce_library_count: usize,
     pub unknown_nid_count: usize,
     pub file_size_mb: f64,
 }
@@ -437,6 +438,7 @@ fn compute_games(ds: &AnalysisDataset, engine_hints: &[DashboardEngineHint]) -> 
                 engine,
                 engine_confidence,
                 library_count: library_count.len(),
+                sce_library_count: hint.map(|h| h.sce_libraries.len()).unwrap_or(0),
                 unknown_nid_count,
                 file_size_mb: img.file_size as f64 / (1024.0 * 1024.0),
             }
