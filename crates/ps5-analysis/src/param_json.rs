@@ -2,6 +2,17 @@ use serde::{Deserialize, Serialize};
 use std::path::Path;
 
 #[derive(Debug, Clone, Serialize, Deserialize, Default)]
+pub struct ModuleParam {
+    pub name: String,
+    #[serde(default)]
+    pub sha256: String,
+    #[serde(default)]
+    pub file_size: u64,
+    #[serde(default)]
+    pub image_type: String,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, Default)]
 pub struct GameParam {
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
@@ -15,6 +26,8 @@ pub struct GameParam {
     pub drm_type: Option<String>,
     pub content_id: Option<String>,
     pub creation_date: Option<String>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub modules: Vec<ModuleParam>,
 }
 
 impl GameParam {
@@ -85,6 +98,7 @@ pub fn read_param(game_dir: &Path) -> Option<GameParam> {
         drm_type: raw.application_drm_type,
         content_id: raw.content_id,
         creation_date,
+        modules: Vec::new(),
     };
     param.display_name = param.compute_display_name();
     Some(param)
@@ -241,6 +255,7 @@ mod tests {
             drm_type: Some("standard".to_string()),
             content_id: None,
             creation_date: None,
+            modules: Vec::new(),
         };
         let json = serde_json::to_string(&param).unwrap();
         let back: GameParam = serde_json::from_str(&json).unwrap();

@@ -1,6 +1,6 @@
 use std::io::{Read, Write};
 
-use crate::{BINARY_IMAGE_VERSION, BinaryImage, BinaryImageDocument};
+use crate::{BINARY_IMAGE_VERSION, BinaryImage, BinaryImageDocument, ImageType};
 
 // ---------------------------------------------------------------------------
 // Error type
@@ -52,6 +52,8 @@ pub fn export_json(image: &BinaryImage, writer: &mut dyn Write) -> Result<(), Js
         tool: "ps5rs".to_string(),
         image: image.clone(),
         string_analysis: None,
+        image_type: ImageType::Eboot,
+        parent_image: None,
     };
     let json = serde_json::to_string_pretty(&doc)?;
     writer.write_all(json.as_bytes())?;

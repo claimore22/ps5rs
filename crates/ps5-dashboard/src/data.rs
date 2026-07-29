@@ -1093,6 +1093,8 @@ mod tests {
         BinaryImageDocument {
             schema_version: 1,
             tool: "test".to_string(),
+            image_type: ps5_image::ImageType::Eboot,
+            parent_image: None,
             string_analysis: None,
             image: BinaryImage {
                 sha256: sha.to_string(),
@@ -1190,6 +1192,7 @@ mod tests {
                 tool: "test".to_string(),
                 created_at: "2026-01-01T00:00:00Z".to_string(),
                 image_count: images.len(),
+                module_count: 0,
                 games: vec![],
             },
             images,

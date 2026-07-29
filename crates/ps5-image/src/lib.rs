@@ -53,6 +53,25 @@ pub struct StringAnalysis {
 }
 
 // ---------------------------------------------------------------------------
+// Image type — distinguishes eboot from PRX / SPRX / other modules
+// ---------------------------------------------------------------------------
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+pub enum ImageType {
+    Eboot,
+    Prx,
+    Sprx,
+    SelfModule,
+    Unknown,
+}
+
+impl Default for ImageType {
+    fn default() -> Self {
+        Self::Eboot
+    }
+}
+
+// ---------------------------------------------------------------------------
 // JSON document wrapper — versions the interchange format, not the Rust struct
 // ---------------------------------------------------------------------------
 
@@ -63,6 +82,10 @@ pub struct BinaryImageDocument {
     pub image: BinaryImage,
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub string_analysis: Option<StringAnalysis>,
+    #[serde(default)]
+    pub image_type: ImageType,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub parent_image: Option<String>,
 }
 
 // ---------------------------------------------------------------------------

@@ -103,6 +103,8 @@ mod tests {
             BinaryImageDocument {
                 schema_version: DATASET_SCHEMA_VERSION,
                 tool: "ps5rs-test".to_string(),
+                image_type: ps5_image::ImageType::Eboot,
+                parent_image: None,
                 image,
                 string_analysis: None,
             },
@@ -116,6 +118,7 @@ mod tests {
                 tool: "ps5rs-test".to_string(),
                 created_at: "2026-01-01T00:00:00Z".to_string(),
                 image_count: images.len(),
+                module_count: 0,
                 games: vec![],
             },
             images,

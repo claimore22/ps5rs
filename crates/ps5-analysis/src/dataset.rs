@@ -3,7 +3,7 @@ use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::path::Path;
 
-pub const DATASET_SCHEMA_VERSION: u32 = 5;
+pub const DATASET_SCHEMA_VERSION: u32 = 6;
 
 // ---------------------------------------------------------------------------
 // Manifest
@@ -15,6 +15,8 @@ pub struct Manifest {
     pub tool: String,
     pub created_at: String,
     pub image_count: usize,
+    #[serde(default)]
+    pub module_count: usize,
     #[serde(default)]
     pub games: Vec<crate::param_json::GameParam>,
 }
@@ -63,6 +65,54 @@ impl From<serde_json::Error> for DatasetError {
     }
 }
 
+fn collect_json_files(
+    base_dir: &Path,
+    dir: &Path,
+    images: &mut Vec<(String, BinaryImageDocument)>,
+) -> Result<(), DatasetError> {
+    for entry in std::fs::read_dir(dir)? {
+        let entry = entry?;
+        let path = entry.path();
+        if path.is_dir() {
+            collect_json_files(base_dir, &path, images)?;
+        } else if path.extension().and_then(|e| e.to_str()) == Some("json") {
+            let data = std::fs::read_to_string(&path)?;
+            let doc: BinaryImageDocument = serde_json::from_str(&data)?;
+            let rel = path
+                .strip_prefix(base_dir)
+                .unwrap_or(&path);
+            let key = if doc.parent_image.is_some() {
+                // module: use {game_dir}/{file_stem}
+                let parent_dir = rel.parent().and_then(|p| p.file_stem())
+                    .or_else(|| rel.file_stem())
+                    .and_then(|s| s.to_str())
+                    .unwrap_or("unknown");
+                let file_stem = path.file_stem().and_then(|s| s.to_str()).unwrap_or("unknown");
+                format!("{parent_dir}/{file_stem}")
+            } else {
+                // game image: use parent dir name (subdir) or file_stem (flat layout)
+                if rel.parent().is_some_and(|p| !p.as_os_str().is_empty()) {
+                    // inside a subdirectory — key is the dir name
+                    rel.parent()
+                        .and_then(|p| p.file_stem())
+                        .or_else(|| rel.file_stem())
+                        .and_then(|s| s.to_str())
+                        .unwrap_or("unknown")
+                        .to_string()
+                } else {
+                    // flat file at images/*.json — key is file_stem (backward compat)
+                    path.file_stem()
+                        .and_then(|s| s.to_str())
+                        .unwrap_or("unknown")
+                        .to_string()
+                }
+            };
+            images.push((key, doc));
+        }
+    }
+    Ok(())
+}
+
 // ---------------------------------------------------------------------------
 // AnalysisDataset
 // ---------------------------------------------------------------------------
@@ -102,32 +152,14 @@ impl AnalysisDataset {
         }
 
         let mut images = Vec::new();
-        let mut entries: Vec<_> = std::fs::read_dir(&images_dir)?
-            .filter_map(|e| e.ok())
-            .filter(|e| {
-                e.path()
-                    .extension()
-                    .and_then(|ext| ext.to_str())
-                    .map(|ext| ext.eq_ignore_ascii_case("json"))
-                    .unwrap_or(false)
-            })
-            .collect();
-        entries.sort_by_key(|e| e.path());
-
-        for entry in &entries {
-            let data = std::fs::read_to_string(entry.path())?;
-            let doc: BinaryImageDocument = serde_json::from_str(&data)?;
-            let name = entry
-                .path()
-                .file_stem()
-                .and_then(|s| s.to_str())
-                .unwrap_or("unknown")
-                .to_string();
-            images.push((name, doc));
-        }
+        collect_json_files(&images_dir, &images_dir, &mut images)?;
+        images.sort_by(|a, b| a.0.cmp(&b.0));
 
         let mut display_names = HashMap::new();
-        for (name, _) in &images {
+        for (name, doc) in &images {
+            if doc.parent_image.is_some() {
+                continue;
+            }
             let name_upper = name.to_ascii_uppercase();
             let display = manifest.games.iter().find_map(|g| {
                 g.display_name.as_ref().filter(|_| {
@@ -146,6 +178,27 @@ impl AnalysisDataset {
             images,
             display_names,
         })
+    }
+
+    pub fn game_images(&self) -> Vec<&(String, BinaryImageDocument)> {
+        self.images
+            .iter()
+            .filter(|(_, doc)| doc.parent_image.is_none())
+            .collect()
+    }
+
+    pub fn module_images(&self) -> Vec<&(String, BinaryImageDocument)> {
+        self.images
+            .iter()
+            .filter(|(_, doc)| doc.parent_image.is_some())
+            .collect()
+    }
+
+    pub fn modules_for_game(&self, game_name: &str) -> Vec<&(String, BinaryImageDocument)> {
+        self.images
+            .iter()
+            .filter(|(_, doc)| doc.parent_image.as_deref() == Some(game_name))
+            .collect()
     }
 
     pub fn total_imports(&self) -> usize {
@@ -206,6 +259,8 @@ mod tests {
         BinaryImageDocument {
             schema_version: 1,
             tool: "ps5rs".to_string(),
+            image_type: ps5_image::ImageType::Eboot,
+            parent_image: None,
             string_analysis: None,
             image: BinaryImage {
                 sha256: sha256.to_string(),
@@ -251,6 +306,7 @@ mod tests {
             tool: "ps5rs".to_string(),
             created_at: "2026-07-25T00:00:00Z".to_string(),
             image_count: docs.len(),
+            module_count: 0,
             games: vec![],
         };
         let manifest_json = serde_json::to_string_pretty(&manifest).unwrap();
@@ -317,6 +373,7 @@ mod tests {
             tool: "ps5rs".to_string(),
             created_at: "2026-01-01T00:00:00Z".to_string(),
             image_count: 0,
+            module_count: 0,
             games: vec![],
         };
         std::fs::write(
@@ -340,6 +397,7 @@ mod tests {
             tool: "ps5rs".to_string(),
             created_at: "2026-01-01T00:00:00Z".to_string(),
             image_count: 0,
+            module_count: 0,
             games: vec![],
         };
         std::fs::write(
@@ -454,6 +512,7 @@ mod tests {
             tool: "ps5rs".to_string(),
             created_at: "2026-07-25T12:00:00Z".to_string(),
             image_count: 42,
+            module_count: 0,
             games: vec![],
         };
         let json = serde_json::to_string(&m).unwrap();

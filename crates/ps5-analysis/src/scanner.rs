@@ -1,7 +1,7 @@
 use crate::dataset::{DATASET_SCHEMA_VERSION, Manifest};
 use crate::param_json::{self, GameParam};
 use crate::string_patterns;
-use ps5_image::{BinaryImageBuilder, BinaryImageDocument};
+use ps5_image::{BinaryImageBuilder, BinaryImageDocument, ImageType};
 use ps5_nid::Catalog;
 use std::path::{Path, PathBuf};
 
@@ -74,6 +74,7 @@ pub fn scan(
         tool: "ps5rs".to_string(),
         created_at: utc_now_iso8601(),
         image_count: image_paths.len(),
+        module_count: 0,
         games: game_params,
     };
     let manifest_json = serde_json::to_string_pretty(&manifest)?;
@@ -176,6 +177,8 @@ fn analyze_binary(path: &Path, catalog: &Catalog, game_dir: &Path) -> Option<Bin
         tool: "ps5rs".to_string(),
         image,
         string_analysis: Some(string_analysis),
+        image_type: ImageType::Eboot,
+        parent_image: None,
     })
 }
 

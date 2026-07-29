@@ -81,6 +81,8 @@ mod tests {
         BinaryImageDocument {
             schema_version: 1,
             tool: "test".into(),
+            image_type: ps5_image::ImageType::Eboot,
+            parent_image: None,
             string_analysis: None,
             image: BinaryImage {
                 sha256: sha_suffix.repeat(32),
@@ -125,6 +127,7 @@ mod tests {
             tool: "test".into(),
             created_at: "2026-01-01T00:00:00Z".into(),
             image_count: docs.len(),
+            module_count: 0,
             games: vec![],
         };
         std::fs::write(
