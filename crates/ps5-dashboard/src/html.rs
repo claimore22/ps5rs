@@ -152,9 +152,10 @@ tr.clickable:hover{{background:#1c2128;outline:1px solid #30363d;}}
 <th data-col="0">Game <span class="arrow">&#9650;</span></th>
 <th data-col="1">Engine <span class="arrow">&#9650;</span></th>
 <th data-col="2">Confidence <span class="arrow">&#9650;</span></th>
-<th data-col="3">Libraries <span class="arrow">&#9650;</span></th>
-<th data-col="4">Unknown NIDs <span class="arrow">&#9650;</span></th>
-<th data-col="5">Size MB <span class="arrow">&#9650;</span></th>
+<th data-col="3">Import <span class="arrow">&#9650;</span></th>
+<th data-col="4">SCE Libs <span class="arrow">&#9650;</span></th>
+<th data-col="5">Unknown NIDs <span class="arrow">&#9650;</span></th>
+<th data-col="6">Size MB <span class="arrow">&#9650;</span></th>
 </tr></thead>
 <tbody id="gamesBody"></tbody>
 </table></div>
@@ -334,7 +335,7 @@ document.addEventListener('keydown', e => {{ if (e.key === 'Escape') $('#detailP
 
 // --- GAMES ---
 (function() {{
-  let allRows = D.games.map(g => [g.name, g.engine||'', g.engine_confidence, g.library_count, g.unknown_nid_count, g.file_size_mb, g.title_name||'', g.platform, g.is_self]);
+  let allRows = D.games.map(g => [g.name, g.engine||'', g.engine_confidence, g.library_count, g.sce_library_count, g.unknown_nid_count, g.file_size_mb, g.title_name||'', g.platform, g.is_self]);
   let filteredRows = [...allRows];
 
   const platforms = [...new Set(D.games.map(g=>g.platform))].sort();
@@ -349,13 +350,13 @@ document.addEventListener('keydown', e => {{ if (e.key === 'Escape') $('#detailP
     const fs = $('#filterSelf').value;
     const fu = $('#filterHasUnknown').value;
     filteredRows = allRows.filter(r => {{
-      if (q && !r[0].toLowerCase().includes(q) && !r[6].toLowerCase().includes(q)) return false;
-      if (fp && r[7] !== fp) return false;
+      if (q && !r[0].toLowerCase().includes(q) && !r[7].toLowerCase().includes(q)) return false;
+      if (fp && r[8] !== fp) return false;
       if (fe && r[1] !== fe) return false;
-      if (fs === 'self' && !r[8]) return false;
-      if (fs === 'elf' && r[8]) return false;
-      if (fu === 'yes' && r[4] === 0) return false;
-      if (fu === 'no' && r[4] > 0) return false;
+      if (fs === 'self' && !r[9]) return false;
+      if (fs === 'elf' && r[9]) return false;
+      if (fu === 'yes' && r[5] === 0) return false;
+      if (fu === 'no' && r[5] > 0) return false;
       return true;
     }});
     renderGames();
@@ -370,12 +371,13 @@ document.addEventListener('keydown', e => {{ if (e.key === 'Escape') $('#detailP
 
   function renderGames() {{
     $('#gamesBody').innerHTML = filteredRows.map(r => `<tr class="clickable" data-game="${{r[0]}}">
-      <td title="${{r[6]}}">${{trunc(r[6] || r[0],32)}}</td>
+      <td title="${{r[7]}}">${{trunc(r[7] || r[0],32)}}</td>
       <td>${{r[1]?`<span class="pill pill-eng">${{r[1]}}</span>`:'-'}}</td>
       <td>${{confPill(r[2])}}</td>
       <td>${{r[3]}}</td>
-      <td class="pct ${{r[4]>0?'pct-low':'pct-high'}}">${{r[4]}}</td>
-      <td>${{r[5].toFixed(1)}}</td>
+      <td>${{r[4]}}</td>
+      <td class="pct ${{r[5]>0?'pct-low':'pct-high'}}">${{r[5]}}</td>
+      <td>${{r[6].toFixed(1)}}</td>
     </tr>`).join('');
 
     $$('#gamesBody tr.clickable').forEach(tr => tr.addEventListener('click', () => {{
@@ -894,6 +896,7 @@ mod tests {
                 engine: "Native".to_string(),
                 engine_confidence: 0,
                 library_count: 5,
+                sce_library_count: 0,
                 unknown_nid_count: 3,
                 file_size_mb: 45.2,
             }],
