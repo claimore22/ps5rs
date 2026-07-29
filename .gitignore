@@ -6,6 +6,10 @@
 *.self
 *.sprx
 
+# Scratch / temp files
+/stray_strings.txt
+/strings.txt
+
 # Generated dataset output (from scan/extract with --output .)
 /images/
 /analysis/extracted/
