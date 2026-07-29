@@ -151,31 +151,37 @@ ps5rs export-unknown analysis/ --group-by library -o unknown_by_lib.csv
 
 ps5rs can synchronize with the community NID catalog hosted on Supabase to resolve more NID hashes and contribute unknown ones back.
 
-Set your publishable key:
-
-```sh
-export PS5RS_SUPABASE_KEY=sb_publishable_xxxxx
-```
-
-Download the latest catalog:
+Download the latest catalog (works immediately — ships with the community key for read-only access):
 
 ```sh
 ps5rs catalog sync
 ```
 
-Upload unknown NIDs for community review:
+Upload unknown NIDs for community review (requires an explicit key — writes are sensitive):
 
 ```sh
-ps5rs catalog push-unknown -i unknown.csv --key $PS5RS_SUPABASE_KEY
+ps5rs catalog push-unknown -i unknown.csv --key sb_publishable_xxxxx
 ```
 
 With GitHub username (local format validation + optional API existence check):
 
 ```sh
-ps5rs catalog push-unknown -i unknown.csv -s claimore22 --key $PS5RS_SUPABASE_KEY
+ps5rs catalog push-unknown -i unknown.csv -s claimore22 --key sb_publishable_xxxxx
 ```
 
-The sync command is read-only and checks `--key`, then `PS5RS_SUPABASE_KEY`, then prints setup instructions if neither is found. It maintains a SHA-256 cache to skip re-downloading unchanged catalogs. The push command requires a key (writes are sensitive) and deduplicates by (NID, library), stamping each submission with `submitter`, `submitter_type` ("github" | "anonymous"), and `github_verified` metadata. The GitHub check is best-effort — API failures or 404s never block submission.
+Key resolution order: `--key` flag → `PS5RS_SUPABASE_KEY` environment variable → `~/.config/ps5rs/config.toml` (file) → built-in default (sync only, never for push-unknown). This means sync works out of the box, while push-unknown always requires explicit configuration via one of the first three methods.
+
+Persistent setup (skip `--key` every time):
+
+```sh
+mkdir -p ~/.config/ps5rs
+cat >> ~/.config/ps5rs/config.toml << 'EOF'
+[catalog]
+supabase_key = "sb_publishable_xxxxx"
+EOF
+```
+
+The sync command maintains a SHA-256 cache to skip re-downloading unchanged catalogs. The push command deduplicates by (NID, library), stamps each submission with `submitter`, `submitter_type` ("github" | "anonymous"), and `github_verified` metadata, and never blocks on GitHub API failures.
 
 ### Inspect a binary
 

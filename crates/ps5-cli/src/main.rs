@@ -59,7 +59,7 @@ fn main() {
                 catalog::cmd_sync(key.as_deref(), &catalog_dir)
             }
             CatalogCommand::PushUnknown { input, key, url, submitter } => {
-                catalog::cmd_push_unknown(&input, &key, url.as_deref(), submitter.as_deref())
+                catalog::cmd_push_unknown(&input, key.as_deref(), url.as_deref(), submitter.as_deref())
             }
         },
     }
