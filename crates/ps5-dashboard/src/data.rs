@@ -460,7 +460,7 @@ fn compute_game_details(
             let hint = hint_map.get(name.as_str());
 
             let engine = hint.map(|h| h.engine.clone()).unwrap_or_default();
-            let engine_score = hint.map(|h| h.score).unwrap_or(0);
+            let engine_score = hint.map(|h| h.score.min(100)).unwrap_or(0);
             let engine_confidence = hint.map(|h| h.confidence).unwrap_or(0);
             let engine_evidence = hint.map(|h| h.evidence.clone()).unwrap_or_default();
             let sce_libraries = hint.map(|h| h.sce_libraries.clone()).unwrap_or_default();
