@@ -4,20 +4,65 @@ pub(crate) const NIDS_CSV: &str = include_str!("../../../data/nids.csv");
 
 const SUPABASE_DEFAULT_URL: &str = "https://krvshlwmvzczpjvuizte.supabase.co";
 
+const SUPABASE_PUBLISHABLE_KEY: &str = "sb_publishable_ClOIpIlMjajaStG_6RmBCA_O_dzcS9l";
+
 const KEY_INSTRUCTIONS: &str = "\
 No Supabase key configured.
 
-ps5rs uses the community NID catalog hosted on Supabase.
-You need a publishable (anon) key to access it.
+Sync (read-only, uses default key automatically):
+  ps5rs catalog sync
 
-Set the key via environment variable:
+Push unknown NIDs (requires explicit key):
   export PS5RS_SUPABASE_KEY=sb_publishable_xxxxx
+  ps5rs catalog push-unknown -i unknown.csv --key $PS5RS_SUPABASE_KEY
 
-Or pass it directly:
-  ps5rs catalog sync --key sb_publishable_xxxxx
-
-To contribute unknown NIDs, push-unknown also requires a key.
+Or store it persistently:
+  mkdir -p ~/.config/ps5rs
+  echo '[catalog]
+  supabase_key = \"sb_publishable_xxxxx\"' >> ~/.config/ps5rs/config.toml
 ";
+
+fn load_config_key() -> Option<String> {
+    let path = std::path::PathBuf::from(
+        std::env::var("HOME")
+            .or_else(|_| std::env::var("USERPROFILE"))
+            .ok()?,
+    )
+    .join(".config")
+    .join("ps5rs")
+    .join("config.toml");
+
+    let content = std::fs::read_to_string(path).ok()?;
+    let mut in_catalog = false;
+
+    for line in content.lines() {
+        let line = line.trim();
+
+        if line == "[catalog]" {
+            in_catalog = true;
+            continue;
+        }
+
+        if line.starts_with('[') {
+            in_catalog = false;
+            continue;
+        }
+
+        if in_catalog && line.starts_with("supabase_key") {
+            return line
+                .split_once('=')
+                .map(|(_, value)| value.trim().trim_matches('"').to_string());
+        }
+    }
+
+    None
+}
+
+fn resolve_supabase_key(cli: Option<&str>) -> Option<String> {
+    cli.map(str::to_owned)
+        .or_else(|| std::env::var("PS5RS_SUPABASE_KEY").ok())
+        .or_else(load_config_key)
+}
 
 #[derive(serde::Deserialize, serde::Serialize)]
 struct CatalogRow {
@@ -64,10 +109,7 @@ pub(crate) fn load_catalog(extra_nids: &[PathBuf]) -> ps5_nid::Catalog {
 }
 
 pub(crate) fn cmd_sync(key: Option<&str>, catalog_dir: &Path) {
-    let Some(key) = key else {
-        eprintln!("{KEY_INSTRUCTIONS}");
-        std::process::exit(1);
-    };
+    let key = resolve_supabase_key(key).unwrap_or_else(|| SUPABASE_PUBLISHABLE_KEY.to_string());
 
     let supabase_url = SUPABASE_DEFAULT_URL;
     let url = format!("{supabase_url}/rest/v1/catalog_export?select=nid,name,library,tag,source&order=nid");
@@ -81,7 +123,7 @@ pub(crate) fn cmd_sync(key: Option<&str>, catalog_dir: &Path) {
     eprintln!("Downloading catalog from Supabase...");
 
     let response = ureq::get(&url)
-        .set("apikey", key)
+        .set("apikey", &key)
         .call()
         .unwrap_or_else(|e| {
             eprintln!("error: failed to fetch catalog: {e}");
@@ -193,7 +235,13 @@ fn check_github_user(username: &str) -> Option<bool> {
     }
 }
 
-pub(crate) fn cmd_push_unknown(input: &Path, key: &str, url: Option<&str>, submitter: Option<&str>) {
+pub(crate) fn cmd_push_unknown(input: &Path, key: Option<&str>, url: Option<&str>, submitter: Option<&str>) {
+    let Some(key) = resolve_supabase_key(key) else {
+        eprintln!("{KEY_INSTRUCTIONS}");
+        eprintln!("push-unknown requires a Supabase key (reads use the default, writes require explicit configuration).");
+        std::process::exit(1);
+    };
+
     let supabase_url = url.unwrap_or(SUPABASE_DEFAULT_URL);
     let submissions_url = format!("{supabase_url}/rest/v1/submissions");
 
@@ -282,7 +330,7 @@ pub(crate) fn cmd_push_unknown(input: &Path, key: &str, url: Option<&str>, submi
         }
 
         match ureq::post(&submissions_url)
-            .set("apikey", key)
+            .set("apikey", &key)
             .set("Content-Type", "application/json")
             .send_json(&payload)
         {
