@@ -1,0 +1,11 @@
+[workspace]
+
+[package]
+name = "seed-supabase"
+version = "0.1.0"
+edition = "2024"
+description = "One-shot tool to generate CSV files for seeding the Supabase NID catalog"
+
+[dependencies]
+csv = "1"
+ps5-nid = { path = "../../crates/ps5-nid" }

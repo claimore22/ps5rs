@@ -39,6 +39,17 @@ pub fn hash(name: &str) -> String {
     nid
 }
 
+const B64_CHARS: &str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-";
+
+pub fn nid_to_u64(nid: &str) -> Option<u64> {
+    let mut value = 0u64;
+    for c in nid.chars() {
+        let pos = B64_CHARS.find(c)? as u64;
+        value = value.wrapping_shl(6) | pos;
+    }
+    Some(value)
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -94,6 +105,40 @@ mod tests {
     fn hash_different_inputs_differ() {
         assert_ne!(hash("memcpy"), hash("memset"));
         assert_ne!(hash("malloc"), hash("free"));
+    }
+
+    #[test]
+    fn nid_to_u64_all_zeros() {
+        assert_eq!(nid_to_u64("AAAAAAAAAAA"), Some(0));
+    }
+
+    #[test]
+    fn nid_to_u64_single_bit() {
+        assert_eq!(nid_to_u64("BAAAAAAAAAA"), Some(1u64 << 60));
+    }
+
+    #[test]
+    fn nid_to_u64_invalid_char() {
+        assert_eq!(nid_to_u64("invalid!"), None);
+    }
+
+    #[test]
+    fn nid_to_u64_invalid_short() {
+        assert_eq!(nid_to_u64("AAAA"), Some(0));
+    }
+
+    #[test]
+    fn nid_to_u64_known() {
+        let nid = hash("sceKernelLoadStartModule");
+        let value = nid_to_u64(&nid).unwrap();
+        assert!(value > 0);
+        // Confirm stable output
+        assert_eq!(nid_to_u64(&nid), Some(value));
+    }
+
+    #[test]
+    fn nid_to_u64_empty() {
+        assert_eq!(nid_to_u64(""), Some(0));
     }
 
     #[test]
