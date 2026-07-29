@@ -224,6 +224,59 @@ const pctCls = v => v >= 80 ? 'pct-high' : v >= 50 ? 'pct-med' : 'pct-low';
 const fmt = v => typeof v === 'number' ? v.toLocaleString() : v;
 const trunc = (s, n) => s && s.length > n ? s.slice(0, n-2) + '..' : s || '';
 
+function showGameDetail(gameId) {{
+  const d = (D.game_details || []).find(x => x.name === gameId);
+  if (!d) return;
+  const segsHtml = d.segments.map(s => `<tr><td>${{s.index}}</td><td>${{s.seg_type}}</td><td>${{s.vaddr}}</td><td>${{(s.filesz/1048576).toFixed(2)}} MB</td><td>${{s.flags}}</td></tr>`).join('');
+  const libsHtml = d.import_summary.slice(0, 15).map(l => `<tr><td>${{l.library}}</td><td>${{fmt(l.count)}}</td></tr>`).join('');
+  const importsHtml = d.imports.slice(0, 200).map(i => `<tr><td style="font-family:monospace;font-size:0.72rem">${{i.nid_hash}}</td><td>${{i.resolved_name||'<span style="color:#f85149">unknown</span>'}}</td><td style="color:#8b949e">${{i.library_name}}</td></tr>`).join('');
+  const unresolvedHtml = d.unresolved_nids.slice(0, 100).map(i => `<tr><td style="font-family:monospace;font-size:0.72rem">${{i.nid_hash}}</td><td style="color:#8b949e">${{i.library_name}}</td></tr>`).join('');
+
+  const engineHtml = `
+    <div class="detail-section"><h3>Engine Forensics</h3><div class="detail-kv">
+      <div class="k">Engine</div><div class="v">${{d.engine||'Unknown'}}</div>
+      <div class="k">Score</div><div class="v" style="font-family:monospace">${{d.engine_score}}</div>
+      <div class="k">Confidence</div><div class="v">${{d.engine_confidence}}%</div>
+      ${{d.build_system ? `<div class="k">Build System</div><div class="v">${{d.build_system}}</div>` : ''}}
+      ${{d.source_depot ? `<div class="k">Source Depot</div><div class="v">${{d.source_depot}}</div>` : ''}}
+      ${{(d.sce_libraries||[]).length ? `<div class="k">SCE Libraries</div><div class="v">${{(d.sce_libraries||[]).length}} detected</div>` : ''}}
+      ${{(d.third_party_libs||[]).length ? `<div class="k">Third-Party Libs</div><div class="v">${{(d.third_party_libs||[]).join(', ')}}</div>` : ''}}
+      ${{(d.custom_forks||[]).length ? `<div class="k">Custom Forks</div><div class="v" style="color:#f85149">${{(d.custom_forks||[]).join(', ')}}</div>` : ''}}
+      ${{(d.sdk_hints||[]).length ? `<div class="k">SDK Hints</div><div class="v">${{(d.sdk_hints||[]).join(', ')}}</div>` : ''}}
+      ${{(d.detected_versions||[]).length ? `<div class="k">Versions</div><div class="v">${{(d.detected_versions||[]).join(', ')}}</div>` : ''}}
+    </div></div>
+    ${{(d.engine_evidence||[]).length ? `<div class="detail-section"><h3>Engine Evidence</h3><div class="table-wrap"><table class="detail-table"><thead><tr><th>String</th></tr></thead><tbody>${{(d.engine_evidence||[]).map(e => `<tr><td style="font-family:monospace;font-size:0.72rem">${{e}}</td></tr>`).join('')}}</tbody></table></div></div>` : ''}}
+    ${{(d.lib_versions||[]).length ? `<div class="detail-section"><h3>SDK Library Versions</h3><div class="table-wrap"><table class="detail-table"><thead><tr><th>Library</th><th>Version</th><th>Raw</th></tr></thead><tbody>${{(d.lib_versions||[]).map(lv => `<tr><td style="font-family:monospace;font-size:0.78rem">${{lv.name}}</td><td style="font-variant-numeric:tabular-nums">${{lv.version_string}}</td><td style="font-family:monospace;font-size:0.72rem;color:#8b949e">0x${{lv.version_raw.toString(16).padStart(8,'0')}}</td></tr>`).join('')}}</tbody></table></div></div>` : ''}}`;
+
+  openDetail(d.title_name || d.name, `
+    <div class="detail-section"><h3>General</h3><div class="detail-kv">
+      <div class="k">Name</div><div class="v">${{d.title_name || d.name}}</div>
+      <div class="k">Platform</div><div class="v">${{d.platform}}</div>
+      <div class="k">Type</div><div class="v">${{d.is_self?'SELF':'Raw ELF'}}</div>
+      <div class="k">File Size</div><div class="v">${{d.file_size_mb.toFixed(1)}} MB</div>
+      <div class="k">Entry Point</div><div class="v" style="font-family:monospace">${{d.entry_point}}</div>
+      <div class="k">SHA-256</div><div class="v" style="font-family:monospace;font-size:0.72rem">${{d.sha256.slice(0,32)}}...</div>
+    </div></div>
+    ${{engineHtml}}
+    <div class="detail-section"><h3>ELF Header</h3><div class="detail-kv">
+      <div class="k">ELF Type</div><div class="v">0x${{d.elf_type.toString(16)}}</div>
+      <div class="k">OS/ABI</div><div class="v">0x${{d.osabi.toString(16)}}</div>
+      <div class="k">ABI Version</div><div class="v">${{d.abi_version}}</div>
+      <div class="k">ELF Version</div><div class="v">${{d.elf_version}}</div>
+      <div class="k">Build ID</div><div class="v" style="font-family:monospace;font-size:0.72rem">${{d.build_id||'N/A'}}</div>
+      <div class="k">Relocations</div><div class="v">${{fmt(d.relocations)}}</div>
+      <div class="k">TLS</div><div class="v">${{d.has_tls?'Yes':'No'}}</div>
+    </div></div>
+    <div class="detail-section"><h3>Segments (${{d.segments.length}})</h3>
+      <div class="table-wrap"><table class="detail-table"><thead><tr><th>#</th><th>Type</th><th>VAddr</th><th>Size</th><th>Flags</th></tr></thead><tbody>${{segsHtml}}</tbody></table></div></div>
+    <div class="detail-section"><h3>Libraries (${{d.import_summary.length}})</h3>
+      <div class="table-wrap"><table class="detail-table"><thead><tr><th>Library</th><th>Imports</th></tr></thead><tbody>${{libsHtml}}</tbody></table></div></div>
+    <div class="detail-section"><h3>Imports (${{d.imports.length}})</h3>
+      <div class="table-wrap"><table class="detail-table"><thead><tr><th>NID Hash</th><th>Resolved Name</th><th>Library</th></tr></thead><tbody>${{importsHtml}}</tbody></table></div></div>
+    ${{d.unresolved_nids.length > 0 ? `<div class="detail-section"><h3>Unknown NIDs (${{d.unresolved_nids.length}})</h3><div class="table-wrap"><table class="detail-table"><thead><tr><th>NID Hash</th><th>Library</th></tr></thead><tbody>${{unresolvedHtml}}</tbody></table></div></div>` : ''}}
+  `);
+}}
+
 // --- TABS ---
 $$('.tab').forEach(tab => tab.addEventListener('click', () => {{
   $$('.tab').forEach(t => t.classList.remove('active'));
@@ -281,10 +334,6 @@ document.addEventListener('keydown', e => {{ if (e.key === 'Escape') $('#detailP
 
 // --- GAMES ---
 (function() {{
-  const details = D.game_details || [];
-  const detailMap = {{}};
-  details.forEach(d => {{ detailMap[d.name] = d; }});
-
   let allRows = D.games.map(g => [g.name, g.engine||'', g.engine_confidence, g.library_count, g.unknown_nid_count, g.file_size_mb, g.title_name||'', g.platform, g.is_self]);
   let filteredRows = [...allRows];
 
@@ -330,55 +379,7 @@ document.addEventListener('keydown', e => {{ if (e.key === 'Escape') $('#detailP
     </tr>`).join('');
 
     $$('#gamesBody tr.clickable').forEach(tr => tr.addEventListener('click', () => {{
-      const d = detailMap[tr.dataset.game];
-      if (!d) return;
-      const segsHtml = d.segments.map(s => `<tr><td>${{s.index}}</td><td>${{s.seg_type}}</td><td>${{s.vaddr}}</td><td>${{(s.filesz/1048576).toFixed(2)}} MB</td><td>${{s.flags}}</td></tr>`).join('');
-      const libsHtml = d.import_summary.slice(0, 15).map(l => `<tr><td>${{l.library}}</td><td>${{fmt(l.count)}}</td></tr>`).join('');
-      const importsHtml = d.imports.slice(0, 200).map(i => `<tr><td style="font-family:monospace;font-size:0.72rem">${{i.nid_hash}}</td><td>${{i.resolved_name||'<span style="color:#f85149">unknown</span>'}}</td><td style="color:#8b949e">${{i.library_name}}</td></tr>`).join('');
-      const unresolvedHtml = d.unresolved_nids.slice(0, 100).map(i => `<tr><td style="font-family:monospace;font-size:0.72rem">${{i.nid_hash}}</td><td style="color:#8b949e">${{i.library_name}}</td></tr>`).join('');
-
-      const engineHtml = `
-        <div class="detail-section"><h3>Engine Forensics</h3><div class="detail-kv">
-          <div class="k">Engine</div><div class="v">${{d.engine||'Unknown'}}</div>
-          <div class="k">Score</div><div class="v" style="font-family:monospace">${{d.engine_score}}</div>
-          <div class="k">Confidence</div><div class="v">${{d.engine_confidence}}%</div>
-          ${{d.build_system ? `<div class="k">Build System</div><div class="v">${{d.build_system}}</div>` : ''}}
-          ${{d.source_depot ? `<div class="k">Source Depot</div><div class="v">${{d.source_depot}}</div>` : ''}}
-          ${{(d.sce_libraries||[]).length ? `<div class="k">SCE Libraries</div><div class="v">${{(d.sce_libraries||[]).length}} detected</div>` : ''}}
-          ${{(d.third_party_libs||[]).length ? `<div class="k">Third-Party Libs</div><div class="v">${{(d.third_party_libs||[]).join(', ')}}</div>` : ''}}
-          ${{(d.custom_forks||[]).length ? `<div class="k">Custom Forks</div><div class="v" style="color:#f85149">${{(d.custom_forks||[]).join(', ')}}</div>` : ''}}
-          ${{(d.sdk_hints||[]).length ? `<div class="k">SDK Hints</div><div class="v">${{(d.sdk_hints||[]).join(', ')}}</div>` : ''}}
-          ${{(d.detected_versions||[]).length ? `<div class="k">Versions</div><div class="v">${{(d.detected_versions||[]).join(', ')}}</div>` : ''}}
-        </div></div>
-        ${{(d.engine_evidence||[]).length ? `<div class="detail-section"><h3>Engine Evidence</h3><div class="table-wrap"><table class="detail-table"><thead><tr><th>String</th></tr></thead><tbody>${{(d.engine_evidence||[]).map(e => `<tr><td style="font-family:monospace;font-size:0.72rem">${{e}}</td></tr>`).join('')}}</tbody></table></div></div>` : ''}}`;
-
-      openDetail(d.title_name || d.name, `
-        <div class="detail-section"><h3>General</h3><div class="detail-kv">
-          <div class="k">Name</div><div class="v">${{d.title_name || d.name}}</div>
-          <div class="k">Platform</div><div class="v">${{d.platform}}</div>
-          <div class="k">Type</div><div class="v">${{d.is_self?'SELF':'Raw ELF'}}</div>
-          <div class="k">File Size</div><div class="v">${{d.file_size_mb.toFixed(1)}} MB</div>
-          <div class="k">Entry Point</div><div class="v" style="font-family:monospace">${{d.entry_point}}</div>
-          <div class="k">SHA-256</div><div class="v" style="font-family:monospace;font-size:0.72rem">${{d.sha256.slice(0,32)}}...</div>
-        </div></div>
-        ${{engineHtml}}
-        <div class="detail-section"><h3>ELF Header</h3><div class="detail-kv">
-          <div class="k">ELF Type</div><div class="v">0x${{d.elf_type.toString(16)}}</div>
-          <div class="k">OS/ABI</div><div class="v">0x${{d.osabi.toString(16)}}</div>
-          <div class="k">ABI Version</div><div class="v">${{d.abi_version}}</div>
-          <div class="k">ELF Version</div><div class="v">${{d.elf_version}}</div>
-          <div class="k">Build ID</div><div class="v" style="font-family:monospace;font-size:0.72rem">${{d.build_id||'N/A'}}</div>
-          <div class="k">Relocations</div><div class="v">${{fmt(d.relocations)}}</div>
-          <div class="k">TLS</div><div class="v">${{d.has_tls?'Yes':'No'}}</div>
-        </div></div>
-        <div class="detail-section"><h3>Segments (${{d.segments.length}})</h3>
-          <div class="table-wrap"><table class="detail-table"><thead><tr><th>#</th><th>Type</th><th>VAddr</th><th>Size</th><th>Flags</th></tr></thead><tbody>${{segsHtml}}</tbody></table></div></div>
-        <div class="detail-section"><h3>Libraries (${{d.import_summary.length}})</h3>
-          <div class="table-wrap"><table class="detail-table"><thead><tr><th>Library</th><th>Imports</th></tr></thead><tbody>${{libsHtml}}</tbody></table></div></div>
-        <div class="detail-section"><h3>Imports (${{d.imports.length}})</h3>
-          <div class="table-wrap"><table class="detail-table"><thead><tr><th>NID Hash</th><th>Resolved Name</th><th>Library</th></tr></thead><tbody>${{importsHtml}}</tbody></table></div></div>
-        ${{d.unresolved_nids.length > 0 ? `<div class="detail-section"><h3>Unknown NIDs (${{d.unresolved_nids.length}})</h3><div class="table-wrap"><table class="detail-table"><thead><tr><th>NID Hash</th><th>Library</th></tr></thead><tbody>${{unresolvedHtml}}</tbody></table></div></div>` : ''}}
-      `);
+      showGameDetail(tr.dataset.game);
     }}));
   }}
 
@@ -465,6 +466,7 @@ document.addEventListener('keydown', e => {{ if (e.key === 'Escape') $('#detailP
         ${{(h.sdk_hints||[]).length ? `<div class="detail-section"><h3>SDK Hints</h3><p style="color:#8b949e;font-size:0.82rem">${{(h.sdk_hints||[]).join(', ')}}</p></div>` : ''}}
         ${{(h.detected_versions||[]).length ? `<div class="detail-section"><h3>Detected Versions</h3><p style="color:#8b949e;font-size:0.82rem">${{(h.detected_versions||[]).join(', ')}}</p></div>` : ''}}
         ${{(h.evidence||[]).length ? `<div class="detail-section"><h3>Evidence Strings (${{(h.evidence||[]).length}})</h3><div class="table-wrap"><table class="detail-table"><thead><tr><th>String</th></tr></thead><tbody>${{(h.evidence||[]).slice(0,30).map(e => `<tr><td style="font-family:monospace;font-size:0.72rem">${{e}}</td></tr>`).join('')}}</tbody></table></div></div>` : ''}}
+        ${{(h.lib_versions||[]).length ? `<div class="detail-section"><h3>SDK Library Versions</h3><div class="table-wrap"><table class="detail-table"><thead><tr><th>Library</th><th>Version</th><th>Raw</th></tr></thead><tbody>${{(h.lib_versions||[]).map(lv => `<tr><td style="font-family:monospace;font-size:0.78rem">${{lv.name}}</td><td style="font-variant-numeric:tabular-nums">${{lv.version_string}}</td><td style="font-family:monospace;font-size:0.72rem;color:#8b949e">0x${{lv.version_raw.toString(16).padStart(8,'0')}}</td></tr>`).join('')}}</tbody></table></div></div>` : ''}}
       `);
     }}));
   }}
@@ -639,6 +641,51 @@ document.addEventListener('keydown', e => {{ if (e.key === 'Escape') $('#detailP
     `<div class="stat-row"><span>Total Data</span><span class="sv">${{s.total_data_mb.toFixed(1)}} MB</span></div>`,
   ].join(''));
   $('#statGrid').innerHTML = html;
+
+  const lv = D.library_versions || [];
+  if (lv.length) {{
+    const totalGames = D.games.length;
+    const uniqueLibs = [...new Set(lv.map(v => v.library))].length;
+    const gamesWithVersions = new Set();
+    lv.forEach(v => v.game_ids.forEach(g => gamesWithVersions.add(g)));
+    let lvHtml = `<div class="section"><h2>SDK Library Version Distribution</h2>
+      <div class="cards" style="margin-bottom:16px">
+        <div class="card"><div class="card-label">Games with Version Info</div><div class="card-value blue">${{gamesWithVersions.size}}/${{totalGames}}</div></div>
+        <div class="card"><div class="card-label">Unique Libraries</div><div class="card-value yellow">${{uniqueLibs}}</div></div>
+        <div class="card"><div class="card-label">Library-Version Pairs</div><div class="card-value">${{lv.length}}</div></div>
+      </div>`;
+    const grouped = {{}};
+    lv.forEach(v => {{
+      if (!grouped[v.library]) grouped[v.library] = [];
+      grouped[v.library].push(v);
+    }});
+    Object.keys(grouped).sort().forEach(lib => {{
+      const versions = grouped[lib].sort((a, b) => b.version_raw - a.version_raw);
+      lvHtml += `<details style="margin-bottom:6px" open>
+        <summary style="cursor:pointer;padding:8px 12px;background:#0d1117;border:1px solid #30363d;border-radius:6px;font-size:0.85rem;color:#c9d1d9">
+          <strong style="color:#58a6ff">${{lib}}</strong> &mdash; ${{versions.length}} version(s), ${{versions[0].game_count}} game(s)
+        </summary>
+        <div style="padding:8px 12px;border:1px solid #30363d;border-top:0;border-radius:0 0 6px 6px">
+          <table style="width:100%;font-size:0.82rem;border-collapse:collapse">
+            <thead><tr style="color:#8b949e"><th style="text-align:left;padding:4px 8px">Version</th><th style="text-align:left;padding:4px 8px">Raw</th><th style="text-align:left;padding:4px 8px">Games</th></tr></thead>
+            <tbody>${{versions.map(v => `<tr><td style="padding:4px 8px;font-variant-numeric:tabular-nums">${{v.version_string}}</td><td style="padding:4px 8px;font-family:monospace;font-size:0.72rem;color:#8b949e">0x${{v.version_raw.toString(16).padStart(8,'0')}}</td><td style="padding:4px 8px;font-size:0.78rem">${{v.games.map((g, i) => `<a href="#" class="game-link" data-game-id="${{v.game_ids[i]}}" style="color:#58a6ff">${{trunc(g,24)}}</a>`).join(', ')}}</td></tr>`).join('')}}</tbody>
+          </table>
+        </div>
+      </details>`;
+    }});
+    lvHtml += '</div>';
+    const el = document.createElement('div');
+    el.innerHTML = lvHtml;
+    $('#statGrid').parentNode.appendChild(el);
+  }}
+
+  $('#statGrid').addEventListener('click', e => {{
+    const link = e.target.closest('.game-link');
+    if (!link) return;
+    e.preventDefault();
+    const gameId = link.dataset.gameId;
+    showGameDetail(gameId);
+  }});
 }})();
 
 // --- GRAPH ---
@@ -728,6 +775,18 @@ document.addEventListener('keydown', e => {{ if (e.key === 'Escape') $('#detailP
       }});
     }});
   }});
+  (D.game_details || []).forEach(d => {{
+    (d.lib_versions || []).forEach(lv => {{
+      searchIndex.push({{
+        type: 'lib-version',
+        name: lv.name,
+        version: lv.version_string,
+        versionRaw: '0x' + lv.version_raw.toString(16).padStart(8,'0'),
+        game: d.name,
+        gameTitle: d.title_name || d.name,
+      }});
+    }});
+  }});
 
   const input = $('#globalSearch');
   const results = $('#searchResults');
@@ -735,27 +794,40 @@ document.addEventListener('keydown', e => {{ if (e.key === 'Escape') $('#detailP
   input.addEventListener('input', () => {{
     const q = input.value.trim().toLowerCase();
     if (q.length < 2) {{ results.classList.remove('show'); return; }}
-    const matches = searchIndex.filter(e =>
-      e.nid.toLowerCase().includes(q) ||
-      e.name.toLowerCase().includes(q) ||
-      e.library.toLowerCase().includes(q) ||
-      e.game.toLowerCase().includes(q) ||
-      e.gameTitle.toLowerCase().includes(q)
-    ).slice(0, 30);
+    const matches = searchIndex.filter(e => {{
+      if (e.type === 'lib-version') {{
+        return (e.name||'').toLowerCase().includes(q) ||
+               (e.version||'').includes(q) ||
+               (e.versionRaw||'').includes(q) ||
+               (e.game||'').toLowerCase().includes(q) ||
+               (e.gameTitle||'').toLowerCase().includes(q);
+      }}
+      return (e.nid||'').toLowerCase().includes(q) ||
+             (e.name||'').toLowerCase().includes(q) ||
+             (e.library||'').toLowerCase().includes(q) ||
+             (e.game||'').toLowerCase().includes(q) ||
+             (e.gameTitle||'').toLowerCase().includes(q);
+    }}).slice(0, 30);
 
     if (matches.length === 0) {{ results.classList.remove('show'); return; }}
 
     const grouped = {{}};
     matches.forEach(m => {{
+      if (m.type === 'lib-version') {{
+        const key = 'lv:' + m.name + ':' + m.version + ':' + m.game;
+        if (!grouped[key]) grouped[key] = {{ ...m, games: new Set(), type: 'lib-version' }};
+        if (m.game) grouped[key].games.add(m.gameTitle || m.game);
+        return;
+      }}
       const key = m.nid + m.library;
       if (!grouped[key]) grouped[key] = {{ ...m, games: new Set() }};
       if (m.game) grouped[key].games.add(m.gameTitle || m.game);
     }});
 
     results.innerHTML = Object.values(grouped).map(m => `
-      <div class="sr-item" data-nid="${{m.nid}}" data-lib="${{m.library}}">
-        <div class="sr-type">${{m.type}} &middot; ${{m.library}}</div>
-        <div class="sr-name">${{m.name || m.nid}}</div>
+      <div class="sr-item" data-nid="${{m.nid}}" data-lib="${{m.library}}" data-game="${{m.game}}" data-type="${{m.type}}">
+        <div class="sr-type">${{m.type}}${{m.type !== 'lib-version' ? ` &middot; ${{m.library||''}}` : ''}}</div>
+        <div class="sr-name">${{m.type === 'lib-version' ? m.name + ' ' + m.version : (m.name || m.nid)}}</div>
         <div class="sr-detail">${{[...m.games].slice(0,3).join(', ')}}${{m.games.size > 3 ? ` +${{m.games.size-3}} more` : ''}}</div>
       </div>
     `).join('');
@@ -765,11 +837,17 @@ document.addEventListener('keydown', e => {{ if (e.key === 'Escape') $('#detailP
   results.addEventListener('click', e => {{
     const item = e.target.closest('.sr-item');
     if (!item) return;
-    const lib = item.dataset.lib;
-    const d = (D.library_details || []).find(x => x.name === lib);
-    if (d) {{
-      const gamesHtml = d.games.map(g => `<tr><td>${{trunc(g.title_name||g.game,30)}}</td><td>${{fmt(g.import_count)}}</td></tr>`).join('');
-      openDetail(d.name, `<div class="detail-section"><div class="detail-kv"><div class="k">Games</div><div class="v">${{d.game_count}}</div></div></div><div class="detail-section"><h3>Games</h3><div class="table-wrap"><table class="detail-table"><thead><tr><th>Game</th><th>Imports</th></tr></thead><tbody>${{gamesHtml}}</tbody></table></div></div>`);
+    const type = item.dataset.type;
+    if (type === 'lib-version') {{
+      const gameId = item.dataset.game;
+      if (gameId) showGameDetail(gameId);
+    }} else {{
+      const lib = item.dataset.lib;
+      const d = (D.library_details || []).find(x => x.name === lib);
+      if (d) {{
+        const gamesHtml = d.games.map(g => `<tr><td>${{trunc(g.title_name||g.game,30)}}</td><td>${{fmt(g.import_count)}}</td></tr>`).join('');
+        openDetail(d.name, `<div class="detail-section"><div class="detail-kv"><div class="k">Games</div><div class="v">${{d.game_count}}</div></div></div><div class="detail-section"><h3>Games</h3><div class="table-wrap"><table class="detail-table"><thead><tr><th>Game</th><th>Imports</th></tr></thead><tbody>${{gamesHtml}}</tbody></table></div></div>`);
+      }}
     }}
     results.classList.remove('show');
     input.value = '';
@@ -863,6 +941,7 @@ mod tests {
                 source_depot: None,
                 sdk_hints: vec![],
                 detected_versions: vec![],
+                lib_versions: vec![],
             }],
             heatmap: HeatmapData {
                 libraries: vec!["libkernel".to_string()],
@@ -955,6 +1034,7 @@ mod tests {
             }),
             engine_hints: vec![],
             engine_summary: vec![],
+            library_versions: vec![],
         }
     }
 
