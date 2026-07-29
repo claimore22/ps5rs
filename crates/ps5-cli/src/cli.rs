@@ -95,6 +95,33 @@ pub enum Commands {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
+    /// Manage NID catalog (sync from Supabase, push unknowns)
+    Catalog {
+        #[command(subcommand)]
+        command: CatalogCommand,
+    },
+}
+
+#[derive(Subcommand)]
+pub enum CatalogCommand {
+    /// Download latest NID catalog from Supabase
+    Sync {
+        #[arg(long, env = "PS5RS_SUPABASE_KEY")]
+        key: Option<String>,
+        #[arg(short, long, default_value = "analysis/catalog")]
+        catalog_dir: PathBuf,
+    },
+    /// Upload unknown NIDs as submission candidates
+    PushUnknown {
+        #[arg(short, long)]
+        input: PathBuf,
+        #[arg(long, env = "PS5RS_SUPABASE_KEY")]
+        key: String,
+        #[arg(long)]
+        url: Option<String>,
+        #[arg(short, long)]
+        submitter: Option<String>,
+    },
 }
 
 #[derive(Subcommand)]

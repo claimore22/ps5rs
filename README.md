@@ -147,6 +147,36 @@ ps5rs export-unknown analysis/ -o unknown_nids.csv
 ps5rs export-unknown analysis/ --group-by library -o unknown_by_lib.csv
 ```
 
+### Community NID Catalog
+
+ps5rs can synchronize with the community NID catalog hosted on Supabase to resolve more NID hashes and contribute unknown ones back.
+
+Set your publishable key:
+
+```sh
+export PS5RS_SUPABASE_KEY=sb_publishable_xxxxx
+```
+
+Download the latest catalog:
+
+```sh
+ps5rs catalog sync
+```
+
+Upload unknown NIDs for community review:
+
+```sh
+ps5rs catalog push-unknown -i unknown.csv --key $PS5RS_SUPABASE_KEY
+```
+
+With GitHub username (local format validation + optional API existence check):
+
+```sh
+ps5rs catalog push-unknown -i unknown.csv -s claimore22 --key $PS5RS_SUPABASE_KEY
+```
+
+The sync command is read-only and checks `--key`, then `PS5RS_SUPABASE_KEY`, then prints setup instructions if neither is found. It maintains a SHA-256 cache to skip re-downloading unchanged catalogs. The push command requires a key (writes are sensitive) and deduplicates by (NID, library), stamping each submission with `submitter`, `submitter_type` ("github" | "anonymous"), and `github_verified` metadata. The GitHub check is best-effort — API failures or 404s never block submission.
+
 ### Inspect a binary
 
 ```sh
@@ -312,7 +342,7 @@ Total: 280  →  UE4 (confidence: 100%)
 
 ## NID Database
 
-The CLI ships with an embedded NID catalog (`data/nids.csv`) containing ~154K hash-to-name mappings. The catalog uses merge semantics — loading multiple files combines entries rather than overwriting.
+The CLI ships with an embedded NID catalog (`data/nids.csv`) containing ~154K hash-to-name mappings. The catalog uses merge semantics — loading multiple files combines entries rather than overwriting. A community-maintained Supabase catalog provides additional coverage; see [Community NID Catalog](#community-nid-catalog).
 
 ```sh
 # Load additional community NID files

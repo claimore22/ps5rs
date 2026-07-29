@@ -10,7 +10,7 @@ mod strings;
 mod terminal;
 mod util;
 
-use cli::{Cli, Commands};
+use cli::{CatalogCommand, Cli, Commands};
 
 fn main() {
     let cli = Cli::parse();
@@ -54,5 +54,13 @@ fn main() {
             detect,
             output,
         } => strings::cmd_strings(&file, min_length, offsets, detect, &output),
+        Commands::Catalog { command } => match command {
+            CatalogCommand::Sync { key, catalog_dir } => {
+                catalog::cmd_sync(key.as_deref(), &catalog_dir)
+            }
+            CatalogCommand::PushUnknown { input, key, url, submitter } => {
+                catalog::cmd_push_unknown(&input, &key, url.as_deref(), submitter.as_deref())
+            }
+        },
     }
 }
