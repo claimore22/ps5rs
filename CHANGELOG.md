@@ -7,7 +7,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [Unreleased]
 
 ### Added
-- **NID Catalog v2** (`ps5-nid`): `NidEntry` struct with `names`, `libraries`, `tags`, `sources` as `BTreeSet<String>`; `resolve()` returns `Option<&NidEntry>` instead of `Option<&str>`; `primary_name()` convenience method; `insert()` for rich metadata with merge semantics
+- **ps5-loader crate**: PS5 ELF/PRX virtual loader with four-phase pipeline (Map → Relocate → Link → Init), relocation engine, import resolver, and multi-module dependency loading
+- **Offline export resolution**: `OfflineExportTable` loads `./system_modules/*.exports.json` for NID→name lookup of system PRXes not available at analysis time; `CrossModuleResolver` uses 3-tier resolution (runtime exports → offline exports → stub allocator); `ResolveResult::Known(u64)` variant separates offline-known from unknown stubs; per-module `imports_known` and aggregate `ModuleContext::known_imports` counters
+- **`ps5rs exports` CLI command**: `exports <file> [--search <query>] [--json] [-o OUTPUT]` lists exported symbols (NID, name, address, size); `--search` for substring filtering; `--json` for firmware export database builder format (`{ module, exports: [{ nid, name, address, size }] }`)
+- **ABS64 relocation (`R_X86_64_64`)**: local symbol path (`load_bias + st_value + addend`) and import path (via `ImportResolver`); `build_import_request()` helper shared by GLOB_DAT, JUMP_SLOT, ABS64
+- **`NidResolver` trait**: `SymbolNidResolver` with inlined SHA1+SALT NID computation (no `ps5-nid` dependency); `compute_nid()`, `nid_to_u64()`; 10 tests matching ps5-nid algorithm exactly
+- **`StubAllocator`**: configurable stub region base (default `0x00007fff00000000`), sequential PRX addresses (eboot `0x800000000`, PRXes at `0x810000000+`)
+- **`ModuleContext`**: load-order vector of modules, merged `ExportTable`, `ModuleGraph` dependency graph, aggregate import counters
+- **`--prx-dir` auto-default**: defaults to `<eboot_parent>/sce_module` when not specified; falls back to single-file mode if path doesn't exist; tested against Stray (12 PRX files auto-found)
+- **`RelocationSummary` counters**: `known_imports`, `abs64`, `copy`, `tls`, `ifunc`, `unknown` fields
+- **`serde_json` dependency**: for offline export JSON deserialization
+- **`analysis_old/` gitignore entry**: oversized scan artifacts excluded from repository
+
+### Changed
+- **Command-line refactor**: `cmd_load()` extracted to `crates/ps5-cli/src/load.rs` (was inline in `main.rs`); JSON and terminal output includes `known_imports` in `ModuleInfo`
 - **Rich CSV catalog format**: auto-detects legacy space-separated (`NID name`) vs new comma-separated (`nid,name,library,tag,source`) with optional header row; later files override earlier ones via merge
 - **String-based fingerprinting** (`ps5-analysis::string_patterns`): `extract_strings()`, `detect_sce_libraries()`, `detect_engine()`, `detect_third_party()`, `detect_build_system()`, `detect_depot()`, `detect_project_paths()`, `detect_custom_forks()`, `detect_sdk_hints()`, `detect_versions()`, `detect_source_paths()`, `analyze_strings()` orchestrator
 - **Weighted engine fingerprints** (`ps5-analysis::engine_fingerprints`): `EngineFingerprint` struct with `score()` method; const definitions for `UNREAL4`, `UNREAL5`, `UNITY`, `GODOT`; tie-breaking prefers newer engine; `detect_engine()` returns `Detection` with computed confidence; `detect_custom_forks()` for P4Damascus, HK_Project_Delivery, HK_EngineSources
