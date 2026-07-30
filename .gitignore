@@ -19,6 +19,12 @@
 /analysis/dashboard/
 /manifest.json
 
+# Offline SDK export database (generated from proprietary SDK/game PRXes)
+/system_modules/
+
+# Old analysis artifacts (many files exceed GitHub's 100MB limit)
+/analysis_old/
+
 # IDE
 .vscode/
 .idea/

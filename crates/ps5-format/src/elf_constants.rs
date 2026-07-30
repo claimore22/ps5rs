@@ -44,6 +44,7 @@ pub const PF_R: u32 = 4;
 
 pub const DT_NULL: u64 = 0;
 pub const DT_NEEDED: u64 = 1;
+pub const DT_SONAME: u64 = 0xe;
 pub const DT_PLTRELSZ: u64 = 2;
 pub const DT_PLTGOT: u64 = 3;
 pub const DT_STRTAB: u64 = 5;
@@ -108,6 +109,7 @@ pub const SHF_INFO_LINK: u64 = 0x40;
 pub const SHF_LINK_ORDER: u64 = 0x80;
 
 pub const DT_VERSYM: u64 = 0x6FFFFFF0;
+pub const DT_RELACOUNT: u64 = 0x6FFFFFF9;
 pub const DT_VERNEED: u64 = 0x6FFFFFFE;
 pub const DT_VERNEEDNUM: u64 = 0x6FFFFFFF;
 

@@ -72,6 +72,8 @@ tr.clickable:hover{{background:#1c2128;outline:1px solid #30363d;}}
 .heatmap td{{width:28px;height:28px;padding:0;text-align:center;font-size:0;cursor:default;}}
 .heatmap td:hover{{outline:2px solid #58a6ff;position:relative;z-index:1;}}
 .heatmap .lib-name{{text-align:right;padding-right:8px;white-space:nowrap;color:#c9d1d9;}}
+.presence-cell{{width:28px;height:28px;text-align:center;font-size:0.85rem;line-height:28px;cursor:default;}}
+.presence-cell:hover{{outline:2px solid #58a6ff;position:relative;z-index:1;}}
 .seg-bar{{display:flex;height:18px;border-radius:3px;overflow:hidden;min-width:100px;}}
 .seg-rx{{background:#238636;}}.seg-r{{background:#1f6feb;}}.seg-rw{{background:#d29922;}}.seg-other{{background:#484f58;}}
 .legend{{display:flex;gap:16px;margin-top:8px;font-size:0.75rem;color:#8b949e;flex-wrap:wrap;}}
@@ -152,7 +154,7 @@ tr.clickable:hover{{background:#1c2128;outline:1px solid #30363d;}}
 <th data-col="0">Game <span class="arrow">&#9650;</span></th>
 <th data-col="1">Engine <span class="arrow">&#9650;</span></th>
 <th data-col="2">Confidence <span class="arrow">&#9650;</span></th>
-<th data-col="3">Import <span class="arrow">&#9650;</span></th>
+<th data-col="3">Libs <span class="arrow">&#9650;</span></th>
 <th data-col="4">SCE Libs <span class="arrow">&#9650;</span></th>
 <th data-col="5">Unknown NIDs <span class="arrow">&#9650;</span></th>
 <th data-col="6">Size MB <span class="arrow">&#9650;</span></th>
@@ -188,7 +190,17 @@ tr.clickable:hover{{background:#1c2128;outline:1px solid #30363d;}}
 </tr></thead>
 <tbody id="libBody"></tbody>
 </table></div>
-<div class="section" style="margin-top:20px"><h2>Library Heatmap (log2)</h2><div class="heatmap-wrap" id="heatmapWrap"></div></div>
+<div class="section" style="margin-top:20px"><h2>Library Heatmap (log&sup2;)</h2><div class="heatmap-wrap" id="heatmapWrap"></div></div>
+
+<div class="section" style="margin-top:20px"><h2>Third Party Libraries</h2><div id="thirdPartyBars"></div></div>
+
+<div class="section" style="margin-top:20px"><h2>SCE System Libraries</h2>
+<div id="sceCategoryBars"></div>
+<h3 style="color:#8b949e;font-size:0.82rem;margin:16px 0 8px">SCE Dependency Matrix</h3>
+<div class="heatmap-wrap" id="sceHeatmapWrap"></div>
+<h3 style="color:#8b949e;font-size:0.82rem;margin:16px 0 8px">SDK Versions</h3>
+<div id="sceVersionDist"></div>
+</div>
 </div>
 
 <div class="tab-content" id="tab-nids">
@@ -565,6 +577,131 @@ document.addEventListener('keydown', e => {{ if (e.key === 'Escape') $('#detailP
     }});
     html += '</tbody></table>';
     $('#heatmapWrap').innerHTML = html;
+  }}
+}})();
+
+// --- SCE & THIRD PARTY LIBRARIES ---
+(function() {{
+  const isScePlatform = n => n.startsWith('libSce') || n.startsWith('libkernel') || n.startsWith('libc');
+
+  // Third Party bars
+  const tpData = D.library_priority.filter(l => !isScePlatform(l.name));
+  const tpMax = tpData.length ? Math.max(...tpData.map(l => l.game_count)) : 1;
+  const tpHtml = tpData.slice(0, 30).map(l =>
+    `<div class="hbar"><div class="hbar-label">${{l.name}}</div><div class="hbar-track"><div class="hbar-fill fill-blue" style="width:${{(l.game_count/tpMax*100).toFixed(1)}}%"></div></div><div class="hbar-count">${{l.game_count}} games</div></div>`
+  ).join('');
+  document.getElementById('thirdPartyBars').innerHTML = tpHtml || '<p style="color:#8b949e;font-size:0.82rem">No third-party library data.</p>';
+
+  // SCE library stats grouped by category
+  const stats = D.sce_library_stats || [];
+  const catOrder = ['Graphics', 'Audio', 'Input', 'Network', 'User', 'Storage', 'System', 'Unknown'];
+  const catLabels = {{ Graphics:'Graphics', Audio:'Audio', Input:'Input', Network:'Network', User:'User', Storage:'Storage', System:'System', Unknown:'Other' }};
+  const cats = {{}};
+  stats.forEach(s => {{
+    if (!cats[s.category]) cats[s.category] = [];
+    cats[s.category].push(s);
+  }});
+
+  let barsHtml = '';
+  catOrder.forEach(cat => {{
+    const group = cats[cat];
+    if (!group || !group.length) return;
+    barsHtml += `<h4 style="color:#e6edf3;font-size:0.82rem;margin:14px 0 6px;text-transform:uppercase;letter-spacing:0.05em">${{catLabels[cat]||cat}}</h4>`;
+    const maxGc = Math.max(...group.map(s => s.game_count));
+    group.sort((a, b) => b.game_count - a.game_count);
+    group.forEach(s => {{
+      barsHtml += `<div class="hbar"><div class="hbar-label" style="cursor:pointer;color:#58a6ff" data-sce="${{s.library}}">${{s.library}}</div><div class="hbar-track"><div class="hbar-fill fill-blue" style="width:${{(s.game_count/maxGc*100).toFixed(1)}}%"></div></div><div class="hbar-count">${{s.game_count}} games, ${{fmt(s.import_count)}} imports</div></div>`;
+    }});
+  }});
+  document.getElementById('sceCategoryBars').innerHTML = barsHtml || '<p style="color:#8b949e;font-size:0.82rem">No SCE library data available.</p>';
+
+  // SCE heatmap — presence matrix
+  const hm = D.sce_heatmap;
+  if (hm && hm.libraries.length) {{
+    let hHtml = '<table class="heatmap"><thead><tr><th></th>';
+    hm.games.forEach(g => {{ hHtml += `<th title="${{g}}">${{trunc(g,10)}}</th>`; }});
+    hHtml += '</tr></thead><tbody>';
+    hm.libraries.forEach((lib, i) => {{
+      hHtml += `<tr><td class="lib-name" style="cursor:pointer;color:#58a6ff" data-sce="${{lib}}">${{lib}}</td>`;
+      hm.raw_matrix[i].forEach(v => {{
+        hHtml += v > 0
+          ? '<td class="presence-cell" style="background:#1f6feb;color:#e6edf3;border-radius:3px">&#9632;</td>'
+          : '<td class="presence-cell"></td>';
+      }});
+      hHtml += '</tr>';
+    }});
+    hHtml += '</tbody></table>';
+    document.getElementById('sceHeatmapWrap').innerHTML = hHtml;
+  }} else {{
+    document.getElementById('sceHeatmapWrap').innerHTML = '<p style="color:#8b949e;font-size:0.82rem">No SCE library heatmap available.</p>';
+  }}
+
+  // SCE version distribution
+  const versions = D.sce_library_versions || [];
+  if (versions.length) {{
+    const grouped = {{}};
+    versions.forEach(v => {{ if (!grouped[v.library]) grouped[v.library] = []; grouped[v.library].push(v); }});
+    let vHtml = '';
+    Object.keys(grouped).sort().forEach(lib => {{
+      const vs = grouped[lib].sort((a, b) => b.version_raw - a.version_raw);
+      vHtml += `<details style="margin-bottom:6px" open>
+        <summary style="cursor:pointer;padding:8px 12px;background:#0d1117;border:1px solid #30363d;border-radius:6px;font-size:0.85rem;color:#c9d1d9">
+          <strong style="color:#58a6ff">${{lib}}</strong> &mdash; ${{vs.length}} version(s), ${{vs[0].game_count}} game(s)
+        </summary>
+        <div style="padding:8px 12px;border:1px solid #30363d;border-top:0;border-radius:0 0 6px 6px">
+          <table style="width:100%;font-size:0.82rem;border-collapse:collapse">
+            <thead><tr style="color:#8b949e"><th style="text-align:left;padding:4px 8px">Version</th><th style="text-align:left;padding:4px 8px">Raw</th><th style="text-align:left;padding:4px 8px">Games</th></tr></thead>
+            <tbody>${{vs.map(v => `<tr><td style="padding:4px 8px;font-variant-numeric:tabular-nums">${{v.version_string}}</td><td style="padding:4px 8px;font-family:monospace;font-size:0.72rem;color:#8b949e">0x${{v.version_raw.toString(16).padStart(8,'0')}}</td><td style="padding:4px 8px;font-size:0.78rem">${{v.games.map((g, i) => `<a href="#" class="game-link" data-game-id="${{v.game_ids[i]}}" style="color:#58a6ff">${{trunc(g,24)}}</a>`).join(', ')}}</td></tr>`).join('')}}</tbody>
+          </table>
+        </div>
+      </details>`;
+    }});
+    document.getElementById('sceVersionDist').innerHTML = vHtml;
+  }} else {{
+    document.getElementById('sceVersionDist').innerHTML = '<p style="color:#8b949e;font-size:0.82rem">No SDK version data for SCE libraries.</p>';
+  }}
+
+  // Click: SCE bars -> detail
+  document.getElementById('sceCategoryBars').addEventListener('click', e => {{
+    const el = e.target.closest('[data-sce]');
+    if (el) showSceDetail(el.dataset.sce);
+  }});
+
+  // Click: SCE heatmap -> detail
+  document.getElementById('sceHeatmapWrap').addEventListener('click', e => {{
+    const el = e.target.closest('[data-sce]');
+    if (el) showSceDetail(el.dataset.sce);
+  }});
+
+  // Click: SCE version game links
+  document.getElementById('sceVersionDist').addEventListener('click', e => {{
+    const link = e.target.closest('.game-link');
+    if (!link) return;
+    e.preventDefault();
+    showGameDetail(link.dataset.gameId);
+  }});
+
+  function showSceDetail(lib) {{
+    const s = stats.find(x => x.library === lib);
+    if (!s) return;
+    const gamesHtml = s.games.map((g, i) =>
+      `<div style="padding:2px 0;font-size:0.82rem"><a href="#" class="game-link" data-game-id="${{s.game_ids[i]}}" style="color:#58a6ff">&#8226; ${{trunc(g,40)}}</a></div>`
+    ).join('');
+    const vHtml = s.versions.length
+      ? s.versions.map(v =>
+        `<tr><td style="font-variant-numeric:tabular-nums">${{v.version_string}}</td><td style="font-family:monospace;font-size:0.72rem;color:#8b949e">0x${{v.version_raw.toString(16).padStart(8,'0')}}</td><td>${{v.game_count}}</td></tr>`
+      ).join('')
+      : '';
+    openDetail(lib, `
+      <div class="detail-section"><div class="detail-kv">
+        <div class="k">Category</div><div class="v">${{catLabels[s.category]||s.category}}</div>
+        <div class="k">Games</div><div class="v">${{s.game_count}}</div>
+        <div class="k">Imports</div><div class="v">${{fmt(s.import_count)}}</div>
+        <div class="k">Modules</div><div class="v">${{s.module_count}}</div>
+      </div></div>
+      <div class="detail-section"><h3>Games (${{s.game_count}})</h3>${{gamesHtml}}</div>
+      ${{vHtml ? `<div class="detail-section"><h3>Versions</h3><div class="table-wrap"><table class="detail-table"><thead><tr><th>Version</th><th>Raw</th><th>Game Count</th></tr></thead><tbody>${{vHtml}}</tbody></table></div></div>` : ''}}
+    `);
   }}
 }})();
 
@@ -1038,6 +1175,9 @@ mod tests {
             engine_hints: vec![],
             engine_summary: vec![],
             library_versions: vec![],
+            sce_library_stats: vec![],
+            sce_heatmap: HeatmapData::default(),
+            sce_library_versions: vec![],
         }
     }
 

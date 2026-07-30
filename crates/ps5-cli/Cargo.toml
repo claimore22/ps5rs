@@ -20,6 +20,7 @@ ps5-nid = { path = "../ps5-nid" }
 ps5-image = { path = "../ps5-image" }
 ps5-analysis = { path = "../ps5-analysis" }
 ps5-dashboard = { path = "../ps5-dashboard" }
+ps5-loader = { path = "../ps5-loader" }
 clap = { version = "4", features = ["derive", "env"] }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"

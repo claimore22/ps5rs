@@ -2,7 +2,7 @@ use ps5_analysis::dataset::AnalysisDataset;
 use ps5_analysis::reports::build_engine_hints;
 use ps5_image::{LibVersionEntry, SegmentType};
 use serde::{Deserialize, Serialize};
-use std::collections::{HashMap, HashSet};
+use std::collections::{BTreeSet, HashMap, HashSet};
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct DashboardData {
@@ -26,6 +26,12 @@ pub struct DashboardData {
     pub engine_summary: Vec<EngineSummary>,
     #[serde(default, skip_serializing_if = "Vec::is_empty")]
     pub library_versions: Vec<DashboardLibraryVersion>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub sce_library_stats: Vec<SceLibraryStats>,
+    #[serde(default)]
+    pub sce_heatmap: HeatmapData,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub sce_library_versions: Vec<DashboardLibraryVersion>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -132,7 +138,7 @@ pub struct LibImportCount {
     pub count: usize,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct HeatmapData {
     pub libraries: Vec<String>,
     pub games: Vec<String>,
@@ -258,6 +264,39 @@ pub struct EngineSummary {
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
+pub enum SceLibraryCategory {
+    Graphics,
+    Audio,
+    Input,
+    Network,
+    System,
+    Storage,
+    User,
+    Unknown,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct SceLibraryStats {
+    pub library: String,
+    pub category: SceLibraryCategory,
+    pub game_count: usize,
+    pub games: Vec<String>,
+    pub game_ids: Vec<String>,
+    pub module_count: usize,
+    pub import_count: usize,
+    pub versions: Vec<SceLibVersionEntry>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct SceLibVersionEntry {
+    pub version_string: String,
+    pub version_raw: u32,
+    pub game_count: usize,
+    pub games: Vec<String>,
+    pub game_ids: Vec<String>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct DashboardLibraryVersion {
     pub library: String,
     pub version_raw: u32,
@@ -342,6 +381,9 @@ pub fn compute(ds: &AnalysisDataset) -> DashboardData {
     let statistics = compute_statistics(ds, &segments);
 
     let library_versions = compute_library_versions(ds);
+    let sce_library_stats = compute_sce_stats(ds);
+    let sce_heatmap = compute_sce_heatmap(ds);
+    let sce_library_versions = compute_sce_library_versions(ds);
 
     DashboardData {
         meta,
@@ -358,6 +400,9 @@ pub fn compute(ds: &AnalysisDataset) -> DashboardData {
         engine_hints,
         engine_summary,
         library_versions,
+        sce_library_stats,
+        sce_heatmap,
+        sce_library_versions,
     }
 }
 
@@ -1074,6 +1119,201 @@ fn now_iso8601() -> String {
         .unwrap_or_default()
         .as_secs();
     format!("{now}")
+}
+
+fn collect_sce_libraries(doc: &ps5_image::BinaryImageDocument) -> BTreeSet<String> {
+    let mut libs = BTreeSet::new();
+    for imp in &doc.image.imports {
+        if imp.library_name.starts_with("libSce") {
+            libs.insert(imp.library_name.clone());
+        }
+    }
+    for lib in doc.image.import_libs.values() {
+        if lib.starts_with("libSce") {
+            libs.insert(lib.clone());
+        }
+    }
+    if let Some(sa) = &doc.string_analysis {
+        for lib in &sa.sce_libraries {
+            if lib.starts_with("libSce") {
+                libs.insert(lib.clone());
+            }
+        }
+    }
+    libs
+}
+
+fn categorize_sce_library(name: &str) -> SceLibraryCategory {
+    if name.contains("Gnm")
+        || name.contains("VideoOut")
+        || name.contains("Gpu")
+        || name.contains("Display")
+        || name.contains("Gnmf")
+    {
+        SceLibraryCategory::Graphics
+    } else if name.contains("Audio") || name.contains("Sound") {
+        SceLibraryCategory::Audio
+    } else if name.contains("Pad")
+        || name.contains("Mouse")
+        || name.contains("Keyboard")
+        || name.contains("Touch")
+        || name.contains("Move")
+        || name.contains("Trigger")
+    {
+        SceLibraryCategory::Input
+    } else if name.contains("Net")
+        || name.contains("Http")
+        || name.contains("Ssl")
+    {
+        SceLibraryCategory::Network
+    } else if name.contains("SaveData")
+        || name.contains("Storage")
+        || name.contains("Disc")
+        || name.contains("Ngs2")
+    {
+        SceLibraryCategory::Storage
+    } else if name.contains("Np")
+        || name.contains("User")
+        || name.contains("NpMatching")
+    {
+        SceLibraryCategory::User
+    } else if name.contains("System")
+        || name.contains("AppContent")
+        || name.contains("Kernel")
+        || name.contains("Thread")
+    {
+        SceLibraryCategory::System
+    } else {
+        SceLibraryCategory::Unknown
+    }
+}
+
+fn compute_sce_stats(ds: &AnalysisDataset) -> Vec<SceLibraryStats> {
+    let mut lib_data: HashMap<
+        String,
+        (Vec<String>, Vec<String>, usize, HashMap<String, SceLibVersionEntry>),
+    > = HashMap::new();
+
+    for (name, doc) in &ds.images {
+        let sce_libs = collect_sce_libraries(doc);
+        let display = ds.display_name_for(name).to_string();
+
+        for lib in &sce_libs {
+            let (game_ids, game_displays, import_count, versions) =
+                lib_data.entry(lib.clone()).or_default();
+
+            if !game_ids.contains(name) {
+                game_ids.push(name.clone());
+                game_displays.push(display.clone());
+            }
+
+            let count = doc
+                .image
+                .imports
+                .iter()
+                .filter(|i| i.library_name == *lib)
+                .count();
+            *import_count += count;
+
+            for lv in &doc.image.lib_versions {
+                if lv.name == *lib {
+                    let v_entry =
+                        versions.entry(lv.version_string.clone()).or_insert_with(|| {
+                            SceLibVersionEntry {
+                                version_string: lv.version_string.clone(),
+                                version_raw: lv.version_raw,
+                                game_count: 0,
+                                games: Vec::new(),
+                                game_ids: Vec::new(),
+                            }
+                        });
+                    if !v_entry.game_ids.contains(name) {
+                        v_entry.game_ids.push(name.clone());
+                        v_entry.games.push(display.clone());
+                        v_entry.game_count = v_entry.game_ids.len();
+                    }
+                }
+            }
+        }
+    }
+
+    let mut result: Vec<SceLibraryStats> = lib_data
+        .into_iter()
+        .map(|(lib, (game_ids, game_displays, import_count, versions))| {
+            let category = categorize_sce_library(&lib);
+            let mut version_list: Vec<SceLibVersionEntry> = versions.into_values().collect();
+            version_list.sort_by_key(|v| std::cmp::Reverse(v.version_raw));
+
+            SceLibraryStats {
+                library: lib,
+                category,
+                game_count: game_ids.len(),
+                games: game_displays,
+                game_ids,
+                module_count: 0,
+                import_count,
+                versions: version_list,
+            }
+        })
+        .collect();
+
+    result.sort_by(|a, b| {
+        b.game_count
+            .cmp(&a.game_count)
+            .then(b.import_count.cmp(&a.import_count))
+    });
+    result
+}
+
+fn compute_sce_heatmap(ds: &AnalysisDataset) -> HeatmapData {
+    let mut lib_game_counts: HashMap<String, HashMap<String, usize>> = HashMap::new();
+    let mut all_games: Vec<String> = Vec::new();
+    let mut seen_games: HashSet<String> = HashSet::new();
+
+    for (name, doc) in &ds.images {
+        let sce_libs = collect_sce_libraries(doc);
+        if !seen_games.contains(name) {
+            all_games.push(name.clone());
+            seen_games.insert(name.clone());
+        }
+        for lib in &sce_libs {
+            lib_game_counts
+                .entry(lib.clone())
+                .or_default()
+                .entry(name.clone())
+                .or_insert(1);
+        }
+    }
+
+    let mut lib_names: Vec<String> = lib_game_counts.keys().cloned().collect();
+    lib_names.sort();
+
+    let mut raw_matrix = Vec::with_capacity(lib_names.len());
+    let mut log_matrix = Vec::with_capacity(lib_names.len());
+
+    for lib in &lib_names {
+        let raw_row: Vec<usize> = all_games
+            .iter()
+            .map(|game| lib_game_counts[lib].get(game).copied().unwrap_or(0))
+            .collect();
+        let log_row: Vec<f64> = raw_row.iter().map(|&v| ((v as f64) + 1.0).log2()).collect();
+        raw_matrix.push(raw_row);
+        log_matrix.push(log_row);
+    }
+
+    HeatmapData {
+        libraries: lib_names,
+        games: all_games,
+        log_matrix,
+        raw_matrix,
+    }
+}
+
+fn compute_sce_library_versions(ds: &AnalysisDataset) -> Vec<DashboardLibraryVersion> {
+    let all = compute_library_versions(ds);
+    all.into_iter()
+        .filter(|v| v.library.starts_with("libSce"))
+        .collect()
 }
 
 #[cfg(test)]

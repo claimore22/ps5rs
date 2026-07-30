@@ -6,6 +6,7 @@ mod cli;
 mod dataset;
 mod extract;
 mod inspect;
+mod load;
 mod strings;
 mod terminal;
 mod util;
@@ -47,6 +48,13 @@ fn main() {
             group_by,
             output,
         } => dataset::cmd_export_unknown(&path, &group_by, &output),
+        Commands::Exports {
+            file,
+            json,
+            search,
+            output,
+        } => inspect::cmd_exports(&file, json, &search, &output),
+        Commands::Load { file, prx_dir, json } => load::cmd_load(&file, prx_dir, json),
         Commands::Strings {
             file,
             min_length,

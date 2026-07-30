@@ -95,6 +95,24 @@ pub enum Commands {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
+    /// List exports from a PS5 binary
+    Exports {
+        file: PathBuf,
+        #[arg(long)]
+        json: bool,
+        #[arg(long)]
+        search: Option<String>,
+        #[arg(short, long, value_hint = ValueHint::FilePath)]
+        output: Option<PathBuf>,
+    },
+    /// Load a PS5 binary into the virtual memory model
+    Load {
+        file: PathBuf,
+        #[arg(long, value_hint = ValueHint::DirPath)]
+        prx_dir: Option<PathBuf>,
+        #[arg(long)]
+        json: bool,
+    },
     /// Manage NID catalog (sync from Supabase, push unknowns)
     Catalog {
         #[command(subcommand)]
