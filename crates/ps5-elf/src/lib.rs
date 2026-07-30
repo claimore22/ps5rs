@@ -45,9 +45,11 @@ pub struct ElfImage<'a> {
     pub strtab_size: u64,
     pub symtab_offset: u64,
     pub symtab_size: u64,
+    pub soname: Option<String>,
     pub import_libs: std::collections::HashMap<u16, String>,
     pub needed_files: Vec<String>,
     pub lib_versions: Vec<LibVersionEntry>,
+    pub rela_count: u64,
 }
 
 impl<'a> ElfImage<'a> {
@@ -133,6 +135,7 @@ impl<'a> ElfImage<'a> {
             Vec::new()
         };
 
+        let mut rela_count = 0u64;
         let mut strtab_vaddr = 0u64;
         let mut strtab_size = 0u64;
         let mut symtab_vaddr = 0u64;
@@ -183,6 +186,7 @@ impl<'a> ElfImage<'a> {
                 ps5_format::self_constants::DT_SCE_PLTRELSZ if jmprel_size == 0 => {
                     jmprel_size = entry.d_val
                 }
+                ps5_format::elf_constants::DT_RELACOUNT => rela_count = entry.d_val,
                 _ => {}
             }
         }
@@ -211,6 +215,11 @@ impl<'a> ElfImage<'a> {
         let relocations =
             relocation::parse_all_relocs(data, rela_offset, rela_size, jmprel_offset, jmprel_size)?;
 
+        let soname = if (strtab_offset as usize) < data.len() {
+            dynamic::parse_soname(&dyn_entries, &data[strtab_offset as usize..])
+        } else {
+            None
+        };
         let import_libs = if (strtab_offset as usize) < data.len() {
             dynamic::parse_import_libs(&dyn_entries, &data[strtab_offset as usize..])
         } else {
@@ -257,9 +266,11 @@ impl<'a> ElfImage<'a> {
             strtab_size,
             symtab_offset,
             symtab_size,
+            soname,
             import_libs,
             needed_files,
             lib_versions,
+            rela_count,
         })
     }
 
@@ -679,6 +690,29 @@ mod tests {
         assert_eq!(img.relocations[0].r_offset, 0x400000);
         assert_eq!(img.relocations[0].r_type(), R_X86_64_GLOB_DAT);
         assert!(!img.relocations[0].is_plt);
+    }
+
+    #[test]
+    fn parse_rela_count() {
+        let placeholder_dynamic = build_dynamic_entries(&[(DT_RELACOUNT, 0)]);
+        let dyn_size = placeholder_dynamic.len();
+
+        let dynamic = build_dynamic_entries(&[(DT_RELACOUNT, 2905)]);
+
+        let elf = ElfBuilder::new()
+            .with_load(0x1000, dynamic)
+            .with_dynamic(0x1000, dyn_size as u64)
+            .build();
+
+        let img = ElfImage::parse(&elf, None).unwrap();
+        assert_eq!(img.rela_count, 2905);
+    }
+
+    #[test]
+    fn parse_rela_count_defaults_to_zero() {
+        let elf = ElfBuilder::new().with_load(0x1000, vec![0; 64]).build();
+        let img = ElfImage::parse(&elf, None).unwrap();
+        assert_eq!(img.rela_count, 0);
     }
 
     #[test]

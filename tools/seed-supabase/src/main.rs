@@ -62,7 +62,11 @@ fn main() {
         eprintln!("error: failed to create {}: {e}", names_path.display());
         std::process::exit(1);
     });
-    w_names.write_record(["nid", "name", "source", "confidence"]).unwrap();
+    w_names
+        .write_record(["nid", "name", "library", "source", "confidence", "evidence"])
+        .unwrap();
+
+    let null = "\\N";
 
     for (nid, (u64_str, names)) in &entries {
         let primary_name = names.first().map(|s| s.as_str()).unwrap_or("");
@@ -72,7 +76,14 @@ fn main() {
 
         for name in names {
             w_names
-                .write_record([nid.as_str(), name.as_str(), "ps5rs-builtin", "100"])
+                .write_record([
+                    nid.as_str(),
+                    name.as_str(),
+                    null,
+                    "ps5rs-builtin",
+                    "100",
+                    null,
+                ])
                 .unwrap();
         }
     }

@@ -1,5 +1,7 @@
 use std::path::PathBuf;
 
+use serde::Serialize;
+
 use crate::catalog::load_catalog;
 use crate::util::{e_version_name, load_file, osabi_name, write_to_output_or_stdout};
 
@@ -129,6 +131,90 @@ pub(crate) fn cmd_imports(path: &PathBuf, json: bool, output: &Option<PathBuf>) 
     for imp in &image.imports {
         let resolved = imp.resolved_name.as_deref().unwrap_or("?");
         println!("{:<64} {:<16} {}", imp.nid_hash, resolved, imp.library_name);
+    }
+}
+
+#[derive(Serialize)]
+struct ExportsReport {
+    module: String,
+    exports: Vec<ExportRow>,
+}
+
+#[derive(Serialize)]
+struct ExportRow {
+    nid: String,
+    name: String,
+    address: String,
+    size: u64,
+}
+
+fn export_nid(name: &str, nid_hash: &str) -> String {
+    if !nid_hash.is_empty() {
+        nid_hash.to_string()
+    } else if let Some(nid) = ps5_loader::compute_nid(name) {
+        nid.to_string()
+    } else {
+        String::new()
+    }
+}
+
+pub(crate) fn cmd_exports(
+    path: &PathBuf,
+    json: bool,
+    search: &Option<String>,
+    output: &Option<PathBuf>,
+) {
+    let data = load_file(path);
+    let sha256 = ps5_format::sha256_hex(&data);
+    let catalog = load_catalog(&[]);
+    let image = ps5_image::BinaryImageBuilder::build_from_file(&data, &sha256, &catalog);
+
+    let file_name = path
+        .file_name()
+        .map(|s| s.to_string_lossy())
+        .unwrap_or(std::borrow::Cow::Borrowed("?"))
+        .to_string();
+
+    let mut rows: Vec<ExportRow> = image
+        .exports
+        .iter()
+        .map(|e| {
+            let name = e.resolved_name.as_deref().unwrap_or("?").to_string();
+            ExportRow {
+                nid: export_nid(&name, &e.nid_hash),
+                name,
+                address: format!("{:#018x}", e.vaddr),
+                size: e.size,
+            }
+        })
+        .collect();
+
+    if let Some(query) = search {
+        let q = query.to_lowercase();
+        rows.retain(|r| r.nid.to_lowercase().contains(&q) || r.name.to_lowercase().contains(&q));
+    }
+
+    if json {
+        let report = ExportsReport {
+            module: file_name,
+            exports: rows,
+        };
+        write_to_output_or_stdout(output, &|w| {
+            serde_json::to_writer_pretty(w, &report).map_err(std::io::Error::other)
+        });
+        return;
+    }
+
+    println!("Exports from {} ({})", path.display(), rows.len());
+    println!();
+    if rows.is_empty() {
+        println!("  No exports found");
+        return;
+    }
+    println!("{:<20} {:<50} {:<20} {}", "NID", "Name", "Address", "Size");
+    println!("{}", "-".repeat(110));
+    for r in &rows {
+        println!("{:<20} {:<50} {:<20} {}", r.nid, r.name, r.address, r.size);
     }
 }
 

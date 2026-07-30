@@ -65,6 +65,19 @@ pub fn parse_needed_files(entries: &[DynEntry], strtab: &[u8]) -> Vec<String> {
     files
 }
 
+pub fn parse_soname(entries: &[DynEntry], strtab: &[u8]) -> Option<String> {
+    for entry in entries {
+        if entry.d_tag == ps5_format::elf_constants::DT_SONAME {
+            let name_off = (entry.d_val & 0xffffffff) as usize;
+            let name = read_cstr(strtab, name_off);
+            if !name.is_empty() {
+                return Some(name);
+            }
+        }
+    }
+    None
+}
+
 fn read_cstr(data: &[u8], offset: usize) -> String {
     if offset >= data.len() {
         return String::new();
