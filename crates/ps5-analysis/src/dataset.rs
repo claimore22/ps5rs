@@ -78,16 +78,19 @@ fn collect_json_files(
         } else if path.extension().and_then(|e| e.to_str()) == Some("json") {
             let data = std::fs::read_to_string(&path)?;
             let doc: BinaryImageDocument = serde_json::from_str(&data)?;
-            let rel = path
-                .strip_prefix(base_dir)
-                .unwrap_or(&path);
+            let rel = path.strip_prefix(base_dir).unwrap_or(&path);
             let key = if doc.parent_image.is_some() {
                 // module: use {game_dir}/{file_stem}
-                let parent_dir = rel.parent().and_then(|p| p.file_stem())
+                let parent_dir = rel
+                    .parent()
+                    .and_then(|p| p.file_stem())
                     .or_else(|| rel.file_stem())
                     .and_then(|s| s.to_str())
                     .unwrap_or("unknown");
-                let file_stem = path.file_stem().and_then(|s| s.to_str()).unwrap_or("unknown");
+                let file_stem = path
+                    .file_stem()
+                    .and_then(|s| s.to_str())
+                    .unwrap_or("unknown");
                 format!("{parent_dir}/{file_stem}")
             } else {
                 // game image: use parent dir name (subdir) or file_stem (flat layout)

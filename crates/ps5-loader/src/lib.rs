@@ -24,8 +24,8 @@ mod context;
 mod exports;
 mod graph;
 mod imports;
-mod memory;
 mod mapper;
+mod memory;
 mod nid;
 mod offline;
 mod pipeline;
@@ -36,40 +36,21 @@ pub use address::LoadAddressAllocator;
 pub use context::ModuleContext;
 pub use exports::{ExportEntry, ExportTable};
 pub use graph::{DependencyEdge, ModuleGraph};
-pub use nid::{compute_nid, nid_to_u64, NidResolver, SymbolNidResolver};
 pub use imports::{
-    ImportError,
-    ImportRequest,
-    ImportResolver,
-    ResolveResult,
-    StubAllocator,
-    STUB_REGION_BASE,
-};
-pub use memory::{
-    MemoryError,
-    MemoryErrorKind,
-    MemoryRegion,
-    ProcessMemory,
-    SegmentFlags,
+    ImportError, ImportRequest, ImportResolver, ResolveResult, STUB_REGION_BASE, StubAllocator,
 };
 pub use mapper::{
+    ImportBinding, LibraryImportCounts, LoadedModule, ModuleNameSource, ModuleState, ModuleType,
     load_elf,
-    ImportBinding,
-    LoadedModule,
-    ModuleNameSource,
-    ModuleState,
-    ModuleType,
 };
+pub use memory::{MemoryError, MemoryErrorKind, MemoryRegion, ProcessMemory, SegmentFlags};
+pub use nid::{NidResolver, SymbolNidResolver, compute_nid, nid_to_u64};
+pub use offline::{OfflineExportEntry, OfflineExportTable};
 pub use pipeline::load_modules;
 pub use relocation::{
-    apply_relocations,
+    RelocationError, RelocationKind, RelocationRecord, RelocationSummary, apply_relocations,
     apply_relocations_with,
-    RelocationError,
-    RelocationKind,
-    RelocationRecord,
-    RelocationSummary,
 };
-pub use offline::{OfflineExportEntry, OfflineExportTable};
 pub use resolver::CrossModuleResolver;
 
 // Re-export LoaderError from mapper (it's the primary error type)

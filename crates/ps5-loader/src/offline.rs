@@ -61,11 +61,17 @@ impl OfflineExportTable {
             if path.extension().and_then(|s| s.to_str()) != Some("json") {
                 continue;
             }
-            let Ok(data) = std::fs::read_to_string(&path) else { continue };
-            let Ok(file) = serde_json::from_str::<ExportsFile>(&data) else { continue };
+            let Ok(data) = std::fs::read_to_string(&path) else {
+                continue;
+            };
+            let Ok(file) = serde_json::from_str::<ExportsFile>(&data) else {
+                continue;
+            };
             let module_name = file.module;
             for row in file.exports {
-                let Some(nid) = crate::nid::nid_to_u64(&row.nid) else { continue };
+                let Some(nid) = crate::nid::nid_to_u64(&row.nid) else {
+                    continue;
+                };
                 table.entries.insert(
                     nid,
                     OfflineExportEntry {

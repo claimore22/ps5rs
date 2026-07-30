@@ -130,6 +130,7 @@ tr.clickable:hover{{background:#1c2128;outline:1px solid #30363d;}}
 <div class="tab" data-tab="segments">Segments</div>
 <div class="tab" data-tab="statistics">Statistics</div>
 <div class="tab" data-tab="graph">Graph</div>
+<div class="tab" data-tab="loader" id="loaderTab" style="display:none">Load Coverage</div>
 </div>
 
 <div class="container">
@@ -222,6 +223,16 @@ tr.clickable:hover{{background:#1c2128;outline:1px solid #30363d;}}
 <div class="section"><h2>Library Dependency Graph</h2><p style="color:#8b949e;font-size:0.82rem;margin-bottom:12px">Click a node to view details</p><div class="graph-wrap" id="graphWrap"></div></div>
 </div>
 
+<div class="tab-content" id="tab-loader">
+<div id="loaderEmpty" style="color:#8b949e;text-align:center;padding:60px 0;font-size:0.9rem">No loader data found. Run <code style="background:#0d1117;padding:2px 8px;border-radius:4px">ps5rs batch-load &lt;games_dir&gt;</code> to generate loader coverage statistics.</div>
+<div id="loaderContent" style="display:none">
+<div class="cards" id="loaderCards"></div>
+<div class="section"><h2>Per-Game Import Resolution</h2><div id="loaderGameBars"></div></div>
+<div class="section"><h2>Most Unavailable Modules</h2><div id="loaderUnavailableBars"></div></div>
+<div class="section"><h2>Games with Highest Stub Rate</h2><div id="loaderWorstBars"></div></div>
+</div>
+</div>
+
 </div>
 
 <div class="detail-overlay" id="detailPanel">
@@ -271,6 +282,17 @@ function showGameDetail(gameId) {{
       <div class="k">SHA-256</div><div class="v" style="font-family:monospace;font-size:0.72rem">${{d.sha256.slice(0,32)}}...</div>
     </div></div>
     ${{engineHtml}}
+    ${{d.imports_resolved != null ? `<div class="detail-section"><h3>Loader</h3><div class="detail-kv">
+      <div class="k">State</div><div class="v">${{d.load_state||'N/A'}}</div>
+      <div class="k">Resolved</div><div class="v" style="font-family:monospace">${{fmt(d.imports_resolved)}}</div>
+      <div class="k">Known (offline)</div><div class="v" style="font-family:monospace">${{fmt(d.imports_known)}}</div>
+      <div class="k">Stubbed</div><div class="v" style="font-family:monospace">${{fmt(d.imports_stubbed)}}</div>
+      <div class="k">Resolution Rate</div><div class="v">${{((d.imports_resolved + d.imports_known) / (d.imports_resolved + d.imports_known + d.imports_stubbed) * 100).toFixed(1)}}%</div>
+      ${{d.loader_tls ? `<div class="k">TLS</div><div class="v">Yes</div>` : ''}}
+      ${{d.init_array_count ? `<div class="k">Init Array</div><div class="v">${{d.init_array_count}} entries</div>` : ''}}
+      ${{d.fini_array_count ? `<div class="k">Fini Array</div><div class="v">${{d.fini_array_count}} entries</div>` : ''}}
+    </div></div>` : ''}}
+    ${{(d.unavailable_modules||[]).length ? `<div class="detail-section"><h3>Unavailable Modules (${{d.unavailable_modules.length}})</h3><div style="font-size:0.82rem;color:#f85149;word-break:break-all">${{d.unavailable_modules.join(', ')}}</div></div>` : ''}}
     <div class="detail-section"><h3>ELF Header</h3><div class="detail-kv">
       <div class="k">ELF Type</div><div class="v">0x${{d.elf_type.toString(16)}}</div>
       <div class="k">OS/ABI</div><div class="v">0x${{d.osabi.toString(16)}}</div>
@@ -884,7 +906,59 @@ document.addEventListener('keydown', e => {{ if (e.key === 'Escape') $('#detailP
       const d = (D.game_details || []).find(x => x.name === name);
       if (d) openDetail(d.title_name||d.name, `<div class="detail-kv"><div class="k">Imports</div><div class="v">${{fmt(d.imports.length)}}</div><div class="k">Libraries</div><div class="v">${{d.import_summary.length}}</div></div>`);
     }}
-  }}));
+}}));
+}})();
+
+// --- LOADER ---
+(function() {{
+  if (!D.loader_summary) return;
+  const s = D.loader_summary;
+  $('#loaderTab').style.display = '';
+  $('#loaderEmpty').style.display = 'none';
+  $('#loaderContent').style.display = '';
+
+  function pctBar(label, pct, color) {{
+    return `<div class="hbar"><div class="hbar-label">${{label}}</div><div class="hbar-track"><div class="hbar-fill fill-${{color}}" style="width:${{pct.toFixed(1)}}%"></div></div><span class="hbar-count">${{pct.toFixed(1)}}%</span></div>`;
+  }}
+
+  function tripleBar(label, a, b, c) {{
+    const total = a + b + c;
+    if (!total) return `<div class="hbar"><div class="hbar-label">${{label}}</div><div class="hbar-track" style="background:#0d1117;display:flex"><div style="width:100%;text-align:center;color:#8b949e;line-height:14px;font-size:0.7rem">No data</div></div></div>`;
+    const rp = a / total * 100;
+    const kp = b / total * 100;
+    const sp = c / total * 100;
+    return `<div class="hbar"><div class="hbar-label">${{label}}</div><div class="hbar-track" style="padding:0;display:flex;gap:0;background:#21262d"><div style="width:${{rp.toFixed(1)}}%;height:14px;background:#3fb950;min-width:2px" title="Resolved: ${{fmt(a)}}"></div><div style="width:${{kp.toFixed(1)}}%;height:14px;background:#58a6ff;min-width:2px" title="Known: ${{fmt(b)}}"></div><div style="width:${{sp.toFixed(1)}}%;height:14px;background:#f85149;min-width:2px" title="Stubbed: ${{fmt(c)}}"></div></div><span class="hbar-count" style="font-size:0.68rem;color:#8b949e;width:90px;text-align:right">${{rp.toFixed(0)}}% / ${{kp.toFixed(0)}}% / ${{sp.toFixed(0)}}%</span></div>`;
+  }}
+
+  const totalImports = s.total_imports_resolved + s.total_imports_known + s.total_imports_stubbed;
+  $('#loaderCards').innerHTML = `
+    <div class="card"><div class="card-label">Games Loaded</div><div class="card-value">${{s.successful}}<span style="font-size:0.85rem;color:#8b949e;margin-left:6px">/ ${{s.total_games}}</span></div></div>
+    <div class="card"><div class="card-label">Failed</div><div class="card-value yellow">${{s.failed}}</div></div>
+    <div class="card"><div class="card-label">Modules</div><div class="card-value blue">${{fmt(s.total_modules)}}</div></div>
+    <div class="card"><div class="card-label">Exports</div><div class="card-value blue">${{fmt(s.total_exports)}}</div></div>
+    <div class="card"><div class="card-label">Resolution Rate</div><div class="card-value ${{pctCls(s.avg_resolution_rate)}}">${{s.avg_resolution_rate.toFixed(1)}}%</div></div>
+    <div class="card"><div class="card-label">Imports</div><div class="card-value">${{fmt(totalImports)}}<span style="font-size:0.75rem;color:#8b949e;display:block">${{fmt(s.total_imports_resolved)}} resolved / ${{fmt(s.total_imports_known)}} known / ${{fmt(s.total_imports_stubbed)}} stubbed</span></div></div>`;
+
+  const gamesWithLoader = (D.game_details || []).filter(g => g.imports_resolved != null);
+  if (gamesWithLoader.length) {{
+    $('#loaderGameBars').innerHTML = '<div style="font-size:0.75rem;color:#8b949e;margin-bottom:8px"><span style="display:inline-block;width:12px;height:12px;background:#3fb950;margin-right:4px;vertical-align:middle"></span>Resolved <span style="display:inline-block;width:12px;height:12px;background:#58a6ff;margin:0 4px 0 12px;vertical-align:middle"></span>Known <span style="display:inline-block;width:12px;height:12px;background:#f85149;margin:0 4px 0 12px;vertical-align:middle"></span>Stubbed</div>'
+      + gamesWithLoader.map(g => tripleBar(g.title_name || g.name, g.imports_resolved, g.imports_known, g.imports_stubbed)).join('');
+  }}
+
+  if (s.top_unavailable && s.top_unavailable.length) {{
+    const maxUc = s.top_unavailable[0].game_count || 1;
+    $('#loaderUnavailableBars').innerHTML = s.top_unavailable.map(u => {{
+      const pct = u.game_count / s.total_games * 100;
+      return `<div class="hbar"><div class="hbar-label" style="width:280px">${{u.module}}</div><div class="hbar-track"><div class="hbar-fill fill-red" style="width:${{(u.game_count / maxUc * 100).toFixed(1)}}%"></div></div><span class="hbar-count">${{u.game_count}} games (${{pct.toFixed(0)}}%)</span></div>`;
+    }}).join('');
+  }}
+
+  if (s.worst_games && s.worst_games.length) {{
+    const maxStub = s.worst_games[0].rate || 1;
+    $('#loaderWorstBars').innerHTML = s.worst_games.map(w => {{
+      return `<div class="hbar"><div class="hbar-label" style="width:280px">${{w.game}}</div><div class="hbar-track"><div class="hbar-fill fill-red" style="width:${{(w.rate / maxStub * 100).toFixed(1)}}%"></div></div><span class="hbar-count">${{fmt(w.stubbed)}} / ${{fmt(w.total)}} (${{w.rate.toFixed(1)}}%)</span></div>`;
+    }}).join('');
+  }}
 }})();
 
 // --- GLOBAL SEARCH ---
@@ -1082,6 +1156,14 @@ mod tests {
                 sdk_hints: vec![],
                 detected_versions: vec![],
                 lib_versions: vec![],
+                load_state: Some("Linked".to_string()),
+                imports_resolved: Some(50),
+                imports_known: Some(30),
+                imports_stubbed: Some(20),
+                loader_tls: None,
+                init_array_count: None,
+                fini_array_count: None,
+                unavailable_modules: vec!["libSceSome.prx".to_string()],
             }],
             heatmap: HeatmapData {
                 libraries: vec!["libkernel".to_string()],
@@ -1178,7 +1260,44 @@ mod tests {
             sce_library_stats: vec![],
             sce_heatmap: HeatmapData::default(),
             sce_library_versions: vec![],
+            loader_summary: None,
         }
+    }
+
+    #[test]
+    fn html_loader_tab_renders_with_data() {
+        let mut data = sample_data();
+        data.loader_summary = Some(LoaderSummary {
+            total_games: 1,
+            successful: 1,
+            failed: 0,
+            total_modules: 5,
+            total_exports: 200,
+            total_imports_resolved: 50,
+            total_imports_known: 30,
+            total_imports_stubbed: 20,
+            avg_resolution_rate: 80.0,
+            top_unavailable: vec![LoaderUnavailableEntry {
+                module: "libSceVideo.prx".to_string(),
+                game_count: 1,
+                games: vec!["game1".to_string()],
+            }],
+            worst_games: vec![LoaderWorstEntry {
+                game: "game1".to_string(),
+                stubbed: 20,
+                total: 100,
+                rate: 20.0,
+            }],
+        });
+        let html = generate_html(&data);
+        assert!(html.contains("Games Loaded"));
+        assert!(html.contains("Modules"));
+        assert!(html.contains("Resolution Rate"));
+        assert!(html.contains("Imports"));
+        assert!(html.contains("Per-Game Import Resolution"));
+        assert!(html.contains("Most Unavailable Modules"));
+        assert!(html.contains("libSceVideo.prx"));
+        assert!(html.contains("Games with Highest Stub Rate"));
     }
 
     #[test]
@@ -1200,6 +1319,7 @@ mod tests {
         assert!(html.contains("tab-segments"));
         assert!(html.contains("tab-statistics"));
         assert!(html.contains("tab-graph"));
+        assert!(html.contains("tab-loader"));
     }
 
     #[test]

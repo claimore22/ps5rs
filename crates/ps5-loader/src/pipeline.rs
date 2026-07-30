@@ -5,7 +5,7 @@ use crate::context::ModuleContext;
 use crate::exports::ExportTable;
 use crate::graph::ModuleGraph;
 use crate::imports::StubAllocator;
-use crate::mapper::{load_elf, LoadedModule, LoaderError, ModuleState};
+use crate::mapper::{LoadedModule, LoaderError, ModuleState, load_elf};
 use crate::offline::OfflineExportTable;
 use crate::relocation::apply_relocations_with;
 use crate::resolver::CrossModuleResolver;
@@ -68,7 +68,10 @@ pub fn load_modules(
     ) -> Result<Option<LoadedModule>, LoaderError> {
         let canonical = elf.soname.as_deref().unwrap_or(name);
         if !processed.insert(canonical.to_string()) {
-            return Ok(loaded_modules.iter().find(|m| m.canonical_name() == canonical).cloned());
+            return Ok(loaded_modules
+                .iter()
+                .find(|m| m.canonical_name() == canonical)
+                .cloned());
         }
 
         // Process transitive deps first
@@ -134,6 +137,9 @@ pub fn load_modules(
         module.imports_resolved = resolver.resolved_count();
         module.imports_known = resolver.known_count();
         module.imports_stubbed = resolver.stubbed_count();
+        module.per_library_imports = resolver.per_library_imports();
+
+        module.state = ModuleState::Initialized;
         *total_resolved += resolver.resolved_count();
         *total_known += resolver.known_count();
         *total_stubbed += resolver.stubbed_count();
@@ -203,15 +209,19 @@ pub fn load_modules(
         export_table.register_module(&module, &eboot_elf);
         module.exports_count = export_table.len() - export_count_before;
 
-        let mut resolver = CrossModuleResolver::new(&export_table, offline_exports, &mut stub_alloc);
+        let mut resolver =
+            CrossModuleResolver::new(&export_table, offline_exports, &mut stub_alloc);
         let _rel_summary = apply_relocations_with(&mut module, &eboot_elf, Some(&mut resolver))?;
         module.state = ModuleState::Linked;
         module.imports_resolved = resolver.resolved_count();
         module.imports_known = resolver.known_count();
         module.imports_stubbed = resolver.stubbed_count();
+        module.per_library_imports = resolver.per_library_imports();
         total_resolved += resolver.resolved_count();
         total_known += resolver.known_count();
         total_stubbed += resolver.stubbed_count();
+
+        module.state = ModuleState::Initialized;
 
         graph.add_node(module.canonical_name(), &module.aliases);
 
@@ -275,26 +285,38 @@ mod tests {
     #[test]
     fn skip_missing_prx() {
         let elf = build_simple_elf(0xFE10);
-        let ctx = load_modules("eboot.bin", &elf, |name| {
-            if name == "missing.prx" {
-                None
-            } else {
-                Some(build_simple_elf(0xFE18))
-            }
-        }, None).unwrap();
+        let ctx = load_modules(
+            "eboot.bin",
+            &elf,
+            |name| {
+                if name == "missing.prx" {
+                    None
+                } else {
+                    Some(build_simple_elf(0xFE18))
+                }
+            },
+            None,
+        )
+        .unwrap();
         assert_eq!(ctx.modules.len(), 1);
     }
 
     #[test]
     fn prx_gets_load_bias() {
         let elf = build_simple_elf(0xFE10);
-        let ctx = load_modules("eboot.bin", &elf, |name| {
-            if name == "libc.prx" {
-                Some(build_simple_elf(0xFE18))
-            } else {
-                None
-            }
-        }, None).unwrap();
+        let ctx = load_modules(
+            "eboot.bin",
+            &elf,
+            |name| {
+                if name == "libc.prx" {
+                    Some(build_simple_elf(0xFE18))
+                } else {
+                    None
+                }
+            },
+            None,
+        )
+        .unwrap();
         assert_eq!(ctx.modules.len(), 1);
     }
 
@@ -329,7 +351,9 @@ mod tests {
         let total_size = 0x300;
         let mut elf = vec![0u8; 64 + 56 + total_size];
         elf[0..4].copy_from_slice(&[0x7f, b'E', b'L', b'F']);
-        elf[4] = 2; elf[5] = 1; elf[6] = 1;
+        elf[4] = 2;
+        elf[5] = 1;
+        elf[6] = 1;
         elf[16..18].copy_from_slice(&0xFE10u16.to_le_bytes());
         elf[18..20].copy_from_slice(&62u16.to_le_bytes());
         elf[20..24].copy_from_slice(&1u32.to_le_bytes());
@@ -357,13 +381,28 @@ mod tests {
         let payload_start = 64 + 56;
         elf[payload_start..payload_start + dyn_data.len()].copy_from_slice(&dyn_data);
 
-        let ctx = load_modules("eboot.bin", &elf, |name| {
-            if name == "libc.prx" {
-                Some(build_simple_elf(0xFE18))
-            } else {
-                None
-            }
-        }, None).unwrap();
+        let ctx = load_modules(
+            "eboot.bin",
+            &elf,
+            |name| {
+                if name == "libc.prx" {
+                    Some(build_simple_elf(0xFE18))
+                } else {
+                    None
+                }
+            },
+            None,
+        )
+        .unwrap();
         assert!(ctx.modules.len() >= 1);
+    }
+
+    #[test]
+    fn state_transitions_to_initialized() {
+        let elf = build_simple_elf(0xFE10);
+        let ctx = load_modules("eboot.bin", &elf, |_| None, None).unwrap();
+        for module in &ctx.modules {
+            assert_eq!(module.state, ModuleState::Initialized);
+        }
     }
 }

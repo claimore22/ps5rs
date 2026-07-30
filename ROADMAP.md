@@ -93,6 +93,8 @@ Map → Relocate → Link
 | `ps5rs exports <file> --json --search` | ✓ |
 | `ps5rs catalog sync` | ✓ |
 | `ps5rs catalog push-unknown` | ✓ |
+| `ps5rs export-scan <dir>` | ✓ |
+| `ps5rs batch-load <games_dir>` | ✓ |
 
 #### Analysis Database
 
@@ -117,14 +119,11 @@ Map → Relocate → Link
 | JSON: copy/tls/ifunc/unknown counts | `RelocationSummary` tracks them, `ModuleInfo` omits them |
 | JSON: per-library import breakdown | Only aggregate counts, not broken down by library |
 | Dependency graph: per-edge metadata | Shows `[MISSING]` but not export counts or import requirements |
-| `ps5rs export-scan <dir>` | No batch PRX export tool |
-| `ps5rs batch-load <games_dir>` | No bulk loader command |
 | `catalog accept` | No local review/accept workflow |
-| Dashboard: loader analytics | No loader stats in GameDetail or DashboardData |
 
 ---
 
-## Roadmap
+## Completed Phases
 
 ### Phase 1 — Complete TLS + Init/Fini Metadata
 
@@ -138,7 +137,7 @@ No execution, no TLS blocks, no thread storage.
   propagate `image.tls` into the module. Validate alignment, record
   file/memory size.
 - **Tests:** 3-5 tests: TLS from PT_TLS, zero-size TLS, missing TLS.
-- **Effort:** ~45 min
+- **Effort:** ~45 min ✅
 
 #### 1b. Init/fini arrays on `LoadedModule`
 
@@ -148,16 +147,16 @@ No execution, no TLS blocks, no thread storage.
   Populate from `image.init_array_va`/`image.init_array_sz` etc. by reading
   function pointers from mapped memory. Transition to `ModuleState::Initialized`.
 - **Tests:** 3-5 tests: init array recorded, empty init array, preinit present.
-- **Effort:** ~1.5h
+- **Effort:** ~1.5h ✅
 
 #### 1c. Expose in JSON + terminal output
 
 - **Files:** `crates/ps5-cli/src/load.rs`
 - **Change:** Add to `ModuleInfo`: `init_va`, `fini_va`, `init_array_count`,
   `tls` block. Show in `print_modules()` terminal view.
-- **Effort:** ~30 min
+- **Effort:** ~30 min ✅
 
-**Total Phase 1: ~3h**
+**Total Phase 1: ~3h ✅**
 
 ---
 
@@ -171,7 +170,7 @@ analysis (dashboard, batch-load aggregator).
 - **Files:** `crates/ps5-cli/src/load.rs`
 - **Change:** Add `copy`, `tls`, `ifunc`, `unknown` fields to `ModuleInfo`
   (already in `RelocationSummary`, just not serialized).
-- **Effort:** ~15 min
+- **Effort:** ~15 min ✅
 
 #### 2b. Per-library import breakdown
 
@@ -180,16 +179,16 @@ analysis (dashboard, batch-load aggregator).
   to `ModuleInfo`. `CrossModuleResolver` already categorizes every import
   by result type — just group by library name.
 - **Tests:** 2-3 tests: per-library counts add up to totals.
-- **Effort:** ~2h
+- **Effort:** ~2h ✅
 
 #### 2c. Dependency graph metadata
 
 - **Files:** `crates/ps5-cli/src/load.rs`
 - **Change:** In `print_graph()` and `GraphInfo`, show per-edge:
   `exports_available`, `imports_required`, `status` (loaded/missing/offline).
-- **Effort:** ~1h
+- **Effort:** ~1h ✅
 
-**Total Phase 2: ~3.5h**
+**Total Phase 2: ~3.5h ✅**
 
 ---
 
@@ -209,7 +208,7 @@ analysis (dashboard, batch-load aggregator).
   4. Skip duplicates (same module name already exists with same hash)
 - **Edge cases:** Non-ELF files, corrupt PRX, SELF-wrapped PRX
 - **Tests:** 3-5 tests: directory with 0/1/N PRXes, duplicate detection.
-- **Effort:** ~4h
+- **Effort:** ~4h ✅
 
 #### 3b. Run against SDK + all game PRXes
 
@@ -218,9 +217,9 @@ analysis (dashboard, batch-load aggregator).
   - All 39 game `sce_module/` directories
 - **Result:** Comprehensive offline database covering SDK + game-specific
   versions.
-- **Effort:** ~15 min (manual command)
+- **Effort:** ~15 min ✅
 
-**Total Phase 3: ~4.5h**
+**Total Phase 3: ~4.5h ✅**
 
 ---
 
@@ -239,7 +238,7 @@ analysis (dashboard, batch-load aggregator).
   3. Write per-game `analysis/load/<game>.json` with full `LoadReport`
   4. Write `analysis/load/summary.json` with aggregate stats
 - **Tests:** 3-4 tests: single game, multi-game, missing PRX dirs.
-- **Effort:** ~6h
+- **Effort:** ~6h ✅
 
 #### 4b. Corpus analysis
 
@@ -250,9 +249,9 @@ analysis (dashboard, batch-load aggregator).
   - Most commonly unavailable system modules (ranked)
   - Games with the most unknown NIDs
   - Performance benchmarks (859K relocations on Octopath Traveler II)
-- **Effort:** ~30 min (run time)
+- **Effort:** ~30 min (run time) ✅
 
-**Total Phase 4: ~6.5h**
+**Total Phase 4: ~6.5h ✅**
 
 ---
 
@@ -272,7 +271,7 @@ analysis data.
   - `unavailable_modules: Vec<String>`
 - Add to `DashboardData`: optional `loader_summary` section with aggregate
   resolution stats across all loaded games.
-- **Effort:** ~3h
+- **Effort:** ~3h ✅
 
 #### 5b. Dashboard "Load Coverage" view
 
@@ -284,11 +283,19 @@ analysis data.
   - Unavailable module frequency list
   - ⚠️ Only shown when loader data is present (backward compat with old
     datasets)
-- **Effort:** ~5h
+- **Effort:** ~5h ✅
 
-**Total Phase 5: ~8h**
+#### 5c. CLI integration
+
+- **Files:** `crates/ps5-cli/src/dataset.rs`
+- **Change:** `cmd_dashboard()` calls `data.inject_loader_data(&loader_dir)` after `compute()` to populate loader data from `analysis/load/` directory.
+- **Effort:** ~30 min ✅
+
+**Total Phase 5: ~8.5h ✅**
 
 ---
+
+## Upcoming Phases
 
 ### Phase 6 — Catalog Accept Workflow
 
@@ -334,15 +341,15 @@ analysis data.
 
 ## Summary
 
-| Phase | Description | Effort | Value |
+| Phase | Description | Effort | Status |
 |---:|---|:---:|:---:|
-| 1 | TLS + Init/fini metadata on LoadedModule | ~3h | Completes the loader data model |
-| 2 | Rich load reports (JSON + terminal) | ~3.5h | Enables downstream consumers |
-| 3 | Export-scan bootstrapper | ~4.5h | Fills the production gap in offline exports |
-| 4 | Bulk analysis pipeline | ~6.5h | First corpus-wide loader validation |
-| 5 | Dashboard loader analytics | ~8h | Makes loader results explorable |
-| 6 | Catalog accept workflow | ~6h | Completes the NID cycle |
-| | **Total** | **~31.5h** | |
+| 1 | TLS + Init/fini metadata on LoadedModule | ~3h | ✅ |
+| 2 | Rich load reports (JSON + terminal) | ~3.5h | ✅ |
+| 3 | Export-scan bootstrapper | ~4.5h | ✅ |
+| 4 | Bulk analysis pipeline | ~6.5h | ✅ |
+| 5 | Dashboard loader analytics | ~8.5h | ✅ |
+| 6 | Catalog accept workflow | ~6h | 🔜 |
+| | **Total** | **~31.5h** | **26.5h done / 6h remaining** |
 
 The narrative end-to-end:
 

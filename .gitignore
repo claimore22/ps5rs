@@ -6,6 +6,18 @@
 *.self
 *.sprx
 
+# Scratch JSON test files (root-level ad-hoc analysis output)
+/dc_libc.json
+/game_libc.json
+/gris.json
+/ot2.json
+/sdk_libc.json
+/sdk_np.json
+/stray.json
+/stray2.json
+/stray3.json
+/stray_test.json
+
 # Scratch / temp files
 /stray_strings.txt
 /strings.txt
@@ -21,6 +33,9 @@
 
 # Offline SDK export database (generated from proprietary SDK/game PRXes)
 /system_modules/
+
+# Bulk load results (generated from batch-load)
+/analysis/load/
 
 # Old analysis artifacts (many files exceed GitHub's 100MB limit)
 /analysis_old/

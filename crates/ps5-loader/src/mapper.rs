@@ -1,3 +1,5 @@
+use serde::Serialize;
+
 use crate::memory::{MemoryRegion, ProcessMemory, SegmentFlags};
 use crate::relocation::{RelocationRecord, RelocationSummary};
 /// Whether a module is the main executable (EBOOT) or a shared library (PRX).
@@ -26,6 +28,15 @@ pub enum ModuleState {
     Linked,
     /// Module init routines have been called (PREINIT_ARRAY, INIT, etc.)
     Initialized,
+}
+
+/// Per-library import counts (resolved / known / stubbed).
+#[derive(Debug, Clone, Serialize)]
+pub struct LibraryImportCounts {
+    pub library: String,
+    pub resolved: u32,
+    pub known: u32,
+    pub stubbed: u32,
 }
 
 /// A single import binding: an (optional) resolved address for an import symbol.
@@ -66,6 +77,24 @@ pub struct LoadedModule {
     pub aliases: Vec<String>,
     /// Current lifecycle phase.
     pub state: ModuleState,
+    /// Thread-local storage layout (from PT_TLS), if present.
+    pub tls: Option<ps5_elf::TlsInfo>,
+    /// `DT_INIT` function pointer (virtual address, 0 if absent).
+    pub init_va: u64,
+    /// `DT_INIT_ARRAY` virtual address (0 if absent).
+    pub init_array_va: u64,
+    /// Number of entries in `DT_INIT_ARRAY`.
+    pub init_array_sz: u64,
+    /// `DT_FINI` function pointer (virtual address, 0 if absent).
+    pub fini_va: u64,
+    /// `DT_FINI_ARRAY` virtual address (0 if absent).
+    pub fini_array_va: u64,
+    /// Number of entries in `DT_FINI_ARRAY`.
+    pub fini_array_sz: u64,
+    /// `DT_PREINIT_ARRAY` virtual address (0 if absent).
+    pub preinit_array_va: u64,
+    /// Number of entries in `DT_PREINIT_ARRAY`.
+    pub preinit_array_sz: u64,
     /// Number of exported symbols registered from this module.
     pub exports_count: usize,
     /// Number of imports resolved against the export table.
@@ -74,6 +103,8 @@ pub struct LoadedModule {
     pub imports_known: u32,
     /// Number of imports assigned stub addresses.
     pub imports_stubbed: u32,
+    /// Per-library import resolution counts.
+    pub per_library_imports: Vec<LibraryImportCounts>,
 }
 
 impl LoadedModule {
@@ -158,11 +189,7 @@ pub fn load_elf(name: &str, elf_bytes: &[u8]) -> Result<LoadedModule> {
 
     regions.sort_by_key(|r| r.vaddr);
 
-    let preferred_base = regions
-        .iter()
-        .map(|r| r.vaddr)
-        .min()
-        .unwrap_or(0);
+    let preferred_base = regions.iter().map(|r| r.vaddr).min().unwrap_or(0);
     let entry_point = if image.header.e_entry > 0 {
         Some(image.header.e_entry)
     } else {
@@ -208,10 +235,20 @@ pub fn load_elf(name: &str, elf_bytes: &[u8]) -> Result<LoadedModule> {
         soname,
         aliases,
         state: ModuleState::Mapped,
+        tls: image.tls,
+        init_va: image.init_va,
+        init_array_va: image.init_array_va,
+        init_array_sz: image.init_array_sz,
+        fini_va: image.fini_va,
+        fini_array_va: image.fini_array_va,
+        fini_array_sz: image.fini_array_sz,
+        preinit_array_va: image.preinit_array_va,
+        preinit_array_sz: image.preinit_array_sz,
         exports_count: 0,
         imports_resolved: 0,
         imports_known: 0,
         imports_stubbed: 0,
+        per_library_imports: Vec::new(),
     })
 }
 
@@ -245,7 +282,12 @@ mod tests {
         buf[off..off + 8].copy_from_slice(&val.to_le_bytes());
     }
 
-    fn build_elf(e_type: u16, entry: u64, phdrs: &[(u32, u32, u64, u64, u64, u64)], payloads: &[&[u8]]) -> Vec<u8> {
+    fn build_elf(
+        e_type: u16,
+        entry: u64,
+        phdrs: &[(u32, u32, u64, u64, u64, u64)],
+        payloads: &[&[u8]],
+    ) -> Vec<u8> {
         assert_eq!(phdrs.len(), payloads.len());
 
         let phdr_count = phdrs.len() as u16;
@@ -278,7 +320,9 @@ mod tests {
         put_u16(&mut buf, 54, phdr_size as u16);
         put_u16(&mut buf, 56, phdr_count);
 
-        for (i, &(p_type, p_flags, p_offset, p_vaddr, p_filesz, p_memsz)) in phdrs.iter().enumerate() {
+        for (i, &(p_type, p_flags, p_offset, p_vaddr, p_filesz, p_memsz)) in
+            phdrs.iter().enumerate()
+        {
             let off = phdr_offset + i * phdr_size;
             put_u32(&mut buf, off, p_type);
             put_u32(&mut buf, off + 4, p_flags);
@@ -291,7 +335,9 @@ mod tests {
 
             let dst = p_offset as usize;
             let len = p_filesz as usize;
-            let copy_len = len.min(payloads[i].len()).min(buf.len().saturating_sub(dst));
+            let copy_len = len
+                .min(payloads[i].len())
+                .min(buf.len().saturating_sub(dst));
             if copy_len > 0 {
                 buf[dst..dst + copy_len].copy_from_slice(&payloads[i][..copy_len]);
             }
@@ -483,6 +529,146 @@ mod tests {
         assert_eq!(r.size, 0x400);
         assert_eq!(&r.data[..0x100], &[0xEE; 0x100]);
         assert_eq!(&r.data[0x100..0x400], &[0u8; 0x300]);
+    }
+
+    const PT_TLS: u32 = 7;
+
+    #[test]
+    fn tls_from_pt_tls_segment() {
+        let payload = vec![0xDD; 0x40];
+        let _elf = build_elf(
+            ET_SCE_DYNEXEC,
+            0,
+            &[(PT_LOAD, PF_R | PF_X, 0x1000, 0x800000000, 0x100, 0x100)],
+            &[&[0xCC; 0x100]],
+        );
+        // Add PT_TLS segment (type 7) pointing to a separate payload
+        let tls_vaddr = 0x800020000u64;
+        let tls_filesz = 0x40u64;
+        let tls_memsz = 0x100u64;
+        let tls_align = 0x40u64;
+        // We need to append a PT_TLS program header and its data
+        // Build a new ELF manually with both PT_LOAD and PT_TLS
+        let phdr_count = 2u16;
+        let phdr_size: usize = 56;
+        let phdr_offset: usize = 64;
+        let phdr_end = phdr_offset + phdr_count as usize * phdr_size;
+        let load_offset = phdr_end;
+        let load_size = 0x100usize;
+        let tls_data_offset = load_offset + load_size;
+        let tls_data_len = tls_filesz as usize;
+        let total_size = tls_data_offset + tls_data_len;
+
+        let mut buf = vec![0u8; total_size];
+        buf[0..4].copy_from_slice(&ELF_MAGIC);
+        buf[EI_CLASS] = ELFCLASS64;
+        buf[EI_DATA] = ELFDATA2LSB;
+        buf[EI_VERSION] = 1;
+        put_u16(&mut buf, 16, ET_SCE_DYNEXEC);
+        put_u16(&mut buf, 18, EM_X86_64);
+        put_u32(&mut buf, 20, 1);
+        put_u64(&mut buf, 24, 0);
+        put_u64(&mut buf, 32, phdr_offset as u64);
+        put_u16(&mut buf, 52, 64);
+        put_u16(&mut buf, 54, phdr_size as u16);
+        put_u16(&mut buf, 56, phdr_count);
+
+        // PT_LOAD
+        put_u32(&mut buf, phdr_offset, PT_LOAD);
+        put_u32(&mut buf, phdr_offset + 4, PF_R | PF_X);
+        put_u64(&mut buf, phdr_offset + 8, load_offset as u64);
+        put_u64(&mut buf, phdr_offset + 16, 0x800000000);
+        put_u64(&mut buf, phdr_offset + 24, 0x800000000);
+        put_u64(&mut buf, phdr_offset + 32, load_size as u64);
+        put_u64(&mut buf, phdr_offset + 40, load_size as u64);
+        put_u64(&mut buf, phdr_offset + 48, 0x1000);
+
+        // PT_TLS
+        let ph2 = phdr_offset + phdr_size;
+        put_u32(&mut buf, ph2, PT_TLS);
+        put_u32(&mut buf, ph2 + 4, PF_R);
+        put_u64(&mut buf, ph2 + 8, tls_data_offset as u64);
+        put_u64(&mut buf, ph2 + 16, tls_vaddr);
+        put_u64(&mut buf, ph2 + 24, tls_vaddr);
+        put_u64(&mut buf, ph2 + 32, tls_filesz);
+        put_u64(&mut buf, ph2 + 40, tls_memsz);
+        put_u64(&mut buf, ph2 + 48, tls_align);
+
+        // Load segment payload
+        buf[load_offset..load_offset + load_size].fill(0xCC);
+        // TLS data payload
+        buf[tls_data_offset..tls_data_offset + tls_data_len].copy_from_slice(&payload);
+
+        let module = load_elf("tls_test.elf", &buf).unwrap();
+        let tls = module.tls.expect("expected TLS info");
+        assert_eq!(tls.vaddr, tls_vaddr);
+        assert_eq!(tls.filesz, tls_filesz);
+        assert_eq!(tls.memsz, tls_memsz);
+        assert_eq!(tls.align, tls_align);
+    }
+
+    #[test]
+    fn tls_missing_when_no_pt_tls() {
+        let elf = build_elf(
+            ET_SCE_DYNEXEC,
+            0,
+            &[(PT_LOAD, PF_R | PF_X, 0x1000, 0x800000000, 0x100, 0x100)],
+            &[&[0xCC; 0x100]],
+        );
+        let module = load_elf("no_tls.elf", &elf).unwrap();
+        assert!(module.tls.is_none());
+    }
+
+    #[test]
+    fn tls_zero_size_preserves_metadata() {
+        let phdr_count = 2u16;
+        let phdr_size: usize = 56;
+        let phdr_offset: usize = 64;
+        let phdr_end = phdr_offset + phdr_count as usize * phdr_size;
+        let load_offset = phdr_end;
+
+        let mut buf = vec![0u8; load_offset + 0x100];
+        buf[0..4].copy_from_slice(&ELF_MAGIC);
+        buf[EI_CLASS] = ELFCLASS64;
+        buf[EI_DATA] = ELFDATA2LSB;
+        buf[EI_VERSION] = 1;
+        put_u16(&mut buf, 16, ET_SCE_DYNEXEC);
+        put_u16(&mut buf, 18, EM_X86_64);
+        put_u32(&mut buf, 20, 1);
+        put_u64(&mut buf, 24, 0);
+        put_u64(&mut buf, 32, phdr_offset as u64);
+        put_u16(&mut buf, 52, 64);
+        put_u16(&mut buf, 54, phdr_size as u16);
+        put_u16(&mut buf, 56, phdr_count);
+
+        // PT_LOAD
+        put_u32(&mut buf, phdr_offset, PT_LOAD);
+        put_u32(&mut buf, phdr_offset + 4, PF_R | PF_X);
+        put_u64(&mut buf, phdr_offset + 8, load_offset as u64);
+        put_u64(&mut buf, phdr_offset + 16, 0x800000000);
+        put_u64(&mut buf, phdr_offset + 24, 0x800000000);
+        put_u64(&mut buf, phdr_offset + 32, 0x100);
+        put_u64(&mut buf, phdr_offset + 40, 0x100);
+        put_u64(&mut buf, phdr_offset + 48, 0x1000);
+
+        // PT_TLS with zero filesz and memsz
+        let ph2 = phdr_offset + phdr_size;
+        put_u32(&mut buf, ph2, PT_TLS);
+        put_u32(&mut buf, ph2 + 4, PF_R);
+        put_u64(&mut buf, ph2 + 8, 0);
+        put_u64(&mut buf, ph2 + 16, 0x800020000);
+        put_u64(&mut buf, ph2 + 24, 0x800020000);
+        put_u64(&mut buf, ph2 + 32, 0);
+        put_u64(&mut buf, ph2 + 40, 0);
+        put_u64(&mut buf, ph2 + 48, 1);
+
+        buf[load_offset..load_offset + 0x100].fill(0xCC);
+
+        let module = load_elf("zero_tls.elf", &buf).unwrap();
+        let tls = module.tls.expect("expected TLS info for zero-size TLS");
+        assert_eq!(tls.filesz, 0);
+        assert_eq!(tls.memsz, 0);
+        assert_eq!(tls.vaddr, 0x800020000);
     }
 
     #[test]

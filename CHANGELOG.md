@@ -7,6 +7,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [Unreleased]
 
 ### Added
+- **`ps5rs batch-load <games_dir>` command**: discovers game subdirectories, runs full load pipeline per game (eboot + PRX deps), writes per-game `GameLoadReport` JSON + aggregate `LoadSummary`, with `--json` stdout mode for piped consumption
+- **`ps5rs export-scan <dir>` command**: walks directory for `*.prx` files, parses ELF, extracts exports, writes `<module>.exports.json` for offline resolution database
+- **Dashboard Loader Analytics (Phase 5)**: new "Load Coverage" tab in dashboard showing overview cards (games loaded, failed, modules, exports, resolution rate), per-game triple bars (resolved/known/stubbed), most unavailable modules ranking, and games with highest stub rate
+- **Per-game loader details in dashboard**: `GameDetail` gains `load_state`, `imports_resolved/known/stubbed`, `loader_tls`, `init_array_count`, `fini_array_count`, `unavailable_modules` — visible in detail panel when loader data exists
+- **`DashboardData::inject_loader_data()`**: reads summary.json + per-game reports from `analysis/load/` and matches by display name to populate per-game loader stats
+- **`loader_summary` on `DashboardData`**: optional aggregate section with `LoaderSummary` (total/successful/failed, module/export counts, import breakdown, top unavailable, worst games)
+
+### Changed
+- **`ps5rs load` refactored**: `cmd_load()` extracted to `crates/ps5-cli/src/load.rs`; `ModuleInfo`, `GraphInfo`, `Totals`, `LoadReport`, `build_report()` all `pub(crate)` for reuse by `batch_load`
+- **Loader pipeline improvements**: `ModuleGraph` tracks unavailable modules per-game; `CrossModuleResolver` exposes per-library breakdown counts; TLS/init/fini metadata propagated to reports
+- **Dashboard HTML template**: regenerated `analysis/dashboard/index.html` with Load Coverage tab (hidden when no loader data, backward compatible)
+
+## [0.2.0] - 2026-07-29
+
+### Added
 - **ps5-loader crate**: PS5 ELF/PRX virtual loader with four-phase pipeline (Map → Relocate → Link → Init), relocation engine, import resolver, and multi-module dependency loading
 - **Offline export resolution**: `OfflineExportTable` loads `./system_modules/*.exports.json` for NID→name lookup of system PRXes not available at analysis time; `CrossModuleResolver` uses 3-tier resolution (runtime exports → offline exports → stub allocator); `ResolveResult::Known(u64)` variant separates offline-known from unknown stubs; per-module `imports_known` and aggregate `ModuleContext::known_imports` counters
 - **`ps5rs exports` CLI command**: `exports <file> [--search <query>] [--json] [-o OUTPUT]` lists exported symbols (NID, name, address, size); `--search` for substring filtering; `--json` for firmware export database builder format (`{ module, exports: [{ nid, name, address, size }] }`)

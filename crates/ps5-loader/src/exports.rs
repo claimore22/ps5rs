@@ -63,13 +63,12 @@ impl ExportTable {
                 continue;
             };
             let address = module.load_bias.wrapping_add(sym.st_value);
-            let (library, name) = if let Some((name_part, lib_part)) =
-                sym.resolved_name.split_once('#')
-            {
-                (lib_part.to_string(), Some(name_part.to_string()))
-            } else {
-                (String::new(), Some(sym.resolved_name.clone()))
-            };
+            let (library, name) =
+                if let Some((name_part, lib_part)) = sym.resolved_name.split_once('#') {
+                    (lib_part.to_string(), Some(name_part.to_string()))
+                } else {
+                    (String::new(), Some(sym.resolved_name.clone()))
+                };
             self.exports.insert(
                 nid,
                 ExportEntry {
@@ -130,10 +129,20 @@ mod tests {
             soname: None,
             aliases: Vec::new(),
             state: crate::mapper::ModuleState::Mapped,
+            tls: None,
+            init_va: 0,
+            init_array_va: 0,
+            init_array_sz: 0,
+            fini_va: 0,
+            fini_array_va: 0,
+            fini_array_sz: 0,
+            preinit_array_va: 0,
+            preinit_array_sz: 0,
             exports_count: 0,
             imports_resolved: 0,
             imports_known: 0,
             imports_stubbed: 0,
+            per_library_imports: Vec::new(),
         }
     }
 
