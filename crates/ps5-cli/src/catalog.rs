@@ -112,7 +112,9 @@ pub(crate) fn cmd_sync(key: Option<&str>, catalog_dir: &Path) {
     let key = resolve_supabase_key(key).unwrap_or_else(|| SUPABASE_PUBLISHABLE_KEY.to_string());
 
     let supabase_url = SUPABASE_DEFAULT_URL;
-    let url = format!("{supabase_url}/rest/v1/catalog_export?select=nid,name,library,tag,source&order=nid");
+    let url = format!(
+        "{supabase_url}/rest/v1/catalog_export?select=nid,name,library,tag,source&order=nid"
+    );
 
     std::fs::create_dir_all(catalog_dir).expect("failed to create catalog directory");
 
@@ -153,7 +155,9 @@ pub(crate) fn cmd_sync(key: Option<&str>, catalog_dir: &Path) {
         std::process::exit(1);
     });
 
-    writer.write_record(["nid", "name", "library", "tag", "source"]).unwrap();
+    writer
+        .write_record(["nid", "name", "library", "tag", "source"])
+        .unwrap();
     for row in &rows {
         writer.serialize(row).unwrap();
     }
@@ -235,10 +239,17 @@ fn check_github_user(username: &str) -> Option<bool> {
     }
 }
 
-pub(crate) fn cmd_push_unknown(input: &Path, key: Option<&str>, url: Option<&str>, submitter: Option<&str>) {
+pub(crate) fn cmd_push_unknown(
+    input: &Path,
+    key: Option<&str>,
+    url: Option<&str>,
+    submitter: Option<&str>,
+) {
     let Some(key) = resolve_supabase_key(key) else {
         eprintln!("{KEY_INSTRUCTIONS}");
-        eprintln!("push-unknown requires a Supabase key (reads use the default, writes require explicit configuration).");
+        eprintln!(
+            "push-unknown requires a Supabase key (reads use the default, writes require explicit configuration)."
+        );
         std::process::exit(1);
     };
 
@@ -307,7 +318,10 @@ pub(crate) fn cmd_push_unknown(input: &Path, key: Option<&str>, url: Option<&str
         return;
     }
 
-    eprintln!("Submitting {} unknown NIDs for review...", submissions.len());
+    eprintln!(
+        "Submitting {} unknown NIDs for review...",
+        submissions.len()
+    );
 
     let mut submitted = 0usize;
     let mut errors = 0usize;

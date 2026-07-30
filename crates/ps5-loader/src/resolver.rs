@@ -1,5 +1,8 @@
+use std::collections::HashMap;
+
 use crate::exports::ExportTable;
 use crate::imports::{ImportError, ImportRequest, ImportResolver, ResolveResult, StubAllocator};
+use crate::mapper::LibraryImportCounts;
 use crate::offline::OfflineExportTable;
 
 /// An [`ImportResolver`] that checks three sources in order:
@@ -14,6 +17,7 @@ pub struct CrossModuleResolver<'a> {
     resolved_count: u32,
     known_count: u32,
     stubbed_count: u32,
+    per_library: HashMap<String, [u32; 3]>,
 }
 
 impl<'a> CrossModuleResolver<'a> {
@@ -29,6 +33,7 @@ impl<'a> CrossModuleResolver<'a> {
             resolved_count: 0,
             known_count: 0,
             stubbed_count: 0,
+            per_library: HashMap::new(),
         }
     }
 
@@ -43,14 +48,32 @@ impl<'a> CrossModuleResolver<'a> {
     pub fn stubbed_count(&self) -> u32 {
         self.stubbed_count
     }
+
+    pub fn per_library_imports(&self) -> Vec<LibraryImportCounts> {
+        let mut result: Vec<LibraryImportCounts> = self
+            .per_library
+            .iter()
+            .map(|(lib, counts)| LibraryImportCounts {
+                library: lib.clone(),
+                resolved: counts[0],
+                known: counts[1],
+                stubbed: counts[2],
+            })
+            .collect();
+        result.sort_by(|a, b| a.library.cmp(&b.library));
+        result
+    }
 }
 
 impl ImportResolver for CrossModuleResolver<'_> {
     fn resolve(&mut self, request: &ImportRequest) -> Result<ResolveResult, ImportError> {
+        let lib = request.library.as_deref().unwrap_or("?");
         // 1. Runtime exports (modules actually loaded)
         if let Some(nid) = request.nid {
             if let Some(entry) = self.exports.get_by_nid(nid) {
                 self.resolved_count += 1;
+                let e = self.per_library.entry(lib.to_string()).or_insert([0, 0, 0]);
+                e[0] += 1;
                 return Ok(ResolveResult::Resolved(entry.address));
             }
         }
@@ -59,6 +82,8 @@ impl ImportResolver for CrossModuleResolver<'_> {
             if let Some(offline) = self.offline {
                 if offline.get_by_nid(nid).is_some() {
                     self.known_count += 1;
+                    let e = self.per_library.entry(lib.to_string()).or_insert([0, 0, 0]);
+                    e[1] += 1;
                     let addr = self.stubs.resolve(request)?.address();
                     return Ok(ResolveResult::Known(addr));
                 }
@@ -66,6 +91,8 @@ impl ImportResolver for CrossModuleResolver<'_> {
         }
         // 3. Fallback to stub
         let result = self.stubs.resolve(request)?;
+        let e = self.per_library.entry(lib.to_string()).or_insert([0, 0, 0]);
+        e[2] += 1;
         self.stubbed_count += 1;
         Ok(result)
     }
@@ -149,10 +176,20 @@ mod tests {
             soname: None,
             aliases: Vec::new(),
             state: crate::mapper::ModuleState::Mapped,
+            tls: None,
+            init_va: 0,
+            init_array_va: 0,
+            init_array_sz: 0,
+            fini_va: 0,
+            fini_array_va: 0,
+            fini_array_sz: 0,
+            preinit_array_va: 0,
+            preinit_array_sz: 0,
             exports_count: 0,
             imports_resolved: 0,
             imports_known: 0,
             imports_stubbed: 0,
+            per_library_imports: Vec::new(),
         };
         let elf = ps5_elf::ElfImage {
             data: &[],

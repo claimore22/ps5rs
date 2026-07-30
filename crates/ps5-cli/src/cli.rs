@@ -113,6 +113,28 @@ pub enum Commands {
         #[arg(long)]
         json: bool,
     },
+    /// Batch-scan ELF/PRX files and produce offline export files for the loader
+    ExportScan {
+        /// Directory containing ELF/PRX/SELF files to scan
+        path: PathBuf,
+        /// Output directory for .exports.json files
+        #[arg(short, long, default_value = "system_modules")]
+        output: PathBuf,
+    },
+    /// Batch-load all games: run virtual loader, collect reports, aggregate stats
+    BatchLoad {
+        /// Games directory containing subdirectories with eboot.bin
+        path: PathBuf,
+        /// Output directory for per-game reports and summary
+        #[arg(short, long, default_value = "analysis/load")]
+        output: PathBuf,
+        /// Path to offline export directory (system_modules)
+        #[arg(long = "offline-dir", default_value = "system_modules")]
+        offline_dir: PathBuf,
+        /// Print combined JSON to stdout instead of writing files
+        #[arg(long)]
+        json: bool,
+    },
     /// Manage NID catalog (sync from Supabase, push unknowns)
     Catalog {
         #[command(subcommand)]

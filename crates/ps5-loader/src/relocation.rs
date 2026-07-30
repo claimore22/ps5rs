@@ -122,9 +122,10 @@ fn build_import_request(
     elf: &ps5_elf::ElfImage,
     reloc: &ps5_elf::RelaEntry,
 ) -> Result<ImportRequest> {
-    let sym = elf.symbols.get(reloc.r_sym() as usize).ok_or_else(|| {
-        RelocationError(format!("symbol index {} not found", reloc.r_sym()))
-    })?;
+    let sym = elf
+        .symbols
+        .get(reloc.r_sym() as usize)
+        .ok_or_else(|| RelocationError(format!("symbol index {} not found", reloc.r_sym())))?;
 
     let (library, import_name) =
         if let Some((name_part, lib_part)) = sym.resolved_name.split_once('#') {
@@ -188,10 +189,7 @@ pub fn apply_relocations_with(
             .memory
             .write(address, &value.to_le_bytes())
             .map_err(|e| {
-                RelocationError(format!(
-                    "RELATIVE write failed at 0x{:x}: {}",
-                    address, e
-                ))
+                RelocationError(format!("RELATIVE write failed at 0x{:x}: {}", address, e))
             })?;
         records.push(RelocationRecord {
             address,
@@ -214,10 +212,7 @@ pub fn apply_relocations_with(
                 .memory
                 .write(address, &value.to_le_bytes())
                 .map_err(|e| {
-                    RelocationError(format!(
-                        "RELATIVE write failed at 0x{:x}: {}",
-                        address, e
-                    ))
+                    RelocationError(format!("RELATIVE write failed at 0x{:x}: {}", address, e))
                 })?;
             applied = true;
         } else if kind == RelocationKind::Abs64 {
@@ -277,18 +272,15 @@ pub fn apply_relocations_with(
         } else if let Some(ref mut res) = resolver {
             if kind == RelocationKind::GlobDat || kind == RelocationKind::JumpSlot {
                 let request = build_import_request(elf, reloc)?;
-                let result = res.resolve(&request).map_err(|e| {
-                    RelocationError(format!("import resolve failed: {e}"))
-                })?;
+                let result = res
+                    .resolve(&request)
+                    .map_err(|e| RelocationError(format!("import resolve failed: {e}")))?;
                 let value = result.address();
                 module
                     .memory
                     .write(address, &value.to_le_bytes())
                     .map_err(|e| {
-                        RelocationError(format!(
-                            "import write at 0x{:x}: {}",
-                            address, e
-                        ))
+                        RelocationError(format!("import write at 0x{:x}: {}", address, e))
                     })?;
                 applied = true;
                 tracing::debug!(
@@ -390,10 +382,20 @@ mod tests {
             soname: None,
             aliases: Vec::new(),
             state: crate::mapper::ModuleState::Mapped,
+            tls: None,
+            init_va: 0,
+            init_array_va: 0,
+            init_array_sz: 0,
+            fini_va: 0,
+            fini_array_va: 0,
+            fini_array_sz: 0,
+            preinit_array_va: 0,
+            preinit_array_sz: 0,
             exports_count: 0,
             imports_resolved: 0,
             imports_known: 0,
             imports_stubbed: 0,
+            per_library_imports: Vec::new(),
         }
     }
 
@@ -559,9 +561,14 @@ mod tests {
 
     fn make_null_sym() -> ps5_elf::SymEntry {
         ps5_elf::SymEntry {
-            st_name: 0, st_info: 0, st_other: 0, st_shndx: 0,
-            st_value: 0, st_size: 0,
-            resolved_name: String::new(), is_import: false,
+            st_name: 0,
+            st_info: 0,
+            st_other: 0,
+            st_shndx: 0,
+            st_value: 0,
+            st_size: 0,
+            resolved_name: String::new(),
+            is_import: false,
         }
     }
 
@@ -619,8 +626,7 @@ mod tests {
             vec![make_null_sym(), make_sym("sceKernelSleep#libkernel")],
         );
         let mut stubber = StubAllocator::new(0xFFFF_0000_0000_0000);
-        let summary =
-            apply_relocations_with(&mut module, &elf, Some(&mut stubber)).unwrap();
+        let summary = apply_relocations_with(&mut module, &elf, Some(&mut stubber)).unwrap();
         assert_eq!(summary.abs64, 1);
         assert_eq!(summary.stubbed_imports, 1);
         assert_eq!(summary.resolved_imports, 0);
@@ -702,7 +708,10 @@ mod tests {
         let summary = apply_relocations(&mut module, &elf).unwrap();
         assert_eq!(summary, RelocationSummary::default());
         assert!(module.relocations.is_empty());
-        assert_eq!(module.relocation_summary, Some(RelocationSummary::default()));
+        assert_eq!(
+            module.relocation_summary,
+            Some(RelocationSummary::default())
+        );
     }
 
     #[test]
@@ -835,10 +844,20 @@ mod tests {
             soname: None,
             aliases: Vec::new(),
             state: crate::mapper::ModuleState::Mapped,
+            tls: None,
+            init_va: 0,
+            init_array_va: 0,
+            init_array_sz: 0,
+            fini_va: 0,
+            fini_array_va: 0,
+            fini_array_sz: 0,
+            preinit_array_va: 0,
+            preinit_array_sz: 0,
             exports_count: 0,
             imports_resolved: 0,
             imports_known: 0,
             imports_stubbed: 0,
+            per_library_imports: Vec::new(),
         };
 
         let r_offset = pref_region_vaddr + 0x100;
@@ -860,8 +879,7 @@ mod tests {
             vec![make_sym("sceKernelSleep#libkernel")],
         );
         let mut stubber = StubAllocator::new(0xFFFF_0000_0000_0000);
-        let summary =
-            apply_relocations_with(&mut module, &elf, Some(&mut stubber)).unwrap();
+        let summary = apply_relocations_with(&mut module, &elf, Some(&mut stubber)).unwrap();
         assert_eq!(summary.glob_dat, 1);
         assert_eq!(summary.stubbed_imports, 1);
         assert_eq!(summary.resolved_imports, 0);
@@ -880,8 +898,7 @@ mod tests {
             vec![make_sym("sceKernelSleep#libkernel")],
         );
         let mut stubber = StubAllocator::new(0xFFFF_0000_0000_0000);
-        let summary =
-            apply_relocations_with(&mut module, &elf, Some(&mut stubber)).unwrap();
+        let summary = apply_relocations_with(&mut module, &elf, Some(&mut stubber)).unwrap();
         assert_eq!(summary.jump_slot, 1);
         assert_eq!(summary.stubbed_imports, 1);
         let bytes = module.memory.read(0x800000100, 8).unwrap();
@@ -915,8 +932,7 @@ mod tests {
             vec![make_sym("sceKernelSleep#libkernel")],
         );
         let mut stubber = StubAllocator::new(0xFFFF_0000_0000_0000);
-        let summary =
-            apply_relocations_with(&mut module, &elf, Some(&mut stubber)).unwrap();
+        let summary = apply_relocations_with(&mut module, &elf, Some(&mut stubber)).unwrap();
         assert_eq!(summary.glob_dat, 2);
         assert_eq!(summary.stubbed_imports, 2);
         let bytes = module.memory.read(0x800000100, 8).unwrap();
@@ -929,13 +945,9 @@ mod tests {
     #[test]
     fn import_resolver_invalid_symbol_errors() {
         let mut module = make_module(0, 0x800000000, 0x1000, 0x00);
-        let elf = make_elf_sym(
-            vec![make_reloc_with_sym(0x800000100, 6, 99, 0)],
-            vec![],
-        );
+        let elf = make_elf_sym(vec![make_reloc_with_sym(0x800000100, 6, 99, 0)], vec![]);
         let mut stubber = StubAllocator::new(0xFFFF_0000_0000_0000);
-        let err =
-            apply_relocations_with(&mut module, &elf, Some(&mut stubber)).unwrap_err();
+        let err = apply_relocations_with(&mut module, &elf, Some(&mut stubber)).unwrap_err();
         assert!(err.to_string().contains("symbol index 99 not found"));
     }
 
@@ -953,8 +965,7 @@ mod tests {
             ],
         );
         let mut stubber = StubAllocator::new(0xFFFF_0000_0000_0000);
-        let summary =
-            apply_relocations_with(&mut module, &elf, Some(&mut stubber)).unwrap();
+        let summary = apply_relocations_with(&mut module, &elf, Some(&mut stubber)).unwrap();
         assert_eq!(summary.glob_dat, 2);
         assert_eq!(summary.stubbed_imports, 2);
         let bytes = module.memory.read(0x800000100, 8).unwrap();

@@ -258,18 +258,22 @@ mod tests {
 
     #[test]
     fn find_region_inside() {
-        let pm = ProcessMemory::new(vec![
-            make_region(0x800000000, 0x1000, SegmentFlags::from_p_flags(5)),
-        ]);
+        let pm = ProcessMemory::new(vec![make_region(
+            0x800000000,
+            0x1000,
+            SegmentFlags::from_p_flags(5),
+        )]);
         let r = pm.find_region(0x800000500).unwrap();
         assert_eq!(r.vaddr, 0x800000000);
     }
 
     #[test]
     fn find_region_unmapped() {
-        let pm = ProcessMemory::new(vec![
-            make_region(0x800000000, 0x1000, SegmentFlags::from_p_flags(5)),
-        ]);
+        let pm = ProcessMemory::new(vec![make_region(
+            0x800000000,
+            0x1000,
+            SegmentFlags::from_p_flags(5),
+        )]);
         assert!(pm.find_region(0x800001000).is_none());
     }
 
@@ -290,9 +294,11 @@ mod tests {
 
     #[test]
     fn read_unmapped_address() {
-        let pm = ProcessMemory::new(vec![
-            make_region(0x800000000, 0x100, SegmentFlags::from_p_flags(4)),
-        ]);
+        let pm = ProcessMemory::new(vec![make_region(
+            0x800000000,
+            0x100,
+            SegmentFlags::from_p_flags(4),
+        )]);
         let err = pm.read(0x800000200, 1).unwrap_err();
         assert_eq!(err.kind, MemoryErrorKind::UnmappedAddress);
     }
@@ -309,9 +315,11 @@ mod tests {
 
     #[test]
     fn write_within_region() {
-        let mut pm = ProcessMemory::new(vec![
-            make_region(0x800000000, 0x100, SegmentFlags::from_p_flags(6)),
-        ]);
+        let mut pm = ProcessMemory::new(vec![make_region(
+            0x800000000,
+            0x100,
+            SegmentFlags::from_p_flags(6),
+        )]);
         pm.write(0x800000010, &[0xFF; 0x10]).unwrap();
         let bytes = pm.read(0x800000010, 0x10).unwrap();
         assert_eq!(bytes, &[0xFF; 0x10]);
@@ -319,9 +327,11 @@ mod tests {
 
     #[test]
     fn write_unmapped_address() {
-        let mut pm = ProcessMemory::new(vec![
-            make_region(0x800000000, 0x100, SegmentFlags::from_p_flags(6)),
-        ]);
+        let mut pm = ProcessMemory::new(vec![make_region(
+            0x800000000,
+            0x100,
+            SegmentFlags::from_p_flags(6),
+        )]);
         let err = pm.write(0x800000200, &[0xFF]).unwrap_err();
         assert_eq!(err.kind, MemoryErrorKind::UnmappedAddress);
     }
@@ -338,9 +348,11 @@ mod tests {
 
     #[test]
     fn write_empty_is_noop() {
-        let mut pm = ProcessMemory::new(vec![
-            make_region(0x800000000, 0x100, SegmentFlags::from_p_flags(6)),
-        ]);
+        let mut pm = ProcessMemory::new(vec![make_region(
+            0x800000000,
+            0x100,
+            SegmentFlags::from_p_flags(6),
+        )]);
         pm.write(0x800000000, &[]).unwrap();
         let bytes = pm.read(0x800000000, 0x10).unwrap();
         assert_eq!(bytes, &[0xAA; 0x10]);
@@ -348,21 +360,9 @@ mod tests {
 
     #[test]
     fn segment_flags_display() {
-        assert_eq!(
-            SegmentFlags::from_p_flags(7).to_string(),
-            "RWX"
-        );
-        assert_eq!(
-            SegmentFlags::from_p_flags(5).to_string(),
-            "R-X"
-        );
-        assert_eq!(
-            SegmentFlags::from_p_flags(4).to_string(),
-            "R--"
-        );
-        assert_eq!(
-            SegmentFlags::from_p_flags(0).to_string(),
-            "---"
-        );
+        assert_eq!(SegmentFlags::from_p_flags(7).to_string(), "RWX");
+        assert_eq!(SegmentFlags::from_p_flags(5).to_string(), "R-X");
+        assert_eq!(SegmentFlags::from_p_flags(4).to_string(), "R--");
+        assert_eq!(SegmentFlags::from_p_flags(0).to_string(), "---");
     }
 }

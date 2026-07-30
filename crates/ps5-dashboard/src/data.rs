@@ -3,6 +3,7 @@ use ps5_analysis::reports::build_engine_hints;
 use ps5_image::{LibVersionEntry, SegmentType};
 use serde::{Deserialize, Serialize};
 use std::collections::{BTreeSet, HashMap, HashSet};
+use std::path::Path;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct DashboardData {
@@ -32,6 +33,8 @@ pub struct DashboardData {
     pub sce_heatmap: HeatmapData,
     #[serde(default, skip_serializing_if = "Vec::is_empty")]
     pub sce_library_versions: Vec<DashboardLibraryVersion>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub loader_summary: Option<LoaderSummary>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -107,6 +110,22 @@ pub struct GameDetail {
     pub detected_versions: Vec<String>,
     #[serde(default, skip_serializing_if = "Vec::is_empty")]
     pub lib_versions: Vec<LibVersionEntry>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub load_state: Option<String>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub imports_resolved: Option<u32>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub imports_known: Option<u32>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub imports_stubbed: Option<u32>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub loader_tls: Option<LoaderTlsInfo>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub init_array_count: Option<u32>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub fini_array_count: Option<u32>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub unavailable_modules: Vec<String>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -306,6 +325,157 @@ pub struct DashboardLibraryVersion {
     pub game_ids: Vec<String>,
 }
 
+#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+pub struct LoaderTlsInfo {
+    pub has_tls: bool,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+pub struct LoaderSummary {
+    pub total_games: usize,
+    pub successful: usize,
+    pub failed: usize,
+    pub total_modules: usize,
+    pub total_exports: usize,
+    pub total_imports_resolved: u64,
+    pub total_imports_known: u64,
+    pub total_imports_stubbed: u64,
+    pub avg_resolution_rate: f64,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub top_unavailable: Vec<LoaderUnavailableEntry>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub worst_games: Vec<LoaderWorstEntry>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct LoaderUnavailableEntry {
+    pub module: String,
+    pub game_count: usize,
+    pub games: Vec<String>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct LoaderWorstEntry {
+    pub game: String,
+    pub stubbed: u32,
+    pub total: u32,
+    pub rate: f64,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+struct LoaderReportFileTotals {
+    resolved: u32,
+    known: u32,
+    stubbed: u32,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+struct LoaderReportFileGraph {
+    unavailable: Vec<String>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+struct LoaderReportFileModule {
+    name: String,
+    module_type: String,
+    state: String,
+    has_tls: bool,
+    init_array_sz: u64,
+    fini_array_sz: u64,
+    init_va: u64,
+    fini_va: u64,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+struct LoaderReportFile {
+    totals: LoaderReportFileTotals,
+    graph: LoaderReportFileGraph,
+    modules: Vec<LoaderReportFileModule>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+struct GameLoadReportFile {
+    game: String,
+    load_report: Option<LoaderReportFile>,
+}
+
+impl DashboardData {
+    pub fn inject_loader_summary(&mut self, summary: LoaderSummary) {
+        self.loader_summary = Some(summary);
+    }
+
+    pub fn inject_loader_data(&mut self, path: &Path) {
+        let summary_path = path.join("summary.json");
+        if !summary_path.exists() {
+            return;
+        }
+        let summary_data = match std::fs::read_to_string(&summary_path) {
+            Ok(d) => d,
+            Err(_) => return,
+        };
+        let summary: LoaderSummary = match serde_json::from_str(&summary_data) {
+            Ok(s) => s,
+            Err(_) => return,
+        };
+        self.loader_summary = Some(summary);
+
+        let games_dir = path.join("games");
+        if !games_dir.is_dir() {
+            return;
+        }
+        let Ok(entries) = std::fs::read_dir(&games_dir) else {
+            return;
+        };
+        for entry in entries.flatten() {
+            let file_path = entry.path();
+            if file_path.extension().is_none_or(|e| e != "json") {
+                continue;
+            }
+            let content = match std::fs::read_to_string(&file_path) {
+                Ok(c) => c,
+                Err(_) => continue,
+            };
+            let report: GameLoadReportFile = match serde_json::from_str(&content) {
+                Ok(r) => r,
+                Err(_) => continue,
+            };
+            let Some(load_report) = report.load_report else {
+                continue;
+            };
+            let eboot = load_report.modules.iter().find(|m| m.module_type == "Eboot");
+
+            let load_state = eboot.map(|m| m.state.clone());
+            let imports_resolved = Some(load_report.totals.resolved);
+            let imports_known = Some(load_report.totals.known);
+            let imports_stubbed = Some(load_report.totals.stubbed);
+            let loader_tls = eboot.filter(|m| m.has_tls).map(|_| LoaderTlsInfo { has_tls: true });
+            let init_array_count = eboot
+                .filter(|m| m.init_array_sz > 0)
+                .map(|_| (load_report.modules.iter().filter(|m| m.init_array_sz > 0).count() as u32).max(1));
+            let fini_array_count = eboot
+                .filter(|m| m.fini_array_sz > 0)
+                .map(|_| (load_report.modules.iter().filter(|m| m.fini_array_sz > 0).count() as u32).max(1));
+            let unavailable_modules = load_report.graph.unavailable.clone();
+
+            for detail in &mut self.game_details {
+                if detail.title_name.as_deref() == Some(&report.game)
+                    || detail.name == report.game
+                {
+                    detail.load_state = load_state;
+                    detail.imports_resolved = imports_resolved;
+                    detail.imports_known = imports_known;
+                    detail.imports_stubbed = imports_stubbed;
+                    detail.loader_tls = loader_tls.clone();
+                    detail.init_array_count = init_array_count;
+                    detail.fini_array_count = fini_array_count;
+                    detail.unavailable_modules = unavailable_modules.clone();
+                    break;
+                }
+            }
+        }
+    }
+}
+
 pub fn compute(ds: &AnalysisDataset) -> DashboardData {
     let meta = DashboardMeta {
         generated_at: now_iso8601(),
@@ -403,6 +573,7 @@ pub fn compute(ds: &AnalysisDataset) -> DashboardData {
         sce_library_stats,
         sce_heatmap,
         sce_library_versions,
+        loader_summary: None,
     }
 }
 
@@ -594,6 +765,14 @@ fn compute_game_details(
                 sdk_hints,
                 detected_versions,
                 lib_versions: doc.image.lib_versions.clone(),
+                load_state: None,
+                imports_resolved: None,
+                imports_known: None,
+                imports_stubbed: None,
+                loader_tls: None,
+                init_array_count: None,
+                fini_array_count: None,
+                unavailable_modules: Vec::new(),
             }
         })
         .collect()
@@ -1161,10 +1340,7 @@ fn categorize_sce_library(name: &str) -> SceLibraryCategory {
         || name.contains("Trigger")
     {
         SceLibraryCategory::Input
-    } else if name.contains("Net")
-        || name.contains("Http")
-        || name.contains("Ssl")
-    {
+    } else if name.contains("Net") || name.contains("Http") || name.contains("Ssl") {
         SceLibraryCategory::Network
     } else if name.contains("SaveData")
         || name.contains("Storage")
@@ -1172,10 +1348,7 @@ fn categorize_sce_library(name: &str) -> SceLibraryCategory {
         || name.contains("Ngs2")
     {
         SceLibraryCategory::Storage
-    } else if name.contains("Np")
-        || name.contains("User")
-        || name.contains("NpMatching")
-    {
+    } else if name.contains("Np") || name.contains("User") || name.contains("NpMatching") {
         SceLibraryCategory::User
     } else if name.contains("System")
         || name.contains("AppContent")
@@ -1191,7 +1364,12 @@ fn categorize_sce_library(name: &str) -> SceLibraryCategory {
 fn compute_sce_stats(ds: &AnalysisDataset) -> Vec<SceLibraryStats> {
     let mut lib_data: HashMap<
         String,
-        (Vec<String>, Vec<String>, usize, HashMap<String, SceLibVersionEntry>),
+        (
+            Vec<String>,
+            Vec<String>,
+            usize,
+            HashMap<String, SceLibVersionEntry>,
+        ),
     > = HashMap::new();
 
     for (name, doc) in &ds.images {
@@ -1217,15 +1395,14 @@ fn compute_sce_stats(ds: &AnalysisDataset) -> Vec<SceLibraryStats> {
 
             for lv in &doc.image.lib_versions {
                 if lv.name == *lib {
-                    let v_entry =
-                        versions.entry(lv.version_string.clone()).or_insert_with(|| {
-                            SceLibVersionEntry {
-                                version_string: lv.version_string.clone(),
-                                version_raw: lv.version_raw,
-                                game_count: 0,
-                                games: Vec::new(),
-                                game_ids: Vec::new(),
-                            }
+                    let v_entry = versions
+                        .entry(lv.version_string.clone())
+                        .or_insert_with(|| SceLibVersionEntry {
+                            version_string: lv.version_string.clone(),
+                            version_raw: lv.version_raw,
+                            game_count: 0,
+                            games: Vec::new(),
+                            game_ids: Vec::new(),
                         });
                     if !v_entry.game_ids.contains(name) {
                         v_entry.game_ids.push(name.clone());

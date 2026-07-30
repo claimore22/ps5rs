@@ -1,9 +1,11 @@
 use clap::Parser;
 
 mod analyze;
+mod batch_load;
 mod catalog;
 mod cli;
 mod dataset;
+mod export_scan;
 mod extract;
 mod inspect;
 mod load;
@@ -54,7 +56,18 @@ fn main() {
             search,
             output,
         } => inspect::cmd_exports(&file, json, &search, &output),
-        Commands::Load { file, prx_dir, json } => load::cmd_load(&file, prx_dir, json),
+        Commands::Load {
+            file,
+            prx_dir,
+            json,
+        } => load::cmd_load(&file, prx_dir, json),
+        Commands::ExportScan { path, output } => export_scan::cmd_export_scan(&path, &output),
+        Commands::BatchLoad {
+            path,
+            output,
+            offline_dir,
+            json,
+        } => batch_load::cmd_batch_load(&path, &output, &offline_dir, json),
         Commands::Strings {
             file,
             min_length,
@@ -66,9 +79,17 @@ fn main() {
             CatalogCommand::Sync { key, catalog_dir } => {
                 catalog::cmd_sync(key.as_deref(), &catalog_dir)
             }
-            CatalogCommand::PushUnknown { input, key, url, submitter } => {
-                catalog::cmd_push_unknown(&input, key.as_deref(), url.as_deref(), submitter.as_deref())
-            }
+            CatalogCommand::PushUnknown {
+                input,
+                key,
+                url,
+                submitter,
+            } => catalog::cmd_push_unknown(
+                &input,
+                key.as_deref(),
+                url.as_deref(),
+                submitter.as_deref(),
+            ),
         },
     }
 }

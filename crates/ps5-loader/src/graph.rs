@@ -209,10 +209,14 @@ mod tests {
         g.add_edge("eboot.bin", "libc.prx");
         g.add_edge("libc.prx", "libkernel.prx");
         let order = g.topological_sort().unwrap();
-        assert!(order.iter().position(|n| n == "libkernel.prx").unwrap()
-            < order.iter().position(|n| n == "libc.prx").unwrap());
-        assert!(order.iter().position(|n| n == "libc.prx").unwrap()
-            < order.iter().position(|n| n == "eboot.bin").unwrap());
+        assert!(
+            order.iter().position(|n| n == "libkernel.prx").unwrap()
+                < order.iter().position(|n| n == "libc.prx").unwrap()
+        );
+        assert!(
+            order.iter().position(|n| n == "libc.prx").unwrap()
+                < order.iter().position(|n| n == "eboot.bin").unwrap()
+        );
     }
 
     #[test]
@@ -228,10 +232,14 @@ mod tests {
         g.add_edge("libB", "libKernel");
         let order = g.topological_sort().unwrap();
         assert_eq!(order.len(), 4);
-        assert!(order.iter().position(|n| n == "libKernel").unwrap()
-            < order.iter().position(|n| n == "libA").unwrap());
-        assert!(order.iter().position(|n| n == "libKernel").unwrap()
-            < order.iter().position(|n| n == "libB").unwrap());
+        assert!(
+            order.iter().position(|n| n == "libKernel").unwrap()
+                < order.iter().position(|n| n == "libA").unwrap()
+        );
+        assert!(
+            order.iter().position(|n| n == "libKernel").unwrap()
+                < order.iter().position(|n| n == "libB").unwrap()
+        );
     }
 
     #[test]

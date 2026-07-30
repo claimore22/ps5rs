@@ -8,7 +8,7 @@ PS5 binary analysis and virtual loading framework. Parses SELF/ELF/PRX, resolves
 
 ```sh
 cargo build --release
-cargo test --workspace    # 430+ tests
+cargo test --workspace    # 435+ tests
 just check                # fmt + clippy + test (default)
 ```
 
@@ -45,7 +45,7 @@ Dependency direction: `format → {elf, self, nid} → image → analysis → cl
 ## CLI
 
 - Binary: `ps5rs` (from `ps5-cli` crate, `clap` derive API)
-- Subcommand files in `crates/ps5-cli/src/`: `inspect.rs`, `load.rs`, `strings.rs`, `catalog.rs`, etc.
+- Subcommand files in `crates/ps5-cli/src/`: `inspect.rs`, `load.rs`, `strings.rs`, `catalog.rs`, `batch_load.rs`, `export_scan.rs`, etc.
 - `cli.rs` purely declarative (types only, no helpers)
 
 ## Loader Pipeline

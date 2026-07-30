@@ -133,7 +133,7 @@ impl ImportResolver for StubAllocator {
             .next_offset
             .checked_add(STUB_STRIDE)
             .ok_or_else(|| ImportError("stub address overflow".into()))?;
-        
+
         self.cache.insert(key, addr);
 
         Ok(ResolveResult::Stubbed(addr))

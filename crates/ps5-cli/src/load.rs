@@ -2,6 +2,7 @@ use std::path::{Path, PathBuf};
 
 use serde::Serialize;
 
+use ps5_loader::LibraryImportCounts;
 use ps5_loader::OfflineExportTable;
 
 use crate::util::load_file;
@@ -101,7 +102,7 @@ fn find_prx<'a>(name: &'a str, files: &'a [(String, PathBuf)]) -> Option<&'a Pat
 
 /// A serializable report for `--json` output.
 #[derive(Serialize)]
-struct ModuleInfo {
+pub(crate) struct ModuleInfo {
     name: String,
     module_type: String,
     load_bias: u64,
@@ -114,37 +115,52 @@ struct ModuleInfo {
     glob_dat: u32,
     jump_slot: u32,
     abs64: u32,
+    copy: u32,
+    tls_relocations: u32,
+    ifunc: u32,
+    unknown: u32,
     state: String,
+    has_tls: bool,
+    init_va: u64,
+    init_array_va: u64,
+    init_array_sz: u64,
+    fini_va: u64,
+    fini_array_va: u64,
+    fini_array_sz: u64,
+    preinit_array_va: u64,
+    preinit_array_sz: u64,
+    per_library: Vec<LibraryImportCounts>,
 }
 
 #[derive(Serialize)]
-struct GraphInfo {
+pub(crate) struct GraphInfo {
     nodes: Vec<String>,
     unavailable: Vec<String>,
     edges: Vec<EdgeInfo>,
 }
 
 #[derive(Serialize)]
-struct EdgeInfo {
+pub(crate) struct EdgeInfo {
     from: String,
     to: String,
+    status: String,
 }
 
 #[derive(Serialize)]
-struct Totals {
-    modules: usize,
-    resolved: u32,
-    known: u32,
-    stubbed: u32,
-    exports: usize,
-    unavailable: usize,
+pub(crate) struct Totals {
+    pub(crate) modules: usize,
+    pub(crate) resolved: u32,
+    pub(crate) known: u32,
+    pub(crate) stubbed: u32,
+    pub(crate) exports: usize,
+    pub(crate) unavailable: usize,
 }
 
 #[derive(Serialize)]
-struct LoadReport {
-    modules: Vec<ModuleInfo>,
-    graph: GraphInfo,
-    totals: Totals,
+pub(crate) struct LoadReport {
+    pub(crate) modules: Vec<ModuleInfo>,
+    pub(crate) graph: GraphInfo,
+    pub(crate) totals: Totals,
 }
 
 /// Display the module dependency graph as ASCII.
@@ -163,12 +179,12 @@ fn print_graph(ctx: &ps5_loader::ModuleContext) {
             }
         } else {
             for dep in deps {
-                let suffix = if ctx.graph.is_unavailable(dep) {
+                let tag = if ctx.graph.is_unavailable(dep) {
                     " [MISSING]"
                 } else {
-                    ""
+                    " [loaded]"
                 };
-                println!("  {node} → {dep}{suffix}");
+                println!("  {node} → {dep}{tag}");
                 edge_count += 1;
             }
         }
@@ -224,6 +240,61 @@ fn print_modules(ctx: &ps5_loader::ModuleContext) {
                 println!("      SONAME: {soname}");
             }
         }
+        if let Some(ref tls) = module.tls {
+            println!(
+                "      TLS: vaddr={:#018x} filesz={} memsz={} align={}",
+                tls.vaddr, tls.filesz, tls.memsz, tls.align
+            );
+        }
+        if module.init_va > 0 {
+            println!("      INIT: {:#018x}", module.init_va);
+        }
+        if module.init_array_va > 0 {
+            println!(
+                "      INIT_ARRAY: {} entries @ {:#018x}",
+                module.init_array_sz, module.init_array_va
+            );
+        }
+        if module.fini_va > 0 {
+            println!("      FINI: {:#018x}", module.fini_va);
+        }
+        if module.fini_array_va > 0 {
+            println!(
+                "      FINI_ARRAY: {} entries @ {:#018x}",
+                module.fini_array_sz, module.fini_array_va
+            );
+        }
+        if module.preinit_array_va > 0 {
+            println!(
+                "      PREINIT_ARRAY: {} entries @ {:#018x}",
+                module.preinit_array_sz, module.preinit_array_va
+            );
+        }
+        if !module.per_library_imports.is_empty() {
+            println!("      Imports by library:");
+            for lib in &module.per_library_imports {
+                let parts: Vec<String> = std::iter::empty()
+                    .chain(if lib.resolved > 0 {
+                        Some(format!("{} resolved", lib.resolved))
+                    } else {
+                        None
+                    })
+                    .chain(if lib.known > 0 {
+                        Some(format!("{} known", lib.known))
+                    } else {
+                        None
+                    })
+                    .chain(if lib.stubbed > 0 {
+                        Some(format!("{} stubbed", lib.stubbed))
+                    } else {
+                        None
+                    })
+                    .collect();
+                if !parts.is_empty() {
+                    println!("        {} ({})", lib.library, parts.join(", "));
+                }
+            }
+        }
         println!();
     }
 
@@ -237,7 +308,7 @@ fn print_modules(ctx: &ps5_loader::ModuleContext) {
 }
 
 /// Build the serializable report.
-fn build_report(ctx: &ps5_loader::ModuleContext) -> LoadReport {
+pub(crate) fn build_report(ctx: &ps5_loader::ModuleContext) -> LoadReport {
     let modules: Vec<ModuleInfo> = ctx
         .modules
         .iter()
@@ -266,7 +337,21 @@ fn build_report(ctx: &ps5_loader::ModuleContext) -> LoadReport {
                 glob_dat: rs.map(|s| s.glob_dat).unwrap_or(0),
                 jump_slot: rs.map(|s| s.jump_slot).unwrap_or(0),
                 abs64: rs.map(|s| s.abs64).unwrap_or(0),
+                copy: rs.map(|s| s.copy).unwrap_or(0),
+                tls_relocations: rs.map(|s| s.tls).unwrap_or(0),
+                ifunc: rs.map(|s| s.ifunc).unwrap_or(0),
+                unknown: rs.map(|s| s.unknown).unwrap_or(0),
                 state: state_label.to_string(),
+                has_tls: m.tls.is_some(),
+                init_va: m.init_va,
+                init_array_va: m.init_array_va,
+                init_array_sz: m.init_array_sz,
+                fini_va: m.fini_va,
+                fini_array_va: m.fini_array_va,
+                fini_array_sz: m.fini_array_sz,
+                preinit_array_va: m.preinit_array_va,
+                preinit_array_sz: m.preinit_array_sz,
+                per_library: m.per_library_imports.clone(),
             }
         })
         .collect();
@@ -280,9 +365,15 @@ fn build_report(ctx: &ps5_loader::ModuleContext) -> LoadReport {
     let mut edges = Vec::new();
     for node in &nodes {
         for dep in ctx.graph.dependencies(node) {
+            let status = if ctx.graph.is_unavailable(dep) {
+                "missing"
+            } else {
+                "loaded"
+            };
             edges.push(EdgeInfo {
                 from: node.clone(),
                 to: dep.to_string(),
+                status: status.to_string(),
             });
         }
     }
@@ -449,27 +540,22 @@ fn cmd_load_single(path: &PathBuf, data: &[u8], json: bool) {
 
     let offline = if Path::new("system_modules").is_dir() {
         let table = OfflineExportTable::load_from_dir(Path::new("system_modules"));
-        if !table.is_empty() {
-            Some(table)
-        } else {
-            None
-        }
+        if !table.is_empty() { Some(table) } else { None }
     } else {
         None
     };
 
     let empty_exports = ps5_loader::ExportTable::new();
     let summary = if let Some(ref offline_table) = offline {
-        let mut resolver = ps5_loader::CrossModuleResolver::new(
-            &empty_exports,
-            Some(offline_table),
-            &mut stubber,
-        );
-        ps5_loader::apply_relocations_with(&mut module, &elf_image, Some(&mut resolver))
+        let mut resolver =
+            ps5_loader::CrossModuleResolver::new(&empty_exports, Some(offline_table), &mut stubber);
+        let s = ps5_loader::apply_relocations_with(&mut module, &elf_image, Some(&mut resolver))
             .unwrap_or_else(|e| {
                 eprintln!("error: relocation failed: {e}");
                 std::process::exit(1);
-            })
+            });
+        module.per_library_imports = resolver.per_library_imports();
+        s
     } else {
         ps5_loader::apply_relocations_with(&mut module, &elf_image, Some(&mut stubber))
             .unwrap_or_else(|e| {
@@ -495,7 +581,21 @@ fn cmd_load_single(path: &PathBuf, data: &[u8], json: bool) {
             glob_dat: summary.glob_dat,
             jump_slot: summary.jump_slot,
             abs64: summary.abs64,
+            copy: summary.copy,
+            tls_relocations: summary.tls,
+            ifunc: summary.ifunc,
+            unknown: summary.unknown,
             state: "Linked".to_string(),
+            has_tls: module.tls.is_some(),
+            init_va: module.init_va,
+            init_array_va: module.init_array_va,
+            init_array_sz: module.init_array_sz,
+            fini_va: module.fini_va,
+            fini_array_va: module.fini_array_va,
+            fini_array_sz: module.fini_array_sz,
+            preinit_array_va: module.preinit_array_va,
+            preinit_array_sz: module.preinit_array_sz,
+            per_library: module.per_library_imports.clone(),
         };
         let report = LoadReport {
             modules: vec![info],
@@ -634,7 +734,10 @@ fn cmd_load_single(path: &PathBuf, data: &[u8], json: bool) {
     }
     if summary.known_imports > 0 {
         println!();
-        println!("Known imports: {} (matched system functions, not loaded)", summary.known_imports);
+        println!(
+            "Known imports: {} (matched system functions, not loaded)",
+            summary.known_imports
+        );
     }
     if summary.stubbed_imports > 0 {
         println!("Unknown imports: {} (stub region)", summary.stubbed_imports);
@@ -658,16 +761,32 @@ fn cmd_load_single(path: &PathBuf, data: &[u8], json: bool) {
         println!("✓ No RELATIVE relocations");
     }
     if summary.resolved_imports > 0 {
-        println!("✓ {} imports resolved (loaded modules)", summary.resolved_imports);
+        println!(
+            "✓ {} imports resolved (loaded modules)",
+            summary.resolved_imports
+        );
     }
     if summary.known_imports > 0 {
-        println!("✓ {} imports known (offline system functions)", summary.known_imports);
+        println!(
+            "✓ {} imports known (offline system functions)",
+            summary.known_imports
+        );
     }
     if summary.stubbed_imports > 0 {
         println!("⚠ {} imports unknown (stubbed)", summary.stubbed_imports);
     }
+    if module.tls.is_some() {
+        println!("✓ TLS metadata recorded");
+    }
+    if module.init_va > 0
+        || module.init_array_va > 0
+        || module.fini_va > 0
+        || module.fini_array_va > 0
+        || module.preinit_array_va > 0
+    {
+        println!("✓ Init/fini metadata recorded (not executed)");
+    }
     if summary.resolved_imports + summary.known_imports + summary.stubbed_imports == 0 {
         println!("⚠ No imports to resolve");
     }
-    println!("⚠ Runtime not initialized");
 }

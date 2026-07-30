@@ -53,7 +53,14 @@ pub(crate) fn cmd_dashboard(path: &std::path::Path, output: &PathBuf) {
     });
 
     eprintln!("Computing dashboard data from {} games...", ds.images.len());
-    let data = ps5_dashboard::data::compute(&ds);
+    let mut data = ps5_dashboard::data::compute(&ds);
+
+    let loader_dir = path.join("load");
+    if loader_dir.is_dir() {
+        eprintln!("Loading loader data from {}...", loader_dir.display());
+        data.inject_loader_data(&loader_dir);
+    }
+
     let html = ps5_dashboard::html::generate_html(&data);
 
     let out_file = if output.to_string_lossy().ends_with(".html") {
