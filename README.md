@@ -20,6 +20,7 @@ The PS5 uses an x86-64 AMD Zen 2 CPU, which means CPU instruction compatibility 
 | `ps5-nid` | NID hash algorithm (SHA1 + Sony custom base64), name catalog (v2 with merge semantics), resolver |
 | `ps5-image` | BinaryImage IR: normalized abstraction with JSON serialization, `Detection` with confidence/evidence |
 | `ps5-analysis` | Analysis engine: scanner, dataset, PRX module discovery, dependency analysis, string fingerprinting, engine detection, reports, and export |
+| `ps5-loader` | PS5 ELF/PRX loader: virtual memory model, relocation engine (RELATIVE, ABS64, GLOB_DAT, JUMP_SLOT), import resolver with 3-tier lookup (runtime exports → offline exports → stub allocator), NID computation, multi-module dependency loading |
 | `ps5-dashboard` | Static HTML dashboard generator (self-contained, no CDN dependencies) |
 | `ps5-cli` | Command-line interface |
 
@@ -146,6 +147,23 @@ ps5rs export-unknown analysis/ -o unknown_nids.csv
 # Group by library
 ps5rs export-unknown analysis/ --group-by library -o unknown_by_lib.csv
 ```
+
+### List exports from a PRX module
+
+List all exported symbols from a PRX module with NID, name, address, and size. Supports substring search and JSON output for building firmware export databases.
+
+```sh
+# Full export table
+ps5rs exports libc.prx
+
+# Search for specific symbols
+ps5rs exports libc.prx --search malloc
+
+# JSON output (for offline export database)
+ps5rs exports libc.prx --json --output libc.exports.json
+```
+
+Offline export files are loaded automatically from `./system_modules/` to resolve imports from system PRXes that aren't available at analysis time (e.g., libkernel.prx, libSceLibcInternal.prx).
 
 ### Community NID Catalog
 
@@ -407,7 +425,36 @@ Compatibility runtime
 
 ## Test Suite
 
-331 tests across 8 crates covering ELF parsing, SELF extraction, NID hashing/caching, BinaryImage IR, string fingerprinting, engine detection, analysis reports, dataset operations, batch extraction, dashboard generation, and PRX module scanning.
+430 tests across 9 crates covering ELF parsing, SELF extraction, NID hashing/caching, BinaryImage IR, string fingerprinting, engine detection, analysis reports, dataset operations, batch extraction, dashboard generation, PRX module scanning, and PS5 ELF/PRX loading with relocation and import resolution.
+
+## Loader / Relocation Engine
+
+The `ps5-loader` crate provides a virtual memory model for PS5 ELF/PRX binaries. It handles the four-phase load pipeline:
+
+| Phase | Operation | Description |
+|-------|-----------|-------------|
+| 1. **Map** | `load_elf()` | Parse PT_LOAD segments into virtual memory, apply zero-fill for `.bss` |
+| 2. **Relocate** | `apply_relocations_with()` | Apply RELATIVE (DT_RELACOUNT fast path), GLOB_DAT, JUMP_SLOT, and ABS64 relocations |
+| 3. **Link** | `load_modules()` | Register exports, resolve imports against runtime + offline tables, assign stubs |
+| 4. **Init** | *(planned)* | Run `.preinit_array`/`.init_array`/`DT_INIT` constructors |
+
+Import resolution uses a 3-tier strategy:
+
+1. **Runtime exports** — symbols from loaded PRX modules (e.g., game's `sce_module/*.prx`)
+2. **Offline exports** — pre-exported symbol tables from `./system_modules/*.exports.json` (for system PRXes not present at analysis time)
+3. **Stub allocator** — fallback stub addresses for truly unknown imports
+
+The loader supports per-module import tracking: `imports_resolved`, `imports_known`, `imports_stubbed` counters on each `LoadedModule` and aggregate counts on `ModuleContext`.
+
+For games with available PRX modules, `--prx-dir` auto-defaults to the `sce_module/` directory next to `eboot.bin`, enabling full multi-module analysis in a single command:
+
+```sh
+# Auto-discovers PRXes from the game's sce_module/
+ps5rs load path/to/eboot.bin
+
+# Explicit PRX directory
+ps5rs load path/to/eboot.bin --prx-dir path/to/sce_module/
+```
 
 ## Acknowledgements
 
