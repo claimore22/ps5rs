@@ -1,10 +1,13 @@
 # ps5rs
 
-A PS5 binary intelligence and fingerprinting framework written in Rust.
-Parses SELF/ELF containers and PRX/SPRX modules, resolves NID imports,
-extracts clean ELFs, fingerprints game binaries through string analysis,
-detects engines and middleware, tracks SDK/library dependencies, and
-analyzes collections of PS5 game binaries through an interactive dashboard.
+A PS5 binary analysis and virtual loading framework written in Rust.
+Parses SELF/ELF/PRX formats, resolves NID imports, extracts clean ELFs,
+fingerprints game binaries through string analysis (engine/middleware/SDK
+detection), and generates interactive dashboards. Also provides a virtual
+PS5 loader: maps ELF memory, applies relocations (RELATIVE, ABS64, GLOB_DAT,
+JUMP_SLOT), resolves imports against runtime PRX exports and offline
+system-module databases, and stubs unknown symbols for multi-module
+dependency analysis.
 
 ## Why Rust?
 
