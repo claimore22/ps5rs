@@ -12,15 +12,21 @@ mod load;
 mod strings;
 mod terminal;
 mod util;
+mod validate;
 
-use cli::{CatalogCommand, Cli, Commands};
+use cli::{CatalogCommand, Cli, Commands, ValidateCommand};
 
 fn main() {
     let cli = Cli::parse();
 
     match cli.command {
         Commands::Inspect { file, json, output } => inspect::cmd_inspect(&file, json, &output),
-        Commands::Imports { file, json, output } => inspect::cmd_imports(&file, json, &output),
+        Commands::Imports {
+            file,
+            json,
+            catalog,
+            output,
+        } => inspect::cmd_imports(&file, json, catalog, &output),
         Commands::Segments { file } => inspect::cmd_segments(&file),
         Commands::Dynamic { file } => inspect::cmd_dynamic(&file),
         Commands::Symbols { file } => inspect::cmd_symbols(&file),
@@ -43,7 +49,12 @@ fn main() {
             nids,
             include_modules,
         } => extract::cmd_batch_extract(&path, &output, &nids, include_modules),
-        Commands::Validate { path, output } => dataset::cmd_validate(&path, &output),
+        Commands::Validate { command } => match command {
+            ValidateCommand::Binary { file, json, output } => {
+                validate::cmd_validate_binary(&file, json, &output)
+            }
+            ValidateCommand::Dataset { path, output } => dataset::cmd_validate(&path, &output),
+        },
         Commands::Dashboard { path, output } => dataset::cmd_dashboard(&path, &output),
         Commands::ExportUnknown {
             path,
