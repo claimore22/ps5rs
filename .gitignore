@@ -37,6 +37,9 @@
 # Bulk load results (generated from batch-load)
 /analysis/load/
 
+# Downloaded catalog snapshot (generated from `catalog sync`)
+/analysis/catalog/
+
 # Old analysis artifacts (many files exceed GitHub's 100MB limit)
 /analysis_old/
 
