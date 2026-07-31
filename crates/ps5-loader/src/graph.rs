@@ -109,7 +109,7 @@ impl ModuleGraph {
         let mut order = Vec::new();
         let mut cycle_nodes = Vec::new();
 
-        fn dfs<'a>(
+        fn dfs(
             node: &str,
             graph: &ModuleGraph,
             visited: &mut HashSet<String>,
@@ -140,17 +140,17 @@ impl ModuleGraph {
         nodes.sort();
 
         for node in &nodes {
-            if !visited.contains(node) {
-                if !dfs(
+            if !visited.contains(node)
+                && !dfs(
                     node,
                     self,
                     &mut visited,
                     &mut in_progress,
                     &mut order,
                     &mut cycle_nodes,
-                ) {
-                    return Err(cycle_nodes);
-                }
+                )
+            {
+                return Err(cycle_nodes);
             }
         }
 

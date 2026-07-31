@@ -29,6 +29,104 @@ use crate::resolver::CrossModuleResolver;
 /// Pass [`OfflineExportTable`] via `offline_exports` to enable known-system-
 /// function detection for system PRX exports (even when the system PRX is
 /// not loaded).
+struct LoadContext<'a, P>
+where
+    P: FnMut(&str) -> Option<Vec<u8>>,
+{
+    export_table: ExportTable,
+    offline_exports: Option<&'a OfflineExportTable>,
+    graph: ModuleGraph,
+    address_alloc: LoadAddressAllocator,
+    stub_alloc: StubAllocator,
+    loaded_modules: Vec<LoadedModule>,
+    total_resolved: u32,
+    total_known: u32,
+    total_stubbed: u32,
+    processed: HashSet<String>,
+    prx_provider: &'a mut P,
+}
+
+impl<P> LoadContext<'_, P>
+where
+    P: FnMut(&str) -> Option<Vec<u8>>,
+{
+    fn load_one(
+        &mut self,
+        name: &str,
+        elf: &ps5_elf::ElfImage,
+    ) -> Result<Option<LoadedModule>, LoaderError> {
+        let canonical = elf.soname.as_deref().unwrap_or(name);
+        if !self.processed.insert(canonical.to_string()) {
+            return Ok(self
+                .loaded_modules
+                .iter()
+                .find(|m| m.canonical_name() == canonical)
+                .cloned());
+        }
+
+        for needed_name in &elf.needed_files {
+            let Some(prx_bytes) = (self.prx_provider)(needed_name) else {
+                tracing::warn!(module = %needed_name, "PRX not found, marking unavailable");
+                self.graph.mark_unavailable(needed_name);
+                self.graph.add_edge(canonical, needed_name);
+                continue;
+            };
+            let prx_elf = ps5_elf::ElfImage::parse(&prx_bytes, None)
+                .map_err(|e| LoaderError(format!("{} parse: {e}", needed_name)))?;
+
+            let prx_canonical = prx_elf.soname.as_deref().unwrap_or(needed_name);
+            self.graph.add_edge(canonical, prx_canonical);
+
+            self.load_one(needed_name, &prx_elf)?;
+        }
+
+        let module_size = elf
+            .program_headers
+            .iter()
+            .filter(|ph| ph.is_load())
+            .map(|ph| ph.p_vaddr + ph.p_memsz)
+            .max()
+            .unwrap_or(0);
+        let load_bias = self.address_alloc.allocate(module_size);
+
+        let mut module = load_elf(name, elf.data)?;
+        module.load_bias = load_bias;
+        for region in &mut module.memory.regions {
+            region.vaddr = region.vaddr.wrapping_add(load_bias);
+        }
+
+        let _rel_summary = apply_relocations_with(&mut module, elf, None)?;
+        module.state = ModuleState::Relocated;
+
+        let export_count_before = self.export_table.len();
+        self.export_table.register_module(&module, elf);
+        module.exports_count = self.export_table.len() - export_count_before;
+
+        let mut resolver = CrossModuleResolver::new(
+            &self.export_table,
+            self.offline_exports,
+            &mut self.stub_alloc,
+        );
+        let _rel_summary = apply_relocations_with(&mut module, elf, Some(&mut resolver))?;
+        module.state = ModuleState::Linked;
+        module.imports_resolved = resolver.resolved_count();
+        module.imports_known = resolver.known_count();
+        module.imports_stubbed = resolver.stubbed_count();
+        module.per_library_imports = resolver.per_library_imports();
+
+        module.state = ModuleState::Initialized;
+        self.total_resolved += resolver.resolved_count();
+        self.total_known += resolver.known_count();
+        self.total_stubbed += resolver.stubbed_count();
+
+        self.graph
+            .add_node(module.canonical_name(), &module.aliases);
+
+        self.loaded_modules.push(module.clone());
+        Ok(Some(module))
+    }
+}
+
 pub fn load_modules(
     eboot_name: &str,
     eboot_bytes: &[u8],
@@ -38,204 +136,87 @@ pub fn load_modules(
     let eboot_elf = ps5_elf::ElfImage::parse(eboot_bytes, None)
         .map_err(|e| LoaderError(format!("eboot ELF parse: {e}")))?;
 
-    let mut export_table = ExportTable::new();
-    let mut graph = ModuleGraph::new();
-    let mut address_alloc = LoadAddressAllocator::default();
-    let mut stub_alloc = StubAllocator::new(0x0000_7fff_0000_0000);
-    let mut loaded_modules: Vec<LoadedModule> = Vec::new();
-    let mut total_resolved = 0u32;
-    let mut total_known = 0u32;
-    let mut total_stubbed = 0u32;
+    let mut ctx = LoadContext {
+        export_table: ExportTable::new(),
+        offline_exports,
+        graph: ModuleGraph::new(),
+        address_alloc: LoadAddressAllocator::default(),
+        stub_alloc: StubAllocator::new(0x0000_7fff_0000_0000),
+        loaded_modules: Vec::new(),
+        total_resolved: 0,
+        total_known: 0,
+        total_stubbed: 0,
+        processed: HashSet::new(),
+        prx_provider: &mut prx_provider,
+    };
 
-    // Track which modules we've already processed to avoid cycles.
-    let mut processed: HashSet<String> = HashSet::new();
-
-    // Load a single module and its transitive dependencies (DFS).
-    fn load_one(
-        name: &str,
-        elf: &ps5_elf::ElfImage,
-        export_table: &mut ExportTable,
-        offline_exports: Option<&OfflineExportTable>,
-        graph: &mut ModuleGraph,
-        address_alloc: &mut LoadAddressAllocator,
-        stub_alloc: &mut StubAllocator,
-        loaded_modules: &mut Vec<LoadedModule>,
-        total_resolved: &mut u32,
-        total_known: &mut u32,
-        total_stubbed: &mut u32,
-        processed: &mut HashSet<String>,
-        prx_provider: &mut impl FnMut(&str) -> Option<Vec<u8>>,
-    ) -> Result<Option<LoadedModule>, LoaderError> {
-        let canonical = elf.soname.as_deref().unwrap_or(name);
-        if !processed.insert(canonical.to_string()) {
-            return Ok(loaded_modules
-                .iter()
-                .find(|m| m.canonical_name() == canonical)
-                .cloned());
-        }
-
-        // Process transitive deps first
-        for needed_name in &elf.needed_files {
-            let Some(prx_bytes) = prx_provider(needed_name) else {
-                tracing::warn!(module = %needed_name, "PRX not found, marking unavailable");
-                graph.mark_unavailable(needed_name);
-                graph.add_edge(canonical, needed_name);
-                continue;
-            };
-            let prx_elf = ps5_elf::ElfImage::parse(&prx_bytes, None)
-                .map_err(|e| LoaderError(format!("{} parse: {e}", needed_name)))?;
-
-            let prx_canonical = prx_elf.soname.as_deref().unwrap_or(needed_name);
-            graph.add_edge(canonical, prx_canonical);
-
-            load_one(
-                needed_name,
-                &prx_elf,
-                export_table,
-                offline_exports,
-                graph,
-                address_alloc,
-                stub_alloc,
-                loaded_modules,
-                total_resolved,
-                total_known,
-                total_stubbed,
-                processed,
-                prx_provider,
-            )?;
-        }
-
-        // Map the module itself
-        let module_size = elf
-            .program_headers
-            .iter()
-            .filter(|ph| ph.is_load())
-            .map(|ph| (ph.p_vaddr + ph.p_memsz) as u64)
-            .max()
-            .unwrap_or(0);
-        let load_bias = address_alloc.allocate(module_size);
-
-        let mut module = load_elf(name, elf.data)?;
-        module.load_bias = load_bias;
-        for region in &mut module.memory.regions {
-            region.vaddr = region.vaddr.wrapping_add(load_bias);
-        }
-
-        // Phase 2: RELATIVE only
-        let _rel_summary = apply_relocations_with(&mut module, elf, None)?;
-        module.state = ModuleState::Relocated;
-
-        // Phase 3: Register exports
-        let export_count_before = export_table.len();
-        export_table.register_module(&module, elf);
-        module.exports_count = export_table.len() - export_count_before;
-
-        // Phase 4: Resolve imports
-        let mut resolver = CrossModuleResolver::new(export_table, offline_exports, stub_alloc);
-        let _rel_summary = apply_relocations_with(&mut module, elf, Some(&mut resolver))?;
-        module.state = ModuleState::Linked;
-        module.imports_resolved = resolver.resolved_count();
-        module.imports_known = resolver.known_count();
-        module.imports_stubbed = resolver.stubbed_count();
-        module.per_library_imports = resolver.per_library_imports();
-
-        module.state = ModuleState::Initialized;
-        *total_resolved += resolver.resolved_count();
-        *total_known += resolver.known_count();
-        *total_stubbed += resolver.stubbed_count();
-
-        graph.add_node(module.canonical_name(), &module.aliases);
-
-        loaded_modules.push(module.clone());
-        Ok(Some(module))
-    }
-
-    // Start with the eboot
     let eboot_canonical = eboot_elf.soname.as_deref().unwrap_or(eboot_name);
-    graph.add_node(eboot_canonical, &[]);
+    ctx.graph.add_node(eboot_canonical, &[]);
 
-    // Process eboot's transitive dependencies
     for needed_name in &eboot_elf.needed_files {
-        let Some(prx_bytes) = prx_provider(needed_name) else {
+        let Some(prx_bytes) = (ctx.prx_provider)(needed_name) else {
             tracing::warn!(module = %needed_name, "PRX not found, marking unavailable");
-            graph.mark_unavailable(needed_name);
-            graph.add_edge(eboot_canonical, needed_name);
+            ctx.graph.mark_unavailable(needed_name);
+            ctx.graph.add_edge(eboot_canonical, needed_name);
             continue;
         };
         let prx_elf = ps5_elf::ElfImage::parse(&prx_bytes, None)
             .map_err(|e| LoaderError(format!("{} parse: {e}", needed_name)))?;
 
         let prx_canonical = prx_elf.soname.as_deref().unwrap_or(needed_name);
-        graph.add_edge(eboot_canonical, prx_canonical);
+        ctx.graph.add_edge(eboot_canonical, prx_canonical);
 
-        load_one(
-            needed_name,
-            &prx_elf,
-            &mut export_table,
-            offline_exports,
-            &mut graph,
-            &mut address_alloc,
-            &mut stub_alloc,
-            &mut loaded_modules,
-            &mut total_resolved,
-            &mut total_known,
-            &mut total_stubbed,
-            &mut processed,
-            &mut prx_provider,
-        )?;
+        ctx.load_one(needed_name, &prx_elf)?;
     }
 
-    // Map + relocate the eboot itself (after all its deps)
-    {
-        let module_size = eboot_elf
-            .program_headers
-            .iter()
-            .filter(|ph| ph.is_load())
-            .map(|ph| (ph.p_vaddr + ph.p_memsz) as u64)
-            .max()
-            .unwrap_or(0);
-        let load_bias = address_alloc.allocate(module_size);
+    let module_size = eboot_elf
+        .program_headers
+        .iter()
+        .filter(|ph| ph.is_load())
+        .map(|ph| ph.p_vaddr + ph.p_memsz)
+        .max()
+        .unwrap_or(0);
+    let load_bias = ctx.address_alloc.allocate(module_size);
 
-        let mut module = load_elf(eboot_name, eboot_bytes)?;
-        module.load_bias = load_bias;
-        for region in &mut module.memory.regions {
-            region.vaddr = region.vaddr.wrapping_add(load_bias);
-        }
-
-        let _rel_summary = apply_relocations_with(&mut module, &eboot_elf, None)?;
-        module.state = ModuleState::Relocated;
-
-        let export_count_before = export_table.len();
-        export_table.register_module(&module, &eboot_elf);
-        module.exports_count = export_table.len() - export_count_before;
-
-        let mut resolver =
-            CrossModuleResolver::new(&export_table, offline_exports, &mut stub_alloc);
-        let _rel_summary = apply_relocations_with(&mut module, &eboot_elf, Some(&mut resolver))?;
-        module.state = ModuleState::Linked;
-        module.imports_resolved = resolver.resolved_count();
-        module.imports_known = resolver.known_count();
-        module.imports_stubbed = resolver.stubbed_count();
-        module.per_library_imports = resolver.per_library_imports();
-        total_resolved += resolver.resolved_count();
-        total_known += resolver.known_count();
-        total_stubbed += resolver.stubbed_count();
-
-        module.state = ModuleState::Initialized;
-
-        graph.add_node(module.canonical_name(), &module.aliases);
-
-        loaded_modules.push(module);
+    let mut module = load_elf(eboot_name, eboot_bytes)?;
+    module.load_bias = load_bias;
+    for region in &mut module.memory.regions {
+        region.vaddr = region.vaddr.wrapping_add(load_bias);
     }
+
+    let _rel_summary = apply_relocations_with(&mut module, &eboot_elf, None)?;
+    module.state = ModuleState::Relocated;
+
+    let export_count_before = ctx.export_table.len();
+    ctx.export_table.register_module(&module, &eboot_elf);
+    module.exports_count = ctx.export_table.len() - export_count_before;
+
+    let mut resolver =
+        CrossModuleResolver::new(&ctx.export_table, offline_exports, &mut ctx.stub_alloc);
+    let _rel_summary = apply_relocations_with(&mut module, &eboot_elf, Some(&mut resolver))?;
+    module.state = ModuleState::Linked;
+    module.imports_resolved = resolver.resolved_count();
+    module.imports_known = resolver.known_count();
+    module.imports_stubbed = resolver.stubbed_count();
+    module.per_library_imports = resolver.per_library_imports();
+    ctx.total_resolved += resolver.resolved_count();
+    ctx.total_known += resolver.known_count();
+    ctx.total_stubbed += resolver.stubbed_count();
+
+    module.state = ModuleState::Initialized;
+
+    ctx.graph.add_node(module.canonical_name(), &module.aliases);
+
+    ctx.loaded_modules.push(module);
 
     Ok(ModuleContext::new(
-        loaded_modules,
-        export_table,
-        graph,
-        stub_alloc,
-        total_resolved,
-        total_known,
-        total_stubbed,
+        ctx.loaded_modules,
+        ctx.export_table,
+        ctx.graph,
+        ctx.stub_alloc,
+        ctx.total_resolved,
+        ctx.total_known,
+        ctx.total_stubbed,
     ))
 }
 
@@ -373,7 +354,7 @@ mod tests {
         let phoff2 = phoff + 56;
         elf[phoff2..phoff2 + 4].copy_from_slice(&1u32.to_le_bytes());
         elf[phoff2 + 4..phoff2 + 8].copy_from_slice(&5u32.to_le_bytes());
-        elf[phoff2 + 8..phoff2 + 16].copy_from_slice(&(64u64 + 56 + 0).to_le_bytes());
+        elf[phoff2 + 8..phoff2 + 16].copy_from_slice(&(64u64 + 56).to_le_bytes());
         elf[phoff2 + 16..phoff2 + 24].copy_from_slice(&0x1000u64.to_le_bytes());
         elf[phoff2 + 32..phoff2 + 40].copy_from_slice(&(total_size as u64).to_le_bytes());
         elf[phoff2 + 40..phoff2 + 48].copy_from_slice(&(total_size as u64).to_le_bytes());
@@ -394,7 +375,7 @@ mod tests {
             None,
         )
         .unwrap();
-        assert!(ctx.modules.len() >= 1);
+        assert!(!ctx.modules.is_empty());
     }
 
     #[test]

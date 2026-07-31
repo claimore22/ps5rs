@@ -39,7 +39,7 @@ impl RelocationKind {
             6 => Self::GlobDat,
             7 => Self::JumpSlot,
             8 => Self::Relative,
-            16 | 17 | 18 => Self::Tls,
+            16..=18 => Self::Tls,
             _ => Self::Unknown(r_type),
         }
     }
@@ -216,84 +216,76 @@ pub fn apply_relocations_with(
                 })?;
             applied = true;
         } else if kind == RelocationKind::Abs64 {
-            if reloc.r_sym() != 0 {
-                if let Some(sym) = elf.symbols.get(reloc.r_sym() as usize) {
-                    if !sym.is_import && sym.st_value != 0 {
-                        // R_X86_64_64: *(S + A) = S + A, S = load_bias + st_value
-                        let s = module.load_bias.wrapping_add(sym.st_value);
-                        let value = s.wrapping_add(reloc.r_addend as u64);
-                        module
-                            .memory
-                            .write(address, &value.to_le_bytes())
-                            .map_err(|e| {
-                                RelocationError(format!(
-                                    "ABS64 write failed at 0x{:x}: {}",
-                                    address, e
-                                ))
-                            })?;
-                        applied = true;
-                        tracing::debug!(
-                            address,
-                            value,
-                            symbol = %sym.resolved_name,
-                            "ABS64 applied (local)",
-                        );
-                    } else if let Some(ref mut res) = resolver {
-                        let request = build_import_request(elf, reloc)?;
-                        let result = res.resolve(&request).map_err(|e| {
-                            RelocationError(format!("ABS64 import resolve failed: {e}"))
+            if reloc.r_sym() != 0
+                && let Some(sym) = elf.symbols.get(reloc.r_sym() as usize)
+            {
+                if !sym.is_import && sym.st_value != 0 {
+                    // R_X86_64_64: *(S + A) = S + A, S = load_bias + st_value
+                    let s = module.load_bias.wrapping_add(sym.st_value);
+                    let value = s.wrapping_add(reloc.r_addend as u64);
+                    module
+                        .memory
+                        .write(address, &value.to_le_bytes())
+                        .map_err(|e| {
+                            RelocationError(format!("ABS64 write failed at 0x{:x}: {}", address, e))
                         })?;
-                        let value = result.address();
-                        module
-                            .memory
-                            .write(address, &value.to_le_bytes())
-                            .map_err(|e| {
-                                RelocationError(format!(
-                                    "ABS64 import write at 0x{:x}: {}",
-                                    address, e
-                                ))
-                            })?;
-                        applied = true;
-                        tracing::debug!(
-                            address,
-                            value,
-                            symbol = %sym.resolved_name,
-                            kind = ?result,
-                            "ABS64 applied (import)",
-                        );
-                        match result {
-                            ResolveResult::Resolved(_) => summary.resolved_imports += 1,
-                            ResolveResult::Known(_) => summary.known_imports += 1,
-                            ResolveResult::Stubbed(_) => summary.stubbed_imports += 1,
-                        }
+                    applied = true;
+                    tracing::debug!(
+                        address,
+                        value,
+                        symbol = %sym.resolved_name,
+                        "ABS64 applied (local)",
+                    );
+                } else if let Some(ref mut res) = resolver {
+                    let request = build_import_request(elf, reloc)?;
+                    let result = res.resolve(&request).map_err(|e| {
+                        RelocationError(format!("ABS64 import resolve failed: {e}"))
+                    })?;
+                    let value = result.address();
+                    module
+                        .memory
+                        .write(address, &value.to_le_bytes())
+                        .map_err(|e| {
+                            RelocationError(format!("ABS64 import write at 0x{:x}: {}", address, e))
+                        })?;
+                    applied = true;
+                    tracing::debug!(
+                        address,
+                        value,
+                        symbol = %sym.resolved_name,
+                        kind = ?result,
+                        "ABS64 applied (import)",
+                    );
+                    match result {
+                        ResolveResult::Resolved(_) => summary.resolved_imports += 1,
+                        ResolveResult::Known(_) => summary.known_imports += 1,
+                        ResolveResult::Stubbed(_) => summary.stubbed_imports += 1,
                     }
                 }
             }
-        } else if let Some(ref mut res) = resolver {
-            if kind == RelocationKind::GlobDat || kind == RelocationKind::JumpSlot {
-                let request = build_import_request(elf, reloc)?;
-                let result = res
-                    .resolve(&request)
-                    .map_err(|e| RelocationError(format!("import resolve failed: {e}")))?;
-                let value = result.address();
-                module
-                    .memory
-                    .write(address, &value.to_le_bytes())
-                    .map_err(|e| {
-                        RelocationError(format!("import write at 0x{:x}: {}", address, e))
-                    })?;
-                applied = true;
-                tracing::debug!(
-                    address,
-                    value,
-                    kind = ?result,
-                    "import resolved",
-                );
-                match result {
-                    ResolveResult::Resolved(_) => summary.resolved_imports += 1,
-                    ResolveResult::Known(_) => summary.known_imports += 1,
-                    ResolveResult::Stubbed(_) => summary.stubbed_imports += 1,
-                }
+        } else if let Some(ref mut res) = resolver
+            && (kind == RelocationKind::GlobDat || kind == RelocationKind::JumpSlot)
+        {
+            let request = build_import_request(elf, reloc)?;
+            let result = res
+                .resolve(&request)
+                .map_err(|e| RelocationError(format!("import resolve failed: {e}")))?;
+            let value = result.address();
+            module
+                .memory
+                .write(address, &value.to_le_bytes())
+                .map_err(|e| RelocationError(format!("import write at 0x{:x}: {}", address, e)))?;
+            applied = true;
+            tracing::debug!(
+                address,
+                value,
+                kind = ?result,
+                "import resolved",
+            );
+            match result {
+                ResolveResult::Resolved(_) => summary.resolved_imports += 1,
+                ResolveResult::Known(_) => summary.known_imports += 1,
+                ResolveResult::Stubbed(_) => summary.stubbed_imports += 1,
             }
         }
 

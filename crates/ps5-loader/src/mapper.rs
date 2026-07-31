@@ -210,15 +210,15 @@ pub fn load_elf(name: &str, elf_bytes: &[u8]) -> Result<LoadedModule> {
 
     let mut aliases = Vec::new();
     aliases.push(module_name.clone());
-    if let Some(ref sn) = soname {
-        if sn != &module_name {
-            aliases.push(sn.clone());
-        }
+    if let Some(ref sn) = soname
+        && sn != &module_name
+    {
+        aliases.push(sn.clone());
     }
-    if let Some(stripped) = module_name.strip_suffix(".prx") {
-        if !aliases.contains(&stripped.to_string()) {
-            aliases.push(stripped.to_string());
-        }
+    if let Some(stripped) = module_name.strip_suffix(".prx")
+        && !aliases.contains(&stripped.to_string())
+    {
+        aliases.push(stripped.to_string());
     }
 
     Ok(LoadedModule {
