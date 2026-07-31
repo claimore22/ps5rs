@@ -25,7 +25,9 @@ fn scan_prx_dir(dir: &Path) -> Vec<(String, PathBuf)> {
     for entry in read_dir {
         let Ok(entry) = entry else { continue };
         let path = entry.path();
-        if path.is_file() && let Some(name) = path.file_name().map(|s| s.to_string_lossy().to_string()) {
+        if path.is_file()
+            && let Some(name) = path.file_name().map(|s| s.to_string_lossy().to_string())
+        {
             entries.push((name, path));
         }
     }
@@ -56,7 +58,9 @@ fn resolve_game_dir(dir: &Path, result: &mut Vec<PathBuf>) {
         result.push(dir.to_owned());
         return;
     }
-    let Ok(entries) = std::fs::read_dir(dir) else { return };
+    let Ok(entries) = std::fs::read_dir(dir) else {
+        return;
+    };
     let subdirs: Vec<_> = entries
         .filter_map(|e| e.ok())
         .filter(|e| e.path().is_dir())
@@ -137,12 +141,7 @@ struct LoadSummary {
     worst_games: Vec<WorstEntry>,
 }
 
-pub(crate) fn cmd_batch_load(
-    games_dir: &Path,
-    output_dir: &Path,
-    offline_dir: &Path,
-    json: bool,
-) {
+pub(crate) fn cmd_batch_load(games_dir: &Path, output_dir: &Path, offline_dir: &Path, json: bool) {
     let games = find_game_dirs(games_dir);
     if games.is_empty() {
         eprintln!(
@@ -167,12 +166,7 @@ pub(crate) fn cmd_batch_load(
         let display = game_display_name(game_dir);
         let eboot_path = game_dir.join("eboot.bin");
 
-        eprint!(
-            "[{}/{}] {} ... ",
-            idx + 1,
-            games.len(),
-            display
-        );
+        eprint!("[{}/{}] {} ... ", idx + 1, games.len(), display);
 
         let data = match std::fs::read(&eboot_path) {
             Ok(d) => d,
@@ -211,11 +205,7 @@ pub(crate) fn cmd_batch_load(
 
         let offline_table = if offline_dir.is_dir() {
             let table = OfflineExportTable::load_from_dir(offline_dir);
-            if !table.is_empty() {
-                Some(table)
-            } else {
-                None
-            }
+            if !table.is_empty() { Some(table) } else { None }
         } else {
             None
         };
@@ -252,8 +242,11 @@ pub(crate) fn cmd_batch_load(
         total_modules += ctx.modules.len();
         total_exports += ctx.exports.len();
 
-        let unavailable: Vec<String> =
-            ctx.graph.unavailable_modules().map(|s| s.to_string()).collect();
+        let unavailable: Vec<String> = ctx
+            .graph
+            .unavailable_modules()
+            .map(|s| s.to_string())
+            .collect();
         for mod_name in &unavailable {
             all_unavailable
                 .entry(mod_name.clone())
@@ -309,7 +302,11 @@ pub(crate) fn cmd_batch_load(
             })
         })
         .collect();
-    worst_games.sort_by(|a, b| b.rate.partial_cmp(&a.rate).unwrap_or(std::cmp::Ordering::Equal));
+    worst_games.sort_by(|a, b| {
+        b.rate
+            .partial_cmp(&a.rate)
+            .unwrap_or(std::cmp::Ordering::Equal)
+    });
 
     let total_imports = total_resolved + total_known + total_stubbed;
     let avg_rate = if total_imports > 0 {
@@ -377,7 +374,10 @@ pub(crate) fn cmd_batch_load(
     if let Ok(json_str) = serde_json::to_string_pretty(&summary)
         && let Err(e) = std::fs::write(&summary_path, &json_str)
     {
-        eprintln!("error: cannot write summary {}: {e}", summary_path.display());
+        eprintln!(
+            "error: cannot write summary {}: {e}",
+            summary_path.display()
+        );
     }
 
     eprintln!();
@@ -392,6 +392,9 @@ pub(crate) fn cmd_batch_load(
         "Total imports resolved: {} known: {} stubbed: {}",
         summary.total_imports_resolved, summary.total_imports_known, summary.total_imports_stubbed
     );
-    eprintln!("Average resolution rate: {:.1}%", summary.avg_resolution_rate);
+    eprintln!(
+        "Average resolution rate: {:.1}%",
+        summary.avg_resolution_rate
+    );
     eprintln!("Output: {}", output_dir.display());
 }
