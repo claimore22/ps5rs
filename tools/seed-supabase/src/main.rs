@@ -66,8 +66,6 @@ fn main() {
         .write_record(["nid", "name", "library", "source", "confidence", "evidence"])
         .unwrap();
 
-    let null = "\\N";
-
     for (nid, (u64_str, names)) in &entries {
         let primary_name = names.first().map(|s| s.as_str()).unwrap_or("");
         w_entries
@@ -79,10 +77,10 @@ fn main() {
                 .write_record([
                     nid.as_str(),
                     name.as_str(),
-                    null,
+                    "",
                     "ps5rs-builtin",
                     "100",
-                    null,
+                    "",
                 ])
                 .unwrap();
         }
