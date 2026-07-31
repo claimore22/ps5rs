@@ -69,25 +69,24 @@ impl ImportResolver for CrossModuleResolver<'_> {
     fn resolve(&mut self, request: &ImportRequest) -> Result<ResolveResult, ImportError> {
         let lib = request.library.as_deref().unwrap_or("?");
         // 1. Runtime exports (modules actually loaded)
-        if let Some(nid) = request.nid {
-            if let Some(entry) = self.exports.get_by_nid(nid) {
-                self.resolved_count += 1;
-                let e = self.per_library.entry(lib.to_string()).or_insert([0, 0, 0]);
-                e[0] += 1;
-                return Ok(ResolveResult::Resolved(entry.address));
-            }
+        if let Some(nid) = request.nid
+            && let Some(entry) = self.exports.get_by_nid(nid)
+        {
+            self.resolved_count += 1;
+            let e = self.per_library.entry(lib.to_string()).or_insert([0, 0, 0]);
+            e[0] += 1;
+            return Ok(ResolveResult::Resolved(entry.address));
         }
         // 2. Offline exports (known system functions, not loaded)
-        if let Some(nid) = request.nid {
-            if let Some(offline) = self.offline {
-                if offline.get_by_nid(nid).is_some() {
-                    self.known_count += 1;
-                    let e = self.per_library.entry(lib.to_string()).or_insert([0, 0, 0]);
-                    e[1] += 1;
-                    let addr = self.stubs.resolve(request)?.address();
-                    return Ok(ResolveResult::Known(addr));
-                }
-            }
+        if let Some(nid) = request.nid
+            && let Some(offline) = self.offline
+            && offline.get_by_nid(nid).is_some()
+        {
+            self.known_count += 1;
+            let e = self.per_library.entry(lib.to_string()).or_insert([0, 0, 0]);
+            e[1] += 1;
+            let addr = self.stubs.resolve(request)?.address();
+            return Ok(ResolveResult::Known(addr));
         }
         // 3. Fallback to stub
         let result = self.stubs.resolve(request)?;

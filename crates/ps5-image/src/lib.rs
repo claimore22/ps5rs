@@ -56,19 +56,14 @@ pub struct StringAnalysis {
 // Image type — distinguishes eboot from PRX / SPRX / other modules
 // ---------------------------------------------------------------------------
 
-#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Default)]
 pub enum ImageType {
+    #[default]
     Eboot,
     Prx,
     Sprx,
     SelfModule,
     Unknown,
-}
-
-impl Default for ImageType {
-    fn default() -> Self {
-        Self::Eboot
-    }
 }
 
 // ---------------------------------------------------------------------------
