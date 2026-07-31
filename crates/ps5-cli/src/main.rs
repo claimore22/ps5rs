@@ -11,6 +11,7 @@ mod inspect;
 mod load;
 mod strings;
 mod terminal;
+mod unknown_nids;
 mod util;
 mod validate;
 
@@ -86,6 +87,12 @@ fn main() {
             detect,
             output,
         } => strings::cmd_strings(&file, min_length, offsets, detect, &output),
+        Commands::UnknownNids {
+            path,
+            remu,
+            json,
+            output,
+        } => unknown_nids::cmd_unknown_nids(&path, &remu, json, &output),
         Commands::Catalog { command } => match command {
             CatalogCommand::Sync { key, catalog_dir } => {
                 catalog::cmd_sync(key.as_deref(), &catalog_dir)
