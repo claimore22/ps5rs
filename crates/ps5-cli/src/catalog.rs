@@ -459,7 +459,7 @@ pub(crate) fn cmd_push_unknown(
     );
 }
 
-fn iso8601_now() -> String {
+pub(crate) fn iso8601_now() -> String {
     let secs = std::time::SystemTime::now()
         .duration_since(std::time::UNIX_EPOCH)
         .unwrap_or_default()

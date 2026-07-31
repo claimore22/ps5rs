@@ -28,6 +28,7 @@
 /analysis/images/
 /analysis/reports/
 /analysis/unknown_nids.csv
+/analysis/unknown_nids.json
 /analysis/dashboard/
 /manifest.json
 

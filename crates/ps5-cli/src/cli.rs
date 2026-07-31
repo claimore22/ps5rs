@@ -141,6 +141,20 @@ pub enum Commands {
         #[command(subcommand)]
         command: CatalogCommand,
     },
+    /// Find NIDs imported by a games corpus that are missing from the catalog
+    UnknownNids {
+        /// Games directory containing subdirectories with eboot.bin
+        path: PathBuf,
+        /// REmu CLI binary (remu.exe) for name cross-reference
+        #[arg(long, value_hint = ValueHint::FilePath)]
+        remu: Option<PathBuf>,
+        /// Emit JSON report
+        #[arg(long)]
+        json: bool,
+        /// Write the report to a file instead of stdout
+        #[arg(short, long, value_hint = ValueHint::FilePath)]
+        output: Option<PathBuf>,
+    },
 }
 
 #[derive(Subcommand)]
