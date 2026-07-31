@@ -1375,16 +1375,15 @@ fn categorize_sce_library(name: &str) -> SceLibraryCategory {
     }
 }
 
+type SceLibAccumulator = (
+    Vec<String>,
+    Vec<String>,
+    usize,
+    HashMap<String, SceLibVersionEntry>,
+);
+
 fn compute_sce_stats(ds: &AnalysisDataset) -> Vec<SceLibraryStats> {
-    let mut lib_data: HashMap<
-        String,
-        (
-            Vec<String>,
-            Vec<String>,
-            usize,
-            HashMap<String, SceLibVersionEntry>,
-        ),
-    > = HashMap::new();
+    let mut lib_data: HashMap<String, SceLibAccumulator> = HashMap::new();
 
     for (name, doc) in &ds.images {
         let sce_libs = collect_sce_libraries(doc);

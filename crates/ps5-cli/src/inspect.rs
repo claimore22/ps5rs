@@ -230,7 +230,7 @@ pub(crate) fn cmd_exports(
         println!("  No exports found");
         return;
     }
-    println!("{:<20} {:<50} {:<20} {}", "NID", "Name", "Address", "Size");
+    println!("{:<20} {:<50} {:<20} Size", "NID", "Name", "Address");
     println!("{}", "-".repeat(110));
     for r in &rows {
         println!("{:<20} {:<50} {:<20} {}", r.nid, r.name, r.address, r.size);
