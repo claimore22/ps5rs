@@ -442,24 +442,38 @@ impl DashboardData {
             let Some(load_report) = report.load_report else {
                 continue;
             };
-            let eboot = load_report.modules.iter().find(|m| m.module_type == "Eboot");
+            let eboot = load_report
+                .modules
+                .iter()
+                .find(|m| m.module_type == "Eboot");
 
             let load_state = eboot.map(|m| m.state.clone());
             let imports_resolved = Some(load_report.totals.resolved);
             let imports_known = Some(load_report.totals.known);
             let imports_stubbed = Some(load_report.totals.stubbed);
-            let loader_tls = eboot.filter(|m| m.has_tls).map(|_| LoaderTlsInfo { has_tls: true });
-            let init_array_count = eboot
-                .filter(|m| m.init_array_sz > 0)
-                .map(|_| (load_report.modules.iter().filter(|m| m.init_array_sz > 0).count() as u32).max(1));
-            let fini_array_count = eboot
-                .filter(|m| m.fini_array_sz > 0)
-                .map(|_| (load_report.modules.iter().filter(|m| m.fini_array_sz > 0).count() as u32).max(1));
+            let loader_tls = eboot
+                .filter(|m| m.has_tls)
+                .map(|_| LoaderTlsInfo { has_tls: true });
+            let init_array_count = eboot.filter(|m| m.init_array_sz > 0).map(|_| {
+                (load_report
+                    .modules
+                    .iter()
+                    .filter(|m| m.init_array_sz > 0)
+                    .count() as u32)
+                    .max(1)
+            });
+            let fini_array_count = eboot.filter(|m| m.fini_array_sz > 0).map(|_| {
+                (load_report
+                    .modules
+                    .iter()
+                    .filter(|m| m.fini_array_sz > 0)
+                    .count() as u32)
+                    .max(1)
+            });
             let unavailable_modules = load_report.graph.unavailable.clone();
 
             for detail in &mut self.game_details {
-                if detail.title_name.as_deref() == Some(&report.game)
-                    || detail.name == report.game
+                if detail.title_name.as_deref() == Some(&report.game) || detail.name == report.game
                 {
                     detail.load_state = load_state;
                     detail.imports_resolved = imports_resolved;
