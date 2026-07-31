@@ -154457,3 +154457,9 @@ y8meQn-Qy5c sceAppContentGetPlayableStatus
 sGNKn-jXzHQ sceGameUpdateCheckTitle
 l0MTQHIcH3M sceNpEntitlementAccessGetAddcontEntitlementInfoListIndividual
 eDXKe9FndlE sceNpEntitlementAccessGetPftFlag
+
+23LRUSvYu1M sceAgcInit
+V++UgBtQhn0 sceAgcGetDataPacketPayloadAddress
+dolOmWH+huQ sceAgcGetFusedShaderSize
+fd5Bp5tGTgo sceAgcFuseShaderHalves
+HV4j+E0MBHE sceAgcCreateInterpolantMapping
