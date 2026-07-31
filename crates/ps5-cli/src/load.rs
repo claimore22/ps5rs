@@ -70,10 +70,10 @@ fn scan_prx_dir(dir: &Path) -> Vec<(String, PathBuf)> {
             std::process::exit(1);
         });
         let path = entry.path();
-        if path.is_file() {
-            if let Some(name) = path.file_name().map(|s| s.to_string_lossy().to_string()) {
-                entries.push((name, path));
-            }
+        if path.is_file()
+            && let Some(name) = path.file_name().map(|s| s.to_string_lossy().to_string())
+        {
+            entries.push((name, path));
         }
     }
     entries
@@ -235,10 +235,10 @@ fn print_modules(ctx: &ps5_loader::ModuleContext) {
         if let Some(entry) = module.entry_point {
             println!("      Entry: {:#018x}", entry);
         }
-        if let Some(ref soname) = module.soname {
-            if soname != &module.name {
-                println!("      SONAME: {soname}");
-            }
+        if let Some(ref soname) = module.soname
+            && soname != &module.name
+        {
+            println!("      SONAME: {soname}");
         }
         if let Some(ref tls) = module.tls {
             println!(
@@ -417,7 +417,7 @@ pub(crate) fn cmd_load(path: &PathBuf, prx_dir: Option<PathBuf>, json: bool) {
 }
 
 /// Multi-module mode: load eboot + PRXs from `--prx-dir`.
-fn cmd_load_multi(path: &PathBuf, data: &[u8], prx_dir: &Path, json: bool) {
+fn cmd_load_multi(path: &Path, data: &[u8], prx_dir: &Path, json: bool) {
     let container = container_name(data);
     let elf_bytes = get_elf_bytes(data);
 
@@ -515,7 +515,7 @@ fn cmd_load_multi(path: &PathBuf, data: &[u8], prx_dir: &Path, json: bool) {
 }
 
 /// Single-file mode (legacy): load one binary with no PRX resolution.
-fn cmd_load_single(path: &PathBuf, data: &[u8], json: bool) {
+fn cmd_load_single(path: &Path, data: &[u8], json: bool) {
     let container = container_name(data);
     let elf_bytes = get_elf_bytes(data);
 
