@@ -108,6 +108,8 @@ pub(crate) fn load_catalog(extra_nids: &[PathBuf]) -> ps5_nid::Catalog {
     cat
 }
 
+const PAGE_SIZE: usize = 1000;
+
 pub(crate) fn cmd_sync(key: Option<&str>, catalog_dir: &Path) {
     let key = resolve_supabase_key(key).unwrap_or_else(|| SUPABASE_PUBLISHABLE_KEY.to_string());
 
@@ -124,36 +126,131 @@ pub(crate) fn cmd_sync(key: Option<&str>, catalog_dir: &Path) {
 
     eprintln!("Downloading catalog from Supabase...");
 
-    let response = ureq::get(&url)
-        .set("apikey", &key)
-        .call()
-        .unwrap_or_else(|e| {
-            eprintln!("error: failed to fetch catalog: {e}");
+    let agent = ureq::AgentBuilder::new()
+        .timeout_connect(std::time::Duration::from_secs(15))
+        .timeout(std::time::Duration::from_secs(60))
+        .build();
+
+    let fetch_page = |agent: &ureq::Agent, start: usize| -> (Vec<CatalogRow>, bool) {
+        let end = start + PAGE_SIZE - 1;
+
+        let response = {
+            let mut attempts = 0;
+            loop {
+                match agent
+                    .get(&url)
+                    .set("apikey", &key)
+                    .set("Range", &format!("{start}-{end}"))
+                    .call()
+                {
+                    Ok(resp) => break resp,
+                    Err(ureq::Error::Status(code, _)) if code >= 500 && attempts < 3 => {
+                        eprintln!("warning: page {start} returned {code}, retrying...");
+                        std::thread::sleep(std::time::Duration::from_millis(1000 << attempts));
+                        attempts += 1;
+                    }
+                    Err(e) => {
+                        eprintln!("error: failed to fetch catalog page {start}: {e}");
+                        std::process::exit(1);
+                    }
+                }
+            }
+        };
+
+        let body = response.into_string().unwrap_or_else(|e| {
+            eprintln!("error: failed to read response: {e}");
             std::process::exit(1);
         });
 
-    let body = response.into_string().unwrap_or_else(|e| {
-        eprintln!("error: failed to read response: {e}");
-        std::process::exit(1);
-    });
+        let page: Vec<CatalogRow> = serde_json::from_str(&body).unwrap_or_else(|e| {
+            eprintln!("error: failed to parse catalog JSON: {e}");
+            std::process::exit(1);
+        });
 
-    let sha256 = ps5_format::sha256_hex(body.as_bytes());
+        let last = page.len() < PAGE_SIZE;
+        (page, last)
+    };
+
+    let total = agent
+        .head(&url)
+        .set("apikey", &key)
+        .set("Prefer", "count=exact")
+        .set("Range", "0-0")
+        .call()
+        .ok()
+        .and_then(|r| r.header("Content-Range").map(str::to_owned))
+        .and_then(|cr| cr.split('/').nth(1).and_then(|t| t.parse::<usize>().ok()));
+
+    let (page0, last0) = fetch_page(&agent, 0);
+    let mut rows = page0;
+
+    if !last0 {
+        match total {
+            Some(t) => {
+                let pages = t.div_ceil(PAGE_SIZE);
+                let next = std::sync::atomic::AtomicUsize::new(1);
+                let results = std::sync::Mutex::new(
+                    (0..pages)
+                        .map(|_| None::<Vec<CatalogRow>>)
+                        .collect::<Vec<_>>(),
+                );
+
+                std::thread::scope(|s| {
+                    for _ in 0..1 {
+                        let worker = ureq::AgentBuilder::new()
+                            .timeout_connect(std::time::Duration::from_secs(15))
+                            .timeout(std::time::Duration::from_secs(60))
+                            .build();
+
+                        let next = &next;
+                        let results = &results;
+
+                        s.spawn(move || {
+                            loop {
+                                let i = next.fetch_add(1, std::sync::atomic::Ordering::Relaxed);
+                                if i >= pages {
+                                    break;
+                                }
+                                let (page, _) = fetch_page(&worker, i * PAGE_SIZE);
+                                results.lock().unwrap()[i] = Some(page);
+                            }
+                        });
+                    }
+                });
+
+                for slot in results.into_inner().unwrap() {
+                    rows.extend(slot.unwrap_or_default());
+                }
+            }
+            None => loop {
+                let (page, last) = fetch_page(&agent, rows.len());
+                rows.extend(page);
+                if last {
+                    break;
+                }
+            },
+        }
+    }
+
+    let sha256 = ps5_format::sha256_hex(
+        serde_json::to_string(&rows)
+            .expect("failed to serialize catalog rows")
+            .as_bytes(),
+    );
 
     if existing_meta.as_ref().is_some_and(|m| m.sha256 == sha256) {
         eprintln!("Catalog unchanged (sha256: {sha256})");
         return;
     }
 
-    let rows: Vec<CatalogRow> = serde_json::from_str(&body).unwrap_or_else(|e| {
-        eprintln!("error: failed to parse catalog JSON: {e}");
-        std::process::exit(1);
-    });
-
     let nids_path = catalog_dir.join("nids.csv");
-    let mut writer = csv::Writer::from_path(&nids_path).unwrap_or_else(|e| {
-        eprintln!("error: failed to create {}: {e}", nids_path.display());
-        std::process::exit(1);
-    });
+    let mut writer = csv::WriterBuilder::new()
+        .has_headers(false)
+        .from_path(&nids_path)
+        .unwrap_or_else(|e| {
+            eprintln!("error: failed to create {}: {e}", nids_path.display());
+            std::process::exit(1);
+        });
 
     writer
         .write_record(["nid", "name", "library", "tag", "source"])
@@ -363,19 +460,55 @@ pub(crate) fn cmd_push_unknown(
 }
 
 fn iso8601_now() -> String {
-    use std::time::{SystemTime, UNIX_EPOCH};
-    let dur = SystemTime::now()
-        .duration_since(UNIX_EPOCH)
-        .unwrap_or_default();
-    let secs = dur.as_secs();
+    let secs = std::time::SystemTime::now()
+        .duration_since(std::time::UNIX_EPOCH)
+        .unwrap_or_default()
+        .as_secs();
+    iso8601(secs)
+}
 
+fn iso8601(secs: u64) -> String {
     let days = secs / 86400;
     let time_secs = secs % 86400;
     let h = time_secs / 3600;
     let m = (time_secs % 3600) / 60;
     let s = time_secs % 60;
 
-    // Approximate year from days since epoch (within a few days)
-    let year = 1970 + (days / 365) as u64;
-    format!("{year:04}-{:02}-{:02}T{h:02}:{m:02}:{s:02}Z", 1, 1)
+    let z = days as i64 + 719468;
+    let era = z.div_euclid(146097);
+    let doe = z.rem_euclid(146097) as u64;
+    let yoe = (doe - doe / 1460 + doe / 36524 - doe / 146096) / 365;
+    let y = yoe as i64 + era * 400;
+    let doy = doe - (365 * yoe + yoe / 4 - yoe / 100);
+    let mp = (5 * doy + 2) / 153;
+    let d = doy - (153 * mp + 2) / 5 + 1;
+    let month = if mp < 10 { mp + 3 } else { mp - 9 };
+    let year = if month <= 2 { y + 1 } else { y };
+
+    format!("{year:04}-{month:02}-{d:02}T{h:02}:{m:02}:{s:02}Z")
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn iso8601_epoch_is_unix_epoch() {
+        assert_eq!(iso8601(0), "1970-01-01T00:00:00Z");
+    }
+
+    #[test]
+    fn iso8601_handles_leap_day() {
+        assert_eq!(iso8601(951_782_400), "2000-02-29T00:00:00Z");
+    }
+
+    #[test]
+    fn iso8601_tracks_month_rollover() {
+        assert_eq!(iso8601(951_868_800), "2000-03-01T00:00:00Z");
+    }
+
+    #[test]
+    fn iso8601_rounds_time_of_day() {
+        assert_eq!(iso8601(86399), "1970-01-01T23:59:59Z");
+    }
 }

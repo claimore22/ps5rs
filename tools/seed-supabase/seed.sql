@@ -46,6 +46,26 @@ CREATE INDEX IF NOT EXISTS nid_names_library_idx ON public.nid_names USING btree
   WITH (FORMAT csv, HEADER true, NULL '')
 ON CONFLICT (nid, name, library) DO NOTHING;
 
+-- Stage 3: catalog_export view (stable public API for ps5rs catalog sync)
+-- All columns are guaranteed non-null; the client deserializes plain strings.
+CREATE OR REPLACE VIEW public.catalog_export AS
+SELECT
+    nid,
+    name,
+    COALESCE(library, '') AS library,
+    COALESCE(tag, '') AS tag,
+    COALESCE(source, '') AS source
+FROM (
+    SELECT
+        nid,
+        name,
+        library,
+        NULL::text AS tag,
+        source
+    FROM public.nid_names
+) t
+ORDER BY library, name;
+
 -- Verify import
 SELECT COUNT(*) AS nid_names_count FROM public.nid_names;
 SELECT COUNT(DISTINCT nid) AS unique_nids FROM public.nid_names;
