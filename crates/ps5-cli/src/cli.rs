@@ -21,6 +21,8 @@ pub enum Commands {
         file: PathBuf,
         #[arg(long)]
         json: bool,
+        #[arg(long)]
+        catalog: bool,
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
@@ -68,9 +70,8 @@ pub enum Commands {
         include_modules: bool,
     },
     Validate {
-        path: PathBuf,
-        #[arg(short, long, value_hint = ValueHint::FilePath)]
-        output: Option<PathBuf>,
+        #[command(subcommand)]
+        command: ValidateCommand,
     },
     Dashboard {
         path: PathBuf,
@@ -161,6 +162,24 @@ pub enum CatalogCommand {
         url: Option<String>,
         #[arg(short, long)]
         submitter: Option<String>,
+    },
+}
+
+#[derive(Subcommand)]
+pub enum ValidateCommand {
+    /// Validate a PS5 binary's structural metrics
+    Binary {
+        file: PathBuf,
+        #[arg(long)]
+        json: bool,
+        #[arg(short, long, value_hint = ValueHint::FilePath)]
+        output: Option<PathBuf>,
+    },
+    /// Validate a scan dataset directory
+    Dataset {
+        path: PathBuf,
+        #[arg(short, long, value_hint = ValueHint::FilePath)]
+        output: Option<PathBuf>,
     },
 }
 

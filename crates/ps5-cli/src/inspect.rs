@@ -111,10 +111,19 @@ pub(crate) fn cmd_inspect(path: &PathBuf, json: bool, output: &Option<PathBuf>) 
 }
 
 #[allow(clippy::print_literal)]
-pub(crate) fn cmd_imports(path: &PathBuf, json: bool, output: &Option<PathBuf>) {
+pub(crate) fn cmd_imports(
+    path: &PathBuf,
+    json: bool,
+    catalog_mode: bool,
+    output: &Option<PathBuf>,
+) {
     let data = load_file(path);
     let sha256 = ps5_format::sha256_hex(&data);
-    let catalog = ps5_nid::Catalog::new();
+    let catalog = if catalog_mode {
+        load_catalog(&[])
+    } else {
+        ps5_nid::Catalog::new()
+    };
     let image = ps5_image::BinaryImageBuilder::build_from_file(&data, &sha256, &catalog);
 
     if json {
@@ -125,12 +134,22 @@ pub(crate) fn cmd_imports(path: &PathBuf, json: bool, output: &Option<PathBuf>) 
     }
 
     println!("Imports from {} ({})", path.display(), image.imports.len());
-    println!("{:<64} {:<16} {}", "NID", "Resolved", "Library");
-    println!("{}", "-".repeat(100));
-
-    for imp in &image.imports {
-        let resolved = imp.resolved_name.as_deref().unwrap_or("?");
-        println!("{:<64} {:<16} {}", imp.nid_hash, resolved, imp.library_name);
+    if catalog_mode {
+        println!("{:<64} {:<32} {:<16}", "NID", "Resolved", "Library");
+        println!("{}", "-".repeat(120));
+        for imp in &image.imports {
+            let resolved = imp.resolved_name.as_deref().unwrap_or("?");
+            println!(
+                "{:<64} {:<32} {:<16}",
+                imp.nid_hash, resolved, imp.library_name
+            );
+        }
+    } else {
+        println!("{:<64} {:<16}", "NID", "Library");
+        println!("{}", "-".repeat(84));
+        for imp in &image.imports {
+            println!("{:<64} {:<16}", imp.nid_hash, imp.library_name);
+        }
     }
 }
 
