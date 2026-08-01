@@ -17,8 +17,12 @@ pub fn hash(name: &str) -> String {
         reversed[i] = result[7 - i];
     }
 
+    encode_nid(reversed)
+}
+
+pub fn encode_nid(bytes: [u8; 8]) -> String {
     let mut nid = String::with_capacity(11);
-    let chunks = reversed.chunks(3);
+    let chunks = bytes.chunks(3);
     for chunk in chunks {
         let b0 = chunk[0] as u32;
         let b1 = if chunk.len() > 1 { chunk[1] as u32 } else { 0 };
@@ -149,5 +153,53 @@ mod tests {
         let without_salt = hasher.finalize();
         assert_ne!(with_salt.len(), 0);
         assert_ne!(format!("{:x}", without_salt), "");
+    }
+
+    #[test]
+    fn encode_nid_matches_hash_of_sce_kernel_add_user_event() {
+        let digest = [64, 112, 54, 242, 58, 191, 30, 225];
+        let mut reversed = [0u8; 8];
+        for i in 0..8 {
+            reversed[i] = digest[7 - i];
+        }
+        assert_eq!(encode_nid(reversed), "4R6-OvI2cEA");
+        assert_eq!(hash("sceKernelAddUserEvent"), "4R6-OvI2cEA");
+    }
+
+    #[test]
+    fn encode_nid_agc_stub_pairs() {
+        for (digest, expected) in [
+            ([83, 187, 216, 43, 81, 209, 114, 219], "23LRUSvYu1M"),
+            ([138, 111, 105, 218, 89, 165, 179, 117], "dbOlWdppb4o"),
+            ([76, 245, 43, 152, 102, 208, 62, 170], "qj7QZpgr9Uw"),
+            ([125, 134, 80, 27, 128, 148, 239, 87], "V++UgBtQhn0"),
+            ([10, 78, 70, 155, 167, 65, 222, 125], "fd5Bp5tGTgo"),
+        ] {
+            let mut reversed = [0u8; 8];
+            for i in 0..8 {
+                reversed[i] = digest[7 - i];
+            }
+            assert_eq!(encode_nid(reversed), expected, "digest {digest:?}");
+        }
+    }
+
+    #[test]
+    fn encode_nid_all_zeros() {
+        assert_eq!(encode_nid([0; 8]), "AAAAAAAAAAA");
+    }
+
+    #[test]
+    fn encode_nid_length_always_11() {
+        for i in 0..64u8 {
+            let bytes = [i; 8];
+            assert_eq!(encode_nid(bytes).len(), 11);
+        }
+    }
+
+    #[test]
+    fn encode_nid_roundtrips_through_nid_to_u64() {
+        let nid = encode_nid([0x12, 0x34, 0x56, 0x78, 0x9a, 0xbc, 0xde, 0xf0]);
+        assert_eq!(nid, "EjRWeJq83vA");
+        assert_eq!(nid_to_u64(&nid), Some(0x123456789abcdef0u64 << 2));
     }
 }

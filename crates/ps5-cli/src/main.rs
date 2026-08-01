@@ -108,6 +108,11 @@ fn main() {
                 url.as_deref(),
                 submitter.as_deref(),
             ),
+            CatalogCommand::ImportStubs {
+                sdk_dir,
+                output,
+                verify,
+            } => catalog::cmd_import_stubs(&sdk_dir, output.as_deref(), verify),
         },
     }
 }
