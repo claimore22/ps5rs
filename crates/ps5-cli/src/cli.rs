@@ -177,6 +177,18 @@ pub enum CatalogCommand {
         #[arg(short, long)]
         submitter: Option<String>,
     },
+    /// Import NID/name pairs from PS5 SDK *_stub_weak.a libraries
+    ImportStubs {
+        /// SDK directory containing *_stub_weak.a files (target/lib is also accepted)
+        #[arg(value_hint = ValueHint::DirPath)]
+        sdk_dir: PathBuf,
+        /// Append net-new NID lines to this catalog file
+        #[arg(short, long, value_hint = ValueHint::FilePath)]
+        output: Option<PathBuf>,
+        /// Cross-check .scenid NIDs against hash(name)
+        #[arg(long)]
+        verify: bool,
+    },
 }
 
 #[derive(Subcommand)]

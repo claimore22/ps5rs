@@ -1,4 +1,7 @@
+use std::io::Write;
 use std::path::{Path, PathBuf};
+
+use ps5_elf::{parse_stub_library, stub_library_name, StubSymbol};
 
 pub(crate) const NIDS_CSV: &str = include_str!("../../../data/nids.csv");
 
@@ -459,6 +462,166 @@ pub(crate) fn cmd_push_unknown(
     );
 }
 
+#[derive(Default)]
+struct StubAggregate {
+    entries: std::collections::BTreeMap<String, StubSymbol>,
+    conflicts: Vec<(String, String, String)>,
+}
+
+impl StubAggregate {
+    fn add(&mut self, symbols: impl Iterator<Item = StubSymbol>) {
+        for s in symbols {
+            match self.entries.get(&s.nid) {
+                Some(existing) if existing.name != s.name => {
+                    self.conflicts
+                        .push((s.nid.clone(), existing.name.clone(), s.name.clone()));
+                }
+                Some(_) => {}
+                None => {
+                    self.entries.insert(s.nid.clone(), s);
+                }
+            }
+        }
+    }
+}
+
+fn stub_files(sdk_dir: &Path) -> Vec<PathBuf> {
+    let mut files = Vec::new();
+    let candidates = [sdk_dir.to_path_buf(), sdk_dir.join("target").join("lib")];
+    for dir in candidates {
+        if let Ok(entries) = std::fs::read_dir(&dir) {
+            for entry in entries.flatten() {
+                let path = entry.path();
+                let is_stub = path.is_file()
+                    && path
+                        .file_name()
+                        .and_then(|n| n.to_str())
+                        .is_some_and(|n| n.ends_with("_stub_weak.a"));
+                if is_stub {
+                    files.push(path);
+                }
+            }
+        }
+        if !files.is_empty() {
+            break;
+        }
+    }
+    files.sort();
+    files
+}
+
+pub(crate) fn cmd_import_stubs(sdk_dir: &Path, output: Option<&Path>, verify: bool) {
+    let mut catalog = ps5_nid::Catalog::new();
+    let loaded = catalog.load_nids_csv(NIDS_CSV);
+
+    let files = stub_files(sdk_dir);
+    if files.is_empty() {
+        eprintln!(
+            "error: no *_stub_weak.a files found under {} (also checked target/lib)",
+            sdk_dir.display()
+        );
+        std::process::exit(1);
+    }
+
+    let mut total_symbols = 0usize;
+    let mut aggregate = StubAggregate::default();
+    let mut verify_mismatches = Vec::new();
+
+    for path in &files {
+        let bytes = match std::fs::read(path) {
+            Ok(b) => b,
+            Err(e) => {
+                eprintln!("error: failed to read {}: {e}", path.display());
+                std::process::exit(1);
+            }
+        };
+        let library = path
+            .file_name()
+            .and_then(|n| n.to_str())
+            .map(stub_library_name)
+            .unwrap_or("unknown")
+            .to_string();
+        let symbols = match parse_stub_library(&bytes, &library) {
+            Ok(s) => s,
+            Err(e) => {
+                eprintln!("error: failed to parse {}: {e}", path.display());
+                std::process::exit(1);
+            }
+        };
+        if verify {
+            for s in &symbols {
+                let derived = ps5_nid::hash(&s.name);
+                if derived != s.nid {
+                    verify_mismatches.push((
+                        s.nid.clone(),
+                        s.name.clone(),
+                        s.library.clone(),
+                        derived,
+                    ));
+                }
+            }
+        }
+        total_symbols += symbols.len();
+        aggregate.add(symbols.into_iter());
+    }
+
+    let unique = aggregate.entries.len();
+    let conflicts = aggregate.conflicts.len();
+    let mut net_new: Vec<&StubSymbol> = aggregate
+        .entries
+        .values()
+        .filter(|s| catalog.resolve(&s.nid).is_none())
+        .collect();
+    net_new.sort_by(|a, b| a.nid.cmp(&b.nid));
+
+    if output.is_none() {
+        for s in &net_new {
+            println!("{} {}", s.nid, s.name);
+        }
+    }
+
+    eprintln!("Loaded {loaded} NID mappings from built-in catalog");
+    eprintln!(
+        "Scanned {} stub libraries: {total_symbols} symbols, {unique} unique NIDs, {} net-new vs catalog, {conflicts} conflicts",
+        files.len(),
+        net_new.len(),
+    );
+    for (nid, first, second) in &aggregate.conflicts {
+        eprintln!("conflict: {nid} => {first} vs {second}");
+    }
+    if verify {
+        eprintln!(
+            "verify: {} of {total_symbols} scenid NIDs differ from hash(name)",
+            verify_mismatches.len()
+        );
+        for (nid, name, library, derived) in verify_mismatches.iter().take(20) {
+            eprintln!("  {name} ({library}): scenid {nid} vs hash {derived}");
+        }
+    }
+
+    if let Some(out) = output {
+        let mut file = std::fs::OpenOptions::new()
+            .create(true)
+            .append(true)
+            .open(out)
+            .unwrap_or_else(|e| {
+                eprintln!("error: cannot open {}: {e}", out.display());
+                std::process::exit(1);
+            });
+        for s in &net_new {
+            writeln!(file, "{} {}", s.nid, s.name).unwrap_or_else(|e| {
+                eprintln!("error: failed to write {}: {e}", out.display());
+                std::process::exit(1);
+            });
+        }
+        eprintln!(
+            "Appended {} net-new entries to {}",
+            net_new.len(),
+            out.display()
+        );
+    }
+}
+
 pub(crate) fn iso8601_now() -> String {
     let secs = std::time::SystemTime::now()
         .duration_since(std::time::UNIX_EPOCH)
@@ -510,5 +673,71 @@ mod tests {
     #[test]
     fn iso8601_rounds_time_of_day() {
         assert_eq!(iso8601(86399), "1970-01-01T23:59:59Z");
+    }
+
+    #[test]
+    fn aggregate_keeps_first_and_reports_conflict() {
+        let mut agg = StubAggregate::default();
+        agg.add(
+            [
+                StubSymbol {
+                    nid: "23LRUSvYu1M".into(),
+                    name: "sceAgcInit".into(),
+                    library: "libSceAgc".into(),
+                },
+                StubSymbol {
+                    nid: "23LRUSvYu1M".into(),
+                    name: "sceAgcInitAlias".into(),
+                    library: "libSceAgc".into(),
+                },
+                StubSymbol {
+                    nid: "23LRUSvYu1M".into(),
+                    name: "sceAgcInit".into(),
+                    library: "libSceAgc".into(),
+                },
+            ]
+            .into_iter(),
+        );
+        assert_eq!(agg.entries.len(), 1);
+        assert_eq!(agg.entries["23LRUSvYu1M"].name, "sceAgcInit");
+        assert_eq!(agg.conflicts.len(), 1);
+        assert_eq!(agg.conflicts[0], ("23LRUSvYu1M".into(), "sceAgcInit".into(), "sceAgcInitAlias".into()));
+    }
+
+    #[test]
+    fn stub_files_finds_only_stub_archives() {
+        let dir = std::env::temp_dir().join("ps5rs_test_stub_files");
+        let _ = std::fs::create_dir_all(&dir);
+        std::fs::write(dir.join("libSceAgc_stub_weak.a"), b"!<arch>\n").unwrap();
+        std::fs::write(dir.join("libSceAgc.a"), b"!<arch>\n").unwrap();
+        std::fs::write(dir.join("notes.txt"), b"hello").unwrap();
+        let files = stub_files(&dir);
+        assert_eq!(files.len(), 1);
+        assert_eq!(
+            files[0].file_name().unwrap().to_str().unwrap(),
+            "libSceAgc_stub_weak.a"
+        );
+        let _ = std::fs::remove_dir_all(&dir);
+    }
+
+    #[test]
+    fn stub_files_falls_back_to_target_lib() {
+        let dir = std::env::temp_dir().join("ps5rs_test_stub_fallback");
+        let lib = dir.join("target").join("lib");
+        let _ = std::fs::create_dir_all(&lib);
+        std::fs::write(lib.join("libkernel_stub_weak.a"), b"!<arch>\n").unwrap();
+        let files = stub_files(&dir);
+        assert_eq!(files.len(), 1);
+        assert_eq!(
+            files[0].file_name().unwrap().to_str().unwrap(),
+            "libkernel_stub_weak.a"
+        );
+        let _ = std::fs::remove_dir_all(&dir);
+    }
+
+    #[test]
+    fn stub_files_returns_empty_for_missing_dir() {
+        let dir = std::env::temp_dir().join("ps5rs_test_stub_missing");
+        assert!(stub_files(&dir).is_empty());
     }
 }

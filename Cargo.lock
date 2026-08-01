@@ -576,6 +576,7 @@ version = "0.2.0"
 dependencies = [
  "proptest",
  "ps5-format",
+ "ps5-nid",
 ]
 
 [[package]]
