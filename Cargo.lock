@@ -580,7 +580,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "ps5-emulator"
+name = "ps5-emu"
 version = "0.2.0"
 
 [[package]]

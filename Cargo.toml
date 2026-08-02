@@ -10,7 +10,7 @@ members = [
     "crates/ps5-dashboard",
     "crates/ps5-cli",
     "crates/ps5-loader",
-    "crates/ps5-emulator",
+    "crates/ps5-emu",
 ]
 
 [workspace.package]
