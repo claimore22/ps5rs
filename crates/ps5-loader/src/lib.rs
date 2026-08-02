@@ -16,7 +16,7 @@
 //!    applies RELATIVE relocations, registers all exports, then resolves imports
 //!    against the merged export table.
 //!
-//! The crate has no dependency on [`ps5_nid`] — NID computation is the caller's
+//! The crate has no dependency on `ps5_nid` — NID computation is the caller's
 //! responsibility.
 
 mod address;

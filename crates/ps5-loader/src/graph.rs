@@ -159,7 +159,7 @@ impl ModuleGraph {
 
     /// Breadth-first load order — same as topological but with leaves first.
     ///
-    /// This produces the same valid order as [`topological_sort`] but
+    /// This produces the same valid order as [`Self::topological_sort`] but
     /// may be easier to debug.
     pub fn load_order(&self) -> Result<Vec<String>, Vec<String>> {
         let sorted = self.topological_sort()?;
