@@ -1,9 +1,9 @@
 [package]
-name = "ps5-emulator"
+name = "ps5-emu"
 version.workspace = true
 edition.workspace = true
 license.workspace = true
-description = "PS5 host-side emulator — emulated SDK library modules"
+description = "PS5 host-side emulator — emulated system library modules"
 
 [lints]
 workspace = true
