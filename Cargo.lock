@@ -580,6 +580,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "ps5-emulator"
+version = "0.2.0"
+
+[[package]]
 name = "ps5-format"
 version = "0.2.0"
 dependencies = [
