@@ -65,9 +65,7 @@ fn parse_stub_archive(data: &[u8], library: &str) -> Result<Vec<StubSymbol>> {
                 let index = std::str::from_utf8(&name[1..])
                     .ok()
                     .and_then(|s| s.parse::<usize>().ok())
-                    .ok_or_else(|| {
-                        ParseError::Custom("ar long-name index invalid".to_string())
-                    })?;
+                    .ok_or_else(|| ParseError::Custom("ar long-name index invalid".to_string()))?;
                 let table = long_names
                     .ok_or_else(|| ParseError::Custom("ar long-name table missing".to_string()))?;
                 let resolved = read_ar_name(table, index).ok_or_else(|| {
@@ -208,8 +206,8 @@ fn parse_stub_object(data: &[u8], library: &str) -> Result<Vec<StubSymbol>> {
         )));
     }
     let symbol_count = (dynsym.len() as u64 / ELF64_SYMENT_SIZE) as usize;
-    let scenid = scenid
-        .ok_or_else(|| ParseError::Custom(format!("stub {library} missing .scenid")))?;
+    let scenid =
+        scenid.ok_or_else(|| ParseError::Custom(format!("stub {library} missing .scenid")))?;
     if scenid.len() != symbol_count * 8 {
         return Err(ParseError::Custom(format!(
             "stub {library} .scenid size {} does not match {} symbols",
@@ -472,7 +470,14 @@ mod tests {
         data[scenid_off..scenid_off + scenid_bytes.len()].copy_from_slice(scenid_bytes);
         data[shstr_off..shstr_off + shstr.len()].copy_from_slice(&shstr);
 
-        let sh = |data: &mut [u8], idx: usize, name: &str, ty: u32, off: u64, size: u64, link: u32, align: u64| {
+        let sh = |data: &mut [u8],
+                  idx: usize,
+                  name: &str,
+                  ty: u32,
+                  off: u64,
+                  size: u64,
+                  link: u32,
+                  align: u64| {
             let base = shdr_off + idx * 64;
             write_u32(data, base, name_offsets[name] as u32);
             write_u32(data, base + 4, ty);
@@ -481,8 +486,26 @@ mod tests {
             write_u32(data, base + 0x28, link);
             write_u64(data, base + 0x30, align);
         };
-        sh(&mut data, 0, ".shstrtab", 3, shstr_off as u64, shstr.len() as u64, 0, 1);
-        sh(&mut data, 1, ".dynstr", 3, dynstr_off as u64, dynstr.len() as u64, 0, 1);
+        sh(
+            &mut data,
+            0,
+            ".shstrtab",
+            3,
+            shstr_off as u64,
+            shstr.len() as u64,
+            0,
+            1,
+        );
+        sh(
+            &mut data,
+            1,
+            ".dynstr",
+            3,
+            dynstr_off as u64,
+            dynstr.len() as u64,
+            0,
+            1,
+        );
         sh(
             &mut data,
             2,
