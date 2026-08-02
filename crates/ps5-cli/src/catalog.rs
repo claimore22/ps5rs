@@ -1,7 +1,7 @@
 use std::io::Write;
 use std::path::{Path, PathBuf};
 
-use ps5_elf::{parse_stub_library, stub_library_name, StubSymbol};
+use ps5_elf::{StubSymbol, parse_stub_library, stub_library_name};
 
 pub(crate) const NIDS_CSV: &str = include_str!("../../../data/nids.csv");
 
@@ -701,7 +701,14 @@ mod tests {
         assert_eq!(agg.entries.len(), 1);
         assert_eq!(agg.entries["23LRUSvYu1M"].name, "sceAgcInit");
         assert_eq!(agg.conflicts.len(), 1);
-        assert_eq!(agg.conflicts[0], ("23LRUSvYu1M".into(), "sceAgcInit".into(), "sceAgcInitAlias".into()));
+        assert_eq!(
+            agg.conflicts[0],
+            (
+                "23LRUSvYu1M".into(),
+                "sceAgcInit".into(),
+                "sceAgcInitAlias".into()
+            )
+        );
     }
 
     #[test]
