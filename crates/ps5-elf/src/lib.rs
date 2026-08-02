@@ -4,8 +4,8 @@ pub mod libversion;
 mod program;
 mod relocation;
 pub mod section;
-mod symbol;
 pub mod stub;
+mod symbol;
 
 pub use dynamic::DynEntry;
 pub use header::ElfHeader;
@@ -13,8 +13,8 @@ pub use libversion::LibVersionEntry;
 pub use program::ProgramHeader;
 pub use relocation::RelaEntry;
 pub use section::ElfSectionHeader;
+pub use stub::{StubSymbol, parse_stub_library, stub_library_name};
 pub use symbol::SymEntry;
-pub use stub::{parse_stub_library, stub_library_name, StubSymbol};
 
 #[derive(Debug, Clone)]
 pub struct TlsInfo {
