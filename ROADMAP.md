@@ -210,12 +210,12 @@ analysis (dashboard, batch-load aggregator).
 - **Tests:** 3-5 tests: directory with 0/1/N PRXes, duplicate detection.
 - **Effort:** ~4h ✅
 
-#### 3b. Run against SDK + all game PRXes
+#### 3b. Run against all game PRXes
 
 - Bootstraps `system_modules/` with all unique exports from:
-  - Prospero SDK `target/sce_module/` (6 PRXes, already done)
+  - `target/sce_module/` (6 PRXes, already done)
   - All 39 game `sce_module/` directories
-- **Result:** Comprehensive offline database covering SDK + game-specific
+- **Result:** Comprehensive offline database covering hypothetical SDK + game-specific
   versions.
 - **Effort:** ~15 min ✅
 
