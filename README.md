@@ -341,7 +341,7 @@ During scanning, `ps5-analysis` extracts printable strings from raw binary bytes
 | `detect_build_system()` | Jenkins, build server paths |
 | `detect_depot()` | Source depot paths (`U:/P4Damascus/...`) |
 | `detect_custom_forks()` | P4Damascus, HK_Project_Delivery, HK_EngineSources |
-| `detect_sdk_hints()` | Prospero SDK references |
+| `detect_sdk_hints()` | Possible SDK references Hints|
 | `detect_versions()` | Library version strings (PhysX 3.4, libpng 1.5.2, etc.) |
 | `detect_source_paths()` | Embedded source file paths |
 
