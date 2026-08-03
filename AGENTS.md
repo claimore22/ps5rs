@@ -2,17 +2,17 @@
 
 ## Overview
 
-PS5 binary analysis and virtual loading framework. Parses SELF/ELF/PRX, resolves NID imports, fingerprints games (engine/middleware/SDK detection), generates dashboards. Also provides a virtual PS5 loader: maps ELF memory, applies relocations, resolves imports via 3-tier resolution (runtime → offline → stubs).
+PS5 binary analysis, virtual loading, and host-side emulation framework. Parses SELF/ELF/PRX, resolves NID imports, fingerprints games (engine/middleware/SDK detection), generates dashboards. Provides a virtual PS5 loader (maps ELF memory, applies relocations, resolves imports via 3-tier resolution runtime → offline → stubs) and a host-side emulator (`ps5-emu`) that executes guest binaries on the host CPU, routing system-library imports through pure-Rust HLE modules.
 
 ## Quick Start
 
 ```sh
 cargo build --release
-cargo test --workspace    # 435+ tests
+cargo test --workspace    # 525+ tests
 just check                # fmt + clippy + test (default)
 ```
 
-## Workspace (9 crates)
+## Workspace (11 crates)
 
 | Crate | Purpose |
 |---|---|
@@ -23,10 +23,12 @@ just check                # fmt + clippy + test (default)
 | `ps5-image` | BinaryImage IR with JSON serialization |
 | `ps5-analysis` | Scanner, dataset, string fingerprinting, engine detection, reports |
 | `ps5-loader` | Virtual loader: 4-phase pipeline (Map/Relocate/Link/Init) |
+| `ps5-emu` | Host-side emulator: native guest execution, HLE modules, `ExecutionReport` |
+| `ps5-tests` | Self-authored ELF fixture generator + expected-behavior manifest |
 | `ps5-dashboard` | Static HTML dashboard (self-contained, no CDN) |
 | `ps5-cli` | Binary `ps5rs` — all subcommands |
 
-Dependency direction: `format → {elf, self, nid} → image → analysis → cli`, with `loader → elf`.
+Dependency direction: `format → {elf, self, nid} → image → analysis → cli`, with `loader → elf`, `ps5-emu → {loader, elf, nid, format}`, `ps5-tests → {format, nid}`.
 
 ## Code Conventions
 
@@ -45,7 +47,7 @@ Dependency direction: `format → {elf, self, nid} → image → analysis → cl
 ## CLI
 
 - Binary: `ps5rs` (from `ps5-cli` crate, `clap` derive API)
-- Subcommand files in `crates/ps5-cli/src/`: `inspect.rs`, `load.rs`, `strings.rs`, `catalog.rs`, `batch_load.rs`, `export_scan.rs`, etc.
+- Subcommand files in `crates/ps5-cli/src/`: `inspect.rs`, `load.rs`, `strings.rs`, `catalog.rs`, `batch_load.rs`, `export_scan.rs`, `run.rs`, etc.
 - `cli.rs` purely declarative (types only, no helpers)
 
 ## Loader Pipeline
@@ -55,15 +57,26 @@ Dependency direction: `format → {elf, self, nid} → image → analysis → cl
 3. **Link** — register exports, 3-tier resolution (runtime → offline `./system_modules/` → stubs)
 4. **Init** — (planned) `.init_array`/`.preinit_array`/`DT_INIT`
 
+`load_modules_at` loads the first module at a caller-supplied base (default `DEFAULT_LOAD_BASE = 0x810000000`) so several processes can share one host address space.
+
+## Emulator
+
+- `ps5-emu` runs guest entry points as native x86-64; only the ABI boundary is machine code (`abi::sysv64`): stubs forward the six SysV integer registers + guest stack pointer into the `Registry`, which dispatches by computed NID to pure-Rust HLE modules (`modules/libc.rs`, `modules/kernel.rs`, `modules/libdbg.rs`).
+- API: `Emulator::from_elf(...)` (default modules, `DEFAULT_LOAD_BASE`) → `resolve_imports_with(&catalog)` → `run() -> ExecutionReport` (module name, entry point, exit code, ordered `import_calls`). `ps5-emu/serde` feature gates report serialization.
+- Loader/emulator split: `Process` owns memory + loaded modules (`Process::load_at` for custom bases); the emulator wraps a `Process`, a `Registry`, and execution state.
+- Library names in traces resolve through the module's `import_libs` table (NID-derived lib id fallback), so masked symbols read as `libkernel::puts`.
+- Reference flows: `crates/ps5-cli/src/run.rs` (CLI) and `crates/ps5-emu/examples/boot.rs`.
+
 ## Testing
 
 - Inline `#[cfg(test)] mod tests { use super::*; }` in every source file
 - Descriptive snake_case names: `parse_minimal_elf_header`, `loaded_segment_roundtrip`
 - Edge cases: truncated data, wrong magic, zero-size TLS, empty sections
 - Property tests: `proptest` in `ps5-elf`
+- **Generated-fixture regression** (primary emulator suite): `ps5-tests` renders byte-exact ELFs + `manifest.json` to `data/test/generated_elfs/`; `ps5-emu/tests/elf_suite.rs` boots every fixture through the real loader + HLE pipeline and asserts exit code, import trace, and (via `print_string`) guest-string reads. Rebuild fixtures with `cargo run -p ps5-tests --bin generate` when fixtures change, and commit the resulting bytes + manifest.
 
 ## Git
 
 - Conventional commits: `feat:`, `fix:`, `docs:`, `chore:`
 - Feature branches from `master`
-- `system_modules/` and `analysis_old/` gitignored (large/proprietary)
+- `system_modules/`, `analysis_old/`, `*.elf` gitignored (large/proprietary) — the tiny self-authored fixtures under `data/test/generated_elfs/` are force-added (`git add -f`) so the regression suite works on fresh clones
