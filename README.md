@@ -1,15 +1,12 @@
 # ps5rs
 
-A PS5 binary analysis, virtual loading, and host-side emulation framework
-written in Rust. Parses SELF/ELF/PRX formats, resolves NID imports, extracts
-clean ELFs, fingerprints game binaries through string analysis
-(engine/middleware/SDK detection), and generates interactive dashboards.
-Also provides a virtual PS5 loader: maps ELF memory, applies relocations
-(RELATIVE, ABS64, GLOB_DAT, JUMP_SLOT), resolves imports against runtime PRX
-exports and offline system-module databases, and stubs unknown symbols for
-multi-module dependency analysis. A host-side emulator (`ps5-emu`) executes
-guest binaries on the host CPU and routes system-library imports through
-pure-Rust HLE modules.
+A PS5 binary analysis, virtual loading, and host-side emulation framework written in Rust.
+
+Parses SELF/ELF/PRX formats, resolves NID imports, extracts clean ELFs, fingerprints game binaries through string analysis (engine/middleware/SDK detection), and generates interactive dashboards.
+
+Also provides a virtual PS5 loader: maps ELF memory, applies relocations (RELATIVE, ABS64, GLOB_DAT, JUMP_SLOT), resolves imports against runtime PRX exports and offline system-module databases, and stubs unknown symbols for multi-module dependency analysis.
+
+A host-side emulator (`ps5-emu`) executes guest binaries on the host CPU and routes system-library imports through pure-Rust HLE modules.
 
 ## Why Rust?
 
