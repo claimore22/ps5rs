@@ -64,7 +64,7 @@ ps5rs dashboard analysis/
 # 6. Boot a binary in the host-side emulator
 ps5rs run path/to/eboot.elf
 
-# 7. Regenerate the emulator's test fixtures elf files (when their definitions change)
+# 7. Generate the emulator's test fixture ELF files yourself
 cargo run -p ps5-tests --bin generate
 ```
 
@@ -509,8 +509,11 @@ Each fixture ships with a `manifest.json` describing its expected exit code,
 import trace, and printed string. The `elf_suite` integration test boots every
 fixture through the real loader + HLE pipeline and asserts the manifest
 matches — a deterministic regression boundary for the full ABI/import/memory
-stack. Regenerate fixtures with `cargo run -p ps5-tests --bin generate` and
-commit the resulting bytes + manifest.
+stack. **Generate your own fixtures.** Define a new fixture (code + layout)
+in `crates/ps5-tests` — e.g. `fixtures.rs`, `codegen.rs`, `dynelf.rs` — then
+run `cargo run -p ps5-tests --bin generate` to render the byte-exact ELF and
+its `manifest.json` entry into `data/test/generated_elfs/`. Commit both the
+fixture bytes and the manifest.
 
 Run a generated fixture directly:
 
