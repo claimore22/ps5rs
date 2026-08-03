@@ -1,13 +1,15 @@
 # ps5rs
 
-A PS5 binary analysis and virtual loading framework written in Rust.
-Parses SELF/ELF/PRX formats, resolves NID imports, extracts clean ELFs,
-fingerprints game binaries through string analysis (engine/middleware/SDK
-detection), and generates interactive dashboards. Also provides a virtual
-PS5 loader: maps ELF memory, applies relocations (RELATIVE, ABS64, GLOB_DAT,
-JUMP_SLOT), resolves imports against runtime PRX exports and offline
-system-module databases, and stubs unknown symbols for multi-module
-dependency analysis.
+A PS5 binary analysis, virtual loading, and host-side emulation framework
+written in Rust. Parses SELF/ELF/PRX formats, resolves NID imports, extracts
+clean ELFs, fingerprints game binaries through string analysis
+(engine/middleware/SDK detection), and generates interactive dashboards.
+Also provides a virtual PS5 loader: maps ELF memory, applies relocations
+(RELATIVE, ABS64, GLOB_DAT, JUMP_SLOT), resolves imports against runtime PRX
+exports and offline system-module databases, and stubs unknown symbols for
+multi-module dependency analysis. A host-side emulator (`ps5-emu`) executes
+guest binaries on the host CPU and routes system-library imports through
+pure-Rust HLE modules.
 
 ## Why Rust?
 
@@ -24,6 +26,8 @@ The PS5 uses an x86-64 AMD Zen 2 CPU, which means CPU instruction compatibility 
 | `ps5-image` | BinaryImage IR: normalized abstraction with JSON serialization, `Detection` with confidence/evidence |
 | `ps5-analysis` | Analysis engine: scanner, dataset, PRX module discovery, dependency analysis, string fingerprinting, engine detection, reports, and export |
 | `ps5-loader` | PS5 ELF/PRX loader: virtual memory model, relocation engine (RELATIVE, ABS64, GLOB_DAT, JUMP_SLOT), import resolver with 3-tier lookup (runtime exports → offline exports → stub allocator), NID computation, multi-module dependency loading |
+| `ps5-emu` | Host-side emulator: loads binaries through the loader pipeline, executes guest entry points as native x86-64, routes system-library imports through HLE modules, emits `ExecutionReport` |
+| `ps5-tests` | Deterministic, self-authored ELF fixture generator + manifest of expected guest behavior (regression suite input) |
 | `ps5-dashboard` | Static HTML dashboard generator (self-contained, no CDN dependencies) |
 | `ps5-cli` | Command-line interface |
 
@@ -59,6 +63,9 @@ ps5rs analyze engines analysis/
 
 # 5. Generate interactive dashboard
 ps5rs dashboard analysis/
+
+# 6. Boot a binary in the host-side emulator
+ps5rs run path/to/eboot.elf
 ```
 
 ## Usage
@@ -408,7 +415,11 @@ Tabs: Overview, Games, Engines, Libraries, NIDs, Segments, Statistics, Graph
 
 ## Compatibility Research
 
-ps5rs is intentionally focused on binary understanding rather than execution. The extracted information provides the foundation for future compatibility work:
+ps5rs is intentionally focused on binary understanding and host-side
+execution rather than full compatibility. The extracted information and the
+`ps5-emu` HLE layer (which already implements `libc`, `libkernel`, and
+`libSceDbg` host modules) provide the foundation for future compatibility
+work:
 
 ```
 Binary analysis
@@ -420,7 +431,7 @@ Dependency graph
 Required system APIs
         |
         v
-HLE implementation targets
+HLE implementations
         |
         v
 Compatibility runtime
@@ -428,7 +439,7 @@ Compatibility runtime
 
 ## Test Suite
 
-430 tests across 9 crates covering ELF parsing, SELF extraction, NID hashing/caching, BinaryImage IR, string fingerprinting, engine detection, analysis reports, dataset operations, batch extraction, dashboard generation, PRX module scanning, and PS5 ELF/PRX loading with relocation and import resolution.
+525+ tests across 11 crates covering ELF parsing, SELF extraction, NID hashing/caching, BinaryImage IR, string fingerprinting, engine detection, analysis reports, dataset operations, batch extraction, dashboard generation, PRX module scanning, PS5 ELF/PRX loading with relocation and import resolution, and end-to-end guest execution against self-authored ELF fixtures (exit codes, import traces, guest-string reads).
 
 ## Loader / Relocation Engine
 
@@ -458,6 +469,48 @@ ps5rs load path/to/eboot.bin
 # Explicit PRX directory
 ps5rs load path/to/eboot.bin --prx-dir path/to/sce_module/
 ```
+
+## Host-Side Execution (Emulator)
+
+The `ps5-emu` crate executes guest binaries on the host CPU — no interpreter.
+Because the PS5 uses an x86-64 AMD Zen 2 CPU, guest machine code runs natively;
+the hard part is the system ABI, which is bridged by hand-written stubs into
+pure-Rust HLE modules.
+
+```sh
+# Boot a binary, print the import-call trace and exit code
+ps5rs run path/to/eboot.elf
+
+# Machine-readable execution report
+ps5rs run path/to/eboot.elf --json
+```
+
+Flow:
+
+1. **Load** — `Emulator::from_elf()` runs the loader pipeline (Map → Relocate → Link) at `DEFAULT_LOAD_BASE` (`0x810000000`), with optional PRX dependencies via `--prx-dir`.
+2. **Resolve** — the import table is built from the module's relocations; every import is patched with a machine-code stub whose address is recorded per-slot.
+3. **Dispatch** — each stub forwards the six SysV integer registers plus a pointer to the guest stack into the `Registry`, which indexes module symbols by computed NID. HLE modules (`libc`, `libkernel`, `libSceDbg`) handle calls like `printf`/`puts`/`atexit`/`exit`/`rand`, reading guest memory through the process API.
+4. **Report** — `Emulator::run()` returns an `ExecutionReport`: module name, entry point, exit code, and the ordered import-call trace (`libkernel::puts` style names, arguments, return values). The report serializes to JSON when the `ps5-emu/serde` feature is enabled.
+
+Entry points that return naturally (rather than calling `exit`) finish with their `rdi`/`rax` value as the exit code.
+
+### Regression fixtures
+
+The `ps5-tests` crate generates byte-exact, self-authored ELF fixtures (no
+third-party binaries) into `data/test/generated_elfs/`:
+
+- `hello.elf` — minimal entry → `ret` → exit 0 (load + natural return).
+- `hello_puts.elf` — dynamic `ET_SCE_DYNEXEC` importing `libkernel::puts`
+  through a GOT slot; prints `Hello from ps5rs!` and exits 0. Exercises
+  RIP-relative addressing, GOT relocation, indirect calls, the SysV first
+  argument register, and guest-memory string reads.
+
+Each fixture ships with a `manifest.json` describing its expected exit code,
+import trace, and printed string. The `elf_suite` integration test boots every
+fixture through the real loader + HLE pipeline and asserts the manifest
+matches — a deterministic regression boundary for the full ABI/import/memory
+stack. Regenerate fixtures with `cargo run -p ps5-tests --bin generate` and
+commit the resulting bytes + manifest.
 
 ## Acknowledgements
 
