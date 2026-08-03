@@ -512,6 +512,15 @@ matches — a deterministic regression boundary for the full ABI/import/memory
 stack. Regenerate fixtures with `cargo run -p ps5-tests --bin generate` and
 commit the resulting bytes + manifest.
 
+Run a generated fixture directly:
+
+```sh
+ps5rs run ./data/test/generated_elfs/hello_puts.elf
+# Hello from ps5rs!
+# hello_puts.elf @ 0x810001000 exited with code 0
+#   import libkernel::puts args=[...] -> 0
+```
+
 ## Acknowledgements
 
 ### Acelogic
