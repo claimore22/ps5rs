@@ -1,8 +1,9 @@
-//! Boot the real SDK libSceDbg `basic` sample to completion, exercising the
-//! full materialize → stub → dispatcher → Registry → escape pipeline against a
-//! production eboot.  The test self-skips when the SDK binary is absent so it
-//! stays green on machines without the SDK, and is serialized against the
-//! other guest-run tests through `GUEST_LOCK`.
+//! Boot an externally-supplied libSceDbg `basic` sample eboot to completion,
+//! exercising the full materialize → stub → dispatcher → Registry → escape
+//! pipeline against a production binary. The test self-skips when
+//! `PS5_SAMPLE_EBOOT` is unset so it stays green on machines without the
+//! binary, and is serialized against the other guest-run tests through
+//! `GUEST_LOCK`.
 
 use std::path::{Path, PathBuf};
 use std::sync::Mutex;
@@ -17,20 +18,8 @@ static GUEST_LOCK: Mutex<()> = Mutex::new(());
 /// reservations would collide).
 const LOAD_BASE: u64 = 0x850000000;
 
-const DEFAULT_SAMPLE: &str = "C:/Users/claimoar/Documents/SDK MANAGER 10.00/Samples/sdk/target/samples/sample_code/system/api_libdbg/basic/Release_Prospero/eboot.elf";
-
 fn sample_eboot() -> Option<PathBuf> {
-    std::env::var("PS5_SAMPLE_EBOOT")
-        .ok()
-        .map(PathBuf::from)
-        .or_else(|| {
-            let default = PathBuf::from(DEFAULT_SAMPLE);
-            if default.is_file() {
-                Some(default)
-            } else {
-                None
-            }
-        })
+    std::env::var("PS5_SAMPLE_EBOOT").ok().map(PathBuf::from)
 }
 
 fn prx_dir_for(eboot: &Path) -> PathBuf {
@@ -47,7 +36,7 @@ fn sdk_libc_dbg_basic_boots_to_finalized() {
     let _guard = GUEST_LOCK.lock().unwrap();
 
     let Some(eboot_path) = sample_eboot() else {
-        eprintln!("skipping: PS5_SAMPLE_EBOOT not set and sample not found at {DEFAULT_SAMPLE}");
+        eprintln!("skipping: PS5_SAMPLE_EBOOT not set");
         return;
     };
 

@@ -1,12 +1,12 @@
-//! Boot the SDK-built ps5rs hello-world eboot to completion and prove the
-//! full ABI path: the guest string literal is reached through native execution
-//! → `libkernel::puts` import → captured argument register → guest virtual
+//! Boot the ps5rs hello-world eboot to completion and prove the full ABI
+//! path: the guest string literal is reached through native execution →
+//! `libkernel::puts` import → captured argument register → guest virtual
 //! address → [`Process::read_string`] → Rust `String`.
 //!
-//! The eboot is built by `SDK_TEST_ELF/build.cmd` against the real Prospero
-//! toolchain, so this doubles as the "real guest execution works" gate.  The
-//! test self-skips when the binary is absent and is serialized against the
-//! other guest-run tests through `GUEST_LOCK`.
+//! The eboot is supplied externally and pointed at with the `PS5_SDK_HELLO`
+//! environment variable, so this doubles as the "real guest execution works"
+//! gate. The test self-skips when the variable is unset and is serialized
+//! against the other guest-run tests through `GUEST_LOCK`.
 
 use std::path::{Path, PathBuf};
 use std::sync::Mutex;
@@ -21,20 +21,8 @@ static GUEST_LOCK: Mutex<()> = Mutex::new(());
 /// reservations would collide).
 const LOAD_BASE: u64 = 0x860000000;
 
-const DEFAULT_HELLO: &str = "C:/Users/claimoar/Documents/SDK_TEST_ELF/Release_Prospero/eboot.elf";
-
 fn hello_eboot() -> Option<PathBuf> {
-    std::env::var("PS5_SDK_HELLO")
-        .ok()
-        .map(PathBuf::from)
-        .or_else(|| {
-            let default = PathBuf::from(DEFAULT_HELLO);
-            if default.is_file() {
-                Some(default)
-            } else {
-                None
-            }
-        })
+    std::env::var("PS5_SDK_HELLO").ok().map(PathBuf::from)
 }
 
 fn prx_dir_for(eboot: &Path) -> PathBuf {
@@ -51,7 +39,7 @@ fn sdk_hello_puts_reads_the_guest_string() {
     let _guard = GUEST_LOCK.lock().unwrap();
 
     let Some(eboot_path) = hello_eboot() else {
-        eprintln!("skipping: PS5_SDK_HELLO not set and hello not found at {DEFAULT_HELLO}");
+        eprintln!("skipping: PS5_SDK_HELLO not set");
         return;
     };
 
