@@ -563,7 +563,7 @@ dependencies = [
 
 [[package]]
 name = "ps5-analysis"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "ps5-format",
  "ps5-image",
@@ -575,7 +575,7 @@ dependencies = [
 
 [[package]]
 name = "ps5-cli"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "clap",
  "csv",
@@ -595,7 +595,7 @@ dependencies = [
 
 [[package]]
 name = "ps5-dashboard"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "ps5-analysis",
  "ps5-image",
@@ -606,7 +606,7 @@ dependencies = [
 
 [[package]]
 name = "ps5-elf"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "proptest",
  "ps5-format",
@@ -615,7 +615,7 @@ dependencies = [
 
 [[package]]
 name = "ps5-emu"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "libc",
  "ps5-elf",
@@ -631,7 +631,7 @@ dependencies = [
 
 [[package]]
 name = "ps5-format"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "sha2",
  "thiserror",
@@ -639,7 +639,7 @@ dependencies = [
 
 [[package]]
 name = "ps5-image"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "ps5-elf",
  "ps5-format",
@@ -651,7 +651,7 @@ dependencies = [
 
 [[package]]
 name = "ps5-loader"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "ps5-elf",
  "serde",
@@ -662,14 +662,14 @@ dependencies = [
 
 [[package]]
 name = "ps5-nid"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "sha1",
 ]
 
 [[package]]
 name = "ps5-self"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "ps5-elf",
  "ps5-format",
@@ -677,7 +677,7 @@ dependencies = [
 
 [[package]]
 name = "ps5-tests"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "ps5-format",
  "ps5-nid",
