@@ -15,10 +15,10 @@ fn find_eboot(dir: &Path) -> Option<std::path::PathBuf> {
     }
     for entry in std::fs::read_dir(dir).ok()? {
         let entry = entry.ok()?;
-        if entry.file_type().map(|t| t.is_dir()).unwrap_or(false) {
-            if let Some(p) = find_eboot(&entry.path()) {
-                return Some(p);
-            }
+        if entry.file_type().map(|t| t.is_dir()).unwrap_or(false)
+            && let Some(p) = find_eboot(&entry.path())
+        {
+            return Some(p);
         }
         if entry.file_name().to_string_lossy().to_lowercase() == "eboot.bin" {
             return Some(entry.path());

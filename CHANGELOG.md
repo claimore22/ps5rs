@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-08-03
+
 ### Added
 - **`ps5rs batch-load <games_dir>` command**: discovers game subdirectories, runs full load pipeline per game (eboot + PRX deps), writes per-game `GameLoadReport` JSON + aggregate `LoadSummary`, with `--json` stdout mode for piped consumption
 - **`ps5rs export-scan <dir>` command**: walks directory for `*.prx` files, parses ELF, extracts exports, writes `<module>.exports.json` for offline resolution database
