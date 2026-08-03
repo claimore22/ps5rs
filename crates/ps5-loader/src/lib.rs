@@ -32,7 +32,7 @@ mod pipeline;
 mod relocation;
 mod resolver;
 
-pub use address::LoadAddressAllocator;
+pub use address::{DEFAULT_LOAD_BASE, LoadAddressAllocator};
 pub use context::ModuleContext;
 pub use exports::{ExportEntry, ExportTable};
 pub use graph::{DependencyEdge, ModuleGraph};
@@ -46,7 +46,7 @@ pub use mapper::{
 pub use memory::{MemoryError, MemoryErrorKind, MemoryRegion, ProcessMemory, SegmentFlags};
 pub use nid::{NidResolver, SymbolNidResolver, compute_nid, nid_to_u64};
 pub use offline::{OfflineExportEntry, OfflineExportTable};
-pub use pipeline::load_modules;
+pub use pipeline::{load_modules, load_modules_at};
 pub use relocation::{
     RelocationError, RelocationKind, RelocationRecord, RelocationSummary, apply_relocations,
     apply_relocations_with,

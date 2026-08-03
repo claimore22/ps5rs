@@ -114,6 +114,16 @@ pub enum Commands {
         #[arg(long)]
         json: bool,
     },
+    /// Run a PS5 eboot in the host emulator and print the execution report
+    Run {
+        file: PathBuf,
+        /// Directory containing PRX modules (default: `file parent/sce_module`)
+        #[arg(long, value_hint = ValueHint::DirPath)]
+        prx_dir: Option<PathBuf>,
+        /// Emit the execution report as JSON
+        #[arg(long)]
+        json: bool,
+    },
     /// Batch-scan ELF/PRX files and produce offline export files for the loader
     ExportScan {
         /// Directory containing ELF/PRX/SELF files to scan

@@ -9,6 +9,7 @@ mod export_scan;
 mod extract;
 mod inspect;
 mod load;
+mod run;
 mod strings;
 mod terminal;
 mod unknown_nids;
@@ -73,6 +74,11 @@ fn main() {
             prx_dir,
             json,
         } => load::cmd_load(&file, prx_dir, json),
+        Commands::Run {
+            file,
+            prx_dir,
+            json,
+        } => run::cmd_run(&file, prx_dir, json),
         Commands::ExportScan { path, output } => export_scan::cmd_export_scan(&path, &output),
         Commands::BatchLoad {
             path,

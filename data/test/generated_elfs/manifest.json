@@ -1,0 +1,28 @@
+{
+  "fixtures": {
+    "hello.elf": {
+      "sha256": "3df31f237acd03fc399a40aace1b57812e1640f8ee93902b8600f6ace0823fc1",
+      "expected_exit": 0
+    },
+    "hello_puts.elf": {
+      "sha256": "2f14c9ce33ef2e59de0dddd3e77037bb3b7d1bc2dde4a43c719a4ac00a89c3d8",
+      "expected_exit": 0,
+      "imports": [
+        {
+          "library": "libkernel",
+          "name": "puts",
+          "args": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "return_value": 0
+        }
+      ],
+      "print_string": "Hello from ps5rs!"
+    }
+  }
+}
