@@ -3,6 +3,9 @@
 /// Default starting point: `0x810000000` (eboot sits at `0x800000000` under
 /// PS5's standard image base).  Each allocation advances by the module's
 /// size rounded up to the page granularity.
+/// Default base for the first loaded module; mirrors the standard PS5 layout.
+pub const DEFAULT_LOAD_BASE: u64 = 0x810000000;
+
 #[derive(Debug, Clone)]
 pub struct LoadAddressAllocator {
     next: u64,
@@ -40,7 +43,7 @@ fn align_up(value: u64, align: u64) -> u64 {
 
 impl Default for LoadAddressAllocator {
     fn default() -> Self {
-        Self::new(0x810000000, 0x10000)
+        Self::new(DEFAULT_LOAD_BASE, 0x10000)
     }
 }
 

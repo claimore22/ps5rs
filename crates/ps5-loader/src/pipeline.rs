@@ -1,6 +1,6 @@
 use std::collections::HashSet;
 
-use crate::address::LoadAddressAllocator;
+use crate::address::{DEFAULT_LOAD_BASE, LoadAddressAllocator};
 use crate::context::ModuleContext;
 use crate::exports::ExportTable;
 use crate::graph::ModuleGraph;
@@ -130,8 +130,27 @@ where
 pub fn load_modules(
     eboot_name: &str,
     eboot_bytes: &[u8],
+    prx_provider: impl FnMut(&str) -> Option<Vec<u8>>,
+    offline_exports: Option<&OfflineExportTable>,
+) -> Result<ModuleContext, LoaderError> {
+    load_modules_at(
+        eboot_name,
+        eboot_bytes,
+        prx_provider,
+        offline_exports,
+        DEFAULT_LOAD_BASE,
+    )
+}
+
+/// Like [`load_modules`], but the first module loads at `base_address`
+/// instead of the default.  Useful when several processes share one address
+/// space, where distinct bases avoid overlapping reservations.
+pub fn load_modules_at(
+    eboot_name: &str,
+    eboot_bytes: &[u8],
     mut prx_provider: impl FnMut(&str) -> Option<Vec<u8>>,
     offline_exports: Option<&OfflineExportTable>,
+    base_address: u64,
 ) -> Result<ModuleContext, LoaderError> {
     let eboot_elf = ps5_elf::ElfImage::parse(eboot_bytes, None)
         .map_err(|e| LoaderError(format!("eboot ELF parse: {e}")))?;
@@ -140,7 +159,7 @@ pub fn load_modules(
         export_table: ExportTable::new(),
         offline_exports,
         graph: ModuleGraph::new(),
-        address_alloc: LoadAddressAllocator::default(),
+        address_alloc: LoadAddressAllocator::new(base_address, 0x10000),
         stub_alloc: StubAllocator::new(0x0000_7fff_0000_0000),
         loaded_modules: Vec::new(),
         total_resolved: 0,

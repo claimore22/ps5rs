@@ -3,7 +3,30 @@ name = "ps5-emu"
 version.workspace = true
 edition.workspace = true
 license.workspace = true
-description = "PS5 host-side emulator — emulated system library modules"
+description = "PS5 host-side emulator — native guest execution with HLE system library modules"
 
-[lints]
-workspace = true
+[features]
+serde = ["dep:serde"]
+
+[dependencies]
+ps5-elf = { path = "../ps5-elf" }
+ps5-loader = { path = "../ps5-loader" }
+ps5-nid = { path = "../ps5-nid" }
+serde = { version = "1", features = ["derive"], optional = true }
+tracing = "0.1"
+
+[target.'cfg(not(target_os = "windows"))'.dependencies]
+libc = "0.2"
+
+[dev-dependencies]
+ps5-format = { path = "../ps5-format" }
+ps5-tests = { path = "../ps5-tests" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+[lints.clippy]
+all = { level = "warn", priority = -1 }
+
+[lints.rust]
+unsafe_code = "allow"

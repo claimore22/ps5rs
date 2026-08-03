@@ -46,7 +46,7 @@ fn elf_type_name(e_type: u16) -> &'static str {
     }
 }
 
-fn get_elf_bytes(data: &[u8]) -> Vec<u8> {
+pub(crate) fn get_elf_bytes(data: &[u8]) -> Vec<u8> {
     if data.len() >= 4 && &data[0..4] == b"\x7fELF" {
         return data.to_vec();
     }
