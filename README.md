@@ -67,7 +67,7 @@ ps5rs dashboard analysis/
 # 6. Boot a binary in the host-side emulator
 ps5rs run path/to/eboot.elf
 
-# 7. Regenerate the emulator's test fixtures (when their definitions change)
+# 7. Regenerate the emulator's test fixtures elf files (when their definitions change)
 cargo run -p ps5-tests --bin generate
 ```
 
