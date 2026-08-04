@@ -28,7 +28,7 @@
       ]
     },
     "libdbg_basic.elf": {
-      "sha256": "135be887c4a631c02be881e67d07f7491e0b650be1674f9d89134e92f9847eb6",
+      "sha256": "0c41d8fe84ffa4949bde1a4f9bb65570a1ba8a90c4f755f4603b90eae35bedd0",
       "expected_exit": 0,
       "imports": [
         {
@@ -242,9 +242,9 @@
       ],
       "stdout": [
         "Hello from ps5rs!\n",
-        "[basic.cpp:36] [] Two random numbers: 40788086, 3851444534\n\n",
-        "[basic.cpp:39] [] Three random numbers: 915262580, 2714061548, 1316748153 My mind is going\n\n",
-        "[basic.cpp:42] [] Four random numbers: 3605590735, 452227306, 2966872715, 1229098382\nDaisy, daisy, give me your answer do\n\n"
+        "[fixture.c:36] [] pair: 40788086, 3851444534\n\n",
+        "[fixture.c:39] [] trio: 915262580, 2714061548, 1316748153 everything nominal\n\n",
+        "[fixture.c:42] [] quartet: 3605590735, 452227306, 2966872715, 1229098382\nThe quick brown fox jumps over the lazy dog\n\n"
       ]
     }
   }
