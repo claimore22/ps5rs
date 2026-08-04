@@ -68,11 +68,11 @@ fn hello_puts() -> Fixture {
     }
 }
 
-/// `libdbg_basic.elf` — a deterministic twin of the SDK `api_libdbg/basic`
-/// sample's `run()` sequence.  Four imports (min-level, puts, rand, logging
-/// handler), 16 GOT calls, and stack varargs pushed right-to-left across the
-/// DEBUG/WARNING/ERROR calls.  The compiled-in `__FILE__`/`__LINE__`/format
-/// constants mirror the sample so the emitted stdout is byte-predictable.
+/// `libdbg_basic.elf` — a deterministic guest exercising the libdbg logging
+/// flow.  Four imports (min-level, puts, rand, logging handler), 16 GOT calls,
+/// and stack varargs pushed right-to-left across the DEBUG/WARNING/ERROR
+/// calls.  The compiled-in `__FILE__`/format constants are fixed text the
+/// fixture owns, so the emitted stdout is byte-predictable.
 fn libdbg_basic() -> Fixture {
     let imports = vec![
         format!("{}#libSceDbg", hash("sceDbgSetMinimumLogLevel")),
@@ -82,14 +82,14 @@ fn libdbg_basic() -> Fixture {
     ];
     let messages: Vec<&'static [u8]> = vec![
         b"Hello from ps5rs!\0".as_slice(),
-        b"basic.cpp\0".as_slice(),
+        b"fixture.c\0".as_slice(),
         b"\0".as_slice(),
-        b"One random number: %d\n\0".as_slice(),
-        b"Two random numbers: %d, %d\n\0".as_slice(),
-        b"Three random numbers: %d, %d, %d %s\n\0".as_slice(),
-        b"Four random numbers: %d, %d, %d, %d\n%s\n\0".as_slice(),
-        b"My mind is going\0".as_slice(),
-        b"Daisy, daisy, give me your answer do\0".as_slice(),
+        b"value: %d\n\0".as_slice(),
+        b"pair: %d, %d\n\0".as_slice(),
+        b"trio: %d, %d, %d %s\n\0".as_slice(),
+        b"quartet: %d, %d, %d, %d\n%s\n\0".as_slice(),
+        b"everything nominal\0".as_slice(),
+        b"The quick brown fox jumps over the lazy dog\0".as_slice(),
     ];
     let p = dynelf::plan(&messages, &imports);
     let addrs = codegen::LibdbgBasicAddrs {
@@ -218,9 +218,9 @@ fn libdbg_basic() -> Fixture {
         print_string: None,
         stdout: vec![
             "Hello from ps5rs!\n".to_string(),
-            "[basic.cpp:36] [] Two random numbers: 40788086, 3851444534\n\n".to_string(),
-            "[basic.cpp:39] [] Three random numbers: 915262580, 2714061548, 1316748153 My mind is going\n\n".to_string(),
-            "[basic.cpp:42] [] Four random numbers: 3605590735, 452227306, 2966872715, 1229098382\nDaisy, daisy, give me your answer do\n\n".to_string(),
+            "[fixture.c:36] [] pair: 40788086, 3851444534\n\n".to_string(),
+            "[fixture.c:39] [] trio: 915262580, 2714061548, 1316748153 everything nominal\n\n".to_string(),
+            "[fixture.c:42] [] quartet: 3605590735, 452227306, 2966872715, 1229098382\nThe quick brown fox jumps over the lazy dog\n\n".to_string(),
         ],
     }
 }
