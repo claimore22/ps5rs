@@ -36,4 +36,7 @@ pub struct ExecutionReport {
     pub entry_point: u64,
     /// Import calls in the order the guest made them.
     pub import_calls: Vec<ImportCall>,
+    /// Chunks the guest wrote to stdout through the HLE modules, in order.
+    #[cfg_attr(feature = "serde", serde(default))]
+    pub output_lines: Vec<String>,
 }

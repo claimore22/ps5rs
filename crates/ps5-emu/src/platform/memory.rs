@@ -93,6 +93,7 @@ pub struct GuestRegion {
 pub struct GuestMemory {
     regions: Vec<GuestRegion>,
     reservations: Vec<Reservation>,
+    output: Vec<String>,
 }
 
 impl GuestMemory {
@@ -166,6 +167,7 @@ impl GuestMemory {
         Ok(Self {
             regions,
             reservations,
+            output: Vec::new(),
         })
     }
 
@@ -233,6 +235,17 @@ impl GuestMemory {
 
     pub fn regions(&self) -> &[GuestRegion] {
         &self.regions
+    }
+
+    /// Take the chunks the guest emitted through [`Host::emit`], clearing the
+    /// buffer.
+    pub fn take_output(&mut self) -> Vec<String> {
+        std::mem::take(&mut self.output)
+    }
+
+    /// Chunks the guest emitted through [`Host::emit`], in order.
+    pub fn output_lines(&self) -> &[String] {
+        &self.output
     }
 }
 
@@ -306,6 +319,10 @@ impl Host for GuestMemory {
             );
         }
         Ok(())
+    }
+
+    fn emit(&mut self, chunk: &str) {
+        self.output.push(chunk.to_string());
     }
 }
 
