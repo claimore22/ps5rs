@@ -73,6 +73,11 @@ impl Dispatcher {
         &self.host
     }
 
+    /// Chunks the guest emitted to stdout through the HLE modules.
+    pub fn take_output(&mut self) -> Vec<String> {
+        self.host.take_output()
+    }
+
     pub fn into_registry(self) -> Registry {
         self.registry
     }

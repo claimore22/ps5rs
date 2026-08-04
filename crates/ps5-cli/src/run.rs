@@ -80,6 +80,10 @@ pub(crate) fn cmd_run(file: &PathBuf, prx_dir: Option<PathBuf>, json: bool) {
         return;
     }
 
+    for line in &report.output_lines {
+        print!("{line}");
+    }
+
     println!(
         "{} @ {:#x} exited with code {}",
         report.module_name, report.entry_point, report.exit_code

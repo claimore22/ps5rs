@@ -9,7 +9,7 @@ use std::path::PathBuf;
 use std::sync::{Mutex, OnceLock};
 
 use ps5_emu::{EXECUTION_REPORT_VERSION, Emulator, ImportCall, Process};
-use ps5_tests::manifest::Manifest;
+use ps5_tests::manifest::{ARG_WILDCARD, Manifest};
 
 static GUEST_LOCK: Mutex<()> = Mutex::new(());
 static CATALOG: OnceLock<ps5_nid::Catalog> = OnceLock::new();
@@ -110,13 +110,22 @@ fn every_fixture_boots_with_expected_report() {
             );
             assert_eq!(got.name, want.name, "{name}: unexpected import name");
             if want.args != [0; 6] {
-                assert_eq!(got.args, want.args, "{name}: unexpected import args");
+                for (g, w) in got.args.iter().zip(want.args.iter()) {
+                    if *w != ARG_WILDCARD {
+                        assert_eq!(g, w, "{name}: unexpected import arg");
+                    }
+                }
             }
             assert_eq!(
                 got.return_value, want.return_value,
                 "{name}: unexpected import return value"
             );
         }
+
+        assert_eq!(
+            report.output_lines, expectation.stdout,
+            "{name}: unexpected stdout"
+        );
 
         if let Some(text) = &expectation.print_string {
             let puts = report

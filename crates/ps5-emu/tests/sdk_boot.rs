@@ -72,10 +72,85 @@ fn sdk_libc_dbg_basic_boots_to_finalized() {
         "all sample imports should resolve to names"
     );
 
-    let code = emulator
-        .run()
-        .expect("sample should run to completion")
-        .exit_code;
-    assert_eq!(code, 0, "sample should exit with code 0");
+    let report = emulator.run().expect("sample should run to completion");
+    assert_eq!(report.exit_code, 0, "sample should exit with code 0");
     assert!(matches!(emulator.state(), ps5_emu::EmuState::Halted));
+
+    let lines = &report.output_lines;
+    assert_eq!(lines.len(), 5, "banner + three log chunks + finalized");
+    assert!(lines[0].starts_with("## Sample Application: start initializing ##"));
+    assert!(lines[1].contains("basic.cpp:36]"));
+    assert!(lines[1].contains("Two random numbers: 40788086, 3851444534"));
+    assert!(lines[2].contains("basic.cpp:39]"));
+    assert!(lines[2].contains("Three random numbers: 915262580, 2714061548, 1316748153"));
+    assert!(lines[2].contains("My mind is going"));
+    assert!(lines[3].contains("basic.cpp:42]"));
+    assert!(
+        lines[3].contains("Four random numbers: 3605590735, 452227306, 2966872715, 1229098382")
+    );
+    assert!(lines[3].contains("Daisy, daisy, give me your answer do"));
+    assert!(lines[4].starts_with("## Sample Application: finalized ##"));
+
+    let names: Vec<&str> = report
+        .import_calls
+        .iter()
+        .map(|c| c.name.as_str())
+        .collect();
+    assert_eq!(
+        names,
+        [
+            "_init_env",
+            "atexit",
+            "atexit",
+            "puts",
+            "sceDbgSetMinimumLogLevel",
+            "rand",
+            "sceDbgLoggingHandler",
+            "rand",
+            "rand",
+            "sceDbgLoggingHandler",
+            "rand",
+            "rand",
+            "rand",
+            "sceDbgLoggingHandler",
+            "rand",
+            "rand",
+            "rand",
+            "rand",
+            "sceDbgLoggingHandler",
+            "puts",
+        ]
+    );
+
+    let mut rand_values = Vec::new();
+    let mut handler_lines = Vec::new();
+    let mut handler_levels = Vec::new();
+    for call in &report.import_calls {
+        match call.name.as_str() {
+            "sceDbgSetMinimumLogLevel" => assert_eq!(call.args[0], 1, "min level must be 1"),
+            "rand" => rand_values.push(call.return_value),
+            "sceDbgLoggingHandler" => {
+                handler_lines.push(call.args[1]);
+                handler_levels.push(call.args[2]);
+            }
+            _ => {}
+        }
+    }
+    assert_eq!(
+        rand_values,
+        [
+            200_494_509,
+            40_788_086,
+            3_851_444_534,
+            915_262_580,
+            2_714_061_548,
+            1_316_748_153,
+            3_605_590_735,
+            452_227_306,
+            2_966_872_715,
+            1_229_098_382,
+        ]
+    );
+    assert_eq!(handler_lines, [33, 36, 39, 42]);
+    assert_eq!(handler_levels, [0, 1, 3, 4]);
 }

@@ -29,21 +29,29 @@ pub struct ImportCallFrame {
     pub _pad: u32,
 }
 
-/// Host stack position and frame pointer saved just before control enters the
-/// guest.
+/// Host stack position, frame pointer, and callee-saved registers captured just
+/// before control enters the guest.
 ///
-/// The escape sequence restores `rsp` and `rbp` from here and `ret`s straight
-/// to the host caller with the exit code in `rax`, unwinding past the guest
-/// stack.  `rbp` matters: the dispatcher pushes it and never pops it on the
-/// escape path, so the host caller's frame pointer would otherwise be lost.
+/// The guest is a full SysV caller: it may destroy every caller-saved register
+/// and the dispatcher's `call` clobbers the rest, so the escape sequence must
+/// restore the entire callee-saved set (`rbx`, `rbp`, `r12`..`r15`) alongside
+/// `rsp` before `ret`ing to the host caller with the exit code in `rax`.
+/// Without this, an optimizing host build that keeps locals in callee-saved
+/// registers across the guest run dereferences garbage the moment control
+/// resumes.
 #[repr(C)]
 pub struct EscapeContext {
     pub rsp: u64,
     pub rbp: u64,
+    pub rbx: u64,
+    pub r12: u64,
+    pub r13: u64,
+    pub r14: u64,
+    pub r15: u64,
 }
 
 const _: () = assert!(size_of::<ImportCallFrame>() == 64);
-const _: () = assert!(size_of::<EscapeContext>() == 16);
+const _: () = assert!(size_of::<EscapeContext>() == 56);
 
 /// Currently armed escape context.  The emulator is single-threaded, so one
 /// process-global slot suffices.
@@ -87,9 +95,10 @@ unsafe extern "sysv64" fn ps5emu_dispatcher() -> u64 {
 
 /// Transfer control to the guest entry point.
 ///
-/// Captures the host `rsp` into the armed [`EscapeContext`], switches to the
-/// guest stack, and calls the guest `_start`.  If the entry point returns
-/// (unusual for a well-formed crt0), returns exit code `0` to the caller.
+/// Captures the host `rsp`, `rbp`, and callee-saved registers into the armed
+/// [`EscapeContext`], switches to the guest stack, and calls the guest `_start`.
+/// If the entry point returns (unusual for a well-formed crt0), returns exit
+/// code `0` to the caller.
 #[unsafe(no_mangle)]
 #[unsafe(naked)]
 unsafe extern "sysv64" fn ps5emu_invoke_guest(entry: u64, stack_top: u64) -> u64 {
@@ -97,10 +106,20 @@ unsafe extern "sysv64" fn ps5emu_invoke_guest(entry: u64, stack_top: u64) -> u64
         "mov rax, qword ptr [rip + ESCAPE_CTX]",
         "mov qword ptr [rax], rsp",
         "mov qword ptr [rax + 8], rbp",
+        "mov qword ptr [rax + 16], rbx",
+        "mov qword ptr [rax + 24], r12",
+        "mov qword ptr [rax + 32], r13",
+        "mov qword ptr [rax + 40], r14",
+        "mov qword ptr [rax + 48], r15",
         "mov rsp, rsi",
         "call rdi",
         "xor eax, eax",
         "mov rcx, qword ptr [rip + ESCAPE_CTX]",
+        "mov r15, qword ptr [rcx + 48]",
+        "mov r14, qword ptr [rcx + 40]",
+        "mov r13, qword ptr [rcx + 32]",
+        "mov r12, qword ptr [rcx + 24]",
+        "mov rbx, qword ptr [rcx + 16]",
         "mov rbp, qword ptr [rcx + 8]",
         "mov rsp, qword ptr [rcx]",
         "ret",
@@ -108,6 +127,9 @@ unsafe extern "sysv64" fn ps5emu_invoke_guest(entry: u64, stack_top: u64) -> u64
 }
 
 /// Unwind from the guest stack back to the host caller with `code` in `rax`.
+///
+/// Restores the full callee-saved set captured at guest entry before `ret`ing
+/// straight to the host caller, unwinding past the guest and dispatcher stacks.
 ///
 /// # Safety
 ///
@@ -118,8 +140,13 @@ unsafe extern "sysv64" fn ps5emu_invoke_guest(entry: u64, stack_top: u64) -> u64
 unsafe extern "sysv64" fn ps5emu_escape(ctx: *const EscapeContext, code: u64) -> ! {
     naked_asm!(
         "mov rax, rsi",
-        "mov rsp, qword ptr [rdi]",
+        "mov r15, qword ptr [rdi + 48]",
+        "mov r14, qword ptr [rdi + 40]",
+        "mov r13, qword ptr [rdi + 32]",
+        "mov r12, qword ptr [rdi + 24]",
+        "mov rbx, qword ptr [rdi + 16]",
         "mov rbp, qword ptr [rdi + 8]",
+        "mov rsp, qword ptr [rdi]",
         "ret",
     );
 }

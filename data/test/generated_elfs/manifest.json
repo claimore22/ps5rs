@@ -22,7 +22,230 @@
           "return_value": 0
         }
       ],
-      "print_string": "Hello from ps5rs!"
+      "print_string": "Hello from ps5rs!",
+      "stdout": [
+        "Hello from ps5rs!\n"
+      ]
+    },
+    "libdbg_basic.elf": {
+      "sha256": "135be887c4a631c02be881e67d07f7491e0b650be1674f9d89134e92f9847eb6",
+      "expected_exit": 0,
+      "imports": [
+        {
+          "library": "libSceDbg",
+          "name": "sceDbgSetMinimumLogLevel",
+          "args": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "return_value": 0
+        },
+        {
+          "library": "libkernel",
+          "name": "puts",
+          "args": [
+            18446744073709551615,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "return_value": 0
+        },
+        {
+          "library": "libc",
+          "name": "rand",
+          "args": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "return_value": 200494509
+        },
+        {
+          "library": "libSceDbg",
+          "name": "sceDbgLoggingHandler",
+          "args": [
+            18446744073709551615,
+            33,
+            0,
+            18446744073709551615,
+            18446744073709551615,
+            200494509
+          ],
+          "return_value": 0
+        },
+        {
+          "library": "libc",
+          "name": "rand",
+          "args": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "return_value": 40788086
+        },
+        {
+          "library": "libc",
+          "name": "rand",
+          "args": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "return_value": 3851444534
+        },
+        {
+          "library": "libSceDbg",
+          "name": "sceDbgLoggingHandler",
+          "args": [
+            18446744073709551615,
+            36,
+            1,
+            18446744073709551615,
+            18446744073709551615,
+            40788086
+          ],
+          "return_value": 0
+        },
+        {
+          "library": "libc",
+          "name": "rand",
+          "args": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "return_value": 915262580
+        },
+        {
+          "library": "libc",
+          "name": "rand",
+          "args": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "return_value": 2714061548
+        },
+        {
+          "library": "libc",
+          "name": "rand",
+          "args": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "return_value": 1316748153
+        },
+        {
+          "library": "libSceDbg",
+          "name": "sceDbgLoggingHandler",
+          "args": [
+            18446744073709551615,
+            39,
+            3,
+            18446744073709551615,
+            18446744073709551615,
+            915262580
+          ],
+          "return_value": 0
+        },
+        {
+          "library": "libc",
+          "name": "rand",
+          "args": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "return_value": 3605590735
+        },
+        {
+          "library": "libc",
+          "name": "rand",
+          "args": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "return_value": 452227306
+        },
+        {
+          "library": "libc",
+          "name": "rand",
+          "args": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "return_value": 2966872715
+        },
+        {
+          "library": "libc",
+          "name": "rand",
+          "args": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "return_value": 1229098382
+        },
+        {
+          "library": "libSceDbg",
+          "name": "sceDbgLoggingHandler",
+          "args": [
+            18446744073709551615,
+            42,
+            4,
+            18446744073709551615,
+            18446744073709551615,
+            3605590735
+          ],
+          "return_value": 0
+        }
+      ],
+      "stdout": [
+        "Hello from ps5rs!\n",
+        "[basic.cpp:36] [] Two random numbers: 40788086, 3851444534\n\n",
+        "[basic.cpp:39] [] Three random numbers: 915262580, 2714061548, 1316748153 My mind is going\n\n",
+        "[basic.cpp:42] [] Four random numbers: 3605590735, 452227306, 2966872715, 1229098382\nDaisy, daisy, give me your answer do\n\n"
+      ]
     }
   }
 }

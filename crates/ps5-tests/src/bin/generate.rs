@@ -25,6 +25,7 @@ fn main() {
                 expected_exit: fixture.expected_exit,
                 imports: fixture.imports,
                 print_string: fixture.print_string.map(str::to_string),
+                stdout: fixture.stdout,
             },
         );
         eprintln!(

@@ -6,6 +6,12 @@ use std::collections::BTreeMap;
 
 use serde::{Deserialize, Serialize};
 
+/// Sentinel for [`ImportExpectation::args`] entries that must not be compared.
+///
+/// Guest pointers (string/format addresses) depend on the load bias, so
+/// fixtures mark them wildcard instead of hardcoding a bias-coupled address.
+pub const ARG_WILDCARD: u64 = u64::MAX;
+
 /// Expected guest behavior of one generated fixture.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct FixtureExpectation {
@@ -19,6 +25,9 @@ pub struct FixtureExpectation {
     /// When set, the first import call must print exactly this string.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub print_string: Option<String>,
+    /// Chunks the guest must emit to stdout through the HLE modules, in order.
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub stdout: Vec<String>,
 }
 
 /// One expected import call during a fixture run.
@@ -28,7 +37,7 @@ pub struct ImportExpectation {
     pub library: String,
     /// Readable symbol name (e.g. `puts`).
     pub name: String,
-    /// Six SysV register arguments in `rdi..r9`.
+    /// Six SysV register arguments in `rdi..r9`; [`ARG_WILDCARD`] skips one.
     pub args: [u64; 6],
     /// Value the HLE handler returned to the guest.
     pub return_value: u64,

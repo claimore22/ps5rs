@@ -5,10 +5,23 @@ use super::output::format_printf;
 
 const ATEXIT_LIMIT: usize = 32;
 
+/// Fixed seed so guest `rand` sequences are reproducible across runs and
+/// machines (matches the approved deterministic-fixture plan).
+const RAND_SEED: u64 = 0x9E37_79B9_7F4A_7C15;
+
 /// Host implementation of the subset of `libc` the samples reach from crt0.
-#[derive(Default)]
 pub struct LibcModule {
     atexit_handlers: usize,
+    rand_state: u64,
+}
+
+impl Default for LibcModule {
+    fn default() -> Self {
+        Self {
+            atexit_handlers: 0,
+            rand_state: RAND_SEED,
+        }
+    }
 }
 
 impl HleModule for LibcModule {
@@ -50,7 +63,9 @@ impl HleModule for LibcModule {
                         EmuError::NoHandler("puts missing argument".to_string())
                     })?)?;
                 tracing::debug!(message = %s, "puts");
-                println!("{s}");
+                let mut line = s;
+                line.push('\n');
+                host.emit(&line);
                 Ok(0)
             }
             "printf" => {
@@ -60,11 +75,11 @@ impl HleModule for LibcModule {
                     })?)?;
                 let message = format_printf(host, &format, &args[1..]);
                 tracing::debug!(message = %message, "printf");
-                print!("{message}");
+                host.emit(&message);
                 Ok(message.chars().count() as u64)
             }
             "rand" => {
-                let value = rand_u64();
+                let value = next_rand(&mut self.rand_state);
                 tracing::debug!(value, "rand");
                 Ok(value)
             }
@@ -78,18 +93,14 @@ impl HleModule for LibcModule {
     }
 }
 
-fn rand_u64() -> u64 {
-    use std::time::{SystemTime, UNIX_EPOCH};
-    let seed = SystemTime::now()
-        .duration_since(UNIX_EPOCH)
-        .map(|d| d.subsec_nanos() as u64)
-        .unwrap_or(0x1234_5678)
-        | 1;
-    let mut state = seed;
-    state ^= state << 13;
-    state ^= state >> 7;
-    state ^= state << 17;
-    state
+/// Advance the xorshift64 state and return a deterministic u32-masked value.
+fn next_rand(state: &mut u64) -> u64 {
+    let mut x = *state;
+    x ^= x << 13;
+    x ^= x >> 7;
+    x ^= x << 17;
+    *state = x;
+    x & 0xFFFF_FFFF
 }
 
 #[cfg(test)]
@@ -140,6 +151,51 @@ mod tests {
         let a = module.call(&mut host, "rand", &[]).unwrap();
         let b = module.call(&mut host, "rand", &[]).unwrap();
         assert_ne!(a, b);
+    }
+
+    #[test]
+    fn rand_is_deterministic_across_modules() {
+        let mut a = LibcModule::default();
+        let mut b = LibcModule::default();
+        let mut host = StubHost;
+        let seq_a: Vec<u64> = (0..8)
+            .map(|_| a.call(&mut host, "rand", &[]).unwrap())
+            .collect();
+        let seq_b: Vec<u64> = (0..8)
+            .map(|_| b.call(&mut host, "rand", &[]).unwrap())
+            .collect();
+        assert_eq!(seq_a, seq_b);
+        assert!(seq_a.iter().all(|v| *v <= u32::MAX as u64));
+    }
+
+    #[test]
+    fn puts_and_printf_emit_through_host() {
+        struct EmittingHost {
+            output: Vec<String>,
+        }
+        impl Host for EmittingHost {
+            fn read_bytes(&self, _addr: u64, _len: usize) -> Result<Vec<u8>, EmuError> {
+                Ok(Vec::new())
+            }
+            fn read_string(&self, addr: u64) -> Result<String, EmuError> {
+                match addr {
+                    0x100 => Ok("hi".to_string()),
+                    0x200 => Ok("n=%d".to_string()),
+                    _ => Err(EmuError::Unmapped(addr)),
+                }
+            }
+            fn write(&mut self, _addr: u64, _data: &[u8]) -> Result<(), EmuError> {
+                Ok(())
+            }
+            fn emit(&mut self, chunk: &str) {
+                self.output.push(chunk.to_string());
+            }
+        }
+        let mut module = LibcModule::default();
+        let mut host = EmittingHost { output: Vec::new() };
+        module.call(&mut host, "puts", &[0x100]).unwrap();
+        module.call(&mut host, "printf", &[0x200, 7]).unwrap();
+        assert_eq!(host.output, vec!["hi\n".to_string(), "n=7".to_string()]);
     }
 
     struct PrintfHost;

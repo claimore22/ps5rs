@@ -57,7 +57,7 @@ impl DbgModule {
 
         tracing::debug!(component = %component, file = %file, line, "log message");
         let message = format_printf(host, &format, &args[5..]);
-        println!("[{file}:{line}] [{component}] {message}");
+        host.emit(&format!("[{file}:{line}] [{component}] {message}\n"));
         Ok(SCE_OK)
     }
 }
