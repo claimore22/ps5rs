@@ -17,6 +17,9 @@ pub trait Host {
     fn read_string(&self, addr: u64) -> Result<String, EmuError>;
     /// Write `data` into guest memory at `addr`.
     fn write(&mut self, addr: u64, data: &[u8]) -> Result<(), EmuError>;
+    /// Forward a chunk of guest stdout to the host sink.  Defaults to a no-op;
+    /// the emulator's guest memory captures these for the execution report.
+    fn emit(&mut self, _chunk: &str) {}
 }
 
 /// A host-side implementation of one system library's exported functions.

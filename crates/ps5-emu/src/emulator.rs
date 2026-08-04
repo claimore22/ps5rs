@@ -123,13 +123,22 @@ impl Emulator {
 
         dispatcher.install();
 
-        let ctx = EscapeContext { rsp: 0, rbp: 0 };
+        let ctx = EscapeContext {
+            rsp: 0,
+            rbp: 0,
+            rbx: 0,
+            r12: 0,
+            r13: 0,
+            r14: 0,
+            r15: 0,
+        };
         unsafe { arm_escape_ctx(&ctx) };
         let code = invoke_guest(entry_point, stack_top);
         disarm_escape_ctx();
         dispatcher.uninstall();
 
         let import_calls = dispatcher.calls().to_vec();
+        let output_lines = dispatcher.take_output();
         let total_hits: u64 = dispatcher.hits().iter().sum();
         let slot_count = dispatcher.hits().len();
         self.registry = dispatcher.into_registry();
@@ -141,6 +150,7 @@ impl Emulator {
             module_name,
             entry_point,
             import_calls,
+            output_lines,
         })
     }
 }
