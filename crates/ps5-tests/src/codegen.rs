@@ -197,8 +197,8 @@ pub fn libdbg_basic_code(a: &LibdbgBasicAddrs) -> Vec<u8> {
     asm.lea_rip(RDI, a.msg_hello);
     asm.call_got(a.puts);
 
-    // TRACE "One random number: %d" — below the DEBUG minimum, so the HLE
-    // records the call but emits nothing.
+    // TRACE "value: %d" — below the DEBUG minimum, so the HLE records the call
+    // but emits nothing.
     asm.zero_args();
     asm.call_got(a.rand);
     asm.mov_r64(R9, RAX);
@@ -209,7 +209,7 @@ pub fn libdbg_basic_code(a: &LibdbgBasicAddrs) -> Vec<u8> {
     asm.lea_rip(R8, a.fmt_trace);
     asm.call_got(a.handler);
 
-    // DEBUG "Two random numbers: %d, %d" — first vararg in r9, second on stack.
+    // DEBUG "pair: %d, %d" — first vararg in r9, second on stack.
     asm.zero_args();
     asm.call_got(a.rand);
     asm.mov_r64(RBX, RAX);
@@ -226,8 +226,8 @@ pub fn libdbg_basic_code(a: &LibdbgBasicAddrs) -> Vec<u8> {
     asm.call_got(a.handler);
     asm.add_rsp(8);
 
-    // WARNING "Three random numbers: %d, %d, %d %s" — first vararg in r9, the
-    // remaining three on the stack pushed right-to-left.
+    // WARNING "trio: %d, %d, %d %s" — first vararg in r9, the remaining three
+    // on the stack pushed right-to-left.
     asm.zero_args();
     asm.call_got(a.rand);
     asm.mov_r64(RBX, RAX);
@@ -250,8 +250,8 @@ pub fn libdbg_basic_code(a: &LibdbgBasicAddrs) -> Vec<u8> {
     asm.call_got(a.handler);
     asm.add_rsp(24);
 
-    // ERROR "Four random numbers: %d, %d, %d, %d\n%s" — first vararg in r9, the
-    // remaining four on the stack pushed right-to-left.
+    // ERROR "quartet: %d, %d, %d, %d\n%s" — first vararg in r9, the remaining
+    // four on the stack pushed right-to-left.
     asm.zero_args();
     asm.call_got(a.rand);
     asm.mov_r64(RBX, RAX);
