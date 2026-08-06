@@ -1,8 +1,8 @@
 use crate::abi::{EscapeContext, arm_escape_ctx, disarm_escape_ctx, invoke_guest};
 use crate::core::{Dispatcher, prepare};
 use crate::error::EmuError;
+use crate::hle::{HleContext, Host, Registry, default_registry};
 use crate::imports::{ImportTable, build_import_table};
-use crate::modules::{Host, Registry, kernel::KernelModule, libc::LibcModule, libdbg::DbgModule};
 use crate::process::Process;
 use crate::trace::{EXECUTION_REPORT_VERSION, ExecutionReport};
 
@@ -19,24 +19,22 @@ pub enum EmuState {
     Halted,
 }
 
-/// Host-side driver: owns the loaded [`Process`], the HLE [`Registry`], and
-/// the emulator state machine.
+/// Host-side driver: owns the loaded [`Process`], the HLE [`Registry`], the
+/// shared [`HleContext`], and the emulator state machine.
 pub struct Emulator {
     process: Process,
     registry: Registry,
+    ctx: HleContext,
     state: EmuState,
 }
 
 impl Emulator {
     /// Wrap a loaded [`Process`] with the default HLE module set.
     pub fn new(process: Process) -> Self {
-        let mut registry = Registry::new();
-        registry.register(KernelModule);
-        registry.register(LibcModule::default());
-        registry.register(DbgModule::default());
         Self {
             process,
-            registry,
+            registry: default_registry(),
+            ctx: HleContext::default(),
             state: EmuState::Ready,
         }
     }
@@ -108,6 +106,7 @@ impl Emulator {
         let executable_modules = vec![module_name.clone()];
 
         let registry = std::mem::take(&mut self.registry);
+        let ctx = std::mem::take(&mut self.ctx);
         let prepared = match prepare(&self.process, imports, &executable_modules, &registry) {
             Ok(prepared) => prepared,
             Err(err) => {
@@ -119,7 +118,7 @@ impl Emulator {
         tracing::info!(%name, entry_point, stack_top, "run: start");
 
         let mut dispatcher =
-            Dispatcher::new(registry, prepared.host, prepared.slots, prepared.stubs);
+            Dispatcher::new(registry, ctx, prepared.host, prepared.slots, prepared.stubs);
 
         dispatcher.install();
 
@@ -141,7 +140,7 @@ impl Emulator {
         let output_lines = dispatcher.take_output();
         let total_hits: u64 = dispatcher.hits().iter().sum();
         let slot_count = dispatcher.hits().len();
-        self.registry = dispatcher.into_registry();
+        (self.registry, self.ctx) = dispatcher.into_parts();
         self.state = EmuState::Halted;
         tracing::info!(%name, entry_point, code, total_hits, slot_count, "run: complete");
         Ok(ExecutionReport {

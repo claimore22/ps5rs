@@ -3,7 +3,7 @@
 use std::ptr::NonNull;
 
 use crate::error::EmuError;
-use crate::modules::Host;
+use crate::hle::Host;
 use crate::process::Process;
 use ps5_loader::SegmentFlags;
 

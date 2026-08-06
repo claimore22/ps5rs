@@ -1,7 +1,4 @@
-pub mod kernel;
-pub mod libc;
-pub mod libdbg;
-mod output;
+//! NID-indexed collection of registered [`HleModule`]s.
 
 use std::collections::HashMap;
 
@@ -9,38 +6,13 @@ use ps5_loader::compute_nid;
 
 use crate::error::EmuError;
 
-/// Services a module handler can use to interact with the guest's memory.
-pub trait Host {
-    /// Read `len` bytes from guest memory at `addr`.
-    fn read_bytes(&self, addr: u64, len: usize) -> Result<Vec<u8>, EmuError>;
-    /// Read a NUL-terminated string from guest memory at `addr`.
-    fn read_string(&self, addr: u64) -> Result<String, EmuError>;
-    /// Write `data` into guest memory at `addr`.
-    fn write(&mut self, addr: u64, data: &[u8]) -> Result<(), EmuError>;
-    /// Forward a chunk of guest stdout to the host sink.  Defaults to a no-op;
-    /// the emulator's guest memory captures these for the execution report.
-    fn emit(&mut self, _chunk: &str) {}
-}
-
-/// A host-side implementation of one system library's exported functions.
-///
-/// Modules are pure Rust — no `extern "sysv64"`, no exported function
-/// pointers.  The guest ABI boundary lives in [`abi`](crate::abi); a call
-/// arrives here as a symbol name plus an argument slice.
-pub trait HleModule {
-    /// Library identity, e.g. `"libSceDbg"`.
-    fn name(&self) -> &str;
-    /// Human-readable symbol names this module implements.
-    fn symbols(&self) -> &'static [&'static str];
-    /// Dispatch a guest call to this module's implementation.
-    fn call(&mut self, host: &mut dyn Host, name: &str, args: &[u64]) -> Result<u64, EmuError>;
-}
+use super::{HleContext, HleModule, Host, HostCall};
 
 /// NID-indexed collection of registered [`HleModule`]s.
 #[derive(Default)]
 pub struct Registry {
     modules: Vec<Box<dyn HleModule>>,
-    by_nid: HashMap<u64, usize>,
+    by_nid: HashMap<u64, (usize, HostCall)>,
     names: HashMap<u64, &'static str>,
 }
 
@@ -54,9 +26,9 @@ impl Registry {
         let idx = self.modules.len();
         let symbols = module.symbols().to_vec();
         self.modules.push(Box::new(module));
-        for sym in symbols {
+        for (sym, call) in symbols {
             if let Some(nid) = compute_nid(sym) {
-                self.by_nid.insert(nid, idx);
+                self.by_nid.insert(nid, (idx, call));
                 self.names.insert(nid, sym);
             }
         }
@@ -82,15 +54,29 @@ impl Registry {
     }
 
     /// Dispatch a guest call by NID.
-    pub fn call(&mut self, host: &mut dyn Host, nid: u64, args: &[u64]) -> Result<u64, EmuError> {
-        let idx = self
+    pub fn call(
+        &mut self,
+        ctx: &mut HleContext,
+        host: &mut dyn Host,
+        nid: u64,
+        args: &[u64],
+    ) -> Result<u64, EmuError> {
+        let (idx, call) = self
             .by_nid
             .get(&nid)
             .copied()
             .ok_or_else(|| EmuError::NoHandler(format!("nid {nid:#x}")))?;
         let name = self.names.get(&nid).copied().unwrap_or("?");
         tracing::debug!(import = name, args = args.len(), "registry: call");
-        self.modules[idx].call(host, name, args)
+        self.modules[idx]
+            .call(ctx, host, call, args)
+            .map_err(|err| {
+                if matches!(err, EmuError::NoHandler(_)) {
+                    EmuError::NoHandler(format!("{}::{name}", self.modules[idx].name()))
+                } else {
+                    err
+                }
+            })
     }
 }
 
@@ -107,17 +93,21 @@ mod tests {
         fn name(&self) -> &str {
             "probe"
         }
-        fn symbols(&self) -> &'static [&'static str] {
-            &["probeFn"]
+        fn symbols(&self) -> &'static [(&'static str, HostCall)] {
+            &[("probeFn", HostCall::Rand)]
         }
         fn call(
             &mut self,
+            _ctx: &mut HleContext,
             _host: &mut dyn Host,
-            name: &str,
+            call: HostCall,
             args: &[u64],
         ) -> Result<u64, EmuError> {
-            self.calls.push(name.to_string());
-            Ok(args.iter().sum())
+            self.calls.push(format!("{call:?}"));
+            Ok(match call {
+                HostCall::Rand => args.iter().sum(),
+                _ => 0,
+            })
         }
     }
 
@@ -139,8 +129,10 @@ mod tests {
     fn registry_dispatch_by_computed_nid() {
         let mut registry = Registry::new();
         registry.register(Probe::default());
+        let mut ctx = HleContext::default();
+        let mut host = NoHost;
         let nid = registry.resolve("probeFn").expect("probeFn registered");
-        let result = registry.call(&mut NoHost, nid, &[2, 3]).unwrap();
+        let result = registry.call(&mut ctx, &mut host, nid, &[2, 3]).unwrap();
         assert_eq!(result, 5);
     }
 

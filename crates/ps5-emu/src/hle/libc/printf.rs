@@ -1,7 +1,6 @@
-//! Guest-facing output formatting shared by the `libc` and `libSceDbg`
-//! modules.  A minimal printf-style substituter over variadic argument slots.
+//! Minimal printf-style substitution over guest variadic argument slots.
 
-use crate::modules::Host;
+use crate::hle::Host;
 
 /// Minimal printf-style substitution over the variadic argument slots.
 ///

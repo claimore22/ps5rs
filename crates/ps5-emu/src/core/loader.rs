@@ -2,8 +2,8 @@
 //! the executable modules' GOT slots with HLE stubs.
 
 use crate::error::EmuError;
+use crate::hle::Registry;
 use crate::imports::ImportTable;
-use crate::modules::Registry;
 use crate::platform::memory::GuestMemory;
 use crate::process::Process;
 
