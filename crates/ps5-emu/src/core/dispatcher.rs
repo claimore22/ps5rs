@@ -3,7 +3,7 @@
 
 use crate::abi::{ImportCallFrame, escape, escape_ctx};
 use crate::error::EmuError;
-use crate::modules::{Host, Registry};
+use crate::hle::{HleContext, Host, Registry};
 use crate::platform::memory::GuestMemory;
 use crate::trace::ImportCall;
 
@@ -18,10 +18,11 @@ pub struct ImportSlot {
 }
 
 /// Owns every resource live while the guest runs: the HLE [`Registry`], the
-/// materialized guest memory, and the executable stub region its GOT slots
-/// point at.
+/// shared [`HleContext`], the materialized guest memory, and the executable
+/// stub region its GOT slots point at.
 pub struct Dispatcher {
     registry: Registry,
+    ctx: HleContext,
     host: GuestMemory,
     slots: Vec<ImportSlot>,
     hits: Vec<u64>,
@@ -35,6 +36,7 @@ static mut DISPATCHER: *mut Dispatcher = core::ptr::null_mut();
 impl Dispatcher {
     pub fn new(
         registry: Registry,
+        ctx: HleContext,
         host: GuestMemory,
         slots: Vec<ImportSlot>,
         stubs: StubRegion,
@@ -42,6 +44,7 @@ impl Dispatcher {
         let hits = vec![0; slots.len()];
         Self {
             registry,
+            ctx,
             host,
             slots,
             hits,
@@ -78,8 +81,8 @@ impl Dispatcher {
         self.host.take_output()
     }
 
-    pub fn into_registry(self) -> Registry {
-        self.registry
+    pub fn into_parts(self) -> (Registry, HleContext) {
+        (self.registry, self.ctx)
     }
 }
 
@@ -125,7 +128,10 @@ pub unsafe extern "sysv64" fn ps5emu_dispatch_frame(frame: *const ImportCallFram
         }
     }
 
-    match disp.registry.call(&mut disp.host, slot.nid, &args[..count]) {
+    match disp
+        .registry
+        .call(&mut disp.ctx, &mut disp.host, slot.nid, &args[..count])
+    {
         Ok(value) => {
             disp.calls.push(ImportCall {
                 library: slot.library.clone(),
