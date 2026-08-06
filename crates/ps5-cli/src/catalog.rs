@@ -649,7 +649,7 @@ fn render_dump(libraries: &mut std::collections::BTreeMap<String, Vec<StubSymbol
     out
 }
 
-pub(crate) fn cmd_dump_stubs(path: &Path) {
+pub(crate) fn cmd_dump_stubs(path: &Path, output: Option<&Path>) {
     let files = if path.is_file() {
         vec![path.to_path_buf()]
     } else {
@@ -689,7 +689,21 @@ pub(crate) fn cmd_dump_stubs(path: &Path) {
         libraries.entry(library).or_default().extend(symbols);
     }
 
-    print!("{}", render_dump(&mut libraries));
+    let dump = render_dump(&mut libraries);
+    match output {
+        Some(out) => {
+            std::fs::write(out, dump).unwrap_or_else(|e| {
+                eprintln!("error: failed to write {}: {e}", out.display());
+                std::process::exit(1);
+            });
+            eprintln!(
+                "Wrote {} stub libraries to {}",
+                libraries.len(),
+                out.display()
+            );
+        }
+        None => print!("{dump}"),
+    }
 }
 
 pub(crate) fn iso8601_now() -> String {
