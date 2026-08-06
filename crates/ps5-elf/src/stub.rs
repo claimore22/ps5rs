@@ -1,9 +1,10 @@
-use crate::{read_u16, read_u32, read_u64};
+use object::read::elf::ElfFile64;
+use object::{Object, ObjectSection};
 use ps5_format::elf_constants::ELF_MAGIC;
 use ps5_format::error::{ParseError, Result};
 use ps5_nid::encode_nid;
 
-const STUB_LIBRARY_SUFFIX: &str = "_stub_weak.a";
+const STUB_LIBRARY_SUFFIXES: [&str; 2] = ["_stub_weak.a", "_stub.a"];
 const AR_MAGIC: &[u8; 8] = b"!<arch>\n";
 const ELF64_SYMENT_SIZE: u64 = 24;
 
@@ -15,8 +16,9 @@ pub struct StubSymbol {
 }
 
 pub fn stub_library_name(file_name: &str) -> &str {
-    file_name
-        .strip_suffix(STUB_LIBRARY_SUFFIX)
+    STUB_LIBRARY_SUFFIXES
+        .iter()
+        .find_map(|suffix| file_name.strip_suffix(suffix))
         .unwrap_or(file_name)
 }
 
@@ -33,201 +35,64 @@ pub fn parse_stub_library(data: &[u8], library: &str) -> Result<Vec<StubSymbol>>
 }
 
 fn parse_stub_archive(data: &[u8], library: &str) -> Result<Vec<StubSymbol>> {
+    let archive = object::read::archive::ArchiveFile::parse(data).map_err(map_object_error)?;
     let mut symbols = Vec::new();
-    let mut long_names: Option<&[u8]> = None;
-    let mut offset = AR_MAGIC.len();
-    while offset + 60 <= data.len() {
-        let name_field = &data[offset..offset + 16];
-        let size_field = &data[offset + 48..offset + 58];
-        let size = std::str::from_utf8(size_field)
-            .ok()
-            .and_then(|s| s.trim().parse::<usize>().ok())
-            .ok_or_else(|| {
-                ParseError::Custom(format!("ar member size invalid at offset {offset}"))
-            })?;
-        let data_start = offset + 60;
-        if data_start + size > data.len() {
-            return Err(ParseError::Truncated {
-                offset: data_start as u64,
-                needed: size as u64,
-                available: (data.len() - data_start) as u64,
-            });
+    for member in archive.members() {
+        let member = member.map_err(map_object_error)?;
+        let member_data = member.data(data).map_err(map_object_error)?;
+        if !member_data.starts_with(&ELF_MAGIC) {
+            continue;
         }
-        let member = &data[data_start..data_start + size];
-        let name = name_field
-            .split(|&b| b == b' ' || b == 0)
-            .next()
-            .unwrap_or(&[]);
-        match name {
-            b"//" => long_names = Some(member),
-            b"/" => {}
-            _ if name.starts_with(b"/") => {
-                let index = std::str::from_utf8(&name[1..])
-                    .ok()
-                    .and_then(|s| s.parse::<usize>().ok())
-                    .ok_or_else(|| ParseError::Custom("ar long-name index invalid".to_string()))?;
-                let table = long_names
-                    .ok_or_else(|| ParseError::Custom("ar long-name table missing".to_string()))?;
-                let resolved = read_ar_name(table, index).ok_or_else(|| {
-                    ParseError::Custom("ar long-name offset out of range".to_string())
-                })?;
-                symbols.extend(parse_member(member, library, &resolved)?);
-            }
-            _ => {
-                let resolved = name
-                    .strip_suffix(b"/")
-                    .map(|n| String::from_utf8_lossy(n).into_owned())
-                    .unwrap_or_else(|| String::from_utf8_lossy(name).into_owned());
-                if !resolved.is_empty() {
-                    symbols.extend(parse_member(member, library, &resolved)?);
-                }
-            }
-        }
-        offset = data_start + size;
-        if offset < data.len() && data[offset] == b'\n' {
-            offset += 1;
-        }
+        let member_name = String::from_utf8_lossy(member.name());
+        symbols
+            .extend(parse_stub_object(member_data, library).map_err(|e| {
+                ParseError::Custom(format!("{member_name} in stub {library}: {e}"))
+            })?);
     }
     Ok(symbols)
 }
 
-fn parse_member(data: &[u8], library: &str, member_name: &str) -> Result<Vec<StubSymbol>> {
-    if !data.starts_with(&ELF_MAGIC) {
-        return Ok(Vec::new());
-    }
-    parse_stub_object(data, library)
-        .map_err(|e| ParseError::Custom(format!("{member_name} in stub {library}: {e}")))
-}
-
-fn read_ar_name(table: &[u8], index: usize) -> Option<String> {
-    let tail = table.get(index..)?;
-    let end = tail
-        .iter()
-        .position(|&b| b == b'\n' || b == 0)
-        .unwrap_or(tail.len());
-    Some(String::from_utf8_lossy(&tail[..end]).into_owned())
-}
-
 fn parse_stub_object(data: &[u8], library: &str) -> Result<Vec<StubSymbol>> {
-    if data.len() < 64 {
-        return Err(ParseError::Truncated {
-            offset: 0,
-            needed: 64,
-            available: data.len() as u64,
-        });
-    }
-    if data[0..4] != ELF_MAGIC {
+    if !data.starts_with(&ELF_MAGIC) {
         return Err(ParseError::InvalidMagic {
             expected: u32::from_le_bytes(ELF_MAGIC),
-            actual: u32::from_le_bytes([data[0], data[1], data[2], data[3]]),
+            actual: data
+                .get(..4)
+                .map(|b| u32::from_le_bytes([b[0], b[1], b[2], b[3]]))
+                .unwrap_or(0),
         });
     }
-
-    let e_shoff = read_u64(data, 0x28);
-    let e_shentsize = read_u16(data, 0x3a);
-    let e_shnum = read_u16(data, 0x3c);
-    let e_shstrndx = read_u16(data, 0x3e);
-    if e_shoff == 0 || e_shentsize < 64 || e_shnum == 0 {
-        return Err(ParseError::Custom(format!(
-            "stub {library} has no section headers"
-        )));
-    }
-    let shdr_end = e_shoff
-        .checked_add(e_shentsize as u64 * e_shnum as u64)
-        .ok_or_else(|| ParseError::Custom("section table size overflow".to_string()))?;
-    if shdr_end > data.len() as u64 {
-        return Err(ParseError::Truncated {
-            offset: e_shoff,
-            needed: shdr_end - e_shoff,
-            available: (data.len() as u64).saturating_sub(e_shoff),
-        });
-    }
-    let shdrs = &data[e_shoff as usize..shdr_end as usize];
-    let section = |index: usize| -> Option<&[u8]> {
-        let start = index * e_shentsize as usize;
-        shdrs.get(start..start + 64)
-    };
-
-    let shstrtab = section(e_shstrndx as usize)
-        .ok_or_else(|| ParseError::Custom("shstrtab index out of range".to_string()))?;
-    let shstr_off = sh_offset(shstrtab);
-    let shstr_size = sh_size(shstrtab);
-    let shstr_end = shstr_off
-        .checked_add(shstr_size)
-        .ok_or_else(|| ParseError::Custom("shstrtab bounds overflow".to_string()))?;
-    if shstr_end > data.len() as u64 {
-        return Err(ParseError::Truncated {
-            offset: shstr_off,
-            needed: shstr_size,
-            available: (data.len() as u64).saturating_sub(shstr_off),
-        });
-    }
-    let shstr = &data[shstr_off as usize..shstr_end as usize];
-
-    let mut dynsym = None;
-    let mut dynstr = None;
-    let mut scenid = None;
-    for i in 0..e_shnum as usize {
-        let sh = section(i).ok_or(ParseError::Truncated {
-            offset: shdrs.len() as u64,
-            needed: 1,
-            available: 0,
-        })?;
-        let name = read_cstr(shstr, sh_name(sh) as usize);
-        if name.is_empty() {
-            continue;
-        }
-        let off = sh_offset(sh);
-        let size = sh_size(sh);
-        let end = off
-            .checked_add(size)
-            .ok_or_else(|| ParseError::Custom("section bounds overflow".to_string()))?;
-        if end > data.len() as u64 {
-            return Err(ParseError::Truncated {
-                offset: off,
-                needed: size,
-                available: (data.len() as u64).saturating_sub(off),
-            });
-        }
-        let slice = &data[off as usize..end as usize];
-        match name.as_str() {
-            ".dynsym" => dynsym = Some(slice),
-            ".dynstr" => dynstr = Some(slice),
-            ".scenid" => scenid = Some(slice),
-            _ => {}
-        }
-    }
-
-    let dynsym = dynsym.ok_or(ParseError::InvalidSymbolTable)?;
-    let dynstr = dynstr.ok_or(ParseError::InvalidStringTable)?;
-    if !(dynsym.len() as u64).is_multiple_of(ELF64_SYMENT_SIZE) {
-        return Err(ParseError::Custom(format!(
-            "stub {library} .dynsym size not a multiple of 24"
-        )));
-    }
-    let symbol_count = (dynsym.len() as u64 / ELF64_SYMENT_SIZE) as usize;
-    let scenid =
-        scenid.ok_or_else(|| ParseError::Custom(format!("stub {library} missing .scenid")))?;
-    if scenid.len() != symbol_count * 8 {
+    let elf = ElfFile64::<object::Endianness>::parse(data).map_err(map_object_error)?;
+    let dynsym = elf
+        .section_by_name(".dynsym")
+        .ok_or(ParseError::InvalidSymbolTable)?;
+    let dynsym_data = dynsym.data().map_err(map_object_error)?;
+    let symbol_count = (dynsym_data.len() as u64 / ELF64_SYMENT_SIZE) as usize;
+    let scenid = elf
+        .section_by_name(".scenid")
+        .ok_or_else(|| ParseError::Custom(format!("stub {library} missing .scenid")))?;
+    let scenid_data = scenid.data().map_err(map_object_error)?;
+    if scenid_data.len() != symbol_count * 8 {
         return Err(ParseError::Custom(format!(
             "stub {library} .scenid size {} does not match {} symbols",
-            scenid.len(),
+            scenid_data.len(),
             symbol_count
         )));
     }
 
+    let symtab = elf.elf_dynamic_symbol_table();
     let mut symbols = Vec::new();
-    for i in 1..symbol_count {
-        let sym = &dynsym[i * 24..i * 24 + 24];
-        let st_name = read_u32(sym, 0) as usize;
-        if st_name == 0 {
+    for (index, symbol) in symtab.enumerate() {
+        if index.0 == 0 {
             continue;
         }
-        let name = read_cstr(dynstr, st_name);
+        let name = symtab
+            .symbol_name(elf.endian(), symbol)
+            .map_err(map_object_error)?;
         if name.is_empty() {
             continue;
         }
-        let raw = &scenid[i * 8..i * 8 + 8];
+        let raw = &scenid_data[index.0 * 8..index.0 * 8 + 8];
         if raw.iter().all(|&b| b == 0) {
             continue;
         }
@@ -237,37 +102,21 @@ fn parse_stub_object(data: &[u8], library: &str) -> Result<Vec<StubSymbol>> {
         }
         symbols.push(StubSymbol {
             nid: encode_nid(reversed),
-            name,
+            name: String::from_utf8_lossy(name).into_owned(),
             library: library.to_string(),
         });
     }
     Ok(symbols)
 }
 
-fn sh_name(sh: &[u8]) -> u32 {
-    read_u32(sh, 0)
-}
-
-fn sh_offset(sh: &[u8]) -> u64 {
-    read_u64(sh, 0x18)
-}
-
-fn sh_size(sh: &[u8]) -> u64 {
-    read_u64(sh, 0x20)
-}
-
-fn read_cstr(data: &[u8], offset: usize) -> String {
-    if offset >= data.len() {
-        return String::new();
-    }
-    let tail = &data[offset..];
-    let end = tail.iter().position(|&b| b == 0).unwrap_or(tail.len());
-    String::from_utf8_lossy(&tail[..end]).into_owned()
+fn map_object_error(e: object::read::Error) -> ParseError {
+    ParseError::Custom(format!("object: {e}"))
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::{read_u16, read_u64};
 
     const SCENID_SCEAGCINIT: [u8; 8] = [83, 187, 216, 43, 81, 209, 114, 219];
     const SCENID_SCEKERNELADDUSEREVENT: [u8; 8] = [64, 112, 54, 242, 58, 191, 30, 225];
@@ -315,20 +164,19 @@ mod tests {
     #[test]
     fn errors_on_dynsym_size_not_multiple_of_24() {
         let data = build_stub_object(&[("sceAgcInit", SCENID_SCEAGCINIT)]);
+        let mut data = data;
         let e_shoff = read_u64(&data, 0x28) as usize;
         let e_shentsize = read_u16(&data, 0x3a) as usize;
-        let dynsym_idx = find_section_index(&data, ".dynsym");
-        let mut data = data;
-        write_u64(&mut data, e_shoff + dynsym_idx * e_shentsize + 0x20, 25);
+        write_u64(&mut data, e_shoff + 3 * e_shentsize + 0x20, 25);
         let err = parse_stub_library(&data, "lib").unwrap_err();
-        assert!(err.to_string().contains("multiple of 24"));
+        assert!(err.to_string().contains("symbol table"));
     }
 
     #[test]
     fn rejects_truncated_elf() {
         let data = build_stub_object(&[("sceAgcInit", SCENID_SCEAGCINIT)]);
         let err = parse_stub_library(&data[..data.len() - 10], "lib").unwrap_err();
-        assert!(matches!(err, ParseError::Truncated { .. }));
+        assert!(err.to_string().contains("object:"));
     }
 
     #[test]
@@ -383,26 +231,9 @@ mod tests {
     fn strips_stub_suffix() {
         assert_eq!(stub_library_name("libSceAgc_stub_weak.a"), "libSceAgc");
         assert_eq!(stub_library_name("libkernel_stub_weak.a"), "libkernel");
+        assert_eq!(stub_library_name("libSceAgc_stub.a"), "libSceAgc");
+        assert_eq!(stub_library_name("libkernel_stub.a"), "libkernel");
         assert_eq!(stub_library_name("no_suffix"), "no_suffix");
-    }
-
-    fn find_section_index(data: &[u8], target: &str) -> usize {
-        let e_shoff = read_u64(data, 0x28) as usize;
-        let e_shentsize = read_u16(data, 0x3a) as usize;
-        let e_shnum = read_u16(data, 0x3c) as usize;
-        let shstrndx = read_u16(data, 0x3e) as usize;
-        let shstr_hdr = &data[e_shoff + shstrndx * e_shentsize..];
-        let shstr_off = sh_offset(shstr_hdr) as usize;
-        let shstr_size = sh_size(shstr_hdr) as usize;
-        let shstr = &data[shstr_off..shstr_off + shstr_size];
-        for i in 0..e_shnum {
-            let sh = &data[e_shoff + i * e_shentsize..];
-            let name = read_cstr(shstr, sh_name(sh) as usize);
-            if name == target {
-                return i;
-            }
-        }
-        panic!("section {target} not found");
     }
 
     fn build_stub_object(symbols: &[(&str, [u8; 8])]) -> Vec<u8> {
@@ -423,13 +254,13 @@ mod tests {
             dynstr.push(0);
         }
         let symbol_count = names.len() + 1;
-        let mut section_names = vec![".shstrtab", ".dynstr", ".dynsym"];
+        let mut section_names = vec!["", ".shstrtab", ".dynstr", ".dynsym"];
         if scenid.is_some() {
             section_names.push(".scenid");
         }
         let mut shstr = vec![0u8];
         let mut name_offsets = std::collections::HashMap::new();
-        for name in &section_names {
+        for name in &section_names[1..] {
             name_offsets.insert(*name, shstr.len());
             shstr.extend_from_slice(name.as_bytes());
             shstr.push(0);
@@ -459,7 +290,7 @@ mod tests {
         write_u16(&mut data, 52, 64);
         write_u16(&mut data, 58, 64);
         write_u16(&mut data, 60, section_names.len() as u16);
-        write_u16(&mut data, 62, 0);
+        write_u16(&mut data, 62, 1);
 
         data[dynstr_off..dynstr_off + dynstr.len()].copy_from_slice(&dynstr);
         for (i, &st_name) in st_names.iter().enumerate() {
@@ -488,7 +319,7 @@ mod tests {
         };
         sh(
             &mut data,
-            0,
+            1,
             ".shstrtab",
             3,
             shstr_off as u64,
@@ -498,7 +329,7 @@ mod tests {
         );
         sh(
             &mut data,
-            1,
+            2,
             ".dynstr",
             3,
             dynstr_off as u64,
@@ -508,18 +339,18 @@ mod tests {
         );
         sh(
             &mut data,
-            2,
+            3,
             ".dynsym",
             11,
             dynsym_off as u64,
             (symbol_count * 24) as u64,
-            1,
+            2,
             8,
         );
         if scenid.is_some() {
             sh(
                 &mut data,
-                3,
+                4,
                 ".scenid",
                 1,
                 scenid_off as u64,
