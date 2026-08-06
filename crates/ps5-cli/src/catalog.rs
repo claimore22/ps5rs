@@ -485,6 +485,10 @@ impl StubAggregate {
     }
 }
 
+fn is_stub_file(name: &str) -> bool {
+    name.ends_with("_stub_weak.a") || name.ends_with("_stub.a")
+}
+
 fn stub_files(sdk_dir: &Path) -> Vec<PathBuf> {
     let mut files = Vec::new();
     let candidates = [sdk_dir.to_path_buf(), sdk_dir.join("target").join("lib")];
@@ -496,7 +500,7 @@ fn stub_files(sdk_dir: &Path) -> Vec<PathBuf> {
                     && path
                         .file_name()
                         .and_then(|n| n.to_str())
-                        .is_some_and(|n| n.ends_with("_stub_weak.a"));
+                        .is_some_and(is_stub_file);
                 if is_stub {
                     files.push(path);
                 }
@@ -622,6 +626,72 @@ pub(crate) fn cmd_import_stubs(sdk_dir: &Path, output: Option<&Path>, verify: bo
     }
 }
 
+fn render_dump(libraries: &mut std::collections::BTreeMap<String, Vec<StubSymbol>>) -> String {
+    let mut out = String::new();
+    let mut total = 0usize;
+    for (library, symbols) in libraries.iter_mut() {
+        symbols.sort_by(|a, b| a.nid.cmp(&b.nid));
+        out.push_str(&format!("# {library}\n"));
+        for s in symbols.iter() {
+            out.push_str(&format!("{} {}\n", s.nid, s.name));
+        }
+        total += symbols.len();
+    }
+    let noun = if libraries.len() == 1 {
+        "library"
+    } else {
+        "libraries"
+    };
+    out.push_str(&format!(
+        "{} stub {noun}, {total} symbols\n",
+        libraries.len()
+    ));
+    out
+}
+
+pub(crate) fn cmd_dump_stubs(path: &Path) {
+    let files = if path.is_file() {
+        vec![path.to_path_buf()]
+    } else {
+        let files = stub_files(path);
+        if files.is_empty() {
+            eprintln!(
+                "error: no *_stub.a or *_stub_weak.a files found under {} (also checked target/lib)",
+                path.display()
+            );
+            std::process::exit(1);
+        }
+        files
+    };
+
+    let mut libraries = std::collections::BTreeMap::<String, Vec<StubSymbol>>::new();
+    for file in &files {
+        let bytes = match std::fs::read(file) {
+            Ok(b) => b,
+            Err(e) => {
+                eprintln!("error: failed to read {}: {e}", file.display());
+                std::process::exit(1);
+            }
+        };
+        let library = file
+            .file_name()
+            .and_then(|n| n.to_str())
+            .map(stub_library_name)
+            .unwrap_or("unknown")
+            .to_string();
+        let symbols = match parse_stub_library(&bytes, &library) {
+            Ok(s) => s,
+            Err(e) => {
+                eprintln!("error: failed to parse {}: {e}", file.display());
+                std::process::exit(1);
+            }
+        };
+        libraries.entry(library).or_default().extend(symbols);
+    }
+
+    print!("{}", render_dump(&mut libraries));
+}
+
 pub(crate) fn iso8601_now() -> String {
     let secs = std::time::SystemTime::now()
         .duration_since(std::time::UNIX_EPOCH)
@@ -712,17 +782,54 @@ mod tests {
     }
 
     #[test]
+    fn render_dump_groups_libraries_and_sorts_by_nid() {
+        let mut libraries = std::collections::BTreeMap::new();
+        libraries.insert(
+            "libkernel".to_string(),
+            vec![
+                StubSymbol {
+                    nid: "Bb".into(),
+                    name: "sceKernelSleep".into(),
+                    library: "libkernel".into(),
+                },
+                StubSymbol {
+                    nid: "Aa".into(),
+                    name: "sceKernelUsleep".into(),
+                    library: "libkernel".into(),
+                },
+            ],
+        );
+        libraries.insert(
+            "libc".to_string(),
+            vec![StubSymbol {
+                nid: "Cc".into(),
+                name: "puts".into(),
+                library: "libc".into(),
+            }],
+        );
+        assert_eq!(
+            render_dump(&mut libraries),
+            "# libc\nCc puts\n# libkernel\nAa sceKernelUsleep\nBb sceKernelSleep\n2 stub libraries, 3 symbols\n"
+        );
+    }
+
+    #[test]
     fn stub_files_finds_only_stub_archives() {
         let dir = std::env::temp_dir().join("ps5rs_test_stub_files");
         let _ = std::fs::create_dir_all(&dir);
         std::fs::write(dir.join("libSceAgc_stub_weak.a"), b"!<arch>\n").unwrap();
+        std::fs::write(dir.join("libkernel_stub.a"), b"!<arch>\n").unwrap();
         std::fs::write(dir.join("libSceAgc.a"), b"!<arch>\n").unwrap();
         std::fs::write(dir.join("notes.txt"), b"hello").unwrap();
         let files = stub_files(&dir);
-        assert_eq!(files.len(), 1);
+        assert_eq!(files.len(), 2);
         assert_eq!(
             files[0].file_name().unwrap().to_str().unwrap(),
             "libSceAgc_stub_weak.a"
+        );
+        assert_eq!(
+            files[1].file_name().unwrap().to_str().unwrap(),
+            "libkernel_stub.a"
         );
         let _ = std::fs::remove_dir_all(&dir);
     }

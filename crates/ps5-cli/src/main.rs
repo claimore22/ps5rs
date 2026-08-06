@@ -119,6 +119,7 @@ fn main() {
                 output,
                 verify,
             } => catalog::cmd_import_stubs(&sdk_dir, output.as_deref(), verify),
+            CatalogCommand::DumpStubs { path } => catalog::cmd_dump_stubs(&path),
         },
     }
 }
