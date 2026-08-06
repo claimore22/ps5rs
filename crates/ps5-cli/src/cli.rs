@@ -204,6 +204,9 @@ pub enum CatalogCommand {
         /// SDK directory (target/lib is also accepted) or a single stub file
         #[arg(value_hint = ValueHint::DirPath)]
         path: PathBuf,
+        /// Write the dump to this file instead of stdout
+        #[arg(short, long, value_hint = ValueHint::FilePath)]
+        output: Option<PathBuf>,
     },
 }
 
