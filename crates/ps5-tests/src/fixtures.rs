@@ -8,6 +8,7 @@ use ps5_nid::algorithm::hash;
 
 use crate::codegen;
 use crate::dynelf;
+use crate::dynelf::{CODE_VA, DynamicSpec, GOT_VA};
 use crate::elf::{ElfSpec, build};
 use crate::manifest::{ARG_WILDCARD, ImportExpectation};
 
@@ -24,7 +25,7 @@ pub struct Fixture {
 
 /// Every fixture the generator knows how to produce.
 pub fn all() -> Vec<Fixture> {
-    vec![hello(), hello_puts(), libdbg_basic()]
+    vec![hello(), hello_puts(), libdbg_basic(), kernel_sleep()]
 }
 
 /// `hello.elf` — a `_start` that just returns.  Boots, maps two segments,
@@ -65,6 +66,30 @@ fn hello_puts() -> Fixture {
         }],
         print_string: Some("Hello from ps5rs!"),
         stdout: vec!["Hello from ps5rs!\n".to_string()],
+    }
+}
+
+/// `kernel_sleep.elf` — a deterministic guest importing `libkernel::sceKernelSleep`
+/// and sleeping for 2 seconds.  The frozen clock model returns immediately with
+/// `SCE_OK`, so the guest exits 0 after a single import call.
+fn kernel_sleep() -> Fixture {
+    let sleep_nid = hash("sceKernelSleep");
+    Fixture {
+        name: "kernel_sleep.elf",
+        bytes: dynelf::build(&DynamicSpec {
+            code: codegen::sleep_and_ret(CODE_VA, GOT_VA),
+            message: b"\0",
+            masked_name: format!("{sleep_nid}#libkernel"),
+        }),
+        expected_exit: 0,
+        imports: vec![ImportExpectation {
+            library: "libkernel".to_string(),
+            name: "sceKernelSleep".to_string(),
+            args: [2, 0, 0, 0, 0, 0],
+            return_value: 0,
+        }],
+        print_string: None,
+        stdout: Vec::new(),
     }
 }
 
