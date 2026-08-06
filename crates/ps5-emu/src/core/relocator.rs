@@ -3,7 +3,7 @@
 
 use crate::abi::dispatcher_address;
 use crate::error::EmuError;
-use crate::modules::Host;
+use crate::hle::Host;
 use crate::platform::memory::{ExecBlock, GuestMemory};
 
 use super::dispatcher::ImportSlot;

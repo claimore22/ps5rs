@@ -61,7 +61,7 @@ Dependency direction: `format → {elf, self, nid} → image → analysis → cl
 
 ## Emulator
 
-- `ps5-emu` runs guest entry points as native x86-64; only the ABI boundary is machine code (`abi::sysv64`): stubs forward the six SysV integer registers + guest stack pointer into the `Registry`, which dispatches by computed NID to pure-Rust HLE modules (`modules/libc.rs`, `modules/kernel.rs`, `modules/libdbg.rs`).
+- `ps5-emu` runs guest entry points as native x86-64; only the ABI boundary is machine code (`abi::sysv64`): stubs forward the six SysV integer registers + guest stack pointer into the `Registry`, which dispatches by computed NID to pure-Rust HLE modules under `hle/` (`hle/libc/`, `hle/libkernel/`, `hle/libSceDbg/`), each with thin handlers in a per-library `calls.rs`.
 - API: `Emulator::from_elf(...)` (default modules, `DEFAULT_LOAD_BASE`) → `resolve_imports_with(&catalog)` → `run() -> ExecutionReport` (module name, entry point, exit code, ordered `import_calls`). `ps5-emu/serde` feature gates report serialization.
 - Loader/emulator split: `Process` owns memory + loaded modules (`Process::load_at` for custom bases); the emulator wraps a `Process`, a `Registry`, and execution state.
 - Library names in traces resolve through the module's `import_libs` table (NID-derived lib id fallback), so masked symbols read as `libkernel::puts`.
