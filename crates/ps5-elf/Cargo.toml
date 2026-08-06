@@ -6,6 +6,7 @@ license.workspace = true
 description = "ELF64 binary format parser (zero-copy)"
 
 [dependencies]
+object = { version = "0.40", default-features = false, features = ["read", "elf", "archive"] }
 ps5-format = { path = "../ps5-format" }
 ps5-nid = { path = "../ps5-nid" }
 
