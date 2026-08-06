@@ -199,6 +199,12 @@ pub enum CatalogCommand {
         #[arg(long)]
         verify: bool,
     },
+    /// Print every symbol from *_stub.a / *_stub_weak.a libraries
+    DumpStubs {
+        /// SDK directory (target/lib is also accepted) or a single stub file
+        #[arg(value_hint = ValueHint::DirPath)]
+        path: PathBuf,
+    },
 }
 
 #[derive(Subcommand)]
