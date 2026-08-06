@@ -27,6 +27,25 @@
         "Hello from ps5rs!\n"
       ]
     },
+    "kernel_sleep.elf": {
+      "sha256": "351095ccfaa2463f330b4c2bdabf79d1e35b00b990919dbdcd29ac645b099847",
+      "expected_exit": 0,
+      "imports": [
+        {
+          "library": "libkernel",
+          "name": "sceKernelSleep",
+          "args": [
+            2,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "return_value": 0
+        }
+      ]
+    },
     "libdbg_basic.elf": {
       "sha256": "0c41d8fe84ffa4949bde1a4f9bb65570a1ba8a90c4f755f4603b90eae35bedd0",
       "expected_exit": 0,

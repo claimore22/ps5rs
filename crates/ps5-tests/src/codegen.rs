@@ -29,6 +29,25 @@ pub fn puts_and_ret(code_va: u64, string_va: u64, puts_got: u64) -> Vec<u8> {
     out
 }
 
+/// Guest entry that parks a fixed immediate in the SysV first argument, calls
+/// an imported function slot, and returns 0:
+///
+/// ```asm
+/// mov  edi, 2
+/// call qword ptr [rip + got]
+/// xor  eax, eax
+/// ret
+/// ```
+pub fn sleep_and_ret(code_va: u64, sleep_got: u64) -> Vec<u8> {
+    let mut asm = Asm::new(code_va);
+    asm.zero_args();
+    asm.mov_r32_imm(reg::RDI, 2);
+    asm.call_got(sleep_got);
+    asm.xor_eax_eax();
+    asm.ret();
+    asm.into_bytes()
+}
+
 /// SysV x86-64 register encodings used by the [`Asm`] emitter.
 pub mod reg {
     pub const RAX: u8 = 0;
@@ -331,6 +350,21 @@ mod tests {
         let code = puts_and_ret(0x1000, 0x2000, 0x2010);
         assert_eq!(code[code.len() - 1], 0xC3);
         assert_eq!(code.len(), 17);
+    }
+
+    #[test]
+    fn sleep_and_ret_sets_rdi_and_calls_got() {
+        let code = sleep_and_ret(0x1000, 0x2018);
+        assert_eq!(code[0], 0x31, "zero_args first: xor edi, edi");
+        assert_eq!(code[1], 0xFF);
+        assert_eq!(&code[14..19], &[0xBF, 0x02, 0x00, 0x00, 0x00], "mov edi, 2");
+        assert_eq!(&code[19..21], &[0xFF, 0x15], "call qword [rip + got]");
+        assert_eq!(
+            &code[code.len() - 3..],
+            &[0x31, 0xC0, 0xC3],
+            "xor eax, eax; ret"
+        );
+        assert!(code.len() < 0x20, "sleep fixture should stay tiny");
     }
 
     #[test]

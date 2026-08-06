@@ -15,7 +15,7 @@ use crate::codegen;
 
 pub const CODE_VA: u64 = 0x1000;
 const MESSAGE_VA: u64 = 0x2000;
-const GOT_VA: u64 = 0x2018;
+pub const GOT_VA: u64 = 0x2018;
 const RELA_VA: u64 = 0x2030;
 const SYMTAB_VA: u64 = 0x2060;
 const STRTAB_VA: u64 = 0x20A8;
