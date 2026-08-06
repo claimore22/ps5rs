@@ -10,8 +10,8 @@ pub mod abi;
 pub mod core;
 pub mod emulator;
 pub mod error;
+pub mod hle;
 pub mod imports;
-pub mod modules;
 pub mod nid;
 pub mod platform;
 pub mod process;
@@ -19,7 +19,7 @@ pub mod trace;
 
 pub use emulator::{EmuState, Emulator};
 pub use error::EmuError;
+pub use hle::{HleContext, HleModule, Host, Registry};
 pub use imports::{ImportBinding, ImportTable};
-pub use modules::{HleModule, Host, Registry};
 pub use process::{ModuleBytes, Process};
 pub use trace::{EXECUTION_REPORT_VERSION, ExecutionReport, ImportCall};
