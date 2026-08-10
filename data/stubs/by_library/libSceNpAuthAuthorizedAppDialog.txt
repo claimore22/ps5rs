@@ -1,0 +1,9 @@
+# libSceNpAuthAuthorizedAppDialog
+2SlriPR9TMc sceNpAuthAuthorizedAppDialogTerminate
+9CiV7Shy6qQ sceNpAuthAuthorizedAppDialogInitialize
+L5iGQ06WlTo sceNpAuthAuthorizedAppDialogUpdateStatus
+bZlJPa2hPWk sceNpAuthAuthorizedAppDialogGetResult
+cTvSsJRn30w sceNpAuthAuthorizedAppDialogOpen
+umZaRUshsKc sceNpAuthAuthorizedAppDialogClose
+wQdH6qOwqhE sceNpAuthAuthorizedAppDialogGetStatus
+1 stub library, 7 symbols

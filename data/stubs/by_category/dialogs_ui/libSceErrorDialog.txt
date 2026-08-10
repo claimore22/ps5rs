@@ -1,0 +1,8 @@
+# libSceErrorDialog
+9XAxK2PMwk8 sceErrorDialogTerminate
+I88KChlynSs sceErrorDialogInitialize
+M2ZF-ClLhgY sceErrorDialogOpen
+WWiGuh9XfgQ sceErrorDialogUpdateStatus
+ekXHb1kDBl0 sceErrorDialogClose
+t2FvHRXzgqk sceErrorDialogGetStatus
+1 stub library, 6 symbols

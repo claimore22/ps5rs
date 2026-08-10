@@ -1,0 +1,7 @@
+# libScePngDec
+-6srIGbLTIU scePngDecQueryMemorySize
+QbD+eENEwo8 scePngDecDelete
+U6h4e5JRPaQ scePngDecParseHeader
+WC216DD3El4 scePngDecDecode
+m0uW+8pFyaw scePngDecCreate
+1 stub library, 5 symbols

@@ -1,0 +1,13 @@
+# libSceNetCtlAp
+19Ec7WkMFfQ sceNetCtlApCheckCallback
+4jkLJc954+Q sceNetCtlApGetResult
+AKZOzsb9whc sceNetCtlApGetState
+FdN+edNRtiw sceNetCtlApInit
+LXADzTIzM9I sceNetCtlApGetInfo
+NpTcFtaQ-0E sceNetCtlApUnregisterCallback
+cv5Y2efOTeg sceNetCtlApTerm
+hfkLVdXmfnU sceNetCtlApGetConnectInfo
+meFMaDpdsVI sceNetCtlApClearEvent
+pmjobSVHuY0 sceNetCtlApRegisterCallback
+r-pOyN6AhsM sceNetCtlApStop
+1 stub library, 11 symbols

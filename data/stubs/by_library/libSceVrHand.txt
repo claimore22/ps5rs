@@ -1,0 +1,10 @@
+# libSceVrHand
+-iqDAXQlXew sceVrHandInitialize
+-wppX82q8dk sceVrHandFinalize
+EG4LeoZJ+mY sceVrHandQueryMemory
+HK2JUFv2RJE sceVrHandGetMeshSize
+ZRe6rlaz1wY sceVrHandStart
+kqcnvHb39ls sceVrHandGetMesh
+lt1WXVXcyxk sceVrHandGetResult
+z1EUL+LMJ+8 sceVrHandStop
+1 stub library, 8 symbols

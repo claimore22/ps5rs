@@ -1,0 +1,9 @@
+# libSceGameUpdate
+0g0+Oq9xcI0 sceGameUpdateGetAddcontLatestVersion
+LYVV9z8+owM sceGameUpdateCheck
+NSH-C-OmoNI sceGameUpdateTerminate
+UvcvKaFvupA sceGameUpdateCreateRequest
+YJtKLttI9fM sceGameUpdateInitialize
+bcCyjHN5sn0 sceGameUpdateDeleteRequest
+d1CNGEOaK28 sceGameUpdateAbortRequest
+1 stub library, 7 symbols

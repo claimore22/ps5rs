@@ -1,0 +1,15 @@
+# libScePsml
++2KpvixvL6E scePsmlMfsrGetSharedResourcesInitRequirement
+3WVD91e12ZQ scePsmlMfsrInit
+AHalTX9wFZY scePsmlMfsrGetDispatchMfsrPacketSizeInDwords
+ArakEpzsZo0 scePsmlMfsrGetContextBufferRequirement800M3_2
+FSGaTQze0UY scePsmlMfsrSelectConfig
+GHna9-DvnUk scePsmlMfsrGetMipmapBias
+GJY0MvuTcs8 scePsmlMfsrRequestCapture
+JaLBe0P3jSU scePsmlMfsrReleaseContext
+LXq+6mIxpCw scePsmlMfsrIsCaptureInProgress
+eWoKNeB6V-k scePsmlMfsrCreateSharedResources
+gxv3i+MTEzU scePsmlMfsrCreateContext800M3_2
+jEevBXmagOQ scePsmlMfsrReleaseSharedResources
+s2psNHUIdjk scePsmlMfsrGetDispatchMfsrPacket1000
+1 stub library, 13 symbols

@@ -1,0 +1,9 @@
+# libScePlayerSelectionDialog
+0fyTCPOHGX4 scePlayerSelectionDialogClose
+9Oj3MIJ+Zjk scePlayerSelectionDialogOpen
+CgdJ1PkIsE4 scePlayerSelectionDialogTerminate
+DrDfu7uq6JY scePlayerSelectionDialogInitialize
+GtF-2gJqsts scePlayerSelectionDialogGetResult
+PBmrW72wbPQ scePlayerSelectionDialogUpdateStatus
+l7oQ33rm9TI scePlayerSelectionDialogGetStatus
+1 stub library, 7 symbols

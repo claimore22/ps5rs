@@ -1,0 +1,6 @@
+# libSceContentDelete
+5XLSih32qHA sceContentDeleteTerminate
+pXJh3aVk8Ks sceContentDeleteById
+qC3QW+AltHs sceContentDeleteByPath
+zoxb0wEChEM sceContentDeleteInitialize
+1 stub library, 4 symbols

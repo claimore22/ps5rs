@@ -1,0 +1,4 @@
+# libSceCommonDialog
+BQ3tey0JmQM sceCommonDialogIsUsed
+uoUpLGNkygk sceCommonDialogInitialize
+1 stub library, 2 symbols
