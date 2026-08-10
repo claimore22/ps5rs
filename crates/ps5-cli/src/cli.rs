@@ -77,6 +77,8 @@ pub enum Commands {
         path: PathBuf,
         #[arg(short, long, value_hint = ValueHint::DirPath, default_value = "analysis/dashboard")]
         output: PathBuf,
+        #[arg(long = "games", value_hint = ValueHint::DirPath)]
+        games: Option<PathBuf>,
     },
     ExportUnknown {
         path: PathBuf,
@@ -161,6 +163,16 @@ pub enum Commands {
         /// Emit JSON report
         #[arg(long)]
         json: bool,
+        /// Write the report to a file instead of stdout
+        #[arg(short, long, value_hint = ValueHint::FilePath)]
+        output: Option<PathBuf>,
+    },
+    /// Detect third-party middleware libraries in game /prx folders
+    Middleware {
+        /// Games directory containing subdirectories with eboot.bin
+        path: PathBuf,
+        #[arg(long, value_enum, default_value = "terminal")]
+        format: OutputFormat,
         /// Write the report to a file instead of stdout
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,

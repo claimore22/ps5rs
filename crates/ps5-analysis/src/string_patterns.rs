@@ -91,6 +91,30 @@ pub fn detect_third_party(strings: &[String]) -> Vec<Detection> {
         "Oodle",
         &mut detections,
     );
+    detect_pattern(
+        strings,
+        &["FMOD", "Firelight Technologies"],
+        "FMOD",
+        &mut detections,
+    );
+    detect_pattern(
+        strings,
+        &["Wwise", "Audiokinetic", "AK::"],
+        "Wwise",
+        &mut detections,
+    );
+    detect_pattern(
+        strings,
+        &["Gameface", "Coherent GT", "CoherentGT"],
+        "Coherent Gameface",
+        &mut detections,
+    );
+    detect_pattern(
+        strings,
+        &["International Components for Unicode", "icu_"],
+        "ICU",
+        &mut detections,
+    );
 
     detections
 }
