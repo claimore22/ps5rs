@@ -13,6 +13,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - **Multi-import dynamic fixture builder**: `ps5-tests` gains a `plan()` + `build_multi()` path laying out messages → GOT → RELA → SYMTAB → STRTAB → DYNAMIC with deterministic addresses and per-import relocations/symbols
 - **stdout + wildcard expectations in elf_suite**: `FixtureExpectation` gains `stdout` (compared against captured output) and `ARG_WILDCARD` for address-valued args that legitimately vary; the generated `libdbg_basic.elf` boots with its full 16-import trace and byte-exact stdout asserted
 - **Code-generator unit coverage**: `ps5-tests::codegen` now asserts exact x86-64 encodings (RIP-relative displacement math from instruction start, REX-prefixed register zeroing for `r8`/`r9`, GOT-indirect call displacements)
+- **Third-party middleware detection** (`ps5-analysis::middleware`): walks game folders, classifies every PRX/SPRX/SO module as ThirdParty/Sony/Unknown via a 27-entry fingerprint catalog (FMOD, Wwise, Gameface, ICU, RENOIR, iZotope/McDSP/Auro-3D/Ozone, Unity IL2CPP/Burst/PS5 platform/PSN/Save Data, Google Resonance Audio, CRIWARE, WebKit (Kitt), Epic Online Services), and parses each module for import/export counts and library names
+- **`ps5rs middleware <games_dir>` command**: per-game terminal or JSON middleware report (title ID, engine, vendor/product attribution per module)
+- **Dashboard Middleware tab**: summary cards, Top Middleware Products ranking, and a per-game module table with third-party/Sony/unknown badges; `dashboard --games <games_dir>` injects the middleware report
+- **String-based middleware detection**: `detect_third_party` gains FMOD, Wwise, Coherent Gameface, and ICU patterns
+
+### Changed
+- **Module-scan accuracy**: the middleware walk skips `sce_sys/` and `decrypted/` dump-artifact folders, dedupes identical file copies per game by SHA-256, and keeps distinct-content same-name versions
 
 ### Fixed
 - **Register zeroing encoding**: generated guard code used `xor r8d, eax`/`xor r9d, eax` (REX.B extending only the rm operand) instead of `xor r8d, r8d`/`xor r9d, r9d`, leaking stale register garbage into recorded import args; the encoder now emits `45 31 C0`/`45 31 C9`
