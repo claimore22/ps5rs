@@ -47,7 +47,7 @@ Dependency direction: `format → {elf, self, nid} → image → analysis → cl
 ## CLI
 
 - Binary: `ps5rs` (from `ps5-cli` crate, `clap` derive API)
-- Subcommand files in `crates/ps5-cli/src/`: `inspect.rs`, `load.rs`, `strings.rs`, `catalog.rs`, `batch_load.rs`, `export_scan.rs`, `run.rs`, etc.
+- Subcommand files in `crates/ps5-cli/src/`: `inspect.rs`, `load.rs`, `strings.rs`, `catalog.rs`, `batch_load.rs`, `export_scan.rs`, `run.rs`, `middleware.rs`, `dataset.rs`, etc.
 - `cli.rs` purely declarative (types only, no helpers)
 
 ## Loader Pipeline
