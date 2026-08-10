@@ -1,0 +1,7 @@
+# libSceM4aacEnc
++MdgHI0TYOw sceM4aacEncFlush
+Fqn-wkJCOes sceM4aacEncEncode
+U2iepfgrDMg sceM4aacEncCreateEncoder
+uPqxvaoLkbM sceM4aacEncClearContext
+z394AzuRItE sceM4aacEncDeleteEncoder
+1 stub library, 5 symbols

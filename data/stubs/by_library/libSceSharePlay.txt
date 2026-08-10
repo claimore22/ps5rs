@@ -1,0 +1,6 @@
+# libSceSharePlay
++MCXJlWdi+s sceSharePlayGetCurrentConnectionInfoA
+FzQS6DREDfk sceSharePlayProhibitController
+UaLjloJinow sceSharePlayTerminate
+isruqthpYcw sceSharePlayInitialize
+1 stub library, 4 symbols

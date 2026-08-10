@@ -1,0 +1,7 @@
+# libSceNpUtility
+BYIZGKm6bO4 sceNpBandwidthTestGetStatus
+hqzi1IHdQQQ sceNpBandwidthTestInitStartDownload
+kvdMF48mB3Y sceNpBandwidthTestAbort
+mA0zsbqm+kA sceNpBandwidthTestInitStartUpload
+pLr1fEQS1z8 sceNpBandwidthTestShutdown
+1 stub library, 5 symbols

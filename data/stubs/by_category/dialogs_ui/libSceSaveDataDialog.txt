@@ -1,0 +1,12 @@
+# libSceSaveDataDialog
+4tPhsP6FpDI sceSaveDataDialogOpen
+ERKzksauAJA sceSaveDataDialogGetStatus
+KK3Bdg1RWK0 sceSaveDataDialogUpdateStatus
+V-uEeFKARJU sceSaveDataDialogProgressBarInc
+YuH2FA7azqQ sceSaveDataDialogTerminate
+en7gNVnh878 sceSaveDataDialogIsReadyToDisplay
+fH46Lag88XY sceSaveDataDialogClose
+hay1CfTmLyA sceSaveDataDialogProgressBarSetValue
+s9e3+YpRnzw sceSaveDataDialogInitialize
+yEiJ-qqr6Cg sceSaveDataDialogGetResult
+1 stub library, 10 symbols

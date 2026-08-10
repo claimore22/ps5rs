@@ -1,0 +1,9 @@
+# libSceNetCtlApDialog
+3QtqTA0uMmU sceNetCtlApDialogClose
+5X+QFaVtiKg sceNetCtlApDialogTerminate
+SKJQwgudGFg sceNetCtlApDialogOpen
+ZaEVF6WqBP8 sceNetCtlApDialogGetResult
+eBWS-HorSWY sceNetCtlApDialogGetStatus
+py8-vzIY-RY sceNetCtlApDialogInitialize
+ys1JAOGzNG0 sceNetCtlApDialogUpdateStatus
+1 stub library, 7 symbols

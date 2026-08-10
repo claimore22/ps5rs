@@ -1,0 +1,9 @@
+# libSceLoginDialog
+2rc+egSfb5A sceLoginDialogUpdateStatus
+Btkx21f1M8k sceLoginDialogGetResult
+F0XIzrG5yvw sceLoginDialogClose
+HAiWUEwEfGo sceLoginDialogGetStatus
+S56ra1+Tymg sceLoginDialogOpen
+qP-EvQRl2Hc sceLoginDialogInitialize
+vMQJRUKsf3U sceLoginDialogTerminate
+1 stub library, 7 symbols

@@ -1,0 +1,8 @@
+# libSceAudiodec
+6Vf9WTLDoss sceAudiodecClearContext
+KHXHMDLkILw sceAudiodecDecode
+O3f1sLMWRvs sceAudiodecCreateDecoder
+Tp+ZEy69mLk sceAudiodecDeleteDecoder
+VjhsmxpcezI sceAudiodecInitLibrary
+h5jSB2QIDV0 sceAudiodecTermLibrary
+1 stub library, 6 symbols

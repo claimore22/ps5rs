@@ -1,0 +1,15 @@
+# libSceAcm
+8fe55ktlNVo sceAcmBatchStartBuffers
+9nLbWmRDpa8 sceAcm_ConvReverb_SharedIr
+DR-ZCmvVR9Q sceAcm_IFFT
+KovqaFbmtsM sceAcm_FFT
+LA4RCNKnFjg sceAcm_Panner
+PVx9oQUaDdk sceAcm_ConvReverb_SharedIr_2
+RLN3gRlXJLE sceAcmBatchWait
+ZIXln2K3XMk sceAcmContextCreate
+jBgBjAj02R8 sceAcmContextDestroy
+r7z5YQFZo+U sceAcmBatchJobNotification
+tW9W+CAG4FE sceAcmBatchStartBuffer
+u70oWo92SYQ sceAcm_ConvReverb_SharedInput
+wM41Cc+ieog sceAcm_ConvReverb_SharedInput_2
+1 stub library, 13 symbols

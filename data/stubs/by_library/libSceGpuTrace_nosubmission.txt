@@ -1,0 +1,10 @@
+# libSceGpuTrace_nosubmission
+GLFNgsekcJU sceGpuTraceParametersSetDuration
+IQl1M8Gynsw sceGpuTraceParametersInit
+QDMpdglDPoo sceGpuTraceParametersSetMemorySize
+TehfTHUiaag sceGpuTraceParametersSetGroup
+WpNcYUoJe74 sceGpuTraceStart
+rxXvAxEbq8I sceGpuTraceStop
+t+2V-Erb8Bg sceGpuTraceMonitorTrigger
+ubB+tVwd4-U sceGpuTraceCancel
+1 stub library, 8 symbols

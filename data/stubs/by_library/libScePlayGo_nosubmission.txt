@@ -1,0 +1,4 @@
+# libScePlayGo_nosubmission
+D6HEAnaC9zQ scePlayGoSnapshot
+RHXYK0iDICM scePlayGoRequestNextChunk
+1 stub library, 2 symbols

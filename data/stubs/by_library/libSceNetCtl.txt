@@ -1,0 +1,17 @@
+# libSceNetCtl
++lxqIKeU9UY sceNetCtlGetStateV6
+0cBgduPRR+M sceNetCtlGetResult
+1NE9OWdBIww sceNetCtlRegisterCallbackV6
+H5yARg37U5g sceNetCtlGetResultV6
+JO4yuTuMoKI sceNetCtlGetNatInfo
+Jy1EO5GdlcM sceNetCtlGetInfoV6
+Rqm2OnZMCz0 sceNetCtlUnregisterCallback
+UJ+Z7Q+4ck0 sceNetCtlRegisterCallback
+Z4wwCFiBELQ sceNetCtlTerm
+gky0+oaNM4k sceNetCtlInit
+hIUVeUNxAwc sceNetCtlUnregisterCallbackV6
+iQw3iQPhvUQ sceNetCtlCheckCallback
+obuxdTiwkF8 sceNetCtlGetInfo
+teuK4QnJTGg sceNetCtlGetIfStat
+uBPlr0lbuiI sceNetCtlGetState
+1 stub library, 15 symbols

@@ -1,0 +1,11 @@
+# libScePfs
+-yzonNNSV8E scePfsGetSingleBlockReadCommand
+FpmVtvy8tYo scePfsGetBlockTableReadCommand
+LJTtb7xKzkY scePfsPread
+P6Yiba6u7cc scePfsPreadDecompressBlock
+QiJFZRyM1dE scePfsGetUncompressedSize
+V7BQGxc2Ll0 scePfsGetWorkBufferSize
+YyWt34TCzw4 scePfsValidate
+qFujOxHUDSs scePfsGetHeaderReadCommand
+smQl0Bi1Ick scePfsGetPreadBlockRange
+1 stub library, 9 symbols

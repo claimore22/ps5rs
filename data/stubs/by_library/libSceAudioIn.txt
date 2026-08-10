@@ -1,0 +1,10 @@
+# libSceAudioIn
+3YQ1qY5ePUk sceAudioInAsyncOpen
+3shKmTrTw6c sceAudioInGetRerouteCount
+5NE8Sjc7VC8 sceAudioInOpen
+BohEAQ7DlUE sceAudioInGetSilentState
+Jh6WbHhnI68 sceAudioInClose
+LozEOU8+anM sceAudioInInput
+S-rDUfQk9sg sceAudioInGetGain
+nya-R5gDYhM sceAudioInHqOpen
+1 stub library, 8 symbols

@@ -1,0 +1,3 @@
+# libSceSystemServiceTournament
+gELp9ue2ccQ sceSystemServiceOpenTournamentOccurrence
+1 stub library, 1 symbols

@@ -1,0 +1,6 @@
+# libSceConvertKeycode
+QjGCaJbRib4 sceConvertKeycodeGetCharacter
+S-Gni2KIJRY sceConvertKeycodeGetCharacterFromKeyboardData
+mUuUOWI-C+0 sceConvertKeycodeGetImeKeyboardType
+vIsoJsLvvlM sceConvertKeycodeGetVirtualKeycode
+1 stub library, 4 symbols

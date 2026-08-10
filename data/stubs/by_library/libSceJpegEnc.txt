@@ -1,0 +1,6 @@
+# libSceJpegEnc
+K+rocojkr-I sceJpegEncCreate
+QbrU0cUghEM sceJpegEncEncode
+j1LyMdaM+C0 sceJpegEncDelete
+o6ZgXfFdWXQ sceJpegEncQueryMemorySize
+1 stub library, 4 symbols

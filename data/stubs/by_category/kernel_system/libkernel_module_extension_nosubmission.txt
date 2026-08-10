@@ -1,0 +1,3 @@
+# libkernel_module_extension_nosubmission
+ClMdHuu+R1A sceKernelExtendMaximumModuleNumber
+1 stub library, 1 symbols

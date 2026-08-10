@@ -1,0 +1,9 @@
+# libSceDeci5_nosubmission
+5IVqeThOi2s sceDeci5Write
+8T8VUmTIKE0 sceDeci5Read
+Ez2iQHniESc sceDeci5CreateHostProcessAndWait
+gYg5m+zII9w sceDeci5Close
+nS4i1N-HEws sceDeci5CreateHostProcess
+sLfxYROuNZU sceDeci5Open
+v-VB0EguQWg sceDeci5GetStatus
+1 stub library, 7 symbols

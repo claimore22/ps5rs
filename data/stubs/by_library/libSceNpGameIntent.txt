@@ -1,0 +1,6 @@
+# libSceNpGameIntent
+0HBYxYAjmf0 sceNpGameIntentTerminate
+jEIXUAr9XE8 sceNpGameIntentReceiveIntent
+m87BHxt-H60 sceNpGameIntentInitialize
+rPl0INNc-M8 sceNpGameIntentGetPropertyValueString
+1 stub library, 4 symbols

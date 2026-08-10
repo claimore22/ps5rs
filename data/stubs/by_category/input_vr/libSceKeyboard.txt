@@ -1,0 +1,9 @@
+# libSceKeyboard
+0LWei+c7RNc sceKeyboardClose
+6HpE68bzX6M sceKeyboardReadState
+HJ+KnEHcaxI sceKeyboardOpen
+se0KYvZSzg8 sceKeyboardGetHandle
+wadT3QBCGY0 sceKeyboardInit
+xybbGMCr738 sceKeyboardRead
+yO9JwdRhtSA sceKeyboardGetKey2Char
+1 stub library, 7 symbols

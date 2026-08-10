@@ -1,0 +1,11 @@
+# libSceMouse
+If6YTBcYAbc sceMouseReadAbsolutePosition
+P+9UQOe1F2g sceMouseGetHandle
+Qs0wWulgl7U sceMouseInit
+RaqxZIf6DvE sceMouseOpen
+c59jEdE4wzY sceMouseResetAbsolutePosition
+cAnT0Rw-IwU sceMouseClose
+oB2fBhW84tQ sceMouseSetAbsoluteVirtualScreenSize
+stCCyzJJyM0 sceMouseSetAbsoluteHighPrecisionMode
+x8qnXqh-tiM sceMouseRead
+1 stub library, 9 symbols

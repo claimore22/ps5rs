@@ -1,0 +1,9 @@
+# libSceVrSetupDialog
+-umGRHNUiZU sceVrSetupDialogGetResult
+KHfpjj9Pucg sceVrSetupDialogUpdateStatus
+ZeYpKhsLfG0 sceVrSetupDialogClose
+loE6cNuCUtk sceVrSetupDialogOpen
+qRUACYyUNFA sceVrSetupDialogGetStatus
+sTFqbfXJGG4 sceVrSetupDialogInitialize
+zdgiIPRqET4 sceVrSetupDialogTerminate
+1 stub library, 7 symbols

@@ -1,0 +1,11 @@
+# libSceTextToSpeech2
++352WTlGCQI sceTextToSpeech2GetSystemStatus
+08JSg9p6bgQ sceTextToSpeech2GetSpeechStatus
+2jiIxUmcsGo sceTextToSpeech2Cancel
+8ntsRd07EQA sceTextToSpeech2Speak
+LazJT1ZrQys sceTextToSpeech2RegisterTextConversionItem
+SoWHuVW0gpU sceTextToSpeech2Terminate
+UOjiprYwVNw sceTextToSpeech2Initialize
+X0HZNbSiqyg sceTextToSpeech2Open
+t4e879M-cSw sceTextToSpeech2Close
+1 stub library, 9 symbols

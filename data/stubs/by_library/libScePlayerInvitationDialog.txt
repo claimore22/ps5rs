@@ -1,0 +1,9 @@
+# libScePlayerInvitationDialog
+1m4CKJxzsW0 scePlayerInvitationDialogGetStatus
+AhqlQ8cngrk scePlayerInvitationDialogGetResult
+JDwx3Bl4bB4 scePlayerInvitationDialogInitialize
+Zo52g0A1XDw scePlayerInvitationDialogClose
+gDm5a6GSE94 scePlayerInvitationDialogTerminate
+kFhuwHrIUqs scePlayerInvitationDialogUpdateStatus
+rKPTlHwGa4k scePlayerInvitationDialogOpen
+1 stub library, 7 symbols

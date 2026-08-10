@@ -1,0 +1,4 @@
+# libSceCoredump_nosubmission
+1Pw5n31Ayxc sceCoredumpDebugForceCoredumpOnAppClose
+G420P25pN5Y sceCoredumpDebugTriggerCoredump
+1 stub library, 2 symbols

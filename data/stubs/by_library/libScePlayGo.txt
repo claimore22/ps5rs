@@ -1,0 +1,20 @@
+# libScePlayGo
+-Q1-u1a7p0g scePlayGoPrefetch
+-RJWNMK3fC8 scePlayGoGetProgress
+3OMbYZBaa50 scePlayGoGetLanguageMask
+4AAcTU9R3XM scePlayGoSetInstallSpeed
+73fF1MFU8hA scePlayGoGetChunkId
+8-e7E989rCU scePlayGoGetInstallChunkId
+HVAa744ecdw scePlayGoPrefetchOptionalChunk
+IfiN+-oeVWI scePlayGoGetSupportedOptionalChunk
+M1Gma1ocrGE scePlayGoOpen
+MPe0EeBGM-E scePlayGoTerminate
+Nn7zKwnA5q0 scePlayGoGetToDoList
+Uco1I0dlDi8 scePlayGoClose
+g4AZyxpSAlA scePlayGoGetOptionalChunk
+gUPGiOQ1tmQ scePlayGoSetToDoList
+rvBSfTimejE scePlayGoGetInstallSpeed
+ts6GlZOKRrE scePlayGoInitialize
+uWIYLFkkwqk scePlayGoGetLocus
+v6EZ-YWRdMs scePlayGoGetEta
+1 stub library, 18 symbols

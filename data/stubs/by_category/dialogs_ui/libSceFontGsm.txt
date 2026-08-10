@@ -1,0 +1,8 @@
+# libSceFontGsm
+6zxuBlsGF0I sceFontGraphicsSequenceGetAgcCommandsForJump
+CeSI7C4ihjo sceFontGraphicsSequenceGetAgcCommandsForSubmit
+PwZEP8ZBK2Y sceFontGraphicsAgcDrawupFillTextureImage
+XKfh4naaANE sceFontSelectGraphicsAgc
+qEGeDXvL3fc sceFontGraphicsAgcSurfaceInit
+z-m061OoEqQ sceFontGraphicsAgcDrawupFillTexturePattern
+1 stub library, 6 symbols

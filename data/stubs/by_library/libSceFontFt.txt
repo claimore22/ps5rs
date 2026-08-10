@@ -1,0 +1,5 @@
+# libSceFontFt
+Xx974EW-QFY sceFontSelectRendererFt
+oM+XCzVG3oM sceFontSelectLibraryFt
+ojW+VKl4Ehs sceFontSelectGlyphsFt
+1 stub library, 3 symbols

@@ -1,0 +1,6 @@
+# libSceProprietaryVoiceChatHelper
+Asuucx2vvaE sceProprietaryVoiceChatHelperGetVoiceChatUsageState
+LDjk9ULlN34 sceProprietaryVoiceChatHelperInitialize
+QJy6V9QAXXE sceProprietaryVoiceChatHelperSetVoiceChatState
+lrswogWNZyM sceProprietaryVoiceChatHelperTerminate
+1 stub library, 4 symbols

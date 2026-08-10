@@ -1,0 +1,8 @@
+# libSceMouseExtension_nosubmission
+2KVa2-HqIRs sceMouseExtensionSetCursor
+CvUnq1gsWMg sceMouseExtensionReadState
+GE+ZU2Y9pEs sceMouseExtensionScalePosition
+T4BHUjH773k sceMouseExtensionSetConfig
+UBO+tFHvcyE sceMouseExtensionGetCursor
+doRbAW89lZE sceMouseExtensionRead
+1 stub library, 6 symbols

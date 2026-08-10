@@ -1,0 +1,20 @@
+# libSceWorkspace_nosubmission
+BaOKcng8g88 module_start
+DYgq0+kM8UI sceWorkspaceWriteFile
+Ej722ud9Zo4 sceWorkspaceFinishWrite
+FLTTgSdkoOc sceWorkspaceApplyUpdateForFiles
+GKMjPmDls-w sceWorkspaceApplyUpdateForAllFiles
+GgrAun5x5Eg sceWorkspaceIsBlockedByDataTransfer
+HcbIPAn1o3g sceWorkspaceMirrorBarrier
+JvThkOI0jjE sceWorkspaceGetNumberOfPendingUpdates
+KpDMrPHvt3Q module_stop
+SOh2WS6VvIE sceWorkspaceUnmount
+WPBiUIzH4z4 sceWorkspaceApplyUpdate
+bSJy+Zr5h+M sceWorkspaceDeletePath
+bsUfUrKJ4Qo sceWorkspaceMount
+d9XUi2-zgWw sceWorkspaceGetName
+euJjtMph7f4 sceWorkspaceCreateFile
+hqY8PDT4oqU sceWorkspaceApplyUpdateForDirectory
+t0z87PlggWI sceWorkspaceIsUpdatePending
+wvc0E5cTehw sceWorkspaceGetPendingUpdateEntries
+1 stub library, 18 symbols

@@ -1,0 +1,16 @@
+# libSceCoredump
++YX0z-GUSNw sceCoredumpAttachMemoryRegion
+32KQRUK13kI sceCoredumpWriteUserString
+5nc2gdLNsok sceCoredumpAttachUserFile
+8zLSfEfW5AU sceCoredumpRegisterCoredumpHandler
+Dbbkj6YHWdo sceCoredumpWriteUserData
+DoKHmUw1yiQ sceCoredumpAttachUserMemoryFile
+Jrs7UUkGOFo sceCoredumpGetStopInfoGpu
+MEJ7tc7ThwM sceCoredumpAttachMemoryRegionAsUserFile
+ShChva57wIM sceCoredumpGetThreadContextInfo
+Uxqkdta7wEg sceCoredumpSetUserDataType
+dei8oUx6DbU sceCoredumpDebugTextOut
+fFkhOgztiCA sceCoredumpUnregisterCoredumpHandler
+gzLt9Qrauk0 sceCoredumpConfigDumpMode
+kK0DUW1Ukgc sceCoredumpGetStopInfoCpu
+1 stub library, 14 symbols

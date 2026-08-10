@@ -1,0 +1,5 @@
+# libSceRemoteplay
+BOwybKVa3Do sceRemoteplayTerminate
+g3PNjYKWqnQ sceRemoteplayGetConnectionStatus
+k1SwgkMSOM8 sceRemoteplayInitialize
+1 stub library, 3 symbols

@@ -1,0 +1,5 @@
+# libSceRazorCpu_debug_nosubmission
+1zHP7BQXxr4 sceRazorCpuStartCapture
+mdUPwgHRqss sceRazorCpuStopCapture
+q4EyfhLHc0Q sceRazorCpuSetLiveServerThreadSettings
+1 stub library, 3 symbols

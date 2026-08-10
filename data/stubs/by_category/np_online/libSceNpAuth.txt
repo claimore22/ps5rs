@@ -1,0 +1,12 @@
+# libSceNpAuth
+6bwFkosYRQg sceNpAuthCreateRequest
+H8wG9Bk-nPc sceNpAuthDeleteRequest
+IDX0S5EsEh4 sceNpAuthGetAuthorizedAppCode
+KI4dHLlTNl0 sceNpAuthGetAuthorizationCodeV3
+N+mr7GjTvr8 sceNpAuthCreateAsyncRequest
+PM3IZCw-7m0 sceNpAuthSetTimeout
+RdsFVsgSpZY sceNpAuthGetIdTokenV3
+SK-S7daqJSE sceNpAuthWaitAsync
+cE7wIsqXdZ8 sceNpAuthAbortRequest
+gjSyfzSsDcE sceNpAuthPollAsync
+1 stub library, 10 symbols

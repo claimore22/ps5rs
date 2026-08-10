@@ -1,0 +1,16 @@
+# libSceAudioOut
+4055yaUg3EY sceAudioOutMasteringSetParam
+GrQ9s4IrNaQ sceAudioOutGetPortState
+JfEPXVxhFqA sceAudioOutInit
+Ptlts326pds sceAudioOutGetLastOutputTime
+QOQtbeDqsT4 sceAudioOutOutput
+R5hemoKKID8 sceAudioOutGetSystemState
+RVWtUgoif5o sceAudioOutMasteringTerm
+b+uAV89IlxE sceAudioOutSetVolume
+ekNvsT22rsY sceAudioOutOpen
+r+qKw+ueD+Q sceAudioOutMasteringGetState
+s1--uE9mBFw sceAudioOutClose
+w3PdaSTSwGE sceAudioOutOutputs
+wVwPU50pS1c sceAudioOutSetMixLevelPadSpk
+xX4RLegarbg sceAudioOutMasteringInit
+1 stub library, 14 symbols

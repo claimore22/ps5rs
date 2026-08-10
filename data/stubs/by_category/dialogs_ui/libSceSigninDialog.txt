@@ -1,0 +1,9 @@
+# libSceSigninDialog
+2m077aeC+PA sceSigninDialogGetStatus
+Bw31liTFT3A sceSigninDialogUpdateStatus
+JlpJVoRWv7U sceSigninDialogOpen
+LXlmS6PvJdU sceSigninDialogTerminate
+M3OkENHcyiU sceSigninDialogClose
+mlYGfmqE3fQ sceSigninDialogInitialize
+nqG7rqnYw1U sceSigninDialogGetResult
+1 stub library, 7 symbols

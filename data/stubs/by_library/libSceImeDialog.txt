@@ -1,0 +1,10 @@
+# libSceImeDialog
+8jqzzPioYl8 sceImeDialogGetPanelPositionAndForm
+CRD+jSErEJQ sceImeDialogGetPanelSizeExtended
+IADmD4tScBY sceImeDialogGetStatus
+NUeBrN7hzf0 sceImeDialogInit
+gyTyVn+bXMw sceImeDialogTerm
+oBmw4xrmfKs sceImeDialogAbort
+wqsJvRXwl58 sceImeDialogGetPanelSize
+x01jxu+vxlc sceImeDialogGetResult
+1 stub library, 8 symbols
