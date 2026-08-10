@@ -1,0 +1,3 @@
+# libSceRandom
+PI7jIZj4pcE sceRandomGetRandomNumber
+1 stub library, 1 symbols

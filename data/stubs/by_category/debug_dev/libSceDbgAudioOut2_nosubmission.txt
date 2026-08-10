@@ -1,0 +1,3 @@
+# libSceDbgAudioOut2_nosubmission
+b1HWDUC8zaE sceAudioOut2SetSystemDebugState
+1 stub library, 1 symbols

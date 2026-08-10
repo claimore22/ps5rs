@@ -1,0 +1,20 @@
+# libSceVdecsw
++L5ArV1tPGA sceVdecswCreateDecoder
+0moTubWCsTM sceVdecswQueryComputeMemoryInfo
+5Y6nZqIZvBg sceVdecswFinalizeDecodeSequence
+A+2M7EivuOU sceVdecswQueryDecoderMemoryInfo
+AAMM-Q1X0g0 sceVdecswSyncDecodeInput
+FzECy3Wxxas sceVdecswGetPictureInfo
+LEqH+dkMszo sceVdecswGetVp9PictureInfo
+PzF+L5zXoyg sceVdecswGetHevcPictureInfo
+aqMiF0AgUYI sceVdecswSetDecodeInput
+ecUtPX+dBYk sceVdecswDeleteDecoder
+fX-zOOefbbs sceVdecswReleaseComputeQueue
+hIgrg5h4V6s sceVdecswAllocateComputeQueue
+ihNT-uuEAr4 sceVdecswGetAvcPictureInfo
+kMBw37oH8nI sceVdecswTrySyncDecodeOutput
+l4sQYy5wPkc sceVdecswTrySyncDecodeInput
+rgtMCOpyBSc sceVdecswSetDecodeOutput
+tWiSgXov8GM sceVdecswSyncDecodeOutput
+veb-YBrOqo0 sceVdecswResetDecoder
+1 stub library, 18 symbols

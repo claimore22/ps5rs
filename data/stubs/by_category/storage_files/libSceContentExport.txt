@@ -1,0 +1,12 @@
+# libSceContentExport
++KDWny9Y-6k sceContentExportTerm
+0GnN4QCgIfs sceContentExportInit2
+AOWqIYsgVHs sceContentExportFromData
+FCygF4Ec4so sceContentExportStart
+OWCJUmrWH1g sceContentExportFromFile
+eRJv4xU7pGU sceContentExportGetProgress
+efqHe7wPRbs sceContentExportCancel
+mbakKLPSO4o sceContentExportFromFileWithThumbnail
+tb3cZTCl8Ps sceContentExportFinish
+uZTQHI50WpY sceContentExportFromDataWithThumbnail
+1 stub library, 10 symbols

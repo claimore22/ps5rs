@@ -1,0 +1,19 @@
+# libSceIme
+-4GCfYdNF1s sceImeUpdate
+E+f1n8e8DAw sceImeDisableController
+PMVehSlfZ94 sceImeKeyboardClose
+RPydv-Jr1bc sceImeOpen
+T6FYjZXG93o sceImeGetPanelPositionAndForm
+TQaogSaqkEk sceImeSetCandidateIndex
+TXYHFRuL8UY sceImeSetTextGeometry
+TmVP8LzcFcY sceImeClose
+VkqLPArfFdc sceImeKeyboardGetInfo
+WLxUN2WMim8 sceImeSetCaret
+WmYDzdC4EHI sceImeParamInit
+dKadqZFgKKQ sceImeKeyboardGetResourceId
+eaFXjfJv3xs sceImeKeyboardOpen
+ieCNrVrzKd4 sceImeSetText
+tKLmVIUkpyM sceImeConfirmCandidate
+ua+13Hk9kKs sceImeKeyboardSetMode
+ziPDcIjO0Vk sceImeGetPanelSize
+1 stub library, 17 symbols

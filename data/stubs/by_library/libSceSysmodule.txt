@@ -1,0 +1,5 @@
+# libSceSysmodule
+eR2bZFAAU0Q sceSysmoduleUnloadModule
+fMP5NHUOaMk sceSysmoduleIsLoaded
+g8cM39EUZ6o sceSysmoduleLoadModule
+1 stub library, 3 symbols
