@@ -1,0 +1,20 @@
+# libSceNpTrophy2
++PDSI6WgPRc sceNpTrophy2GetGroupInfoArray
+-9LLVU0uvs8 sceNpTrophy2GetTrophyIcon
+2QgUy+xJqS0 sceNpTrophy2GetGameIcon
+4IzqhhUQ3nk sceNpTrophy2GetGameInfo
+6IjXJUy6ZnA sceNpTrophy2GetGroupIcon
+Bagshr7OQ6Q sceNpTrophy2CreateContext
+BsE-m8JxIOg sceNpTrophy2GetRewardIcon
+DoZWauG8mu0 sceNpTrophy2GetGroupInfo
+EHQEDVXZ0TI sceNpTrophy2ShowTrophyList
+EwNylPdWUTM sceNpTrophy2GetTrophyInfo
+Gz1rmUZpROM sceNpTrophy2CreateHandle
+bIDov3wBu5Q sceNpTrophy2RegisterContext
+d8P11CI40KE sceNpTrophy2DestroyHandle
+fYapWA9xVmA sceNpTrophy2AbortHandle
+sUXGfNMalIo sceNpTrophy2RegisterUnlockCallback
+sysY2FHYff4 sceNpTrophy2DestroyContext
+wVqxM58sIKs sceNpTrophy2UnregisterUnlockCallback
+y3zHpdZO6ME sceNpTrophy2GetTrophyInfoArray
+1 stub library, 18 symbols

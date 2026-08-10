@@ -1,0 +1,8 @@
+# libSceSulpha_nosubmission
+1ZWN9dK5-Sc sceSulphaMessage
+6x06HaJWiDQ sceSulphaGetNeededMemory
+SqfL0YjlBiA sceSulphaGetDefaultConfig
+fpFCQLbTB1w sceSulphaInit
+gLjLCP6tKuw sceSulphaShutdown
+miCg4z-c1Gc sceSulphaSetBookmark
+1 stub library, 6 symbols

@@ -1,0 +1,3 @@
+# libSceAudiodecCpuHevag
+lYA31T9O1KU audiodeccpuinternal_core_ops_hevag2
+1 stub library, 1 symbols

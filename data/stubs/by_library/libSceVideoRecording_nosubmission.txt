@@ -1,0 +1,9 @@
+# libSceVideoRecording_nosubmission
+7QoTYzVuzto sceVideoRecordingOpen
+KHvkPQJDMLk sceVideoRecordingClose
+KQ34-uHDBto _sceVideoRecordingQueryParam
+OOFxrMY+mfI sceVideoRecordingStop
+ZvWzS2wTIMc sceVideoRecordingQueryMemSize
+fZJQzFK4Gv4 sceVideoRecordingGetStatus
+tWoe9IlGAhs sceVideoRecordingStart
+1 stub library, 7 symbols

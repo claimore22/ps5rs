@@ -1,0 +1,15 @@
+# libSceVideodec2
+69fVNDtk2Zk sceVideodec2GetVp9PictureInfo
+7M+1UFqWOAI sceVideodec2GetHevcPictureInfo
+852F5+q6+iM sceVideodec2Decode
+CNNRoRYd8XI sceVideodec2CreateDecoder
+NtXRa3dRzU0 sceVideodec2GetPictureInfo
+RnDibcGCPKw sceVideodec2QueryComputeMemoryInfo
+UvtA3FAiF4Y sceVideodec2ReleaseComputeQueue
+eD+X2SmxUt4 sceVideodec2AllocateComputeQueue
+jwImxXRGSKA sceVideodec2DeleteDecoder
+kjrLbcyhEiw sceVideodec2GetAvcPictureInfo
+l1hXwscLuCY sceVideodec2Flush
+qqMCwlULR+E sceVideodec2QueryDecoderMemoryInfo
+wJXikG6QFN8 sceVideodec2Reset
+1 stub library, 13 symbols

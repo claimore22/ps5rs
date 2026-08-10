@@ -1,0 +1,7 @@
+# libSceJpegDec
+1kzQRoWEgSA sceJpegDecDecode
+Hwh11+m5KoI sceJpegDecDelete
+JPh3Zgg0Zwc sceJpegDecCreate
+LSinoSQH790 sceJpegDecParseHeader
+uNAUmANZMEw sceJpegDecQueryMemorySize
+1 stub library, 5 symbols

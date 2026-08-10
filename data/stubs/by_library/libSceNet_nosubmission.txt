@@ -1,0 +1,4 @@
+# libSceNet_nosubmission
+JK1oZe4UysY sceNetEmulationGet
+pfn3Fha1ydc sceNetEmulationSet
+1 stub library, 2 symbols

@@ -1,0 +1,17 @@
+# libSceFiber
+0dy4JtMUcMQ _sceFiberGetThreadFramePointerAddress
+7+OJIpko9RY _sceFiberInitializeWithInternalOptionImpl
+B0ZX2hx9DMw sceFiberReturnToThread
+JeNX5F-NzQU sceFiberFinalize
+JzyT91ucGDc sceFiberRename
+Kj4nXMpnM8Y sceFiberStopContextSizeCheck
+Lcqty+QNWFc sceFiberStartContextSizeCheck
+PFT2S-tJ7Uk sceFiberSwitch
+ZqhZFuzKT6U _sceFiberAttachContextAndSwitch
+a0LLrZWac0M sceFiberRun
+asjUJJ+aa8s sceFiberOptParamInitialize
+avfGJ94g36Q _sceFiberAttachContextAndRun
+hVYD7Ou2pCQ _sceFiberInitializeImpl
+p+zLIOg27zU sceFiberGetSelf
+uq2Y5BFz0PE sceFiberGetInfo
+1 stub library, 15 symbols

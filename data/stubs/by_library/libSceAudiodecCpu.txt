@@ -1,0 +1,10 @@
+# libSceAudiodecCpu
+-0jDlM2hG5k sceAudiodecCpuInternalDecode
+CnY1NGmdi7I sceAudiodecCpuInternalClearContext
+KkhdeVCyo6Y sceAudiodecCpuInternalInitDecoder
+R8v5kdZ55mY sceAudiodecCpuInternalQueryMemSize
+hAS5WH6hxrE sceAudiodecCpuClearContext
+hdFsxo3MFu8 sceAudiodecCpuInitDecoder
+ktD2w3D4G2U sceAudiodecCpuQueryMemSize
+lSVTiWV5wLc sceAudiodecCpuDecode
+1 stub library, 8 symbols

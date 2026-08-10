@@ -1,0 +1,6 @@
+# libScePngEnc
+7aGTPfrqT9s scePngEncCreate
+9030RnBDoh4 scePngEncQueryMemorySize
+RUrWdwTWZy8 scePngEncDelete
+xgDjJKpcyHo scePngEncEncode
+1 stub library, 4 symbols

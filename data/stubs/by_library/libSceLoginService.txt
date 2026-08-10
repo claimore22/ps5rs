@@ -1,0 +1,5 @@
+# libSceLoginService
+S1Uxf-lgJ-c sceLoginServiceRequestDevices
+T9-NuSHAvcQ sceLoginServiceInitialize
+aR8+Hvghm0E sceLoginServiceTerminate
+1 stub library, 3 symbols

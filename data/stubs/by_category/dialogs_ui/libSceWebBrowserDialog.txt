@@ -1,0 +1,12 @@
+# libSceWebBrowserDialog
+CFTG6a8TjOU sceWebBrowserDialogGetStatus
+Cya+jvTtPqg sceWebBrowserDialogResetCookie
+FraP7debcdg sceWebBrowserDialogOpen
+O7dIZQrwVFY sceWebBrowserDialogOpenForPredeterminedContent
+PSK+Eik919Q sceWebBrowserDialogClose
+TZnDVkP91Rg sceWebBrowserDialogSetCookie
+h1dR-t5ISgg sceWebBrowserDialogUpdateStatus
+jqb7HntFQFc sceWebBrowserDialogInitialize
+ocHtyBwHfys sceWebBrowserDialogTerminate
+vCaW0fgVQmc sceWebBrowserDialogGetResult
+1 stub library, 10 symbols

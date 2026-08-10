@@ -1,0 +1,9 @@
+# libScePlayGoDialog
+NOAMxY2EGS0 scePlayGoDialogGetStatus
+Yb60K7BST48 scePlayGoDialogUpdateStatus
+fECamTJKpsM scePlayGoDialogInitialize
+fbigNQiZpm0 scePlayGoDialogClose
+kHd72ukqbxw scePlayGoDialogOpen
+okgIGdr5Iz0 scePlayGoDialogTerminate
+wx9TDplJKB4 scePlayGoDialogGetResult
+1 stub library, 7 symbols
