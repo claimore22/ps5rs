@@ -4,7 +4,7 @@ All notable changes to ps5rs will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
-## [Unreleased]
+## [0.4.0] - 2026-08-10
 
 ### Added
 - **Deterministic `rand`**: `libc::rand` now draws from a per-module, fixed-seed xorshift64 sequence, so guest runs (and their import traces) are reproducible byte-for-byte across invocations

@@ -22,6 +22,9 @@
 /stray_strings.txt
 /strings.txt
 
+# Release artifacts (uploaded to GitHub Releases, not the repo)
+/dist/
+
 # Generated dataset output (from scan/extract with --output .)
 /images/
 /analysis/extracted/
