@@ -131,6 +131,7 @@ tr.clickable:hover{{background:#1c2128;outline:1px solid #30363d;}}
 <div class="tab" data-tab="statistics">Statistics</div>
 <div class="tab" data-tab="graph">Graph</div>
 <div class="tab" data-tab="loader" id="loaderTab" style="display:none">Load Coverage</div>
+<div class="tab" data-tab="middleware" id="middlewareTab" style="display:none">Middleware</div>
 </div>
 
 <div class="container">
@@ -230,6 +231,27 @@ tr.clickable:hover{{background:#1c2128;outline:1px solid #30363d;}}
 <div class="section"><h2>Per-Game Import Resolution</h2><div id="loaderGameBars"></div></div>
 <div class="section"><h2>Most Unavailable Modules</h2><div id="loaderUnavailableBars"></div></div>
 <div class="section"><h2>Games with Highest Stub Rate</h2><div id="loaderWorstBars"></div></div>
+</div>
+</div>
+
+<div class="tab-content" id="tab-middleware">
+<div id="middlewareEmpty" style="color:#8b949e;text-align:center;padding:60px 0;font-size:0.9rem">No middleware data found. Run <code style="background:#0d1117;padding:2px 8px;border-radius:4px">ps5rs dashboard --games &lt;games_dir&gt;</code> to scan third-party and Sony PRX modules.</div>
+<div id="middlewareContent" style="display:none">
+<div class="cards" id="middlewareCards"></div>
+<div class="section"><h2>Top Middleware Products</h2><div id="middlewareProductBars"></div></div>
+<div class="section"><h2>Per-Game Middleware</h2>
+<div class="filter-bar"><select class="filter-select" id="middlewareGameSelect"></select></div>
+<div class="table-wrap"><table id="middlewareGameTable">
+<thead><tr>
+<th>Module</th>
+<th>Vendor</th>
+<th>Product</th>
+<th>Description</th>
+<th>Imports</th>
+</tr></thead>
+<tbody id="middlewareGameBody"></tbody>
+</table></div>
+</div>
 </div>
 </div>
 
@@ -961,6 +983,59 @@ document.addEventListener('keydown', e => {{ if (e.key === 'Escape') $('#detailP
   }}
 }})();
 
+// --- MIDDLEWARE ---
+(function() {{
+  if (!D.middleware) return;
+  const m = D.middleware;
+  $('#middlewareTab').style.display = '';
+  $('#middlewareEmpty').style.display = 'none';
+  $('#middlewareContent').style.display = '';
+
+  const s = m.summary;
+  $('#middlewareCards').innerHTML = `
+    <div class="card"><div class="card-label">Third-Party Modules</div><div class="card-value">${{fmt(s.third_party_modules)}}</div></div>
+    <div class="card"><div class="card-label">Sony Modules</div><div class="card-value blue">${{fmt(s.sony_modules)}}</div></div>
+    <div class="card"><div class="card-label">Unknown Modules</div><div class="card-value yellow">${{fmt(s.unknown_modules)}}</div></div>
+    <div class="card"><div class="card-label">Games with Third-Party</div><div class="card-value green">${{s.games_with_third_party}}<span style="font-size:0.85rem;color:#8b949e;margin-left:6px">/ ${{m.games.length}}</span></div></div>`;
+
+  if (s.products && s.products.length) {{
+    const maxMods = s.products[0].module_count || 1;
+    $('#middlewareProductBars').innerHTML = '<div style="font-size:0.75rem;color:#8b949e;margin-bottom:8px">Detected middleware products across all games, ordered by total module count.</div>'
+      + s.products.map(p => {{
+        const pct = p.module_count / maxMods * 100;
+        return `<div class="hbar"><div class="hbar-label" style="width:280px">${{p.vendor}} &mdash; ${{p.product}}</div><div class="hbar-track"><div class="hbar-fill fill-blue" style="width:${{pct.toFixed(1)}}%"></div></div><span class="hbar-count">${{p.module_count}} module${{p.module_count === 1 ? '' : 's'}} / ${{p.game_count}} game${{p.game_count === 1 ? '' : 's'}}</span></div>`;
+      }}).join('');
+  }}
+
+  const rows = m.games || [];
+  const sel = $('#middlewareGameSelect');
+  sel.innerHTML = rows.map((g, i) => `<option value="${{i}}">${{g.name}}${{g.title_id ? ' (' + g.title_id + ')' : ''}} &mdash; ${{(g.third_party || []).length}} / ${{(g.sony || []).length}} / ${{(g.unknown || []).length}}</option>`).join('');
+
+  function badge(row) {{
+    return `<span style="display:inline-block;padding:1px 6px;border-radius:10px;font-size:0.65rem;font-weight:600;margin-right:6px;background:${{row.kind === '3rd' ? 'rgba(63,185,80,0.15)' : row.kind === 'sce' ? 'rgba(88,166,255,0.15)' : 'rgba(177,186,196,0.15)'}};color:${{row.kind === '3rd' ? '#3fb950' : row.kind === 'sce' ? '#58a6ff' : '#b1bac4'}}">${{row.kind === '3rd' ? '3RD' : row.kind === 'sce' ? 'SCE' : '?'}}</span>`;
+  }}
+
+  function renderGame(i) {{
+    const g = rows[i];
+    if (!g) return;
+    const all = (g.third_party || []).map(x => Object.assign({{kind: '3rd'}}, x))
+      .concat((g.sony || []).map(x => Object.assign({{kind: 'sce'}}, x)))
+      .concat((g.unknown || []).map(x => Object.assign({{kind: 'unk'}}, x)));
+    $('#middlewareGameBody').innerHTML = all.length
+      ? all.map(x => `<tr>
+        <td>${{badge(x)}}${{x.file_name}}<span style="color:#8b949e;font-size:0.7rem;margin-left:6px">${{x.parseable ? '' : '(unreadable)'}}</span></td>
+        <td>${{x.vendor || '-'}}</td>
+        <td>${{x.product || '-'}}</td>
+        <td>${{x.description || '-'}}</td>
+        <td>${{fmt(x.imports)}}</td>
+      </tr>`).join('')
+      : '<tr><td colspan="5" style="text-align:center;color:#8b949e">No PRX modules detected.</td></tr>';
+  }}
+
+  sel.addEventListener('change', () => renderGame(parseInt(sel.value || '0', 10)));
+  if (rows.length) renderGame(0);
+}})();
+
 // --- GLOBAL SEARCH ---
 (function() {{
   const searchIndex = [];
@@ -1261,6 +1336,7 @@ mod tests {
             sce_heatmap: HeatmapData::default(),
             sce_library_versions: vec![],
             loader_summary: None,
+            middleware: None,
         }
     }
 
@@ -1301,6 +1377,50 @@ mod tests {
     }
 
     #[test]
+    fn html_middleware_tab_renders_with_data() {
+        let mut data = sample_data();
+        data.middleware = Some(MiddlewareData {
+            summary: MiddlewareSummary {
+                third_party_modules: 3,
+                sony_modules: 2,
+                unknown_modules: 1,
+                games_with_third_party: 1,
+                products: vec![MiddlewareProductCount {
+                    vendor: "Audiokinetic".to_string(),
+                    product: "Wwise".to_string(),
+                    game_count: 1,
+                    module_count: 2,
+                }],
+            },
+            games: vec![MiddlewareGameRow {
+                name: "game1".to_string(),
+                title_id: Some("PPSA12345".to_string()),
+                third_party: vec![MiddlewareModuleRow {
+                    file_name: "libWwise.prx".to_string(),
+                    vendor: Some("Audiokinetic".to_string()),
+                    product: Some("Wwise".to_string()),
+                    description: Some("Audio middleware".to_string()),
+                    imports: 42,
+                    parseable: true,
+                }],
+                sony: vec![],
+                unknown: vec![],
+            }],
+        });
+        let html = generate_html(&data);
+        assert!(html.contains("Third-Party Modules"));
+        assert!(html.contains("Sony Modules"));
+        assert!(html.contains("Unknown Modules"));
+        assert!(html.contains("Games with Third-Party"));
+        assert!(html.contains("Top Middleware Products"));
+        assert!(html.contains("Per-Game Middleware"));
+        assert!(html.contains("Audiokinetic"));
+        assert!(html.contains("Wwise"));
+        assert!(html.contains("libWwise.prx"));
+        assert!(html.contains("PPSA12345"));
+    }
+
+    #[test]
     fn html_contains_data() {
         let html = generate_html(&sample_data());
         assert!(html.contains("PS5rs"));
@@ -1320,6 +1440,7 @@ mod tests {
         assert!(html.contains("tab-statistics"));
         assert!(html.contains("tab-graph"));
         assert!(html.contains("tab-loader"));
+        assert!(html.contains("tab-middleware"));
     }
 
     #[test]

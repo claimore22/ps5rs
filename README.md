@@ -21,7 +21,7 @@ The PS5 uses an x86-64 AMD Zen 2 CPU, which means CPU instruction compatibility 
 | `ps5-elf` | ELF64 binary format parsing (headers, segments, symbols, relocations) |
 | `ps5-nid` | NID hash algorithm (SHA1 + Sony custom base64), name catalog (v2 with merge semantics), resolver |
 | `ps5-image` | BinaryImage IR: normalized abstraction with JSON serialization, `Detection` with confidence/evidence |
-| `ps5-analysis` | Analysis engine: scanner, dataset, PRX module discovery, dependency analysis, string fingerprinting, engine detection, reports, and export |
+| `ps5-analysis` | Analysis engine: scanner, dataset, PRX module discovery, dependency analysis, string fingerprinting, engine detection, third-party middleware classification, reports, and export |
 | `ps5-loader` | PS5 ELF/PRX loader: virtual memory model, relocation engine (RELATIVE, ABS64, GLOB_DAT, JUMP_SLOT), import resolver with 3-tier lookup (runtime exports → offline exports → stub allocator), NID computation, multi-module dependency loading |
 | `ps5-emu` | Host-side emulator: loads binaries through the loader pipeline, executes guest entry points as native x86-64, routes system-library imports through HLE modules, emits `ExecutionReport` |
 | `ps5-tests` | Deterministic, self-authored ELF fixture generator + manifest of expected guest behavior (regression suite input) |
@@ -60,6 +60,9 @@ ps5rs analyze engines analysis/
 
 # 5. Generate interactive dashboard
 ps5rs dashboard analysis/
+
+# 5b. Include third-party middleware detection (scans the games folder)
+ps5rs dashboard analysis/ --games ./games
 
 # 6. Boot a binary in the host-side emulator
 ps5rs run path/to/eboot.elf
@@ -174,6 +177,20 @@ ps5rs exports libc.prx --json --output libc.exports.json
 ```
 
 Offline export files are loaded automatically from `./system_modules/` to resolve imports from system PRXes that aren't available at analysis time (e.g., libkernel.prx, libSceLibcInternal.prx).
+
+### Detect third-party middleware
+
+Scan a games directory and classify every PRX module by vendor and product. Modules are bucketed into third-party, Sony system, and unidentified; each is parsed for import/export counts and library names.
+
+```sh
+# Terminal report (default)
+ps5rs middleware ./games
+
+# JSON report (machine-readable)
+ps5rs middleware ./games --format json -o middleware.json
+```
+
+The built-in fingerprint catalog covers audio engines (FMOD, Wwise, Resonance Audio, Auro-3D, iZotope, McDSP, CRIWARE), UI frameworks (Coherent Gameface, WebKit), Unity runtime modules (IL2CPP, Burst, PS5 platform, PSN, Save Data), and networking SDKs (Epic Online Services), among others.
 
 ### Community NID Catalog
 
@@ -344,7 +361,7 @@ During scanning, `ps5-analysis` extracts printable strings from raw binary bytes
 | Detector | What it finds |
 |---|---|
 | `detect_engine()` | UE4/UE5/Unity/Godot via weighted pattern scoring |
-| `detect_third_party()` | PhysX, Bink, FMOD, libpng, OpenSSL, etc. |
+| `detect_third_party()` | PhysX, Bink, FMOD, Wwise, Coherent Gameface, ICU, libpng, OpenSSL, etc. |
 | `detect_build_system()` | Jenkins, build server paths |
 | `detect_depot()` | Source depot paths (`U:/P4Damascus/...`) |
 | `detect_custom_forks()` | P4Damascus, HK_Project_Delivery, HK_EngineSources |
@@ -403,6 +420,8 @@ The `ps5-dashboard` crate generates a self-contained HTML file with all data emb
 - Module-aware game views with per-module import/SDK breakdown
 - SDK library version tracking across the dataset
 - Binary dependency exploration
+- Third-party middleware inventory per game (vendor/product attribution, import counts)
+- Load Coverage analytics (resolution/stub rates, unavailable modules)
 
 ![Overview](screenshots/overview.png)
 ![Games](screenshots/games.png)
@@ -411,7 +430,7 @@ The `ps5-dashboard` crate generates a self-contained HTML file with all data emb
 ![Segments](screenshots/segments.png)
 ![Statistics](screenshots/statistics.png)
 
-Tabs: Overview, Games, Engines, Libraries, NIDs, Segments, Statistics, Graph
+Tabs: Overview, Games, Engines, Libraries, NIDs, Segments, Statistics, Graph, Load Coverage, Middleware
 
 ## Compatibility Research
 

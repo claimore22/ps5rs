@@ -1,5 +1,6 @@
 use std::path::PathBuf;
 
+use crate::catalog::load_catalog;
 use crate::util::{is_dataset_dir, write_to_output_or_stdout};
 
 pub(crate) fn cmd_validate(path: &std::path::Path, output: &Option<PathBuf>) {
@@ -46,7 +47,11 @@ pub(crate) fn cmd_validate(path: &std::path::Path, output: &Option<PathBuf>) {
     });
 }
 
-pub(crate) fn cmd_dashboard(path: &std::path::Path, output: &PathBuf) {
+pub(crate) fn cmd_dashboard(
+    path: &std::path::Path,
+    output: &PathBuf,
+    games: Option<&std::path::Path>,
+) {
     let ds = ps5_analysis::AnalysisDataset::open(path).unwrap_or_else(|e| {
         eprintln!("error: failed to load dataset from {}: {e}", path.display());
         std::process::exit(1);
@@ -59,6 +64,21 @@ pub(crate) fn cmd_dashboard(path: &std::path::Path, output: &PathBuf) {
     if loader_dir.is_dir() {
         eprintln!("Loading loader data from {}...", loader_dir.display());
         data.inject_loader_data(&loader_dir);
+    }
+
+    if let Some(games_root) = games {
+        eprintln!("Scanning {} for middleware...", games_root.display());
+        let catalog = load_catalog(&[]);
+        let report = ps5_analysis::build_middleware_report(games_root, &catalog);
+        data.inject_middleware(&report);
+        eprintln!(
+            "  Middleware: {} games, {} modules ({} third-party, {} Sony, {} unknown)",
+            report.games.len(),
+            report.total_prx,
+            report.third_party_modules,
+            report.sony_modules,
+            report.unknown_modules
+        );
     }
 
     let html = ps5_dashboard::html::generate_html(&data);

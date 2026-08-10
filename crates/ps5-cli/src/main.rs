@@ -9,6 +9,7 @@ mod export_scan;
 mod extract;
 mod inspect;
 mod load;
+mod middleware;
 mod run;
 mod strings;
 mod terminal;
@@ -57,7 +58,11 @@ fn main() {
             }
             ValidateCommand::Dataset { path, output } => dataset::cmd_validate(&path, &output),
         },
-        Commands::Dashboard { path, output } => dataset::cmd_dashboard(&path, &output),
+        Commands::Dashboard {
+            path,
+            output,
+            games,
+        } => dataset::cmd_dashboard(&path, &output, games.as_deref()),
         Commands::ExportUnknown {
             path,
             group_by,
@@ -123,5 +128,10 @@ fn main() {
                 catalog::cmd_dump_stubs(&path, output.as_deref())
             }
         },
+        Commands::Middleware {
+            path,
+            format,
+            output,
+        } => middleware::cmd_middleware(&path, format, &output),
     }
 }

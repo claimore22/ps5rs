@@ -35,6 +35,8 @@ pub struct DashboardData {
     pub sce_library_versions: Vec<DashboardLibraryVersion>,
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub loader_summary: Option<LoaderSummary>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub middleware: Option<MiddlewareData>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -399,7 +401,122 @@ struct GameLoadReportFile {
     load_report: Option<LoaderReportFile>,
 }
 
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct MiddlewareData {
+    pub summary: MiddlewareSummary,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub games: Vec<MiddlewareGameRow>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct MiddlewareSummary {
+    pub third_party_modules: usize,
+    pub sony_modules: usize,
+    pub unknown_modules: usize,
+    pub games_with_third_party: usize,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub products: Vec<MiddlewareProductCount>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct MiddlewareProductCount {
+    pub vendor: String,
+    pub product: String,
+    pub game_count: usize,
+    pub module_count: usize,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct MiddlewareGameRow {
+    pub name: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub title_id: Option<String>,
+    #[serde(default)]
+    pub third_party: Vec<MiddlewareModuleRow>,
+    #[serde(default)]
+    pub sony: Vec<MiddlewareModuleRow>,
+    #[serde(default)]
+    pub unknown: Vec<MiddlewareModuleRow>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct MiddlewareModuleRow {
+    pub file_name: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub vendor: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub product: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub description: Option<String>,
+    pub imports: usize,
+    pub parseable: bool,
+}
+
 impl DashboardData {
+    pub fn inject_middleware(&mut self, report: &ps5_analysis::MiddlewareReport) {
+        let mut module_counts: HashMap<(String, String), usize> = HashMap::new();
+        let mut games_with_third_party = 0;
+
+        let games: Vec<MiddlewareGameRow> = report
+            .games
+            .iter()
+            .map(|game| {
+                let third_party: Vec<MiddlewareModuleRow> =
+                    game.third_party.iter().map(middleware_module_row).collect();
+                if !third_party.is_empty() {
+                    games_with_third_party += 1;
+                }
+                for module in &third_party {
+                    let vendor = module.vendor.clone().unwrap_or_else(|| "Unknown".into());
+                    let product = module.product.clone().unwrap_or_else(|| "Unknown".into());
+                    *module_counts.entry((vendor, product)).or_insert(0) += 1;
+                }
+                MiddlewareGameRow {
+                    name: game.game.clone(),
+                    title_id: game.title_id.clone(),
+                    third_party,
+                    sony: game.sony.iter().map(middleware_module_row).collect(),
+                    unknown: game.unknown.iter().map(middleware_module_row).collect(),
+                }
+            })
+            .collect();
+
+        let products: Vec<MiddlewareProductCount> = module_counts
+            .into_iter()
+            .map(|((vendor, product), module_count)| {
+                let game_count = report
+                    .games
+                    .iter()
+                    .filter(|g| {
+                        g.third_party.iter().any(|m| {
+                            m.vendor.as_deref().unwrap_or("Unknown") == vendor
+                                && m.product.as_deref().unwrap_or("Unknown") == product
+                        })
+                    })
+                    .count();
+                MiddlewareProductCount {
+                    vendor,
+                    product,
+                    game_count,
+                    module_count,
+                }
+            })
+            .collect();
+        let mut products = products;
+        products.sort_by_key(|a| std::cmp::Reverse(a.module_count));
+
+        self.middleware = Some(MiddlewareData {
+            summary: MiddlewareSummary {
+                third_party_modules: report.third_party_modules,
+                sony_modules: report.sony_modules,
+                unknown_modules: report.unknown_modules,
+                games_with_third_party,
+                products,
+            },
+            games,
+        });
+    }
+
     pub fn inject_loader_summary(&mut self, summary: LoaderSummary) {
         self.loader_summary = Some(summary);
     }
@@ -588,6 +705,18 @@ pub fn compute(ds: &AnalysisDataset) -> DashboardData {
         sce_heatmap,
         sce_library_versions,
         loader_summary: None,
+        middleware: None,
+    }
+}
+
+fn middleware_module_row(module: &ps5_analysis::MiddlewareModule) -> MiddlewareModuleRow {
+    MiddlewareModuleRow {
+        file_name: module.file_name.clone(),
+        vendor: module.vendor.clone(),
+        product: module.product.clone(),
+        description: module.description.clone(),
+        imports: module.imports,
+        parseable: module.parseable,
     }
 }
 
@@ -1863,5 +1992,155 @@ mod tests {
             ds.display_name_for("trek-to-yomi-ppsa02629"),
             "Trek To Yomi - [PPSA02629]"
         );
+    }
+
+    #[test]
+    fn inject_middleware_merges_report() {
+        use ps5_analysis::{GameMiddlewareReport, MiddlewareModule, MiddlewareReport};
+
+        let module = |name: &str, vendor: Option<&str>, product: Option<&str>, imports: usize| {
+            MiddlewareModule {
+                file_name: name.to_string(),
+                module_name: name.to_string(),
+                kind: ps5_analysis::ModuleKind::ThirdParty,
+                sha256: None,
+                vendor: vendor.map(str::to_string),
+                product: product.map(str::to_string),
+                description: Some("desc".to_string()),
+                parseable: true,
+                imports,
+                exports: 0,
+                import_libs: vec![],
+                needed_files: vec![],
+            }
+        };
+
+        let report = MiddlewareReport {
+            games: vec![
+                GameMiddlewareReport {
+                    game: "game-a".to_string(),
+                    title_id: Some("PPSA11111".to_string()),
+                    engine: None,
+                    third_party: vec![
+                        module("libWwise.prx", Some("Audiokinetic"), Some("Wwise"), 10),
+                        module(
+                            "libWwise_AudioInput.prx",
+                            Some("Audiokinetic"),
+                            Some("Wwise"),
+                            5,
+                        ),
+                        module("libfmod.prx", Some("Firelight"), Some("FMOD"), 3),
+                    ],
+                    sony: vec![module("libc.prx", Some("Sony"), Some("libc"), 2)],
+                    unknown: vec![module("libWeird.prx", None, None, 1)],
+                },
+                GameMiddlewareReport {
+                    game: "game-b".to_string(),
+                    title_id: None,
+                    engine: None,
+                    third_party: vec![module(
+                        "libWwise.prx",
+                        Some("Audiokinetic"),
+                        Some("Wwise"),
+                        9,
+                    )],
+                    sony: vec![],
+                    unknown: vec![],
+                },
+            ],
+            total_prx: 6,
+            third_party_modules: 4,
+            sony_modules: 1,
+            unknown_modules: 1,
+        };
+
+        let mut data = DashboardData {
+            meta: DashboardMeta {
+                generated_at: "".into(),
+                game_count: 0,
+                tool_version: "test".into(),
+            },
+            overview: Overview {
+                total_games: 0,
+                elf_valid: 0,
+                total_imports: 0,
+                unique_nids: 0,
+                unique_libs: 0,
+                resolution_rate: 0.0,
+                avg_imports_per_game: 0.0,
+            },
+            games: vec![],
+            game_details: vec![],
+            heatmap: HeatmapData::default(),
+            nid_stats: NidStats {
+                top_nids: vec![],
+                resolved_count: 0,
+                unknown_count: 0,
+            },
+            segments: vec![],
+            library_priority: vec![],
+            library_details: vec![],
+            library_nid_breakdown: vec![],
+            statistics: None,
+            engine_hints: vec![],
+            engine_summary: vec![],
+            library_versions: vec![],
+            sce_library_stats: vec![],
+            sce_heatmap: HeatmapData::default(),
+            sce_library_versions: vec![],
+            loader_summary: None,
+            middleware: None,
+        };
+
+        data.inject_middleware(&report);
+
+        let mw = data.middleware.unwrap();
+        assert_eq!(mw.summary.third_party_modules, 4);
+        assert_eq!(mw.summary.sony_modules, 1);
+        assert_eq!(mw.summary.unknown_modules, 1);
+        assert_eq!(mw.summary.games_with_third_party, 2);
+        assert_eq!(mw.games.len(), 2);
+        assert_eq!(mw.games[0].third_party.len(), 3);
+        assert_eq!(mw.games[0].sony.len(), 1);
+        assert_eq!(mw.games[0].unknown.len(), 1);
+
+        let wwise = mw
+            .summary
+            .products
+            .iter()
+            .find(|p| p.product == "Wwise")
+            .unwrap();
+        assert_eq!(wwise.vendor, "Audiokinetic");
+        assert_eq!(wwise.module_count, 3);
+        assert_eq!(wwise.game_count, 2);
+
+        let fmod = mw
+            .summary
+            .products
+            .iter()
+            .find(|p| p.product == "FMOD")
+            .unwrap();
+        assert_eq!(fmod.module_count, 1);
+        assert_eq!(fmod.game_count, 1);
+
+        assert!(
+            mw.summary.products[0].module_count >= mw.summary.products[1].module_count,
+            "products must be sorted by module count desc"
+        );
+    }
+
+    #[test]
+    fn middleware_game_row_serializes_empty_buckets_as_arrays() {
+        let row = MiddlewareGameRow {
+            name: "game".to_string(),
+            title_id: None,
+            third_party: vec![],
+            sony: vec![],
+            unknown: vec![],
+        };
+        let json = serde_json::to_string(&row).unwrap();
+        assert!(json.contains(r#""third_party":[]"#), "{json}");
+        assert!(json.contains(r#""sony":[]"#), "{json}");
+        assert!(json.contains(r#""unknown":[]"#), "{json}");
     }
 }
