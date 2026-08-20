@@ -8,5 +8,7 @@ description = "PS5 NID hash algorithm, name catalog, and resolver"
 [dependencies]
 sha1 = "0.10"
 
-[lints]
-workspace = true
+[[bin]]
+name = "ps5-nid-lookup"
+path = "src/bin/lookup.rs"
+
