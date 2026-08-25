@@ -132,6 +132,7 @@ tr.clickable:hover{{background:#1c2128;outline:1px solid #30363d;}}
 <div class="tab" data-tab="graph">Graph</div>
 <div class="tab" data-tab="loader" id="loaderTab" style="display:none">Load Coverage</div>
 <div class="tab" data-tab="middleware" id="middlewareTab" style="display:none">Middleware</div>
+<div class="tab" data-tab="sdk">SDK Timeline</div>
 </div>
 
 <div class="container">
@@ -252,6 +253,33 @@ tr.clickable:hover{{background:#1c2128;outline:1px solid #30363d;}}
 <tbody id="middlewareGameBody"></tbody>
 </table></div>
 </div>
+</div>
+</div>
+
+<div class="tab-content" id="tab-sdk">
+<div class="section">
+<h2>Prospero SDK — UE — EMC Timeline</h2>
+<p style="color:#8b949e;font-size:0.82rem;margin-bottom:12px">Earliest concrete evidence per SDK generation. UE = Unreal Engine documented pairing, EMC = PS5 EMC (errMG) build association, Prospero = SDK distrib label.</p>
+<div class="table-wrap"><table id="sdkTable">
+<thead><tr>
+<th data-col="0">Prospero SDK <span class="arrow">&#9650;</span></th>
+<th data-col="1">SDK documented by UE <span class="arrow">&#9650;</span></th>
+<th data-col="2">PS5 EMC <span class="arrow">&#9650;</span></th>
+<th data-col="3">Earliest concrete date / evidence <span class="arrow">&#9650;</span></th>
+<th data-col="4">Confidence <span class="arrow">&#9650;</span></th>
+</tr></thead>
+<tbody id="sdkBody"></tbody>
+</table></div>
+<div class="legend" style="margin-top:12px"><span class="l-rx">High</span><span class="l-r">Medium</span><span class="l-rw">Low</span></div>
+</div>
+<div class="section">
+<h2>Timeline Notes</h2>
+<ul style="color:#8b949e;font-size:0.82rem;line-height:1.6;margin-left:18px">
+<li><strong>Prospero</strong> is the internal SDK distrib name (e.g. <code>PS5 - SDK-10_00_00_40</code>). UE docs map <code>PS5 - SDK-10_00_00_40-00_00_00_0_1</code> ↔ UE 5.5 etc.</li>
+<li><strong>EMC</strong> = <code>errMG</code> PS5 system-software build tag embedded in games; association is via games built against that SDK generation (e.g. 10.00 ↔ EMC 1.14.3 is not direct, but 9.20 ↔ 1.14.3 is).</li>
+<li>Generation inference for <code>6.x</code> and <code>12.x</code> is from firmware/SDK gaps, hence <span class="pill" style="background:#d2992222;color:#d29922;border:1px solid #d2992244">Medium/Low</span>.</li>
+<li>UE 5.6 and 5.7 both document <code>11.00.00.40</code> — same SDK, different UE minor.</li>
+</ul>
 </div>
 </div>
 
@@ -782,6 +810,65 @@ document.addEventListener('keydown', e => {{ if (e.key === 'Escape') $('#detailP
     </details>`;
   }}).join('');
 }})();
+
+// --- SDK TIMELINE ---
+(function() {{
+  const rows = [
+    ["0.70","—","—","2018-11-05 — PS5 0.70.060 build","High"],
+    ["0.83","—","—","2019-06-05 — PS5 0.83.00 build","High"],
+    ["0.85.070","—","0.7.6","2019 — SDK/EMC association","High"],
+    ["1.x","—","1.0.4","2020 — SDK generation / EMC association","High"],
+    ["2.x","—","1.2.3","2020–2021 — SDK generation / EMC association","Medium"],
+    ["3.00","—","1.4.2","2021-04-06 — PS5 3.00 build","High"],
+    ["3.20","—","1.4.2","2021 — 3.20 generation","High"],
+    ["3.21","—","1.4.2","2021 — 3.21 generation","High"],
+    ["4.00","UE 5.0 → 4.00.00.31","1.6.0","2021-09-03 — PS5 4.00 build","High"],
+    ["4.50","UE 5.0 → 4.00.00.31","1.6.0","2021-11-17 — PS5 4.50 build","High"],
+    ["4.51","UE 5.0 → 4.00.00.31","1.6.0","2022 — UE explicitly pairs SDK 4.00.00.31","High"],
+    ["5.00","UE 5.1 → 5.00.00.33","1.8.2","2022 — SDK/EMC association","High"],
+    ["5.50","—","1.8.3","2022 — SDK/EMC association","High"],
+    ["6.x","—","—","2022–2023 — generation inferred from firmware/SDK evidence","Medium"],
+    ["7.00","UE 5.2 → 7.00.00.38","—","2023 — Epic SDK pairing","High"],
+    ["7.00.00.45","UE 5.3 → 7.00.00.45","—","2023 — Epic documents patched SDK","High"],
+    ["9.00","UE 5.4 → 9.00.00.40","—","2024 — Epic SDK pairing","High"],
+    ["9.20","—","1.14.3","2024 — EMC association","High"],
+    ["10.00","UE 5.5 → 10.00.00.40","—","2024 — Epic SDK pairing","High"],
+    ["11.00","UE 5.6 → 11.00.00.40","—","2025 — Epic SDK pairing","High"],
+    ["11.00","UE 5.7 → 11.00.00.40","—","2025 — same SDK documented by Epic","High"],
+    ["12.x","—","—","2026 — current/recent generation; insufficient public evidence","Medium/Low"],
+  ];
+  const confPill = c => {
+    if(c.startsWith("High")) return '<span class="pill" style="background:#23863622;color:#3fb950;border:1px solid #23863644">High</span>';
+    if(c.startsWith("Medium")) return '<span class="pill" style="background:#d2992222;color:#d29922;border:1px solid #d2992244">'+c+'</span>';
+    return '<span class="pill" style="background:#da363322;color:#f85149;border:1px solid #da363344">'+c+'</span>';
+  };
+  const tbody = document.getElementById('sdkBody');
+  function render(data) {
+    tbody.innerHTML = data.map(r => `<tr>
+      <td style="font-variant-numeric:tabular-nums"><strong>${r[0]}</strong></td>
+      <td style="color:#8b949e">${r[1]}</td>
+      <td style="font-family:monospace">${r[2]}</td>
+      <td style="font-size:0.78rem">${r[3]}</td>
+      <td>${confPill(r[4])}</td>
+    </tr>`).join('');
+  }
+  render(rows);
+  let sortState = {col:-1, asc:true};
+  document.querySelector('#sdkTable thead').addEventListener('click', e => {
+    const th = e.target.closest('th');
+    if(!th) return;
+    const col = +th.dataset.col;
+    if(sortState.col===col) sortState.asc=!sortState.asc; else {sortState.col=col; sortState.asc=true;}
+    document.querySelectorAll('#sdkTable th').forEach(h=>h.classList.remove('sorted'));
+    th.classList.add('sorted');
+    th.querySelector('.arrow').innerHTML = sortState.asc?'&#9650;':'&#9660;';
+    rows.sort((a,b)=>{
+      const va=a[col], vb=b[col];
+      return sortState.asc ? String(va).localeCompare(String(vb)) : String(vb).localeCompare(String(va));
+    });
+    render(rows);
+  });
+}}());
 
 // --- SEGMENTS ---
 (function() {{
