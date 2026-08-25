@@ -837,37 +837,37 @@ document.addEventListener('keydown', e => {{ if (e.key === 'Escape') $('#detailP
     ["11.00","UE 5.7 → 11.00.00.40","—","2025 — same SDK documented by Epic","High"],
     ["12.x","—","—","2026 — current/recent generation; insufficient public evidence","Medium/Low"],
   ];
-  const confPill = c => {
+  const confPill = c => {{
     if(c.startsWith("High")) return '<span class="pill" style="background:#23863622;color:#3fb950;border:1px solid #23863644">High</span>';
     if(c.startsWith("Medium")) return '<span class="pill" style="background:#d2992222;color:#d29922;border:1px solid #d2992244">'+c+'</span>';
     return '<span class="pill" style="background:#da363322;color:#f85149;border:1px solid #da363344">'+c+'</span>';
-  };
+  }};
   const tbody = document.getElementById('sdkBody');
-  function render(data) {
+  function render(data) {{
     tbody.innerHTML = data.map(r => `<tr>
-      <td style="font-variant-numeric:tabular-nums"><strong>${r[0]}</strong></td>
-      <td style="color:#8b949e">${r[1]}</td>
-      <td style="font-family:monospace">${r[2]}</td>
-      <td style="font-size:0.78rem">${r[3]}</td>
-      <td>${confPill(r[4])}</td>
+      <td style="font-variant-numeric:tabular-nums"><strong>${{r[0]}}</strong></td>
+      <td style="color:#8b949e">${{r[1]}}</td>
+      <td style="font-family:monospace">${{r[2]}}</td>
+      <td style="font-size:0.78rem">${{r[3]}}</td>
+      <td>${{confPill(r[4])}}</td>
     </tr>`).join('');
-  }
+  }}
   render(rows);
-  let sortState = {col:-1, asc:true};
-  document.querySelector('#sdkTable thead').addEventListener('click', e => {
+  let sortState = {{col:-1, asc:true}};
+  document.querySelector('#sdkTable thead').addEventListener('click', e => {{
     const th = e.target.closest('th');
     if(!th) return;
     const col = +th.dataset.col;
-    if(sortState.col===col) sortState.asc=!sortState.asc; else {sortState.col=col; sortState.asc=true;}
+    if(sortState.col===col) sortState.asc=!sortState.asc; else {{sortState.col=col; sortState.asc=true;}}
     document.querySelectorAll('#sdkTable th').forEach(h=>h.classList.remove('sorted'));
     th.classList.add('sorted');
     th.querySelector('.arrow').innerHTML = sortState.asc?'&#9650;':'&#9660;';
-    rows.sort((a,b)=>{
+    rows.sort((a,b)=>{{
       const va=a[col], vb=b[col];
       return sortState.asc ? String(va).localeCompare(String(vb)) : String(vb).localeCompare(String(va));
-    });
+    }});
     render(rows);
-  });
+  }});
 }}());
 
 // --- SEGMENTS ---
