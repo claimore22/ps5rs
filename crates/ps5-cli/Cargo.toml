@@ -13,6 +13,7 @@ path = "src/main.rs"
 integration = []
 
 [dependencies]
+ps5-deps = { path = "../ps5-deps" }
 ps5-format = { path = "../ps5-format" }
 ps5-self = { path = "../ps5-self" }
 ps5-elf = { path = "../ps5-elf" }
