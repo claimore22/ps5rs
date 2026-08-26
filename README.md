@@ -1,7 +1,5 @@
 # ps5rs
 
-![Elfspector](screenshots/elfspector_3.jpg)
-
 A PS5 binary analysis, virtual loading, and host-side emulation framework written in Rust.
 
 Parses SELF/ELF/PRX formats, resolves NID imports, extracts clean ELFs, fingerprints game binaries through string analysis (engine/middleware/SDK detection), and generates interactive dashboards.
