@@ -9,6 +9,7 @@ description = "PS5 host-side emulator — native guest execution with HLE system
 serde = ["dep:serde"]
 
 [dependencies]
+ps5-abi = { path = "../ps5-abi" }
 ps5-elf = { path = "../ps5-elf" }
 ps5-loader = { path = "../ps5-loader" }
 ps5-nid = { path = "../ps5-nid" }

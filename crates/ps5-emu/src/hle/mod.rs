@@ -18,6 +18,8 @@ mod context;
 pub use context::{DbgState, HleContext, LibcState};
 pub use registry::Registry;
 
+use ps5_abi::types::AbiType;
+
 use crate::error::EmuError;
 
 /// Stable identity of one guest host call, shared by every library module.
@@ -79,6 +81,7 @@ pub trait HleModule {
 
 /// The default HLE module set every emulator starts with.
 pub fn default_registry() -> Registry {
+    let _abi_check = AbiType::U64;
     let mut registry = Registry::new();
     libc::register(&mut registry);
     libkernel::register(&mut registry);

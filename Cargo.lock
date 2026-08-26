@@ -674,6 +674,7 @@ name = "ps5-emu"
 version = "0.4.0"
 dependencies = [
  "libc",
+ "ps5-abi",
  "ps5-elf",
  "ps5-format",
  "ps5-loader",
