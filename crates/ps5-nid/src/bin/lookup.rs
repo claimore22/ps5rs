@@ -1,5 +1,5 @@
-use std::env;
 use ps5_nid::hash;
+use std::env;
 
 fn print_usage(prog: &str) {
     eprintln!("Usage: {} <function_name>", prog);

@@ -16,6 +16,8 @@ pub use heatmap::build_heatmap;
 pub use imports::{LibraryInventory, LibraryInventoryEntry, build_import_inventory};
 pub use library_versions::{LibraryVersionEntry, LibraryVersionReport, build_library_versions};
 pub use statistics::compute_stats;
-pub use unknown_nids::{UnknownNidEntry, UnknownNidReport, build_unknown_nids};
+pub use unknown_nids::{
+    UnknownNidEntry, UnknownNidReport, build_unknown_nids, build_unknown_nids_with_catalog,
+};
 pub use unresolved::find_unresolved;
 pub use validation::{GameValidation, ParseError, ValidationReport, validate_dataset};
