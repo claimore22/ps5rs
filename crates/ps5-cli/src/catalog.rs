@@ -486,7 +486,7 @@ impl StubAggregate {
 }
 
 fn is_stub_file(name: &str) -> bool {
-    name.ends_with("_stub_weak.a") || name.ends_with("_stub.a")
+    name.ends_with(".a")
 }
 
 fn stub_files(sdk_dir: &Path) -> Vec<PathBuf> {
@@ -521,7 +521,7 @@ pub(crate) fn cmd_import_stubs(sdk_dir: &Path, output: Option<&Path>, verify: bo
     let files = stub_files(sdk_dir);
     if files.is_empty() {
         eprintln!(
-            "error: no *_stub_weak.a files found under {} (also checked target/lib)",
+            "error: no *.a files found under {} (also checked target/lib)",
             sdk_dir.display()
         );
         std::process::exit(1);
@@ -656,7 +656,7 @@ pub(crate) fn cmd_dump_stubs(path: &Path, output: Option<&Path>) {
         let files = stub_files(path);
         if files.is_empty() {
             eprintln!(
-                "error: no *_stub.a or *_stub_weak.a files found under {} (also checked target/lib)",
+                "error: no *.a files found under {} (also checked target/lib)",
                 path.display()
             );
             std::process::exit(1);
@@ -831,19 +831,18 @@ mod tests {
     fn stub_files_finds_only_stub_archives() {
         let dir = std::env::temp_dir().join("ps5rs_test_stub_files");
         let _ = std::fs::create_dir_all(&dir);
-        std::fs::write(dir.join("libSceAgc_stub_weak.a"), b"!<arch>\n").unwrap();
-        std::fs::write(dir.join("libkernel_stub.a"), b"!<arch>\n").unwrap();
         std::fs::write(dir.join("libSceAgc.a"), b"!<arch>\n").unwrap();
+        std::fs::write(dir.join("libkernel.a"), b"!<arch>\n").unwrap();
         std::fs::write(dir.join("notes.txt"), b"hello").unwrap();
         let files = stub_files(&dir);
         assert_eq!(files.len(), 2);
         assert_eq!(
             files[0].file_name().unwrap().to_str().unwrap(),
-            "libSceAgc_stub_weak.a"
+            "libSceAgc.a"
         );
         assert_eq!(
             files[1].file_name().unwrap().to_str().unwrap(),
-            "libkernel_stub.a"
+            "libkernel.a"
         );
         let _ = std::fs::remove_dir_all(&dir);
     }
@@ -853,12 +852,12 @@ mod tests {
         let dir = std::env::temp_dir().join("ps5rs_test_stub_fallback");
         let lib = dir.join("target").join("lib");
         let _ = std::fs::create_dir_all(&lib);
-        std::fs::write(lib.join("libkernel_stub_weak.a"), b"!<arch>\n").unwrap();
+        std::fs::write(lib.join("libkernel.a"), b"!<arch>\n").unwrap();
         let files = stub_files(&dir);
         assert_eq!(files.len(), 1);
         assert_eq!(
             files[0].file_name().unwrap().to_str().unwrap(),
-            "libkernel_stub_weak.a"
+            "libkernel.a"
         );
         let _ = std::fs::remove_dir_all(&dir);
     }
