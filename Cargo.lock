@@ -764,6 +764,7 @@ dependencies = [
 name = "ps5-schema"
 version = "0.4.0"
 dependencies = [
+ "ps5-image",
  "serde",
  "serde_json",
 ]
