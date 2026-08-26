@@ -1,0 +1,12 @@
+[package]
+name = "ps5-abi"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "ABI metadata"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+
+[lints]
+workspace = true

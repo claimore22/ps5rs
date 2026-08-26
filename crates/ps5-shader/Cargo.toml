@@ -1,0 +1,12 @@
+[package]
+name = "ps5-shader"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Shader analysis"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+
+[lints]
+workspace = true
