@@ -6,7 +6,6 @@ license.workspace = true
 description = "Stable JSON schemas"
 
 [dependencies]
-ps5-image = { path = "../ps5-image" }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 
