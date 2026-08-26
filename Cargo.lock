@@ -588,6 +588,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "ps5-abi"
+version = "0.4.0"
+dependencies = [
+ "serde",
+]
+
+[[package]]
 name = "ps5-analysis"
 version = "0.4.0"
 dependencies = [
@@ -595,6 +602,7 @@ dependencies = [
  "ps5-image",
  "ps5-nid",
  "ps5-self",
+ "ps5-signatures",
  "serde",
  "serde_json",
 ]
@@ -619,6 +627,7 @@ dependencies = [
  "csv",
  "ps5-analysis",
  "ps5-dashboard",
+ "ps5-deps",
  "ps5-elf",
  "ps5-emu",
  "ps5-format",
@@ -638,6 +647,14 @@ dependencies = [
  "ps5-analysis",
  "ps5-image",
  "ps5-nid",
+ "serde",
+ "serde_json",
+]
+
+[[package]]
+name = "ps5-deps"
+version = "0.4.0"
+dependencies = [
  "serde",
  "serde_json",
 ]
@@ -669,6 +686,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "ps5-firmware"
+version = "0.4.0"
+dependencies = [
+ "serde",
+]
+
+[[package]]
 name = "ps5-format"
 version = "0.4.0"
 dependencies = [
@@ -692,6 +716,7 @@ dependencies = [
 name = "ps5-loader"
 version = "0.4.0"
 dependencies = [
+ "ps5-deps",
  "ps5-elf",
  "serde",
  "serde_json",
@@ -715,11 +740,59 @@ dependencies = [
 ]
 
 [[package]]
+name = "ps5-nid-db"
+version = "0.4.0"
+dependencies = [
+ "ps5-nid",
+ "serde",
+]
+
+[[package]]
+name = "ps5-prx"
+version = "0.4.0"
+dependencies = [
+ "ps5-elf",
+ "ps5-nid-db",
+ "serde",
+]
+
+[[package]]
+name = "ps5-schema"
+version = "0.4.0"
+dependencies = [
+ "serde",
+ "serde_json",
+]
+
+[[package]]
+name = "ps5-sdk-meta"
+version = "0.4.0"
+dependencies = [
+ "ps5-nid-db",
+ "serde",
+]
+
+[[package]]
 name = "ps5-self"
 version = "0.4.0"
 dependencies = [
  "ps5-elf",
  "ps5-format",
+]
+
+[[package]]
+name = "ps5-shader"
+version = "0.4.0"
+dependencies = [
+ "serde",
+]
+
+[[package]]
+name = "ps5-signatures"
+version = "0.4.0"
+dependencies = [
+ "ps5-image",
+ "serde",
 ]
 
 [[package]]
