@@ -595,6 +595,7 @@ dependencies = [
  "ps5-image",
  "ps5-nid",
  "ps5-self",
+ "ps5-signatures",
  "serde",
  "serde_json",
 ]
@@ -730,6 +731,14 @@ version = "0.4.0"
 dependencies = [
  "ps5-elf",
  "ps5-format",
+]
+
+[[package]]
+name = "ps5-signatures"
+version = "0.4.0"
+dependencies = [
+ "ps5-image",
+ "serde",
 ]
 
 [[package]]
