@@ -734,6 +734,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "ps5-prx"
+version = "0.4.0"
+dependencies = [
+ "ps5-elf",
+ "ps5-nid-db",
+ "serde",
+]
+
+[[package]]
 name = "ps5-self"
 version = "0.4.0"
 dependencies = [
