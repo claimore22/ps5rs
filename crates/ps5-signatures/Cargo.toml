@@ -1,0 +1,13 @@
+[package]
+name = "ps5-signatures"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Reusable signature definitions for engine/middleware detection"
+
+[dependencies]
+ps5-image = { path = "../ps5-image" }
+serde = { version = "1", features = ["derive"] }
+
+[lints]
+workspace = true
