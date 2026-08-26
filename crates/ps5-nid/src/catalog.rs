@@ -694,10 +694,19 @@ mod tests {
     fn load_nids_csv_six_col_mixed_with_five_col() {
         let mut cat = Catalog::new();
         let csv = "nid,nid_hex,name,library,derived,sources\nHV4j+E0MBHE,0x1D5E23F84D0C0471,sceAgcCreateInterpolantMapping,Graphics5,0,bleps5-rs\n";
-        let csv2 = "nid,name,library,tag,source\n246322a3edb52f87,posix_mkdir,libkernel,filesystem,sdk\n";
+        let csv2 =
+            "nid,name,library,tag,source\n246322a3edb52f87,posix_mkdir,libkernel,filesystem,sdk\n";
         assert_eq!(cat.load_nids_csv(csv), 1);
         assert_eq!(cat.load_nids_csv(csv2), 1);
-        assert!(cat.resolve("HV4j+E0MBHE").unwrap().has_name("sceAgcCreateInterpolantMapping"));
-        assert!(cat.resolve("246322a3edb52f87").unwrap().has_name("posix_mkdir"));
+        assert!(
+            cat.resolve("HV4j+E0MBHE")
+                .unwrap()
+                .has_name("sceAgcCreateInterpolantMapping")
+        );
+        assert!(
+            cat.resolve("246322a3edb52f87")
+                .unwrap()
+                .has_name("posix_mkdir")
+        );
     }
 }
