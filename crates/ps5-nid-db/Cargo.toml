@@ -1,0 +1,13 @@
+[package]
+name = "ps5-nid-db"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Typed NID database with LibraryId, VersionRange, Confidence"
+
+[dependencies]
+ps5-nid = { path = "../ps5-nid" }
+serde = { version = "1", features = ["derive"] }
+
+[lints]
+workspace = true
