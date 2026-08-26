@@ -4,7 +4,7 @@ use ps5_format::elf_constants::ELF_MAGIC;
 use ps5_format::error::{ParseError, Result};
 use ps5_nid::encode_nid;
 
-const STUB_LIBRARY_SUFFIXES: [&str; 2] = ["_stub_weak.a", "_stub.a"];
+const STUB_LIBRARY_SUFFIXES: [&str; 1] = [".a"];
 const AR_MAGIC: &[u8; 8] = b"!<arch>\n";
 const ELF64_SYMENT_SIZE: u64 = 24;
 
@@ -198,8 +198,8 @@ mod tests {
         let inner_a = build_stub_object(&[("sceAgcInit", SCENID_SCEAGCINIT)]);
         let inner_b = build_stub_object(&[("sceKernelAddUserEvent", SCENID_SCEKERNELADDUSEREVENT)]);
         let archive = build_archive(&[
-            ("libSceAgc_stub_weak.a_first_member.o", &inner_a),
-            ("libSceAgc_stub_weak.a_second_member.o", &inner_b),
+            ("libSceAgc.a_first_member.o", &inner_a),
+            ("libSceAgc.a_second_member.o", &inner_b),
         ]);
         let symbols = parse_stub_library(&archive, "libSceAgc").unwrap();
         assert_eq!(symbols.len(), 2);
@@ -229,10 +229,10 @@ mod tests {
 
     #[test]
     fn strips_stub_suffix() {
-        assert_eq!(stub_library_name("libSceAgc_stub_weak.a"), "libSceAgc");
-        assert_eq!(stub_library_name("libkernel_stub_weak.a"), "libkernel");
-        assert_eq!(stub_library_name("libSceAgc_stub.a"), "libSceAgc");
-        assert_eq!(stub_library_name("libkernel_stub.a"), "libkernel");
+        assert_eq!(stub_library_name("libSceAgc.a"), "libSceAgc");
+        assert_eq!(stub_library_name("libkernel.a"), "libkernel");
+        assert_eq!(stub_library_name("libSceFoo.a"), "libSceFoo");
+        assert_eq!(stub_library_name("libBar.a"), "libBar");
         assert_eq!(stub_library_name("no_suffix"), "no_suffix");
     }
 
