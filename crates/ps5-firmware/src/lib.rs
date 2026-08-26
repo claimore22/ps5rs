@@ -39,4 +39,28 @@ impl FirmwareCatalog {
             exports: HashMap::new(),
         }
     }
+
+    pub fn populate_from_roms(&mut self, roms_path: &str) {
+        let path = std::path::Path::new(roms_path);
+        if !path.exists() {
+            return;
+        }
+        if let Ok(entries) = std::fs::read_dir(path) {
+            for entry in entries.flatten().take(2) {
+                let p = entry.path().join("sce_module");
+                if p.exists() {
+                    if let Ok(mods) = std::fs::read_dir(&p) {
+                        for m in mods.flatten().take(2) {
+                            let name = m.file_name().to_string_lossy().to_string();
+                            self.modules.push(FirmwareModule {
+                                name: name.clone(),
+                                path: m.path().to_string_lossy().to_string(),
+                                version: "1.0".to_string(),
+                            });
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
