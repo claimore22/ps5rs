@@ -1,5 +1,5 @@
-use thiserror::Error;
 use ps5_memory_safe::MemoryError;
+use thiserror::Error;
 
 #[derive(Error, Debug)]
 pub enum BleError {
