@@ -18,6 +18,13 @@ pub struct UnknownNidReport {
 }
 
 pub fn build_unknown_nids(ds: &AnalysisDataset) -> UnknownNidReport {
+    build_unknown_nids_with_catalog(ds, None)
+}
+
+pub fn build_unknown_nids_with_catalog(
+    ds: &AnalysisDataset,
+    catalog: Option<&ps5_nid::Catalog>,
+) -> UnknownNidReport {
     let mut nid_data: HashMap<
         String,
         (
@@ -31,7 +38,12 @@ pub fn build_unknown_nids(ds: &AnalysisDataset) -> UnknownNidReport {
 
     for (name, doc) in &ds.images {
         for imp in &doc.image.imports {
-            if imp.resolved_name.is_none() {
+            let is_unknown = if let Some(cat) = catalog {
+                cat.resolve(&imp.nid_hash).is_none()
+            } else {
+                imp.resolved_name.is_none()
+            };
+            if is_unknown {
                 total_unknown += 1;
                 let entry = nid_data.entry(imp.nid_hash.clone()).or_insert_with(|| {
                     (
@@ -416,6 +428,38 @@ mod tests {
         assert_eq!(report.entries[0].games, vec!["game0"]);
         assert_eq!(report.total_unknown, 1);
         assert_eq!(report.total_imports, 2);
+        let _ = std::fs::remove_dir_all(&root);
+    }
+
+    #[test]
+    fn unknown_with_catalog_corrects_stale_dataset() {
+        let root = tempdir_for_test("stale_catalog");
+        let mut cat = ps5_nid::Catalog::new();
+        cat.add("staleFunc");
+        let stale_hash = ps5_nid::hash("staleFunc");
+        let doc = make_doc(
+            vec![ImportEntry {
+                nid_hash: stale_hash.clone(),
+                resolved_name: None,
+                library_id: 1,
+                library_name: "libkernel".into(),
+                value: 0,
+                size: 0,
+                shndx: 0,
+                binding: ps5_image::SymbolBinding::Global,
+                sym_type: ps5_image::SymbolType::Func,
+                visibility: ps5_image::SymbolVisibility::Default,
+                ordinal: 0,
+            }],
+            "a",
+        );
+        make_dataset(&root, vec![doc]);
+        let ds = AnalysisDataset::open(&root).unwrap();
+        let report_without_catalog = build_unknown_nids(&ds);
+        assert_eq!(report_without_catalog.entries.len(), 1);
+        let report_with_catalog = build_unknown_nids_with_catalog(&ds, Some(&cat));
+        assert!(report_with_catalog.entries.is_empty());
+        assert_eq!(report_with_catalog.total_unknown, 0);
         let _ = std::fs::remove_dir_all(&root);
     }
 }
