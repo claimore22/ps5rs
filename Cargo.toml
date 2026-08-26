@@ -15,6 +15,7 @@ members = [
     "crates/ps5-memory-safe",
     "crates/ps5-deps",
     "crates/ps5-signatures",
+    "crates/ps5-nid-db",
 ]
 
 [workspace.package]
