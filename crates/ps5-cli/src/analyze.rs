@@ -202,7 +202,7 @@ pub(crate) fn cmd_analyze(command: AnalyzeCommand, extra_nids: &[PathBuf], inclu
                     eprintln!("error: {e}");
                     std::process::exit(1);
                 });
-                let report = ps5_analysis::reports::build_unknown_nids(&ds);
+                let report = ps5_analysis::reports::build_unknown_nids_with_catalog(&ds, Some(&catalog));
                 match format {
                     OutputFormat::Terminal => terminal::print_unknown_nids_terminal(&report),
                     OutputFormat::Json => write_to_output_or_stdout(&output, &|w| {
