@@ -8,6 +8,8 @@ description = "PS5 ELF/PRX loader — virtual memory model"
 [dependencies]
 ps5-deps = { path = "../ps5-deps" }
 ps5-elf = { path = "../ps5-elf" }
+ps5-nid = { path = "../ps5-nid" }
+ps5-prx = { path = "../ps5-prx" }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 sha1 = "0.10"

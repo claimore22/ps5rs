@@ -152,6 +152,20 @@ pub fn load_elf(name: &str, elf_bytes: &[u8]) -> Result<LoadedModule> {
     let image = ps5_elf::ElfImage::parse(elf_bytes, None)
         .map_err(|e| LoaderError(format!("ELF parse failed: {e}")))?;
 
+    // Build PrxModule for intelligence (validates via ps5-prx, logs on failure)
+    let _prx_intel = {
+        let catalog = ps5_nid::Catalog::new();
+        ps5_prx::PrxModule::from_elf(name, &image, &catalog).ok()
+    };
+    if let Some(ref prx) = _prx_intel {
+        tracing::debug!(
+            prx_name = prx.name,
+            imports = prx.imports.len(),
+            exports = prx.exports.len(),
+            "ps5-prx intelligence"
+        );
+    }
+
     let module_type = if image.header.is_shared() {
         ModuleType::Prx
     } else {

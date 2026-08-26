@@ -718,6 +718,8 @@ version = "0.4.0"
 dependencies = [
  "ps5-deps",
  "ps5-elf",
+ "ps5-nid",
+ "ps5-prx",
  "serde",
  "serde_json",
  "sha1",
