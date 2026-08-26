@@ -177,6 +177,15 @@ pub enum Commands {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
+    /// Show module dependency graph (uses ps5-deps)
+    Deps {
+        /// Games directory or single binary path
+        path: PathBuf,
+        #[arg(long, value_enum, default_value = "terminal")]
+        format: OutputFormat,
+        #[arg(short, long, value_hint = ValueHint::FilePath)]
+        output: Option<PathBuf>,
+    },
 }
 
 #[derive(Subcommand)]

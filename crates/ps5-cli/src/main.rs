@@ -5,6 +5,7 @@ mod batch_load;
 mod catalog;
 mod cli;
 mod dataset;
+mod deps;
 mod export_scan;
 mod extract;
 mod inspect;
@@ -133,5 +134,10 @@ fn main() {
             format,
             output,
         } => middleware::cmd_middleware(&path, format, &output),
+        Commands::Deps {
+            path,
+            format,
+            output,
+        } => deps::cmd_deps(&path, format, &output),
     }
 }
