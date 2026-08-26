@@ -199,11 +199,11 @@ pub enum CatalogCommand {
         #[arg(short, long)]
         submitter: Option<String>,
     },
-    /// Import NID/name pairs from PS5 SDK *_stub_weak.a libraries
+    /// Import NID/name pairs from *.a libraries
     ImportStubs {
-        /// SDK directory containing *_stub_weak.a files (target/lib is also accepted)
+        /// Directory containing *.a files (fallback directory also checked)
         #[arg(value_hint = ValueHint::DirPath)]
-        sdk_dir: PathBuf,
+        library_dir: PathBuf,
         /// Append net-new NID lines to this catalog file
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
@@ -211,9 +211,9 @@ pub enum CatalogCommand {
         #[arg(long)]
         verify: bool,
     },
-    /// Print every symbol from *_stub.a / *_stub_weak.a libraries
+    /// Print every symbol from *.a libraries
     DumpStubs {
-        /// SDK directory (target/lib is also accepted) or a single stub file
+        /// Directory containing *.a files or a single archive file (fallback checked)
         #[arg(value_hint = ValueHint::DirPath)]
         path: PathBuf,
         /// Write the dump to this file instead of stdout

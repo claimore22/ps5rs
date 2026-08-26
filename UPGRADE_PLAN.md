@@ -23,7 +23,7 @@ ps5-tests         ELF fixture generator + manifest
 
 Dependency direction: `format → {elf,self,nid} → image → analysis → cli`, `loader → elf`, `ps5-emu → {loader,elf,nid,format}`.
 
-No directory `ps5-prx`, `ps5-sdk`, `ps5-abi`, `ps5-shader`, `ps5-firmware`, `ps5-deps`, `ps5-signatures`, `ps5-fuzz`, `ps5-schema` exists.
+No directory `ps5-prx`, `ps5-sdk-meta`, `ps5-abi`, `ps5-shader`, `ps5-firmware`, `ps5-deps`, `ps5-signatures`, `ps5-fuzz`, `ps5-schema` exists.
 `Test-Path fuzz` → `False`. `crates/` glob confirms `0/10` proposed crates exist.
 
 ---
@@ -33,7 +33,7 @@ No directory `ps5-prx`, `ps5-sdk`, `ps5-abi`, `ps5-shader`, `ps5-firmware`, `ps5
 | # | Proposed crate | Exists? | Coverage today (scattered) | Verdict |
 |---|---|---|---|---|
 | 1 | **ps5-prx** `module.rs/metadata.rs/dependencies.rs/exports.rs/imports.rs/versions.rs/error.rs` | No | `ps5-elf/src/dynamic.rs:42` → `DT_SCE_NEEDED_LIB/DT_NEEDED/DT_SONAME`, `ps5-elf/src/libversion.rs`, `ps5-image/src/lib.rs:645` `LibVersionEntry`, `ps5-image/src/builder.rs` (`imports/exports/needed_files/import_libs`), `ps5-loader/src/mapper.rs:25` `ModuleType::Prx/Eboot`, `ModuleState`, `LoadedModule` | **Refactor+promote** — logic exists but no unified `PrxModule` type |
-| 2 | **ps5-sdk** `libraries/functions/versions/structures/constants/database` `SdkFunction{nid,name,library,sdk_versions,module,category}` | No | `ps5-nid/src/catalog.rs:24` `Catalog{by_nid: HashMap<String,NidEntry>}` builtins `catalog.rs:171` (~100 names), `ps5-analysis/src/string_patterns.rs:240` SDK hints | **Greenfield DB** — no `SdkFunction`, no version ranges, no SDK structures |
+| 2 | **ps5-sdk-meta** `libraries/functions/versions/structures/constants/database` `SdkFunction{nid,name,library,sdk_versions,module,category}` | No | `ps5-nid/src/catalog.rs:24` `Catalog{by_nid: HashMap<String,NidEntry>}` builtins `catalog.rs:171` (~100 names), `ps5-analysis/src/string_patterns.rs:240` SDK hints | **Greenfield DB** — no `SdkFunction`, no version ranges, no SDK structures |
 | 3 | **ps5-nid-db** `NidRecord{nid,library,name,versions,source,confidence}` | No | `ps5-nid/src/catalog.rs:5` `NidEntry{names,libraries,tags,sources: BTreeSet}` + `insert()` `catalog.rs:49`, 5-col rich CSV `catalog.rs:107` | **Promote catalog** — needs typed `LibraryId`, `VersionRange`, `Confidence`, `NidSource` |
 | 4 | **ps5-abi** `calling_convention.rs/types.rs/functions.rs/structs.rs/callbacks.rs/layouts.rs` `FunctionSignature/StructLayout` | No | `ps5-emu/src/abi/mod.rs:1` + `abi/sysv64.rs` (execution only: `EscapeContext/ImportCallFrame/invoke_guest/escape`) | **Greenfield metadata** — no signature store for HLE |
 | 5 | **ps5-shader** `agc/shader_binary.rs/shader_metadata.rs/agsd.rs/disasm.rs/resources.rs/reflection.rs` | No | Zero hits (`*.ags*`, GPU ISA) | **Greenfield** — highest research value |
@@ -43,7 +43,7 @@ No directory `ps5-prx`, `ps5-sdk`, `ps5-abi`, `ps5-shader`, `ps5-firmware`, `ps5
 | 9 | **ps5-fuzz** `fuzz/elf.rs/self.rs/nid.rs/dynamic.rs/relocations.rs/shader.rs` | No | Inline `#[cfg(test)]` + `ps5-tests` fixtures only | **Greenfield** — `cargo fuzz` targets for parsers |
 | 10 | **ps5-schema** `BinaryImage/NidRecord/LibraryRecord/ModuleRecord/SdkFunction/DependencyGraph` stable schemas | No | `ps5-image/src/lib.rs:72` `BinaryImageDocument{schema_version,tool,image}` `BINARY_IMAGE_VERSION`, `ps5-analysis/src/dataset.rs` `DATASET_SCHEMA_VERSION` — versioned but tied to structs | **Greenfield** — decouple JSON interchange from internal structs |
 
-**Summary:** `0/10` exist as named crates. `3` have substantial logic ready to extract (`ps5-deps`, `ps5-signatures`, `ps5-nid-db` promotion). `3` are refactors of scattered code (`ps5-prx`, `ps5-abi`, `ps5-schema`). `4` are greenfield (`ps5-sdk`, `ps5-shader`, `ps5-firmware`, `ps5-fuzz`).
+**Summary:** `0/10` exist as named crates. `3` have substantial logic ready to extract (`ps5-deps`, `ps5-signatures`, `ps5-nid-db` promotion). `3` are refactors of scattered code (`ps5-prx`, `ps5-abi`, `ps5-schema`). `4` are greenfield (`ps5-sdk-meta`, `ps5-shader`, `ps5-firmware`, `ps5-fuzz`).
 
 ---
 
@@ -58,7 +58,7 @@ ps5-format ─┬─► ps5-elf ────────┼─► ps5-prx ──
             │   ps5-nid ──► ps5-nid-db ────────┘            │
             │                │                               │
             │                ▼                               ▼
-            │            ps5-sdk ──► ps5-abi ──► ps5-emu (HLE Registry)
+            │            ps5-sdk-meta ──► ps5-abi ──► ps5-emu (HLE Registry)
             │                │          ▲
             └────────────────┼──────────┘
                              ▼
@@ -69,7 +69,7 @@ ps5-format ─┬─► ps5-elf ────────┼─► ps5-prx ──
                      ps5-fuzz (dev-only, targets all parsers)
 ```
 
-Dependency rule: `ps5-schema` has **no** dependencies (pure `serde` types). `ps5-nid` stays algorithm-only; `ps5-nid-db` depends on `ps5-nid` + `ps5-schema`. `ps5-prx` depends on `ps5-elf` + `ps5-nid-db`. `ps5-abi` depends on `ps5-nid-db` + `ps5-sdk`. No cycles.
+Dependency rule: `ps5-schema` has **no** dependencies (pure `serde` types). `ps5-nid` stays algorithm-only; `ps5-nid-db` depends on `ps5-nid` + `ps5-schema`. `ps5-prx` depends on `ps5-elf` + `ps5-nid-db`. `ps5-abi` depends on `ps5-nid-db` + `ps5-sdk-meta`. No cycles.
 
 ---
 
@@ -114,12 +114,12 @@ pub struct PrxModule {
 
 **Effort:** ~8h (refactor, no new parsing).
 
-### 3.2 `ps5-sdk` — SDK Knowledge Database
+### 3.2 `ps5-sdk-meta` — SDK Knowledge Database
 
 **Purpose:** Metadata *about* the SDK, not the SDK itself. Maps `NID → SdkFunction` with version ranges.
 
 ```
-ps5-sdk/
+ps5-sdk-meta/
 ├── Cargo.toml
 ├── src/
 │   ├── lib.rs
@@ -143,7 +143,7 @@ pub struct SdkFunction {
 }
 ```
 
-**Data sources:** `analysis/catalog/nids.csv`, Supabase dumps, `*_stub_weak.a` via `ps5rs catalog import-stubs` `crates/ps5-cli/src/catalog.rs`, leaked SDK headers (metadata only).
+**Data sources:** `analysis/catalog/nids.csv`, Supabase dumps, `*.a` via `ps5rs catalog import-stubs` `crates/ps5-cli/src/catalog.rs`, public system headers (metadata only).
 
 **Effort:** ~12h + ongoing curation. Start with schema + import from existing `Catalog`.
 
@@ -198,7 +198,7 @@ pub struct FunctionSignature {
 pub struct StructLayout { pub size: usize, pub align: usize, pub fields: Vec<Field> }
 ```
 
-**Integration:** `ps5-sdk::SdkFunction.signature: Option<FunctionSignature>`; `ps5-emu` HLE `Registry` validates handlers against stored signatures; generated stubs can be checked at `cargo test`.
+**Integration:** `ps5-sdk-meta::SdkFunction.signature: Option<FunctionSignature>`; `ps5-emu` HLE `Registry` validates handlers against stored signatures; generated stubs can be checked at `cargo test`.
 
 **Effort:** ~10h (types + ~50 initial signatures).
 
@@ -351,7 +351,7 @@ Current versioning: `ps5-image/src/lib.rs:10` `BINARY_IMAGE_VERSION`, `ps5-image
 |---|---|---|---|---|
 | B1 | `ps5-prx` | Create `PrxModule` wrapping `ps5-elf` + `ps5-nid-db`, migrate `ps5-image/src/builder.rs` | A3 | 8h |
 | B2 | `ps5-schema` | Extract `BinaryImageDocument`/`BinaryMetadata` + dataset schemas, add `schemas/*.json` | B1, A3 | 8h |
-| B3 | `ps5-abi` | Define `FunctionSignature`/`StructLayout`, seed 50 SDK funcs, wire to `ps5-sdk` + `ps5-emu` Registry | A3 | 10h |
+| B3 | `ps5-abi` | Define `FunctionSignature`/`StructLayout`, seed 50 SDK funcs, wire to `ps5-sdk-meta` + `ps5-emu` Registry | A3 | 10h |
 | | **Phase B total** | | | **~26h** |
 
 `ps5-image` now depends on `ps5-prx` + `ps5-schema`; `ps5-emu` validates HLE handlers against `ps5-abi`.
@@ -360,11 +360,11 @@ Current versioning: `ps5-image/src/lib.rs:10` `BINARY_IMAGE_VERSION`, `ps5-image
 
 | Step | Crate | Action | Depends on | Effort |
 |---|---|---|---|---|
-| C1 | `ps5-sdk` | Create `SdkFunction` DB, import `analysis/catalog/nids.csv` + `catalog import-stubs` | A3, B2 | 12h |
+| C1 | `ps5-sdk-meta` | Create `SdkFunction` DB, import `analysis/catalog/nids.csv` + `catalog import-stubs` | A3, B2 | 12h |
 | C2 | `ps5-firmware` | Model firmware versions + module catalog, feed `system_modules/` | B1, B2 | 6h |
 | | **Phase C total** | | | **~18h** |
 
-Populate `ps5-sdk` from `data/test/generated_elfs` + Supabase; `ps5-firmware` from `system_modules/*.exports.json`.
+Populate `ps5-sdk-meta` from `data/test/generated_elfs` + Supabase; `ps5-firmware` from `system_modules/*.exports.json`.
 
 ### Phase D — New Domains + Tooling
 
@@ -397,7 +397,7 @@ Phases are incremental — each crate can ship independently. Recommended order:
 - [ ] `ps5-prx` — `PrxModule` type, migrate `BinaryImageBuilder`/`dynamic.rs`/`libversion.rs`
 - [ ] `ps5-schema` — `SCHEMA_VERSION` central, JSON Schema files, migrations
 - [ ] `ps5-abi` — `FunctionSignature` store, 50 initial funcs, Registry validation
-- [ ] `ps5-sdk` — `SdkFunction` DB, import from `nids.csv` + `*_stub_weak.a`
+- [ ] `ps5-sdk-meta` — `SdkFunction` DB, import from `nids.csv` + `*.a`
 - [ ] `ps5-firmware` — `FirmwareCatalog`, firmware-aware analysis (`libSceFoo v2.1 vs v1.4`)
 - [ ] `ps5-shader` — `.ags`/`.agsd`/`disasm`/`reflection`
 - [ ] `ps5-fuzz` — `fuzz/fuzz_targets/*.rs`, corpus from `ps5-tests`, CI 60s per target
