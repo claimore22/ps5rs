@@ -1,8 +1,7 @@
+use crate::types::AbiType;
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
-pub enum AbiType {
-    U32,
-    U64,
-    Ptr,
+pub struct CallbackSignature {
+    pub params: Vec<AbiType>,
 }
