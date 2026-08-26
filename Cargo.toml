@@ -17,6 +17,11 @@ members = [
     "crates/ps5-signatures",
     "crates/ps5-nid-db",
     "crates/ps5-prx",
+    "crates/ps5-schema",
+    "crates/ps5-abi",
+    "crates/ps5-sdk-meta",
+    "crates/ps5-firmware",
+    "crates/ps5-shader",
 ]
 
 [workspace.package]

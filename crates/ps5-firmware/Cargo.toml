@@ -1,0 +1,12 @@
+[package]
+name = "ps5-firmware"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Firmware metadata"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+
+[lints]
+workspace = true
