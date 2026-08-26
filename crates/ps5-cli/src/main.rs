@@ -120,10 +120,10 @@ fn main() {
                 submitter.as_deref(),
             ),
             CatalogCommand::ImportStubs {
-                sdk_dir,
+                library_dir,
                 output,
                 verify,
-            } => catalog::cmd_import_stubs(&sdk_dir, output.as_deref(), verify),
+            } => catalog::cmd_import_stubs(&library_dir, output.as_deref(), verify),
             CatalogCommand::DumpStubs { path, output } => {
                 catalog::cmd_dump_stubs(&path, output.as_deref())
             }

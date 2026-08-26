@@ -485,23 +485,26 @@ impl StubAggregate {
     }
 }
 
-fn is_stub_file(name: &str) -> bool {
+fn is_archive_file(name: &str) -> bool {
     name.ends_with(".a")
 }
 
-fn stub_files(sdk_dir: &Path) -> Vec<PathBuf> {
+fn collect_archive_files(search_dir: &Path) -> Vec<PathBuf> {
     let mut files = Vec::new();
-    let candidates = [sdk_dir.to_path_buf(), sdk_dir.join("target").join("lib")];
+    let candidates = [
+        search_dir.to_path_buf(),
+        search_dir.join("target").join("lib"),
+    ];
     for dir in candidates {
         if let Ok(entries) = std::fs::read_dir(&dir) {
             for entry in entries.flatten() {
                 let path = entry.path();
-                let is_stub = path.is_file()
+                let is_archive = path.is_file()
                     && path
                         .file_name()
                         .and_then(|n| n.to_str())
-                        .is_some_and(is_stub_file);
-                if is_stub {
+                        .is_some_and(is_archive_file);
+                if is_archive {
                     files.push(path);
                 }
             }
@@ -514,15 +517,15 @@ fn stub_files(sdk_dir: &Path) -> Vec<PathBuf> {
     files
 }
 
-pub(crate) fn cmd_import_stubs(sdk_dir: &Path, output: Option<&Path>, verify: bool) {
+pub(crate) fn cmd_import_stubs(search_dir: &Path, output: Option<&Path>, verify: bool) {
     let mut catalog = ps5_nid::Catalog::new();
     let loaded = catalog.load_nids_csv(NIDS_CSV);
 
-    let files = stub_files(sdk_dir);
+    let files = collect_archive_files(search_dir);
     if files.is_empty() {
         eprintln!(
-            "error: no *.a files found under {} (also checked target/lib)",
-            sdk_dir.display()
+            "error: no *.a files found under {} (also checked fallback directory)",
+            search_dir.display()
         );
         std::process::exit(1);
     }
@@ -653,10 +656,10 @@ pub(crate) fn cmd_dump_stubs(path: &Path, output: Option<&Path>) {
     let files = if path.is_file() {
         vec![path.to_path_buf()]
     } else {
-        let files = stub_files(path);
+        let files = collect_archive_files(path);
         if files.is_empty() {
             eprintln!(
-                "error: no *.a files found under {} (also checked target/lib)",
+                "error: no *.a files found under {} (also checked fallback directory)",
                 path.display()
             );
             std::process::exit(1);
@@ -828,13 +831,13 @@ mod tests {
     }
 
     #[test]
-    fn stub_files_finds_only_stub_archives() {
+    fn archive_search_finds_only_archives() {
         let dir = std::env::temp_dir().join("ps5rs_test_stub_files");
         let _ = std::fs::create_dir_all(&dir);
         std::fs::write(dir.join("libSceAgc.a"), b"!<arch>\n").unwrap();
         std::fs::write(dir.join("libkernel.a"), b"!<arch>\n").unwrap();
         std::fs::write(dir.join("notes.txt"), b"hello").unwrap();
-        let files = stub_files(&dir);
+        let files = collect_archive_files(&dir);
         assert_eq!(files.len(), 2);
         assert_eq!(
             files[0].file_name().unwrap().to_str().unwrap(),
@@ -848,12 +851,12 @@ mod tests {
     }
 
     #[test]
-    fn stub_files_falls_back_to_target_lib() {
+    fn archive_search_falls_back_to_secondary_dir() {
         let dir = std::env::temp_dir().join("ps5rs_test_stub_fallback");
         let lib = dir.join("target").join("lib");
         let _ = std::fs::create_dir_all(&lib);
         std::fs::write(lib.join("libkernel.a"), b"!<arch>\n").unwrap();
-        let files = stub_files(&dir);
+        let files = collect_archive_files(&dir);
         assert_eq!(files.len(), 1);
         assert_eq!(
             files[0].file_name().unwrap().to_str().unwrap(),
@@ -863,8 +866,8 @@ mod tests {
     }
 
     #[test]
-    fn stub_files_returns_empty_for_missing_dir() {
+    fn archive_search_returns_empty_for_missing_dir() {
         let dir = std::env::temp_dir().join("ps5rs_test_stub_missing");
-        assert!(stub_files(&dir).is_empty());
+        assert!(collect_archive_files(&dir).is_empty());
     }
 }
