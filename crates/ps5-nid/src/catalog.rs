@@ -105,8 +105,10 @@ impl Catalog {
     }
 
     fn load_nids_csv_rich(&mut self, first_line: &str, content: &str) -> usize {
-        let first_col = first_line.split(',').next().unwrap_or("").trim();
+        let header = first_line.trim();
+        let first_col = header.split(',').next().unwrap_or("").trim();
         let skip_header = first_col == "nid";
+        let is_six_col_header = header.contains("nid_hex");
 
         let mut count = 0;
         for line in content.lines() {
@@ -114,30 +116,60 @@ impl Catalog {
             if line.is_empty() || line.starts_with('#') {
                 continue;
             }
-            if skip_header && line == first_line.trim() {
+            if skip_header && line == header {
                 continue;
             }
 
-            let mut cols = line.splitn(5, ',');
-            let nid = cols.next().unwrap_or("").trim();
-            let name = cols.next().unwrap_or("").trim();
-            let library = cols.next().unwrap_or("").trim();
-            let tag = cols.next().unwrap_or("").trim();
-            let source = cols.next().unwrap_or("").trim();
+            let comma_count = line.matches(',').count();
+            let is_six_col = is_six_col_header || comma_count == 5;
 
-            if !nid.is_empty() && !name.is_empty() {
-                let entry = self.by_nid.entry(nid.to_string()).or_default();
-                entry.names.insert(name.to_string());
-                if !library.is_empty() {
-                    entry.libraries.insert(library.to_string());
+            if is_six_col {
+                let mut cols = line.splitn(6, ',');
+                let nid = cols.next().unwrap_or("").trim();
+                let _nid_hex = cols.next().unwrap_or("").trim();
+                let name = cols.next().unwrap_or("").trim();
+                let library = cols.next().unwrap_or("").trim();
+                let _derived = cols.next().unwrap_or("").trim();
+                let source = cols.next().unwrap_or("").trim();
+
+                if !nid.is_empty() && !name.is_empty() {
+                    let entry = self.by_nid.entry(nid.to_string()).or_default();
+                    entry.names.insert(name.to_string());
+                    if !library.is_empty() {
+                        entry.libraries.insert(library.to_string());
+                    }
+                    if !source.is_empty() {
+                        for s in source.split(';') {
+                            let s = s.trim();
+                            if !s.is_empty() {
+                                entry.sources.insert(s.to_string());
+                            }
+                        }
+                    }
+                    count += 1;
                 }
-                if !tag.is_empty() {
-                    entry.tags.insert(tag.to_string());
+            } else {
+                let mut cols = line.splitn(5, ',');
+                let nid = cols.next().unwrap_or("").trim();
+                let name = cols.next().unwrap_or("").trim();
+                let library = cols.next().unwrap_or("").trim();
+                let tag = cols.next().unwrap_or("").trim();
+                let source = cols.next().unwrap_or("").trim();
+
+                if !nid.is_empty() && !name.is_empty() {
+                    let entry = self.by_nid.entry(nid.to_string()).or_default();
+                    entry.names.insert(name.to_string());
+                    if !library.is_empty() {
+                        entry.libraries.insert(library.to_string());
+                    }
+                    if !tag.is_empty() {
+                        entry.tags.insert(tag.to_string());
+                    }
+                    if !source.is_empty() {
+                        entry.sources.insert(source.to_string());
+                    }
+                    count += 1;
                 }
-                if !source.is_empty() {
-                    entry.sources.insert(source.to_string());
-                }
-                count += 1;
             }
         }
         count
@@ -631,5 +663,41 @@ mod tests {
             });
             assert!(entry.has_name(name), "entry for {name} missing name");
         }
+    }
+
+    #[test]
+    fn load_nids_csv_six_col_with_header() {
+        let mut cat = Catalog::new();
+        let csv = "nid,nid_hex,name,library,derived,sources\nHV4j+E0MBHE,0x1D5E23F84D0C0471,sceAgcCreateInterpolantMapping,Graphics5,0,bleps5-rs;ps5rs;remu-table\n";
+        let loaded = cat.load_nids_csv(csv);
+        assert_eq!(loaded, 1);
+        let entry = cat.resolve("HV4j+E0MBHE").unwrap();
+        assert!(entry.has_name("sceAgcCreateInterpolantMapping"));
+        assert!(entry.libraries.contains("Graphics5"));
+        assert!(entry.sources.contains("bleps5-rs"));
+        assert!(entry.sources.contains("ps5rs"));
+        assert!(!entry.has_name("0x1D5E23F84D0C0471"));
+    }
+
+    #[test]
+    fn load_nids_csv_six_col_without_header() {
+        let mut cat = Catalog::new();
+        let csv = "HV4j+E0MBHE,0x1D5E23F84D0C0471,sceAgcCreateInterpolantMapping,Graphics5,0,bleps5-rs;ps5rs\n";
+        let loaded = cat.load_nids_csv(csv);
+        assert_eq!(loaded, 1);
+        let entry = cat.resolve("HV4j+E0MBHE").unwrap();
+        assert!(entry.has_name("sceAgcCreateInterpolantMapping"));
+        assert!(entry.libraries.contains("Graphics5"));
+    }
+
+    #[test]
+    fn load_nids_csv_six_col_mixed_with_five_col() {
+        let mut cat = Catalog::new();
+        let csv = "nid,nid_hex,name,library,derived,sources\nHV4j+E0MBHE,0x1D5E23F84D0C0471,sceAgcCreateInterpolantMapping,Graphics5,0,bleps5-rs\n";
+        let csv2 = "nid,name,library,tag,source\n246322a3edb52f87,posix_mkdir,libkernel,filesystem,sdk\n";
+        assert_eq!(cat.load_nids_csv(csv), 1);
+        assert_eq!(cat.load_nids_csv(csv2), 1);
+        assert!(cat.resolve("HV4j+E0MBHE").unwrap().has_name("sceAgcCreateInterpolantMapping"));
+        assert!(cat.resolve("246322a3edb52f87").unwrap().has_name("posix_mkdir"));
     }
 }
