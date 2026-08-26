@@ -4,4 +4,5 @@ use serde::{Deserialize, Serialize};
 pub struct BinaryImageDocument {
     pub schema_version: u32,
     pub tool: String,
+    pub image: ps5_image::BinaryImage,
 }
