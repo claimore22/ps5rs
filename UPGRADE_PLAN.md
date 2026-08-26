@@ -143,7 +143,7 @@ pub struct SdkFunction {
 }
 ```
 
-**Data sources:** `analysis/catalog/nids.csv`, Supabase dumps, `*.a` via `ps5rs catalog import-stubs` `crates/ps5-cli/src/catalog.rs`, leaked SDK headers (metadata only).
+**Data sources:** `analysis/catalog/nids.csv`, Supabase dumps, `*.a` via `ps5rs catalog import-stubs` `crates/ps5-cli/src/catalog.rs`, public system headers (metadata only).
 
 **Effort:** ~12h + ongoing curation. Start with schema + import from existing `Catalog`.
 
