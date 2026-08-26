@@ -1,7 +1,7 @@
 #![forbid(unsafe_code)]
 
-pub mod loader;
 pub mod error;
+pub mod loader;
 pub mod log_targets;
 use loader::{ElfLoader, LoadedElf};
 
@@ -21,4 +21,3 @@ mod tests {
         assert!(loaded.entry_point != 0, "Entry point should not be zero");
     }
 }
-
