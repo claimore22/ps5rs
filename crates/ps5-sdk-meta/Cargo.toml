@@ -9,5 +9,8 @@ description = "SDK knowledge database"
 ps5-nid-db = { path = "../ps5-nid-db" }
 serde = { version = "1", features = ["derive"] }
 
+[dev-dependencies]
+ps5-nid = { path = "../ps5-nid" }
+
 [lints]
 workspace = true
