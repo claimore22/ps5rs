@@ -1,7 +1,6 @@
 use ps5_ble_loader::loader::{ElfLoader, LoadedElf};
 use ps5_memory_safe::MemoryManager;
 
-
 #[test]
 fn load_libdbg_basic() {
     // Path is relative to workspace root
@@ -17,4 +16,4 @@ fn load_libdbg_basic() {
 
     let loaded: LoadedElf = result.unwrap();
     assert!(loaded.entry_point != 0, "Entry point should not be zero");
-} 
+}
