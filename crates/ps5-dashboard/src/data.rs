@@ -2261,4 +2261,86 @@ mod tests {
         assert!(json.contains(r#""sony":[]"#), "{json}");
         assert!(json.contains(r#""unknown":[]"#), "{json}");
     }
+
+    #[test]
+    fn inject_artifacts_updates_overview_and_shader() {
+        use ps5_analysis::artifacts::{Artifact, ArtifactCategory, ArtifactReport, GameArtifacts};
+        let report = ArtifactReport {
+            games: vec![GameArtifacts {
+                game: "test-game".to_string(),
+                game_dir: "/tmp/test-game".to_string(),
+                total_files: 10,
+                total_bytes: 1000,
+                by_extension: [("pssl".to_string(), 2), ("sb".to_string(), 3)]
+                    .into_iter()
+                    .collect(),
+                by_category: [("shader".to_string(), 5), ("texture".to_string(), 2)]
+                    .into_iter()
+                    .collect(),
+                artifacts: (0..5)
+                    .map(|i| Artifact {
+                        relative_path: format!("Content/a{}.sb", i),
+                        file_name: format!("a{}.sb", i),
+                        extension: "sb".to_string(),
+                        size: 100,
+                        category: ArtifactCategory::Shader,
+                    })
+                    .collect(),
+            }],
+            total_games: 1,
+            total_files: 10,
+            by_extension: [("pssl".to_string(), 2), ("sb".to_string(), 3)]
+                .into_iter()
+                .collect(),
+            by_category: [("shader".to_string(), 5)].into_iter().collect(),
+        };
+        let mut data = DashboardData {
+            meta: DashboardMeta {
+                generated_at: "".into(),
+                game_count: 0,
+                tool_version: "test".into(),
+            },
+            overview: Overview {
+                total_games: 0,
+                elf_valid: 0,
+                total_imports: 0,
+                unique_nids: 0,
+                unique_libs: 0,
+                resolution_rate: 0.0,
+                avg_imports_per_game: 0.0,
+                total_artifacts: 0,
+                shader_files: 0,
+            },
+            games: vec![],
+            game_details: vec![],
+            heatmap: HeatmapData::default(),
+            nid_stats: NidStats {
+                top_nids: vec![],
+                resolved_count: 0,
+                unknown_count: 0,
+            },
+            segments: vec![],
+            library_priority: vec![],
+            library_details: vec![],
+            library_nid_breakdown: vec![],
+            statistics: None,
+            engine_hints: vec![],
+            engine_summary: vec![],
+            library_versions: vec![],
+            sce_library_stats: vec![],
+            sce_heatmap: HeatmapData::default(),
+            sce_library_versions: vec![],
+            loader_summary: None,
+            middleware: None,
+            upgrade_plan_complete: true,
+            shader_summary: ShaderSummary::default(),
+            firmware_summary: FirmwareSummary::default(),
+            artifacts: None,
+        };
+        data.inject_artifacts(report);
+        assert_eq!(data.overview.total_artifacts, 10);
+        assert_eq!(data.overview.shader_files, 5);
+        assert_eq!(data.shader_summary.total_shaders, 5);
+        assert!(data.artifacts.is_some());
+    }
 }
