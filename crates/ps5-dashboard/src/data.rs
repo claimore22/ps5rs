@@ -653,7 +653,6 @@ impl DashboardData {
                         }
                     }
                 } else if hint.engine == "Unknown" {
-                    // do not invent engine from artifacts alone; just add as contextual evidence if already some signal
                     let shader = ag.by_category.get("shader").copied().unwrap_or(0);
                     if shader > 100 && !hint.evidence.is_empty() {
                         hint.evidence.push(format!(
@@ -662,6 +661,23 @@ impl DashboardData {
                         ));
                     }
                 }
+            }
+        }
+        let total_shaders: usize = report.by_category.get("shader").copied().unwrap_or(0);
+        if total_shaders > 0 {
+            let mut by_stage: std::collections::HashMap<String, usize> =
+                std::collections::HashMap::new();
+            for (ext, count) in &report.by_extension {
+                if matches!(ext.as_str(), "pssl" | "sb" | "ags" | "agsd") {
+                    *by_stage.entry(ext.clone()).or_insert(0) += count;
+                }
+            }
+            if !by_stage.is_empty() {
+                self.shader_summary = ShaderSummary {
+                    total_shaders,
+                    by_stage,
+                    total_resources: 0,
+                };
             }
         }
         for game in &mut report.games {
