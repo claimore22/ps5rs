@@ -333,6 +333,23 @@ impl BinaryImageBuilder {
             .map(|(i, lib)| (i as u16, lib.clone()))
             .collect();
         img.import_libs = libs;
+        if let Some(t) = &prx.tls {
+            img.tls = Some(TlsInfo {
+                vaddr: t.vaddr,
+                filesz: t.filesz,
+                memsz: t.memsz,
+                align: t.align,
+            });
+        }
+        img.init_va = prx.init_va;
+        img.init_array_va = prx.init_array_va;
+        img.init_array_sz = prx.init_array_sz;
+        img.fini_va = prx.fini_va;
+        img.fini_array_va = prx.fini_array_va;
+        img.fini_array_sz = prx.fini_array_sz;
+        img.preinit_array_va = prx.preinit_array_va;
+        img.preinit_array_sz = prx.preinit_array_sz;
+        img.entry_point = prx.metadata.entry_point;
         img
     }
 }

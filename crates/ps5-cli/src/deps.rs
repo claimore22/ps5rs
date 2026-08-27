@@ -27,46 +27,81 @@ pub(crate) fn cmd_deps(path: &Path, format: OutputFormat, output: &Option<std::p
         }
         g
     } else {
-        // Directory: scan for games (reuse ps5-analysis find logic)
         let mut g = ModuleGraph::new();
-        // Walk for eboot.bin and prx files to infer deps
         let mut game_dirs = Vec::new();
         if let Ok(entries) = std::fs::read_dir(path) {
             for entry in entries.flatten() {
                 let p = entry.path();
-                if p.is_dir() {
-                    // Simple: if contains eboot.bin, add node
-                    if p.join("eboot.bin").exists() {
-                        let name = p
-                            .file_name()
-                            .and_then(|n| n.to_str())
-                            .unwrap_or("game")
-                            .to_string();
-                        g.add_node(&name, &[]);
-                        // Add dummy edges for demonstration (scan prx)
-                        if let Ok(prx_entries) = std::fs::read_dir(p.join("sce_module")) {
+                if p.is_dir() && p.join("eboot.bin").exists() {
+                    let name = p
+                        .file_name()
+                        .and_then(|n| n.to_str())
+                        .unwrap_or("game")
+                        .to_string();
+                    g.add_node(&name, &[]);
+                    if let Ok(data) = std::fs::read(p.join("eboot.bin")) {
+                        if let Ok(img) = ps5_self::SelfImage::parse(&data) {
+                            for needed in &img.elf.needed_files {
+                                g.add_edge(&name, needed);
+                            }
+                            for lib in img.elf.import_libs.values() {
+                                if !img.elf.needed_files.contains(lib) {
+                                    g.add_edge(&name, lib);
+                                }
+                            }
+                        }
+                    }
+                    let sce_module = p.join("sce_module");
+                    if sce_module.is_dir() {
+                        if let Ok(prx_entries) = std::fs::read_dir(&sce_module) {
                             for prx in prx_entries.flatten() {
-                                if let Some(fname) = prx.path().file_name().and_then(|n| n.to_str())
-                                {
-                                    if fname.ends_with(".prx") {
-                                        g.add_edge(&name, fname);
+                                let prx_path = prx.path();
+                                let Some(fname) = prx_path
+                                    .file_name()
+                                    .and_then(|n| n.to_str())
+                                    .map(|s| s.to_string())
+                                else {
+                                    continue;
+                                };
+                                if !fname.ends_with(".prx") && !fname.ends_with(".sprx") {
+                                    continue;
+                                }
+                                g.add_node(&fname, &[]);
+                                g.add_edge(&name, &fname);
+                                if let Ok(data) = std::fs::read(&prx_path) {
+                                    if let Ok(img) = ps5_self::SelfImage::parse(&data) {
+                                        for needed in &img.elf.needed_files {
+                                            g.add_edge(&fname, needed);
+                                        }
+                                    } else if let Ok(img) = ps5_elf::ElfImage::parse(&data, None) {
+                                        for needed in &img.needed_files {
+                                            g.add_edge(&fname, needed);
+                                        }
                                     }
                                 }
                             }
                         }
-                        game_dirs.push(p);
                     }
+                    game_dirs.push(p);
                 }
             }
         }
         if game_dirs.is_empty() {
-            // Fallback: treat path itself as a game dir
             let name = path
                 .file_name()
                 .and_then(|n| n.to_str())
                 .unwrap_or("game")
                 .to_string();
             g.add_node(&name, &[]);
+            if path.join("eboot.bin").exists() {
+                if let Ok(data) = std::fs::read(path.join("eboot.bin")) {
+                    if let Ok(img) = ps5_self::SelfImage::parse(&data) {
+                        for needed in &img.elf.needed_files {
+                            g.add_edge(&name, needed);
+                        }
+                    }
+                }
+            }
         }
         g
     };

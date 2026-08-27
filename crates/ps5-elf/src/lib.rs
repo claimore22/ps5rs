@@ -1,3 +1,5 @@
+use serde::{Deserialize, Serialize};
+
 mod dynamic;
 mod header;
 pub mod libversion;
@@ -16,7 +18,7 @@ pub use section::ElfSectionHeader;
 pub use stub::{StubSymbol, parse_stub_library, stub_library_name};
 pub use symbol::SymEntry;
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct TlsInfo {
     pub vaddr: u64,
     pub filesz: u64,

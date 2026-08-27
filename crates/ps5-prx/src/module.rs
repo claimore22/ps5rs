@@ -36,6 +36,24 @@ pub struct PrxModule {
     pub imports: Vec<ImportEntry>,
     pub exports: Vec<ExportEntry>,
     pub versions: Vec<LibVersion>,
+    #[serde(default)]
+    pub tls: Option<ps5_elf::TlsInfo>,
+    #[serde(default)]
+    pub init_va: u64,
+    #[serde(default)]
+    pub init_array_va: u64,
+    #[serde(default)]
+    pub init_array_sz: u64,
+    #[serde(default)]
+    pub fini_va: u64,
+    #[serde(default)]
+    pub fini_array_va: u64,
+    #[serde(default)]
+    pub fini_array_sz: u64,
+    #[serde(default)]
+    pub preinit_array_va: u64,
+    #[serde(default)]
+    pub preinit_array_sz: u64,
 }
 
 impl PrxModule {
@@ -68,6 +86,15 @@ impl PrxModule {
             imports,
             exports,
             versions,
+            tls: elf.tls.clone(),
+            init_va: elf.init_va,
+            init_array_va: elf.init_array_va,
+            init_array_sz: elf.init_array_sz,
+            fini_va: elf.fini_va,
+            fini_array_va: elf.fini_array_va,
+            fini_array_sz: elf.fini_array_sz,
+            preinit_array_va: elf.preinit_array_va,
+            preinit_array_sz: elf.preinit_array_sz,
         })
     }
 

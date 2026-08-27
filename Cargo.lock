@@ -667,6 +667,7 @@ dependencies = [
  "proptest",
  "ps5-format",
  "ps5-nid",
+ "serde",
 ]
 
 [[package]]
