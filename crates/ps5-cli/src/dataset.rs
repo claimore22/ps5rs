@@ -79,6 +79,17 @@ pub(crate) fn cmd_dashboard(
             report.sony_modules,
             report.unknown_modules
         );
+        eprintln!("Scanning {} for bare artifacts...", games_root.display());
+        let art_report = ps5_analysis::artifacts::inventory_corpus(games_root);
+        eprintln!(
+            "  Artifacts: {} games, {} files (shader={}, texture={}, audio={})",
+            art_report.total_games,
+            art_report.total_files,
+            art_report.by_category.get("shader").copied().unwrap_or(0),
+            art_report.by_category.get("texture").copied().unwrap_or(0),
+            art_report.by_category.get("audio").copied().unwrap_or(0),
+        );
+        data.inject_artifacts(art_report);
     }
 
     let is_single_file = output.to_string_lossy().ends_with(".html");

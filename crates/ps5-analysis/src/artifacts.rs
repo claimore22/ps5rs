@@ -210,6 +210,16 @@ pub fn inventory_game(game_dir: &Path) -> GameArtifacts {
 }
 
 pub fn inventory_corpus(root: &Path) -> ArtifactReport {
+    if root.join("eboot.bin").exists() {
+        let inv = inventory_game(root);
+        return ArtifactReport {
+            games: vec![inv.clone()],
+            total_games: 1,
+            total_files: inv.total_files,
+            by_extension: inv.by_extension.clone(),
+            by_category: inv.by_category.clone(),
+        };
+    }
     let mut games = Vec::new();
     let mut total_files = 0usize;
     let mut by_extension: HashMap<String, usize> = HashMap::new();

@@ -168,6 +168,7 @@ tr.clickable:hover{{background:#1c2128;outline:1px solid #30363d;}}
 <div class="tab" data-tab="graph">Graph</div>
 <div class="tab" data-tab="loader" id="loaderTab" style="display:none">Load Coverage</div>
 <div class="tab" data-tab="middleware" id="middlewareTab" style="display:none">Middleware</div>
+<div class="tab" data-tab="artifacts" id="artifactTab" style="display:none">Artifacts</div>
 <div class="tab" data-tab="sdk">SDK Timeline</div>
 <div class="tab" data-tab="shader">Shaders</div>
 <div class="tab" data-tab="firmware">Firmware</div>
@@ -291,6 +292,17 @@ tr.clickable:hover{{background:#1c2128;outline:1px solid #30363d;}}
 <tbody id="middlewareGameBody"></tbody>
 </table></div>
 </div>
+</div>
+</div>
+
+<div class="tab-content" id="tab-artifacts">
+<div id="artifactEmpty" style="color:#8b949e;text-align:center;padding:60px 0;font-size:0.9rem">No artifact data. Run <code style="background:#0d1117;padding:2px 8px;border-radius:4px">ps5rs dashboard --games &lt;games_dir&gt;</code> to inventory bare content (prx/pssl/sb/gnf/at9/bank/json etc.).</div>
+<div id="artifactContent" style="display:none">
+<div class="cards" id="artifactCards"></div>
+<div class="section"><h2>By Category</h2><div id="artifactCategoryBars"></div></div>
+<div class="section"><h2>Top Extensions</h2><div id="artifactExtBars"></div></div>
+<div class="section"><h2>Per-Game Artifacts</h2><div id="artifactPerGame"></div></div>
+<div class="section"><h2>Cross-Artifact Linkage</h2><p style="color:#8b949e;font-size:0.82rem;margin-bottom:12px">Per-game executable / shader / texture / audio counts derived from inventory; relative paths preserved. Bare content is first-class — .pak not required.</p><div id="artifactCrossBars"></div></div>
 </div>
 </div>
 
@@ -1174,6 +1186,48 @@ document.addEventListener('keydown', e => {{ if (e.key === 'Escape') $('#detailP
   if (rows.length) renderGame(0);
 }})();
 
+// --- ARTIFACTS ---
+(function() {{
+  if (!D.artifacts) return;
+  const a = D.artifacts;
+  $('#artifactTab').style.display = '';
+  $('#artifactEmpty').style.display = 'none';
+  $('#artifactContent').style.display = '';
+  $('#artifactCards').innerHTML = [
+    ['Games', a.total_games, 'blue'],
+    ['Files', fmt(a.total_files), 'green'],
+    ['Categories', Object.keys(a.by_category||{{}}).length, 'yellow'],
+    ['Extensions', Object.keys(a.by_extension||{{}}).length, ''],
+  ].map(([l,v,c]) => `<div class="card"><div class="card-label">${{l}}</div><div class="card-value ${{c}}">${{v}}</div></div>`).join('');
+  const catMax = Math.max(1, ...Object.values(a.by_category||{{}}));
+  $('#artifactCategoryBars').innerHTML = Object.entries(a.by_category||{{}}).sort((x,y)=>y[1]-x[1]).map(([k,v]) => `<div class="hbar"><div class="hbar-label">${{k}}</div><div class="hbar-track"><div class="hbar-fill fill-blue" style="width:${{(v/catMax*100).toFixed(1)}}%"></div></div><div class="hbar-count">${{fmt(v)}}</div></div>`).join('') || '<p style="color:#8b949e">No category data.</p>';
+  const extMax = Math.max(1, ...Object.values(a.by_extension||{{}}));
+  const extSorted = Object.entries(a.by_extension||{{}}).sort((x,y)=>y[1]-x[1]).slice(0,20);
+  $('#artifactExtBars').innerHTML = extSorted.map(([k,v]) => `<div class="hbar"><div class="hbar-label">${{k}}</div><div class="hbar-track"><div class="hbar-fill fill-purple" style="width:${{(v/extMax*100).toFixed(1)}}%"></div></div><div class="hbar-count">${{fmt(v)}}</div></div>`).join('');
+  let perHtml = '<div style="font-size:0.75rem;color:#8b949e;margin-bottom:8px">Bare content is first-class — .pak not required. Relative paths preserved; unknown formats kept as structured artifacts.</div>';
+  a.games.forEach(g => {{
+    const cat = g.by_category || {{}};
+    const ext = g.by_extension || {{}};
+    perHtml += `<details style="margin-bottom:6px"><summary style="cursor:pointer;padding:8px 12px;background:#0d1117;border:1px solid #30363d;border-radius:6px;font-size:0.85rem;color:#c9d1d9"><strong style="color:#58a6ff">${{g.game}}</strong> &mdash; ${{fmt(g.total_files)}} files, ${{(g.total_bytes/1048576).toFixed(1)}} MB &mdash; shader:${{cat.shader||0}} texture:${{cat.texture||0}} audio:${{cat.audio||0}} executable:${{cat.executable||0}}</summary><div style="padding:8px 12px;border:1px solid #30363d;border-top:0;border-radius:0 0 6px 6px"><div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:8px">`;
+    Object.entries(cat).sort((x,y)=>y[1]-x[1]).forEach(([k,v]) => {{ perHtml += `<span style="background:#21262d;padding:2px 8px;border-radius:10px;font-size:0.72rem;color:#8b949e">${{k}}:${{fmt(v)}}</span>`; }});
+    perHtml += `</div><div style="max-height:200px;overflow-y:auto;border:1px solid #21262d;border-radius:4px;padding:6px"><table style="width:100%;font-size:0.72rem;border-collapse:collapse"><thead><tr style="color:#8b949e"><th style="text-align:left">Path</th><th>Ext</th><th>Category</th><th>Size</th></tr></thead><tbody>`;
+    (g.artifacts||[]).slice(0,100).forEach(art => {{
+      perHtml += `<tr><td style="font-family:monospace;word-break:break-all">${{art.relative_path}}</td><td>${{art.extension}}</td><td style="color:#58a6ff">${{art.category}}</td><td style="text-align:right">${{(art.size/1024).toFixed(1)}} KB</td></tr>`;
+    }});
+    if ((g.artifacts||[]).length > 100) perHtml += `<tr><td colspan="4" style="text-align:center;color:#8b949e">... and ${{g.artifacts.length-100}} more (full inventory in JSON)</td></tr>`;
+    perHtml += `</tbody></table></div></div></details>`;
+  }});
+  $('#artifactPerGame').innerHTML = perHtml;
+  const crossMax = Math.max(1, ...a.games.map(g => (g.by_category.shader||0) + (g.by_category.texture||0)));
+  let crossHtml = '';
+  a.games.forEach(g => {{
+    const s = g.by_category.shader||0, t = g.by_category.texture||0, au = g.by_category.audio||0, e = g.by_category.executable||0;
+    const total = s+t+au+e || 1;
+    crossHtml += `<div class="hbar"><div class="hbar-label" style="width:220px" title="${{g.game}}">${{trunc(g.game,22)}}</div><div class="hbar-track" style="display:flex;gap:0;background:#21262d"><div style="width:${{(s/total*100).toFixed(1)}}%;height:14px;background:#8957e5" title="shader:${{s}}"></div><div style="width:${{(t/total*100).toFixed(1)}}%;height:14px;background:#1f6feb" title="texture:${{t}}"></div><div style="width:${{(au/total*100).toFixed(1)}}%;height:14px;background:#3fb950" title="audio:${{au}}"></div><div style="width:${{(e/total*100).toFixed(1)}}%;height:14px;background:#d29922" title="executable:${{e}}"></div></div><span class="hbar-count" style="font-size:0.68rem;width:90px;text-align:right">${{s}}/ ${{t}}/ ${{au}}/ ${{e}}</span></div>`;
+  }});
+  $('#artifactCrossBars').innerHTML = crossHtml || '<p style="color:#8b949e">No cross-artifact data.</p>';
+}})();
+
 // --- GLOBAL SEARCH ---
 (function() {{
   const searchIndex = [];
@@ -1526,6 +1580,7 @@ mod tests {
             upgrade_plan_complete: true,
             shader_summary: crate::data::ShaderSummary::default(),
             firmware_summary: crate::data::FirmwareSummary::default(),
+            artifacts: None,
         }
     }
 

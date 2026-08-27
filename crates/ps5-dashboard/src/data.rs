@@ -43,6 +43,8 @@ pub struct DashboardData {
     pub shader_summary: ShaderSummary,
     #[serde(default)]
     pub firmware_summary: FirmwareSummary,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub artifacts: Option<ps5_analysis::artifacts::ArtifactReport>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -625,6 +627,10 @@ impl DashboardData {
             }
         }
     }
+
+    pub fn inject_artifacts(&mut self, report: ps5_analysis::artifacts::ArtifactReport) {
+        self.artifacts = Some(report);
+    }
 }
 
 pub fn compute(ds: &AnalysisDataset) -> DashboardData {
@@ -731,6 +737,7 @@ pub fn compute(ds: &AnalysisDataset) -> DashboardData {
         upgrade_plan_complete: true,
         shader_summary,
         firmware_summary,
+        artifacts: None,
     }
 }
 
@@ -2134,6 +2141,7 @@ mod tests {
             upgrade_plan_complete: true,
             shader_summary: ShaderSummary::default(),
             firmware_summary: FirmwareSummary::default(),
+            artifacts: None,
         };
 
         data.inject_middleware(&report);
