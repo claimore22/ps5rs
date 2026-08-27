@@ -1,82 +1,239 @@
 @echo off
-setlocal
+setlocal EnableExtensions
 
 set "ROMS=C:\Users\claimoar\Documents\ROMS\PS5"
 set "OUT=analysis"
 set "LOG=update.log"
 
-echo ============================================================ > "%LOG%"
-echo ps5rs analysis update started %date% %time% >> "%LOG%"
-echo ============================================================ >> "%LOG%"
+rem ============================================================
+rem START LOG
+rem ============================================================
 
-echo [1/4] Scanning %ROMS% -^> %OUT% (ps5-prx + ps5-image + ps5-schema + ps5-nid-db)
-echo [1/4] Scanning %ROMS% -^> %OUT% (ps5-prx + ps5-image + ps5-schema + ps5-nid-db) >> "%LOG%"
+> "%LOG%" echo ============================================================
+>> "%LOG%" echo ps5rs analysis update
+>> "%LOG%" echo Started: %date% %time%
+>> "%LOG%" echo ROMS:    %ROMS%
+>> "%LOG%" echo OUTPUT:  %OUT%
+>> "%LOG%" echo ============================================================
+>> "%LOG%" echo.
 
-cargo run -p ps5-cli -- scan --output "%OUT%" --include-modules "%ROMS%" 2>&1 | tee "%TEMP%\ps5rs_cmd.log"
-type "%TEMP%\ps5rs_cmd.log" >> "%LOG%"
-del "%TEMP%\ps5rs_cmd.log"
+
+rem ============================================================
+rem STEP 1 - SCAN
+rem ============================================================
+
+call :header "1/4 - Scan PS5 ROMs"
+
+call :run "cargo run -p ps5-cli -- scan --output %OUT% --include-modules %ROMS%"
+
+if errorlevel 1 goto :error
+
+
+rem ============================================================
+rem STEP 2 - VALIDATE
+rem ============================================================
+
+call :header "2/4 - Validate dataset"
+
+call :run "cargo run -p ps5-cli -- validate dataset %OUT%"
 
 if errorlevel 1 goto :error
 
 
-echo [2/4] Validating dataset + middleware (ps5-signatures, ps5-deps, ps5-sdk-meta, ps5-firmware, ps5-shader)
-echo [2/4] Validating dataset + middleware (ps5-signatures, ps5-deps, ps5-sdk-meta, ps5-firmware, ps5-shader) >> "%LOG%"
+rem ============================================================
+rem STEP 2b - MIDDLEWARE
+rem ============================================================
 
-cargo run -p ps5-cli -- validate dataset "%OUT%" 2>&1 | tee "%TEMP%\ps5rs_cmd.log"
-type "%TEMP%\ps5rs_cmd.log" >> "%LOG%"
-del "%TEMP%\ps5rs_cmd.log"
+call :header "2/4 - Middleware analysis"
 
-if errorlevel 1 goto :error
-
-
-cargo run -p ps5-cli -- middleware "%ROMS%" --output "%OUT%\reports\middleware.json" 2>&1 | tee "%TEMP%\ps5rs_cmd.log"
-type "%TEMP%\ps5rs_cmd.log" >> "%LOG%"
-del "%TEMP%\ps5rs_cmd.log"
-
-rem optional - ignore failure
+call :run_optional "cargo run -p ps5-cli -- middleware %ROMS% --output %OUT%\reports\middleware.json"
 
 
-echo [3/4] Deps / graph
-echo [3/4] Deps / graph >> "%LOG%"
+rem ============================================================
+rem STEP 3 - DEPS
+rem ============================================================
 
-cargo run -p ps5-cli -- deps --format json --output "%OUT%\reports\deps.json" "%ROMS%" 2>&1 | tee "%TEMP%\ps5rs_cmd.log"
-type "%TEMP%\ps5rs_cmd.log" >> "%LOG%"
-del "%TEMP%\ps5rs_cmd.log"
+if not exist "%OUT%\reports" (
+    mkdir "%OUT%\reports"
+)
+
+call :header "3/4 - Dependency analysis"
+
+call :run "cargo run -p ps5-cli -- deps --format json --output %OUT%\reports\deps.json %ROMS%"
 
 if errorlevel 1 goto :error
 
-if not exist "%OUT%\reports" mkdir "%OUT%\reports"
+
+rem ============================================================
+rem STEP 3b - GRAPH
+rem ============================================================
+
+call :header "3/4 - Generate dependency graph"
 
 cargo run -p ps5-cli -- analyze graph "%OUT%" --format dot > "%OUT%\reports\graph.dot" 2>> "%LOG%"
+
+set "ERR=%errorlevel%"
+
+if not "%ERR%"=="0" (
+    echo [FAILED] Dependency graph generation
+    >> "%LOG%" echo [FAILED] Dependency graph generation
+    >> "%LOG%" echo Exit code: %ERR%
+    goto :error
+)
+
+echo [OK] Dependency graph generated
+>> "%LOG%" echo [OK] Dependency graph generated
+
+
+rem ============================================================
+rem STEP 4 - DASHBOARD
+rem ============================================================
+
+call :header "4/4 - Dashboard generation"
+
+call :run "cargo run -p ps5-cli -- dashboard %OUT% --output %OUT%\dashboard\index.html"
+
 if errorlevel 1 goto :error
 
 
-echo [4/4] Dashboard (ps5-dashboard consumes all above)
-echo [4/4] Dashboard (ps5-dashboard consumes all above) >> "%LOG%"
-
-cargo run -p ps5-cli -- dashboard "%OUT%" --output "%OUT%\dashboard\index.html" 2>&1 | tee "%TEMP%\ps5rs_cmd.log"
-type "%TEMP%\ps5rs_cmd.log" >> "%LOG%"
-del "%TEMP%\ps5rs_cmd.log"
-
-if errorlevel 1 goto :error
-
-
-echo ============================================================ >> "%LOG%"
-echo Done. %date% %time% >> "%LOG%"
-echo Dashboard: %OUT%\dashboard\index.html >> "%LOG%"
-echo Multi-page: %OUT%\dashboard\ (index/shader/firmware/deps.html) via output dir >> "%LOG%"
-echo ============================================================ >> "%LOG%"
+rem ============================================================
+rem SUCCESS
+rem ============================================================
 
 echo.
-echo Done. Dashboard: %OUT%\dashboard\index.html
-echo Multi-page: %OUT%\dashboard\ (index/shader/firmware/deps.html) via output dir
+echo ============================================================
+echo DONE
+echo ============================================================
+echo Finished: %date% %time%
+echo Dashboard: %OUT%\dashboard\index.html
 echo Log: %LOG%
+echo ============================================================
+
+>> "%LOG%" echo.
+>> "%LOG%" echo ============================================================
+>> "%LOG%" echo UPDATE COMPLETED SUCCESSFULLY
+>> "%LOG%" echo Finished: %date% %time%
+>> "%LOG%" echo Dashboard: %OUT%\dashboard\index.html
+>> "%LOG%" echo ============================================================
+
 exit /b 0
 
 
+rem ============================================================
+rem HEADER
+rem ============================================================
+
+:header
+
+echo.
+echo ============================================================
+echo [%~1]
+echo ============================================================
+
+>> "%LOG%" echo.
+>> "%LOG%" echo ============================================================
+>> "%LOG%" echo [%~1]
+>> "%LOG%" echo Started: %date% %time%
+>> "%LOG%" echo ============================================================
+
+exit /b 0
+
+
+rem ============================================================
+rem RUN COMMAND
+rem ============================================================
+
+:run
+
+set "COMMAND=%~1"
+
+echo COMMAND: %COMMAND%
+>> "%LOG%" echo COMMAND: %COMMAND%
+>> "%LOG%" echo.
+
+powershell.exe -NoProfile -Command ^
+    "& { Invoke-Expression '%COMMAND%' 2>&1 | Tee-Object -FilePath '%LOG%' -Append; exit $LASTEXITCODE }"
+
+set "ERR=%errorlevel%"
+
+if not "%ERR%"=="0" (
+    echo.
+    echo [FAILED] Exit code: %ERR%
+
+    >> "%LOG%" echo.
+    >> "%LOG%" echo [FAILED] Exit code: %ERR%
+    >> "%LOG%" echo Failed: %date% %time%
+
+    exit /b %ERR%
+)
+
+echo.
+echo [OK]
+
+>> "%LOG%" echo.
+>> "%LOG%" echo [OK]
+>> "%LOG%" echo Finished: %date% %time%
+
+exit /b 0
+
+
+rem ============================================================
+rem OPTIONAL RUN
+rem ============================================================
+
+:run_optional
+
+set "COMMAND=%~1"
+
+echo COMMAND: %COMMAND%
+>> "%LOG%" echo COMMAND: %COMMAND%
+>> "%LOG%" echo.
+
+powershell.exe -NoProfile -Command ^
+    "& { Invoke-Expression '%COMMAND%' 2>&1 | Tee-Object -FilePath '%LOG%' -Append; exit $LASTEXITCODE }"
+
+set "ERR=%errorlevel%"
+
+if not "%ERR%"=="0" (
+    echo.
+    echo [WARNING] Optional step failed: %ERR%
+
+    >> "%LOG%" echo.
+    >> "%LOG%" echo [WARNING] Optional step failed: %ERR%
+    >> "%LOG%" echo Continued because this step is optional.
+) else (
+    echo.
+    echo [OK]
+
+    >> "%LOG%" echo.
+    >> "%LOG%" echo [OK]
+)
+
+exit /b 0
+
+
+rem ============================================================
+rem ERROR
+rem ============================================================
+
 :error
-echo Failed with error %errorlevel%
-echo ============================================================ >> "%LOG%"
-echo FAILED with error %errorlevel% at %date% %time% >> "%LOG%"
-echo ============================================================ >> "%LOG%"
-exit /b %errorlevel%
+
+set "ERR=%errorlevel%"
+
+echo.
+echo ============================================================
+echo UPDATE FAILED
+echo ============================================================
+echo Error code: %ERR%
+echo Failed: %date% %time%
+echo See: %LOG%
+echo ============================================================
+
+>> "%LOG%" echo.
+>> "%LOG%" echo ============================================================
+>> "%LOG%" echo UPDATE FAILED
+>> "%LOG%" echo Error code: %ERR%
+>> "%LOG%" echo Failed: %date% %time%
+>> "%LOG%" echo ============================================================
+
+exit /b %ERR%

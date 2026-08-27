@@ -1,0 +1,34 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "instructions": ["AGENTS.md", "UPGRADE_PLAN.md"],
+
+  // ── Multi-tier loop ──────────────────────────────────────────────
+  // YOU → Commander (Ollama OSS-20B, local) → Planner (Qwen3-8B on NPU)
+  //        → Worker (cloud) → Validator (cargo test/check) → Reviewer (cloud)
+  //
+  // Start the NPU server first:
+  //   C:\Users\claimoar\Documents\npu-test\run_npu_server.bat
+  // Health: curl http://localhost:11435/health  or  /v1/models
+  //
+  // Commander decides WHAT, Planner decomposes HOW (file-level tasks,
+  // deps, risks — ~5 tok/s is fine, one-shot). Worker codes fast.
+  // Validator proves (deterministic), Reviewer judges (cloud).
+
+  "agent": {
+    "commander": {
+      "model": "ollama/gpt-oss:20b",
+      "prompt": "You are the Commander. Understand the mission from UPGRADE_PLAN.md and AGENTS.md, control the loop, and delegate decomposition to the Planner. Never write code yourself — delegate to Worker."
+    },
+    "planner": {
+      "model": "npu/Qwen3-8B",
+      "prompt": "You are the Planner (Qwen3-8B on Intel AI Boost NPU). Decompose the Commander's objective into file-level tasks with dependencies, risks, and an ordered checklist. Do not write code. Be precise and grounded in the repo state (read AGENTS.md, UPGRADE_PLAN.md, Cargo.toml, crate src)."
+    },
+    "plan": {
+      "model": "npu/Qwen3-8B"
+    }
+  },
+
+  // NPU provider is defined globally in ~/.config/opencode/opencode.jsonc
+  // (npu/Qwen3-8B → http://localhost:11435/v1). This project file only
+  // routes agents; no provider duplication needed.
+}
