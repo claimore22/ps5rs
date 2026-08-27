@@ -8,11 +8,14 @@ mod dataset;
 mod deps;
 mod export_scan;
 mod extract;
+mod firmware;
 mod inspect;
 mod inventory;
 mod load;
 mod middleware;
 mod run;
+mod sdk;
+mod shader;
 mod strings;
 mod terminal;
 mod unknown_nids;
@@ -145,5 +148,20 @@ fn main() {
             format,
             output,
         } => inventory::cmd_inventory(&path, format, &output),
+        Commands::Shader {
+            path,
+            format,
+            output,
+        } => shader::cmd_shader(&path, format, &output),
+        Commands::Firmware {
+            path,
+            format,
+            output,
+        } => firmware::cmd_firmware(&path, format, &output),
+        Commands::Sdk {
+            path,
+            format,
+            output,
+        } => sdk::cmd_sdk(&path, format, &output),
     }
 }
