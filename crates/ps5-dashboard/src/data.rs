@@ -1,13 +1,53 @@
-use crate::types::*;
 use ps5_analysis::dataset::AnalysisDataset;
 use ps5_analysis::reports::build_engine_hints;
 use ps5_image::{LibVersionEntry, SegmentType};
 use serde::{Deserialize, Serialize};
 use std::collections::{BTreeSet, HashMap, HashSet};
 use std::path::Path;
-#[derive(Debug, Clone, Serialize, Deserialize)]
-// DashboardData now defined in crate::types::DashboardData
 
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct DashboardData {
+    pub meta: DashboardMeta,
+    pub overview: Overview,
+    pub games: Vec<GameRow>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub game_details: Vec<GameDetail>,
+    pub heatmap: HeatmapData,
+    pub nid_stats: NidStats,
+    pub segments: Vec<SegmentRow>,
+    pub library_priority: Vec<LibraryPriority>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub library_details: Vec<LibraryDetail>,
+    pub library_nid_breakdown: Vec<LibraryNidGroup>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub statistics: Option<DashboardStatistics>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub engine_hints: Vec<DashboardEngineHint>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub engine_summary: Vec<EngineSummary>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub library_versions: Vec<DashboardLibraryVersion>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub sce_library_stats: Vec<SceLibraryStats>,
+    #[serde(default)]
+    pub sce_heatmap: HeatmapData,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub sce_library_versions: Vec<DashboardLibraryVersion>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub loader_summary: Option<LoaderSummary>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub middleware: Option<MiddlewareData>,
+    #[serde(default)]
+    pub upgrade_plan_complete: bool,
+    #[serde(default)]
+    pub shader_summary: ShaderSummary,
+    #[serde(default)]
+    pub firmware_summary: FirmwareSummary,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub artifacts: Option<ps5_analysis::artifacts::ArtifactReport>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub firmware_checks: Vec<FirmwareGameCheck>,
+}
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct FirmwareGameCheck {
@@ -2367,4 +2407,3 @@ mod tests {
         assert!(data.artifacts.is_some());
     }
 }
- // duplicate removed now
