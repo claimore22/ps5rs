@@ -1,5 +1,6 @@
 pub const SCHEMA_VERSION: u32 = 1;
 
+pub mod artifact_record;
 pub mod binary_image;
 pub mod dependency_graph;
 pub mod game_record;
@@ -8,6 +9,7 @@ pub mod module_record;
 pub mod nid_record;
 pub mod shader_record;
 
+pub use artifact_record::{ArtifactRecord, ArtifactReportRecord, GameArtifactsRecord};
 pub use binary_image::BinaryImageDocument;
 pub use dependency_graph::DependencyGraphSnapshot;
 pub use game_record::GameRecord;
