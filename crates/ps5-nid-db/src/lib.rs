@@ -64,8 +64,49 @@ impl NidDatabase {
     }
 
     pub fn from_catalog(catalog: &ps5_nid::Catalog) -> Self {
-        let _ = catalog;
-        Self::new()
+        let mut db = Self::new();
+        for (nid, entry) in catalog.iter() {
+            let library = entry
+                .libraries
+                .iter()
+                .next()
+                .cloned()
+                .unwrap_or_else(|| "unknown".to_string());
+            let name = entry.primary_name().map(|s| s.to_string());
+            let aliases: BTreeSet<String> = entry.names.clone();
+            let source_str = entry
+                .sources
+                .iter()
+                .next()
+                .map(|s| s.as_str())
+                .unwrap_or("");
+            let source = match source_str.to_ascii_lowercase().as_str() {
+                "sdk" | "sdkstub" | "sdks" => NidSource::SdkStub,
+                "supabase" => NidSource::Supabase,
+                "manual" => NidSource::Manual,
+                "remu" | "remucrossref" | "remu-crossref" => NidSource::RemuCrossRef,
+                _ if entry.sources.is_empty() && entry.libraries.is_empty() => NidSource::Builtin,
+                _ => NidSource::Builtin,
+            };
+            let confidence = match source {
+                NidSource::SdkStub => Confidence::High,
+                NidSource::Supabase => Confidence::Medium,
+                NidSource::Manual => Confidence::Low,
+                NidSource::RemuCrossRef => Confidence::Medium,
+                NidSource::Builtin => Confidence::Medium,
+            };
+            let record = NidRecord {
+                nid: nid.clone(),
+                library: LibraryId(library),
+                name: name.clone(),
+                versions: None,
+                source,
+                confidence,
+                aliases,
+            };
+            db.insert(record);
+        }
+        db
     }
 
     pub fn from_records(records: Vec<NidRecord>) -> Self {

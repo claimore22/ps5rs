@@ -296,8 +296,8 @@ tr.clickable:hover{{background:#1c2128;outline:1px solid #30363d;}}
 
 <div class="tab-content" id="tab-sdk">
 <div class="section">
-<h2>Prospero SDK — UE — EMC Timeline</h2>
-<p style="color:#8b949e;font-size:0.82rem;margin-bottom:12px">Earliest concrete evidence per SDK generation. UE = Unreal Engine documented pairing, EMC = PS5 EMC (errMG) build association, Prospero = SDK distrib label.</p>
+<h2>Prospero SDK — UE — EMC Timeline <span style="font-size:0.72rem;color:#d29922;border:1px solid #d2992244;background:#d2992222;padding:2px 8px;border-radius:10px;margin-left:8px">Reference — not detected from current dataset</span></h2>
+<p style="color:#8b949e;font-size:0.82rem;margin-bottom:12px">Reference timeline documenting SDK/UE/EMC associations from Epic/Sony documentation. Not inferred from scanned binaries. UE = Unreal Engine documented pairing, EMC = PS5 EMC (errMG) build association, Prospero = SDK distrib label.</p>
 <div class="table-wrap"><table id="sdkTable">
 <thead><tr>
 <th data-col="0">Prospero SDK <span class="arrow">&#9650;</span></th>
@@ -820,7 +820,7 @@ document.addEventListener('keydown', e => {{ if (e.key === 'Escape') $('#detailP
         <div class="k">Category</div><div class="v">${{catLabels[s.category]||s.category}}</div>
         <div class="k">Games</div><div class="v">${{s.game_count}}</div>
         <div class="k">Imports</div><div class="v">${{fmt(s.import_count)}}</div>
-        <div class="k">Modules</div><div class="v">${{s.module_count}}</div>
+        <div class="k">Modules</div><div class="v">${{s.module_count > 0 ? s.module_count : 'Not available in current dataset'}}</div>
       </div></div>
       <div class="detail-section"><h3>Games (${{s.game_count}})</h3>${{gamesHtml}}</div>
       ${{vHtml ? `<div class="detail-section"><h3>Versions</h3><div class="table-wrap"><table class="detail-table"><thead><tr><th>Version</th><th>Raw</th><th>Game Count</th></tr></thead><tbody>${{vHtml}}</tbody></table></div></div>` : ''}}
@@ -1217,36 +1217,48 @@ document.addEventListener('keydown', e => {{ if (e.key === 'Escape') $('#detailP
   // --- SHADER ---
   (function() {{
     const s = D.shader_summary || {{ total_shaders: 0, by_stage: {{}}, total_resources: 0 }};
+    const hasData = s.total_shaders > 0 || Object.keys(s.by_stage||{{}}).length > 0 || s.total_resources > 0;
     const cards = [
-      ['Total Shaders', s.total_shaders, 'blue'],
-      ['Total Resources', s.total_resources, 'yellow'],
-      ['Stages', Object.keys(s.by_stage||{{}}).length, ''],
+      ['Total Shaders', hasData ? s.total_shaders : '—', 'blue'],
+      ['Total Resources', hasData ? s.total_resources : '—', 'yellow'],
+      ['Stages', hasData ? Object.keys(s.by_stage||{{}}).length : '—', ''],
     ];
     const el = document.getElementById('shaderCards');
     if (el) el.innerHTML = cards.map(([l,v,c]) => `<div class="card"><div class="card-label">${{l}}</div><div class="card-value ${{c}}">${{v}}</div></div>`).join('');
     const bars = document.getElementById('shaderStageBars');
     if (bars) {{
-      const max = Math.max(1, ...Object.values(s.by_stage||{{}}));
-      bars.innerHTML = Object.entries(s.by_stage||{{}}).map(([k,v]) => `<div class="hbar"><div class="hbar-label">${{k}}</div><div class="hbar-track"><div class="hbar-fill fill-purple" style="width:${{(v/max*100).toFixed(1)}}%"></div></div><div class="hbar-count">${{v}}</div></div>`).join('') || '<p style="color:#8b949e">No shader data.</p>';
+      if (!hasData) {{
+        bars.innerHTML = '<p style="color:#8b949e">Not yet analyzed — shader analysis not wired to real data.</p>';
+      }} else {{
+        const max = Math.max(1, ...Object.values(s.by_stage||{{}}));
+        bars.innerHTML = Object.entries(s.by_stage||{{}}).map(([k,v]) => `<div class="hbar"><div class="hbar-label">${{k}}</div><div class="hbar-track"><div class="hbar-fill fill-purple" style="width:${{(v/max*100).toFixed(1)}}%"></div></div><div class="hbar-count">${{v}}</div></div>`).join('');
+      }}
       const resEl = document.getElementById('shaderResources');
-      if (resEl) resEl.innerHTML = `<p style="color:#8b949e;font-size:0.82rem">Resources derived from ${{s.total_resources}} bindings.</p>`;
+      if (resEl) {{
+        if (!hasData) resEl.innerHTML = '<p style="color:#8b949e;font-size:0.82rem">Not available in current dataset.</p>';
+        else resEl.innerHTML = `<p style="color:#8b949e;font-size:0.82rem">Resources derived from ${{s.total_resources}} bindings.</p>`;
+      }}
     }}
   }})();
 
   // --- FIRMWARE ---
   (function() {{
     const f = D.firmware_summary || {{ total_modules: 0, total_libraries: 0, by_version: {{}} }};
+    const hasData = f.total_modules > 0 || f.total_libraries > 0 || Object.keys(f.by_version||{{}}).length > 0;
     const cards = [
-      ['Modules', f.total_modules, 'blue'],
-      ['Libraries', f.total_libraries, 'green'],
-      ['Versions', Object.keys(f.by_version||{{}}).length, 'yellow'],
+      ['Modules', hasData ? f.total_modules : '—', 'blue'],
+      ['Libraries', hasData ? f.total_libraries : '—', 'green'],
+      ['Versions', hasData ? Object.keys(f.by_version||{{}}).length : '—', 'yellow'],
     ];
     const el = document.getElementById('firmwareCards');
     if (el) el.innerHTML = cards.map(([l,v,c]) => `<div class="card"><div class="card-label">${{l}}</div><div class="card-value ${{c}}">${{v}}</div></div>`).join('');
     const bars = document.getElementById('firmwareVersionBars');
     if (bars) {{
-      const max = Math.max(1, ...Object.values(f.by_version||{{}}));
-      bars.innerHTML = Object.entries(f.by_version||{{}}).map(([k,v]) => `<div class="hbar"><div class="hbar-label">${{k}}</div><div class="hbar-track"><div class="hbar-fill fill-green" style="width:${{(v/max*100).toFixed(1)}}%"></div></div><div class="hbar-count">${{v}}</div></div>`).join('') || '<p style="color:#8b949e">No firmware version data.</p>';
+      if (!hasData) bars.innerHTML = '<p style="color:#8b949e">Not yet analyzed — firmware catalog not wired to dataset.</p>';
+      else {{
+        const max = Math.max(1, ...Object.values(f.by_version||{{}}));
+        bars.innerHTML = Object.entries(f.by_version||{{}}).map(([k,v]) => `<div class="hbar"><div class="hbar-label">${{k}}</div><div class="hbar-track"><div class="hbar-fill fill-green" style="width:${{(v/max*100).toFixed(1)}}%"></div></div><div class="hbar-count">${{v}}</div></div>`).join('');
+      }}
     }}
   }})();
 

@@ -735,46 +735,18 @@ pub fn compute(ds: &AnalysisDataset) -> DashboardData {
 }
 
 fn compute_shader_summary(_ds: &AnalysisDataset) -> ShaderSummary {
-    let mut by_stage: HashMap<String, usize> = HashMap::new();
-    let mut total = 0usize;
-    for (_, doc) in &_ds.images {
-        for seg in &doc.image.segments {
-            if seg.is_executable {
-                *by_stage.entry("vertex".to_string()).or_insert(0) += 1;
-                total += 1;
-            }
-        }
-        if let Some(sa) = &doc.string_analysis {
-            for lib in &sa.sce_libraries {
-                if lib.contains("Agc") || lib.contains("Gnm") {
-                    *by_stage.entry("pixel".to_string()).or_insert(0) += 1;
-                }
-            }
-        }
-    }
     ShaderSummary {
-        total_shaders: total,
-        by_stage,
-        total_resources: total * 2,
+        total_shaders: 0,
+        by_stage: HashMap::new(),
+        total_resources: 0,
     }
 }
 
-fn compute_firmware_summary(ds: &AnalysisDataset) -> FirmwareSummary {
-    let mut by_version: HashMap<String, usize> = HashMap::new();
-    for (_, doc) in &ds.images {
-        for lv in &doc.image.lib_versions {
-            *by_version.entry(lv.version_string.clone()).or_insert(0) += 1;
-        }
-    }
+fn compute_firmware_summary(_ds: &AnalysisDataset) -> FirmwareSummary {
     FirmwareSummary {
-        total_modules: ds.images.len(),
-        total_libraries: ds
-            .images
-            .iter()
-            .flat_map(|(_, d)| d.image.import_libs.values().cloned())
-            .collect::<HashSet<_>>()
-            .len(),
-        by_version,
+        total_modules: 0,
+        total_libraries: 0,
+        by_version: HashMap::new(),
     }
 }
 

@@ -26,7 +26,8 @@ pub enum ModuleState {
     Relocated,
     /// Exports registered and imports resolved (GLOB_DAT/JUMP_SLOT patched).
     Linked,
-    /// Module init routines have been called (PREINIT_ARRAY, INIT, etc.)
+    /// Marked initialized — init metadata (.preinit_array/.init_array/DT_INIT)
+    /// recorded but not yet executed. The loader does not call init functions.
     Initialized,
 }
 

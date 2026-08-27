@@ -9,6 +9,14 @@ use crate::libraries::FirmwareLibrary;
 use crate::modules::FirmwareModule;
 use crate::version::FirmwareVersion;
 
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+pub enum LibraryAvailability {
+    Compatible,
+    Insufficient { required: String, available: String },
+    NotFound,
+    Unknown { reason: String },
+}
+
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct FirmwareCatalog {
     pub version: FirmwareVersion,
@@ -105,12 +113,42 @@ impl FirmwareCatalog {
 
     pub fn is_library_available(&self, lib: &str, required_version: &str) -> bool {
         if let Some(l) = self.libraries.iter().find(|l| l.name == lib) {
-            // simple version check: if required version <= catalog version string? For now check equality or availability
-            let _ = required_version;
-            let _ = &l.version;
-            true
+            if let (Some(req), Some(have)) = (
+                FirmwareVersion::parse(required_version),
+                FirmwareVersion::parse(&l.version),
+            ) {
+                return have >= req;
+            }
+            return l.version == required_version;
+        }
+        false
+    }
+
+    pub fn check_library(&self, lib: &str, required_version: &str) -> LibraryAvailability {
+        if let Some(l) = self.libraries.iter().find(|l| l.name == lib) {
+            match (
+                FirmwareVersion::parse(required_version),
+                FirmwareVersion::parse(&l.version),
+            ) {
+                (Some(req), Some(have)) => {
+                    if have >= req {
+                        LibraryAvailability::Compatible
+                    } else {
+                        LibraryAvailability::Insufficient {
+                            required: required_version.to_string(),
+                            available: l.version.clone(),
+                        }
+                    }
+                }
+                _ => LibraryAvailability::Unknown {
+                    reason: format!(
+                        "unparseable version: required={required_version} available={}",
+                        l.version
+                    ),
+                },
+            }
         } else {
-            false
+            LibraryAvailability::NotFound
         }
     }
 

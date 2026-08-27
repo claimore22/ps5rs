@@ -13,6 +13,7 @@ fn function_signature_creates() {
         return_type: AbiType::U32,
         params: vec![AbiType::U64],
         variadic: false,
+        provenance: Default::default(),
     };
     assert_eq!(sig.name, "test");
 }

@@ -9,6 +9,7 @@ fn fifty_signatures() {
             return_type: AbiType::U64,
             params: vec![AbiType::U64, AbiType::U32],
             variadic: false,
+            provenance: Default::default(),
         });
     }
     assert_eq!(sigs.len(), 50);

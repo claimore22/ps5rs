@@ -46,7 +46,7 @@ rem ============================================================
 
 call :header "2/4 - Middleware analysis"
 
-call :run_optional "cargo run -p ps5-cli -- middleware %ROMS% --output %OUT%\reports\middleware.json"
+call :run_optional "cargo run -p ps5-cli -- middleware %ROMS% --format json --output %OUT%\reports\middleware.json"
 
 
 rem ============================================================
@@ -91,7 +91,7 @@ rem ============================================================
 
 call :header "4/4 - Dashboard generation"
 
-call :run "cargo run -p ps5-cli -- dashboard %OUT% --output %OUT%\dashboard\index.html"
+call :run "cargo run -p ps5-cli -- dashboard %OUT% --output %OUT%\dashboard\index.html --games %ROMS%"
 
 if errorlevel 1 goto :error
 
