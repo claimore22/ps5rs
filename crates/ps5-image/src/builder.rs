@@ -44,6 +44,7 @@ impl BinaryImageBuilder {
         let is_self = img.is_self();
         let file_size = img.data.len() as u64;
         let entry_point = img.elf.header.e_entry;
+        let _prx_validation = ps5_prx::PrxModule::from_elf("module", &img.elf, catalog).ok();
 
         let segments = img
             .elf
@@ -319,5 +320,19 @@ impl BinaryImageBuilder {
                 }
             })
             .collect()
+    }
+
+    pub fn build_from_prx_module(prx: &ps5_prx::PrxModule, base: &BinaryImage) -> BinaryImage {
+        let mut img = base.clone();
+        img.needed_files = prx.metadata.needed_files.clone();
+        let libs: std::collections::HashMap<u16, String> = prx
+            .metadata
+            .import_libs
+            .iter()
+            .enumerate()
+            .map(|(i, lib)| (i as u16, lib.clone()))
+            .collect();
+        img.import_libs = libs;
+        img
     }
 }

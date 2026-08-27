@@ -1,0 +1,11 @@
+[
+    {
+        "nid": "0x1234abcd",
+        "library": "libSceKernel",
+        "name": "sceKernelExit",
+        "versions": { "from": "9.00", "to": "11.00" },
+        "source": "Builtin",
+        "confidence": "Verified",
+        "aliases": ["sceKernelExit"]
+    }
+]

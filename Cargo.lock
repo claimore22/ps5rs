@@ -690,7 +690,9 @@ dependencies = [
 name = "ps5-firmware"
 version = "0.4.0"
 dependencies = [
+ "ps5-elf",
  "serde",
+ "serde_json",
 ]
 
 [[package]]
@@ -702,12 +704,22 @@ dependencies = [
 ]
 
 [[package]]
+name = "ps5-fuzz"
+version = "0.4.0"
+dependencies = [
+ "ps5-elf",
+ "ps5-nid",
+ "ps5-self",
+]
+
+[[package]]
 name = "ps5-image"
 version = "0.4.0"
 dependencies = [
  "ps5-elf",
  "ps5-format",
  "ps5-nid",
+ "ps5-prx",
  "ps5-schema",
  "ps5-self",
  "serde",
@@ -780,6 +792,7 @@ dependencies = [
  "ps5-nid",
  "ps5-nid-db",
  "serde",
+ "serde_json",
 ]
 
 [[package]]
