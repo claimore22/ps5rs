@@ -1,5 +1,6 @@
+#![allow(clippy::collapsible_if, clippy::ptr_arg)]
 use std::collections::{BTreeMap, HashSet};
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 
 use serde::Serialize;
 
@@ -337,6 +338,151 @@ fn utc_now() -> String {
     format!("{}", secs)
 }
 
+fn extract_source_apis(path: &Path) -> std::collections::HashSet<String> {
+    let mut apis = std::collections::HashSet::new();
+    let Ok(data) = std::fs::read_to_string(path) else {
+        return apis;
+    };
+    for line in data.lines() {
+        let mut chars = line.chars().peekable();
+        while let Some(c) = chars.next() {
+            if c == 's' {
+                let rest: String = chars.clone().collect();
+                if rest.starts_with("ce") {
+                    let mut ident = String::from("sce");
+                    // consume "ce"
+                    chars.next();
+                    chars.next();
+                    for ch in chars.by_ref() {
+                        if ch.is_ascii_alphanumeric() || ch == '_' {
+                            ident.push(ch);
+                        } else {
+                            break;
+                        }
+                    }
+                    if ident.len() > 6 {
+                        apis.insert(ident);
+                    }
+                }
+            }
+        }
+    }
+    apis
+}
+
+#[allow(clippy::collapsible_if, unused_variables)]
+fn compute_source_correlation(_root: &Path, file_list: &[PathBuf]) -> String {
+    let mut projects = std::collections::HashSet::new();
+    for file in file_list {
+        if file.to_string_lossy().contains("Release_Prospero") {
+            if let Some(parent) = file.parent() {
+                let mut cur = parent;
+                while let Some(p) = cur.parent() {
+                    if p.file_name().and_then(|n| n.to_str()) == Some("Release_Prospero") {
+                        if let Some(proj) = p.parent() {
+                            projects.insert(proj.to_path_buf());
+                        }
+                        break;
+                    }
+                    cur = p;
+                }
+            }
+        }
+    }
+    if projects.is_empty() {
+        return "SKIPPED — source↔binary correlation requires sample with Release_Prospero and source".to_string();
+    }
+    let mut total_source_apis = 0usize;
+    let mut total_binary_imports = 0usize;
+    let mut matched = 0usize;
+    let mut scanned_projects = 0usize;
+    for proj in projects.iter().take(20) {
+        let mut source_apis = std::collections::HashSet::new();
+        let mut binaries = Vec::new();
+        let mut stack = vec![proj.clone()];
+        while let Some(dir) = stack.pop() {
+            if dir.file_name().and_then(|n| n.to_str()) == Some("Release_Prospero") {
+                continue;
+            }
+            if let Ok(entries) = std::fs::read_dir(&dir) {
+                for e in entries.flatten() {
+                    let p = e.path();
+                    if p.is_dir() {
+                        stack.push(p);
+                    } else if let Some(ext) = p.extension().and_then(|e| e.to_str()) {
+                        if matches!(ext.to_ascii_lowercase().as_str(), "cpp" | "c" | "h" | "hpp") {
+                            source_apis.extend(extract_source_apis(&p));
+                        }
+                    }
+                }
+            }
+        }
+        let release = proj.join("Release_Prospero");
+        let mut bin_stack = vec![release];
+        while let Some(dir) = bin_stack.pop() {
+            if let Ok(entries) = std::fs::read_dir(&dir) {
+                for e in entries.flatten() {
+                    let p = e.path();
+                    if p.is_dir() {
+                        bin_stack.push(p);
+                    } else if let Some(ext) = p.extension().and_then(|e| e.to_str()) {
+                        if matches!(
+                            ext.to_ascii_lowercase().as_str(),
+                            "elf" | "prx" | "self" | "o"
+                        ) {
+                            binaries.push(p);
+                        }
+                    }
+                }
+            }
+        }
+        if source_apis.is_empty() || binaries.is_empty() {
+            continue;
+        }
+        scanned_projects += 1;
+        total_source_apis += source_apis.len();
+        let mut proj_imports = std::collections::HashSet::new();
+        for bin in &binaries {
+            if let Ok(data) = std::fs::read(bin) {
+                if let Ok(img) = ps5_elf::ElfImage::parse(&data, None) {
+                    for s in &img.symbols {
+                        if s.is_import {
+                            let name = s.resolved_name.split('#').next().unwrap_or("").to_string();
+                            if !name.is_empty() {
+                                proj_imports.insert(name);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        total_binary_imports += proj_imports.len();
+        for api in &source_apis {
+            if proj_imports.contains(api) {
+                matched += 1;
+            }
+        }
+    }
+    if scanned_projects == 0 {
+        return "INSUFFICIENT EVIDENCE — no projects with both source and Release_Prospero"
+            .to_string();
+    }
+    let mismatched = total_source_apis.saturating_sub(matched);
+    format!(
+        "Scanned {} projects, {} source APIs, {} binary imports, matched {}, mismatched {} — {}",
+        scanned_projects,
+        total_source_apis,
+        total_binary_imports,
+        matched,
+        mismatched,
+        if matched > 0 {
+            "PASS"
+        } else {
+            "INSUFFICIENT EVIDENCE"
+        }
+    )
+}
+
 #[allow(clippy::ptr_arg, clippy::collapsible_if)]
 pub(crate) fn cmd_validate_external(path: &std::path::Path, output: &Option<PathBuf>) {
     if !path.exists() {
@@ -511,6 +657,9 @@ pub(crate) fn cmd_validate_external(path: &std::path::Path, output: &Option<Path
     let unresolved = total_nids.saturating_sub(resolved);
     let exe_discovered = exe_tools.len();
     let exe_is_empty = exe_tools.is_empty();
+
+    let source_corr = compute_source_correlation(path, &file_list);
+
     let report = ExternalReport {
         schema_version: SCHEMA_VERSION,
         tool: "ps5rs",
@@ -537,7 +686,7 @@ pub(crate) fn cmd_validate_external(path: &std::path::Path, output: &Option<Path
         },
         deps,
         shader: shader_stats,
-        source_binary_correlation: "SKIPPED — source↔binary correlation requires explicit source root and binary mapping".to_string(),
+        source_binary_correlation: source_corr,
         abi: "SKIPPED — ABI validation requires verified signatures and HLE mapping".to_string(),
         firmware: "SKIPPED — firmware validation requires system_modules/*.exports.json and game requirements".to_string(),
         engine: "SKIPPED — engine validation requires string + artifact multi-signal; run dashboard --games".to_string(),
