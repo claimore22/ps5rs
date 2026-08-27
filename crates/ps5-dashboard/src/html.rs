@@ -361,8 +361,17 @@ const $$ = s => document.querySelectorAll(s);
 const pctCls = v => v >= 80 ? 'pct-high' : v >= 50 ? 'pct-med' : 'pct-low';
 const fmt = v => typeof v === 'number' ? v.toLocaleString() : v;
 const trunc = (s, n) => s && s.length > n ? s.slice(0, n-2) + '..' : s || '';
+const gameLabel = x => {{
+  if (!x) return '';
+  if (typeof x === 'string') {{
+    const g = (D.games||[]).find(y=>y.name===x);
+    return g ? (g.title_name || g.name) : x;
+  }}
+  return x.title_name || x.name || x.game || '';
+}};
+const gameDisplay = (x,n=32) => trunc(gameLabel(x), n);
 
-function showGameDetail(gameId) {{
+  function showGameDetail(gameId) {{
   const d = (D.game_details || []).find(x => x.name === gameId);
   if (!d) return;
   const segsHtml = d.segments.map(s => `<tr><td>${{s.index}}</td><td>${{s.seg_type}}</td><td>${{s.vaddr}}</td><td>${{(s.filesz/1048576).toFixed(2)}} MB</td><td>${{s.flags}}</td></tr>`).join('');
@@ -386,9 +395,9 @@ function showGameDetail(gameId) {{
     ${{(d.engine_evidence||[]).length ? `<div class="detail-section"><h3>Engine Evidence</h3><div class="table-wrap"><table class="detail-table"><thead><tr><th>String</th></tr></thead><tbody>${{(d.engine_evidence||[]).map(e => `<tr><td style="font-family:monospace;font-size:0.72rem">${{e}}</td></tr>`).join('')}}</tbody></table></div></div>` : ''}}
     ${{(d.lib_versions||[]).length ? `<div class="detail-section"><h3>SDK Library Versions</h3><div class="table-wrap"><table class="detail-table"><thead><tr><th>Library</th><th>Version</th><th>Raw</th></tr></thead><tbody>${{(d.lib_versions||[]).map(lv => `<tr><td style="font-family:monospace;font-size:0.78rem">${{lv.name}}</td><td style="font-variant-numeric:tabular-nums">${{lv.version_string}}</td><td style="font-family:monospace;font-size:0.72rem;color:#8b949e">0x${{lv.version_raw.toString(16).padStart(8,'0')}}</td></tr>`).join('')}}</tbody></table></div></div>` : ''}}`;
 
-  openDetail(d.title_name || d.name, `
+  openDetail(gameLabel(d), `
     <div class="detail-section"><h3>General</h3><div class="detail-kv">
-      <div class="k">Name</div><div class="v">${{d.title_name || d.name}}</div>
+      <div class="k">Name</div><div class="v">${{gameLabel(d)}}</div>
       <div class="k">Platform</div><div class="v">${{d.platform}}</div>
       <div class="k">Type</div><div class="v">${{d.is_self?'SELF':'Raw ELF'}}</div>
       <div class="k">File Size</div><div class="v">${{d.file_size_mb.toFixed(1)}} MB</div>
@@ -1211,7 +1220,7 @@ document.addEventListener('keydown', e => {{ if (e.key === 'Escape') $('#detailP
   a.games.forEach(g => {{
     const cat = g.by_category || {{}};
     const ext = g.by_extension || {{}};
-    perHtml += `<details style="margin-bottom:6px"><summary style="cursor:pointer;padding:8px 12px;background:#0d1117;border:1px solid #30363d;border-radius:6px;font-size:0.85rem;color:#c9d1d9"><strong style="color:#58a6ff">${{g.game}}</strong> &mdash; ${{fmt(g.total_files)}} files, ${{(g.total_bytes/1048576).toFixed(1)}} MB &mdash; shader:${{cat.shader||0}} texture:${{cat.texture||0}} audio:${{cat.audio||0}} executable:${{cat.executable||0}}</summary><div style="padding:8px 12px;border:1px solid #30363d;border-top:0;border-radius:0 0 6px 6px"><div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:8px">`;
+    perHtml += `<details style="margin-bottom:6px"><summary style="cursor:pointer;padding:8px 12px;background:#0d1117;border:1px solid #30363d;border-radius:6px;font-size:0.85rem;color:#c9d1d9"><strong style="color:#58a6ff">${{gameLabel(g.game)}}</strong> &mdash; ${{fmt(g.total_files)}} files, ${{(g.total_bytes/1048576).toFixed(1)}} MB &mdash; shader:${{cat.shader||0}} texture:${{cat.texture||0}} audio:${{cat.audio||0}} executable:${{cat.executable||0}}</summary><div style="padding:8px 12px;border:1px solid #30363d;border-top:0;border-radius:0 0 6px 6px"><div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:8px">`;
     Object.entries(cat).sort((x,y)=>y[1]-x[1]).forEach(([k,v]) => {{ perHtml += `<span style="background:#21262d;padding:2px 8px;border-radius:10px;font-size:0.72rem;color:#8b949e">${{k}}:${{fmt(v)}}</span>`; }});
     perHtml += `</div><div style="max-height:200px;overflow-y:auto;border:1px solid #21262d;border-radius:4px;padding:6px"><table style="width:100%;font-size:0.72rem;border-collapse:collapse"><thead><tr style="color:#8b949e"><th style="text-align:left">Path</th><th>Ext</th><th>Category</th><th>Size</th></tr></thead><tbody>`;
     (g.artifacts||[]).slice(0,100).forEach(art => {{
@@ -1226,7 +1235,7 @@ document.addEventListener('keydown', e => {{ if (e.key === 'Escape') $('#detailP
   a.games.forEach(g => {{
     const s = g.by_category.shader||0, t = g.by_category.texture||0, au = g.by_category.audio||0, e = g.by_category.executable||0;
     const total = s+t+au+e || 1;
-    crossHtml += `<div class="hbar"><div class="hbar-label" style="width:220px" title="${{g.game}}">${{trunc(g.game,22)}}</div><div class="hbar-track" style="display:flex;gap:0;background:#21262d"><div style="width:${{(s/total*100).toFixed(1)}}%;height:14px;background:#8957e5" title="shader:${{s}}"></div><div style="width:${{(t/total*100).toFixed(1)}}%;height:14px;background:#1f6feb" title="texture:${{t}}"></div><div style="width:${{(au/total*100).toFixed(1)}}%;height:14px;background:#3fb950" title="audio:${{au}}"></div><div style="width:${{(e/total*100).toFixed(1)}}%;height:14px;background:#d29922" title="executable:${{e}}"></div></div><span class="hbar-count" style="font-size:0.68rem;width:90px;text-align:right">${{s}}/ ${{t}}/ ${{au}}/ ${{e}}</span></div>`;
+    crossHtml += `<div class="hbar"><div class="hbar-label" style="width:220px" title="${{gameLabel(g.game)}}">${{gameDisplay(g.game,22)}}</div><div class="hbar-track" style="display:flex;gap:0;background:#21262d"><div style="width:${{(s/total*100).toFixed(1)}}%;height:14px;background:#8957e5" title="shader:${{s}}"></div><div style="width:${{(t/total*100).toFixed(1)}}%;height:14px;background:#1f6feb" title="texture:${{t}}"></div><div style="width:${{(au/total*100).toFixed(1)}}%;height:14px;background:#3fb950" title="audio:${{au}}"></div><div style="width:${{(e/total*100).toFixed(1)}}%;height:14px;background:#d29922" title="executable:${{e}}"></div></div><span class="hbar-count" style="font-size:0.68rem;width:90px;text-align:right">${{s}}/ ${{t}}/ ${{au}}/ ${{e}}</span></div>`;
   }});
   $('#artifactCrossBars').innerHTML = crossHtml || '<p style="color:#8b949e">No cross-artifact data.</p>';
 }})();
