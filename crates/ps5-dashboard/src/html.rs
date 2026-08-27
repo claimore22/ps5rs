@@ -453,6 +453,8 @@ document.addEventListener('keydown', e => {{ if (e.key === 'Escape') $('#detailP
     ['Unique Libraries', o.unique_libs, ''],
     ['Resolution', o.resolution_rate.toFixed(1) + '%', 'green'],
     ['Avg Imports/Game', Math.round(o.avg_imports_per_game), ''],
+    ['Artifacts', o.total_artifacts ? fmt(o.total_artifacts) : '—', ''],
+    ['Shader Files', o.shader_files ? o.shader_files : '—', 'yellow'],
   ].map(([l, v, c]) => `<div class="card"><div class="card-label">${{l}}</div><div class="card-value ${{c}}">${{v}}</div></div>`).join('');
 
   const ns = D.nid_stats;
@@ -1413,6 +1415,8 @@ mod tests {
                 unique_libs: 10,
                 resolution_rate: 95.0,
                 avg_imports_per_game: 50.0,
+                total_artifacts: 0,
+                shader_files: 0,
             },
             games: vec![GameRow {
                 name: "game1".to_string(),

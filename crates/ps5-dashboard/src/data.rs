@@ -63,6 +63,10 @@ pub struct Overview {
     pub unique_libs: usize,
     pub resolution_rate: f64,
     pub avg_imports_per_game: f64,
+    #[serde(default)]
+    pub total_artifacts: usize,
+    #[serde(default)]
+    pub shader_files: usize,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -680,6 +684,8 @@ impl DashboardData {
                 };
             }
         }
+        self.overview.total_artifacts = report.total_files;
+        self.overview.shader_files = total_shaders;
         for game in &mut report.games {
             if game.artifacts.len() > 200 {
                 game.artifacts.truncate(200);
@@ -865,6 +871,8 @@ fn compute_overview(ds: &AnalysisDataset) -> Overview {
         } else {
             0.0
         },
+        total_artifacts: 0,
+        shader_files: 0,
     }
 }
 
@@ -2172,6 +2180,8 @@ mod tests {
                 unique_libs: 0,
                 resolution_rate: 0.0,
                 avg_imports_per_game: 0.0,
+                total_artifacts: 0,
+                shader_files: 0,
             },
             games: vec![],
             game_details: vec![],
