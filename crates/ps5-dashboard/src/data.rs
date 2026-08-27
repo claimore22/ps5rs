@@ -628,7 +628,12 @@ impl DashboardData {
         }
     }
 
-    pub fn inject_artifacts(&mut self, report: ps5_analysis::artifacts::ArtifactReport) {
+    pub fn inject_artifacts(&mut self, mut report: ps5_analysis::artifacts::ArtifactReport) {
+        for game in &mut report.games {
+            if game.artifacts.len() > 200 {
+                game.artifacts.truncate(200);
+            }
+        }
         self.artifacts = Some(report);
     }
 }
