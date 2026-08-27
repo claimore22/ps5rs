@@ -397,42 +397,26 @@ fn compute_source_correlation(_root: &Path, file_list: &[PathBuf]) -> String {
     let mut matched = 0usize;
     let mut scanned_projects = 0usize;
     for proj in projects.iter().take(20) {
+        let proj_str = proj.to_string_lossy().to_string();
         let mut source_apis = std::collections::HashSet::new();
         let mut binaries = Vec::new();
-        let mut stack = vec![proj.clone()];
-        while let Some(dir) = stack.pop() {
-            if dir.file_name().and_then(|n| n.to_str()) == Some("Release_Prospero") {
+        for file in file_list {
+            let file_str = file.to_string_lossy().to_string();
+            if !file_str.starts_with(&proj_str) {
                 continue;
             }
-            if let Ok(entries) = std::fs::read_dir(&dir) {
-                for e in entries.flatten() {
-                    let p = e.path();
-                    if p.is_dir() {
-                        stack.push(p);
-                    } else if let Some(ext) = p.extension().and_then(|e| e.to_str()) {
-                        if matches!(ext.to_ascii_lowercase().as_str(), "cpp" | "c" | "h" | "hpp") {
-                            source_apis.extend(extract_source_apis(&p));
-                        }
+            if file_str.contains("Release_Prospero") {
+                if let Some(ext) = file.extension().and_then(|e| e.to_str()) {
+                    if matches!(
+                        ext.to_ascii_lowercase().as_str(),
+                        "elf" | "prx" | "self" | "o"
+                    ) {
+                        binaries.push(file.clone());
                     }
                 }
-            }
-        }
-        let release = proj.join("Release_Prospero");
-        let mut bin_stack = vec![release];
-        while let Some(dir) = bin_stack.pop() {
-            if let Ok(entries) = std::fs::read_dir(&dir) {
-                for e in entries.flatten() {
-                    let p = e.path();
-                    if p.is_dir() {
-                        bin_stack.push(p);
-                    } else if let Some(ext) = p.extension().and_then(|e| e.to_str()) {
-                        if matches!(
-                            ext.to_ascii_lowercase().as_str(),
-                            "elf" | "prx" | "self" | "o"
-                        ) {
-                            binaries.push(p);
-                        }
-                    }
+            } else if let Some(ext) = file.extension().and_then(|e| e.to_str()) {
+                if matches!(ext.to_ascii_lowercase().as_str(), "cpp" | "c" | "h" | "hpp") {
+                    source_apis.extend(extract_source_apis(file));
                 }
             }
         }
