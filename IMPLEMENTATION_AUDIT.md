@@ -2,7 +2,7 @@
 
 > Source-of-truth repository audit against UPGRADE_PLAN2.md mission.
 > Audited 2026-08-27 on branch `elfspector-dev` @ `6ae64c1`. Read-only investigation — no code changed by this audit.
-> **Update — `update_plan_v2` 2026-08-27:** Phases 0–6 + 9 validated on `update_plan_v2` (commits edaf364, 7551552, 4ec6811, 8eb8058, d5cdeee, 9d23028, ffd476c, 0796b4b, 55f8f92). See `analysis/validation-report.json`/`md`.
+> **Update — `update_plan_v2` 2026-08-27:** Phases 0–9 validated on `update_plan_v2` (commits edaf364, 7551552, 4ec6811, 8eb8058, d5cdeee, 9d23028, ffd476c, 0796b4b, 55f8f92, ead7456, 0ee1553, 33aac87). See `analysis/validation-report.json`/`md`, `analysis/external-bugsnax.json`.
 
 ## 0. update_plan_v2 progress (verified)
 
@@ -14,8 +14,11 @@
 - **9d23028** bare artifacts: ps5-analysis artifacts inventory — 30+ extensions classified (prx/pssl/sb/gnf/at9/bank/json etc.), relative paths preserved, cross-artifact prx/pssl/sb/gnf/at9 counts, bare content first-class (.pak not required, `archive` when present, unknown kept structured). Validated on Bugsnax bare dump: 17825 files, 514 shaders, 4812 gnf, 35 banks.
 - **ffd476c/0796b4b** dashboard artifacts: DashboardData artifacts Option<ArtifactReport> (truncated 200/game), dataset inject_artifacts when --games, html Artifacts tab (by-category/extension, per-game details, cross-artifact linkage).
 - **55f8f92** engine multi-signal: ps5-signatures enhance_with_artifacts (bare shader/texture/audio counts as evidence, +2 confidence for shader-rich, never invents engine), ps5-dashboard enriches engine_hints evidence with bare artifact counts — validated Bugsnax remains Unknown (no Unreal strings) despite 514 shaders.
+- **ead7456** schema: ps5-schema artifact_record stable interchange (ArtifactRecord/GameArtifactsRecord/ArtifactReportRecord, SCHEMA_VERSION=1, category string, relative_path preserved).
+- **0ee1553** cli completeness: shader (Shdr+SHA256, 514 Bugsnax), firmware (8 modules 46021 exports), sdk (SKIPPED when no stubs, honest) — each terminal/json, --help, real data.
+- **33aac87** validate external: `ps5rs validate external <path>` full matrix (elf/prx/self/.a/source/shader/.exe) with PASS/FAIL/SKIPPED, .exe first-class (inventoried without execution, SKIPPED unless explicit config), bare .gnf/.at9 counted, Bugsnax 17825 (30 exts) + synthetic 10-type matrix + full 27-game 76154 files + .exe 1 validated, nonexistent SKIPPED — no hardcode, no copy, cargo test still SKIPPED-free.
 
-Clippy `-D warnings --all-targets --all-features` and `cargo test --workspace` green at each milestone. Bare content handled as first-class validation corpus; proprietary contents never copied.
+Clippy `-D warnings --all-targets --all-features` and `cargo test --workspace` green at each milestone (now 170 analysis + 20 dashboard + 13 signatures). Bare content and .exe tools are first-class validation corpus; proprietary contents never copied, .exe never executed silently.
 
 ## 1. CURRENT STATE
 
