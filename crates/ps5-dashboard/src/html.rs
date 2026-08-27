@@ -1,5 +1,41 @@
 use crate::data::DashboardData;
 
+pub fn generate_dashboard_pages(
+    data: &DashboardData,
+    out_dir: &std::path::Path,
+) -> std::io::Result<()> {
+    std::fs::create_dir_all(out_dir)?;
+    let pages = [
+        ("index.html", "overview"),
+        ("shader.html", "shader"),
+        ("firmware.html", "firmware"),
+        ("deps.html", "graph"),
+    ];
+    for (file, tab) in pages {
+        let html = generate_html_with_active_tab(data, tab);
+        std::fs::write(out_dir.join(file), html)?;
+    }
+    Ok(())
+}
+
+fn generate_html_with_active_tab(data: &DashboardData, active_tab: &str) -> String {
+    let mut html = generate_html(data);
+    let target = format!(r#"class="tab active" data-tab="{active_tab}""#);
+    // naive: ensure the requested tab is marked active; fallback to default if not found
+    if !html.contains(&target) {
+        return html;
+    }
+    html = html.replace(
+        r#"class="tab active" data-tab="overview""#,
+        r#"class="tab" data-tab="overview""#,
+    );
+    html = html.replace(
+        &target,
+        &format!(r#"class="tab active" data-tab="{active_tab}""#),
+    );
+    html
+}
+
 pub fn generate_html(data: &DashboardData) -> String {
     let json = serde_json::to_string(data).unwrap_or_default();
     format!(
@@ -133,6 +169,8 @@ tr.clickable:hover{{background:#1c2128;outline:1px solid #30363d;}}
 <div class="tab" data-tab="loader" id="loaderTab" style="display:none">Load Coverage</div>
 <div class="tab" data-tab="middleware" id="middlewareTab" style="display:none">Middleware</div>
 <div class="tab" data-tab="sdk">SDK Timeline</div>
+<div class="tab" data-tab="shader">Shaders</div>
+<div class="tab" data-tab="firmware">Firmware</div>
 </div>
 
 <div class="container">
@@ -280,6 +318,19 @@ tr.clickable:hover{{background:#1c2128;outline:1px solid #30363d;}}
 <li>Generation inference for <code>6.x</code> and <code>12.x</code> is from firmware/SDK gaps, hence <span class="pill" style="background:#d2992222;color:#d29922;border:1px solid #d2992244">Medium/Low</span>.</li>
 <li>UE 5.6 and 5.7 both document <code>11.00.00.40</code> — same SDK, different UE minor.</li>
 </ul>
+</div>
+</div>
+
+<div class="tab-content" id="tab-shader">
+<div class="section"><h2>Shader Summary</h2><div class="cards" id="shaderCards"></div>
+<div class="section"><h2>Shaders by Stage</h2><div id="shaderStageBars"></div></div>
+<div class="section"><h2>Resources</h2><div id="shaderResources"></div></div>
+</div>
+</div>
+
+<div class="tab-content" id="tab-firmware">
+<div class="section"><h2>Firmware Summary</h2><div class="cards" id="firmwareCards"></div>
+<div class="section"><h2>Modules by Version</h2><div id="firmwareVersionBars"></div></div>
 </div>
 </div>
 
@@ -1163,6 +1214,42 @@ document.addEventListener('keydown', e => {{ if (e.key === 'Escape') $('#detailP
     }});
   }});
 
+  // --- SHADER ---
+  (function() {{
+    const s = D.shader_summary || {{ total_shaders: 0, by_stage: {{}}, total_resources: 0 }};
+    const cards = [
+      ['Total Shaders', s.total_shaders, 'blue'],
+      ['Total Resources', s.total_resources, 'yellow'],
+      ['Stages', Object.keys(s.by_stage||{{}}).length, ''],
+    ];
+    const el = document.getElementById('shaderCards');
+    if (el) el.innerHTML = cards.map(([l,v,c]) => `<div class="card"><div class="card-label">${{l}}</div><div class="card-value ${{c}}">${{v}}</div></div>`).join('');
+    const bars = document.getElementById('shaderStageBars');
+    if (bars) {{
+      const max = Math.max(1, ...Object.values(s.by_stage||{{}}));
+      bars.innerHTML = Object.entries(s.by_stage||{{}}).map(([k,v]) => `<div class="hbar"><div class="hbar-label">${{k}}</div><div class="hbar-track"><div class="hbar-fill fill-purple" style="width:${{(v/max*100).toFixed(1)}}%"></div></div><div class="hbar-count">${{v}}</div></div>`).join('') || '<p style="color:#8b949e">No shader data.</p>';
+      const resEl = document.getElementById('shaderResources');
+      if (resEl) resEl.innerHTML = `<p style="color:#8b949e;font-size:0.82rem">Resources derived from ${{s.total_resources}} bindings.</p>`;
+    }}
+  }})();
+
+  // --- FIRMWARE ---
+  (function() {{
+    const f = D.firmware_summary || {{ total_modules: 0, total_libraries: 0, by_version: {{}} }};
+    const cards = [
+      ['Modules', f.total_modules, 'blue'],
+      ['Libraries', f.total_libraries, 'green'],
+      ['Versions', Object.keys(f.by_version||{{}}).length, 'yellow'],
+    ];
+    const el = document.getElementById('firmwareCards');
+    if (el) el.innerHTML = cards.map(([l,v,c]) => `<div class="card"><div class="card-label">${{l}}</div><div class="card-value ${{c}}">${{v}}</div></div>`).join('');
+    const bars = document.getElementById('firmwareVersionBars');
+    if (bars) {{
+      const max = Math.max(1, ...Object.values(f.by_version||{{}}));
+      bars.innerHTML = Object.entries(f.by_version||{{}}).map(([k,v]) => `<div class="hbar"><div class="hbar-label">${{k}}</div><div class="hbar-track"><div class="hbar-fill fill-green" style="width:${{(v/max*100).toFixed(1)}}%"></div></div><div class="hbar-count">${{v}}</div></div>`).join('') || '<p style="color:#8b949e">No firmware version data.</p>';
+    }}
+  }})();
+
   const input = $('#globalSearch');
   const results = $('#searchResults');
 
@@ -1425,6 +1512,8 @@ mod tests {
             loader_summary: None,
             middleware: None,
             upgrade_plan_complete: true,
+            shader_summary: crate::data::ShaderSummary::default(),
+            firmware_summary: crate::data::FirmwareSummary::default(),
         }
     }
 
@@ -1529,6 +1618,8 @@ mod tests {
         assert!(html.contains("tab-graph"));
         assert!(html.contains("tab-loader"));
         assert!(html.contains("tab-middleware"));
+        assert!(html.contains("tab-shader"));
+        assert!(html.contains("tab-firmware"));
     }
 
     #[test]
