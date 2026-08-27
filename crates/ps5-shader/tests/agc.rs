@@ -1,4 +1,5 @@
 use ps5_shader::{ShaderBinary, agc::AgcShader};
+use ps5_shader::shader_binary::ShaderStage;
 
 #[test]
 fn agc_shader_from_roms() {
@@ -12,14 +13,12 @@ fn agc_shader_from_roms() {
         for entry in entries.flatten().take(1) {
             let p = entry.path();
             if p.is_dir() {
-                // Look for any file that might contain shader data (just test the API)
-                let shader = ShaderBinary {
-                    stage: "vertex".to_string(),
-                };
+                let data = b"vertex shader binary";
+                let shader = ShaderBinary::parse(data).unwrap();
                 let agc = AgcShader {
                     data: vec![0u8; 16],
                 };
-                assert_eq!(shader.stage, "vertex");
+                assert_eq!(shader.stage, ShaderStage::Vertex);
                 assert_eq!(agc.data.len(), 16);
                 found += 1;
             }

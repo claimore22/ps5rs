@@ -67,6 +67,21 @@ Dependency direction: `format → {elf, self, nid} → image → analysis → cl
 - Library names in traces resolve through the module's `import_libs` table (NID-derived lib id fallback), so masked symbols read as `libkernel::puts`.
 - Reference flows: `crates/ps5-cli/src/run.rs` (CLI) and `crates/ps5-emu/examples/boot.rs`.
 
+## Agent Loop (OpenCode + NPU Planner)
+
+```
+YOU → Commander (Ollama OSS-20B, local) → Planner (Qwen3-8B on Intel NPU)
+       → Worker (cloud LLM) → Validator (deterministic) → Reviewer (cloud)
+```
+
+- **Commander** (`ollama/gpt-oss:20b`): understands mission from `UPGRADE_PLAN.md`, controls loop.
+- **Planner** (`npu/Qwen3-8B` → `http://localhost:11435/v1` via `npu-test/npu_server.py` on Intel AI Boost NPU): decomposes one ready objective into file-level tasks with deps/risks. One-shot, ~5 tok/s is irrelevant vs Worker's 5–15 min. Start server: `npu-test/run_npu_server.bat` (health: `curl http://localhost:11435/health`).
+- **Worker** (cloud LLM, default model): writes code per plan. Must not re-plan.
+- **Validator** (deterministic, no LLM): `just check` = `cargo fmt --check` + `cargo clippy -- -D warnings` + `cargo test --workspace` (525+ tests) + `git diff` + `cargo check`. Evidence flows to Reviewer; Worker claims are not trusted.
+- **Reviewer** (cloud LLM): PASS→next task, FAIL→correction back to Worker.
+
+`opencode.jsonc` routes `agent.commander.model`→Ollama and `agent.planner`/`agent.plan`→NPU; Worker/Reviewer use the primary cloud model. Mission queue is `UPGRADE_PLAN.md` checklist (ps5-prx/ps5-schema/ps5-abi/…).
+
 ## Testing
 
 - Inline `#[cfg(test)] mod tests { use super::*; }` in every source file
@@ -74,6 +89,7 @@ Dependency direction: `format → {elf, self, nid} → image → analysis → cl
 - Edge cases: truncated data, wrong magic, zero-size TLS, empty sections
 - Property tests: `proptest` in `ps5-elf`
 - **Generated-fixture regression** (primary emulator suite): `ps5-tests` renders byte-exact ELFs + `manifest.json` to `data/test/generated_elfs/`; `ps5-emu/tests/elf_suite.rs` boots every fixture through the real loader + HLE pipeline and asserts exit code, import trace, and (via `print_string`) guest-string reads. Rebuild fixtures with `cargo run -p ps5-tests --bin generate` when fixtures change, and commit the resulting bytes + manifest.
+- **Validator contract**: every Worker change must pass `just check` before Reviewer sees it. Reviewer judges the validator's stdout, not the Worker's self-report.
 
 ## Git
 
