@@ -4,7 +4,7 @@ pub mod libraries;
 pub mod modules;
 pub mod version;
 
-pub use catalog::FirmwareCatalog;
+pub use catalog::{FirmwareCatalog, LibraryAvailability};
 pub use exports::FirmwareExportTable;
 pub use libraries::FirmwareLibrary;
 pub use modules::FirmwareModule;
