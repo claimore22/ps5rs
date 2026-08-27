@@ -62,6 +62,9 @@ fn main() {
                 validate::cmd_validate_binary(&file, json, &output)
             }
             ValidateCommand::Dataset { path, output } => dataset::cmd_validate(&path, &output),
+            ValidateCommand::External { path, output } => {
+                validate::cmd_validate_external(&path, &output)
+            }
         },
         Commands::Dashboard {
             path,

@@ -283,6 +283,13 @@ pub enum ValidateCommand {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
+    /// Validate external corpus (native binaries, libs, source, shaders, exe tools)
+    External {
+        /// Root directory to validate (recursively)
+        path: PathBuf,
+        #[arg(short, long, value_hint = ValueHint::FilePath)]
+        output: Option<PathBuf>,
+    },
 }
 
 #[derive(Subcommand)]
