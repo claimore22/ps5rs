@@ -83,4 +83,21 @@ impl NidDatabase {
     pub fn is_empty(&self) -> bool {
         self.records.is_empty()
     }
+
+    pub fn query_by_library(&self, lib: &str) -> Vec<&NidRecord> {
+        self.records
+            .values()
+            .filter(|r| r.library.0 == lib)
+            .collect()
+    }
+}
+
+pub fn load_from_path(path: &std::path::Path) -> Result<NidDatabase, serde_json::Error> {
+    let data = std::fs::read_to_string(path).map_err(serde_json::Error::io)?;
+    let records: Vec<NidRecord> = serde_json::from_str(&data)?;
+    let mut db = NidDatabase::new();
+    for r in records {
+        db.insert(r);
+    }
+    Ok(db)
 }

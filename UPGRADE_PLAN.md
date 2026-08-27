@@ -391,8 +391,8 @@ Phases are incremental — each crate can ship independently. Recommended order:
 
 ## 5. Checklist
 
-- [ ] `ps5-deps` — new crate, `ps5-loader` re-exports, `ps5rs deps` + `--dot` CLI
-- [ ] `ps5-signatures` — data crate, `ps5-analysis` becomes orchestrator
+- [x] `ps5-deps` — new crate, `ps5-loader` re-exports, `ps5rs deps` + `--dot` CLI
+- [x] `ps5-signatures` — data crate, `ps5-analysis` becomes orchestrator
 - [ ] `ps5-nid-db` — typed `NidRecord`, keep `ps5-nid` algorithm-only, CSV compat
 - [ ] `ps5-prx` — `PrxModule` type, migrate `BinaryImageBuilder`/`dynamic.rs`/`libversion.rs`
 - [ ] `ps5-schema` — `SCHEMA_VERSION` central, JSON Schema files, migrations
