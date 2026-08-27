@@ -45,6 +45,21 @@ pub struct DashboardData {
     pub firmware_summary: FirmwareSummary,
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub artifacts: Option<ps5_analysis::artifacts::ArtifactReport>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub firmware_checks: Vec<FirmwareGameCheck>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct FirmwareGameCheck {
+    pub game: String,
+    pub checks: Vec<FirmwareLibCheck>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct FirmwareLibCheck {
+    pub library: String,
+    pub required: String,
+    pub status: String,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -693,6 +708,51 @@ impl DashboardData {
         }
         self.artifacts = Some(report);
     }
+
+    pub fn inject_firmware(&mut self, catalog: &ps5_firmware::FirmwareCatalog) {
+        let mut checks = Vec::new();
+        for detail in &self.game_details {
+            if detail.lib_versions.is_empty() {
+                continue;
+            }
+            let reqs: Vec<(String, String)> = detail
+                .lib_versions
+                .iter()
+                .map(|lv| (lv.name.clone(), lv.version_string.clone()))
+                .collect();
+            let results = catalog.check_requirements(&reqs);
+            let lib_checks: Vec<FirmwareLibCheck> = results
+                .into_iter()
+                .map(|(lib, avail)| {
+                    let status = match avail {
+                        ps5_firmware::LibraryAvailability::Compatible => "compatible",
+                        ps5_firmware::LibraryAvailability::Insufficient { .. } => "insufficient",
+                        ps5_firmware::LibraryAvailability::NotFound => "not found",
+                        ps5_firmware::LibraryAvailability::Unknown { .. } => "unknown",
+                    }
+                    .to_string();
+                    let required = detail
+                        .lib_versions
+                        .iter()
+                        .find(|lv| lv.name == lib)
+                        .map(|lv| lv.version_string.clone())
+                        .unwrap_or_default();
+                    FirmwareLibCheck {
+                        library: lib,
+                        required,
+                        status,
+                    }
+                })
+                .collect();
+            if !lib_checks.is_empty() {
+                checks.push(FirmwareGameCheck {
+                    game: detail.name.clone(),
+                    checks: lib_checks,
+                });
+            }
+        }
+        self.firmware_checks = checks;
+    }
 }
 
 pub fn compute(ds: &AnalysisDataset) -> DashboardData {
@@ -800,6 +860,7 @@ pub fn compute(ds: &AnalysisDataset) -> DashboardData {
         shader_summary,
         firmware_summary,
         artifacts: None,
+        firmware_checks: Vec::new(),
     }
 }
 
@@ -2208,6 +2269,7 @@ mod tests {
             shader_summary: ShaderSummary::default(),
             firmware_summary: FirmwareSummary::default(),
             artifacts: None,
+            firmware_checks: Vec::new(),
         };
 
         data.inject_middleware(&report);
@@ -2336,6 +2398,7 @@ mod tests {
             shader_summary: ShaderSummary::default(),
             firmware_summary: FirmwareSummary::default(),
             artifacts: None,
+            firmware_checks: Vec::new(),
         };
         data.inject_artifacts(report);
         assert_eq!(data.overview.total_artifacts, 10);

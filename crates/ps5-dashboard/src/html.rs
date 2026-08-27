@@ -343,6 +343,7 @@ tr.clickable:hover{{background:#1c2128;outline:1px solid #30363d;}}
 <div class="tab-content" id="tab-firmware">
 <div class="section"><h2>Firmware Summary</h2><div class="cards" id="firmwareCards"></div>
 <div class="section"><h2>Modules by Version</h2><div id="firmwareVersionBars"></div></div>
+<div class="section"><h2>Per-Game Compatibility</h2><div id="firmwareChecks"></div></div>
 </div>
 </div>
 
@@ -1316,6 +1317,17 @@ document.addEventListener('keydown', e => {{ if (e.key === 'Escape') $('#detailP
         bars.innerHTML = Object.entries(f.by_version||{{}}).map(([k,v]) => `<div class="hbar"><div class="hbar-label">${{k}}</div><div class="hbar-track"><div class="hbar-fill fill-green" style="width:${{(v/max*100).toFixed(1)}}%"></div></div><div class="hbar-count">${{v}}</div></div>`).join('');
       }}
     }}
+    const checks = D.firmware_checks || [];
+    const el2 = document.getElementById('firmwareChecks');
+    if (el2) {{
+      if (!checks.length) el2.innerHTML = '<p style="color:#8b949e">No per-game firmware checks — no lib_version requirements or no catalog. Run dashboard --games with system_modules.</p>';
+      else {{
+        el2.innerHTML = checks.map(g => {{
+          const rows = g.checks.map(c => `<tr><td style="font-family:monospace">${{c.library}}</td><td>${{c.required}}</td><td><span class="pill" style="background:${{c.status==='compatible'?'#23863622':'#da363322'}};color:${{c.status==='compatible'?'#3fb950':'#f85149'}};border:1px solid ${{c.status==='compatible'?'#23863644':'#da363344'}}">${{c.status}}</span></td></tr>`).join('');
+          return `<details style="margin-bottom:6px"><summary style="cursor:pointer;padding:8px 12px;background:#0d1117;border:1px solid #30363d;border-radius:6px;font-size:0.85rem;color:#c9d1d9"><strong style="color:#58a6ff">${{g.game}}</strong> &mdash; ${{g.checks.length}} libs</summary><div style="padding:8px 12px;border:1px solid #30363d;border-top:0;border-radius:0 0 6px 6px"><table style="width:100%;font-size:0.82rem;border-collapse:collapse"><thead><tr style="color:#8b949e"><th style="text-align:left">Library</th><th>Required</th><th>Status</th></tr></thead><tbody>${{rows}}</tbody></table></div></details>`;
+        }}).join('');
+      }}
+    }}
   }})();
 
   const input = $('#globalSearch');
@@ -1585,6 +1597,7 @@ mod tests {
             shader_summary: crate::data::ShaderSummary::default(),
             firmware_summary: crate::data::FirmwareSummary::default(),
             artifacts: None,
+            firmware_checks: Vec::new(),
         }
     }
 

@@ -92,6 +92,32 @@ pub(crate) fn cmd_dashboard(
         data.inject_artifacts(art_report);
     }
 
+    {
+        let mut fw_catalog =
+            ps5_firmware::FirmwareCatalog::new(ps5_firmware::FirmwareVersion::new(0, 0, 0));
+        let mut fw_loaded =
+            fw_catalog.load_exports_from_dir(std::path::Path::new("system_modules"));
+        if fw_loaded == 0
+            && let Some(gr) = games
+        {
+            let p = gr.join("system_modules");
+            if p.is_dir() {
+                fw_loaded = fw_catalog.load_exports_from_dir(&p);
+            }
+        }
+        if fw_loaded > 0 {
+            eprintln!(
+                "Firmware catalog: {} modules, {} exports",
+                fw_catalog.modules.len(),
+                fw_loaded
+            );
+            data.inject_firmware(&fw_catalog);
+            eprintln!("  Firmware checks: {} games", data.firmware_checks.len());
+        } else {
+            eprintln!("Firmware catalog: SKIPPED — no system_modules/*.exports.json");
+        }
+    }
+
     let is_single_file = output.to_string_lossy().ends_with(".html");
     if is_single_file {
         let html = ps5_dashboard::html::generate_html(&data);

@@ -7,6 +7,7 @@ description = "Static HTML dashboard generator for PS5 binary analysis datasets"
 
 [dependencies]
 ps5-analysis = { path = "../ps5-analysis" }
+ps5-firmware = { path = "../ps5-firmware" }
 ps5-image = { path = "../ps5-image" }
 ps5-nid = { path = "../ps5-nid" }
 serde = { version = "1", features = ["derive"] }
