@@ -26,7 +26,7 @@ impl SdkFunction {
             name: name.into(),
             library: library.into(),
             module,
-            sdk_versions: sdk_versions,
+            sdk_versions,
             category: category.into(),
         }
     }

@@ -1,5 +1,5 @@
-use ps5_shader::{ShaderBinary, agc::AgcShader};
 use ps5_shader::shader_binary::ShaderStage;
+use ps5_shader::{ShaderBinary, agc::AgcShader};
 
 #[test]
 fn agc_shader_from_roms() {

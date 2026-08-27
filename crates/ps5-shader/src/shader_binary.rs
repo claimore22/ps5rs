@@ -1,3 +1,4 @@
+#![allow(clippy::collapsible_if)]
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
@@ -24,6 +25,7 @@ impl ShaderStage {
         }
     }
 
+    #[allow(clippy::should_implement_trait)]
     pub fn from_str(s: &str) -> Self {
         match s.to_ascii_lowercase().as_str() {
             "vertex" | "vs" => Self::Vertex,
@@ -50,9 +52,9 @@ impl ShaderBinary {
         if data.is_empty() {
             return Err("empty shader data".to_string());
         }
-        let stage = if data.len() > 4 && data[0..4] == [0x47, 0x43, 0x4E, 0x00] {
-            ShaderStage::Vertex
-        } else if data.windows(6).any(|w| w == b"vertex") {
+        let stage = if (data.len() > 4 && data[0..4] == [0x47, 0x43, 0x4E, 0x00])
+            || data.windows(6).any(|w| w == b"vertex")
+        {
             ShaderStage::Vertex
         } else if data.windows(5).any(|w| w == b"pixel") {
             ShaderStage::Pixel
@@ -89,10 +91,10 @@ impl ShaderBinary {
         }
         let walker = walkdir_simple(path);
         for file in walker {
-            if let Ok(data) = std::fs::read(&file) {
-                if let Ok(shader) = Self::parse(&data) {
-                    out.push(shader);
-                }
+            if let Ok(data) = std::fs::read(&file)
+                && let Ok(shader) = Self::parse(&data)
+            {
+                out.push(shader);
             }
         }
         out
@@ -108,12 +110,14 @@ fn walkdir_simple(root: &std::path::Path) -> Vec<std::path::PathBuf> {
                 let p = e.path();
                 if p.is_dir() {
                     stack.push(p);
-                } else if p.is_file() {
-                    if let Some(ext) = p.extension().and_then(|s| s.to_str()) {
-                        if matches!(ext.to_ascii_lowercase().as_str(), "bin" | "sb" | "ags" | "agsd" | "gnf" | "elf" | "prx") {
-                            files.push(p);
-                        }
-                    }
+                } else if p.is_file()
+                    && let Some(ext) = p.extension().and_then(|s| s.to_str())
+                    && matches!(
+                        ext.to_ascii_lowercase().as_str(),
+                        "bin" | "sb" | "ags" | "agsd" | "gnf" | "elf" | "prx"
+                    )
+                {
+                    files.push(p);
                 }
             }
         }

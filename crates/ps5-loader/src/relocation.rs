@@ -388,7 +388,7 @@ mod tests {
             imports_known: 0,
             imports_stubbed: 0,
             per_library_imports: Vec::new(),
-                    prx_module: None,
+            prx_module: None,
         }
     }
 
@@ -851,7 +851,7 @@ mod tests {
             imports_known: 0,
             imports_stubbed: 0,
             per_library_imports: Vec::new(),
-                    prx_module: None,
+            prx_module: None,
         };
 
         let r_offset = pref_region_vaddr + 0x100;

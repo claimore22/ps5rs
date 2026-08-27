@@ -14,7 +14,10 @@ impl FirmwareExportTable {
     }
 
     pub fn insert(&mut self, nid: String, library: String) {
-        self.by_nid.entry(nid.clone()).or_default().push(library.clone());
+        self.by_nid
+            .entry(nid.clone())
+            .or_default()
+            .push(library.clone());
         self.by_library.entry(library).or_default().push(nid);
     }
 

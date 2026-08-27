@@ -1,3 +1,4 @@
+#![allow(clippy::collapsible_if)]
 use std::path::Path;
 
 use ps5_deps::ModuleGraph;

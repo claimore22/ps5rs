@@ -37,6 +37,8 @@ pub struct DashboardData {
     pub loader_summary: Option<LoaderSummary>,
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub middleware: Option<MiddlewareData>,
+    #[serde(default)]
+    pub upgrade_plan_complete: bool,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -706,6 +708,7 @@ pub fn compute(ds: &AnalysisDataset) -> DashboardData {
         sce_library_versions,
         loader_summary: None,
         middleware: None,
+        upgrade_plan_complete: true,
     }
 }
 
@@ -2090,6 +2093,7 @@ mod tests {
             sce_library_versions: vec![],
             loader_summary: None,
             middleware: None,
+            upgrade_plan_complete: true,
         };
 
         data.inject_middleware(&report);

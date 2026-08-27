@@ -322,10 +322,7 @@ impl BinaryImageBuilder {
             .collect()
     }
 
-    pub fn build_from_prx_module(
-        prx: &ps5_prx::PrxModule,
-        base: &BinaryImage,
-    ) -> BinaryImage {
+    pub fn build_from_prx_module(prx: &ps5_prx::PrxModule, base: &BinaryImage) -> BinaryImage {
         let mut img = base.clone();
         img.needed_files = prx.metadata.needed_files.clone();
         let libs: std::collections::HashMap<u16, String> = prx
