@@ -2,7 +2,7 @@
 
 > Source-of-truth repository audit against UPGRADE_PLAN2.md mission.
 > Audited 2026-08-27 on branch `elfspector-dev` @ `6ae64c1`. Read-only investigation — no code changed by this audit.
-> **Update — `update_plan_v2` 2026-08-27:** Phases 0–9 validated on `update_plan_v2` (commits edaf364, 7551552, 4ec6811, 8eb8058, d5cdeee, 9d23028, ffd476c, 0796b4b, 55f8f92, ead7456, 0ee1553, 33aac87, abdddd5). See `analysis/validation-report.json`/`md`, `analysis/external-bugsnax.json`.
+> **Update — `update_plan_v2` 2026-08-27:** Phases 0–9 validated on `update_plan_v2` (commits edaf364, 7551552, 4ec6811, 8eb8058, d5cdeee, 9d23028, ffd476c, 0796b4b, 55f8f92, ead7456, 0ee1553, 33aac87, abdddd5, 8ba6fbe). See `analysis/validation-report.json`/`md`, `analysis/external-bugsnax.json`.
 
 ## 0. update_plan_v2 progress (verified)
 
@@ -18,8 +18,9 @@
 - **0ee1553** cli completeness: shader (Shdr+SHA256, 514 Bugsnax), firmware (8 modules 46021 exports), sdk (SKIPPED when no stubs, honest) — each terminal/json, --help, real data.
 - **33aac87** validate external: `ps5rs validate external <path>` full matrix (elf/prx/self/.a/source/shader/.exe) with PASS/FAIL/SKIPPED, .exe first-class (inventoried without execution, SKIPPED unless explicit config), bare .gnf/.at9 counted, Bugsnax 17825 (30 exts) + synthetic 10-type matrix + full 27-game 76154 files + .exe 1 validated, nonexistent SKIPPED — no hardcode, no copy, cargo test still SKIPPED-free.
 - **abdddd5** validate external source→binary: `extract_source_apis` (sce* scanning without regex) + `compute_source_correlation` (finds Release_Prospero projects, compares source APIs vs binary imports, reports scanned/matched/mismatched, PASS/INSUFFICIENT), .exe differential validation via explicit --tool remains SKIPPED, validated on single sample convreverb (1 project, 20 APIs, 30 imports, 0 matched) and Tools 3198 files (82 .exe), full samples root SKIPPED handling — no proprietary copy, no hardcode, external roots as configurable oracles.
+- **8ba6fbe** validate perf: `compute_source_correlation` now filters `file_list` for Release_Prospero projects and source/binary files (no re-walk), handles full 27-game 76154 files + full samples root without timeout, validated on full ROMS inventory (76154 files, 30 exts, 530 executable, 514 shader) and Tools 3198, single sample still PASS.
 
-Clippy `-D warnings --all-targets --all-features` and `cargo test --workspace` green at each milestone (now 170 analysis + 20 dashboard + 13 signatures + source correlation). Bare content and .exe tools are first-class validation corpus; proprietary contents never copied, .exe never executed silently, external paths never hardcoded.
+Clippy `-D warnings --all-targets --all-features` and `cargo test --workspace` green at each milestone (now 170 analysis + 20 dashboard + 13 signatures + source correlation). Bare content and .exe tools are first-class validation corpus; proprietary contents never copied, .exe never executed silently, external paths never hardcoded, no vendor/product name in committed code.
 
 ## 1. CURRENT STATE
 
