@@ -13,6 +13,7 @@ fn sdk_database_inserts() {
             to: None,
         },
         category: "test".to_string(),
+        provenance: Default::default(),
     };
     db.insert(func);
     assert_eq!(db.len(), 1);

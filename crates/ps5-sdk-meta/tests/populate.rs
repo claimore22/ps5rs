@@ -18,6 +18,7 @@ fn populate_from_catalog() {
                     to: None,
                 },
                 category: "system".to_string(),
+                provenance: Default::default(),
             };
             db.insert(func);
         }
@@ -47,6 +48,7 @@ fn populate_from_roms() {
                     to: None,
                 },
                 category: "game".to_string(),
+                provenance: Default::default(),
             };
             db.insert(func);
         }

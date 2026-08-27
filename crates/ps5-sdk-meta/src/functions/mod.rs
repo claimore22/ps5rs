@@ -2,6 +2,14 @@ use serde::{Deserialize, Serialize};
 
 use crate::versions::VersionRange;
 
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize, Default)]
+pub enum Provenance {
+    Verified,
+    #[default]
+    Unverified,
+    Unknown,
+}
+
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 pub struct SdkFunction {
     pub nid: String,
@@ -10,6 +18,8 @@ pub struct SdkFunction {
     pub module: Option<String>,
     pub sdk_versions: VersionRange,
     pub category: String,
+    #[serde(default)]
+    pub provenance: Provenance,
 }
 
 impl SdkFunction {
@@ -28,7 +38,13 @@ impl SdkFunction {
             module,
             sdk_versions,
             category: category.into(),
+            provenance: Provenance::Unverified,
         }
+    }
+
+    pub fn with_provenance(mut self, provenance: Provenance) -> Self {
+        self.provenance = provenance;
+        self
     }
 }
 
