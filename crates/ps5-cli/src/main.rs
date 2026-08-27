@@ -9,6 +9,7 @@ mod deps;
 mod export_scan;
 mod extract;
 mod inspect;
+mod inventory;
 mod load;
 mod middleware;
 mod run;
@@ -139,5 +140,10 @@ fn main() {
             format,
             output,
         } => deps::cmd_deps(&path, format, &output),
+        Commands::Inventory {
+            path,
+            format,
+            output,
+        } => inventory::cmd_inventory(&path, format, &output),
     }
 }

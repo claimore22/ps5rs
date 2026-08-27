@@ -87,6 +87,14 @@ pub fn scan(
 }
 
 fn find_game_dirs(root: &Path) -> Vec<PathBuf> {
+    find_game_dirs_inner(root)
+}
+
+pub(crate) fn find_game_dirs_for_artifacts(root: &Path) -> Vec<PathBuf> {
+    find_game_dirs_inner(root)
+}
+
+fn find_game_dirs_inner(root: &Path) -> Vec<PathBuf> {
     let mut dirs = Vec::new();
     if let Ok(entries) = std::fs::read_dir(root) {
         for entry in entries.flatten() {

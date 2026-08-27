@@ -186,6 +186,15 @@ pub enum Commands {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
+    /// Inventory bare game content — all file types, relative paths, cross-artifact linkage
+    Inventory {
+        /// Games directory (or single game dir)
+        path: PathBuf,
+        #[arg(long, value_enum, default_value = "terminal")]
+        format: OutputFormat,
+        #[arg(short, long, value_hint = ValueHint::FilePath)]
+        output: Option<PathBuf>,
+    },
 }
 
 #[derive(Subcommand)]

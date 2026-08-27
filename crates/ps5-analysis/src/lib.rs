@@ -1,3 +1,4 @@
+pub mod artifacts;
 pub mod batch_extract;
 pub mod collector;
 pub mod dataset;
