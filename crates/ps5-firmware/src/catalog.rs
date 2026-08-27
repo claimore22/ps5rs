@@ -152,6 +152,16 @@ impl FirmwareCatalog {
         }
     }
 
+    pub fn check_requirements(
+        &self,
+        requirements: &[(String, String)],
+    ) -> Vec<(String, LibraryAvailability)> {
+        requirements
+            .iter()
+            .map(|(lib, ver)| (lib.clone(), self.check_library(lib, ver)))
+            .collect()
+    }
+
     pub fn load_exports_from_dir(&mut self, dir: &Path) -> usize {
         if !dir.is_dir() {
             return 0;
@@ -258,5 +268,50 @@ mod tests {
         let mut cat = FirmwareCatalog::new(FirmwareVersion::new(10, 0, 0));
         cat.populate_from_roms(Path::new("/nonexistent/path/xyz"));
         assert!(cat.modules.is_empty());
+    }
+
+    #[test]
+    fn check_library_compatibility() {
+        let mut cat = FirmwareCatalog::new(FirmwareVersion::new(10, 0, 0));
+        cat.libraries.push(FirmwareLibrary::new(
+            "libSceAgc",
+            "1.0",
+            vec!["libSceAgc.prx".to_string()],
+        ));
+        assert_eq!(
+            cat.check_library("libSceAgc", "1.0"),
+            LibraryAvailability::Compatible
+        );
+        assert!(matches!(
+            cat.check_library("libSceAgc", "2.0"),
+            LibraryAvailability::Insufficient { .. }
+        ));
+        assert_eq!(
+            cat.check_library("libMissing", "1.0"),
+            LibraryAvailability::NotFound
+        );
+    }
+
+    #[test]
+    fn check_requirements_batch() {
+        let mut cat = FirmwareCatalog::new(FirmwareVersion::new(10, 0, 0));
+        cat.libraries.push(FirmwareLibrary::new(
+            "libSceAgc",
+            "1.0",
+            vec!["libSceAgc.prx".to_string()],
+        ));
+        let reqs = vec![
+            ("libSceAgc".to_string(), "1.0".to_string()),
+            ("libSceAgc".to_string(), "2.0".to_string()),
+            ("libMissing".to_string(), "1.0".to_string()),
+        ];
+        let results = cat.check_requirements(&reqs);
+        assert_eq!(results.len(), 3);
+        assert_eq!(results[0].1, LibraryAvailability::Compatible);
+        assert!(matches!(
+            results[1].1,
+            LibraryAvailability::Insufficient { .. }
+        ));
+        assert_eq!(results[2].1, LibraryAvailability::NotFound);
     }
 }
