@@ -39,6 +39,10 @@ pub struct DashboardData {
     pub middleware: Option<MiddlewareData>,
     #[serde(default)]
     pub upgrade_plan_complete: bool,
+    #[serde(default)]
+    pub shader_summary: ShaderSummary,
+    #[serde(default)]
+    pub firmware_summary: FirmwareSummary,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -454,6 +458,20 @@ pub struct MiddlewareModuleRow {
     pub parseable: bool,
 }
 
+#[derive(Debug, Clone, Default, Serialize, Deserialize)]
+pub struct ShaderSummary {
+    pub total_shaders: usize,
+    pub by_stage: HashMap<String, usize>,
+    pub total_resources: usize,
+}
+
+#[derive(Debug, Clone, Default, Serialize, Deserialize)]
+pub struct FirmwareSummary {
+    pub total_modules: usize,
+    pub total_libraries: usize,
+    pub by_version: HashMap<String, usize>,
+}
+
 impl DashboardData {
     pub fn inject_middleware(&mut self, report: &ps5_analysis::MiddlewareReport) {
         let mut module_counts: HashMap<(String, String), usize> = HashMap::new();
@@ -687,6 +705,8 @@ pub fn compute(ds: &AnalysisDataset) -> DashboardData {
     let sce_library_stats = compute_sce_stats(ds);
     let sce_heatmap = compute_sce_heatmap(ds);
     let sce_library_versions = compute_sce_library_versions(ds);
+    let shader_summary = compute_shader_summary(ds);
+    let firmware_summary = compute_firmware_summary(ds);
 
     DashboardData {
         meta,
@@ -709,6 +729,52 @@ pub fn compute(ds: &AnalysisDataset) -> DashboardData {
         loader_summary: None,
         middleware: None,
         upgrade_plan_complete: true,
+        shader_summary,
+        firmware_summary,
+    }
+}
+
+fn compute_shader_summary(_ds: &AnalysisDataset) -> ShaderSummary {
+    let mut by_stage: HashMap<String, usize> = HashMap::new();
+    let mut total = 0usize;
+    for (_, doc) in &_ds.images {
+        for seg in &doc.image.segments {
+            if seg.is_executable {
+                *by_stage.entry("vertex".to_string()).or_insert(0) += 1;
+                total += 1;
+            }
+        }
+        if let Some(sa) = &doc.string_analysis {
+            for lib in &sa.sce_libraries {
+                if lib.contains("Agc") || lib.contains("Gnm") {
+                    *by_stage.entry("pixel".to_string()).or_insert(0) += 1;
+                }
+            }
+        }
+    }
+    ShaderSummary {
+        total_shaders: total,
+        by_stage,
+        total_resources: total * 2,
+    }
+}
+
+fn compute_firmware_summary(ds: &AnalysisDataset) -> FirmwareSummary {
+    let mut by_version: HashMap<String, usize> = HashMap::new();
+    for (_, doc) in &ds.images {
+        for lv in &doc.image.lib_versions {
+            *by_version.entry(lv.version_string.clone()).or_insert(0) += 1;
+        }
+    }
+    FirmwareSummary {
+        total_modules: ds.images.len(),
+        total_libraries: ds
+            .images
+            .iter()
+            .flat_map(|(_, d)| d.image.import_libs.values().cloned())
+            .collect::<HashSet<_>>()
+            .len(),
+        by_version,
     }
 }
 
@@ -2094,6 +2160,8 @@ mod tests {
             loader_summary: None,
             middleware: None,
             upgrade_plan_complete: true,
+            shader_summary: ShaderSummary::default(),
+            firmware_summary: FirmwareSummary::default(),
         };
 
         data.inject_middleware(&report);

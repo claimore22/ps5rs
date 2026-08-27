@@ -81,30 +81,35 @@ pub(crate) fn cmd_dashboard(
         );
     }
 
-    let html = ps5_dashboard::html::generate_html(&data);
-
-    let out_file = if output.to_string_lossy().ends_with(".html") {
+    let is_single_file = output.to_string_lossy().ends_with(".html");
+    if is_single_file {
+        let html = ps5_dashboard::html::generate_html(&data);
         if let Some(parent) = output.parent() {
             std::fs::create_dir_all(parent).unwrap_or_else(|e| {
                 eprintln!("error: cannot create {}: {e}", parent.display());
                 std::process::exit(1);
             });
         }
-        output.clone()
+        std::fs::write(output, &html).unwrap_or_else(|e| {
+            eprintln!("error: cannot write {}: {e}", output.display());
+            std::process::exit(1);
+        });
+        eprintln!("Dashboard written to {}", output.display());
     } else {
         std::fs::create_dir_all(output).unwrap_or_else(|e| {
             eprintln!("error: cannot create {}: {e}", output.display());
             std::process::exit(1);
         });
-        output.join("index.html")
-    };
-
-    std::fs::write(&out_file, &html).unwrap_or_else(|e| {
-        eprintln!("error: cannot write {}: {e}", out_file.display());
-        std::process::exit(1);
-    });
-
-    eprintln!("Dashboard written to {}", out_file.display());
+        ps5_dashboard::html::generate_dashboard_pages(&data, output).unwrap_or_else(|e| {
+            eprintln!(
+                "error: cannot write dashboard pages to {}: {e}",
+                output.display()
+            );
+            std::process::exit(1);
+        });
+        eprintln!("Dashboard pages written to {}", output.display());
+        eprintln!("  index.html (overview), shader.html, firmware.html, deps.html");
+    }
     eprintln!("  Games: {}", data.overview.total_games);
     eprintln!("  Libraries: {}", data.overview.unique_libs);
     eprintln!(
