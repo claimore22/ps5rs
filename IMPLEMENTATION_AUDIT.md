@@ -2,7 +2,7 @@
 
 > Source-of-truth repository audit against UPGRADE_PLAN2.md mission.
 > Audited 2026-08-27 on branch `elfspector-dev` @ `6ae64c1`. Read-only investigation — no code changed by this audit.
-> **Update — `update_plan_v2` 2026-08-27:** Phases 0–3 + 9 validated on `update_plan_v2` (commits edaf364, 7551552, 4ec6811, 8eb8058, d5cdeee). See `analysis/validation-report.json`/`md`.
+> **Update — `update_plan_v2` 2026-08-27:** Phases 0–6 + 9 validated on `update_plan_v2` (commits edaf364, 7551552, 4ec6811, 8eb8058, d5cdeee, 9d23028, ffd476c, 0796b4b, 55f8f92). See `analysis/validation-report.json`/`md`.
 
 ## 0. update_plan_v2 progress (verified)
 
@@ -11,8 +11,11 @@
 - **4ec6811** PRX authoritative: PrxModule TLS/init arrays (TlsInfo now serde), builder wiring, ps5-elf serde, ps5-cli deps honest via SelfImage/ElfImage parsing.
 - **8eb8058** shader real: SHA256 not DefaultHasher, stage from Shdr byte 44, hexdump not disassembly, resources no synthetic default_sampler, tests updated to real Shdr header.
 - **d5cdeee** validation: 27 games 98.6% NID, dashboard_honesty_test with 181/126/9 middleware, validation-report.json/md.
+- **9d23028** bare artifacts: ps5-analysis artifacts inventory — 30+ extensions classified (prx/pssl/sb/gnf/at9/bank/json etc.), relative paths preserved, cross-artifact prx/pssl/sb/gnf/at9 counts, bare content first-class (.pak not required, `archive` when present, unknown kept structured). Validated on Bugsnax bare dump: 17825 files, 514 shaders, 4812 gnf, 35 banks.
+- **ffd476c/0796b4b** dashboard artifacts: DashboardData artifacts Option<ArtifactReport> (truncated 200/game), dataset inject_artifacts when --games, html Artifacts tab (by-category/extension, per-game details, cross-artifact linkage).
+- **55f8f92** engine multi-signal: ps5-signatures enhance_with_artifacts (bare shader/texture/audio counts as evidence, +2 confidence for shader-rich, never invents engine), ps5-dashboard enriches engine_hints evidence with bare artifact counts — validated Bugsnax remains Unknown (no Unreal strings) despite 514 shaders.
 
-Clippy `-D warnings --all-targets --all-features` and `cargo test --workspace` green at each milestone.
+Clippy `-D warnings --all-targets --all-features` and `cargo test --workspace` green at each milestone. Bare content handled as first-class validation corpus; proprietary contents never copied.
 
 ## 1. CURRENT STATE
 
