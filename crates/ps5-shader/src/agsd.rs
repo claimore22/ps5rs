@@ -20,12 +20,12 @@ impl Agsd {
             if offset + 4 > data.len() {
                 break;
             }
-            let len = u32::from_le_bytes(data[offset..offset+4].try_into().unwrap()) as usize;
+            let len = u32::from_le_bytes(data[offset..offset + 4].try_into().unwrap()) as usize;
             offset += 4;
             if offset + len > data.len() {
                 break;
             }
-            if let Ok(s) = std::str::from_utf8(&data[offset..offset+len]) {
+            if let Ok(s) = std::str::from_utf8(&data[offset..offset + len]) {
                 names.push(s.to_string());
             }
             offset += len;

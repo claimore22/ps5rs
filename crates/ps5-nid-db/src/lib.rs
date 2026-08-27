@@ -92,11 +92,17 @@ impl NidDatabase {
         if let Some(name) = record.name.clone() {
             self.by_name.entry(name).or_default().push(nid.clone());
             for alias in &record.aliases {
-                self.by_name.entry(alias.clone()).or_default().push(nid.clone());
+                self.by_name
+                    .entry(alias.clone())
+                    .or_default()
+                    .push(nid.clone());
             }
         } else {
             for alias in &record.aliases {
-                self.by_name.entry(alias.clone()).or_default().push(nid.clone());
+                self.by_name
+                    .entry(alias.clone())
+                    .or_default()
+                    .push(nid.clone());
             }
         }
         self.by_library.entry(lib).or_default().push(nid.clone());
@@ -118,7 +124,9 @@ impl NidDatabase {
     pub fn query_by_library(&self, lib: &str) -> Vec<&NidRecord> {
         let key = LibraryId(lib.to_string());
         if let Some(nids) = self.by_library.get(&key) {
-            nids.iter().filter_map(|nid| self.records.get(nid)).collect()
+            nids.iter()
+                .filter_map(|nid| self.records.get(nid))
+                .collect()
         } else {
             self.records
                 .values()
@@ -132,10 +140,10 @@ impl NidDatabase {
             let mut seen = std::collections::BTreeSet::new();
             let mut out = Vec::new();
             for nid in nids {
-                if seen.insert(nid) {
-                    if let Some(rec) = self.records.get(nid) {
-                        out.push(rec);
-                    }
+                if seen.insert(nid)
+                    && let Some(rec) = self.records.get(nid)
+                {
+                    out.push(rec);
                 }
             }
             out
@@ -180,8 +188,12 @@ pub fn from_nid_csv_str(csv: &str) -> NidDatabase {
         if cols.len() >= 2 && !cols[0].is_empty() && !cols[1].is_empty() {
             let nid = cols[0].to_string();
             let name = cols[1].to_string();
-            let library = cols.get(2).filter(|s| !s.is_empty()).map(|s| LibraryId(s.to_string())).unwrap_or(LibraryId("unknown".to_string()));
-            let source = match cols.get(4).map(|s| *s).unwrap_or("Builtin") {
+            let library = cols
+                .get(2)
+                .filter(|s| !s.is_empty())
+                .map(|s| LibraryId(s.to_string()))
+                .unwrap_or(LibraryId("unknown".to_string()));
+            let source = match cols.get(4).copied().unwrap_or("Builtin") {
                 s if s.eq_ignore_ascii_case("sdk") => NidSource::SdkStub,
                 s if s.eq_ignore_ascii_case("supabase") => NidSource::Supabase,
                 s if s.eq_ignore_ascii_case("manual") => NidSource::Manual,
@@ -265,7 +277,10 @@ mod tests {
         let json = db.to_json_string().unwrap();
         let db2 = NidDatabase::from_json_str(&json).unwrap();
         assert_eq!(db2.len(), 1);
-        assert_eq!(db2.get("NID_JSON1").unwrap().name, Some("jsonFunc".to_string()));
+        assert_eq!(
+            db2.get("NID_JSON1").unwrap().name,
+            Some("jsonFunc".to_string())
+        );
     }
 
     #[test]

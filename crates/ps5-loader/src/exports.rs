@@ -143,7 +143,7 @@ mod tests {
             imports_known: 0,
             imports_stubbed: 0,
             per_library_imports: Vec::new(),
-                    prx_module: None,
+            prx_module: None,
         }
     }
 

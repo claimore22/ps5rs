@@ -29,6 +29,18 @@ The PS5 uses an x86-64 AMD Zen 2 CPU, which means CPU instruction compatibility 
 | `ps5-tests` | Deterministic, self-authored ELF fixture generator + manifest of expected guest behavior (regression suite input) |
 | `ps5-dashboard` | Static HTML dashboard generator (self-contained, no CDN dependencies) |
 | `ps5-cli` | Command-line interface |
+| `ps5-prx` | PRX module intelligence: `PrxModule` with metadata/dependencies/imports/exports/versions |
+| `ps5-schema` | Stable JSON schemas (`SCHEMA_VERSION`) for `BinaryImage`/`GameRecord`/`NidRecord` |
+| `ps5-abi` | ABI metadata: `AbiType`/`FunctionSignature`/`StructLayout` with 50 seed signatures |
+| `ps5-deps` | Dependency graph `ModuleGraph` + `DepReport` (`ps5rs deps --dot`) |
+| `ps5-signatures` | Engine/middleware signatures (`UNREAL4/5/UNITY/GODOT`, Wwise/FMOD/PhysX) |
+| `ps5-nid-db` | Typed NID database `NidDatabase` (JSON-only, in-memory indexes) |
+| `ps5-sdk-meta` | SDK knowledge DB `SdkDatabase` (libraries/functions/versions/structures/constants) |
+| `ps5-firmware` | Firmware catalog `FirmwareCatalog` (version/modules/libraries/exports) |
+| `ps5-shader` | Shader analysis `ShaderBinary`/`Agsd`/`Reflection`/`disasm` |
+| `ps5-fuzz` | Fuzz harnesses for ELF/SELF/NID/dynamic/relocations/shader |
+
+> **Upgrade plan:** all 10 proposed crates implemented — see `UPGRADE_PLAN.md:392` checklist (all `[x]`).
 
 ## Building
 

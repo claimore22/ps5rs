@@ -9,7 +9,12 @@ pub struct FirmwareModule {
 }
 
 impl FirmwareModule {
-    pub fn new(name: impl Into<String>, path: impl Into<String>, version: impl Into<String>, exports_count: usize) -> Self {
+    pub fn new(
+        name: impl Into<String>,
+        path: impl Into<String>,
+        version: impl Into<String>,
+        exports_count: usize,
+    ) -> Self {
         Self {
             name: name.into(),
             path: path.into(),

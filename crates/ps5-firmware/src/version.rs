@@ -10,7 +10,11 @@ pub struct FirmwareVersion {
 
 impl FirmwareVersion {
     pub fn new(major: u32, minor: u32, patch: u32) -> Self {
-        Self { major, minor, patch }
+        Self {
+            major,
+            minor,
+            patch,
+        }
     }
 
     pub fn parse(s: &str) -> Option<Self> {
@@ -22,7 +26,11 @@ impl FirmwareVersion {
         let major = parts[0].parse().ok()?;
         let minor = parts[1].parse().ok()?;
         let patch = parts.get(2).and_then(|p| p.parse().ok()).unwrap_or(0);
-        Some(Self { major, minor, patch })
+        Some(Self {
+            major,
+            minor,
+            patch,
+        })
     }
 }
 

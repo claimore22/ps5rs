@@ -1,3 +1,5 @@
+#![allow(non_camel_case_types)]
+#![allow(clippy::new_without_default)]
 use thiserror::Error;
 
 #[derive(Error, Debug)]

@@ -16,8 +16,14 @@ impl VersionRange {
 
     fn parse_ver(s: &str) -> (u32, u32) {
         let mut parts = s.split('.');
-        let major = parts.next().and_then(|p| p.parse::<u32>().ok()).unwrap_or(0);
-        let minor = parts.next().and_then(|p| p.parse::<u32>().ok()).unwrap_or(0);
+        let major = parts
+            .next()
+            .and_then(|p| p.parse::<u32>().ok())
+            .unwrap_or(0);
+        let minor = parts
+            .next()
+            .and_then(|p| p.parse::<u32>().ok())
+            .unwrap_or(0);
         (major, minor)
     }
 

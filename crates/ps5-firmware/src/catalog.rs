@@ -1,3 +1,4 @@
+#![allow(clippy::collapsible_if)]
 use std::collections::HashMap;
 use std::path::Path;
 
@@ -52,7 +53,12 @@ impl FirmwareCatalog {
                                 libs.entry(soname.clone()).or_default().push(soname.clone());
                                 for sym in &img.symbols {
                                     if !sym.is_import && !sym.resolved_name.is_empty() {
-                                        let nid = sym.resolved_name.split('#').next().unwrap_or("").to_string();
+                                        let nid = sym
+                                            .resolved_name
+                                            .split('#')
+                                            .next()
+                                            .unwrap_or("")
+                                            .to_string();
                                         if !nid.is_empty() {
                                             self.exports.insert(nid, soname.clone());
                                         }
@@ -76,7 +82,9 @@ impl FirmwareCatalog {
                                                 "1.0",
                                                 img.symbols.iter().filter(|s| !s.is_import).count(),
                                             ));
-                                            libs.entry(soname.clone()).or_default().push(soname.clone());
+                                            libs.entry(soname.clone())
+                                                .or_default()
+                                                .push(soname.clone());
                                         }
                                     }
                                 }
@@ -128,7 +136,8 @@ mod tests {
     #[test]
     fn json_roundtrip() {
         let mut cat = FirmwareCatalog::new(FirmwareVersion::new(9, 0, 0));
-        cat.modules.push(FirmwareModule::new("libTest.prx", "/tmp", "1.0", 5));
+        cat.modules
+            .push(FirmwareModule::new("libTest.prx", "/tmp", "1.0", 5));
         let s = cat.to_json().unwrap();
         let de = FirmwareCatalog::from_json(&s).unwrap();
         assert_eq!(de.modules.len(), 1);

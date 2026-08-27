@@ -1424,6 +1424,7 @@ mod tests {
             sce_library_versions: vec![],
             loader_summary: None,
             middleware: None,
+            upgrade_plan_complete: true,
         }
     }
 

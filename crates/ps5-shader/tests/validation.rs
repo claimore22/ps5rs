@@ -1,5 +1,5 @@
-use ps5_shader::{ShaderBinary, shader_metadata::ShaderMetadata};
 use ps5_shader::shader_binary::ShaderStage;
+use ps5_shader::{ShaderBinary, shader_metadata::ShaderMetadata};
 
 #[test]
 fn shader_binary_creates() {

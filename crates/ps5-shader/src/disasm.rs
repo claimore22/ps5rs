@@ -15,8 +15,7 @@ pub fn disassemble(data: &[u8]) -> Vec<String> {
 }
 
 pub fn is_gcn_instruction(data: &[u8]) -> bool {
-    // GCN instructions are 4 or 8 bytes, check alignment
-    !data.is_empty() && data.len() % 4 == 0
+    !data.is_empty() && data.len().is_multiple_of(4)
 }
 
 #[cfg(test)]

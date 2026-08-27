@@ -32,11 +32,23 @@ impl ResourceBinding {
         let text = String::from_utf8_lossy(data);
         for (idx, line) in text.lines().enumerate() {
             if line.contains("s_sampler") || line.contains("Sampler") {
-                out.push(Self::new(format!("sampler_{}", idx), idx as u32, ResourceType::Sampler));
+                out.push(Self::new(
+                    format!("sampler_{}", idx),
+                    idx as u32,
+                    ResourceType::Sampler,
+                ));
             } else if line.contains("Texture") || line.contains("t_") {
-                out.push(Self::new(format!("tex_{}", idx), idx as u32, ResourceType::Texture));
+                out.push(Self::new(
+                    format!("tex_{}", idx),
+                    idx as u32,
+                    ResourceType::Texture,
+                ));
             } else if line.contains("cbuffer") || line.contains("CB") {
-                out.push(Self::new(format!("cb_{}", idx), idx as u32, ResourceType::ConstantBuffer));
+                out.push(Self::new(
+                    format!("cb_{}", idx),
+                    idx as u32,
+                    ResourceType::ConstantBuffer,
+                ));
             }
         }
         if out.is_empty() && !data.is_empty() {
