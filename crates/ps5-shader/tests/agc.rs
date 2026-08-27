@@ -13,8 +13,10 @@ fn agc_shader_from_roms() {
         for entry in entries.flatten().take(1) {
             let p = entry.path();
             if p.is_dir() {
-                let data = b"vertex shader binary";
-                let shader = ShaderBinary::parse(data).unwrap();
+                let mut data = vec![0u8; 50];
+                data[32..36].copy_from_slice(b"Shdr");
+                data[44] = 1;
+                let shader = ShaderBinary::parse(&data).unwrap();
                 let agc = AgcShader {
                     data: vec![0u8; 16],
                 };

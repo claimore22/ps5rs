@@ -811,6 +811,7 @@ name = "ps5-shader"
 version = "0.4.0"
 dependencies = [
  "serde",
+ "sha2",
 ]
 
 [[package]]

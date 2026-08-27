@@ -34,7 +34,10 @@ mod tests {
 
     #[test]
     fn from_binary() {
-        let bin = crate::shader_binary::ShaderBinary::parse(b"vertex data").unwrap();
+        let mut data = vec![0u8; 50];
+        data[32..36].copy_from_slice(b"Shdr");
+        data[44] = 1;
+        let bin = crate::shader_binary::ShaderBinary::parse(&data).unwrap();
         let meta = ShaderMetadata::from_binary(&bin, "main");
         assert_eq!(meta.stage, crate::shader_binary::ShaderStage::Vertex);
         assert_eq!(meta.entry_point, "main");

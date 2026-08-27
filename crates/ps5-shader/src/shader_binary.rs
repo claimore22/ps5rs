@@ -52,35 +52,54 @@ impl ShaderBinary {
         if data.is_empty() {
             return Err("empty shader data".to_string());
         }
-        let stage = if (data.len() > 4 && data[0..4] == [0x47, 0x43, 0x4E, 0x00])
-            || data.windows(6).any(|w| w == b"vertex")
-        {
-            ShaderStage::Vertex
-        } else if data.windows(5).any(|w| w == b"pixel") {
-            ShaderStage::Pixel
-        } else if data.windows(7).any(|w| w == b"compute") {
-            ShaderStage::Compute
-        } else {
-            ShaderStage::Unknown("unknown".to_string())
-        };
+        let stage =
+            if data.len() >= 50 && data[32..36] == [0x53, 0x68, 0x64, 0x72] && data.len() > 44 {
+                match data[44] {
+                    1 => ShaderStage::Vertex,
+                    2 => ShaderStage::Pixel,
+                    3 => ShaderStage::Compute,
+                    other => ShaderStage::Unknown(format!("type_{other}")),
+                }
+            } else if data.len() > 4 && data[0..4] == [0x47, 0x43, 0x4E, 0x00] {
+                ShaderStage::Vertex
+            } else {
+                ShaderStage::Unknown("unknown".to_string())
+            };
         let hash = {
-            use std::collections::hash_map::DefaultHasher;
-            use std::hash::{Hash, Hasher};
-            let mut hasher = DefaultHasher::new();
-            data.hash(&mut hasher);
-            format!("{:016x}", hasher.finish())
+            use sha2::{Digest, Sha256};
+            let mut hasher = Sha256::new();
+            hasher.update(data);
+            let result = hasher.finalize();
+            result
+                .iter()
+                .map(|b| format!("{b:02x}"))
+                .collect::<String>()
         };
-        let entry_point = if data.len() >= 8 {
-            u64::from_le_bytes(data[0..8].try_into().unwrap_or([0; 8]))
-        } else {
-            0
-        };
+        let entry_point = 0;
         Ok(Self {
             stage,
             size: data.len(),
             hash,
             entry_point,
         })
+    }
+
+    pub fn parse_with_path(data: &[u8], path: &std::path::Path) -> Result<Self, String> {
+        let mut shader = Self::parse(data)?;
+        if matches!(shader.stage, ShaderStage::Unknown(_)) {
+            if let Some(name) = path.file_name().and_then(|n| n.to_str()) {
+                let lower = name.to_ascii_lowercase();
+                if lower.contains("_vs") || lower.contains("_vv") || lower.contains("_vertex") {
+                    shader.stage = ShaderStage::Vertex;
+                } else if lower.contains("_ps") || lower.contains("_p.") || lower.contains("_pixel")
+                {
+                    shader.stage = ShaderStage::Pixel;
+                } else if lower.contains("_cs") || lower.contains("_compute") {
+                    shader.stage = ShaderStage::Compute;
+                }
+            }
+        }
+        Ok(shader)
     }
 
     pub fn from_roms(roms_path: &str) -> Vec<Self> {
@@ -92,9 +111,11 @@ impl ShaderBinary {
         let walker = walkdir_simple(path);
         for file in walker {
             if let Ok(data) = std::fs::read(&file)
-                && let Ok(shader) = Self::parse(&data)
+                && let Ok(shader) = Self::parse_with_path(&data, &file)
             {
-                out.push(shader);
+                if !matches!(shader.stage, ShaderStage::Unknown(_)) || data.len() >= 32 {
+                    out.push(shader);
+                }
             }
         }
         out
@@ -112,10 +133,7 @@ fn walkdir_simple(root: &std::path::Path) -> Vec<std::path::PathBuf> {
                     stack.push(p);
                 } else if p.is_file()
                     && let Some(ext) = p.extension().and_then(|s| s.to_str())
-                    && matches!(
-                        ext.to_ascii_lowercase().as_str(),
-                        "bin" | "sb" | "ags" | "agsd" | "gnf" | "elf" | "prx"
-                    )
+                    && matches!(ext.to_ascii_lowercase().as_str(), "sb" | "ags" | "agsd")
                 {
                     files.push(p);
                 }
@@ -136,16 +154,20 @@ mod tests {
 
     #[test]
     fn parse_vertex_keyword() {
-        let data = b"some vertex shader code";
-        let s = ShaderBinary::parse(data).unwrap();
+        let mut data = vec![0u8; 50];
+        data[32..36].copy_from_slice(b"Shdr");
+        data[44] = 1;
+        let s = ShaderBinary::parse(&data).unwrap();
         assert_eq!(s.stage, ShaderStage::Vertex);
         assert_eq!(s.size, data.len());
     }
 
     #[test]
     fn parse_compute() {
-        let data = b"compute shader binary blob";
-        let s = ShaderBinary::parse(data).unwrap();
+        let mut data = vec![0u8; 50];
+        data[32..36].copy_from_slice(b"Shdr");
+        data[44] = 3;
+        let s = ShaderBinary::parse(&data).unwrap();
         assert_eq!(s.stage, ShaderStage::Compute);
     }
 

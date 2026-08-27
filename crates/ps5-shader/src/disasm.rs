@@ -1,4 +1,4 @@
-pub fn disassemble(data: &[u8]) -> Vec<String> {
+pub fn hexdump(data: &[u8]) -> Vec<String> {
     if data.is_empty() {
         return vec![];
     }
@@ -12,6 +12,10 @@ pub fn disassemble(data: &[u8]) -> Vec<String> {
         out.push(format!("{:08x}: {:<48} |{}|", i * 16, hex.join(" "), ascii));
     }
     out
+}
+
+pub fn disassemble(data: &[u8]) -> Vec<String> {
+    hexdump(data)
 }
 
 pub fn is_gcn_instruction(data: &[u8]) -> bool {

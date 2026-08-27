@@ -51,9 +51,6 @@ impl ResourceBinding {
                 ));
             }
         }
-        if out.is_empty() && !data.is_empty() {
-            out.push(Self::new("default_sampler", 0, ResourceType::Sampler));
-        }
         out
     }
 }
@@ -72,6 +69,6 @@ mod tests {
     #[test]
     fn empty_gives_default() {
         let res = ResourceBinding::parse_from_binary(b"binary blob");
-        assert_eq!(res.len(), 1);
+        assert!(res.is_empty());
     }
 }
