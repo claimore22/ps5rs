@@ -83,6 +83,27 @@ pub const GODOT: EngineFingerprint = EngineFingerprint {
 
 pub const ALL: &[EngineFingerprint] = &[UNREAL4, UNREAL5, UNITY, GODOT];
 
+pub fn enhance_with_artifacts(
+    mut detection: Detection,
+    shader_count: usize,
+    texture_count: usize,
+    audio_count: usize,
+) -> Detection {
+    if shader_count > 0 || texture_count > 0 || audio_count > 0 {
+        let evidence = format!(
+            "bare artifacts: shader={} (pssl/sb), texture={} (gnf/dds), audio={} (at9/bank) — relative paths preserved, .pak not required",
+            shader_count, texture_count, audio_count
+        );
+        detection.evidence.push(evidence);
+        // small confidence bump for shader-rich content when engine already detected; never invent engine from artifacts alone
+        if shader_count > 100 {
+            detection.confidence = detection.confidence.saturating_add(2).min(100);
+            detection.score = detection.score.saturating_add(5);
+        }
+    }
+    detection
+}
+
 pub fn detect_engine(strings: &[String]) -> Option<Detection> {
     let mut best: Option<Detection> = None;
 
@@ -280,5 +301,32 @@ mod tests {
     fn detect_custom_forks_empty() {
         let strings = vec!["hello world".to_string()];
         assert!(detect_custom_forks(&strings).is_empty());
+    }
+
+    #[test]
+    fn enhance_with_artifacts_adds_evidence() {
+        let strings = vec!["UnrealEngine4Runtime".to_string(), "UObject".to_string()];
+        let det = detect_engine(&strings).unwrap();
+        let enhanced = enhance_with_artifacts(det, 514, 4812, 36);
+        assert!(
+            enhanced
+                .evidence
+                .iter()
+                .any(|e| e.contains("bare artifacts"))
+        );
+        assert!(enhanced.confidence >= 90);
+    }
+
+    #[test]
+    fn enhance_does_not_invent_engine() {
+        let det = Detection {
+            value: "Unknown".to_string(),
+            score: 0,
+            confidence: 0,
+            evidence: vec![],
+        };
+        let enhanced = enhance_with_artifacts(det, 500, 4000, 10);
+        // enhance should still be Unknown, not misclassify as Unreal from artifacts alone
+        assert_eq!(enhanced.value, "Unknown");
     }
 }

@@ -629,6 +629,41 @@ impl DashboardData {
     }
 
     pub fn inject_artifacts(&mut self, mut report: ps5_analysis::artifacts::ArtifactReport) {
+        for hint in &mut self.engine_hints {
+            let artifact_game = report.games.iter().find(|g| {
+                g.game == hint.name
+                    || g.game == hint.display_name
+                    || hint.name.contains(&g.game)
+                    || g.game.contains(&hint.name)
+            });
+            if let Some(ag) = artifact_game {
+                if hint.engine != "Unknown" && hint.confidence > 0 {
+                    let shader = ag.by_category.get("shader").copied().unwrap_or(0);
+                    let texture = ag.by_category.get("texture").copied().unwrap_or(0);
+                    let audio = ag.by_category.get("audio").copied().unwrap_or(0);
+                    if shader > 0 || texture > 0 || audio > 0 {
+                        let ev = format!(
+                            "bare artifacts: shader={} (pssl/sb), texture={} (gnf/dds), audio={} (at9/bank) — relative paths preserved, .pak not required",
+                            shader, texture, audio
+                        );
+                        hint.evidence.push(ev);
+                        if shader > 100 {
+                            hint.confidence = hint.confidence.saturating_add(2).min(100);
+                            hint.score = hint.score.saturating_add(5);
+                        }
+                    }
+                } else if hint.engine == "Unknown" {
+                    // do not invent engine from artifacts alone; just add as contextual evidence if already some signal
+                    let shader = ag.by_category.get("shader").copied().unwrap_or(0);
+                    if shader > 100 && !hint.evidence.is_empty() {
+                        hint.evidence.push(format!(
+                            "bare content with {} shaders — indicates unpacked PS5 build, not .pak",
+                            shader
+                        ));
+                    }
+                }
+            }
+        }
         for game in &mut report.games {
             if game.artifacts.len() > 200 {
                 game.artifacts.truncate(200);
