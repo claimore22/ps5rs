@@ -18,7 +18,7 @@ mod context;
 pub use context::{DbgState, HleContext, LibcState};
 pub use registry::Registry;
 
-use ps5_abi::types::AbiType;
+use ps5_abi::AbiType;
 
 use crate::error::EmuError;
 
