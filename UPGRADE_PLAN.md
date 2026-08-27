@@ -393,7 +393,7 @@ Phases are incremental — each crate can ship independently. Recommended order:
 
 - [x] `ps5-deps` — new crate, `ps5-loader` re-exports, `ps5rs deps` + `--dot` CLI
 - [x] `ps5-signatures` — data crate, `ps5-analysis` becomes orchestrator
-- [ ] `ps5-nid-db` — typed `NidRecord`, keep `ps5-nid` algorithm-only, CSV compat
+- [x] `ps5-nid-db` — typed `NidRecord`, keep `ps5-nid` algorithm-only, CSV compat — **done** (JSON-only persistence + in-memory `HashMap`/`by_library`/`by_name` indexes, `load_from_path`/`save_to_path`, 8 tests, `data/nid/catalog.json`)
 - [ ] `ps5-prx` — `PrxModule` type, migrate `BinaryImageBuilder`/`dynamic.rs`/`libversion.rs`
 - [ ] `ps5-schema` — `SCHEMA_VERSION` central, JSON Schema files, migrations
 - [ ] `ps5-abi` — `FunctionSignature` store, 50 initial funcs, Registry validation
