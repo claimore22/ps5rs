@@ -9,6 +9,7 @@ pub enum NidSource {
     Supabase,
     Manual,
     RemuCrossRef,
+    Firmware,
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
@@ -94,6 +95,7 @@ impl NidDatabase {
                 NidSource::Manual => Confidence::Low,
                 NidSource::RemuCrossRef => Confidence::Medium,
                 NidSource::Builtin => Confidence::Medium,
+                NidSource::Firmware => Confidence::Verified,
             };
             let record = NidRecord {
                 nid: nid.clone(),
@@ -200,6 +202,65 @@ impl NidDatabase {
     pub fn libraries(&self) -> Vec<LibraryId> {
         self.by_library.keys().cloned().collect()
     }
+
+    pub fn populate_from_exports_dir(&mut self, dir: &std::path::Path) -> usize {
+        if !dir.is_dir() {
+            return 0;
+        }
+        let mut count = 0usize;
+        let Ok(entries) = std::fs::read_dir(dir) else {
+            return 0;
+        };
+        for entry in entries.flatten() {
+            let path = entry.path();
+            if path.extension().is_none_or(|e| e != "json") {
+                continue;
+            }
+            let file_name = path.file_name().and_then(|n| n.to_str()).unwrap_or("");
+            if !file_name.ends_with(".exports.json") {
+                continue;
+            }
+            let data = match std::fs::read_to_string(&path) {
+                Ok(d) => d,
+                Err(_) => continue,
+            };
+            let parsed: ExportFile = match serde_json::from_str(&data) {
+                Ok(p) => p,
+                Err(_) => continue,
+            };
+            let library = parsed
+                .module
+                .strip_suffix(".prx")
+                .unwrap_or(&parsed.module)
+                .to_string();
+            for exp in parsed.exports {
+                let record = NidRecord {
+                    nid: exp.nid.clone(),
+                    library: LibraryId(library.clone()),
+                    name: Some(exp.name.clone()),
+                    versions: None,
+                    source: NidSource::Firmware,
+                    confidence: Confidence::Verified,
+                    aliases: BTreeSet::from([exp.name.clone()]),
+                };
+                self.insert(record);
+                count += 1;
+            }
+        }
+        count
+    }
+}
+
+#[derive(Debug, Deserialize)]
+struct ExportFile {
+    module: String,
+    exports: Vec<ExportEntryJson>,
+}
+
+#[derive(Debug, Deserialize)]
+struct ExportEntryJson {
+    nid: String,
+    name: String,
 }
 
 pub fn load_from_path(path: &std::path::Path) -> Result<NidDatabase, serde_json::Error> {

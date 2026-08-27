@@ -152,6 +152,61 @@ impl FirmwareCatalog {
         }
     }
 
+    pub fn load_exports_from_dir(&mut self, dir: &Path) -> usize {
+        if !dir.is_dir() {
+            return 0;
+        }
+        let mut total = 0usize;
+        let mut libs: HashMap<String, Vec<String>> = HashMap::new();
+        let entries = match std::fs::read_dir(dir) {
+            Ok(e) => e,
+            Err(_) => return 0,
+        };
+        for entry in entries.flatten() {
+            let path = entry.path();
+            if path.extension().is_none_or(|e| e != "json") {
+                continue;
+            }
+            let file_name = path.file_name().and_then(|n| n.to_str()).unwrap_or("");
+            if !file_name.ends_with(".exports.json") {
+                continue;
+            }
+            let data = match std::fs::read_to_string(&path) {
+                Ok(d) => d,
+                Err(_) => continue,
+            };
+            let parsed: ExportFile = match serde_json::from_str(&data) {
+                Ok(p) => p,
+                Err(_) => continue,
+            };
+            let module_name = parsed.module.clone();
+            let library = module_name
+                .strip_suffix(".prx")
+                .unwrap_or(&module_name)
+                .to_string();
+            self.modules.push(FirmwareModule::new(
+                module_name.clone(),
+                path.to_string_lossy().to_string(),
+                "1.0",
+                parsed.exports.len(),
+            ));
+            libs.entry(library.clone())
+                .or_default()
+                .push(module_name.clone());
+            for exp in parsed.exports {
+                self.exports.insert(exp.nid.clone(), library.clone());
+                total += 1;
+            }
+        }
+        for (name, mods) in libs {
+            if self.libraries.iter().any(|l| l.name == name) {
+                continue;
+            }
+            self.libraries.push(FirmwareLibrary::new(name, "1.0", mods));
+        }
+        total
+    }
+
     pub fn to_json(&self) -> Result<String, serde_json::Error> {
         serde_json::to_string_pretty(self)
     }
@@ -159,6 +214,23 @@ impl FirmwareCatalog {
     pub fn from_json(s: &str) -> Result<Self, serde_json::Error> {
         serde_json::from_str(s)
     }
+}
+
+#[derive(Debug, Deserialize)]
+struct ExportFile {
+    module: String,
+    exports: Vec<ExportEntry>,
+}
+
+#[derive(Debug, Deserialize)]
+struct ExportEntry {
+    nid: String,
+    #[allow(dead_code)]
+    name: String,
+    #[allow(dead_code)]
+    address: String,
+    #[allow(dead_code)]
+    size: u64,
 }
 
 #[cfg(test)]
