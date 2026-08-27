@@ -95,13 +95,36 @@ pub fn enhance_with_artifacts(
             shader_count, texture_count, audio_count
         );
         detection.evidence.push(evidence);
-        // small confidence bump for shader-rich content when engine already detected; never invent engine from artifacts alone
         if shader_count > 100 {
             detection.confidence = detection.confidence.saturating_add(2).min(100);
             detection.score = detection.score.saturating_add(5);
         }
     }
     detection
+}
+
+pub fn detect_unreal_version(strings: &[String], base: &Detection) -> Option<(String, u8)> {
+    if !base.value.contains("Unreal") {
+        return None;
+    }
+    for s in strings {
+        if s.contains("5.3") && s.contains("Unreal") {
+            return Some(("Unreal Engine 5.3".to_string(), 85));
+        }
+        if s.contains("5.2") && s.contains("Unreal") {
+            return Some(("Unreal Engine 5.2".to_string(), 85));
+        }
+        if s.contains("5.1") && s.contains("Unreal") {
+            return Some(("Unreal Engine 5.1".to_string(), 85));
+        }
+        if s.contains("5.0") && s.contains("Unreal") {
+            return Some(("Unreal Engine 5.0".to_string(), 80));
+        }
+        if s.contains("4.27") && s.contains("Unreal") {
+            return Some(("Unreal Engine 4.27".to_string(), 80));
+        }
+    }
+    None
 }
 
 pub fn detect_engine(strings: &[String]) -> Option<Detection> {
@@ -326,7 +349,35 @@ mod tests {
             evidence: vec![],
         };
         let enhanced = enhance_with_artifacts(det, 500, 4000, 10);
-        // enhance should still be Unknown, not misclassify as Unreal from artifacts alone
         assert_eq!(enhanced.value, "Unknown");
+    }
+
+    #[test]
+    fn unreal_version_only_with_evidence() {
+        let strings = vec![
+            "UnrealEngine5Runtime".to_string(),
+            "SomeGame 5.3".to_string(),
+        ];
+        let base = detect_engine(&strings).unwrap();
+        assert_eq!(base.value, "Unreal Engine 5");
+        assert!(detect_unreal_version(&strings, &base).is_none());
+        let strings2 = vec!["Unreal 5.3 patch".to_string()];
+        let base2 = Detection {
+            value: "Unreal Engine 5".to_string(),
+            score: 100,
+            confidence: 90,
+            evidence: vec![],
+        };
+        let ver = detect_unreal_version(&strings2, &base2).unwrap();
+        assert_eq!(ver.0, "Unreal Engine 5.3");
+    }
+
+    #[test]
+    fn version_uncertainty() {
+        let strings = vec!["UnrealEngine5Runtime".to_string()];
+        let base = detect_engine(&strings).unwrap();
+        assert_eq!(base.value, "Unreal Engine 5");
+        assert!(base.confidence >= 80);
+        assert!(detect_unreal_version(&strings, &base).is_none());
     }
 }
