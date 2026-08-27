@@ -51,5 +51,5 @@ fn populate_from_roms() {
             db.insert(func);
         }
     }
-    assert!(db.len() >= 0);
+    assert!(db.len() <= 100);
 }

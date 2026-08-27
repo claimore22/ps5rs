@@ -1,3 +1,5 @@
+#![allow(clippy::collapsible_if)]
+#![allow(clippy::absurd_extreme_comparisons)]
 use std::path::Path;
 
 #[test]

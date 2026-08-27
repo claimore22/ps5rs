@@ -1,3 +1,5 @@
+#![allow(clippy::collapsible_if)]
+#![allow(clippy::absurd_extreme_comparisons)]
 use ps5_prx::{ModuleType, PrxModule};
 
 #[test]
