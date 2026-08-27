@@ -1,4 +1,4 @@
-use ps5_abi::{AbiType, FunctionSignature, calling_convention::CallingConvention};
+use ps5_abi::{AbiType, FunctionSignature};
 
 #[test]
 fn abi_types_exist() {
