@@ -1,0 +1,444 @@
+{
+  "dataset_path": "analysis",
+  "generated_at": "2026-08-27T16:06:23Z",
+  "tool": "ps5rs",
+  "total_games": 27,
+  "elf_valid": 27,
+  "parse_errors": [],
+  "libversion_found": 0,
+  "nid_resolution_avg": 98.5789104980485,
+  "games": [
+    {
+      "name": "Afterimage-PPSA14053-EUR-Game-v01.000-PS5",
+      "display_name": "Afterimage - [PPSA14053]",
+      "input_sha256": "16101e0a130b9067a534d574c22901c3a28a08ab74326b324cc25bf977c3b3b2",
+      "elf_sha256": null,
+      "self_detected": true,
+      "elf_valid": true,
+      "error": null,
+      "segment_count": 14,
+      "sce_segments": [
+        "SCE_Procparam"
+      ],
+      "lib_versions_count": 0,
+      "imports": 2144,
+      "resolved_imports": 2051
+    },
+    {
+      "name": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+      "display_name": "Asterigos: Curse of the Stars - [PPSA08194]",
+      "input_sha256": "b208de05bd97250bde4a3bb9e8157107e606fbfd3d3a36bfcc9b5c66d4337f7a",
+      "elf_sha256": null,
+      "self_detected": true,
+      "elf_valid": true,
+      "error": null,
+      "segment_count": 14,
+      "sce_segments": [
+        "SCE_Procparam"
+      ],
+      "lib_versions_count": 0,
+      "imports": 2165,
+      "resolved_imports": 2019
+    },
+    {
+      "name": "Blue.Prince-PPSA25009-EUR-Game-_v01.008___APR-EMU_-PS5",
+      "display_name": "Blue Prince - [PPSA25009]",
+      "input_sha256": "7dbcc2870eb428c11b85184286fd1bd821b5692503188dd2676dfa42defa7d8e",
+      "elf_sha256": null,
+      "self_detected": false,
+      "elf_valid": true,
+      "error": null,
+      "segment_count": 14,
+      "sce_segments": [
+        "SCE_Procparam"
+      ],
+      "lib_versions_count": 0,
+      "imports": 610,
+      "resolved_imports": 608
+    },
+    {
+      "name": "Bugsnax_PS5_Dump_v2.000",
+      "display_name": "Bugsnax_PS5_Dump_v2.000",
+      "input_sha256": "176717908d1ce7e7993f9b03f9324aa0661d1c75cc6ae8b89fb7d65ea9ad1118",
+      "elf_sha256": null,
+      "self_detected": true,
+      "elf_valid": true,
+      "error": null,
+      "segment_count": 14,
+      "sce_segments": [
+        "SCE_Procparam"
+      ],
+      "lib_versions_count": 0,
+      "imports": 612,
+      "resolved_imports": 545
+    },
+    {
+      "name": "Cat-Quest-III-PPSA15065-app",
+      "display_name": "Cat Quest III - [PPSA15065]",
+      "input_sha256": "5910ab94c8b0a8087bcbb6d60098ed8e58b5d6a5f46134120bd0efe9f647bbea",
+      "elf_sha256": null,
+      "self_detected": true,
+      "elf_valid": true,
+      "error": null,
+      "segment_count": 14,
+      "sce_segments": [
+        "SCE_Procparam"
+      ],
+      "lib_versions_count": 0,
+      "imports": 604,
+      "resolved_imports": 602
+    },
+    {
+      "name": "Dead.Cells-PPSA15552-USA-Game-v01.005-PS5",
+      "display_name": "Dead Cells - [PPSA15552]",
+      "input_sha256": "0cecb86cae3ec7834b68963d580ae297b393264636c23fd4114969ecc1966139",
+      "elf_sha256": null,
+      "self_detected": true,
+      "elf_valid": true,
+      "error": null,
+      "segment_count": 14,
+      "sce_segments": [
+        "SCE_Procparam"
+      ],
+      "lib_versions_count": 0,
+      "imports": 310,
+      "resolved_imports": 310
+    },
+    {
+      "name": "Dusk_Diver_2_01.000_PPSA06565",
+      "display_name": "Dusk Diver 2 - [PPSA06565]",
+      "input_sha256": "8fed747507fa3ca0ede07ebb0c86bf2af50e10f81f90c04ecc6c0e25687e295c",
+      "elf_sha256": null,
+      "self_detected": true,
+      "elf_valid": true,
+      "error": null,
+      "segment_count": 14,
+      "sce_segments": [
+        "SCE_Procparam"
+      ],
+      "lib_versions_count": 0,
+      "imports": 2129,
+      "resolved_imports": 2035
+    },
+    {
+      "name": "GRIS-PPSA09804___EUR-Game__v01.001_-PS5",
+      "display_name": "GRIS - [PPSA09804]",
+      "input_sha256": "effbbbe080c102794779b180caba6562b14093379ee866a6989dcd494e91527d",
+      "elf_sha256": null,
+      "self_detected": true,
+      "elf_valid": true,
+      "error": null,
+      "segment_count": 14,
+      "sce_segments": [
+        "SCE_Procparam"
+      ],
+      "lib_versions_count": 0,
+      "imports": 584,
+      "resolved_imports": 584
+    },
+    {
+      "name": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+      "display_name": "Hello Neighbor 2 - [PPSA07426]",
+      "input_sha256": "fd73d6384888fc641d4119f7eece0adf6f79e8bc2393098ed650bb42070f09b6",
+      "elf_sha256": null,
+      "self_detected": true,
+      "elf_valid": true,
+      "error": null,
+      "segment_count": 14,
+      "sce_segments": [
+        "SCE_Procparam"
+      ],
+      "lib_versions_count": 0,
+      "imports": 2058,
+      "resolved_imports": 2057
+    },
+    {
+      "name": "Judgment-PPSA02739-USA-Game__v01.001_-PS5",
+      "display_name": "Judgment - [PPSA02739]",
+      "input_sha256": "444cbf9932b55a710c36c591b850a6d6bf24c109c76251c36f10ea3c982938a1",
+      "elf_sha256": null,
+      "self_detected": true,
+      "elf_valid": true,
+      "error": null,
+      "segment_count": 14,
+      "sce_segments": [
+        "SCE_Procparam"
+      ],
+      "lib_versions_count": 0,
+      "imports": 548,
+      "resolved_imports": 548
+    },
+    {
+      "name": "Juicy.Realm-PPSA19268-USA-Game__v01.000_-PS5",
+      "display_name": "Juicy Realm - [PPSA19268]",
+      "input_sha256": "c1e8a335b8ad33b8645f5fa3a1b74469b7e3e0ed2e70770780a036dec2174790",
+      "elf_sha256": null,
+      "self_detected": true,
+      "elf_valid": true,
+      "error": null,
+      "segment_count": 14,
+      "sce_segments": [
+        "SCE_Procparam"
+      ],
+      "lib_versions_count": 0,
+      "imports": 603,
+      "resolved_imports": 601
+    },
+    {
+      "name": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+      "display_name": "Jusant - [PPSA10264]",
+      "input_sha256": "36f451ac260314fc92ae0a91e60dbd4a5ed900bbca069def80dc9e928440f15f",
+      "elf_sha256": null,
+      "self_detected": true,
+      "elf_valid": true,
+      "error": null,
+      "segment_count": 14,
+      "sce_segments": [
+        "SCE_Procparam"
+      ],
+      "lib_versions_count": 0,
+      "imports": 1767,
+      "resolved_imports": 1767
+    },
+    {
+      "name": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game__v01.001_-PS5",
+      "display_name": "Mega Man Star Force Legacy Collection - [PPSA32239]",
+      "input_sha256": "3a7e3daa5e642f9948d69a6b188ad937ad554e0c3c1b40d008a3d7c0d7173b45",
+      "elf_sha256": null,
+      "self_detected": false,
+      "elf_valid": true,
+      "error": null,
+      "segment_count": 14,
+      "sce_segments": [
+        "SCE_Procparam"
+      ],
+      "lib_versions_count": 0,
+      "imports": 851,
+      "resolved_imports": 847
+    },
+    {
+      "name": "Metal.Slug.Tactics-PPSA20643-EUR-Game__v02.000_-PS5",
+      "display_name": "Metal Slug Tactics - [PPSA20643]",
+      "input_sha256": "4390643f8697a97d3b5f75ad1bb630d18ea9b289cccc12a8fa9f92379c2dbd68",
+      "elf_sha256": null,
+      "self_detected": true,
+      "elf_valid": true,
+      "error": null,
+      "segment_count": 14,
+      "sce_segments": [
+        "SCE_Procparam"
+      ],
+      "lib_versions_count": 0,
+      "imports": 606,
+      "resolved_imports": 604
+    },
+    {
+      "name": "Neko.Rescue.Tale-PPSA13871-EUR-Game__v01.000_-PS5",
+      "display_name": "Neko Rescue Tale - [PPSA13871]",
+      "input_sha256": "01ecd7e5f523330f6212325c99d90cf2b0a2e094df96235c5c02ea555a63f07b",
+      "elf_sha256": null,
+      "self_detected": true,
+      "elf_valid": true,
+      "error": null,
+      "segment_count": 14,
+      "sce_segments": [
+        "SCE_Procparam"
+      ],
+      "lib_versions_count": 0,
+      "imports": 554,
+      "resolved_imports": 553
+    },
+    {
+      "name": "Neva-PPSA16786-EUR-Game__v01.007_-PS5",
+      "display_name": "Neva - [PPSA16786]",
+      "input_sha256": "824460e6eb249fa0e817ac4cff94bbbfe225c8d30faa264139f455356e5245c5",
+      "elf_sha256": null,
+      "self_detected": true,
+      "elf_valid": true,
+      "error": null,
+      "segment_count": 14,
+      "sce_segments": [
+        "SCE_Procparam"
+      ],
+      "lib_versions_count": 0,
+      "imports": 610,
+      "resolved_imports": 608
+    },
+    {
+      "name": "Octopath.Traveler.II-PPSA09809-EUR-Game-v01.000-PS5",
+      "display_name": "OCTOPATH TRAVELER II - [PPSA09809]",
+      "input_sha256": "844a361498bf83596943718e94008da42e78060924eeaad6530c1e8f2f9cd1f6",
+      "elf_sha256": null,
+      "self_detected": true,
+      "elf_valid": true,
+      "error": null,
+      "segment_count": 14,
+      "sce_segments": [
+        "SCE_Procparam"
+      ],
+      "lib_versions_count": 0,
+      "imports": 2050,
+      "resolved_imports": 2049
+    },
+    {
+      "name": "PPSA02100_-__Stray",
+      "display_name": "Stray - [PPSA02100]",
+      "input_sha256": "24e0ba7dddf1537357b7eb1c61f477bb9d585d0164b932f7828c6dbd04afc676",
+      "elf_sha256": null,
+      "self_detected": true,
+      "elf_valid": true,
+      "error": null,
+      "segment_count": 14,
+      "sce_segments": [
+        "SCE_Procparam"
+      ],
+      "lib_versions_count": 0,
+      "imports": 2040,
+      "resolved_imports": 2039
+    },
+    {
+      "name": "PPSA02456-app",
+      "display_name": "Subnautica Below Zero - [PPSA02456]",
+      "input_sha256": "b73b02c3cd0ae353007aa34d677a5d0653ef2119cc82eae7a23b5d75f084414e",
+      "elf_sha256": null,
+      "self_detected": true,
+      "elf_valid": true,
+      "error": null,
+      "segment_count": 14,
+      "sce_segments": [
+        "SCE_Procparam"
+      ],
+      "lib_versions_count": 0,
+      "imports": 581,
+      "resolved_imports": 581
+    },
+    {
+      "name": "PPSA02787-app0",
+      "display_name": "Monster Boy and the Cursed Kingdom - [PPSA02787]",
+      "input_sha256": "cff19ba5d9e7593acd8371ca8367b0f4d038642c07d593ca0deb8470adbe5a06",
+      "elf_sha256": null,
+      "self_detected": true,
+      "elf_valid": true,
+      "error": null,
+      "segment_count": 14,
+      "sce_segments": [
+        "SCE_Procparam"
+      ],
+      "lib_versions_count": 0,
+      "imports": 596,
+      "resolved_imports": 595
+    },
+    {
+      "name": "PPSA07653-app0",
+      "display_name": "Oxide Room 104 - [PPSA07653]",
+      "input_sha256": "f520b717976d781cb3b963422f90aa58d27ce47096454d96f22bc7c827dc40c3",
+      "elf_sha256": null,
+      "self_detected": true,
+      "elf_valid": true,
+      "error": null,
+      "segment_count": 14,
+      "sce_segments": [
+        "SCE_Procparam"
+      ],
+      "lib_versions_count": 0,
+      "imports": 2022,
+      "resolved_imports": 2021
+    },
+    {
+      "name": "PPSA13356-app",
+      "display_name": "Raiden III x MIKADO MANIAX - [PPSA13356]",
+      "input_sha256": "3de3bb43c3c4d0c7b3bd234d75386602bb515755fb600cc0cbb930a857451b24",
+      "elf_sha256": null,
+      "self_detected": true,
+      "elf_valid": true,
+      "error": null,
+      "segment_count": 14,
+      "sce_segments": [
+        "SCE_Procparam"
+      ],
+      "lib_versions_count": 0,
+      "imports": 684,
+      "resolved_imports": 683
+    },
+    {
+      "name": "PPSA22102-app",
+      "display_name": "Squirrel with a Gun - [PPSA22102]",
+      "input_sha256": "7ad68d87f114cab2bedbe1ff6c878be58b10ce1a87755d6ebd9fbd0f9bac3af8",
+      "elf_sha256": null,
+      "self_detected": true,
+      "elf_valid": true,
+      "error": null,
+      "segment_count": 14,
+      "sce_segments": [
+        "SCE_Procparam"
+      ],
+      "lib_versions_count": 0,
+      "imports": 1774,
+      "resolved_imports": 1774
+    },
+    {
+      "name": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+      "display_name": "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
+      "input_sha256": "b3c9a98297a08cbdec815b436048f34414a1bd58c786b69f7e72fd3d837a1258",
+      "elf_sha256": null,
+      "self_detected": true,
+      "elf_valid": true,
+      "error": null,
+      "segment_count": 14,
+      "sce_segments": [
+        "SCE_Procparam"
+      ],
+      "lib_versions_count": 0,
+      "imports": 604,
+      "resolved_imports": 602
+    },
+    {
+      "name": "Soul.Hackers.2-PPSA03743-USA-Game__v01.002__DLC-PS5",
+      "display_name": "Soul Hackers 2 - [PPSA03743]",
+      "input_sha256": "b0b3e83447a4ce3e759c442321751ab939af76fe33411366ff96b0948aeb4831",
+      "elf_sha256": null,
+      "self_detected": true,
+      "elf_valid": true,
+      "error": null,
+      "segment_count": 14,
+      "sce_segments": [
+        "SCE_Procparam"
+      ],
+      "lib_versions_count": 0,
+      "imports": 594,
+      "resolved_imports": 594
+    },
+    {
+      "name": "The_Pathless_PS5_Dump_v2.000",
+      "display_name": "The_Pathless_PS5_Dump_v2.000",
+      "input_sha256": "37a3c6dbff248781267ba018cc5ca99713464d7a3b78de34103dac7ac8aa33ff",
+      "elf_sha256": null,
+      "self_detected": true,
+      "elf_valid": true,
+      "error": null,
+      "segment_count": 14,
+      "sce_segments": [
+        "SCE_Procparam"
+      ],
+      "lib_versions_count": 0,
+      "imports": 1665,
+      "resolved_imports": 1664
+    },
+    {
+      "name": "Totally.Reliable.Delivery.Service-PPSA28855-EUR-Game__v01.001_-PS5",
+      "display_name": "Totally Reliable Delivery Service - [PPSA28855]",
+      "input_sha256": "67119076d9f66dababb37a8d7a61617a40a23d02cb49af62ffe233a30b5f0edb",
+      "elf_sha256": null,
+      "self_detected": true,
+      "elf_valid": true,
+      "error": null,
+      "segment_count": 14,
+      "sce_segments": [
+        "SCE_Procparam"
+      ],
+      "lib_versions_count": 0,
+      "imports": 612,
+      "resolved_imports": 610
+    }
+  ]
+}
