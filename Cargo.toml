@@ -22,6 +22,7 @@ members = [
     "crates/ps5-sdk-meta",
     "crates/ps5-firmware",
     "crates/ps5-shader",
+    "crates/ps5-fuzz",
 ]
 
 [workspace.package]

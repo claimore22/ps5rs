@@ -20,6 +20,7 @@ fn catalog_from_roms() {
                 name: name.clone(),
                 path: entry.path().to_string_lossy().to_string(),
                 version: "1.0".to_string(),
+                exports_count: 0,
             });
         }
     }

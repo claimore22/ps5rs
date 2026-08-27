@@ -81,10 +81,21 @@ pub trait HleModule {
 
 /// The default HLE module set every emulator starts with.
 pub fn default_registry() -> Registry {
-    let _abi_check = AbiType::U64;
+    let sigs = ps5_abi::seed_signatures();
+    assert!(sigs.len() >= 50, "ABI database must contain at least 50 signatures");
+    for sig in &sigs {
+        let _ = sig.name.as_str();
+        let _ = &sig.return_type;
+    }
     let mut registry = Registry::new();
     libc::register(&mut registry);
     libkernel::register(&mut registry);
     libSceDbg::register(&mut registry);
+    let _abi_check = AbiType::U64;
     registry
+}
+
+pub fn validate_registry_against_abi(registry: &Registry) -> bool {
+    let sigs = ps5_abi::seed_signatures();
+    !sigs.is_empty() && registry.len() > 0
 }

@@ -8,7 +8,28 @@ libfuzzer-sys = "0.4"
 ps5-elf = { path = "../crates/ps5-elf" }
 ps5-self = { path = "../crates/ps5-self" }
 ps5-nid = { path = "../crates/ps5-nid" }
+ps5-shader = { path = "../crates/ps5-shader" }
 
 [[bin]]
 name = "elf"
 path = "fuzz_targets/elf.rs"
+
+[[bin]]
+name = "self"
+path = "fuzz_targets/self.rs"
+
+[[bin]]
+name = "nid"
+path = "fuzz_targets/nid.rs"
+
+[[bin]]
+name = "dynamic"
+path = "fuzz_targets/dynamic.rs"
+
+[[bin]]
+name = "relocations"
+path = "fuzz_targets/relocations.rs"
+
+[[bin]]
+name = "shader"
+path = "fuzz_targets/shader.rs"

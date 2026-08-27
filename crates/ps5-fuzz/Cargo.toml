@@ -1,14 +1,14 @@
 [package]
-name = "ps5-firmware"
+name = "ps5-fuzz"
 version.workspace = true
 edition.workspace = true
 license.workspace = true
-description = "Firmware metadata"
+description = "Fuzz targets for parsers"
 
 [dependencies]
 ps5-elf = { path = "../ps5-elf" }
-serde = { version = "1", features = ["derive"] }
-serde_json = "1"
+ps5-self = { path = "../ps5-self" }
+ps5-nid = { path = "../ps5-nid" }
 
 [lints]
 workspace = true
