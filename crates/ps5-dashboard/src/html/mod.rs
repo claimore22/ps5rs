@@ -1,5 +1,8 @@
 use crate::data::DashboardData;
 
+mod helpers;
+mod style;
+
 pub fn generate_dashboard_pages(
     data: &DashboardData,
     out_dir: &std::path::Path,
