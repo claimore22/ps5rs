@@ -105,6 +105,8 @@ pub struct LoadedModule {
     pub imports_stubbed: u32,
     /// Per-library import resolution counts.
     pub per_library_imports: Vec<LibraryImportCounts>,
+    /// Parsed PRX intelligence (from `ps5-prx`), if available.
+    pub prx_module: Option<ps5_prx::PrxModule>,
 }
 
 impl LoadedModule {
@@ -263,6 +265,7 @@ pub fn load_elf(name: &str, elf_bytes: &[u8]) -> Result<LoadedModule> {
         imports_known: 0,
         imports_stubbed: 0,
         per_library_imports: Vec::new(),
+        prx_module: _prx_intel,
     })
 }
 

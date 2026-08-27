@@ -189,6 +189,7 @@ mod tests {
             imports_known: 0,
             imports_stubbed: 0,
             per_library_imports: Vec::new(),
+            prx_module: None,
         };
         let elf = ps5_elf::ElfImage {
             data: &[],

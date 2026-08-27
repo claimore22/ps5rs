@@ -9,6 +9,7 @@ description = "BinaryImage IR — normalized abstraction between PS5 ELF/SELF pa
 ps5-format = { path = "../ps5-format" }
 ps5-elf = { path = "../ps5-elf" }
 ps5-nid = { path = "../ps5-nid" }
+ps5-prx = { path = "../ps5-prx" }
 ps5-schema = { path = "../ps5-schema" }
 ps5-self = { path = "../ps5-self" }
 serde = { version = "1", features = ["derive"] }

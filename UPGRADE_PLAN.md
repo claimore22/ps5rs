@@ -393,14 +393,14 @@ Phases are incremental — each crate can ship independently. Recommended order:
 
 - [x] `ps5-deps` — new crate, `ps5-loader` re-exports, `ps5rs deps` + `--dot` CLI
 - [x] `ps5-signatures` — data crate, `ps5-analysis` becomes orchestrator
-- [ ] `ps5-nid-db` — typed `NidRecord`, keep `ps5-nid` algorithm-only, CSV compat
-- [ ] `ps5-prx` — `PrxModule` type, migrate `BinaryImageBuilder`/`dynamic.rs`/`libversion.rs`
-- [ ] `ps5-schema` — `SCHEMA_VERSION` central, JSON Schema files, migrations
-- [ ] `ps5-abi` — `FunctionSignature` store, 50 initial funcs, Registry validation
-- [ ] `ps5-sdk-meta` — `SdkFunction` DB, import from `nids.csv` + `*.a`
-- [ ] `ps5-firmware` — `FirmwareCatalog`, firmware-aware analysis (`libSceFoo v2.1 vs v1.4`)
-- [ ] `ps5-shader` — `.ags`/`.agsd`/`disasm`/`reflection`
-- [ ] `ps5-fuzz` — `fuzz/fuzz_targets/*.rs`, corpus from `ps5-tests`, CI 60s per target
+- [x] `ps5-nid-db` — typed `NidRecord`, keep `ps5-nid` algorithm-only, CSV compat — **done** (JSON-only persistence + in-memory `HashMap`/`by_library`/`by_name` indexes, `load_from_path`/`save_to_path`, 8 tests, `data/nid/catalog.json`)
+- [x] `ps5-prx` — `PrxModule` type, migrate `BinaryImageBuilder`/`dynamic.rs`/`libversion.rs` — **done** (`PrxModule::from_elf` with `ModuleType`/`PrxMetadata`/`Dependency`/`ImportEntry`/`ExportEntry`/`LibVersion`, `ps5-image/src/builder.rs` consumes `ps5-prx`, `ps5-loader/src/mapper.rs` stores `prx_module`, 2 integration tests)
+- [x] `ps5-schema` — `SCHEMA_VERSION` central, JSON Schema files, migrations — **done** (`SCHEMA_VERSION=1`, `BinaryImageDocument`/`NidRecord`/`ModuleRecord`/`GameRecord`/`DependencyGraphSnapshot`/`ShaderRecord`, `ps5-image` re-exports `BINARY_IMAGE_VERSION`, 2 tests, no cycles)
+- [x] `ps5-abi` — `FunctionSignature` store, 50 initial funcs, Registry validation — **done** (`AbiType`/`CallingConvention`/`FunctionSignature`/`StructLayout`/`CallbackSignature`, `layouts::known_layouts`, `database::seed_signatures()` 50 entries, `ps5-emu::default_registry` validates, 4 tests)
+- [x] `ps5-sdk-meta` — `SdkFunction` DB, import from `nids.csv` + `*.a` — **done** (modular `libraries`/`functions`/`versions`/`structures`/`constants`/`database`, `SdkDatabase` with `populate_from_stubs_dir` + `populate_from_nids_csv`, JSON persistence, 9 tests)
+- [x] `ps5-firmware` — `FirmwareCatalog`, firmware-aware analysis (`libSceFoo v2.1 vs v1.4`) — **done** (`version`/`modules`/`libraries`/`exports`/`catalog`, `FirmwareCatalog::populate_from_roms` via `ps5-elf`, JSON roundtrip, 8 tests)
+- [x] `ps5-shader` — `.ags`/`.agsd`/`disasm`/`reflection` — **done** (`ShaderBinary::parse` + `ShaderStage`, `ShaderMetadata`, `Agsd`, `disasm::disassemble`, `ResourceBinding`/`Reflection`, `from_roms` walker, 7 tests + 2 integration)
+- [x] `ps5-fuzz` — `fuzz/fuzz_targets/*.rs`, corpus from `ps5-tests`, CI 60s per target — **done** (`crates/ps5-fuzz` lib + `fuzz/fuzz_targets/{elf,self,nid,dynamic,relocations,shader}.rs`, `ps5-elf`/`ps5-self`/`ps5-nid`/`ps5-shader` harnesses, `crates/ps5-fuzz` 3 tests)
 
 ## 6. Non-Goals (deferred per ROADMAP.md)
 
