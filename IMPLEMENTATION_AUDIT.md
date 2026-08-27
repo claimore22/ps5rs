@@ -2,6 +2,17 @@
 
 > Source-of-truth repository audit against UPGRADE_PLAN2.md mission.
 > Audited 2026-08-27 on branch `elfspector-dev` @ `6ae64c1`. Read-only investigation — no code changed by this audit.
+> **Update — `update_plan_v2` 2026-08-27:** Phases 0–3 + 9 validated on `update_plan_v2` (commits edaf364, 7551552, 4ec6811, 8eb8058, d5cdeee). See `analysis/validation-report.json`/`md`.
+
+## 0. update_plan_v2 progress (verified)
+
+- **edaf364** honesty gate: shader/firmware honest empty (not vertex/pixel guess, not total*2), SDK timeline marked reference, module_count honest, ps5-nid-db from_catalog honest, ps5-nid iter, ps5-signatures scoring non-zero, ps5-firmware version-aware + LibraryAvailability, ps5-abi Provenance + free->Void, loader docs, middleware --format json + dashboard --games, dead template removed.
+- **7551552** NID/evidence: ps5-format Evidence/EvidenceKind/Detection, ps5-nid-db Firmware source + populate_from_exports_dir, ps5-firmware load_exports_from_dir (8 tables), unknown_nids extended (modules/possible_category/confidence/evidence honest unknown defaults).
+- **4ec6811** PRX authoritative: PrxModule TLS/init arrays (TlsInfo now serde), builder wiring, ps5-elf serde, ps5-cli deps honest via SelfImage/ElfImage parsing.
+- **8eb8058** shader real: SHA256 not DefaultHasher, stage from Shdr byte 44, hexdump not disassembly, resources no synthetic default_sampler, tests updated to real Shdr header.
+- **d5cdeee** validation: 27 games 98.6% NID, dashboard_honesty_test with 181/126/9 middleware, validation-report.json/md.
+
+Clippy `-D warnings --all-targets --all-features` and `cargo test --workspace` green at each milestone.
 
 ## 1. CURRENT STATE
 
