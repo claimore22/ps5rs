@@ -47,13 +47,13 @@ html, body {
 .sr-name { font-size: 0.88rem; }
 .sr-detail { font-size: 0.75rem; color: var(--muted); }
 .tabs { display: none; }
-.tab { display: none; }
 .layout { display: flex; min-height: calc(100vh - 57px); }
 .sidebar {
   width: 260px; flex-shrink: 0; background: var(--surface);
   border-right: 1px solid var(--border); position: sticky; top: 57px;
   height: calc(100vh - 57px); overflow-y: auto; padding: 16px 10px;
 }
+.sidebar-title { font-size: 0.95rem; font-weight: 700; color: var(--text); padding: 6px 8px 10px; letter-spacing: -0.02em; border-bottom: 1px solid var(--border); margin-bottom: 10px; }
 .sidebar-section { margin-bottom: 18px; }
 .sidebar-heading {
   font-size: 0.68rem; color: var(--muted); text-transform: uppercase;
