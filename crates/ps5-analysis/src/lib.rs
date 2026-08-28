@@ -2,6 +2,7 @@ pub mod artifacts;
 pub mod batch_extract;
 pub mod collector;
 pub mod dataset;
+pub mod dragon;
 pub mod engine_fingerprints;
 pub mod export;
 pub mod middleware;

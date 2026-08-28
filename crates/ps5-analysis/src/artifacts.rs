@@ -38,9 +38,9 @@ impl ArtifactCategory {
             "pssl" | "sb" | "ags" | "agsd" => Self::Shader,
             "gnf" | "dds" | "tga" | "bmp" | "png" | "jpg" => Self::Texture,
             "at9" | "bank" => Self::Audio,
-            "dae" | "objcache" | "mtl" => Self::Model,
+            "dae" | "objcache" | "mtl" | "gmd" => Self::Model,
             "ttf" => Self::Font,
-            "pak" | "pkg" | "paks" => Self::Archive,
+            "pak" | "par" | "pxd" | "pkg" | "paks" | "bnd" | "dcx" => Self::Archive,
             "json" | "xml" | "txt" | "ucp" | "auth_info" | "irr" | "esbak" | "swatch"
             | "xcache" | "daecache" | "db" | "dat" | "bat" | "bin" => Self::Metadata,
             _ => Self::Unknown,

@@ -110,8 +110,11 @@ pub const DRAGON_ENGINE: EngineFingerprint = EngineFingerprint {
         ("DragonEngine", 90),
         ("RyuGaGotoku", 90),
         (".par", 40),
+        (".pxd", 40),
         (".gmd", 30),
+        (".dds", 10),
         ("Yakuza", 20),
+        ("LikeADragon", 30),
     ],
 };
 
