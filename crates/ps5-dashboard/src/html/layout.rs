@@ -123,10 +123,11 @@ pub fn render_page(data: &DashboardData, active_tab: &str) -> String {
     html.push_str("</style>\n</head>\n<body>\n\n");
 
     push_header(&mut html, data);
-    push_tab_bar(&mut html, active);
-    html.push_str("\n<div class=\"container\">\n");
+    html.push_str("\n<div class=\"layout\">\n");
+    push_sidebar(&mut html, active);
+    html.push_str("\n<div class=\"main\">\n<div class=\"container\">\n");
     push_tab_contents(&mut html, active);
-    html.push_str("\n</div>\n\n");
+    html.push_str("\n</div>\n</div>\n</div>\n\n");
     html.push_str(DETAIL_PANEL);
     html.push_str("\n<script>\nconst D = ");
     html.push_str(&json);
@@ -156,6 +157,56 @@ fn push_header(html: &mut String, data: &DashboardData) {
 "#);
 }
 
+fn push_sidebar(html: &mut String, active: &str) {
+    html.push_str(r#"<nav class="sidebar" id="sidebar">"#);
+    html.push_str(r#"<div class="sidebar-section"><div class="sidebar-heading">General</div>"#);
+    render_sidebar_group(html, &["overview"], active);
+    html.push_str("</div>");
+    html.push_str(r#"<div class="sidebar-section"><div class="sidebar-heading">Games</div>"#);
+    render_sidebar_group(html, &["games"], active);
+    html.push_str("</div>");
+    html.push_str(r#"<div class="sidebar-section"><div class="sidebar-heading">Analysis</div>"#);
+    render_sidebar_group(
+        html,
+        &[
+            "engines",
+            "libraries",
+            "nids",
+            "segments",
+            "statistics",
+            "graph",
+            "loader",
+            "middleware",
+            "artifacts",
+        ],
+        active,
+    );
+    html.push_str("</div>");
+    html.push_str(r#"<div class="sidebar-section"><div class="sidebar-heading">Platform</div>"#);
+    render_sidebar_group(html, &["sdk", "shader", "firmware"], active);
+    html.push_str("</div>");
+    html.push_str("</nav>");
+}
+
+fn render_sidebar_group(html: &mut String, ids: &[&str], active: &str) {
+    for id in ids {
+        if let Some(tab) = TABS.iter().find(|t| t.id == *id) {
+            html.push_str(r#"<div class="sidebar-item tab"#);
+            if tab.id == active {
+                html.push_str(" active");
+            }
+            html.push_str(r#"" data-tab=""#);
+            html.push_str(tab.id);
+            html.push('"');
+            html.push_str(tab.button_attrs);
+            html.push('>');
+            html.push_str(tab.label);
+            html.push_str("</div>\n");
+        }
+    }
+}
+
+#[allow(dead_code)]
 fn push_tab_bar(html: &mut String, active: &str) {
     html.push_str(
         r#"<div class="tabs" id="tabBar">
