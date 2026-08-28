@@ -59,7 +59,6 @@ fn analyze_engine(name: &str, doc: &ps5_image::BinaryImageDocument) -> EngineHin
         .into_iter()
         .collect();
 
-    // ELF-based SCE library detection
     let mut sce_libraries: Vec<String> = all_libs
         .iter()
         .filter(|l| l.starts_with("libSce"))
@@ -67,7 +66,59 @@ fn analyze_engine(name: &str, doc: &ps5_image::BinaryImageDocument) -> EngineHin
         .collect();
     sce_libraries.sort();
 
-    // ELF-based engine detection
+    let string_analysis = doc.string_analysis.as_ref();
+
+    // Multi-signal studio engine detection (RE/Decima/Dragon/FromSoft etc.) via ps5-signatures
+    let mut signals: Vec<String> = Vec::new();
+    signals.extend(all_libs.iter().cloned());
+    signals.extend(lib_names.iter().cloned());
+    signals.extend(img.needed_files.iter().cloned());
+    signals.extend(img.lib_versions.iter().map(|lv| lv.name.clone()));
+    signals.extend(
+        img.imports
+            .iter()
+            .filter_map(|imp| imp.resolved_name.clone()),
+    );
+    signals.extend(img.segments.iter().map(|s| format!("{:?}", s.seg_type)));
+    if let Some(sa) = string_analysis {
+        if let Some(e) = &sa.engine {
+            signals.push(e.value.clone());
+            signals.extend(e.evidence.clone());
+        }
+        signals.extend(sa.source_paths.clone());
+        signals.extend(sa.sce_libraries.clone());
+        for det in &sa.third_party_libs {
+            signals.push(det.value.clone());
+            signals.extend(det.evidence.clone());
+        }
+        if let Some(bs) = &sa.build_system {
+            signals.push(bs.value.clone());
+        }
+        for lv in &sa.detected_versions {
+            signals.push(lv.value.clone());
+        }
+    }
+    if let Some(build_id) = &img.metadata.build_id {
+        signals.push(build_id.clone());
+    }
+    let mut studio_engines: Vec<String> = Vec::new();
+    let mut studio_detection: Option<ps5_image::Detection> = None;
+    if let Some(det) = ps5_signatures::engine::detect_engine(&signals)
+        && ![
+            "Native",
+            "SCE",
+            "Unreal Engine 4",
+            "Unreal Engine 5",
+            "Unity",
+            "Godot",
+        ]
+        .contains(&det.value.as_str())
+    {
+        studio_engines.push(det.value.clone());
+        studio_detection = Some(det);
+    }
+
+    // Original ELF-based engine detection for Unreal/Unity/Godot (kept for backward compat)
     let mut engines = Vec::new();
 
     let unreal = {
@@ -99,18 +150,14 @@ fn analyze_engine(name: &str, doc: &ps5_image::BinaryImageDocument) -> EngineHin
         engines.push("Godot".to_string());
     }
 
-    // String-based analysis — enriches ELF data, fills gaps for encrypted eboots
-    let string_analysis = doc.string_analysis.as_ref();
+    engines.extend(studio_engines.clone());
 
     if let Some(sa) = string_analysis {
-        // Merge string-based engine detection if ELF found nothing
         if engines.is_empty()
             && let Some(ref engine) = sa.engine
         {
             engines.push(engine.value.clone());
         }
-
-        // Merge SCE libraries from strings
         for lib in &sa.sce_libraries {
             if !sce_libraries.contains(lib) {
                 sce_libraries.push(lib.clone());
@@ -120,21 +167,41 @@ fn analyze_engine(name: &str, doc: &ps5_image::BinaryImageDocument) -> EngineHin
     }
 
     if engines.is_empty() {
-        engines.push("Native/SCE".to_string());
+        if let Some(ref det) = studio_detection {
+            engines.push(det.value.clone());
+        } else {
+            engines.push("Native/SCE".to_string());
+        }
     }
 
     let unreal = unreal
+        || studio_detection
+            .as_ref()
+            .is_some_and(|d| d.value.contains("Unreal"))
         || string_analysis
             .and_then(|sa| sa.engine.as_ref())
             .is_some_and(|e| e.value.contains("Unreal"));
     let unity = unity
+        || studio_detection
+            .as_ref()
+            .is_some_and(|d| d.value == "Unity")
         || string_analysis
             .and_then(|sa| sa.engine.as_ref())
             .is_some_and(|e| e.value == "Unity");
     let godot = godot
+        || studio_detection
+            .as_ref()
+            .is_some_and(|d| d.value == "Godot")
         || string_analysis
             .and_then(|sa| sa.engine.as_ref())
             .is_some_and(|e| e.value == "Godot");
+
+    let mut custom_forks = string_analysis
+        .map(|sa| sa.custom_forks.clone())
+        .unwrap_or_default();
+    if let Some(det) = studio_detection.clone() {
+        custom_forks.push(det);
+    }
 
     EngineHint {
         name: name.to_string(),
@@ -161,9 +228,7 @@ fn analyze_engine(name: &str, doc: &ps5_image::BinaryImageDocument) -> EngineHin
         project_paths: string_analysis
             .map(|sa| sa.project_paths.clone())
             .unwrap_or_default(),
-        custom_forks: string_analysis
-            .map(|sa| sa.custom_forks.clone())
-            .unwrap_or_default(),
+        custom_forks,
     }
 }
 
