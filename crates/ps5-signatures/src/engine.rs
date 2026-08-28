@@ -12,7 +12,7 @@ impl EngineFingerprint {
 
         for &(pattern, weight) in self.patterns {
             for s in strings {
-                if s.contains(pattern) {
+                if contains_word_boundary(s, pattern) {
                     evidence.push(s.clone());
                     total += weight as u32;
                     break;
@@ -28,6 +28,34 @@ impl EngineFingerprint {
 
         (total, confidence, evidence)
     }
+}
+
+fn contains_word_boundary(haystack: &str, needle: &str) -> bool {
+    if needle.is_empty() {
+        return false;
+    }
+    if haystack.contains(needle) {
+        // fast path for exact or substring with word boundary
+        let mut start = 0;
+        while let Some(pos) = haystack[start..].find(needle) {
+            let abs = start + pos;
+            let before_ok = abs == 0 || !haystack.as_bytes()[abs - 1].is_ascii_alphanumeric();
+            let after = abs + needle.len();
+            let after_ok =
+                after >= haystack.len() || !haystack.as_bytes()[after].is_ascii_alphanumeric();
+            // For patterns starting with '.' like ".par", allow before to be alphanumeric (dot handles boundary)
+            let is_dot_pattern = needle.starts_with('.');
+            if (before_ok || is_dot_pattern) && after_ok {
+                return true;
+            }
+            start = abs + needle.len();
+            if start >= haystack.len() {
+                break;
+            }
+        }
+        return false;
+    }
+    false
 }
 
 pub const UNREAL4: EngineFingerprint = EngineFingerprint {
@@ -108,12 +136,9 @@ pub const DRAGON_ENGINE: EngineFingerprint = EngineFingerprint {
     patterns: &[
         ("DragonEngine", 90),
         ("RyuGaGotoku", 90),
-        (".par", 40),
-        (".pxd", 40),
-        (".gmd", 30),
-        (".dds", 10),
-        ("Yakuza", 20),
-        ("LikeADragon", 30),
+        ("Yakuza:", 50),
+        ("LikeADragon", 50),
+        ("Ryu Ga Gotoku Studio", 90),
     ],
 };
 

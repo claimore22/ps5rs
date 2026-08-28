@@ -118,6 +118,7 @@ fn analyze_engine(name: &str, doc: &ps5_image::BinaryImageDocument) -> EngineHin
             "Godot",
         ]
         .contains(&det.value.as_str())
+        && det.confidence >= 10
     {
         studio_engines.push(det.value.clone());
         studio_detection = Some(det);
@@ -160,8 +161,10 @@ fn analyze_engine(name: &str, doc: &ps5_image::BinaryImageDocument) -> EngineHin
     if let Some(sa) = string_analysis {
         if engines.is_empty()
             && let Some(ref engine) = sa.engine
+            && engine.confidence >= 10
         {
             engines.push(engine.value.clone());
+            studio_detection = Some(engine.clone());
         }
         for lib in &sa.sce_libraries {
             if !sce_libraries.contains(lib) {
@@ -461,8 +464,8 @@ mod tests {
         let sa = StringAnalysis {
             engine: Some(Detection {
                 value: "Unreal Engine 4".to_string(),
-                score: 0,
-                confidence: 0,
+                score: 90,
+                confidence: 90,
                 evidence: vec!["UnrealEngine4Runtime".to_string()],
             }),
             ..Default::default()
