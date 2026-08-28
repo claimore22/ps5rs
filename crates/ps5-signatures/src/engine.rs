@@ -96,11 +96,10 @@ pub const RE_ENGINE: EngineFingerprint = EngineFingerprint {
 pub const DECIMA: EngineFingerprint = EngineFingerprint {
     name: "Decima",
     patterns: &[
-        ("Decima", 90),
         ("DecimaEngine", 90),
-        (".core", 30),
-        ("HorizonZeroDawn", 20),
-        ("DeathStranding", 20),
+        ("Decima Engine", 90),
+        ("HorizonZeroDawn", 40),
+        ("DeathStranding", 40),
     ],
 };
 
@@ -161,7 +160,11 @@ pub const SUCKER_PUNCH: EngineFingerprint = EngineFingerprint {
 
 pub const POLYPHONY: EngineFingerprint = EngineFingerprint {
     name: "Polyphony Digital",
-    patterns: &[("Polyphony", 90), ("Gran Turismo", 50), ("GT7", 30)],
+    patterns: &[
+        ("Gran Turismo", 90),
+        ("Polyphony Digital", 90),
+        ("GT7 ", 50),
+    ],
 };
 
 pub const SQUARE_ENIX: EngineFingerprint = EngineFingerprint {

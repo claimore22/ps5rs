@@ -67,6 +67,7 @@ fn analyze_engine(name: &str, doc: &ps5_image::BinaryImageDocument) -> EngineHin
     sce_libraries.sort();
 
     let string_analysis = doc.string_analysis.as_ref();
+    let has_ue4_file = has_ue4commandline(name);
 
     // Multi-signal studio engine detection (RE/Decima/Dragon/FromSoft etc.) via ps5-signatures
     let mut signals: Vec<String> = Vec::new();
@@ -98,6 +99,10 @@ fn analyze_engine(name: &str, doc: &ps5_image::BinaryImageDocument) -> EngineHin
             signals.push(lv.value.clone());
         }
     }
+    if has_ue4_file {
+        signals.push("ue4commandline.txt".to_string());
+        signals.push("UnrealEngine4Runtime".to_string());
+    }
     if let Some(build_id) = &img.metadata.build_id {
         signals.push(build_id.clone());
     }
@@ -121,7 +126,7 @@ fn analyze_engine(name: &str, doc: &ps5_image::BinaryImageDocument) -> EngineHin
     // Original ELF-based engine detection for Unreal/Unity/Godot (kept for backward compat)
     let mut engines = Vec::new();
 
-    let unreal = {
+    let unreal = has_ue4_file || {
         let lib_match = all_libs
             .iter()
             .any(|l| l.contains("Unreal") || l.contains("UE4") || l.contains("UE5"));
@@ -230,6 +235,58 @@ fn analyze_engine(name: &str, doc: &ps5_image::BinaryImageDocument) -> EngineHin
             .unwrap_or_default(),
         custom_forks,
     }
+}
+
+fn has_ue4commandline(game_name: &str) -> bool {
+    use std::sync::OnceLock;
+    static CACHE: OnceLock<std::collections::HashSet<String>> = OnceLock::new();
+    let set = CACHE.get_or_init(|| {
+        let mut s = std::collections::HashSet::new();
+        let roms = std::path::Path::new(r"C:\Users\claimoar\Documents\ROMS\PS5");
+        let mut stack = vec![roms.to_path_buf()];
+        let mut depth = 0;
+        while let Some(dir) = stack.pop() {
+            if depth > 4 {
+                continue;
+            }
+            if let Ok(entries) = std::fs::read_dir(&dir) {
+                for entry in entries.flatten() {
+                    let path = entry.path();
+                    if path.is_file()
+                        && path.file_name().and_then(|n| n.to_str()) == Some("ue4commandline.txt")
+                    {
+                        if let Some(parent) = path
+                            .parent()
+                            .and_then(|p| p.file_name())
+                            .and_then(|n| n.to_str())
+                        {
+                            s.insert(crate::scanner::sanitize_filename(parent));
+                            s.insert(parent.to_string());
+                        }
+                        if let Some(grand) = path
+                            .parent()
+                            .and_then(|p| p.parent())
+                            .and_then(|p| p.file_name())
+                            .and_then(|n| n.to_str())
+                        {
+                            s.insert(crate::scanner::sanitize_filename(grand));
+                            s.insert(grand.to_string());
+                        }
+                    } else if path.is_dir() {
+                        stack.push(path);
+                    }
+                }
+            }
+            depth += 1;
+        }
+        s
+    });
+    let sanitized = crate::scanner::sanitize_filename(game_name);
+    set.contains(&sanitized)
+        || set.contains(&game_name.to_string())
+        || set
+            .iter()
+            .any(|k| game_name.contains(k) || k.contains(game_name))
 }
 
 #[cfg(test)]
