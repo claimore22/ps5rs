@@ -47,6 +47,8 @@ pub struct DashboardData {
     pub artifacts: Option<ps5_analysis::artifacts::ArtifactReport>,
     #[serde(default, skip_serializing_if = "Vec::is_empty")]
     pub firmware_checks: Vec<FirmwareGameCheck>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub shaders: Vec<ps5_schema::ShaderRecord>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -753,6 +755,41 @@ impl DashboardData {
         }
         self.firmware_checks = checks;
     }
+
+    pub fn inject_shaders(&mut self, shaders: Vec<ps5_schema::ShaderRecord>) {
+        if shaders.is_empty() {
+            return;
+        }
+        let total = shaders.len();
+        let mut by_stage: HashMap<String, usize> = HashMap::new();
+        for s in &shaders {
+            let key = if s.stage.is_empty() {
+                "unknown".to_string()
+            } else {
+                s.stage.clone()
+            };
+            *by_stage.entry(key).or_insert(0) += 1;
+        }
+        self.shader_summary = ShaderSummary {
+            total_shaders: total,
+            by_stage,
+            total_resources: 0,
+        };
+        self.overview.shader_files = total;
+        self.shaders = shaders;
+    }
+
+    pub fn load_shaders_from_dataset(&mut self, dataset_root: &Path) {
+        let path = dataset_root.join("shaders.json");
+        if !path.exists() {
+            return;
+        }
+        if let Ok(data) = std::fs::read_to_string(&path)
+            && let Ok(shaders) = serde_json::from_str::<Vec<ps5_schema::ShaderRecord>>(&data)
+        {
+            self.inject_shaders(shaders);
+        }
+    }
 }
 
 pub fn compute(ds: &AnalysisDataset) -> DashboardData {
@@ -861,6 +898,7 @@ pub fn compute(ds: &AnalysisDataset) -> DashboardData {
         firmware_summary,
         artifacts: None,
         firmware_checks: Vec::new(),
+        shaders: Vec::new(),
     }
 }
 
@@ -2270,6 +2308,7 @@ mod tests {
             firmware_summary: FirmwareSummary::default(),
             artifacts: None,
             firmware_checks: Vec::new(),
+            shaders: Vec::new(),
         };
 
         data.inject_middleware(&report);
@@ -2399,6 +2438,7 @@ mod tests {
             firmware_summary: FirmwareSummary::default(),
             artifacts: None,
             firmware_checks: Vec::new(),
+            shaders: Vec::new(),
         };
         data.inject_artifacts(report);
         assert_eq!(data.overview.total_artifacts, 10);

@@ -10,6 +10,7 @@ pub mod model;
 pub mod param_json;
 pub mod reports;
 pub mod scanner;
+pub mod shader_inventory;
 pub mod string_patterns;
 pub mod unity;
 

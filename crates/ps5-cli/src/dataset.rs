@@ -92,6 +92,19 @@ pub(crate) fn cmd_dashboard(
         data.inject_artifacts(art_report);
     }
 
+    data.load_shaders_from_dataset(path);
+    if !data.shaders.is_empty() {
+        eprintln!(
+            "  Shaders: {} records ({} games)",
+            data.shaders.len(),
+            data.shaders
+                .iter()
+                .map(|s| &s.game)
+                .collect::<std::collections::HashSet<_>>()
+                .len()
+        );
+    }
+
     {
         let mut fw_catalog =
             ps5_firmware::FirmwareCatalog::new(ps5_firmware::FirmwareVersion::new(0, 0, 0));

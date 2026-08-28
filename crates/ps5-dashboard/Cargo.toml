@@ -10,6 +10,7 @@ ps5-analysis = { path = "../ps5-analysis" }
 ps5-firmware = { path = "../ps5-firmware" }
 ps5-image = { path = "../ps5-image" }
 ps5-nid = { path = "../ps5-nid" }
+ps5-schema = { path = "../ps5-schema" }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 
