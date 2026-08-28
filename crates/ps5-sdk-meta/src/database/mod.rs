@@ -76,7 +76,27 @@ impl SdkDatabase {
     }
 
     pub fn populate_from_catalog(&mut self, catalog: &ps5_nid::Catalog) {
-        let _ = catalog;
+        for (nid, entry) in catalog.iter() {
+            let library = entry
+                .libraries
+                .iter()
+                .next()
+                .cloned()
+                .unwrap_or_else(|| "unknown".to_string());
+            let Some(name) = entry.primary_name().map(|s| s.to_string()) else {
+                continue;
+            };
+            let func = SdkFunction::new(
+                nid.clone(),
+                name.clone(),
+                library.clone(),
+                Some(format!("{library}.prx")),
+                VersionRange::single("1.00"),
+                infer_category(&library),
+            )
+            .with_provenance(crate::functions::Provenance::Unverified);
+            self.insert(func);
+        }
     }
 
     pub fn populate_from_stubs_dir(&mut self, stubs_path: &Path) {
