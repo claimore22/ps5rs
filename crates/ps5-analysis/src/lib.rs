@@ -10,6 +10,7 @@ pub mod param_json;
 pub mod reports;
 pub mod scanner;
 pub mod string_patterns;
+pub mod unity;
 
 pub use batch_extract::{
     BatchExtractOptions, BatchExtractResult, ExtractionEntry, ExtractionManifest, batch_extract,
