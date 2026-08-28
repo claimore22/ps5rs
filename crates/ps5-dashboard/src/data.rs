@@ -1,5 +1,2409 @@
-pub mod types;
-pub mod logic;
+use ps5_analysis::dataset::AnalysisDataset;
+use ps5_analysis::reports::build_engine_hints;
+use ps5_image::{LibVersionEntry, SegmentType};
+use serde::{Deserialize, Serialize};
+use std::collections::{BTreeSet, HashMap, HashSet};
+use std::path::Path;
 
-pub use types::*;
-pub use logic::*;
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct DashboardData {
+    pub meta: DashboardMeta,
+    pub overview: Overview,
+    pub games: Vec<GameRow>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub game_details: Vec<GameDetail>,
+    pub heatmap: HeatmapData,
+    pub nid_stats: NidStats,
+    pub segments: Vec<SegmentRow>,
+    pub library_priority: Vec<LibraryPriority>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub library_details: Vec<LibraryDetail>,
+    pub library_nid_breakdown: Vec<LibraryNidGroup>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub statistics: Option<DashboardStatistics>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub engine_hints: Vec<DashboardEngineHint>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub engine_summary: Vec<EngineSummary>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub library_versions: Vec<DashboardLibraryVersion>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub sce_library_stats: Vec<SceLibraryStats>,
+    #[serde(default)]
+    pub sce_heatmap: HeatmapData,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub sce_library_versions: Vec<DashboardLibraryVersion>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub loader_summary: Option<LoaderSummary>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub middleware: Option<MiddlewareData>,
+    #[serde(default)]
+    pub upgrade_plan_complete: bool,
+    #[serde(default)]
+    pub shader_summary: ShaderSummary,
+    #[serde(default)]
+    pub firmware_summary: FirmwareSummary,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub artifacts: Option<ps5_analysis::artifacts::ArtifactReport>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub firmware_checks: Vec<FirmwareGameCheck>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct FirmwareGameCheck {
+    pub game: String,
+    pub checks: Vec<FirmwareLibCheck>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct FirmwareLibCheck {
+    pub library: String,
+    pub required: String,
+    pub status: String,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct DashboardMeta {
+    pub generated_at: String,
+    pub game_count: usize,
+    pub tool_version: String,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct Overview {
+    pub total_games: usize,
+    pub elf_valid: usize,
+    pub total_imports: usize,
+    pub unique_nids: usize,
+    pub unique_libs: usize,
+    pub resolution_rate: f64,
+    pub avg_imports_per_game: f64,
+    #[serde(default)]
+    pub total_artifacts: usize,
+    #[serde(default)]
+    pub shader_files: usize,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct GameRow {
+    pub name: String,
+    pub title_name: Option<String>,
+    pub platform: String,
+    pub is_self: bool,
+    pub engine: String,
+    pub engine_confidence: u8,
+    pub library_count: usize,
+    pub sce_library_count: usize,
+    pub unknown_nid_count: usize,
+    pub file_size_mb: f64,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct GameDetail {
+    pub name: String,
+    pub title_name: Option<String>,
+    pub platform: String,
+    pub is_self: bool,
+    pub file_size_mb: f64,
+    pub sha256: String,
+    pub entry_point: String,
+    pub elf_type: u16,
+    pub osabi: u8,
+    pub abi_version: u8,
+    pub elf_version: u32,
+    pub build_id: Option<String>,
+    pub segments: Vec<SegmentDetail>,
+    pub imports: Vec<ImportDetail>,
+    pub unresolved_nids: Vec<UnresolvedNid>,
+    pub import_summary: Vec<LibImportCount>,
+    pub relocations: usize,
+    pub has_tls: bool,
+    pub engine: String,
+    pub engine_score: u32,
+    pub engine_confidence: u8,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub engine_evidence: Vec<String>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub sce_libraries: Vec<String>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub third_party_libs: Vec<String>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub custom_forks: Vec<String>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub build_system: Option<String>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub source_depot: Option<String>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub sdk_hints: Vec<String>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub detected_versions: Vec<String>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub lib_versions: Vec<LibVersionEntry>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub load_state: Option<String>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub imports_resolved: Option<u32>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub imports_known: Option<u32>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub imports_stubbed: Option<u32>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub loader_tls: Option<LoaderTlsInfo>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub init_array_count: Option<u32>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub fini_array_count: Option<u32>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub unavailable_modules: Vec<String>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct SegmentDetail {
+    pub index: usize,
+    pub seg_type: String,
+    pub vaddr: String,
+    pub filesz: u64,
+    pub memsz: u64,
+    pub flags: String,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct ImportDetail {
+    pub nid_hash: String,
+    pub resolved_name: Option<String>,
+    pub library_name: String,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct UnresolvedNid {
+    pub nid_hash: String,
+    pub library_name: String,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct LibImportCount {
+    pub library: String,
+    pub count: usize,
+}
+
+#[derive(Debug, Clone, Default, Serialize, Deserialize)]
+pub struct HeatmapData {
+    pub libraries: Vec<String>,
+    pub games: Vec<String>,
+    pub log_matrix: Vec<Vec<f64>>,
+    pub raw_matrix: Vec<Vec<usize>>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct NidStats {
+    pub top_nids: Vec<TopNid>,
+    pub resolved_count: usize,
+    pub unknown_count: usize,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct TopNid {
+    pub nid_hash: String,
+    pub resolved_name: String,
+    pub count: usize,
+    pub game_count: usize,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct SegmentRow {
+    pub game: String,
+    pub rx_mb: f64,
+    pub r_mb: f64,
+    pub rw_mb: f64,
+    pub other_mb: f64,
+    pub total_mb: f64,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct LibraryPriority {
+    pub name: String,
+    pub game_count: usize,
+    pub import_count: usize,
+    pub unique_nid_count: usize,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct LibraryNidGroup {
+    pub library: String,
+    pub game_count: usize,
+    pub total_imports: usize,
+    pub unique_nid_count: usize,
+    pub top_nids: Vec<TopNid>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct LibraryDetail {
+    pub name: String,
+    pub game_count: usize,
+    pub total_imports: usize,
+    pub unique_nid_count: usize,
+    pub games: Vec<LibGameEntry>,
+    pub top_nids: Vec<TopNid>,
+    pub unknown_nids: Vec<TopNid>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct LibGameEntry {
+    pub game: String,
+    pub title_name: Option<String>,
+    pub import_count: usize,
+    pub unique_nid_count: usize,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct DashboardStatistics {
+    pub top_5_largest: Vec<StatEntry>,
+    pub top_5_smallest: Vec<StatEntry>,
+    pub top_5_most_imports: Vec<StatEntry>,
+    pub top_5_most_libs: Vec<StatEntry>,
+    pub top_5_highest_unknown: Vec<StatEntry>,
+    pub avg_code_size_mb: f64,
+    pub avg_data_size_mb: f64,
+    pub avg_rodata_size_mb: f64,
+    pub avg_other_size_mb: f64,
+    pub total_code_mb: f64,
+    pub total_data_mb: f64,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct StatEntry {
+    pub game: String,
+    pub value: f64,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct DashboardEngineHint {
+    pub name: String,
+    pub display_name: String,
+    pub engine: String,
+    pub score: u32,
+    pub confidence: u8,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub evidence: Vec<String>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub sce_libraries: Vec<String>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub third_party_libs: Vec<String>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub custom_forks: Vec<String>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub build_system: Option<String>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub source_depot: Option<String>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub sdk_hints: Vec<String>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub detected_versions: Vec<String>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub lib_versions: Vec<LibVersionEntry>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct EngineSummary {
+    pub engine: String,
+    pub game_count: usize,
+    pub avg_score: f64,
+    pub avg_confidence: f64,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub enum SceLibraryCategory {
+    Graphics,
+    Audio,
+    Input,
+    Network,
+    System,
+    Storage,
+    User,
+    Unknown,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct SceLibraryStats {
+    pub library: String,
+    pub category: SceLibraryCategory,
+    pub game_count: usize,
+    pub games: Vec<String>,
+    pub game_ids: Vec<String>,
+    pub module_count: usize,
+    pub import_count: usize,
+    pub versions: Vec<SceLibVersionEntry>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct SceLibVersionEntry {
+    pub version_string: String,
+    pub version_raw: u32,
+    pub game_count: usize,
+    pub games: Vec<String>,
+    pub game_ids: Vec<String>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct DashboardLibraryVersion {
+    pub library: String,
+    pub version_raw: u32,
+    pub version_string: String,
+    pub game_count: usize,
+    pub games: Vec<String>,
+    pub game_ids: Vec<String>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+pub struct LoaderTlsInfo {
+    pub has_tls: bool,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+pub struct LoaderSummary {
+    pub total_games: usize,
+    pub successful: usize,
+    pub failed: usize,
+    pub total_modules: usize,
+    pub total_exports: usize,
+    pub total_imports_resolved: u64,
+    pub total_imports_known: u64,
+    pub total_imports_stubbed: u64,
+    pub avg_resolution_rate: f64,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub top_unavailable: Vec<LoaderUnavailableEntry>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub worst_games: Vec<LoaderWorstEntry>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct LoaderUnavailableEntry {
+    pub module: String,
+    pub game_count: usize,
+    pub games: Vec<String>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct LoaderWorstEntry {
+    pub game: String,
+    pub stubbed: u32,
+    pub total: u32,
+    pub rate: f64,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+struct LoaderReportFileTotals {
+    resolved: u32,
+    known: u32,
+    stubbed: u32,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+struct LoaderReportFileGraph {
+    unavailable: Vec<String>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+struct LoaderReportFileModule {
+    name: String,
+    module_type: String,
+    state: String,
+    has_tls: bool,
+    init_array_sz: u64,
+    fini_array_sz: u64,
+    init_va: u64,
+    fini_va: u64,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+struct LoaderReportFile {
+    totals: LoaderReportFileTotals,
+    graph: LoaderReportFileGraph,
+    modules: Vec<LoaderReportFileModule>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+struct GameLoadReportFile {
+    game: String,
+    load_report: Option<LoaderReportFile>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct MiddlewareData {
+    pub summary: MiddlewareSummary,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub games: Vec<MiddlewareGameRow>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct MiddlewareSummary {
+    pub third_party_modules: usize,
+    pub sony_modules: usize,
+    pub unknown_modules: usize,
+    pub games_with_third_party: usize,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub products: Vec<MiddlewareProductCount>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct MiddlewareProductCount {
+    pub vendor: String,
+    pub product: String,
+    pub game_count: usize,
+    pub module_count: usize,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct MiddlewareGameRow {
+    pub name: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub title_id: Option<String>,
+    #[serde(default)]
+    pub third_party: Vec<MiddlewareModuleRow>,
+    #[serde(default)]
+    pub sony: Vec<MiddlewareModuleRow>,
+    #[serde(default)]
+    pub unknown: Vec<MiddlewareModuleRow>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct MiddlewareModuleRow {
+    pub file_name: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub vendor: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub product: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub description: Option<String>,
+    pub imports: usize,
+    pub parseable: bool,
+}
+
+#[derive(Debug, Clone, Default, Serialize, Deserialize)]
+pub struct ShaderSummary {
+    pub total_shaders: usize,
+    pub by_stage: HashMap<String, usize>,
+    pub total_resources: usize,
+}
+
+#[derive(Debug, Clone, Default, Serialize, Deserialize)]
+pub struct FirmwareSummary {
+    pub total_modules: usize,
+    pub total_libraries: usize,
+    pub by_version: HashMap<String, usize>,
+}
+
+impl DashboardData {
+    pub fn inject_middleware(&mut self, report: &ps5_analysis::MiddlewareReport) {
+        let mut module_counts: HashMap<(String, String), usize> = HashMap::new();
+        let mut games_with_third_party = 0;
+
+        let games: Vec<MiddlewareGameRow> = report
+            .games
+            .iter()
+            .map(|game| {
+                let third_party: Vec<MiddlewareModuleRow> =
+                    game.third_party.iter().map(middleware_module_row).collect();
+                if !third_party.is_empty() {
+                    games_with_third_party += 1;
+                }
+                for module in &third_party {
+                    let vendor = module.vendor.clone().unwrap_or_else(|| "Unknown".into());
+                    let product = module.product.clone().unwrap_or_else(|| "Unknown".into());
+                    *module_counts.entry((vendor, product)).or_insert(0) += 1;
+                }
+                MiddlewareGameRow {
+                    name: game.game.clone(),
+                    title_id: game.title_id.clone(),
+                    third_party,
+                    sony: game.sony.iter().map(middleware_module_row).collect(),
+                    unknown: game.unknown.iter().map(middleware_module_row).collect(),
+                }
+            })
+            .collect();
+
+        let products: Vec<MiddlewareProductCount> = module_counts
+            .into_iter()
+            .map(|((vendor, product), module_count)| {
+                let game_count = report
+                    .games
+                    .iter()
+                    .filter(|g| {
+                        g.third_party.iter().any(|m| {
+                            m.vendor.as_deref().unwrap_or("Unknown") == vendor
+                                && m.product.as_deref().unwrap_or("Unknown") == product
+                        })
+                    })
+                    .count();
+                MiddlewareProductCount {
+                    vendor,
+                    product,
+                    game_count,
+                    module_count,
+                }
+            })
+            .collect();
+        let mut products = products;
+        products.sort_by_key(|a| std::cmp::Reverse(a.module_count));
+
+        self.middleware = Some(MiddlewareData {
+            summary: MiddlewareSummary {
+                third_party_modules: report.third_party_modules,
+                sony_modules: report.sony_modules,
+                unknown_modules: report.unknown_modules,
+                games_with_third_party,
+                products,
+            },
+            games,
+        });
+    }
+
+    pub fn inject_loader_summary(&mut self, summary: LoaderSummary) {
+        self.loader_summary = Some(summary);
+    }
+
+    pub fn inject_loader_data(&mut self, path: &Path) {
+        let summary_path = path.join("summary.json");
+        if !summary_path.exists() {
+            return;
+        }
+        let summary_data = match std::fs::read_to_string(&summary_path) {
+            Ok(d) => d,
+            Err(_) => return,
+        };
+        let summary: LoaderSummary = match serde_json::from_str(&summary_data) {
+            Ok(s) => s,
+            Err(_) => return,
+        };
+        self.loader_summary = Some(summary);
+
+        let games_dir = path.join("games");
+        if !games_dir.is_dir() {
+            return;
+        }
+        let Ok(entries) = std::fs::read_dir(&games_dir) else {
+            return;
+        };
+        for entry in entries.flatten() {
+            let file_path = entry.path();
+            if file_path.extension().is_none_or(|e| e != "json") {
+                continue;
+            }
+            let content = match std::fs::read_to_string(&file_path) {
+                Ok(c) => c,
+                Err(_) => continue,
+            };
+            let report: GameLoadReportFile = match serde_json::from_str(&content) {
+                Ok(r) => r,
+                Err(_) => continue,
+            };
+            let Some(load_report) = report.load_report else {
+                continue;
+            };
+            let eboot = load_report
+                .modules
+                .iter()
+                .find(|m| m.module_type == "Eboot");
+
+            let load_state = eboot.map(|m| m.state.clone());
+            let imports_resolved = Some(load_report.totals.resolved);
+            let imports_known = Some(load_report.totals.known);
+            let imports_stubbed = Some(load_report.totals.stubbed);
+            let loader_tls = eboot
+                .filter(|m| m.has_tls)
+                .map(|_| LoaderTlsInfo { has_tls: true });
+            let init_array_count = eboot.filter(|m| m.init_array_sz > 0).map(|_| {
+                (load_report
+                    .modules
+                    .iter()
+                    .filter(|m| m.init_array_sz > 0)
+                    .count() as u32)
+                    .max(1)
+            });
+            let fini_array_count = eboot.filter(|m| m.fini_array_sz > 0).map(|_| {
+                (load_report
+                    .modules
+                    .iter()
+                    .filter(|m| m.fini_array_sz > 0)
+                    .count() as u32)
+                    .max(1)
+            });
+            let unavailable_modules = load_report.graph.unavailable.clone();
+
+            for detail in &mut self.game_details {
+                if detail.title_name.as_deref() == Some(&report.game) || detail.name == report.game
+                {
+                    detail.load_state = load_state;
+                    detail.imports_resolved = imports_resolved;
+                    detail.imports_known = imports_known;
+                    detail.imports_stubbed = imports_stubbed;
+                    detail.loader_tls = loader_tls.clone();
+                    detail.init_array_count = init_array_count;
+                    detail.fini_array_count = fini_array_count;
+                    detail.unavailable_modules = unavailable_modules.clone();
+                    break;
+                }
+            }
+        }
+    }
+
+    pub fn inject_artifacts(&mut self, mut report: ps5_analysis::artifacts::ArtifactReport) {
+        for hint in &mut self.engine_hints {
+            let artifact_game = report.games.iter().find(|g| {
+                g.game == hint.name
+                    || g.game == hint.display_name
+                    || hint.name.contains(&g.game)
+                    || g.game.contains(&hint.name)
+            });
+            if let Some(ag) = artifact_game {
+                if hint.engine != "Unknown" && hint.confidence > 0 {
+                    let shader = ag.by_category.get("shader").copied().unwrap_or(0);
+                    let texture = ag.by_category.get("texture").copied().unwrap_or(0);
+                    let audio = ag.by_category.get("audio").copied().unwrap_or(0);
+                    if shader > 0 || texture > 0 || audio > 0 {
+                        let ev = format!(
+                            "bare artifacts: shader={} (pssl/sb), texture={} (gnf/dds), audio={} (at9/bank) — relative paths preserved, .pak not required",
+                            shader, texture, audio
+                        );
+                        hint.evidence.push(ev);
+                        if shader > 100 {
+                            hint.confidence = hint.confidence.saturating_add(2).min(100);
+                            hint.score = hint.score.saturating_add(5);
+                        }
+                    }
+                } else if hint.engine == "Unknown" {
+                    let shader = ag.by_category.get("shader").copied().unwrap_or(0);
+                    if shader > 100 && !hint.evidence.is_empty() {
+                        hint.evidence.push(format!(
+                            "bare content with {} shaders — indicates unpacked PS5 build, not .pak",
+                            shader
+                        ));
+                    }
+                }
+            }
+        }
+        let total_shaders: usize = report.by_category.get("shader").copied().unwrap_or(0);
+        if total_shaders > 0 {
+            let mut by_stage: std::collections::HashMap<String, usize> =
+                std::collections::HashMap::new();
+            for (ext, count) in &report.by_extension {
+                if matches!(ext.as_str(), "pssl" | "sb" | "ags" | "agsd") {
+                    *by_stage.entry(ext.clone()).or_insert(0) += count;
+                }
+            }
+            if !by_stage.is_empty() {
+                self.shader_summary = ShaderSummary {
+                    total_shaders,
+                    by_stage,
+                    total_resources: 0,
+                };
+            }
+        }
+        self.overview.total_artifacts = report.total_files;
+        self.overview.shader_files = total_shaders;
+        for game in &mut report.games {
+            if game.artifacts.len() > 200 {
+                game.artifacts.truncate(200);
+            }
+        }
+        self.artifacts = Some(report);
+    }
+
+    pub fn inject_firmware(&mut self, catalog: &ps5_firmware::FirmwareCatalog) {
+        let mut checks = Vec::new();
+        for detail in &self.game_details {
+            if detail.lib_versions.is_empty() {
+                continue;
+            }
+            let reqs: Vec<(String, String)> = detail
+                .lib_versions
+                .iter()
+                .map(|lv| (lv.name.clone(), lv.version_string.clone()))
+                .collect();
+            let results = catalog.check_requirements(&reqs);
+            let lib_checks: Vec<FirmwareLibCheck> = results
+                .into_iter()
+                .map(|(lib, avail)| {
+                    let status = match avail {
+                        ps5_firmware::LibraryAvailability::Compatible => "compatible",
+                        ps5_firmware::LibraryAvailability::Insufficient { .. } => "insufficient",
+                        ps5_firmware::LibraryAvailability::NotFound => "not found",
+                        ps5_firmware::LibraryAvailability::Unknown { .. } => "unknown",
+                    }
+                    .to_string();
+                    let required = detail
+                        .lib_versions
+                        .iter()
+                        .find(|lv| lv.name == lib)
+                        .map(|lv| lv.version_string.clone())
+                        .unwrap_or_default();
+                    FirmwareLibCheck {
+                        library: lib,
+                        required,
+                        status,
+                    }
+                })
+                .collect();
+            if !lib_checks.is_empty() {
+                checks.push(FirmwareGameCheck {
+                    game: detail.name.clone(),
+                    checks: lib_checks,
+                });
+            }
+        }
+        self.firmware_checks = checks;
+    }
+}
+
+pub fn compute(ds: &AnalysisDataset) -> DashboardData {
+    let meta = DashboardMeta {
+        generated_at: now_iso8601(),
+        game_count: ds.images.len(),
+        tool_version: env!("CARGO_PKG_VERSION").to_string(),
+    };
+
+    let engine_hint_report = build_engine_hints(ds);
+    let engine_hints: Vec<DashboardEngineHint> = engine_hint_report
+        .games
+        .iter()
+        .map(|hint| {
+            let img = ds.images.iter().find(|(n, _)| n == &hint.name);
+            let sa = img.and_then(|(_, doc)| doc.string_analysis.as_ref());
+
+            let (engine, score, confidence, evidence) =
+                if let Some(engine_det) = sa.and_then(|sa| sa.engine.as_ref()) {
+                    (
+                        engine_det.value.clone(),
+                        engine_det.score,
+                        engine_det.confidence,
+                        engine_det.evidence.clone(),
+                    )
+                } else if let Some(first) = hint.engines.first() {
+                    (first.clone(), 0, 0, vec![])
+                } else {
+                    ("Unknown".to_string(), 0, 0, vec![])
+                };
+
+            DashboardEngineHint {
+                name: hint.name.clone(),
+                display_name: hint
+                    .display_name
+                    .clone()
+                    .unwrap_or_else(|| hint.name.clone()),
+                engine,
+                score,
+                confidence,
+                evidence,
+                sce_libraries: hint.sce_libraries.clone(),
+                third_party_libs: hint
+                    .third_party_libs
+                    .iter()
+                    .map(|d| d.value.clone())
+                    .collect(),
+                custom_forks: hint.custom_forks.iter().map(|d| d.value.clone()).collect(),
+                build_system: hint.build_system.as_ref().map(|d| d.value.clone()),
+                source_depot: hint.source_depot.as_ref().map(|d| d.value.clone()),
+                sdk_hints: hint.sdk_hints.iter().map(|d| d.value.clone()).collect(),
+                detected_versions: hint
+                    .detected_versions
+                    .iter()
+                    .map(|d| d.value.clone())
+                    .collect(),
+                lib_versions: img
+                    .map(|(_, doc)| doc.image.lib_versions.clone())
+                    .unwrap_or_default(),
+            }
+        })
+        .collect();
+
+    let engine_summary = compute_engine_summary(&engine_hints);
+
+    let overview = compute_overview(ds);
+    let games = compute_games(ds, &engine_hints);
+    let game_details = compute_game_details(ds, &engine_hints);
+    let heatmap = compute_heatmap(ds);
+    let nid_stats = compute_nid_stats(ds);
+    let segments = compute_segments(ds);
+    let library_priority = compute_library_priority(ds);
+    let library_details = compute_library_details(ds);
+    let library_nid_breakdown = compute_library_nid_breakdown(ds);
+    let statistics = compute_statistics(ds, &segments);
+
+    let library_versions = compute_library_versions(ds);
+    let sce_library_stats = compute_sce_stats(ds);
+    let sce_heatmap = compute_sce_heatmap(ds);
+    let sce_library_versions = compute_sce_library_versions(ds);
+    let shader_summary = compute_shader_summary(ds);
+    let firmware_summary = compute_firmware_summary(ds);
+
+    DashboardData {
+        meta,
+        overview,
+        games,
+        game_details,
+        heatmap,
+        nid_stats,
+        segments,
+        library_priority,
+        library_details,
+        library_nid_breakdown,
+        statistics: Some(statistics),
+        engine_hints,
+        engine_summary,
+        library_versions,
+        sce_library_stats,
+        sce_heatmap,
+        sce_library_versions,
+        loader_summary: None,
+        middleware: None,
+        upgrade_plan_complete: true,
+        shader_summary,
+        firmware_summary,
+        artifacts: None,
+        firmware_checks: Vec::new(),
+    }
+}
+
+fn compute_shader_summary(_ds: &AnalysisDataset) -> ShaderSummary {
+    ShaderSummary {
+        total_shaders: 0,
+        by_stage: HashMap::new(),
+        total_resources: 0,
+    }
+}
+
+fn compute_firmware_summary(_ds: &AnalysisDataset) -> FirmwareSummary {
+    FirmwareSummary {
+        total_modules: 0,
+        total_libraries: 0,
+        by_version: HashMap::new(),
+    }
+}
+
+fn middleware_module_row(module: &ps5_analysis::MiddlewareModule) -> MiddlewareModuleRow {
+    MiddlewareModuleRow {
+        file_name: module.file_name.clone(),
+        vendor: module.vendor.clone(),
+        product: module.product.clone(),
+        description: module.description.clone(),
+        imports: module.imports,
+        parseable: module.parseable,
+    }
+}
+
+fn compute_overview(ds: &AnalysisDataset) -> Overview {
+    let total_imports: usize = ds.images.iter().map(|(_, d)| d.image.imports.len()).sum();
+    let resolved: usize = ds
+        .images
+        .iter()
+        .flat_map(|(_, d)| d.image.imports.iter())
+        .filter(|i| i.resolved_name.is_some())
+        .count();
+    let unique_nids: HashSet<&str> = ds
+        .images
+        .iter()
+        .flat_map(|(_, d)| d.image.imports.iter().map(|i| i.nid_hash.as_str()))
+        .collect();
+    let unique_libs: HashSet<&str> = ds
+        .images
+        .iter()
+        .flat_map(|(_, d)| d.image.imports.iter().map(|i| i.library_name.as_str()))
+        .collect();
+    let total_games = ds.images.len();
+    let elf_valid = ds
+        .images
+        .iter()
+        .filter(|(_, d)| !d.image.segments.is_empty())
+        .count();
+
+    Overview {
+        total_games,
+        elf_valid,
+        total_imports,
+        unique_nids: unique_nids.len(),
+        unique_libs: unique_libs.len(),
+        resolution_rate: if total_imports > 0 {
+            resolved as f64 / total_imports as f64 * 100.0
+        } else {
+            0.0
+        },
+        avg_imports_per_game: if total_games > 0 {
+            total_imports as f64 / total_games as f64
+        } else {
+            0.0
+        },
+        total_artifacts: 0,
+        shader_files: 0,
+    }
+}
+
+fn compute_games(ds: &AnalysisDataset, engine_hints: &[DashboardEngineHint]) -> Vec<GameRow> {
+    let hint_map: HashMap<&str, &DashboardEngineHint> =
+        engine_hints.iter().map(|h| (h.name.as_str(), h)).collect();
+
+    ds.images
+        .iter()
+        .map(|(name, doc)| {
+            let img = &doc.image;
+            let hint = hint_map.get(name.as_str());
+            let engine = hint.map(|h| h.engine.clone()).unwrap_or_default();
+            let engine_confidence = hint.map(|h| h.confidence).unwrap_or(0);
+
+            let library_count: HashSet<&str> = img
+                .imports
+                .iter()
+                .map(|i| i.library_name.as_str())
+                .collect();
+            let unknown_nid_count = img
+                .imports
+                .iter()
+                .filter(|i| i.resolved_name.is_none())
+                .count();
+
+            let title_name = Some(ds.display_name_for(name).to_string());
+
+            GameRow {
+                name: name.clone(),
+                title_name,
+                platform: img.platform.to_string(),
+                is_self: img.is_self,
+                engine,
+                engine_confidence,
+                library_count: library_count.len(),
+                sce_library_count: hint.map(|h| h.sce_libraries.len()).unwrap_or(0),
+                unknown_nid_count,
+                file_size_mb: img.file_size as f64 / (1024.0 * 1024.0),
+            }
+        })
+        .collect()
+}
+
+fn compute_game_details(
+    ds: &AnalysisDataset,
+    engine_hints: &[DashboardEngineHint],
+) -> Vec<GameDetail> {
+    let hint_map: HashMap<&str, &DashboardEngineHint> =
+        engine_hints.iter().map(|h| (h.name.as_str(), h)).collect();
+
+    ds.images
+        .iter()
+        .map(|(name, doc)| {
+            let img = &doc.image;
+            let hint = hint_map.get(name.as_str());
+
+            let engine = hint.map(|h| h.engine.clone()).unwrap_or_default();
+            let engine_score = hint.map(|h| h.score.min(100)).unwrap_or(0);
+            let engine_confidence = hint.map(|h| h.confidence).unwrap_or(0);
+            let engine_evidence = hint.map(|h| h.evidence.clone()).unwrap_or_default();
+            let sce_libraries = hint.map(|h| h.sce_libraries.clone()).unwrap_or_default();
+            let third_party_libs = hint.map(|h| h.third_party_libs.clone()).unwrap_or_default();
+            let custom_forks = hint.map(|h| h.custom_forks.clone()).unwrap_or_default();
+            let build_system = hint.and_then(|h| h.build_system.clone());
+            let source_depot = hint.and_then(|h| h.source_depot.clone());
+            let sdk_hints = hint.map(|h| h.sdk_hints.clone()).unwrap_or_default();
+            let detected_versions = hint
+                .map(|h| h.detected_versions.clone())
+                .unwrap_or_default();
+
+            let segments = img
+                .segments
+                .iter()
+                .enumerate()
+                .map(|(i, s)| SegmentDetail {
+                    index: i,
+                    seg_type: format!("{:?}", s.seg_type),
+                    vaddr: format!("0x{:x}", s.vaddr),
+                    filesz: s.filesz,
+                    memsz: s.memsz,
+                    flags: s.flags(),
+                })
+                .collect();
+
+            let imports = img
+                .imports
+                .iter()
+                .map(|imp| ImportDetail {
+                    nid_hash: imp.nid_hash.clone(),
+                    resolved_name: imp.resolved_name.clone(),
+                    library_name: imp.library_name.clone(),
+                })
+                .collect();
+
+            let unresolved_nids: Vec<UnresolvedNid> = img
+                .imports
+                .iter()
+                .filter(|i| i.resolved_name.is_none())
+                .map(|i| UnresolvedNid {
+                    nid_hash: i.nid_hash.clone(),
+                    library_name: i.library_name.clone(),
+                })
+                .collect();
+
+            let mut lib_counts: HashMap<String, usize> = HashMap::new();
+            for imp in &img.imports {
+                *lib_counts.entry(imp.library_name.clone()).or_insert(0) += 1;
+            }
+            let mut import_summary: Vec<LibImportCount> = lib_counts
+                .into_iter()
+                .map(|(library, count)| LibImportCount { library, count })
+                .collect();
+            import_summary.sort_by_key(|b| std::cmp::Reverse(b.count));
+
+            let meta = &img.metadata;
+            GameDetail {
+                name: name.clone(),
+                title_name: Some(ds.display_name_for(name).to_string()),
+                platform: img.platform.to_string(),
+                is_self: img.is_self,
+                file_size_mb: img.file_size as f64 / (1024.0 * 1024.0),
+                sha256: img.sha256.clone(),
+                entry_point: format!("0x{:x}", img.entry_point),
+                elf_type: meta.elf_type,
+                osabi: meta.osabi,
+                abi_version: meta.ei_abi_version,
+                elf_version: meta.e_version,
+                build_id: meta.build_id.clone(),
+                segments,
+                imports,
+                unresolved_nids,
+                import_summary,
+                relocations: img.relocations.len(),
+                has_tls: img.tls.is_some(),
+                engine,
+                engine_score,
+                engine_confidence,
+                engine_evidence,
+                sce_libraries,
+                third_party_libs,
+                custom_forks,
+                build_system,
+                source_depot,
+                sdk_hints,
+                detected_versions,
+                lib_versions: doc.image.lib_versions.clone(),
+                load_state: None,
+                imports_resolved: None,
+                imports_known: None,
+                imports_stubbed: None,
+                loader_tls: None,
+                init_array_count: None,
+                fini_array_count: None,
+                unavailable_modules: Vec::new(),
+            }
+        })
+        .collect()
+}
+
+fn compute_heatmap(ds: &AnalysisDataset) -> HeatmapData {
+    let mut lib_game_counts: HashMap<String, HashMap<String, usize>> = HashMap::new();
+    let mut all_games: Vec<String> = Vec::new();
+    let mut seen_games: HashSet<String> = HashSet::new();
+
+    for (name, doc) in &ds.images {
+        if !seen_games.contains(name) {
+            all_games.push(name.clone());
+            seen_games.insert(name.clone());
+        }
+        for imp in &doc.image.imports {
+            lib_game_counts
+                .entry(imp.library_name.clone())
+                .or_default()
+                .entry(name.clone())
+                .and_modify(|c| *c += 1)
+                .or_insert(1);
+        }
+    }
+
+    let mut lib_names: Vec<String> = lib_game_counts.keys().cloned().collect();
+    lib_names.sort();
+
+    let mut raw_matrix = Vec::with_capacity(lib_names.len());
+    let mut log_matrix = Vec::with_capacity(lib_names.len());
+
+    for lib in &lib_names {
+        let raw_row: Vec<usize> = all_games
+            .iter()
+            .map(|game| lib_game_counts[lib].get(game).copied().unwrap_or(0))
+            .collect();
+        let log_row: Vec<f64> = raw_row.iter().map(|&v| ((v as f64) + 1.0).log2()).collect();
+        raw_matrix.push(raw_row);
+        log_matrix.push(log_row);
+    }
+
+    HeatmapData {
+        libraries: lib_names,
+        games: all_games,
+        log_matrix,
+        raw_matrix,
+    }
+}
+
+fn compute_nid_stats(ds: &AnalysisDataset) -> NidStats {
+    let mut nid_counts: HashMap<String, (String, usize)> = HashMap::new();
+    let mut resolved_total = 0usize;
+    let mut unknown_total = 0usize;
+
+    for (_, doc) in &ds.images {
+        for imp in &doc.image.imports {
+            if imp.resolved_name.is_some() {
+                resolved_total += 1;
+            } else {
+                unknown_total += 1;
+            }
+            let entry = nid_counts
+                .entry(imp.nid_hash.clone())
+                .or_insert_with(|| (imp.resolved_name.clone().unwrap_or_default(), 0));
+            entry.1 += 1;
+        }
+    }
+
+    let mut top_nids: Vec<TopNid> = nid_counts
+        .into_iter()
+        .map(|(hash, (name, count))| TopNid {
+            nid_hash: hash,
+            resolved_name: name,
+            count,
+            game_count: 0,
+        })
+        .collect();
+
+    top_nids.sort_by_key(|b| std::cmp::Reverse(b.count));
+    top_nids.truncate(25);
+
+    NidStats {
+        top_nids,
+        resolved_count: resolved_total,
+        unknown_count: unknown_total,
+    }
+}
+
+fn compute_segments(ds: &AnalysisDataset) -> Vec<SegmentRow> {
+    ds.images
+        .iter()
+        .map(|(name, doc)| {
+            let (rx, r, rw, other) = sum_segment_sizes(&doc.image);
+            let total = rx + r + rw + other;
+            SegmentRow {
+                game: name.clone(),
+                rx_mb: rx as f64 / (1024.0 * 1024.0),
+                r_mb: r as f64 / (1024.0 * 1024.0),
+                rw_mb: rw as f64 / (1024.0 * 1024.0),
+                other_mb: other as f64 / (1024.0 * 1024.0),
+                total_mb: total as f64 / (1024.0 * 1024.0),
+            }
+        })
+        .collect()
+}
+
+fn compute_library_priority(ds: &AnalysisDataset) -> Vec<LibraryPriority> {
+    let mut lib_data: HashMap<String, (usize, usize, HashSet<String>)> = HashMap::new();
+
+    for (_, doc) in &ds.images {
+        let mut seen_libs: HashSet<&str> = HashSet::new();
+        for imp in &doc.image.imports {
+            let e = lib_data
+                .entry(imp.library_name.clone())
+                .or_insert_with(|| (0, 0, HashSet::new()));
+            e.1 += 1;
+            e.2.insert(imp.nid_hash.clone());
+            seen_libs.insert(&imp.library_name);
+        }
+        for lib in &seen_libs {
+            lib_data
+                .entry(lib.to_string())
+                .or_insert_with(|| (0, 0, HashSet::new()))
+                .0 += 1;
+        }
+    }
+
+    let mut result: Vec<LibraryPriority> = lib_data
+        .into_iter()
+        .map(|(name, (gc, ic, nids))| LibraryPriority {
+            name,
+            game_count: gc,
+            import_count: ic,
+            unique_nid_count: nids.len(),
+        })
+        .collect();
+
+    result.sort_by(|a, b| {
+        b.game_count
+            .cmp(&a.game_count)
+            .then(b.import_count.cmp(&a.import_count))
+    });
+    result
+}
+
+fn compute_library_details(ds: &AnalysisDataset) -> Vec<LibraryDetail> {
+    let mut lib_games: HashMap<String, HashMap<String, (usize, HashSet<String>)>> = HashMap::new();
+
+    for (game, doc) in &ds.images {
+        for imp in &doc.image.imports {
+            let game_entry = lib_games
+                .entry(imp.library_name.clone())
+                .or_default()
+                .entry(game.clone())
+                .or_insert_with(|| (0, HashSet::new()));
+            game_entry.0 += 1;
+            game_entry.1.insert(imp.nid_hash.clone());
+        }
+    }
+
+    let mut result: Vec<LibraryDetail> = Vec::new();
+
+    for (lib, games_map) in &lib_games {
+        let total_imports: usize = games_map.values().map(|(c, _)| c).sum();
+        let all_nids: HashSet<&str> = games_map
+            .values()
+            .flat_map(|(_, nids)| nids.iter().map(|s| s.as_str()))
+            .collect();
+        let unique_nid_count = all_nids.len();
+
+        let mut games: Vec<LibGameEntry> = games_map
+            .iter()
+            .map(|(game, (count, nids))| {
+                let title = Some(ds.display_name_for(game).to_string());
+                LibGameEntry {
+                    game: game.clone(),
+                    title_name: title,
+                    import_count: *count,
+                    unique_nid_count: nids.len(),
+                }
+            })
+            .collect();
+        games.sort_by_key(|b| std::cmp::Reverse(b.import_count));
+
+        let mut nid_counts: HashMap<String, (String, usize)> = HashMap::new();
+        let mut unknown_counts: HashMap<String, (String, usize)> = HashMap::new();
+        for (_, doc) in &ds.images {
+            for imp in &doc.image.imports {
+                if imp.library_name != *lib {
+                    continue;
+                }
+                if imp.resolved_name.is_some() {
+                    let e = nid_counts
+                        .entry(imp.nid_hash.clone())
+                        .or_insert_with(|| (imp.resolved_name.clone().unwrap_or_default(), 0));
+                    e.1 += 1;
+                } else {
+                    let e = unknown_counts
+                        .entry(imp.nid_hash.clone())
+                        .or_insert_with(|| (String::new(), 0));
+                    e.1 += 1;
+                }
+            }
+        }
+
+        let mut top_nids: Vec<TopNid> = nid_counts
+            .into_iter()
+            .map(|(hash, (name, count))| TopNid {
+                nid_hash: hash,
+                resolved_name: name,
+                count,
+                game_count: 0,
+            })
+            .collect();
+        top_nids.sort_by_key(|n| std::cmp::Reverse(n.count));
+        top_nids.truncate(15);
+
+        let mut unknown_nids: Vec<TopNid> = unknown_counts
+            .into_iter()
+            .map(|(hash, (_, count))| TopNid {
+                nid_hash: hash,
+                resolved_name: String::new(),
+                count,
+                game_count: 0,
+            })
+            .collect();
+        unknown_nids.sort_by_key(|n| std::cmp::Reverse(n.count));
+        unknown_nids.truncate(15);
+
+        result.push(LibraryDetail {
+            name: lib.clone(),
+            game_count: games.len(),
+            total_imports,
+            unique_nid_count,
+            games,
+            top_nids,
+            unknown_nids,
+        });
+    }
+
+    result.sort_by(|a, b| {
+        b.game_count
+            .cmp(&a.game_count)
+            .then(b.total_imports.cmp(&a.total_imports))
+    });
+    result
+}
+
+fn compute_library_nid_breakdown(ds: &AnalysisDataset) -> Vec<LibraryNidGroup> {
+    let mut lib_games: HashMap<String, HashSet<String>> = HashMap::new();
+    let mut lib_nids: HashMap<String, HashMap<String, (String, usize)>> = HashMap::new();
+
+    for (game, doc) in &ds.images {
+        for imp in &doc.image.imports {
+            lib_games
+                .entry(imp.library_name.clone())
+                .or_default()
+                .insert(game.clone());
+            let nid_entry = lib_nids
+                .entry(imp.library_name.clone())
+                .or_default()
+                .entry(imp.nid_hash.clone())
+                .or_insert_with(|| (imp.resolved_name.clone().unwrap_or_default(), 0));
+            nid_entry.1 += 1;
+        }
+    }
+
+    let mut groups: Vec<LibraryNidGroup> = lib_games
+        .into_iter()
+        .map(|(lib, games)| {
+            let total_imports: usize = lib_nids
+                .get(&lib)
+                .map(|nids| nids.values().map(|(_, c)| c).sum())
+                .unwrap_or(0);
+            let unique_nid_count = lib_nids.get(&lib).map_or(0, |nids| nids.len());
+            let mut top_nids: Vec<TopNid> = lib_nids
+                .get(&lib)
+                .map(|nids| {
+                    nids.iter()
+                        .map(|(hash, (name, count))| TopNid {
+                            nid_hash: hash.clone(),
+                            resolved_name: name.clone(),
+                            count: *count,
+                            game_count: 0,
+                        })
+                        .collect()
+                })
+                .unwrap_or_default();
+            top_nids.sort_by_key(|n| std::cmp::Reverse(n.count));
+            top_nids.truncate(10);
+
+            LibraryNidGroup {
+                library: lib,
+                game_count: games.len(),
+                total_imports,
+                unique_nid_count,
+                top_nids,
+            }
+        })
+        .collect();
+
+    groups.sort_by(|a, b| {
+        b.game_count
+            .cmp(&a.game_count)
+            .then(b.total_imports.cmp(&a.total_imports))
+    });
+    groups
+}
+
+fn compute_statistics(ds: &AnalysisDataset, segments: &[SegmentRow]) -> DashboardStatistics {
+    if segments.is_empty() {
+        return DashboardStatistics {
+            top_5_largest: vec![],
+            top_5_smallest: vec![],
+            top_5_most_imports: vec![],
+            top_5_most_libs: vec![],
+            top_5_highest_unknown: vec![],
+            avg_code_size_mb: 0.0,
+            avg_data_size_mb: 0.0,
+            avg_rodata_size_mb: 0.0,
+            avg_other_size_mb: 0.0,
+            total_code_mb: 0.0,
+            total_data_mb: 0.0,
+        };
+    }
+
+    let mut by_size: Vec<&SegmentRow> = segments.iter().collect();
+    by_size.sort_by(|a, b| {
+        b.total_mb
+            .partial_cmp(&a.total_mb)
+            .unwrap_or(std::cmp::Ordering::Equal)
+    });
+
+    let top_5_largest: Vec<StatEntry> = by_size
+        .iter()
+        .take(5)
+        .map(|s| StatEntry {
+            game: s.game.clone(),
+            value: s.total_mb,
+        })
+        .collect();
+    let top_5_smallest: Vec<StatEntry> = by_size
+        .iter()
+        .rev()
+        .take(5)
+        .map(|s| StatEntry {
+            game: s.game.clone(),
+            value: s.total_mb,
+        })
+        .collect();
+
+    let mut by_imports: Vec<(&String, &ps5_image::BinaryImageDocument)> =
+        ds.images.iter().map(|(n, d)| (n, d)).collect();
+    by_imports.sort_by_key(|b| std::cmp::Reverse(b.1.image.imports.len()));
+
+    let top_5_most_imports: Vec<StatEntry> = by_imports
+        .iter()
+        .take(5)
+        .map(|(name, doc)| StatEntry {
+            game: name.to_string(),
+            value: doc.image.imports.len() as f64,
+        })
+        .collect();
+
+    let mut lib_counts_per_game: Vec<(String, usize)> = ds
+        .images
+        .iter()
+        .map(|(name, doc)| {
+            let libs: HashSet<&str> = doc
+                .image
+                .imports
+                .iter()
+                .map(|i| i.library_name.as_str())
+                .collect();
+            (name.clone(), libs.len())
+        })
+        .collect();
+    lib_counts_per_game.sort_by_key(|b| std::cmp::Reverse(b.1));
+
+    let top_5_most_libs: Vec<StatEntry> = lib_counts_per_game
+        .iter()
+        .take(5)
+        .map(|(name, count)| StatEntry {
+            game: name.clone(),
+            value: *count as f64,
+        })
+        .collect();
+
+    let mut unknown_pct: Vec<(String, f64)> = ds
+        .images
+        .iter()
+        .filter(|(_, doc)| !doc.image.imports.is_empty())
+        .map(|(name, doc)| {
+            let total = doc.image.imports.len();
+            let unknown = doc
+                .image
+                .imports
+                .iter()
+                .filter(|i| i.resolved_name.is_none())
+                .count();
+            (name.clone(), unknown as f64 / total as f64 * 100.0)
+        })
+        .collect();
+    unknown_pct.sort_by(|a, b| b.1.partial_cmp(&a.1).unwrap_or(std::cmp::Ordering::Equal));
+
+    let top_5_highest_unknown: Vec<StatEntry> = unknown_pct
+        .iter()
+        .take(5)
+        .map(|(name, pct)| StatEntry {
+            game: name.clone(),
+            value: *pct,
+        })
+        .collect();
+
+    let n = segments.len() as f64;
+    let avg_code = segments.iter().map(|s| s.rx_mb).sum::<f64>() / n;
+    let avg_data = segments.iter().map(|s| s.rw_mb).sum::<f64>() / n;
+    let avg_rodata = segments.iter().map(|s| s.r_mb).sum::<f64>() / n;
+    let avg_other = segments.iter().map(|s| s.other_mb).sum::<f64>() / n;
+    let total_code = segments.iter().map(|s| s.rx_mb).sum::<f64>();
+    let total_data = segments.iter().map(|s| s.rw_mb).sum::<f64>();
+
+    DashboardStatistics {
+        top_5_largest,
+        top_5_smallest,
+        top_5_most_imports,
+        top_5_most_libs,
+        top_5_highest_unknown,
+        avg_code_size_mb: avg_code,
+        avg_data_size_mb: avg_data,
+        avg_rodata_size_mb: avg_rodata,
+        avg_other_size_mb: avg_other,
+        total_code_mb: total_code,
+        total_data_mb: total_data,
+    }
+}
+
+fn compute_engine_summary(hints: &[DashboardEngineHint]) -> Vec<EngineSummary> {
+    let mut by_engine: HashMap<String, (usize, u64, u64)> = HashMap::new();
+    for h in hints {
+        let e = by_engine.entry(h.engine.clone()).or_insert((0, 0, 0));
+        e.0 += 1;
+        e.1 += h.score as u64;
+        e.2 += h.confidence as u64;
+    }
+    let mut result: Vec<EngineSummary> = by_engine
+        .into_iter()
+        .map(|(engine, (count, total_score, total_conf))| EngineSummary {
+            engine,
+            game_count: count,
+            avg_score: if count > 0 {
+                total_score as f64 / count as f64
+            } else {
+                0.0
+            },
+            avg_confidence: if count > 0 {
+                total_conf as f64 / count as f64
+            } else {
+                0.0
+            },
+        })
+        .collect();
+    result.sort_by_key(|b| std::cmp::Reverse(b.game_count));
+    result
+}
+
+fn compute_library_versions(ds: &AnalysisDataset) -> Vec<DashboardLibraryVersion> {
+    let mut map: HashMap<(String, u32), DashboardLibraryVersion> = HashMap::new();
+    for (name, doc) in &ds.images {
+        let display = ds.display_name_for(name).to_string();
+        for lv in &doc.image.lib_versions {
+            let key = (lv.name.clone(), lv.version_raw);
+            let entry = map.entry(key).or_insert_with(|| DashboardLibraryVersion {
+                library: lv.name.clone(),
+                version_raw: lv.version_raw,
+                version_string: lv.version_string.clone(),
+                game_count: 0,
+                games: Vec::new(),
+                game_ids: Vec::new(),
+            });
+            if !entry.games.contains(&display) {
+                entry.games.push(display.clone());
+                entry.game_ids.push(name.clone());
+                entry.game_count = entry.games.len();
+            }
+        }
+    }
+    let mut entries: Vec<DashboardLibraryVersion> = map.into_values().collect();
+    entries.sort_by(|a, b| {
+        b.game_count
+            .cmp(&a.game_count)
+            .then(a.library.cmp(&b.library))
+    });
+    entries
+}
+
+fn sum_segment_sizes(img: &ps5_image::BinaryImage) -> (u64, u64, u64, u64) {
+    let mut rx = 0u64;
+    let mut r = 0u64;
+    let mut rw = 0u64;
+    let mut other = 0u64;
+
+    for seg in &img.segments {
+        if seg.seg_type != SegmentType::Load {
+            other += seg.filesz;
+            continue;
+        }
+        if seg.is_executable {
+            rx += seg.filesz;
+        } else if seg.is_writable {
+            rw += seg.filesz;
+        } else {
+            r += seg.filesz;
+        }
+    }
+
+    (rx, r, rw, other)
+}
+
+fn now_iso8601() -> String {
+    let now = std::time::SystemTime::now()
+        .duration_since(std::time::UNIX_EPOCH)
+        .unwrap_or_default()
+        .as_secs();
+    format!("{now}")
+}
+
+fn collect_sce_libraries(doc: &ps5_image::BinaryImageDocument) -> BTreeSet<String> {
+    let mut libs = BTreeSet::new();
+    for imp in &doc.image.imports {
+        if imp.library_name.starts_with("libSce") {
+            libs.insert(imp.library_name.clone());
+        }
+    }
+    for lib in doc.image.import_libs.values() {
+        if lib.starts_with("libSce") {
+            libs.insert(lib.clone());
+        }
+    }
+    if let Some(sa) = &doc.string_analysis {
+        for lib in &sa.sce_libraries {
+            if lib.starts_with("libSce") {
+                libs.insert(lib.clone());
+            }
+        }
+    }
+    libs
+}
+
+fn categorize_sce_library(name: &str) -> SceLibraryCategory {
+    if name.contains("Gnm")
+        || name.contains("VideoOut")
+        || name.contains("Gpu")
+        || name.contains("Display")
+        || name.contains("Gnmf")
+    {
+        SceLibraryCategory::Graphics
+    } else if name.contains("Audio") || name.contains("Sound") {
+        SceLibraryCategory::Audio
+    } else if name.contains("Pad")
+        || name.contains("Mouse")
+        || name.contains("Keyboard")
+        || name.contains("Touch")
+        || name.contains("Move")
+        || name.contains("Trigger")
+    {
+        SceLibraryCategory::Input
+    } else if name.contains("Net") || name.contains("Http") || name.contains("Ssl") {
+        SceLibraryCategory::Network
+    } else if name.contains("SaveData")
+        || name.contains("Storage")
+        || name.contains("Disc")
+        || name.contains("Ngs2")
+    {
+        SceLibraryCategory::Storage
+    } else if name.contains("Np") || name.contains("User") || name.contains("NpMatching") {
+        SceLibraryCategory::User
+    } else if name.contains("System")
+        || name.contains("AppContent")
+        || name.contains("Kernel")
+        || name.contains("Thread")
+    {
+        SceLibraryCategory::System
+    } else {
+        SceLibraryCategory::Unknown
+    }
+}
+
+type SceLibAccumulator = (
+    Vec<String>,
+    Vec<String>,
+    usize,
+    HashMap<String, SceLibVersionEntry>,
+);
+
+fn compute_sce_stats(ds: &AnalysisDataset) -> Vec<SceLibraryStats> {
+    let mut lib_data: HashMap<String, SceLibAccumulator> = HashMap::new();
+
+    for (name, doc) in &ds.images {
+        let sce_libs = collect_sce_libraries(doc);
+        let display = ds.display_name_for(name).to_string();
+
+        for lib in &sce_libs {
+            let (game_ids, game_displays, import_count, versions) =
+                lib_data.entry(lib.clone()).or_default();
+
+            if !game_ids.contains(name) {
+                game_ids.push(name.clone());
+                game_displays.push(display.clone());
+            }
+
+            let count = doc
+                .image
+                .imports
+                .iter()
+                .filter(|i| i.library_name == *lib)
+                .count();
+            *import_count += count;
+
+            for lv in &doc.image.lib_versions {
+                if lv.name == *lib {
+                    let v_entry = versions
+                        .entry(lv.version_string.clone())
+                        .or_insert_with(|| SceLibVersionEntry {
+                            version_string: lv.version_string.clone(),
+                            version_raw: lv.version_raw,
+                            game_count: 0,
+                            games: Vec::new(),
+                            game_ids: Vec::new(),
+                        });
+                    if !v_entry.game_ids.contains(name) {
+                        v_entry.game_ids.push(name.clone());
+                        v_entry.games.push(display.clone());
+                        v_entry.game_count = v_entry.game_ids.len();
+                    }
+                }
+            }
+        }
+    }
+
+    let mut result: Vec<SceLibraryStats> = lib_data
+        .into_iter()
+        .map(|(lib, (game_ids, game_displays, import_count, versions))| {
+            let category = categorize_sce_library(&lib);
+            let mut version_list: Vec<SceLibVersionEntry> = versions.into_values().collect();
+            version_list.sort_by_key(|v| std::cmp::Reverse(v.version_raw));
+
+            SceLibraryStats {
+                library: lib,
+                category,
+                game_count: game_ids.len(),
+                games: game_displays,
+                game_ids,
+                module_count: 0,
+                import_count,
+                versions: version_list,
+            }
+        })
+        .collect();
+
+    result.sort_by(|a, b| {
+        b.game_count
+            .cmp(&a.game_count)
+            .then(b.import_count.cmp(&a.import_count))
+    });
+    result
+}
+
+fn compute_sce_heatmap(ds: &AnalysisDataset) -> HeatmapData {
+    let mut lib_game_counts: HashMap<String, HashMap<String, usize>> = HashMap::new();
+    let mut all_games: Vec<String> = Vec::new();
+    let mut seen_games: HashSet<String> = HashSet::new();
+
+    for (name, doc) in &ds.images {
+        let sce_libs = collect_sce_libraries(doc);
+        if !seen_games.contains(name) {
+            all_games.push(name.clone());
+            seen_games.insert(name.clone());
+        }
+        for lib in &sce_libs {
+            lib_game_counts
+                .entry(lib.clone())
+                .or_default()
+                .entry(name.clone())
+                .or_insert(1);
+        }
+    }
+
+    let mut lib_names: Vec<String> = lib_game_counts.keys().cloned().collect();
+    lib_names.sort();
+
+    let mut raw_matrix = Vec::with_capacity(lib_names.len());
+    let mut log_matrix = Vec::with_capacity(lib_names.len());
+
+    for lib in &lib_names {
+        let raw_row: Vec<usize> = all_games
+            .iter()
+            .map(|game| lib_game_counts[lib].get(game).copied().unwrap_or(0))
+            .collect();
+        let log_row: Vec<f64> = raw_row.iter().map(|&v| ((v as f64) + 1.0).log2()).collect();
+        raw_matrix.push(raw_row);
+        log_matrix.push(log_row);
+    }
+
+    HeatmapData {
+        libraries: lib_names,
+        games: all_games,
+        log_matrix,
+        raw_matrix,
+    }
+}
+
+fn compute_sce_library_versions(ds: &AnalysisDataset) -> Vec<DashboardLibraryVersion> {
+    let all = compute_library_versions(ds);
+    all.into_iter()
+        .filter(|v| v.library.starts_with("libSce"))
+        .collect()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use ps5_image::{
+        BinaryImage, BinaryImageDocument, ImportEntry, LoadedSegment, Platform, SegmentType,
+        SymbolBinding, SymbolType, SymbolVisibility,
+    };
+
+    fn make_doc(
+        sha: &str,
+        imports: Vec<ImportEntry>,
+        segments: Vec<LoadedSegment>,
+    ) -> BinaryImageDocument {
+        use ps5_image::BinaryMetadata;
+        BinaryImageDocument {
+            schema_version: 1,
+            tool: "test".to_string(),
+            image_type: ps5_image::ImageType::Eboot,
+            parent_image: None,
+            string_analysis: None,
+            image: BinaryImage {
+                sha256: sha.to_string(),
+                platform: Platform::Ps5,
+                is_self: true,
+                file_size: 1024 * 1024,
+                entry_point: 0x80000000,
+                metadata: BinaryMetadata {
+                    build_id: None,
+                    elf_type: 3,
+                    elf_flags: 0,
+                    osabi: 0x9,
+                    ei_abi_version: 2,
+                    e_version: 1,
+                    self_key_type: None,
+                    self_attr: None,
+                    self_mode: None,
+                    self_endian: None,
+                    self_version: None,
+                    self_flags: None,
+                    sections: vec![],
+                },
+                segments,
+                imports,
+                exports: vec![],
+                relocations: vec![],
+                tls: None,
+                init_va: 0,
+                init_array_va: 0,
+                init_array_sz: 0,
+                fini_va: 0,
+                fini_array_va: 0,
+                fini_array_sz: 0,
+                preinit_array_va: 0,
+                preinit_array_sz: 0,
+                import_libs: std::collections::HashMap::new(),
+                needed_files: vec![],
+                dynamic_entries: vec![],
+                version_defs: vec![],
+                lib_versions: vec![],
+            },
+        }
+    }
+
+    fn make_imp(nid: &str, resolved: Option<&str>, lib: &str) -> ImportEntry {
+        ImportEntry {
+            nid_hash: nid.to_string(),
+            resolved_name: resolved.map(|s| s.to_string()),
+            library_id: 1,
+            library_name: lib.to_string(),
+            value: 0,
+            size: 0,
+            shndx: 0,
+            binding: SymbolBinding::Global,
+            sym_type: SymbolType::Func,
+            visibility: SymbolVisibility::Default,
+            ordinal: 0,
+        }
+    }
+
+    fn make_seg(flags: &str, filesz: u64) -> LoadedSegment {
+        let (exec, write) = match flags {
+            "RX" => (true, false),
+            "R" => (false, false),
+            "RW" => (false, true),
+            "RWX" => (true, true),
+            _ => (false, false),
+        };
+        LoadedSegment {
+            vaddr: 0,
+            file_offset: 0,
+            filesz,
+            memsz: filesz,
+            is_executable: exec,
+            is_writable: write,
+            seg_type: SegmentType::Load,
+            p_paddr: 0,
+            p_align: 0x1000,
+            is_encrypted: false,
+            is_compressed: false,
+            phdr_index: None,
+        }
+    }
+
+    fn make_dataset(docs: Vec<(&str, BinaryImageDocument)>) -> AnalysisDataset {
+        use ps5_analysis::dataset::{DATASET_SCHEMA_VERSION, Manifest};
+        let mut images = Vec::new();
+        for (name, doc) in docs {
+            images.push((name.to_string(), doc));
+        }
+        images.sort_by_key(|(n, _)| n.clone());
+        AnalysisDataset {
+            manifest: Manifest {
+                schema_version: DATASET_SCHEMA_VERSION,
+                tool: "test".to_string(),
+                created_at: "2026-01-01T00:00:00Z".to_string(),
+                image_count: images.len(),
+                module_count: 0,
+                games: vec![],
+            },
+            images,
+            display_names: std::collections::HashMap::new(),
+        }
+    }
+
+    #[test]
+    fn compute_overview_basic() {
+        let ds = make_dataset(vec![
+            (
+                "game1",
+                make_doc(
+                    &"a".repeat(64),
+                    vec![make_imp("n1", Some("f1"), "libA")],
+                    vec![],
+                ),
+            ),
+            (
+                "game2",
+                make_doc(
+                    &"b".repeat(64),
+                    vec![
+                        make_imp("n1", Some("f1"), "libA"),
+                        make_imp("n2", None, "libA"),
+                    ],
+                    vec![],
+                ),
+            ),
+        ]);
+        let ov = compute_overview(&ds);
+        assert_eq!(ov.total_games, 2);
+        assert_eq!(ov.total_imports, 3);
+        assert_eq!(ov.unique_nids, 2);
+        assert_eq!(ov.unique_libs, 1);
+        assert!((ov.resolution_rate - 66.66).abs() < 0.1);
+    }
+
+    #[test]
+    fn compute_segments_load_only() {
+        let ds = make_dataset(vec![(
+            "game1",
+            make_doc(
+                &"a".repeat(64),
+                vec![],
+                vec![
+                    make_seg("RX", 10 * 1024 * 1024),
+                    make_seg("R", 3 * 1024 * 1024),
+                    make_seg("RW", 2 * 1024 * 1024),
+                ],
+            ),
+        )]);
+        let segs = compute_segments(&ds);
+        assert_eq!(segs.len(), 1);
+        assert!((segs[0].rx_mb - 10.0).abs() < 0.01);
+        assert!((segs[0].r_mb - 3.0).abs() < 0.01);
+        assert!((segs[0].rw_mb - 2.0).abs() < 0.01);
+    }
+
+    #[test]
+    fn heatmap_log_scaling() {
+        let ds = make_dataset(vec![(
+            "g1",
+            make_doc(
+                &"a".repeat(64),
+                vec![make_imp("n", Some("f"), "lib")],
+                vec![],
+            ),
+        )]);
+        let hm = compute_heatmap(&ds);
+        assert_eq!(hm.libraries, vec!["lib"]);
+        assert_eq!(hm.raw_matrix, vec![vec![1]]);
+        let expected_log = ((1.0_f64) + 1.0).log2();
+        assert!((hm.log_matrix[0][0] - expected_log).abs() < 0.001);
+    }
+
+    #[test]
+    fn library_priority_sorted() {
+        let ds = make_dataset(vec![
+            (
+                "g1",
+                make_doc(
+                    &"a".repeat(64),
+                    vec![
+                        make_imp("n1", Some("f"), "libA"),
+                        make_imp("n2", Some("f"), "libA"),
+                    ],
+                    vec![],
+                ),
+            ),
+            (
+                "g2",
+                make_doc(
+                    &"b".repeat(64),
+                    vec![
+                        make_imp("n1", Some("f"), "libA"),
+                        make_imp("n3", Some("f"), "libB"),
+                    ],
+                    vec![],
+                ),
+            ),
+        ]);
+        let lp = compute_library_priority(&ds);
+        assert_eq!(lp[0].name, "libA");
+        assert_eq!(lp[0].game_count, 2);
+        assert_eq!(lp[0].import_count, 3);
+        assert_eq!(lp[0].unique_nid_count, 2);
+    }
+
+    #[test]
+    fn game_details_have_segments_and_imports() {
+        let ds = make_dataset(vec![(
+            "game1",
+            make_doc(
+                &"a".repeat(64),
+                vec![
+                    make_imp("n1", Some("f1"), "libA"),
+                    make_imp("n2", None, "libA"),
+                ],
+                vec![make_seg("RX", 1024 * 1024), make_seg("RW", 512 * 1024)],
+            ),
+        )]);
+        let details = compute_game_details(&ds, &[]);
+        assert_eq!(details.len(), 1);
+        assert_eq!(details[0].segments.len(), 2);
+        assert_eq!(details[0].imports.len(), 2);
+        assert_eq!(details[0].unresolved_nids.len(), 1);
+        assert_eq!(details[0].import_summary.len(), 1);
+        assert_eq!(details[0].import_summary[0].count, 2);
+        assert_eq!(details[0].engine, "");
+        assert_eq!(details[0].engine_confidence, 0);
+    }
+
+    #[test]
+    fn library_details_group_by_game() {
+        let ds = make_dataset(vec![
+            (
+                "g1",
+                make_doc(
+                    &"a".repeat(64),
+                    vec![
+                        make_imp("n1", Some("f1"), "libA"),
+                        make_imp("n2", Some("f2"), "libA"),
+                    ],
+                    vec![],
+                ),
+            ),
+            (
+                "g2",
+                make_doc(
+                    &"b".repeat(64),
+                    vec![
+                        make_imp("n1", Some("f1"), "libA"),
+                        make_imp("n3", Some("f3"), "libB"),
+                    ],
+                    vec![],
+                ),
+            ),
+        ]);
+        let details = compute_library_details(&ds);
+        let lib_a = details.iter().find(|d| d.name == "libA").unwrap();
+        assert_eq!(lib_a.game_count, 2);
+        assert_eq!(lib_a.total_imports, 3);
+        assert_eq!(lib_a.games.len(), 2);
+    }
+
+    #[test]
+    fn statistics_computed() {
+        let ds = make_dataset(vec![
+            (
+                "game1",
+                make_doc(
+                    &"a".repeat(64),
+                    vec![make_imp("n1", Some("f1"), "libA")],
+                    vec![make_seg("RX", 10 * 1024 * 1024)],
+                ),
+            ),
+            (
+                "game2",
+                make_doc(
+                    &"b".repeat(64),
+                    vec![make_imp("n2", None, "libA")],
+                    vec![make_seg("RX", 1024)],
+                ),
+            ),
+        ]);
+        let segments = compute_segments(&ds);
+        let stats = compute_statistics(&ds, &segments);
+        assert_eq!(stats.top_5_largest.len(), 2);
+        assert_eq!(stats.top_5_most_imports.len(), 2);
+        assert!(stats.avg_code_size_mb > 0.0);
+    }
+
+    use ps5_analysis::param_json::GameParam;
+
+    #[test]
+    fn display_name_for_resolves_from_manifest() {
+        let mut ds = make_dataset(vec![(
+            "Bugsnax-PPSA01502-USA-PS5",
+            make_doc(&"a".repeat(64), vec![], vec![]),
+        )]);
+        ds.manifest.games = vec![GameParam {
+            title_id: Some("PPSA01502".to_string()),
+            title_name: Some("Bugsnax".to_string()),
+            display_name: Some("Bugsnax - [PPSA01502]".to_string()),
+            ..Default::default()
+        }];
+        ds.display_names.insert(
+            "Bugsnax-PPSA01502-USA-PS5".to_string(),
+            "Bugsnax - [PPSA01502]".to_string(),
+        );
+        assert_eq!(
+            ds.display_name_for("Bugsnax-PPSA01502-USA-PS5"),
+            "Bugsnax - [PPSA01502]"
+        );
+    }
+
+    #[test]
+    fn display_name_for_falls_back_to_name() {
+        let ds = make_dataset(vec![(
+            "SomeGame-ABC",
+            make_doc(&"a".repeat(64), vec![], vec![]),
+        )]);
+        assert_eq!(ds.display_name_for("SomeGame-ABC"), "SomeGame-ABC");
+    }
+
+    #[test]
+    fn display_name_for_case_insensitive() {
+        let mut ds = make_dataset(vec![(
+            "trek-to-yomi-ppsa02629",
+            make_doc(&"a".repeat(64), vec![], vec![]),
+        )]);
+        ds.display_names.insert(
+            "trek-to-yomi-ppsa02629".to_string(),
+            "Trek To Yomi - [PPSA02629]".to_string(),
+        );
+        assert_eq!(
+            ds.display_name_for("trek-to-yomi-ppsa02629"),
+            "Trek To Yomi - [PPSA02629]"
+        );
+    }
+
+    #[test]
+    fn inject_middleware_merges_report() {
+        use ps5_analysis::{GameMiddlewareReport, MiddlewareModule, MiddlewareReport};
+
+        let module = |name: &str, vendor: Option<&str>, product: Option<&str>, imports: usize| {
+            MiddlewareModule {
+                file_name: name.to_string(),
+                module_name: name.to_string(),
+                kind: ps5_analysis::ModuleKind::ThirdParty,
+                sha256: None,
+                vendor: vendor.map(str::to_string),
+                product: product.map(str::to_string),
+                description: Some("desc".to_string()),
+                parseable: true,
+                imports,
+                exports: 0,
+                import_libs: vec![],
+                needed_files: vec![],
+            }
+        };
+
+        let report = MiddlewareReport {
+            games: vec![
+                GameMiddlewareReport {
+                    game: "game-a".to_string(),
+                    title_id: Some("PPSA11111".to_string()),
+                    engine: None,
+                    third_party: vec![
+                        module("libWwise.prx", Some("Audiokinetic"), Some("Wwise"), 10),
+                        module(
+                            "libWwise_AudioInput.prx",
+                            Some("Audiokinetic"),
+                            Some("Wwise"),
+                            5,
+                        ),
+                        module("libfmod.prx", Some("Firelight"), Some("FMOD"), 3),
+                    ],
+                    sony: vec![module("libc.prx", Some("Sony"), Some("libc"), 2)],
+                    unknown: vec![module("libWeird.prx", None, None, 1)],
+                },
+                GameMiddlewareReport {
+                    game: "game-b".to_string(),
+                    title_id: None,
+                    engine: None,
+                    third_party: vec![module(
+                        "libWwise.prx",
+                        Some("Audiokinetic"),
+                        Some("Wwise"),
+                        9,
+                    )],
+                    sony: vec![],
+                    unknown: vec![],
+                },
+            ],
+            total_prx: 6,
+            third_party_modules: 4,
+            sony_modules: 1,
+            unknown_modules: 1,
+        };
+
+        let mut data = DashboardData {
+            meta: DashboardMeta {
+                generated_at: "".into(),
+                game_count: 0,
+                tool_version: "test".into(),
+            },
+            overview: Overview {
+                total_games: 0,
+                elf_valid: 0,
+                total_imports: 0,
+                unique_nids: 0,
+                unique_libs: 0,
+                resolution_rate: 0.0,
+                avg_imports_per_game: 0.0,
+                total_artifacts: 0,
+                shader_files: 0,
+            },
+            games: vec![],
+            game_details: vec![],
+            heatmap: HeatmapData::default(),
+            nid_stats: NidStats {
+                top_nids: vec![],
+                resolved_count: 0,
+                unknown_count: 0,
+            },
+            segments: vec![],
+            library_priority: vec![],
+            library_details: vec![],
+            library_nid_breakdown: vec![],
+            statistics: None,
+            engine_hints: vec![],
+            engine_summary: vec![],
+            library_versions: vec![],
+            sce_library_stats: vec![],
+            sce_heatmap: HeatmapData::default(),
+            sce_library_versions: vec![],
+            loader_summary: None,
+            middleware: None,
+            upgrade_plan_complete: true,
+            shader_summary: ShaderSummary::default(),
+            firmware_summary: FirmwareSummary::default(),
+            artifacts: None,
+            firmware_checks: Vec::new(),
+        };
+
+        data.inject_middleware(&report);
+
+        let mw = data.middleware.unwrap();
+        assert_eq!(mw.summary.third_party_modules, 4);
+        assert_eq!(mw.summary.sony_modules, 1);
+        assert_eq!(mw.summary.unknown_modules, 1);
+        assert_eq!(mw.summary.games_with_third_party, 2);
+        assert_eq!(mw.games.len(), 2);
+        assert_eq!(mw.games[0].third_party.len(), 3);
+        assert_eq!(mw.games[0].sony.len(), 1);
+        assert_eq!(mw.games[0].unknown.len(), 1);
+
+        let wwise = mw
+            .summary
+            .products
+            .iter()
+            .find(|p| p.product == "Wwise")
+            .unwrap();
+        assert_eq!(wwise.vendor, "Audiokinetic");
+        assert_eq!(wwise.module_count, 3);
+        assert_eq!(wwise.game_count, 2);
+
+        let fmod = mw
+            .summary
+            .products
+            .iter()
+            .find(|p| p.product == "FMOD")
+            .unwrap();
+        assert_eq!(fmod.module_count, 1);
+        assert_eq!(fmod.game_count, 1);
+
+        assert!(
+            mw.summary.products[0].module_count >= mw.summary.products[1].module_count,
+            "products must be sorted by module count desc"
+        );
+    }
+
+    #[test]
+    fn middleware_game_row_serializes_empty_buckets_as_arrays() {
+        let row = MiddlewareGameRow {
+            name: "game".to_string(),
+            title_id: None,
+            third_party: vec![],
+            sony: vec![],
+            unknown: vec![],
+        };
+        let json = serde_json::to_string(&row).unwrap();
+        assert!(json.contains(r#""third_party":[]"#), "{json}");
+        assert!(json.contains(r#""sony":[]"#), "{json}");
+        assert!(json.contains(r#""unknown":[]"#), "{json}");
+    }
+
+    #[test]
+    fn inject_artifacts_updates_overview_and_shader() {
+        use ps5_analysis::artifacts::{Artifact, ArtifactCategory, ArtifactReport, GameArtifacts};
+        let report = ArtifactReport {
+            games: vec![GameArtifacts {
+                game: "test-game".to_string(),
+                game_dir: "/tmp/test-game".to_string(),
+                total_files: 10,
+                total_bytes: 1000,
+                by_extension: [("pssl".to_string(), 2), ("sb".to_string(), 3)]
+                    .into_iter()
+                    .collect(),
+                by_category: [("shader".to_string(), 5), ("texture".to_string(), 2)]
+                    .into_iter()
+                    .collect(),
+                artifacts: (0..5)
+                    .map(|i| Artifact {
+                        relative_path: format!("Content/a{}.sb", i),
+                        file_name: format!("a{}.sb", i),
+                        extension: "sb".to_string(),
+                        size: 100,
+                        category: ArtifactCategory::Shader,
+                    })
+                    .collect(),
+            }],
+            total_games: 1,
+            total_files: 10,
+            by_extension: [("pssl".to_string(), 2), ("sb".to_string(), 3)]
+                .into_iter()
+                .collect(),
+            by_category: [("shader".to_string(), 5)].into_iter().collect(),
+        };
+        let mut data = DashboardData {
+            meta: DashboardMeta {
+                generated_at: "".into(),
+                game_count: 0,
+                tool_version: "test".into(),
+            },
+            overview: Overview {
+                total_games: 0,
+                elf_valid: 0,
+                total_imports: 0,
+                unique_nids: 0,
+                unique_libs: 0,
+                resolution_rate: 0.0,
+                avg_imports_per_game: 0.0,
+                total_artifacts: 0,
+                shader_files: 0,
+            },
+            games: vec![],
+            game_details: vec![],
+            heatmap: HeatmapData::default(),
+            nid_stats: NidStats {
+                top_nids: vec![],
+                resolved_count: 0,
+                unknown_count: 0,
+            },
+            segments: vec![],
+            library_priority: vec![],
+            library_details: vec![],
+            library_nid_breakdown: vec![],
+            statistics: None,
+            engine_hints: vec![],
+            engine_summary: vec![],
+            library_versions: vec![],
+            sce_library_stats: vec![],
+            sce_heatmap: HeatmapData::default(),
+            sce_library_versions: vec![],
+            loader_summary: None,
+            middleware: None,
+            upgrade_plan_complete: true,
+            shader_summary: ShaderSummary::default(),
+            firmware_summary: FirmwareSummary::default(),
+            artifacts: None,
+            firmware_checks: Vec::new(),
+        };
+        data.inject_artifacts(report);
+        assert_eq!(data.overview.total_artifacts, 10);
+        assert_eq!(data.overview.shader_files, 5);
+        assert_eq!(data.shader_summary.total_shaders, 5);
+        assert!(data.artifacts.is_some());
+    }
+}
