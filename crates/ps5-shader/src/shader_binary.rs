@@ -52,19 +52,23 @@ impl ShaderBinary {
         if data.is_empty() {
             return Err("empty shader data".to_string());
         }
-        let stage =
-            if data.len() >= 50 && data[32..36] == [0x53, 0x68, 0x64, 0x72] && data.len() > 44 {
-                match data[44] {
+        let stage = if let Some(pos) = find_shdr(data) {
+            let stage_off = pos + 12;
+            if stage_off < data.len() {
+                match data[stage_off] {
                     1 => ShaderStage::Vertex,
                     2 => ShaderStage::Pixel,
                     3 => ShaderStage::Compute,
                     other => ShaderStage::Unknown(format!("type_{other}")),
                 }
-            } else if data.len() > 4 && data[0..4] == [0x47, 0x43, 0x4E, 0x00] {
-                ShaderStage::Vertex
             } else {
                 ShaderStage::Unknown("unknown".to_string())
-            };
+            }
+        } else if data.len() > 4 && data[0..4] == [0x47, 0x43, 0x4E, 0x00] {
+            ShaderStage::Vertex
+        } else {
+            ShaderStage::Unknown("unknown".to_string())
+        };
         let hash = {
             use sha2::{Digest, Sha256};
             let mut hasher = Sha256::new();
@@ -122,6 +126,16 @@ impl ShaderBinary {
     }
 }
 
+fn find_shdr(data: &[u8]) -> Option<usize> {
+    let limit = usize::min(data.len().saturating_sub(16), 512);
+    for i in 0..=limit {
+        if data[i..].starts_with(b"Shdr") {
+            return Some(i);
+        }
+    }
+    None
+}
+
 fn walkdir_simple(root: &std::path::Path) -> Vec<std::path::PathBuf> {
     let mut files = Vec::new();
     let mut stack = vec![root.to_path_buf()];
@@ -133,7 +147,10 @@ fn walkdir_simple(root: &std::path::Path) -> Vec<std::path::PathBuf> {
                     stack.push(p);
                 } else if p.is_file()
                     && let Some(ext) = p.extension().and_then(|s| s.to_str())
-                    && matches!(ext.to_ascii_lowercase().as_str(), "sb" | "ags" | "agsd")
+                    && matches!(
+                        ext.to_ascii_lowercase().as_str(),
+                        "sb" | "ags" | "agsd" | "pssl"
+                    )
                 {
                     files.push(p);
                 }
