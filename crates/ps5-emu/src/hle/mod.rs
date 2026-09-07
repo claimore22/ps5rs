@@ -37,6 +37,7 @@ pub enum HostCall {
     Qsort,
     Rand,
 
+    SceDbgSetMinimumLogLevel,
     SceDbgLoggingHandler,
     KernelSleep,
     KernelUsleep,
