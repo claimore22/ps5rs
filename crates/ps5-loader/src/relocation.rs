@@ -127,12 +127,22 @@ fn build_import_request(
         .get(reloc.r_sym() as usize)
         .ok_or_else(|| RelocationError(format!("symbol index {} not found", reloc.r_sym())))?;
 
-    let (library, import_name) =
-        if let Some((name_part, lib_part)) = sym.resolved_name.split_once('#') {
-            (Some(lib_part.to_string()), Some(name_part.to_string()))
-        } else {
-            (None, Some(sym.resolved_name.clone()))
-        };
+    let (library, import_name) = if let Some((name_part, tail)) = sym.resolved_name.split_once('#')
+    {
+        // Map the encoded lib id (e.g. `K`) to the real name from
+        // DT_SCE_NEEDED_LIB (e.g. `libScePad`), same as ps5-image does.
+        // Masked binaries may append a third segment (`nid#lib#extra`);
+        // the library id is the middle segment in both cases.
+        let lib_fragment = tail.split('#').next().unwrap_or(tail);
+        let real = crate::nid::lib_id_from_nid(&sym.resolved_name)
+            .and_then(|id| elf.import_libs.get(&id).cloned());
+        (
+            Some(real.unwrap_or_else(|| lib_fragment.to_string())),
+            Some(name_part.to_string()),
+        )
+    } else {
+        (None, Some(sym.resolved_name.clone()))
+    };
 
     let nid = SymbolNidResolver.resolve(&sym.resolved_name);
 

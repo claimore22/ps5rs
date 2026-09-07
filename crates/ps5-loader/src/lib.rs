@@ -44,7 +44,7 @@ pub use mapper::{
     load_elf,
 };
 pub use memory::{MemoryError, MemoryErrorKind, MemoryRegion, ProcessMemory, SegmentFlags};
-pub use nid::{NidResolver, SymbolNidResolver, compute_nid, nid_to_u64};
+pub use nid::{NidResolver, SymbolNidResolver, compute_nid, lib_id_from_nid, nid_to_u64};
 pub use offline::{OfflineExportEntry, OfflineExportTable};
 pub use pipeline::{load_modules, load_modules_at};
 pub use relocation::{
