@@ -14,12 +14,16 @@ pub fn init_env() -> Result<u64, EmuError> {
 }
 
 
+use std::sync::Once;
+
 /// Stub implementation for `qsort`. It does **not** perform a real sort –
 /// it simply returns 0 (success) so execution can continue.
 /// A full implementation would need to read the guest array, call the
 /// comparator callback, and write the sorted data back via the `Host`
 /// interface.
 pub fn qsort(_host: &mut dyn Host, _args: &[u64]) -> Result<u64, EmuError> {
+    static WARN: Once = Once::new();
+    WARN.call_once(|| tracing::warn!("qsort stub called – not a real implementation"));
     Ok(0)
 }
 
