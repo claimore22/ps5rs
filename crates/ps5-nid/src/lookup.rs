@@ -1,8 +1,12 @@
 const B64: &[u8; 64] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-";
 
+/// Decode the base64 library id after `#` in a `nid#lib` symbol to a u16.
+///
+/// Some binaries (e.g. masked PS4 titles) append a third segment
+/// (`nid#lib#extra`); the library id is always the segment right after the
+/// first `#`, so split there instead of decoding the whole tail.
 pub fn lib_id_from_nid(nid: &str) -> Option<u16> {
-    let hash_end = nid.find('#')?;
-    let lib_str = &nid[hash_end + 1..];
+    let lib_str = nid.split('#').nth(1)?;
     let mut val: u16 = 0;
     for ch in lib_str.bytes() {
         let pos = B64.iter().position(|&b| b == ch)?;
@@ -57,5 +61,15 @@ mod tests {
             long_lib.push('z');
         }
         assert_eq!(lib_id_from_nid(&long_lib), None);
+    }
+
+    #[test]
+    fn triple_segment_uses_middle() {
+        assert_eq!(lib_id_from_nid("MfDb+4Nln64#D#E"), Some(3));
+    }
+
+    #[test]
+    fn triple_segment_last_ignored() {
+        assert_eq!(lib_id_from_nid("EHQEDVXZ0TI#E#F"), Some(4));
     }
 }
