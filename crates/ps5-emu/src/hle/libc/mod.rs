@@ -31,6 +31,7 @@ impl HleModule for LibcModule {
             ("Need_sceLibc", HostCall::NeedSceLibc),
             ("printf", HostCall::Printf),
             ("puts", HostCall::Puts),
+            ("qsort", HostCall::Qsort),
             ("rand", HostCall::Rand),
         ]
     }
@@ -55,7 +56,7 @@ impl HleModule for LibcModule {
             HostCall::CatchReturnFromMain => calls::catch_return_from_main(args),
             HostCall::Puts => calls::puts(host, args),
             HostCall::Printf => calls::printf(host, args),
-            HostCall::Rand => calls::rand(&mut ctx.libc),
+            HostCall::Rand => Ok(calls::rand(&mut ctx.libc)),
             _ => Err(EmuError::NoHandler("libc".to_string())),
         }
     }
