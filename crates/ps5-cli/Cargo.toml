@@ -13,6 +13,8 @@ path = "src/main.rs"
 integration = []
 
 [dependencies]
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 ps5-deps = { path = "../ps5-deps" }
 ps5-format = { path = "../ps5-format" }
 ps5-self = { path = "../ps5-self" }
