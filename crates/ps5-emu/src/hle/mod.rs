@@ -11,6 +11,7 @@
 pub mod libSceDbg;
 pub mod libc;
 pub mod libkernel;
+pub mod libSceAgc;
 pub mod libSceNpUniversalDataSystem;
 
 
@@ -48,7 +49,9 @@ pub enum HostCall {
     KernelGetTscFrequency,
     KernelIsTrinityMode,
     KernelGetCurrentCpu,
+    SceNpUniversalDataSystemDestroyEvent,
     SceAgcGetDefaultCxStateFlat,
+
 }
 
 /// Services a handler can use to interact with the guest's memory.
@@ -99,6 +102,7 @@ pub fn default_registry() -> Registry {
     libc::register(&mut registry);
     libkernel::register(&mut registry);
     libSceNpUniversalDataSystem::register(&mut registry);
+    libSceAgc::register(&mut registry);
     // libSceAgc is not implemented – stub will be added later if needed.
 
     let _abi_check = AbiType::U64;

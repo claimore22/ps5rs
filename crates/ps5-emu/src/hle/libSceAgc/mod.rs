@@ -1,7 +1,4 @@
 //! HLE implementation for libSceAgc.
-
-pub mod calls;
-
 use crate::error::EmuError;
 use crate::hle::{HleContext, HleModule, Host, HostCall, Registry};
 
@@ -19,7 +16,7 @@ impl HleModule for AgcModule {
     }
 
     fn symbols(&self) -> &'static [(&'static str, HostCall)] {
-        &["sceAgcGetDefaultCxStateFlat", HostCall::SceAgcGetDefaultCxStateFlat]
+        &[("sceAgcGetDefaultCxStateFlat", HostCall::SceAgcGetDefaultCxStateFlat)]
     }
 
     fn call(
@@ -31,8 +28,12 @@ impl HleModule for AgcModule {
     ) -> Result<u64, EmuError> {
         match call {
             HostCall::SceAgcGetDefaultCxStateFlat => {
-                // Placeholder implementation – returns success (0).
-                // Real implementation would populate a CxState struct.
+                static WARN: std::sync::Once = std::sync::Once::new();
+                WARN.call_once(|| {
+                    tracing::warn!(
+                        "sceAgcGetDefaultCxStateFlat stub called – not a real implementation"
+                    );
+                });
                 Ok(0)
             }
             _ => Err(EmuError::NoHandler("libSceAgc".to_string())),
