@@ -3,6 +3,7 @@
 > Source-of-truth repository audit against UPGRADE_PLAN2.md mission.
 > Audited 2026-08-27 on branch `elfspector-dev` @ `6ae64c1`. Read-only investigation — no code changed by this audit.
 > **Update — `update_plan_v2` 2026-08-27:** Phases 0–9 validated on `update_plan_v2` (commits edaf364, 7551552, 4ec6811, 8eb8058, d5cdeee, 9d23028, ffd476c, 0796b4b, 55f8f92, ead7456, 0ee1553, 33aac87, abdddd5, 8ba6fbe). See `analysis/validation-report.json`/`md`, `analysis/external-bugsnax.json`.
+> **Update — `update_plan_v2` 2026-08-28:** Shader real extended (`a0fed7f` `ShaderArchive`/`GlobalShaderCache` 5 UE titles, `9ac75b6` `Shdr` scan fix Bugsnax 508/508 `720e781` Unity `ps5-analysis/src/unity.rs` heuristic + `UnityPy` oracle, `c1d312b` Dragon `PAR/PXD/GMD` `PS5_TOOLS/DragonTools/ParManager 1.3.4`, `b3657cb`/`206840a` `ps5-schema` `ShaderRecord` + `ps5-analysis` `shader_inventory` → `analysis/shaders.json` 547 records + `ps5-dashboard` `shaders` inject, `c382d62`/`a6742ba` docs.rs left sidebar 14 tabs, `d1287a1` UE4 2→11 via `ue4commandline.txt` file presence + word-boundary, `2e4a343` Phase 5 multi-signal engine forensics). `cargo clippy -- -D warnings` + `cargo test --workspace` green, `analysis/dashboard` 5.19 MB `file://`.
 
 ## 0. update_plan_v2 progress (verified)
 

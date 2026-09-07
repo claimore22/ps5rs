@@ -93,7 +93,26 @@ pub fn generate_dashboard_pages(
         let html = generate_html_with_active_tab(data, page.tab);
         std::fs::write(out_dir.join(page.file), html)?;
     }
+    for game in &data.game_details {
+        let sanitized = sanitize_filename(&game.name);
+        let game_dir = out_dir.join("games").join(sanitized);
+        std::fs::create_dir_all(&game_dir)?;
+        let html = layout::render_game_page(data, game);
+        std::fs::write(game_dir.join("index.html"), html)?;
+    }
     Ok(())
+}
+
+fn sanitize_filename(name: &str) -> String {
+    name.chars()
+        .map(|c| {
+            if c.is_ascii_alphanumeric() || c == '-' || c == '_' || c == '.' {
+                c
+            } else {
+                '_'
+            }
+        })
+        .collect()
 }
 
 pub fn generate_html_with_active_tab(data: &DashboardData, active_tab: &str) -> String {

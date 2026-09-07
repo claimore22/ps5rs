@@ -220,6 +220,114 @@ fn push_tab_contents(html: &mut String, active: &str) {
     }
 }
 
+pub fn render_game_page(data: &DashboardData, game: &crate::data::GameDetail) -> String {
+    let json = dashboard_json(data);
+    let mut html = String::with_capacity(96 * 1024);
+    html.push_str("<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n");
+    html.push_str("<meta charset=\"UTF-8\">\n");
+    html.push_str("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n");
+    html.push_str("<title>");
+    html.push_str(&game.title_name.clone().unwrap_or_else(|| game.name.clone()));
+    html.push_str(" — PS5rs</title>\n<style>");
+    html.push_str(CSS);
+    html.push_str("</style>\n</head>\n<body>\n\n");
+    push_header(&mut html, data);
+    html.push_str("\n<div class=\"layout\">\n");
+    push_sidebar(&mut html, "games");
+    html.push_str("\n<div class=\"main\">\n<div class=\"container\">\n");
+    html.push_str(&render_game_detail_html(game, data));
+    html.push_str("\n</div>\n</div>\n</div>\n\n");
+    html.push_str(DETAIL_PANEL);
+    html.push_str("\n<script>\nconst D = ");
+    html.push_str(&json);
+    html.push_str(";\n");
+    html.push_str(JS);
+    html.push_str("\n</script>\n</body>\n</html>");
+    html
+}
+
+fn render_game_detail_html(game: &crate::data::GameDetail, data: &DashboardData) -> String {
+    let mut out = String::new();
+    out.push_str(r#"<a href="../../index.html" style="color:#58a6ff;font-size:0.85rem">&larr; Back to Games</a>"#);
+    out.push_str(&format!(
+        r#"<h1 style="margin:12px 0 4px">{}</h1><p style="color:#8b949e;font-size:0.85rem">{} &middot; {} &middot; {:.1} MB</p>"#,
+        game.title_name.clone().unwrap_or_else(|| game.name.clone()),
+        game.name,
+        game.platform,
+        game.file_size_mb
+    ));
+    out.push_str(&format!(
+        r#"<div class="cards"><div class="card"><div class="card-label">Engine</div><div class="card-value">{}</div></div><div class="card"><div class="card-label">Confidence</div><div class="card-value">{}</div></div><div class="card"><div class="card-label">SCE Libs</div><div class="card-value">{}</div></div><div class="card"><div class="card-label">Unknown NIDs</div><div class="card-value">{}</div></div></div>"#,
+        game.engine,
+        game.engine_confidence,
+        game.sce_libraries.len(),
+        game.unresolved_nids.len()
+    ));
+    out.push_str(r#"<div class="section"><h2>Identity</h2><div class="detail-kv">"#);
+    out.push_str(&format!(r#"<div class="k">SHA-256</div><div class="v" style="font-family:monospace;font-size:0.72rem">{}</div>"#, game.sha256));
+    out.push_str(&format!(r#"<div class="k">Entry Point</div><div class="v" style="font-family:monospace">{}</div>"#, game.entry_point));
+    out.push_str(&format!(r#"<div class="k">Build ID</div><div class="v" style="font-family:monospace;font-size:0.72rem">{}</div>"#, game.build_id.clone().unwrap_or_else(|| "N/A".to_string())));
+    out.push_str(&format!(r#"<div class="k">ELF Type</div><div class="v">0x{:x}</div>"#, game.elf_type));
+    out.push_str("</div></div>");
+    out.push_str(r#"<div class="section"><h2>Engine Forensics</h2><div class="detail-kv">"#);
+    out.push_str(&format!(r#"<div class="k">Engine</div><div class="v">{}</div><div class="k">Score</div><div class="v">{}</div><div class="k">Confidence</div><div class="v">{}%</div>"#, game.engine, game.engine_score, game.engine_confidence));
+    if let Some(bs) = &game.build_system {
+        out.push_str(&format!(r#"<div class="k">Build System</div><div class="v">{}</div>"#, bs));
+    }
+    if let Some(sd) = &game.source_depot {
+        out.push_str(&format!(r#"<div class="k">Source Depot</div><div class="v">{}</div>"#, sd));
+    }
+    out.push_str("</div>");
+    if !game.engine_evidence.is_empty() {
+        out.push_str(r#"<h3 style="margin-top:12px">Evidence</h3><div class="table-wrap"><table class="detail-table"><thead><tr><th>String</th></tr></thead><tbody>"#);
+        for ev in &game.engine_evidence {
+            out.push_str(&format!(r#"<tr><td style="font-family:monospace;font-size:0.72rem">{}</td></tr>"#, ev));
+        }
+        out.push_str("</tbody></table></div>");
+    }
+    out.push_str("</div>");
+    if !game.lib_versions.is_empty() {
+        out.push_str(r#"<div class="section"><h2>SDK Library Versions</h2><div class="table-wrap"><table class="detail-table"><thead><tr><th>Library</th><th>Version</th></tr></thead><tbody>"#);
+        for lv in &game.lib_versions {
+            out.push_str(&format!(r#"<tr><td style="font-family:monospace">{}</td><td>{}</td></tr>"#, lv.name, lv.version_string));
+        }
+        out.push_str("</tbody></table></div></div>");
+    }
+    out.push_str(r#"<div class="section"><h2>Segments</h2><div class="table-wrap"><table class="detail-table"><thead><tr><th>#</th><th>Type</th><th>VAddr</th><th>Size</th></tr></thead><tbody>"#);
+    for seg in &game.segments {
+        out.push_str(&format!(r#"<tr><td>{}</td><td>{}</td><td>{}</td><td>{}</td></tr>"#, seg.index, seg.seg_type, seg.vaddr, seg.filesz));
+    }
+    out.push_str("</tbody></table></div></div>");
+    out.push_str(r#"<div class="section"><h2>Libraries</h2><div class="table-wrap"><table class="detail-table"><thead><tr><th>Library</th><th>Imports</th></tr></thead><tbody>"#);
+    for lib in &game.import_summary {
+        out.push_str(&format!(r#"<tr><td>{}</td><td>{}</td></tr>"#, lib.library, lib.count));
+    }
+    out.push_str("</tbody></table></div></div>");
+    let shader_count = data.shaders.iter().filter(|s| s.game == game.name).count();
+    if shader_count > 0 {
+        out.push_str(&format!(r#"<div class="section"><h2>Shaders ({} records)</h2><p style="color:#8b949e;font-size:0.82rem">From ShaderArchive/GlobalShaderCache/sb and Unity assets</p><div class="table-wrap"><table class="detail-table"><thead><tr><th>Stage</th><th>Format</th><th>Size</th></tr></thead><tbody>"#, shader_count));
+        for s in data.shaders.iter().filter(|s| s.game == game.name).take(20) {
+            out.push_str(&format!(r#"<tr><td>{}</td><td>{}</td><td>{}</td></tr>"#, s.stage, s.format, s.size));
+        }
+        out.push_str("</tbody></table></div></div>");
+    }
+    if let Some(fw) = data.firmware_checks.iter().find(|f| f.game == game.name) {
+        out.push_str(r#"<div class="section"><h2>Firmware Compatibility</h2><div class="table-wrap"><table class="detail-table"><thead><tr><th>Library</th><th>Required</th><th>Status</th></tr></thead><tbody>"#);
+        for c in &fw.checks {
+            out.push_str(&format!(r#"<tr><td>{}</td><td>{}</td><td>{}</td></tr>"#, c.library, c.required, c.status));
+        }
+        out.push_str("</tbody></table></div></div>");
+    }
+    if !game.unresolved_nids.is_empty() {
+        out.push_str(&format!(r#"<div class="section"><h2>Unknown NIDs ({} shown)</h2><div class="table-wrap"><table class="detail-table"><thead><tr><th>NID</th><th>Library</th></tr></thead><tbody>"#, game.unresolved_nids.len().min(50)));
+        for nid in game.unresolved_nids.iter().take(50) {
+            out.push_str(&format!(r#"<tr><td style="font-family:monospace">{}</td><td>{}</td></tr>"#, nid.nid_hash, nid.library_name));
+        }
+        out.push_str("</tbody></table></div></div>");
+    }
+    out
+}
+
 const DETAIL_PANEL: &str = r#"<div class="detail-overlay" id="detailPanel">
 <div class="detail-header"><h2 id="detailTitle">Detail</h2><button class="detail-close" id="detailClose">&times; Close</button></div>
 <div class="detail-body" id="detailBody"></div>

@@ -76,7 +76,7 @@ impl NidResolver for SymbolNidResolver {
         if let Some(nid) = nid_to_u64(candidate) {
             return Some(nid);
         }
-        compute_nid(name)
+        compute_nid(candidate)
     }
 }
 

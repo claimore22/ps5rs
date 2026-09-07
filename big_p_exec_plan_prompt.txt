@@ -1,0 +1,85 @@
+Work incrementally, one coherent change at a time.
+One Git commit per logical milestone, not one huge commit.
+Before each commit: run cargo fmt --check, cargo clippy --workspace --all-targets --all-features -- -D warnings, and relevant tests.
+Commit only when the milestone is actually implemented, integrated, tested, and working on real data.
+After each commit, run the real PS5 corpus validation where relevant and record results.
+Never mix unrelated refactors with feature work.
+Preserve working behavior; revert/repair regressions before continuing.
+Update IMPLEMENTATION_AUDIT.md / UPGRADE_PLAN.md  /  BIG_PLAN.MD  only to reflect verified reality.
+Suggested sequence:
+audit/honesty-gate
+nid/evidence
+shader/real-analysis
+firmware/abi
+engine-sdk-detection
+dashboard-v2
+cli-completeness
+real-data-validation
+final-hardening
+Do not create one giant commit for the entire plan. Each phase must remain buildable/testable.
+
+
+The following local directories may be used as READ-ONLY validation/reference resources:
+
+1. Toolchain\Tools:
+   C:\Program Files (x86)\SCE\*
+   C:\Program Files (x86)\SCE\Prospero\Tools\*
+   C:\Program Files (x86)\SCE\Prospero SDKs\10.000\host_tools\*
+
+   Use available `*.exe` tools as independent validation oracles for ELF,
+   shader, symbol, binary, metadata, and related analysis.
+
+2. Complete sample workspace:
+   C:\Users\claimoar\Documents\SDK MANAGER 10.00\Samples\sdk\target\samples\
+
+   Use the COMPLETE tree for validation, including:
+   - sample source code (`*.cpp`, headers, projects, etc.)
+   - sample data/assets
+   - shader sources (`*.pssl`)
+   - compiled shaders (`*.ags`, `*.agsd`, `*.sb`, etc.)
+   - compiled ELF/PRX/SPRX binaries
+   - build/intermediate artifacts
+   - `Release_Prospero` output directories and their resulting binaries
+   - any other files produced by the sample builds
+
+3. Real PS5 game corpus:
+   C:\Users\claimoar\Documents\ROMS\PS5\
+
+   This may contain both packed (`*.pak`) and unpacked/bare game content.
+   Inventory and analyze useful artifact types rather than assuming a
+   particular packaging format.
+
+### Validation Strategy
+
+Use the sample SOURCE → BUILD → RESULT relationship whenever possible:
+
+    sample source
+        ↓
+    compiled artifact
+        ↓
+    ps5rs analysis
+        ↓
+    compare against independent tool/reference information
+
+Use the executable tools above as validation oracles where appropriate.
+
+Validate ELF/SELF/PRX parsing, imports, exports, relocations, NIDs,
+libraries, dependencies, symbols, shaders, metadata, engine/middleware
+fingerprints, and other analysis features against real artifacts.
+
+### STRICT REPOSITORY RULES
+
+- These directories are EXTERNAL validation resources only.
+- NEVER hardcode these local paths into `ps5rs`.
+- NEVER require them for normal builds or tests.
+- NEVER copy, commit, embed, or redistribute their contents.
+- NEVER commit proprietary source, headers, binaries, libraries, shaders,
+  sample data, or executable tool output.
+- Tests may reference configurable external validation paths, but must
+  gracefully skip when the resources are unavailable.
+- Store only derived validation results such as counts, hashes where
+  appropriate, pass/fail results, mismatches, and aggregated statistics.
+- **NEVER mention the vendor/product name in committed source code,
+  comments, documentation, schemas, tests, or generated project data.**
+- The repository must remain completely self-contained without these
+  external resources.

@@ -7,6 +7,17 @@ use crate::imports::ImportTable;
 use crate::platform::memory::GuestMemory;
 use crate::process::Process;
 
+fn u64_to_nid_str(nid: u64) -> String {
+    const B64: &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-";
+    let mut val = (nid as u128) << 2;
+    let mut out = [0u8; 11];
+    for i in (0..11).rev() {
+        out[i] = B64[(val & 0x3F) as usize];
+        val >>= 6;
+    }
+    String::from_utf8(out.to_vec()).unwrap()
+}
+
 use super::dispatcher::ImportSlot;
 use super::relocator::{StubRegion, patch_got_slots};
 
@@ -79,7 +90,11 @@ fn build_slots(
             .clone()
             .unwrap_or_else(|| binding.nid_str.clone());
         if !registry.contains(binding.nid) {
-            return Err(EmuError::NoHandler(format!("{name}#{}", binding.library)));
+            let nid_b64 = u64_to_nid_str(binding.nid);
+            return Err(EmuError::NoHandler(format!(
+                "{name}#{} [nid {} / {:#x}]",
+                binding.library, nid_b64, binding.nid
+            )));
         }
         tracing::trace!(nid = format_args!("{:#x}", binding.nid), name, "slot built");
         slots.push(ImportSlot {
