@@ -25,6 +25,10 @@ impl HleModule for AgcModule {
                 "sceAgcGetRegisterDefaults2Internal",
                 HostCall::SceAgcGetRegisterDefaults2Internal,
             ),
+            (
+                "sceAgcCbDispatchGetSize",
+                HostCall::SceAgcCbDispatchGetSize,
+            ),
         ]
     }
 
@@ -52,6 +56,16 @@ impl HleModule for AgcModule {
                     eprintln!("WARNING: sceAgcGetRegisterDefaults2Internal stub called – not a real implementation");
                     tracing::warn!(
                         "sceAgcGetRegisterDefaults2Internal stub called – not a real implementation"
+                    );
+                });
+                Ok(0)
+            }
+            HostCall::SceAgcCbDispatchGetSize => {
+                static WARN: std::sync::Once = std::sync::Once::new();
+                WARN.call_once(|| {
+                    eprintln!("WARNING: sceAgcCbDispatchGetSize stub called – not a real implementation");
+                    tracing::warn!(
+                        "sceAgcCbDispatchGetSize stub called – not a real implementation"
                     );
                 });
                 Ok(0)

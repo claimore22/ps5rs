@@ -14,6 +14,7 @@ pub mod libkernel;
 pub mod libSceAgc;
 pub mod libSceAgcDriver;
 pub mod libSceAudioOut;
+pub mod libSceNgs2;
 pub mod libSceNpUniversalDataSystem;
 
 
@@ -97,8 +98,10 @@ pub enum HostCall {
     SceNpUniversalDataSystemDestroyEvent,
     SceAgcGetDefaultCxStateFlat,
     SceAgcGetRegisterDefaults2Internal,
+    SceAgcCbDispatchGetSize,
     SceAgcDriverQueryResourceRegistrationUserMemoryRequirements,
     SceAudioOutOutput,
+    SceNgs2VoiceRunCommands,
 
 }
 
@@ -153,6 +156,7 @@ pub fn default_registry() -> Registry {
     libSceAgc::register(&mut registry);
     libSceAgcDriver::register(&mut registry);
     libSceAudioOut::register(&mut registry);
+    libSceNgs2::register(&mut registry);
     // libSceAgc is not implemented – stub will be added later if needed.
 
     let _abi_check = AbiType::U64;
