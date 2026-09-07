@@ -21,7 +21,10 @@ pub fn nid_to_u64(nid: &str) -> Option<u64> {
     Some(val)
 }
 
-/// Compute the u64 NID for a human-readable SCE symbol name.
+/// Decode the base64 library identifier after the first `#` in a `nid#lib` symbol.
+/// Returns `None` if the symbol does not contain a `#` or the fragment is not a
+/// valid base‑64 library ID.
+/// Compute the u64 NID for a human‑readable SCE symbol name.
 ///
 /// Uses the same SHA1+SALT algorithm as `ps5-nid::algorithm::hash()`.
 pub fn compute_nid(name: &str) -> Option<u64> {
@@ -36,7 +39,7 @@ pub fn compute_nid(name: &str) -> Option<u64> {
         buf[i] = result[7 - i];
     }
 
-    // Base64-encode the reversed bytes into an 11-char NID string.
+    // Base64‑encode the reversed bytes into an 11‑char NID string.
     let mut nid = String::with_capacity(11);
     for chunk in buf.chunks(3) {
         let b0 = chunk[0] as u32;
@@ -56,6 +59,22 @@ pub fn compute_nid(name: &str) -> Option<u64> {
 
     nid_to_u64(&nid)
 }
+
+
+/// Decode the base64 library identifier after the first `#` in a `nid#lib` symbol.
+/// Returns `None` if the symbol does not contain a `#` or the fragment is not a
+/// valid base‑64 library ID.
+pub fn lib_id_from_nid(nid: &str) -> Option<u16> {
+    // Take the fragment after the *first* '#'.
+    let lib_str = nid.split('#').nth(1)?;
+    let mut val: u16 = 0;
+    for ch in lib_str.bytes() {
+        let pos = B64.iter().position(|b| b == &ch)?;
+        val = val.checked_mul(64)?.checked_add(pos as u16)?;
+    }
+    Some(val)
+}
+
 
 /// Resolves a symbol name to a numeric NID.
 pub trait NidResolver {
