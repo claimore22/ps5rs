@@ -1,8 +1,8 @@
 const B64: &[u8; 64] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-";
 
 pub fn lib_id_from_nid(nid: &str) -> Option<u16> {
-    let hash_end = nid.find('#')?;
-    let lib_str = &nid[hash_end + 1..];
+
+    let lib_str = nid.split('#').nth(1)?;
     let mut val: u16 = 0;
     for ch in lib_str.bytes() {
         let pos = B64.iter().position(|&b| b == ch)?;
