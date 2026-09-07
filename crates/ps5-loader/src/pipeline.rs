@@ -9,6 +9,7 @@ use crate::mapper::{LoadedModule, LoaderError, ModuleState, load_elf};
 use crate::offline::OfflineExportTable;
 use crate::relocation::apply_relocations_with;
 use crate::resolver::CrossModuleResolver;
+use ps5_self::extract::extract_elf;
 
 /// Load an eboot and all its PRX dependencies (transitive), returning a
 /// fully-linked [`ModuleContext`].
@@ -71,8 +72,33 @@ where
                 self.graph.add_edge(canonical, needed_name);
                 continue;
             };
-            let prx_elf = ps5_elf::ElfImage::parse(&prx_bytes, None)
-                .map_err(|e| LoaderError(format!("{} parse: {e}", needed_name)))?;
+            let prx_elf_bytes = match extract_elf(&prx_bytes) {
+                Ok(result) => {
+                    tracing::info!(
+                        module = %needed_name,
+                        size = prx_bytes.len(),
+                        was_self = result.was_self,
+                        "PRX SELF extraction ok"
+                    );
+                    result.elf
+                }
+                Err(e) => {
+                    tracing::warn!(module = %needed_name, error = %e, "PRX SELF extraction failed, marking unavailable");
+                    self.graph.mark_unavailable(needed_name);
+                    self.graph.add_edge(canonical, needed_name);
+                    continue;
+                }
+            };
+            let prx_elf = match ps5_elf::ElfImage::parse(&prx_elf_bytes, None) {
+                Ok(image) => image,
+                Err(e) => {
+                    let magic = prx_bytes.first().copied().unwrap_or(0);
+                    tracing::warn!(module = %needed_name, error = %e, magic = magic, "PRX ELF parse failed, marking unavailable");
+                    self.graph.mark_unavailable(needed_name);
+                    self.graph.add_edge(canonical, needed_name);
+                    continue;
+                }
+            };
 
             let prx_canonical = prx_elf.soname.as_deref().unwrap_or(needed_name);
             self.graph.add_edge(canonical, prx_canonical);
@@ -152,7 +178,17 @@ pub fn load_modules_at(
     offline_exports: Option<&OfflineExportTable>,
     base_address: u64,
 ) -> Result<ModuleContext, LoaderError> {
-    let eboot_elf = ps5_elf::ElfImage::parse(eboot_bytes, None)
+    let eboot_extract =
+        extract_elf(eboot_bytes).map_err(|e| LoaderError(format!("eboot extract ELF: {e}")))?;
+    tracing::info!(
+        size = eboot_bytes.len(),
+        was_self = eboot_extract.was_self,
+        encrypted = eboot_extract.encrypted_segments,
+        compressed = eboot_extract.compressed_segments,
+        "eboot SELF extraction ok"
+    );
+    let eboot_elf_bytes = eboot_extract.elf;
+    let eboot_elf = ps5_elf::ElfImage::parse(&eboot_elf_bytes, None)
         .map_err(|e| LoaderError(format!("eboot ELF parse: {e}")))?;
 
     let mut ctx = LoadContext {
@@ -179,8 +215,32 @@ pub fn load_modules_at(
             ctx.graph.add_edge(eboot_canonical, needed_name);
             continue;
         };
-        let prx_elf = ps5_elf::ElfImage::parse(&prx_bytes, None)
-            .map_err(|e| LoaderError(format!("{} parse: {e}", needed_name)))?;
+        let prx_elf_bytes = match extract_elf(&prx_bytes) {
+            Ok(result) => {
+                tracing::info!(
+                    module = %needed_name,
+                    size = prx_bytes.len(),
+                    was_self = result.was_self,
+                    "PRX SELF extraction ok"
+                );
+                result.elf
+            }
+            Err(e) => {
+                tracing::warn!(module = %needed_name, error = %e, "PRX SELF extraction failed, marking unavailable");
+                ctx.graph.mark_unavailable(needed_name);
+                ctx.graph.add_edge(eboot_canonical, needed_name);
+                continue;
+            }
+        };
+        let prx_elf = match ps5_elf::ElfImage::parse(&prx_elf_bytes, None) {
+            Ok(image) => image,
+            Err(e) => {
+                tracing::warn!(module = %needed_name, error = %e, "PRX ELF parse failed, marking unavailable");
+                ctx.graph.mark_unavailable(needed_name);
+                ctx.graph.add_edge(eboot_canonical, needed_name);
+                continue;
+            }
+        };
 
         let prx_canonical = prx_elf.soname.as_deref().unwrap_or(needed_name);
         ctx.graph.add_edge(eboot_canonical, prx_canonical);
@@ -197,7 +257,7 @@ pub fn load_modules_at(
         .unwrap_or(0);
     let load_bias = ctx.address_alloc.allocate(module_size);
 
-    let mut module = load_elf(eboot_name, eboot_bytes)?;
+    let mut module = load_elf(eboot_name, &eboot_elf_bytes)?;
     module.load_bias = load_bias;
     for region in &mut module.memory.regions {
         region.vaddr = region.vaddr.wrapping_add(load_bias);

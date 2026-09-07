@@ -637,6 +637,8 @@ dependencies = [
  "ps5-self",
  "serde",
  "serde_json",
+ "tracing",
+ "tracing-subscriber",
  "ureq",
 ]
 
@@ -678,6 +680,7 @@ dependencies = [
  "ps5-format",
  "ps5-loader",
  "ps5-nid",
+ "ps5-self",
  "ps5-tests",
  "serde",
  "serde_json",
@@ -718,6 +721,7 @@ version = "0.4.0"
 dependencies = [
  "ps5-deps",
  "ps5-elf",
+ "ps5-self",
  "serde",
  "serde_json",
  "sha1",

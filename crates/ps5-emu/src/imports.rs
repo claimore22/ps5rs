@@ -56,7 +56,12 @@ pub fn build_import_table(
         else {
             continue;
         };
-        let elf = ps5_elf::ElfImage::parse(&src.bytes, None)
+        let extracted = ps5_self::extract::extract_elf(&src.bytes)
+            .map_err(|e| EmuError::Parse(format!("{}: SELF extraction: {e}", src.name)))?;
+        if extracted.was_self {
+            tracing::debug!(module = %src.name, size = src.bytes.len(), "import table: SELF extraction ok");
+        }
+        let elf = ps5_elf::ElfImage::parse(&extracted.elf, None)
             .map_err(|e| EmuError::Parse(format!("{}: {e}", src.name)))?;
 
         for reloc in &elf.relocations {
