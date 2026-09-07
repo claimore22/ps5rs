@@ -23,7 +23,9 @@ use std::sync::Once;
 /// interface.
 pub fn qsort(_host: &mut dyn Host, _args: &[u64]) -> Result<u64, EmuError> {
     static WARN: Once = Once::new();
-    WARN.call_once(|| tracing::warn!("qsort stub called – not a real implementation"));
+    WARN.call_once(|| {
+        tracing::warn!("qsort stub called – not a real implementation");
+    });
     Ok(0)
 }
 
