@@ -57,6 +57,22 @@ pub fn compute_nid(name: &str) -> Option<u64> {
     nid_to_u64(&nid)
 }
 
+/// Decode the base64 library id after `#` in a `nid#lib` symbol to a u16.
+///
+/// Mirrors `ps5_nid::lib_id_from_nid`; kept local so the loader stays
+/// self-contained (it already vendors the NID hash algorithm above).
+/// The id is the segment right after the first `#`, since masked binaries
+/// may append a third segment (`nid#lib#extra`).
+pub fn lib_id_from_nid(nid: &str) -> Option<u16> {
+    let lib_str = nid.split('#').nth(1)?;
+    let mut val: u16 = 0;
+    for ch in lib_str.bytes() {
+        let pos = B64.iter().position(|&b| b == ch)?;
+        val = val.checked_mul(64)?.checked_add(pos as u16)?;
+    }
+    Some(val)
+}
+
 /// Resolves a symbol name to a numeric NID.
 pub trait NidResolver {
     fn resolve(&self, name: &str) -> Option<u64>;
@@ -141,6 +157,22 @@ mod tests {
     #[test]
     fn compute_nid_different_inputs_differ() {
         assert_ne!(compute_nid("memcpy"), compute_nid("memset"));
+    }
+
+    #[test]
+    fn lib_id_single_char() {
+        assert_eq!(lib_id_from_nid("J6h9iA2kL7M#B"), Some(1));
+    }
+
+    #[test]
+    fn lib_id_no_hash_returns_none() {
+        assert_eq!(lib_id_from_nid("memcpy"), None);
+    }
+
+    #[test]
+    fn lib_id_triple_segment_uses_middle() {
+        assert_eq!(lib_id_from_nid("X#A#B"), Some(0));
+        assert_eq!(lib_id_from_nid("MfDb+4Nln64#D#E"), Some(3));
     }
 
     #[test]
