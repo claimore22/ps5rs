@@ -1,6 +1,4 @@
-//! Host implementation of the `libkernel` subset currently exercised.
-
-pub mod calls;
+//! HLE implementation for `libkernel` (stub – covers many `sceKernel*` calls).
 
 use crate::error::EmuError;
 use crate::hle::{HleContext, HleModule, Host, HostCall, Registry};
@@ -19,7 +17,33 @@ impl HleModule for KernelModule {
     }
 
     fn symbols(&self) -> &'static [(&'static str, HostCall)] {
-        &[("sceKernelSleep", HostCall::KernelSleep)]
+        &[
+            ("sceKernelSleep", HostCall::KernelSleep),
+            ("sceKernelUsleep", HostCall::KernelUsleep),
+            ("sceKernelUnlink", HostCall::KernelUnlink),
+            ("sceKernelOpen", HostCall::KernelOpen),
+            ("sceKernelClose", HostCall::KernelClose),
+            ("sceKernelRead", HostCall::KernelRead),
+            ("sceKernelWrite", HostCall::KernelWrite),
+            ("sceKernelLseek", HostCall::KernelLseek),
+            ("sceKernelStat", HostCall::KernelStat),
+            ("sceKernelFstat", HostCall::KernelFstat),
+            ("sceKernelMkdir", HostCall::KernelMkdir),
+            ("sceKernelRmdir", HostCall::KernelRmdir),
+            ("sceKernelGetProcessTime", HostCall::KernelGetProcessTime),
+            (
+                "sceKernelGetProcessTimeCounter",
+                HostCall::KernelGetProcessTimeCounter,
+            ),
+            (
+                "sceKernelGetProcessTimeCounterFrequency",
+                HostCall::KernelGetProcessTimeCounterFrequency,
+            ),
+            ("sceKernelReadTsc", HostCall::KernelReadTsc),
+            ("sceKernelGetTscFrequency", HostCall::KernelGetTscFrequency),
+            ("sceKernelIsTrinityMode", HostCall::KernelIsTrinityMode),
+            ("sceKernelGetCurrentCpu", HostCall::KernelGetCurrentCpu),
+        ]
     }
 
     fn call(
@@ -27,11 +51,25 @@ impl HleModule for KernelModule {
         _ctx: &mut HleContext,
         _host: &mut dyn Host,
         call: HostCall,
-        args: &[u64],
+        _args: &[u64],
     ) -> Result<u64, EmuError> {
         match call {
-            HostCall::KernelSleep => calls::sleep(args),
-            _ => Err(EmuError::NoHandler("libkernel".to_string())),
+            HostCall::KernelSleep => {
+                static WARN: std::sync::Once = std::sync::Once::new();
+                WARN.call_once(|| {
+                    eprintln!("WARNING: sceKernelSleep stub called – not a real implementation");
+                    tracing::warn!("sceKernelSleep stub called – not a real implementation");
+                });
+                Ok(0)
+            }
+            _ => {
+                static WARN: std::sync::Once = std::sync::Once::new();
+                WARN.call_once(|| {
+                    eprintln!("WARNING: libkernel stub called – not a real implementation");
+                    tracing::warn!("libkernel stub called – not a real implementation");
+                });
+                Ok(0)
+            }
         }
     }
 }

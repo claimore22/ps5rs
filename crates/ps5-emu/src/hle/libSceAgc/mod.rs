@@ -16,7 +16,16 @@ impl HleModule for AgcModule {
     }
 
     fn symbols(&self) -> &'static [(&'static str, HostCall)] {
-        &[("sceAgcGetDefaultCxStateFlat", HostCall::SceAgcGetDefaultCxStateFlat)]
+        &[
+            (
+                "sceAgcGetDefaultCxStateFlat",
+                HostCall::SceAgcGetDefaultCxStateFlat,
+            ),
+            (
+                "sceAgcGetRegisterDefaults2Internal",
+                HostCall::SceAgcGetRegisterDefaults2Internal,
+            ),
+        ]
     }
 
     fn call(
@@ -33,6 +42,16 @@ impl HleModule for AgcModule {
                     eprintln!("WARNING: sceAgcGetDefaultCxStateFlat stub called – not a real implementation");
                     tracing::warn!(
                         "sceAgcGetDefaultCxStateFlat stub called – not a real implementation"
+                    );
+                });
+                Ok(0)
+            }
+            HostCall::SceAgcGetRegisterDefaults2Internal => {
+                static WARN: std::sync::Once = std::sync::Once::new();
+                WARN.call_once(|| {
+                    eprintln!("WARNING: sceAgcGetRegisterDefaults2Internal stub called – not a real implementation");
+                    tracing::warn!(
+                        "sceAgcGetRegisterDefaults2Internal stub called – not a real implementation"
                     );
                 });
                 Ok(0)

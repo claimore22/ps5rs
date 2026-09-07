@@ -60,6 +60,208 @@ pub fn setjmp(_host: &mut dyn Host, _args: &[u64]) -> Result<u64, EmuError> {
     Ok(0)
 }
 
+/// Memory allocation stub. Allocates a buffer via the host and returns its address.
+pub fn malloc(host: &mut dyn Host, args: &[u64]) -> Result<u64, EmuError> {
+    let size = args.first().copied().unwrap_or(0) as usize;
+    if size == 0 {
+        return Ok(0);
+    }
+    let mut buf = vec![0u8; size];
+    let ptr = buf.as_mut_ptr() as u64;
+    std::mem::forget(buf);
+    static WARN: std::sync::Once = std::sync::Once::new();
+    WARN.call_once(|| {
+        tracing::debug!("malloc stub: returning host heap pointer");
+    });
+    Ok(ptr)
+}
+
+/// Free stub – no-op (host memory is leaked for now).
+pub fn free(_host: &mut dyn Host, _args: &[u64]) -> Result<u64, EmuError> {
+    Ok(0)
+}
+
+/// calloc stub.
+pub fn calloc(host: &mut dyn Host, args: &[u64]) -> Result<u64, EmuError> {
+    let nmemb = args.first().copied().unwrap_or(0) as usize;
+    let size = args.get(1).copied().unwrap_or(0) as usize;
+    let total = nmemb.saturating_mul(size);
+    malloc(host, &[total as u64])
+}
+
+/// realloc stub – returns a fresh allocation (old pointer is leaked).
+pub fn realloc(host: &mut dyn Host, args: &[u64]) -> Result<u64, EmuError> {
+    let size = args.get(1).copied().unwrap_or(0);
+    malloc(host, &[size])
+}
+
+/// memset stub.
+pub fn memset(host: &mut dyn Host, args: &[u64]) -> Result<u64, EmuError> {
+    let dst = args.first().copied().unwrap_or(0);
+    let value = args.get(1).copied().unwrap_or(0) as u8;
+    let len = args.get(2).copied().unwrap_or(0) as usize;
+    let data = vec![value; len];
+    host.write(dst, &data)?;
+    Ok(dst)
+}
+
+/// memcpy stub.
+pub fn memcpy(host: &mut dyn Host, args: &[u64]) -> Result<u64, EmuError> {
+    let dst = args.first().copied().unwrap_or(0);
+    let src = args.get(1).copied().unwrap_or(0);
+    let len = args.get(2).copied().unwrap_or(0) as usize;
+    let data = host.read_bytes(src, len)?;
+    host.write(dst, &data)?;
+    Ok(dst)
+}
+
+/// memmove stub (same as memcpy for now).
+pub fn memmove(host: &mut dyn Host, args: &[u64]) -> Result<u64, EmuError> {
+    memcpy(host, args)
+}
+
+/// memcmp stub – returns 0 (equal) always.
+pub fn memcmp(_host: &mut dyn Host, _args: &[u64]) -> Result<u64, EmuError> {
+    Ok(0)
+}
+
+/// strlen stub.
+pub fn strlen(host: &mut dyn Host, args: &[u64]) -> Result<u64, EmuError> {
+    let s = host.read_string(args.first().copied().unwrap_or(0))?;
+    Ok(s.len() as u64)
+}
+
+/// strcpy stub.
+pub fn strcpy(host: &mut dyn Host, args: &[u64]) -> Result<u64, EmuError> {
+    let dst = args.first().copied().unwrap_or(0);
+    let src = args.get(1).copied().unwrap_or(0);
+    let s = host.read_string(src)?;
+    let bytes = s.as_bytes();
+    let mut buf = Vec::with_capacity(bytes.len() + 1);
+    buf.extend_from_slice(bytes);
+    buf.push(0);
+    host.write(dst, &buf)?;
+    Ok(dst)
+}
+
+/// strncpy stub.
+pub fn strncpy(host: &mut dyn Host, args: &[u64]) -> Result<u64, EmuError> {
+    let dst = args.first().copied().unwrap_or(0);
+    let src = args.get(1).copied().unwrap_or(0);
+    let n = args.get(2).copied().unwrap_or(0) as usize;
+    let s = host.read_string(src)?;
+    let bytes = s.as_bytes();
+    let mut buf = vec![0u8; n];
+    for (i, b) in bytes.iter().take(n).enumerate() {
+        buf[i] = *b;
+    }
+    host.write(dst, &buf)?;
+    Ok(dst)
+}
+
+/// strcmp stub – always returns 0.
+pub fn strcmp(_host: &mut dyn Host, _args: &[u64]) -> Result<u64, EmuError> {
+    Ok(0)
+}
+
+/// strncmp stub – always returns 0.
+pub fn strncmp(_host: &mut dyn Host, _args: &[u64]) -> Result<u64, EmuError> {
+    Ok(0)
+}
+
+/// strchr stub – returns the original pointer.
+pub fn strchr(_host: &mut dyn Host, args: &[u64]) -> Result<u64, EmuError> {
+    Ok(args.first().copied().unwrap_or(0))
+}
+
+/// strrchr stub – returns the original pointer.
+pub fn strrchr(_host: &mut dyn Host, args: &[u64]) -> Result<u64, EmuError> {
+    Ok(args.first().copied().unwrap_or(0))
+}
+
+/// strstr stub – returns the haystack pointer.
+pub fn strstr(_host: &mut dyn Host, args: &[u64]) -> Result<u64, EmuError> {
+    Ok(args.first().copied().unwrap_or(0))
+}
+
+/// strcat stub.
+pub fn strcat(host: &mut dyn Host, args: &[u64]) -> Result<u64, EmuError> {
+    let dst = args.first().copied().unwrap_or(0);
+    let src = args.get(1).copied().unwrap_or(0);
+    let existing = host.read_string(dst).unwrap_or_default();
+    let append = host.read_string(src).unwrap_or_default();
+    let mut combined = existing.as_bytes().to_vec();
+    combined.extend_from_slice(append.as_bytes());
+    combined.push(0);
+    host.write(dst, &combined)?;
+    Ok(dst)
+}
+
+/// strncat stub.
+pub fn strncat(host: &mut dyn Host, args: &[u64]) -> Result<u64, EmuError> {
+    strcat(host, args)
+}
+
+/// memchr stub – returns the original pointer.
+pub fn memchr(_host: &mut dyn Host, args: &[u64]) -> Result<u64, EmuError> {
+    Ok(args.first().copied().unwrap_or(0))
+}
+
+/// fopen stub – returns 0 (null FILE*).
+pub fn fopen(_host: &mut dyn Host, _args: &[u64]) -> Result<u64, EmuError> {
+    Ok(0)
+}
+
+/// fclose stub – returns 0.
+pub fn fclose(_host: &mut dyn Host, _args: &[u64]) -> Result<u64, EmuError> {
+    Ok(0)
+}
+
+/// fread stub – returns 0.
+pub fn fread(_host: &mut dyn Host, _args: &[u64]) -> Result<u64, EmuError> {
+    Ok(0)
+}
+
+/// fwrite stub – returns 0.
+pub fn fwrite(_host: &mut dyn Host, _args: &[u64]) -> Result<u64, EmuError> {
+    Ok(0)
+}
+
+/// fseek stub – returns 0.
+pub fn fseek(_host: &mut dyn Host, _args: &[u64]) -> Result<u64, EmuError> {
+    Ok(0)
+}
+
+/// ftell stub – returns 0.
+pub fn ftell(_host: &mut dyn Host, _args: &[u64]) -> Result<u64, EmuError> {
+    Ok(0)
+}
+
+/// fflush stub – returns 0.
+pub fn fflush(_host: &mut dyn Host, _args: &[u64]) -> Result<u64, EmuError> {
+    Ok(0)
+}
+
+/// fgetc stub – returns EOF (-1).
+pub fn fgetc(_host: &mut dyn Host, _args: &[u64]) -> Result<u64, EmuError> {
+    Ok(u64::MAX)
+}
+
+/// fputc stub – returns 0.
+pub fn fputc(_host: &mut dyn Host, _args: &[u64]) -> Result<u64, EmuError> {
+    Ok(0)
+}
+
+/// getc stub – returns EOF.
+pub fn getc(_host: &mut dyn Host, _args: &[u64]) -> Result<u64, EmuError> {
+    Ok(u64::MAX)
+}
+
+/// putc stub – returns 0.
+pub fn putc(_host: &mut dyn Host, _args: &[u64]) -> Result<u64, EmuError> {
+    Ok(0)
+}
+
 
 /// `exit(code)`: unwind to the host caller with `code`.
 pub fn exit(args: &[u64]) -> Result<u64, EmuError> {
