@@ -11,7 +11,7 @@
 pub mod libSceDbg;
 pub mod libc;
 pub mod libkernel;
-pub mod libSceAgc;
+pub mod libSceNpUniversalDataSystem;
 
 
 mod context;
@@ -98,7 +98,7 @@ pub fn default_registry() -> Registry {
     let mut registry = Registry::new();
     libc::register(&mut registry);
     libkernel::register(&mut registry);
-    libSceDbg::register(&mut registry);
+    libSceNpUniversalDataSystem::register(&mut registry);
     libSceAgc::register(&mut registry);
     let _abi_check = AbiType::U64;
     registry
