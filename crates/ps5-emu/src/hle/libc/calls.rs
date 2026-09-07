@@ -8,6 +8,12 @@ use crate::hle::{Host, LibcState};
 use super::printf::format_printf;
 use super::random::next_rand;
 
+/// `_init_env(module, flags, debug, arg) -> int`: accept crt0 setup.
+pub fn init_env() -> Result<u64, EmuError> {
+    Ok(0)
+}
+
+
 /// Stub implementation for `qsort`. It does **not** perform a real sort –
 /// it simply returns 0 (success) so execution can continue.
 /// A full implementation would need to read the guest array, call the
