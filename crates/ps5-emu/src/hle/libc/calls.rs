@@ -18,13 +18,44 @@ use std::sync::Once;
 
 /// Stub implementation for `qsort`. It does **not** perform a real sort –
 /// it simply returns 0 (success) so execution can continue.
-/// A full implementation would need to read the guest array, call the
-/// comparator callback, and write the sorted data back via the `Host`
-/// interface.
 pub fn qsort(_host: &mut dyn Host, _args: &[u64]) -> Result<u64, EmuError> {
-    static WARN: Once = Once::new();
+    static WARN: std::sync::Once = std::sync::Once::new();
     WARN.call_once(|| {
+        eprintln!("WARNING: qsort stub called – not a real implementation");
         tracing::warn!("qsort stub called – not a real implementation");
+    });
+    Ok(0)
+}
+
+/// Stub implementation for `ferror`. It does **not** check the stream error
+/// indicator; it just returns 0 (no error) so execution can continue.
+pub fn ferror(_host: &mut dyn Host, _args: &[u64]) -> Result<u64, EmuError> {
+    static WARN: std::sync::Once = std::sync::Once::new();
+    WARN.call_once(|| {
+        eprintln!("WARNING: ferror stub called – not a real implementation");
+        tracing::warn!("ferror stub called – not a real implementation");
+    });
+    Ok(0)
+}
+
+/// Stub implementation for `time`. It does **not** read the real clock;
+/// it just returns 0 (epoch) so execution can continue.
+pub fn time(_host: &mut dyn Host, _args: &[u64]) -> Result<u64, EmuError> {
+    static WARN: std::sync::Once = std::sync::Once::new();
+    WARN.call_once(|| {
+        eprintln!("WARNING: time stub called – not a real implementation");
+        tracing::warn!("time stub called – not a real implementation");
+    });
+    Ok(0)
+}
+
+/// Stub implementation for `setjmp`. It does **not** save the call
+/// environment; it just returns 0 so execution can continue.
+pub fn setjmp(_host: &mut dyn Host, _args: &[u64]) -> Result<u64, EmuError> {
+    static WARN: std::sync::Once = std::sync::Once::new();
+    WARN.call_once(|| {
+        eprintln!("WARNING: setjmp stub called – not a real implementation");
+        tracing::warn!("setjmp stub called – not a real implementation");
     });
     Ok(0)
 }

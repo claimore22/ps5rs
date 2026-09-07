@@ -30,6 +30,7 @@ impl HleModule for AgcModule {
             HostCall::SceAgcGetDefaultCxStateFlat => {
                 static WARN: std::sync::Once = std::sync::Once::new();
                 WARN.call_once(|| {
+                    eprintln!("WARNING: sceAgcGetDefaultCxStateFlat stub called – not a real implementation");
                     tracing::warn!(
                         "sceAgcGetDefaultCxStateFlat stub called – not a real implementation"
                     );

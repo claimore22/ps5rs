@@ -33,6 +33,9 @@ impl HleModule for LibcModule {
             ("puts", HostCall::Puts),
             ("qsort", HostCall::Qsort),
             ("rand", HostCall::Rand),
+            ("ferror", HostCall::Ferror),
+            ("time", HostCall::Time),
+            ("setjmp", HostCall::Setjmp),
         ]
     }
 
@@ -56,6 +59,10 @@ impl HleModule for LibcModule {
             HostCall::CatchReturnFromMain => calls::catch_return_from_main(args),
             HostCall::Puts => calls::puts(host, args),
             HostCall::Printf => calls::printf(host, args),
+            HostCall::Qsort => calls::qsort(host, args),
+            HostCall::Ferror => calls::ferror(host, args),
+            HostCall::Time => calls::time(host, args),
+            HostCall::Setjmp => calls::setjmp(host, args),
             HostCall::Rand => Ok(calls::rand(&mut ctx.libc)),
             _ => Err(EmuError::NoHandler("libc".to_string())),
         }

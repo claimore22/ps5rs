@@ -12,6 +12,8 @@ pub mod libSceDbg;
 pub mod libc;
 pub mod libkernel;
 pub mod libSceAgc;
+pub mod libSceAgcDriver;
+pub mod libSceAudioOut;
 pub mod libSceNpUniversalDataSystem;
 
 
@@ -37,6 +39,9 @@ pub enum HostCall {
     Puts,
     Qsort,
     Rand,
+    Ferror,
+    Time,
+    Setjmp,
 
     SceDbgSetMinimumLogLevel,
     SceDbgLoggingHandler,
@@ -51,6 +56,8 @@ pub enum HostCall {
     KernelGetCurrentCpu,
     SceNpUniversalDataSystemDestroyEvent,
     SceAgcGetDefaultCxStateFlat,
+    SceAgcDriverQueryResourceRegistrationUserMemoryRequirements,
+    SceAudioOutOutput,
 
 }
 
@@ -103,6 +110,8 @@ pub fn default_registry() -> Registry {
     libkernel::register(&mut registry);
     libSceNpUniversalDataSystem::register(&mut registry);
     libSceAgc::register(&mut registry);
+    libSceAgcDriver::register(&mut registry);
+    libSceAudioOut::register(&mut registry);
     // libSceAgc is not implemented – stub will be added later if needed.
 
     let _abi_check = AbiType::U64;
