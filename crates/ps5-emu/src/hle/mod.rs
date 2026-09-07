@@ -99,7 +99,8 @@ pub fn default_registry() -> Registry {
     libc::register(&mut registry);
     libkernel::register(&mut registry);
     libSceNpUniversalDataSystem::register(&mut registry);
-    libSceAgc::register(&mut registry);
+    // libSceAgc is not implemented – stub will be added later if needed.
+
     let _abi_check = AbiType::U64;
     registry
 }
