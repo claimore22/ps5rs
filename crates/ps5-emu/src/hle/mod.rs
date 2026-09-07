@@ -17,6 +17,7 @@ pub mod libSceAgc;
 mod context;
 
 pub use context::{DbgState, HleContext, LibcState};
+pub mod registry;
 pub use registry::Registry;
 
 use ps5_abi::AbiType;
@@ -33,7 +34,7 @@ pub enum HostCall {
     CatchReturnFromMain,
     Printf,
     Puts,
-    Rand,
+    Qsort,
     SceDbgSetMinimumLogLevel,
     SceDbgLoggingHandler,
     KernelSleep,
