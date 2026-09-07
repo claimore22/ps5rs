@@ -17,8 +17,6 @@ pub fn qsort(_host: &mut dyn Host, _args: &[u64]) -> Result<u64, EmuError> {
     Ok(0)
 }
 
-    Ok(0)
-}
 
 /// `exit(code)`: unwind to the host caller with `code`.
 pub fn exit(args: &[u64]) -> Result<u64, EmuError> {
