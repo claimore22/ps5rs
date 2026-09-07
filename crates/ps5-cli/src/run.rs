@@ -31,19 +31,56 @@ fn offline_table() -> Option<OfflineExportTable> {
 
 pub(crate) fn cmd_run(file: &PathBuf, prx_dir: Option<PathBuf>, json: bool) {
     let data = load_file(file);
+    let container = if data.len() >= 4 && &data[0..4] == b"\x7fELF" {
+        "Raw ELF"
+    } else if data.len() >= 4 {
+        match u32::from_be_bytes([data[0], data[1], data[2], data[3]]) {
+            0x5414F5EE => "PS5 SELF",
+            0x4F153D1D => "PS4 SELF",
+            magic => {
+                tracing::warn!(
+                    magic = format_args!("{magic:#x}"),
+                    "unknown container magic"
+                );
+                "Unknown"
+            }
+        }
+    } else {
+        "Too small"
+    };
+    tracing::info!(file = %file.display(), container, size = data.len(), "run: input detected");
     let elf_bytes = get_elf_bytes(&data);
+    tracing::info!(size = elf_bytes.len(), "run: ELF extraction ok");
 
     let dir = prx_dir.or_else(|| prx_dir_for(file));
+    tracing::info!(dir = ?dir, "run: PRX provider dir");
     let provider = |name: &str| -> Option<Vec<u8>> {
         let dir = dir.as_ref()?;
-        let direct = dir.join(name);
-        if direct.is_file() {
-            return std::fs::read(direct).ok();
+        for candidate in [dir.join(name), dir.join(format!("{name}.prx"))] {
+            if candidate.is_file() {
+                match std::fs::read(&candidate) {
+                    Ok(bytes) => {
+                        let kind = if bytes.len() >= 4 && &bytes[0..4] == b"\x7fELF" {
+                            "Raw ELF"
+                        } else if bytes.len() >= 4 {
+                            match u32::from_be_bytes([bytes[0], bytes[1], bytes[2], bytes[3]]) {
+                                0x5414F5EE => "PS5 SELF",
+                                0x4F153D1D => "PS4 SELF",
+                                _ => "Unknown",
+                            }
+                        } else {
+                            "Too small"
+                        };
+                        tracing::info!(module = %name, path = %candidate.display(), kind, size = bytes.len(), "run: PRX provider hit");
+                        return Some(bytes);
+                    }
+                    Err(e) => {
+                        tracing::warn!(module = %name, path = %candidate.display(), error = %e, "run: PRX read failed");
+                    }
+                }
+            }
         }
-        let suffixed = dir.join(format!("{name}.prx"));
-        if suffixed.is_file() {
-            return std::fs::read(suffixed).ok();
-        }
+        tracing::warn!(module = %name, "run: PRX not found in provider dir");
         None
     };
 
