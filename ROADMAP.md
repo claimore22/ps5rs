@@ -351,6 +351,7 @@ analysis data.
 | 6 | Catalog accept workflow | ~6h | 🔜 |
 | | **Total** | **~31.5h** | **26.5h done / 6h remaining** |
 
+
 The narrative end-to-end:
 
 ```
