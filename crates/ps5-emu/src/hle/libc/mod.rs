@@ -55,7 +55,7 @@ impl HleModule for LibcModule {
             HostCall::CatchReturnFromMain => calls::catch_return_from_main(args),
             HostCall::Puts => calls::puts(host, args),
             HostCall::Printf => calls::printf(host, args),
-            HostCall::Qsort => calls::qsort(host, args),
+            HostCall::Rand => calls::rand(&mut ctx.libc),
             _ => Err(EmuError::NoHandler("libc".to_string())),
         }
     }
