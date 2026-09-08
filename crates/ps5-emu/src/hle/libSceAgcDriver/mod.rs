@@ -17,10 +17,40 @@ impl HleModule for AgcDriverModule {
     }
 
     fn symbols(&self) -> &'static [(&'static str, HostCall)] {
-        &[(
-            "sceAgcDriverQueryResourceRegistrationUserMemoryRequirements",
-            HostCall::SceAgcDriverQueryResourceRegistrationUserMemoryRequirements,
-        )]
+        &[
+            (
+                "sceAgcDriverQueryResourceRegistrationUserMemoryRequirements",
+                HostCall::SceAgcDriverQueryResourceRegistrationUserMemoryRequirements,
+            ),
+            (
+                "sceAgcDriverAgrSubmitDcb",
+                HostCall::SceAgcDriverAgrSubmitDcb,
+            ),
+            (
+                "sceAgcDriverUnmapIoctl",
+                HostCall::SceAgcDriverUnmapIoctl,
+            ),
+            (
+                "sceAgcDriverMapComputeQueue",
+                HostCall::SceAgcDriverMapComputeQueue,
+            ),
+            (
+                "sceAgcDriverInit",
+                HostCall::SceAgcDriverInit,
+            ),
+            (
+                "sceAgcDriverUnmapComputeQueue",
+                HostCall::SceAgcDriverUnmapComputeQueue,
+            ),
+            (
+                "sceAgcDriverSubmitDcb",
+                HostCall::SceAgcDriverSubmitDcb,
+            ),
+            (
+                "sceAgcDriverMapIoctl",
+                HostCall::SceAgcDriverMapIoctl,
+            ),
+        ]
     }
 
     fn call(
@@ -38,6 +68,14 @@ impl HleModule for AgcDriverModule {
                     tracing::warn!(
                         "sceAgcDriverQueryResourceRegistrationUserMemoryRequirements stub called – not a real implementation"
                     );
+                });
+                Ok(0)
+            }
+            _ => {
+                static WARN: std::sync::Once = std::sync::Once::new();
+                WARN.call_once(|| {
+                    eprintln!("WARNING: libSceAgcDriver stub called – not a real implementation");
+                    tracing::warn!("libSceAgcDriver stub called – not a real implementation");
                 });
                 Ok(0)
             }

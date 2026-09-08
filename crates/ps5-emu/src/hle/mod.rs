@@ -100,6 +100,13 @@ pub enum HostCall {
     SceAgcGetRegisterDefaults2Internal,
     SceAgcCbDispatchGetSize,
     SceAgcDriverQueryResourceRegistrationUserMemoryRequirements,
+    SceAgcDriverAgrSubmitDcb,
+    SceAgcDriverUnmapIoctl,
+    SceAgcDriverMapComputeQueue,
+    SceAgcDriverInit,
+    SceAgcDriverUnmapComputeQueue,
+    SceAgcDriverSubmitDcb,
+    SceAgcDriverMapIoctl,
     SceAudioOutOutput,
     SceNgs2VoiceRunCommands,
 
