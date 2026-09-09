@@ -4,6 +4,19 @@ All notable changes to ps5rs will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [0.5.0] - 2026-09-09
+
+### Added
+- **Upgrade-plan crates**: `ps5-prx` (authoritative module model with TLS/init arrays), `ps5-schema` (stable JSON interchange), `ps5-abi` (function signatures + struct layouts), `ps5-sdk-meta` (SDK knowledge DB), `ps5-firmware` (firmware catalog), `ps5-shader` (shader analysis), `ps5-deps` (dependency graph), `ps5-signatures` (engine/middleware fingerprints), `ps5-nid-db` (typed NID database)
+- **New CLI commands**: `sdk`, `firmware`, `shader`, `deps`, `inventory`, `middleware`, `export-scan`, `batch-load`, `run`
+- **Host-side emulator** (`ps5-emu`): native guest execution with HLE registry, `ExecutionReport`, deterministic fixtures
+- **Third-party middleware detection** with dashboard Middleware tab
+- **SELF PRX handling** in loader pipeline and emulator imports
+
+### Changed
+- **Unified master**: merged parallel development lines (local analysis depth + toolchain/loader fixes)
+- **Documentation refresh**: neutral vendor wording, redacted local paths
+
 ## [0.4.0] - 2026-08-10
 
 ### Added
