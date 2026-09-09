@@ -59,7 +59,6 @@ fn analyze_engine(name: &str, doc: &ps5_image::BinaryImageDocument) -> EngineHin
         .into_iter()
         .collect();
 
-    // ELF-based SCE library detection
     let mut sce_libraries: Vec<String> = all_libs
         .iter()
         .filter(|l| l.starts_with("libSce"))
@@ -67,10 +66,68 @@ fn analyze_engine(name: &str, doc: &ps5_image::BinaryImageDocument) -> EngineHin
         .collect();
     sce_libraries.sort();
 
-    // ELF-based engine detection
+    let string_analysis = doc.string_analysis.as_ref();
+    let has_ue4_file = has_ue4commandline(name);
+
+    // Multi-signal studio engine detection (RE/Decima/Dragon/FromSoft etc.) via ps5-signatures
+    let mut signals: Vec<String> = Vec::new();
+    signals.extend(all_libs.iter().cloned());
+    signals.extend(lib_names.iter().cloned());
+    signals.extend(img.needed_files.iter().cloned());
+    signals.extend(img.lib_versions.iter().map(|lv| lv.name.clone()));
+    signals.extend(
+        img.imports
+            .iter()
+            .filter_map(|imp| imp.resolved_name.clone()),
+    );
+    signals.extend(img.segments.iter().map(|s| format!("{:?}", s.seg_type)));
+    if let Some(sa) = string_analysis {
+        if let Some(e) = &sa.engine {
+            signals.push(e.value.clone());
+            signals.extend(e.evidence.clone());
+        }
+        signals.extend(sa.source_paths.clone());
+        signals.extend(sa.sce_libraries.clone());
+        for det in &sa.third_party_libs {
+            signals.push(det.value.clone());
+            signals.extend(det.evidence.clone());
+        }
+        if let Some(bs) = &sa.build_system {
+            signals.push(bs.value.clone());
+        }
+        for lv in &sa.detected_versions {
+            signals.push(lv.value.clone());
+        }
+    }
+    if has_ue4_file {
+        signals.push("ue4commandline.txt".to_string());
+        signals.push("UnrealEngine4Runtime".to_string());
+    }
+    if let Some(build_id) = &img.metadata.build_id {
+        signals.push(build_id.clone());
+    }
+    let mut studio_engines: Vec<String> = Vec::new();
+    let mut studio_detection: Option<ps5_image::Detection> = None;
+    if let Some(det) = ps5_signatures::engine::detect_engine(&signals)
+        && ![
+            "Native",
+            "SCE",
+            "Unreal Engine 4",
+            "Unreal Engine 5",
+            "Unity",
+            "Godot",
+        ]
+        .contains(&det.value.as_str())
+        && det.confidence >= 10
+    {
+        studio_engines.push(det.value.clone());
+        studio_detection = Some(det);
+    }
+
+    // Original ELF-based engine detection for Unreal/Unity/Godot (kept for backward compat)
     let mut engines = Vec::new();
 
-    let unreal = {
+    let unreal = has_ue4_file || {
         let lib_match = all_libs
             .iter()
             .any(|l| l.contains("Unreal") || l.contains("UE4") || l.contains("UE5"));
@@ -99,18 +156,16 @@ fn analyze_engine(name: &str, doc: &ps5_image::BinaryImageDocument) -> EngineHin
         engines.push("Godot".to_string());
     }
 
-    // String-based analysis — enriches ELF data, fills gaps for encrypted eboots
-    let string_analysis = doc.string_analysis.as_ref();
+    engines.extend(studio_engines.clone());
 
     if let Some(sa) = string_analysis {
-        // Merge string-based engine detection if ELF found nothing
         if engines.is_empty()
             && let Some(ref engine) = sa.engine
+            && engine.confidence >= 10
         {
             engines.push(engine.value.clone());
+            studio_detection = Some(engine.clone());
         }
-
-        // Merge SCE libraries from strings
         for lib in &sa.sce_libraries {
             if !sce_libraries.contains(lib) {
                 sce_libraries.push(lib.clone());
@@ -120,21 +175,41 @@ fn analyze_engine(name: &str, doc: &ps5_image::BinaryImageDocument) -> EngineHin
     }
 
     if engines.is_empty() {
-        engines.push("Native/SCE".to_string());
+        if let Some(ref det) = studio_detection {
+            engines.push(det.value.clone());
+        } else {
+            engines.push("Native/SCE".to_string());
+        }
     }
 
     let unreal = unreal
+        || studio_detection
+            .as_ref()
+            .is_some_and(|d| d.value.contains("Unreal"))
         || string_analysis
             .and_then(|sa| sa.engine.as_ref())
             .is_some_and(|e| e.value.contains("Unreal"));
     let unity = unity
+        || studio_detection
+            .as_ref()
+            .is_some_and(|d| d.value == "Unity")
         || string_analysis
             .and_then(|sa| sa.engine.as_ref())
             .is_some_and(|e| e.value == "Unity");
     let godot = godot
+        || studio_detection
+            .as_ref()
+            .is_some_and(|d| d.value == "Godot")
         || string_analysis
             .and_then(|sa| sa.engine.as_ref())
             .is_some_and(|e| e.value == "Godot");
+
+    let mut custom_forks = string_analysis
+        .map(|sa| sa.custom_forks.clone())
+        .unwrap_or_default();
+    if let Some(det) = studio_detection.clone() {
+        custom_forks.push(det);
+    }
 
     EngineHint {
         name: name.to_string(),
@@ -161,10 +236,60 @@ fn analyze_engine(name: &str, doc: &ps5_image::BinaryImageDocument) -> EngineHin
         project_paths: string_analysis
             .map(|sa| sa.project_paths.clone())
             .unwrap_or_default(),
-        custom_forks: string_analysis
-            .map(|sa| sa.custom_forks.clone())
-            .unwrap_or_default(),
+        custom_forks,
     }
+}
+
+fn has_ue4commandline(game_name: &str) -> bool {
+    use std::sync::OnceLock;
+    static CACHE: OnceLock<std::collections::HashSet<String>> = OnceLock::new();
+    let set = CACHE.get_or_init(|| {
+        let mut s = std::collections::HashSet::new();
+        let roms = std::path::Path::new(r"C:\Users\claimoar\Documents\ROMS\PS5");
+        let mut stack = vec![roms.to_path_buf()];
+        let mut depth = 0;
+        while let Some(dir) = stack.pop() {
+            if depth > 4 {
+                continue;
+            }
+            if let Ok(entries) = std::fs::read_dir(&dir) {
+                for entry in entries.flatten() {
+                    let path = entry.path();
+                    if path.is_file()
+                        && path.file_name().and_then(|n| n.to_str()) == Some("ue4commandline.txt")
+                    {
+                        if let Some(parent) = path
+                            .parent()
+                            .and_then(|p| p.file_name())
+                            .and_then(|n| n.to_str())
+                        {
+                            s.insert(crate::scanner::sanitize_filename(parent));
+                            s.insert(parent.to_string());
+                        }
+                        if let Some(grand) = path
+                            .parent()
+                            .and_then(|p| p.parent())
+                            .and_then(|p| p.file_name())
+                            .and_then(|n| n.to_str())
+                        {
+                            s.insert(crate::scanner::sanitize_filename(grand));
+                            s.insert(grand.to_string());
+                        }
+                    } else if path.is_dir() {
+                        stack.push(path);
+                    }
+                }
+            }
+            depth += 1;
+        }
+        s
+    });
+    let sanitized = crate::scanner::sanitize_filename(game_name);
+    set.contains(&sanitized)
+        || set.contains(&game_name.to_string())
+        || set
+            .iter()
+            .any(|k| game_name.contains(k) || k.contains(game_name))
 }
 
 #[cfg(test)]
@@ -339,8 +464,8 @@ mod tests {
         let sa = StringAnalysis {
             engine: Some(Detection {
                 value: "Unreal Engine 4".to_string(),
-                score: 0,
-                confidence: 0,
+                score: 90,
+                confidence: 90,
                 evidence: vec!["UnrealEngine4Runtime".to_string()],
             }),
             ..Default::default()

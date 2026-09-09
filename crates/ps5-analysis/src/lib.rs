@@ -1,6 +1,8 @@
+pub mod artifacts;
 pub mod batch_extract;
 pub mod collector;
 pub mod dataset;
+pub mod dragon;
 pub mod engine_fingerprints;
 pub mod export;
 pub mod middleware;
@@ -8,7 +10,9 @@ pub mod model;
 pub mod param_json;
 pub mod reports;
 pub mod scanner;
+pub mod shader_inventory;
 pub mod string_patterns;
+pub mod unity;
 
 pub use batch_extract::{
     BatchExtractOptions, BatchExtractResult, ExtractionEntry, ExtractionManifest, batch_extract,

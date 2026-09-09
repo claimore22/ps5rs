@@ -19,7 +19,7 @@ The PS5 uses an x86-64 AMD Zen 2 CPU, which means CPU instruction compatibility 
 | `ps5-format` | Shared types, error enums, ELF/SELF constants, SHA-256 utility |
 | `ps5-self` | SELF container parsing (PS4/PS5 wrappers around ELF) |
 | `ps5-elf` | ELF64 binary format parsing (headers, segments, symbols, relocations) |
-| `ps5-nid` | NID hash algorithm (SHA1 + Sony custom base64), name catalog (v2 with merge semantics), resolver |
+| `ps5-nid` | NID hash algorithm (SHA1 + custom base64), name catalog (v2 with merge semantics), resolver |
 | `ps5-image` | BinaryImage IR: normalized abstraction with JSON serialization, `Detection` with confidence/evidence |
 | `ps5-analysis` | Analysis engine: scanner, dataset, PRX module discovery, dependency analysis, string fingerprinting, engine detection, third-party middleware classification, reports, and export |
 | `ps5-loader` | PS5 ELF/PRX loader: virtual memory model, relocation engine (RELATIVE, ABS64, GLOB_DAT, JUMP_SLOT), import resolver with 3-tier lookup (runtime exports → offline exports → stub allocator), NID computation, multi-module dependency loading |
@@ -27,6 +27,18 @@ The PS5 uses an x86-64 AMD Zen 2 CPU, which means CPU instruction compatibility 
 | `ps5-tests` | Deterministic, self-authored ELF fixture generator + manifest of expected guest behavior (regression suite input) |
 | `ps5-dashboard` | Static HTML dashboard generator (self-contained, no CDN dependencies) |
 | `ps5-cli` | Command-line interface |
+| `ps5-prx` | PRX module intelligence: `PrxModule` with metadata/dependencies/imports/exports/versions |
+| `ps5-schema` | Stable JSON schemas (`SCHEMA_VERSION`) for `BinaryImage`/`GameRecord`/`NidRecord` |
+| `ps5-abi` | ABI metadata: `AbiType`/`FunctionSignature`/`StructLayout` with 50 seed signatures |
+| `ps5-deps` | Dependency graph `ModuleGraph` + `DepReport` (`ps5rs deps --dot`) |
+| `ps5-signatures` | Engine/middleware signatures (`UNREAL4/5/UNITY/GODOT`, Wwise/FMOD/PhysX) |
+| `ps5-nid-db` | Typed NID database `NidDatabase` (JSON-only, in-memory indexes) |
+| `ps5-sdk-meta` | SDK knowledge DB `SdkDatabase` (libraries/functions/versions/structures/constants) |
+| `ps5-firmware` | Firmware catalog `FirmwareCatalog` (version/modules/libraries/exports) |
+| `ps5-shader` | Shader analysis `ShaderBinary`/`Agsd`/`Reflection`/`disasm` |
+| `ps5-fuzz` | Fuzz harnesses for ELF/SELF/NID/dynamic/relocations/shader |
+
+> **Upgrade plan:** all 10 proposed crates implemented — see `UPGRADE_PLAN.md:392` checklist (all `[x]`).
 
 ## Building
 
@@ -103,7 +115,7 @@ analysis/
 
 ### Extract clean ELFs from SELF containers
 
-Sony's SELF format wraps ELF code segments with encryption and metadata. The `extract` commands produce clean, standard ELF files that tools like `readelf` can analyze.
+The SELF container format wraps ELF code segments with encryption and metadata. The `extract` commands produce clean, standard ELF files that tools like `readelf` can analyze.
 
 ```sh
 # Extract a single binary
@@ -180,7 +192,7 @@ Offline export files are loaded automatically from `./system_modules/` to resolv
 
 ### Detect third-party middleware
 
-Scan a games directory and classify every PRX module by vendor and product. Modules are bucketed into third-party, Sony system, and unidentified; each is parsed for import/export counts and library names.
+Scan a games directory and classify every PRX module by vendor and product. Modules are bucketed into third-party, system, and unidentified; each is parsed for import/export counts and library names.
 
 ```sh
 # Terminal report (default)
@@ -550,7 +562,7 @@ Proposed the idea of a NID heatmap on SharpEmu Discord.
 
 ### Prosper (ps5ys)
 
-[Prosper](https://github.com/mattias800/ps5ys) by mattias800 is a user-space PS5 to PC compatibility layer -- think Proton/Wine, but for PS5. It runs PS5 game binaries on Linux and Windows by reimplementing the console's OS, ABI, and GPU stack natively, without CPU emulation. Prosper was the primary inspiration for this project's SELF/ELF parsing approach and NID resolution strategy. Its clean-room reimplementation of Sony's system libraries demonstrates that PS5 binary compatibility is achievable through careful reverse engineering without using any copyrighted Sony code.
+[Prosper](https://github.com/mattias800/ps5ys) by mattias800 is a user-space PS5 to PC compatibility layer -- think Proton/Wine, but for PS5. It runs PS5 game binaries on Linux and Windows by reimplementing the console's OS, ABI, and GPU stack natively, without CPU emulation. Prosper was the primary inspiration for this project's SELF/ELF parsing approach and NID resolution strategy. Its clean-room reimplementation of system libraries demonstrates that PS5 binary compatibility is achievable through careful reverse engineering without using any copyrighted platform code.
 
 ### SharpEmu
 

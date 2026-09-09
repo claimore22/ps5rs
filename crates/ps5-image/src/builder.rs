@@ -44,6 +44,7 @@ impl BinaryImageBuilder {
         let is_self = img.is_self();
         let file_size = img.data.len() as u64;
         let entry_point = img.elf.header.e_entry;
+        let _prx_validation = ps5_prx::PrxModule::from_elf("module", &img.elf, catalog).ok();
 
         let segments = img
             .elf
@@ -319,5 +320,36 @@ impl BinaryImageBuilder {
                 }
             })
             .collect()
+    }
+
+    pub fn build_from_prx_module(prx: &ps5_prx::PrxModule, base: &BinaryImage) -> BinaryImage {
+        let mut img = base.clone();
+        img.needed_files = prx.metadata.needed_files.clone();
+        let libs: std::collections::HashMap<u16, String> = prx
+            .metadata
+            .import_libs
+            .iter()
+            .enumerate()
+            .map(|(i, lib)| (i as u16, lib.clone()))
+            .collect();
+        img.import_libs = libs;
+        if let Some(t) = &prx.tls {
+            img.tls = Some(TlsInfo {
+                vaddr: t.vaddr,
+                filesz: t.filesz,
+                memsz: t.memsz,
+                align: t.align,
+            });
+        }
+        img.init_va = prx.init_va;
+        img.init_array_va = prx.init_array_va;
+        img.init_array_sz = prx.init_array_sz;
+        img.fini_va = prx.fini_va;
+        img.fini_array_va = prx.fini_array_va;
+        img.fini_array_sz = prx.fini_array_sz;
+        img.preinit_array_va = prx.preinit_array_va;
+        img.preinit_array_sz = prx.preinit_array_sz;
+        img.entry_point = prx.metadata.entry_point;
+        img
     }
 }

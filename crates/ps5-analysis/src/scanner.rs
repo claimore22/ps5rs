@@ -69,6 +69,12 @@ pub fn scan(
         }
     }
 
+    let shaders = crate::shader_inventory::inventory_shaders_corpus(root);
+    if !shaders.is_empty() {
+        let shaders_json = serde_json::to_string_pretty(&shaders)?;
+        std::fs::write(output.join("shaders.json"), format!("{shaders_json}\n"))?;
+    }
+
     let manifest = Manifest {
         schema_version: DATASET_SCHEMA_VERSION,
         tool: "ps5rs".to_string(),
@@ -87,6 +93,14 @@ pub fn scan(
 }
 
 fn find_game_dirs(root: &Path) -> Vec<PathBuf> {
+    find_game_dirs_inner(root)
+}
+
+pub(crate) fn find_game_dirs_for_artifacts(root: &Path) -> Vec<PathBuf> {
+    find_game_dirs_inner(root)
+}
+
+fn find_game_dirs_inner(root: &Path) -> Vec<PathBuf> {
     let mut dirs = Vec::new();
     if let Ok(entries) = std::fs::read_dir(root) {
         for entry in entries.flatten() {

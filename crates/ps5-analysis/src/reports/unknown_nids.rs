@@ -8,6 +8,14 @@ pub struct UnknownNidEntry {
     pub count: usize,
     pub libraries: Vec<String>,
     pub games: Vec<String>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub modules: Vec<String>,
+    #[serde(default)]
+    pub possible_category: String,
+    #[serde(default)]
+    pub confidence: u8,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub evidence: Vec<String>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -71,7 +79,11 @@ pub fn build_unknown_nids_with_catalog(
                 nid_hash,
                 count,
                 libraries,
-                games,
+                games: games.clone(),
+                modules: games,
+                possible_category: "unknown".to_string(),
+                confidence: 0,
+                evidence: Vec::new(),
             }
         })
         .collect();

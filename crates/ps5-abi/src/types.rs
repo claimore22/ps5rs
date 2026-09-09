@@ -1,16 +1,13 @@
-use crate::calling_convention::CallingConvention;
 use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 pub enum AbiType {
     U32,
     U64,
+    I32,
+    I64,
+    F32,
+    F64,
     Ptr,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct FunctionSignature {
-    pub return_type: AbiType,
-    pub params: Vec<AbiType>,
-    pub convention: CallingConvention,
+    Void,
 }

@@ -127,8 +127,8 @@ pub(crate) fn cmd_run(file: &PathBuf, prx_dir: Option<PathBuf>, json: bool) {
     );
     for call in &report.import_calls {
         println!(
-            "  import {}::{} args={:?} -> {}",
-            call.library, call.name, call.args, call.return_value
+            "  import {}::{} nid={:#x} args={:?} -> {}",
+            call.library, call.name, call.nid, call.args, call.return_value
         );
     }
     if report.import_calls.is_empty() {

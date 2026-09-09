@@ -7,8 +7,12 @@ description = "PS5 PRX module intelligence"
 
 [dependencies]
 ps5-elf = { path = "../ps5-elf" }
+ps5-format = { path = "../ps5-format" }
+ps5-nid = { path = "../ps5-nid" }
 ps5-nid-db = { path = "../ps5-nid-db" }
+ps5-self = { path = "../ps5-self" }
 serde = { version = "1", features = ["derive"] }
+thiserror = "2"
 
 [lints]
 workspace = true

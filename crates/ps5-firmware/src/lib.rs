@@ -1,7 +1,11 @@
-use serde::{Deserialize, Serialize};
+pub mod catalog;
+pub mod exports;
+pub mod libraries;
+pub mod modules;
+pub mod version;
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct FirmwareVersion {
-    pub major: u32,
-    pub minor: u32,
-}
+pub use catalog::{FirmwareCatalog, LibraryAvailability};
+pub use exports::FirmwareExportTable;
+pub use libraries::FirmwareLibrary;
+pub use modules::FirmwareModule;
+pub use version::FirmwareVersion;

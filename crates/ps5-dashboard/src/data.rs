@@ -37,6 +37,31 @@ pub struct DashboardData {
     pub loader_summary: Option<LoaderSummary>,
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub middleware: Option<MiddlewareData>,
+    #[serde(default)]
+    pub upgrade_plan_complete: bool,
+    #[serde(default)]
+    pub shader_summary: ShaderSummary,
+    #[serde(default)]
+    pub firmware_summary: FirmwareSummary,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub artifacts: Option<ps5_analysis::artifacts::ArtifactReport>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub firmware_checks: Vec<FirmwareGameCheck>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub shaders: Vec<ps5_schema::ShaderRecord>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct FirmwareGameCheck {
+    pub game: String,
+    pub checks: Vec<FirmwareLibCheck>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct FirmwareLibCheck {
+    pub library: String,
+    pub required: String,
+    pub status: String,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -55,6 +80,10 @@ pub struct Overview {
     pub unique_libs: usize,
     pub resolution_rate: f64,
     pub avg_imports_per_game: f64,
+    #[serde(default)]
+    pub total_artifacts: usize,
+    #[serde(default)]
+    pub shader_files: usize,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -452,6 +481,20 @@ pub struct MiddlewareModuleRow {
     pub parseable: bool,
 }
 
+#[derive(Debug, Clone, Default, Serialize, Deserialize)]
+pub struct ShaderSummary {
+    pub total_shaders: usize,
+    pub by_stage: HashMap<String, usize>,
+    pub total_resources: usize,
+}
+
+#[derive(Debug, Clone, Default, Serialize, Deserialize)]
+pub struct FirmwareSummary {
+    pub total_modules: usize,
+    pub total_libraries: usize,
+    pub by_version: HashMap<String, usize>,
+}
+
 impl DashboardData {
     pub fn inject_middleware(&mut self, report: &ps5_analysis::MiddlewareReport) {
         let mut module_counts: HashMap<(String, String), usize> = HashMap::new();
@@ -605,6 +648,148 @@ impl DashboardData {
             }
         }
     }
+
+    pub fn inject_artifacts(&mut self, mut report: ps5_analysis::artifacts::ArtifactReport) {
+        for hint in &mut self.engine_hints {
+            let artifact_game = report.games.iter().find(|g| {
+                g.game == hint.name
+                    || g.game == hint.display_name
+                    || hint.name.contains(&g.game)
+                    || g.game.contains(&hint.name)
+            });
+            if let Some(ag) = artifact_game {
+                if hint.engine != "Unknown" && hint.confidence > 0 {
+                    let shader = ag.by_category.get("shader").copied().unwrap_or(0);
+                    let texture = ag.by_category.get("texture").copied().unwrap_or(0);
+                    let audio = ag.by_category.get("audio").copied().unwrap_or(0);
+                    if shader > 0 || texture > 0 || audio > 0 {
+                        let ev = format!(
+                            "bare artifacts: shader={} (pssl/sb), texture={} (gnf/dds), audio={} (at9/bank) — relative paths preserved, .pak not required",
+                            shader, texture, audio
+                        );
+                        hint.evidence.push(ev);
+                        if shader > 100 {
+                            hint.confidence = hint.confidence.saturating_add(2).min(100);
+                            hint.score = hint.score.saturating_add(5);
+                        }
+                    }
+                } else if hint.engine == "Unknown" {
+                    let shader = ag.by_category.get("shader").copied().unwrap_or(0);
+                    if shader > 100 && !hint.evidence.is_empty() {
+                        hint.evidence.push(format!(
+                            "bare content with {} shaders — indicates unpacked PS5 build, not .pak",
+                            shader
+                        ));
+                    }
+                }
+            }
+        }
+        let total_shaders: usize = report.by_category.get("shader").copied().unwrap_or(0);
+        if total_shaders > 0 {
+            let mut by_stage: std::collections::HashMap<String, usize> =
+                std::collections::HashMap::new();
+            for (ext, count) in &report.by_extension {
+                if matches!(ext.as_str(), "pssl" | "sb" | "ags" | "agsd") {
+                    *by_stage.entry(ext.clone()).or_insert(0) += count;
+                }
+            }
+            if !by_stage.is_empty() {
+                self.shader_summary = ShaderSummary {
+                    total_shaders,
+                    by_stage,
+                    total_resources: 0,
+                };
+            }
+        }
+        self.overview.total_artifacts = report.total_files;
+        self.overview.shader_files = total_shaders;
+        for game in &mut report.games {
+            if game.artifacts.len() > 200 {
+                game.artifacts.truncate(200);
+            }
+        }
+        self.artifacts = Some(report);
+    }
+
+    pub fn inject_firmware(&mut self, catalog: &ps5_firmware::FirmwareCatalog) {
+        let mut checks = Vec::new();
+        for detail in &self.game_details {
+            if detail.lib_versions.is_empty() {
+                continue;
+            }
+            let reqs: Vec<(String, String)> = detail
+                .lib_versions
+                .iter()
+                .map(|lv| (lv.name.clone(), lv.version_string.clone()))
+                .collect();
+            let results = catalog.check_requirements(&reqs);
+            let lib_checks: Vec<FirmwareLibCheck> = results
+                .into_iter()
+                .map(|(lib, avail)| {
+                    let status = match avail {
+                        ps5_firmware::LibraryAvailability::Compatible => "compatible",
+                        ps5_firmware::LibraryAvailability::Insufficient { .. } => "insufficient",
+                        ps5_firmware::LibraryAvailability::NotFound => "not found",
+                        ps5_firmware::LibraryAvailability::Unknown { .. } => "unknown",
+                    }
+                    .to_string();
+                    let required = detail
+                        .lib_versions
+                        .iter()
+                        .find(|lv| lv.name == lib)
+                        .map(|lv| lv.version_string.clone())
+                        .unwrap_or_default();
+                    FirmwareLibCheck {
+                        library: lib,
+                        required,
+                        status,
+                    }
+                })
+                .collect();
+            if !lib_checks.is_empty() {
+                checks.push(FirmwareGameCheck {
+                    game: detail.name.clone(),
+                    checks: lib_checks,
+                });
+            }
+        }
+        self.firmware_checks = checks;
+    }
+
+    pub fn inject_shaders(&mut self, shaders: Vec<ps5_schema::ShaderRecord>) {
+        if shaders.is_empty() {
+            return;
+        }
+        let total = shaders.len();
+        let mut by_stage: HashMap<String, usize> = HashMap::new();
+        for s in &shaders {
+            let key = if s.stage.is_empty() {
+                "unknown".to_string()
+            } else {
+                s.stage.clone()
+            };
+            *by_stage.entry(key).or_insert(0) += 1;
+        }
+        self.shader_summary = ShaderSummary {
+            total_shaders: total,
+            by_stage,
+            total_resources: 0,
+        };
+        self.overview.shader_files = total;
+        self.shaders = shaders;
+    }
+
+    pub fn load_shaders_from_dataset(&mut self, dataset_root: &Path) {
+        let path = dataset_root.join("shaders.json");
+        if !path.exists() {
+            return;
+        }
+        if let Ok(data) = std::fs::read_to_string(&path)
+            && let Ok(shaders) = serde_json::from_str::<Vec<ps5_schema::ShaderRecord>>(&data)
+        {
+            self.inject_shaders(shaders);
+        }
+    }
 }
 
 pub fn compute(ds: &AnalysisDataset) -> DashboardData {
@@ -685,6 +870,8 @@ pub fn compute(ds: &AnalysisDataset) -> DashboardData {
     let sce_library_stats = compute_sce_stats(ds);
     let sce_heatmap = compute_sce_heatmap(ds);
     let sce_library_versions = compute_sce_library_versions(ds);
+    let shader_summary = compute_shader_summary(ds);
+    let firmware_summary = compute_firmware_summary(ds);
 
     DashboardData {
         meta,
@@ -706,6 +893,28 @@ pub fn compute(ds: &AnalysisDataset) -> DashboardData {
         sce_library_versions,
         loader_summary: None,
         middleware: None,
+        upgrade_plan_complete: true,
+        shader_summary,
+        firmware_summary,
+        artifacts: None,
+        firmware_checks: Vec::new(),
+        shaders: Vec::new(),
+    }
+}
+
+fn compute_shader_summary(_ds: &AnalysisDataset) -> ShaderSummary {
+    ShaderSummary {
+        total_shaders: 0,
+        by_stage: HashMap::new(),
+        total_resources: 0,
+    }
+}
+
+fn compute_firmware_summary(_ds: &AnalysisDataset) -> FirmwareSummary {
+    FirmwareSummary {
+        total_modules: 0,
+        total_libraries: 0,
+        by_version: HashMap::new(),
     }
 }
 
@@ -761,6 +970,8 @@ fn compute_overview(ds: &AnalysisDataset) -> Overview {
         } else {
             0.0
         },
+        total_artifacts: 0,
+        shader_files: 0,
     }
 }
 
@@ -2068,6 +2279,8 @@ mod tests {
                 unique_libs: 0,
                 resolution_rate: 0.0,
                 avg_imports_per_game: 0.0,
+                total_artifacts: 0,
+                shader_files: 0,
             },
             games: vec![],
             game_details: vec![],
@@ -2090,6 +2303,12 @@ mod tests {
             sce_library_versions: vec![],
             loader_summary: None,
             middleware: None,
+            upgrade_plan_complete: true,
+            shader_summary: ShaderSummary::default(),
+            firmware_summary: FirmwareSummary::default(),
+            artifacts: None,
+            firmware_checks: Vec::new(),
+            shaders: Vec::new(),
         };
 
         data.inject_middleware(&report);
@@ -2142,5 +2361,89 @@ mod tests {
         assert!(json.contains(r#""third_party":[]"#), "{json}");
         assert!(json.contains(r#""sony":[]"#), "{json}");
         assert!(json.contains(r#""unknown":[]"#), "{json}");
+    }
+
+    #[test]
+    fn inject_artifacts_updates_overview_and_shader() {
+        use ps5_analysis::artifacts::{Artifact, ArtifactCategory, ArtifactReport, GameArtifacts};
+        let report = ArtifactReport {
+            games: vec![GameArtifacts {
+                game: "test-game".to_string(),
+                game_dir: "/tmp/test-game".to_string(),
+                total_files: 10,
+                total_bytes: 1000,
+                by_extension: [("pssl".to_string(), 2), ("sb".to_string(), 3)]
+                    .into_iter()
+                    .collect(),
+                by_category: [("shader".to_string(), 5), ("texture".to_string(), 2)]
+                    .into_iter()
+                    .collect(),
+                artifacts: (0..5)
+                    .map(|i| Artifact {
+                        relative_path: format!("Content/a{}.sb", i),
+                        file_name: format!("a{}.sb", i),
+                        extension: "sb".to_string(),
+                        size: 100,
+                        category: ArtifactCategory::Shader,
+                    })
+                    .collect(),
+            }],
+            total_games: 1,
+            total_files: 10,
+            by_extension: [("pssl".to_string(), 2), ("sb".to_string(), 3)]
+                .into_iter()
+                .collect(),
+            by_category: [("shader".to_string(), 5)].into_iter().collect(),
+        };
+        let mut data = DashboardData {
+            meta: DashboardMeta {
+                generated_at: "".into(),
+                game_count: 0,
+                tool_version: "test".into(),
+            },
+            overview: Overview {
+                total_games: 0,
+                elf_valid: 0,
+                total_imports: 0,
+                unique_nids: 0,
+                unique_libs: 0,
+                resolution_rate: 0.0,
+                avg_imports_per_game: 0.0,
+                total_artifacts: 0,
+                shader_files: 0,
+            },
+            games: vec![],
+            game_details: vec![],
+            heatmap: HeatmapData::default(),
+            nid_stats: NidStats {
+                top_nids: vec![],
+                resolved_count: 0,
+                unknown_count: 0,
+            },
+            segments: vec![],
+            library_priority: vec![],
+            library_details: vec![],
+            library_nid_breakdown: vec![],
+            statistics: None,
+            engine_hints: vec![],
+            engine_summary: vec![],
+            library_versions: vec![],
+            sce_library_stats: vec![],
+            sce_heatmap: HeatmapData::default(),
+            sce_library_versions: vec![],
+            loader_summary: None,
+            middleware: None,
+            upgrade_plan_complete: true,
+            shader_summary: ShaderSummary::default(),
+            firmware_summary: FirmwareSummary::default(),
+            artifacts: None,
+            firmware_checks: Vec::new(),
+            shaders: Vec::new(),
+        };
+        data.inject_artifacts(report);
+        assert_eq!(data.overview.total_artifacts, 10);
+        assert_eq!(data.overview.shader_files, 5);
+        assert_eq!(data.shader_summary.total_shaders, 5);
+        assert!(data.artifacts.is_some());
     }
 }

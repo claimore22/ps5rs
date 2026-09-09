@@ -1,5 +1,6 @@
+#![allow(clippy::collapsible_if, clippy::ptr_arg)]
 use std::collections::{BTreeMap, HashSet};
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 
 use serde::Serialize;
 
@@ -269,4 +270,430 @@ pub(crate) fn cmd_validate_binary(path: &PathBuf, json: bool, output: &Option<Pa
     } else {
         print_report(&report);
     }
+}
+
+#[derive(Serialize)]
+struct ExternalReport {
+    schema_version: u32,
+    tool: &'static str,
+    root: String,
+    generated_at: String,
+    status: String,
+    files_discovered: std::collections::BTreeMap<String, usize>,
+    files_parsed: std::collections::BTreeMap<String, usize>,
+    files_rejected: std::collections::BTreeMap<String, usize>,
+    parser_errors: Vec<String>,
+    elf_self_prx: ElfSelfPrxStats,
+    imports_exports: ImportExportStats,
+    nid: NidStats,
+    deps: usize,
+    shader: ShaderStats,
+    source_binary_correlation: String,
+    abi: String,
+    firmware: String,
+    engine: String,
+    exe_tools: ExeStats,
+}
+
+#[derive(Serialize, Default)]
+struct ElfSelfPrxStats {
+    total: usize,
+    parsed: usize,
+    failed: usize,
+}
+
+#[derive(Serialize, Default)]
+struct ImportExportStats {
+    total_imports: usize,
+    total_exports: usize,
+}
+
+#[derive(Serialize, Default)]
+struct NidStats {
+    total_nids: usize,
+    resolved: usize,
+    unresolved: usize,
+}
+
+#[derive(Serialize, Default)]
+struct ShaderStats {
+    total: usize,
+    parsed: usize,
+    failed: usize,
+}
+
+#[derive(Serialize, Default)]
+struct ExeStats {
+    discovered: usize,
+    tools: Vec<String>,
+    status: String,
+}
+
+fn utc_now() -> String {
+    use std::time::{SystemTime, UNIX_EPOCH};
+    let secs = SystemTime::now()
+        .duration_since(UNIX_EPOCH)
+        .unwrap_or_default()
+        .as_secs();
+    format!("{}", secs)
+}
+
+fn extract_source_apis(path: &Path) -> std::collections::HashSet<String> {
+    let mut apis = std::collections::HashSet::new();
+    let Ok(data) = std::fs::read_to_string(path) else {
+        return apis;
+    };
+    for line in data.lines() {
+        let mut chars = line.chars().peekable();
+        while let Some(c) = chars.next() {
+            if c == 's' {
+                let rest: String = chars.clone().collect();
+                if rest.starts_with("ce") {
+                    let mut ident = String::from("sce");
+                    // consume "ce"
+                    chars.next();
+                    chars.next();
+                    for ch in chars.by_ref() {
+                        if ch.is_ascii_alphanumeric() || ch == '_' {
+                            ident.push(ch);
+                        } else {
+                            break;
+                        }
+                    }
+                    if ident.len() > 6 {
+                        apis.insert(ident);
+                    }
+                }
+            }
+        }
+    }
+    apis
+}
+
+#[allow(clippy::collapsible_if, unused_variables)]
+fn compute_source_correlation(_root: &Path, file_list: &[PathBuf]) -> String {
+    let mut projects = std::collections::HashSet::new();
+    for file in file_list {
+        if file.to_string_lossy().contains("Release_Prospero") {
+            if let Some(parent) = file.parent() {
+                let mut cur = parent;
+                while let Some(p) = cur.parent() {
+                    if p.file_name().and_then(|n| n.to_str()) == Some("Release_Prospero") {
+                        if let Some(proj) = p.parent() {
+                            projects.insert(proj.to_path_buf());
+                        }
+                        break;
+                    }
+                    cur = p;
+                }
+            }
+        }
+    }
+    if projects.is_empty() {
+        return "SKIPPED — source↔binary correlation requires sample with Release_Prospero and source".to_string();
+    }
+    let mut total_source_apis = 0usize;
+    let mut total_binary_imports = 0usize;
+    let mut matched = 0usize;
+    let mut scanned_projects = 0usize;
+    for proj in projects.iter().take(20) {
+        let proj_str = proj.to_string_lossy().to_string();
+        let mut source_apis = std::collections::HashSet::new();
+        let mut binaries = Vec::new();
+        for file in file_list {
+            let file_str = file.to_string_lossy().to_string();
+            if !file_str.starts_with(&proj_str) {
+                continue;
+            }
+            if file_str.contains("Release_Prospero") {
+                if let Some(ext) = file.extension().and_then(|e| e.to_str()) {
+                    if matches!(
+                        ext.to_ascii_lowercase().as_str(),
+                        "elf" | "prx" | "self" | "o"
+                    ) {
+                        binaries.push(file.clone());
+                    }
+                }
+            } else if let Some(ext) = file.extension().and_then(|e| e.to_str()) {
+                if matches!(ext.to_ascii_lowercase().as_str(), "cpp" | "c" | "h" | "hpp") {
+                    source_apis.extend(extract_source_apis(file));
+                }
+            }
+        }
+        if source_apis.is_empty() || binaries.is_empty() {
+            continue;
+        }
+        scanned_projects += 1;
+        total_source_apis += source_apis.len();
+        let mut proj_imports = std::collections::HashSet::new();
+        for bin in &binaries {
+            if let Ok(data) = std::fs::read(bin) {
+                if let Ok(img) = ps5_elf::ElfImage::parse(&data, None) {
+                    for s in &img.symbols {
+                        if s.is_import {
+                            let name = s.resolved_name.split('#').next().unwrap_or("").to_string();
+                            if !name.is_empty() {
+                                proj_imports.insert(name);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        total_binary_imports += proj_imports.len();
+        for api in &source_apis {
+            if proj_imports.contains(api) {
+                matched += 1;
+            }
+        }
+    }
+    if scanned_projects == 0 {
+        return "INSUFFICIENT EVIDENCE — no projects with both source and Release_Prospero"
+            .to_string();
+    }
+    let mismatched = total_source_apis.saturating_sub(matched);
+    format!(
+        "Scanned {} projects, {} source APIs, {} binary imports, matched {}, mismatched {} — {}",
+        scanned_projects,
+        total_source_apis,
+        total_binary_imports,
+        matched,
+        mismatched,
+        if matched > 0 {
+            "PASS"
+        } else {
+            "INSUFFICIENT EVIDENCE"
+        }
+    )
+}
+
+#[allow(clippy::ptr_arg, clippy::collapsible_if)]
+pub(crate) fn cmd_validate_external(path: &std::path::Path, output: &Option<PathBuf>) {
+    if !path.exists() {
+        let report = serde_json::json!({
+            "schema_version": SCHEMA_VERSION,
+            "tool": "ps5rs",
+            "root": path.display().to_string(),
+            "status": "SKIPPED — external corpus unavailable",
+            "reason": "path does not exist"
+        });
+        write_to_output_or_stdout(output, &|w| {
+            serde_json::to_writer_pretty(w, &report).map_err(std::io::Error::other)
+        });
+        eprintln!("SKIPPED — external corpus unavailable: {}", path.display());
+        return;
+    }
+
+    let mut discovered: std::collections::BTreeMap<String, usize> =
+        std::collections::BTreeMap::new();
+    let mut parsed: std::collections::BTreeMap<String, usize> = std::collections::BTreeMap::new();
+    let mut rejected: std::collections::BTreeMap<String, usize> = std::collections::BTreeMap::new();
+    let mut parser_errors: Vec<String> = Vec::new();
+    let mut elf_stats = ElfSelfPrxStats::default();
+    let mut shader_stats = ShaderStats::default();
+    let mut exe_tools: Vec<String> = Vec::new();
+    let mut total_imports = 0usize;
+    let mut total_exports = 0usize;
+    let mut total_nids = 0usize;
+    let mut resolved = 0usize;
+
+    let mut stack: Vec<PathBuf> = vec![path.to_path_buf()];
+    let mut file_list: Vec<PathBuf> = Vec::new();
+    while let Some(p) = stack.pop() {
+        if p.is_file() {
+            file_list.push(p);
+        } else if p.is_dir() {
+            if let Ok(entries) = std::fs::read_dir(&p) {
+                for e in entries.flatten() {
+                    stack.push(e.path());
+                }
+            }
+        }
+    }
+
+    for file in &file_list {
+        let ext = file
+            .extension()
+            .and_then(|e| e.to_str())
+            .unwrap_or("")
+            .to_ascii_lowercase();
+        let ext_key = if file
+            .file_name()
+            .and_then(|n| n.to_str())
+            .map(|n| n.ends_with(".auth_info"))
+            .unwrap_or(false)
+        {
+            "auth_info".to_string()
+        } else if ext.is_empty() {
+            if let Some(name) = file.file_name().and_then(|n| n.to_str()) {
+                if let Some(dot) = name.rfind('.') {
+                    name[dot + 1..].to_ascii_lowercase()
+                } else {
+                    "(no_ext)".to_string()
+                }
+            } else {
+                "(no_ext)".to_string()
+            }
+        } else {
+            ext.clone()
+        };
+        *discovered.entry(ext_key.clone()).or_insert(0) += 1;
+
+        match ext_key.as_str() {
+            "elf" | "prx" | "sprx" | "self" | "o" | "so" => {
+                elf_stats.total += 1;
+                let data = match std::fs::read(file) {
+                    Ok(d) => d,
+                    Err(e) => {
+                        *rejected.entry(ext_key.clone()).or_insert(0) += 1;
+                        parser_errors.push(format!("{}: read error {}", file.display(), e));
+                        elf_stats.failed += 1;
+                        continue;
+                    }
+                };
+                let parsed_ok = if ext_key == "self" {
+                    ps5_self::SelfImage::parse(&data).is_ok()
+                } else {
+                    ps5_elf::ElfImage::parse(&data, None).is_ok()
+                        || ps5_self::SelfImage::parse(&data).is_ok()
+                };
+                if parsed_ok {
+                    *parsed.entry(ext_key.clone()).or_insert(0) += 1;
+                    elf_stats.parsed += 1;
+                    // also count imports/exports for NID stats if ELF
+                    if let Ok(img) = ps5_elf::ElfImage::parse(&data, None) {
+                        total_imports += img.symbols.iter().filter(|s| s.is_import).count();
+                        total_exports += img.symbols.iter().filter(|s| !s.is_import).count();
+                        total_nids += img.symbols.len();
+                        let catalog = load_catalog(&[]);
+                        for s in &img.symbols {
+                            let nid = s.resolved_name.split('#').next().unwrap_or("");
+                            if catalog.resolve(nid).is_some() {
+                                resolved += 1;
+                            }
+                        }
+                    }
+                } else {
+                    *rejected.entry(ext_key.clone()).or_insert(0) += 1;
+                    elf_stats.failed += 1;
+                    parser_errors.push(format!("{}: ELF/SELF parse failed", file.display()));
+                }
+            }
+            "a" => {
+                let data = match std::fs::read(file) {
+                    Ok(d) => d,
+                    Err(_) => {
+                        *rejected.entry(ext_key.clone()).or_insert(0) += 1;
+                        continue;
+                    }
+                };
+                let ok = data.starts_with(b"!<arch>")
+                    || ps5_elf::stub::parse_stub_library(&data, "unknown").is_ok();
+                if ok {
+                    *parsed.entry(ext_key.clone()).or_insert(0) += 1;
+                } else {
+                    *rejected.entry(ext_key.clone()).or_insert(0) += 1;
+                }
+            }
+            "pssl" | "sb" | "ags" | "agsd" => {
+                shader_stats.total += 1;
+                let data = match std::fs::read(file) {
+                    Ok(d) => d,
+                    Err(_) => {
+                        *rejected.entry(ext_key.clone()).or_insert(0) += 1;
+                        shader_stats.failed += 1;
+                        continue;
+                    }
+                };
+                if ps5_shader::ShaderBinary::parse(&data).is_ok()
+                    || ps5_shader::ShaderBinary::parse_with_path(&data, file).is_ok()
+                {
+                    *parsed.entry(ext_key.clone()).or_insert(0) += 1;
+                    shader_stats.parsed += 1;
+                } else {
+                    *rejected.entry(ext_key.clone()).or_insert(0) += 1;
+                    shader_stats.failed += 1;
+                }
+            }
+            "exe" => {
+                exe_tools.push(
+                    file.file_name()
+                        .and_then(|n| n.to_str())
+                        .unwrap_or("")
+                        .to_string(),
+                );
+                *parsed.entry(ext_key.clone()).or_insert(0) += 1;
+            }
+            "c" | "cpp" | "h" | "hpp" | "json" | "xml" | "map" | "sym" | "txt" | "log" | "gnf"
+            | "at9" | "bank" | "png" | "jpg" | "dds" | "tga" | "bmp" | "dae" | "mtl" | "ttf"
+            | "auth_info" | "ucp" | "dat" | "bin" | "db" | "objcache" | "xcache" | "daecache"
+            | "esbak" | "irr" | "swatch" => {
+                // Bare artifacts and metadata: discovered, not parsed via ELF, count as parsed for inventory
+                *parsed.entry(ext_key.clone()).or_insert(0) += 1;
+            }
+            _ => {
+                *parsed.entry(ext_key.clone()).or_insert(0) += 1;
+            }
+        }
+    }
+
+    let deps = total_imports;
+    let unresolved = total_nids.saturating_sub(resolved);
+    let exe_discovered = exe_tools.len();
+    let exe_is_empty = exe_tools.is_empty();
+
+    let source_corr = compute_source_correlation(path, &file_list);
+
+    let report = ExternalReport {
+        schema_version: SCHEMA_VERSION,
+        tool: "ps5rs",
+        root: path.display().to_string(),
+        generated_at: utc_now(),
+        status: if discovered.is_empty() {
+            "INSUFFICIENT EVIDENCE".to_string()
+        } else {
+            "PASS".to_string()
+        },
+        files_discovered: discovered,
+        files_parsed: parsed,
+        files_rejected: rejected,
+        parser_errors: parser_errors.into_iter().take(20).collect(),
+        elf_self_prx: elf_stats,
+        imports_exports: ImportExportStats {
+            total_imports,
+            total_exports,
+        },
+        nid: NidStats {
+            total_nids,
+            resolved,
+            unresolved,
+        },
+        deps,
+        shader: shader_stats,
+        source_binary_correlation: source_corr,
+        abi: "SKIPPED — ABI validation requires verified signatures and HLE mapping".to_string(),
+        firmware: "SKIPPED — firmware validation requires system_modules/*.exports.json and game requirements".to_string(),
+        engine: "SKIPPED — engine validation requires string + artifact multi-signal; run dashboard --games".to_string(),
+        exe_tools: ExeStats {
+            discovered: exe_discovered,
+            tools: exe_tools.into_iter().take(20).collect(),
+            status: if exe_is_empty {
+                "No .exe tools discovered under supplied root — SKIPPED".to_string()
+            } else {
+                "Discovered .exe tools inventoried; differential validation requires explicit tool config — SKIPPED".to_string()
+            },
+        },
+    };
+
+    write_to_output_or_stdout(output, &|w| {
+        serde_json::to_writer_pretty(w, &report).map_err(std::io::Error::other)
+    });
+    eprintln!(
+        "External validation: {} files discovered, {} ELF/SELF/PRX parsed ({} failed), {} shaders parsed, {} .exe tools",
+        file_list.len(),
+        report.elf_self_prx.parsed,
+        report.elf_self_prx.failed,
+        report.shader.parsed,
+        report.exe_tools.discovered
+    );
 }

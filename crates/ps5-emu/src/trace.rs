@@ -14,8 +14,12 @@ pub const EXECUTION_REPORT_VERSION: u32 = 1;
 pub struct ImportCall {
     /// Library tag from the masked symbol (e.g. `libc`).
     pub library: String,
+    /// Numeric NID dispatched to the HLE handler.
+    pub nid: u64,
     /// Readable symbol name when the catalog resolves it, else the NID string.
     pub name: String,
+    /// Whether this call used the generic missing-handler stub.
+    pub stubbed: bool,
     /// The six SysV register arguments in `rdi..r9`.
     pub args: [u64; 6],
     /// The value the HLE handler returned to the guest.

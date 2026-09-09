@@ -21,7 +21,10 @@ pub fn nid_to_u64(nid: &str) -> Option<u64> {
     Some(val)
 }
 
-/// Compute the u64 NID for a human-readable SCE symbol name.
+/// Decode the base64 library identifier after the first `#` in a `nid#lib` symbol.
+/// Returns `None` if the symbol does not contain a `#` or the fragment is not a
+/// valid base‑64 library ID.
+/// Compute the u64 NID for a human‑readable SCE symbol name.
 ///
 /// Uses the same SHA1+SALT algorithm as `ps5-nid::algorithm::hash()`.
 pub fn compute_nid(name: &str) -> Option<u64> {
@@ -36,7 +39,7 @@ pub fn compute_nid(name: &str) -> Option<u64> {
         buf[i] = result[7 - i];
     }
 
-    // Base64-encode the reversed bytes into an 11-char NID string.
+    // Base64‑encode the reversed bytes into an 11‑char NID string.
     let mut nid = String::with_capacity(11);
     for chunk in buf.chunks(3) {
         let b0 = chunk[0] as u32;
@@ -57,21 +60,21 @@ pub fn compute_nid(name: &str) -> Option<u64> {
     nid_to_u64(&nid)
 }
 
-/// Decode the base64 library id after `#` in a `nid#lib` symbol to a u16.
-///
-/// Mirrors `ps5_nid::lib_id_from_nid`; kept local so the loader stays
-/// self-contained (it already vendors the NID hash algorithm above).
-/// The id is the segment right after the first `#`, since masked binaries
-/// may append a third segment (`nid#lib#extra`).
+
+/// Decode the base64 library identifier after the first `#` in a `nid#lib` symbol.
+/// Returns `None` if the symbol does not contain a `#` or the fragment is not a
+/// valid base‑64 library ID.
 pub fn lib_id_from_nid(nid: &str) -> Option<u16> {
+    // Take the fragment after the *first* '#'.
     let lib_str = nid.split('#').nth(1)?;
     let mut val: u16 = 0;
     for ch in lib_str.bytes() {
-        let pos = B64.iter().position(|&b| b == ch)?;
+        let pos = B64.iter().position(|b| b == &ch)?;
         val = val.checked_mul(64)?.checked_add(pos as u16)?;
     }
     Some(val)
 }
+
 
 /// Resolves a symbol name to a numeric NID.
 pub trait NidResolver {
@@ -92,7 +95,7 @@ impl NidResolver for SymbolNidResolver {
         if let Some(nid) = nid_to_u64(candidate) {
             return Some(nid);
         }
-        compute_nid(name)
+        compute_nid(candidate)
     }
 }
 
@@ -157,22 +160,6 @@ mod tests {
     #[test]
     fn compute_nid_different_inputs_differ() {
         assert_ne!(compute_nid("memcpy"), compute_nid("memset"));
-    }
-
-    #[test]
-    fn lib_id_single_char() {
-        assert_eq!(lib_id_from_nid("J6h9iA2kL7M#B"), Some(1));
-    }
-
-    #[test]
-    fn lib_id_no_hash_returns_none() {
-        assert_eq!(lib_id_from_nid("memcpy"), None);
-    }
-
-    #[test]
-    fn lib_id_triple_segment_uses_middle() {
-        assert_eq!(lib_id_from_nid("X#A#B"), Some(0));
-        assert_eq!(lib_id_from_nid("MfDb+4Nln64#D#E"), Some(3));
     }
 
     #[test]

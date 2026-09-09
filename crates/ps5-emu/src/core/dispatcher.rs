@@ -15,6 +15,7 @@ pub struct ImportSlot {
     pub name: String,
     pub library: String,
     pub got_slot: u64,
+    pub stubbed: bool,
 }
 
 /// Owns every resource live while the guest runs: the HLE [`Registry`], the
@@ -128,14 +129,20 @@ pub unsafe extern "sysv64" fn ps5emu_dispatch_frame(frame: *const ImportCallFram
         }
     }
 
-    match disp
-        .registry
-        .call(&mut disp.ctx, &mut disp.host, slot.nid, &args[..count])
-    {
+    let result = if slot.stubbed {
+        Ok(0)
+    } else {
+        disp.registry
+            .call(&mut disp.ctx, &mut disp.host, slot.nid, &args[..count])
+    };
+
+    match result {
         Ok(value) => {
             disp.calls.push(ImportCall {
                 library: slot.library.clone(),
+                nid: slot.nid,
                 name: slot.name.clone(),
+                stubbed: slot.stubbed,
                 args: [args[0], args[1], args[2], args[3], args[4], args[5]],
                 return_value: value,
             });

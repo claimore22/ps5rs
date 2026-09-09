@@ -71,6 +71,10 @@ impl Catalog {
         self.by_nid.get(nid)
     }
 
+    pub fn iter(&self) -> impl Iterator<Item = (&String, &NidEntry)> {
+        self.by_nid.iter()
+    }
+
     pub fn size(&self) -> usize {
         self.by_nid.len()
     }

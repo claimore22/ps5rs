@@ -50,3 +50,5 @@
 # IDE
 .vscode/
 .idea/
+
+analysis_with_modules/images/*.json

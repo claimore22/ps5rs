@@ -192,6 +192,42 @@ pub enum Commands {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
+    /// Inventory bare game content — all file types, relative paths, cross-artifact linkage
+    Inventory {
+        /// Games directory (or single game dir)
+        path: PathBuf,
+        #[arg(long, value_enum, default_value = "terminal")]
+        format: OutputFormat,
+        #[arg(short, long, value_hint = ValueHint::FilePath)]
+        output: Option<PathBuf>,
+    },
+    /// List shader artifacts (pssl/sb/ags) with stage, hash, size
+    Shader {
+        /// Games directory or shader file
+        path: PathBuf,
+        #[arg(long, value_enum, default_value = "terminal")]
+        format: OutputFormat,
+        #[arg(short, long, value_hint = ValueHint::FilePath)]
+        output: Option<PathBuf>,
+    },
+    /// Show firmware export tables and compatibility
+    Firmware {
+        /// Path to system_modules dir or game dir
+        path: PathBuf,
+        #[arg(long, value_enum, default_value = "terminal")]
+        format: OutputFormat,
+        #[arg(short, long, value_hint = ValueHint::FilePath)]
+        output: Option<PathBuf>,
+    },
+    /// Show SDK metadata (libraries, functions, versions)
+    Sdk {
+        /// Path to stubs dir, nids.csv, or game dir
+        path: PathBuf,
+        #[arg(long, value_enum, default_value = "terminal")]
+        format: OutputFormat,
+        #[arg(short, long, value_hint = ValueHint::FilePath)]
+        output: Option<PathBuf>,
+    },
 }
 
 #[derive(Subcommand)]
@@ -249,6 +285,13 @@ pub enum ValidateCommand {
     },
     /// Validate a scan dataset directory
     Dataset {
+        path: PathBuf,
+        #[arg(short, long, value_hint = ValueHint::FilePath)]
+        output: Option<PathBuf>,
+    },
+    /// Validate external corpus (native binaries, libs, source, shaders, exe tools)
+    External {
+        /// Root directory to validate (recursively)
         path: PathBuf,
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,

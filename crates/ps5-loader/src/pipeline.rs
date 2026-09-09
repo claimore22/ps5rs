@@ -22,6 +22,10 @@ use ps5_self::extract::extract_elf;
 /// 4. **Resolve** — resolve `GLOB_DAT` / `JUMP_SLOT` imports using the global
 ///    export table with [`CrossModuleResolver`] (stub fallback for unknowns).
 ///
+/// Init arrays (`.preinit_array`, `.init_array`, `DT_INIT`) are recorded as
+/// metadata (`init_va`/`init_array_va` etc.) and modules are marked
+/// `Initialized`, but init functions are not currently executed.
+///
 /// Modules are loaded in dependency-first order (DFS) so that every module
 /// sees its dependency's exports during resolution.  Modules referenced by
 /// `DT_NEEDED` but not provided by the `prx_provider` are recorded in the

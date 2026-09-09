@@ -1,8 +1,8 @@
 {
   "schema_version": 6,
   "tool": "ps5rs",
-  "created_at": "2026-08-01T04:21:02Z",
-  "image_count": 28,
+  "created_at": "2026-08-28T22:41:41Z",
+  "image_count": 27,
   "module_count": 0,
   "games": [
     {
@@ -66,18 +66,6 @@
       "creation_date": "2024-05-21 01:47:41"
     },
     {
-      "name": "PPSA01342-app0",
-      "title_id": "PPSA01342",
-      "content_version": "01.004.000",
-      "master_version": "01.00",
-      "sdk_version": "0x0100000000000000",
-      "title_name": "Demon's Souls",
-      "display_name": "Demon's Souls - [PPSA01342]",
-      "drm_type": "upgradable",
-      "content_id": "UP9000-PPSA01342_00-DEMONSSOULS00000",
-      "creation_date": "2020-12-09 17:57:39"
-    },
-    {
       "name": "Dead.Cells-PPSA15552-USA-Game-v01.005-PS5",
       "title_id": "PPSA15552",
       "content_version": "01.005.000",
@@ -114,7 +102,7 @@
       "creation_date": "2022-11-21 23:05:29"
     },
     {
-      "name": "Hello Neighbor 2             01.000 PPSA07426",
+      "name": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
       "title_id": "PPSA07426",
       "content_version": "01.000.000",
       "master_version": "01.01",
@@ -150,7 +138,7 @@
       "creation_date": "2024-02-20 06:22:51"
     },
     {
-      "name": "Jusant 01.007 PPSA10264",
+      "name": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
       "title_id": "PPSA10264",
       "content_version": "02.000.000",
       "master_version": "02.00",

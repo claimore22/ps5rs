@@ -9,6 +9,7 @@ use std::path::PathBuf;
 use std::sync::{Mutex, OnceLock};
 
 use ps5_emu::{EXECUTION_REPORT_VERSION, Emulator, ImportCall, Process};
+use ps5_loader::compute_nid;
 use ps5_tests::manifest::{ARG_WILDCARD, Manifest};
 
 static GUEST_LOCK: Mutex<()> = Mutex::new(());
@@ -43,7 +44,9 @@ fn expected_calls(manifest: &Manifest, fixture: &str) -> Vec<ImportCall> {
                 .iter()
                 .map(|import| ImportCall {
                     library: import.library.clone(),
+                    nid: compute_nid(&import.name).expect("manifest import has a valid NID"),
                     name: import.name.clone(),
+                    stubbed: false,
                     args: import.args,
                     return_value: import.return_value,
                 })

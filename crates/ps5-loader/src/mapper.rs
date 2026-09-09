@@ -26,7 +26,8 @@ pub enum ModuleState {
     Relocated,
     /// Exports registered and imports resolved (GLOB_DAT/JUMP_SLOT patched).
     Linked,
-    /// Module init routines have been called (PREINIT_ARRAY, INIT, etc.)
+    /// Marked initialized — init metadata (.preinit_array/.init_array/DT_INIT)
+    /// recorded but not yet executed. The loader does not call init functions.
     Initialized,
 }
 
@@ -105,6 +106,8 @@ pub struct LoadedModule {
     pub imports_stubbed: u32,
     /// Per-library import resolution counts.
     pub per_library_imports: Vec<LibraryImportCounts>,
+    /// Parsed PRX intelligence (from `ps5-prx`), if available.
+    pub prx_module: Option<ps5_prx::PrxModule>,
 }
 
 impl LoadedModule {
@@ -151,6 +154,20 @@ pub fn load_elf(name: &str, elf_bytes: &[u8]) -> Result<LoadedModule> {
 
     let image = ps5_elf::ElfImage::parse(elf_bytes, None)
         .map_err(|e| LoaderError(format!("ELF parse failed: {e}")))?;
+
+    // Build PrxModule for intelligence (validates via ps5-prx, logs on failure)
+    let _prx_intel = {
+        let catalog = ps5_nid::Catalog::new();
+        ps5_prx::PrxModule::from_elf(name, &image, &catalog).ok()
+    };
+    if let Some(ref prx) = _prx_intel {
+        tracing::debug!(
+            prx_name = prx.name,
+            imports = prx.imports.len(),
+            exports = prx.exports.len(),
+            "ps5-prx intelligence"
+        );
+    }
 
     let module_type = if image.header.is_shared() {
         ModuleType::Prx
@@ -249,6 +266,7 @@ pub fn load_elf(name: &str, elf_bytes: &[u8]) -> Result<LoadedModule> {
         imports_known: 0,
         imports_stubbed: 0,
         per_library_imports: Vec::new(),
+        prx_module: _prx_intel,
     })
 }
 

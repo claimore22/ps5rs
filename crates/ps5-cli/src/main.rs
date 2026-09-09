@@ -8,10 +8,14 @@ mod dataset;
 mod deps;
 mod export_scan;
 mod extract;
+mod firmware;
 mod inspect;
+mod inventory;
 mod load;
 mod middleware;
 mod run;
+mod sdk;
+mod shader;
 mod strings;
 mod terminal;
 mod unknown_nids;
@@ -22,7 +26,10 @@ use cli::{CatalogCommand, Cli, Commands, ValidateCommand};
 
 fn main() {
     tracing_subscriber::fmt()
-        .with_env_filter(tracing_subscriber::EnvFilter::from_default_env())
+        .with_env_filter(
+            tracing_subscriber::EnvFilter::try_from_default_env()
+                .unwrap_or_else(|_| tracing_subscriber::EnvFilter::new("info,ps5_emu::hle=warn")),
+        )
         .with_writer(std::io::stderr)
         .init();
     let cli = Cli::parse();
@@ -62,6 +69,9 @@ fn main() {
                 validate::cmd_validate_binary(&file, json, &output)
             }
             ValidateCommand::Dataset { path, output } => dataset::cmd_validate(&path, &output),
+            ValidateCommand::External { path, output } => {
+                validate::cmd_validate_external(&path, &output)
+            }
         },
         Commands::Dashboard {
             path,
@@ -143,5 +153,25 @@ fn main() {
             format,
             output,
         } => deps::cmd_deps(&path, format, &output),
+        Commands::Inventory {
+            path,
+            format,
+            output,
+        } => inventory::cmd_inventory(&path, format, &output),
+        Commands::Shader {
+            path,
+            format,
+            output,
+        } => shader::cmd_shader(&path, format, &output),
+        Commands::Firmware {
+            path,
+            format,
+            output,
+        } => firmware::cmd_firmware(&path, format, &output),
+        Commands::Sdk {
+            path,
+            format,
+            output,
+        } => sdk::cmd_sdk(&path, format, &output),
     }
 }

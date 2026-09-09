@@ -1,0 +1,7 @@
+{
+  "reason": "path does not exist",
+  "root": "C:\\nonexistent\\path\\xyz",
+  "schema_version": 1,
+  "status": "SKIPPED — external corpus unavailable",
+  "tool": "ps5rs"
+}

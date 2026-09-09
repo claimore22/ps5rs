@@ -105,9 +105,9 @@ impl Emulator {
         let module_name = eboot.canonical_name().to_string();
         let executable_modules = vec![module_name.clone()];
 
-        let registry = std::mem::take(&mut self.registry);
+        let mut registry = std::mem::take(&mut self.registry);
         let ctx = std::mem::take(&mut self.ctx);
-        let prepared = match prepare(&self.process, imports, &executable_modules, &registry) {
+        let prepared = match prepare(&self.process, imports, &executable_modules, &mut registry) {
             Ok(prepared) => prepared,
             Err(err) => {
                 self.registry = registry;

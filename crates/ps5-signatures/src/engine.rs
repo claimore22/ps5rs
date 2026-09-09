@@ -12,7 +12,7 @@ impl EngineFingerprint {
 
         for &(pattern, weight) in self.patterns {
             for s in strings {
-                if s.contains(pattern) {
+                if contains_word_boundary(s, pattern) {
                     evidence.push(s.clone());
                     total += weight as u32;
                     break;
@@ -28,6 +28,34 @@ impl EngineFingerprint {
 
         (total, confidence, evidence)
     }
+}
+
+fn contains_word_boundary(haystack: &str, needle: &str) -> bool {
+    if needle.is_empty() {
+        return false;
+    }
+    if haystack.contains(needle) {
+        // fast path for exact or substring with word boundary
+        let mut start = 0;
+        while let Some(pos) = haystack[start..].find(needle) {
+            let abs = start + pos;
+            let before_ok = abs == 0 || !haystack.as_bytes()[abs - 1].is_ascii_alphanumeric();
+            let after = abs + needle.len();
+            let after_ok =
+                after >= haystack.len() || !haystack.as_bytes()[after].is_ascii_alphanumeric();
+            // For patterns starting with '.' like ".par", allow before to be alphanumeric (dot handles boundary)
+            let is_dot_pattern = needle.starts_with('.');
+            if (before_ok || is_dot_pattern) && after_ok {
+                return true;
+            }
+            start = abs + needle.len();
+            if start >= haystack.len() {
+                break;
+            }
+        }
+        return false;
+    }
+    false
 }
 
 pub const UNREAL4: EngineFingerprint = EngineFingerprint {
@@ -81,12 +109,204 @@ pub const GODOT: EngineFingerprint = EngineFingerprint {
     patterns: &[("Godot Engine", 10), ("GDNative", 8)],
 };
 
-pub const ALL: &[EngineFingerprint] = &[UNREAL4, UNREAL5, UNITY, GODOT];
+pub const RE_ENGINE: EngineFingerprint = EngineFingerprint {
+    name: "RE Engine",
+    patterns: &[
+        ("RE Engine", 90),
+        ("re_chunk", 80),
+        ("REFramework", 70),
+        ("via.motion", 40),
+        ("via.render", 40),
+        ("RE2_Prop", 30),
+    ],
+};
+
+pub const DECIMA: EngineFingerprint = EngineFingerprint {
+    name: "Decima",
+    patterns: &[
+        ("DecimaEngine", 90),
+        ("Decima Engine", 90),
+        ("HorizonZeroDawn", 40),
+        ("DeathStranding", 40),
+    ],
+};
+
+pub const DRAGON_ENGINE: EngineFingerprint = EngineFingerprint {
+    name: "Dragon Engine",
+    patterns: &[
+        ("DragonEngine", 90),
+        ("RyuGaGotoku", 90),
+        ("Yakuza:", 50),
+        ("LikeADragon", 50),
+        ("Ryu Ga Gotoku Studio", 90),
+    ],
+};
+
+pub const FROMSOFTWARE: EngineFingerprint = EngineFingerprint {
+    name: "FromSoftware",
+    patterns: &[
+        ("FromSoftware", 90),
+        (".dcx", 40),
+        (".bnd", 40),
+        ("FLVER", 50),
+        ("SoulsFormats", 30),
+        ("EldenRing", 30),
+    ],
+};
+
+pub const INSOMNIAC: EngineFingerprint = EngineFingerprint {
+    name: "Insomniac",
+    patterns: &[
+        ("Insomniac", 90),
+        ("Spider-Man", 30),
+        ("Ratchet", 20),
+        (".i30", 30),
+    ],
+};
+
+pub const NAUGHTY_DOG: EngineFingerprint = EngineFingerprint {
+    name: "Naughty Dog",
+    patterns: &[("Naughty Dog", 90), ("ndlib", 50), ("The Last of Us", 30)],
+};
+
+pub const SANTA_MONICA: EngineFingerprint = EngineFingerprint {
+    name: "Santa Monica Studio",
+    patterns: &[("Santa Monica", 90), ("God of War", 40), ("Jotnar", 30)],
+};
+
+pub const SUCKER_PUNCH: EngineFingerprint = EngineFingerprint {
+    name: "Sucker Punch",
+    patterns: &[
+        ("Sucker Punch", 90),
+        ("Ghost of Tsushima", 40),
+        ("inFAMOUS", 30),
+    ],
+};
+
+pub const POLYPHONY: EngineFingerprint = EngineFingerprint {
+    name: "Polyphony Digital",
+    patterns: &[
+        ("Gran Turismo", 90),
+        ("Polyphony Digital", 90),
+        ("GT7 ", 50),
+    ],
+};
+
+pub const SQUARE_ENIX: EngineFingerprint = EngineFingerprint {
+    name: "Square Enix",
+    patterns: &[
+        ("Square Enix", 90),
+        ("Luminous", 50),
+        ("Crystal Tools", 40),
+        ("FFXVI", 30),
+        (".pac", 20),
+    ],
+};
+
+pub const UBISOFT: EngineFingerprint = EngineFingerprint {
+    name: "Ubisoft",
+    patterns: &[
+        ("Ubisoft", 90),
+        ("Anvil", 50),
+        ("Snowdrop", 50),
+        ("Dunia", 50),
+        ("FarCry", 30),
+    ],
+};
+
+pub const CRYENGINE: EngineFingerprint = EngineFingerprint {
+    name: "CryEngine",
+    patterns: &[("CryEngine", 90), ("CryTek", 80), ("Crysis", 30)],
+};
+
+pub const HEDGEHOG: EngineFingerprint = EngineFingerprint {
+    name: "Hedgehog Engine",
+    patterns: &[("Hedgehog", 90), ("Sonic", 30), ("HedgehogEngine", 90)],
+};
+
+pub const NATIVE: EngineFingerprint = EngineFingerprint {
+    name: "Native",
+    patterns: &[("eboot.bin", 5), ("prx", 5)],
+};
+
+pub const SCE: EngineFingerprint = EngineFingerprint {
+    name: "SCE",
+    patterns: &[("libSce", 30), ("Prospero", 30), ("Orbis", 30), ("SCE", 10)],
+};
+
+pub const ALL: &[EngineFingerprint] = &[
+    UNREAL4,
+    UNREAL5,
+    UNITY,
+    GODOT,
+    RE_ENGINE,
+    DECIMA,
+    DRAGON_ENGINE,
+    FROMSOFTWARE,
+    INSOMNIAC,
+    NAUGHTY_DOG,
+    SANTA_MONICA,
+    SUCKER_PUNCH,
+    POLYPHONY,
+    SQUARE_ENIX,
+    UBISOFT,
+    CRYENGINE,
+    HEDGEHOG,
+    NATIVE,
+    SCE,
+];
+
+pub fn enhance_with_artifacts(
+    mut detection: Detection,
+    shader_count: usize,
+    texture_count: usize,
+    audio_count: usize,
+) -> Detection {
+    if shader_count > 0 || texture_count > 0 || audio_count > 0 {
+        let evidence = format!(
+            "bare artifacts: shader={} (pssl/sb), texture={} (gnf/dds), audio={} (at9/bank) — relative paths preserved, .pak not required",
+            shader_count, texture_count, audio_count
+        );
+        detection.evidence.push(evidence);
+        if shader_count > 100 {
+            detection.confidence = detection.confidence.saturating_add(2).min(100);
+            detection.score = detection.score.saturating_add(5);
+        }
+    }
+    detection
+}
+
+pub fn detect_unreal_version(strings: &[String], base: &Detection) -> Option<(String, u8)> {
+    if !base.value.contains("Unreal") {
+        return None;
+    }
+    for s in strings {
+        if s.contains("5.3") && s.contains("Unreal") {
+            return Some(("Unreal Engine 5.3".to_string(), 85));
+        }
+        if s.contains("5.2") && s.contains("Unreal") {
+            return Some(("Unreal Engine 5.2".to_string(), 85));
+        }
+        if s.contains("5.1") && s.contains("Unreal") {
+            return Some(("Unreal Engine 5.1".to_string(), 85));
+        }
+        if s.contains("5.0") && s.contains("Unreal") {
+            return Some(("Unreal Engine 5.0".to_string(), 80));
+        }
+        if s.contains("4.27") && s.contains("Unreal") {
+            return Some(("Unreal Engine 4.27".to_string(), 80));
+        }
+    }
+    None
+}
 
 pub fn detect_engine(strings: &[String]) -> Option<Detection> {
     let mut best: Option<Detection> = None;
 
     for fp in ALL {
+        if fp.name == "Native" || fp.name == "SCE" {
+            continue;
+        }
         let (score, confidence, evidence) = fp.score(strings);
         if confidence == 0 {
             continue;
@@ -95,7 +315,6 @@ pub fn detect_engine(strings: &[String]) -> Option<Detection> {
         match &best {
             Some(current) if current.confidence > confidence => {}
             Some(current) if current.confidence == confidence => {
-                // tie-break: prefer the later entry (newer engine)
                 best = Some(Detection {
                     value: fp.name.to_string(),
                     score,
@@ -122,7 +341,36 @@ pub fn detect_engine(strings: &[String]) -> Option<Detection> {
         }
     }
 
-    best
+    if best.is_some() {
+        return best;
+    }
+
+    for fallback in [NATIVE, SCE] {
+        let (score, confidence, evidence) = fallback.score(strings);
+        if confidence == 0 {
+            continue;
+        }
+        return Some(Detection {
+            value: fallback.name.to_string(),
+            score,
+            confidence,
+            evidence,
+        });
+    }
+
+    None
+}
+
+pub fn classify_unknown(strings: &[String]) -> Detection {
+    if let Some(d) = detect_engine(strings) {
+        return d;
+    }
+    Detection {
+        value: "Unknown".to_string(),
+        score: 0,
+        confidence: 0,
+        evidence: vec![],
+    }
 }
 
 pub fn detect_custom_forks(strings: &[String]) -> Vec<Detection> {
@@ -250,6 +498,42 @@ mod tests {
     fn detect_engine_none() {
         let strings = vec!["hello world".to_string()];
         assert!(detect_engine(&strings).is_none());
+        assert_eq!(classify_unknown(&strings).value, "Unknown");
+    }
+
+    #[test]
+    fn detect_native_fallback() {
+        let strings = vec!["eboot.bin".to_string(), "prx".to_string()];
+        let d = classify_unknown(&strings);
+        assert!(d.value == "Native" || d.value == "Unknown");
+    }
+
+    #[test]
+    fn detect_sce_fallback() {
+        let strings = vec!["libScePad".to_string(), "Prospero".to_string()];
+        let d = detect_engine(&strings).unwrap();
+        assert_eq!(d.value, "SCE");
+    }
+
+    #[test]
+    fn detect_re_engine() {
+        let strings = vec!["RE Engine".to_string(), "re_chunk_000.pak".to_string()];
+        let d = detect_engine(&strings).unwrap();
+        assert_eq!(d.value, "RE Engine");
+    }
+
+    #[test]
+    fn detect_decima() {
+        let strings = vec!["DecimaEngine".to_string(), "HorizonZeroDawn".to_string()];
+        let d = detect_engine(&strings).unwrap();
+        assert_eq!(d.value, "Decima");
+    }
+
+    #[test]
+    fn detect_fromsoftware() {
+        let strings = vec!["FromSoftware".to_string(), "FLVER".to_string()];
+        let d = detect_engine(&strings).unwrap();
+        assert_eq!(d.value, "FromSoftware");
     }
 
     #[test]
@@ -280,5 +564,60 @@ mod tests {
     fn detect_custom_forks_empty() {
         let strings = vec!["hello world".to_string()];
         assert!(detect_custom_forks(&strings).is_empty());
+    }
+
+    #[test]
+    fn enhance_with_artifacts_adds_evidence() {
+        let strings = vec!["UnrealEngine4Runtime".to_string(), "UObject".to_string()];
+        let det = detect_engine(&strings).unwrap();
+        let enhanced = enhance_with_artifacts(det, 514, 4812, 36);
+        assert!(
+            enhanced
+                .evidence
+                .iter()
+                .any(|e| e.contains("bare artifacts"))
+        );
+        assert!(enhanced.confidence >= 90);
+    }
+
+    #[test]
+    fn enhance_does_not_invent_engine() {
+        let det = Detection {
+            value: "Unknown".to_string(),
+            score: 0,
+            confidence: 0,
+            evidence: vec![],
+        };
+        let enhanced = enhance_with_artifacts(det, 500, 4000, 10);
+        assert_eq!(enhanced.value, "Unknown");
+    }
+
+    #[test]
+    fn unreal_version_only_with_evidence() {
+        let strings = vec![
+            "UnrealEngine5Runtime".to_string(),
+            "SomeGame 5.3".to_string(),
+        ];
+        let base = detect_engine(&strings).unwrap();
+        assert_eq!(base.value, "Unreal Engine 5");
+        assert!(detect_unreal_version(&strings, &base).is_none());
+        let strings2 = vec!["Unreal 5.3 patch".to_string()];
+        let base2 = Detection {
+            value: "Unreal Engine 5".to_string(),
+            score: 100,
+            confidence: 90,
+            evidence: vec![],
+        };
+        let ver = detect_unreal_version(&strings2, &base2).unwrap();
+        assert_eq!(ver.0, "Unreal Engine 5.3");
+    }
+
+    #[test]
+    fn version_uncertainty() {
+        let strings = vec!["UnrealEngine5Runtime".to_string()];
+        let base = detect_engine(&strings).unwrap();
+        assert_eq!(base.value, "Unreal Engine 5");
+        assert!(base.confidence >= 80);
+        assert!(detect_unreal_version(&strings, &base).is_none());
     }
 }

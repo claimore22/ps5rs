@@ -1,0 +1,14 @@
+[package]
+name = "ps5-fuzz"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Fuzz targets for parsers"
+
+[dependencies]
+ps5-elf = { path = "../ps5-elf" }
+ps5-self = { path = "../ps5-self" }
+ps5-nid = { path = "../ps5-nid" }
+
+[lints]
+workspace = true
