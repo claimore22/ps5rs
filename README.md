@@ -10,6 +10,10 @@ Also provides a virtual PS5 loader: maps ELF memory, applies relocations (RELATI
 
 A host-side emulator (`ps5-emu`) executes guest binaries on the host CPU and routes system-library imports through pure-Rust HLE modules.
 
+## Fast NID Search
+
+Open `data/nid_search.html` in a browser (no server, no build — the `nids.csv` catalog is embedded). Search across NID / hex / name / library / sources, sort any column, and filter via Libraries, Sources, and Emulators checkbox dropdowns (including a shadPS4 excluder).
+
 ## Why Rust?
 
 The PS5 uses an x86-64 AMD Zen 2 CPU, which means CPU instruction compatibility is not the primary challenge. The main difficulties are the PS5 ABI, system libraries, graphics stack, kernel interfaces, and runtime services. Rust eliminates an entire class of memory safety bugs (buffer overflows, use-after-free, data races, null pointer dereferences) that plague unsafe native code, while matching C++ performance. For a project that parses untrusted binary data from third-party game dumps, this safety guarantee is critical.
