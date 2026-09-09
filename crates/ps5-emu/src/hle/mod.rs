@@ -67,7 +67,6 @@ pub mod libkernel;
 mod context;
 pub mod libCoherentUIGT;
 pub mod libIl2CppUserAssemblies;
-pub mod libIl2cppUserAssemblies;
 pub mod libPS5Util;
 pub mod libRenoirCore_PS5;
 pub mod libSceAudioIn;
@@ -303,7 +302,6 @@ pub fn default_registry() -> Registry {
     libSceMsgDialog_native::register(&mut registry);
     libSceRtc::register(&mut registry);
     libIl2CppUserAssemblies::register(&mut registry);
-    libIl2cppUserAssemblies::register(&mut registry);
     libPS5Util::register(&mut registry);
     libSceAudiodec::register(&mut registry);
     libSceAudioIn::register(&mut registry);
