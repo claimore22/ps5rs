@@ -1,6 +1,6 @@
 # ps5rs
 
-![Elfspector](screenshots/elfspector_2.jpg)
+![Elfspector](screenshots/elfspector.jpg)
 
 A PS5 binary analysis, virtual loading, and host-side emulation framework written in Rust.
 
