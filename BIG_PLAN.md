@@ -43,7 +43,7 @@ HARD RULES
 9B. 
 # 18. EXTERNAL VALIDATION CORPUS
 
-The development environment may contain additional SDK/tool/sample files that are
+The development environment may contain additional tool/sample files that are
 available ONLY as local validation inputs.
 
 These external validation inputs are NOT project assets.
@@ -294,25 +294,21 @@ use it for differential validation.
 
 The following local directories may be used as READ-ONLY validation/reference resources:
 
-1. Toolchain\Tools:
-   C:\Program Files (x86)\SCE\*
-   C:\Program Files (x86)\SCE\Prospero\Tools\*
-   C:\Program Files (x86)\SCE\Prospero SDKs\10.000\host_tools\*
+1. Local toolchain directory (path redacted):
 
-   Use available `*.exe` tools as independent validation oracles for ELF,
+   Use available command-line tools as independent validation oracles for ELF,
    shader, symbol, binary, metadata, and related analysis.
 
-2. Complete sample workspace:
-   C:\Users\claimoar\Documents\SDK MANAGER 10.00\Samples\sdk\target\samples\
+2. Complete sample workspace (path redacted):
 
    Use the COMPLETE tree for validation, including:
    - sample source code (`*.cpp`, headers, projects, etc.)
    - sample data/assets
-   - shader sources (`*.pssl`)
-   - compiled shaders (`*.ags`, `*.agsd`, `*.sb`, etc.)
+   - shader sources
+   - compiled shaders
    - compiled ELF/PRX/SPRX binaries
    - build/intermediate artifacts
-   - `Release_Prospero` output directories and their resulting binaries
+   - release output directories and their resulting binaries
    - any other files produced by the sample builds
 
 3. Real PS5 game corpus:
@@ -505,7 +501,7 @@ independently parse/compile/inspect an artifact,
 21. Dashboard must remain self-contained/file:// compatible.
 22. Avoid regex if AGENTS.md prohibits it; use the repository's established
     string matching approach.
-23. Do not add Sony proprietary SDK material to the repository.
+23. Do not add proprietary SDK material to the repository.
 24. Do not remove existing useful functionality simply because it is incomplete.
     Replace synthetic behavior with honest empty/unknown states first.
 	

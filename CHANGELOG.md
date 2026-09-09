@@ -13,9 +13,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - **Multi-import dynamic fixture builder**: `ps5-tests` gains a `plan()` + `build_multi()` path laying out messages → GOT → RELA → SYMTAB → STRTAB → DYNAMIC with deterministic addresses and per-import relocations/symbols
 - **stdout + wildcard expectations in elf_suite**: `FixtureExpectation` gains `stdout` (compared against captured output) and `ARG_WILDCARD` for address-valued args that legitimately vary; the generated `libdbg_basic.elf` boots with its full 16-import trace and byte-exact stdout asserted
 - **Code-generator unit coverage**: `ps5-tests::codegen` now asserts exact x86-64 encodings (RIP-relative displacement math from instruction start, REX-prefixed register zeroing for `r8`/`r9`, GOT-indirect call displacements)
-- **Third-party middleware detection** (`ps5-analysis::middleware`): walks game folders, classifies every PRX/SPRX/SO module as ThirdParty/Sony/Unknown via a 27-entry fingerprint catalog (FMOD, Wwise, Gameface, ICU, RENOIR, iZotope/McDSP/Auro-3D/Ozone, Unity IL2CPP/Burst/PS5 platform/PSN/Save Data, Google Resonance Audio, CRIWARE, WebKit (Kitt), Epic Online Services), and parses each module for import/export counts and library names
+- **Third-party middleware detection** (`ps5-analysis::middleware`): walks game folders, classifies every PRX/SPRX/SO module as ThirdParty/System/Unknown via a 27-entry fingerprint catalog (FMOD, Wwise, Gameface, ICU, RENOIR, iZotope/McDSP/Auro-3D/Ozone, Unity IL2CPP/Burst/PS5 platform/PSN/Save Data, Google Resonance Audio, CRIWARE, WebKit (Kitt), Epic Online Services), and parses each module for import/export counts and library names
 - **`ps5rs middleware <games_dir>` command**: per-game terminal or JSON middleware report (title ID, engine, vendor/product attribution per module)
-- **Dashboard Middleware tab**: summary cards, Top Middleware Products ranking, and a per-game module table with third-party/Sony/unknown badges; `dashboard --games <games_dir>` injects the middleware report
+- **Dashboard Middleware tab**: summary cards, Top Middleware Products ranking, and a per-game module table with third-party/system/unknown badges; `dashboard --games <games_dir>` injects the middleware report
 - **String-based middleware detection**: `detect_third_party` gains FMOD, Wwise, Coherent Gameface, and ICU patterns
 
 ### Changed
@@ -126,6 +126,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Initial SELF/ELF/NID parser with 62 synthetic unit tests
 - SELF container parsing with correct BE magic + LE fields
 - ELF64 parsing: headers, segments, dynamic section, symbols, relocations, TLS
-- NID hash algorithm: SHA1 + salt + Sony custom base64 alphabet
+- NID hash algorithm: SHA1 + salt + custom base64 alphabet
 - Basic NID catalog with 162 built-in entries
 - ElfBuilder test infrastructure for synthetic ELF/SELF construction

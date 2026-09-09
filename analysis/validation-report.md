@@ -4,7 +4,7 @@
 
 ## Corpus
 
-- **Root:** `C:\Users\claimoar\Documents\ROMS\PS5` (27 games, bare + packed) + `C:\Program Files (x86)\SCE\Prospero\Tools` (3198 files, 82 `.exe`) + `C:\Users\claimoar\Documents\SDK MANAGER 10.00\Samples` (179 files single sample, full root >100k)
+- **Root:** `C:\Users\claimoar\Documents\ROMS\PS5` (27 games, bare + packed) + local toolchain/sample inputs (paths redacted, never committed)
 - **External validation:** `ps5rs validate external <path>` with configurable `--path` (never hard-coded in source), aggregated `PASS/FAIL/SKIPPED/INSUFFICIENT` per BIG_PLAN 18.
 
 ## Games & Binaries
@@ -32,7 +32,7 @@
 
 ## Middleware / SDK / Firmware
 
-- **Middleware:** `ps5rs middleware --format json` + `dashboard --games` `27 games 316 modules (181 third-party 126 Sony 9 unknown)` `Wwise`/`FMOD`, `SKIPPED` when no `eboot` vs `no middleware detected` distinguishable
+- **Middleware:** `ps5rs middleware --format json` + `dashboard --games` `27 games 316 modules (181 third-party 126 system 9 unknown)` `Wwise`/`FMOD`, `SKIPPED` when no `eboot` vs `no middleware detected` distinguishable
 - **SDK:** `ps5-sdk-meta` `SdkFunction` `Provenance` `Verified/Unverified` (`free→Void` fixed), `ps5-cli sdk` `SKIPPED` when no `stubs`/`nids.csv` (honest), `SDK` heatmap via `library_versions` (`ps5-image` `LibVersionEntry`)
 - **Firmware:** `ps5-firmware` `FirmwareCatalog::load_exports_from_dir` `8` tables `46021` exports, `LibraryAvailability` `Compatible/Insufficient/NotFound/Unknown` (was `true`), `ps5-cli firmware` per-game `compatible` (Bugsnax no `lib_version` → `unknown` honest) + `ps5-dashboard` `Per-Game Compatibility` pill table
 

@@ -19,7 +19,7 @@ just check                # fmt + clippy + test (default)
 | `ps5-format` | Shared types, error enums, ELF/SELF constants, SHA-256 |
 | `ps5-self` | SELF container parser |
 | `ps5-elf` | ELF64 binary parser (zero-copy) |
-| `ps5-nid` | NID hash algorithm (SHA1+Sony base64), name catalog |
+| `ps5-nid` | NID hash algorithm (SHA1 + custom base64), name catalog |
 | `ps5-image` | BinaryImage IR with JSON serialization |
 | `ps5-analysis` | Scanner, dataset, string fingerprinting, engine detection, reports |
 | `ps5-loader` | Virtual loader: 4-phase pipeline (Map/Relocate/Link/Init) |
@@ -36,7 +36,7 @@ Dependency direction: `format → {elf, self, nid} → image → analysis → cl
 - **No comments** in source code unless explaining *why*, not *what*
 - **Snake_case** for functions/variables, **PascalCase** for types
 - **Standard ELF terminology** — `ElfHeader`, `ProgramHeader`, `Relocation` (not renamed)
-- **Sony-specific** gets new names — `SelfImage`, `SceDynamicTag`
+- **Platform-specific** gets new names — `SelfImage`, `SceDynamicTag`
 - **Error handling**: `Result<T, ps5_format::ParseError>` in parsers; loader has `LoaderError`, `MemoryError`, `RelocationError`
 - **Zero-copy parsers**: all types borrow `&'a [u8]`
 - **Serde**: hex addresses as `"0x..."`, `#[serde(default)]` for backward compat, `skip_serializing_if`

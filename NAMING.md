@@ -6,14 +6,14 @@
    `Relocation`, `DynamicEntry` — the same names used by LLVM, GNU binutils, LIEF,
    goblin, pyelftools. Contributors already know these.
 
-2. **Sony-specific structures get new names.** Where the format diverges from standard
+2. **Platform-specific structures get new names.** Where the format diverges from standard
    ELF, we invent clear names:
    - `SelfImage` (not `SceSelfHeader`) — the top-level SELF container
    - `SelfSegmentEntry` — per-segment metadata in the SELF wrapper
-   - `SceDynamicTag` — Sony-extended dynamic tags (`DT_SCE_*`)
+   - `SceDynamicTag` — platform-extended dynamic tags (`DT_SCE_*`)
 
-3. **No SDK-derived names copied verbatim.** The SDK headers (`sce_elf.h`, `self.h`)
-   are reference for understanding. We document what fields mean independently.
+3. **No externally-derived names copied verbatim.** Public documentation is
+   reference for understanding. We document what fields mean independently.
 
 4. **Rust idioms over C conventions.**
    - `Error` enums, not error codes
@@ -93,7 +93,7 @@ pub const R_X86_64_DTPOFF64: u32 = 17;
 pub const R_X86_64_TPOFF64: u32 = 18;
 ```
 
-## Sony-specific constants (renamed for clarity)
+## Platform-specific constants (renamed for clarity)
 
 ```rust
 pub const PT_SCE_DYNLIBDATA: u32 = 0x61000000;
@@ -128,7 +128,7 @@ crates/
   ps5-elf/src/symbol.rs       # Symbol table parsing
   ps5-nid/src/lib.rs          # hash() function
   ps5-nid/src/catalog.rs      # Catalog (name ↔ NID database)
-  ps5-nid/src/algorithm.rs    # SHA1 + Sony base64
+   ps5-nid/src/algorithm.rs    # SHA1 + custom base64
   ps5-cli/src/main.rs         # Entry point
   ps5-cli/src/inspect.rs      # "inspect" subcommand
   ps5-cli/src/imports.rs      # "imports" subcommand

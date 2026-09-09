@@ -147,8 +147,7 @@ Implement: `SdkFunction`, SDK version range, library, module, category, aliases,
 confidence, source, structures, constants, function metadata.
 
 Import knowledge from existing project data where legally/technically appropriate
-(`analysis/catalog/nids.csv`, `data/nid/catalog.json`, `.a` stubs via
-`ps5rs catalog import-stubs` / `dump-stubs`).
+(`analysis/catalog/nids.csv`, `data/nid/catalog.json`).
 
 Analysis must answer:
 - Which SDK functions does this game use? Which libraries? Which SDK generation?
@@ -498,7 +497,7 @@ preserved.
   execution, full `libkernel`) — analysis-first per hard rules.
 - No SQLite/external DB; JSON-only persistence; self-contained dashboard, `file://`
   compatible, no server, no CDN.
-- No Sony SDK name leakage into committed strings (grep gate: `sony.*sdk`).
+- No proprietary SDK name leakage into committed strings.
 
 ---
 
