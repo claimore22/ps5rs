@@ -17,6 +17,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - **Unified master**: merged parallel development lines (local analysis depth + toolchain/loader fixes)
 - **Documentation refresh**: neutral vendor wording, redacted local paths
 
+### Fixed
+- **Linux build**: dropped duplicate case-variant `libIl2cppUserAssemblies` module declaration (and double `register()` call) that only compiled on case-insensitive filesystems
+- **Merge coherence**: aligned mixed-side API pairs (`ps5-image`/`ps5-prx`, `ps5-analysis`/`ps5-schema`/`ps5-shader`/`ps5-firmware`/`ps5-sdk-meta`, CLI command table), restored missing crate deps
+- **Dashboard**: removed stale single-file `html.rs`, kept modular `html/` layout paired with matching `DashboardData`
+
 ## [0.4.0] - 2026-08-10
 
 ### Added
