@@ -1,0 +1,30 @@
+use crate::hle::stub::define_hle_stub_module;
+
+define_hle_stub_module!(
+    FontModule,
+    "libSceFont",
+    [
+        "sceFontAttachDeviceCacheBuffer",
+        "sceFontBindRenderer",
+        "sceFontCloseFont",
+        "sceFontCreateLibraryWithEdition",
+        "sceFontCreateRendererWithEdition",
+        "sceFontDestroyLibrary",
+        "sceFontDestroyRenderer",
+        "sceFontGetCharGlyphMetrics",
+        "sceFontGetHorizontalLayout",
+        "sceFontMemoryInit",
+        "sceFontMemoryTerm",
+        "sceFontOpenFontMemory",
+        "sceFontOpenFontSet",
+        "sceFontRenderCharGlyphImage",
+        "sceFontRenderCharGlyphImageHorizontal",
+        "sceFontRenderSurfaceInit",
+        "sceFontRenderSurfaceSetScissor",
+        "sceFontSetScalePixel",
+        "sceFontSetupRenderScalePixel",
+        "sceFontSupportExternalFonts",
+        "sceFontSupportSystemFonts",
+        "sceFontUnbindRenderer"
+    ]
+);

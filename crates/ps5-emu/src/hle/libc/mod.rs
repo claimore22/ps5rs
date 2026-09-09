@@ -66,6 +66,8 @@ impl HleModule for LibcModule {
             ("fputc", HostCall::Fputc),
             ("getc", HostCall::Getc),
             ("putc", HostCall::Putc),
+            ("exp2f", HostCall::LibcExp2f),
+            ("strftime", HostCall::LibcStrftime),
         ]
     }
 
@@ -123,6 +125,7 @@ impl HleModule for LibcModule {
             HostCall::Fputc => calls::fputc(host, args),
             HostCall::Getc => calls::getc(host, args),
             HostCall::Putc => calls::putc(host, args),
+            HostCall::LibcExp2f | HostCall::LibcStrftime => Ok(0),
             HostCall::Rand => Ok(calls::rand(&mut ctx.libc)),
             _ => Err(EmuError::NoHandler("libc".to_string())),
         }

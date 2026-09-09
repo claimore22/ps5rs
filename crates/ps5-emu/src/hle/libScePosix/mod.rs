@@ -1,0 +1,30 @@
+use crate::hle::stub::define_hle_stub_module;
+
+define_hle_stub_module!(
+    PosixModule,
+    "libScePosix",
+    [
+        "accept",
+        "bind",
+        "close",
+        "connect",
+        "fcntl",
+        "getpeername",
+        "getpid",
+        "getsockname",
+        "listen",
+        "mkdir",
+        "recv",
+        "recvfrom",
+        "rename",
+        "rmdir",
+        "select",
+        "send",
+        "sendto",
+        "setsockopt",
+        "shutdown",
+        "socket",
+        "stat",
+        "unlink"
+    ]
+);

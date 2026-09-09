@@ -20,6 +20,7 @@ impl HleModule for KernelModule {
         &[
             ("sceKernelSleep", HostCall::KernelSleep),
             ("sceKernelUsleep", HostCall::KernelUsleep),
+            ("sceKernelNanosleep", HostCall::KernelNanosleep),
             ("sceKernelUnlink", HostCall::KernelUnlink),
             ("sceKernelOpen", HostCall::KernelOpen),
             ("sceKernelClose", HostCall::KernelClose),
@@ -54,7 +55,7 @@ impl HleModule for KernelModule {
         _args: &[u64],
     ) -> Result<u64, EmuError> {
         match call {
-            HostCall::KernelSleep => {
+            HostCall::KernelSleep | HostCall::KernelNanosleep => {
                 static WARN: std::sync::Once = std::sync::Once::new();
                 WARN.call_once(|| {
                     eprintln!("WARNING: sceKernelSleep stub called – not a real implementation");

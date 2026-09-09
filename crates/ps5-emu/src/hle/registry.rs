@@ -6,6 +6,7 @@ use ps5_loader::compute_nid;
 
 use crate::error::EmuError;
 
+use super::stub::{StubModule, warn_once};
 use super::{HleContext, HleModule, Host, HostCall};
 
 /// NID-indexed collection of registered [`HleModule`]s.
@@ -13,7 +14,8 @@ use super::{HleContext, HleModule, Host, HostCall};
 pub struct Registry {
     modules: Vec<Box<dyn HleModule>>,
     by_nid: HashMap<u64, (usize, HostCall)>,
-    names: HashMap<u64, &'static str>,
+    libraries: HashMap<u64, String>,
+    names: HashMap<u64, String>,
 }
 
 impl Registry {
@@ -25,13 +27,31 @@ impl Registry {
     pub fn register(&mut self, module: impl HleModule + 'static) {
         let idx = self.modules.len();
         let symbols = module.symbols().to_vec();
+        let library = module.name().to_string();
         self.modules.push(Box::new(module));
         for (sym, call) in symbols {
             if let Some(nid) = compute_nid(sym) {
                 self.by_nid.insert(nid, (idx, call));
-                self.names.insert(nid, sym);
+                self.libraries.insert(nid, library.clone());
+                self.names.insert(nid, sym.to_string());
             }
         }
+    }
+
+    /// Register a neutral fallback for an import with no dedicated HLE implementation.
+    pub fn register_stub(&mut self, library: &str, name: &str) -> bool {
+        let Some(nid) = compute_nid(name) else {
+            return false;
+        };
+        if self.by_nid.contains_key(&nid) {
+            return true;
+        }
+        let idx = self.modules.len();
+        self.modules.push(Box::new(StubModule));
+        self.by_nid.insert(nid, (idx, HostCall::GenericStub));
+        self.libraries.insert(nid, library.to_string());
+        self.names.insert(nid, name.to_string());
+        true
     }
 
     /// The NID for a symbol if it is registered.
@@ -66,7 +86,11 @@ impl Registry {
             .get(&nid)
             .copied()
             .ok_or_else(|| EmuError::NoHandler(format!("nid {nid:#x}")))?;
-        let name = self.names.get(&nid).copied().unwrap_or("?");
+        let name = self.names.get(&nid).map(String::as_str).unwrap_or("?");
+        if call == HostCall::GenericStub {
+            let library = self.libraries.get(&nid).map(String::as_str).unwrap_or("?");
+            warn_once(library, nid, name);
+        }
         tracing::debug!(import = name, args = args.len(), "registry: call");
         self.modules[idx]
             .call(ctx, host, call, args)
@@ -147,5 +171,15 @@ mod tests {
         let mut registry = Registry::new();
         registry.register(Probe::default());
         assert_eq!(registry.len(), 1);
+    }
+
+    #[test]
+    fn registry_dispatches_generic_stub() {
+        let mut registry = Registry::new();
+        assert!(registry.register_stub("unknownLibrary", "unknownImport"));
+        let nid = registry.resolve("unknownImport").expect("stub registered");
+        let mut ctx = HleContext::default();
+        let mut host = NoHost;
+        assert_eq!(registry.call(&mut ctx, &mut host, nid, &[]).unwrap(), 0);
     }
 }

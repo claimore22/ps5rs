@@ -25,10 +25,12 @@ impl HleModule for AgcModule {
                 "sceAgcGetRegisterDefaults2Internal",
                 HostCall::SceAgcGetRegisterDefaults2Internal,
             ),
+            ("sceAgcCbDispatchGetSize", HostCall::SceAgcCbDispatchGetSize),
             (
-                "sceAgcCbDispatchGetSize",
-                HostCall::SceAgcCbDispatchGetSize,
+                "sceAgcSetShRegIndirectPatchSetAddress",
+                HostCall::SceAgcSetShRegIndirectPatchSetAddress,
             ),
+            ("sceAgcCbReleaseMem", HostCall::SceAgcCbReleaseMem),
         ]
     }
 
@@ -40,36 +42,11 @@ impl HleModule for AgcModule {
         _args: &[u64],
     ) -> Result<u64, EmuError> {
         match call {
-            // HostCall::SceAgcGetDefaultCxStateFlat => {
-            //     static WARN: std::sync::Once = std::sync::Once::new();
-            //     WARN.call_once(|| {
-            //         eprintln!("WARNING: sceAgcGetDefaultCxStateFlat stub called – not a real implementation");
-            //         tracing::warn!(
-            //             "sceAgcGetDefaultCxStateFlat stub called – not a real implementation"
-            //         );
-            //     });
-            //     Ok(0)
-            // }
-            // HostCall::SceAgcGetRegisterDefaults2Internal => {
-            //     static WARN: std::sync::Once = std::sync::Once::new();
-            //     WARN.call_once(|| {
-            //         eprintln!("WARNING: sceAgcGetRegisterDefaults2Internal stub called – not a real implementation");
-            //         tracing::warn!(
-            //             "sceAgcGetRegisterDefaults2Internal stub called – not a real implementation"
-            //         );
-            //     });
-            //     Ok(0)
-            // }
-            // HostCall::SceAgcCbDispatchGetSize => {
-            //     static WARN: std::sync::Once = std::sync::Once::new();
-            //     WARN.call_once(|| {
-            //         eprintln!("WARNING: sceAgcCbDispatchGetSize stub called – not a real implementation");
-            //         tracing::warn!(
-            //             "sceAgcCbDispatchGetSize stub called – not a real implementation"
-            //         );
-            //     });
-            //     Ok(0)
-            // }
+            HostCall::SceAgcGetDefaultCxStateFlat
+            | HostCall::SceAgcGetRegisterDefaults2Internal
+            | HostCall::SceAgcCbDispatchGetSize
+            | HostCall::SceAgcSetShRegIndirectPatchSetAddress
+            | HostCall::SceAgcCbReleaseMem => Ok(0),
             _ => Err(EmuError::NoHandler("libSceAgc".to_string())),
         }
     }

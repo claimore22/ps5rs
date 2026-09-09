@@ -49,7 +49,7 @@ pub fn prepare(
     process: &Process,
     imports: &ImportTable,
     executable_modules: &[String],
-    registry: &Registry,
+    registry: &mut Registry,
 ) -> Result<Prepared, EmuError> {
     tracing::info!(
         executable_modules = executable_modules.len(),
@@ -90,13 +90,13 @@ pub fn prepare(
 fn build_slots(
     imports: &ImportTable,
     executable_modules: &[String],
-    registry: &Registry,
+    registry: &mut Registry,
 ) -> Result<Vec<ImportSlot>, EmuError> {
     let mut slots = Vec::new();
     let mut reported = std::collections::HashSet::new();
     for binding in &imports.bindings {
         // Skip imports belonging to modules that are never executed. The
-       // loader patched them in the PRX image instead of in the guard process.
+        // loader patched them in the PRX image instead of in the guard process.
         if !executable_modules.iter().any(|m| m == &binding.module) {
             continue;
         }
@@ -111,22 +111,22 @@ fn build_slots(
         // Ensure the emulator has a handler for this NID. The unexpected path,
         // e.g. stubs missing, is surfaced as an explicit error.
         if !registry.contains(binding.nid) {
+            registry.register_stub(&binding.library, &name);
             let nid_b64 = u64_to_nid_str(binding.nid);
             let key = (binding.library.clone(), name.clone(), binding.nid);
             if reported.insert(key) {
-                tracing::warn!(
+                tracing::debug!(
                     library = %binding.library,
                     name = %name,
                     nid = format_args!("{:#x}", binding.nid),
                     nid_b64 = %nid_b64,
-                    "missing HLE handler"
+                    "using generic HLE stub"
                 );
             }
         }
 
         // Successful imports are converted into import slots.
-        tracing::trace!(nid = format_args!("{:#x}", binding.nid), name, 
-            "slot built");
+        tracing::trace!(nid = format_args!("{:#x}", binding.nid), name, "slot built");
         slots.push(ImportSlot {
             nid: binding.nid,
             name,
@@ -137,4 +137,3 @@ fn build_slots(
     }
     Ok(slots)
 }
-
