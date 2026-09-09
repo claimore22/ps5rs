@@ -241,6 +241,7 @@ pub fn default_registry() -> Registry {
     let mut registry = Registry::new();
     libc::register(&mut registry);
     libkernel::register(&mut registry);
+    libSceDbg::register(&mut registry);
     libSceNpUniversalDataSystem::register(&mut registry);
     libSceAgc::register(&mut registry);
     libSceAgcDriver::register(&mut registry);

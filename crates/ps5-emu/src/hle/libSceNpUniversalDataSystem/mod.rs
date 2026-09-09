@@ -41,7 +41,9 @@ impl HleModule for NpUniversalDataSystemModule {
             //     });
             //     Ok(0)
             // }
-            _ => Err(EmuError::NoHandler("libSceNpUniversalDataSystem".to_string())),
+            _ => Err(EmuError::NoHandler(
+                "libSceNpUniversalDataSystem".to_string(),
+            )),
         }
     }
 }

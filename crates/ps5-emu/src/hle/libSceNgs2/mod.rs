@@ -17,10 +17,7 @@ impl HleModule for Ngs2Module {
     }
 
     fn symbols(&self) -> &'static [(&'static str, HostCall)] {
-        &[(
-            "sceNgs2VoiceRunCommands",
-            HostCall::SceNgs2VoiceRunCommands,
-        )]
+        &[("sceNgs2VoiceRunCommands", HostCall::SceNgs2VoiceRunCommands)]
     }
 
     fn call(

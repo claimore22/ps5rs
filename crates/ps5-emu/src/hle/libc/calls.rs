@@ -13,7 +13,6 @@ pub fn init_env() -> Result<u64, EmuError> {
     Ok(0)
 }
 
-
 use std::sync::Once;
 
 /// Stub implementation for `qsort`. It does **not** perform a real sort –
@@ -261,7 +260,6 @@ pub fn getc(_host: &mut dyn Host, _args: &[u64]) -> Result<u64, EmuError> {
 pub fn putc(_host: &mut dyn Host, _args: &[u64]) -> Result<u64, EmuError> {
     Ok(0)
 }
-
 
 /// `exit(code)`: unwind to the host caller with `code`.
 pub fn exit(args: &[u64]) -> Result<u64, EmuError> {

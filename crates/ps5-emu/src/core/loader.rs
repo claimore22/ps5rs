@@ -115,12 +115,12 @@ fn build_slots(
             let nid_b64 = u64_to_nid_str(binding.nid);
             let key = (binding.library.clone(), name.clone(), binding.nid);
             if reported.insert(key) {
-                tracing::debug!(
+                tracing::info!(
                     library = %binding.library,
                     name = %name,
                     nid = format_args!("{:#x}", binding.nid),
                     nid_b64 = %nid_b64,
-                    "using generic HLE stub"
+                    "setup: registered generic HLE stub"
                 );
             }
         }

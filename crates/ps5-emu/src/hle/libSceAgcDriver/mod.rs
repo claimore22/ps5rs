@@ -26,30 +26,18 @@ impl HleModule for AgcDriverModule {
                 "sceAgcDriverAgrSubmitDcb",
                 HostCall::SceAgcDriverAgrSubmitDcb,
             ),
-            (
-                "sceAgcDriverUnmapIoctl",
-                HostCall::SceAgcDriverUnmapIoctl,
-            ),
+            ("sceAgcDriverUnmapIoctl", HostCall::SceAgcDriverUnmapIoctl),
             (
                 "sceAgcDriverMapComputeQueue",
                 HostCall::SceAgcDriverMapComputeQueue,
             ),
-            (
-                "sceAgcDriverInit",
-                HostCall::SceAgcDriverInit,
-            ),
+            ("sceAgcDriverInit", HostCall::SceAgcDriverInit),
             (
                 "sceAgcDriverUnmapComputeQueue",
                 HostCall::SceAgcDriverUnmapComputeQueue,
             ),
-            (
-                "sceAgcDriverSubmitDcb",
-                HostCall::SceAgcDriverSubmitDcb,
-            ),
-            (
-                "sceAgcDriverMapIoctl",
-                HostCall::SceAgcDriverMapIoctl,
-            ),
+            ("sceAgcDriverSubmitDcb", HostCall::SceAgcDriverSubmitDcb),
+            ("sceAgcDriverMapIoctl", HostCall::SceAgcDriverMapIoctl),
         ]
     }
 
