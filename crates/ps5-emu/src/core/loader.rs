@@ -93,6 +93,7 @@ fn build_slots(
     registry: &Registry,
 ) -> Result<Vec<ImportSlot>, EmuError> {
     let mut slots = Vec::new();
+    let mut reported = std::collections::HashSet::new();
     for binding in &imports.bindings {
         // Skip imports belonging to modules that are never executed. The
        // loader patched them in the PRX image instead of in the guard process.
@@ -111,10 +112,16 @@ fn build_slots(
         // e.g. stubs missing, is surfaced as an explicit error.
         if !registry.contains(binding.nid) {
             let nid_b64 = u64_to_nid_str(binding.nid);
-            return Err(EmuError::NoHandler(format!(
-                "{name}#{} [nid {} / {:#x}]",
-                binding.library, nid_b64, binding.nid
-            )));
+            let key = (binding.library.clone(), name.clone(), binding.nid);
+            if reported.insert(key) {
+                tracing::warn!(
+                    library = %binding.library,
+                    name = %name,
+                    nid = format_args!("{:#x}", binding.nid),
+                    nid_b64 = %nid_b64,
+                    "missing HLE handler"
+                );
+            }
         }
 
         // Successful imports are converted into import slots.
@@ -125,6 +132,7 @@ fn build_slots(
             name,
             library: binding.library.clone(),
             got_slot: binding.got_slot,
+            stubbed: !registry.contains(binding.nid),
         });
     }
     Ok(slots)

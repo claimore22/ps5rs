@@ -31,14 +31,14 @@ impl HleModule for Ngs2Module {
         _args: &[u64],
     ) -> Result<u64, EmuError> {
         match call {
-            HostCall::SceNgs2VoiceRunCommands => {
-                static WARN: std::sync::Once = std::sync::Once::new();
-                WARN.call_once(|| {
-                    eprintln!("WARNING: sceNgs2VoiceRunCommands stub called – not a real implementation");
-                    tracing::warn!("sceNgs2VoiceRunCommands stub called – not a real implementation");
-                });
-                Ok(0)
-            }
+            // HostCall::SceNgs2VoiceRunCommands => {
+            //     static WARN: std::sync::Once = std::sync::Once::new();
+            //     WARN.call_once(|| {
+            //         eprintln!("WARNING: sceNgs2VoiceRunCommands stub called – not a real implementation");
+            //         tracing::warn!("sceNgs2VoiceRunCommands stub called – not a real implementation");
+            //     });
+            //     Ok(0)
+            // }
             _ => Err(EmuError::NoHandler("libSceNgs2".to_string())),
         }
     }

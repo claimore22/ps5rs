@@ -16,6 +16,7 @@ pub mod libSceAgcDriver;
 pub mod libSceAudioOut;
 pub mod libSceNgs2;
 pub mod libSceNpUniversalDataSystem;
+pub mod libSceSaveData_native;
 
 
 mod context;
@@ -109,6 +110,7 @@ pub enum HostCall {
     SceAgcDriverMapIoctl,
     SceAudioOutOutput,
     SceNgs2VoiceRunCommands,
+    SceSaveDataCreateTransactionResource,
 
 }
 
@@ -164,6 +166,7 @@ pub fn default_registry() -> Registry {
     libSceAgcDriver::register(&mut registry);
     libSceAudioOut::register(&mut registry);
     libSceNgs2::register(&mut registry);
+    libSceSaveData_native::register(&mut registry);
     // libSceAgc is not implemented – stub will be added later if needed.
 
     let _abi_check = AbiType::U64;

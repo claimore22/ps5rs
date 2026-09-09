@@ -31,16 +31,16 @@ impl HleModule for NpUniversalDataSystemModule {
         _args: &[u64],
     ) -> Result<u64, EmuError> {
         match call {
-            HostCall::SceNpUniversalDataSystemDestroyEvent => {
-                static WARN: std::sync::Once = std::sync::Once::new();
-                WARN.call_once(|| {
-                    eprintln!("WARNING: sceNpUniversalDataSystemDestroyEvent stub called – not a real implementation");
-                    tracing::warn!(
-                        "sceNpUniversalDataSystemDestroyEvent stub called – not a real implementation"
-                    );
-                });
-                Ok(0)
-            }
+            // HostCall::SceNpUniversalDataSystemDestroyEvent => {
+            //     static WARN: std::sync::Once = std::sync::Once::new();
+            //     WARN.call_once(|| {
+            //         eprintln!("WARNING: sceNpUniversalDataSystemDestroyEvent stub called – not a real implementation");
+            //         tracing::warn!(
+            //             "sceNpUniversalDataSystemDestroyEvent stub called – not a real implementation"
+            //         );
+            //     });
+            //     Ok(0)
+            // }
             _ => Err(EmuError::NoHandler("libSceNpUniversalDataSystem".to_string())),
         }
     }
