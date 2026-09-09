@@ -1,10 +1,4 @@
 #![forbid(unsafe_code)]
-#![allow(unused_imports, dead_code)]
-#![allow(
-    clippy::needless_borrow,
-    clippy::module_inception,
-    clippy::collapsible_if
-)]
 
 pub mod error;
 pub mod loader;

@@ -717,15 +717,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "ps5-fuzz"
-version = "0.4.0"
-dependencies = [
- "ps5-elf",
- "ps5-nid",
- "ps5-self",
-]
-
-[[package]]
 name = "ps5-image"
 version = "0.4.0"
 dependencies = [
@@ -775,7 +766,6 @@ version = "0.4.0"
 dependencies = [
  "ps5-nid",
  "serde",
- "serde_json",
 ]
 
 [[package]]

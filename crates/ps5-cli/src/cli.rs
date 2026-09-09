@@ -10,7 +10,6 @@ pub struct Cli {
 
 #[derive(Subcommand)]
 pub enum Commands {
-    /// Show header, segments, imports, and metadata summary for a binary
     Inspect {
         file: PathBuf,
         #[arg(long)]
@@ -18,7 +17,6 @@ pub enum Commands {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
-    /// List NID imports from a binary, with optional catalog name resolution
     Imports {
         file: PathBuf,
         #[arg(long)]
@@ -28,15 +26,18 @@ pub enum Commands {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
-    /// List ELF program headers and SELF segments for a binary
-    Segments { file: PathBuf },
-    /// Show dynamic entries and needed libraries for a binary
-    Dynamic { file: PathBuf },
-    /// List symbol table entries for a binary
-    Symbols { file: PathBuf },
-    /// Compute the Sony NID hash for a symbol name
-    Nid { name: String },
-    /// Scan a games directory and build a JSON analysis dataset
+    Segments {
+        file: PathBuf,
+    },
+    Dynamic {
+        file: PathBuf,
+    },
+    Symbols {
+        file: PathBuf,
+    },
+    Nid {
+        name: String,
+    },
     Scan {
         path: PathBuf,
         #[arg(short, long, value_hint = ValueHint::DirPath)]
@@ -46,7 +47,6 @@ pub enum Commands {
         #[arg(long)]
         include_modules: bool,
     },
-    /// Run reports over a scan dataset or games directory
     Analyze {
         #[arg(long = "nids", value_hint = ValueHint::FilePath)]
         nids: Vec<PathBuf>,
@@ -55,13 +55,11 @@ pub enum Commands {
         #[command(subcommand)]
         command: AnalyzeCommand,
     },
-    /// Extract the inner ELF from a SELF container
     Extract {
         file: PathBuf,
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
-    /// Batch-extract ELFs for every game in a directory
     BatchExtract {
         path: PathBuf,
         #[arg(short, long, value_hint = ValueHint::DirPath)]
@@ -71,12 +69,10 @@ pub enum Commands {
         #[arg(long)]
         include_modules: bool,
     },
-    /// Validate binaries and scan datasets
     Validate {
         #[command(subcommand)]
         command: ValidateCommand,
     },
-    /// Generate a static HTML dashboard from a scan dataset
     Dashboard {
         path: PathBuf,
         #[arg(short, long, value_hint = ValueHint::DirPath, default_value = "analysis/dashboard")]
@@ -84,7 +80,6 @@ pub enum Commands {
         #[arg(long = "games", value_hint = ValueHint::DirPath)]
         games: Option<PathBuf>,
     },
-    /// Export unresolved NIDs from a dataset to CSV
     ExportUnknown {
         path: PathBuf,
         #[arg(long, default_value = "frequency")]
@@ -92,7 +87,6 @@ pub enum Commands {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
-    /// Extract printable strings and detect engine/SDK fingerprints
     Strings {
         file: PathBuf,
         #[arg(short = 'n', long, default_value_t = 4)]
@@ -300,7 +294,6 @@ pub enum ValidateCommand {
 
 #[derive(Subcommand)]
 pub enum AnalyzeCommand {
-    /// Show per-game and corpus-wide import statistics
     Stats {
         path: PathBuf,
         #[arg(long, value_enum, default_value = "terminal")]
@@ -308,7 +301,6 @@ pub enum AnalyzeCommand {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
-    /// Show library usage heatmap across games
     Heatmap {
         path: PathBuf,
         #[arg(long, value_enum, default_value = "terminal")]
@@ -316,7 +308,6 @@ pub enum AnalyzeCommand {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
-    /// Show NID frequency across the corpus
     Frequency {
         path: PathBuf,
         #[arg(long, value_enum, default_value = "terminal")]
@@ -324,7 +315,6 @@ pub enum AnalyzeCommand {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
-    /// List imports that failed catalog resolution
     Unresolved {
         path: PathBuf,
         #[arg(long, value_enum, default_value = "terminal")]
@@ -332,7 +322,6 @@ pub enum AnalyzeCommand {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
-    /// Export the module dependency graph (dot/json)
     Graph {
         path: PathBuf,
         #[arg(long)]
@@ -342,7 +331,6 @@ pub enum AnalyzeCommand {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
-    /// Show per-library import inventory
     Imports {
         path: PathBuf,
         #[arg(long, value_enum, default_value = "terminal")]
@@ -350,7 +338,6 @@ pub enum AnalyzeCommand {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
-    /// List unknown NIDs in a scan dataset
     Unknown {
         path: PathBuf,
         #[arg(long, value_enum, default_value = "terminal")]
@@ -358,13 +345,11 @@ pub enum AnalyzeCommand {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
-    /// Collect a games directory into a JSON analysis file
     Collect {
         path: PathBuf,
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
-    /// Show library version strings per game
     LibraryVersions {
         path: PathBuf,
         #[arg(long, value_enum, default_value = "terminal")]
@@ -372,7 +357,6 @@ pub enum AnalyzeCommand {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
-    /// Detect game engines from dataset strings
     Engines {
         path: PathBuf,
         #[arg(long, value_enum, default_value = "terminal")]

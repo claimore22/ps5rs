@@ -56,12 +56,10 @@ fn detect_pattern(
     }
     if !evidence.is_empty() {
         evidence.truncate(10);
-        let score = (evidence.len() as u32 * 25).min(100);
-        let confidence = (evidence.len() as u8 * 30).clamp(40, 90);
         detections.push(Detection {
             value: name.to_string(),
-            score,
-            confidence,
+            score: 0,
+            confidence: 0,
             evidence,
         });
     }

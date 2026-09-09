@@ -7,7 +7,7 @@ pub mod json;
 
 pub use builder::BinaryImageBuilder;
 
-pub use ps5_schema::SCHEMA_VERSION as BINARY_IMAGE_VERSION;
+pub const BINARY_IMAGE_VERSION: u32 = 1;
 
 // ---------------------------------------------------------------------------
 // Detection — value + evidence for reverse engineering datasets

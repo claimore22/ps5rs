@@ -3,9 +3,5 @@ use crate::hle::stub::define_hle_stub_module;
 define_hle_stub_module!(
     ImeModule,
     "libSceIme",
-    [
-        "sceImeKeyboardClose",
-        "sceImeKeyboardOpen",
-        "sceImeUpdate"
-    ]
+    ["sceImeKeyboardClose", "sceImeKeyboardOpen", "sceImeUpdate"]
 );
