@@ -302,6 +302,19 @@ pub fn printf(host: &mut dyn Host, args: &[u64]) -> Result<u64, EmuError> {
     Ok(message.chars().count() as u64)
 }
 
+/// `fprintf(stream, format, ...) -> int`: emit formatted text to the host.
+pub fn fprintf(host: &mut dyn Host, args: &[u64]) -> Result<u64, EmuError> {
+    let format = host.read_string(
+        args.get(1)
+            .copied()
+            .ok_or_else(|| EmuError::NoHandler("fprintf missing format".to_string()))?,
+    )?;
+    let message = format_printf(host, &format, &args[2..]);
+    tracing::debug!(message = %message, "fprintf");
+    host.emit(&message);
+    Ok(message.chars().count() as u64)
+}
+
 /// `rand() -> int`: next value of the deterministic guest PRNG.
 pub fn rand(state: &mut LibcState) -> u64 {
     let value = next_rand(&mut state.rand_state);
@@ -371,7 +384,9 @@ mod tests {
         assert_eq!(host.output, vec!["hi\n".to_string(), "n=7".to_string()]);
     }
 
-    struct PrintfHost;
+    struct PrintfHost {
+        output: Vec<String>,
+    }
 
     impl Host for PrintfHost {
         fn read_bytes(&self, _addr: u64, _len: usize) -> Result<Vec<u8>, EmuError> {
@@ -387,18 +402,30 @@ mod tests {
         fn write(&mut self, _addr: u64, _data: &[u8]) -> Result<(), EmuError> {
             Ok(())
         }
+
+        fn emit(&mut self, chunk: &str) {
+            self.output.push(chunk.to_string());
+        }
     }
 
     #[test]
     fn printf_formats_variadic_args() {
-        let mut host = PrintfHost;
+        let mut host = PrintfHost { output: Vec::new() };
         let result = printf(&mut host, &[0x100, 2, 0x200, 0x1A]).unwrap();
         assert_eq!(result, 16);
     }
 
     #[test]
+    fn fprintf_skips_stream_and_emits_formatted_text() {
+        let mut host = PrintfHost { output: Vec::new() };
+        let result = fprintf(&mut host, &[0xDEAD, 0x100, 7, 0x200, 0xDEAD]).unwrap();
+        assert_eq!(result, 18);
+        assert_eq!(host.output, vec!["n=7 s=world x=dead".to_string()]);
+    }
+
+    #[test]
     fn printf_missing_format_errors() {
-        let mut host = PrintfHost;
+        let mut host = PrintfHost { output: Vec::new() };
         let err = printf(&mut host, &[]).unwrap_err();
         assert!(err.to_string().contains("printf"));
     }

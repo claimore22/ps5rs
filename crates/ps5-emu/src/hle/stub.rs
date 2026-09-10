@@ -13,11 +13,14 @@ pub(crate) fn warn_once(library: &str, nid: u64, name: &str) {
     let Ok(mut warned) = warned.lock() else {
         return;
     };
+    
     if warned.insert((library.to_string(), nid)) {
+        let nid_b64 = u64_to_nid_str(nid);
         tracing::warn!(
             library,
             name,
-            nid = format_args!("{nid:#x}"),
+            nid = format_args!("{:#x}", nid),
+            nid_b64 = %nid_b64,
             "HLE stub called"
         );
     }
@@ -54,6 +57,10 @@ macro_rules! define_hle_stub_module {
             }
         }
     };
+}
+
+fn u64_to_nid_str(nid: u64) -> String {
+    ps5_nid::encode_nid(nid.to_be_bytes())
 }
 
 pub(crate) use define_hle_stub_module;

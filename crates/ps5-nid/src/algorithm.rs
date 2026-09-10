@@ -46,12 +46,29 @@ pub fn encode_nid(bytes: [u8; 8]) -> String {
 const B64_CHARS: &str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-";
 
 pub fn nid_to_u64(nid: &str) -> Option<u64> {
-    let mut value = 0u64;
-    for c in nid.chars() {
-        let pos = B64_CHARS.find(c)? as u64;
-        value = value.wrapping_shl(6) | pos;
+    if nid.len() != 11 {
+        return None;
     }
-    Some(value)
+    let values: Vec<u8> = nid
+        .chars()
+        .map(|c| B64_CHARS.find(c).map(|value| value as u8))
+        .collect::<Option<_>>()?;
+    let mut bytes = [0u8; 8];
+    for (group, offset) in [(0, 0), (4, 3)] {
+        let v0 = values[group] as u32;
+        let v1 = values[group + 1] as u32;
+        let v2 = values[group + 2] as u32;
+        let v3 = values[group + 3] as u32;
+        bytes[offset] = ((v0 << 2) | (v1 >> 4)) as u8;
+        bytes[offset + 1] = (((v1 & 0x0f) << 4) | (v2 >> 2)) as u8;
+        bytes[offset + 2] = (((v2 & 0x03) << 6) | v3) as u8;
+    }
+    let v8 = values[8] as u32;
+    let v9 = values[9] as u32;
+    let v10 = values[10] as u32;
+    bytes[6] = ((v8 << 2) | (v9 >> 4)) as u8;
+    bytes[7] = (((v9 & 0x0f) << 4) | (v10 >> 2)) as u8;
+    Some(u64::from_be_bytes(bytes))
 }
 
 #[cfg(test)]
@@ -118,7 +135,7 @@ mod tests {
 
     #[test]
     fn nid_to_u64_single_bit() {
-        assert_eq!(nid_to_u64("BAAAAAAAAAA"), Some(1u64 << 60));
+        assert_eq!(nid_to_u64("BAAAAAAAAAA"), Some(1u64 << 58));
     }
 
     #[test]
@@ -128,7 +145,7 @@ mod tests {
 
     #[test]
     fn nid_to_u64_invalid_short() {
-        assert_eq!(nid_to_u64("AAAA"), Some(0));
+        assert_eq!(nid_to_u64("AAAA"), None);
     }
 
     #[test]
@@ -142,7 +159,7 @@ mod tests {
 
     #[test]
     fn nid_to_u64_empty() {
-        assert_eq!(nid_to_u64(""), Some(0));
+        assert_eq!(nid_to_u64(""), None);
     }
 
     #[test]
@@ -200,6 +217,6 @@ mod tests {
     fn encode_nid_roundtrips_through_nid_to_u64() {
         let nid = encode_nid([0x12, 0x34, 0x56, 0x78, 0x9a, 0xbc, 0xde, 0xf0]);
         assert_eq!(nid, "EjRWeJq83vA");
-        assert_eq!(nid_to_u64(&nid), Some(0x123456789abcdef0u64 << 2));
+        assert_eq!(nid_to_u64(&nid), Some(0x123456789abcdef0u64));
     }
 }

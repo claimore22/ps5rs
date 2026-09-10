@@ -111,6 +111,7 @@ pub enum HostCall {
     Exit,
     CatchReturnFromMain,
     Printf,
+    Fprintf,
     Puts,
     Qsort,
     Rand,

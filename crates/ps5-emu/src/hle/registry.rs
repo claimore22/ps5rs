@@ -39,10 +39,7 @@ impl Registry {
     }
 
     /// Register a neutral fallback for an import with no dedicated HLE implementation.
-    pub fn register_stub(&mut self, library: &str, name: &str) -> bool {
-        let Some(nid) = compute_nid(name) else {
-            return false;
-        };
+    pub fn register_stub(&mut self, library: &str, nid: u64, name: &str) -> bool {
         if self.by_nid.contains_key(&nid) {
             return true;
         }
@@ -176,7 +173,8 @@ mod tests {
     #[test]
     fn registry_dispatches_generic_stub() {
         let mut registry = Registry::new();
-        assert!(registry.register_stub("unknownLibrary", "unknownImport"));
+        let nid = compute_nid("unknownImport").expect("test symbol has a NID");
+        assert!(registry.register_stub("unknownLibrary", nid, "unknownImport"));
         let nid = registry.resolve("unknownImport").expect("stub registered");
         let mut ctx = HleContext::default();
         let mut host = NoHost;
