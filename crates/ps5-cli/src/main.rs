@@ -8,6 +8,7 @@ mod dataset;
 mod deps;
 mod export_scan;
 mod extract;
+mod fingerprint;
 mod firmware;
 mod inspect;
 mod inventory;
@@ -106,7 +107,8 @@ fn main() {
             output,
             offline_dir,
             json,
-        } => batch_load::cmd_batch_load(&path, &output, &offline_dir, json),
+            force,
+        } => batch_load::cmd_batch_load(&path, &output, &offline_dir, json, force),
         Commands::Strings {
             file,
             min_length,

@@ -1,6 +1,6 @@
 use std::path::{Path, PathBuf};
 
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
 use ps5_loader::LibraryImportCounts;
 use ps5_loader::OfflineExportTable;
@@ -101,7 +101,7 @@ fn find_prx<'a>(name: &'a str, files: &'a [(String, PathBuf)]) -> Option<&'a Pat
 }
 
 /// A serializable report for `--json` output.
-#[derive(Serialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub(crate) struct ModuleInfo {
     name: String,
     module_type: String,
@@ -132,21 +132,21 @@ pub(crate) struct ModuleInfo {
     per_library: Vec<LibraryImportCounts>,
 }
 
-#[derive(Serialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub(crate) struct GraphInfo {
     nodes: Vec<String>,
-    unavailable: Vec<String>,
+    pub(crate) unavailable: Vec<String>,
     edges: Vec<EdgeInfo>,
 }
 
-#[derive(Serialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub(crate) struct EdgeInfo {
     from: String,
     to: String,
     status: String,
 }
 
-#[derive(Serialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub(crate) struct Totals {
     pub(crate) modules: usize,
     pub(crate) resolved: u32,
@@ -156,7 +156,7 @@ pub(crate) struct Totals {
     pub(crate) unavailable: usize,
 }
 
-#[derive(Serialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub(crate) struct LoadReport {
     pub(crate) modules: Vec<ModuleInfo>,
     pub(crate) graph: GraphInfo,

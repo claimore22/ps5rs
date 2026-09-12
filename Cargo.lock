@@ -642,6 +642,7 @@ dependencies = [
  "ps5-shader",
  "serde",
  "serde_json",
+ "sha2",
  "tracing",
  "tracing-subscriber",
  "ureq",

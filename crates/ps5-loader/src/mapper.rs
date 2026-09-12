@@ -1,4 +1,4 @@
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
 use crate::memory::{MemoryRegion, ProcessMemory, SegmentFlags};
 use crate::relocation::{RelocationRecord, RelocationSummary};
@@ -32,7 +32,7 @@ pub enum ModuleState {
 }
 
 /// Per-library import counts (resolved / known / stubbed).
-#[derive(Debug, Clone, Serialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct LibraryImportCounts {
     pub library: String,
     pub resolved: u32,

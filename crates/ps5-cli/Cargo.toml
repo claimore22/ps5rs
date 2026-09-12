@@ -36,3 +36,6 @@ csv = "1"
 
 [lints]
 workspace = true
+
+[build-dependencies]
+sha2 = "0.10"

@@ -137,7 +137,8 @@ pub enum Commands {
         #[arg(short, long, default_value = "system_modules")]
         output: PathBuf,
     },
-    /// Batch-load all games: run virtual loader, collect reports, aggregate stats
+    /// Batch-load all games: incremental reconcile by default (only changed
+    /// games are reloaded; pass --force to reload everything)
     BatchLoad {
         /// Games directory containing subdirectories with eboot.bin
         path: PathBuf,
@@ -150,6 +151,9 @@ pub enum Commands {
         /// Print combined JSON to stdout instead of writing files
         #[arg(long)]
         json: bool,
+        /// Reload every game even if its stored report fingerprint is fresh
+        #[arg(long)]
+        force: bool,
     },
     /// Manage NID catalog (sync from Supabase, push unknowns)
     Catalog {
