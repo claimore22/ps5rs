@@ -1,60 +1,16 @@
-use sha1::{Digest, Sha1};
-
 /// Sony's base64 alphabet used for NID strings.
 const B64: &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-";
 
-/// Salt bytes appended to symbol names before SHA1 hashing.
-const SALT: [u8; 16] = [
-    0x51, 0x8D, 0x64, 0xA6, 0x35, 0xDE, 0xD8, 0xC1, 0xE6, 0xB0, 0x39, 0xB1, 0xC3, 0xE5, 0x52, 0x30,
-];
-
 /// Decode an 11-character Sony-style base64 NID to a u64.
 pub fn nid_to_u64(nid: &str) -> Option<u64> {
-    if nid.len() != 11 {
-        return None;
-    }
-    let mut val: u64 = 0;
-    for &c in nid.as_bytes() {
-        let idx = B64.iter().position(|&b| b == c)?;
-        val = val.wrapping_mul(64).wrapping_add(idx as u64);
-    }
-    Some(val)
+    ps5_nid::nid_to_u64(nid)
 }
 
 /// Compute the u64 NID for a human-readable SCE symbol name.
 ///
-/// Uses the same SHA1+SALT algorithm as `ps5-nid::algorithm::hash()`.
+/// Uses the canonical SHA1+SALT implementation from `ps5-nid`.
 pub fn compute_nid(name: &str) -> Option<u64> {
-    let mut hasher = Sha1::new();
-    hasher.update(name.as_bytes());
-    hasher.update(SALT);
-    let result = hasher.finalize();
-
-    // Reverse first 8 bytes: result[7], result[6], ..., result[0]
-    let mut buf = [0u8; 8];
-    for i in 0..8 {
-        buf[i] = result[7 - i];
-    }
-
-    // Base64-encode the reversed bytes into an 11-char NID string.
-    let mut nid = String::with_capacity(11);
-    for chunk in buf.chunks(3) {
-        let b0 = chunk[0] as u32;
-        let b1 = chunk.get(1).copied().unwrap_or(0) as u32;
-        let b2 = chunk.get(2).copied().unwrap_or(0) as u32;
-        let triple = (b0 << 16) | (b1 << 8) | b2;
-        nid.push(B64[((triple >> 18) & 63) as usize] as char);
-        nid.push(B64[((triple >> 12) & 63) as usize] as char);
-        if chunk.len() > 1 {
-            nid.push(B64[((triple >> 6) & 63) as usize] as char);
-        }
-        if chunk.len() > 2 {
-            nid.push(B64[(triple & 63) as usize] as char);
-        }
-    }
-    nid.truncate(11);
-
-    nid_to_u64(&nid)
+    ps5_nid::nid_to_u64(&ps5_nid::hash(name))
 }
 
 /// Decode the base64 library id after `#` in a `nid#lib` symbol to a u16.
@@ -145,6 +101,12 @@ mod tests {
         let nid = compute_nid("scePthreadCreate").unwrap();
         let expected = nid_to_u64("6UgtwV+0zb4").unwrap();
         assert_eq!(nid, expected);
+    }
+
+    #[test]
+    fn compute_nid_cpp_operator_new_matches_catalog() {
+        let nid = compute_nid("_Znwm").unwrap();
+        assert_eq!(nid, 0x7c99_e9b9_5541_6ca9);
     }
 
     #[test]

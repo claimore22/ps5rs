@@ -6,18 +6,6 @@ use crate::hle::Registry;
 use crate::imports::ImportTable;
 use crate::platform::memory::GuestMemory;
 use crate::process::Process;
-
-fn u64_to_nid_str(nid: u64) -> String {
-    const B64: &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-";
-    let mut val = (nid as u128) << 2;
-    let mut out = [0u8; 11];
-    for i in (0..11).rev() {
-        out[i] = B64[(val & 0x3F) as usize];
-        val >>= 6;
-    }
-    String::from_utf8(out.to_vec()).unwrap()
-}
-
 use super::dispatcher::ImportSlot;
 use super::relocator::{StubRegion, patch_got_slots};
 
@@ -25,6 +13,15 @@ use super::relocator::{StubRegion, patch_got_slots};
 pub const GUEST_STACK_VA: u64 = 0x0000_7000_0000_0000;
 /// Guest stack size in bytes. This value is passed to `GuestMemory::add_guest_stack` to allocate the runtime stack, and it is also used to calculate the top of the stack stored in `Prepared.stack_top`.
 pub const GUEST_STACK_SIZE: u64 = 0x0010_0000;
+
+fn u64_to_nid_str(nid: u64) -> String {
+
+
+
+
+
+    ps5_nid::encode_nid(nid.to_be_bytes())
+}
 
 /// Everything needed to run the guest once.
 /// Structure holding all information required to start a guest binary in the emulator.
@@ -111,7 +108,7 @@ fn build_slots(
         // Ensure the emulator has a handler for this NID. The unexpected path,
         // e.g. stubs missing, is surfaced as an explicit error.
         if !registry.contains(binding.nid) {
-            registry.register_stub(&binding.library, &name);
+            registry.register_stub(&binding.library, binding.nid, &name);
             let nid_b64 = u64_to_nid_str(binding.nid);
             let key = (binding.library.clone(), name.clone(), binding.nid);
             if reported.insert(key) {
@@ -132,7 +129,7 @@ fn build_slots(
             name,
             library: binding.library.clone(),
             got_slot: binding.got_slot,
-            stubbed: !registry.contains(binding.nid),
+            stubbed: !registry.contains(binding.nid)
         });
     }
     Ok(slots)
