@@ -186,44 +186,44 @@
     ],
     "graph": {
       "nodes": [
-        "libkernel.prx",
-        "libSceAudioOut.prx",
-        "libSceNpGameIntent.prx",
-        "libSceRtc.prx",
-        "libSceAgcDriver.prx",
-        "libSceUserService.prx",
-        "libScePad.prx",
-        "libSceCommonDialog.prx",
-        "libSceAgc.prx",
-        "libSceSaveDataDialog.native.prx",
         "libSceSaveData.native.prx",
-        "libc.prx",
         "libSceSystemService.prx",
-        "libSceVideoOut.prx",
-        "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
+        "libSceCommonDialog.prx",
         "libSceNpUniversalDataSystem.prx",
+        "libSceVideoOut.prx",
+        "libScePad.prx",
+        "libSceUserService.prx",
         "libSceNgs2.prx",
-        "libSceSysmodule.prx",
-        "libSceLibcInternal.prx"
+        "libSceNpGameIntent.prx",
+        "libc.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceRtc.prx",
+        "libkernel.prx",
+        "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
+        "libSceAgcDriver.prx",
+        "libSceLibcInternal.prx",
+        "libSceAudioOut.prx",
+        "libSceAgc.prx",
+        "libSceSysmodule.prx"
       ],
       "unavailable": [
-        "libSceNgs2.prx",
-        "libSceLibcInternal.prx",
+        "libkernel.prx",
+        "libScePad.prx",
         "libSceSystemService.prx",
+        "libSceSysmodule.prx",
         "libSceSaveData.native.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceAgcDriver.prx",
+        "libSceAgc.prx",
         "libSceAudioOut.prx",
         "libSceSaveDataDialog.native.prx",
-        "libSceSysmodule.prx",
-        "libScePad.prx",
-        "libSceAgc.prx",
-        "libSceCommonDialog.prx",
-        "libSceAgcDriver.prx",
-        "libSceNpUniversalDataSystem.prx",
-        "libSceNpGameIntent.prx",
         "libSceUserService.prx",
+        "libSceLibcInternal.prx",
         "libSceVideoOut.prx",
         "libSceRtc.prx",
-        "libkernel.prx"
+        "libSceNpGameIntent.prx",
+        "libSceCommonDialog.prx",
+        "libSceNgs2.prx"
       ],
       "edges": [
         {
@@ -337,5 +337,13 @@
       "unavailable": 17
     }
   },
-  "error": null
+  "error": null,
+  "total_exports": 2925,
+  "freshness": {
+    "report_format": 1,
+    "loader_fingerprint": "d245a80770d2897643c4754f10883b674208fc8fdecaad2ebd247d1990f6f5a0",
+    "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
+    "environment_fingerprint": "c65955db3dee9d575ca652856c86c3fc2b7297fff36bb37fcb1b9319f1ff09a9",
+    "game_fingerprint": "473eeddf5297452bdaa1454ec398eb3a57550f5178e4e2456d2d485ba5690efb"
+  }
 }

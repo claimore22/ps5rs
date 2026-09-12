@@ -1,148 +1,16 @@
 {
   "schema": 1,
   "games": {
-    "PPSA19268": {
-      "name": "Juicy Realm - [PPSA19268]",
-      "eboot_sha256": "c1e8a335b8ad33b8645f5fa3a1b74469b7e3e0ed2e70770780a036dec2174790",
-      "game_fingerprint": "db6ffb8ae181f6e6bbe95dab0fb04fb9c2c09dc7181671ba08efe16189d52e4a",
-      "ingest_id": "ingest_20260912085620_db6ffb8ae181",
-      "status": "complete",
-      "ingested_at": "2026-09-12T08:56:20Z",
-      "source_deleted": false,
-      "record_path": "games/PPSA19268/versions/db6ffb8ae181",
-      "report_file": "Juicy_Realm_-_[PPSA19268].json"
-    },
-    "PPSA13356": {
-      "name": "Raiden III x MIKADO MANIAX - [PPSA13356]",
-      "eboot_sha256": "3de3bb43c3c4d0c7b3bd234d75386602bb515755fb600cc0cbb930a857451b24",
-      "game_fingerprint": "5c71c7328ab63bf9902cbef1dba0bc4afc73306e7bfbbc42bf93ea9a3e2977c3",
-      "ingest_id": "ingest_20260912085621_5c71c7328ab6",
+    "PPSA02787": {
+      "name": "Monster Boy and the Cursed Kingdom - [PPSA02787]",
+      "eboot_sha256": "cff19ba5d9e7593acd8371ca8367b0f4d038642c07d593ca0deb8470adbe5a06",
+      "game_fingerprint": "96a5a96a755301afd017d7ba2173fce4ac8f6c1f5bb1fce268194f5d8ccd475c",
+      "ingest_id": "ingest_20260912085621_96a5a96a7553",
       "status": "complete",
       "ingested_at": "2026-09-12T08:56:21Z",
       "source_deleted": false,
-      "record_path": "games/PPSA13356/versions/5c71c7328ab6",
-      "report_file": "Raiden_III_x_MIKADO_MANIAX_-_[PPSA13356].json"
-    },
-    "PPSA14053": {
-      "name": "Afterimage - [PPSA14053]",
-      "eboot_sha256": "16101e0a130b9067a534d574c22901c3a28a08ab74326b324cc25bf977c3b3b2",
-      "game_fingerprint": "a1e942d5312bf1f8102cf4357ba2d240d4722fc957380ec09590d3f904bb57b5",
-      "ingest_id": "ingest_20260912085618_a1e942d5312b",
-      "status": "complete",
-      "ingested_at": "2026-09-12T08:56:18Z",
-      "source_deleted": false,
-      "record_path": "games/PPSA14053/versions/a1e942d5312b",
-      "report_file": "Afterimage_-_[PPSA14053].json"
-    },
-    "PPSA07426": {
-      "name": "Hello Neighbor 2 - [PPSA07426]",
-      "eboot_sha256": "fd73d6384888fc641d4119f7eece0adf6f79e8bc2393098ed650bb42070f09b6",
-      "game_fingerprint": "0248b8ee6e15ca644e5505b1393805d0ef89172c71a6b1e5ca8b6b33e2155ec4",
-      "ingest_id": "ingest_20260912085620_0248b8ee6e15",
-      "status": "complete",
-      "ingested_at": "2026-09-12T08:56:20Z",
-      "source_deleted": false,
-      "record_path": "games/PPSA07426/versions/0248b8ee6e15",
-      "report_file": "Hello_Neighbor_2_-_[PPSA07426].json"
-    },
-    "PPSA06565": {
-      "name": "Dusk Diver 2 - [PPSA06565]",
-      "eboot_sha256": "8fed747507fa3ca0ede07ebb0c86bf2af50e10f81f90c04ecc6c0e25687e295c",
-      "game_fingerprint": "56402bb2e5ec873c345070369f5df1d8102aa95a13eebb2be325eb98efb31da5",
-      "ingest_id": "ingest_20260912085619_56402bb2e5ec",
-      "status": "complete",
-      "ingested_at": "2026-09-12T08:56:19Z",
-      "source_deleted": false,
-      "record_path": "games/PPSA06565/versions/56402bb2e5ec",
-      "report_file": "Dusk_Diver_2_-_[PPSA06565].json"
-    },
-    "PPSA16786": {
-      "name": "Neva - [PPSA16786]",
-      "eboot_sha256": "824460e6eb249fa0e817ac4cff94bbbfe225c8d30faa264139f455356e5245c5",
-      "game_fingerprint": "4e16b500566ad2f5ed86c543b0284bf7800bdcec778bb8a5f87dd23cb06a2680",
-      "ingest_id": "ingest_20260912085621_4e16b500566a",
-      "status": "complete",
-      "ingested_at": "2026-09-12T08:56:21Z",
-      "source_deleted": false,
-      "record_path": "games/PPSA16786/versions/4e16b500566a",
-      "report_file": "Neva_-_[PPSA16786].json"
-    },
-    "PPSA15552": {
-      "name": "Dead Cells - [PPSA15552]",
-      "eboot_sha256": "0cecb86cae3ec7834b68963d580ae297b393264636c23fd4114969ecc1966139",
-      "game_fingerprint": "56445e5149f793c97e0b0d6d8e1ef838a40b87866cb2e77c41452078e0a086de",
-      "ingest_id": "ingest_20260912085619_56445e5149f7",
-      "status": "complete",
-      "ingested_at": "2026-09-12T08:56:19Z",
-      "source_deleted": false,
-      "record_path": "games/PPSA15552/versions/56445e5149f7",
-      "report_file": "Dead_Cells_-_[PPSA15552].json"
-    },
-    "PPSA28855": {
-      "name": "Totally Reliable Delivery Service - [PPSA28855]",
-      "eboot_sha256": "67119076d9f66dababb37a8d7a61617a40a23d02cb49af62ffe233a30b5f0edb",
-      "game_fingerprint": "a2932021ba13c77c6da9cb91e6aa08a67ba40482c93747dabb1a97ba0010c6dd",
-      "ingest_id": "ingest_20260912085622_a2932021ba13",
-      "status": "complete",
-      "ingested_at": "2026-09-12T08:56:22Z",
-      "source_deleted": false,
-      "record_path": "games/PPSA28855/versions/a2932021ba13",
-      "report_file": "Totally_Reliable_Delivery_Service_-_[PPSA28855].json"
-    },
-    "PPSA01502": {
-      "name": "Bugsnax - [PPSA01502]",
-      "eboot_sha256": "176717908d1ce7e7993f9b03f9324aa0661d1c75cc6ae8b89fb7d65ea9ad1118",
-      "game_fingerprint": "eecc027d8733005a094cf8da8557972f5021ca293f0fc47b1cbd78719e0161c9",
-      "ingest_id": "ingest_20260912085619_eecc027d8733",
-      "status": "complete",
-      "ingested_at": "2026-09-12T08:56:19Z",
-      "source_deleted": false,
-      "record_path": "games/PPSA01502/versions/eecc027d8733",
-      "report_file": "Bugsnax_-_[PPSA01502].json"
-    },
-    "PPSA02456": {
-      "name": "Subnautica Below Zero - [PPSA02456]",
-      "eboot_sha256": "b73b02c3cd0ae353007aa34d677a5d0653ef2119cc82eae7a23b5d75f084414e",
-      "game_fingerprint": "6679080b0d88ca327b0113a00c2906f83845ee4eaacaee91a0eb5e4423b1dfb6",
-      "ingest_id": "ingest_20260912085622_6679080b0d88",
-      "status": "complete",
-      "ingested_at": "2026-09-12T08:56:22Z",
-      "source_deleted": false,
-      "record_path": "games/PPSA02456/versions/6679080b0d88",
-      "report_file": "Subnautica_Below_Zero_-_[PPSA02456].json"
-    },
-    "PPSA22102": {
-      "name": "Squirrel with a Gun - [PPSA22102]",
-      "eboot_sha256": "7ad68d87f114cab2bedbe1ff6c878be58b10ce1a87755d6ebd9fbd0f9bac3af8",
-      "game_fingerprint": "7a852910c3e85b6fb0544a7317021528fa095fcb03f418343225980b8b43514a",
-      "ingest_id": "ingest_20260912085622_7a852910c3e8",
-      "status": "complete",
-      "ingested_at": "2026-09-12T08:56:22Z",
-      "source_deleted": false,
-      "record_path": "games/PPSA22102/versions/7a852910c3e8",
-      "report_file": "Squirrel_with_a_Gun_-_[PPSA22102].json"
-    },
-    "PPSA09809": {
-      "name": "OCTOPATH TRAVELER II - [PPSA09809]",
-      "eboot_sha256": "844a361498bf83596943718e94008da42e78060924eeaad6530c1e8f2f9cd1f6",
-      "game_fingerprint": "c08b84420723f8c62431670be750fa45e512d4e091c0d2ad3493a5bfafc979ba",
-      "ingest_id": "ingest_20260912085621_c08b84420723",
-      "status": "complete",
-      "ingested_at": "2026-09-12T08:56:21Z",
-      "source_deleted": false,
-      "record_path": "games/PPSA09809/versions/c08b84420723",
-      "report_file": "OCTOPATH_TRAVELER_II_-_[PPSA09809].json"
-    },
-    "PPSA09804": {
-      "name": "GRIS - [PPSA09804]",
-      "eboot_sha256": "effbbbe080c102794779b180caba6562b14093379ee866a6989dcd494e91527d",
-      "game_fingerprint": "3d9eb91691008ce7f3aed0c806321b953dcda308ac0fcc9ccad8311f330acb68",
-      "ingest_id": "ingest_20260912085619_3d9eb9169100",
-      "status": "complete",
-      "ingested_at": "2026-09-12T08:56:19Z",
-      "source_deleted": false,
-      "record_path": "games/PPSA09804/versions/3d9eb9169100",
-      "report_file": "GRIS_-_[PPSA09804].json"
+      "record_path": "games/PPSA02787/versions/96a5a96a7553",
+      "report_file": "Monster_Boy_and_the_Cursed_Kingdom_-_[PPSA02787].json"
     },
     "PPSA32239": {
       "name": "Mega Man Star Force Legacy Collection - [PPSA32239]",
@@ -155,104 +23,27 @@
       "record_path": "games/PPSA32239/versions/710f518ef79b",
       "report_file": "Mega_Man_Star_Force_Legacy_Collection_-_[PPSA32239].json"
     },
-    "PPSA13871": {
-      "name": "Neko Rescue Tale - [PPSA13871]",
-      "eboot_sha256": "01ecd7e5f523330f6212325c99d90cf2b0a2e094df96235c5c02ea555a63f07b",
-      "game_fingerprint": "b9c08a18f83a3008f60fc312797ac28a2810591b46b59229f88beae23a5cd57a",
-      "ingest_id": "ingest_20260912085621_b9c08a18f83a",
-      "status": "complete",
-      "ingested_at": "2026-09-12T08:56:21Z",
-      "source_deleted": false,
-      "record_path": "games/PPSA13871/versions/b9c08a18f83a",
-      "report_file": "Neko_Rescue_Tale_-_[PPSA13871].json"
-    },
-    "PPSA02787": {
-      "name": "Monster Boy and the Cursed Kingdom - [PPSA02787]",
-      "eboot_sha256": "cff19ba5d9e7593acd8371ca8367b0f4d038642c07d593ca0deb8470adbe5a06",
-      "game_fingerprint": "96a5a96a755301afd017d7ba2173fce4ac8f6c1f5bb1fce268194f5d8ccd475c",
-      "ingest_id": "ingest_20260912085621_96a5a96a7553",
-      "status": "complete",
-      "ingested_at": "2026-09-12T08:56:21Z",
-      "source_deleted": false,
-      "record_path": "games/PPSA02787/versions/96a5a96a7553",
-      "report_file": "Monster_Boy_and_the_Cursed_Kingdom_-_[PPSA02787].json"
-    },
-    "PPSA07653": {
-      "name": "Oxide Room 104 - [PPSA07653]",
-      "eboot_sha256": "f520b717976d781cb3b963422f90aa58d27ce47096454d96f22bc7c827dc40c3",
-      "game_fingerprint": "f40fb22e3d32462ca31839bbc7f25b711574ed67a9c7b8e2e0f1d1f40b717c6c",
-      "ingest_id": "ingest_20260912085621_f40fb22e3d32",
-      "status": "complete",
-      "ingested_at": "2026-09-12T08:56:21Z",
-      "source_deleted": false,
-      "record_path": "games/PPSA07653/versions/f40fb22e3d32",
-      "report_file": "Oxide_Room_104_-_[PPSA07653].json"
-    },
-    "PPSA03743": {
-      "name": "Soul Hackers 2 - [PPSA03743]",
-      "eboot_sha256": "b0b3e83447a4ce3e759c442321751ab939af76fe33411366ff96b0948aeb4831",
-      "game_fingerprint": "566f0ade6d12b3b49c0ec23385e7729bd0df4344c8bac53475166cb449743a93",
-      "ingest_id": "ingest_20260912085621_566f0ade6d12",
-      "status": "complete",
-      "ingested_at": "2026-09-12T08:56:21Z",
-      "source_deleted": false,
-      "record_path": "games/PPSA03743/versions/566f0ade6d12",
-      "report_file": "Soul_Hackers_2_-_[PPSA03743].json"
-    },
-    "PPSA17949": {
-      "name": "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
-      "eboot_sha256": "b3c9a98297a08cbdec815b436048f34414a1bd58c786b69f7e72fd3d837a1258",
-      "game_fingerprint": "92e19babff68d2e5370c7ab184d88fcd55342ea95036cea86c787dcce7903b8b",
-      "ingest_id": "ingest_20260912085621_92e19babff68",
-      "status": "complete",
-      "ingested_at": "2026-09-12T08:56:21Z",
-      "source_deleted": false,
-      "record_path": "games/PPSA17949/versions/92e19babff68",
-      "report_file": "Plumbers_Don't_Wear_Ties__Definitive_Edition_-_[PPSA17949].json"
-    },
-    "PPSA15065": {
-      "name": "Cat Quest III - [PPSA15065]",
-      "eboot_sha256": "5910ab94c8b0a8087bcbb6d60098ed8e58b5d6a5f46134120bd0efe9f647bbea",
-      "game_fingerprint": "13e5b0ef5733b70cb6892291f93c63af4697012b08003a13f7dbc218eec7a254",
-      "ingest_id": "ingest_20260912085619_13e5b0ef5733",
+    "PPSA06565": {
+      "name": "Dusk Diver 2 - [PPSA06565]",
+      "eboot_sha256": "8fed747507fa3ca0ede07ebb0c86bf2af50e10f81f90c04ecc6c0e25687e295c",
+      "game_fingerprint": "56402bb2e5ec873c345070369f5df1d8102aa95a13eebb2be325eb98efb31da5",
+      "ingest_id": "ingest_20260912085619_56402bb2e5ec",
       "status": "complete",
       "ingested_at": "2026-09-12T08:56:19Z",
       "source_deleted": false,
-      "record_path": "games/PPSA15065/versions/13e5b0ef5733",
-      "report_file": "Cat_Quest_III_-_[PPSA15065].json"
+      "record_path": "games/PPSA06565/versions/56402bb2e5ec",
+      "report_file": "Dusk_Diver_2_-_[PPSA06565].json"
     },
-    "PPSA02739": {
-      "name": "Judgment - [PPSA02739]",
-      "eboot_sha256": "444cbf9932b55a710c36c591b850a6d6bf24c109c76251c36f10ea3c982938a1",
-      "game_fingerprint": "ab3a073534ff2cfc1dabded3a1355cd94010d8565bc4b5d9816f71085d3c5f50",
-      "ingest_id": "ingest_20260912085620_ab3a073534ff",
+    "PPSA09809": {
+      "name": "OCTOPATH TRAVELER II - [PPSA09809]",
+      "eboot_sha256": "844a361498bf83596943718e94008da42e78060924eeaad6530c1e8f2f9cd1f6",
+      "game_fingerprint": "c08b84420723f8c62431670be750fa45e512d4e091c0d2ad3493a5bfafc979ba",
+      "ingest_id": "ingest_20260912085621_c08b84420723",
       "status": "complete",
-      "ingested_at": "2026-09-12T08:56:20Z",
+      "ingested_at": "2026-09-12T08:56:21Z",
       "source_deleted": false,
-      "record_path": "games/PPSA02739/versions/ab3a073534ff",
-      "report_file": "Judgment_-_[PPSA02739].json"
-    },
-    "PPSA01825": {
-      "name": "The Pathless - [PPSA01825]",
-      "eboot_sha256": "37a3c6dbff248781267ba018cc5ca99713464d7a3b78de34103dac7ac8aa33ff",
-      "game_fingerprint": "4a1eeaf2e8fa0937b9a8af49b85b4681c6158ae856857e81470cc5bb4ce89f8a",
-      "ingest_id": "ingest_20260912085622_4a1eeaf2e8fa",
-      "status": "complete",
-      "ingested_at": "2026-09-12T08:56:22Z",
-      "source_deleted": false,
-      "record_path": "games/PPSA01825/versions/4a1eeaf2e8fa",
-      "report_file": "The_Pathless_-_[PPSA01825].json"
-    },
-    "PPSA08194": {
-      "name": "Asterigos: Curse of the Stars - [PPSA08194]",
-      "eboot_sha256": "b208de05bd97250bde4a3bb9e8157107e606fbfd3d3a36bfcc9b5c66d4337f7a",
-      "game_fingerprint": "80aa03447cda8130bc785f328efc0c044522aed71499f5d13789688df1766611",
-      "ingest_id": "ingest_20260912085619_80aa03447cda",
-      "status": "complete",
-      "ingested_at": "2026-09-12T08:56:19Z",
-      "source_deleted": false,
-      "record_path": "games/PPSA08194/versions/80aa03447cda",
-      "report_file": "Asterigos__Curse_of_the_Stars_-_[PPSA08194].json"
+      "record_path": "games/PPSA09809/versions/c08b84420723",
+      "report_file": "OCTOPATH_TRAVELER_II_-_[PPSA09809].json"
     },
     "PPSA02100": {
       "name": "Stray - [PPSA02100]",
@@ -265,16 +56,71 @@
       "record_path": "games/PPSA02100/versions/7e38c165e4cd",
       "report_file": "Stray_-_[PPSA02100].json"
     },
-    "PPSA20643": {
-      "name": "Metal Slug Tactics - [PPSA20643]",
-      "eboot_sha256": "4390643f8697a97d3b5f75ad1bb630d18ea9b289cccc12a8fa9f92379c2dbd68",
-      "game_fingerprint": "522f3b60f4d1a1c7b15336f498197ccd7f9f2c470402083e5a7d22e9468097d0",
-      "ingest_id": "ingest_20260912085621_522f3b60f4d1",
+    "PPSA02456": {
+      "name": "Subnautica Below Zero - [PPSA02456]",
+      "eboot_sha256": "b73b02c3cd0ae353007aa34d677a5d0653ef2119cc82eae7a23b5d75f084414e",
+      "game_fingerprint": "6679080b0d88ca327b0113a00c2906f83845ee4eaacaee91a0eb5e4423b1dfb6",
+      "ingest_id": "ingest_20260912085622_6679080b0d88",
+      "status": "complete",
+      "ingested_at": "2026-09-12T08:56:22Z",
+      "source_deleted": false,
+      "record_path": "games/PPSA02456/versions/6679080b0d88",
+      "report_file": "Subnautica_Below_Zero_-_[PPSA02456].json"
+    },
+    "PPSA01502": {
+      "name": "Bugsnax - [PPSA01502]",
+      "eboot_sha256": "176717908d1ce7e7993f9b03f9324aa0661d1c75cc6ae8b89fb7d65ea9ad1118",
+      "game_fingerprint": "eecc027d8733005a094cf8da8557972f5021ca293f0fc47b1cbd78719e0161c9",
+      "ingest_id": "ingest_20260912085619_eecc027d8733",
+      "status": "complete",
+      "ingested_at": "2026-09-12T08:56:19Z",
+      "source_deleted": false,
+      "record_path": "games/PPSA01502/versions/eecc027d8733",
+      "report_file": "Bugsnax_-_[PPSA01502].json"
+    },
+    "PPSA13871": {
+      "name": "Neko Rescue Tale - [PPSA13871]",
+      "eboot_sha256": "01ecd7e5f523330f6212325c99d90cf2b0a2e094df96235c5c02ea555a63f07b",
+      "game_fingerprint": "b9c08a18f83a3008f60fc312797ac28a2810591b46b59229f88beae23a5cd57a",
+      "ingest_id": "ingest_20260912085621_b9c08a18f83a",
       "status": "complete",
       "ingested_at": "2026-09-12T08:56:21Z",
       "source_deleted": false,
-      "record_path": "games/PPSA20643/versions/522f3b60f4d1",
-      "report_file": "Metal_Slug_Tactics_-_[PPSA20643].json"
+      "record_path": "games/PPSA13871/versions/b9c08a18f83a",
+      "report_file": "Neko_Rescue_Tale_-_[PPSA13871].json"
+    },
+    "PPSA17949": {
+      "name": "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
+      "eboot_sha256": "b3c9a98297a08cbdec815b436048f34414a1bd58c786b69f7e72fd3d837a1258",
+      "game_fingerprint": "92e19babff68d2e5370c7ab184d88fcd55342ea95036cea86c787dcce7903b8b",
+      "ingest_id": "ingest_20260912085621_92e19babff68",
+      "status": "complete",
+      "ingested_at": "2026-09-12T08:56:21Z",
+      "source_deleted": false,
+      "record_path": "games/PPSA17949/versions/92e19babff68",
+      "report_file": "Plumbers_Don't_Wear_Ties__Definitive_Edition_-_[PPSA17949].json"
+    },
+    "PPSA14053": {
+      "name": "Afterimage - [PPSA14053]",
+      "eboot_sha256": "16101e0a130b9067a534d574c22901c3a28a08ab74326b324cc25bf977c3b3b2",
+      "game_fingerprint": "a1e942d5312bf1f8102cf4357ba2d240d4722fc957380ec09590d3f904bb57b5",
+      "ingest_id": "ingest_20260912085618_a1e942d5312b",
+      "status": "complete",
+      "ingested_at": "2026-09-12T08:56:18Z",
+      "source_deleted": false,
+      "record_path": "games/PPSA14053/versions/a1e942d5312b",
+      "report_file": "Afterimage_-_[PPSA14053].json"
+    },
+    "PPSA16960": {
+      "name": "Richman 11 - [PPSA16960]",
+      "eboot_sha256": "c3c797989bb705f6a5d254374abf380d323f97eb599661cf6600bddbd2f2902f",
+      "game_fingerprint": "7b80c508aad5cc609afa2edf998a6dadf6ca55435111436700c05bceb2427761",
+      "ingest_id": "ingest_20260912095232_7b80c508aad5",
+      "status": "complete",
+      "ingested_at": "2026-09-12T09:52:32Z",
+      "source_deleted": false,
+      "record_path": "games/PPSA16960/versions/7b80c508aad5",
+      "report_file": "Richman_11_-_[PPSA16960].json"
     },
     "PPSA25009": {
       "name": "Blue Prince - [PPSA25009]",
@@ -287,6 +133,105 @@
       "record_path": "games/PPSA25009/versions/8c7145abde26",
       "report_file": "Blue_Prince_-_[PPSA25009].json"
     },
+    "PPSA03743": {
+      "name": "Soul Hackers 2 - [PPSA03743]",
+      "eboot_sha256": "b0b3e83447a4ce3e759c442321751ab939af76fe33411366ff96b0948aeb4831",
+      "game_fingerprint": "566f0ade6d12b3b49c0ec23385e7729bd0df4344c8bac53475166cb449743a93",
+      "ingest_id": "ingest_20260912085621_566f0ade6d12",
+      "status": "complete",
+      "ingested_at": "2026-09-12T08:56:21Z",
+      "source_deleted": false,
+      "record_path": "games/PPSA03743/versions/566f0ade6d12",
+      "report_file": "Soul_Hackers_2_-_[PPSA03743].json"
+    },
+    "PPSA07653": {
+      "name": "Oxide Room 104 - [PPSA07653]",
+      "eboot_sha256": "f520b717976d781cb3b963422f90aa58d27ce47096454d96f22bc7c827dc40c3",
+      "game_fingerprint": "f40fb22e3d32462ca31839bbc7f25b711574ed67a9c7b8e2e0f1d1f40b717c6c",
+      "ingest_id": "ingest_20260912085621_f40fb22e3d32",
+      "status": "complete",
+      "ingested_at": "2026-09-12T08:56:21Z",
+      "source_deleted": false,
+      "record_path": "games/PPSA07653/versions/f40fb22e3d32",
+      "report_file": "Oxide_Room_104_-_[PPSA07653].json"
+    },
+    "PPSA08194": {
+      "name": "Asterigos: Curse of the Stars - [PPSA08194]",
+      "eboot_sha256": "b208de05bd97250bde4a3bb9e8157107e606fbfd3d3a36bfcc9b5c66d4337f7a",
+      "game_fingerprint": "80aa03447cda8130bc785f328efc0c044522aed71499f5d13789688df1766611",
+      "ingest_id": "ingest_20260912085619_80aa03447cda",
+      "status": "complete",
+      "ingested_at": "2026-09-12T08:56:19Z",
+      "source_deleted": false,
+      "record_path": "games/PPSA08194/versions/80aa03447cda",
+      "report_file": "Asterigos__Curse_of_the_Stars_-_[PPSA08194].json"
+    },
+    "PPSA20643": {
+      "name": "Metal Slug Tactics - [PPSA20643]",
+      "eboot_sha256": "4390643f8697a97d3b5f75ad1bb630d18ea9b289cccc12a8fa9f92379c2dbd68",
+      "game_fingerprint": "522f3b60f4d1a1c7b15336f498197ccd7f9f2c470402083e5a7d22e9468097d0",
+      "ingest_id": "ingest_20260912085621_522f3b60f4d1",
+      "status": "complete",
+      "ingested_at": "2026-09-12T08:56:21Z",
+      "source_deleted": false,
+      "record_path": "games/PPSA20643/versions/522f3b60f4d1",
+      "report_file": "Metal_Slug_Tactics_-_[PPSA20643].json"
+    },
+    "PPSA07426": {
+      "name": "Hello Neighbor 2 - [PPSA07426]",
+      "eboot_sha256": "fd73d6384888fc641d4119f7eece0adf6f79e8bc2393098ed650bb42070f09b6",
+      "game_fingerprint": "0248b8ee6e15ca644e5505b1393805d0ef89172c71a6b1e5ca8b6b33e2155ec4",
+      "ingest_id": "ingest_20260912085620_0248b8ee6e15",
+      "status": "complete",
+      "ingested_at": "2026-09-12T08:56:20Z",
+      "source_deleted": false,
+      "record_path": "games/PPSA07426/versions/0248b8ee6e15",
+      "report_file": "Hello_Neighbor_2_-_[PPSA07426].json"
+    },
+    "PPSA15065": {
+      "name": "Cat Quest III - [PPSA15065]",
+      "eboot_sha256": "5910ab94c8b0a8087bcbb6d60098ed8e58b5d6a5f46134120bd0efe9f647bbea",
+      "game_fingerprint": "13e5b0ef5733b70cb6892291f93c63af4697012b08003a13f7dbc218eec7a254",
+      "ingest_id": "ingest_20260912085619_13e5b0ef5733",
+      "status": "complete",
+      "ingested_at": "2026-09-12T08:56:19Z",
+      "source_deleted": false,
+      "record_path": "games/PPSA15065/versions/13e5b0ef5733",
+      "report_file": "Cat_Quest_III_-_[PPSA15065].json"
+    },
+    "PPSA28855": {
+      "name": "Totally Reliable Delivery Service - [PPSA28855]",
+      "eboot_sha256": "67119076d9f66dababb37a8d7a61617a40a23d02cb49af62ffe233a30b5f0edb",
+      "game_fingerprint": "a2932021ba13c77c6da9cb91e6aa08a67ba40482c93747dabb1a97ba0010c6dd",
+      "ingest_id": "ingest_20260912085622_a2932021ba13",
+      "status": "complete",
+      "ingested_at": "2026-09-12T08:56:22Z",
+      "source_deleted": false,
+      "record_path": "games/PPSA28855/versions/a2932021ba13",
+      "report_file": "Totally_Reliable_Delivery_Service_-_[PPSA28855].json"
+    },
+    "PPSA13356": {
+      "name": "Raiden III x MIKADO MANIAX - [PPSA13356]",
+      "eboot_sha256": "3de3bb43c3c4d0c7b3bd234d75386602bb515755fb600cc0cbb930a857451b24",
+      "game_fingerprint": "5c71c7328ab63bf9902cbef1dba0bc4afc73306e7bfbbc42bf93ea9a3e2977c3",
+      "ingest_id": "ingest_20260912085621_5c71c7328ab6",
+      "status": "complete",
+      "ingested_at": "2026-09-12T08:56:21Z",
+      "source_deleted": false,
+      "record_path": "games/PPSA13356/versions/5c71c7328ab6",
+      "report_file": "Raiden_III_x_MIKADO_MANIAX_-_[PPSA13356].json"
+    },
+    "PPSA15552": {
+      "name": "Dead Cells - [PPSA15552]",
+      "eboot_sha256": "0cecb86cae3ec7834b68963d580ae297b393264636c23fd4114969ecc1966139",
+      "game_fingerprint": "56445e5149f793c97e0b0d6d8e1ef838a40b87866cb2e77c41452078e0a086de",
+      "ingest_id": "ingest_20260912085619_56445e5149f7",
+      "status": "complete",
+      "ingested_at": "2026-09-12T08:56:19Z",
+      "source_deleted": false,
+      "record_path": "games/PPSA15552/versions/56445e5149f7",
+      "report_file": "Dead_Cells_-_[PPSA15552].json"
+    },
     "PPSA10264": {
       "name": "Jusant - [PPSA10264]",
       "eboot_sha256": "36f451ac260314fc92ae0a91e60dbd4a5ed900bbca069def80dc9e928440f15f",
@@ -298,6 +243,17 @@
       "record_path": "games/PPSA10264/versions/6e47243f25c1",
       "report_file": "Jusant_-_[PPSA10264].json"
     },
+    "PPSA16786": {
+      "name": "Neva - [PPSA16786]",
+      "eboot_sha256": "824460e6eb249fa0e817ac4cff94bbbfe225c8d30faa264139f455356e5245c5",
+      "game_fingerprint": "4e16b500566ad2f5ed86c543b0284bf7800bdcec778bb8a5f87dd23cb06a2680",
+      "ingest_id": "ingest_20260912085621_4e16b500566a",
+      "status": "complete",
+      "ingested_at": "2026-09-12T08:56:21Z",
+      "source_deleted": false,
+      "record_path": "games/PPSA16786/versions/4e16b500566a",
+      "report_file": "Neva_-_[PPSA16786].json"
+    },
     "PPSA22520": {
       "name": "ANIMAL WELL - [PPSA22520]",
       "eboot_sha256": "f47f00463f9b3b3e5e0b5e8ccd0318fc944e2eb649009fa4530a351aa5beb0d4",
@@ -308,6 +264,61 @@
       "source_deleted": false,
       "record_path": "games/PPSA22520/versions/c47fceacf74a",
       "report_file": "ANIMAL_WELL_-_[PPSA22520].json"
+    },
+    "PPSA19268": {
+      "name": "Juicy Realm - [PPSA19268]",
+      "eboot_sha256": "c1e8a335b8ad33b8645f5fa3a1b74469b7e3e0ed2e70770780a036dec2174790",
+      "game_fingerprint": "db6ffb8ae181f6e6bbe95dab0fb04fb9c2c09dc7181671ba08efe16189d52e4a",
+      "ingest_id": "ingest_20260912085620_db6ffb8ae181",
+      "status": "complete",
+      "ingested_at": "2026-09-12T08:56:20Z",
+      "source_deleted": false,
+      "record_path": "games/PPSA19268/versions/db6ffb8ae181",
+      "report_file": "Juicy_Realm_-_[PPSA19268].json"
+    },
+    "PPSA02739": {
+      "name": "Judgment - [PPSA02739]",
+      "eboot_sha256": "444cbf9932b55a710c36c591b850a6d6bf24c109c76251c36f10ea3c982938a1",
+      "game_fingerprint": "ab3a073534ff2cfc1dabded3a1355cd94010d8565bc4b5d9816f71085d3c5f50",
+      "ingest_id": "ingest_20260912085620_ab3a073534ff",
+      "status": "complete",
+      "ingested_at": "2026-09-12T08:56:20Z",
+      "source_deleted": false,
+      "record_path": "games/PPSA02739/versions/ab3a073534ff",
+      "report_file": "Judgment_-_[PPSA02739].json"
+    },
+    "PPSA09804": {
+      "name": "GRIS - [PPSA09804]",
+      "eboot_sha256": "effbbbe080c102794779b180caba6562b14093379ee866a6989dcd494e91527d",
+      "game_fingerprint": "3d9eb91691008ce7f3aed0c806321b953dcda308ac0fcc9ccad8311f330acb68",
+      "ingest_id": "ingest_20260912085619_3d9eb9169100",
+      "status": "complete",
+      "ingested_at": "2026-09-12T08:56:19Z",
+      "source_deleted": false,
+      "record_path": "games/PPSA09804/versions/3d9eb9169100",
+      "report_file": "GRIS_-_[PPSA09804].json"
+    },
+    "PPSA01825": {
+      "name": "The Pathless - [PPSA01825]",
+      "eboot_sha256": "37a3c6dbff248781267ba018cc5ca99713464d7a3b78de34103dac7ac8aa33ff",
+      "game_fingerprint": "4a1eeaf2e8fa0937b9a8af49b85b4681c6158ae856857e81470cc5bb4ce89f8a",
+      "ingest_id": "ingest_20260912085622_4a1eeaf2e8fa",
+      "status": "complete",
+      "ingested_at": "2026-09-12T08:56:22Z",
+      "source_deleted": false,
+      "record_path": "games/PPSA01825/versions/4a1eeaf2e8fa",
+      "report_file": "The_Pathless_-_[PPSA01825].json"
+    },
+    "PPSA22102": {
+      "name": "Squirrel with a Gun - [PPSA22102]",
+      "eboot_sha256": "7ad68d87f114cab2bedbe1ff6c878be58b10ce1a87755d6ebd9fbd0f9bac3af8",
+      "game_fingerprint": "7a852910c3e85b6fb0544a7317021528fa095fcb03f418343225980b8b43514a",
+      "ingest_id": "ingest_20260912085622_7a852910c3e8",
+      "status": "complete",
+      "ingested_at": "2026-09-12T08:56:22Z",
+      "source_deleted": false,
+      "record_path": "games/PPSA22102/versions/7a852910c3e8",
+      "report_file": "Squirrel_with_a_Gun_-_[PPSA22102].json"
     }
   }
 }

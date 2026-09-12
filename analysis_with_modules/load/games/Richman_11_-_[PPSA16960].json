@@ -1,6 +1,6 @@
 {
-  "game": "Metal Slug Tactics - [PPSA20643]",
-  "path": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5\\Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5\\eboot.bin",
+  "game": "Richman 11 - [PPSA16960]",
+  "path": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Richman 11 PS5 _PPSA16960_\\eboot.bin",
   "load_report": {
     "modules": [
       {
@@ -8,13 +8,13 @@
         "module_type": "Prx",
         "load_bias": 34628173824,
         "entry_point": null,
-        "exports_count": 2920,
+        "exports_count": 2584,
         "imports_resolved": 0,
         "imports_known": 0,
-        "imports_stubbed": 118,
-        "relative": 2905,
+        "imports_stubbed": 105,
+        "relative": 1722,
         "glob_dat": 3,
-        "jump_slot": 115,
+        "jump_slot": 102,
         "abs64": 0,
         "copy": 0,
         "tls_relocations": 3,
@@ -25,10 +25,10 @@
         "init_va": 16,
         "init_array_va": 0,
         "init_array_sz": 0,
-        "fini_va": 1137520,
+        "fini_va": 827296,
         "fini_array_va": 0,
         "fini_array_sz": 0,
-        "preinit_array_va": 1648648,
+        "preinit_array_va": 1129648,
         "preinit_array_sz": 8,
         "per_library": [
           {
@@ -47,23 +47,23 @@
             "library": "libkernel",
             "resolved": 0,
             "known": 0,
-            "stubbed": 114
+            "stubbed": 101
           }
         ]
       },
       {
-        "name": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
+        "name": "Richman 11 PS5 _PPSA16960_",
         "module_type": "Eboot",
-        "load_bias": 34630139904,
+        "load_bias": 34629550080,
         "entry_point": 112,
         "exports_count": 1,
-        "imports_resolved": 1345,
+        "imports_resolved": 1284,
         "imports_known": 0,
-        "imports_stubbed": 460,
-        "relative": 49646,
+        "imports_stubbed": 467,
+        "relative": 47791,
         "glob_dat": 4,
-        "jump_slot": 600,
-        "abs64": 1201,
+        "jump_slot": 597,
+        "abs64": 1150,
         "copy": 0,
         "tls_relocations": 0,
         "ifunc": 0,
@@ -73,14 +73,14 @@
         "init_va": 16,
         "init_array_va": 0,
         "init_array_sz": 0,
-        "fini_va": 26946608,
+        "fini_va": 25673376,
         "fini_array_va": 0,
         "fini_array_sz": 0,
         "preinit_array_va": 0,
         "preinit_array_sz": 0,
         "per_library": [
           {
-            "library": "Il2cppUserAssemblies",
+            "library": "Il2CppUserAssemblies",
             "resolved": 0,
             "known": 0,
             "stubbed": 5
@@ -95,7 +95,7 @@
             "library": "libSceAgc",
             "resolved": 0,
             "known": 0,
-            "stubbed": 68
+            "stubbed": 67
           },
           {
             "library": "libSceAgcDriver",
@@ -143,7 +143,7 @@
             "library": "libSceAvPlayer",
             "resolved": 0,
             "known": 0,
-            "stubbed": 20
+            "stubbed": 23
           },
           {
             "library": "libSceCommonDialog",
@@ -221,7 +221,7 @@
             "library": "libScePosix",
             "resolved": 0,
             "known": 0,
-            "stubbed": 37
+            "stubbed": 42
           },
           {
             "library": "libSceRandom",
@@ -245,7 +245,7 @@
             "library": "libSceSsl",
             "resolved": 0,
             "known": 0,
-            "stubbed": 12
+            "stubbed": 11
           },
           {
             "library": "libSceSysmodule",
@@ -279,7 +279,7 @@
           },
           {
             "library": "libc",
-            "resolved": 1345,
+            "resolved": 1284,
             "known": 0,
             "stubbed": 0
           },
@@ -287,91 +287,271 @@
             "library": "libkernel",
             "resolved": 0,
             "known": 0,
-            "stubbed": 94
+            "stubbed": 95
           }
         ]
       }
     ],
     "graph": {
       "nodes": [
-        "libSceAudioIn.prx",
-        "libSceAppContent.prx",
-        "libSceIme.prx",
-        "libSceNpManager.prx",
-        "libSceNet.prx",
-        "Il2cppUserAssemblies.prx",
-        "libSceNpWebApi2.prx",
-        "libSceWebBrowserDialog.prx",
-        "libSceSysmodule.prx",
-        "libSceSaveData.native.prx",
-        "libSceAvPlayer.native.prx",
-        "libSceVideoOut.prx",
-        "libSceRazorCpu.prx",
         "libSceLibcInternal.prx",
-        "libSceCommonDialog.prx",
-        "libSceRtc.prx",
-        "libSceMsgDialog.native.prx",
-        "libSceAudioOut.prx",
-        "libSceNetCtl.prx",
-        "libSceAgc.prx",
-        "libSceAudio3d.prx",
-        "libSceAjm.native.prx",
-        "PS5Util.prx",
-        "libSceHttp2.prx",
-        "libSceSystemService.prx",
-        "libc.prx",
         "libSceAmpr.prx",
-        "libScePad.prx",
-        "libkernel.prx",
-        "libSceRemoteplay.prx",
+        "libSceAppContent.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceAudioIn.prx",
+        "libSceNet.prx",
         "libSceUserService.prx",
-        "libSceMouse.prx",
+        "libSceSaveData.native.prx",
         "libSceRandom.prx",
+        "libSceNpWebApi2.prx",
+        "Il2CppUserAssemblies.prx",
+        "libSceSystemService.prx",
+        "libSceAudio3d.prx",
+        "libSceVideoOut.prx",
         "libSceAgcDriver.prx",
-        "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
+        "libSceSysmodule.prx",
+        "Richman 11 PS5 _PPSA16960_",
+        "libSceIme.prx",
+        "libSceNetCtl.prx",
         "libSceHttp.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceMouse.prx",
+        "libSceAudioOut.prx",
+        "libSceSsl.prx",
         "libSceImeDialog.prx",
-        "libSceSsl.prx"
+        "libSceWebBrowserDialog.prx",
+        "libSceAgc.prx",
+        "libScePad.prx",
+        "libSceCommonDialog.prx",
+        "PS5Util.prx",
+        "libSceNpManager.prx",
+        "libSceAjm.native.prx",
+        "libc.prx",
+        "libkernel.prx",
+        "libSceRazorCpu.prx",
+        "libSceRtc.prx",
+        "libSceHttp2.prx",
+        "libSceRemoteplay.prx"
       ],
       "unavailable": [
-        "libSceHttp.prx",
-        "libSceAgcDriver.prx",
-        "Il2cppUserAssemblies.prx",
-        "libSceRazorCpu.prx",
-        "libSceRandom.prx",
-        "libkernel.prx",
-        "libSceAvPlayer.native.prx",
-        "libSceAgc.prx",
-        "libSceAudio3d.prx",
-        "libSceSystemService.prx",
-        "libSceUserService.prx",
-        "libSceIme.prx",
-        "libSceWebBrowserDialog.prx",
-        "libSceSsl.prx",
-        "libSceNpWebApi2.prx",
-        "libSceMsgDialog.native.prx",
-        "libSceSaveData.native.prx",
-        "libSceAudioIn.prx",
-        "libSceImeDialog.prx",
-        "libSceCommonDialog.prx",
         "libSceNet.prx",
-        "libSceAmpr.prx",
-        "libSceRemoteplay.prx",
+        "libSceUserService.prx",
         "libSceVideoOut.prx",
-        "libSceLibcInternal.prx",
-        "libSceNetCtl.prx",
-        "libSceAjm.native.prx",
-        "libSceNpManager.prx",
-        "libScePad.prx",
-        "PS5Util.prx",
-        "libSceRtc.prx",
-        "libSceHttp2.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceAudioOut.prx",
         "libSceAppContent.prx",
-        "libSceMouse.prx",
+        "libkernel.prx",
+        "libSceRemoteplay.prx",
+        "libSceHttp.prx",
+        "libSceImeDialog.prx",
         "libSceSysmodule.prx",
-        "libSceAudioOut.prx"
+        "libSceNpManager.prx",
+        "libSceIme.prx",
+        "libSceLibcInternal.prx",
+        "libSceCommonDialog.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceRandom.prx",
+        "libSceRtc.prx",
+        "libScePad.prx",
+        "libSceAudioIn.prx",
+        "libSceSsl.prx",
+        "libSceAgc.prx",
+        "libSceHttp2.prx",
+        "libSceAjm.native.prx",
+        "libSceAmpr.prx",
+        "libSceAudio3d.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceMouse.prx",
+        "libSceAgcDriver.prx",
+        "libSceNetCtl.prx",
+        "libSceSystemService.prx",
+        "libSceRazorCpu.prx",
+        "libSceNpWebApi2.prx",
+        "libSceSaveData.native.prx",
+        "Il2CppUserAssemblies.prx",
+        "PS5Util.prx"
       ],
       "edges": [
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "Il2CppUserAssemblies.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "PS5Util.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceNetCtl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceNet.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceUserService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceVideoOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceAudioOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceAudioIn.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libScePad.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceIme.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceImeDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceRtc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceSystemService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceHttp.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceHttp2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceSsl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceSaveData.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceCommonDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceMsgDialog.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceAvPlayer.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceAppContent.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceWebBrowserDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceAudio3d.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceRemoteplay.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceNpManager.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceMouse.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceAgcDriver.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceAgc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceAjm.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceRazorCpu.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceNpWebApi2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceRandom.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libc.prx",
+          "status": "loaded"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceAmpr.prx",
+          "status": "missing"
+        },
         {
           "from": "libc.prx",
           "to": "libkernel.prx",
@@ -386,205 +566,25 @@
           "from": "libc.prx",
           "to": "libSceSysmodule.prx",
           "status": "missing"
-        },
-        {
-          "from": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
-          "to": "Il2cppUserAssemblies.prx",
-          "status": "missing"
-        },
-        {
-          "from": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
-          "to": "PS5Util.prx",
-          "status": "missing"
-        },
-        {
-          "from": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
-          "to": "libSceNetCtl.prx",
-          "status": "missing"
-        },
-        {
-          "from": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
-          "to": "libSceSysmodule.prx",
-          "status": "missing"
-        },
-        {
-          "from": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
-          "to": "libSceNet.prx",
-          "status": "missing"
-        },
-        {
-          "from": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
-          "to": "libSceUserService.prx",
-          "status": "missing"
-        },
-        {
-          "from": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
-          "to": "libSceVideoOut.prx",
-          "status": "missing"
-        },
-        {
-          "from": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
-          "to": "libSceAudioOut.prx",
-          "status": "missing"
-        },
-        {
-          "from": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
-          "to": "libSceAudioIn.prx",
-          "status": "missing"
-        },
-        {
-          "from": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
-          "to": "libScePad.prx",
-          "status": "missing"
-        },
-        {
-          "from": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
-          "to": "libSceIme.prx",
-          "status": "missing"
-        },
-        {
-          "from": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
-          "to": "libSceImeDialog.prx",
-          "status": "missing"
-        },
-        {
-          "from": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
-          "to": "libkernel.prx",
-          "status": "missing"
-        },
-        {
-          "from": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
-          "to": "libSceRtc.prx",
-          "status": "missing"
-        },
-        {
-          "from": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
-          "to": "libSceSystemService.prx",
-          "status": "missing"
-        },
-        {
-          "from": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
-          "to": "libSceHttp.prx",
-          "status": "missing"
-        },
-        {
-          "from": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
-          "to": "libSceHttp2.prx",
-          "status": "missing"
-        },
-        {
-          "from": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
-          "to": "libSceSsl.prx",
-          "status": "missing"
-        },
-        {
-          "from": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
-          "to": "libSceSaveData.native.prx",
-          "status": "missing"
-        },
-        {
-          "from": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
-          "to": "libSceCommonDialog.prx",
-          "status": "missing"
-        },
-        {
-          "from": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
-          "to": "libSceMsgDialog.native.prx",
-          "status": "missing"
-        },
-        {
-          "from": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
-          "to": "libSceAvPlayer.native.prx",
-          "status": "missing"
-        },
-        {
-          "from": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
-          "to": "libSceAppContent.prx",
-          "status": "missing"
-        },
-        {
-          "from": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
-          "to": "libSceWebBrowserDialog.prx",
-          "status": "missing"
-        },
-        {
-          "from": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
-          "to": "libSceAudio3d.prx",
-          "status": "missing"
-        },
-        {
-          "from": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
-          "to": "libSceRemoteplay.prx",
-          "status": "missing"
-        },
-        {
-          "from": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
-          "to": "libSceNpManager.prx",
-          "status": "missing"
-        },
-        {
-          "from": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
-          "to": "libSceMouse.prx",
-          "status": "missing"
-        },
-        {
-          "from": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
-          "to": "libSceAgcDriver.prx",
-          "status": "missing"
-        },
-        {
-          "from": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
-          "to": "libSceAgc.prx",
-          "status": "missing"
-        },
-        {
-          "from": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
-          "to": "libSceAjm.native.prx",
-          "status": "missing"
-        },
-        {
-          "from": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
-          "to": "libSceRazorCpu.prx",
-          "status": "missing"
-        },
-        {
-          "from": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
-          "to": "libSceNpWebApi2.prx",
-          "status": "missing"
-        },
-        {
-          "from": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
-          "to": "libSceRandom.prx",
-          "status": "missing"
-        },
-        {
-          "from": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
-          "to": "libc.prx",
-          "status": "loaded"
-        },
-        {
-          "from": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
-          "to": "libSceAmpr.prx",
-          "status": "missing"
         }
       ]
     },
     "totals": {
       "modules": 2,
-      "resolved": 1345,
+      "resolved": 1284,
       "known": 0,
-      "stubbed": 578,
-      "exports": 2921,
+      "stubbed": 572,
+      "exports": 2585,
       "unavailable": 36
     }
   },
   "error": null,
-  "total_exports": 2921,
+  "total_exports": 2585,
   "freshness": {
     "report_format": 1,
     "loader_fingerprint": "d245a80770d2897643c4754f10883b674208fc8fdecaad2ebd247d1990f6f5a0",
     "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
     "environment_fingerprint": "c65955db3dee9d575ca652856c86c3fc2b7297fff36bb37fcb1b9319f1ff09a9",
-    "game_fingerprint": "46af5c98fb7e74dcf3c911562b6a187a9253f2fd80acdb004f563a5ef23d84b1"
+    "game_fingerprint": "cd3e48aa3ce6fbdf57cf3048653c7545c7cc3afef0dfd3440dab83c13d4e3112"
   }
 }

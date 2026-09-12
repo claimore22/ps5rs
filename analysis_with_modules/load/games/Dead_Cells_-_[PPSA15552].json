@@ -222,56 +222,71 @@
     ],
     "graph": {
       "nodes": [
-        "libSceSaveData.native.prx",
+        "libSceCommonDialog.prx",
+        "libSceNpTrophy2.prx",
+        "libSceNgs2.prx",
         "libSceAppContent.prx",
         "libSceUserService.prx",
-        "libSceVideoOut.prx",
-        "libSceNpGameIntent.prx",
-        "libSceAgcDriver.prx",
-        "libSceAgc.prx",
-        "libkernel.prx",
-        "libSceSaveDataDialog.native.prx",
-        "libSceNpTrophy2.prx",
-        "libSceLibcInternal.prx",
-        "libSceNpCommerce.prx",
-        "libSceNpUniversalDataSystem.prx",
-        "libSceSystemService.prx",
-        "libSceNpEntitlementAccess.prx",
+        "libc.prx",
         "libSceAudioOut.prx",
-        "libSceJpegDec.prx",
-        "Dead.Cells-PPSA15552-USA-Game-v01.005-PS5",
-        "libSceCommonDialog.prx",
-        "libSceSysmodule.prx",
-        "libSceNgs2.prx",
-        "libScePad.prx",
+        "libSceLibcInternal.prx",
         "libSceNet.prx",
-        "libc.prx"
+        "libSceAgcDriver.prx",
+        "libkernel.prx",
+        "libSceSystemService.prx",
+        "Dead.Cells-PPSA15552-USA-Game-v01.005-PS5",
+        "libSceNpCommerce.prx",
+        "libSceNpEntitlementAccess.prx",
+        "libScePad.prx",
+        "libSceAgc.prx",
+        "libSceJpegDec.prx",
+        "libSceVideoOut.prx",
+        "libSceSysmodule.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceSaveData.native.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceNpGameIntent.prx"
       ],
       "unavailable": [
-        "libSceAgcDriver.prx",
-        "libkernel.prx",
-        "libSceJpegDec.prx",
-        "libSceCommonDialog.prx",
-        "libSceNpEntitlementAccess.prx",
-        "libSceNpCommerce.prx",
-        "libSceLibcInternal.prx",
-        "libSceSaveDataDialog.native.prx",
-        "libSceVideoOut.prx",
-        "libScePad.prx",
-        "libSceNet.prx",
         "libSceSysmodule.prx",
+        "libSceJpegDec.prx",
+        "libSceAgc.prx",
+        "libSceNgs2.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceNet.prx",
         "libSceSystemService.prx",
         "libSceAudioOut.prx",
         "libSceNpGameIntent.prx",
-        "libSceUserService.prx",
-        "libSceAppContent.prx",
-        "libSceNpUniversalDataSystem.prx",
-        "libSceNpTrophy2.prx",
+        "libSceCommonDialog.prx",
         "libSceSaveData.native.prx",
-        "libSceNgs2.prx",
-        "libSceAgc.prx"
+        "libSceLibcInternal.prx",
+        "libSceAgcDriver.prx",
+        "libSceAppContent.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceUserService.prx",
+        "libSceNpCommerce.prx",
+        "libkernel.prx",
+        "libScePad.prx",
+        "libSceNpTrophy2.prx",
+        "libSceVideoOut.prx",
+        "libSceNpEntitlementAccess.prx"
       ],
       "edges": [
+        {
+          "from": "libc.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
         {
           "from": "Dead.Cells-PPSA15552-USA-Game-v01.005-PS5",
           "to": "libSceNpEntitlementAccess.prx",
@@ -381,21 +396,6 @@
           "from": "Dead.Cells-PPSA15552-USA-Game-v01.005-PS5",
           "to": "libc.prx",
           "status": "loaded"
-        },
-        {
-          "from": "libc.prx",
-          "to": "libkernel.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libc.prx",
-          "to": "libSceLibcInternal.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libc.prx",
-          "to": "libSceSysmodule.prx",
-          "status": "missing"
         }
       ]
     },
@@ -408,5 +408,13 @@
       "unavailable": 22
     }
   },
-  "error": null
+  "error": null,
+  "total_exports": 2574,
+  "freshness": {
+    "report_format": 1,
+    "loader_fingerprint": "d245a80770d2897643c4754f10883b674208fc8fdecaad2ebd247d1990f6f5a0",
+    "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
+    "environment_fingerprint": "c65955db3dee9d575ca652856c86c3fc2b7297fff36bb37fcb1b9319f1ff09a9",
+    "game_fingerprint": "0538afe4e4de94bb41c5601d732c6eb2a88a5394cfb8b94b3e47d03aa1f2607b"
+  }
 }
