@@ -70,7 +70,7 @@ def password_of(entry, default="SuperPSX"):
     return default
 
 
-def pick_url(entry):
+def pick_url(entry, prefer=""):
     seen = {}
     for _row, links in game_rows(entry):
         for link in links:
@@ -81,6 +81,8 @@ def pick_url(entry):
     if not seen:
         return None, None, {}
     order = PREFERRED + sorted(set(seen) - set(PREFERRED))
+    if prefer and prefer in seen:
+        order = [prefer] + [h for h in order if h != prefer]
     chosen = next(h for h in order if h in seen)
     return chosen, seen[chosen], {h: u for h, u in seen.items() if h != chosen}
 
@@ -92,6 +94,8 @@ def main():
     ap.add_argument("--out", required=True)
     ap.add_argument("--only", default="")
     ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--prefer-host", default="",
+                    help="host to prefer as primary URL (e.g. onefile)")
     ap.add_argument("--folderwatch", default="",
                     help="copy each .crawljob here for JD2 pickup "
                          "(e.g. <install>\\folderwatch); empty = no copy")
@@ -122,7 +126,7 @@ def main():
             if ppsa in have:
                 skipped_have += 1
                 continue
-            host, url, alternates = pick_url(entry)
+            host, url, alternates = pick_url(entry, args.prefer_host.strip().lower())
             if not url:
                 skipped_nolink += 1
                 print(f"skip (no game-row links): {entry.get('name')}", file=sys.stderr)
