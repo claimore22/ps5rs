@@ -186,7 +186,7 @@ pub fn archive_game(
     match registry_status(&registry, &title_id, &game_fp) {
         IngestStatus::SameIngest => {
             let entry = registry.games.get(&title_id).cloned().unwrap();
-            eprintln!("ALREADY INGESTED {title_id} ({})", entry.ingest_id);
+            println!("ALREADY INGESTED {title_id} ({})", entry.ingest_id);
             return Ok(entry);
         }
         IngestStatus::NewVersion => {
@@ -261,7 +261,7 @@ pub fn archive_game(
     };
     registry.games.insert(title_id.clone(), entry.clone());
     save_registry(dataset, &registry)?;
-    eprintln!("ARCHIVED {title_id} -> {}", entry.record_path);
+    println!("ARCHIVED {title_id} -> {}", entry.record_path);
     Ok(entry)
 }
 
@@ -334,7 +334,7 @@ pub fn cmd_archive(
     };
     match archive_game(game_dir, dataset, offline_dir) {
         Ok(entry) => {
-            eprintln!("ingest_id: {}", entry.ingest_id);
+            println!("ingest_id: {}", entry.ingest_id);
         }
         Err(e) => {
             eprintln!("error: archive failed: {e}");
