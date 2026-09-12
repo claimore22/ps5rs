@@ -53,6 +53,13 @@
 
 analysis_with_modules/images/*.json
 
-# Ingest farm runtime state (per-run logs, feeder output)
-/tools/ingest/queue.log
-/tools/ingest/out/
+# Ingest farm: local tooling, per-run logs, feeder output (never commit)
+/tools/ingest/
+
+# JDownloader download dir (renamed from ROM)
+/rhum/
+
+# Stray local blobs (never commit)
+/backup.7z
+/analysis_with_modules.7z
+/analysis/*.zip
