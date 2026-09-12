@@ -51,7 +51,8 @@ fn main() {
             output,
             nids,
             include_modules,
-        } => analyze::cmd_scan(&path, &output, &nids, include_modules),
+            append,
+        } => analyze::cmd_scan(&path, &output, &nids, include_modules, append),
         Commands::Analyze {
             nids,
             include_modules,

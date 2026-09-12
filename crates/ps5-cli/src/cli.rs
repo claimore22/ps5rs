@@ -46,6 +46,9 @@ pub enum Commands {
         nids: Vec<PathBuf>,
         #[arg(long)]
         include_modules: bool,
+        /// Only scan games missing from the output dataset; keep existing images
+        #[arg(long)]
+        append: bool,
     },
     Analyze {
         #[arg(long = "nids", value_hint = ValueHint::FilePath)]

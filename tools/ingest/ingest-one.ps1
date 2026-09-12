@@ -114,7 +114,7 @@ function Run-Ps5rs([string[]]$PsArgs, [string]$step) {
     & $PS5RS @PsArgs
     if ($LASTEXITCODE -ne 0) { Abort "ps5rs $step failed (exit $LASTEXITCODE). Corpus keeps $gameName; archive kept." }
 }
-Run-Ps5rs @("scan", $Corpus, "-o", $DS, "--include-modules") "scan"
+Run-Ps5rs @("scan", $Corpus, "-o", $DS, "--include-modules", "--append") "scan --append"
 Run-Ps5rs @("batch-load", $Corpus, "-o", (Join-Path $DS "load"), "--offline-dir", (Join-Path $Repo "system_modules")) "batch-load"
 Run-Ps5rs @("unknown-nids", $Corpus, "-o", (Join-Path $DS "unknown-nids.json"), "--json") "unknown-nids"
 Run-Ps5rs @("middleware", $Corpus, "-o", (Join-Path $DS "middleware.json"), "--format", "json") "middleware"

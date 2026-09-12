@@ -8,6 +8,7 @@ use std::path::{Path, PathBuf};
 #[derive(Default)]
 pub struct ScanOptions {
     pub include_prx: bool,
+    pub append: bool,
 }
 
 pub struct ScanResult {
@@ -23,22 +24,45 @@ pub fn scan(
 ) -> Result<ScanResult, std::io::Error> {
     std::fs::create_dir_all(output)?;
     let images_dir = output.join("images");
-    if images_dir.exists() {
-        for entry in std::fs::read_dir(&images_dir)
-            .into_iter()
-            .flatten()
-            .flatten()
-        {
-            if entry.path().extension().is_some_and(|e| e == "json") {
-                let _ = std::fs::remove_file(entry.path());
+    if options.append {
+        std::fs::create_dir_all(&images_dir)?;
+    } else {
+        if images_dir.exists() {
+            for entry in std::fs::read_dir(&images_dir)
+                .into_iter()
+                .flatten()
+                .flatten()
+            {
+                if entry.path().extension().is_some_and(|e| e == "json") {
+                    let _ = std::fs::remove_file(entry.path());
+                }
             }
         }
+        std::fs::create_dir_all(&images_dir)?;
     }
-    std::fs::create_dir_all(&images_dir)?;
 
     let mut image_paths = Vec::new();
     let mut seen_names: std::collections::HashSet<String> = std::collections::HashSet::new();
     let mut game_params: Vec<GameParam> = Vec::new();
+    let mut created_at: Option<String> = None;
+    if options.append {
+        if let Ok(entries) = std::fs::read_dir(&images_dir) {
+            for entry in entries.flatten() {
+                let path = entry.path();
+                if path.extension().is_some_and(|e| e == "json")
+                    && let Some(stem) = path.file_stem().and_then(|s| s.to_str())
+                {
+                    seen_names.insert(stem.to_string());
+                }
+            }
+        }
+        if let Ok(data) = std::fs::read_to_string(output.join("manifest.json"))
+            && let Ok(manifest) = serde_json::from_str::<Manifest>(&data)
+        {
+            created_at = Some(manifest.created_at);
+            game_params = manifest.games;
+        }
+    }
 
     let game_dirs = find_game_dirs(root);
     for game_dir in &game_dirs {
@@ -75,11 +99,19 @@ pub fn scan(
         std::fs::write(output.join("shaders.json"), format!("{shaders_json}\n"))?;
     }
 
+    let total_images = std::fs::read_dir(&images_dir)
+        .map(|entries| {
+            entries
+                .flatten()
+                .filter(|e| e.path().extension().is_some_and(|x| x == "json"))
+                .count()
+        })
+        .unwrap_or(image_paths.len());
     let manifest = Manifest {
         schema_version: DATASET_SCHEMA_VERSION,
         tool: "ps5rs".to_string(),
-        created_at: utc_now_iso8601(),
-        image_count: image_paths.len(),
+        created_at: created_at.unwrap_or_else(utc_now_iso8601),
+        image_count: total_images,
         module_count: 0,
         games: game_params,
     };
@@ -303,6 +335,55 @@ mod tests {
 
         let dirs = find_game_dirs(&tmp);
         assert!(dirs.is_empty());
+
+        let _ = std::fs::remove_dir_all(&tmp);
+    }
+
+    #[test]
+    fn scan_append_adds_only_new_games() {
+        use ps5_nid::Catalog;
+        let tmp =
+            std::env::temp_dir().join(format!("ps5rs_scan_test_append_{}", std::process::id()));
+        let _ = std::fs::remove_dir_all(&tmp);
+        let corpus = tmp.join("corpus");
+        let out = tmp.join("out");
+        std::fs::create_dir_all(corpus.join("GameA")).unwrap();
+        std::fs::create_dir_all(corpus.join("GameB")).unwrap();
+        std::fs::write(
+            corpus.join("GameA").join("eboot.bin"),
+            [0x7f, b'E', b'L', b'F'],
+        )
+        .unwrap();
+        std::fs::write(
+            corpus.join("GameB").join("eboot.bin"),
+            [0x7f, b'E', b'L', b'F'],
+        )
+        .unwrap();
+        let catalog = Catalog::new();
+
+        let first = scan(&corpus, &out, &catalog, &ScanOptions::default()).unwrap();
+        assert_eq!(first.manifest.image_count, 2);
+        let created = first.manifest.created_at.clone();
+
+        std::fs::create_dir_all(corpus.join("GameC")).unwrap();
+        std::fs::write(
+            corpus.join("GameC").join("eboot.bin"),
+            [0x7f, b'E', b'L', b'F'],
+        )
+        .unwrap();
+        let append_opts = ScanOptions {
+            append: true,
+            ..Default::default()
+        };
+        let second = scan(&corpus, &out, &catalog, &append_opts).unwrap();
+        assert_eq!(second.manifest.image_count, 3);
+        assert_eq!(second.manifest.created_at, created);
+        assert_eq!(second.manifest.games.len(), 3);
+        assert!(out.join("images").join("GameA.json").exists());
+
+        let third = scan(&corpus, &out, &catalog, &append_opts).unwrap();
+        assert_eq!(third.manifest.image_count, 3);
+        assert_eq!(third.manifest.games.len(), 3);
 
         let _ = std::fs::remove_dir_all(&tmp);
     }
