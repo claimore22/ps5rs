@@ -9,9 +9,9 @@ Usage:
     python feeder.py --json <crawler.json> --manifest <analysis_with_modules/manifest.json>
                      --out <crawljob-dir> [--only PPSA22520] [--limit 50]
 
-A .crawljob file dropped into JDownloader's folder-watch (or double-clicked)
-queues the package. Verify field names once in your JD version; the core set
-(packageName/text/downloadPassword/enabled) is stable across v2 builds.
+A .crawljob file (JSON array of flat job objects, per the official JD
+folder-watch docs) dropped into JDownloader's folderwatch directory queues
+the package. JD2 watches <install-dir>\folderwatch by default.
 """
 import argparse
 import json
@@ -121,15 +121,18 @@ def main():
                 continue
             pw = password_of(entry)
             pkg = f"{entry.get('name', 'game')} [{ppsa}]" if ppsa else entry.get("name", "game")
-            job = {"crawlJob": {
+            job = [{
                 "packageName": pkg,
                 "text": url,
                 "downloadPassword": pw,
-                "downloadFolder": "",
+                "extractPasswords": [pw],
                 "comment": f"crawler {ppsa}; alternates: " +
                            ", ".join(f"{h}={u}" for h, u in alternates.items()),
-                "enabled": True,
-            }}
+                "enabled": "TRUE",
+                "autoStart": "TRUE",
+                "autoConfirm": "TRUE",
+                "extractAfterDownload": "FALSE",
+            }]
             safe = re.sub(r"[^\w\-\. ]", "_", pkg).strip()[:120]
             (out / "jobs" / f"{safe}.crawljob").write_text(
                 json.dumps(job, indent=2), encoding="utf-8")
