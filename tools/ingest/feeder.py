@@ -92,6 +92,9 @@ def main():
     ap.add_argument("--out", required=True)
     ap.add_argument("--only", default="")
     ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--folderwatch", default="",
+                    help="copy each .crawljob here for JD2 pickup "
+                         "(e.g. <install>\\folderwatch); empty = no copy")
     args = ap.parse_args()
 
     games = json.load(open(args.json, encoding="utf-8"))
@@ -104,6 +107,11 @@ def main():
 
     out = Path(args.out)
     (out / "jobs").mkdir(parents=True, exist_ok=True)
+    watch = Path(args.folderwatch) if args.folderwatch else None
+    if watch is not None:
+        if not watch.is_dir():
+            sys.exit(f"error: folderwatch dir missing: {watch}")
+        print(f"autocopy -> {watch}", file=sys.stderr)
     queued, skipped_have, skipped_nolink = 0, 0, 0
     with open(out / "queue.tsv", "w", encoding="utf-8") as tsv:
         tsv.write("ppsa\tname\tchosen_host\tchosen_url\talternates\tpassword\n")
@@ -134,8 +142,11 @@ def main():
                 "extractAfterDownload": "FALSE",
             }]
             safe = re.sub(r"[^\w\-\. ]", "_", pkg).strip()[:120]
-            (out / "jobs" / f"{safe}.crawljob").write_text(
-                json.dumps(job, indent=2), encoding="utf-8")
+            text = json.dumps(job, indent=2)
+            job_file = out / "jobs" / f"{safe}.crawljob"
+            job_file.write_text(text, encoding="utf-8")
+            if watch is not None:
+                (watch / job_file.name).write_text(text, encoding="utf-8")
             alt = ";".join(f"{h}={u}" for h, u in alternates.items())
             tsv.write(f"{ppsa}\t{entry.get('name')}\t{host}\t{url}\t{alt}\t{pw}\n")
             queued += 1
