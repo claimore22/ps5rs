@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "title_id": "PPSA02739",
+  "name": "Judgment - [PPSA02739]",
+  "eboot_sha256": "444cbf9932b55a710c36c591b850a6d6bf24c109c76251c36f10ea3c982938a1",
+  "game_fingerprint": "ab3a073534ff2cfc1dabded3a1355cd94010d8565bc4b5d9816f71085d3c5f50",
+  "environment_fingerprint": "c65955db3dee9d575ca652856c86c3fc2b7297fff36bb37fcb1b9319f1ff09a9",
+  "loader_fingerprint": "d245a80770d2897643c4754f10883b674208fc8fdecaad2ebd247d1990f6f5a0",
+  "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
+  "ingest_id": "ingest_20260912085620_ab3a073534ff",
+  "ingested_at": "2026-09-12T08:56:20Z",
+  "params": {
+    "name": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+    "title_id": "PPSA02739",
+    "content_version": "01.001.000",
+    "master_version": "01.00",
+    "sdk_version": "0x0200000000000000",
+    "title_name": "Judgment",
+    "display_name": "Judgment - [PPSA02739]",
+    "drm_type": "standard",
+    "content_id": "UP0177-PPSA02739_00-JUDGMENTRYUGAENG",
+    "creation_date": "2021-03-19 13:39:10"
+  },
+  "load_report_file": "load_report.json"
+}

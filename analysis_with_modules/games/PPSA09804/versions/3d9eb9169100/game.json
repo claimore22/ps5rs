@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "title_id": "PPSA09804",
+  "name": "GRIS - [PPSA09804]",
+  "eboot_sha256": "effbbbe080c102794779b180caba6562b14093379ee866a6989dcd494e91527d",
+  "game_fingerprint": "3d9eb91691008ce7f3aed0c806321b953dcda308ac0fcc9ccad8311f330acb68",
+  "environment_fingerprint": "c65955db3dee9d575ca652856c86c3fc2b7297fff36bb37fcb1b9319f1ff09a9",
+  "loader_fingerprint": "d245a80770d2897643c4754f10883b674208fc8fdecaad2ebd247d1990f6f5a0",
+  "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
+  "ingest_id": "ingest_20260912085619_3d9eb9169100",
+  "ingested_at": "2026-09-12T08:56:19Z",
+  "params": {
+    "name": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+    "title_id": "PPSA09804",
+    "content_version": "01.001.000",
+    "master_version": "01.00",
+    "sdk_version": "0x0500000000000000",
+    "title_name": "GRIS",
+    "display_name": "GRIS - [PPSA09804]",
+    "drm_type": "standard",
+    "content_id": "EP3643-PPSA09804_00-0000000000000000",
+    "creation_date": "2022-11-21 23:05:29"
+  },
+  "load_report_file": "load_report.json"
+}

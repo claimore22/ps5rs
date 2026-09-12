@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "title_id": "PPSA32239",
+  "name": "Mega Man Star Force Legacy Collection - [PPSA32239]",
+  "eboot_sha256": "a46145a3f329f3f0852b5e6d5f5abdcddf81e4341c9de94064b4313499f06e9d",
+  "game_fingerprint": "710f518ef79b3604dd648439670898a71376b1ead33783d6d4b7811749870423",
+  "environment_fingerprint": "c65955db3dee9d575ca652856c86c3fc2b7297fff36bb37fcb1b9319f1ff09a9",
+  "loader_fingerprint": "d245a80770d2897643c4754f10883b674208fc8fdecaad2ebd247d1990f6f5a0",
+  "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
+  "ingest_id": "ingest_20260912085620_710f518ef79b",
+  "ingested_at": "2026-09-12T08:56:20Z",
+  "params": {
+    "name": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+    "title_id": "PPSA32239",
+    "content_version": "01.001.000",
+    "master_version": "01.00",
+    "sdk_version": "0x1100000000000000",
+    "title_name": "Mega Man Star Force Legacy Collection",
+    "display_name": "Mega Man Star Force Legacy Collection - [PPSA32239]",
+    "drm_type": "standard",
+    "content_id": "JP0102-PPSA32239_00-FULLGAME00000000",
+    "creation_date": "2026-01-22 16:17:34"
+  },
+  "load_report_file": "load_report.json"
+}

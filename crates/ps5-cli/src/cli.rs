@@ -229,6 +229,22 @@ pub enum Commands {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
+    /// Archive one ingested game into the dataset's per-game records and
+    /// commit the ingest registry (write -> reload -> verify; sources untouched)
+    Archive {
+        /// Game directory to archive (must contain eboot.bin)
+        #[arg(long, value_hint = ValueHint::DirPath)]
+        game: Option<PathBuf>,
+        /// Dataset root holding load/ and ingest.json
+        #[arg(long, value_hint = ValueHint::DirPath)]
+        dataset: PathBuf,
+        /// Path to offline export directory (system_modules)
+        #[arg(long = "offline-dir", default_value = "system_modules")]
+        offline_dir: PathBuf,
+        /// Mark a title's sources as deleted (only if its ingest is complete)
+        #[arg(long = "mark-deleted")]
+        mark_deleted: Option<String>,
+    },
 }
 
 #[derive(Subcommand)]

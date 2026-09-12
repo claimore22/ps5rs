@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "title_id": "PPSA28855",
+  "name": "Totally Reliable Delivery Service - [PPSA28855]",
+  "eboot_sha256": "67119076d9f66dababb37a8d7a61617a40a23d02cb49af62ffe233a30b5f0edb",
+  "game_fingerprint": "a2932021ba13c77c6da9cb91e6aa08a67ba40482c93747dabb1a97ba0010c6dd",
+  "environment_fingerprint": "c65955db3dee9d575ca652856c86c3fc2b7297fff36bb37fcb1b9319f1ff09a9",
+  "loader_fingerprint": "d245a80770d2897643c4754f10883b674208fc8fdecaad2ebd247d1990f6f5a0",
+  "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
+  "ingest_id": "ingest_20260912085622_a2932021ba13",
+  "ingested_at": "2026-09-12T08:56:22Z",
+  "params": {
+    "name": "Totally.Reliable.Delivery.Service-PPSA28855-EUR-Game (v01.001)-PS5",
+    "title_id": "PPSA28855",
+    "content_version": "01.000.001",
+    "master_version": "01.00",
+    "sdk_version": "0x1000000000000000",
+    "title_name": "Totally Reliable Delivery Service",
+    "display_name": "Totally Reliable Delivery Service - [PPSA28855]",
+    "drm_type": "standard",
+    "content_id": "EB1016-PPSA28855_00-TOTALLYRELIABLE0",
+    "creation_date": "2025-12-02 08:40:22"
+  },
+  "load_report_file": "load_report.json"
+}

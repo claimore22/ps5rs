@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "title_id": "PPSA17949",
+  "name": "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
+  "eboot_sha256": "b3c9a98297a08cbdec815b436048f34414a1bd58c786b69f7e72fd3d837a1258",
+  "game_fingerprint": "92e19babff68d2e5370c7ab184d88fcd55342ea95036cea86c787dcce7903b8b",
+  "environment_fingerprint": "c65955db3dee9d575ca652856c86c3fc2b7297fff36bb37fcb1b9319f1ff09a9",
+  "loader_fingerprint": "d245a80770d2897643c4754f10883b674208fc8fdecaad2ebd247d1990f6f5a0",
+  "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
+  "ingest_id": "ingest_20260912085621_92e19babff68",
+  "ingested_at": "2026-09-12T08:56:21Z",
+  "params": {
+    "name": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+    "title_id": "PPSA17949",
+    "content_version": "01.000.003",
+    "master_version": "01.00",
+    "sdk_version": "0x0700000000000000",
+    "title_name": "Plumbers Don't Wear Ties: Definitive Edition",
+    "display_name": "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
+    "drm_type": "standard",
+    "content_id": "EP6890-PPSA17949_00-0627234715882867",
+    "creation_date": "2024-03-08 21:00:22"
+  },
+  "load_report_file": "load_report.json"
+}

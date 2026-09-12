@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "title_id": "PPSA15552",
+  "name": "Dead Cells - [PPSA15552]",
+  "eboot_sha256": "0cecb86cae3ec7834b68963d580ae297b393264636c23fd4114969ecc1966139",
+  "game_fingerprint": "56445e5149f793c97e0b0d6d8e1ef838a40b87866cb2e77c41452078e0a086de",
+  "environment_fingerprint": "c65955db3dee9d575ca652856c86c3fc2b7297fff36bb37fcb1b9319f1ff09a9",
+  "loader_fingerprint": "d245a80770d2897643c4754f10883b674208fc8fdecaad2ebd247d1990f6f5a0",
+  "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
+  "ingest_id": "ingest_20260912085619_56445e5149f7",
+  "ingested_at": "2026-09-12T08:56:19Z",
+  "params": {
+    "name": "Dead.Cells-PPSA15552-USA-Game-v01.005-PS5",
+    "title_id": "PPSA15552",
+    "content_version": "01.005.000",
+    "master_version": "01.00",
+    "sdk_version": "0x0700000000000000",
+    "title_name": "Dead Cells",
+    "display_name": "Dead Cells - [PPSA15552]",
+    "drm_type": "standard",
+    "content_id": "UP4016-PPSA15552_00-DEADCELLS0000000",
+    "creation_date": "2023-08-11 09:22:26"
+  },
+  "load_report_file": "load_report.json"
+}

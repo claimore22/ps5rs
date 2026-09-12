@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "title_id": "PPSA02456",
+  "name": "Subnautica Below Zero - [PPSA02456]",
+  "eboot_sha256": "b73b02c3cd0ae353007aa34d677a5d0653ef2119cc82eae7a23b5d75f084414e",
+  "game_fingerprint": "6679080b0d88ca327b0113a00c2906f83845ee4eaacaee91a0eb5e4423b1dfb6",
+  "environment_fingerprint": "c65955db3dee9d575ca652856c86c3fc2b7297fff36bb37fcb1b9319f1ff09a9",
+  "loader_fingerprint": "d245a80770d2897643c4754f10883b674208fc8fdecaad2ebd247d1990f6f5a0",
+  "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
+  "ingest_id": "ingest_20260912085622_6679080b0d88",
+  "ingested_at": "2026-09-12T08:56:22Z",
+  "params": {
+    "name": "Subnautica.Below.Zero-PPSA02456-USA-Game-v01.021.397-PS5",
+    "title_id": "PPSA02456",
+    "content_version": "01.021.397",
+    "master_version": "01.00",
+    "sdk_version": "0x0400000000000000",
+    "title_name": "Subnautica Below Zero",
+    "display_name": "Subnautica Below Zero - [PPSA02456]",
+    "drm_type": "upgradable",
+    "content_id": "UP5245-PPSA02456_00-BELOWZERSUB38637",
+    "creation_date": "2022-09-28 20:51:18"
+  },
+  "load_report_file": "load_report.json"
+}

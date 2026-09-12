@@ -1,0 +1,955 @@
+{
+  "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+  "path": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5\\eboot.bin",
+  "load_report": {
+    "modules": [
+      {
+        "name": "libSceNpCppWebApi.prx",
+        "module_type": "Prx",
+        "load_bias": 34628173824,
+        "entry_point": null,
+        "exports_count": 41638,
+        "imports_resolved": 0,
+        "imports_known": 25,
+        "imports_stubbed": 73,
+        "relative": 774,
+        "glob_dat": 2,
+        "jump_slot": 92,
+        "abs64": 4,
+        "copy": 0,
+        "tls_relocations": 0,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 4060784,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 0,
+        "preinit_array_sz": 0,
+        "per_library": [
+          {
+            "library": "libSceHttp",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceJson2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 37
+          },
+          {
+            "library": "libSceLibcInternal",
+            "resolved": 0,
+            "known": 25,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceNpWebApi2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libSceRtc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 24
+          }
+        ]
+      },
+      {
+        "name": "libc.prx",
+        "module_type": "Prx",
+        "load_bias": 34636038144,
+        "entry_point": null,
+        "exports_count": 2571,
+        "imports_resolved": 0,
+        "imports_known": 0,
+        "imports_stubbed": 104,
+        "relative": 1721,
+        "glob_dat": 3,
+        "jump_slot": 101,
+        "abs64": 0,
+        "copy": 0,
+        "tls_relocations": 3,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 831392,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 1129600,
+        "preinit_array_sz": 8,
+        "per_library": [
+          {
+            "library": "libSceLibcInternalExt",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 100
+          }
+        ]
+      },
+      {
+        "name": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+        "module_type": "Eboot",
+        "load_bias": 34637414400,
+        "entry_point": 128,
+        "exports_count": 0,
+        "imports_resolved": 9970,
+        "imports_known": 0,
+        "imports_stubbed": 1016,
+        "relative": 788702,
+        "glob_dat": 24,
+        "jump_slot": 2128,
+        "abs64": 8834,
+        "copy": 0,
+        "tls_relocations": 0,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 92568944,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 0,
+        "preinit_array_sz": 0,
+        "per_library": [
+          {
+            "library": "libCoherentUIGT",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 53
+          },
+          {
+            "library": "libRenoirCore.PS5",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceAcm",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 6
+          },
+          {
+            "library": "libSceAgc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 192
+          },
+          {
+            "library": "libSceAgcDriver",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 38
+          },
+          {
+            "library": "libSceAjm",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 14
+          },
+          {
+            "library": "libSceAmpr",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 60
+          },
+          {
+            "library": "libSceAppContent",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceAudioIn",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceAudioOut",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceAudioOut2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 13
+          },
+          {
+            "library": "libSceAvPlayer",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 22
+          },
+          {
+            "library": "libSceCdlgPlayerReview",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceCommonDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceCoredump",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceErrorDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceGameLiveStreaming",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceGameUpdate",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceHttp",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 24
+          },
+          {
+            "library": "libSceHttp2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceIme",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceImeDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 6
+          },
+          {
+            "library": "libSceJson2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 23
+          },
+          {
+            "library": "libSceMouse",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceMsgDialog.native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceNet",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 24
+          },
+          {
+            "library": "libSceNetCtl",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceNgs2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 15
+          },
+          {
+            "library": "libSceNpAuth",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceNpCommerce",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceNpCppWebApi",
+            "resolved": 942,
+            "known": 0,
+            "stubbed": 0
+          },
+          {
+            "library": "libSceNpEntitlementAccess",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceNpGameIntent",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceNpManager",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 11
+          },
+          {
+            "library": "libSceNpSessionSignaling",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libSceNpTrophy2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 9
+          },
+          {
+            "library": "libSceNpUniversalDataSystem",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 29
+          },
+          {
+            "library": "libSceNpWebApi2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 22
+          },
+          {
+            "library": "libScePad",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 12
+          },
+          {
+            "library": "libScePlayGo",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 10
+          },
+          {
+            "library": "libScePlayerInvitationDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libScePosix",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 65
+          },
+          {
+            "library": "libSceRandom",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceRtc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceSaveDataDialog.native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceSaveData_native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 11
+          },
+          {
+            "library": "libSceShare",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceSsl",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSystemService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceUserService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 6
+          },
+          {
+            "library": "libSceVideoOut",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 13
+          },
+          {
+            "library": "libSceVoiceQoS",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 12
+          },
+          {
+            "library": "libSceWebBrowserDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libc",
+            "resolved": 9028,
+            "known": 0,
+            "stubbed": 0
+          },
+          {
+            "library": "libfmod",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 26
+          },
+          {
+            "library": "libfmodstudio",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 73
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 89
+          }
+        ]
+      }
+    ],
+    "graph": {
+      "nodes": [
+        "libSceNpSessionSignaling.prx",
+        "libScePlayGo.prx",
+        "libSceWebBrowserDialog.prx",
+        "libRenoirCore.PS5.prx",
+        "libSceErrorDialog.prx",
+        "libSceNpManager.prx",
+        "libSceGameUpdate.prx",
+        "libSceNpCppWebApi.prx",
+        "libSceAudioOut.prx",
+        "libSceLibcInternal.prx",
+        "libSceNpCommerce.prx",
+        "libSceAmpr.prx",
+        "libSceShare.prx",
+        "libScePlayerInvitationDialog.prx",
+        "libSceAjm.native.prx",
+        "libSceRtc.prx",
+        "libSceNpWebApi2.prx",
+        "libSceRandom.prx",
+        "libSceAudioIn.prx",
+        "libSceIme.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceNpEntitlementAccess.prx",
+        "libSceMsgDialog.native.prx",
+        "libCoherentUIGT.prx",
+        "libSceNetCtl.prx",
+        "libSceCommonDialog.prx",
+        "libSceHttp2.prx",
+        "libSceSsl.prx",
+        "libSceSystemService.prx",
+        "libSceHttp.prx",
+        "libSceGameLiveStreaming.prx",
+        "libSceContentExport.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceAcm.prx",
+        "libSceAgc.prx",
+        "libSceAppContent.prx",
+        "libSceMouse.prx",
+        "libSceJson2.prx",
+        "libSceCdlgPlayerReview.prx",
+        "libSceVoiceQoS.prx",
+        "libSceNgs2.prx",
+        "libc.prx",
+        "libSceNpAuth.prx",
+        "libSceNpTrophy2.prx",
+        "libScePad.prx",
+        "libkernel.prx",
+        "libSceSysmodule.prx",
+        "libSceNet.prx",
+        "libfmodstudio.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceVideoOut.prx",
+        "libSceAgcDriver.prx",
+        "libSceImeDialog.prx",
+        "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+        "libSceUserService.prx",
+        "libSceNpGameIntent.prx",
+        "libSceSaveData.native.prx",
+        "libfmod.prx"
+      ],
+      "unavailable": [
+        "libSceShare.prx",
+        "libSceNpGameIntent.prx",
+        "libSceCdlgPlayerReview.prx",
+        "libSceAmpr.prx",
+        "libSceNpWebApi2.prx",
+        "libSceNpManager.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceVideoOut.prx",
+        "libSceAppContent.prx",
+        "libSceSysmodule.prx",
+        "libSceImeDialog.prx",
+        "libSceSystemService.prx",
+        "libSceAjm.native.prx",
+        "libSceHttp2.prx",
+        "libfmod.prx",
+        "libSceNetCtl.prx",
+        "libSceCommonDialog.prx",
+        "libSceMouse.prx",
+        "libScePad.prx",
+        "libSceAudioOut.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceAgc.prx",
+        "libSceContentExport.prx",
+        "libSceNgs2.prx",
+        "libSceNpCommerce.prx",
+        "libkernel.prx",
+        "libSceGameLiveStreaming.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libScePlayerInvitationDialog.prx",
+        "libSceSsl.prx",
+        "libScePlayGo.prx",
+        "libSceUserService.prx",
+        "libSceRtc.prx",
+        "libSceRandom.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceJson2.prx",
+        "libCoherentUIGT.prx",
+        "libSceHttp.prx",
+        "libSceAgcDriver.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceLibcInternal.prx",
+        "libSceAcm.prx",
+        "libfmodstudio.prx",
+        "libSceNpTrophy2.prx",
+        "libSceSaveData.native.prx",
+        "libSceNpSessionSignaling.prx",
+        "libSceNet.prx",
+        "libSceErrorDialog.prx",
+        "libSceGameUpdate.prx",
+        "libSceNpEntitlementAccess.prx",
+        "libSceIme.prx",
+        "libSceAudioIn.prx",
+        "libSceVoiceQoS.prx",
+        "libRenoirCore.PS5.prx",
+        "libSceNpAuth.prx"
+      ],
+      "edges": [
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceJson2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceRtc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceNpWebApi2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceHttp.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceAgcDriver.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceAgc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceRtc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libScePad.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceNet.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceNetCtl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceNgs2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceAudioOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceAjm.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceVideoOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceUserService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceSsl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceHttp.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libScePlayGo.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceNpManager.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceAppContent.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceSaveData.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceSaveDataDialog.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceCommonDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceGameLiveStreaming.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceSystemService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceIme.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceImeDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceMsgDialog.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceNpCommerce.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceShare.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceMouse.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceRandom.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceWebBrowserDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceContentExport.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceNpGameIntent.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceAvPlayer.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceNpAuth.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceJson2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceNpUniversalDataSystem.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceNpTrophy2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceErrorDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceGameUpdate.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libScePlayerInvitationDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceCdlgPlayerReview.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceVoiceQoS.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceHttp2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceNpCppWebApi.prx",
+          "status": "loaded"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceNpWebApi2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceNpSessionSignaling.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceNpEntitlementAccess.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceAudioIn.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceAcm.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libCoherentUIGT.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libRenoirCore.PS5.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libfmod.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libfmodstudio.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libc.prx",
+          "status": "loaded"
+        },
+        {
+          "from": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+          "to": "libSceAmpr.prx",
+          "status": "missing"
+        }
+      ]
+    },
+    "totals": {
+      "modules": 3,
+      "resolved": 9970,
+      "known": 25,
+      "stubbed": 1193,
+      "exports": 44209,
+      "unavailable": 55
+    }
+  },
+  "error": null
+}

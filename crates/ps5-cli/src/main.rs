@@ -10,6 +10,7 @@ mod export_scan;
 mod extract;
 mod fingerprint;
 mod firmware;
+mod ingest;
 mod inspect;
 mod inventory;
 mod load;
@@ -176,5 +177,11 @@ fn main() {
             format,
             output,
         } => sdk::cmd_sdk(&path, format, &output),
+        Commands::Archive {
+            game,
+            dataset,
+            offline_dir,
+            mark_deleted,
+        } => ingest::cmd_archive(&game, &dataset, &offline_dir, &mark_deleted),
     }
 }

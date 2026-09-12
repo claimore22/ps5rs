@@ -164,7 +164,14 @@ fn read_prx_bytes(dir: &Path) -> Vec<(String, Vec<u8>)> {
     out
 }
 
-fn purge_stale_reports(games_out: &Path, expected: &std::collections::HashSet<String>) {
+/// Delete reports for games in neither the current corpus nor the ingest
+/// registry. A game missing from the corpus but present in the registry
+/// was ingested and deliberately deleted: its report is retained.
+fn purge_stale_reports(
+    games_out: &Path,
+    expected: &std::collections::HashSet<String>,
+    registered: &std::collections::HashSet<String>,
+) {
     let Ok(entries) = std::fs::read_dir(games_out) else {
         return;
     };
@@ -176,8 +183,10 @@ fn purge_stale_reports(games_out: &Path, expected: &std::collections::HashSet<St
             .and_then(|n| n.to_str())
             .unwrap_or_default()
             .to_string();
-        if is_json && !expected.contains(&name) && std::fs::remove_file(&path).is_ok() {
-            eprintln!("PURGED stale report {name}");
+        if is_json && !expected.contains(&name) && !registered.contains(&name) {
+            if std::fs::remove_file(&path).is_ok() {
+                eprintln!("PURGED stale report {name}");
+            }
         }
     }
 }
@@ -439,7 +448,12 @@ pub(crate) fn cmd_batch_load(
     }
 
     if !json {
-        purge_stale_reports(&games_out, &expected_files);
+        let registered: std::collections::HashSet<String> = output_dir
+            .parent()
+            .map(crate::ingest::load_registry)
+            .map(|reg| reg.games.values().map(|e| e.report_file.clone()).collect())
+            .unwrap_or_default();
+        purge_stale_reports(&games_out, &expected_files, &registered);
     }
 
     let successful = reports.iter().filter(|r| r.load_report.is_some()).count();
@@ -686,9 +700,13 @@ mod tests {
         std::fs::write(dir.join("notes.txt"), b"hi").unwrap();
         let mut expected = std::collections::HashSet::new();
         expected.insert("Keep.json".to_string());
-        purge_stale_reports(&dir, &expected);
+        let mut registered = std::collections::HashSet::new();
+        registered.insert("Archived.json".to_string());
+        std::fs::write(dir.join("Archived.json"), b"{}").unwrap();
+        purge_stale_reports(&dir, &expected, &registered);
         assert!(dir.join("Keep.json").exists());
         assert!(!dir.join("Stale.json").exists());
+        assert!(dir.join("Archived.json").exists());
         assert!(dir.join("notes.txt").exists());
         let _ = std::fs::remove_dir_all(&dir);
     }
