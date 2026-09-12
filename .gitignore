@@ -52,3 +52,7 @@
 .idea/
 
 analysis_with_modules/images/*.json
+
+# Ingest farm runtime state (per-run logs, feeder output)
+/tools/ingest/queue.log
+/tools/ingest/out/
