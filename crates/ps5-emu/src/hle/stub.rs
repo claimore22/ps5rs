@@ -13,7 +13,7 @@ pub(crate) fn warn_once(library: &str, nid: u64, name: &str) {
     let Ok(mut warned) = warned.lock() else {
         return;
     };
-    
+
     if warned.insert((library.to_string(), nid)) {
         let nid_b64 = u64_to_nid_str(nid);
         tracing::warn!(
