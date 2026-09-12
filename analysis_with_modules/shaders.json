@@ -1,0 +1,3086 @@
+[
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/DefaultShader.pssl",
+    "stage": "unknown",
+    "size": 1288,
+    "hash": "15efcc2a00f2077876db64a63f51007df9ad7ef6fc59a0af243f70a8c7508b2e"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/DefaultShader_p.sb",
+    "stage": "pixel",
+    "size": 496,
+    "hash": "ecfa804725e331ad2642ae1c793722c2bedfce79ba0068366b82d476f60124e1"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/DefaultShader_vv.sb",
+    "stage": "vertex",
+    "size": 732,
+    "hash": "be6ffc103de18a91589588ea0c6090f28d3310368dcfae1ccb14cfc370a81bc9"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/DepthGrassT_p.sb",
+    "stage": "pixel",
+    "size": 1296,
+    "hash": "a6e9cb48b2cb76828eb02f0a40435059ffec11161e12e19c7990dd91df71277f"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/DepthGrassT_vv.sb",
+    "stage": "vertex",
+    "size": 2364,
+    "hash": "4bd705e542d9b4127cfcabbd7cef08adbbfe8ef22768e05a7a4c24b58c9dfcd7"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/DepthGrassWindT_p.sb",
+    "stage": "pixel",
+    "size": 1296,
+    "hash": "a6e9cb48b2cb76828eb02f0a40435059ffec11161e12e19c7990dd91df71277f"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/DepthGrassWindT_vv.sb",
+    "stage": "vertex",
+    "size": 2752,
+    "hash": "50bc4ab8492e3b903fb29b69f0aa913aa7f9a3e698e239bb527139269edc23b7"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/DepthGrassWind_p.sb",
+    "stage": "pixel",
+    "size": 336,
+    "hash": "086fbf4c6cc3e32153b54a01930cdd2d8d7218b40c4648398993e1daf90cc5e0"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/DepthGrassWind_vv.sb",
+    "stage": "vertex",
+    "size": 2580,
+    "hash": "50b3013ad551f1f986906272efc2b247509e344e2909f16e569cca0a49d44193"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/DepthInstancedGrassWindT_p.sb",
+    "stage": "pixel",
+    "size": 1296,
+    "hash": "a6e9cb48b2cb76828eb02f0a40435059ffec11161e12e19c7990dd91df71277f"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/DepthInstancedGrassWindT_vv.sb",
+    "stage": "vertex",
+    "size": 2820,
+    "hash": "2639523a58631f0c579dc0af445fea85d55ec8052e1b16ba38f197092ec85da6"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/DepthInstancedGrassWind_p.sb",
+    "stage": "pixel",
+    "size": 336,
+    "hash": "086fbf4c6cc3e32153b54a01930cdd2d8d7218b40c4648398993e1daf90cc5e0"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/DepthInstancedGrassWind_vv.sb",
+    "stage": "vertex",
+    "size": 2640,
+    "hash": "c8dc63467a7cb179c3d528395ca39f01883eb8377bd4477dd42006311d835255"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/DepthInstancedT_p.sb",
+    "stage": "pixel",
+    "size": 1296,
+    "hash": "a6e9cb48b2cb76828eb02f0a40435059ffec11161e12e19c7990dd91df71277f"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/DepthInstancedT_vv.sb",
+    "stage": "vertex",
+    "size": 1116,
+    "hash": "21179a62b55079fb253c316dab0b4dc4b492fb75ff61f93592f2d1fdb2fd693c"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/DepthInstancedWindT_p.sb",
+    "stage": "pixel",
+    "size": 1296,
+    "hash": "a6e9cb48b2cb76828eb02f0a40435059ffec11161e12e19c7990dd91df71277f"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/DepthInstancedWindT_vv.sb",
+    "stage": "vertex",
+    "size": 2180,
+    "hash": "679b47b4e319b36a4e0ad5b12a3636ac8621beaa1fe21652ee6b8f7940811f5d"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/DepthInstancedWind_p.sb",
+    "stage": "pixel",
+    "size": 336,
+    "hash": "086fbf4c6cc3e32153b54a01930cdd2d8d7218b40c4648398993e1daf90cc5e0"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/DepthInstancedWind_vv.sb",
+    "stage": "vertex",
+    "size": 2016,
+    "hash": "c4bccdfcdbf5ddf2033bc3e7d541092e41902efe4a88099669f380be45f3fd7e"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/DepthInstanced_p.sb",
+    "stage": "pixel",
+    "size": 336,
+    "hash": "086fbf4c6cc3e32153b54a01930cdd2d8d7218b40c4648398993e1daf90cc5e0"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/DepthInstanced_vv.sb",
+    "stage": "vertex",
+    "size": 944,
+    "hash": "25c891f87bf9b57e12c6f5460bf490c70c465445c3d80b458c8fbf7dcbc5ade6"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/DepthSkinnedT_p.sb",
+    "stage": "pixel",
+    "size": 1296,
+    "hash": "a6e9cb48b2cb76828eb02f0a40435059ffec11161e12e19c7990dd91df71277f"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/DepthSkinnedT_vv.sb",
+    "stage": "vertex",
+    "size": 1704,
+    "hash": "3f9facfb66767951bd8087d5a223cf3a7b54181abdf76fb65abd5f37ce0d3bd9"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/DepthSkinned_p.sb",
+    "stage": "pixel",
+    "size": 336,
+    "hash": "086fbf4c6cc3e32153b54a01930cdd2d8d7218b40c4648398993e1daf90cc5e0"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/DepthSkinned_vv.sb",
+    "stage": "vertex",
+    "size": 1524,
+    "hash": "07553ffffd4f58d5625d1a590aa3494b9af0aa6d229a36b7387615adbc691e4b"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/DepthT_p.sb",
+    "stage": "pixel",
+    "size": 1296,
+    "hash": "a6e9cb48b2cb76828eb02f0a40435059ffec11161e12e19c7990dd91df71277f"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/DepthT_vv.sb",
+    "stage": "vertex",
+    "size": 984,
+    "hash": "4c3f475df77aa504c0987ee3c2f969c03bbc5ce8388a502be5522772c9466ae9"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/DepthWindT_p.sb",
+    "stage": "pixel",
+    "size": 1296,
+    "hash": "a6e9cb48b2cb76828eb02f0a40435059ffec11161e12e19c7990dd91df71277f"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/DepthWindT_vv.sb",
+    "stage": "vertex",
+    "size": 2096,
+    "hash": "309272f548c25ec55525988b185cdf9ab64f4d5f0ab6357f7f42d6438c83d83b"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/DepthWind_p.sb",
+    "stage": "pixel",
+    "size": 336,
+    "hash": "086fbf4c6cc3e32153b54a01930cdd2d8d7218b40c4648398993e1daf90cc5e0"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/DepthWind_vv.sb",
+    "stage": "vertex",
+    "size": 1940,
+    "hash": "a0d7dc541c68ece2270ed1f59a558aff6576e42faa28f6b2a92fd406988c2fdb"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/Depth_p.sb",
+    "stage": "pixel",
+    "size": 336,
+    "hash": "086fbf4c6cc3e32153b54a01930cdd2d8d7218b40c4648398993e1daf90cc5e0"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/Depth_vv.sb",
+    "stage": "vertex",
+    "size": 816,
+    "hash": "5125692e404daa02338ad50720f222bfa986e8743a1ec9c38f9aa76cbbc0a4ed"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ImageShader_p.sb",
+    "stage": "pixel",
+    "size": 1588,
+    "hash": "fe865e914548e4a9d076ba87423813cbd831d8a894b93704f4bbce68a685ec8d"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ImageShader_vv.sb",
+    "stage": "vertex",
+    "size": 1012,
+    "hash": "f46f8f6ea1eb331bc382d44d01ed2fe43df9397450639d829eff97c4e8055b6a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/Line_p.sb",
+    "stage": "pixel",
+    "size": 564,
+    "hash": "dd74369769cc96fb522509b3974e7d8c7978d47330af11af09e54157ea8dc3ce"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/Line_vv.sb",
+    "stage": "vertex",
+    "size": 1016,
+    "hash": "336743b0341223e0b8755bb4d6c56fe17b45598de83c495c4db7efcf9ebca0ec"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ParticleRain_p.sb",
+    "stage": "pixel",
+    "size": 808,
+    "hash": "09c403e386ccb91671bd6a764943ad54c57250f1697dad9bf9f68bc8945105d6"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ParticleRain_vv.sb",
+    "stage": "vertex",
+    "size": 2380,
+    "hash": "f33d7c9e753ed84805548ee0964aa2ebc672317e3abc9d2e0b7d7f23edf80f35"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ParticleSand_p.sb",
+    "stage": "pixel",
+    "size": 772,
+    "hash": "841c86def7a651c879bed7605495d798d83b174a4ceefa3dac59e474505e6ca0"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ParticleSand_vv.sb",
+    "stage": "vertex",
+    "size": 1832,
+    "hash": "73288390d7d1b0e468d8198a461b2b711172396a9810cea41478f0f8bd87fd8f"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ParticleShader_p.sb",
+    "stage": "pixel",
+    "size": 1444,
+    "hash": "b97cc215ea0e957459bb42e5b105545a181039e07cb837ae10b5886602d3646b"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ParticleShader_vv.sb",
+    "stage": "vertex",
+    "size": 1056,
+    "hash": "caa9417b012bbf5334de0a3405ccbdaf804e8355de4f0dee30733f4eb80ba331"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ParticleSnow_p.sb",
+    "stage": "pixel",
+    "size": 808,
+    "hash": "09c403e386ccb91671bd6a764943ad54c57250f1697dad9bf9f68bc8945105d6"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ParticleSnow_vv.sb",
+    "stage": "vertex",
+    "size": 2316,
+    "hash": "ed225082d5b7296b24bb92146c8c3cc50a7d5f028e0c7eb9a04d5457dd6ea05f"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderGlowSkinned_p.sb",
+    "stage": "pixel",
+    "size": 2760,
+    "hash": "9116aa80963bbf6ba5d60ff11d1b8b3c8515490a36982d167c3d937efca92b58"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderGlowSkinned_vv.sb",
+    "stage": "vertex",
+    "size": 3568,
+    "hash": "47d3895c8bec5c54c1ecf1c8fad4759239a07f27c16aa55fa46089d76be68b27"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderGlow_p.sb",
+    "stage": "pixel",
+    "size": 2716,
+    "hash": "4f46c38883cab27cebedb85340e1baa949a7128b35c2adbc304586fe1317c2fc"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderGlow_vv.sb",
+    "stage": "vertex",
+    "size": 2772,
+    "hash": "5358b5fce2830f830ae06d9982072b176e2fee902a215b1f429c753f75d6408c"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong0_p.sb",
+    "stage": "pixel",
+    "size": 8096,
+    "hash": "a4e4676e4ee0fd029ab5e9274bc155c805c3b3e6493c71e3699baae34b3ca7fb"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong0_vv.sb",
+    "stage": "vertex",
+    "size": 3540,
+    "hash": "22a3cbfdd6f32ccdff20fdb96a4c22c83e7ee8b71ed569c7280dc28f84f17c18"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong1048577_p.sb",
+    "stage": "pixel",
+    "size": 8288,
+    "hash": "4eece67461e2515b96d5a506018631df958b42ad135daba669e1ac9375335a2a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong1048577_vv.sb",
+    "stage": "vertex",
+    "size": 3588,
+    "hash": "44a82f65a4d3d3d21307db49a5edac0aa7b19ff76e48779f332856fd21d2780a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong10_p.sb",
+    "stage": "pixel",
+    "size": 8736,
+    "hash": "8eefaeeb811eecb061ff887b9d74b8ea3678f5488039ac136dec59f01fe3a255"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong10_vv.sb",
+    "stage": "vertex",
+    "size": 3920,
+    "hash": "0ae4ef4f882e8dc30564952fbdf73ae77137bf577d7f9567c9032d3c174f87da"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong1114113_p.sb",
+    "stage": "pixel",
+    "size": 8784,
+    "hash": "524f94477a5b1db44728177828c74bac18204481075062390c3b157e0f331559"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong1114113_vv.sb",
+    "stage": "vertex",
+    "size": 3876,
+    "hash": "7a9ce57d648fc1c781c8fdec28f1ac64ba0e73e0922e6eb82fe8a10c10b6bbf3"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong131072_p.sb",
+    "stage": "pixel",
+    "size": 3604,
+    "hash": "f256ad9146d569263ff3a1994c2b2cd632b8e14c30f54fc5df97d5b6d273f256"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong131072_vv.sb",
+    "stage": "vertex",
+    "size": 3056,
+    "hash": "a16ad9bb5c5fc575515f6fe34997ffedf584786a32eb85a7e876452ce0db9824"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong131076_p.sb",
+    "stage": "pixel",
+    "size": 3656,
+    "hash": "9a31f1537ff19ab68ab1f78c19c394c45d61a5db655f10392630ffe6acbe2d6d"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong131076_vv.sb",
+    "stage": "vertex",
+    "size": 3872,
+    "hash": "2379b8bc20070c55756721d9216bb73357538a9671b73825ac69a996961b1295"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong133120_p.sb",
+    "stage": "pixel",
+    "size": 3604,
+    "hash": "f256ad9146d569263ff3a1994c2b2cd632b8e14c30f54fc5df97d5b6d273f256"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong133120_vv.sb",
+    "stage": "vertex",
+    "size": 4000,
+    "hash": "b8a35c1217908341da4da05034c14f1af70456fc7fdae358ad120cd29f8dc48d"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong160_p.sb",
+    "stage": "pixel",
+    "size": 7312,
+    "hash": "d2ba755d509419b3e619dbc0147f8a4dfd318eb7454a88c4fd0edd0aebc43203"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong160_vv.sb",
+    "stage": "vertex",
+    "size": 3588,
+    "hash": "1e05f358b7acf5e20417946751be711b97783b0e7e4d6e683f14cfaa6423a927"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong16384_p.sb",
+    "stage": "pixel",
+    "size": 10284,
+    "hash": "2bc73181326c26d04b2ff944465e77009ca27fa2e8d6c27ffabacbc67c0d4339"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong16384_vv.sb",
+    "stage": "vertex",
+    "size": 3840,
+    "hash": "eabe4136955265a852b55de2c53221466453fd35d51a6032a8fce6178c997a2e"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong16385_p.sb",
+    "stage": "pixel",
+    "size": 10284,
+    "hash": "2bc73181326c26d04b2ff944465e77009ca27fa2e8d6c27ffabacbc67c0d4339"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong16385_vv.sb",
+    "stage": "vertex",
+    "size": 3840,
+    "hash": "eabe4136955265a852b55de2c53221466453fd35d51a6032a8fce6178c997a2e"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong16389_p.sb",
+    "stage": "pixel",
+    "size": 10368,
+    "hash": "cd5d807552390c573ab4562723eaa38cf6ce8cf359f2282714c1787228808825"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong16389_vv.sb",
+    "stage": "vertex",
+    "size": 4720,
+    "hash": "4e44a10a24b894f4810286610b5d258bcac26653e14d940c26a63b8bf91235e5"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong16_p.sb",
+    "stage": "pixel",
+    "size": 7656,
+    "hash": "d908ba30d442cf5f0b402f94e83d4af5be199b015f3e759e23ef12a96c837f78"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong16_vv.sb",
+    "stage": "vertex",
+    "size": 3636,
+    "hash": "b8e962ad748d122f9bee671b19a5e174c673fcce076cb0539e6d213809558d7c"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong17_p.sb",
+    "stage": "pixel",
+    "size": 7656,
+    "hash": "d908ba30d442cf5f0b402f94e83d4af5be199b015f3e759e23ef12a96c837f78"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong17_vv.sb",
+    "stage": "vertex",
+    "size": 3636,
+    "hash": "b8e962ad748d122f9bee671b19a5e174c673fcce076cb0539e6d213809558d7c"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong1_p.sb",
+    "stage": "pixel",
+    "size": 8096,
+    "hash": "a4e4676e4ee0fd029ab5e9274bc155c805c3b3e6493c71e3699baae34b3ca7fb"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong1_vv.sb",
+    "stage": "vertex",
+    "size": 3540,
+    "hash": "22a3cbfdd6f32ccdff20fdb96a4c22c83e7ee8b71ed569c7280dc28f84f17c18"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong2048_p.sb",
+    "stage": "pixel",
+    "size": 8096,
+    "hash": "a4e4676e4ee0fd029ab5e9274bc155c805c3b3e6493c71e3699baae34b3ca7fb"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong2048_vv.sb",
+    "stage": "vertex",
+    "size": 4488,
+    "hash": "9760c42808f0672cb9e9a58a7f0e3e312009b099ecf980ac4675898a6bbc9eef"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong2050_p.sb",
+    "stage": "pixel",
+    "size": 8600,
+    "hash": "f7c82ba2cefa5b4fa3ae98660b2abd26bd0bc382e06f1c8b2dfcb7b6072c066c"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong2050_vv.sb",
+    "stage": "vertex",
+    "size": 4564,
+    "hash": "4742da5369380a8811f3f16dda95adcb6e820c741918d8688572231379da9a64"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong2056_p.sb",
+    "stage": "pixel",
+    "size": 8148,
+    "hash": "0697be26bc365facbfec62ba116a6800241629adbe79d39795581d8b45164b7d"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong2056_vv.sb",
+    "stage": "vertex",
+    "size": 4608,
+    "hash": "7383fdcf59b2c2bcef37145b805ac211d22a2aa9321a90d4a0da4e79bcfb3bae"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong2058_p.sb",
+    "stage": "pixel",
+    "size": 8652,
+    "hash": "c0466c29d5f755449a67e988b11bec30764e12a8a0b4226dd63ad61c97a8bac9"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong2058_vv.sb",
+    "stage": "vertex",
+    "size": 4692,
+    "hash": "4172652adaa45cee30424e087c1187fba3d9a3b32b0b6aa2fdb7dc1bfcc132cb"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong2097152_p.sb",
+    "stage": "pixel",
+    "size": 9160,
+    "hash": "cb884fa6bf80122c8af154de0406abc875dc2241a79a70c1eefedf794b964c5c"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong2097152_vv.sb",
+    "stage": "vertex",
+    "size": 3860,
+    "hash": "4838510927b983670cee5ac4a8ec6222ebf840932f61ebe18f5aaacae558ee5a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong2097153_p.sb",
+    "stage": "pixel",
+    "size": 9160,
+    "hash": "cb884fa6bf80122c8af154de0406abc875dc2241a79a70c1eefedf794b964c5c"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong2097153_vv.sb",
+    "stage": "vertex",
+    "size": 3860,
+    "hash": "4838510927b983670cee5ac4a8ec6222ebf840932f61ebe18f5aaacae558ee5a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong2097156_p.sb",
+    "stage": "pixel",
+    "size": 9236,
+    "hash": "3626145864fa3690c01a649deebdd870e31577f5c88811218ef328b9c9f3d834"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong2097156_vv.sb",
+    "stage": "vertex",
+    "size": 4644,
+    "hash": "3277691be3e76a243d4174bfbb23e72b26d68e7159e6600722deb434124a426a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong2097157_p.sb",
+    "stage": "pixel",
+    "size": 9236,
+    "hash": "3626145864fa3690c01a649deebdd870e31577f5c88811218ef328b9c9f3d834"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong2097157_vv.sb",
+    "stage": "vertex",
+    "size": 4644,
+    "hash": "3277691be3e76a243d4174bfbb23e72b26d68e7159e6600722deb434124a426a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong2097412_p.sb",
+    "stage": "pixel",
+    "size": 9348,
+    "hash": "edb314c58eebb20bd66ba211b4ecc7f534823ac865f1591286351bf99851b802"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong2097412_vv.sb",
+    "stage": "vertex",
+    "size": 4644,
+    "hash": "3277691be3e76a243d4174bfbb23e72b26d68e7159e6600722deb434124a426a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong2097413_p.sb",
+    "stage": "pixel",
+    "size": 9348,
+    "hash": "edb314c58eebb20bd66ba211b4ecc7f534823ac865f1591286351bf99851b802"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong2097413_vv.sb",
+    "stage": "vertex",
+    "size": 4644,
+    "hash": "3277691be3e76a243d4174bfbb23e72b26d68e7159e6600722deb434124a426a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong256_p.sb",
+    "stage": "pixel",
+    "size": 8224,
+    "hash": "a7808b6c8e1584c625c0e80d3a214cb1895d82ccadbeb23a2739d509899b1e25"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong256_vv.sb",
+    "stage": "vertex",
+    "size": 3540,
+    "hash": "22a3cbfdd6f32ccdff20fdb96a4c22c83e7ee8b71ed569c7280dc28f84f17c18"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong257_p.sb",
+    "stage": "pixel",
+    "size": 8224,
+    "hash": "a7808b6c8e1584c625c0e80d3a214cb1895d82ccadbeb23a2739d509899b1e25"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong257_vv.sb",
+    "stage": "vertex",
+    "size": 3540,
+    "hash": "22a3cbfdd6f32ccdff20fdb96a4c22c83e7ee8b71ed569c7280dc28f84f17c18"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong260_p.sb",
+    "stage": "pixel",
+    "size": 8300,
+    "hash": "f5809df8fbf63ef46067237a6adc2a71259fab5639b75f1a980bd452acab79d8"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong260_vv.sb",
+    "stage": "vertex",
+    "size": 4328,
+    "hash": "7101da93116ffc561322910f4b1fd5871e14ad2ffb0970f34d7dc488560a5354"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong261_p.sb",
+    "stage": "pixel",
+    "size": 8300,
+    "hash": "f5809df8fbf63ef46067237a6adc2a71259fab5639b75f1a980bd452acab79d8"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong261_vv.sb",
+    "stage": "vertex",
+    "size": 4328,
+    "hash": "7101da93116ffc561322910f4b1fd5871e14ad2ffb0970f34d7dc488560a5354"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong2621444_p.sb",
+    "stage": "pixel",
+    "size": 10020,
+    "hash": "d4cbadb6e564891e908b16fc414769485b240c8e31afd31cfd47e2cd7ff641f3"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong2621444_vv.sb",
+    "stage": "vertex",
+    "size": 4644,
+    "hash": "3277691be3e76a243d4174bfbb23e72b26d68e7159e6600722deb434124a426a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong2621445_p.sb",
+    "stage": "pixel",
+    "size": 10020,
+    "hash": "d4cbadb6e564891e908b16fc414769485b240c8e31afd31cfd47e2cd7ff641f3"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong2621445_vv.sb",
+    "stage": "vertex",
+    "size": 4644,
+    "hash": "3277691be3e76a243d4174bfbb23e72b26d68e7159e6600722deb434124a426a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong262144_p.sb",
+    "stage": "pixel",
+    "size": 8400,
+    "hash": "70496b6e65f66ca09b7fae648dc0714af094e2268ef760f20f377bcc29b79e32"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong262144_vv.sb",
+    "stage": "vertex",
+    "size": 3760,
+    "hash": "deb8d9e40c3621388adb34a5d9da8ed81c9704d8c06ec6144f1d55b68265b650"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong262145_p.sb",
+    "stage": "pixel",
+    "size": 8400,
+    "hash": "70496b6e65f66ca09b7fae648dc0714af094e2268ef760f20f377bcc29b79e32"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong262145_vv.sb",
+    "stage": "vertex",
+    "size": 3760,
+    "hash": "deb8d9e40c3621388adb34a5d9da8ed81c9704d8c06ec6144f1d55b68265b650"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong2_p.sb",
+    "stage": "pixel",
+    "size": 8600,
+    "hash": "f7c82ba2cefa5b4fa3ae98660b2abd26bd0bc382e06f1c8b2dfcb7b6072c066c"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong2_vv.sb",
+    "stage": "vertex",
+    "size": 3616,
+    "hash": "25a47854be8d00dd2dad526baa7c7ef1341938268704c4db73084e76cb6b929a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong32772_p.sb",
+    "stage": "pixel",
+    "size": 8948,
+    "hash": "fde2ff8f7c59abbb8986ef0ad0b5ca6ac08c183b86120600f5a80d0cbc019235"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong32772_vv.sb",
+    "stage": "vertex",
+    "size": 4328,
+    "hash": "7101da93116ffc561322910f4b1fd5871e14ad2ffb0970f34d7dc488560a5354"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong32_p.sb",
+    "stage": "pixel",
+    "size": 9612,
+    "hash": "b147fefddbdcd2a956856d9657f71dfa77067852efa15e51d69ad617a78934f9"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong32_vv.sb",
+    "stage": "vertex",
+    "size": 3588,
+    "hash": "1e05f358b7acf5e20417946751be711b97783b0e7e4d6e683f14cfaa6423a927"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong4098_p.sb",
+    "stage": "pixel",
+    "size": 8828,
+    "hash": "504da2ded23cd13ba8cfe0a047624255a8b3ae34590d635bb550e9505ff6b21b"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong4098_vv.sb",
+    "stage": "vertex",
+    "size": 5212,
+    "hash": "76ff4e2df69bef85e9c86550ee9ee7ca93e1f5ecc6a8726eb748afca7b42be0b"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong4194304_p.sb",
+    "stage": "pixel",
+    "size": 9668,
+    "hash": "5dad71cb36bfa9dc7a99d7d5cac43202898586d88a63602c4dda4ff3db2f3c5e"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong4194304_vv.sb",
+    "stage": "vertex",
+    "size": 3588,
+    "hash": "1e05f358b7acf5e20417946751be711b97783b0e7e4d6e683f14cfaa6423a927"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong4_p.sb",
+    "stage": "pixel",
+    "size": 8172,
+    "hash": "52ec51974aba80af67a94277c6d88b036d98dd4b8aa3b7ba5380888c9709dd83"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong4_vv.sb",
+    "stage": "vertex",
+    "size": 4328,
+    "hash": "7101da93116ffc561322910f4b1fd5871e14ad2ffb0970f34d7dc488560a5354"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong524288_p.sb",
+    "stage": "pixel",
+    "size": 8896,
+    "hash": "eda427803e052b3e19b10d646cd63a8d657c22b1b03e79260a0ffbf8ad0e4f2e"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong524288_vv.sb",
+    "stage": "vertex",
+    "size": 3540,
+    "hash": "22a3cbfdd6f32ccdff20fdb96a4c22c83e7ee8b71ed569c7280dc28f84f17c18"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong524289_p.sb",
+    "stage": "pixel",
+    "size": 8896,
+    "hash": "eda427803e052b3e19b10d646cd63a8d657c22b1b03e79260a0ffbf8ad0e4f2e"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong524289_vv.sb",
+    "stage": "vertex",
+    "size": 3540,
+    "hash": "22a3cbfdd6f32ccdff20fdb96a4c22c83e7ee8b71ed569c7280dc28f84f17c18"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong524290_p.sb",
+    "stage": "pixel",
+    "size": 9400,
+    "hash": "bb7a5ddd58c14c956fc2e164e4d63f54d2b83b6ae02a2834a22d48da5c33d1db"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong524290_vv.sb",
+    "stage": "vertex",
+    "size": 3616,
+    "hash": "25a47854be8d00dd2dad526baa7c7ef1341938268704c4db73084e76cb6b929a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong524292_p.sb",
+    "stage": "pixel",
+    "size": 8964,
+    "hash": "61cef52768bb797ce74c977af1e12753da3102a7b2ba8ca9b7abcd41beb41612"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong524292_vv.sb",
+    "stage": "vertex",
+    "size": 4328,
+    "hash": "7101da93116ffc561322910f4b1fd5871e14ad2ffb0970f34d7dc488560a5354"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong524293_p.sb",
+    "stage": "pixel",
+    "size": 8964,
+    "hash": "61cef52768bb797ce74c977af1e12753da3102a7b2ba8ca9b7abcd41beb41612"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong524293_vv.sb",
+    "stage": "vertex",
+    "size": 4328,
+    "hash": "7101da93116ffc561322910f4b1fd5871e14ad2ffb0970f34d7dc488560a5354"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong526338_p.sb",
+    "stage": "pixel",
+    "size": 9400,
+    "hash": "bb7a5ddd58c14c956fc2e164e4d63f54d2b83b6ae02a2834a22d48da5c33d1db"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong526338_vv.sb",
+    "stage": "vertex",
+    "size": 4564,
+    "hash": "4742da5369380a8811f3f16dda95adcb6e820c741918d8688572231379da9a64"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong530434_p.sb",
+    "stage": "pixel",
+    "size": 9400,
+    "hash": "bb7a5ddd58c14c956fc2e164e4d63f54d2b83b6ae02a2834a22d48da5c33d1db"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong530434_vv.sb",
+    "stage": "vertex",
+    "size": 5220,
+    "hash": "2ff7a75d6bb92394471bcb6df1c41e854c4e08d977deb87b1f1388d54c4a0f19"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong557060_p.sb",
+    "stage": "pixel",
+    "size": 10044,
+    "hash": "9ff6a875bba2e49ccad4f94caada7bb255bd3561b609aa98735c92cdf830a5a6"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong557060_vv.sb",
+    "stage": "vertex",
+    "size": 4328,
+    "hash": "7101da93116ffc561322910f4b1fd5871e14ad2ffb0970f34d7dc488560a5354"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong5_p.sb",
+    "stage": "pixel",
+    "size": 8172,
+    "hash": "52ec51974aba80af67a94277c6d88b036d98dd4b8aa3b7ba5380888c9709dd83"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong5_vv.sb",
+    "stage": "vertex",
+    "size": 4328,
+    "hash": "7101da93116ffc561322910f4b1fd5871e14ad2ffb0970f34d7dc488560a5354"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong6144_p.sb",
+    "stage": "pixel",
+    "size": 8096,
+    "hash": "a4e4676e4ee0fd029ab5e9274bc155c805c3b3e6493c71e3699baae34b3ca7fb"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong6144_vv.sb",
+    "stage": "vertex",
+    "size": 5144,
+    "hash": "da7f3cbd69c4fc15c4f26bf0a3b22048556513925005945822077f3df3bedcb4"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong6146_p.sb",
+    "stage": "pixel",
+    "size": 8600,
+    "hash": "f7c82ba2cefa5b4fa3ae98660b2abd26bd0bc382e06f1c8b2dfcb7b6072c066c"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong6146_vv.sb",
+    "stage": "vertex",
+    "size": 5220,
+    "hash": "2ff7a75d6bb92394471bcb6df1c41e854c4e08d977deb87b1f1388d54c4a0f19"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong6152_p.sb",
+    "stage": "pixel",
+    "size": 8148,
+    "hash": "0697be26bc365facbfec62ba116a6800241629adbe79d39795581d8b45164b7d"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong6152_vv.sb",
+    "stage": "vertex",
+    "size": 5256,
+    "hash": "53f75b22e9de4da5efe4bea67e9dea21ea7ceadcafbdb29d38a00af98a6918f3"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong6154_p.sb",
+    "stage": "pixel",
+    "size": 8652,
+    "hash": "c0466c29d5f755449a67e988b11bec30764e12a8a0b4226dd63ad61c97a8bac9"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong6154_vv.sb",
+    "stage": "vertex",
+    "size": 5348,
+    "hash": "d70aa3988a71addda7e5ffc72b89029afc25838ce60d7717ca24138afa15d7f2"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong64_p.sb",
+    "stage": "pixel",
+    "size": 8276,
+    "hash": "c15e6fe705c5312e96dd568a2fc47397f69bcc451202321091a439cafb9b8bf0"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong64_vv.sb",
+    "stage": "vertex",
+    "size": 3668,
+    "hash": "b6a4ba7baaf9fdb715416808117016945f0ce74a48a9c9f898f838044c93283a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong65537_p.sb",
+    "stage": "pixel",
+    "size": 8588,
+    "hash": "fe00da409144c92dfefd554e0f8f5ed6956265d7915cb769fbb1f72abbe857f1"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong65537_vv.sb",
+    "stage": "vertex",
+    "size": 3816,
+    "hash": "303cd50c46de7fbd9373c26814ab87408bde8ef674320a14d0a6fff664d435e5"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong65538_p.sb",
+    "stage": "pixel",
+    "size": 8956,
+    "hash": "cb4a18d5b211733ad637bf93a42d349907ea18eed4cb2fd580bd788ab6ac41b1"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong65538_vv.sb",
+    "stage": "vertex",
+    "size": 3816,
+    "hash": "303cd50c46de7fbd9373c26814ab87408bde8ef674320a14d0a6fff664d435e5"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong65_p.sb",
+    "stage": "pixel",
+    "size": 8276,
+    "hash": "c15e6fe705c5312e96dd568a2fc47397f69bcc451202321091a439cafb9b8bf0"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong65_vv.sb",
+    "stage": "vertex",
+    "size": 3668,
+    "hash": "b6a4ba7baaf9fdb715416808117016945f0ce74a48a9c9f898f838044c93283a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong67585_p.sb",
+    "stage": "pixel",
+    "size": 8464,
+    "hash": "d4463b1bdb3c287d0045d8a36e45cad644bfaca58e55e37084ef6bf8862e4e39"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong67585_vv.sb",
+    "stage": "vertex",
+    "size": 4416,
+    "hash": "27e3bfdd96a375ea0c187e321dbd1221836c1d135a8e2d1ddde9e8dda76978c5"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong67586_p.sb",
+    "stage": "pixel",
+    "size": 8840,
+    "hash": "559068151c7acae754cf773d56a54ee66909cd80f11663dfcf2686a13b6cf669"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong67586_vv.sb",
+    "stage": "vertex",
+    "size": 4416,
+    "hash": "27e3bfdd96a375ea0c187e321dbd1221836c1d135a8e2d1ddde9e8dda76978c5"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong8192_p.sb",
+    "stage": "pixel",
+    "size": 8728,
+    "hash": "1845b2080656fd0855aecb077a181351fde4922e90ad9ec53f2eccafff298ff0"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong8192_vv.sb",
+    "stage": "vertex",
+    "size": 3740,
+    "hash": "6e1e0ce4a7cadfaf02883258e0e67ce0051282b5ab5f0acec66fb76e1e1148f5"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong8193_p.sb",
+    "stage": "pixel",
+    "size": 8728,
+    "hash": "1845b2080656fd0855aecb077a181351fde4922e90ad9ec53f2eccafff298ff0"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong8193_vv.sb",
+    "stage": "vertex",
+    "size": 3740,
+    "hash": "6e1e0ce4a7cadfaf02883258e0e67ce0051282b5ab5f0acec66fb76e1e1148f5"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong8197_p.sb",
+    "stage": "pixel",
+    "size": 8796,
+    "hash": "85c830d5af65dc2e322006d8ab388691d83ebcb2f5ee049b9093e1ccf93a3cde"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong8197_vv.sb",
+    "stage": "vertex",
+    "size": 4524,
+    "hash": "65051cae2977d505f34e9d098ce9e972fd798694270000e7a7564ba431708288"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong8_p.sb",
+    "stage": "pixel",
+    "size": 8236,
+    "hash": "1633880445ba5136c9a620c4d68a368756bc9c825f49e4b889835b7e2e5c7274"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong8_vv.sb",
+    "stage": "vertex",
+    "size": 3808,
+    "hash": "3fba309e99ee2954d3bc2084110393470bc651287ee8f8e0277245f05f2e0578"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong9_p.sb",
+    "stage": "pixel",
+    "size": 8236,
+    "hash": "1633880445ba5136c9a620c4d68a368756bc9c825f49e4b889835b7e2e5c7274"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderPhong9_vv.sb",
+    "stage": "vertex",
+    "size": 3808,
+    "hash": "3fba309e99ee2954d3bc2084110393470bc651287ee8f8e0277245f05f2e0578"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderSheenSkinned_p.sb",
+    "stage": "pixel",
+    "size": 2536,
+    "hash": "079fcf6cb4fdf3447902c8da5154a4241f186f74b5bf9e936038f071dce03be2"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderSheenSkinned_vv.sb",
+    "stage": "vertex",
+    "size": 3236,
+    "hash": "390d63af6a932bf96362632c46cdc79c2377413e926ec08d3175928c8c551e13"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderSheen_p.sb",
+    "stage": "pixel",
+    "size": 2484,
+    "hash": "c0def1bc206b36af96ae7613774f7c394e30145c68a918caa9388305925ae502"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShaderSheen_vv.sb",
+    "stage": "vertex",
+    "size": 2480,
+    "hash": "00537b19991c4128b2432ebcbfa121b1f45eb7d87b81bd050579c881ad32fb6e"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShadowGrassT_p.sb",
+    "stage": "pixel",
+    "size": 884,
+    "hash": "2409145212fcb747882a1e246f27f3e2dc70d7a8223ee66c0d7470015b54e904"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShadowGrassT_vv.sb",
+    "stage": "vertex",
+    "size": 2260,
+    "hash": "b75d8cef8da6e9fd34ccd1c465aceffed90ee51da24299c55583aceaa875f995"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShadowGrassWindT_p.sb",
+    "stage": "pixel",
+    "size": 884,
+    "hash": "2409145212fcb747882a1e246f27f3e2dc70d7a8223ee66c0d7470015b54e904"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShadowGrassWindT_vv.sb",
+    "stage": "vertex",
+    "size": 2664,
+    "hash": "07829e934ca1d11f2b2d2935d2c223cd94291c47d76cb32757a4f77aecdee887"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShadowGrassWind_p.sb",
+    "stage": "pixel",
+    "size": 336,
+    "hash": "086fbf4c6cc3e32153b54a01930cdd2d8d7218b40c4648398993e1daf90cc5e0"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShadowGrassWind_vv.sb",
+    "stage": "vertex",
+    "size": 2580,
+    "hash": "50b3013ad551f1f986906272efc2b247509e344e2909f16e569cca0a49d44193"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShadowInstancedGrassWindT_p.sb",
+    "stage": "pixel",
+    "size": 884,
+    "hash": "2409145212fcb747882a1e246f27f3e2dc70d7a8223ee66c0d7470015b54e904"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShadowInstancedGrassWindT_vv.sb",
+    "stage": "vertex",
+    "size": 2720,
+    "hash": "b914ee3391890bfd77f33f7778e19b63df5d647a650c1d37ea5d680dd6542541"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShadowInstancedGrassWind_p.sb",
+    "stage": "pixel",
+    "size": 336,
+    "hash": "086fbf4c6cc3e32153b54a01930cdd2d8d7218b40c4648398993e1daf90cc5e0"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShadowInstancedGrassWind_vv.sb",
+    "stage": "vertex",
+    "size": 2640,
+    "hash": "c8dc63467a7cb179c3d528395ca39f01883eb8377bd4477dd42006311d835255"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShadowInstancedT_p.sb",
+    "stage": "pixel",
+    "size": 884,
+    "hash": "2409145212fcb747882a1e246f27f3e2dc70d7a8223ee66c0d7470015b54e904"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShadowInstancedT_vv.sb",
+    "stage": "vertex",
+    "size": 1028,
+    "hash": "cd293df6fe6052d7b5a519dccaec78a716487a530fbb493e12839246c6e7cd40"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShadowInstancedWindT_p.sb",
+    "stage": "pixel",
+    "size": 884,
+    "hash": "2409145212fcb747882a1e246f27f3e2dc70d7a8223ee66c0d7470015b54e904"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShadowInstancedWindT_vv.sb",
+    "stage": "vertex",
+    "size": 2096,
+    "hash": "e792d5ffaf7431da1c34f100335cf55d35c09b74075a5e9898ceb44b339fb9e3"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShadowInstancedWind_p.sb",
+    "stage": "pixel",
+    "size": 336,
+    "hash": "086fbf4c6cc3e32153b54a01930cdd2d8d7218b40c4648398993e1daf90cc5e0"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShadowInstancedWind_vv.sb",
+    "stage": "vertex",
+    "size": 2016,
+    "hash": "c4bccdfcdbf5ddf2033bc3e7d541092e41902efe4a88099669f380be45f3fd7e"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShadowInstanced_p.sb",
+    "stage": "pixel",
+    "size": 336,
+    "hash": "086fbf4c6cc3e32153b54a01930cdd2d8d7218b40c4648398993e1daf90cc5e0"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShadowInstanced_vv.sb",
+    "stage": "vertex",
+    "size": 944,
+    "hash": "25c891f87bf9b57e12c6f5460bf490c70c465445c3d80b458c8fbf7dcbc5ade6"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShadowSkinnedT_p.sb",
+    "stage": "pixel",
+    "size": 884,
+    "hash": "2409145212fcb747882a1e246f27f3e2dc70d7a8223ee66c0d7470015b54e904"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShadowSkinnedT_vv.sb",
+    "stage": "vertex",
+    "size": 1604,
+    "hash": "881049b6185843858dcabf691a105d36798b8e3ffe639df7540a539e9eb87f29"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShadowSkinned_p.sb",
+    "stage": "pixel",
+    "size": 336,
+    "hash": "086fbf4c6cc3e32153b54a01930cdd2d8d7218b40c4648398993e1daf90cc5e0"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShadowSkinned_vv.sb",
+    "stage": "vertex",
+    "size": 1524,
+    "hash": "07553ffffd4f58d5625d1a590aa3494b9af0aa6d229a36b7387615adbc691e4b"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShadowT_p.sb",
+    "stage": "pixel",
+    "size": 884,
+    "hash": "2409145212fcb747882a1e246f27f3e2dc70d7a8223ee66c0d7470015b54e904"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShadowT_vv.sb",
+    "stage": "vertex",
+    "size": 880,
+    "hash": "34c419549bc1745a75e1d865fde32b292a62a921b99f23db66d027cd5676bf73"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShadowWindT_p.sb",
+    "stage": "pixel",
+    "size": 884,
+    "hash": "2409145212fcb747882a1e246f27f3e2dc70d7a8223ee66c0d7470015b54e904"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShadowWindT_vv.sb",
+    "stage": "vertex",
+    "size": 2016,
+    "hash": "6c3827630b2b326adb3da88cf752fe0026bfacb1ee19f7a5de70f67376f01b8d"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShadowWind_p.sb",
+    "stage": "pixel",
+    "size": 336,
+    "hash": "086fbf4c6cc3e32153b54a01930cdd2d8d7218b40c4648398993e1daf90cc5e0"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/ShadowWind_vv.sb",
+    "stage": "vertex",
+    "size": 1940,
+    "hash": "a0d7dc541c68ece2270ed1f59a558aff6576e42faa28f6b2a92fd406988c2fdb"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/Shadow_p.sb",
+    "stage": "pixel",
+    "size": 336,
+    "hash": "086fbf4c6cc3e32153b54a01930cdd2d8d7218b40c4648398993e1daf90cc5e0"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/Shadow_vv.sb",
+    "stage": "vertex",
+    "size": 816,
+    "hash": "5125692e404daa02338ad50720f222bfa986e8743a1ec9c38f9aa76cbbc0a4ed"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/SkyboxClouds_p.sb",
+    "stage": "pixel",
+    "size": 3180,
+    "hash": "2cf8ec3b0a24670b37330a17a911042723db089e6eea6942b8c0e2cf2a7196d6"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/SkyboxClouds_vv.sb",
+    "stage": "vertex",
+    "size": 2468,
+    "hash": "e6aaf3a65e8dd590948fc02da02537dca1bcc2e57facb0ab31402005aebbad75"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/SkyboxLayered_p.sb",
+    "stage": "pixel",
+    "size": 4876,
+    "hash": "e9eeb13b25909e31deed42e1180919e6dd4d4faf7cd3890540c1990b0f2cc768"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/SkyboxLayered_vv.sb",
+    "stage": "vertex",
+    "size": 2468,
+    "hash": "e6aaf3a65e8dd590948fc02da02537dca1bcc2e57facb0ab31402005aebbad75"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/SkyboxSky_p.sb",
+    "stage": "pixel",
+    "size": 3164,
+    "hash": "1b41dc3f30161e57d0cc2ca2edb53eaad0287a2183fd6952e040af14e9ed3a9a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/SkyboxSky_vv.sb",
+    "stage": "vertex",
+    "size": 2468,
+    "hash": "e6aaf3a65e8dd590948fc02da02537dca1bcc2e57facb0ab31402005aebbad75"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/Skybox_p.sb",
+    "stage": "pixel",
+    "size": 432,
+    "hash": "4173b9265c0d2016c50851c5a50210d8849b1e811ca31f9a49677efda8388f6d"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/Skybox_vv.sb",
+    "stage": "vertex",
+    "size": 2468,
+    "hash": "e6aaf3a65e8dd590948fc02da02537dca1bcc2e57facb0ab31402005aebbad75"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/Transition_CameraBurning_p.sb",
+    "stage": "pixel",
+    "size": 1300,
+    "hash": "3f1093716535f37222dec8473aec7f50b7c4af92d64edbec47bc769af3cc9a04"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/Transition_CameraBurning_vv.sb",
+    "stage": "vertex",
+    "size": 420,
+    "hash": "bac924286bbae537cd8f6e538d2e4bd51ee5d13dade230e88ddb0c6af6188287"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/Transition_CameraFrozen_p.sb",
+    "stage": "pixel",
+    "size": 1260,
+    "hash": "549b3634c8f8c16e93fb118e545f662ea0df3cd2cbb992e5433ecccb7bbc836d"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/Transition_CameraFrozen_vv.sb",
+    "stage": "vertex",
+    "size": 420,
+    "hash": "bac924286bbae537cd8f6e538d2e4bd51ee5d13dade230e88ddb0c6af6188287"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/Transition_CameraSick_p.sb",
+    "stage": "pixel",
+    "size": 1244,
+    "hash": "580a9c2878f4b4326f6d67b452d626382dd4bae2e03604a447a5c8af3cb1ae1a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/Transition_CameraSick_vv.sb",
+    "stage": "vertex",
+    "size": 420,
+    "hash": "bac924286bbae537cd8f6e538d2e4bd51ee5d13dade230e88ddb0c6af6188287"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/Transition_CameraSticky_p.sb",
+    "stage": "pixel",
+    "size": 1212,
+    "hash": "46ae0fe8e22a55511de44890365d1ea2c7f138ab5378df78361661503ff8789c"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/Transition_CameraSticky_vv.sb",
+    "stage": "vertex",
+    "size": 420,
+    "hash": "bac924286bbae537cd8f6e538d2e4bd51ee5d13dade230e88ddb0c6af6188287"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/Transition_CameraUnderwater_p.sb",
+    "stage": "pixel",
+    "size": 1204,
+    "hash": "693ee72a46f4ce8534691e7449629c2864cc8817905850c4221e7519f46bec86"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/Transition_CameraUnderwater_vv.sb",
+    "stage": "vertex",
+    "size": 420,
+    "hash": "bac924286bbae537cd8f6e538d2e4bd51ee5d13dade230e88ddb0c6af6188287"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/Transition_CameraWet_p.sb",
+    "stage": "pixel",
+    "size": 1476,
+    "hash": "1e21edd3922f766c95f485458952ccac0332ff754872e6186dc1e02af69e07dc"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/Transition_CameraWet_vv.sb",
+    "stage": "vertex",
+    "size": 420,
+    "hash": "bac924286bbae537cd8f6e538d2e4bd51ee5d13dade230e88ddb0c6af6188287"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/Transition_CircleWipeInvert_p.sb",
+    "stage": "pixel",
+    "size": 744,
+    "hash": "116bd550ec959bf46a3932ae1f952555ac4592337b4595f11e39b0a82e80c592"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/Transition_CircleWipeInvert_vv.sb",
+    "stage": "vertex",
+    "size": 456,
+    "hash": "a2bc815c000a0ed69c62bce09584358016ed97c618202da25de642a617d02542"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/Transition_CircleWipe_p.sb",
+    "stage": "pixel",
+    "size": 848,
+    "hash": "1b5bea69e4c58999dedd36b0dda4c73ce4dc057a32970468e7fcae7b3ec26b2f"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/Transition_CircleWipe_vv.sb",
+    "stage": "vertex",
+    "size": 456,
+    "hash": "a2bc815c000a0ed69c62bce09584358016ed97c618202da25de642a617d02542"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/Transition_DirectionalWipe_p.sb",
+    "stage": "pixel",
+    "size": 776,
+    "hash": "84575af462d5b91f783dac602c25e8043e4e8aa948ba268450251555f5b3cc88"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/Transition_DirectionalWipe_vv.sb",
+    "stage": "vertex",
+    "size": 456,
+    "hash": "a2bc815c000a0ed69c62bce09584358016ed97c618202da25de642a617d02542"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/Transition_Fade_p.sb",
+    "stage": "pixel",
+    "size": 644,
+    "hash": "2f4273773f8750866e52078c516dfa74b12a72f1e2f33b93aed5a48c873a50f5"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/Transition_Fade_vv.sb",
+    "stage": "vertex",
+    "size": 420,
+    "hash": "bac924286bbae537cd8f6e538d2e4bd51ee5d13dade230e88ddb0c6af6188287"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/Transition_Feeding_p.sb",
+    "stage": "pixel",
+    "size": 752,
+    "hash": "e0c78161d9a4f739915b460a322126adc223f714e1419efe0d8921f1e7044684"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/Transition_Feeding_vv.sb",
+    "stage": "vertex",
+    "size": 456,
+    "hash": "a2bc815c000a0ed69c62bce09584358016ed97c618202da25de642a617d02542"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/Transition_GradientMask_p.sb",
+    "stage": "pixel",
+    "size": 1912,
+    "hash": "7ee918bbd979edd210b719c7c3246fd8fcbf8ab97f26520e0cfb015624350b80"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/Transition_GradientMask_vv.sb",
+    "stage": "vertex",
+    "size": 420,
+    "hash": "bac924286bbae537cd8f6e538d2e4bd51ee5d13dade230e88ddb0c6af6188287"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/Transition_Loading_p.sb",
+    "stage": "pixel",
+    "size": 644,
+    "hash": "2f4273773f8750866e52078c516dfa74b12a72f1e2f33b93aed5a48c873a50f5"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/Transition_Loading_vv.sb",
+    "stage": "vertex",
+    "size": 420,
+    "hash": "bac924286bbae537cd8f6e538d2e4bd51ee5d13dade230e88ddb0c6af6188287"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/Transition_SwirlWipe_p.sb",
+    "stage": "pixel",
+    "size": 1036,
+    "hash": "9df41ffbd8f6c1aabefedda14d5b30a52c9be93eeee2c31d1f7f9298b3a04923"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl/Transition_SwirlWipe_vv.sb",
+    "stage": "vertex",
+    "size": 420,
+    "hash": "bac924286bbae537cd8f6e538d2e4bd51ee5d13dade230e88ddb0c6af6188287"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Clear_p.pssl",
+    "stage": "pixel",
+    "size": 334,
+    "hash": "03310be240da2f4ceeb6477f809898b619f4a7918390effad141b4e69dfd8dff"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Clear_p.sb",
+    "stage": "pixel",
+    "size": 1552,
+    "hash": "fee87b7ae600494862dcd6ca79291d5bc0f990918e4115a751c4c280c954eb2a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Clear_vv.pssl",
+    "stage": "vertex",
+    "size": 627,
+    "hash": "73e7f03ceb0ea347e2e806c6ba25f4fb0e45ef91ba9153cf9a6cfcda9f387472"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Clear_vv.sb",
+    "stage": "vertex",
+    "size": 1888,
+    "hash": "7e5b27b72ecfdaa7e0a569e095fbad6e5490bf8d3ba01a8a850092eb6912242c"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/DefaultShader.pssl",
+    "stage": "unknown",
+    "size": 1288,
+    "hash": "15efcc2a00f2077876db64a63f51007df9ad7ef6fc59a0af243f70a8c7508b2e"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/DefaultShader_p.sb",
+    "stage": "pixel",
+    "size": 1936,
+    "hash": "52fe853f1a01d12f31135b980201e72f61d58bd6512dc540c135f4d4dc22ec5f"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/DefaultShader_vv.sb",
+    "stage": "vertex",
+    "size": 2912,
+    "hash": "d2780674e2fe47a28c566a10535105cb7647829dcd639f44cd86912b9f2b4630"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/DepthGrassT_p.sb",
+    "stage": "pixel",
+    "size": 2928,
+    "hash": "20cefb8593eda1452b7b1e9664f70023d84eecc0ee54c8b2ecc0202ae224c3e1"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/DepthGrassT_vv.sb",
+    "stage": "vertex",
+    "size": 5312,
+    "hash": "9ab427ef564ec4b9e946ff8a51e4812a43ecd259ee1e9c327e7d99ce6277d266"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/DepthGrassWindT_p.sb",
+    "stage": "pixel",
+    "size": 2928,
+    "hash": "20cefb8593eda1452b7b1e9664f70023d84eecc0ee54c8b2ecc0202ae224c3e1"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/DepthGrassWindT_vv.sb",
+    "stage": "vertex",
+    "size": 5520,
+    "hash": "75c3e9f9d328294c727b1297f0744f853f68f761fa30143e3f3389093bc42c66"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/DepthGrassWind_p.sb",
+    "stage": "pixel",
+    "size": 1648,
+    "hash": "d5bc1ddc8285634bd64c61ce0916294dd2efe06ad618b101b7b37b2cc2f5061a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/DepthGrassWind_vv.sb",
+    "stage": "vertex",
+    "size": 5520,
+    "hash": "75c3e9f9d328294c727b1297f0744f853f68f761fa30143e3f3389093bc42c66"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/DepthInstancedGrassWindT_p.sb",
+    "stage": "pixel",
+    "size": 2928,
+    "hash": "20cefb8593eda1452b7b1e9664f70023d84eecc0ee54c8b2ecc0202ae224c3e1"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/DepthInstancedGrassWindT_vv.sb",
+    "stage": "vertex",
+    "size": 5696,
+    "hash": "39592349c8aa160825b6126dd0f1b94a4bec8a07af064df5c9d3ffa602d29f58"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/DepthInstancedGrassWind_p.sb",
+    "stage": "pixel",
+    "size": 1648,
+    "hash": "d5bc1ddc8285634bd64c61ce0916294dd2efe06ad618b101b7b37b2cc2f5061a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/DepthInstancedGrassWind_vv.sb",
+    "stage": "vertex",
+    "size": 5696,
+    "hash": "39592349c8aa160825b6126dd0f1b94a4bec8a07af064df5c9d3ffa602d29f58"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/DepthInstancedT_p.sb",
+    "stage": "pixel",
+    "size": 2928,
+    "hash": "20cefb8593eda1452b7b1e9664f70023d84eecc0ee54c8b2ecc0202ae224c3e1"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/DepthInstancedT_vv.sb",
+    "stage": "vertex",
+    "size": 3536,
+    "hash": "734b47dcfc38590ea59e7af6800d239b1f4f6a3cd5cd181963cd3723eceffae7"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/DepthInstancedWindT_p.sb",
+    "stage": "pixel",
+    "size": 2928,
+    "hash": "20cefb8593eda1452b7b1e9664f70023d84eecc0ee54c8b2ecc0202ae224c3e1"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/DepthInstancedWindT_vv.sb",
+    "stage": "vertex",
+    "size": 4872,
+    "hash": "738998f778b6e0a4c81ab1ea06c3d5ba471e4ac537a56cb1ed1a021c0eba7978"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/DepthInstancedWind_p.sb",
+    "stage": "pixel",
+    "size": 1648,
+    "hash": "d5bc1ddc8285634bd64c61ce0916294dd2efe06ad618b101b7b37b2cc2f5061a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/DepthInstancedWind_vv.sb",
+    "stage": "vertex",
+    "size": 4872,
+    "hash": "738998f778b6e0a4c81ab1ea06c3d5ba471e4ac537a56cb1ed1a021c0eba7978"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/DepthInstanced_p.sb",
+    "stage": "pixel",
+    "size": 1648,
+    "hash": "d5bc1ddc8285634bd64c61ce0916294dd2efe06ad618b101b7b37b2cc2f5061a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/DepthInstanced_vv.sb",
+    "stage": "vertex",
+    "size": 3536,
+    "hash": "734b47dcfc38590ea59e7af6800d239b1f4f6a3cd5cd181963cd3723eceffae7"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/DepthSkinnedT_p.sb",
+    "stage": "pixel",
+    "size": 2928,
+    "hash": "20cefb8593eda1452b7b1e9664f70023d84eecc0ee54c8b2ecc0202ae224c3e1"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/DepthSkinnedT_vv.sb",
+    "stage": "vertex",
+    "size": 4328,
+    "hash": "bd6ec4d15bea6201b25119fe170490fa55ad21876515f96cb33d0a3c8685c79a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/DepthSkinned_p.sb",
+    "stage": "pixel",
+    "size": 1648,
+    "hash": "d5bc1ddc8285634bd64c61ce0916294dd2efe06ad618b101b7b37b2cc2f5061a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/DepthSkinned_vv.sb",
+    "stage": "vertex",
+    "size": 4328,
+    "hash": "bd6ec4d15bea6201b25119fe170490fa55ad21876515f96cb33d0a3c8685c79a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/DepthT_p.sb",
+    "stage": "pixel",
+    "size": 2928,
+    "hash": "20cefb8593eda1452b7b1e9664f70023d84eecc0ee54c8b2ecc0202ae224c3e1"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/DepthT_vv.sb",
+    "stage": "vertex",
+    "size": 3224,
+    "hash": "aafdc2aa7f29cbbf0c293f80abfeac63666267ac03b73a0b05a32c9f80515a90"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/DepthWindT_p.sb",
+    "stage": "pixel",
+    "size": 2928,
+    "hash": "20cefb8593eda1452b7b1e9664f70023d84eecc0ee54c8b2ecc0202ae224c3e1"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/DepthWindT_vv.sb",
+    "stage": "vertex",
+    "size": 4712,
+    "hash": "b7ab9c00c1c3f8046129858260bfa1c4b9e22eeb028182775b7b09f967ff4940"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/DepthWind_p.sb",
+    "stage": "pixel",
+    "size": 1648,
+    "hash": "d5bc1ddc8285634bd64c61ce0916294dd2efe06ad618b101b7b37b2cc2f5061a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/DepthWind_vv.sb",
+    "stage": "vertex",
+    "size": 4712,
+    "hash": "b7ab9c00c1c3f8046129858260bfa1c4b9e22eeb028182775b7b09f967ff4940"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Depth_p.sb",
+    "stage": "pixel",
+    "size": 1648,
+    "hash": "d5bc1ddc8285634bd64c61ce0916294dd2efe06ad618b101b7b37b2cc2f5061a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Depth_vv.sb",
+    "stage": "vertex",
+    "size": 3224,
+    "hash": "aafdc2aa7f29cbbf0c293f80abfeac63666267ac03b73a0b05a32c9f80515a90"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ImageShader_p.sb",
+    "stage": "pixel",
+    "size": 3776,
+    "hash": "b4a4d4ba28a861accceab9e06c573239d7c7aa333843a76ae7d3626fda4119b4"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ImageShader_vv.sb",
+    "stage": "vertex",
+    "size": 3320,
+    "hash": "af13786930ad95fd06ce53dba4985c4281d673eaceeab3c3aea708bbc612b774"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Line_p.sb",
+    "stage": "pixel",
+    "size": 1952,
+    "hash": "4711e216d63abf622d618b4a1d9109df7c4392ac0d9c69da7488782214b6d7d2"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Line_vv.sb",
+    "stage": "vertex",
+    "size": 3176,
+    "hash": "ccf34dd0af8a4602b158b8ab37e9bba6da614151997a957f4ed54edf59e00cbe"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ParticleRain_p.sb",
+    "stage": "pixel",
+    "size": 2352,
+    "hash": "d720e555a1ffec589c0f78af2306cb573f08826db2295156d66d3dfecf566019"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ParticleRain_vv.sb",
+    "stage": "vertex",
+    "size": 4360,
+    "hash": "3988fcaeb0e8eb488e499c38be4b24181c91d28af4df20f318fecf34c69137f8"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ParticleSand_p.sb",
+    "stage": "pixel",
+    "size": 2312,
+    "hash": "b604ff3e3ef53a83fcdfba502b673be54402839c122185e1a101ff111ab5b47a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ParticleSand_vv.sb",
+    "stage": "vertex",
+    "size": 3632,
+    "hash": "062fda94f2969f258e46d188d4acc9fc388233b60f45e6fc7f2dc31458ae89ec"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ParticleShader_p.sb",
+    "stage": "pixel",
+    "size": 2952,
+    "hash": "6ffa1f3c26ea160ce1cfe6bc80c1e3ce1b512e3ba02249b21d8d6fa15527724f"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ParticleShader_vv.sb",
+    "stage": "vertex",
+    "size": 3064,
+    "hash": "7c58fc5255b31aa148d807dac66eb3e1561670a5f9c3d6c4c6a12efefd460587"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ParticleSnow_p.sb",
+    "stage": "pixel",
+    "size": 2352,
+    "hash": "d720e555a1ffec589c0f78af2306cb573f08826db2295156d66d3dfecf566019"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ParticleSnow_vv.sb",
+    "stage": "vertex",
+    "size": 4296,
+    "hash": "dc30736640fa97c268ecb63b6284dde33d5f5bd0f05075715652e44118e01730"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Post/BloomP_p.sb",
+    "stage": "pixel",
+    "size": 3368,
+    "hash": "4606a5be4e4bc1ec2859c917f2fd6b93a27e2cac2da24c090563e5e2158d70b1"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Post/BloomP_vv.sb",
+    "stage": "vertex",
+    "size": 3272,
+    "hash": "69c010d17005c7f72c581b58fd0924012942264e80a2f8f3928a35ad8945bf19"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Post/BlurHPDOF_p.sb",
+    "stage": "pixel",
+    "size": 3248,
+    "hash": "d76799ea9a86ea0c6e226d502b6f519f3d8f767c3157ad2c46a2043eacc395f7"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Post/BlurHPDOF_vv.sb",
+    "stage": "vertex",
+    "size": 3272,
+    "hash": "69c010d17005c7f72c581b58fd0924012942264e80a2f8f3928a35ad8945bf19"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Post/BlurHP_p.sb",
+    "stage": "pixel",
+    "size": 2712,
+    "hash": "06dd5030495c0805feea87e7a858c97ab7c54d93ca3a9f0478b4b9314b2af153"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Post/BlurHP_vv.sb",
+    "stage": "vertex",
+    "size": 3272,
+    "hash": "69c010d17005c7f72c581b58fd0924012942264e80a2f8f3928a35ad8945bf19"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Post/BlurVPDOF_p.sb",
+    "stage": "pixel",
+    "size": 3248,
+    "hash": "8b3afdf59f622f73a5ee84588f58bce5aa7a311bb7074df640b8bc734e431b95"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Post/BlurVPDOF_vv.sb",
+    "stage": "vertex",
+    "size": 3272,
+    "hash": "69c010d17005c7f72c581b58fd0924012942264e80a2f8f3928a35ad8945bf19"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Post/BlurVP_p.sb",
+    "stage": "pixel",
+    "size": 2712,
+    "hash": "25cfd91f008f6eaf84a07c212a9d9bace558f915dfd1df80ba70df1e8510e0c3"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Post/BlurVP_vv.sb",
+    "stage": "vertex",
+    "size": 3272,
+    "hash": "69c010d17005c7f72c581b58fd0924012942264e80a2f8f3928a35ad8945bf19"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Post/CamBlur_p.sb",
+    "stage": "pixel",
+    "size": 2968,
+    "hash": "3a724cfbc848727e1e6c3e871e602228010fa6db703e24c03c6988f83b0a9ba9"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Post/CamBlur_vv.sb",
+    "stage": "vertex",
+    "size": 3216,
+    "hash": "696a388e41e4cdf19beee1e464e50b4a2822e8f3950c368bfd74e104d47a8163"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Post/ColorGrade_p.sb",
+    "stage": "pixel",
+    "size": 2744,
+    "hash": "43f3fb8dfcdb129c096f58b107a6c569c81e9e05d5d28867b38228c98f9dedef"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Post/ColorGrade_vv.sb",
+    "stage": "vertex",
+    "size": 3272,
+    "hash": "69c010d17005c7f72c581b58fd0924012942264e80a2f8f3928a35ad8945bf19"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Post/DOF_p.sb",
+    "stage": "pixel",
+    "size": 2984,
+    "hash": "77ebb573ae2d7dd28a2af41fa791bc111b3080adb94b949eaf3ab638ab8de235"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Post/DOF_vv.sb",
+    "stage": "vertex",
+    "size": 3272,
+    "hash": "69c010d17005c7f72c581b58fd0924012942264e80a2f8f3928a35ad8945bf19"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Post/SSAOCombine_p.sb",
+    "stage": "pixel",
+    "size": 2536,
+    "hash": "adf8d1d6595753111bceaf98a752f70bc67ca182a5a63aa28cae434e57b0ca2d"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Post/SSAOCombine_vv.sb",
+    "stage": "vertex",
+    "size": 3272,
+    "hash": "69c010d17005c7f72c581b58fd0924012942264e80a2f8f3928a35ad8945bf19"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Post/SSAOHigh_p.sb",
+    "stage": "pixel",
+    "size": 4232,
+    "hash": "96b4e181739214a4d56d9c6723887c920acbfcdda738943aef0363a02097ce90"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Post/SSAOHigh_vv.sb",
+    "stage": "vertex",
+    "size": 3272,
+    "hash": "69c010d17005c7f72c581b58fd0924012942264e80a2f8f3928a35ad8945bf19"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Post/SSAO_p.sb",
+    "stage": "pixel",
+    "size": 4104,
+    "hash": "bbf4f78d7741f970a054d15beaf2479de0b828eb6f5839b2960f60eab40dda57"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Post/SSAO_vv.sb",
+    "stage": "vertex",
+    "size": 3272,
+    "hash": "69c010d17005c7f72c581b58fd0924012942264e80a2f8f3928a35ad8945bf19"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderGlowSkinned_p.sb",
+    "stage": "pixel",
+    "size": 3512,
+    "hash": "d0014bbd3833f8086fbb1ae5c2ee7be12e167a478707aaea698cbe69e2a4178d"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderGlowSkinned_vv.sb",
+    "stage": "vertex",
+    "size": 5488,
+    "hash": "a8db6afe404901e3468c895a0bb87f25d3676649732f650a3c0ddc49ea6b36c3"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderGlow_p.sb",
+    "stage": "pixel",
+    "size": 3472,
+    "hash": "7ebc904e0e0355ae0943d7657234cdf0a9bcd2379dfcb64ab107d2fa311e3545"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderGlow_vv.sb",
+    "stage": "vertex",
+    "size": 4120,
+    "hash": "0d5b1e24dc3a5f86d4bd497c2ca1e08eacc2440130c67fd72a1e1be54f130cdb"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong0_p.sb",
+    "stage": "pixel",
+    "size": 10800,
+    "hash": "607bdeffc304f19ba79b8127df2ecb1bd67de5b9a129fa8219f2d0c9d0cbd21d"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong0_vv.sb",
+    "stage": "vertex",
+    "size": 4784,
+    "hash": "3b5010c8508183a8ac4d3f665b8c23fa8b8cb38ba2c7e88cd4544ae7e3a67f80"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong1048577_p.sb",
+    "stage": "pixel",
+    "size": 11176,
+    "hash": "abcbb525555e479c81fe47d8e2e7dfdf493c11cedf7e25c2d65106d7e79f4576"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong1048577_vv.sb",
+    "stage": "vertex",
+    "size": 4832,
+    "hash": "4f10800518c6d7a8299a27ac96b978ee84c2b570b0e88abb02fc9f1691ca5281"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong10_p.sb",
+    "stage": "pixel",
+    "size": 11528,
+    "hash": "47761e30914b09d11c05cd1b0c86fb057c6eaacf9332014cd56125e38c07e20b"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong10_vv.sb",
+    "stage": "vertex",
+    "size": 5352,
+    "hash": "3c69aeeb5bc59d251eb11daaec65bfe2be6ab5886c655b108d244ecebf2927df"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong1114113_p.sb",
+    "stage": "pixel",
+    "size": 11608,
+    "hash": "46d7574c8691f90a3d91f61a96559581976669140919fa9a44bdbd96b6d7a5fd"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong1114113_vv.sb",
+    "stage": "vertex",
+    "size": 5104,
+    "hash": "687f8b4cd136c30558efb787968bca5a828d12d2ab9e582d7c5015b7948ebf3b"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong131072_p.sb",
+    "stage": "pixel",
+    "size": 4464,
+    "hash": "effd9fcf330b1ffb000f4cb7c64ed7f73f843e5c4687bcd5166f64233a38e0dd"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong131072_vv.sb",
+    "stage": "vertex",
+    "size": 5024,
+    "hash": "5ad0417e2668e74578d96c7a61b04e648d1809c9eaa20dd255fb57f2942fce85"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong131076_p.sb",
+    "stage": "pixel",
+    "size": 4512,
+    "hash": "4177f1eb2414f2404a4280c0122b2cf6aec5341a1f9055db1fe84d860af26dba"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong131076_vv.sb",
+    "stage": "vertex",
+    "size": 6456,
+    "hash": "7bcc83dd6043489a11a5bac562380055c0e3b5060e03f9e0d704104ae032fae0"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong133120_p.sb",
+    "stage": "pixel",
+    "size": 4464,
+    "hash": "effd9fcf330b1ffb000f4cb7c64ed7f73f843e5c4687bcd5166f64233a38e0dd"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong133120_vv.sb",
+    "stage": "vertex",
+    "size": 6224,
+    "hash": "2542be6d8213893b7786f05ab1ebfd2d54b0dbec8a0c34c54563065d9d14eee6"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong160_p.sb",
+    "stage": "pixel",
+    "size": 9728,
+    "hash": "f29e8ce9a2d0b67bee4ade674932e3d8276cf52d178ea59bb93b02c8e62b982f"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong160_vv.sb",
+    "stage": "vertex",
+    "size": 4832,
+    "hash": "c9ce607f1f59332c40832a840c7876ea23ec9799fd202a818b9319c6f25f048b"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong16384_p.sb",
+    "stage": "pixel",
+    "size": 13160,
+    "hash": "71ec8c725eb8ad6511d0e3a1519974b8664d2eb8da0cdfc01542d934f881b561"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong16384_vv.sb",
+    "stage": "vertex",
+    "size": 5032,
+    "hash": "59b77d7f46da2f74a946ea43e3530c36616de4e7e9c544c38a55dc92d0a0aabe"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong16385_p.sb",
+    "stage": "pixel",
+    "size": 13160,
+    "hash": "71ec8c725eb8ad6511d0e3a1519974b8664d2eb8da0cdfc01542d934f881b561"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong16385_vv.sb",
+    "stage": "vertex",
+    "size": 5032,
+    "hash": "59b77d7f46da2f74a946ea43e3530c36616de4e7e9c544c38a55dc92d0a0aabe"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong16389_p.sb",
+    "stage": "pixel",
+    "size": 13240,
+    "hash": "a968d174c19ff23bca026f568736d84c3e358ce9bd512d0ab1da3ffc69a74ba9"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong16389_vv.sb",
+    "stage": "vertex",
+    "size": 6784,
+    "hash": "89644921e03daed2256e9fcb81fb12e9dfed83ae56060af910d5a69275487bf9"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong16_p.sb",
+    "stage": "pixel",
+    "size": 10408,
+    "hash": "d592d50b6d244394a027eb851c43a6a9253f71964f86c85df9ed29cf936d8542"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong16_vv.sb",
+    "stage": "vertex",
+    "size": 5000,
+    "hash": "6246f670c0e1a3fee9f45b87a6914eb35022d91924466f26e1a6e3d046b73a00"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong17_p.sb",
+    "stage": "pixel",
+    "size": 10408,
+    "hash": "d592d50b6d244394a027eb851c43a6a9253f71964f86c85df9ed29cf936d8542"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong17_vv.sb",
+    "stage": "vertex",
+    "size": 5000,
+    "hash": "6246f670c0e1a3fee9f45b87a6914eb35022d91924466f26e1a6e3d046b73a00"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong1_p.sb",
+    "stage": "pixel",
+    "size": 10800,
+    "hash": "607bdeffc304f19ba79b8127df2ecb1bd67de5b9a129fa8219f2d0c9d0cbd21d"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong1_vv.sb",
+    "stage": "vertex",
+    "size": 4784,
+    "hash": "3b5010c8508183a8ac4d3f665b8c23fa8b8cb38ba2c7e88cd4544ae7e3a67f80"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong2048_p.sb",
+    "stage": "pixel",
+    "size": 10800,
+    "hash": "607bdeffc304f19ba79b8127df2ecb1bd67de5b9a129fa8219f2d0c9d0cbd21d"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong2048_vv.sb",
+    "stage": "vertex",
+    "size": 6336,
+    "hash": "602f6ca0ed3abbc255a6acd4e804aeff100f19d711647bbdf1f45799f6799750"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong2050_p.sb",
+    "stage": "pixel",
+    "size": 11440,
+    "hash": "2af381e1b180450e4da8c8a7f24a2e0b325ff9a3578692ff82993d74163c901e"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong2050_vv.sb",
+    "stage": "vertex",
+    "size": 6336,
+    "hash": "602f6ca0ed3abbc255a6acd4e804aeff100f19d711647bbdf1f45799f6799750"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong2056_p.sb",
+    "stage": "pixel",
+    "size": 10840,
+    "hash": "d91bfcd2f1d76aafd7ec1bd3cca5006762c112c1cff04d04a0e19b7e9d884e24"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong2056_vv.sb",
+    "stage": "vertex",
+    "size": 6464,
+    "hash": "27a6588fd62eaa6fa24c831eeaf90031247a0140598d33ba0e9d3ac57363f607"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong2058_p.sb",
+    "stage": "pixel",
+    "size": 11480,
+    "hash": "ba2e8aefa41b142cb1e0d802fe8db1a635a40bb02ce1754c8b4fca8e8bf0f763"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong2058_vv.sb",
+    "stage": "vertex",
+    "size": 6464,
+    "hash": "27a6588fd62eaa6fa24c831eeaf90031247a0140598d33ba0e9d3ac57363f607"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong2097152_p.sb",
+    "stage": "pixel",
+    "size": 11848,
+    "hash": "5f710680e0beccefcb1564c629434ad65ba5e8124cec633352762063b549685b"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong2097152_vv.sb",
+    "stage": "vertex",
+    "size": 5088,
+    "hash": "0e971cf34b8e764716b74dab4b0733e65735a0d3781e85bc946c8c88f1fafd80"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong2097153_p.sb",
+    "stage": "pixel",
+    "size": 11848,
+    "hash": "5f710680e0beccefcb1564c629434ad65ba5e8124cec633352762063b549685b"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong2097153_vv.sb",
+    "stage": "vertex",
+    "size": 5088,
+    "hash": "0e971cf34b8e764716b74dab4b0733e65735a0d3781e85bc946c8c88f1fafd80"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong2097156_p.sb",
+    "stage": "pixel",
+    "size": 11904,
+    "hash": "55ccf1ab6fe1ed89087968119d9469081cbe484b35ceb9e3a8846279760f0241"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong2097156_vv.sb",
+    "stage": "vertex",
+    "size": 6520,
+    "hash": "c53daffc374570a89e1871ef31e0815fb2877bc5fdb5ddfb2c33a17ba9addcc9"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong2097157_p.sb",
+    "stage": "pixel",
+    "size": 11904,
+    "hash": "55ccf1ab6fe1ed89087968119d9469081cbe484b35ceb9e3a8846279760f0241"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong2097157_vv.sb",
+    "stage": "vertex",
+    "size": 6520,
+    "hash": "c53daffc374570a89e1871ef31e0815fb2877bc5fdb5ddfb2c33a17ba9addcc9"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong2097412_p.sb",
+    "stage": "pixel",
+    "size": 12048,
+    "hash": "b95591e46bc75aa86d0c0c70005f577833781682e3529e9d1b8e8c0a55f76e85"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong2097412_vv.sb",
+    "stage": "vertex",
+    "size": 6520,
+    "hash": "c53daffc374570a89e1871ef31e0815fb2877bc5fdb5ddfb2c33a17ba9addcc9"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong2097413_p.sb",
+    "stage": "pixel",
+    "size": 12048,
+    "hash": "b95591e46bc75aa86d0c0c70005f577833781682e3529e9d1b8e8c0a55f76e85"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong2097413_vv.sb",
+    "stage": "vertex",
+    "size": 6520,
+    "hash": "c53daffc374570a89e1871ef31e0815fb2877bc5fdb5ddfb2c33a17ba9addcc9"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong256_p.sb",
+    "stage": "pixel",
+    "size": 10928,
+    "hash": "117df609bdfb64f029c61a996c5d70f6bf837cc5103c4e9b0e4e4d0dd116cf6a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong256_vv.sb",
+    "stage": "vertex",
+    "size": 4784,
+    "hash": "3b5010c8508183a8ac4d3f665b8c23fa8b8cb38ba2c7e88cd4544ae7e3a67f80"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong257_p.sb",
+    "stage": "pixel",
+    "size": 10928,
+    "hash": "117df609bdfb64f029c61a996c5d70f6bf837cc5103c4e9b0e4e4d0dd116cf6a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong257_vv.sb",
+    "stage": "vertex",
+    "size": 4784,
+    "hash": "3b5010c8508183a8ac4d3f665b8c23fa8b8cb38ba2c7e88cd4544ae7e3a67f80"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong260_p.sb",
+    "stage": "pixel",
+    "size": 11016,
+    "hash": "8424a04efa5d9cb08524d583d82bd3c70ae31966fd8f1e99bab40c23a967c13d"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong260_vv.sb",
+    "stage": "vertex",
+    "size": 6280,
+    "hash": "32e2031b9c87bbce8fb92f178da719f905d51ec184792aafbda8092475b6d5f6"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong261_p.sb",
+    "stage": "pixel",
+    "size": 11016,
+    "hash": "8424a04efa5d9cb08524d583d82bd3c70ae31966fd8f1e99bab40c23a967c13d"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong261_vv.sb",
+    "stage": "vertex",
+    "size": 6280,
+    "hash": "32e2031b9c87bbce8fb92f178da719f905d51ec184792aafbda8092475b6d5f6"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong2621444_p.sb",
+    "stage": "pixel",
+    "size": 12712,
+    "hash": "ebf0a3ada620d90f05a43d5904c0c3cbad6b3ad6c5534f9bf398f947656b6d61"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong2621444_vv.sb",
+    "stage": "vertex",
+    "size": 6520,
+    "hash": "c53daffc374570a89e1871ef31e0815fb2877bc5fdb5ddfb2c33a17ba9addcc9"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong2621445_p.sb",
+    "stage": "pixel",
+    "size": 12712,
+    "hash": "ebf0a3ada620d90f05a43d5904c0c3cbad6b3ad6c5534f9bf398f947656b6d61"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong2621445_vv.sb",
+    "stage": "vertex",
+    "size": 6520,
+    "hash": "c53daffc374570a89e1871ef31e0815fb2877bc5fdb5ddfb2c33a17ba9addcc9"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong262144_p.sb",
+    "stage": "pixel",
+    "size": 11240,
+    "hash": "42d04afc049ce994957c1543ea84ef631e4758924d293bcbe77b2652fe4aa0db"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong262144_vv.sb",
+    "stage": "vertex",
+    "size": 5104,
+    "hash": "687f8b4cd136c30558efb787968bca5a828d12d2ab9e582d7c5015b7948ebf3b"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong262145_p.sb",
+    "stage": "pixel",
+    "size": 11240,
+    "hash": "42d04afc049ce994957c1543ea84ef631e4758924d293bcbe77b2652fe4aa0db"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong262145_vv.sb",
+    "stage": "vertex",
+    "size": 5104,
+    "hash": "687f8b4cd136c30558efb787968bca5a828d12d2ab9e582d7c5015b7948ebf3b"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong2_p.sb",
+    "stage": "pixel",
+    "size": 11440,
+    "hash": "cfd8613c5526c98fdf6666498cd3b4b7970daf63f47f0b781b1de34a00022063"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong2_vv.sb",
+    "stage": "vertex",
+    "size": 4784,
+    "hash": "3b5010c8508183a8ac4d3f665b8c23fa8b8cb38ba2c7e88cd4544ae7e3a67f80"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong32772_p.sb",
+    "stage": "pixel",
+    "size": 11888,
+    "hash": "60d808dccab1fc370665b626b18da116e1e563fd8d7e182251aea4924b2efbc9"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong32772_vv.sb",
+    "stage": "vertex",
+    "size": 6280,
+    "hash": "32e2031b9c87bbce8fb92f178da719f905d51ec184792aafbda8092475b6d5f6"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong32_p.sb",
+    "stage": "pixel",
+    "size": 12232,
+    "hash": "48f968e1683022c99e9947fd36446734fea8649bd5be3ec349ebea15b72a9d90"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong32_vv.sb",
+    "stage": "vertex",
+    "size": 4832,
+    "hash": "c9ce607f1f59332c40832a840c7876ea23ec9799fd202a818b9319c6f25f048b"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong4098_p.sb",
+    "stage": "pixel",
+    "size": 11648,
+    "hash": "f4e029d0b94b910f24958f9a0edf4d01c32780fc4199db104117bfd23c344381"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong4098_vv.sb",
+    "stage": "vertex",
+    "size": 7336,
+    "hash": "31fe20360cdecf543bad3e3154a49e3a6688ee157510283d07d9545b5e1cda2e"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong4194304_p.sb",
+    "stage": "pixel",
+    "size": 12312,
+    "hash": "b94b96bc6d5ac5858c9555cdf53ecaa0d4637d6cae5b3d7f02b63e9b9fd4de89"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong4194304_vv.sb",
+    "stage": "vertex",
+    "size": 4832,
+    "hash": "c9ce607f1f59332c40832a840c7876ea23ec9799fd202a818b9319c6f25f048b"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong4_p.sb",
+    "stage": "pixel",
+    "size": 10856,
+    "hash": "22b8a644fb657b1721e5c006f8866cc7852cfcba8248b1cc68a12de55d7c5c2c"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong4_vv.sb",
+    "stage": "vertex",
+    "size": 6280,
+    "hash": "32e2031b9c87bbce8fb92f178da719f905d51ec184792aafbda8092475b6d5f6"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong524288_p.sb",
+    "stage": "pixel",
+    "size": 11560,
+    "hash": "d2ffaedc6b04b0aa467cd3b882b001d1a9e581102599983449d69b3fc84bcb7c"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong524288_vv.sb",
+    "stage": "vertex",
+    "size": 4784,
+    "hash": "3b5010c8508183a8ac4d3f665b8c23fa8b8cb38ba2c7e88cd4544ae7e3a67f80"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong524289_p.sb",
+    "stage": "pixel",
+    "size": 11560,
+    "hash": "d2ffaedc6b04b0aa467cd3b882b001d1a9e581102599983449d69b3fc84bcb7c"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong524289_vv.sb",
+    "stage": "vertex",
+    "size": 4784,
+    "hash": "3b5010c8508183a8ac4d3f665b8c23fa8b8cb38ba2c7e88cd4544ae7e3a67f80"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong524290_p.sb",
+    "stage": "pixel",
+    "size": 12200,
+    "hash": "bd2236dd493163bfc99c63b58f38613f90f3e68493745cb4b3fd2103225396c5"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong524290_vv.sb",
+    "stage": "vertex",
+    "size": 4784,
+    "hash": "3b5010c8508183a8ac4d3f665b8c23fa8b8cb38ba2c7e88cd4544ae7e3a67f80"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong524292_p.sb",
+    "stage": "pixel",
+    "size": 11632,
+    "hash": "14ea15a0bd4ecf3ea58e902bef802a9e1547339729ae55a75b86b208027a7e6f"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong524292_vv.sb",
+    "stage": "vertex",
+    "size": 6280,
+    "hash": "32e2031b9c87bbce8fb92f178da719f905d51ec184792aafbda8092475b6d5f6"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong524293_p.sb",
+    "stage": "pixel",
+    "size": 11632,
+    "hash": "14ea15a0bd4ecf3ea58e902bef802a9e1547339729ae55a75b86b208027a7e6f"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong524293_vv.sb",
+    "stage": "vertex",
+    "size": 6280,
+    "hash": "32e2031b9c87bbce8fb92f178da719f905d51ec184792aafbda8092475b6d5f6"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong526338_p.sb",
+    "stage": "pixel",
+    "size": 12200,
+    "hash": "b5fd967b8dcca0e9f9e97b06fb9393d3ebec284c266213c01fec061ef65aa3c2"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong526338_vv.sb",
+    "stage": "vertex",
+    "size": 6336,
+    "hash": "602f6ca0ed3abbc255a6acd4e804aeff100f19d711647bbdf1f45799f6799750"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong530434_p.sb",
+    "stage": "pixel",
+    "size": 12200,
+    "hash": "675aa763e88e6858db5d5d6697867c5a0ff517a3fae93700becfa1f0e4b22d44"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong530434_vv.sb",
+    "stage": "vertex",
+    "size": 7264,
+    "hash": "7127af3b68fe7c2e2e753ac7cd4b7f83366592f93bc1d2be48c0784a52782e79"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong557060_p.sb",
+    "stage": "pixel",
+    "size": 13048,
+    "hash": "00c2ec6ab8ef62d048d20492461a6a0bba62b94c9b61893dcb3648c08623d2e3"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong557060_vv.sb",
+    "stage": "vertex",
+    "size": 6280,
+    "hash": "32e2031b9c87bbce8fb92f178da719f905d51ec184792aafbda8092475b6d5f6"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong5_p.sb",
+    "stage": "pixel",
+    "size": 10856,
+    "hash": "22b8a644fb657b1721e5c006f8866cc7852cfcba8248b1cc68a12de55d7c5c2c"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong5_vv.sb",
+    "stage": "vertex",
+    "size": 6280,
+    "hash": "32e2031b9c87bbce8fb92f178da719f905d51ec184792aafbda8092475b6d5f6"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong6144_p.sb",
+    "stage": "pixel",
+    "size": 10800,
+    "hash": "607bdeffc304f19ba79b8127df2ecb1bd67de5b9a129fa8219f2d0c9d0cbd21d"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong6144_vv.sb",
+    "stage": "vertex",
+    "size": 7264,
+    "hash": "7127af3b68fe7c2e2e753ac7cd4b7f83366592f93bc1d2be48c0784a52782e79"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong6146_p.sb",
+    "stage": "pixel",
+    "size": 11440,
+    "hash": "4b045dccd47ed3410c81d7b42d683acfd644876361efe4578b3477713900ee33"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong6146_vv.sb",
+    "stage": "vertex",
+    "size": 7264,
+    "hash": "7127af3b68fe7c2e2e753ac7cd4b7f83366592f93bc1d2be48c0784a52782e79"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong6152_p.sb",
+    "stage": "pixel",
+    "size": 10840,
+    "hash": "d91bfcd2f1d76aafd7ec1bd3cca5006762c112c1cff04d04a0e19b7e9d884e24"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong6152_vv.sb",
+    "stage": "vertex",
+    "size": 7328,
+    "hash": "890391bc6e47f975b3cbdcae5c8ba18e46c57ee2e87976805dc50fb837bd1a65"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong6154_p.sb",
+    "stage": "pixel",
+    "size": 11480,
+    "hash": "395276dd1395d4e37ddd27b82ca460a8d581ca52c0ad1e7e7e7bc48cec6a77ac"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong6154_vv.sb",
+    "stage": "vertex",
+    "size": 7328,
+    "hash": "890391bc6e47f975b3cbdcae5c8ba18e46c57ee2e87976805dc50fb837bd1a65"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong64_p.sb",
+    "stage": "pixel",
+    "size": 10888,
+    "hash": "3479eb7751d204c10d7a5f067c3b8cddcb1e36e72584206df5ca490b9600baa0"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong64_vv.sb",
+    "stage": "vertex",
+    "size": 5296,
+    "hash": "df4c829a69cbe9780c2b7c502b18579d67194ee2995aef439cdebb92067c409b"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong65537_p.sb",
+    "stage": "pixel",
+    "size": 11232,
+    "hash": "78005fc3ac179001db1a8cb53ec7960a45f49a18ccffdf25de654aee3ebf40c1"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong65537_vv.sb",
+    "stage": "vertex",
+    "size": 5000,
+    "hash": "06603324f1de42e9d2f16ecdfdd95cd6f3dca60b210d5f9d743ada1d898290bd"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong65538_p.sb",
+    "stage": "pixel",
+    "size": 11768,
+    "hash": "46253c5a3835bb099132c50ff797f225f1591fa4ce9fe56fcc2f49a4da29eeb2"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong65538_vv.sb",
+    "stage": "vertex",
+    "size": 5000,
+    "hash": "06603324f1de42e9d2f16ecdfdd95cd6f3dca60b210d5f9d743ada1d898290bd"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong65_p.sb",
+    "stage": "pixel",
+    "size": 10888,
+    "hash": "3479eb7751d204c10d7a5f067c3b8cddcb1e36e72584206df5ca490b9600baa0"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong65_vv.sb",
+    "stage": "vertex",
+    "size": 5296,
+    "hash": "df4c829a69cbe9780c2b7c502b18579d67194ee2995aef439cdebb92067c409b"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong67585_p.sb",
+    "stage": "pixel",
+    "size": 11168,
+    "hash": "80181b925edad5e6191813175f39bc8f1bd2138f4838869bee4a25f3d9c3704b"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong67585_vv.sb",
+    "stage": "vertex",
+    "size": 6232,
+    "hash": "3c269c2762dbfda0dd1eb3200118dcc16080a767b82694a3481f12cdd88471be"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong67586_p.sb",
+    "stage": "pixel",
+    "size": 11704,
+    "hash": "3517505e3ec6eb136ecc2626e0f1cc2dc44fdc97198472d094d13cf967fe63e3"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong67586_vv.sb",
+    "stage": "vertex",
+    "size": 6232,
+    "hash": "3c269c2762dbfda0dd1eb3200118dcc16080a767b82694a3481f12cdd88471be"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong8192_p.sb",
+    "stage": "pixel",
+    "size": 11336,
+    "hash": "8e70a6cac3d7724ae7163de8b921bdb7a65571444ba16ab7005bde61e6d76005"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong8192_vv.sb",
+    "stage": "vertex",
+    "size": 5032,
+    "hash": "59b77d7f46da2f74a946ea43e3530c36616de4e7e9c544c38a55dc92d0a0aabe"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong8193_p.sb",
+    "stage": "pixel",
+    "size": 11336,
+    "hash": "8e70a6cac3d7724ae7163de8b921bdb7a65571444ba16ab7005bde61e6d76005"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong8193_vv.sb",
+    "stage": "vertex",
+    "size": 5032,
+    "hash": "59b77d7f46da2f74a946ea43e3530c36616de4e7e9c544c38a55dc92d0a0aabe"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong8197_p.sb",
+    "stage": "pixel",
+    "size": 11416,
+    "hash": "0dc022c1a1fd5f230c14348de21c0709dea40f1c18e6e730d30ce243aba1e549"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong8197_vv.sb",
+    "stage": "vertex",
+    "size": 6784,
+    "hash": "89644921e03daed2256e9fcb81fb12e9dfed83ae56060af910d5a69275487bf9"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong8_p.sb",
+    "stage": "pixel",
+    "size": 10864,
+    "hash": "99b4fbe030a94157ba86dd8e2e02d56351f3b50c21d919a613ca75c44cc03f46"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong8_vv.sb",
+    "stage": "vertex",
+    "size": 5352,
+    "hash": "3c69aeeb5bc59d251eb11daaec65bfe2be6ab5886c655b108d244ecebf2927df"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong9_p.sb",
+    "stage": "pixel",
+    "size": 10864,
+    "hash": "99b4fbe030a94157ba86dd8e2e02d56351f3b50c21d919a613ca75c44cc03f46"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderPhong9_vv.sb",
+    "stage": "vertex",
+    "size": 5352,
+    "hash": "3c69aeeb5bc59d251eb11daaec65bfe2be6ab5886c655b108d244ecebf2927df"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderSheenSkinned_p.sb",
+    "stage": "pixel",
+    "size": 3296,
+    "hash": "4b8651db8dba71904375a2055856ec8bf4f685b4bb5d0951cfacf61de0b3f79b"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderSheenSkinned_vv.sb",
+    "stage": "vertex",
+    "size": 5472,
+    "hash": "b97fd25bb66a7b8210c639de8bc3ffe1821f79d8bb13efad118ece1852efbd5d"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderSheen_p.sb",
+    "stage": "pixel",
+    "size": 3248,
+    "hash": "f32b89315ec6b97f7b81b45a020c33f1382ae635f6d0c13901027139c942d115"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShaderSheen_vv.sb",
+    "stage": "vertex",
+    "size": 4104,
+    "hash": "37b7cff960a1a071933d5b702cd89f4eddbd171fa985764e5731071cff1f055d"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShadowGrassT_p.sb",
+    "stage": "pixel",
+    "size": 2344,
+    "hash": "8265198d160cf6e00ab13b5fc69adcc70be7408508a0c0b9a2050a6e67342b02"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShadowGrassT_vv.sb",
+    "stage": "vertex",
+    "size": 5312,
+    "hash": "9ab427ef564ec4b9e946ff8a51e4812a43ecd259ee1e9c327e7d99ce6277d266"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShadowGrassWindT_p.sb",
+    "stage": "pixel",
+    "size": 2344,
+    "hash": "8265198d160cf6e00ab13b5fc69adcc70be7408508a0c0b9a2050a6e67342b02"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShadowGrassWindT_vv.sb",
+    "stage": "vertex",
+    "size": 5520,
+    "hash": "75c3e9f9d328294c727b1297f0744f853f68f761fa30143e3f3389093bc42c66"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShadowGrassWind_p.sb",
+    "stage": "pixel",
+    "size": 1648,
+    "hash": "d5bc1ddc8285634bd64c61ce0916294dd2efe06ad618b101b7b37b2cc2f5061a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShadowGrassWind_vv.sb",
+    "stage": "vertex",
+    "size": 5520,
+    "hash": "75c3e9f9d328294c727b1297f0744f853f68f761fa30143e3f3389093bc42c66"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShadowInstancedGrassWindT_p.sb",
+    "stage": "pixel",
+    "size": 2344,
+    "hash": "8265198d160cf6e00ab13b5fc69adcc70be7408508a0c0b9a2050a6e67342b02"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShadowInstancedGrassWindT_vv.sb",
+    "stage": "vertex",
+    "size": 5696,
+    "hash": "39592349c8aa160825b6126dd0f1b94a4bec8a07af064df5c9d3ffa602d29f58"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShadowInstancedGrassWind_p.sb",
+    "stage": "pixel",
+    "size": 1648,
+    "hash": "d5bc1ddc8285634bd64c61ce0916294dd2efe06ad618b101b7b37b2cc2f5061a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShadowInstancedGrassWind_vv.sb",
+    "stage": "vertex",
+    "size": 5696,
+    "hash": "39592349c8aa160825b6126dd0f1b94a4bec8a07af064df5c9d3ffa602d29f58"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShadowInstancedT_p.sb",
+    "stage": "pixel",
+    "size": 2344,
+    "hash": "8265198d160cf6e00ab13b5fc69adcc70be7408508a0c0b9a2050a6e67342b02"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShadowInstancedT_vv.sb",
+    "stage": "vertex",
+    "size": 3536,
+    "hash": "734b47dcfc38590ea59e7af6800d239b1f4f6a3cd5cd181963cd3723eceffae7"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShadowInstancedWindT_p.sb",
+    "stage": "pixel",
+    "size": 2344,
+    "hash": "8265198d160cf6e00ab13b5fc69adcc70be7408508a0c0b9a2050a6e67342b02"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShadowInstancedWindT_vv.sb",
+    "stage": "vertex",
+    "size": 4872,
+    "hash": "738998f778b6e0a4c81ab1ea06c3d5ba471e4ac537a56cb1ed1a021c0eba7978"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShadowInstancedWind_p.sb",
+    "stage": "pixel",
+    "size": 1648,
+    "hash": "d5bc1ddc8285634bd64c61ce0916294dd2efe06ad618b101b7b37b2cc2f5061a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShadowInstancedWind_vv.sb",
+    "stage": "vertex",
+    "size": 4872,
+    "hash": "738998f778b6e0a4c81ab1ea06c3d5ba471e4ac537a56cb1ed1a021c0eba7978"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShadowInstanced_p.sb",
+    "stage": "pixel",
+    "size": 1648,
+    "hash": "d5bc1ddc8285634bd64c61ce0916294dd2efe06ad618b101b7b37b2cc2f5061a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShadowInstanced_vv.sb",
+    "stage": "vertex",
+    "size": 3536,
+    "hash": "734b47dcfc38590ea59e7af6800d239b1f4f6a3cd5cd181963cd3723eceffae7"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShadowSkinnedT_p.sb",
+    "stage": "pixel",
+    "size": 2344,
+    "hash": "8265198d160cf6e00ab13b5fc69adcc70be7408508a0c0b9a2050a6e67342b02"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShadowSkinnedT_vv.sb",
+    "stage": "vertex",
+    "size": 4328,
+    "hash": "bd6ec4d15bea6201b25119fe170490fa55ad21876515f96cb33d0a3c8685c79a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShadowSkinned_p.sb",
+    "stage": "pixel",
+    "size": 1648,
+    "hash": "d5bc1ddc8285634bd64c61ce0916294dd2efe06ad618b101b7b37b2cc2f5061a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShadowSkinned_vv.sb",
+    "stage": "vertex",
+    "size": 4328,
+    "hash": "bd6ec4d15bea6201b25119fe170490fa55ad21876515f96cb33d0a3c8685c79a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShadowT_p.sb",
+    "stage": "pixel",
+    "size": 2344,
+    "hash": "8265198d160cf6e00ab13b5fc69adcc70be7408508a0c0b9a2050a6e67342b02"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShadowT_vv.sb",
+    "stage": "vertex",
+    "size": 3224,
+    "hash": "aafdc2aa7f29cbbf0c293f80abfeac63666267ac03b73a0b05a32c9f80515a90"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShadowWindT_p.sb",
+    "stage": "pixel",
+    "size": 2344,
+    "hash": "8265198d160cf6e00ab13b5fc69adcc70be7408508a0c0b9a2050a6e67342b02"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShadowWindT_vv.sb",
+    "stage": "vertex",
+    "size": 4712,
+    "hash": "b7ab9c00c1c3f8046129858260bfa1c4b9e22eeb028182775b7b09f967ff4940"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShadowWind_p.sb",
+    "stage": "pixel",
+    "size": 1648,
+    "hash": "d5bc1ddc8285634bd64c61ce0916294dd2efe06ad618b101b7b37b2cc2f5061a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/ShadowWind_vv.sb",
+    "stage": "vertex",
+    "size": 4712,
+    "hash": "b7ab9c00c1c3f8046129858260bfa1c4b9e22eeb028182775b7b09f967ff4940"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Shadow_p.sb",
+    "stage": "pixel",
+    "size": 1648,
+    "hash": "d5bc1ddc8285634bd64c61ce0916294dd2efe06ad618b101b7b37b2cc2f5061a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Shadow_vv.sb",
+    "stage": "vertex",
+    "size": 3224,
+    "hash": "aafdc2aa7f29cbbf0c293f80abfeac63666267ac03b73a0b05a32c9f80515a90"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/SkyboxClouds_p.sb",
+    "stage": "pixel",
+    "size": 3968,
+    "hash": "5d1384c769855d9eecf2e7cc6dd8befae53edad27b1b251bc25ca005d2718f56"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/SkyboxClouds_vv.sb",
+    "stage": "vertex",
+    "size": 3728,
+    "hash": "f294e6560f75ce087c165c733b24865da0583a2249dd99d88069f0d6b007ad85"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/SkyboxLayered_p.sb",
+    "stage": "pixel",
+    "size": 6192,
+    "hash": "814efdbda60a328deb1ec4f18caa62333a29f2dcb0f6c5567019a25bc9acfc07"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/SkyboxLayered_vv.sb",
+    "stage": "vertex",
+    "size": 3728,
+    "hash": "f294e6560f75ce087c165c733b24865da0583a2249dd99d88069f0d6b007ad85"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/SkyboxSky_p.sb",
+    "stage": "pixel",
+    "size": 3864,
+    "hash": "08b426f66fab83ba62766323fa5260fc63e44f0ef60d160e26739f26a5895394"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/SkyboxSky_vv.sb",
+    "stage": "vertex",
+    "size": 3728,
+    "hash": "f294e6560f75ce087c165c733b24865da0583a2249dd99d88069f0d6b007ad85"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Skybox_p.sb",
+    "stage": "pixel",
+    "size": 1824,
+    "hash": "c8fbb45f2296f9ad678abbbcdd6bb6ade10663a42bb7515431c00af19c2e82af"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Skybox_vv.sb",
+    "stage": "vertex",
+    "size": 3728,
+    "hash": "f294e6560f75ce087c165c733b24865da0583a2249dd99d88069f0d6b007ad85"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Temp/pix_p.pssl",
+    "stage": "pixel",
+    "size": 445,
+    "hash": "1ebf67db8f086c2d4b169136aedc17228f667548d0dd2c8e26dba6120ccc51ce"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Temp/vex_vv.pssl",
+    "stage": "vertex",
+    "size": 502,
+    "hash": "6f2eea015238930ed85dc58110c0dc94c1cc1bd9ea09386eb3272d09467ffaf5"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Transition_CameraBurning_p.sb",
+    "stage": "pixel",
+    "size": 2928,
+    "hash": "bf16e7136f15a463db6cb5a8052cce378fc2d8b2ed755eeacc39278b998914f3"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Transition_CameraBurning_vv.sb",
+    "stage": "vertex",
+    "size": 2472,
+    "hash": "b1971607f7732ad3f77f38a61b83151d04bf7ced3d7b8139be9a521a1ae6874a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Transition_CameraFrozen_p.sb",
+    "stage": "pixel",
+    "size": 2776,
+    "hash": "d25a597f207290143d7ecbf01b386a387af854bc679adb271547e6ad769b7fd9"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Transition_CameraFrozen_vv.sb",
+    "stage": "vertex",
+    "size": 2472,
+    "hash": "b1971607f7732ad3f77f38a61b83151d04bf7ced3d7b8139be9a521a1ae6874a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Transition_CameraSick_p.sb",
+    "stage": "pixel",
+    "size": 2760,
+    "hash": "c043744112984e0385b619e5509ffce01dad10a090681b1297500c547c552d75"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Transition_CameraSick_vv.sb",
+    "stage": "vertex",
+    "size": 2472,
+    "hash": "b1971607f7732ad3f77f38a61b83151d04bf7ced3d7b8139be9a521a1ae6874a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Transition_CameraSticky_p.sb",
+    "stage": "pixel",
+    "size": 2760,
+    "hash": "7b444b900ad2662ff5af9039cdbef0dcaa45da53ed2c2b31c0fd9b7b0ffdb1e7"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Transition_CameraSticky_vv.sb",
+    "stage": "vertex",
+    "size": 2472,
+    "hash": "b1971607f7732ad3f77f38a61b83151d04bf7ced3d7b8139be9a521a1ae6874a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Transition_CameraUnderwater_p.sb",
+    "stage": "pixel",
+    "size": 2808,
+    "hash": "b9aa6bf1ba57eb2f1e5e39605dc34a11f80bdbf9926abc3f27193546b127988b"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Transition_CameraUnderwater_vv.sb",
+    "stage": "vertex",
+    "size": 2472,
+    "hash": "b1971607f7732ad3f77f38a61b83151d04bf7ced3d7b8139be9a521a1ae6874a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Transition_CameraWet_p.sb",
+    "stage": "pixel",
+    "size": 3160,
+    "hash": "cbff3cd9a8b6eaff1b73f06d476506cd92e88ae251cd6a9115ad0780a535741e"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Transition_CameraWet_vv.sb",
+    "stage": "vertex",
+    "size": 2472,
+    "hash": "b1971607f7732ad3f77f38a61b83151d04bf7ced3d7b8139be9a521a1ae6874a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Transition_CircleWipeInvert_p.sb",
+    "stage": "pixel",
+    "size": 2240,
+    "hash": "aa2df0248e67b365b106e9f370708114ef282370446dd2bc8b48278aa7a53048"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Transition_CircleWipeInvert_vv.sb",
+    "stage": "vertex",
+    "size": 2472,
+    "hash": "b1971607f7732ad3f77f38a61b83151d04bf7ced3d7b8139be9a521a1ae6874a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Transition_CircleWipe_p.sb",
+    "stage": "pixel",
+    "size": 2432,
+    "hash": "6af6403463eaccf586f536045bcfde05043e6622fde4f8d969464327c0c0508f"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Transition_CircleWipe_vv.sb",
+    "stage": "vertex",
+    "size": 2472,
+    "hash": "b1971607f7732ad3f77f38a61b83151d04bf7ced3d7b8139be9a521a1ae6874a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Transition_DirectionalWipe_p.sb",
+    "stage": "pixel",
+    "size": 2240,
+    "hash": "8900bbe3f573b9d68bffd2702b9b4306ccfc1e13dfebb36b82d364375f537bd9"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Transition_DirectionalWipe_vv.sb",
+    "stage": "vertex",
+    "size": 2472,
+    "hash": "b1971607f7732ad3f77f38a61b83151d04bf7ced3d7b8139be9a521a1ae6874a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Transition_Fade_p.sb",
+    "stage": "pixel",
+    "size": 2080,
+    "hash": "8146969fa2afa67877658b8d3361a369f01fc9eb89b2ba452f1a701544f35a7f"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Transition_Fade_vv.sb",
+    "stage": "vertex",
+    "size": 2472,
+    "hash": "b1971607f7732ad3f77f38a61b83151d04bf7ced3d7b8139be9a521a1ae6874a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Transition_Feeding_p.sb",
+    "stage": "pixel",
+    "size": 2240,
+    "hash": "c679815d15a3de426864178b2d4c9d01c67e4fb9dcf37c694e38da79f753afea"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Transition_Feeding_vv.sb",
+    "stage": "vertex",
+    "size": 2472,
+    "hash": "b1971607f7732ad3f77f38a61b83151d04bf7ced3d7b8139be9a521a1ae6874a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Transition_GradientMask_p.sb",
+    "stage": "pixel",
+    "size": 3344,
+    "hash": "8359afb9833688a2ea474e0984cff90d73f495d989bd5dd9b7dedfd4c18bd05b"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Transition_GradientMask_vv.sb",
+    "stage": "vertex",
+    "size": 2472,
+    "hash": "b1971607f7732ad3f77f38a61b83151d04bf7ced3d7b8139be9a521a1ae6874a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Transition_Loading_p.sb",
+    "stage": "pixel",
+    "size": 2080,
+    "hash": "8146969fa2afa67877658b8d3361a369f01fc9eb89b2ba452f1a701544f35a7f"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Transition_Loading_vv.sb",
+    "stage": "vertex",
+    "size": 2472,
+    "hash": "b1971607f7732ad3f77f38a61b83151d04bf7ced3d7b8139be9a521a1ae6874a"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Transition_SwirlWipe_p.sb",
+    "stage": "pixel",
+    "size": 2880,
+    "hash": "d0f39922f7f622077e49b47c8d555281bcc02ba14bc201a72e669fe4179a6eba"
+  },
+  {
+    "path": "Bugsnax-PPSA01502-USA-PS5/Bugsnax PS5 Dump v2.000/Content/Shaders/pssl5/Transition_SwirlWipe_vv.sb",
+    "stage": "vertex",
+    "size": 2472,
+    "hash": "b1971607f7732ad3f77f38a61b83151d04bf7ced3d7b8139be9a521a1ae6874a"
+  }
+]

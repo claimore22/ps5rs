@@ -1,0 +1,3197 @@
+{
+  "schema_version": 1,
+  "tool": "ps5rs",
+  "games_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5",
+  "generated_at": "2026-09-12T07:35:21Z",
+  "summary": {
+    "games_found": 29,
+    "games_parsed": 28,
+    "games_failed": 1,
+    "imports_total": 30385,
+    "known_total": 29959,
+    "unknown_total": 426,
+    "unique_unknown_nids": 183
+  },
+  "games": [
+    {
+      "name": "Afterimage - [PPSA14053]",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Afterimage-PPSA14053-EUR-Game-v01.000-PS5\\eboot.bin",
+      "imports": 2144,
+      "known": 2051,
+      "unknown": 93,
+      "unknown_nids": [
+        "+8m0hqMZsqw",
+        "+V2QcIcvWpw",
+        "-7VafNNns2A",
+        "-HTS6hB300E",
+        "0+HgFkajHnk",
+        "2QOSvz5hvAg",
+        "2Rb+xdt8XkU",
+        "3loRRCoqXfU",
+        "4AQlc0jE9PQ",
+        "527zZ46M9IM",
+        "5QDnyU+SPxs",
+        "5Y5pSdsEdMg",
+        "6NIqae6zQt4",
+        "6nWYF1yMOl4",
+        "7hd4bRJuLMg",
+        "8ABCdDIqXJs",
+        "8N9h2itN+Y4",
+        "A1mb1i8hsRw",
+        "AdR01fo-WaM",
+        "BgCoL-FZz0Y",
+        "DlcM6wdwWJc",
+        "DsFsPD0MWNc",
+        "ERN4ES-D2x8",
+        "EZMhRCBn3dU",
+        "GqL992msUmo",
+        "H+G1XQRDyWk",
+        "H8AN0zYsJ-M",
+        "J-Oi-ac1EcU",
+        "JfoCWM1F50Q",
+        "Ka06Z1LiRps",
+        "L51FfEMZa4o",
+        "LG53EJZJDnA",
+        "LILXByiyFiQ",
+        "MPBXfoxd+eo",
+        "Ma4ynrNRJGw",
+        "MjQ5oH6b620",
+        "N+wyls17Mjo",
+        "NC7NmKVz61g",
+        "NDMQ5Z8QdWQ",
+        "OBfS6KLrjYA",
+        "PoA8NrRlUrw",
+        "RcRmUkp-AOo",
+        "RmRxmDnkZ9s",
+        "SCvUImM+5zk",
+        "SPoYGtEslGY",
+        "TK8-OMvveV8",
+        "VS1Vg5yOLH0",
+        "VdQjbIsdhXQ",
+        "Vyo4sShcggs",
+        "WP51b8simn8",
+        "Y36Y21dnKtc",
+        "ZlyXxXkCaq8",
+        "alleMuKEWr8",
+        "amVp+qf6SDk",
+        "b949925VwHM",
+        "bBL9LOkN-Ng",
+        "c4nJ9NGNhcA",
+        "cITO9UF6qbs",
+        "cIv243UhfFs",
+        "cju7jJ-abPQ",
+        "d-I6Z20jeYo",
+        "dc1rk+VZdyo",
+        "f3SCKie2gZM",
+        "fEcGNRe4laE",
+        "giT9raPeA9Y",
+        "iILsKSo5Syg",
+        "iujfeL+h0RI",
+        "k0E7vkgqAuE",
+        "k57C+tslpho",
+        "kFNJPXQw-zM",
+        "khSBLJTsUxE",
+        "kuUyampLEsU",
+        "mHhZZyzhOvw",
+        "nhBPjhZ+VWs",
+        "o2hcK6F8Ih4",
+        "omDBr+dcDVc",
+        "qDkZUgzj3Cs",
+        "s1UHlyHU3rI",
+        "tG17NFv2mZ8",
+        "tPFAXasYRR4",
+        "urqRW0vsBa4",
+        "vgT4A7VrTtE",
+        "vhKuvcKcUPc",
+        "wJM7jKtToIs",
+        "xaNK0ZTH3QA",
+        "y2ybsIQ073A",
+        "y6Uo7jDXvhA",
+        "yYh3lwMFxd8",
+        "yjRnMhiv-KQ",
+        "zE+zCB1FUOs",
+        "zKjgSnqVqf4",
+        "zVxbiRlxmRk",
+        "zdsupMypfMU"
+      ],
+      "error": null
+    },
+    {
+      "name": "ANIMAL WELL - [PPSA22520]",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Animal Well PS5 _PPSA22520_\\[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5\\eboot.bin",
+      "imports": 408,
+      "known": 408,
+      "unknown": 0,
+      "unknown_nids": [],
+      "error": null
+    },
+    {
+      "name": "Asterigos: Curse of the Stars - [PPSA08194]",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5\\eboot.bin",
+      "imports": 2165,
+      "known": 2019,
+      "unknown": 146,
+      "unknown_nids": [
+        "+8m0hqMZsqw",
+        "+9LkZlUeYEg",
+        "+So6CdPGoWw",
+        "+V2QcIcvWpw",
+        "+jUcaWTZIR0",
+        "+qYvlz27LLI",
+        "+vckMgP13aE",
+        "-7VafNNns2A",
+        "-HTS6hB300E",
+        "0+HgFkajHnk",
+        "0zVeZ0oy6ZQ",
+        "10tStWjcWSQ",
+        "2EI0H1c4pLA",
+        "2QOSvz5hvAg",
+        "2Rb+xdt8XkU",
+        "2WX+-Y1+Dcc",
+        "2ZWj71IMUk0",
+        "3loRRCoqXfU",
+        "4AQlc0jE9PQ",
+        "4yMHGnC0X3A",
+        "5+JjnXLeSIo",
+        "527zZ46M9IM",
+        "5QDnyU+SPxs",
+        "5Y5pSdsEdMg",
+        "5Ysce+s-CWU",
+        "6nWYF1yMOl4",
+        "7hd4bRJuLMg",
+        "7nxmQiJW2Js",
+        "834oDD6Db+8",
+        "89ZjvyIhobo",
+        "8ABCdDIqXJs",
+        "8N9h2itN+Y4",
+        "8vZUZ20YjfU",
+        "9cg1zkA48rg",
+        "A1mb1i8hsRw",
+        "AMBfBMXCLhs",
+        "AdR01fo-WaM",
+        "BYrcH+G7fVM",
+        "BgCoL-FZz0Y",
+        "Bv++RljHBj8",
+        "CFJj4SL3E6M",
+        "Cm2cmtCv8cA",
+        "D79MT0gui+4",
+        "DlcM6wdwWJc",
+        "DsFsPD0MWNc",
+        "E+VYAc3btSA",
+        "ERN4ES-D2x8",
+        "EZMhRCBn3dU",
+        "Fdq01lyJj0M",
+        "GZp+9L3JUn0",
+        "GeKfAT07sDo",
+        "GqL992msUmo",
+        "H+G1XQRDyWk",
+        "H8AN0zYsJ-M",
+        "J-Oi-ac1EcU",
+        "JfoCWM1F50Q",
+        "Ka06Z1LiRps",
+        "L0s4ByRX+RU",
+        "L51FfEMZa4o",
+        "LG53EJZJDnA",
+        "LILXByiyFiQ",
+        "LoHhsrH0C5c",
+        "MPBXfoxd+eo",
+        "Ma4ynrNRJGw",
+        "MjQ5oH6b620",
+        "Ms8ZkUZx18I",
+        "N+wyls17Mjo",
+        "NDMQ5Z8QdWQ",
+        "OBfS6KLrjYA",
+        "OccHN8ZAeeQ",
+        "PoA8NrRlUrw",
+        "RcRmUkp-AOo",
+        "SCvUImM+5zk",
+        "SPoYGtEslGY",
+        "TK8-OMvveV8",
+        "VS1Vg5yOLH0",
+        "VdQjbIsdhXQ",
+        "Vyo4sShcggs",
+        "WP51b8simn8",
+        "Y36Y21dnKtc",
+        "YXe6ABbHZPs",
+        "YemJWcQ8k2o",
+        "ZKfSSJQk3H0",
+        "ZY9oXjWFBrs",
+        "ZlyXxXkCaq8",
+        "ZvvJG-s1yKo",
+        "aNAHqE5cbIY",
+        "alleMuKEWr8",
+        "amVp+qf6SDk",
+        "aplSBGhDRFw",
+        "b949925VwHM",
+        "bBL9LOkN-Ng",
+        "brQlMMQqan0",
+        "c4nJ9NGNhcA",
+        "cBqjb8eBPi8",
+        "cITO9UF6qbs",
+        "cIv243UhfFs",
+        "cVUy74Zc6t8",
+        "cju7jJ-abPQ",
+        "d-I6Z20jeYo",
+        "dHVtNkoIoa4",
+        "dc1rk+VZdyo",
+        "dfPK9R6M0qM",
+        "f3SCKie2gZM",
+        "fEcGNRe4laE",
+        "fZiBbVa2ZDU",
+        "giT9raPeA9Y",
+        "iILsKSo5Syg",
+        "idhb8B-l-8A",
+        "iqaFZ-RLY4E",
+        "iujfeL+h0RI",
+        "k0E7vkgqAuE",
+        "k57C+tslpho",
+        "kFNJPXQw-zM",
+        "khSBLJTsUxE",
+        "kuUyampLEsU",
+        "lU8CaNia7Lg",
+        "mHhZZyzhOvw",
+        "mjDE4DOk8hs",
+        "nhBPjhZ+VWs",
+        "o2hcK6F8Ih4",
+        "omDBr+dcDVc",
+        "qDkZUgzj3Cs",
+        "s1UHlyHU3rI",
+        "sRU2qSZyqVk",
+        "tG17NFv2mZ8",
+        "tG86XGc2VtE",
+        "tPFAXasYRR4",
+        "tZJlqyRA-44",
+        "urqRW0vsBa4",
+        "vgT4A7VrTtE",
+        "vhKuvcKcUPc",
+        "vzeuqOyUf2E",
+        "w8y7S3banO4",
+        "wJM7jKtToIs",
+        "wccix0j2NCo",
+        "xFZxMognttU",
+        "xaNK0ZTH3QA",
+        "y6Uo7jDXvhA",
+        "yYh3lwMFxd8",
+        "yjRnMhiv-KQ",
+        "z78kWio3sas",
+        "zE+zCB1FUOs",
+        "zKjgSnqVqf4",
+        "zVxbiRlxmRk",
+        "zdsupMypfMU"
+      ],
+      "error": null
+    },
+    {
+      "name": "Blue Prince - [PPSA25009]",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5\\eboot.bin",
+      "imports": 610,
+      "known": 608,
+      "unknown": 2,
+      "unknown_nids": [
+        "dZGYu5wObJs",
+        "zlqfTyrQSPk"
+      ],
+      "error": null
+    },
+    {
+      "name": "Bugsnax - [PPSA01502]",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Bugsnax-PPSA01502-USA-PS5\\Bugsnax PS5 Dump v2.000\\eboot.bin",
+      "imports": 612,
+      "known": 545,
+      "unknown": 67,
+      "unknown_nids": [
+        "+So6CdPGoWw",
+        "+V2QcIcvWpw",
+        "0+HgFkajHnk",
+        "0kASdf6u3nQ",
+        "2QOSvz5hvAg",
+        "2Rb+xdt8XkU",
+        "527zZ46M9IM",
+        "5QDnyU+SPxs",
+        "65WU0PMnF24",
+        "6E6MUTGjxhI",
+        "714y+rWMyhA",
+        "7hd4bRJuLMg",
+        "BEUeVfn2zfA",
+        "Bu8uFP7ME2k",
+        "FJdpGGMFv9w",
+        "GqL992msUmo",
+        "H+G1XQRDyWk",
+        "HccLYOWCuVM",
+        "JfoCWM1F50Q",
+        "Ka06Z1LiRps",
+        "L51FfEMZa4o",
+        "L7dxMcJ-2Gc",
+        "LILXByiyFiQ",
+        "Lq1Q7TqB1vw",
+        "MjQ5oH6b620",
+        "Ou4LHokCK2k",
+        "QOW4WYUMJK0",
+        "R6X5MxO-U50",
+        "SPoYGtEslGY",
+        "T11Rlk4THVg",
+        "TLzwr4Uy37g",
+        "UFG9YEjxcgk",
+        "VdQjbIsdhXQ",
+        "WP51b8simn8",
+        "X5j6Mr8a2Pk",
+        "YRC81VNoDQk",
+        "ZlyXxXkCaq8",
+        "aLwhiAtjRsE",
+        "alleMuKEWr8",
+        "b949925VwHM",
+        "bBL9LOkN-Ng",
+        "c4nJ9NGNhcA",
+        "cju7jJ-abPQ",
+        "dHVtNkoIoa4",
+        "fEcGNRe4laE",
+        "iILsKSo5Syg",
+        "ihNVT4djxtM",
+        "j2tWhrml6vQ",
+        "k57C+tslpho",
+        "kFNJPXQw-zM",
+        "kuUyampLEsU",
+        "l3CBbF47D4o",
+        "nUAnu9FIGLU",
+        "nhBPjhZ+VWs",
+        "qDkZUgzj3Cs",
+        "sRU2qSZyqVk",
+        "tG17NFv2mZ8",
+        "uWXqw4LeM5Q",
+        "uoDN52qMEyQ",
+        "urqRW0vsBa4",
+        "vVupb6lqml0",
+        "vhKuvcKcUPc",
+        "xFZxMognttU",
+        "xaNK0ZTH3QA",
+        "y2ybsIQ073A",
+        "yNPSb1Gx4LE",
+        "yjRnMhiv-KQ"
+      ],
+      "error": null
+    },
+    {
+      "name": "Cat Quest III - [PPSA15065]",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Cat-Quest-III-PPSA15065-app\\eboot.bin",
+      "imports": 604,
+      "known": 602,
+      "unknown": 2,
+      "unknown_nids": [
+        "dZGYu5wObJs",
+        "zlqfTyrQSPk"
+      ],
+      "error": null
+    },
+    {
+      "name": "Dead Cells - [PPSA15552]",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Dead.Cells-PPSA15552-USA-Game-v01.005-PS5\\eboot.bin",
+      "imports": 310,
+      "known": 310,
+      "unknown": 0,
+      "unknown_nids": [],
+      "error": null
+    },
+    {
+      "name": "Dusk Diver 2 - [PPSA06565]",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Dusk.Diver.2-PPSA06565-EUR-Game-v1.000.000-PS5\\Dusk Diver 2 01.000 PPSA06565\\eboot.bin",
+      "imports": 2129,
+      "known": 2035,
+      "unknown": 94,
+      "unknown_nids": [
+        "+8m0hqMZsqw",
+        "+V2QcIcvWpw",
+        "-7VafNNns2A",
+        "-HTS6hB300E",
+        "0+HgFkajHnk",
+        "2QOSvz5hvAg",
+        "2Rb+xdt8XkU",
+        "3loRRCoqXfU",
+        "4AQlc0jE9PQ",
+        "527zZ46M9IM",
+        "5QDnyU+SPxs",
+        "5Y5pSdsEdMg",
+        "6NIqae6zQt4",
+        "6nWYF1yMOl4",
+        "7hd4bRJuLMg",
+        "8ABCdDIqXJs",
+        "8N9h2itN+Y4",
+        "A1mb1i8hsRw",
+        "AdR01fo-WaM",
+        "BgCoL-FZz0Y",
+        "DlcM6wdwWJc",
+        "DsFsPD0MWNc",
+        "ERN4ES-D2x8",
+        "EZMhRCBn3dU",
+        "GqL992msUmo",
+        "H+G1XQRDyWk",
+        "H8AN0zYsJ-M",
+        "J-Oi-ac1EcU",
+        "JfoCWM1F50Q",
+        "Ka06Z1LiRps",
+        "L51FfEMZa4o",
+        "L7dxMcJ-2Gc",
+        "LG53EJZJDnA",
+        "LILXByiyFiQ",
+        "MPBXfoxd+eo",
+        "Ma4ynrNRJGw",
+        "MjQ5oH6b620",
+        "N+wyls17Mjo",
+        "NC7NmKVz61g",
+        "NDMQ5Z8QdWQ",
+        "OBfS6KLrjYA",
+        "PoA8NrRlUrw",
+        "RcRmUkp-AOo",
+        "SCvUImM+5zk",
+        "SPoYGtEslGY",
+        "TK8-OMvveV8",
+        "VS1Vg5yOLH0",
+        "VdQjbIsdhXQ",
+        "Vyo4sShcggs",
+        "WP51b8simn8",
+        "Y36Y21dnKtc",
+        "ZlyXxXkCaq8",
+        "alleMuKEWr8",
+        "amVp+qf6SDk",
+        "b949925VwHM",
+        "bBL9LOkN-Ng",
+        "c4nJ9NGNhcA",
+        "cITO9UF6qbs",
+        "cIv243UhfFs",
+        "cju7jJ-abPQ",
+        "d-I6Z20jeYo",
+        "dHVtNkoIoa4",
+        "dc1rk+VZdyo",
+        "f3SCKie2gZM",
+        "fEcGNRe4laE",
+        "giT9raPeA9Y",
+        "iILsKSo5Syg",
+        "iujfeL+h0RI",
+        "k0E7vkgqAuE",
+        "k57C+tslpho",
+        "kFNJPXQw-zM",
+        "khSBLJTsUxE",
+        "kuUyampLEsU",
+        "mHhZZyzhOvw",
+        "nhBPjhZ+VWs",
+        "o2hcK6F8Ih4",
+        "omDBr+dcDVc",
+        "qDkZUgzj3Cs",
+        "s1UHlyHU3rI",
+        "tG17NFv2mZ8",
+        "tPFAXasYRR4",
+        "urqRW0vsBa4",
+        "vgT4A7VrTtE",
+        "vhKuvcKcUPc",
+        "wJM7jKtToIs",
+        "xaNK0ZTH3QA",
+        "y6Uo7jDXvhA",
+        "yNPSb1Gx4LE",
+        "yYh3lwMFxd8",
+        "yjRnMhiv-KQ",
+        "zE+zCB1FUOs",
+        "zKjgSnqVqf4",
+        "zVxbiRlxmRk",
+        "zdsupMypfMU"
+      ],
+      "error": null
+    },
+    {
+      "name": "GRIS - [PPSA09804]",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\GRIS-PPSA09804 – EUR-Game (v01.001)-PS5\\eboot.bin",
+      "imports": 584,
+      "known": 584,
+      "unknown": 0,
+      "unknown_nids": [],
+      "error": null
+    },
+    {
+      "name": "Hello Neighbor 2 - [PPSA07426]",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5\\eboot.bin",
+      "imports": 2058,
+      "known": 2057,
+      "unknown": 1,
+      "unknown_nids": [
+        "k0E7vkgqAuE"
+      ],
+      "error": null
+    },
+    {
+      "name": "Judgment - [PPSA02739]",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Judgment-PPSA02739-USA-Game (v01.001)-PS5\\eboot.bin",
+      "imports": 548,
+      "known": 548,
+      "unknown": 0,
+      "unknown_nids": [],
+      "error": null
+    },
+    {
+      "name": "Juicy Realm - [PPSA19268]",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Juicy.Realm-PPSA19268-USA-Game (v01.000)-PS5\\eboot.bin",
+      "imports": 603,
+      "known": 601,
+      "unknown": 2,
+      "unknown_nids": [
+        "dZGYu5wObJs",
+        "zlqfTyrQSPk"
+      ],
+      "error": null
+    },
+    {
+      "name": "Jusant - [PPSA10264]",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Jusant-PPSA10264-EUR-Game-v01.007-PS5\\eboot.bin",
+      "imports": 1767,
+      "known": 1767,
+      "unknown": 0,
+      "unknown_nids": [],
+      "error": null
+    },
+    {
+      "name": "KytyPS5-2026-08-04-0bbd0bd-Windows-x64",
+      "file": "",
+      "imports": 0,
+      "known": 0,
+      "unknown": 0,
+      "unknown_nids": [],
+      "error": "no eboot.bin found"
+    },
+    {
+      "name": "Mega Man Star Force Legacy Collection - [PPSA32239]",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5\\Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5\\eboot.bin",
+      "imports": 851,
+      "known": 847,
+      "unknown": 4,
+      "unknown_nids": [
+        "-q-vbO859Tw",
+        "LibwuIonIBw",
+        "gWT7X8H0bYs",
+        "kP2L8t3j-aM"
+      ],
+      "error": null
+    },
+    {
+      "name": "Metal Slug Tactics - [PPSA20643]",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5\\Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5\\eboot.bin",
+      "imports": 606,
+      "known": 604,
+      "unknown": 2,
+      "unknown_nids": [
+        "dZGYu5wObJs",
+        "zlqfTyrQSPk"
+      ],
+      "error": null
+    },
+    {
+      "name": "Monster Boy and the Cursed Kingdom - [PPSA02787]",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Monster.Boy.and.The.Cursed.Kingdom-PPSA02787-USA-Game-v01.000.004-PS5\\PPSA02787-app0\\eboot.bin",
+      "imports": 596,
+      "known": 595,
+      "unknown": 1,
+      "unknown_nids": [
+        "k0E7vkgqAuE"
+      ],
+      "error": null
+    },
+    {
+      "name": "Neko Rescue Tale - [PPSA13871]",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Neko.Rescue.Tale-PPSA13871-EUR-Game (v01.000)-PS5\\eboot.bin",
+      "imports": 554,
+      "known": 553,
+      "unknown": 1,
+      "unknown_nids": [
+        "k0E7vkgqAuE"
+      ],
+      "error": null
+    },
+    {
+      "name": "Neva - [PPSA16786]",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Neva-PPSA16786-EUR-Game (v01.007)-PS5\\eboot.bin",
+      "imports": 610,
+      "known": 608,
+      "unknown": 2,
+      "unknown_nids": [
+        "dZGYu5wObJs",
+        "zlqfTyrQSPk"
+      ],
+      "error": null
+    },
+    {
+      "name": "OCTOPATH TRAVELER II - [PPSA09809]",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Octopath.Traveler.II-PPSA09809-EUR-Game-v01.000-PS5\\eboot.bin",
+      "imports": 2050,
+      "known": 2049,
+      "unknown": 1,
+      "unknown_nids": [
+        "k0E7vkgqAuE"
+      ],
+      "error": null
+    },
+    {
+      "name": "Oxide Room 104 - [PPSA07653]",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Oxide.Room.104-PPSA07653-EUR-Game-v1.000.000-PS5\\PPSA07653-app0\\eboot.bin",
+      "imports": 2022,
+      "known": 2021,
+      "unknown": 1,
+      "unknown_nids": [
+        "k0E7vkgqAuE"
+      ],
+      "error": null
+    },
+    {
+      "name": "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5\\eboot.bin",
+      "imports": 604,
+      "known": 602,
+      "unknown": 2,
+      "unknown_nids": [
+        "dZGYu5wObJs",
+        "zlqfTyrQSPk"
+      ],
+      "error": null
+    },
+    {
+      "name": "Raiden III x MIKADO MANIAX - [PPSA13356]",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Raiden.III.x.MIKADO.MANIAX-PPSA13356-USA-Game-v01.01-PS5\\PPSA13356-app\\eboot.bin",
+      "imports": 684,
+      "known": 683,
+      "unknown": 1,
+      "unknown_nids": [
+        "k0E7vkgqAuE"
+      ],
+      "error": null
+    },
+    {
+      "name": "Soul Hackers 2 - [PPSA03743]",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Soul.Hackers.2-PPSA03743-USA-Game (v01.002)+DLC-PS5\\eboot.bin",
+      "imports": 594,
+      "known": 594,
+      "unknown": 0,
+      "unknown_nids": [],
+      "error": null
+    },
+    {
+      "name": "Squirrel with a Gun - [PPSA22102]",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Squirrel.With.A.Gun-PPSA22102-USA-Game-PS5\\PPSA22102-app\\eboot.bin",
+      "imports": 1774,
+      "known": 1774,
+      "unknown": 0,
+      "unknown_nids": [],
+      "error": null
+    },
+    {
+      "name": "Stray - [PPSA02100]",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Stray-PPSA02100-USA-PS5\\PPSA02100 -  Stray\\eboot.bin",
+      "imports": 2040,
+      "known": 2039,
+      "unknown": 1,
+      "unknown_nids": [
+        "k0E7vkgqAuE"
+      ],
+      "error": null
+    },
+    {
+      "name": "Subnautica Below Zero - [PPSA02456]",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Subnautica.Below.Zero-PPSA02456-USA-Game-v01.021.397-PS5\\PPSA02456-app\\eboot.bin",
+      "imports": 581,
+      "known": 581,
+      "unknown": 0,
+      "unknown_nids": [],
+      "error": null
+    },
+    {
+      "name": "The Pathless - [PPSA01825]",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\The.Pathless-PPSA01825-USA-PS5\\The Pathless PS5 Dump v2.000\\eboot.bin",
+      "imports": 1665,
+      "known": 1664,
+      "unknown": 1,
+      "unknown_nids": [
+        "k0E7vkgqAuE"
+      ],
+      "error": null
+    },
+    {
+      "name": "Totally Reliable Delivery Service - [PPSA28855]",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Totally.Reliable.Delivery.Service-PPSA28855-EUR-Game (v01.001)-PS5\\Totally.Reliable.Delivery.Service-PPSA28855-EUR-Game (v01.001)-PS5\\eboot.bin",
+      "imports": 612,
+      "known": 610,
+      "unknown": 2,
+      "unknown_nids": [
+        "dZGYu5wObJs",
+        "zlqfTyrQSPk"
+      ],
+      "error": null
+    }
+  ],
+  "unknown_nids": [
+    {
+      "nid": "k0E7vkgqAuE",
+      "frequency": 11,
+      "libraries": [
+        "libSceAgc"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]",
+        "Hello Neighbor 2 - [PPSA07426]",
+        "Monster Boy and the Cursed Kingdom - [PPSA02787]",
+        "Neko Rescue Tale - [PPSA13871]",
+        "OCTOPATH TRAVELER II - [PPSA09809]",
+        "Oxide Room 104 - [PPSA07653]",
+        "Raiden III x MIKADO MANIAX - [PPSA13356]",
+        "Stray - [PPSA02100]",
+        "The Pathless - [PPSA01825]"
+      ],
+      "remu_name": null,
+      "confidence": "high"
+    },
+    {
+      "nid": "dZGYu5wObJs",
+      "frequency": 7,
+      "libraries": [
+        "PS5Util"
+      ],
+      "games": [
+        "Blue Prince - [PPSA25009]",
+        "Cat Quest III - [PPSA15065]",
+        "Juicy Realm - [PPSA19268]",
+        "Metal Slug Tactics - [PPSA20643]",
+        "Neva - [PPSA16786]",
+        "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
+        "Totally Reliable Delivery Service - [PPSA28855]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "zlqfTyrQSPk",
+      "frequency": 7,
+      "libraries": [
+        "PS5Util"
+      ],
+      "games": [
+        "Blue Prince - [PPSA25009]",
+        "Cat Quest III - [PPSA15065]",
+        "Juicy Realm - [PPSA19268]",
+        "Metal Slug Tactics - [PPSA20643]",
+        "Neva - [PPSA16786]",
+        "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
+        "Totally Reliable Delivery Service - [PPSA28855]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "+V2QcIcvWpw",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "0+HgFkajHnk",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "2QOSvz5hvAg",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "2Rb+xdt8XkU",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "527zZ46M9IM",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "5QDnyU+SPxs",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "7hd4bRJuLMg",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "GqL992msUmo",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "H+G1XQRDyWk",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "JfoCWM1F50Q",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "Ka06Z1LiRps",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "L51FfEMZa4o",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "LILXByiyFiQ",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "MjQ5oH6b620",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "SPoYGtEslGY",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "VdQjbIsdhXQ",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "WP51b8simn8",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "ZlyXxXkCaq8",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "alleMuKEWr8",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "b949925VwHM",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "bBL9LOkN-Ng",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "c4nJ9NGNhcA",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "cju7jJ-abPQ",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "fEcGNRe4laE",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "iILsKSo5Syg",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "k57C+tslpho",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "kFNJPXQw-zM",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "kuUyampLEsU",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "nhBPjhZ+VWs",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "qDkZUgzj3Cs",
+      "frequency": 4,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "tG17NFv2mZ8",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "urqRW0vsBa4",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "vhKuvcKcUPc",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "xaNK0ZTH3QA",
+      "frequency": 4,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "yjRnMhiv-KQ",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "+8m0hqMZsqw",
+      "frequency": 3,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "-7VafNNns2A",
+      "frequency": 3,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "-HTS6hB300E",
+      "frequency": 3,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "3loRRCoqXfU",
+      "frequency": 3,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "4AQlc0jE9PQ",
+      "frequency": 3,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "5Y5pSdsEdMg",
+      "frequency": 3,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "6nWYF1yMOl4",
+      "frequency": 3,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "8ABCdDIqXJs",
+      "frequency": 3,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "8N9h2itN+Y4",
+      "frequency": 3,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "A1mb1i8hsRw",
+      "frequency": 3,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "AdR01fo-WaM",
+      "frequency": 3,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "BgCoL-FZz0Y",
+      "frequency": 3,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "DlcM6wdwWJc",
+      "frequency": 3,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "DsFsPD0MWNc",
+      "frequency": 3,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "ERN4ES-D2x8",
+      "frequency": 3,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "EZMhRCBn3dU",
+      "frequency": 3,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "H8AN0zYsJ-M",
+      "frequency": 3,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "J-Oi-ac1EcU",
+      "frequency": 3,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "LG53EJZJDnA",
+      "frequency": 3,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "MPBXfoxd+eo",
+      "frequency": 3,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "Ma4ynrNRJGw",
+      "frequency": 3,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "N+wyls17Mjo",
+      "frequency": 3,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "NDMQ5Z8QdWQ",
+      "frequency": 3,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "OBfS6KLrjYA",
+      "frequency": 3,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "PoA8NrRlUrw",
+      "frequency": 3,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "RcRmUkp-AOo",
+      "frequency": 3,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "SCvUImM+5zk",
+      "frequency": 3,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "TK8-OMvveV8",
+      "frequency": 3,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "VS1Vg5yOLH0",
+      "frequency": 3,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "Vyo4sShcggs",
+      "frequency": 3,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "Y36Y21dnKtc",
+      "frequency": 3,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "amVp+qf6SDk",
+      "frequency": 3,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "cITO9UF6qbs",
+      "frequency": 3,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "cIv243UhfFs",
+      "frequency": 3,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "d-I6Z20jeYo",
+      "frequency": 3,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "dHVtNkoIoa4",
+      "frequency": 3,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "dc1rk+VZdyo",
+      "frequency": 3,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "f3SCKie2gZM",
+      "frequency": 3,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "giT9raPeA9Y",
+      "frequency": 3,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "iujfeL+h0RI",
+      "frequency": 3,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "khSBLJTsUxE",
+      "frequency": 3,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "mHhZZyzhOvw",
+      "frequency": 3,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "o2hcK6F8Ih4",
+      "frequency": 3,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "omDBr+dcDVc",
+      "frequency": 3,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "s1UHlyHU3rI",
+      "frequency": 3,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "tPFAXasYRR4",
+      "frequency": 3,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "vgT4A7VrTtE",
+      "frequency": 3,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "wJM7jKtToIs",
+      "frequency": 3,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "y6Uo7jDXvhA",
+      "frequency": 3,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "yYh3lwMFxd8",
+      "frequency": 3,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "zE+zCB1FUOs",
+      "frequency": 3,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "zKjgSnqVqf4",
+      "frequency": 3,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "zVxbiRlxmRk",
+      "frequency": 3,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "zdsupMypfMU",
+      "frequency": 3,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "+So6CdPGoWw",
+      "frequency": 2,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "6NIqae6zQt4",
+      "frequency": 2,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "L7dxMcJ-2Gc",
+      "frequency": 2,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Bugsnax - [PPSA01502]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "NC7NmKVz61g",
+      "frequency": 2,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "sRU2qSZyqVk",
+      "frequency": 2,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "xFZxMognttU",
+      "frequency": 2,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "y2ybsIQ073A",
+      "frequency": 2,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Bugsnax - [PPSA01502]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "yNPSb1Gx4LE",
+      "frequency": 2,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Bugsnax - [PPSA01502]",
+        "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "+9LkZlUeYEg",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "+jUcaWTZIR0",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "+qYvlz27LLI",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "+vckMgP13aE",
+      "frequency": 1,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "-q-vbO859Tw",
+      "frequency": 1,
+      "libraries": [
+        "libSceVideoOutVrrStatus"
+      ],
+      "games": [
+        "Mega Man Star Force Legacy Collection - [PPSA32239]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "0kASdf6u3nQ",
+      "frequency": 1,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Bugsnax - [PPSA01502]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "0zVeZ0oy6ZQ",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "10tStWjcWSQ",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "2EI0H1c4pLA",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "2WX+-Y1+Dcc",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "2ZWj71IMUk0",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "4yMHGnC0X3A",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "5+JjnXLeSIo",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "5Ysce+s-CWU",
+      "frequency": 1,
+      "libraries": [
+        "libRenoirCore.PS5"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "65WU0PMnF24",
+      "frequency": 1,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Bugsnax - [PPSA01502]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "6E6MUTGjxhI",
+      "frequency": 1,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Bugsnax - [PPSA01502]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "714y+rWMyhA",
+      "frequency": 1,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Bugsnax - [PPSA01502]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "7nxmQiJW2Js",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "834oDD6Db+8",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "89ZjvyIhobo",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "8vZUZ20YjfU",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "9cg1zkA48rg",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "AMBfBMXCLhs",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "BEUeVfn2zfA",
+      "frequency": 1,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Bugsnax - [PPSA01502]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "BYrcH+G7fVM",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "Bu8uFP7ME2k",
+      "frequency": 1,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Bugsnax - [PPSA01502]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "Bv++RljHBj8",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "CFJj4SL3E6M",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "Cm2cmtCv8cA",
+      "frequency": 1,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "D79MT0gui+4",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "E+VYAc3btSA",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "FJdpGGMFv9w",
+      "frequency": 1,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Bugsnax - [PPSA01502]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "Fdq01lyJj0M",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "GZp+9L3JUn0",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "GeKfAT07sDo",
+      "frequency": 1,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "HccLYOWCuVM",
+      "frequency": 1,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Bugsnax - [PPSA01502]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "L0s4ByRX+RU",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "LibwuIonIBw",
+      "frequency": 1,
+      "libraries": [
+        "libSceVideoOutVrrStatus"
+      ],
+      "games": [
+        "Mega Man Star Force Legacy Collection - [PPSA32239]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "LoHhsrH0C5c",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "Lq1Q7TqB1vw",
+      "frequency": 1,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Bugsnax - [PPSA01502]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "Ms8ZkUZx18I",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "OccHN8ZAeeQ",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "Ou4LHokCK2k",
+      "frequency": 1,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Bugsnax - [PPSA01502]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "QOW4WYUMJK0",
+      "frequency": 1,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Bugsnax - [PPSA01502]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "R6X5MxO-U50",
+      "frequency": 1,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Bugsnax - [PPSA01502]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "RmRxmDnkZ9s",
+      "frequency": 1,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "T11Rlk4THVg",
+      "frequency": 1,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Bugsnax - [PPSA01502]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "TLzwr4Uy37g",
+      "frequency": 1,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Bugsnax - [PPSA01502]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "UFG9YEjxcgk",
+      "frequency": 1,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Bugsnax - [PPSA01502]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "X5j6Mr8a2Pk",
+      "frequency": 1,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Bugsnax - [PPSA01502]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "YRC81VNoDQk",
+      "frequency": 1,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Bugsnax - [PPSA01502]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "YXe6ABbHZPs",
+      "frequency": 1,
+      "libraries": [
+        "libRenoirCore.PS5"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "YemJWcQ8k2o",
+      "frequency": 1,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "ZKfSSJQk3H0",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "ZY9oXjWFBrs",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "ZvvJG-s1yKo",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "aLwhiAtjRsE",
+      "frequency": 1,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Bugsnax - [PPSA01502]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "aNAHqE5cbIY",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "aplSBGhDRFw",
+      "frequency": 1,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "brQlMMQqan0",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "cBqjb8eBPi8",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "cVUy74Zc6t8",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "dfPK9R6M0qM",
+      "frequency": 1,
+      "libraries": [
+        "libRenoirCore.PS5"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "fZiBbVa2ZDU",
+      "frequency": 1,
+      "libraries": [
+        "libRenoirCore.PS5"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "gWT7X8H0bYs",
+      "frequency": 1,
+      "libraries": [
+        "libSceVideoOutVrrStatus"
+      ],
+      "games": [
+        "Mega Man Star Force Legacy Collection - [PPSA32239]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "idhb8B-l-8A",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "ihNVT4djxtM",
+      "frequency": 1,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Bugsnax - [PPSA01502]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "iqaFZ-RLY4E",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "j2tWhrml6vQ",
+      "frequency": 1,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Bugsnax - [PPSA01502]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "kP2L8t3j-aM",
+      "frequency": 1,
+      "libraries": [
+        "libSceVideoOutVrrStatus"
+      ],
+      "games": [
+        "Mega Man Star Force Legacy Collection - [PPSA32239]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "l3CBbF47D4o",
+      "frequency": 1,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Bugsnax - [PPSA01502]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "lU8CaNia7Lg",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "mjDE4DOk8hs",
+      "frequency": 1,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "nUAnu9FIGLU",
+      "frequency": 1,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Bugsnax - [PPSA01502]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "tG86XGc2VtE",
+      "frequency": 1,
+      "libraries": [
+        "libRenoirCore.PS5"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "tZJlqyRA-44",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "uWXqw4LeM5Q",
+      "frequency": 1,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Bugsnax - [PPSA01502]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "uoDN52qMEyQ",
+      "frequency": 1,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Bugsnax - [PPSA01502]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "vVupb6lqml0",
+      "frequency": 1,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Bugsnax - [PPSA01502]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "vzeuqOyUf2E",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "w8y7S3banO4",
+      "frequency": 1,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "wccix0j2NCo",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "z78kWio3sas",
+      "frequency": 1,
+      "libraries": [
+        "libCoherentUIGT"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    }
+  ],
+  "library_breakdown": [
+    {
+      "library": "PS5Util",
+      "unknown_count": 2
+    },
+    {
+      "library": "libCoherentUIGT",
+      "unknown_count": 41
+    },
+    {
+      "library": "libRenoirCore.PS5",
+      "unknown_count": 5
+    },
+    {
+      "library": "libSceAgc",
+      "unknown_count": 1
+    },
+    {
+      "library": "libSceVideoOutVrrStatus",
+      "unknown_count": 4
+    },
+    {
+      "library": "libfmod",
+      "unknown_count": 39
+    },
+    {
+      "library": "libfmodstudio",
+      "unknown_count": 91
+    }
+  ],
+  "remu_comparison": null,
+  "extraction_diffs": []
+}

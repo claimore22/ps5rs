@@ -1,0 +1,2132 @@
+[
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libSceAgc",
+    "nid_hash": "k0E7vkgqAuE"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmod",
+    "nid_hash": "giT9raPeA9Y"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmod",
+    "nid_hash": "y6Uo7jDXvhA"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmod",
+    "nid_hash": "8N9h2itN+Y4"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmod",
+    "nid_hash": "mHhZZyzhOvw"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmod",
+    "nid_hash": "OBfS6KLrjYA"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmod",
+    "nid_hash": "TK8-OMvveV8"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmod",
+    "nid_hash": "s1UHlyHU3rI"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmod",
+    "nid_hash": "VS1Vg5yOLH0"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmod",
+    "nid_hash": "PoA8NrRlUrw"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmod",
+    "nid_hash": "BgCoL-FZz0Y"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmod",
+    "nid_hash": "zKjgSnqVqf4"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmod",
+    "nid_hash": "xaNK0ZTH3QA"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmod",
+    "nid_hash": "NDMQ5Z8QdWQ"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmod",
+    "nid_hash": "yYh3lwMFxd8"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmod",
+    "nid_hash": "A1mb1i8hsRw"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmod",
+    "nid_hash": "MPBXfoxd+eo"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmod",
+    "nid_hash": "qDkZUgzj3Cs"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmod",
+    "nid_hash": "khSBLJTsUxE"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmod",
+    "nid_hash": "RcRmUkp-AOo"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmod",
+    "nid_hash": "o2hcK6F8Ih4"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmod",
+    "nid_hash": "8ABCdDIqXJs"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmod",
+    "nid_hash": "tPFAXasYRR4"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "kFNJPXQw-zM"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "cITO9UF6qbs"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "N+wyls17Mjo"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "c4nJ9NGNhcA"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "LG53EJZJDnA"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "kuUyampLEsU"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "2QOSvz5hvAg"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "VdQjbIsdhXQ"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "3loRRCoqXfU"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "+V2QcIcvWpw"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "zdsupMypfMU"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "wJM7jKtToIs"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "2Rb+xdt8XkU"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "SPoYGtEslGY"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "-7VafNNns2A"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "7hd4bRJuLMg"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "DsFsPD0MWNc"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "6NIqae6zQt4"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "urqRW0vsBa4"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "EZMhRCBn3dU"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "b949925VwHM"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "iujfeL+h0RI"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "vhKuvcKcUPc"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "WP51b8simn8"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "ZlyXxXkCaq8"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "L51FfEMZa4o"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "H8AN0zYsJ-M"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "dc1rk+VZdyo"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "SCvUImM+5zk"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "6nWYF1yMOl4"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "f3SCKie2gZM"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "JfoCWM1F50Q"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "yjRnMhiv-KQ"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "omDBr+dcDVc"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "amVp+qf6SDk"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "y2ybsIQ073A"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "GqL992msUmo"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "RmRxmDnkZ9s"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "vgT4A7VrTtE"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "fEcGNRe4laE"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "527zZ46M9IM"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "0+HgFkajHnk"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "5Y5pSdsEdMg"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "k57C+tslpho"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "-HTS6hB300E"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "AdR01fo-WaM"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "alleMuKEWr8"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "zE+zCB1FUOs"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "nhBPjhZ+VWs"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "cIv243UhfFs"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "Ma4ynrNRJGw"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "NC7NmKVz61g"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "MjQ5oH6b620"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "DlcM6wdwWJc"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "iILsKSo5Syg"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "LILXByiyFiQ"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "5QDnyU+SPxs"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "zVxbiRlxmRk"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "bBL9LOkN-Ng"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "Vyo4sShcggs"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "cju7jJ-abPQ"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "J-Oi-ac1EcU"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "4AQlc0jE9PQ"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "d-I6Z20jeYo"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "ERN4ES-D2x8"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "Ka06Z1LiRps"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "tG17NFv2mZ8"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "+8m0hqMZsqw"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "Y36Y21dnKtc"
+  },
+  {
+    "game": "Afterimage - [PPSA14053]",
+    "library": "libfmodstudio",
+    "nid_hash": "H+G1XQRDyWk"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "L0s4ByRX+RU"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "iqaFZ-RLY4E"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "5+JjnXLeSIo"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "0zVeZ0oy6ZQ"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "aNAHqE5cbIY"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "lU8CaNia7Lg"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "10tStWjcWSQ"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "89ZjvyIhobo"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "+9LkZlUeYEg"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "GZp+9L3JUn0"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "tZJlqyRA-44"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "LoHhsrH0C5c"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "ZKfSSJQk3H0"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "4yMHGnC0X3A"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "ZvvJG-s1yKo"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "cVUy74Zc6t8"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "AMBfBMXCLhs"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "2ZWj71IMUk0"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "834oDD6Db+8"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "ZY9oXjWFBrs"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "+qYvlz27LLI"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "Fdq01lyJj0M"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "z78kWio3sas"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "wccix0j2NCo"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "2WX+-Y1+Dcc"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "BYrcH+G7fVM"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "idhb8B-l-8A"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "OccHN8ZAeeQ"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "8vZUZ20YjfU"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "brQlMMQqan0"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "vzeuqOyUf2E"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "7nxmQiJW2Js"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "+jUcaWTZIR0"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "2EI0H1c4pLA"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "9cg1zkA48rg"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "D79MT0gui+4"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "E+VYAc3btSA"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "CFJj4SL3E6M"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "cBqjb8eBPi8"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "Ms8ZkUZx18I"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libCoherentUIGT",
+    "nid_hash": "Bv++RljHBj8"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libRenoirCore.PS5",
+    "nid_hash": "5Ysce+s-CWU"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libRenoirCore.PS5",
+    "nid_hash": "tG86XGc2VtE"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libRenoirCore.PS5",
+    "nid_hash": "fZiBbVa2ZDU"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libRenoirCore.PS5",
+    "nid_hash": "dfPK9R6M0qM"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libRenoirCore.PS5",
+    "nid_hash": "YXe6ABbHZPs"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libSceAgc",
+    "nid_hash": "k0E7vkgqAuE"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmod",
+    "nid_hash": "giT9raPeA9Y"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmod",
+    "nid_hash": "y6Uo7jDXvhA"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmod",
+    "nid_hash": "8N9h2itN+Y4"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmod",
+    "nid_hash": "mHhZZyzhOvw"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmod",
+    "nid_hash": "OBfS6KLrjYA"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmod",
+    "nid_hash": "TK8-OMvveV8"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmod",
+    "nid_hash": "s1UHlyHU3rI"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmod",
+    "nid_hash": "VS1Vg5yOLH0"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmod",
+    "nid_hash": "PoA8NrRlUrw"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmod",
+    "nid_hash": "BgCoL-FZz0Y"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmod",
+    "nid_hash": "zKjgSnqVqf4"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmod",
+    "nid_hash": "xaNK0ZTH3QA"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmod",
+    "nid_hash": "NDMQ5Z8QdWQ"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmod",
+    "nid_hash": "yYh3lwMFxd8"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmod",
+    "nid_hash": "A1mb1i8hsRw"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmod",
+    "nid_hash": "MPBXfoxd+eo"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmod",
+    "nid_hash": "qDkZUgzj3Cs"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmod",
+    "nid_hash": "khSBLJTsUxE"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmod",
+    "nid_hash": "RcRmUkp-AOo"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmod",
+    "nid_hash": "o2hcK6F8Ih4"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmod",
+    "nid_hash": "8ABCdDIqXJs"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmod",
+    "nid_hash": "tPFAXasYRR4"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmod",
+    "nid_hash": "sRU2qSZyqVk"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmod",
+    "nid_hash": "mjDE4DOk8hs"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmod",
+    "nid_hash": "+vckMgP13aE"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmod",
+    "nid_hash": "GeKfAT07sDo"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "2QOSvz5hvAg"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "kFNJPXQw-zM"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "cITO9UF6qbs"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "N+wyls17Mjo"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "c4nJ9NGNhcA"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "LG53EJZJDnA"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "kuUyampLEsU"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "VdQjbIsdhXQ"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "3loRRCoqXfU"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "+V2QcIcvWpw"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "zdsupMypfMU"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "wJM7jKtToIs"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "2Rb+xdt8XkU"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "SPoYGtEslGY"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "-7VafNNns2A"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "7hd4bRJuLMg"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "DsFsPD0MWNc"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "w8y7S3banO4"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "urqRW0vsBa4"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "EZMhRCBn3dU"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "b949925VwHM"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "iujfeL+h0RI"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "vhKuvcKcUPc"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "WP51b8simn8"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "ZlyXxXkCaq8"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "L51FfEMZa4o"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "H8AN0zYsJ-M"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "dc1rk+VZdyo"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "SCvUImM+5zk"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "6nWYF1yMOl4"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "f3SCKie2gZM"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "JfoCWM1F50Q"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "yjRnMhiv-KQ"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "omDBr+dcDVc"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "amVp+qf6SDk"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "vgT4A7VrTtE"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "GqL992msUmo"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "fEcGNRe4laE"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "527zZ46M9IM"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "0+HgFkajHnk"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "5Y5pSdsEdMg"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "k57C+tslpho"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "-HTS6hB300E"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "AdR01fo-WaM"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "alleMuKEWr8"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "zE+zCB1FUOs"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "nhBPjhZ+VWs"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "cIv243UhfFs"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "Ma4ynrNRJGw"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "Cm2cmtCv8cA"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "MjQ5oH6b620"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "DlcM6wdwWJc"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "iILsKSo5Syg"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "LILXByiyFiQ"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "5QDnyU+SPxs"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "zVxbiRlxmRk"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "bBL9LOkN-Ng"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "Vyo4sShcggs"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "cju7jJ-abPQ"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "J-Oi-ac1EcU"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "4AQlc0jE9PQ"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "d-I6Z20jeYo"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "ERN4ES-D2x8"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "Ka06Z1LiRps"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "tG17NFv2mZ8"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "+8m0hqMZsqw"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "Y36Y21dnKtc"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "H+G1XQRDyWk"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "xFZxMognttU"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "dHVtNkoIoa4"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "+So6CdPGoWw"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "YemJWcQ8k2o"
+  },
+  {
+    "game": "Asterigos: Curse of the Stars - [PPSA08194]",
+    "library": "libfmodstudio",
+    "nid_hash": "aplSBGhDRFw"
+  },
+  {
+    "game": "Blue Prince - [PPSA25009]",
+    "library": "PS5Util",
+    "nid_hash": "zlqfTyrQSPk"
+  },
+  {
+    "game": "Blue Prince - [PPSA25009]",
+    "library": "PS5Util",
+    "nid_hash": "dZGYu5wObJs"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmod",
+    "nid_hash": "xaNK0ZTH3QA"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmod",
+    "nid_hash": "l3CBbF47D4o"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmod",
+    "nid_hash": "sRU2qSZyqVk"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmod",
+    "nid_hash": "R6X5MxO-U50"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmod",
+    "nid_hash": "YRC81VNoDQk"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmod",
+    "nid_hash": "ihNVT4djxtM"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmod",
+    "nid_hash": "aLwhiAtjRsE"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmod",
+    "nid_hash": "TLzwr4Uy37g"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmod",
+    "nid_hash": "65WU0PMnF24"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmod",
+    "nid_hash": "FJdpGGMFv9w"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmod",
+    "nid_hash": "uoDN52qMEyQ"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmod",
+    "nid_hash": "UFG9YEjxcgk"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmod",
+    "nid_hash": "0kASdf6u3nQ"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmod",
+    "nid_hash": "Ou4LHokCK2k"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmod",
+    "nid_hash": "qDkZUgzj3Cs"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmod",
+    "nid_hash": "BEUeVfn2zfA"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "kFNJPXQw-zM"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "SPoYGtEslGY"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "vhKuvcKcUPc"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "c4nJ9NGNhcA"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "2Rb+xdt8XkU"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "kuUyampLEsU"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "b949925VwHM"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "urqRW0vsBa4"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "JfoCWM1F50Q"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "yjRnMhiv-KQ"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "vVupb6lqml0"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "0+HgFkajHnk"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "527zZ46M9IM"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "fEcGNRe4laE"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "GqL992msUmo"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "k57C+tslpho"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "iILsKSo5Syg"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "L51FfEMZa4o"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "X5j6Mr8a2Pk"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "714y+rWMyhA"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "MjQ5oH6b620"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "H+G1XQRDyWk"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "cju7jJ-abPQ"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "dHVtNkoIoa4"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "xFZxMognttU"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "2QOSvz5hvAg"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "ZlyXxXkCaq8"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "WP51b8simn8"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "yNPSb1Gx4LE"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "T11Rlk4THVg"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "+V2QcIcvWpw"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "Lq1Q7TqB1vw"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "j2tWhrml6vQ"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "nUAnu9FIGLU"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "nhBPjhZ+VWs"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "+So6CdPGoWw"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "uWXqw4LeM5Q"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "VdQjbIsdhXQ"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "alleMuKEWr8"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "QOW4WYUMJK0"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "HccLYOWCuVM"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "L7dxMcJ-2Gc"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "tG17NFv2mZ8"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "Ka06Z1LiRps"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "bBL9LOkN-Ng"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "5QDnyU+SPxs"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "LILXByiyFiQ"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "7hd4bRJuLMg"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "y2ybsIQ073A"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "Bu8uFP7ME2k"
+  },
+  {
+    "game": "Bugsnax_PS5_Dump_v2.000",
+    "library": "libfmodstudio",
+    "nid_hash": "6E6MUTGjxhI"
+  },
+  {
+    "game": "Cat Quest III - [PPSA15065]",
+    "library": "PS5Util",
+    "nid_hash": "zlqfTyrQSPk"
+  },
+  {
+    "game": "Cat Quest III - [PPSA15065]",
+    "library": "PS5Util",
+    "nid_hash": "dZGYu5wObJs"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libSceAgc",
+    "nid_hash": "k0E7vkgqAuE"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmod",
+    "nid_hash": "giT9raPeA9Y"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmod",
+    "nid_hash": "y6Uo7jDXvhA"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmod",
+    "nid_hash": "s1UHlyHU3rI"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmod",
+    "nid_hash": "TK8-OMvveV8"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmod",
+    "nid_hash": "mHhZZyzhOvw"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmod",
+    "nid_hash": "8N9h2itN+Y4"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmod",
+    "nid_hash": "OBfS6KLrjYA"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmod",
+    "nid_hash": "VS1Vg5yOLH0"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmod",
+    "nid_hash": "BgCoL-FZz0Y"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmod",
+    "nid_hash": "xaNK0ZTH3QA"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmod",
+    "nid_hash": "zKjgSnqVqf4"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmod",
+    "nid_hash": "8ABCdDIqXJs"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmod",
+    "nid_hash": "PoA8NrRlUrw"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmod",
+    "nid_hash": "khSBLJTsUxE"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmod",
+    "nid_hash": "A1mb1i8hsRw"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmod",
+    "nid_hash": "MPBXfoxd+eo"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmod",
+    "nid_hash": "NDMQ5Z8QdWQ"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmod",
+    "nid_hash": "RcRmUkp-AOo"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmod",
+    "nid_hash": "qDkZUgzj3Cs"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmod",
+    "nid_hash": "o2hcK6F8Ih4"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmod",
+    "nid_hash": "yYh3lwMFxd8"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmod",
+    "nid_hash": "tPFAXasYRR4"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "6NIqae6zQt4"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "LG53EJZJDnA"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "N+wyls17Mjo"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "wJM7jKtToIs"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "kFNJPXQw-zM"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "cITO9UF6qbs"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "SPoYGtEslGY"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "vhKuvcKcUPc"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "c4nJ9NGNhcA"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "2Rb+xdt8XkU"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "kuUyampLEsU"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "EZMhRCBn3dU"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "b949925VwHM"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "urqRW0vsBa4"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "iujfeL+h0RI"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "-7VafNNns2A"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "2QOSvz5hvAg"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "ZlyXxXkCaq8"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "WP51b8simn8"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "3loRRCoqXfU"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "+V2QcIcvWpw"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "zdsupMypfMU"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "VdQjbIsdhXQ"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "DsFsPD0MWNc"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "7hd4bRJuLMg"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "JfoCWM1F50Q"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "yjRnMhiv-KQ"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "0+HgFkajHnk"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "527zZ46M9IM"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "fEcGNRe4laE"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "GqL992msUmo"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "k57C+tslpho"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "H8AN0zYsJ-M"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "f3SCKie2gZM"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "SCvUImM+5zk"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "L51FfEMZa4o"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "-HTS6hB300E"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "amVp+qf6SDk"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "omDBr+dcDVc"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "6nWYF1yMOl4"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "vgT4A7VrTtE"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "5Y5pSdsEdMg"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "dc1rk+VZdyo"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "AdR01fo-WaM"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "cIv243UhfFs"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "Ma4ynrNRJGw"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "nhBPjhZ+VWs"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "zE+zCB1FUOs"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "alleMuKEWr8"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "+8m0hqMZsqw"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "iILsKSo5Syg"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "ERN4ES-D2x8"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "J-Oi-ac1EcU"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "DlcM6wdwWJc"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "4AQlc0jE9PQ"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "MjQ5oH6b620"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "H+G1XQRDyWk"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "cju7jJ-abPQ"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "tG17NFv2mZ8"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "Ka06Z1LiRps"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "bBL9LOkN-Ng"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "zVxbiRlxmRk"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "Vyo4sShcggs"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "Y36Y21dnKtc"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "5QDnyU+SPxs"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "NC7NmKVz61g"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "LILXByiyFiQ"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "d-I6Z20jeYo"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "dHVtNkoIoa4"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "yNPSb1Gx4LE"
+  },
+  {
+    "game": "Dusk Diver 2 - [PPSA06565]",
+    "library": "libfmodstudio",
+    "nid_hash": "L7dxMcJ-2Gc"
+  },
+  {
+    "game": "Hello Neighbor 2 - [PPSA07426]",
+    "library": "libSceAgc",
+    "nid_hash": "k0E7vkgqAuE"
+  },
+  {
+    "game": "Juicy Realm - [PPSA19268]",
+    "library": "PS5Util",
+    "nid_hash": "zlqfTyrQSPk"
+  },
+  {
+    "game": "Juicy Realm - [PPSA19268]",
+    "library": "PS5Util",
+    "nid_hash": "dZGYu5wObJs"
+  },
+  {
+    "game": "Mega Man Star Force Legacy Collection - [PPSA32239]",
+    "library": "libSceVideoOutVrrStatus",
+    "nid_hash": "LibwuIonIBw"
+  },
+  {
+    "game": "Mega Man Star Force Legacy Collection - [PPSA32239]",
+    "library": "libSceVideoOutVrrStatus",
+    "nid_hash": "gWT7X8H0bYs"
+  },
+  {
+    "game": "Mega Man Star Force Legacy Collection - [PPSA32239]",
+    "library": "libSceVideoOutVrrStatus",
+    "nid_hash": "-q-vbO859Tw"
+  },
+  {
+    "game": "Mega Man Star Force Legacy Collection - [PPSA32239]",
+    "library": "libSceVideoOutVrrStatus",
+    "nid_hash": "kP2L8t3j-aM"
+  },
+  {
+    "game": "Metal Slug Tactics - [PPSA20643]",
+    "library": "PS5Util",
+    "nid_hash": "zlqfTyrQSPk"
+  },
+  {
+    "game": "Metal Slug Tactics - [PPSA20643]",
+    "library": "PS5Util",
+    "nid_hash": "dZGYu5wObJs"
+  },
+  {
+    "game": "Monster Boy and the Cursed Kingdom - [PPSA02787]",
+    "library": "libSceAgc",
+    "nid_hash": "k0E7vkgqAuE"
+  },
+  {
+    "game": "Neko Rescue Tale - [PPSA13871]",
+    "library": "libSceAgc",
+    "nid_hash": "k0E7vkgqAuE"
+  },
+  {
+    "game": "Neva - [PPSA16786]",
+    "library": "PS5Util",
+    "nid_hash": "zlqfTyrQSPk"
+  },
+  {
+    "game": "Neva - [PPSA16786]",
+    "library": "PS5Util",
+    "nid_hash": "dZGYu5wObJs"
+  },
+  {
+    "game": "OCTOPATH TRAVELER II - [PPSA09809]",
+    "library": "libSceAgc",
+    "nid_hash": "k0E7vkgqAuE"
+  },
+  {
+    "game": "Oxide Room 104 - [PPSA07653]",
+    "library": "libSceAgc",
+    "nid_hash": "k0E7vkgqAuE"
+  },
+  {
+    "game": "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
+    "library": "PS5Util",
+    "nid_hash": "zlqfTyrQSPk"
+  },
+  {
+    "game": "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
+    "library": "PS5Util",
+    "nid_hash": "dZGYu5wObJs"
+  },
+  {
+    "game": "Raiden III x MIKADO MANIAX - [PPSA13356]",
+    "library": "libSceAgc",
+    "nid_hash": "k0E7vkgqAuE"
+  },
+  {
+    "game": "Stray - [PPSA02100]",
+    "library": "libSceAgc",
+    "nid_hash": "k0E7vkgqAuE"
+  },
+  {
+    "game": "The_Pathless_PS5_Dump_v2.000",
+    "library": "libSceAgc",
+    "nid_hash": "k0E7vkgqAuE"
+  },
+  {
+    "game": "Totally Reliable Delivery Service - [PPSA28855]",
+    "library": "PS5Util",
+    "nid_hash": "zlqfTyrQSPk"
+  },
+  {
+    "game": "Totally Reliable Delivery Service - [PPSA28855]",
+    "library": "PS5Util",
+    "nid_hash": "dZGYu5wObJs"
+  }
+]

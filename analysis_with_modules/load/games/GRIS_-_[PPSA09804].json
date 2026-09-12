@@ -1,0 +1,563 @@
+{
+  "game": "GRIS - [PPSA09804]",
+  "path": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\GRIS-PPSA09804 – EUR-Game (v01.001)-PS5\\eboot.bin",
+  "load_report": {
+    "modules": [
+      {
+        "name": "libc.prx",
+        "module_type": "Prx",
+        "load_bias": 34628173824,
+        "entry_point": null,
+        "exports_count": 2571,
+        "imports_resolved": 0,
+        "imports_known": 0,
+        "imports_stubbed": 104,
+        "relative": 1721,
+        "glob_dat": 3,
+        "jump_slot": 101,
+        "abs64": 0,
+        "copy": 0,
+        "tls_relocations": 3,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 831392,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 1129600,
+        "preinit_array_sz": 8,
+        "per_library": [
+          {
+            "library": "libSceLibcInternalExt",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 100
+          }
+        ]
+      },
+      {
+        "name": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+        "module_type": "Eboot",
+        "load_bias": 34629550080,
+        "entry_point": 112,
+        "exports_count": 1,
+        "imports_resolved": 1274,
+        "imports_known": 0,
+        "imports_stubbed": 431,
+        "relative": 27851,
+        "glob_dat": 13,
+        "jump_slot": 568,
+        "abs64": 1124,
+        "copy": 0,
+        "tls_relocations": 0,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 23317248,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 0,
+        "preinit_array_sz": 0,
+        "per_library": [
+          {
+            "library": "Il2CppUserAssemblies",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceAgc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 57
+          },
+          {
+            "library": "libSceAgcDriver",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 6
+          },
+          {
+            "library": "libSceAjm",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 15
+          },
+          {
+            "library": "libSceAmpr",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceAppContent",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libSceAudioIn",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceAudioOut",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceAudioOut2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 13
+          },
+          {
+            "library": "libSceAvPlayer",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 22
+          },
+          {
+            "library": "libSceCommonDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceHttp",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceHttp2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 23
+          },
+          {
+            "library": "libSceIme",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceImeDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceMouse",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceMsgDialog.native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceNet",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 20
+          },
+          {
+            "library": "libSceNetCtl",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceNpManager",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceNpWebApi2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libScePad",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 17
+          },
+          {
+            "library": "libScePosix",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 40
+          },
+          {
+            "library": "libSceRemoteplay",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceSaveData_native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceSsl",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 10
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSystemService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 17
+          },
+          {
+            "library": "libSceUserService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 14
+          },
+          {
+            "library": "libSceVideoOut",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 15
+          },
+          {
+            "library": "libSceWebBrowserDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libc",
+            "resolved": 1274,
+            "known": 0,
+            "stubbed": 0
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 86
+          }
+        ]
+      }
+    ],
+    "graph": {
+      "nodes": [
+        "libSceAudioOut.prx",
+        "libSceNpWebApi2.prx",
+        "libSceAgcDriver.prx",
+        "libSceRtc.prx",
+        "libSceSsl.prx",
+        "libSceRazorCpu.prx",
+        "libScePad.prx",
+        "libSceNet.prx",
+        "libSceSaveData.native.prx",
+        "PS5Util.prx",
+        "libSceHttp2.prx",
+        "libSceCommonDialog.prx",
+        "libSceImeDialog.prx",
+        "libSceAudio3d.prx",
+        "libSceAmpr.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceRemoteplay.prx",
+        "libSceAudioIn.prx",
+        "libSceAgc.prx",
+        "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+        "libSceAppContent.prx",
+        "libkernel.prx",
+        "libSceHttp.prx",
+        "libSceNetCtl.prx",
+        "libSceUserService.prx",
+        "Il2CppUserAssemblies.prx",
+        "libSceMouse.prx",
+        "libSceIme.prx",
+        "libSceLibcInternal.prx",
+        "libSceSysmodule.prx",
+        "libSceNpManager.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceAjm.native.prx",
+        "libc.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceSystemService.prx",
+        "libSceVideoOut.prx"
+      ],
+      "unavailable": [
+        "libSceAppContent.prx",
+        "libSceAudio3d.prx",
+        "Il2CppUserAssemblies.prx",
+        "libSceAudioIn.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceRtc.prx",
+        "libSceMouse.prx",
+        "libSceRemoteplay.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceNpWebApi2.prx",
+        "PS5Util.prx",
+        "libSceSystemService.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceAgc.prx",
+        "libSceVideoOut.prx",
+        "libSceAudioOut.prx",
+        "libSceImeDialog.prx",
+        "libkernel.prx",
+        "libSceSaveData.native.prx",
+        "libSceAjm.native.prx",
+        "libSceRazorCpu.prx",
+        "libSceSysmodule.prx",
+        "libSceLibcInternal.prx",
+        "libSceNet.prx",
+        "libSceHttp.prx",
+        "libScePad.prx",
+        "libSceSsl.prx",
+        "libSceHttp2.prx",
+        "libSceAgcDriver.prx",
+        "libSceAmpr.prx",
+        "libSceNetCtl.prx",
+        "libSceCommonDialog.prx",
+        "libSceUserService.prx",
+        "libSceNpManager.prx",
+        "libSceIme.prx"
+      ],
+      "edges": [
+        {
+          "from": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+          "to": "Il2CppUserAssemblies.prx",
+          "status": "missing"
+        },
+        {
+          "from": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+          "to": "PS5Util.prx",
+          "status": "missing"
+        },
+        {
+          "from": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+          "to": "libSceNetCtl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
+        {
+          "from": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+          "to": "libSceNet.prx",
+          "status": "missing"
+        },
+        {
+          "from": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+          "to": "libSceUserService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+          "to": "libSceVideoOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+          "to": "libSceAudioOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+          "to": "libSceAudioIn.prx",
+          "status": "missing"
+        },
+        {
+          "from": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+          "to": "libScePad.prx",
+          "status": "missing"
+        },
+        {
+          "from": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+          "to": "libSceIme.prx",
+          "status": "missing"
+        },
+        {
+          "from": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+          "to": "libSceImeDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+          "to": "libSceRtc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+          "to": "libSceSystemService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+          "to": "libSceHttp.prx",
+          "status": "missing"
+        },
+        {
+          "from": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+          "to": "libSceHttp2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+          "to": "libSceSsl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+          "to": "libSceSaveData.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+          "to": "libSceCommonDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+          "to": "libSceMsgDialog.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+          "to": "libSceAvPlayer.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+          "to": "libSceAppContent.prx",
+          "status": "missing"
+        },
+        {
+          "from": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+          "to": "libSceWebBrowserDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+          "to": "libSceAudio3d.prx",
+          "status": "missing"
+        },
+        {
+          "from": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+          "to": "libSceRemoteplay.prx",
+          "status": "missing"
+        },
+        {
+          "from": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+          "to": "libSceNpManager.prx",
+          "status": "missing"
+        },
+        {
+          "from": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+          "to": "libSceMouse.prx",
+          "status": "missing"
+        },
+        {
+          "from": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+          "to": "libSceAgcDriver.prx",
+          "status": "missing"
+        },
+        {
+          "from": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+          "to": "libSceAgc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+          "to": "libSceAjm.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+          "to": "libSceRazorCpu.prx",
+          "status": "missing"
+        },
+        {
+          "from": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+          "to": "libSceNpWebApi2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+          "to": "libc.prx",
+          "status": "loaded"
+        },
+        {
+          "from": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+          "to": "libSceAmpr.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        }
+      ]
+    },
+    "totals": {
+      "modules": 2,
+      "resolved": 1274,
+      "known": 0,
+      "stubbed": 535,
+      "exports": 2572,
+      "unavailable": 35
+    }
+  },
+  "error": null
+}

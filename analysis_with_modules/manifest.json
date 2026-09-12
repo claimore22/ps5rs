@@ -2,7 +2,7 @@
   "schema_version": 6,
   "tool": "ps5rs",
   "created_at": "2026-08-26T05:07:13Z",
-  "image_count": 27,
+  "image_count": 28,
   "module_count": 0,
   "games": [
     {
@@ -328,6 +328,18 @@
       "drm_type": "standard",
       "content_id": "EB1016-PPSA28855_00-TOTALLYRELIABLE0",
       "creation_date": "2025-12-02 08:40:22"
+    },
+    {
+      "name": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
+      "title_id": "PPSA22520",
+      "content_version": "01.000.011",
+      "master_version": "02.00",
+      "sdk_version": "0x1000000000000000",
+      "title_name": "ANIMAL WELL",
+      "display_name": "ANIMAL WELL - [PPSA22520]",
+      "drm_type": "standard",
+      "content_id": "JP8399-PPSA22520_00-0036675864053061",
+      "creation_date": "2025-11-03 23:27:52"
     }
   ]
 }
