@@ -18,6 +18,8 @@ pub struct IngestEntry {
     pub source_deleted: bool,
     pub record_path: String,
     pub report_file: String,
+    #[serde(default)]
+    pub corpus_dir: String,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize, Default)]
@@ -137,6 +139,152 @@ fn short_fp(fp: &str) -> &str {
     fp.get(..12).unwrap_or(fp)
 }
 
+fn read_json_file(path: &Path) -> serde_json::Value {
+    std::fs::read(path)
+        .ok()
+        .and_then(|b| serde_json::from_slice(&b).ok())
+        .unwrap_or(serde_json::Value::Null)
+}
+
+fn str_field(v: &serde_json::Value, key: &str) -> String {
+    v.get(key)
+        .and_then(|x| x.as_str())
+        .unwrap_or_default()
+        .to_string()
+}
+
+/// Extract this game's entries from the corpus-wide derived files so the
+/// data survives source deletion. Missing files/entries yield empty slices,
+/// never an error: absence of evidence is itself recorded.
+fn slice_middleware(data: &serde_json::Value, title_id: &str) -> serde_json::Value {
+    let games = data
+        .get("games")
+        .and_then(|g| g.as_array())
+        .cloned()
+        .unwrap_or_default();
+    games
+        .into_iter()
+        .find(|g| str_field(g, "title_id") == title_id)
+        .unwrap_or(serde_json::Value::Null)
+}
+
+fn slice_inventory(data: &serde_json::Value, dir_name: &str, game_dir: &Path) -> serde_json::Value {
+    let games = data
+        .get("games")
+        .and_then(|g| g.as_array())
+        .cloned()
+        .unwrap_or_default();
+    let abs_hint = game_dir.to_string_lossy().replace('\\', "/");
+    games
+        .into_iter()
+        .find(|g| {
+            str_field(g, "game") == dir_name
+                || g.get("game_dir").and_then(|d| d.as_str()).is_some_and(|d| {
+                    let norm = d.replace('\\', "/");
+                    norm == abs_hint
+                        || norm.starts_with(&format!("{abs_hint}/"))
+                        || norm.contains(&format!("/{dir_name}/"))
+                })
+        })
+        .unwrap_or(serde_json::Value::Null)
+}
+
+fn slice_shaders(data: &serde_json::Value, dir_name: &str) -> serde_json::Value {
+    let prefix = format!("{dir_name}/");
+    let all = data.as_array().cloned().unwrap_or_default();
+    let mine: Vec<serde_json::Value> = all
+        .into_iter()
+        .filter(|s| {
+            s.get("path")
+                .and_then(|p| p.as_str())
+                .is_some_and(|p| p.starts_with(&prefix))
+        })
+        .collect();
+    serde_json::Value::Array(mine)
+}
+
+fn slice_unknowns(data: &serde_json::Value, display: &str, dir_name: &str) -> serde_json::Value {
+    let games = data
+        .get("games")
+        .and_then(|g| g.as_array())
+        .cloned()
+        .unwrap_or_default();
+    let entry = games.into_iter().find(|g| {
+        str_field(g, "name") == display
+            || g.get("file")
+                .and_then(|f| f.as_str())
+                .is_some_and(|f| f.contains(dir_name))
+    });
+    let Some(entry) = entry else {
+        return serde_json::Value::Null;
+    };
+    let ids: Vec<String> = entry
+        .get("unknown_nids")
+        .and_then(|n| n.as_array())
+        .cloned()
+        .unwrap_or_default()
+        .into_iter()
+        .filter_map(|n| n.as_str().map(str::to_string))
+        .collect();
+    let global = data
+        .get("unknown_nids")
+        .and_then(|n| n.as_array())
+        .cloned()
+        .unwrap_or_default();
+    let details: Vec<serde_json::Value> = global
+        .into_iter()
+        .filter(|g| {
+            g.get("nid")
+                .and_then(|n| n.as_str())
+                .is_some_and(|n| ids.iter().any(|id| id == n))
+        })
+        .collect();
+    serde_json::json!({"game": entry, "details": details})
+}
+
+fn snapshot_slices(
+    dataset: &Path,
+    record_dir: &Path,
+    title_id: &str,
+    display: &str,
+    dir_name: &str,
+    game_dir: &Path,
+) -> Result<(), String> {
+    let slices = [
+        (
+            "middleware_slice.json",
+            slice_middleware(&read_json_file(&dataset.join("middleware.json")), title_id),
+        ),
+        (
+            "inventory_slice.json",
+            slice_inventory(
+                &read_json_file(&dataset.join("inventory.json")),
+                dir_name,
+                game_dir,
+            ),
+        ),
+        (
+            "shader_slice.json",
+            slice_shaders(&read_json_file(&dataset.join("shaders.json")), dir_name),
+        ),
+        (
+            "unknown_slice.json",
+            slice_unknowns(
+                &read_json_file(&dataset.join("unknown-nids.json")),
+                display,
+                dir_name,
+            ),
+        ),
+    ];
+    for (file, value) in slices {
+        let json = serde_json::to_string_pretty(&value)
+            .map_err(|e| format!("cannot serialize {file}: {e}"))?;
+        std::fs::write(record_dir.join(file), format!("{json}\n"))
+            .map_err(|e| format!("cannot write {file}: {e}"))?;
+    }
+    Ok(())
+}
+
 /// Archive one game: write the per-game record, reload it from disk,
 /// verify it, then commit the registry entry. Sources are never touched;
 /// deletion is a separate explicit step (`--mark-deleted`).
@@ -182,10 +330,25 @@ pub fn archive_game(
     let env_fp = fingerprint::environment_fingerprint(&loader_fp, &offline_fp);
     let game_fp = fingerprint::game_fingerprint(&env_fp, &eboot_bytes, &prx_files);
 
+    let dir_name = game_dir
+        .file_name()
+        .and_then(|n| n.to_str())
+        .unwrap_or_default()
+        .to_string();
+
     let mut registry = load_registry(dataset);
     match registry_status(&registry, &title_id, &game_fp) {
         IngestStatus::SameIngest => {
             let entry = registry.games.get(&title_id).cloned().unwrap();
+            let record_dir = dataset.join(&entry.record_path);
+            snapshot_slices(
+                &dataset,
+                &record_dir,
+                &title_id,
+                &display,
+                &dir_name,
+                game_dir,
+            )?;
             println!("ALREADY INGESTED {title_id} ({})", entry.ingest_id);
             return Ok(entry);
         }
@@ -242,6 +405,15 @@ pub fn archive_game(
     std::fs::copy(&load_report_src, record_dir.join("load_report.json"))
         .map_err(|e| format!("cannot copy load report: {e}"))?;
 
+    snapshot_slices(
+        &dataset,
+        &record_dir,
+        &title_id,
+        &display,
+        &dir_name,
+        game_dir,
+    )?;
+
     verify_record(&record_dir, &eboot_bytes)?;
 
     let rel_record = record_dir
@@ -258,6 +430,7 @@ pub fn archive_game(
         source_deleted: false,
         record_path: rel_record,
         report_file: report_name,
+        corpus_dir: dir_name,
     };
     registry.games.insert(title_id.clone(), entry.clone());
     save_registry(dataset, &registry)?;
@@ -295,6 +468,17 @@ fn verify_record(record_dir: &Path, eboot_bytes: &[u8]) -> Result<(), String> {
             "verify: load report game mismatch ({game} vs {})",
             record.name
         ));
+    }
+    for slice in [
+        "middleware_slice.json",
+        "inventory_slice.json",
+        "shader_slice.json",
+        "unknown_slice.json",
+    ] {
+        let data = std::fs::read(record_dir.join(slice))
+            .map_err(|e| format!("verify: cannot re-read {slice}: {e}"))?;
+        serde_json::from_slice::<serde_json::Value>(&data)
+            .map_err(|e| format!("verify: {slice} invalid: {e}"))?;
     }
     eprintln!("VERIFIED {}", record.title_id);
     Ok(())
@@ -370,6 +554,7 @@ mod tests {
                 source_deleted: false,
                 record_path: "games/PPSA00001".to_string(),
                 report_file: "Game.json".to_string(),
+                corpus_dir: "GameA".to_string(),
             },
         );
         assert_eq!(
@@ -384,6 +569,57 @@ mod tests {
             registry_status(&reg, "PPSA99999", "fp1"),
             IngestStatus::NotIngested
         );
+    }
+
+    #[test]
+    fn slices_match_by_title_dir_and_display() {
+        let mw = serde_json::json!({"games": [
+            {"title_id": "PPSA00001", "engine": "Unity"},
+            {"title_id": "PPSA00002", "engine": "Unreal"},
+        ]});
+        assert_eq!(
+            slice_middleware(&mw, "PPSA00002")["engine"],
+            serde_json::json!("Unreal")
+        );
+        assert!(slice_middleware(&mw, "PPSAXXXXX").is_null());
+        assert!(slice_middleware(&serde_json::json!({}), "PPSA00001").is_null());
+
+        let inv = serde_json::json!({"games": [
+            {"game": "GameA", "total_files": 3},
+            {"game": "Inner", "game_dir": "C:/corpus/GameB/Inner", "total_files": 7},
+        ]});
+        let dir_a = Path::new("C:/corpus/GameA");
+        let dir_b = Path::new("C:/corpus/GameB");
+        assert_eq!(
+            slice_inventory(&inv, "GameA", dir_a)["total_files"],
+            serde_json::json!(3)
+        );
+        assert_eq!(
+            slice_inventory(&inv, "GameB", dir_b)["total_files"],
+            serde_json::json!(7)
+        );
+        assert!(slice_inventory(&inv, "Nobody", Path::new("C:/corpus/Nobody")).is_null());
+
+        let sh = serde_json::json!([
+            {"path": "GameA/a.pssl"},
+            {"path": "GameB/b.pssl"},
+            {"path": "GameA/sub/c.pssl"},
+        ]);
+        let mine = slice_shaders(&sh, "GameA");
+        assert_eq!(mine.as_array().unwrap().len(), 2);
+        assert!(slice_shaders(&sh, "Nobody").as_array().unwrap().is_empty());
+
+        let un = serde_json::json!({
+            "games": [{"name": "GameA - [PPSA00001]", "unknown_nids": ["aaa", "bbb"]}],
+            "unknown_nids": [
+                {"nid": "aaa", "frequency": 2},
+                {"nid": "zzz", "frequency": 9},
+            ],
+        });
+        let slice = slice_unknowns(&un, "GameA - [PPSA00001]", "GameA");
+        assert_eq!(slice["details"].as_array().unwrap().len(), 1);
+        assert_eq!(slice["details"][0]["nid"], serde_json::json!("aaa"));
+        assert!(slice_unknowns(&un, "Nobody", "Nobody").is_null());
     }
 
     #[test]
@@ -407,6 +643,7 @@ mod tests {
                 source_deleted: true,
                 record_path: "x".to_string(),
                 report_file: "Game.json".to_string(),
+                corpus_dir: "GameA".to_string(),
             },
         );
         save_registry(&dir, &reg).unwrap();
