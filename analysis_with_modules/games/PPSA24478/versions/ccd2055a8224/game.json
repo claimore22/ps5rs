@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "title_id": "PPSA24478",
+  "name": "Like a Dragon: Pirate Yakuza in Hawaii - [PPSA24478]",
+  "eboot_sha256": "6682023d6992085de7d929afed396a104b29d37806879c9bef33f54590cfe83a",
+  "game_fingerprint": "ccd2055a8224f1699dc816461a47b2f0604c65c61d408630e55848679385ac95",
+  "environment_fingerprint": "c65955db3dee9d575ca652856c86c3fc2b7297fff36bb37fcb1b9319f1ff09a9",
+  "loader_fingerprint": "d245a80770d2897643c4754f10883b674208fc8fdecaad2ebd247d1990f6f5a0",
+  "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
+  "ingest_id": "ingest_20260913055953_ccd2055a8224",
+  "ingested_at": "2026-09-13T05:59:53Z",
+  "params": {
+    "name": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+    "title_id": "PPSA24478",
+    "content_version": "01.014.000",
+    "master_version": "01.00",
+    "sdk_version": "0x1000000000000000",
+    "title_name": "Like a Dragon: Pirate Yakuza in Hawaii",
+    "display_name": "Like a Dragon: Pirate Yakuza in Hawaii - [PPSA24478]",
+    "drm_type": "standard",
+    "content_id": "JP0177-PPSA24478_00-MAINGAME00000000",
+    "creation_date": "2025-04-08 09:00:24"
+  },
+  "load_report_file": "load_report.json"
+}

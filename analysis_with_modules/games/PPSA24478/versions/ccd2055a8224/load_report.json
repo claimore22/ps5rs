@@ -1,0 +1,703 @@
+{
+  "game": "Like a Dragon: Pirate Yakuza in Hawaii - [PPSA24478]",
+  "path": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5\\eboot.bin",
+  "load_report": {
+    "modules": [
+      {
+        "name": "libc.prx",
+        "module_type": "Prx",
+        "load_bias": 34628173824,
+        "entry_point": null,
+        "exports_count": 2925,
+        "imports_resolved": 0,
+        "imports_known": 0,
+        "imports_stubbed": 120,
+        "relative": 2905,
+        "glob_dat": 3,
+        "jump_slot": 117,
+        "abs64": 0,
+        "copy": 0,
+        "tls_relocations": 3,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 1133744,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 1648664,
+        "preinit_array_sz": 8,
+        "per_library": [
+          {
+            "library": "libSceLibcInternalExt",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 116
+          }
+        ]
+      },
+      {
+        "name": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+        "module_type": "Eboot",
+        "load_bias": 34630139904,
+        "entry_point": 112,
+        "exports_count": 0,
+        "imports_resolved": 584,
+        "imports_known": 0,
+        "imports_stubbed": 393,
+        "relative": 144148,
+        "glob_dat": 3,
+        "jump_slot": 481,
+        "abs64": 493,
+        "copy": 0,
+        "tls_relocations": 0,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 30363648,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 0,
+        "preinit_array_sz": 0,
+        "per_library": [
+          {
+            "library": "libSceAcm",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceAgc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 58
+          },
+          {
+            "library": "libSceAgcDriver",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceAmpr",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 27
+          },
+          {
+            "library": "libSceAppContent",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceAudioOut2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 14
+          },
+          {
+            "library": "libSceCommonDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceContentDelete",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceContentExport",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceCoredump",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceErrorDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceImeDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceJpegDec",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceJpegEnc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceMsgDialog.native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceNetCtl",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceNpCommerce",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceNpEntitlementAccess",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceNpGameIntent",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceNpManager",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceNpTrophy2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceNpUniversalDataSystem",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 15
+          },
+          {
+            "library": "libScePad",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 13
+          },
+          {
+            "library": "libScePlayGo",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 15
+          },
+          {
+            "library": "libScePlayGoDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libScePngDec",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libScePngEnc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libScePsml",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 10
+          },
+          {
+            "library": "libSceRemoteplay",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceRtc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceSaveDataDialog.native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libSceSaveData_native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 14
+          },
+          {
+            "library": "libSceShare",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSigninDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceSystemService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceUserService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libSceVideoOut",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 14
+          },
+          {
+            "library": "libSceVideodec2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 9
+          },
+          {
+            "library": "libc",
+            "resolved": 584,
+            "known": 0,
+            "stubbed": 0
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 78
+          }
+        ]
+      }
+    ],
+    "graph": {
+      "nodes": [
+        "libSceNpTrophy2.prx",
+        "libSceNetCtl.prx",
+        "libSceSigninDialog.prx",
+        "libScePsml.prx",
+        "libSceSystemService.prx",
+        "libSceVideodec2.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceRazorCpu.prx",
+        "libSceRemoteplay.prx",
+        "libSceNet.prx",
+        "libScePngEnc.prx",
+        "libSceContentDelete.prx",
+        "libScePad.prx",
+        "libSceShare.prx",
+        "libSceNpCommerce.prx",
+        "libSceNpCppWebApi.prx",
+        "libSceSysmodule.prx",
+        "libSceNpGameIntent.prx",
+        "libSceErrorDialog.prx",
+        "libSceImeDialog.prx",
+        "libSceGameLiveStreaming.prx",
+        "libSceVideoOut.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceWebBrowserDialog.prx",
+        "libkernel.prx",
+        "libScePlayGo.prx",
+        "libSceContentExport.prx",
+        "libSceJpegEnc.prx",
+        "libScePlayGoDialog.prx",
+        "libSceUserService.prx",
+        "libSceAppContent.prx",
+        "libSceRtc.prx",
+        "libSceAcm.prx",
+        "libSceSharePlay.prx",
+        "libSceMouse.prx",
+        "libSceAmpr.prx",
+        "libScePngDec.prx",
+        "libSceAgc.prx",
+        "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+        "libSceNpEntitlementAccess.prx",
+        "libSceAudioOut.prx",
+        "libSceAgcDriver.prx",
+        "libc.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceNpManager.prx",
+        "libSceLibcInternal.prx",
+        "libSceJpegDec.prx",
+        "libSceCommonDialog.prx",
+        "libSceSaveData.native.prx"
+      ],
+      "unavailable": [
+        "libSceJpegEnc.prx",
+        "libSceSharePlay.prx",
+        "libSceMouse.prx",
+        "libSceNet.prx",
+        "libSceAudioOut.prx",
+        "libSceNpManager.prx",
+        "libSceSigninDialog.prx",
+        "libScePlayGo.prx",
+        "libSceGameLiveStreaming.prx",
+        "libSceErrorDialog.prx",
+        "libSceAcm.prx",
+        "libScePsml.prx",
+        "libSceSysmodule.prx",
+        "libSceVideoOut.prx",
+        "libSceRemoteplay.prx",
+        "libSceUserService.prx",
+        "libSceNpTrophy2.prx",
+        "libSceNetCtl.prx",
+        "libSceRtc.prx",
+        "libSceAgc.prx",
+        "libSceNpGameIntent.prx",
+        "libSceCommonDialog.prx",
+        "libSceShare.prx",
+        "libSceNpCppWebApi.prx",
+        "libSceRazorCpu.prx",
+        "libScePngDec.prx",
+        "libSceLibcInternal.prx",
+        "libSceNpEntitlementAccess.prx",
+        "libSceWebBrowserDialog.prx",
+        "libScePlayGoDialog.prx",
+        "libSceAmpr.prx",
+        "libScePad.prx",
+        "libSceSystemService.prx",
+        "libSceAppContent.prx",
+        "libSceVideodec2.prx",
+        "libSceSaveData.native.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceNpCommerce.prx",
+        "libScePngEnc.prx",
+        "libkernel.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceJpegDec.prx",
+        "libSceContentExport.prx",
+        "libSceImeDialog.prx",
+        "libSceAgcDriver.prx",
+        "libSceContentDelete.prx",
+        "libSceNpUniversalDataSystem.prx"
+      ],
+      "edges": [
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libc.prx",
+          "status": "loaded"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceAgc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceVideoOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceAgcDriver.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libScePad.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceAudioOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceNet.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceNetCtl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceVideodec2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceNpUniversalDataSystem.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceAcm.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceSystemService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceRemoteplay.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceCommonDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceNpTrophy2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceMsgDialog.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceImeDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceErrorDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceNpEntitlementAccess.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceAppContent.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceSaveData.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceSaveDataDialog.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceWebBrowserDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceNpCommerce.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceNpManager.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceContentExport.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceContentDelete.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libScePngEnc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libScePngDec.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceJpegEnc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceJpegDec.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libScePlayGo.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libScePlayGoDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceSigninDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceGameLiveStreaming.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceSharePlay.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceShare.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceNpCppWebApi.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceRazorCpu.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceNpGameIntent.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceUserService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceRtc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceMouse.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libScePsml.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+          "to": "libSceAmpr.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        }
+      ]
+    },
+    "totals": {
+      "modules": 2,
+      "resolved": 584,
+      "known": 0,
+      "stubbed": 513,
+      "exports": 2925,
+      "unavailable": 47
+    }
+  },
+  "error": null,
+  "total_exports": 2925,
+  "freshness": {
+    "report_format": 1,
+    "loader_fingerprint": "37a85e37ad1df177c24ca92b5e06dd2322849bcbc949ec1461e015d7a1db1eee",
+    "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
+    "environment_fingerprint": "3aaac4cd58fab0d58acdb4ea2271b30447f0e35fa900d2cd9f160d90a489df07",
+    "game_fingerprint": "8d1782cfaa34d904f2d41bfc3a0bb469150a4d11120161261d26f4d6001c5fa7"
+  }
+}

@@ -2,13 +2,13 @@
   "schema_version": 1,
   "tool": "ps5rs",
   "games_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5",
-  "generated_at": "2026-09-13T05:54:05Z",
+  "generated_at": "2026-09-13T05:59:24Z",
   "summary": {
     "games_found": 33,
     "games_parsed": 30,
     "games_failed": 3,
-    "imports_total": 32883,
-    "known_total": 32455,
+    "imports_total": 31475,
+    "known_total": 31047,
     "unknown_total": 428,
     "unique_unknown_nids": 183
   },
@@ -555,6 +555,15 @@
       "error": "no eboot.bin found"
     },
     {
+      "name": "Like a Dragon: Pirate Yakuza in Hawaii - [PPSA24478]",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5\\eboot.bin",
+      "imports": 487,
+      "known": 487,
+      "unknown": 0,
+      "unknown_nids": [],
+      "error": null
+    },
+    {
       "name": "Mega Man Star Force Legacy Collection - [PPSA32239]",
       "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5\\Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5\\eboot.bin",
       "imports": 851,
@@ -678,15 +687,6 @@
         "dZGYu5wObJs",
         "zlqfTyrQSPk"
       ],
-      "error": null
-    },
-    {
-      "name": "SAND LAND - [PPSA08574]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5\\eboot.bin",
-      "imports": 1895,
-      "known": 1895,
-      "unknown": 0,
-      "unknown_nids": [],
       "error": null
     },
     {

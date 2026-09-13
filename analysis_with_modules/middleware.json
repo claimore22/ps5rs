@@ -3836,6 +3836,163 @@
       "unknown": []
     },
     {
+      "game": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+      "title_id": "PPSA24478",
+      "third_party": [],
+      "sony": [
+        {
+          "file_name": "libSceAmpr.sprx",
+          "module_name": "libSceAmpr",
+          "kind": "sony",
+          "sha256": "6f13898045bfa1089cd9797355fcb5ff462de9067223f392ce5c7d0cb556f277",
+          "parseable": true,
+          "imports": 85,
+          "exports": 276,
+          "import_libs": [
+            "libSceLibcInternal",
+            "libkernel"
+          ],
+          "needed_files": [
+            "libSceLibcInternal.prx",
+            "libkernel.prx"
+          ]
+        },
+        {
+          "file_name": "libScePlayGo.sprx",
+          "module_name": "libScePlayGo",
+          "kind": "sony",
+          "sha256": "35c437b7e9365e3183974ab5bfbf489ea1db12b7f711c829813ff14ce4d1790e",
+          "parseable": true,
+          "imports": 13,
+          "exports": 24,
+          "import_libs": [
+            "libc",
+            "libkernel"
+          ],
+          "needed_files": [
+            "libkernel.prx",
+            "libc.prx"
+          ]
+        },
+        {
+          "file_name": "libc.prx",
+          "module_name": "libc",
+          "kind": "sony",
+          "sha256": "73d89a5cd9c3015d0384f88380b56a32bc983a94cd1c24815e6f453286019354",
+          "parseable": true,
+          "imports": 119,
+          "exports": 2925,
+          "import_libs": [
+            "libSceLibcInternalExt",
+            "libSceSysmodule",
+            "libkernel"
+          ],
+          "needed_files": [
+            "libkernel.prx",
+            "libSceLibcInternal.prx",
+            "libSceSysmodule.prx"
+          ]
+        }
+      ],
+      "unknown": [
+        {
+          "file_name": "pfx_fsr3_1_ps5.prx",
+          "module_name": "pfx_fsr3_1_ps5",
+          "kind": "unknown",
+          "sha256": "b04072f65b23a587cf02022e0539d3576e02f7dbb69f33f784e994c3e9650b8b",
+          "parseable": true,
+          "imports": 63,
+          "exports": 1,
+          "import_libs": [
+            "libSceAgc",
+            "libSceAgcDriver",
+            "libSceAmpr",
+            "libSceMouse",
+            "libScePad",
+            "libScePsml",
+            "libSceRtc",
+            "libSceSysmodule",
+            "libSceSystemService",
+            "libSceUserService",
+            "libSceVideoOut",
+            "libc",
+            "libkernel"
+          ],
+          "needed_files": [
+            "libkernel.prx",
+            "libc.prx",
+            "libSceAgc.prx",
+            "libSceVideoOut.prx",
+            "libSceAgcDriver.prx",
+            "libSceAmpr.prx",
+            "libScePsml.prx",
+            "libScePad.prx",
+            "libSceUserService.prx",
+            "libSceRtc.prx",
+            "libSceMouse.prx",
+            "libSceSysmodule.prx",
+            "libSceSystemService.prx"
+          ]
+        },
+        {
+          "file_name": "pre3-pxd-ps5-retail.prx",
+          "module_name": "pre3-pxd-ps5-retail",
+          "kind": "unknown",
+          "sha256": "9e1c43818faea2b135a26dd645a6a788c406070cf7f78e3abe85e1b635ed84a0",
+          "parseable": true,
+          "imports": 140,
+          "exports": 0,
+          "import_libs": [
+            "libSceAgc",
+            "libSceAgcDriver",
+            "libSceAmpr",
+            "libSceMouse",
+            "libScePad",
+            "libScePsml",
+            "libSceRtc",
+            "libSceSysmodule",
+            "libSceSystemService",
+            "libSceUserService",
+            "libSceVideoOut",
+            "libc",
+            "libkernel"
+          ],
+          "needed_files": [
+            "libkernel.prx",
+            "libc.prx",
+            "libSceAgc.prx",
+            "libSceVideoOut.prx",
+            "libSceAgcDriver.prx",
+            "libScePad.prx",
+            "libSceUserService.prx",
+            "libSceRtc.prx",
+            "libSceMouse.prx",
+            "libSceSysmodule.prx",
+            "libSceSystemService.prx",
+            "libScePsml.prx",
+            "libSceAmpr.prx"
+          ]
+        },
+        {
+          "file_name": "smsce_ps5.prx",
+          "module_name": "smsce_ps5",
+          "kind": "unknown",
+          "sha256": "a49386a6436b0de87e5cac63615d1bf3d2af64783c63b3bb52547c270e28357c",
+          "parseable": true,
+          "imports": 8,
+          "exports": 2,
+          "import_libs": [
+            "libc",
+            "libkernel"
+          ],
+          "needed_files": [
+            "libkernel.prx",
+            "libc.prx"
+          ]
+        }
+      ]
+    },
+    {
       "game": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
       "title_id": "PPSA32239",
       "third_party": [],
@@ -5842,161 +5999,6 @@
           "parseable": true,
           "imports": 104,
           "exports": 2584,
-          "import_libs": [
-            "libSceLibcInternalExt",
-            "libSceSysmodule",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libSceLibcInternal.prx",
-            "libSceSysmodule.prx"
-          ]
-        }
-      ],
-      "unknown": []
-    },
-    {
-      "game": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
-      "title_id": "PPSA08574",
-      "engine": "Unreal Engine",
-      "third_party": [],
-      "sony": [
-        {
-          "file_name": "libSceFace.prx",
-          "module_name": "libSceFace",
-          "kind": "sony",
-          "sha256": "488189ed4173ff5c719943c6ee9a127980babfc5f16a8c8d9c715dd5c0ccfd1b",
-          "parseable": true,
-          "imports": 20,
-          "exports": 29,
-          "import_libs": [
-            "libSceLibcInternal",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libSceLibcInternal.prx"
-          ]
-        },
-        {
-          "file_name": "libSceFaceTracker.prx",
-          "module_name": "libSceFaceTracker",
-          "kind": "sony",
-          "sha256": "80cfbaf075ecf68c00ab8648a23fb879594c7c556bea727ecbef1c755d543bf2",
-          "parseable": true,
-          "imports": 27,
-          "exports": 21,
-          "import_libs": [
-            "libSceFace",
-            "libSceLibcInternal",
-            "libScePosix",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libSceFace.prx",
-            "libkernel.prx",
-            "libSceLibcInternal.prx"
-          ]
-        },
-        {
-          "file_name": "libSceFontGsm.prx",
-          "module_name": "libSceFontGsm",
-          "kind": "sony",
-          "sha256": "5993c86e0ab2cd2eac09a94dd20675947c1938abe0a6114738bc975fe36d55f8",
-          "parseable": true,
-          "imports": 61,
-          "exports": 6,
-          "import_libs": [
-            "libSceAgc",
-            "libSceAgcDriver",
-            "libSceFont",
-            "libSceLibcInternal",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libSceLibcInternal.prx",
-            "libSceFont-module.prx",
-            "libSceAgcDriver.prx",
-            "libSceAgc.prx"
-          ]
-        },
-        {
-          "file_name": "libSceJobManager.prx",
-          "module_name": "libSceJobManager",
-          "kind": "sony",
-          "sha256": "a96dbcd93af29fa541c3bfe63d0e6272e0e934ff6478afd1f72f79678255fb9e",
-          "parseable": true,
-          "imports": 149,
-          "exports": 11,
-          "import_libs": [
-            "libSceAgc",
-            "libSceAgcDriver",
-            "libSceLibcInternal",
-            "libSceRazorCpu",
-            "libkernel",
-            "ulobjmgr"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libSceLibcInternal.prx",
-            "libSceAgcDriver.prx",
-            "libSceAgc.prx",
-            "ulobjmgr.prx",
-            "libSceRazorCpu.prx"
-          ]
-        },
-        {
-          "file_name": "libSceNpCppWebApi.prx",
-          "module_name": "libSceNpCppWebApi",
-          "kind": "sony",
-          "sha256": "81f420124fa6fe8342b4319982b2f21f2b57f55cf9e2e782264b6fe85d3068da",
-          "parseable": true,
-          "imports": 95,
-          "exports": 42487,
-          "import_libs": [
-            "libSceHttp",
-            "libSceJson2",
-            "libSceLibcInternal",
-            "libSceNpWebApi2",
-            "libSceRtc",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libSceJson2.prx",
-            "libSceRtc.prx",
-            "libSceNpWebApi2.prx",
-            "libSceHttp.prx",
-            "libkernel.prx",
-            "libSceLibcInternal.prx"
-          ]
-        },
-        {
-          "file_name": "libScePfs.prx",
-          "module_name": "libScePfs",
-          "kind": "sony",
-          "sha256": "a89fae797ffbe0e8b762ef7fb6015dd02f13f77aa0e70fb933c874bed68c2a30",
-          "parseable": true,
-          "imports": 15,
-          "exports": 9,
-          "import_libs": [
-            "libSceLibcInternal",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libSceLibcInternal.prx"
-          ]
-        },
-        {
-          "file_name": "libc.prx",
-          "module_name": "libc",
-          "kind": "sony",
-          "sha256": "abbb974ce678d1bcc18bde94a35d88c5e2551f83ca03fcbf2870c6a62dcb35d4",
-          "parseable": true,
-          "imports": 104,
-          "exports": 2574,
           "import_libs": [
             "libSceLibcInternalExt",
             "libSceSysmodule",
@@ -8414,8 +8416,8 @@
       "unknown": []
     }
   ],
-  "total_prx": 335,
+  "total_prx": 334,
   "third_party_modules": 184,
-  "sony_modules": 142,
-  "unknown_modules": 9
+  "sony_modules": 138,
+  "unknown_modules": 12
 }

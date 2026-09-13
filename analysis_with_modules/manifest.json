@@ -2,7 +2,7 @@
   "schema_version": 6,
   "tool": "ps5rs",
   "created_at": "2026-08-26T05:07:13Z",
-  "image_count": 36,
+  "image_count": 37,
   "module_count": 0,
   "games": [
     {
@@ -423,6 +423,18 @@
       "drm_type": "standard",
       "content_id": "UP0082-PPSA20612_00-DQ3RNA0000000000",
       "creation_date": "2024-08-05 05:28:36"
+    },
+    {
+      "name": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+      "title_id": "PPSA24478",
+      "content_version": "01.014.000",
+      "master_version": "01.00",
+      "sdk_version": "0x1000000000000000",
+      "title_name": "Like a Dragon: Pirate Yakuza in Hawaii",
+      "display_name": "Like a Dragon: Pirate Yakuza in Hawaii - [PPSA24478]",
+      "drm_type": "standard",
+      "content_id": "JP0177-PPSA24478_00-MAINGAME00000000",
+      "creation_date": "2025-04-08 09:00:24"
     }
   ]
 }
