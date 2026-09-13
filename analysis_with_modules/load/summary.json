@@ -2,12 +2,12 @@
   "total_games": 31,
   "successful": 31,
   "failed": 0,
-  "total_modules": 75,
-  "total_exports": 674687,
-  "total_imports_resolved": 124807,
-  "total_imports_known": 9402,
-  "total_imports_stubbed": 22517,
-  "avg_resolution_rate": 85.63288797008792,
+  "total_modules": 77,
+  "total_exports": 718917,
+  "total_imports_resolved": 134873,
+  "total_imports_known": 339,
+  "total_imports_stubbed": 22611,
+  "avg_resolution_rate": 85.67319085304423,
   "top_unavailable": [
     {
       "module": "libSceAgc.prx",
@@ -33,6 +33,7 @@
         "Neva - [PPSA16786]",
         "OCTOPATH TRAVELER II - [PPSA09809]",
         "Oxide Room 104 - [PPSA07653]",
+        "Persona 3 Reload - [PPSA10872]",
         "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
         "Raiden III x MIKADO MANIAX - [PPSA13356]",
         "Richman 11 - [PPSA16960]",
@@ -42,8 +43,7 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "WUCHANG.Fallen.Feathers-PPSA09519-EUR-Game(v01.01)-PS5"
+        "Totally Reliable Delivery Service - [PPSA28855]"
       ]
     },
     {
@@ -70,6 +70,7 @@
         "Neva - [PPSA16786]",
         "OCTOPATH TRAVELER II - [PPSA09809]",
         "Oxide Room 104 - [PPSA07653]",
+        "Persona 3 Reload - [PPSA10872]",
         "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
         "Raiden III x MIKADO MANIAX - [PPSA13356]",
         "Richman 11 - [PPSA16960]",
@@ -79,8 +80,7 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "WUCHANG.Fallen.Feathers-PPSA09519-EUR-Game(v01.01)-PS5"
+        "Totally Reliable Delivery Service - [PPSA28855]"
       ]
     },
     {
@@ -107,6 +107,7 @@
         "Neva - [PPSA16786]",
         "OCTOPATH TRAVELER II - [PPSA09809]",
         "Oxide Room 104 - [PPSA07653]",
+        "Persona 3 Reload - [PPSA10872]",
         "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
         "Raiden III x MIKADO MANIAX - [PPSA13356]",
         "Richman 11 - [PPSA16960]",
@@ -116,8 +117,7 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "WUCHANG.Fallen.Feathers-PPSA09519-EUR-Game(v01.01)-PS5"
+        "Totally Reliable Delivery Service - [PPSA28855]"
       ]
     },
     {
@@ -144,6 +144,7 @@
         "Neva - [PPSA16786]",
         "OCTOPATH TRAVELER II - [PPSA09809]",
         "Oxide Room 104 - [PPSA07653]",
+        "Persona 3 Reload - [PPSA10872]",
         "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
         "Raiden III x MIKADO MANIAX - [PPSA13356]",
         "Richman 11 - [PPSA16960]",
@@ -153,8 +154,44 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "WUCHANG.Fallen.Feathers-PPSA09519-EUR-Game(v01.01)-PS5"
+        "Totally Reliable Delivery Service - [PPSA28855]"
+      ]
+    },
+    {
+      "module": "libSceLibcInternal.prx",
+      "game_count": 31,
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "ANIMAL WELL - [PPSA22520]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Blue Prince - [PPSA25009]",
+        "Bugsnax - [PPSA01502]",
+        "Cat Quest III - [PPSA15065]",
+        "Dead Cells - [PPSA15552]",
+        "Dusk Diver 2 - [PPSA06565]",
+        "GRIS - [PPSA09804]",
+        "Hello Neighbor 2 - [PPSA07426]",
+        "Judgment - [PPSA02739]",
+        "Juicy Realm - [PPSA19268]",
+        "Jusant - [PPSA10264]",
+        "Mega Man Star Force Legacy Collection - [PPSA32239]",
+        "Metal Slug Tactics - [PPSA20643]",
+        "Monster Boy and the Cursed Kingdom - [PPSA02787]",
+        "Neko Rescue Tale - [PPSA13871]",
+        "Neva - [PPSA16786]",
+        "OCTOPATH TRAVELER II - [PPSA09809]",
+        "Oxide Room 104 - [PPSA07653]",
+        "Persona 3 Reload - [PPSA10872]",
+        "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
+        "Raiden III x MIKADO MANIAX - [PPSA13356]",
+        "Richman 11 - [PPSA16960]",
+        "SAND LAND - [PPSA08574]",
+        "Soul Hackers 2 - [PPSA03743]",
+        "Squirrel with a Gun - [PPSA22102]",
+        "Stray - [PPSA02100]",
+        "Subnautica Below Zero - [PPSA02456]",
+        "The Pathless - [PPSA01825]",
+        "Totally Reliable Delivery Service - [PPSA28855]"
       ]
     },
     {
@@ -181,6 +218,7 @@
         "Neva - [PPSA16786]",
         "OCTOPATH TRAVELER II - [PPSA09809]",
         "Oxide Room 104 - [PPSA07653]",
+        "Persona 3 Reload - [PPSA10872]",
         "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
         "Raiden III x MIKADO MANIAX - [PPSA13356]",
         "Richman 11 - [PPSA16960]",
@@ -190,8 +228,7 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "WUCHANG.Fallen.Feathers-PPSA09519-EUR-Game(v01.01)-PS5"
+        "Totally Reliable Delivery Service - [PPSA28855]"
       ]
     },
     {
@@ -218,6 +255,7 @@
         "Neva - [PPSA16786]",
         "OCTOPATH TRAVELER II - [PPSA09809]",
         "Oxide Room 104 - [PPSA07653]",
+        "Persona 3 Reload - [PPSA10872]",
         "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
         "Raiden III x MIKADO MANIAX - [PPSA13356]",
         "Richman 11 - [PPSA16960]",
@@ -227,8 +265,7 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "WUCHANG.Fallen.Feathers-PPSA09519-EUR-Game(v01.01)-PS5"
+        "Totally Reliable Delivery Service - [PPSA28855]"
       ]
     },
     {
@@ -255,6 +292,7 @@
         "Neva - [PPSA16786]",
         "OCTOPATH TRAVELER II - [PPSA09809]",
         "Oxide Room 104 - [PPSA07653]",
+        "Persona 3 Reload - [PPSA10872]",
         "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
         "Raiden III x MIKADO MANIAX - [PPSA13356]",
         "Richman 11 - [PPSA16960]",
@@ -264,8 +302,7 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "WUCHANG.Fallen.Feathers-PPSA09519-EUR-Game(v01.01)-PS5"
+        "Totally Reliable Delivery Service - [PPSA28855]"
       ]
     },
     {
@@ -292,6 +329,7 @@
         "Neva - [PPSA16786]",
         "OCTOPATH TRAVELER II - [PPSA09809]",
         "Oxide Room 104 - [PPSA07653]",
+        "Persona 3 Reload - [PPSA10872]",
         "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
         "Raiden III x MIKADO MANIAX - [PPSA13356]",
         "Richman 11 - [PPSA16960]",
@@ -301,8 +339,7 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "WUCHANG.Fallen.Feathers-PPSA09519-EUR-Game(v01.01)-PS5"
+        "Totally Reliable Delivery Service - [PPSA28855]"
       ]
     },
     {
@@ -329,6 +366,7 @@
         "Neva - [PPSA16786]",
         "OCTOPATH TRAVELER II - [PPSA09809]",
         "Oxide Room 104 - [PPSA07653]",
+        "Persona 3 Reload - [PPSA10872]",
         "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
         "Raiden III x MIKADO MANIAX - [PPSA13356]",
         "Richman 11 - [PPSA16960]",
@@ -338,8 +376,7 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "WUCHANG.Fallen.Feathers-PPSA09519-EUR-Game(v01.01)-PS5"
+        "Totally Reliable Delivery Service - [PPSA28855]"
       ]
     },
     {
@@ -366,6 +403,7 @@
         "Neva - [PPSA16786]",
         "OCTOPATH TRAVELER II - [PPSA09809]",
         "Oxide Room 104 - [PPSA07653]",
+        "Persona 3 Reload - [PPSA10872]",
         "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
         "Raiden III x MIKADO MANIAX - [PPSA13356]",
         "Richman 11 - [PPSA16960]",
@@ -375,8 +413,7 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "WUCHANG.Fallen.Feathers-PPSA09519-EUR-Game(v01.01)-PS5"
+        "Totally Reliable Delivery Service - [PPSA28855]"
       ]
     },
     {
@@ -403,43 +440,7 @@
         "Neva - [PPSA16786]",
         "OCTOPATH TRAVELER II - [PPSA09809]",
         "Oxide Room 104 - [PPSA07653]",
-        "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
-        "Raiden III x MIKADO MANIAX - [PPSA13356]",
-        "Richman 11 - [PPSA16960]",
-        "SAND LAND - [PPSA08574]",
-        "Soul Hackers 2 - [PPSA03743]",
-        "Squirrel with a Gun - [PPSA22102]",
-        "Stray - [PPSA02100]",
-        "Subnautica Below Zero - [PPSA02456]",
-        "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "WUCHANG.Fallen.Feathers-PPSA09519-EUR-Game(v01.01)-PS5"
-      ]
-    },
-    {
-      "module": "libSceLibcInternal.prx",
-      "game_count": 30,
-      "games": [
-        "Afterimage - [PPSA14053]",
-        "ANIMAL WELL - [PPSA22520]",
-        "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Blue Prince - [PPSA25009]",
-        "Bugsnax - [PPSA01502]",
-        "Cat Quest III - [PPSA15065]",
-        "Dead Cells - [PPSA15552]",
-        "Dusk Diver 2 - [PPSA06565]",
-        "GRIS - [PPSA09804]",
-        "Hello Neighbor 2 - [PPSA07426]",
-        "Judgment - [PPSA02739]",
-        "Juicy Realm - [PPSA19268]",
-        "Jusant - [PPSA10264]",
-        "Mega Man Star Force Legacy Collection - [PPSA32239]",
-        "Metal Slug Tactics - [PPSA20643]",
-        "Monster Boy and the Cursed Kingdom - [PPSA02787]",
-        "Neko Rescue Tale - [PPSA13871]",
-        "Neva - [PPSA16786]",
-        "OCTOPATH TRAVELER II - [PPSA09809]",
-        "Oxide Room 104 - [PPSA07653]",
+        "Persona 3 Reload - [PPSA10872]",
         "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
         "Raiden III x MIKADO MANIAX - [PPSA13356]",
         "Richman 11 - [PPSA16960]",
@@ -474,6 +475,7 @@
         "Neva - [PPSA16786]",
         "OCTOPATH TRAVELER II - [PPSA09809]",
         "Oxide Room 104 - [PPSA07653]",
+        "Persona 3 Reload - [PPSA10872]",
         "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
         "Raiden III x MIKADO MANIAX - [PPSA13356]",
         "Richman 11 - [PPSA16960]",
@@ -483,8 +485,7 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "WUCHANG.Fallen.Feathers-PPSA09519-EUR-Game(v01.01)-PS5"
+        "Totally Reliable Delivery Service - [PPSA28855]"
       ]
     },
     {
@@ -508,6 +509,7 @@
         "Neva - [PPSA16786]",
         "OCTOPATH TRAVELER II - [PPSA09809]",
         "Oxide Room 104 - [PPSA07653]",
+        "Persona 3 Reload - [PPSA10872]",
         "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
         "Raiden III x MIKADO MANIAX - [PPSA13356]",
         "Richman 11 - [PPSA16960]",
@@ -517,8 +519,7 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "WUCHANG.Fallen.Feathers-PPSA09519-EUR-Game(v01.01)-PS5"
+        "Totally Reliable Delivery Service - [PPSA28855]"
       ]
     },
     {
@@ -542,6 +543,7 @@
         "Neva - [PPSA16786]",
         "OCTOPATH TRAVELER II - [PPSA09809]",
         "Oxide Room 104 - [PPSA07653]",
+        "Persona 3 Reload - [PPSA10872]",
         "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
         "Raiden III x MIKADO MANIAX - [PPSA13356]",
         "Richman 11 - [PPSA16960]",
@@ -551,8 +553,7 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "WUCHANG.Fallen.Feathers-PPSA09519-EUR-Game(v01.01)-PS5"
+        "Totally Reliable Delivery Service - [PPSA28855]"
       ]
     },
     {
@@ -576,6 +577,7 @@
         "Neva - [PPSA16786]",
         "OCTOPATH TRAVELER II - [PPSA09809]",
         "Oxide Room 104 - [PPSA07653]",
+        "Persona 3 Reload - [PPSA10872]",
         "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
         "Richman 11 - [PPSA16960]",
         "SAND LAND - [PPSA08574]",
@@ -584,8 +586,7 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "WUCHANG.Fallen.Feathers-PPSA09519-EUR-Game(v01.01)-PS5"
+        "Totally Reliable Delivery Service - [PPSA28855]"
       ]
     },
     {
@@ -608,6 +609,7 @@
         "Neva - [PPSA16786]",
         "OCTOPATH TRAVELER II - [PPSA09809]",
         "Oxide Room 104 - [PPSA07653]",
+        "Persona 3 Reload - [PPSA10872]",
         "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
         "Raiden III x MIKADO MANIAX - [PPSA13356]",
         "Richman 11 - [PPSA16960]",
@@ -617,8 +619,7 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "WUCHANG.Fallen.Feathers-PPSA09519-EUR-Game(v01.01)-PS5"
+        "Totally Reliable Delivery Service - [PPSA28855]"
       ]
     },
     {
@@ -641,6 +642,7 @@
         "Neva - [PPSA16786]",
         "OCTOPATH TRAVELER II - [PPSA09809]",
         "Oxide Room 104 - [PPSA07653]",
+        "Persona 3 Reload - [PPSA10872]",
         "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
         "Raiden III x MIKADO MANIAX - [PPSA13356]",
         "Richman 11 - [PPSA16960]",
@@ -650,8 +652,7 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "WUCHANG.Fallen.Feathers-PPSA09519-EUR-Game(v01.01)-PS5"
+        "Totally Reliable Delivery Service - [PPSA28855]"
       ]
     },
     {
@@ -674,6 +675,7 @@
         "Neva - [PPSA16786]",
         "OCTOPATH TRAVELER II - [PPSA09809]",
         "Oxide Room 104 - [PPSA07653]",
+        "Persona 3 Reload - [PPSA10872]",
         "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
         "Raiden III x MIKADO MANIAX - [PPSA13356]",
         "Richman 11 - [PPSA16960]",
@@ -683,8 +685,7 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "WUCHANG.Fallen.Feathers-PPSA09519-EUR-Game(v01.01)-PS5"
+        "Totally Reliable Delivery Service - [PPSA28855]"
       ]
     },
     {
@@ -707,6 +708,7 @@
         "Neva - [PPSA16786]",
         "OCTOPATH TRAVELER II - [PPSA09809]",
         "Oxide Room 104 - [PPSA07653]",
+        "Persona 3 Reload - [PPSA10872]",
         "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
         "Raiden III x MIKADO MANIAX - [PPSA13356]",
         "Richman 11 - [PPSA16960]",
@@ -716,8 +718,7 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "WUCHANG.Fallen.Feathers-PPSA09519-EUR-Game(v01.01)-PS5"
+        "Totally Reliable Delivery Service - [PPSA28855]"
       ]
     }
   ],
