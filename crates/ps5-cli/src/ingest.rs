@@ -325,6 +325,9 @@ pub fn archive_game(
         .and_then(|n| n.to_str())
         .unwrap_or_default()
         .to_string();
+    let display = params
+        .compute_display_name()
+        .unwrap_or_else(|| resolved_name.clone());
     let title_id = match params.title_id.clone().filter(|t| !t.is_empty()) {
         Some(t) => t,
         None => {
@@ -360,9 +363,6 @@ pub fn archive_game(
             .and_then(|n| n.to_str())
             .map(str::to_string);
     }
-    let display = params
-        .compute_display_name()
-        .unwrap_or_else(|| resolved_name.clone());
 
     let eboot_bytes = std::fs::read(&eboot_path)
         .map_err(|e| format!("cannot read {}: {e}", eboot_path.display()))?;
