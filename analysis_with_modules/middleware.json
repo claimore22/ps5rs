@@ -6012,1201 +6012,6 @@
       "unknown": []
     },
     {
-      "game": "SIFU-PPSA03001-EUR-PS5",
-      "title_id": "PPSA03001",
-      "engine": "Unreal Engine",
-      "third_party": [
-        {
-          "file_name": "akaudioinput.prx",
-          "module_name": "akaudioinput",
-          "kind": "thirdparty",
-          "sha256": "a4625a21eae6f79e62d53f6c4435789aaece41c65e17eb94053fca44f4c2d990",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 0,
-          "exports": 0
-        },
-        {
-          "file_name": "akaudioinput.prx",
-          "module_name": "akaudioinput",
-          "kind": "thirdparty",
-          "sha256": "23302a67698edf7942fc8a221c1346c4a1db6662e13cd9c20d11839cb8f75a29",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 6,
-          "exports": 1,
-          "import_libs": [
-            "libc",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libc.prx"
-          ]
-        },
-        {
-          "file_name": "akcompressor.prx",
-          "module_name": "akcompressor",
-          "kind": "thirdparty",
-          "sha256": "f54266ce16f0ffdeba24397007d016e6336a4bb8320610edc33c81b9b7a43a84",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 0,
-          "exports": 0
-        },
-        {
-          "file_name": "akcompressor.prx",
-          "module_name": "akcompressor",
-          "kind": "thirdparty",
-          "sha256": "eb9b01191b731aeef55993df2eff77214276d0ec5baa009429481017a77144e3",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 6,
-          "exports": 1,
-          "import_libs": [
-            "libc",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libc.prx"
-          ]
-        },
-        {
-          "file_name": "akdelay.prx",
-          "module_name": "akdelay",
-          "kind": "thirdparty",
-          "sha256": "1a2d9525127882c3888c69458684daa86dd4b3332ec25b244b6d6d5da51c9d42",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 0,
-          "exports": 0
-        },
-        {
-          "file_name": "akdelay.prx",
-          "module_name": "akdelay",
-          "kind": "thirdparty",
-          "sha256": "c787dd7b4df0d5f220c9c2803729a846995dc6455a4d103061e7a3e5d3962ddd",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 6,
-          "exports": 1,
-          "import_libs": [
-            "libc",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libc.prx"
-          ]
-        },
-        {
-          "file_name": "akexpander.prx",
-          "module_name": "akexpander",
-          "kind": "thirdparty",
-          "sha256": "88ac94a21649be12d70c60ab9cca94075dc1eadb62500db4e7ad351b43b2abc1",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 0,
-          "exports": 0
-        },
-        {
-          "file_name": "akexpander.prx",
-          "module_name": "akexpander",
-          "kind": "thirdparty",
-          "sha256": "d91f64ce825661062851ba4f7273735c5be91f9beb5d6c24a18b76f5a088239f",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 8,
-          "exports": 1,
-          "import_libs": [
-            "libc",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libc.prx"
-          ]
-        },
-        {
-          "file_name": "akflanger.prx",
-          "module_name": "akflanger",
-          "kind": "thirdparty",
-          "sha256": "aa0463dd502ce3de9ea3a0d4273cf686171cb8a2340c335c8bd5ac212881dd5f",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 0,
-          "exports": 0
-        },
-        {
-          "file_name": "akflanger.prx",
-          "module_name": "akflanger",
-          "kind": "thirdparty",
-          "sha256": "d1f378d313174d0deb8ee8f7d32df392e664d6e0db88e6105534bdb774d48578",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 12,
-          "exports": 1,
-          "import_libs": [
-            "libc",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libc.prx"
-          ]
-        },
-        {
-          "file_name": "akgain.prx",
-          "module_name": "akgain",
-          "kind": "thirdparty",
-          "sha256": "2a45dda403153c7d4e249b83dbc2981830107dfab2865f6b84246def674f7fbd",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 0,
-          "exports": 0
-        },
-        {
-          "file_name": "akgain.prx",
-          "module_name": "akgain",
-          "kind": "thirdparty",
-          "sha256": "ee3c98de79dbf5b43ff3aae3545ddcdf29a07e1a63fe057a796d996fcb3a714c",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 4,
-          "exports": 1,
-          "import_libs": [
-            "libc",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libc.prx"
-          ]
-        },
-        {
-          "file_name": "akguitardistortion.prx",
-          "module_name": "akguitardistortion",
-          "kind": "thirdparty",
-          "sha256": "a7549dd711e5501716bb766895142f68bceb1c24682588feba9512ad9dc20e69",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 0,
-          "exports": 0
-        },
-        {
-          "file_name": "akguitardistortion.prx",
-          "module_name": "akguitardistortion",
-          "kind": "thirdparty",
-          "sha256": "728c770506bcc25718089d9a9822b62c428a058ca9b9f1c01136d0e7514854a8",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 10,
-          "exports": 1,
-          "import_libs": [
-            "libc",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libc.prx"
-          ]
-        },
-        {
-          "file_name": "akharmonizer.prx",
-          "module_name": "akharmonizer",
-          "kind": "thirdparty",
-          "sha256": "830c4213cbf27c364e322d0f3fa8745fb6e5c07b75c92e1894cbeb1850d1e611",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 0,
-          "exports": 0
-        },
-        {
-          "file_name": "akharmonizer.prx",
-          "module_name": "akharmonizer",
-          "kind": "thirdparty",
-          "sha256": "87eb8cb2807c902dcfc8bfe4a8bd8092861b5f7e1f31544b45c18ed7785911cb",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 15,
-          "exports": 1,
-          "import_libs": [
-            "libc",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libc.prx"
-          ]
-        },
-        {
-          "file_name": "akmatrixreverb.prx",
-          "module_name": "akmatrixreverb",
-          "kind": "thirdparty",
-          "sha256": "183f09268d3049b3819d3c59e0269451d811361b023599570ddf64aa2c4dc11c",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 0,
-          "exports": 0
-        },
-        {
-          "file_name": "akmatrixreverb.prx",
-          "module_name": "akmatrixreverb",
-          "kind": "thirdparty",
-          "sha256": "04e5f8741454427c960edbb04ddcd618560c4882a796fef9472da1ddd36357d6",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 11,
-          "exports": 1,
-          "import_libs": [
-            "libc",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libc.prx"
-          ]
-        },
-        {
-          "file_name": "akmotion.prx",
-          "module_name": "akmotion",
-          "kind": "thirdparty",
-          "sha256": "ab0afd3ca1af46b8737a8e7c487910d068e7df52cd1ce9862290bd4c988cdde1",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 0,
-          "exports": 0
-        },
-        {
-          "file_name": "akmotion.prx",
-          "module_name": "akmotion",
-          "kind": "thirdparty",
-          "sha256": "880496d539f20c7f5bfc71e15631c34b71e189346f67023790e493bdbbd541b8",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 16,
-          "exports": 1,
-          "import_libs": [
-            "libSceAjm",
-            "libSceAudioOut2",
-            "libSceNet",
-            "libSceNetCtl",
-            "libScePad",
-            "libScePosix",
-            "libSceUserService",
-            "libc",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libSceAjm.native.prx",
-            "libSceAudioOut.prx",
-            "libSceNetCtl.prx",
-            "libSceNet.prx",
-            "libScePad.prx",
-            "libkernel.prx",
-            "libSceUserService.prx",
-            "libc.prx"
-          ]
-        },
-        {
-          "file_name": "akparametriceq.prx",
-          "module_name": "akparametriceq",
-          "kind": "thirdparty",
-          "sha256": "3800c264f0fc250ef4c316c7fec15dbb9947644ee9768c7eefde42583679ac1f",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 0,
-          "exports": 0
-        },
-        {
-          "file_name": "akparametriceq.prx",
-          "module_name": "akparametriceq",
-          "kind": "thirdparty",
-          "sha256": "204ef7ddffc1a868eaa4e014536935ff70d2e79c25db6d86f9710cb8082c9589",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 9,
-          "exports": 1,
-          "import_libs": [
-            "libc",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libc.prx"
-          ]
-        },
-        {
-          "file_name": "akpeaklimiter.prx",
-          "module_name": "akpeaklimiter",
-          "kind": "thirdparty",
-          "sha256": "116129ba144ae97084ec98d9089e377d383992c6daf510fa6be0292b45ef2c5c",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 0,
-          "exports": 0
-        },
-        {
-          "file_name": "akpeaklimiter.prx",
-          "module_name": "akpeaklimiter",
-          "kind": "thirdparty",
-          "sha256": "da540f6eb62481c6bf106a99bcbb91b3d06eb69924ecf0413a53c4ee0dadb865",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 8,
-          "exports": 1,
-          "import_libs": [
-            "libc",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libc.prx"
-          ]
-        },
-        {
-          "file_name": "akpitchshifter.prx",
-          "module_name": "akpitchshifter",
-          "kind": "thirdparty",
-          "sha256": "4b4cfaa9fd46463ebc896094fd0a5caa50521522bea0a2035eef1bbc40d05d5e",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 0,
-          "exports": 0
-        },
-        {
-          "file_name": "akpitchshifter.prx",
-          "module_name": "akpitchshifter",
-          "kind": "thirdparty",
-          "sha256": "7cf19d3842a8ef47f18793ac0d4820bb3e58ce196eaa8e8a718b82926dc9b64b",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 9,
-          "exports": 1,
-          "import_libs": [
-            "libc",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libc.prx"
-          ]
-        },
-        {
-          "file_name": "akrecorder.prx",
-          "module_name": "akrecorder",
-          "kind": "thirdparty",
-          "sha256": "5fd75396c465fc7e567c19840737944bc5f4b0bee611ab1084b31233ba5e535e",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 0,
-          "exports": 0
-        },
-        {
-          "file_name": "akrecorder.prx",
-          "module_name": "akrecorder",
-          "kind": "thirdparty",
-          "sha256": "397b20b6bb1febf1770cf4b5d7b8eadfdff8f8e038570a3cab0de71724d268dc",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 9,
-          "exports": 1,
-          "import_libs": [
-            "libc",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libc.prx"
-          ]
-        },
-        {
-          "file_name": "akreflect.prx",
-          "module_name": "akreflect",
-          "kind": "thirdparty",
-          "sha256": "e5783da092dcccc81f0a0cc8c0cc222d44dcaa59ecff4578d6df23f0eb9611d3",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 0,
-          "exports": 0
-        },
-        {
-          "file_name": "akreflect.prx",
-          "module_name": "akreflect",
-          "kind": "thirdparty",
-          "sha256": "49947eea2ed104d6a95645ac9d776d10d61da016e3315f5b853800ce35cc4fc6",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 15,
-          "exports": 1,
-          "import_libs": [
-            "libc",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libc.prx"
-          ]
-        },
-        {
-          "file_name": "akroomverb.prx",
-          "module_name": "akroomverb",
-          "kind": "thirdparty",
-          "sha256": "78f5bab820e5a9d139de7a47bece6c9798caf90537b4997df623a3702439615a",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 0,
-          "exports": 0
-        },
-        {
-          "file_name": "akroomverb.prx",
-          "module_name": "akroomverb",
-          "kind": "thirdparty",
-          "sha256": "2eccd075214d11a2670b12f562b07149b1f962fada997d5636f03f0985f0189d",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 14,
-          "exports": 1,
-          "import_libs": [
-            "libc",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libc.prx"
-          ]
-        },
-        {
-          "file_name": "aksilencegenerator.prx",
-          "module_name": "aksilencegenerator",
-          "kind": "thirdparty",
-          "sha256": "c090a7f83c0a072e938d8e6a2348b36aa91d272aaf2e07134580bd339e403749",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 0,
-          "exports": 0
-        },
-        {
-          "file_name": "aksilencegenerator.prx",
-          "module_name": "aksilencegenerator",
-          "kind": "thirdparty",
-          "sha256": "929552a4409c9b15e464bc37dddbf3d1adca8ce0a009cd2e64d4e83ca4386b24",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 6,
-          "exports": 1,
-          "import_libs": [
-            "libc",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libc.prx"
-          ]
-        },
-        {
-          "file_name": "aksinetone.prx",
-          "module_name": "aksinetone",
-          "kind": "thirdparty",
-          "sha256": "f405468f8eccb281d082b95a37bf47dfac847b0d17abc4de169020ecba7490da",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 0,
-          "exports": 0
-        },
-        {
-          "file_name": "aksinetone.prx",
-          "module_name": "aksinetone",
-          "kind": "thirdparty",
-          "sha256": "ebada060da23b6f8f1b56a6785feb735aac3cc7bf2f528e6c3f332da0d0ff092",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 4,
-          "exports": 1,
-          "import_libs": [
-            "libc",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libc.prx"
-          ]
-        },
-        {
-          "file_name": "aksoundseedair.prx",
-          "module_name": "aksoundseedair",
-          "kind": "thirdparty",
-          "sha256": "9d36547da73d173671d225f142b646d1377374c3765559d786e8c81a7cc5e19f",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 0,
-          "exports": 0
-        },
-        {
-          "file_name": "aksoundseedair.prx",
-          "module_name": "aksoundseedair",
-          "kind": "thirdparty",
-          "sha256": "c5f7ccebfa013764a05fe24e806186b920d6f79f2a9f3edba6a1ba47a0e34ef9",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 17,
-          "exports": 1,
-          "import_libs": [
-            "libc",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libc.prx"
-          ]
-        },
-        {
-          "file_name": "aksoundseedimpact.prx",
-          "module_name": "aksoundseedimpact",
-          "kind": "thirdparty",
-          "sha256": "47b464bbc921c9548b0da83824dbd6ea0aa12c0eb00ac95ddace4b0bd6d79682",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 0,
-          "exports": 0
-        },
-        {
-          "file_name": "aksoundseedimpact.prx",
-          "module_name": "aksoundseedimpact",
-          "kind": "thirdparty",
-          "sha256": "73b83c93105f8ef1676e451bcab989d9d194bf4b1386fbaabb30f44d1bba23d1",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 10,
-          "exports": 1,
-          "import_libs": [
-            "libc",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libc.prx"
-          ]
-        },
-        {
-          "file_name": "akstereodelay.prx",
-          "module_name": "akstereodelay",
-          "kind": "thirdparty",
-          "sha256": "f70832d6806ccbb80f1b01b4de14f1dec3e154ee92d6cc55c022810b060f21f0",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 0,
-          "exports": 0
-        },
-        {
-          "file_name": "akstereodelay.prx",
-          "module_name": "akstereodelay",
-          "kind": "thirdparty",
-          "sha256": "22e241c0c58ce1daaf912207894aa377b25ce4d817b30c55ab6d9ce30f045ad8",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 13,
-          "exports": 1,
-          "import_libs": [
-            "libc",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libc.prx"
-          ]
-        },
-        {
-          "file_name": "aksynthone.prx",
-          "module_name": "aksynthone",
-          "kind": "thirdparty",
-          "sha256": "9e53d732c7f565744e1036a8289acffa562adc3a3ff8a8066d80fcd3efa75197",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 0,
-          "exports": 0
-        },
-        {
-          "file_name": "aksynthone.prx",
-          "module_name": "aksynthone",
-          "kind": "thirdparty",
-          "sha256": "598352b50231d47dad3725379f1957a67a9afdde47203f6218994e2f756d5cce",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 6,
-          "exports": 1,
-          "import_libs": [
-            "libc",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libc.prx"
-          ]
-        },
-        {
-          "file_name": "aktimestretch.prx",
-          "module_name": "aktimestretch",
-          "kind": "thirdparty",
-          "sha256": "152775d7d90ef07107a796ed38a9daba1258da50555a542a5425234d95f950da",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 0,
-          "exports": 0
-        },
-        {
-          "file_name": "aktimestretch.prx",
-          "module_name": "aktimestretch",
-          "kind": "thirdparty",
-          "sha256": "6818eb1c71b030d6522305964c759ea57b1abf923d370956f365ec009a014640",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 10,
-          "exports": 1,
-          "import_libs": [
-            "libc",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libc.prx"
-          ]
-        },
-        {
-          "file_name": "aktonegen.prx",
-          "module_name": "aktonegen",
-          "kind": "thirdparty",
-          "sha256": "7e58a1f8d3a7451417ec8d4e74c02b1392204bd84dc761fc302594248afcb7a6",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 0,
-          "exports": 0
-        },
-        {
-          "file_name": "aktonegen.prx",
-          "module_name": "aktonegen",
-          "kind": "thirdparty",
-          "sha256": "0ade67cc292d48e8955cb1b76b77fcbb41df753644acdedf00e5f6827528ac24",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 6,
-          "exports": 1,
-          "import_libs": [
-            "libc",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libc.prx"
-          ]
-        },
-        {
-          "file_name": "aktremolo.prx",
-          "module_name": "aktremolo",
-          "kind": "thirdparty",
-          "sha256": "f02f027db9b456f57a9590ee1e00de09e5aefde09c65844d10729d84d091e86c",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 0,
-          "exports": 0
-        },
-        {
-          "file_name": "aktremolo.prx",
-          "module_name": "aktremolo",
-          "kind": "thirdparty",
-          "sha256": "3d19dc38e4d64966a94c3826b048723706bb62813db504c1c078eb13bac2f71b",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 11,
-          "exports": 1,
-          "import_libs": [
-            "libc",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libc.prx"
-          ]
-        },
-        {
-          "file_name": "akvorbishwaccelerator.prx",
-          "module_name": "akvorbishwaccelerator",
-          "kind": "thirdparty",
-          "sha256": "66eb8060049ae299e7afd697205f049a32c2f92c4b10e86fc6cafcba2ecbec0c",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 0,
-          "exports": 0
-        },
-        {
-          "file_name": "akvorbishwaccelerator.prx",
-          "module_name": "akvorbishwaccelerator",
-          "kind": "thirdparty",
-          "sha256": "fa5f671ee6f54f82123cd20bc5bb45c357e3c8d2e395d47b48b23563b043a1ed",
-          "vendor": "Audiokinetic",
-          "product": "Wwise",
-          "description": "Wwise audio effect plugin",
-          "parseable": true,
-          "imports": 6,
-          "exports": 2,
-          "import_libs": [
-            "libSceAjm",
-            "libSceAjmWVorbis",
-            "libc",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libSceAjm.native.prx",
-            "libkernel.prx",
-            "libc.prx"
-          ]
-        },
-        {
-          "file_name": "auro.prx",
-          "module_name": "auro",
-          "kind": "thirdparty",
-          "sha256": "42ec1b383fdbdc8eeaf7d9c42f4c622f60a31e9615a07e456fdebff53e023abc",
-          "vendor": "Auro Technologies",
-          "product": "Auro-3D",
-          "description": "Auro-3D audio plugin (Wwise integration)",
-          "parseable": true,
-          "imports": 0,
-          "exports": 0
-        },
-        {
-          "file_name": "auro.prx",
-          "module_name": "auro",
-          "kind": "thirdparty",
-          "sha256": "d07ea815a9531e5df163b6d7053c695e6a69fa3d132ef19672608447240c9462",
-          "vendor": "Auro Technologies",
-          "product": "Auro-3D",
-          "description": "Auro-3D audio plugin (Wwise integration)",
-          "parseable": true,
-          "imports": 26,
-          "exports": 1,
-          "import_libs": [
-            "libc",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libc.prx"
-          ]
-        },
-        {
-          "file_name": "izotope.prx",
-          "module_name": "izotope",
-          "kind": "thirdparty",
-          "sha256": "9b48d7f3019fe375c4fc4825dc6ac6b31e80d3511b69c5d428c8cd2d16515a26",
-          "vendor": "iZotope",
-          "product": "iZotope",
-          "description": "iZotope audio processing plugin (Wwise integration)",
-          "parseable": true,
-          "imports": 0,
-          "exports": 0
-        },
-        {
-          "file_name": "izotope.prx",
-          "module_name": "izotope",
-          "kind": "thirdparty",
-          "sha256": "b12dead0237ae1911409b3d9da226ad1a48de263b3c90cdf68dda82cc102f769",
-          "vendor": "iZotope",
-          "product": "iZotope",
-          "description": "iZotope audio processing plugin (Wwise integration)",
-          "parseable": true,
-          "imports": 34,
-          "exports": 1,
-          "import_libs": [
-            "libc",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libc.prx"
-          ]
-        },
-        {
-          "file_name": "masteringsuite.prx",
-          "module_name": "masteringsuite",
-          "kind": "thirdparty",
-          "sha256": "f61f259974439cdee2e044f3beb85fc8d86f5577762f961d2fd7a5892a71120b",
-          "vendor": "iZotope",
-          "product": "Ozone Mastering Suite",
-          "description": "iZotope Ozone mastering suite (Wwise integration)",
-          "parseable": true,
-          "imports": 0,
-          "exports": 0
-        },
-        {
-          "file_name": "masteringsuite.prx",
-          "module_name": "masteringsuite",
-          "kind": "thirdparty",
-          "sha256": "10687910b97ccaf6e85702e5295e62aecd892645964e487565e9f4332f55b1e3",
-          "vendor": "iZotope",
-          "product": "Ozone Mastering Suite",
-          "description": "iZotope Ozone mastering suite (Wwise integration)",
-          "parseable": true,
-          "imports": 16,
-          "exports": 1,
-          "import_libs": [
-            "libSceAudioOut2",
-            "libc",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libSceAudioOut.prx",
-            "libkernel.prx",
-            "libc.prx"
-          ]
-        },
-        {
-          "file_name": "mcdsp.prx",
-          "module_name": "mcdsp",
-          "kind": "thirdparty",
-          "sha256": "43577c9d7c4f8f9c02585e4bed1cb25f949a60a0ab5d23072ed16b0975271f28",
-          "vendor": "McDSP",
-          "product": "McDSP",
-          "description": "McDSP DSP audio plugin (Wwise integration)",
-          "parseable": true,
-          "imports": 0,
-          "exports": 0
-        },
-        {
-          "file_name": "mcdsp.prx",
-          "module_name": "mcdsp",
-          "kind": "thirdparty",
-          "sha256": "1289772ff35f8dfb97f2cf84e6ffb83426e8b6c15628dd7b4d0f264d53d42c50",
-          "vendor": "McDSP",
-          "product": "McDSP",
-          "description": "McDSP DSP audio plugin (Wwise integration)",
-          "parseable": true,
-          "imports": 13,
-          "exports": 1,
-          "import_libs": [
-            "libc",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libc.prx"
-          ]
-        }
-      ],
-      "sony": [
-        {
-          "file_name": "libSceFace.prx",
-          "module_name": "libSceFace",
-          "kind": "sony",
-          "sha256": "c80b4551f58e294d268e3dff309a73a150a95e917346b7f4d3268f7e5ba54488",
-          "parseable": true,
-          "imports": 0,
-          "exports": 0
-        },
-        {
-          "file_name": "libSceFace.prx",
-          "module_name": "libSceFace",
-          "kind": "sony",
-          "sha256": "fe06c42736d7248b3391beecff6a3f0d9b13c4927913636b50d71c38d11729fb",
-          "parseable": true,
-          "imports": 20,
-          "exports": 29,
-          "import_libs": [
-            "libSceLibcInternal",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libSceLibcInternal.prx"
-          ]
-        },
-        {
-          "file_name": "libSceFaceTracker.prx",
-          "module_name": "libSceFaceTracker",
-          "kind": "sony",
-          "sha256": "f5c04dea627677f856721627b4f089ec633494092ea37af98aa3b04578e58c00",
-          "parseable": true,
-          "imports": 0,
-          "exports": 0
-        },
-        {
-          "file_name": "libSceFaceTracker.prx",
-          "module_name": "libSceFaceTracker",
-          "kind": "sony",
-          "sha256": "84aa3010405f339e756debc09370c3d747f8ced9d340b111cff9d378a0a76f39",
-          "parseable": true,
-          "imports": 27,
-          "exports": 21,
-          "import_libs": [
-            "libSceFace",
-            "libSceLibcInternal",
-            "libScePosix",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libSceFace.prx",
-            "libkernel.prx",
-            "libSceLibcInternal.prx"
-          ]
-        },
-        {
-          "file_name": "libSceJobManager.prx",
-          "module_name": "libSceJobManager",
-          "kind": "sony",
-          "sha256": "83a0e1963133a7ae4351fc4cae0bdd604c2f79d1d67ce0a05d9080e1ac4c0c79",
-          "parseable": true,
-          "imports": 0,
-          "exports": 0
-        },
-        {
-          "file_name": "libSceJobManager.prx",
-          "module_name": "libSceJobManager",
-          "kind": "sony",
-          "sha256": "d1cfca79f1ddd5529f1096e68bfb0bf0974cdee36fd37d7a7074b95b4373daf0",
-          "parseable": true,
-          "imports": 140,
-          "exports": 11,
-          "import_libs": [
-            "libSceAgc",
-            "libSceAgcDriver",
-            "libSceLibcInternal",
-            "libSceRazorCpu",
-            "libkernel",
-            "ulobjmgr"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libSceLibcInternal.prx",
-            "libSceAgcDriver.prx",
-            "libSceAgc.prx",
-            "ulobjmgr.prx",
-            "libSceRazorCpu.prx"
-          ]
-        },
-        {
-          "file_name": "libSceNpCppWebApi.prx",
-          "module_name": "libSceNpCppWebApi",
-          "kind": "sony",
-          "sha256": "365101388fd429d7842c25da1c0463d98e617f6534fa8929dc533b52fefa6dc9",
-          "parseable": true,
-          "imports": 0,
-          "exports": 0
-        },
-        {
-          "file_name": "libSceNpCppWebApi.prx",
-          "module_name": "libSceNpCppWebApi",
-          "kind": "sony",
-          "sha256": "300b6f5577707b58a158c91e2d0140ed6f0c44670b997094857bf9e9a21e1da0",
-          "parseable": true,
-          "imports": 94,
-          "exports": 42911,
-          "import_libs": [
-            "libSceHttp",
-            "libSceJson2",
-            "libSceLibcInternal",
-            "libSceNpWebApi2",
-            "libSceRtc",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libSceJson2.prx",
-            "libSceRtc.prx",
-            "libSceNpWebApi2.prx",
-            "libSceHttp.prx",
-            "libkernel.prx",
-            "libSceLibcInternal.prx"
-          ]
-        },
-        {
-          "file_name": "libScePfs.prx",
-          "module_name": "libScePfs",
-          "kind": "sony",
-          "sha256": "7501f378d41b96a1c58adadd13257a1e5289a1b114ed767e482f7fcc9d582a63",
-          "parseable": true,
-          "imports": 0,
-          "exports": 0
-        },
-        {
-          "file_name": "libScePfs.prx",
-          "module_name": "libScePfs",
-          "kind": "sony",
-          "sha256": "1a6d4d5fdca0c58ee33c4b3f5561e30d11e70c2a537c6e336a2b3325e1384dd4",
-          "parseable": true,
-          "imports": 15,
-          "exports": 9,
-          "import_libs": [
-            "libSceLibcInternal",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libSceLibcInternal.prx"
-          ]
-        },
-        {
-          "file_name": "libc.prx",
-          "module_name": "libc",
-          "kind": "sony",
-          "sha256": "e7d96ea3d3122179f5fe0702b10b7f9596e3f3ca5d0e7f32caecfb062471ef02",
-          "parseable": true,
-          "imports": 0,
-          "exports": 0
-        },
-        {
-          "file_name": "libc.prx",
-          "module_name": "libc",
-          "kind": "sony",
-          "sha256": "f31f9f3752aebad58dfe1600df6483b4c0424338ab14ce4154e61f3fda1d153e",
-          "parseable": true,
-          "imports": 103,
-          "exports": 2565,
-          "import_libs": [
-            "libSceLibcInternalExt",
-            "libSceSysmodule",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libSceLibcInternal.prx",
-            "libSceSysmodule.prx"
-          ]
-        },
-        {
-          "file_name": "sceaudio3d.prx",
-          "module_name": "sceaudio3d",
-          "kind": "sony",
-          "sha256": "9510d4d1b5959f6c4aef6deca17c39ec6ceef867fe2dafecce4ce3fb13b2c421",
-          "parseable": true,
-          "imports": 0,
-          "exports": 0
-        },
-        {
-          "file_name": "sceaudio3d.prx",
-          "module_name": "sceaudio3d",
-          "kind": "sony",
-          "sha256": "637b5da6e18b9fbafd29d180e7ad3811c2fbafc1b3f864061da3678e9ee7ca18",
-          "parseable": true,
-          "imports": 16,
-          "exports": 1,
-          "import_libs": [
-            "libSceAudioOut2",
-            "libSceSysmodule",
-            "libc",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libSceAudioOut.prx",
-            "libSceSysmodule.prx",
-            "libkernel.prx",
-            "libc.prx"
-          ]
-        }
-      ],
-      "unknown": []
-    },
-    {
       "game": "Soul.Hackers.2-PPSA03743-USA-Game (v01.002)+DLC-PS5",
       "title_id": "PPSA03743",
       "third_party": [
@@ -9499,6 +8304,195 @@
       "unknown": []
     },
     {
+      "game": "Trek To Yomi 02.000 PPSA02629",
+      "title_id": "PPSA02629",
+      "engine": "Unreal Engine",
+      "third_party": [
+        {
+          "file_name": "libfmod.prx",
+          "module_name": "libfmod",
+          "kind": "thirdparty",
+          "sha256": "bea9e57458ecf003b297c969917a33f0aff28d3f87994850e7b84c44e58710e7",
+          "vendor": "Firelight Technologies",
+          "product": "FMOD",
+          "description": "FMOD low-level audio engine",
+          "parseable": true,
+          "imports": 146,
+          "exports": 1091,
+          "import_libs": [
+            "libSceAcm",
+            "libSceAjm",
+            "libSceAudioIn",
+            "libSceAudioOut2",
+            "libSceNet",
+            "libSceSysmodule",
+            "libSceUserService",
+            "libc",
+            "libkernel"
+          ],
+          "needed_files": [
+            "libSceAudioOut.prx",
+            "libSceAudioIn.prx",
+            "libSceAjm.native.prx",
+            "libSceNet.prx",
+            "libSceUserService.prx",
+            "libkernel.prx",
+            "libc.prx",
+            "libSceSysmodule.prx",
+            "libSceAcm.prx"
+          ]
+        },
+        {
+          "file_name": "libfmodstudio.prx",
+          "module_name": "libfmodstudio",
+          "kind": "thirdparty",
+          "sha256": "fe27091eabbf69187746b5412bf6d27749966843331e2346ff934c73aaa1b181",
+          "vendor": "Firelight Technologies",
+          "product": "FMOD Studio",
+          "description": "FMOD Studio audio engine (banks and events)",
+          "parseable": true,
+          "imports": 178,
+          "exports": 381,
+          "import_libs": [
+            "libc",
+            "libfmod",
+            "libkernel"
+          ],
+          "needed_files": [
+            "libfmod.prx",
+            "libkernel.prx",
+            "libc.prx"
+          ]
+        }
+      ],
+      "sony": [
+        {
+          "file_name": "libSceFace.prx",
+          "module_name": "libSceFace",
+          "kind": "sony",
+          "sha256": "8cd26f20664893a27eb62050860bf17a217ab055a04243d9c4b4dbf18fca2b4d",
+          "parseable": true,
+          "imports": 20,
+          "exports": 29,
+          "import_libs": [
+            "libSceLibcInternal",
+            "libkernel"
+          ],
+          "needed_files": [
+            "libkernel.prx",
+            "libSceLibcInternal.prx"
+          ]
+        },
+        {
+          "file_name": "libSceFaceTracker.prx",
+          "module_name": "libSceFaceTracker",
+          "kind": "sony",
+          "sha256": "8e7f1ced010d890abde1ab079a9acace9acd4fef82bd9ce2ac3de564807812a5",
+          "parseable": true,
+          "imports": 27,
+          "exports": 21,
+          "import_libs": [
+            "libSceFace",
+            "libSceLibcInternal",
+            "libScePosix",
+            "libkernel"
+          ],
+          "needed_files": [
+            "libSceFace.prx",
+            "libkernel.prx",
+            "libSceLibcInternal.prx"
+          ]
+        },
+        {
+          "file_name": "libSceJobManager.prx",
+          "module_name": "libSceJobManager",
+          "kind": "sony",
+          "sha256": "fc2ab185733e0f33dd19531e93554ae26d0503b5902df17550dde5e04c7b578d",
+          "parseable": true,
+          "imports": 143,
+          "exports": 11,
+          "import_libs": [
+            "libSceAgc",
+            "libSceAgcDriver",
+            "libSceLibcInternal",
+            "libSceRazorCpu",
+            "libkernel",
+            "ulobjmgr"
+          ],
+          "needed_files": [
+            "libkernel.prx",
+            "libSceLibcInternal.prx",
+            "libSceAgcDriver.prx",
+            "libSceAgc.prx",
+            "ulobjmgr.prx",
+            "libSceRazorCpu.prx"
+          ]
+        },
+        {
+          "file_name": "libSceNpCppWebApi.prx",
+          "module_name": "libSceNpCppWebApi",
+          "kind": "sony",
+          "sha256": "0920ccca8940ca8c3498a904afca19ba34c768255008aa8aaf27fa80ef4f3698",
+          "parseable": true,
+          "imports": 95,
+          "exports": 45841,
+          "import_libs": [
+            "libSceHttp",
+            "libSceJson2",
+            "libSceLibcInternal",
+            "libSceNpWebApi2",
+            "libSceRtc",
+            "libkernel"
+          ],
+          "needed_files": [
+            "libSceJson2.prx",
+            "libSceRtc.prx",
+            "libSceNpWebApi2.prx",
+            "libSceHttp.prx",
+            "libkernel.prx",
+            "libSceLibcInternal.prx"
+          ]
+        },
+        {
+          "file_name": "libScePfs.prx",
+          "module_name": "libScePfs",
+          "kind": "sony",
+          "sha256": "716bb66874a3e963a7671682cbfbf32ece6aec7b0c6ecfb399b5edeb807c0509",
+          "parseable": true,
+          "imports": 15,
+          "exports": 9,
+          "import_libs": [
+            "libSceLibcInternal",
+            "libkernel"
+          ],
+          "needed_files": [
+            "libkernel.prx",
+            "libSceLibcInternal.prx"
+          ]
+        },
+        {
+          "file_name": "libc.prx",
+          "module_name": "libc",
+          "kind": "sony",
+          "sha256": "6b25e96e88168466ca4e98516d10e62868bb67dc301b9be64b1b0b749b7b0c0d",
+          "parseable": true,
+          "imports": 103,
+          "exports": 2569,
+          "import_libs": [
+            "libSceLibcInternalExt",
+            "libSceSysmodule",
+            "libkernel"
+          ],
+          "needed_files": [
+            "libkernel.prx",
+            "libSceLibcInternal.prx",
+            "libSceSysmodule.prx"
+          ]
+        }
+      ],
+      "unknown": []
+    },
+    {
       "game": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
       "title_id": "PPSA22520",
       "third_party": [],
@@ -9609,8 +8603,8 @@
       "unknown": []
     }
   ],
-  "total_prx": 409,
-  "third_party_modules": 244,
-  "sony_modules": 156,
+  "total_prx": 343,
+  "third_party_modules": 186,
+  "sony_modules": 148,
   "unknown_modules": 9
 }
