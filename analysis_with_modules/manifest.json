@@ -2,7 +2,7 @@
   "schema_version": 6,
   "tool": "ps5rs",
   "created_at": "2026-08-26T05:07:13Z",
-  "image_count": 29,
+  "image_count": 30,
   "module_count": 0,
   "games": [
     {
@@ -352,6 +352,18 @@
       "drm_type": "standard",
       "content_id": "EP2005-PPSA16960_00-RICHMANELEVEN000",
       "creation_date": "2024-03-06 01:44:48"
+    },
+    {
+      "name": "void tRrLM Void Terrarium PS5 Dump v1.000",
+      "title_id": "PPSA03061",
+      "content_version": "01.000.000",
+      "master_version": "01.00",
+      "sdk_version": "0x0200000000000000",
+      "title_name": "void tRrLM();++ //Void Terrarium++",
+      "display_name": "void tRrLM();++ //Void Terrarium++ - [PPSA03061]",
+      "drm_type": "standard",
+      "content_id": "UP1063-PPSA03061_00-VOIDTERRARIUMPS5",
+      "creation_date": "2021-02-18 05:57:25"
     }
   ]
 }

@@ -1,17 +1,17 @@
 {
-  "total_games": 29,
-  "successful": 29,
+  "total_games": 30,
+  "successful": 30,
   "failed": 0,
-  "total_modules": 71,
-  "total_exports": 629626,
-  "total_imports_resolved": 115113,
+  "total_modules": 73,
+  "total_exports": 632191,
+  "total_imports_resolved": 115297,
   "total_imports_known": 289,
-  "total_imports_stubbed": 20637,
-  "avg_resolution_rate": 84.83008549019031,
+  "total_imports_stubbed": 20979,
+  "avg_resolution_rate": 84.63808442866035,
   "top_unavailable": [
     {
       "module": "libSceAgc.prx",
-      "game_count": 29,
+      "game_count": 30,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
@@ -41,12 +41,13 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]"
+        "Totally Reliable Delivery Service - [PPSA28855]",
+        "void tRrLM();++ //Void Terrarium++ - [PPSA03061]"
       ]
     },
     {
       "module": "libSceAgcDriver.prx",
-      "game_count": 29,
+      "game_count": 30,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
@@ -76,12 +77,13 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]"
+        "Totally Reliable Delivery Service - [PPSA28855]",
+        "void tRrLM();++ //Void Terrarium++ - [PPSA03061]"
       ]
     },
     {
       "module": "libSceAudioOut.prx",
-      "game_count": 29,
+      "game_count": 30,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
@@ -111,12 +113,13 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]"
+        "Totally Reliable Delivery Service - [PPSA28855]",
+        "void tRrLM();++ //Void Terrarium++ - [PPSA03061]"
       ]
     },
     {
       "module": "libSceCommonDialog.prx",
-      "game_count": 29,
+      "game_count": 30,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
@@ -146,12 +149,13 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]"
+        "Totally Reliable Delivery Service - [PPSA28855]",
+        "void tRrLM();++ //Void Terrarium++ - [PPSA03061]"
       ]
     },
     {
       "module": "libSceLibcInternal.prx",
-      "game_count": 29,
+      "game_count": 30,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
@@ -181,12 +185,13 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]"
+        "Totally Reliable Delivery Service - [PPSA28855]",
+        "void tRrLM();++ //Void Terrarium++ - [PPSA03061]"
       ]
     },
     {
       "module": "libScePad.prx",
-      "game_count": 29,
+      "game_count": 30,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
@@ -216,12 +221,13 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]"
+        "Totally Reliable Delivery Service - [PPSA28855]",
+        "void tRrLM();++ //Void Terrarium++ - [PPSA03061]"
       ]
     },
     {
       "module": "libSceSaveData.native.prx",
-      "game_count": 29,
+      "game_count": 30,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
@@ -251,12 +257,13 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]"
+        "Totally Reliable Delivery Service - [PPSA28855]",
+        "void tRrLM();++ //Void Terrarium++ - [PPSA03061]"
       ]
     },
     {
       "module": "libSceSysmodule.prx",
-      "game_count": 29,
+      "game_count": 30,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
@@ -286,12 +293,13 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]"
+        "Totally Reliable Delivery Service - [PPSA28855]",
+        "void tRrLM();++ //Void Terrarium++ - [PPSA03061]"
       ]
     },
     {
       "module": "libSceSystemService.prx",
-      "game_count": 29,
+      "game_count": 30,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
@@ -321,12 +329,13 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]"
+        "Totally Reliable Delivery Service - [PPSA28855]",
+        "void tRrLM();++ //Void Terrarium++ - [PPSA03061]"
       ]
     },
     {
       "module": "libSceUserService.prx",
-      "game_count": 29,
+      "game_count": 30,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
@@ -356,12 +365,13 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]"
+        "Totally Reliable Delivery Service - [PPSA28855]",
+        "void tRrLM();++ //Void Terrarium++ - [PPSA03061]"
       ]
     },
     {
       "module": "libSceVideoOut.prx",
-      "game_count": 29,
+      "game_count": 30,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
@@ -391,12 +401,13 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]"
+        "Totally Reliable Delivery Service - [PPSA28855]",
+        "void tRrLM();++ //Void Terrarium++ - [PPSA03061]"
       ]
     },
     {
       "module": "libkernel.prx",
-      "game_count": 29,
+      "game_count": 30,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
@@ -426,12 +437,13 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]"
+        "Totally Reliable Delivery Service - [PPSA28855]",
+        "void tRrLM();++ //Void Terrarium++ - [PPSA03061]"
       ]
     },
     {
       "module": "libSceRtc.prx",
-      "game_count": 27,
+      "game_count": 28,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
@@ -459,7 +471,73 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]"
+        "Totally Reliable Delivery Service - [PPSA28855]",
+        "void tRrLM();++ //Void Terrarium++ - [PPSA03061]"
+      ]
+    },
+    {
+      "module": "libSceNpManager.prx",
+      "game_count": 27,
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Blue Prince - [PPSA25009]",
+        "Bugsnax - [PPSA01502]",
+        "Cat Quest III - [PPSA15065]",
+        "Dusk Diver 2 - [PPSA06565]",
+        "GRIS - [PPSA09804]",
+        "Hello Neighbor 2 - [PPSA07426]",
+        "Judgment - [PPSA02739]",
+        "Juicy Realm - [PPSA19268]",
+        "Jusant - [PPSA10264]",
+        "Mega Man Star Force Legacy Collection - [PPSA32239]",
+        "Metal Slug Tactics - [PPSA20643]",
+        "Monster Boy and the Cursed Kingdom - [PPSA02787]",
+        "Neva - [PPSA16786]",
+        "OCTOPATH TRAVELER II - [PPSA09809]",
+        "Oxide Room 104 - [PPSA07653]",
+        "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
+        "Raiden III x MIKADO MANIAX - [PPSA13356]",
+        "Richman 11 - [PPSA16960]",
+        "Soul Hackers 2 - [PPSA03743]",
+        "Squirrel with a Gun - [PPSA22102]",
+        "Stray - [PPSA02100]",
+        "Subnautica Below Zero - [PPSA02456]",
+        "The Pathless - [PPSA01825]",
+        "Totally Reliable Delivery Service - [PPSA28855]",
+        "void tRrLM();++ //Void Terrarium++ - [PPSA03061]"
+      ]
+    },
+    {
+      "module": "libSceMsgDialog.native.prx",
+      "game_count": 26,
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Blue Prince - [PPSA25009]",
+        "Bugsnax - [PPSA01502]",
+        "Cat Quest III - [PPSA15065]",
+        "Dusk Diver 2 - [PPSA06565]",
+        "GRIS - [PPSA09804]",
+        "Hello Neighbor 2 - [PPSA07426]",
+        "Judgment - [PPSA02739]",
+        "Juicy Realm - [PPSA19268]",
+        "Jusant - [PPSA10264]",
+        "Mega Man Star Force Legacy Collection - [PPSA32239]",
+        "Metal Slug Tactics - [PPSA20643]",
+        "Neva - [PPSA16786]",
+        "OCTOPATH TRAVELER II - [PPSA09809]",
+        "Oxide Room 104 - [PPSA07653]",
+        "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
+        "Raiden III x MIKADO MANIAX - [PPSA13356]",
+        "Richman 11 - [PPSA16960]",
+        "Soul Hackers 2 - [PPSA03743]",
+        "Squirrel with a Gun - [PPSA22102]",
+        "Stray - [PPSA02100]",
+        "Subnautica Below Zero - [PPSA02456]",
+        "The Pathless - [PPSA01825]",
+        "Totally Reliable Delivery Service - [PPSA28855]",
+        "void tRrLM();++ //Void Terrarium++ - [PPSA03061]"
       ]
     },
     {
@@ -495,8 +573,8 @@
       ]
     },
     {
-      "module": "libSceNpManager.prx",
-      "game_count": 26,
+      "module": "libSceAmpr.prx",
+      "game_count": 25,
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
@@ -511,19 +589,18 @@
         "Jusant - [PPSA10264]",
         "Mega Man Star Force Legacy Collection - [PPSA32239]",
         "Metal Slug Tactics - [PPSA20643]",
-        "Monster Boy and the Cursed Kingdom - [PPSA02787]",
         "Neva - [PPSA16786]",
         "OCTOPATH TRAVELER II - [PPSA09809]",
         "Oxide Room 104 - [PPSA07653]",
         "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
-        "Raiden III x MIKADO MANIAX - [PPSA13356]",
         "Richman 11 - [PPSA16960]",
         "Soul Hackers 2 - [PPSA03743]",
         "Squirrel with a Gun - [PPSA22102]",
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]"
+        "Totally Reliable Delivery Service - [PPSA28855]",
+        "void tRrLM();++ //Void Terrarium++ - [PPSA03061]"
       ]
     },
     {
@@ -618,68 +695,6 @@
         "The Pathless - [PPSA01825]",
         "Totally Reliable Delivery Service - [PPSA28855]"
       ]
-    },
-    {
-      "module": "libSceMsgDialog.native.prx",
-      "game_count": 25,
-      "games": [
-        "Afterimage - [PPSA14053]",
-        "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Blue Prince - [PPSA25009]",
-        "Bugsnax - [PPSA01502]",
-        "Cat Quest III - [PPSA15065]",
-        "Dusk Diver 2 - [PPSA06565]",
-        "GRIS - [PPSA09804]",
-        "Hello Neighbor 2 - [PPSA07426]",
-        "Judgment - [PPSA02739]",
-        "Juicy Realm - [PPSA19268]",
-        "Jusant - [PPSA10264]",
-        "Mega Man Star Force Legacy Collection - [PPSA32239]",
-        "Metal Slug Tactics - [PPSA20643]",
-        "Neva - [PPSA16786]",
-        "OCTOPATH TRAVELER II - [PPSA09809]",
-        "Oxide Room 104 - [PPSA07653]",
-        "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
-        "Raiden III x MIKADO MANIAX - [PPSA13356]",
-        "Richman 11 - [PPSA16960]",
-        "Soul Hackers 2 - [PPSA03743]",
-        "Squirrel with a Gun - [PPSA22102]",
-        "Stray - [PPSA02100]",
-        "Subnautica Below Zero - [PPSA02456]",
-        "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]"
-      ]
-    },
-    {
-      "module": "libSceNetCtl.prx",
-      "game_count": 25,
-      "games": [
-        "Afterimage - [PPSA14053]",
-        "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Blue Prince - [PPSA25009]",
-        "Bugsnax - [PPSA01502]",
-        "Cat Quest III - [PPSA15065]",
-        "Dusk Diver 2 - [PPSA06565]",
-        "GRIS - [PPSA09804]",
-        "Hello Neighbor 2 - [PPSA07426]",
-        "Judgment - [PPSA02739]",
-        "Juicy Realm - [PPSA19268]",
-        "Jusant - [PPSA10264]",
-        "Mega Man Star Force Legacy Collection - [PPSA32239]",
-        "Metal Slug Tactics - [PPSA20643]",
-        "Neva - [PPSA16786]",
-        "OCTOPATH TRAVELER II - [PPSA09809]",
-        "Oxide Room 104 - [PPSA07653]",
-        "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
-        "Raiden III x MIKADO MANIAX - [PPSA13356]",
-        "Richman 11 - [PPSA16960]",
-        "Soul Hackers 2 - [PPSA03743]",
-        "Squirrel with a Gun - [PPSA22102]",
-        "Stray - [PPSA02100]",
-        "Subnautica Below Zero - [PPSA02456]",
-        "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]"
-      ]
     }
   ],
   "worst_games": [
@@ -700,6 +715,12 @@
       "stubbed": 599,
       "total": 888,
       "rate": 67.45495495495496
+    },
+    {
+      "game": "void tRrLM();++ //Void Terrarium++ - [PPSA03061]",
+      "stubbed": 342,
+      "total": 526,
+      "rate": 65.0190114068441
     },
     {
       "game": "Judgment - [PPSA02739]",
@@ -736,12 +757,6 @@
       "stubbed": 572,
       "total": 1856,
       "rate": 30.81896551724138
-    },
-    {
-      "game": "Totally Reliable Delivery Service - [PPSA28855]",
-      "stubbed": 587,
-      "total": 1931,
-      "rate": 30.398757120662868
     }
   ]
 }

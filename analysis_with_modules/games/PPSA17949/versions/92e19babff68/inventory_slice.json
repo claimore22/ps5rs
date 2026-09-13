@@ -1,0 +1,614 @@
+{
+  "artifacts": [
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "global-metadata.dat",
+      "relative_path": "Media/Metadata/global-metadata.dat",
+      "size": 7253552
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "Il2cppUserAssemblies.prx",
+      "relative_path": "Media/Modules/Il2cppUserAssemblies.prx",
+      "size": 45254817
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "Il2cppUserAssemblies.prx.esbak",
+      "relative_path": "Media/Modules/Il2cppUserAssemblies.prx.esbak",
+      "size": 45201340
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "PS5Util.prx",
+      "relative_path": "Media/Modules/PS5Util.prx",
+      "size": 7057
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "PS5Util.prx.esbak",
+      "relative_path": "Media/Modules/PS5Util.prx.esbak",
+      "size": 68012
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "lib_burst_generated.prx",
+      "relative_path": "Media/Plugins/lib_burst_generated.prx",
+      "size": 51401
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "lib_burst_generated.prx.esbak",
+      "relative_path": "Media/Plugins/lib_burst_generated.prx.esbak",
+      "size": 104036
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "mscorlib.dll-resources.dat",
+      "relative_path": "Media/Resources/mscorlib.dll-resources.dat",
+      "size": 337563
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "unity default resources",
+      "relative_path": "Media/Resources/unity default resources",
+      "size": 861768
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "unity_builtin_extra",
+      "relative_path": "Media/Resources/unity_builtin_extra",
+      "size": 663340
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "RuntimeInitializeOnLoads.json",
+      "relative_path": "Media/RuntimeInitializeOnLoads.json",
+      "size": 893
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "ScriptingAssemblies.json",
+      "relative_path": "Media/ScriptingAssemblies.json",
+      "size": 3165
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "H264_AAC_1280x720_30sec_01.mp4",
+      "relative_path": "Media/StreamingAssets/H264_AAC_1280x720_30sec_01.mp4",
+      "size": 1388105
+    },
+    {
+      "category": "Texture",
+      "extension": "jpg",
+      "file_name": "PS4SessionImage.jpg",
+      "relative_path": "Media/StreamingAssets/PS4SessionImage.jpg",
+      "size": 49063
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "Readme.txt",
+      "relative_path": "Media/StreamingAssets/Readme.txt",
+      "size": 402
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "SaveIcon.png",
+      "relative_path": "Media/StreamingAssets/SaveIcon.png",
+      "size": 28555
+    },
+    {
+      "category": "Unknown",
+      "extension": "config",
+      "file_name": "boot.config",
+      "relative_path": "Media/boot.config",
+      "size": 558
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "globalgamemanagers",
+      "relative_path": "Media/globalgamemanagers",
+      "size": 375780
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "globalgamemanagers.assets",
+      "relative_path": "Media/globalgamemanagers.assets",
+      "size": 1284708
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "globalgamemanagers.assets.resS",
+      "relative_path": "Media/globalgamemanagers.assets.resS",
+      "size": 5935104
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level0",
+      "relative_path": "Media/level0",
+      "size": 14228
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level1",
+      "relative_path": "Media/level1",
+      "size": 62460
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level2",
+      "relative_path": "Media/level2",
+      "size": 80460
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level3",
+      "relative_path": "Media/level3",
+      "size": 177520
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level4",
+      "relative_path": "Media/level4",
+      "size": 95628
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level5",
+      "relative_path": "Media/level5",
+      "size": 74264
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level6",
+      "relative_path": "Media/level6",
+      "size": 97820
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level7",
+      "relative_path": "Media/level7",
+      "size": 77420
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "resources.assets",
+      "relative_path": "Media/resources.assets",
+      "size": 2214832
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "resources.assets.resS",
+      "relative_path": "Media/resources.assets.resS",
+      "size": 2715447296
+    },
+    {
+      "category": "Unknown",
+      "extension": "resource",
+      "file_name": "resources.resource",
+      "relative_path": "Media/resources.resource",
+      "size": 65535616
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets0.assets",
+      "relative_path": "Media/sharedassets0.assets",
+      "size": 25856
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets0.assets.resS",
+      "relative_path": "Media/sharedassets0.assets.resS",
+      "size": 28028928
+    },
+    {
+      "category": "Unknown",
+      "extension": "resource",
+      "file_name": "sharedassets0.resource",
+      "relative_path": "Media/sharedassets0.resource",
+      "size": 143155720
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets1.assets",
+      "relative_path": "Media/sharedassets1.assets",
+      "size": 24180
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets1.assets.resS",
+      "relative_path": "Media/sharedassets1.assets.resS",
+      "size": 75763712
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets2.assets",
+      "relative_path": "Media/sharedassets2.assets",
+      "size": 11724
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets2.assets.resS",
+      "relative_path": "Media/sharedassets2.assets.resS",
+      "size": 12574720
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets3.assets",
+      "relative_path": "Media/sharedassets3.assets",
+      "size": 564118
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets3.assets.resS",
+      "relative_path": "Media/sharedassets3.assets.resS",
+      "size": 101432992
+    },
+    {
+      "category": "Unknown",
+      "extension": "resource",
+      "file_name": "sharedassets3.resource",
+      "relative_path": "Media/sharedassets3.resource",
+      "size": 5823387436
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets4.assets",
+      "relative_path": "Media/sharedassets4.assets",
+      "size": 217360
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets4.assets.resS",
+      "relative_path": "Media/sharedassets4.assets.resS",
+      "size": 5377280
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets5.assets",
+      "relative_path": "Media/sharedassets5.assets",
+      "size": 12552
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets5.assets.resS",
+      "relative_path": "Media/sharedassets5.assets.resS",
+      "size": 18395136
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets6.assets",
+      "relative_path": "Media/sharedassets6.assets",
+      "size": 29564
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets6.assets.resS",
+      "relative_path": "Media/sharedassets6.assets.resS",
+      "size": 21446656
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets7.assets",
+      "relative_path": "Media/sharedassets7.assets",
+      "size": 191204
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets7.assets.resS",
+      "relative_path": "Media/sharedassets7.assets.resS",
+      "size": 104833024
+    },
+    {
+      "category": "Unknown",
+      "extension": "resource",
+      "file_name": "sharedassets7.resource",
+      "relative_path": "Media/sharedassets7.resource",
+      "size": 6516608
+    },
+    {
+      "category": "Executable",
+      "extension": "eboot.bin",
+      "file_name": "eboot.bin",
+      "relative_path": "eboot.bin",
+      "size": 32689890
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "eboot.bin.esbak",
+      "relative_path": "eboot.bin.esbak",
+      "size": 32681596
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceFace.prx",
+      "relative_path": "sce_module/libSceFace.prx",
+      "size": 324204
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "libSceFace.prx.esbak",
+      "relative_path": "sce_module/libSceFace.prx.esbak",
+      "size": 372560
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceFaceTracker.prx",
+      "relative_path": "sce_module/libSceFaceTracker.prx",
+      "size": 2615239
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "libSceFaceTracker.prx.esbak",
+      "relative_path": "sce_module/libSceFaceTracker.prx.esbak",
+      "size": 2660727
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceFontGsm.prx",
+      "relative_path": "sce_module/libSceFontGsm.prx",
+      "size": 250759
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "libSceFontGsm.prx.esbak",
+      "relative_path": "sce_module/libSceFontGsm.prx.esbak",
+      "size": 306435
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceJobManager.prx",
+      "relative_path": "sce_module/libSceJobManager.prx",
+      "size": 71862
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "libSceJobManager.prx.esbak",
+      "relative_path": "sce_module/libSceJobManager.prx.esbak",
+      "size": 113558
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceNpCppWebApi.prx",
+      "relative_path": "sce_module/libSceNpCppWebApi.prx",
+      "size": 7920967
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "libSceNpCppWebApi.prx.esbak",
+      "relative_path": "sce_module/libSceNpCppWebApi.prx.esbak",
+      "size": 7954839
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libScePfs.prx",
+      "relative_path": "sce_module/libScePfs.prx",
+      "size": 1343215
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "libScePfs.prx.esbak",
+      "relative_path": "sce_module/libScePfs.prx.esbak",
+      "size": 1381095
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libc.prx",
+      "relative_path": "sce_module/libc.prx",
+      "size": 1291778
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "libc.prx.esbak",
+      "relative_path": "sce_module/libc.prx.esbak",
+      "size": 1334282
+    },
+    {
+      "category": "Executable",
+      "extension": "sprx",
+      "file_name": "right.sprx",
+      "relative_path": "sce_sys/about/right.sprx",
+      "size": 12512
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "right.sprx.esbak",
+      "relative_path": "sce_sys/about/right.sprx.esbak",
+      "size": 66704
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "ext_info.dat",
+      "relative_path": "sce_sys/ext_info.dat",
+      "size": 44
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "icon0.dds",
+      "relative_path": "sce_sys/icon0.dds",
+      "size": 262292
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "icon0.png",
+      "relative_path": "sce_sys/icon0.png",
+      "size": 454210
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "keystone",
+      "relative_path": "sce_sys/keystone",
+      "size": 96
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "nptitle.dat",
+      "relative_path": "sce_sys/nptitle.dat",
+      "size": 160
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "param.json",
+      "relative_path": "sce_sys/param.json",
+      "size": 2657
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "pfs-version.dat",
+      "relative_path": "sce_sys/pfs-version.dat",
+      "size": 10
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic0.dds",
+      "relative_path": "sce_sys/pic0.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "pic0.png",
+      "relative_path": "sce_sys/pic0.png",
+      "size": 13013478
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic1.dds",
+      "relative_path": "sce_sys/pic1.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic2.dds",
+      "relative_path": "sce_sys/pic2.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "sce_sys/trophy2/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "trophy00.ucp",
+      "relative_path": "sce_sys/trophy2/trophy00.ucp",
+      "size": 9719152
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "sce_sys/uds/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "uds00.ucp",
+      "relative_path": "sce_sys/uds/uds00.ucp",
+      "size": 28704
+    }
+  ],
+  "by_category": {
+    "executable": 12,
+    "metadata": 25,
+    "texture": 8,
+    "unknown": 38
+  },
+  "by_extension": {
+    "(no_ext)": 12,
+    "assets": 10,
+    "config": 1,
+    "dat": 7,
+    "dds": 4,
+    "eboot.bin": 1,
+    "esbak": 12,
+    "jpg": 1,
+    "json": 3,
+    "mp4": 1,
+    "png": 3,
+    "prx": 10,
+    "resource": 4,
+    "ress": 10,
+    "sprx": 1,
+    "txt": 1,
+    "ucp": 2
+  },
+  "game": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+  "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+  "total_bytes": 9376493266,
+  "total_files": 83
+}

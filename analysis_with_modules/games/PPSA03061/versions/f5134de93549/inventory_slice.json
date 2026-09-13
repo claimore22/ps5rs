@@ -1,0 +1,1016 @@
+{
+  "artifacts": [
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "AIGraf.dat",
+      "relative_path": "Data/AI/AIGraf.dat",
+      "size": 190464
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Anime_0.dat",
+      "relative_path": "Data/Anime/Anime_0.dat",
+      "size": 1359984128
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Data_0.dat",
+      "relative_path": "Data/Data/Data_0.dat",
+      "size": 79944544
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "3DModel.dat",
+      "relative_path": "Data/Database/3DModel.dat",
+      "size": 77193
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Advice.dat",
+      "relative_path": "Data/Database/Advice.dat",
+      "size": 48772
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Anime.dat",
+      "relative_path": "Data/Database/Anime.dat",
+      "size": 18209
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "AnimePlayBackOnTheWay.dat",
+      "relative_path": "Data/Database/AnimePlayBackOnTheWay.dat",
+      "size": 108
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "AnimeTextFormat.dat",
+      "relative_path": "Data/Database/AnimeTextFormat.dat",
+      "size": 13958
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Archive_Category.dat",
+      "relative_path": "Data/Database/Archive_Category.dat",
+      "size": 848
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Archive_Closet.dat",
+      "relative_path": "Data/Database/Archive_Closet.dat",
+      "size": 13500
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Archive_CustomParts.dat",
+      "relative_path": "Data/Database/Archive_CustomParts.dat",
+      "size": 13643
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Archive_Enemy.dat",
+      "relative_path": "Data/Database/Archive_Enemy.dat",
+      "size": 67814
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Archive_Item.dat",
+      "relative_path": "Data/Database/Archive_Item.dat",
+      "size": 60008
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Archive_Memory.dat",
+      "relative_path": "Data/Database/Archive_Memory.dat",
+      "size": 1318
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Archive_Recipe.dat",
+      "relative_path": "Data/Database/Archive_Recipe.dat",
+      "size": 1652
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Archive_Role.dat",
+      "relative_path": "Data/Database/Archive_Role.dat",
+      "size": 148
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Archive_Sick.dat",
+      "relative_path": "Data/Database/Archive_Sick.dat",
+      "size": 10768
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Archive_Skill.dat",
+      "relative_path": "Data/Database/Archive_Skill.dat",
+      "size": 60010
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Archive_TerrariumObject.dat",
+      "relative_path": "Data/Database/Archive_TerrariumObject.dat",
+      "size": 41038
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "BattleMessage.dat",
+      "relative_path": "Data/Database/BattleMessage.dat",
+      "size": 5676
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "ChangeItem.dat",
+      "relative_path": "Data/Database/ChangeItem.dat",
+      "size": 2382
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "ChildAction.dat",
+      "relative_path": "Data/Database/ChildAction.dat",
+      "size": 24406
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "ChildDirtEffect.dat",
+      "relative_path": "Data/Database/ChildDirtEffect.dat",
+      "size": 132
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "ChildMoodEffect.dat",
+      "relative_path": "Data/Database/ChildMoodEffect.dat",
+      "size": 92
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "ChildSatietyEffect.dat",
+      "relative_path": "Data/Database/ChildSatietyEffect.dat",
+      "size": 112
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "ChildState.dat",
+      "relative_path": "Data/Database/ChildState.dat",
+      "size": 63911
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "ChildStateCategory.dat",
+      "relative_path": "Data/Database/ChildStateCategory.dat",
+      "size": 2556
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "ChildSubState.dat",
+      "relative_path": "Data/Database/ChildSubState.dat",
+      "size": 766
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "ChildVitalityEffect.dat",
+      "relative_path": "Data/Database/ChildVitalityEffect.dat",
+      "size": 112
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "ChildWishPlay.dat",
+      "relative_path": "Data/Database/ChildWishPlay.dat",
+      "size": 124
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Condition.dat",
+      "relative_path": "Data/Database/Condition.dat",
+      "size": 21885
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "CustomParts.dat",
+      "relative_path": "Data/Database/CustomParts.dat",
+      "size": 13666
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "DropTable.dat",
+      "relative_path": "Data/Database/DropTable.dat",
+      "size": 74783
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Effect.dat",
+      "relative_path": "Data/Database/Effect.dat",
+      "size": 11217
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "EnemyGrowth.dat",
+      "relative_path": "Data/Database/EnemyGrowth.dat",
+      "size": 1754
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Event.dat",
+      "relative_path": "Data/Database/Event.dat",
+      "size": 118410
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "EventType.dat",
+      "relative_path": "Data/Database/EventType.dat",
+      "size": 5052
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "FlagList_Debug.dat",
+      "relative_path": "Data/Database/FlagList_Debug.dat",
+      "size": 4175
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "FlagList_Debug_OnFlag.dat",
+      "relative_path": "Data/Database/FlagList_Debug_OnFlag.dat",
+      "size": 36
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "FlagList_Debug_OnFlag_.dat",
+      "relative_path": "Data/Database/FlagList_Debug_OnFlag_.dat",
+      "size": 36
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "FlagList_System.dat",
+      "relative_path": "Data/Database/FlagList_System.dat",
+      "size": 61769
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "FlagList_System_Fav.dat",
+      "relative_path": "Data/Database/FlagList_System_Fav.dat",
+      "size": 51
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Font.dat",
+      "relative_path": "Data/Database/Font.dat",
+      "size": 386
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "GameValue.dat",
+      "relative_path": "Data/Database/GameValue.dat",
+      "size": 6757
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Garbage.dat",
+      "relative_path": "Data/Database/Garbage.dat",
+      "size": 1901
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Growth.dat",
+      "relative_path": "Data/Database/Growth.dat",
+      "size": 5304
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "HappySlot.dat",
+      "relative_path": "Data/Database/HappySlot.dat",
+      "size": 768
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "HomeBG.dat",
+      "relative_path": "Data/Database/HomeBG.dat",
+      "size": 3968
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "HomeBGM.dat",
+      "relative_path": "Data/Database/HomeBGM.dat",
+      "size": 292
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "HomeEffect.dat",
+      "relative_path": "Data/Database/HomeEffect.dat",
+      "size": 413
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "HomeEffectType.dat",
+      "relative_path": "Data/Database/HomeEffectType.dat",
+      "size": 599
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "HomeType.dat",
+      "relative_path": "Data/Database/HomeType.dat",
+      "size": 263
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Icon.dat",
+      "relative_path": "Data/Database/Icon.dat",
+      "size": 14452
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "KeyConfig.dat",
+      "relative_path": "Data/Database/KeyConfig.dat",
+      "size": 3463
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "MapList.dat",
+      "relative_path": "Data/Database/MapList.dat",
+      "size": 13903
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "MessageWindow.dat",
+      "relative_path": "Data/Database/MessageWindow.dat",
+      "size": 1584
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "MiniMapTip.dat",
+      "relative_path": "Data/Database/MiniMapTip.dat",
+      "size": 722
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "MonsterHouse.dat",
+      "relative_path": "Data/Database/MonsterHouse.dat",
+      "size": 348
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "MonsterHouse_Enemy.dat",
+      "relative_path": "Data/Database/MonsterHouse_Enemy.dat",
+      "size": 1164
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "MonsterHouse_Trap.dat",
+      "relative_path": "Data/Database/MonsterHouse_Trap.dat",
+      "size": 1356
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Particle.dat",
+      "relative_path": "Data/Database/Particle.dat",
+      "size": 7515
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "PassiveEffect.dat",
+      "relative_path": "Data/Database/PassiveEffect.dat",
+      "size": 26340
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "PollutionSickRisk.dat",
+      "relative_path": "Data/Database/PollutionSickRisk.dat",
+      "size": 76
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "PostEffectSetting.dat",
+      "relative_path": "Data/Database/PostEffectSetting.dat",
+      "size": 1513
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Quest.dat",
+      "relative_path": "Data/Database/Quest.dat",
+      "size": 9458
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Recipe.dat",
+      "relative_path": "Data/Database/Recipe.dat",
+      "size": 130887
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "RecipeTag.dat",
+      "relative_path": "Data/Database/RecipeTag.dat",
+      "size": 1492
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "ReplaceTexture.dat",
+      "relative_path": "Data/Database/ReplaceTexture.dat",
+      "size": 166809
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Resource.dat",
+      "relative_path": "Data/Database/Resource.dat",
+      "size": 17475
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "RogueChar.dat",
+      "relative_path": "Data/Database/RogueChar.dat",
+      "size": 93710
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "RogueEventObject.dat",
+      "relative_path": "Data/Database/RogueEventObject.dat",
+      "size": 422
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "RogueItem.dat",
+      "relative_path": "Data/Database/RogueItem.dat",
+      "size": 924720
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "RogueItemCategory.dat",
+      "relative_path": "Data/Database/RogueItemCategory.dat",
+      "size": 320
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "RogueItemEffectType.dat",
+      "relative_path": "Data/Database/RogueItemEffectType.dat",
+      "size": 11650
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "RogueItemTag.dat",
+      "relative_path": "Data/Database/RogueItemTag.dat",
+      "size": 714
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "RogueMagic.dat",
+      "relative_path": "Data/Database/RogueMagic.dat",
+      "size": 102544
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "RogueMagicEffectType.dat",
+      "relative_path": "Data/Database/RogueMagicEffectType.dat",
+      "size": 1636
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "RogueObject.dat",
+      "relative_path": "Data/Database/RogueObject.dat",
+      "size": 7947
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "RogueSkill.dat",
+      "relative_path": "Data/Database/RogueSkill.dat",
+      "size": 460063
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "RogueSkillLotteryLevel.dat",
+      "relative_path": "Data/Database/RogueSkillLotteryLevel.dat",
+      "size": 970
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Role.dat",
+      "relative_path": "Data/Database/Role.dat",
+      "size": 9711
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "SaveText.dat",
+      "relative_path": "Data/Database/SaveText.dat",
+      "size": 2300
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Script.dat",
+      "relative_path": "Data/Database/Script.dat",
+      "size": 1482
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "SickRisk.dat",
+      "relative_path": "Data/Database/SickRisk.dat",
+      "size": 108
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Smork.dat",
+      "relative_path": "Data/Database/Smork.dat",
+      "size": 6883
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Sound_BGM_0.dat",
+      "relative_path": "Data/Database/Sound_BGM_0.dat",
+      "size": 3942
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Sound_Msg_JP_0.dat",
+      "relative_path": "Data/Database/Sound_Msg_JP_0.dat",
+      "size": 845713
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Sound_SE_0.dat",
+      "relative_path": "Data/Database/Sound_SE_0.dat",
+      "size": 24542
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Sound_Voice_JP_0.dat",
+      "relative_path": "Data/Database/Sound_Voice_JP_0.dat",
+      "size": 376437
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Speaker.dat",
+      "relative_path": "Data/Database/Speaker.dat",
+      "size": 677
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "StringList.dat",
+      "relative_path": "Data/Database/StringList.dat",
+      "size": 23773
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "TalkCommand.dat",
+      "relative_path": "Data/Database/TalkCommand.dat",
+      "size": 5391
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "TerrariumObject.dat",
+      "relative_path": "Data/Database/TerrariumObject.dat",
+      "size": 39751
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "TerrariumObjectTag.dat",
+      "relative_path": "Data/Database/TerrariumObjectTag.dat",
+      "size": 344
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "TextureList.dat",
+      "relative_path": "Data/Database/TextureList.dat",
+      "size": 12518
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Tips.dat",
+      "relative_path": "Data/Database/Tips.dat",
+      "size": 5177
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Token.dat",
+      "relative_path": "Data/Database/Token.dat",
+      "size": 157
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Trap.dat",
+      "relative_path": "Data/Database/Trap.dat",
+      "size": 1328
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Trophy.dat",
+      "relative_path": "Data/Database/Trophy.dat",
+      "size": 7691
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "WatchChildAction.dat",
+      "relative_path": "Data/Database/WatchChildAction.dat",
+      "size": 660
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Weather.dat",
+      "relative_path": "Data/Database/Weather.dat",
+      "size": 288
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "WeatherPeriod.dat",
+      "relative_path": "Data/Database/WeatherPeriod.dat",
+      "size": 252
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "WindowAction.dat",
+      "relative_path": "Data/Database/WindowAction.dat",
+      "size": 3676
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "WindowPos.dat",
+      "relative_path": "Data/Database/WindowPos.dat",
+      "size": 212
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "FixedMap_0.dat",
+      "relative_path": "Data/FixedMap/FixedMap_0.dat",
+      "size": 133120
+    },
+    {
+      "category": "Unknown",
+      "extension": "otf",
+      "file_name": "FOT-AnitoStd-M.otf",
+      "relative_path": "Data/Font/FOT-AnitoStd-M.otf",
+      "size": 3116236
+    },
+    {
+      "category": "Unknown",
+      "extension": "otf",
+      "file_name": "FOT-CometStd-B.otf",
+      "relative_path": "Data/Font/FOT-CometStd-B.otf",
+      "size": 2126560
+    },
+    {
+      "category": "Unknown",
+      "extension": "otf",
+      "file_name": "FOT-RodinNTLGPro-M.otf",
+      "relative_path": "Data/Font/FOT-RodinNTLGPro-M.otf",
+      "size": 3444084
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Model_0.dat",
+      "relative_path": "Data/Model/Model_0.dat",
+      "size": 178984955
+    },
+    {
+      "category": "Unknown",
+      "extension": "fxdat",
+      "file_name": "nmplFxShader.fxdat",
+      "relative_path": "Data/Model/nmplFxShader.fxdat",
+      "size": 695360
+    },
+    {
+      "category": "Unknown",
+      "extension": "fxdat",
+      "file_name": "nmplFxShaderPbr.fxdat",
+      "relative_path": "Data/Model/nmplFxShaderPbr.fxdat",
+      "size": 833680
+    },
+    {
+      "category": "Unknown",
+      "extension": "fxdat",
+      "file_name": "nmplFxShaderPost.fxdat",
+      "relative_path": "Data/Model/nmplFxShaderPost.fxdat",
+      "size": 30800
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "RogueMap_0.dat",
+      "relative_path": "Data/RogueMap/RogueMap_0.dat",
+      "size": 539648
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "ICON00.PNG",
+      "relative_path": "Data/SaveIcon/ICON00.PNG",
+      "size": 252608
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "ICON01.png",
+      "relative_path": "Data/SaveIcon/ICON01.png",
+      "size": 263061
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "ICON02.png",
+      "relative_path": "Data/SaveIcon/ICON02.png",
+      "size": 270120
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Script.dat",
+      "relative_path": "Data/Script/Script.dat",
+      "size": 1403848
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Talk.dat",
+      "relative_path": "Data/Script/Talk.dat",
+      "size": 261666
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Sound_BGM_0.dat",
+      "relative_path": "Data/Sound_BGM/Sound_BGM_0.dat",
+      "size": 69718528
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Sound_SE_0.dat",
+      "relative_path": "Data/Sound_SE/Sound_SE_0.dat",
+      "size": 6279168
+    },
+    {
+      "category": "Executable",
+      "extension": "eboot.bin",
+      "file_name": "eboot.bin",
+      "relative_path": "eboot.bin",
+      "size": 5836056
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "eboot.bin.esbak",
+      "relative_path": "eboot.bin.esbak",
+      "size": 5861272
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libc.prx",
+      "relative_path": "sce_module/libc.prx",
+      "size": 1284392
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "libc.prx.esbak",
+      "relative_path": "sce_module/libc.prx.esbak",
+      "size": 1335912
+    },
+    {
+      "category": "Executable",
+      "extension": "sprx",
+      "file_name": "right.sprx",
+      "relative_path": "sce_sys/about/right.sprx",
+      "size": 12512
+    },
+    {
+      "category": "Metadata",
+      "extension": "auth_info",
+      "file_name": "right.sprx.auth_info",
+      "relative_path": "sce_sys/about/right.sprx.auth_info",
+      "size": 136
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "right.sprx.esbak",
+      "relative_path": "sce_sys/about/right.sprx.esbak",
+      "size": 66704
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "ext_info.dat",
+      "relative_path": "sce_sys/ext_info.dat",
+      "size": 44
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "icon0.dds",
+      "relative_path": "sce_sys/icon0.dds",
+      "size": 262292
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "icon0.png",
+      "relative_path": "sce_sys/icon0.png",
+      "size": 195612
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "keystone",
+      "relative_path": "sce_sys/keystone",
+      "size": 96
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "nptitle.dat",
+      "relative_path": "sce_sys/nptitle.dat",
+      "size": 160
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "param.json",
+      "relative_path": "sce_sys/param.json",
+      "size": 2657
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic0.dds",
+      "relative_path": "sce_sys/pic0.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "pic0.png",
+      "relative_path": "sce_sys/pic0.png",
+      "size": 2910993
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic1.dds",
+      "relative_path": "sce_sys/pic1.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic2.dds",
+      "relative_path": "sce_sys/pic2.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "sce_sys/trophy2/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "trophy00.ucp",
+      "relative_path": "sce_sys/trophy2/trophy00.ucp",
+      "size": 4364368
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "sce_sys/uds/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "uds00.ucp",
+      "relative_path": "sce_sys/uds/uds00.ucp",
+      "size": 28400
+    }
+  ],
+  "by_category": {
+    "executable": 3,
+    "metadata": 122,
+    "texture": 9,
+    "unknown": 7
+  },
+  "by_extension": {
+    "(no_ext)": 1,
+    "auth_info": 1,
+    "dat": 115,
+    "dds": 4,
+    "eboot.bin": 1,
+    "esbak": 3,
+    "fxdat": 3,
+    "json": 1,
+    "otf": 3,
+    "png": 5,
+    "prx": 1,
+    "sprx": 1,
+    "ucp": 2
+  },
+  "game": "void tRrLM Void Terrarium PS5 Dump v1.000",
+  "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Void.tRrLM();++.Void.Terrarium++-PPSA03061-USA-PS5\\void tRrLM Void Terrarium PS5 Dump v1.000",
+  "total_bytes": 1759757899,
+  "total_files": 141
+}

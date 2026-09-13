@@ -1,0 +1,52 @@
+{
+  "game": "PPSA02787-app0",
+  "sony": [
+    {
+      "exports": 11,
+      "file_name": "libSceJobManager.prx",
+      "import_libs": [
+        "libSceAgc",
+        "libSceAgcDriver",
+        "libSceLibcInternal",
+        "libSceRazorCpu",
+        "libkernel",
+        "ulobjmgr"
+      ],
+      "imports": 144,
+      "kind": "sony",
+      "module_name": "libSceJobManager",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceLibcInternal.prx",
+        "libSceAgcDriver.prx",
+        "libSceAgc.prx",
+        "ulobjmgr.prx",
+        "libSceRazorCpu.prx"
+      ],
+      "parseable": true,
+      "sha256": "0b69ea79bb3b30f11cb70c3f8fafc6e553ddb3c0fd6244d12c19fa7b72ac28f8"
+    },
+    {
+      "exports": 2571,
+      "file_name": "libc.prx",
+      "import_libs": [
+        "libSceLibcInternalExt",
+        "libSceSysmodule",
+        "libkernel"
+      ],
+      "imports": 103,
+      "kind": "sony",
+      "module_name": "libc",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceLibcInternal.prx",
+        "libSceSysmodule.prx"
+      ],
+      "parseable": true,
+      "sha256": "6d1c1786f5ab64b51b6dd7ee05b00e1a16ae02a9c9e37045d275335abcea215a"
+    }
+  ],
+  "third_party": [],
+  "title_id": "PPSA02787",
+  "unknown": []
+}

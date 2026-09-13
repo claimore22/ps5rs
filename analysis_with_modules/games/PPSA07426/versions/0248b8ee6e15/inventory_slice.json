@@ -1,0 +1,549 @@
+{
+  "artifacts": [
+    {
+      "category": "Unknown",
+      "extension": "complete",
+      "file_name": "PPSA07426.complete",
+      "relative_path": "PPSA07426.complete",
+      "size": 0
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "contentids.json",
+      "relative_path": "contentids.json",
+      "size": 87
+    },
+    {
+      "category": "Executable",
+      "extension": "eboot.bin",
+      "file_name": "eboot.bin",
+      "relative_path": "eboot.bin",
+      "size": 152373147
+    },
+    {
+      "category": "Unknown",
+      "extension": "ini",
+      "file_name": "manifest.ini",
+      "relative_path": "engine/saved/config/ps5/manifest.ini",
+      "size": 22
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "hello_baker_building.mp4",
+      "relative_path": "helloneighbor2/content/movies/cctv/hello_baker_building.mp4",
+      "size": 1102839
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "hello_baker_closeup.mp4",
+      "relative_path": "helloneighbor2/content/movies/cctv/hello_baker_closeup.mp4",
+      "size": 856035
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "hello_baker_road.mp4",
+      "relative_path": "helloneighbor2/content/movies/cctv/hello_baker_road.mp4",
+      "size": 1066383
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "hello_cop_building.mp4",
+      "relative_path": "helloneighbor2/content/movies/cctv/hello_cop_building.mp4",
+      "size": 526737
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "hello_cop_closeup.mp4",
+      "relative_path": "helloneighbor2/content/movies/cctv/hello_cop_closeup.mp4",
+      "size": 735234
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "hello_cop_road.mp4",
+      "relative_path": "helloneighbor2/content/movies/cctv/hello_cop_road.mp4",
+      "size": 1260775
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "hello_mayor_building.mp4",
+      "relative_path": "helloneighbor2/content/movies/cctv/hello_mayor_building.mp4",
+      "size": 472564
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "hello_mayor_closeup.mp4",
+      "relative_path": "helloneighbor2/content/movies/cctv/hello_mayor_closeup.mp4",
+      "size": 218143
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "hello_mayor_road.mp4",
+      "relative_path": "helloneighbor2/content/movies/cctv/hello_mayor_road.mp4",
+      "size": 1388056
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "hello_taxidermist_building.mp4",
+      "relative_path": "helloneighbor2/content/movies/cctv/hello_taxidermist_building.mp4",
+      "size": 758732
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "hello_taxidermist_closeup.mp4",
+      "relative_path": "helloneighbor2/content/movies/cctv/hello_taxidermist_closeup.mp4",
+      "size": 1333035
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "hello_taxidermist_road.mp4",
+      "relative_path": "helloneighbor2/content/movies/cctv/hello_taxidermist_road.mp4",
+      "size": 1251838
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "loadingimg.mp4",
+      "relative_path": "helloneighbor2/content/movies/loadingimg.mp4",
+      "size": 5309723
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "video_compose_tv_1.mp4",
+      "relative_path": "helloneighbor2/content/movies/video_compose_tv_1.mp4",
+      "size": 57926622
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "video_compose_tv_2.mp4",
+      "relative_path": "helloneighbor2/content/movies/video_compose_tv_2.mp4",
+      "size": 59219797
+    },
+    {
+      "category": "Archive",
+      "extension": "pak",
+      "file_name": "helloneighbor2-ps5.pak",
+      "relative_path": "helloneighbor2/content/paks/helloneighbor2-ps5.pak",
+      "size": 10928796401
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akaudioinput.prx",
+      "relative_path": "prx/akaudioinput.prx",
+      "size": 11249
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akcompressor.prx",
+      "relative_path": "prx/akcompressor.prx",
+      "size": 20497
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akdelay.prx",
+      "relative_path": "prx/akdelay.prx",
+      "size": 10765
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akexpander.prx",
+      "relative_path": "prx/akexpander.prx",
+      "size": 20577
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akflanger.prx",
+      "relative_path": "prx/akflanger.prx",
+      "size": 26829
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akgain.prx",
+      "relative_path": "prx/akgain.prx",
+      "size": 10493
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akguitardistortion.prx",
+      "relative_path": "prx/akguitardistortion.prx",
+      "size": 30825
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akharmonizer.prx",
+      "relative_path": "prx/akharmonizer.prx",
+      "size": 89345
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akmatrixreverb.prx",
+      "relative_path": "prx/akmatrixreverb.prx",
+      "size": 53557
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akmotion.prx",
+      "relative_path": "prx/akmotion.prx",
+      "size": 25023
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akparametriceq.prx",
+      "relative_path": "prx/akparametriceq.prx",
+      "size": 18037
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akpeaklimiter.prx",
+      "relative_path": "prx/akpeaklimiter.prx",
+      "size": 15489
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akpitchshifter.prx",
+      "relative_path": "prx/akpitchshifter.prx",
+      "size": 24149
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akrecorder.prx",
+      "relative_path": "prx/akrecorder.prx",
+      "size": 20049
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akreflect.prx",
+      "relative_path": "prx/akreflect.prx",
+      "size": 51277
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akroomverb.prx",
+      "relative_path": "prx/akroomverb.prx",
+      "size": 104113
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aksilencegenerator.prx",
+      "relative_path": "prx/aksilencegenerator.prx",
+      "size": 8569
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aksinetone.prx",
+      "relative_path": "prx/aksinetone.prx",
+      "size": 9681
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aksoundseedair.prx",
+      "relative_path": "prx/aksoundseedair.prx",
+      "size": 60213
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aksoundseedimpact.prx",
+      "relative_path": "prx/aksoundseedimpact.prx",
+      "size": 15941
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akstereodelay.prx",
+      "relative_path": "prx/akstereodelay.prx",
+      "size": 27921
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aksynthone.prx",
+      "relative_path": "prx/aksynthone.prx",
+      "size": 32625
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aktimestretch.prx",
+      "relative_path": "prx/aktimestretch.prx",
+      "size": 73585
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aktonegen.prx",
+      "relative_path": "prx/aktonegen.prx",
+      "size": 29981
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aktremolo.prx",
+      "relative_path": "prx/aktremolo.prx",
+      "size": 15741
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akvorbishwaccelerator.prx",
+      "relative_path": "prx/akvorbishwaccelerator.prx",
+      "size": 6373
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "auro.prx",
+      "relative_path": "prx/auro.prx",
+      "size": 3403673
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "izotope.prx",
+      "relative_path": "prx/izotope.prx",
+      "size": 452157
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "masteringsuite.prx",
+      "relative_path": "prx/masteringsuite.prx",
+      "size": 95972
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "mcdsp.prx",
+      "relative_path": "prx/mcdsp.prx",
+      "size": 148201
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "sceaudio3d.prx",
+      "relative_path": "prx/sceaudio3d.prx",
+      "size": 33423
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceFace.prx",
+      "relative_path": "sce_module/libSceFace.prx",
+      "size": 302748
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceFaceTracker.prx",
+      "relative_path": "sce_module/libSceFaceTracker.prx",
+      "size": 2610112
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceJobManager.prx",
+      "relative_path": "sce_module/libSceJobManager.prx",
+      "size": 70928
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceNpCppWebApi.prx",
+      "relative_path": "sce_module/libSceNpCppWebApi.prx",
+      "size": 7852416
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libScePfs.prx",
+      "relative_path": "sce_module/libScePfs.prx",
+      "size": 1343136
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libc.prx",
+      "relative_path": "sce_module/libc.prx",
+      "size": 1314024
+    },
+    {
+      "category": "Executable",
+      "extension": "sprx",
+      "file_name": "right.sprx",
+      "relative_path": "sce_sys/about/right.sprx",
+      "size": 12448
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "disc_info.dat",
+      "relative_path": "sce_sys/disc_info.dat",
+      "size": 6640
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "icon0.dds",
+      "relative_path": "sce_sys/icon0.dds",
+      "size": 262292
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "icon0.png",
+      "relative_path": "sce_sys/icon0.png",
+      "size": 425404
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "keystone",
+      "relative_path": "sce_sys/keystone",
+      "size": 96
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "nptitle.dat",
+      "relative_path": "sce_sys/nptitle.dat",
+      "size": 160
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "param.json",
+      "relative_path": "sce_sys/param.json",
+      "size": 2473
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "pfs-version.dat",
+      "relative_path": "sce_sys/pfs-version.dat",
+      "size": 10
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic0.dds",
+      "relative_path": "sce_sys/pic0.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "pic0.png",
+      "relative_path": "sce_sys/pic0.png",
+      "size": 10299326
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic1.dds",
+      "relative_path": "sce_sys/pic1.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic2.dds",
+      "relative_path": "sce_sys/pic2.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "sce_sys/trophy2/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "trophy00.ucp",
+      "relative_path": "sce_sys/trophy2/trophy00.ucp",
+      "size": 1293776
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "sce_sys/uds/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "uds00.ucp",
+      "relative_path": "sce_sys/uds/uds00.ucp",
+      "size": 22352
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "ue4commandline.txt",
+      "relative_path": "ue4commandline.txt",
+      "size": 48
+    }
+  ],
+  "by_category": {
+    "archive": 1,
+    "executable": 39,
+    "metadata": 10,
+    "texture": 6,
+    "unknown": 18
+  },
+  "by_extension": {
+    "(no_ext)": 1,
+    "complete": 1,
+    "dat": 5,
+    "dds": 4,
+    "eboot.bin": 1,
+    "ini": 1,
+    "json": 2,
+    "mp4": 15,
+    "pak": 1,
+    "png": 2,
+    "prx": 37,
+    "sprx": 1,
+    "txt": 1,
+    "ucp": 2
+  },
+  "game": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+  "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+  "total_bytes": 11270245597,
+  "total_files": 74
+}

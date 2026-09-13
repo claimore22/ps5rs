@@ -1,0 +1,37 @@
+{
+  "details": [
+    {
+      "confidence": "high",
+      "frequency": 11,
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]",
+        "Hello Neighbor 2 - [PPSA07426]",
+        "Monster Boy and the Cursed Kingdom - [PPSA02787]",
+        "Neko Rescue Tale - [PPSA13871]",
+        "OCTOPATH TRAVELER II - [PPSA09809]",
+        "Oxide Room 104 - [PPSA07653]",
+        "Raiden III x MIKADO MANIAX - [PPSA13356]",
+        "Stray - [PPSA02100]",
+        "The Pathless - [PPSA01825]"
+      ],
+      "libraries": [
+        "libSceAgc"
+      ],
+      "nid": "k0E7vkgqAuE",
+      "remu_name": null
+    }
+  ],
+  "game": {
+    "error": null,
+    "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Stray-PPSA02100-USA-PS5\\PPSA02100 -  Stray\\eboot.bin",
+    "imports": 2040,
+    "known": 2039,
+    "name": "Stray - [PPSA02100]",
+    "unknown": 1,
+    "unknown_nids": [
+      "k0E7vkgqAuE"
+    ]
+  }
+}

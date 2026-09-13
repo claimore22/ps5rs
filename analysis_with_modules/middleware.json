@@ -8257,10 +8257,36 @@
         }
       ],
       "unknown": []
+    },
+    {
+      "game": "void tRrLM Void Terrarium PS5 Dump v1.000",
+      "third_party": [],
+      "sony": [
+        {
+          "file_name": "libc.prx",
+          "module_name": "libc",
+          "kind": "sony",
+          "sha256": "fc7c2ad5d2b53b60b17b77d6648638617698af1bb9ad3526662d93d483c3dd68",
+          "parseable": true,
+          "imports": 102,
+          "exports": 2565,
+          "import_libs": [
+            "libSceLibcInternalExt",
+            "libSceSysmodule",
+            "libkernel"
+          ],
+          "needed_files": [
+            "libkernel.prx",
+            "libSceLibcInternal.prx",
+            "libSceSysmodule.prx"
+          ]
+        }
+      ],
+      "unknown": []
     }
   ],
-  "total_prx": 328,
+  "total_prx": 329,
   "third_party_modules": 184,
-  "sony_modules": 135,
+  "sony_modules": 136,
   "unknown_modules": 9
 }

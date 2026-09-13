@@ -1,0 +1,27 @@
+{
+  "game": "Dead.Cells-PPSA15552-USA-Game-v01.005-PS5",
+  "sony": [
+    {
+      "exports": 2574,
+      "file_name": "libc.prx",
+      "import_libs": [
+        "libSceLibcInternalExt",
+        "libSceSysmodule",
+        "libkernel"
+      ],
+      "imports": 104,
+      "kind": "sony",
+      "module_name": "libc",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceLibcInternal.prx",
+        "libSceSysmodule.prx"
+      ],
+      "parseable": true,
+      "sha256": "9f9a07efbfdccc581edebdb3ba958d8ecd44ce3ec670091d1dc6fe9e456ef832"
+    }
+  ],
+  "third_party": [],
+  "title_id": "PPSA15552",
+  "unknown": []
+}

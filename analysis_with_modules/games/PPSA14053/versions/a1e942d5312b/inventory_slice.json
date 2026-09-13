@@ -1,0 +1,3180 @@
+{
+  "artifacts": [
+    {
+      "category": "Unknown",
+      "extension": "complete",
+      "file_name": "PPSA14053.complete",
+      "relative_path": "PPSA14053.complete",
+      "size": 0
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "ambient.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/ambient.uasset",
+      "size": 1270
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "ambient_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/ambient_assets.uasset",
+      "size": 1298
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "ambient_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/ambient_streams.uasset",
+      "size": 1302
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "bgm.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/bgm.uasset",
+      "size": 1254
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "bgm_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/bgm_assets.uasset",
+      "size": 1282
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "bgm_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/bgm_streams.uasset",
+      "size": 1286
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "bgm_temp.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/bgm_temp.uasset",
+      "size": 1274
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "bgm_temp_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/bgm_temp_assets.uasset",
+      "size": 1302
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "bgm_temp_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/bgm_temp_streams.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "master.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/master.uasset",
+      "size": 1266
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "master_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/master_assets.uasset",
+      "size": 1294
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "master_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/master_streams.uasset",
+      "size": 1298
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "sfx.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/sfx.uasset",
+      "size": 1254
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "sfx_2.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/sfx_2.uasset",
+      "size": 1218
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "sfx_2_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/sfx_2_assets.uasset",
+      "size": 1250
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "sfx_2_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/sfx_2_streams.uasset",
+      "size": 1254
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "sfx_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/sfx_assets.uasset",
+      "size": 1282
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "sfx_boss_m0.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/sfx_boss_m0.uasset",
+      "size": 1286
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "sfx_boss_m0_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/sfx_boss_m0_assets.uasset",
+      "size": 1314
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "sfx_boss_m0_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/sfx_boss_m0_streams.uasset",
+      "size": 1318
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "sfx_boss_m1.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/sfx_boss_m1.uasset",
+      "size": 1286
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "sfx_boss_m1_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/sfx_boss_m1_assets.uasset",
+      "size": 1314
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "sfx_boss_m1_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/sfx_boss_m1_streams.uasset",
+      "size": 1318
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "sfx_boss_m2.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/sfx_boss_m2.uasset",
+      "size": 1286
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "sfx_boss_m2_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/sfx_boss_m2_assets.uasset",
+      "size": 1314
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "sfx_boss_m2_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/sfx_boss_m2_streams.uasset",
+      "size": 1318
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "sfx_enemy_m0.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/sfx_enemy_m0.uasset",
+      "size": 1290
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "sfx_enemy_m0_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/sfx_enemy_m0_assets.uasset",
+      "size": 1318
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "sfx_enemy_m0_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/sfx_enemy_m0_streams.uasset",
+      "size": 1322
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "sfx_enemy_m1.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/sfx_enemy_m1.uasset",
+      "size": 1290
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "sfx_enemy_m1_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/sfx_enemy_m1_assets.uasset",
+      "size": 1318
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "sfx_enemy_m1_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/sfx_enemy_m1_streams.uasset",
+      "size": 1322
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "sfx_enemy_m2.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/sfx_enemy_m2.uasset",
+      "size": 1290
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "sfx_enemy_m2_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/sfx_enemy_m2_assets.uasset",
+      "size": 1318
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "sfx_enemy_m2_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/sfx_enemy_m2_streams.uasset",
+      "size": 1322
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "sfx_npc.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/sfx_npc.uasset",
+      "size": 1230
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "sfx_npc_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/sfx_npc_assets.uasset",
+      "size": 1258
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "sfx_npc_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/sfx_npc_streams.uasset",
+      "size": 1262
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "sfx_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/sfx_streams.uasset",
+      "size": 1286
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "snapshot.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/snapshot.uasset",
+      "size": 1274
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "snapshot_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/snapshot_assets.uasset",
+      "size": 1302
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "snapshot_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/snapshot_streams.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "tmp",
+      "file_name": "t2336t81468t158.tmp",
+      "relative_path": "afterimage/content/assets/audio/banks/t2336t81468t158.tmp",
+      "size": 1286
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "ui.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/ui.uasset",
+      "size": 1250
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "ui_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/ui_assets.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "ui_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/ui_streams.uasset",
+      "size": 1282
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice.uasset",
+      "size": 1222
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_assets.uasset",
+      "size": 1250
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_battle.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_battle.uasset",
+      "size": 1286
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_battle_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_battle_assets.uasset",
+      "size": 1314
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_battle_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_battle_streams.uasset",
+      "size": 1318
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv00.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv00.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv00_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv00_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv00_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv00_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv01.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv01.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv01_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv01_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv01_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv01_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv02.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv02.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv02_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv02_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv02_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv02_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv05.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv05.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv05_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv05_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv05_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv05_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv10.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv10.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv10_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv10_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv10_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv10_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv11.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv11.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv11_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv11_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv11_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv11_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv12.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv12.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv12_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv12_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv12_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv12_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv14.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv14.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv14_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv14_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv14_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv14_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv15.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv15.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv15_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv15_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv15_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv15_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv16.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv16.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv16_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv16_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv16_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv16_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv17.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv17.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv17_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv17_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv17_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv17_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv18.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv18.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv18_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv18_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv18_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv18_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv23.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv23.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv23_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv23_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv23_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv23_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv25.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv25.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv25_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv25_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv25_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv25_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv27.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv27.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv27_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv27_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_lv27_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_lv27_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_side.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_side.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_side_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_side_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_side_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_side_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_voice.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_voice.uasset",
+      "size": 1282
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_voice_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_voice_assets.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_en_story_voice_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_en_story_voice_streams.uasset",
+      "size": 1314
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_battle.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_battle.uasset",
+      "size": 1286
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_battle_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_battle_assets.uasset",
+      "size": 1314
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_battle_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_battle_streams.uasset",
+      "size": 1318
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv00.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv00.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv00_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv00_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv00_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv00_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv01.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv01.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv01_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv01_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv01_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv01_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv02.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv02.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv02_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv02_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv02_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv02_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv05.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv05.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv05_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv05_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv05_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv05_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv10.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv10.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv10_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv10_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv10_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv10_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv11.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv11.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv11_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv11_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv11_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv11_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv12.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv12.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv12_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv12_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv12_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv12_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv14.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv14.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv14_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv14_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv14_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv14_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv15.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv15.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv15_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv15_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv15_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv15_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv16.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv16.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv16_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv16_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv16_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv16_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv17.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv17.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv17_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv17_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv17_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv17_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv18.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv18.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv18_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv18_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv18_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv18_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv23.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv23.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv23_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv23_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv23_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv23_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv25.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv25.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv25_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv25_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv25_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv25_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv27.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv27.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv27_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv27_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_lv27_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_lv27_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_side.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_side.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_side_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_side_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_jp_story_side_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_jp_story_side_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_streams.uasset",
+      "size": 1254
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_battle.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_battle.uasset",
+      "size": 1286
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_battle_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_battle_assets.uasset",
+      "size": 1314
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_battle_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_battle_streams.uasset",
+      "size": 1318
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv00.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv00.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv00_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv00_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv00_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv00_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv01.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv01.uasset",
+      "size": 1318
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv01_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv01_assets.uasset",
+      "size": 1346
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv01_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv01_streams.uasset",
+      "size": 1350
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv02.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv02.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv02_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv02_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv02_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv02_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv05.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv05.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv05_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv05_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv05_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv05_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv10.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv10.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv10_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv10_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv10_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv10_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv11.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv11.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv11_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv11_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv11_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv11_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv12.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv12.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv12_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv12_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv12_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv12_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv14.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv14.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv14_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv14_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv14_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv14_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv15.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv15.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv15_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv15_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv15_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv15_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv16.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv16.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv16_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv16_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv16_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv16_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv17.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv17.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv17_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv17_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv17_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv17_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv18.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv18.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv18_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv18_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv18_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv18_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv23.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv23.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv23_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv23_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv23_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv23_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv25.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv25.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv25_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv25_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv25_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv25_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv27.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv27.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv27_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv27_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_lv27_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_lv27_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_side.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_side.uasset",
+      "size": 1278
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_side_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_side_assets.uasset",
+      "size": 1306
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_side_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_side_streams.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_voice.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_voice.uasset",
+      "size": 1282
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_voice_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_voice_assets.uasset",
+      "size": 1310
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "voice_zh_story_voice_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/voice_zh_story_voice_streams.uasset",
+      "size": 1314
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "zupdate_1.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/zupdate_1.uasset",
+      "size": 1234
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "zupdate_1_assets.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/zupdate_1_assets.uasset",
+      "size": 1266
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "zupdate_1_streams.uasset",
+      "relative_path": "afterimage/content/assets/audio/banks/zupdate_1_streams.uasset",
+      "size": 1270
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "ambient.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/ambient.assets.bank",
+      "size": 218464
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "ambient.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/ambient.bank",
+      "size": 86140
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "ambient.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/ambient.streams.bank",
+      "size": 21175264
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "bgm.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/bgm.assets.bank",
+      "size": 482
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "bgm.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/bgm.bank",
+      "size": 113580
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "bgm.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/bgm.streams.bank",
+      "size": 82001888
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "master.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/master.assets.bank",
+      "size": 482
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "master.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/master.bank",
+      "size": 35734
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "master.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/master.streams.bank",
+      "size": 482
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "master.strings.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/master.strings.bank",
+      "size": 406762
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "sfx.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/sfx.assets.bank",
+      "size": 4710240
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "sfx.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/sfx.bank",
+      "size": 257402
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "sfx.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/sfx.streams.bank",
+      "size": 3309216
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "sfx_2.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/sfx_2.assets.bank",
+      "size": 4253120
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "sfx_2.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/sfx_2.bank",
+      "size": 320898
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "sfx_2.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/sfx_2.streams.bank",
+      "size": 88736
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "sfx_boss_m0.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/sfx_boss_m0.assets.bank",
+      "size": 7628672
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "sfx_boss_m0.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/sfx_boss_m0.bank",
+      "size": 338106
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "sfx_boss_m0.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/sfx_boss_m0.streams.bank",
+      "size": 482
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "sfx_boss_m1.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/sfx_boss_m1.assets.bank",
+      "size": 21680032
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "sfx_boss_m1.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/sfx_boss_m1.bank",
+      "size": 802010
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "sfx_boss_m1.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/sfx_boss_m1.streams.bank",
+      "size": 1294880
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "sfx_boss_m2.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/sfx_boss_m2.assets.bank",
+      "size": 17020800
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "sfx_boss_m2.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/sfx_boss_m2.bank",
+      "size": 611420
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "sfx_boss_m2.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/sfx_boss_m2.streams.bank",
+      "size": 1175520
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "sfx_enemy_m0.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/sfx_enemy_m0.assets.bank",
+      "size": 20026368
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "sfx_enemy_m0.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/sfx_enemy_m0.bank",
+      "size": 1038100
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "sfx_enemy_m0.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/sfx_enemy_m0.streams.bank",
+      "size": 482
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "sfx_enemy_m1.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/sfx_enemy_m1.assets.bank",
+      "size": 28952864
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "sfx_enemy_m1.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/sfx_enemy_m1.bank",
+      "size": 1197646
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "sfx_enemy_m1.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/sfx_enemy_m1.streams.bank",
+      "size": 927488
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "sfx_enemy_m2.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/sfx_enemy_m2.assets.bank",
+      "size": 12186080
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "sfx_enemy_m2.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/sfx_enemy_m2.bank",
+      "size": 417764
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "sfx_enemy_m2.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/sfx_enemy_m2.streams.bank",
+      "size": 2107360
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "sfx_npc.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/sfx_npc.assets.bank",
+      "size": 9054528
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "sfx_npc.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/sfx_npc.bank",
+      "size": 204746
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "sfx_npc.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/sfx_npc.streams.bank",
+      "size": 1196064
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "snapshot.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/snapshot.assets.bank",
+      "size": 149824
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "snapshot.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/snapshot.bank",
+      "size": 15800
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "snapshot.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/snapshot.streams.bank",
+      "size": 482
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "ui.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/ui.assets.bank",
+      "size": 1104256
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "ui.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/ui.bank",
+      "size": 53068
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "ui.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/ui.streams.bank",
+      "size": 482
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_battle.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_battle.assets.bank",
+      "size": 290784
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_battle.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_battle.bank",
+      "size": 26144
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_battle.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_battle.streams.bank",
+      "size": 482
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv00.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv00.assets.bank",
+      "size": 682592
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv00.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv00.bank",
+      "size": 21696
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv00.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv00.streams.bank",
+      "size": 125696
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv01.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv01.assets.bank",
+      "size": 2926048
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv01.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv01.bank",
+      "size": 100648
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv01.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv01.streams.bank",
+      "size": 551776
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv02.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv02.assets.bank",
+      "size": 192384
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv02.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv02.bank",
+      "size": 8352
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv02.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv02.streams.bank",
+      "size": 482
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv05.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv05.assets.bank",
+      "size": 995072
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv05.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv05.bank",
+      "size": 43936
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv05.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv05.streams.bank",
+      "size": 650784
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv10.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv10.assets.bank",
+      "size": 704928
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv10.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv10.bank",
+      "size": 27256
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv10.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv10.streams.bank",
+      "size": 341920
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv11.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv11.assets.bank",
+      "size": 685088
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv11.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv11.bank",
+      "size": 22808
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv11.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv11.streams.bank",
+      "size": 482
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv12.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv12.assets.bank",
+      "size": 2043744
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv12.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv12.bank",
+      "size": 69512
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv12.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv12.streams.bank",
+      "size": 482
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv14.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv14.assets.bank",
+      "size": 1136608
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv14.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv14.bank",
+      "size": 41712
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv14.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv14.streams.bank",
+      "size": 171264
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv15.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv15.assets.bank",
+      "size": 2792416
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv15.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv15.bank",
+      "size": 99536
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv15.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv15.streams.bank",
+      "size": 784192
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv16.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv16.assets.bank",
+      "size": 3952736
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv16.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv16.bank",
+      "size": 182936
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv16.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv16.streams.bank",
+      "size": 5519264
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv17.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv17.assets.bank",
+      "size": 593856
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv17.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv17.bank",
+      "size": 20584
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv17.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv17.streams.bank",
+      "size": 167424
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv18.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv18.assets.bank",
+      "size": 2730432
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv18.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv18.bank",
+      "size": 107320
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv18.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv18.streams.bank",
+      "size": 3174432
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv23.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv23.assets.bank",
+      "size": 3482624
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv23.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv23.bank",
+      "size": 130672
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv23.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv23.streams.bank",
+      "size": 1531008
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv25.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv25.assets.bank",
+      "size": 6461440
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv25.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv25.bank",
+      "size": 242984
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv25.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv25.streams.bank",
+      "size": 3605440
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv27.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv27.assets.bank",
+      "size": 75552
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv27.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv27.bank",
+      "size": 5016
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_lv27.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_lv27.streams.bank",
+      "size": 130816
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_side.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_side.assets.bank",
+      "size": 29597728
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_side.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_side.bank",
+      "size": 1202640
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_side.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_side.streams.bank",
+      "size": 22321248
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_voice.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_voice.assets.bank",
+      "size": 244608
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_voice.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_voice.bank",
+      "size": 7240
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_en_story_voice.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_en_story_voice.streams.bank",
+      "size": 482
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_battle.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_battle.assets.bank",
+      "size": 287232
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_battle.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_battle.bank",
+      "size": 13912
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_battle.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_battle.streams.bank",
+      "size": 482
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv00.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv00.assets.bank",
+      "size": 693056
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv00.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv00.bank",
+      "size": 21696
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv00.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv00.streams.bank",
+      "size": 314112
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv01.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv01.assets.bank",
+      "size": 2931392
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv01.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv01.bank",
+      "size": 100648
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv01.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv01.streams.bank",
+      "size": 1283424
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv02.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv02.assets.bank",
+      "size": 238304
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv02.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv02.bank",
+      "size": 8352
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv02.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv02.streams.bank",
+      "size": 482
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv05.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv05.assets.bank",
+      "size": 1160704
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv05.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv05.bank",
+      "size": 45048
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv05.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv05.streams.bank",
+      "size": 842112
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv10.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv10.assets.bank",
+      "size": 690432
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv10.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv10.bank",
+      "size": 27256
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv10.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv10.streams.bank",
+      "size": 593824
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv11.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv11.assets.bank",
+      "size": 535552
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv11.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv11.bank",
+      "size": 16136
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv11.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv11.streams.bank",
+      "size": 95936
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv12.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv12.assets.bank",
+      "size": 1862752
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv12.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv12.bank",
+      "size": 70624
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv12.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv12.streams.bank",
+      "size": 967008
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv14.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv14.assets.bank",
+      "size": 1388928
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv14.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv14.bank",
+      "size": 41712
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv14.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv14.streams.bank",
+      "size": 216544
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv15.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv15.assets.bank",
+      "size": 2914592
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv15.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv15.bank",
+      "size": 100648
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv15.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv15.streams.bank",
+      "size": 1214624
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv16.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv16.assets.bank",
+      "size": 4228128
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv16.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv16.bank",
+      "size": 182936
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv16.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv16.streams.bank",
+      "size": 6735840
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv17.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv17.assets.bank",
+      "size": 595296
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv17.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv17.bank",
+      "size": 20584
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv17.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv17.streams.bank",
+      "size": 161344
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv18.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv18.assets.bank",
+      "size": 1990720
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv18.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv18.bank",
+      "size": 108432
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv18.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv18.streams.bank",
+      "size": 6512192
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv23.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv23.assets.bank",
+      "size": 3831360
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv23.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv23.bank",
+      "size": 134008
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv23.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv23.streams.bank",
+      "size": 2198336
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv25.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv25.assets.bank",
+      "size": 5914944
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv25.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv25.bank",
+      "size": 249656
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv25.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv25.streams.bank",
+      "size": 7651904
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv27.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv27.assets.bank",
+      "size": 69632
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv27.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv27.bank",
+      "size": 5016
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_lv27.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_lv27.streams.bank",
+      "size": 116256
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_side.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_side.assets.bank",
+      "size": 30538432
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_side.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_side.bank",
+      "size": 1217096
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_jp_story_side.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_jp_story_side.streams.bank",
+      "size": 32852896
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_battle.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_battle.assets.bank",
+      "size": 546880
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_battle.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_battle.bank",
+      "size": 30592
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_battle.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_battle.streams.bank",
+      "size": 348192
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv00.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv00.assets.bank",
+      "size": 696768
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv00.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv00.bank",
+      "size": 21696
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv00.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv00.streams.bank",
+      "size": 304992
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv01.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv01.assets.bank",
+      "size": 3211168
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv01.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv01.bank",
+      "size": 115104
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv01.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv01.streams.bank",
+      "size": 994400
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv02.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv02.assets.bank",
+      "size": 222944
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv02.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv02.bank",
+      "size": 10576
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv02.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv02.streams.bank",
+      "size": 98336
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv05.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv05.assets.bank",
+      "size": 959936
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv05.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv05.bank",
+      "size": 46160
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv05.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv05.streams.bank",
+      "size": 954720
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv10.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv10.assets.bank",
+      "size": 577184
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv10.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv10.bank",
+      "size": 26144
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv10.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv10.streams.bank",
+      "size": 540544
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv11.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv11.assets.bank",
+      "size": 608064
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv11.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv11.bank",
+      "size": 20584
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv11.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv11.streams.bank",
+      "size": 95456
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv12.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv12.assets.bank",
+      "size": 2119328
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv12.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv12.bank",
+      "size": 70624
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv12.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv12.streams.bank",
+      "size": 259872
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv14.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv14.assets.bank",
+      "size": 1609504
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv14.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv14.bank",
+      "size": 49496
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv14.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv14.streams.bank",
+      "size": 112896
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv15.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv15.assets.bank",
+      "size": 2917120
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv15.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv15.bank",
+      "size": 101760
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv15.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv15.streams.bank",
+      "size": 1118464
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv16.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv16.assets.bank",
+      "size": 3974656
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv16.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv16.bank",
+      "size": 185160
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv16.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv16.streams.bank",
+      "size": 7569312
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv17.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv17.assets.bank",
+      "size": 668544
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv17.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv17.bank",
+      "size": 20584
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv17.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv17.streams.bank",
+      "size": 92256
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv18.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv18.assets.bank",
+      "size": 2255776
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv18.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv18.bank",
+      "size": 108432
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv18.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv18.streams.bank",
+      "size": 4858496
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv23.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv23.assets.bank",
+      "size": 3956576
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv23.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv23.bank",
+      "size": 135120
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv23.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv23.streams.bank",
+      "size": 2183328
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv25.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv25.assets.bank",
+      "size": 6901664
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv25.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv25.bank",
+      "size": 248544
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv25.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv25.streams.bank",
+      "size": 4862816
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv27.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv27.assets.bank",
+      "size": 72352
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv27.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv27.bank",
+      "size": 5016
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_lv27.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_lv27.streams.bank",
+      "size": 112736
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_side.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_side.assets.bank",
+      "size": 32146976
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_side.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_side.bank",
+      "size": 1214872
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "voice_zh_story_side.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/voice_zh_story_side.streams.bank",
+      "size": 25683104
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "zupdate_1.assets.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/zupdate_1.assets.bank",
+      "size": 3068096
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "zupdate_1.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/zupdate_1.bank",
+      "size": 168042
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "zupdate_1.streams.bank",
+      "relative_path": "afterimage/content/assets/audio/ps5/zupdate_1.streams.bank",
+      "size": 482
+    },
+    {
+      "category": "Archive",
+      "extension": "pak",
+      "file_name": "afterimage-ps5.pak",
+      "relative_path": "afterimage/content/paks/afterimage-ps5.pak",
+      "size": 737162758
+    },
+    {
+      "category": "Unknown",
+      "extension": "ucas",
+      "file_name": "afterimage-ps5.ucas",
+      "relative_path": "afterimage/content/paks/afterimage-ps5.ucas",
+      "size": 5513396128
+    },
+    {
+      "category": "Unknown",
+      "extension": "utoc",
+      "file_name": "afterimage-ps5.utoc",
+      "relative_path": "afterimage/content/paks/afterimage-ps5.utoc",
+      "size": 6927846
+    },
+    {
+      "category": "Unknown",
+      "extension": "ucas",
+      "file_name": "global.ucas",
+      "relative_path": "afterimage/content/paks/global.ucas",
+      "size": 1101904
+    },
+    {
+      "category": "Unknown",
+      "extension": "utoc",
+      "file_name": "global.utoc",
+      "relative_path": "afterimage/content/paks/global.utoc",
+      "size": 537
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "contentids.json",
+      "relative_path": "contentids.json",
+      "size": 87
+    },
+    {
+      "category": "Executable",
+      "extension": "eboot.bin",
+      "file_name": "eboot.bin",
+      "relative_path": "eboot.bin",
+      "size": 135680619
+    },
+    {
+      "category": "Unknown",
+      "extension": "ini",
+      "file_name": "manifest.ini",
+      "relative_path": "engine/saved/config/ps5/manifest.ini",
+      "size": 22
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libfmod.prx",
+      "relative_path": "prx/libfmod.prx",
+      "size": 1662724
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libfmodstudio.prx",
+      "relative_path": "prx/libfmodstudio.prx",
+      "size": 1479237
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceFace.prx",
+      "relative_path": "sce_module/libSceFace.prx",
+      "size": 325596
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceFaceTracker.prx",
+      "relative_path": "sce_module/libSceFaceTracker.prx",
+      "size": 2612064
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceFontGsm.prx",
+      "relative_path": "sce_module/libSceFontGsm.prx",
+      "size": 252388
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceJobManager.prx",
+      "relative_path": "sce_module/libSceJobManager.prx",
+      "size": 71616
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceNpCppWebApi.prx",
+      "relative_path": "sce_module/libSceNpCppWebApi.prx",
+      "size": 7834880
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libScePfs.prx",
+      "relative_path": "sce_module/libScePfs.prx",
+      "size": 1343264
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libc.prx",
+      "relative_path": "sce_module/libc.prx",
+      "size": 1285240
+    },
+    {
+      "category": "Executable",
+      "extension": "sprx",
+      "file_name": "right.sprx",
+      "relative_path": "sce_sys/about/right.sprx",
+      "size": 12448
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "disc_info.dat",
+      "relative_path": "sce_sys/disc_info.dat",
+      "size": 6640
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "icon0.dds",
+      "relative_path": "sce_sys/icon0.dds",
+      "size": 262292
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "icon0.png",
+      "relative_path": "sce_sys/icon0.png",
+      "size": 417541
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "keystone",
+      "relative_path": "sce_sys/keystone",
+      "size": 96
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "nptitle.dat",
+      "relative_path": "sce_sys/nptitle.dat",
+      "size": 160
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "param.json",
+      "relative_path": "sce_sys/param.json",
+      "size": 2632
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "pfs-version.dat",
+      "relative_path": "sce_sys/pfs-version.dat",
+      "size": 10
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic0.dds",
+      "relative_path": "sce_sys/pic0.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "pic0.png",
+      "relative_path": "sce_sys/pic0.png",
+      "size": 8893264
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic1.dds",
+      "relative_path": "sce_sys/pic1.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic2.dds",
+      "relative_path": "sce_sys/pic2.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Audio",
+      "extension": "at9",
+      "file_name": "snd0.at9",
+      "relative_path": "sce_sys/snd0.at9",
+      "size": 2042024
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "sce_sys/trophy2/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "trophy00.ucp",
+      "relative_path": "sce_sys/trophy2/trophy00.ucp",
+      "size": 15871024
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "sce_sys/uds/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "uds00.ucp",
+      "relative_path": "sce_sys/uds/uds00.ucp",
+      "size": 41584
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "ue4commandline.txt",
+      "relative_path": "ue4commandline.txt",
+      "size": 40
+    }
+  ],
+  "by_category": {
+    "archive": 1,
+    "audio": 203,
+    "executable": 11,
+    "metadata": 10,
+    "texture": 6,
+    "unknown": 218
+  },
+  "by_extension": {
+    "(no_ext)": 1,
+    "at9": 1,
+    "bank": 202,
+    "complete": 1,
+    "dat": 5,
+    "dds": 4,
+    "eboot.bin": 1,
+    "ini": 1,
+    "json": 2,
+    "pak": 1,
+    "png": 2,
+    "prx": 9,
+    "sprx": 1,
+    "tmp": 1,
+    "txt": 1,
+    "uasset": 210,
+    "ucas": 2,
+    "ucp": 2,
+    "utoc": 2
+  },
+  "game": "Afterimage-PPSA14053-EUR-Game-v01.000-PS5",
+  "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Afterimage-PPSA14053-EUR-Game-v01.000-PS5",
+  "total_bytes": 7054311211,
+  "total_files": 449
+}

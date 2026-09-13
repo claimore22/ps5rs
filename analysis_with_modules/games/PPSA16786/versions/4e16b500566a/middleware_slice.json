@@ -1,0 +1,234 @@
+{
+  "game": "Neva-PPSA16786-EUR-Game (v01.007)-PS5",
+  "sony": [
+    {
+      "exports": 42826,
+      "file_name": "libSceNpCppWebApi.prx",
+      "import_libs": [
+        "libSceHttp",
+        "libSceJson2",
+        "libSceLibcInternal",
+        "libSceNpWebApi2",
+        "libSceRtc",
+        "libkernel"
+      ],
+      "imports": 95,
+      "kind": "sony",
+      "module_name": "libSceNpCppWebApi",
+      "needed_files": [
+        "libSceJson2.prx",
+        "libSceRtc.prx",
+        "libSceNpWebApi2.prx",
+        "libSceHttp.prx",
+        "libkernel.prx",
+        "libSceLibcInternal.prx"
+      ],
+      "parseable": true,
+      "sha256": "39044178989d98c5e4d10e71052aca6d4b27755fe98bc163e0eb40c561d097bd"
+    },
+    {
+      "exports": 2920,
+      "file_name": "libc.prx",
+      "import_libs": [
+        "libSceLibcInternalExt",
+        "libSceSysmodule",
+        "libkernel"
+      ],
+      "imports": 117,
+      "kind": "sony",
+      "module_name": "libc",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceLibcInternal.prx",
+        "libSceSysmodule.prx"
+      ],
+      "parseable": true,
+      "sha256": "b55147b655f09b4e01b7b2af71a53899a015dd94c503f3882f9a95451bc5eeb5"
+    }
+  ],
+  "third_party": [
+    {
+      "description": "Wwise audio effect plugin",
+      "exports": 1299,
+      "file_name": "AkSoundEngine.prx",
+      "import_libs": [
+        "libSceAcm",
+        "libSceAgc",
+        "libSceAgcDriver",
+        "libSceAjm",
+        "libSceAudio3d",
+        "libSceAudioOut",
+        "libSceAudioOut2",
+        "libScePad",
+        "libScePosix",
+        "libSceSysmodule",
+        "libSceUserService",
+        "libc",
+        "libkernel"
+      ],
+      "imports": 154,
+      "kind": "thirdparty",
+      "module_name": "AkSoundEngine",
+      "needed_files": [
+        "libSceAcm.prx",
+        "libSceAgc.prx",
+        "libSceAgcDriver.prx",
+        "libSceAjm.native.prx",
+        "libSceAudioOut.prx",
+        "libSceAudio3d.prx",
+        "libScePad.prx",
+        "libkernel.prx",
+        "libSceSysmodule.prx",
+        "libSceUserService.prx",
+        "libc.prx"
+      ],
+      "parseable": true,
+      "product": "Wwise",
+      "sha256": "d7350beda4597b22f4fb7c3b6f098dca9be1da7ca3f86321259fb96e7be17714",
+      "vendor": "Audiokinetic"
+    },
+    {
+      "description": "Unity IL2CPP user assemblies (AOT-compiled C#)",
+      "exports": 296,
+      "file_name": "Il2cppUserAssemblies.prx",
+      "import_libs": [
+        "AkSoundEngine",
+        "PS5Util",
+        "libSceAppContent",
+        "libSceNet",
+        "libSceNetCtl",
+        "libScePosix",
+        "libSceRtc",
+        "libSceSysmodule",
+        "libSceSystemService",
+        "libc",
+        "libkernel"
+      ],
+      "imports": 299,
+      "kind": "thirdparty",
+      "module_name": "Il2cppUserAssemblies",
+      "needed_files": [
+        "AkSoundEngine.prx",
+        "PS5Util.prx",
+        "libSceNetCtl.prx",
+        "libSceNet.prx",
+        "libkernel.prx",
+        "libSceRtc.prx",
+        "libSceSystemService.prx",
+        "libSceAppContent.prx",
+        "libSceSysmodule.prx",
+        "libc.prx"
+      ],
+      "parseable": true,
+      "product": "Unity IL2CPP",
+      "sha256": "7e0ceccb1a99e0347ca0515cdeee4fc64b2987830e29adac45f3f2ebac52ac2b",
+      "vendor": "Unity Technologies"
+    },
+    {
+      "description": "Unity PS5 player support module",
+      "exports": 7,
+      "file_name": "PS5Util.prx",
+      "import_libs": [
+        "libc",
+        "libkernel",
+        "libkernel_sync_on_address",
+        "libkernel_unity"
+      ],
+      "imports": 10,
+      "kind": "thirdparty",
+      "module_name": "PS5Util",
+      "needed_files": [
+        "libkernel.prx",
+        "libc.prx"
+      ],
+      "parseable": true,
+      "product": "Unity PS5 Platform",
+      "sha256": "050ff7587e4b24e5e40da3254d52634680e1a923e1c82fde096c02205806cc25",
+      "vendor": "Unity Technologies"
+    },
+    {
+      "description": "Unity PSN package (com.unity.psn.ps5)",
+      "exports": 7,
+      "file_name": "PSN.prx",
+      "import_libs": [
+        "libSceCommonDialog",
+        "libSceGameUpdate",
+        "libSceHttp2",
+        "libSceJson2",
+        "libSceMsgDialog.native",
+        "libSceNet",
+        "libSceNetCtl",
+        "libSceNpAuth",
+        "libSceNpCommerce",
+        "libSceNpCppWebApi",
+        "libSceNpEntitlementAccess",
+        "libSceNpGameIntent",
+        "libSceNpManager",
+        "libSceNpSessionSignaling",
+        "libSceNpTrophy2",
+        "libSceNpUniversalDataSystem",
+        "libSceNpUtility",
+        "libSceNpWebApi2",
+        "libScePlayerInvitationDialog",
+        "libSceSsl",
+        "libSceSysmodule",
+        "libc",
+        "libkernel"
+      ],
+      "imports": 2439,
+      "kind": "thirdparty",
+      "module_name": "PSN",
+      "needed_files": [
+        "libSceSysmodule.prx",
+        "libSceNpTrophy2.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceNpManager.prx",
+        "libSceNpGameIntent.prx",
+        "libSceJson2.prx",
+        "libSceNpCppWebApi.prx",
+        "libSceNet.prx",
+        "libSceSsl.prx",
+        "libSceHttp2.prx",
+        "libSceNpWebApi2.prx",
+        "libSceCommonDialog.prx",
+        "libSceNpAuth.prx",
+        "libSceNpEntitlementAccess.prx",
+        "libSceNpCommerce.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceNpSessionSignaling.prx",
+        "libSceNetCtl.prx",
+        "libSceGameUpdate.prx",
+        "libScePlayerInvitationDialog.prx",
+        "libSceNpUtility.prx",
+        "libkernel.prx",
+        "libc.prx"
+      ],
+      "parseable": true,
+      "product": "Unity PSN",
+      "sha256": "69885a2a3746ec702fd1af42846c060fefe60e9bdd001b8a2c397f8c936441e7",
+      "vendor": "Unity Technologies"
+    },
+    {
+      "description": "Unity Burst-compiled job system code",
+      "exports": 104,
+      "file_name": "lib_burst_generated.prx",
+      "import_libs": [
+        "libc",
+        "libkernel"
+      ],
+      "imports": 6,
+      "kind": "thirdparty",
+      "module_name": "lib_burst_generated",
+      "needed_files": [
+        "libkernel.prx",
+        "libc.prx"
+      ],
+      "parseable": true,
+      "product": "Unity Burst",
+      "sha256": "61ef937ef564ed5ff701ae144b40588e6a47ff0fda428782c937eab64fe7b7bb",
+      "vendor": "Unity Technologies"
+    }
+  ],
+  "title_id": "PPSA16786",
+  "unknown": []
+}

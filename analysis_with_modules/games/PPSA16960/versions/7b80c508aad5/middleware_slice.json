@@ -1,0 +1,202 @@
+{
+  "game": "Richman 11 PS5 _PPSA16960_",
+  "sony": [
+    {
+      "exports": 118,
+      "file_name": "libSceAmpr.sprx",
+      "import_libs": [
+        "libSceLibcInternal",
+        "libc",
+        "libkernel"
+      ],
+      "imports": 96,
+      "kind": "sony",
+      "module_name": "libSceAmpr",
+      "needed_files": [
+        "libSceLibcInternal.prx",
+        "libkernel.prx",
+        "libc.prx"
+      ],
+      "parseable": true,
+      "sha256": "f667aa38c5b865951ad49424b2706b04d95651fda4cb80e2bdab7e6305068d7c"
+    },
+    {
+      "exports": 118,
+      "file_name": "libSceAmpr.sprx",
+      "import_libs": [
+        "libSceLibcInternal",
+        "libkernel"
+      ],
+      "imports": 84,
+      "kind": "sony",
+      "module_name": "libSceAmpr",
+      "needed_files": [
+        "libSceLibcInternal.prx",
+        "libkernel.prx"
+      ],
+      "parseable": true,
+      "sha256": "2d532e14e43ca115e211db9cdfbff0298ecfe8c54c51de8528fa03bebc89240d"
+    },
+    {
+      "exports": 42850,
+      "file_name": "libSceNpCppWebApi.prx",
+      "import_libs": [
+        "libSceHttp",
+        "libSceJson2",
+        "libSceLibcInternal",
+        "libSceNpWebApi2",
+        "libSceRtc",
+        "libkernel"
+      ],
+      "imports": 95,
+      "kind": "sony",
+      "module_name": "libSceNpCppWebApi",
+      "needed_files": [
+        "libSceJson2.prx",
+        "libSceRtc.prx",
+        "libSceNpWebApi2.prx",
+        "libSceHttp.prx",
+        "libkernel.prx",
+        "libSceLibcInternal.prx"
+      ],
+      "parseable": true,
+      "sha256": "c6a66fb95e531a83dce81edecef9cfef96db9d3c7b9ee9af6d51204891697fb0"
+    },
+    {
+      "exports": 2584,
+      "file_name": "libc.prx",
+      "import_libs": [
+        "libSceLibcInternalExt",
+        "libSceSysmodule",
+        "libkernel"
+      ],
+      "imports": 104,
+      "kind": "sony",
+      "module_name": "libc",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceLibcInternal.prx",
+        "libSceSysmodule.prx"
+      ],
+      "parseable": true,
+      "sha256": "2aeb2ea9486785f2eeca44a74e5e392bddd8b499b388e603ede78797dbbbeaf8"
+    }
+  ],
+  "third_party": [
+    {
+      "description": "Unity IL2CPP user assemblies (AOT-compiled C#)",
+      "exports": 427,
+      "file_name": "Il2CppUserAssemblies.prx",
+      "import_libs": [
+        "PS5Util",
+        "libSceAppContent",
+        "libSceCommonDialog",
+        "libSceGameUpdate",
+        "libSceHttp2",
+        "libSceJson2",
+        "libSceMsgDialog.native",
+        "libSceNet",
+        "libSceNetCtl",
+        "libSceNpAuth",
+        "libSceNpCommerce",
+        "libSceNpCppWebApi",
+        "libSceNpEntitlementAccess",
+        "libSceNpGameIntent",
+        "libSceNpManager",
+        "libSceNpSessionSignaling",
+        "libSceNpTrophy2",
+        "libSceNpUniversalDataSystem",
+        "libSceNpUtility",
+        "libSceNpWebApi2",
+        "libScePlayerInvitationDialog",
+        "libScePosix",
+        "libSceRtc",
+        "libSceSsl",
+        "libSceSysmodule",
+        "libSceSystemService",
+        "libc",
+        "libkernel"
+      ],
+      "imports": 2691,
+      "kind": "thirdparty",
+      "module_name": "Il2CppUserAssemblies",
+      "needed_files": [
+        "PS5Util.prx",
+        "libc.prx",
+        "libSceNetCtl.prx",
+        "libSceNet.prx",
+        "libkernel.prx",
+        "libSceRtc.prx",
+        "libSceSystemService.prx",
+        "libSceAppContent.prx",
+        "libSceSysmodule.prx",
+        "libSceNpAuth.prx",
+        "libSceNpUtility.prx",
+        "libSceNpCommerce.prx",
+        "libSceNpCppWebApi.prx",
+        "libSceNpWebApi2.prx",
+        "libSceJson2.prx",
+        "libSceNpEntitlementAccess.prx",
+        "libSceNpManager.prx",
+        "libSceNpGameIntent.prx",
+        "libSceGameUpdate.prx",
+        "libSceMsgDialog.native.prx",
+        "libScePlayerInvitationDialog.prx",
+        "libSceNpSessionSignaling.prx",
+        "libSceNpTrophy2.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceCommonDialog.prx",
+        "libSceSsl.prx",
+        "libSceHttp2.prx"
+      ],
+      "parseable": true,
+      "product": "Unity IL2CPP",
+      "sha256": "8da040aeb6cf17eae11bf7441900c588b8f7db004e2a8841719ea075c5d79b7c",
+      "vendor": "Unity Technologies"
+    },
+    {
+      "description": "Unity PS5 player support module",
+      "exports": 7,
+      "file_name": "PS5Util.prx",
+      "import_libs": [
+        "libc",
+        "libkernel",
+        "libkernel_sync_on_address",
+        "libkernel_unity"
+      ],
+      "imports": 10,
+      "kind": "thirdparty",
+      "module_name": "PS5Util",
+      "needed_files": [
+        "libkernel.prx",
+        "libc.prx"
+      ],
+      "parseable": true,
+      "product": "Unity PS5 Platform",
+      "sha256": "0a40b4b1dcdbcdd29e31a09ebac4e3b434f42592a2b9efacb4bc24787538c193",
+      "vendor": "Unity Technologies"
+    },
+    {
+      "description": "Unity Burst-compiled job system code",
+      "exports": 40,
+      "file_name": "lib_burst_generated.prx",
+      "import_libs": [
+        "libc",
+        "libkernel"
+      ],
+      "imports": 5,
+      "kind": "thirdparty",
+      "module_name": "lib_burst_generated",
+      "needed_files": [
+        "libkernel.prx",
+        "libc.prx"
+      ],
+      "parseable": true,
+      "product": "Unity Burst",
+      "sha256": "ab4dc5f0c4ac60d823a98db630922cd4c4bbcf84ca960c6deb21ac1392d8cdca",
+      "vendor": "Unity Technologies"
+    }
+  ],
+  "title_id": "PPSA16960",
+  "unknown": []
+}
