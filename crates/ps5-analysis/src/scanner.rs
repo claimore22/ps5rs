@@ -66,14 +66,17 @@ pub fn scan(
 
     let game_dirs = find_game_dirs(root);
     for game_dir in &game_dirs {
+        let game_name = game_dir
+            .file_name()
+            .and_then(|n| n.to_str())
+            .unwrap_or("unknown");
+        let safe_name = sanitize_filename(game_name);
+        if options.append && seen_names.contains(&safe_name) {
+            continue;
+        }
         let binaries = find_binaries(game_dir, options);
         for bin_path in &binaries {
             if let Some(doc) = analyze_binary(bin_path, catalog, game_dir) {
-                let game_name = game_dir
-                    .file_name()
-                    .and_then(|n| n.to_str())
-                    .unwrap_or("unknown");
-                let safe_name = sanitize_filename(game_name);
                 if seen_names.contains(&safe_name) {
                     continue;
                 }
@@ -93,7 +96,29 @@ pub fn scan(
         }
     }
 
-    let shaders = crate::shader_inventory::inventory_shaders_corpus(root);
+    let mut shaders: Vec<ps5_schema::ShaderRecord> = Vec::new();
+    let mut shadered_games: std::collections::HashSet<String> = std::collections::HashSet::new();
+    if options.append
+        && let Ok(data) = std::fs::read(output.join("shaders.json"))
+        && let Ok(existing) = serde_json::from_slice::<Vec<ps5_schema::ShaderRecord>>(&data)
+    {
+        for record in &existing {
+            shadered_games.insert(record.game.clone());
+        }
+        shaders = existing;
+    }
+    for game_dir in &game_dirs {
+        let name = game_dir
+            .file_name()
+            .and_then(|n| n.to_str())
+            .unwrap_or("unknown");
+        if options.append && shadered_games.contains(name) {
+            continue;
+        }
+        shaders.extend(crate::shader_inventory::inventory_shaders_for_game(
+            game_dir, name,
+        ));
+    }
     if !shaders.is_empty() {
         let shaders_json = serde_json::to_string_pretty(&shaders)?;
         std::fs::write(output.join("shaders.json"), format!("{shaders_json}\n"))?;
