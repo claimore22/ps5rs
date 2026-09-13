@@ -2,7 +2,7 @@
   "schema_version": 6,
   "tool": "ps5rs",
   "created_at": "2026-08-26T05:07:13Z",
-  "image_count": 32,
+  "image_count": 33,
   "module_count": 0,
   "games": [
     {
@@ -388,6 +388,17 @@
       "drm_type": "standard",
       "content_id": "EP3643-PPSA02629_00-TREKTOYOMI000000",
       "creation_date": "2022-07-06 10:10:31"
+    },
+    {
+      "name": "WUCHANG.Fallen.Feathers-PPSA09519-EUR-Game(v01.01)-PS5",
+      "title_id": null,
+      "content_version": null,
+      "master_version": null,
+      "sdk_version": null,
+      "title_name": null,
+      "drm_type": null,
+      "content_id": null,
+      "creation_date": null
     }
   ]
 }
