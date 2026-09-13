@@ -632,6 +632,7 @@ dependencies = [
  "ps5-deps",
  "ps5-elf",
  "ps5-emu",
+ "ps5-farm",
  "ps5-firmware",
  "ps5-format",
  "ps5-image",
@@ -642,7 +643,6 @@ dependencies = [
  "ps5-shader",
  "serde",
  "serde_json",
- "sha2",
  "tracing",
  "tracing-subscriber",
  "ureq",
@@ -696,6 +696,20 @@ dependencies = [
  "serde_json",
  "tracing",
  "tracing-subscriber",
+]
+
+[[package]]
+name = "ps5-farm"
+version = "0.5.0"
+dependencies = [
+ "ps5-analysis",
+ "ps5-elf",
+ "ps5-format",
+ "ps5-loader",
+ "ps5-self",
+ "serde",
+ "serde_json",
+ "sha2",
 ]
 
 [[package]]

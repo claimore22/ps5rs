@@ -8,7 +8,6 @@ mod dataset;
 mod deps;
 mod export_scan;
 mod extract;
-mod fingerprint;
 mod firmware;
 mod ingest;
 mod inspect;
