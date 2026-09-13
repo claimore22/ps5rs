@@ -8149,195 +8149,6 @@
       "unknown": []
     },
     {
-      "game": "Trek To Yomi 02.000 PPSA02629",
-      "title_id": "PPSA02629",
-      "engine": "Unreal Engine",
-      "third_party": [
-        {
-          "file_name": "libfmod.prx",
-          "module_name": "libfmod",
-          "kind": "thirdparty",
-          "sha256": "bea9e57458ecf003b297c969917a33f0aff28d3f87994850e7b84c44e58710e7",
-          "vendor": "Firelight Technologies",
-          "product": "FMOD",
-          "description": "FMOD low-level audio engine",
-          "parseable": true,
-          "imports": 146,
-          "exports": 1091,
-          "import_libs": [
-            "libSceAcm",
-            "libSceAjm",
-            "libSceAudioIn",
-            "libSceAudioOut2",
-            "libSceNet",
-            "libSceSysmodule",
-            "libSceUserService",
-            "libc",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libSceAudioOut.prx",
-            "libSceAudioIn.prx",
-            "libSceAjm.native.prx",
-            "libSceNet.prx",
-            "libSceUserService.prx",
-            "libkernel.prx",
-            "libc.prx",
-            "libSceSysmodule.prx",
-            "libSceAcm.prx"
-          ]
-        },
-        {
-          "file_name": "libfmodstudio.prx",
-          "module_name": "libfmodstudio",
-          "kind": "thirdparty",
-          "sha256": "fe27091eabbf69187746b5412bf6d27749966843331e2346ff934c73aaa1b181",
-          "vendor": "Firelight Technologies",
-          "product": "FMOD Studio",
-          "description": "FMOD Studio audio engine (banks and events)",
-          "parseable": true,
-          "imports": 178,
-          "exports": 381,
-          "import_libs": [
-            "libc",
-            "libfmod",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libfmod.prx",
-            "libkernel.prx",
-            "libc.prx"
-          ]
-        }
-      ],
-      "sony": [
-        {
-          "file_name": "libSceFace.prx",
-          "module_name": "libSceFace",
-          "kind": "sony",
-          "sha256": "8cd26f20664893a27eb62050860bf17a217ab055a04243d9c4b4dbf18fca2b4d",
-          "parseable": true,
-          "imports": 20,
-          "exports": 29,
-          "import_libs": [
-            "libSceLibcInternal",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libSceLibcInternal.prx"
-          ]
-        },
-        {
-          "file_name": "libSceFaceTracker.prx",
-          "module_name": "libSceFaceTracker",
-          "kind": "sony",
-          "sha256": "8e7f1ced010d890abde1ab079a9acace9acd4fef82bd9ce2ac3de564807812a5",
-          "parseable": true,
-          "imports": 27,
-          "exports": 21,
-          "import_libs": [
-            "libSceFace",
-            "libSceLibcInternal",
-            "libScePosix",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libSceFace.prx",
-            "libkernel.prx",
-            "libSceLibcInternal.prx"
-          ]
-        },
-        {
-          "file_name": "libSceJobManager.prx",
-          "module_name": "libSceJobManager",
-          "kind": "sony",
-          "sha256": "fc2ab185733e0f33dd19531e93554ae26d0503b5902df17550dde5e04c7b578d",
-          "parseable": true,
-          "imports": 143,
-          "exports": 11,
-          "import_libs": [
-            "libSceAgc",
-            "libSceAgcDriver",
-            "libSceLibcInternal",
-            "libSceRazorCpu",
-            "libkernel",
-            "ulobjmgr"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libSceLibcInternal.prx",
-            "libSceAgcDriver.prx",
-            "libSceAgc.prx",
-            "ulobjmgr.prx",
-            "libSceRazorCpu.prx"
-          ]
-        },
-        {
-          "file_name": "libSceNpCppWebApi.prx",
-          "module_name": "libSceNpCppWebApi",
-          "kind": "sony",
-          "sha256": "0920ccca8940ca8c3498a904afca19ba34c768255008aa8aaf27fa80ef4f3698",
-          "parseable": true,
-          "imports": 95,
-          "exports": 45841,
-          "import_libs": [
-            "libSceHttp",
-            "libSceJson2",
-            "libSceLibcInternal",
-            "libSceNpWebApi2",
-            "libSceRtc",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libSceJson2.prx",
-            "libSceRtc.prx",
-            "libSceNpWebApi2.prx",
-            "libSceHttp.prx",
-            "libkernel.prx",
-            "libSceLibcInternal.prx"
-          ]
-        },
-        {
-          "file_name": "libScePfs.prx",
-          "module_name": "libScePfs",
-          "kind": "sony",
-          "sha256": "716bb66874a3e963a7671682cbfbf32ece6aec7b0c6ecfb399b5edeb807c0509",
-          "parseable": true,
-          "imports": 15,
-          "exports": 9,
-          "import_libs": [
-            "libSceLibcInternal",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libSceLibcInternal.prx"
-          ]
-        },
-        {
-          "file_name": "libc.prx",
-          "module_name": "libc",
-          "kind": "sony",
-          "sha256": "6b25e96e88168466ca4e98516d10e62868bb67dc301b9be64b1b0b749b7b0c0d",
-          "parseable": true,
-          "imports": 103,
-          "exports": 2569,
-          "import_libs": [
-            "libSceLibcInternalExt",
-            "libSceSysmodule",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libSceLibcInternal.prx",
-            "libSceSysmodule.prx"
-          ]
-        }
-      ],
-      "unknown": []
-    },
-    {
       "game": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
       "title_id": "PPSA22520",
       "third_party": [],
@@ -8446,10 +8257,36 @@
         }
       ],
       "unknown": []
+    },
+    {
+      "game": "void tRrLM Void Terrarium PS5 Dump v1.000",
+      "third_party": [],
+      "sony": [
+        {
+          "file_name": "libc.prx",
+          "module_name": "libc",
+          "kind": "sony",
+          "sha256": "fc7c2ad5d2b53b60b17b77d6648638617698af1bb9ad3526662d93d483c3dd68",
+          "parseable": true,
+          "imports": 102,
+          "exports": 2565,
+          "import_libs": [
+            "libSceLibcInternalExt",
+            "libSceSysmodule",
+            "libkernel"
+          ],
+          "needed_files": [
+            "libkernel.prx",
+            "libSceLibcInternal.prx",
+            "libSceSysmodule.prx"
+          ]
+        }
+      ],
+      "unknown": []
     }
   ],
-  "total_prx": 336,
-  "third_party_modules": 186,
-  "sony_modules": 141,
+  "total_prx": 329,
+  "third_party_modules": 184,
+  "sony_modules": 136,
   "unknown_modules": 9
 }
