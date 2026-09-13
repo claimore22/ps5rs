@@ -1,0 +1,1301 @@
+{
+  "artifacts": [
+    {
+      "category": "Executable",
+      "extension": "eboot.bin",
+      "file_name": "eboot.bin",
+      "relative_path": "_original_files/eboot.bin",
+      "size": 168445985
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akaudioinput.prx",
+      "relative_path": "_original_files/prx/akaudioinput.prx",
+      "size": 10681
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akcompressor.prx",
+      "relative_path": "_original_files/prx/akcompressor.prx",
+      "size": 11913
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akdelay.prx",
+      "relative_path": "_original_files/prx/akdelay.prx",
+      "size": 10741
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akexpander.prx",
+      "relative_path": "_original_files/prx/akexpander.prx",
+      "size": 13077
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akflanger.prx",
+      "relative_path": "_original_files/prx/akflanger.prx",
+      "size": 28037
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akgain.prx",
+      "relative_path": "_original_files/prx/akgain.prx",
+      "size": 10193
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akguitardistortion.prx",
+      "relative_path": "_original_files/prx/akguitardistortion.prx",
+      "size": 28493
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akharmonizer.prx",
+      "relative_path": "_original_files/prx/akharmonizer.prx",
+      "size": 66889
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akmatrixreverb.prx",
+      "relative_path": "_original_files/prx/akmatrixreverb.prx",
+      "size": 53529
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akmotion.prx",
+      "relative_path": "_original_files/prx/akmotion.prx",
+      "size": 23863
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akparametriceq.prx",
+      "relative_path": "_original_files/prx/akparametriceq.prx",
+      "size": 15433
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akpeaklimiter.prx",
+      "relative_path": "_original_files/prx/akpeaklimiter.prx",
+      "size": 15465
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akpitchshifter.prx",
+      "relative_path": "_original_files/prx/akpitchshifter.prx",
+      "size": 24921
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akrecorder.prx",
+      "relative_path": "_original_files/prx/akrecorder.prx",
+      "size": 19685
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akreflect.prx",
+      "relative_path": "_original_files/prx/akreflect.prx",
+      "size": 50101
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akroomverb.prx",
+      "relative_path": "_original_files/prx/akroomverb.prx",
+      "size": 110069
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aksilencegenerator.prx",
+      "relative_path": "_original_files/prx/aksilencegenerator.prx",
+      "size": 8733
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aksinetone.prx",
+      "relative_path": "_original_files/prx/aksinetone.prx",
+      "size": 9685
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aksoundseedair.prx",
+      "relative_path": "_original_files/prx/aksoundseedair.prx",
+      "size": 60761
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aksoundseedimpact.prx",
+      "relative_path": "_original_files/prx/aksoundseedimpact.prx",
+      "size": 15661
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akstereodelay.prx",
+      "relative_path": "_original_files/prx/akstereodelay.prx",
+      "size": 25753
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aksynthone.prx",
+      "relative_path": "_original_files/prx/aksynthone.prx",
+      "size": 30725
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aktimestretch.prx",
+      "relative_path": "_original_files/prx/aktimestretch.prx",
+      "size": 46937
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aktonegen.prx",
+      "relative_path": "_original_files/prx/aktonegen.prx",
+      "size": 29765
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aktremolo.prx",
+      "relative_path": "_original_files/prx/aktremolo.prx",
+      "size": 16037
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akvorbishwaccelerator.prx",
+      "relative_path": "_original_files/prx/akvorbishwaccelerator.prx",
+      "size": 6685
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "auro.prx",
+      "relative_path": "_original_files/prx/auro.prx",
+      "size": 3403681
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "izotope.prx",
+      "relative_path": "_original_files/prx/izotope.prx",
+      "size": 454565
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "masteringsuite.prx",
+      "relative_path": "_original_files/prx/masteringsuite.prx",
+      "size": 67448
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "mcdsp.prx",
+      "relative_path": "_original_files/prx/mcdsp.prx",
+      "size": 146177
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "sceaudio3d.prx",
+      "relative_path": "_original_files/prx/sceaudio3d.prx",
+      "size": 31827
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceFace.prx",
+      "relative_path": "_original_files/sce_module/libSceFace.prx",
+      "size": 302508
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceFaceTracker.prx",
+      "relative_path": "_original_files/sce_module/libSceFaceTracker.prx",
+      "size": 2610695
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceJobManager.prx",
+      "relative_path": "_original_files/sce_module/libSceJobManager.prx",
+      "size": 68582
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceNpCppWebApi.prx",
+      "relative_path": "_original_files/sce_module/libSceNpCppWebApi.prx",
+      "size": 6994887
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libScePfs.prx",
+      "relative_path": "_original_files/sce_module/libScePfs.prx",
+      "size": 1343439
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libc.prx",
+      "relative_path": "_original_files/sce_module/libc.prx",
+      "size": 1300450
+    },
+    {
+      "category": "Executable",
+      "extension": "sprx",
+      "file_name": "right.sprx",
+      "relative_path": "_original_files/sce_sys/about/right.sprx",
+      "size": 12752
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "disc_info.dat",
+      "relative_path": "_original_files/sce_sys/disc_info.dat",
+      "size": 6640
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "icon0.dds",
+      "relative_path": "_original_files/sce_sys/icon0.dds",
+      "size": 262292
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "icon0.png",
+      "relative_path": "_original_files/sce_sys/icon0.png",
+      "size": 226197
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "keystone",
+      "relative_path": "_original_files/sce_sys/keystone",
+      "size": 96
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "nptitle.dat",
+      "relative_path": "_original_files/sce_sys/nptitle.dat",
+      "size": 160
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "param.json",
+      "relative_path": "_original_files/sce_sys/param.json",
+      "size": 2576
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "pfs-version.dat",
+      "relative_path": "_original_files/sce_sys/pfs-version.dat",
+      "size": 10
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic0.dds",
+      "relative_path": "_original_files/sce_sys/pic0.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "pic0.png",
+      "relative_path": "_original_files/sce_sys/pic0.png",
+      "size": 5101592
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic1.dds",
+      "relative_path": "_original_files/sce_sys/pic1.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic2.dds",
+      "relative_path": "_original_files/sce_sys/pic2.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Audio",
+      "extension": "at9",
+      "file_name": "snd0.at9",
+      "relative_path": "_original_files/sce_sys/snd0.at9",
+      "size": 564324
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "_original_files/sce_sys/trophy2/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "trophy00.ucp",
+      "relative_path": "_original_files/sce_sys/trophy2/trophy00.ucp",
+      "size": 12294992
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "_original_files/sce_sys/uds/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "uds00.ucp",
+      "relative_path": "_original_files/sce_sys/uds/uds00.ucp",
+      "size": 62320
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "contentids.json",
+      "relative_path": "contentids.json",
+      "size": 87
+    },
+    {
+      "category": "Executable",
+      "extension": "eboot.bin",
+      "file_name": "eboot.bin",
+      "relative_path": "eboot.bin",
+      "size": 168434696
+    },
+    {
+      "category": "Unknown",
+      "extension": "ini",
+      "file_name": "manifest.ini",
+      "relative_path": "engine/saved/config/ps5/manifest.ini",
+      "size": 22
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akaudioinput.prx",
+      "relative_path": "prx/akaudioinput.prx",
+      "size": 10204
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akcompressor.prx",
+      "relative_path": "prx/akcompressor.prx",
+      "size": 11436
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akdelay.prx",
+      "relative_path": "prx/akdelay.prx",
+      "size": 10264
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akexpander.prx",
+      "relative_path": "prx/akexpander.prx",
+      "size": 12600
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akflanger.prx",
+      "relative_path": "prx/akflanger.prx",
+      "size": 27560
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akgain.prx",
+      "relative_path": "prx/akgain.prx",
+      "size": 9716
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akguitardistortion.prx",
+      "relative_path": "prx/akguitardistortion.prx",
+      "size": 28016
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akharmonizer.prx",
+      "relative_path": "prx/akharmonizer.prx",
+      "size": 66412
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akmatrixreverb.prx",
+      "relative_path": "prx/akmatrixreverb.prx",
+      "size": 53052
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akmotion.prx",
+      "relative_path": "prx/akmotion.prx",
+      "size": 23080
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akparametriceq.prx",
+      "relative_path": "prx/akparametriceq.prx",
+      "size": 14956
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akpeaklimiter.prx",
+      "relative_path": "prx/akpeaklimiter.prx",
+      "size": 14988
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akpitchshifter.prx",
+      "relative_path": "prx/akpitchshifter.prx",
+      "size": 24444
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akrecorder.prx",
+      "relative_path": "prx/akrecorder.prx",
+      "size": 19208
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akreflect.prx",
+      "relative_path": "prx/akreflect.prx",
+      "size": 49624
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akroomverb.prx",
+      "relative_path": "prx/akroomverb.prx",
+      "size": 109592
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aksilencegenerator.prx",
+      "relative_path": "prx/aksilencegenerator.prx",
+      "size": 8256
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aksinetone.prx",
+      "relative_path": "prx/aksinetone.prx",
+      "size": 9208
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aksoundseedair.prx",
+      "relative_path": "prx/aksoundseedair.prx",
+      "size": 60284
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aksoundseedimpact.prx",
+      "relative_path": "prx/aksoundseedimpact.prx",
+      "size": 15184
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akstereodelay.prx",
+      "relative_path": "prx/akstereodelay.prx",
+      "size": 25276
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aksynthone.prx",
+      "relative_path": "prx/aksynthone.prx",
+      "size": 30248
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aktimestretch.prx",
+      "relative_path": "prx/aktimestretch.prx",
+      "size": 46460
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aktonegen.prx",
+      "relative_path": "prx/aktonegen.prx",
+      "size": 29288
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aktremolo.prx",
+      "relative_path": "prx/aktremolo.prx",
+      "size": 15560
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akvorbishwaccelerator.prx",
+      "relative_path": "prx/akvorbishwaccelerator.prx",
+      "size": 6116
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "auro.prx",
+      "relative_path": "prx/auro.prx",
+      "size": 3403204
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "izotope.prx",
+      "relative_path": "prx/izotope.prx",
+      "size": 454088
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "masteringsuite.prx",
+      "relative_path": "prx/masteringsuite.prx",
+      "size": 66924
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "mcdsp.prx",
+      "relative_path": "prx/mcdsp.prx",
+      "size": 145700
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "sceaudio3d.prx",
+      "relative_path": "prx/sceaudio3d.prx",
+      "size": 31256
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceFace.prx",
+      "relative_path": "sce_module/libSceFace.prx",
+      "size": 302188
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceFaceTracker.prx",
+      "relative_path": "sce_module/libSceFaceTracker.prx",
+      "size": 2610368
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceJobManager.prx",
+      "relative_path": "sce_module/libSceJobManager.prx",
+      "size": 68256
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceNpCppWebApi.prx",
+      "relative_path": "sce_module/libSceNpCppWebApi.prx",
+      "size": 6994560
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libScePfs.prx",
+      "relative_path": "sce_module/libScePfs.prx",
+      "size": 1343120
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libc.prx",
+      "relative_path": "sce_module/libc.prx",
+      "size": 1300136
+    },
+    {
+      "category": "Executable",
+      "extension": "sprx",
+      "file_name": "right.sprx",
+      "relative_path": "sce_sys/about/right.sprx",
+      "size": 12512
+    },
+    {
+      "category": "Metadata",
+      "extension": "auth_info",
+      "file_name": "right.sprx.auth_info",
+      "relative_path": "sce_sys/about/right.sprx.auth_info",
+      "size": 136
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "disc_info.dat",
+      "relative_path": "sce_sys/disc_info.dat",
+      "size": 6640
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "icon0.dds",
+      "relative_path": "sce_sys/icon0.dds",
+      "size": 262292
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "icon0.png",
+      "relative_path": "sce_sys/icon0.png",
+      "size": 226197
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "keystone",
+      "relative_path": "sce_sys/keystone",
+      "size": 96
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "nptitle.dat",
+      "relative_path": "sce_sys/nptitle.dat",
+      "size": 160
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "param.json",
+      "relative_path": "sce_sys/param.json",
+      "size": 2576
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "pfs-version.dat",
+      "relative_path": "sce_sys/pfs-version.dat",
+      "size": 10
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic0.dds",
+      "relative_path": "sce_sys/pic0.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "pic0.png",
+      "relative_path": "sce_sys/pic0.png",
+      "size": 5101592
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic1.dds",
+      "relative_path": "sce_sys/pic1.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic2.dds",
+      "relative_path": "sce_sys/pic2.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Audio",
+      "extension": "at9",
+      "file_name": "snd0.at9",
+      "relative_path": "sce_sys/snd0.at9",
+      "size": 564324
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "sce_sys/trophy2/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "trophy00.ucp",
+      "relative_path": "sce_sys/trophy2/trophy00.ucp",
+      "size": 12294992
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "sce_sys/uds/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "uds00.ucp",
+      "relative_path": "sce_sys/uds/uds00.ucp",
+      "size": 62320
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "achievements.json",
+      "relative_path": "sifu/config/oss/live/achievements.json",
+      "size": 757
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "events.json",
+      "relative_path": "sifu/config/oss/live/events.json",
+      "size": 54
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "bettinglounge_monitor_a.mp4",
+      "relative_path": "sifu/content/movies/bettinglounge_monitor_a.mp4",
+      "size": 542212
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "bettinglounge_monitor_b.mp4",
+      "relative_path": "sifu/content/movies/bettinglounge_monitor_b.mp4",
+      "size": 299693
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "bettinglounge_monitor_c.mp4",
+      "relative_path": "sifu/content/movies/bettinglounge_monitor_c.mp4",
+      "size": 2038102
+    },
+    {
+      "category": "Unknown",
+      "extension": "mov",
+      "file_name": "fireclub_motiongraphics_01.mov",
+      "relative_path": "sifu/content/movies/fireclub_motiongraphics_01.mov",
+      "size": 97394590
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "fireclub_motiongraphics_01_270x480.mp4",
+      "relative_path": "sifu/content/movies/fireclub_motiongraphics_01_270x480.mp4",
+      "size": 1630553
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "fireclub_motiongraphics_01_480x270.mp4",
+      "relative_path": "sifu/content/movies/fireclub_motiongraphics_01_480x270.mp4",
+      "size": 3114597
+    },
+    {
+      "category": "Unknown",
+      "extension": "mov",
+      "file_name": "fireclub_motiongraphics_01_blurred.mov",
+      "relative_path": "sifu/content/movies/fireclub_motiongraphics_01_blurred.mov",
+      "size": 7719003
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "fireclub_motiongraphics_02_480x270.mp4",
+      "relative_path": "sifu/content/movies/fireclub_motiongraphics_02_480x270.mp4",
+      "size": 989113
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "fireclub_motiongraphics_03_480x270.mp4",
+      "relative_path": "sifu/content/movies/fireclub_motiongraphics_03_480x270.mp4",
+      "size": 954102
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "h3_flashbladesintro_symbolsanimation_v1.0.mp4",
+      "relative_path": "sifu/content/movies/h3_flashbladesintro_symbolsanimation_v1.0.mp4",
+      "size": 1948208
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "h3_permaexhib1video_720p.mp4",
+      "relative_path": "sifu/content/movies/h3_permaexhib1video_720p.mp4",
+      "size": 6159471
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "h3_touchscreenvideos_01.mp4",
+      "relative_path": "sifu/content/movies/h3_touchscreenvideos_01.mp4",
+      "size": 6207668
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "h4_video_lobby_01_720p.mp4",
+      "relative_path": "sifu/content/movies/h4_video_lobby_01_720p.mp4",
+      "size": 2466382
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "h4_video_screeningroom_01_720p.mp4",
+      "relative_path": "sifu/content/movies/h4_video_screeningroom_01_720p.mp4",
+      "size": 2725541
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "loadingscreen_long.mp4",
+      "relative_path": "sifu/content/movies/loadingscreen_long.mp4",
+      "size": 18188768
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "loadingscreen_short.mp4",
+      "relative_path": "sifu/content/movies/loadingscreen_short.mp4",
+      "size": 1287941
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "optionsgameplay_hidecluevfxs_no.mp4",
+      "relative_path": "sifu/content/movies/optionsillustrations/optionsgameplay_hidecluevfxs_no.mp4",
+      "size": 1558930
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "optionsgameplay_hidecluevfxs_yes.mp4",
+      "relative_path": "sifu/content/movies/optionsillustrations/optionsgameplay_hidecluevfxs_yes.mp4",
+      "size": 1550621
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "optionsgameplay_luminosity.mp4",
+      "relative_path": "sifu/content/movies/optionsillustrations/optionsgameplay_luminosity.mp4",
+      "size": 2995900
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "optionsgameplay_subtitleopacity.mp4",
+      "relative_path": "sifu/content/movies/optionsillustrations/optionsgameplay_subtitleopacity.mp4",
+      "size": 4242837
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "ui_img_optionsgameplay_hudframing.mp4",
+      "relative_path": "sifu/content/movies/optionsillustrations/ui_img_optionsgameplay_hudframing.mp4",
+      "size": 2029163
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "ui_img_optionsgameplay_hudsize.mp4",
+      "relative_path": "sifu/content/movies/optionsillustrations/ui_img_optionsgameplay_hudsize.mp4",
+      "size": 2015857
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "ui_video_optionsgamplay_invertx_no.mp4",
+      "relative_path": "sifu/content/movies/optionsillustrations/ui_video_optionsgamplay_invertx_no.mp4",
+      "size": 334604
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "ui_video_optionsgamplay_invertx_yes.mp4",
+      "relative_path": "sifu/content/movies/optionsillustrations/ui_video_optionsgamplay_invertx_yes.mp4",
+      "size": 334027
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "ui_video_optionsgamplay_inverty_no.mp4",
+      "relative_path": "sifu/content/movies/optionsillustrations/ui_video_optionsgamplay_inverty_no.mp4",
+      "size": 334199
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "ui_video_optionsgamplay_inverty_yes.mp4",
+      "relative_path": "sifu/content/movies/optionsillustrations/ui_video_optionsgamplay_inverty_yes.mp4",
+      "size": 333144
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "ui_video_optionsgamplay_shakeeffect.mp4",
+      "relative_path": "sifu/content/movies/optionsillustrations/ui_video_optionsgamplay_shakeeffect.mp4",
+      "size": 476738
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "seanvideo_glimpse_1920px.mp4",
+      "relative_path": "sifu/content/movies/seanvideo_glimpse_1920px.mp4",
+      "size": 4954841
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "01_focus_blade.mp4",
+      "relative_path": "sifu/content/movies/skillvideosopti/01_focus_blade.mp4",
+      "size": 3277463
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "02_focus_staff.mp4",
+      "relative_path": "sifu/content/movies/skillvideosopti/02_focus_staff.mp4",
+      "size": 2872717
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "03_focus_bat.mp4",
+      "relative_path": "sifu/content/movies/skillvideosopti/03_focus_bat.mp4",
+      "size": 3091431
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "05_action_pushcancel.mp4",
+      "relative_path": "sifu/content/movies/skillvideosopti/05_action_pushcancel.mp4",
+      "size": 1398536
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "05_focus_calbot.mp4",
+      "relative_path": "sifu/content/movies/skillvideosopti/05_focus_calbot.mp4",
+      "size": 2876106
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "06_action_instantthrow.mp4",
+      "relative_path": "sifu/content/movies/skillvideosopti/06_action_instantthrow.mp4",
+      "size": 1731254
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "07_action_itemcatch.mp4",
+      "relative_path": "sifu/content/movies/skillvideosopti/07_action_itemcatch.mp4",
+      "size": 1731096
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "08_focus_pushback.mp4",
+      "relative_path": "sifu/content/movies/skillvideosopti/08_focus_pushback.mp4",
+      "size": 2325292
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "09_focus_knockdown.mp4",
+      "relative_path": "sifu/content/movies/skillvideosopti/09_focus_knockdown.mp4",
+      "size": 2739734
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "10_technique_spinhighkick.mp4",
+      "relative_path": "sifu/content/movies/skillvideosopti/10_technique_spinhighkick.mp4",
+      "size": 2826250
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "11_technique_guardbreak.mp4",
+      "relative_path": "sifu/content/movies/skillvideosopti/11_technique_guardbreak.mp4",
+      "size": 1993197
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "12_action_otgcounter.mp4",
+      "relative_path": "sifu/content/movies/skillvideosopti/12_action_otgcounter.mp4",
+      "size": 1553125
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "13_focus_stun.mp4",
+      "relative_path": "sifu/content/movies/skillvideosopti/13_focus_stun.mp4",
+      "size": 2902153
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "14_technique_postpushbackdamage.mp4",
+      "relative_path": "sifu/content/movies/skillvideosopti/14_technique_postpushbackdamage.mp4",
+      "size": 2611228
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "15_technique_engagegroundpunch.mp4",
+      "relative_path": "sifu/content/movies/skillvideosopti/15_technique_engagegroundpunch.mp4",
+      "size": 1908724
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "16_technique_crookedfoot.mp4",
+      "relative_path": "sifu/content/movies/skillvideosopti/16_technique_crookedfoot.mp4",
+      "size": 1845151
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "17_technique_multihit.mp4",
+      "relative_path": "sifu/content/movies/skillvideosopti/17_technique_multihit.mp4",
+      "size": 3086511
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "18_technique_dizzypunch.mp4",
+      "relative_path": "sifu/content/movies/skillvideosopti/18_technique_dizzypunch.mp4",
+      "size": 5733116
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "19_technique_thrustkick.mp4",
+      "relative_path": "sifu/content/movies/skillvideosopti/19_technique_thrustkick.mp4",
+      "size": 1364440
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "20_technique_resilient.mp4",
+      "relative_path": "sifu/content/movies/skillvideosopti/20_technique_resilient.mp4",
+      "size": 3840869
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "21_technique_postpushbackknockdown.mp4",
+      "relative_path": "sifu/content/movies/skillvideosopti/21_technique_postpushbackknockdown.mp4",
+      "size": 1942858
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "22_action_brokenweapons.mp4",
+      "relative_path": "sifu/content/movies/skillvideosopti/22_action_brokenweapons.mp4",
+      "size": 4049595
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "23_technique_invert.mp4",
+      "relative_path": "sifu/content/movies/skillvideosopti/23_technique_invert.mp4",
+      "size": 2263568
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "24_technique_disengage.mp4",
+      "relative_path": "sifu/content/movies/skillvideosopti/24_technique_disengage.mp4",
+      "size": 1883743
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "25_technique_rushsweep.mp4",
+      "relative_path": "sifu/content/movies/skillvideosopti/25_technique_rushsweep.mp4",
+      "size": 1379099
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "splash_sloclap.mp4",
+      "relative_path": "sifu/content/movies/splash_sloclap.mp4",
+      "size": 279203
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "splashscreen_kepler_4k.mp4",
+      "relative_path": "sifu/content/movies/splashscreen/4k/splashscreen_kepler_4k.mp4",
+      "size": 815560
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "splashscreen_sloclap_4k.mp4",
+      "relative_path": "sifu/content/movies/splashscreen/4k/splashscreen_sloclap_4k.mp4",
+      "size": 501259
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "splashscreen_unrealwwise_4k.mp4",
+      "relative_path": "sifu/content/movies/splashscreen/4k/splashscreen_unrealwwise_4k.mp4",
+      "size": 830684
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "splashscreen_kepler_fullhd.mp4",
+      "relative_path": "sifu/content/movies/splashscreen/fullhd/splashscreen_kepler_fullhd.mp4",
+      "size": 464534
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "splashscreen_sloclap_fullhd.mp4",
+      "relative_path": "sifu/content/movies/splashscreen/fullhd/splashscreen_sloclap_fullhd.mp4",
+      "size": 677467
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "splashscreen_unrealwwise_fullhd.mp4",
+      "relative_path": "sifu/content/movies/splashscreen/fullhd/splashscreen_unrealwwise_fullhd.mp4",
+      "size": 499267
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "splashscreen_unrealwwisenvidia_fullhd.mp4",
+      "relative_path": "sifu/content/movies/splashscreen/fullhd/splashscreen_unrealwwisenvidia_fullhd.mp4",
+      "size": 693275
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "t_nightclub_lightvideo_01_a.mp4",
+      "relative_path": "sifu/content/movies/t_nightclub_lightvideo_01_a.mp4",
+      "size": 253779
+    },
+    {
+      "category": "Archive",
+      "extension": "pak",
+      "file_name": "pakchunk0-ps5.pak",
+      "relative_path": "sifu/content/paks/pakchunk0-ps5.pak",
+      "size": 14513017738
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "achievements.json",
+      "relative_path": "sifu/platforms/ps5/config/oss/achievements.json",
+      "size": 3160
+    },
+    {
+      "category": "Unknown",
+      "extension": "ini",
+      "file_name": "crashreportclient.ini",
+      "relative_path": "sifu/saved/config/crashreportclient/ue4cc-ps5-000476cc08def27bdcfdf5dd002dd625/crashreportclient.ini",
+      "size": 107
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "ue4commandline.txt",
+      "relative_path": "ue4commandline.txt",
+      "size": 28
+    }
+  ],
+  "by_category": {
+    "archive": 1,
+    "audio": 2,
+    "executable": 78,
+    "metadata": 22,
+    "texture": 12,
+    "unknown": 66
+  },
+  "by_extension": {
+    "(no_ext)": 2,
+    "at9": 2,
+    "auth_info": 1,
+    "dat": 10,
+    "dds": 8,
+    "eboot.bin": 2,
+    "ini": 2,
+    "json": 6,
+    "mov": 2,
+    "mp4": 60,
+    "pak": 1,
+    "png": 4,
+    "prx": 74,
+    "sprx": 2,
+    "txt": 1,
+    "ucp": 4
+  },
+  "game": "SIFU-PPSA03001-EUR-PS5",
+  "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\SIFU-PPSA03001-EUR-PS5",
+  "total_bytes": 15214727860,
+  "total_files": 181
+}

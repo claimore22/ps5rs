@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "title_id": "PPSA03001",
+  "name": "Sifu - [PPSA03001]",
+  "eboot_sha256": "50344636bb447bd6e1b9fbab70f9d60ca64e68df1f79e8dceda200f4f08e7e69",
+  "game_fingerprint": "181f05e30426cf214cf78a4a932a2d60427238ff1b4413ce8f0c2ca6d4e5b9b9",
+  "environment_fingerprint": "c65955db3dee9d575ca652856c86c3fc2b7297fff36bb37fcb1b9319f1ff09a9",
+  "loader_fingerprint": "d245a80770d2897643c4754f10883b674208fc8fdecaad2ebd247d1990f6f5a0",
+  "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
+  "ingest_id": "ingest_20260913025551_181f05e30426",
+  "ingested_at": "2026-09-13T02:55:51Z",
+  "params": {
+    "name": "SIFU-PPSA03001-EUR-PS5",
+    "title_id": "PPSA03001",
+    "content_version": "01.007.000",
+    "master_version": "01.01",
+    "sdk_version": "0x0300000000000000",
+    "title_name": "Sifu",
+    "display_name": "Sifu - [PPSA03001]",
+    "drm_type": "standard",
+    "content_id": "EP2566-PPSA03001_00-WUGUAN0000000001",
+    "creation_date": "2022-03-03 14:15:16"
+  },
+  "load_report_file": "load_report.json"
+}
