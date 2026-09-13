@@ -336,77 +336,107 @@
     ],
     "graph": {
       "nodes": [
-        "libSceNpTrophy2.prx",
-        "libSceHttp.prx",
-        "libSceSsl.prx",
-        "libSceCommonDialog.prx",
-        "libSceAvPlayer.native.prx",
-        "libSceNet.prx",
-        "libSceNpUtility.prx",
-        "libSceNpGameIntent.prx",
-        "libSceLibcInternal.prx",
-        "libSceJson2.prx",
-        "libSceFontFt-module.prx",
-        "libSceHttp2.prx",
-        "libScePad.prx",
-        "libc.prx",
-        "libSceAudioOut.prx",
-        "libSceNpWebApi2.prx",
-        "libSceAgcDriver.prx",
-        "libSceNgs2.prx",
-        "libSceMsgDialog.native.prx",
-        "libSceNpUniversalDataSystem.prx",
-        "libSceSaveData.native.prx",
         "libSceNpManager.prx",
-        "libkernel.prx",
-        "libSceSigninDialog.prx",
-        "libSceSystemService.prx",
-        "PPSA13356-app",
-        "libSceUserService.prx",
-        "libSceNetCtl.prx",
-        "libSceRtc.prx",
-        "libSceVideoOut.prx",
-        "libSceFont-module.prx",
-        "libSceSysmodule.prx",
-        "libSceAgc.prx",
         "libSceSaveDataDialog.native.prx",
-        "libSceNpCppWebApi.prx"
+        "libSceHttp.prx",
+        "libSceAgcDriver.prx",
+        "libSceRtc.prx",
+        "libSceNgs2.prx",
+        "libSceNpWebApi2.prx",
+        "libSceNpGameIntent.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceVideoOut.prx",
+        "libSceJson2.prx",
+        "libSceFont-module.prx",
+        "libSceSaveData.native.prx",
+        "libSceNpCppWebApi.prx",
+        "libkernel.prx",
+        "libSceLibcInternal.prx",
+        "libSceUserService.prx",
+        "libSceFontFt-module.prx",
+        "libSceNpTrophy2.prx",
+        "libSceSigninDialog.prx",
+        "libSceNpUtility.prx",
+        "libScePad.prx",
+        "libSceSysmodule.prx",
+        "libSceSystemService.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libc.prx",
+        "libSceSsl.prx",
+        "PPSA13356-app",
+        "libSceNetCtl.prx",
+        "libSceHttp2.prx",
+        "libSceNet.prx",
+        "libSceAgc.prx",
+        "libSceAudioOut.prx",
+        "libSceCommonDialog.prx"
       ],
       "unavailable": [
-        "libSceNpManager.prx",
-        "libSceNpWebApi2.prx",
-        "libScePad.prx",
-        "libSceLibcInternal.prx",
-        "libSceAgc.prx",
-        "libSceAvPlayer.native.prx",
-        "libSceSaveData.native.prx",
-        "libSceNgs2.prx",
-        "libSceNpUniversalDataSystem.prx",
-        "libSceMsgDialog.native.prx",
-        "libSceJson2.prx",
-        "libSceNet.prx",
-        "libSceNetCtl.prx",
-        "libSceNpUtility.prx",
         "libSceSigninDialog.prx",
-        "libSceUserService.prx",
-        "libkernel.prx",
-        "libSceCommonDialog.prx",
-        "libSceFontFt-module.prx",
-        "libSceAudioOut.prx",
-        "libSceHttp.prx",
-        "libSceNpGameIntent.prx",
-        "libSceSysmodule.prx",
-        "libSceRtc.prx",
-        "libSceHttp2.prx",
-        "libSceFont-module.prx",
-        "libSceAgcDriver.prx",
-        "libSceSsl.prx",
-        "libSceSaveDataDialog.native.prx",
+        "libSceMsgDialog.native.prx",
         "libSceNpTrophy2.prx",
+        "libSceCommonDialog.prx",
+        "libSceHttp2.prx",
+        "libSceNgs2.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceNet.prx",
+        "libScePad.prx",
+        "libSceVideoOut.prx",
+        "libSceHttp.prx",
+        "libSceSaveData.native.prx",
+        "libkernel.prx",
+        "libSceAgcDriver.prx",
+        "libSceNpUtility.prx",
+        "libSceNpWebApi2.prx",
+        "libSceFontFt-module.prx",
+        "libSceAgc.prx",
         "libSceSystemService.prx",
-        "libSceVideoOut.prx"
+        "libSceRtc.prx",
+        "libSceAudioOut.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceNetCtl.prx",
+        "libSceNpManager.prx",
+        "libSceSsl.prx",
+        "libSceJson2.prx",
+        "libSceSysmodule.prx",
+        "libSceLibcInternal.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceNpGameIntent.prx",
+        "libSceFont-module.prx",
+        "libSceUserService.prx"
       ],
       "edges": [
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceJson2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceRtc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceNpWebApi2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceHttp.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
         {
           "from": "libc.prx",
           "to": "libkernel.prx",
@@ -576,36 +606,6 @@
           "from": "PPSA13356-app",
           "to": "libc.prx",
           "status": "loaded"
-        },
-        {
-          "from": "libSceNpCppWebApi.prx",
-          "to": "libSceJson2.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libSceNpCppWebApi.prx",
-          "to": "libSceRtc.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libSceNpCppWebApi.prx",
-          "to": "libSceNpWebApi2.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libSceNpCppWebApi.prx",
-          "to": "libSceHttp.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libSceNpCppWebApi.prx",
-          "to": "libkernel.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libSceNpCppWebApi.prx",
-          "to": "libSceLibcInternal.prx",
-          "status": "missing"
         }
       ]
     },
@@ -622,9 +622,9 @@
   "total_exports": 44230,
   "freshness": {
     "report_format": 1,
-    "loader_fingerprint": "d245a80770d2897643c4754f10883b674208fc8fdecaad2ebd247d1990f6f5a0",
+    "loader_fingerprint": "37a85e37ad1df177c24ca92b5e06dd2322849bcbc949ec1461e015d7a1db1eee",
     "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
-    "environment_fingerprint": "c65955db3dee9d575ca652856c86c3fc2b7297fff36bb37fcb1b9319f1ff09a9",
-    "game_fingerprint": "1bfa616da344cecb57537a15d50189747c27170e8cb344591eba6dccabab1201"
+    "environment_fingerprint": "3aaac4cd58fab0d58acdb4ea2271b30447f0e35fa900d2cd9f160d90a489df07",
+    "game_fingerprint": "0a327b5dc7dab2fb4bc1a0a2ee1216e6ea5faafb0f7fc94bb80a5cfecfad43c7"
   }
 }

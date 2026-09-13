@@ -822,6 +822,13 @@
     {
       "category": "Unknown",
       "extension": "ini",
+      "file_name": "crashreportclient.ini",
+      "relative_path": "ronin/saved/config/crashreportclient/ue4cc-ps5-00047e0f08df113440b48302004ced81/crashreportclient.ini",
+      "size": 107
+    },
+    {
+      "category": "Unknown",
+      "extension": "ini",
       "file_name": "gameusersettings.ini",
       "relative_path": "ronin/saved/config/ps5/gameusersettings.ini",
       "size": 1
@@ -994,7 +1001,7 @@
     "executable": 10,
     "metadata": 15,
     "texture": 7,
-    "unknown": 21
+    "unknown": 22
   },
   "by_extension": {
     "(no_ext)": 1,
@@ -1004,7 +1011,7 @@
     "dat": 5,
     "dds": 4,
     "eboot.bin": 1,
-    "ini": 3,
+    "ini": 4,
     "json": 6,
     "mp4": 16,
     "pak": 1,
@@ -1016,6 +1023,6 @@
   },
   "game": "Trek To Yomi 02.000 PPSA02629",
   "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Trek.To.Yomi-PPSA02629-EUR-Game-v02.000-PS5\\Trek.To.Yomi-PPSA02629-EUR-Game-v02.000-PS5\\Trek To Yomi 02.000 PPSA02629",
-  "total_bytes": 18267142804,
-  "total_files": 141
+  "total_bytes": 18267142911,
+  "total_files": 142
 }
