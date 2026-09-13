@@ -1257,6 +1257,13 @@
       "category": "Unknown",
       "extension": "ini",
       "file_name": "crashreportclient.ini",
+      "relative_path": "sifu/saved/config/crashreportclient/ue4cc-ps5-0004529208df1135b65affbc00554aa7/crashreportclient.ini",
+      "size": 107
+    },
+    {
+      "category": "Unknown",
+      "extension": "ini",
+      "file_name": "crashreportclient.ini",
       "relative_path": "sifu/saved/config/crashreportclient/ue4cc-ps5-000476cc08def27bdcfdf5dd002dd625/crashreportclient.ini",
       "size": 107
     },
@@ -1274,7 +1281,7 @@
     "executable": 78,
     "metadata": 22,
     "texture": 12,
-    "unknown": 66
+    "unknown": 67
   },
   "by_extension": {
     "(no_ext)": 2,
@@ -1283,7 +1290,7 @@
     "dat": 10,
     "dds": 8,
     "eboot.bin": 2,
-    "ini": 2,
+    "ini": 3,
     "json": 6,
     "mov": 2,
     "mp4": 60,
@@ -1296,6 +1303,6 @@
   },
   "game": "SIFU-PPSA03001-EUR-PS5",
   "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\SIFU-PPSA03001-EUR-PS5",
-  "total_bytes": 15214727860,
-  "total_files": 181
+  "total_bytes": 15214727967,
+  "total_files": 182
 }
