@@ -2,14 +2,14 @@
   "schema_version": 1,
   "tool": "ps5rs",
   "games_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5",
-  "generated_at": "2026-09-13T04:08:57Z",
+  "generated_at": "2026-09-13T04:11:52Z",
   "summary": {
     "games_found": 32,
     "games_parsed": 31,
     "games_failed": 1,
-    "imports_total": 33240,
-    "known_total": 32812,
-    "unknown_total": 428,
+    "imports_total": 34899,
+    "known_total": 34470,
+    "unknown_total": 429,
     "unique_unknown_nids": 183
   },
   "games": [
@@ -681,6 +681,17 @@
       "error": null
     },
     {
+      "name": "Sifu - [PPSA03001]",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\SIFU-PPSA03001-EUR-PS5\\eboot.bin",
+      "imports": 2016,
+      "known": 2015,
+      "unknown": 1,
+      "unknown_nids": [
+        "k0E7vkgqAuE"
+      ],
+      "error": null
+    },
+    {
       "name": "Soul Hackers 2 - [PPSA03743]",
       "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Soul.Hackers.2-PPSA03743-USA-Game (v01.002)+DLC-PS5\\eboot.bin",
       "imports": 594,
@@ -740,21 +751,12 @@
         "zlqfTyrQSPk"
       ],
       "error": null
-    },
-    {
-      "name": "void tRrLM();++ //Void Terrarium++ - [PPSA03061]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Void.tRrLM();++.Void.Terrarium++-PPSA03061-USA-PS5\\void tRrLM Void Terrarium PS5 Dump v1.000\\eboot.bin",
-      "imports": 357,
-      "known": 357,
-      "unknown": 0,
-      "unknown_nids": [],
-      "error": null
     }
   ],
   "unknown_nids": [
     {
       "nid": "k0E7vkgqAuE",
-      "frequency": 11,
+      "frequency": 12,
       "libraries": [
         "libSceAgc"
       ],
@@ -768,6 +770,7 @@
         "OCTOPATH TRAVELER II - [PPSA09809]",
         "Oxide Room 104 - [PPSA07653]",
         "Raiden III x MIKADO MANIAX - [PPSA13356]",
+        "Sifu - [PPSA03001]",
         "Stray - [PPSA02100]",
         "The Pathless - [PPSA01825]"
       ],
