@@ -2,14 +2,14 @@
   "schema_version": 1,
   "tool": "ps5rs",
   "games_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5",
-  "generated_at": "2026-09-13T05:31:54Z",
+  "generated_at": "2026-09-13T05:35:21Z",
   "summary": {
     "games_found": 32,
     "games_parsed": 31,
     "games_failed": 1,
-    "imports_total": 34964,
-    "known_total": 34535,
-    "unknown_total": 429,
+    "imports_total": 33240,
+    "known_total": 32812,
+    "unknown_total": 428,
     "unique_unknown_nids": 183
   },
   "games": [
@@ -392,17 +392,6 @@
       "error": null
     },
     {
-      "name": "DRAGON QUEST III HD-2D Remake - [PPSA20612]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5\\eboot.bin",
-      "imports": 2081,
-      "known": 2080,
-      "unknown": 1,
-      "unknown_nids": [
-        "k0E7vkgqAuE"
-      ],
-      "error": null
-    },
-    {
       "name": "Dusk Diver 2 - [PPSA06565]",
       "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Dusk.Diver.2-PPSA06565-EUR-Game-v1.000.000-PS5\\Dusk Diver 2 01.000 PPSA06565\\eboot.bin",
       "imports": 2129,
@@ -751,19 +740,27 @@
         "zlqfTyrQSPk"
       ],
       "error": null
+    },
+    {
+      "name": "void tRrLM();++ //Void Terrarium++ - [PPSA03061]",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Void.tRrLM();++.Void.Terrarium++-PPSA03061-USA-PS5\\void tRrLM Void Terrarium PS5 Dump v1.000\\eboot.bin",
+      "imports": 357,
+      "known": 357,
+      "unknown": 0,
+      "unknown_nids": [],
+      "error": null
     }
   ],
   "unknown_nids": [
     {
       "nid": "k0E7vkgqAuE",
-      "frequency": 12,
+      "frequency": 11,
       "libraries": [
         "libSceAgc"
       ],
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
-        "DRAGON QUEST III HD-2D Remake - [PPSA20612]",
         "Dusk Diver 2 - [PPSA06565]",
         "Hello Neighbor 2 - [PPSA07426]",
         "Monster Boy and the Cursed Kingdom - [PPSA02787]",

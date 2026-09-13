@@ -216,62 +216,77 @@
     ],
     "graph": {
       "nodes": [
-        "libSceAmpr.prx",
-        "libSceNpManager.prx",
-        "libSceErrorDialog.prx",
-        "libSceSaveData.native.prx",
         "libSceSystemService.prx",
-        "libSceLibcInternal.prx",
-        "libSceSaveDataDialog.native.prx",
-        "libSceAgcDriver.prx",
-        "libSceNgs2.prx",
-        "libSceSysmodule.prx",
-        "libScePad.prx",
-        "libSceMsgDialog.native.prx",
-        "libSceUserService.prx",
+        "libSceImeDialog.prx",
+        "libSceAmpr.prx",
         "libSceCesCs-module.prx",
         "libSceNpGameIntent.prx",
-        "libSceCommonDialog.prx",
-        "libSceAudioOut.prx",
-        "libSceRtc.prx",
-        "libSceVideoOut.prx",
+        "libkernel.prx",
+        "libc.prx",
+        "void tRrLM Void Terrarium PS5 Dump v1.000",
+        "libSceSaveData.native.prx",
+        "libSceAgcDriver.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceNpManager.prx",
+        "libSceLibcInternal.prx",
+        "libSceNpTrophy2.prx",
         "libSceNpUniversalDataSystem.prx",
         "libSceAgc.prx",
-        "void tRrLM Void Terrarium PS5 Dump v1.000",
-        "libSceWebBrowserDialog.prx",
-        "libkernel.prx",
-        "libSceNpTrophy2.prx",
-        "libSceImeDialog.prx",
-        "libc.prx"
+        "libSceErrorDialog.prx",
+        "libSceVideoOut.prx",
+        "libSceCommonDialog.prx",
+        "libSceSysmodule.prx",
+        "libSceRtc.prx",
+        "libSceNgs2.prx",
+        "libScePad.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceAudioOut.prx",
+        "libSceUserService.prx"
       ],
       "unavailable": [
-        "libSceNpManager.prx",
-        "libSceImeDialog.prx",
-        "libSceVideoOut.prx",
-        "libSceSysmodule.prx",
         "libSceAgcDriver.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceUserService.prx",
         "libSceErrorDialog.prx",
-        "libSceNpUniversalDataSystem.prx",
-        "libSceSaveData.native.prx",
-        "libSceSaveDataDialog.native.prx",
-        "libSceNpGameIntent.prx",
+        "libSceCommonDialog.prx",
+        "libSceSysmodule.prx",
         "libSceAmpr.prx",
+        "libkernel.prx",
+        "libSceAgc.prx",
+        "libSceVideoOut.prx",
+        "libSceNpGameIntent.prx",
+        "libSceSystemService.prx",
+        "libSceRtc.prx",
+        "libSceNpTrophy2.prx",
+        "libSceSaveData.native.prx",
+        "libSceImeDialog.prx",
+        "libSceLibcInternal.prx",
+        "libSceNpManager.prx",
+        "libSceNgs2.prx",
+        "libSceAudioOut.prx",
         "libSceCesCs-module.prx",
+        "libSceSaveDataDialog.native.prx",
         "libScePad.prx",
         "libSceWebBrowserDialog.prx",
-        "libkernel.prx",
-        "libSceCommonDialog.prx",
-        "libSceLibcInternal.prx",
-        "libSceMsgDialog.native.prx",
-        "libSceAgc.prx",
-        "libSceAudioOut.prx",
-        "libSceSystemService.prx",
-        "libSceNgs2.prx",
-        "libSceNpTrophy2.prx",
-        "libSceUserService.prx",
-        "libSceRtc.prx"
+        "libSceNpUniversalDataSystem.prx"
       ],
       "edges": [
+        {
+          "from": "libc.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
         {
           "from": "void tRrLM Void Terrarium PS5 Dump v1.000",
           "to": "libSceCommonDialog.prx",
@@ -396,21 +411,6 @@
           "from": "void tRrLM Void Terrarium PS5 Dump v1.000",
           "to": "libSceAmpr.prx",
           "status": "missing"
-        },
-        {
-          "from": "libc.prx",
-          "to": "libkernel.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libc.prx",
-          "to": "libSceLibcInternal.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libc.prx",
-          "to": "libSceSysmodule.prx",
-          "status": "missing"
         }
       ]
     },
@@ -427,9 +427,9 @@
   "total_exports": 2565,
   "freshness": {
     "report_format": 1,
-    "loader_fingerprint": "37a85e37ad1df177c24ca92b5e06dd2322849bcbc949ec1461e015d7a1db1eee",
+    "loader_fingerprint": "d245a80770d2897643c4754f10883b674208fc8fdecaad2ebd247d1990f6f5a0",
     "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
-    "environment_fingerprint": "3aaac4cd58fab0d58acdb4ea2271b30447f0e35fa900d2cd9f160d90a489df07",
-    "game_fingerprint": "5c374028991ace19997f4c3855d0489a746768a11d81e8b168059d92da1007f7"
+    "environment_fingerprint": "c65955db3dee9d575ca652856c86c3fc2b7297fff36bb37fcb1b9319f1ff09a9",
+    "game_fingerprint": "65ff4cdd30db34574991872be3ba2004957ff7cc0983fbba523d568b70df01d4"
   }
 }
