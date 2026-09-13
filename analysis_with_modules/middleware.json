@@ -5371,6 +5371,137 @@
       "unknown": []
     },
     {
+      "game": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+      "title_id": "PPSA10872",
+      "third_party": [],
+      "sony": [
+        {
+          "file_name": "libSceFace.prx",
+          "module_name": "libSceFace",
+          "kind": "sony",
+          "sha256": "383406d3cac5a460d50bc488a5d117a7c99616ff3558e40eea8c20585f0d4998",
+          "parseable": true,
+          "imports": 20,
+          "exports": 29,
+          "import_libs": [
+            "libSceLibcInternal",
+            "libkernel"
+          ],
+          "needed_files": [
+            "libkernel.prx",
+            "libSceLibcInternal.prx"
+          ]
+        },
+        {
+          "file_name": "libSceFaceTracker.prx",
+          "module_name": "libSceFaceTracker",
+          "kind": "sony",
+          "sha256": "4ca6ebc831871ecbe846e89428932656dd56d670044b4d5e506cf03909434a67",
+          "parseable": true,
+          "imports": 27,
+          "exports": 21,
+          "import_libs": [
+            "libSceFace",
+            "libSceLibcInternal",
+            "libScePosix",
+            "libkernel"
+          ],
+          "needed_files": [
+            "libSceFace.prx",
+            "libkernel.prx",
+            "libSceLibcInternal.prx"
+          ]
+        },
+        {
+          "file_name": "libSceJobManager.prx",
+          "module_name": "libSceJobManager",
+          "kind": "sony",
+          "sha256": "237e10c012750d226f4cf967d79e8651b5f03d482c59f186e38378409694be60",
+          "parseable": true,
+          "imports": 146,
+          "exports": 11,
+          "import_libs": [
+            "libSceAgc",
+            "libSceAgcDriver",
+            "libSceLibcInternal",
+            "libSceRazorCpu",
+            "libkernel",
+            "ulobjmgr"
+          ],
+          "needed_files": [
+            "libkernel.prx",
+            "libSceLibcInternal.prx",
+            "libSceAgcDriver.prx",
+            "libSceAgc.prx",
+            "ulobjmgr.prx",
+            "libSceRazorCpu.prx"
+          ]
+        },
+        {
+          "file_name": "libSceNpCppWebApi.prx",
+          "module_name": "libSceNpCppWebApi",
+          "kind": "sony",
+          "sha256": "3d3a594e45087d032939e40359a5dcc911a8952cd3ef51be9541f96dd0dd7eb5",
+          "parseable": true,
+          "imports": 95,
+          "exports": 41658,
+          "import_libs": [
+            "libSceHttp",
+            "libSceJson2",
+            "libSceLibcInternal",
+            "libSceNpWebApi2",
+            "libSceRtc",
+            "libkernel"
+          ],
+          "needed_files": [
+            "libSceJson2.prx",
+            "libSceRtc.prx",
+            "libSceNpWebApi2.prx",
+            "libSceHttp.prx",
+            "libkernel.prx",
+            "libSceLibcInternal.prx"
+          ]
+        },
+        {
+          "file_name": "libScePfs.prx",
+          "module_name": "libScePfs",
+          "kind": "sony",
+          "sha256": "8f92f89f4fa71e8c895ca7ee91a85e222e9f5470f169caf496f6513ec5fcdb05",
+          "parseable": true,
+          "imports": 15,
+          "exports": 9,
+          "import_libs": [
+            "libSceLibcInternal",
+            "libkernel"
+          ],
+          "needed_files": [
+            "libkernel.prx",
+            "libSceLibcInternal.prx"
+          ]
+        },
+        {
+          "file_name": "libc.prx",
+          "module_name": "libc",
+          "kind": "sony",
+          "sha256": "25cefd411d5d6172b2264d6dd26a6cff01e501011f5aae61c4b158167454626a",
+          "parseable": true,
+          "imports": 104,
+          "exports": 2572,
+          "import_libs": [
+            "libSceLibcInternalExt",
+            "libSceSysmodule",
+            "libkernel"
+          ],
+          "needed_files": [
+            "libkernel.prx",
+            "libSceLibcInternal.prx",
+            "libSceSysmodule.prx"
+          ]
+        }
+      ],
+      "unknown": []
+    },
+    {
       "game": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
       "title_id": "PPSA17949",
       "third_party": [
@@ -8149,14 +8280,6 @@
       "unknown": []
     },
     {
-      "game": "WUCHANG.Fallen.Feathers-PPSA09519-EUR-Game(v01.01)-PS5",
-      "title_id": "PPSA09519",
-      "engine": "Unreal Engine",
-      "third_party": [],
-      "sony": [],
-      "unknown": []
-    },
-    {
       "game": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
       "title_id": "PPSA22520",
       "third_party": [],
@@ -8267,8 +8390,8 @@
       "unknown": []
     }
   ],
-  "total_prx": 328,
+  "total_prx": 334,
   "third_party_modules": 184,
-  "sony_modules": 135,
+  "sony_modules": 141,
   "unknown_modules": 9
 }

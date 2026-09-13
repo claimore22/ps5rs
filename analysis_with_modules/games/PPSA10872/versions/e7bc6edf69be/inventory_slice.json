@@ -1,0 +1,432 @@
+{
+  "artifacts": [
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "contentids.json",
+      "relative_path": "contentids.json",
+      "size": 171
+    },
+    {
+      "category": "Executable",
+      "extension": "eboot.bin",
+      "file_name": "eboot.bin",
+      "relative_path": "eboot.bin",
+      "size": 174047201
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceFace.prx",
+      "relative_path": "sce_module/libSceFace.prx",
+      "size": 325548
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "libSceFace.prx.esbak",
+      "relative_path": "sce_module/libSceFace.prx.esbak",
+      "size": 372516
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceFaceTracker.prx",
+      "relative_path": "sce_module/libSceFaceTracker.prx",
+      "size": 2612016
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "libSceFaceTracker.prx.esbak",
+      "relative_path": "sce_module/libSceFaceTracker.prx.esbak",
+      "size": 2660680
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceJobManager.prx",
+      "relative_path": "sce_module/libSceJobManager.prx",
+      "size": 71568
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "libSceJobManager.prx.esbak",
+      "relative_path": "sce_module/libSceJobManager.prx.esbak",
+      "size": 113288
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceNpCppWebApi.prx",
+      "relative_path": "sce_module/libSceNpCppWebApi.prx",
+      "size": 7834832
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "libSceNpCppWebApi.prx.esbak",
+      "relative_path": "sce_module/libSceNpCppWebApi.prx.esbak",
+      "size": 7864920
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libScePfs.prx",
+      "relative_path": "sce_module/libScePfs.prx",
+      "size": 1343216
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "libScePfs.prx.esbak",
+      "relative_path": "sce_module/libScePfs.prx.esbak",
+      "size": 1381064
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libc.prx",
+      "relative_path": "sce_module/libc.prx",
+      "size": 1285192
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "libc.prx.esbak",
+      "relative_path": "sce_module/libc.prx.esbak",
+      "size": 1334208
+    },
+    {
+      "category": "Executable",
+      "extension": "sprx",
+      "file_name": "right.sprx",
+      "relative_path": "sce_sys/about/right.sprx",
+      "size": 12400
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "right.sprx.esbak",
+      "relative_path": "sce_sys/about/right.sprx.esbak",
+      "size": 66196
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "ext_info.dat",
+      "relative_path": "sce_sys/ext_info.dat",
+      "size": 44
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "icon0.dds",
+      "relative_path": "sce_sys/icon0.dds",
+      "size": 262292
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "icon0.png",
+      "relative_path": "sce_sys/icon0.png",
+      "size": 275924
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "keystone",
+      "relative_path": "sce_sys/keystone",
+      "size": 96
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "nptitle.dat",
+      "relative_path": "sce_sys/nptitle.dat",
+      "size": 160
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "param.json",
+      "relative_path": "sce_sys/param.json",
+      "size": 1818
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "pfs-version.dat",
+      "relative_path": "sce_sys/pfs-version.dat",
+      "size": 10
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic0.dds",
+      "relative_path": "sce_sys/pic0.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "pic0.png",
+      "relative_path": "sce_sys/pic0.png",
+      "size": 1194817
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic1.dds",
+      "relative_path": "sce_sys/pic1.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic2.dds",
+      "relative_path": "sce_sys/pic2.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "playgo-scenario.json",
+      "relative_path": "sce_sys/playgo-scenario.json",
+      "size": 420
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "shareoverlayimage.png",
+      "relative_path": "sce_sys/shareoverlayimage.png",
+      "size": 2631
+    },
+    {
+      "category": "Audio",
+      "extension": "at9",
+      "file_name": "snd0.at9",
+      "relative_path": "sce_sys/snd0.at9",
+      "size": 738600
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "sce_sys/trophy2/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "trophy00.ucp",
+      "relative_path": "sce_sys/trophy2/trophy00.ucp",
+      "size": 10123840
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "sce_sys/uds/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "uds00.ucp",
+      "relative_path": "sce_sys/uds/uds00.ucp",
+      "size": 59152
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "ue4commandline.txt",
+      "relative_path": "ue4commandline.txt",
+      "size": 32
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "screenshotoverlayimage.png",
+      "relative_path": "xrd777/content/nonufs/screenshotoverlayimage.png",
+      "size": 3621
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "screenshotoverlayimage2.png",
+      "relative_path": "xrd777/content/nonufs/screenshotoverlayimage2.png",
+      "size": 2631
+    },
+    {
+      "category": "Unknown",
+      "extension": "ucas",
+      "file_name": "global.ucas",
+      "relative_path": "xrd777/content/paks/global.ucas",
+      "size": 1511424
+    },
+    {
+      "category": "Unknown",
+      "extension": "utoc",
+      "file_name": "global.utoc",
+      "relative_path": "xrd777/content/paks/global.utoc",
+      "size": 597
+    },
+    {
+      "category": "Archive",
+      "extension": "pak",
+      "file_name": "pakchunk0-ps5.pak",
+      "relative_path": "xrd777/content/paks/pakchunk0-ps5.pak",
+      "size": 1991762702
+    },
+    {
+      "category": "Unknown",
+      "extension": "ucas",
+      "file_name": "pakchunk0-ps5.ucas",
+      "relative_path": "xrd777/content/paks/pakchunk0-ps5.ucas",
+      "size": 6960339184
+    },
+    {
+      "category": "Unknown",
+      "extension": "utoc",
+      "file_name": "pakchunk0-ps5.utoc",
+      "relative_path": "xrd777/content/paks/pakchunk0-ps5.utoc",
+      "size": 3699249
+    },
+    {
+      "category": "Archive",
+      "extension": "pak",
+      "file_name": "pakchunk1-ps5.pak",
+      "relative_path": "xrd777/content/paks/pakchunk1-ps5.pak",
+      "size": 5516212461
+    },
+    {
+      "category": "Unknown",
+      "extension": "ucas",
+      "file_name": "pakchunk1-ps5.ucas",
+      "relative_path": "xrd777/content/paks/pakchunk1-ps5.ucas",
+      "size": 17894438352
+    },
+    {
+      "category": "Unknown",
+      "extension": "utoc",
+      "file_name": "pakchunk1-ps5.utoc",
+      "relative_path": "xrd777/content/paks/pakchunk1-ps5.utoc",
+      "size": 9132732
+    },
+    {
+      "category": "Archive",
+      "extension": "pak",
+      "file_name": "pakchunk2-ps5.pak",
+      "relative_path": "xrd777/content/paks/pakchunk2-ps5.pak",
+      "size": 0
+    },
+    {
+      "category": "Unknown",
+      "extension": "ucas",
+      "file_name": "pakchunk2-ps5.ucas",
+      "relative_path": "xrd777/content/paks/pakchunk2-ps5.ucas",
+      "size": 0
+    },
+    {
+      "category": "Unknown",
+      "extension": "utoc",
+      "file_name": "pakchunk2-ps5.utoc",
+      "relative_path": "xrd777/content/paks/pakchunk2-ps5.utoc",
+      "size": 0
+    },
+    {
+      "category": "Archive",
+      "extension": "pak",
+      "file_name": "pakchunk3-ps5.pak",
+      "relative_path": "xrd777/content/paks/pakchunk3-ps5.pak",
+      "size": 0
+    },
+    {
+      "category": "Unknown",
+      "extension": "ucas",
+      "file_name": "pakchunk3-ps5.ucas",
+      "relative_path": "xrd777/content/paks/pakchunk3-ps5.ucas",
+      "size": 0
+    },
+    {
+      "category": "Unknown",
+      "extension": "utoc",
+      "file_name": "pakchunk3-ps5.utoc",
+      "relative_path": "xrd777/content/paks/pakchunk3-ps5.utoc",
+      "size": 0
+    },
+    {
+      "category": "Archive",
+      "extension": "pak",
+      "file_name": "pakchunk4-ps5.pak",
+      "relative_path": "xrd777/content/paks/pakchunk4-ps5.pak",
+      "size": 1060243786
+    },
+    {
+      "category": "Unknown",
+      "extension": "ucas",
+      "file_name": "pakchunk4-ps5.ucas",
+      "relative_path": "xrd777/content/paks/pakchunk4-ps5.ucas",
+      "size": 1772118192
+    },
+    {
+      "category": "Unknown",
+      "extension": "utoc",
+      "file_name": "pakchunk4-ps5.utoc",
+      "relative_path": "xrd777/content/paks/pakchunk4-ps5.utoc",
+      "size": 933355
+    },
+    {
+      "category": "Archive",
+      "extension": "pak",
+      "file_name": "pakchunk5-ps5.pak",
+      "relative_path": "xrd777/content/paks/pakchunk5-ps5.pak",
+      "size": 3133605649
+    },
+    {
+      "category": "Unknown",
+      "extension": "ucas",
+      "file_name": "pakchunk5-ps5.ucas",
+      "relative_path": "xrd777/content/paks/pakchunk5-ps5.ucas",
+      "size": 1094566896
+    },
+    {
+      "category": "Unknown",
+      "extension": "utoc",
+      "file_name": "pakchunk5-ps5.utoc",
+      "relative_path": "xrd777/content/paks/pakchunk5-ps5.utoc",
+      "size": 2293070
+    }
+  ],
+  "by_category": {
+    "archive": 6,
+    "audio": 1,
+    "executable": 8,
+    "metadata": 18,
+    "texture": 9,
+    "unknown": 15
+  },
+  "by_extension": {
+    "(no_ext)": 1,
+    "at9": 1,
+    "dat": 5,
+    "dds": 4,
+    "eboot.bin": 1,
+    "esbak": 7,
+    "json": 3,
+    "pak": 6,
+    "png": 5,
+    "prx": 6,
+    "sprx": 1,
+    "txt": 1,
+    "ucas": 7,
+    "ucp": 2,
+    "utoc": 7
+  },
+  "game": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+  "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+  "total_bytes": 39679733461,
+  "total_files": 57
+}
