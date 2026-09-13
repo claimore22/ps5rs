@@ -2,14 +2,14 @@
   "schema_version": 1,
   "tool": "ps5rs",
   "games_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5",
-  "generated_at": "2026-09-13T03:47:35Z",
+  "generated_at": "2026-09-13T03:53:33Z",
   "summary": {
-    "games_found": 31,
-    "games_parsed": 30,
+    "games_found": 32,
+    "games_parsed": 31,
     "games_failed": 1,
-    "imports_total": 33104,
-    "known_total": 32675,
-    "unknown_total": 429,
+    "imports_total": 33240,
+    "known_total": 32812,
+    "unknown_total": 428,
     "unique_unknown_nids": 183
   },
   "games": [
@@ -637,17 +637,6 @@
       "error": null
     },
     {
-      "name": "Persona 3 Reload - [PPSA10872]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5\\eboot.bin",
-      "imports": 2116,
-      "known": 2115,
-      "unknown": 1,
-      "unknown_nids": [
-        "k0E7vkgqAuE"
-      ],
-      "error": null
-    },
-    {
       "name": "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
       "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5\\eboot.bin",
       "imports": 604,
@@ -680,6 +669,15 @@
         "dZGYu5wObJs",
         "zlqfTyrQSPk"
       ],
+      "error": null
+    },
+    {
+      "name": "SAND LAND - [PPSA08574]",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5\\eboot.bin",
+      "imports": 1895,
+      "known": 1895,
+      "unknown": 0,
+      "unknown_nids": [],
       "error": null
     },
     {
@@ -742,12 +740,21 @@
         "zlqfTyrQSPk"
       ],
       "error": null
+    },
+    {
+      "name": "void tRrLM();++ //Void Terrarium++ - [PPSA03061]",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Void.tRrLM();++.Void.Terrarium++-PPSA03061-USA-PS5\\void tRrLM Void Terrarium PS5 Dump v1.000\\eboot.bin",
+      "imports": 357,
+      "known": 357,
+      "unknown": 0,
+      "unknown_nids": [],
+      "error": null
     }
   ],
   "unknown_nids": [
     {
       "nid": "k0E7vkgqAuE",
-      "frequency": 12,
+      "frequency": 11,
       "libraries": [
         "libSceAgc"
       ],
@@ -760,7 +767,6 @@
         "Neko Rescue Tale - [PPSA13871]",
         "OCTOPATH TRAVELER II - [PPSA09809]",
         "Oxide Room 104 - [PPSA07653]",
-        "Persona 3 Reload - [PPSA10872]",
         "Raiden III x MIKADO MANIAX - [PPSA13356]",
         "Stray - [PPSA02100]",
         "The Pathless - [PPSA01825]"
