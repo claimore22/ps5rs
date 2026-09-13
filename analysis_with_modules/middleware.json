@@ -1251,6 +1251,161 @@
       "unknown": []
     },
     {
+      "game": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
+      "title_id": "PPSA20612",
+      "engine": "Unreal Engine",
+      "third_party": [],
+      "sony": [
+        {
+          "file_name": "libSceFace.prx",
+          "module_name": "libSceFace",
+          "kind": "sony",
+          "sha256": "a457bd21ea22ab18c16cda9c96a15a85bbb00d731054aa7ae26cc3c7e754f5f4",
+          "parseable": true,
+          "imports": 20,
+          "exports": 29,
+          "import_libs": [
+            "libSceLibcInternal",
+            "libkernel"
+          ],
+          "needed_files": [
+            "libkernel.prx",
+            "libSceLibcInternal.prx"
+          ]
+        },
+        {
+          "file_name": "libSceFaceTracker.prx",
+          "module_name": "libSceFaceTracker",
+          "kind": "sony",
+          "sha256": "e1792e65b1fef2e59ea8619fed0edf964f06bc80b51716fa0ceab61340671690",
+          "parseable": true,
+          "imports": 27,
+          "exports": 21,
+          "import_libs": [
+            "libSceFace",
+            "libSceLibcInternal",
+            "libScePosix",
+            "libkernel"
+          ],
+          "needed_files": [
+            "libSceFace.prx",
+            "libkernel.prx",
+            "libSceLibcInternal.prx"
+          ]
+        },
+        {
+          "file_name": "libSceFontGsm.prx",
+          "module_name": "libSceFontGsm",
+          "kind": "sony",
+          "sha256": "485b82637e3b9f55c665b57120885670cde5ffaaa3ef2e482af490d6210d23f7",
+          "parseable": true,
+          "imports": 61,
+          "exports": 6,
+          "import_libs": [
+            "libSceAgc",
+            "libSceAgcDriver",
+            "libSceFont",
+            "libSceLibcInternal",
+            "libkernel"
+          ],
+          "needed_files": [
+            "libkernel.prx",
+            "libSceLibcInternal.prx",
+            "libSceFont-module.prx",
+            "libSceAgcDriver.prx",
+            "libSceAgc.prx"
+          ]
+        },
+        {
+          "file_name": "libSceJobManager.prx",
+          "module_name": "libSceJobManager",
+          "kind": "sony",
+          "sha256": "7dbcfc9b3a5479f27cce79b9a2887f349336f3da1228c3df043a5c0013d6212a",
+          "parseable": true,
+          "imports": 153,
+          "exports": 11,
+          "import_libs": [
+            "libSceAgc",
+            "libSceAgcDriver",
+            "libSceLibcInternal",
+            "libSceRazorCpu",
+            "libkernel",
+            "ulobjmgr"
+          ],
+          "needed_files": [
+            "libkernel.prx",
+            "libSceLibcInternal.prx",
+            "libSceAgcDriver.prx",
+            "libSceAgc.prx",
+            "ulobjmgr.prx",
+            "libSceRazorCpu.prx"
+          ]
+        },
+        {
+          "file_name": "libSceNpCppWebApi.prx",
+          "module_name": "libSceNpCppWebApi",
+          "kind": "sony",
+          "sha256": "32ea43961a55200b449a2975e0f246d75778ea4fe39215b206d4f1a86448f213",
+          "parseable": true,
+          "imports": 95,
+          "exports": 42850,
+          "import_libs": [
+            "libSceHttp",
+            "libSceJson2",
+            "libSceLibcInternal",
+            "libSceNpWebApi2",
+            "libSceRtc",
+            "libkernel"
+          ],
+          "needed_files": [
+            "libSceJson2.prx",
+            "libSceRtc.prx",
+            "libSceNpWebApi2.prx",
+            "libSceHttp.prx",
+            "libkernel.prx",
+            "libSceLibcInternal.prx"
+          ]
+        },
+        {
+          "file_name": "libScePfs.prx",
+          "module_name": "libScePfs",
+          "kind": "sony",
+          "sha256": "f23d20b821c7a173a4ea5a627eca3179f14717d8a47e50d9219e8608d81aa7d2",
+          "parseable": true,
+          "imports": 15,
+          "exports": 9,
+          "import_libs": [
+            "libSceLibcInternal",
+            "libkernel"
+          ],
+          "needed_files": [
+            "libkernel.prx",
+            "libSceLibcInternal.prx"
+          ]
+        },
+        {
+          "file_name": "libc.prx",
+          "module_name": "libc",
+          "kind": "sony",
+          "sha256": "b25b19d3ff52d1e093e1fe2b9c37869739a9e7acb8f7a3f3037dea61be0ab94f",
+          "parseable": true,
+          "imports": 104,
+          "exports": 2584,
+          "import_libs": [
+            "libSceLibcInternalExt",
+            "libSceSysmodule",
+            "libkernel"
+          ],
+          "needed_files": [
+            "libkernel.prx",
+            "libSceLibcInternal.prx",
+            "libSceSysmodule.prx"
+          ]
+        }
+      ],
+      "unknown": []
+    },
+    {
       "game": "Dusk Diver 2 01.000 PPSA06565",
       "title_id": "PPSA06565",
       "engine": "Unreal Engine",
@@ -8412,36 +8567,10 @@
         }
       ],
       "unknown": []
-    },
-    {
-      "game": "void tRrLM Void Terrarium PS5 Dump v1.000",
-      "third_party": [],
-      "sony": [
-        {
-          "file_name": "libc.prx",
-          "module_name": "libc",
-          "kind": "sony",
-          "sha256": "fc7c2ad5d2b53b60b17b77d6648638617698af1bb9ad3526662d93d483c3dd68",
-          "parseable": true,
-          "imports": 102,
-          "exports": 2565,
-          "import_libs": [
-            "libSceLibcInternalExt",
-            "libSceSysmodule",
-            "libkernel"
-          ],
-          "needed_files": [
-            "libkernel.prx",
-            "libSceLibcInternal.prx",
-            "libSceSysmodule.prx"
-          ]
-        }
-      ],
-      "unknown": []
     }
   ],
-  "total_prx": 336,
+  "total_prx": 342,
   "third_party_modules": 184,
-  "sony_modules": 143,
+  "sony_modules": 149,
   "unknown_modules": 9
 }

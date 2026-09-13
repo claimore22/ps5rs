@@ -1,0 +1,394 @@
+{
+  "artifacts": [
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "contentids.json",
+      "relative_path": "contentids.json",
+      "size": 171
+    },
+    {
+      "category": "Executable",
+      "extension": "eboot.bin",
+      "file_name": "eboot.bin",
+      "relative_path": "eboot.bin",
+      "size": 155956771
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "eboot.bin.esbak",
+      "relative_path": "eboot.bin.esbak",
+      "size": 155716828
+    },
+    {
+      "category": "Unknown",
+      "extension": "ini",
+      "file_name": "manifest.ini",
+      "relative_path": "engine/saved/config/ps5/manifest.ini",
+      "size": 22
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "saveicon.png",
+      "relative_path": "nicola/content/nicola/ps5asset/saveicon.png",
+      "size": 184181
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "screenshotoverlayimage.png",
+      "relative_path": "nicola/content/nicola/ps5asset/screenshotoverlayimage.png",
+      "size": 37512
+    },
+    {
+      "category": "Archive",
+      "extension": "pak",
+      "file_name": "nicola-ps5.pak",
+      "relative_path": "nicola/content/paks/nicola-ps5.pak",
+      "size": 46665459512
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceFace.prx",
+      "relative_path": "sce_module/libSceFace.prx",
+      "size": 324012
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "libSceFace.prx.esbak",
+      "relative_path": "sce_module/libSceFace.prx.esbak",
+      "size": 372560
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceFaceTracker.prx",
+      "relative_path": "sce_module/libSceFaceTracker.prx",
+      "size": 2614631
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "libSceFaceTracker.prx.esbak",
+      "relative_path": "sce_module/libSceFaceTracker.prx.esbak",
+      "size": 2660727
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceFontGsm.prx",
+      "relative_path": "sce_module/libSceFontGsm.prx",
+      "size": 246279
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "libSceFontGsm.prx.esbak",
+      "relative_path": "sce_module/libSceFontGsm.prx.esbak",
+      "size": 289843
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceJobManager.prx",
+      "relative_path": "sce_module/libSceJobManager.prx",
+      "size": 72022
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "libSceJobManager.prx.esbak",
+      "relative_path": "sce_module/libSceJobManager.prx.esbak",
+      "size": 113846
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceNpCppWebApi.prx",
+      "relative_path": "sce_module/libSceNpCppWebApi.prx",
+      "size": 7878919
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "libSceNpCppWebApi.prx.esbak",
+      "relative_path": "sce_module/libSceNpCppWebApi.prx.esbak",
+      "size": 7907127
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libScePfs.prx",
+      "relative_path": "sce_module/libScePfs.prx",
+      "size": 1341455
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "libScePfs.prx.esbak",
+      "relative_path": "sce_module/libScePfs.prx.esbak",
+      "size": 1381095
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libc.prx",
+      "relative_path": "sce_module/libc.prx",
+      "size": 1303154
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "libc.prx.esbak",
+      "relative_path": "sce_module/libc.prx.esbak",
+      "size": 1351786
+    },
+    {
+      "category": "Executable",
+      "extension": "sprx",
+      "file_name": "right.sprx",
+      "relative_path": "sce_sys/about/right.sprx",
+      "size": 12512
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "right.sprx.esbak",
+      "relative_path": "sce_sys/about/right.sprx.esbak",
+      "size": 66704
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "disc_info.dat",
+      "relative_path": "sce_sys/disc_info.dat",
+      "size": 6640
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "icon0.dds",
+      "relative_path": "sce_sys/icon0.dds",
+      "size": 262292
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "icon0.png",
+      "relative_path": "sce_sys/icon0.png",
+      "size": 119849
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "icon0_00.dds",
+      "relative_path": "sce_sys/icon0_00.dds",
+      "size": 262292
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "icon0_00.png",
+      "relative_path": "sce_sys/icon0_00.png",
+      "size": 119910
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "icon0_09.dds",
+      "relative_path": "sce_sys/icon0_09.dds",
+      "size": 262292
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "icon0_09.png",
+      "relative_path": "sce_sys/icon0_09.png",
+      "size": 120141
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "icon0_10.dds",
+      "relative_path": "sce_sys/icon0_10.dds",
+      "size": 262292
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "icon0_10.png",
+      "relative_path": "sce_sys/icon0_10.png",
+      "size": 123253
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "icon0_11.dds",
+      "relative_path": "sce_sys/icon0_11.dds",
+      "size": 262292
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "icon0_11.png",
+      "relative_path": "sce_sys/icon0_11.png",
+      "size": 122377
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "keystone",
+      "relative_path": "sce_sys/keystone",
+      "size": 96
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "nptitle.dat",
+      "relative_path": "sce_sys/nptitle.dat",
+      "size": 160
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "param.json",
+      "relative_path": "sce_sys/param.json",
+      "size": 3413
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "pfs-version.dat",
+      "relative_path": "sce_sys/pfs-version.dat",
+      "size": 10
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic0.dds",
+      "relative_path": "sce_sys/pic0.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "pic0.png",
+      "relative_path": "sce_sys/pic0.png",
+      "size": 16493108
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic1.dds",
+      "relative_path": "sce_sys/pic1.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic2.dds",
+      "relative_path": "sce_sys/pic2.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic2_00.dds",
+      "relative_path": "sce_sys/pic2_00.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic2_09.dds",
+      "relative_path": "sce_sys/pic2_09.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic2_10.dds",
+      "relative_path": "sce_sys/pic2_10.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic2_11.dds",
+      "relative_path": "sce_sys/pic2_11.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "shareoverlayimage.png",
+      "relative_path": "sce_sys/shareoverlayimage.png",
+      "size": 12865
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "sce_sys/trophy2/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "trophy00.ucp",
+      "relative_path": "sce_sys/trophy2/trophy00.ucp",
+      "size": 16496592
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "sce_sys/uds/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "uds00.ucp",
+      "relative_path": "sce_sys/uds/uds00.ucp",
+      "size": 50128
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "ue4commandline.txt",
+      "relative_path": "ue4commandline.txt",
+      "size": 32
+    }
+  ],
+  "by_category": {
+    "archive": 1,
+    "executable": 9,
+    "metadata": 19,
+    "texture": 21,
+    "unknown": 2
+  },
+  "by_extension": {
+    "(no_ext)": 1,
+    "dat": 5,
+    "dds": 12,
+    "eboot.bin": 1,
+    "esbak": 9,
+    "ini": 1,
+    "json": 2,
+    "pak": 1,
+    "png": 9,
+    "prx": 7,
+    "sprx": 1,
+    "txt": 1,
+    "ucp": 2
+  },
+  "game": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
+  "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
+  "total_bytes": 47098334603,
+  "total_files": 52
+}

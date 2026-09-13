@@ -1,0 +1,38 @@
+{
+  "details": [
+    {
+      "confidence": "high",
+      "frequency": 12,
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "DRAGON QUEST III HD-2D Remake - [PPSA20612]",
+        "Dusk Diver 2 - [PPSA06565]",
+        "Hello Neighbor 2 - [PPSA07426]",
+        "Monster Boy and the Cursed Kingdom - [PPSA02787]",
+        "Neko Rescue Tale - [PPSA13871]",
+        "OCTOPATH TRAVELER II - [PPSA09809]",
+        "Oxide Room 104 - [PPSA07653]",
+        "Raiden III x MIKADO MANIAX - [PPSA13356]",
+        "Stray - [PPSA02100]",
+        "The Pathless - [PPSA01825]"
+      ],
+      "libraries": [
+        "libSceAgc"
+      ],
+      "nid": "k0E7vkgqAuE",
+      "remu_name": null
+    }
+  ],
+  "game": {
+    "error": null,
+    "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5\\eboot.bin",
+    "imports": 2081,
+    "known": 2080,
+    "name": "DRAGON QUEST III HD-2D Remake - [PPSA20612]",
+    "unknown": 1,
+    "unknown_nids": [
+      "k0E7vkgqAuE"
+    ]
+  }
+}

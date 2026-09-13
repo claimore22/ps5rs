@@ -186,61 +186,46 @@
     ],
     "graph": {
       "nodes": [
-        "libSceNpUniversalDataSystem.prx",
-        "libSceAgcDriver.prx",
-        "libSceVideoOut.prx",
-        "libc.prx",
-        "libScePad.prx",
-        "libSceAudioOut.prx",
+        "libSceUserService.prx",
         "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
-        "libSceSaveData.native.prx",
-        "libSceAgc.prx",
-        "libSceSaveDataDialog.native.prx",
         "libSceCommonDialog.prx",
-        "libkernel.prx",
+        "libc.prx",
         "libSceRtc.prx",
-        "libSceLibcInternal.prx",
-        "libSceNgs2.prx",
+        "libSceAgcDriver.prx",
         "libSceSysmodule.prx",
         "libSceNpGameIntent.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceNgs2.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceAudioOut.prx",
+        "libScePad.prx",
+        "libSceSaveData.native.prx",
+        "libSceLibcInternal.prx",
+        "libSceVideoOut.prx",
+        "libkernel.prx",
         "libSceSystemService.prx",
-        "libSceUserService.prx"
+        "libSceAgc.prx"
       ],
       "unavailable": [
-        "libScePad.prx",
-        "libSceRtc.prx",
-        "libkernel.prx",
         "libSceAgc.prx",
-        "libSceCommonDialog.prx",
-        "libSceNpUniversalDataSystem.prx",
-        "libSceAgcDriver.prx",
-        "libSceSaveData.native.prx",
+        "libkernel.prx",
         "libSceLibcInternal.prx",
-        "libSceAudioOut.prx",
         "libSceVideoOut.prx",
+        "libSceSaveData.native.prx",
+        "libSceRtc.prx",
+        "libSceSystemService.prx",
+        "libSceAudioOut.prx",
+        "libSceAgcDriver.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceNpUniversalDataSystem.prx",
         "libSceSysmodule.prx",
         "libSceUserService.prx",
-        "libSceSystemService.prx",
+        "libScePad.prx",
+        "libSceCommonDialog.prx",
         "libSceNpGameIntent.prx",
-        "libSceNgs2.prx",
-        "libSceSaveDataDialog.native.prx"
+        "libSceNgs2.prx"
       ],
       "edges": [
-        {
-          "from": "libc.prx",
-          "to": "libkernel.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libc.prx",
-          "to": "libSceLibcInternal.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libc.prx",
-          "to": "libSceSysmodule.prx",
-          "status": "missing"
-        },
         {
           "from": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
           "to": "libSceAgcDriver.prx",
@@ -325,6 +310,21 @@
           "from": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
           "to": "libSceRtc.prx",
           "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
         }
       ]
     },
@@ -341,9 +341,9 @@
   "total_exports": 2925,
   "freshness": {
     "report_format": 1,
-    "loader_fingerprint": "37a85e37ad1df177c24ca92b5e06dd2322849bcbc949ec1461e015d7a1db1eee",
+    "loader_fingerprint": "d245a80770d2897643c4754f10883b674208fc8fdecaad2ebd247d1990f6f5a0",
     "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
-    "environment_fingerprint": "3aaac4cd58fab0d58acdb4ea2271b30447f0e35fa900d2cd9f160d90a489df07",
-    "game_fingerprint": "b872aba18e1ca5913e62229003a402d635fbb1b959a37118b0f09dff89b5dbf7"
+    "environment_fingerprint": "c65955db3dee9d575ca652856c86c3fc2b7297fff36bb37fcb1b9319f1ff09a9",
+    "game_fingerprint": "473eeddf5297452bdaa1454ec398eb3a57550f5178e4e2456d2d485ba5690efb"
   }
 }

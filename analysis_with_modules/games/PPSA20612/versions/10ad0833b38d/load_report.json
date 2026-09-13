@@ -1,6 +1,6 @@
 {
-  "game": "SAND LAND - [PPSA08574]",
-  "path": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5\\eboot.bin",
+  "game": "DRAGON QUEST III HD-2D Remake - [PPSA20612]",
+  "path": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5\\eboot.bin",
   "load_report": {
     "modules": [
       {
@@ -8,11 +8,11 @@
         "module_type": "Prx",
         "load_bias": 34628173824,
         "entry_point": null,
-        "exports_count": 42487,
+        "exports_count": 42850,
         "imports_resolved": 0,
         "imports_known": 25,
         "imports_stubbed": 73,
-        "relative": 792,
+        "relative": 801,
         "glob_dat": 2,
         "jump_slot": 92,
         "abs64": 4,
@@ -25,7 +25,7 @@
         "init_va": 16,
         "init_array_va": 0,
         "init_array_sz": 0,
-        "fini_va": 4100880,
+        "fini_va": 4154528,
         "fini_array_va": 0,
         "fini_array_sz": 0,
         "preinit_array_va": 0,
@@ -72,13 +72,13 @@
       {
         "name": "libc.prx",
         "module_type": "Prx",
-        "load_bias": 34636169216,
+        "load_bias": 34636103680,
         "entry_point": null,
-        "exports_count": 2574,
+        "exports_count": 2584,
         "imports_resolved": 0,
         "imports_known": 0,
         "imports_stubbed": 105,
-        "relative": 1697,
+        "relative": 1722,
         "glob_dat": 3,
         "jump_slot": 102,
         "abs64": 0,
@@ -91,10 +91,10 @@
         "init_va": 16,
         "init_array_va": 0,
         "init_array_sz": 0,
-        "fini_va": 811872,
+        "fini_va": 827296,
         "fini_array_va": 0,
         "fini_array_sz": 0,
-        "preinit_array_va": 1113024,
+        "preinit_array_va": 1129648,
         "preinit_array_sz": 8,
         "per_library": [
           {
@@ -118,18 +118,18 @@
         ]
       },
       {
-        "name": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+        "name": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
         "module_type": "Eboot",
-        "load_bias": 34637545472,
+        "load_bias": 34637479936,
         "entry_point": 128,
         "exports_count": 0,
-        "imports_resolved": 9694,
+        "imports_resolved": 10028,
         "imports_known": 0,
-        "imports_stubbed": 718,
-        "relative": 1275623,
-        "glob_dat": 10,
-        "jump_slot": 1881,
-        "abs64": 8521,
+        "imports_stubbed": 904,
+        "relative": 856704,
+        "glob_dat": 23,
+        "jump_slot": 2053,
+        "abs64": 8856,
         "copy": 0,
         "tls_relocations": 0,
         "ifunc": 0,
@@ -139,7 +139,7 @@
         "init_va": 16,
         "init_array_va": 0,
         "init_array_sz": 0,
-        "fini_va": 125430256,
+        "fini_va": 95449904,
         "fini_array_va": 0,
         "fini_array_sz": 0,
         "preinit_array_va": 0,
@@ -155,13 +155,13 @@
             "library": "libSceAgc",
             "resolved": 0,
             "known": 0,
-            "stubbed": 65
+            "stubbed": 205
           },
           {
             "library": "libSceAgcDriver",
             "resolved": 0,
             "known": 0,
-            "stubbed": 6
+            "stubbed": 43
           },
           {
             "library": "libSceAjm",
@@ -251,7 +251,7 @@
             "library": "libSceIme",
             "resolved": 0,
             "known": 0,
-            "stubbed": 3
+            "stubbed": 5
           },
           {
             "library": "libSceImeDialog",
@@ -281,7 +281,7 @@
             "library": "libSceNet",
             "resolved": 0,
             "known": 0,
-            "stubbed": 23
+            "stubbed": 24
           },
           {
             "library": "libSceNetCtl",
@@ -309,7 +309,7 @@
           },
           {
             "library": "libSceNpCppWebApi",
-            "resolved": 994,
+            "resolved": 942,
             "known": 0,
             "stubbed": 0
           },
@@ -347,7 +347,7 @@
             "library": "libSceNpUniversalDataSystem",
             "resolved": 0,
             "known": 0,
-            "stubbed": 28
+            "stubbed": 29
           },
           {
             "library": "libSceNpWebApi2",
@@ -359,13 +359,13 @@
             "library": "libScePad",
             "resolved": 0,
             "known": 0,
-            "stubbed": 11
+            "stubbed": 12
           },
           {
             "library": "libScePlayGo",
             "resolved": 0,
             "known": 0,
-            "stubbed": 11
+            "stubbed": 10
           },
           {
             "library": "libScePlayerInvitationDialog",
@@ -377,7 +377,7 @@
             "library": "libScePosix",
             "resolved": 0,
             "known": 0,
-            "stubbed": 63
+            "stubbed": 66
           },
           {
             "library": "libSceRandom",
@@ -401,7 +401,7 @@
             "library": "libSceSaveData_native",
             "resolved": 0,
             "known": 0,
-            "stubbed": 15
+            "stubbed": 11
           },
           {
             "library": "libSceShare",
@@ -459,7 +459,7 @@
           },
           {
             "library": "libc",
-            "resolved": 8700,
+            "resolved": 9086,
             "known": 0,
             "stubbed": 0
           },
@@ -467,452 +467,452 @@
             "library": "libkernel",
             "resolved": 0,
             "known": 0,
-            "stubbed": 100
+            "stubbed": 106
           }
         ]
       }
     ],
     "graph": {
       "nodes": [
-        "libSceGameUpdate.prx",
-        "libSceAmpr.prx",
-        "libSceVideoOut.prx",
-        "libSceAgc.prx",
-        "libkernel.prx",
-        "libScePlayGo.prx",
-        "libSceNpCommerce.prx",
         "libSceVideodec2.prx",
-        "libSceHttp.prx",
-        "libSceMsgDialog.native.prx",
-        "libSceNpManager.prx",
-        "libSceGameLiveStreaming.prx",
-        "libSceSysmodule.prx",
-        "libSceLibcInternal.prx",
-        "libc.prx",
-        "libSceSsl.prx",
-        "libSceMouse.prx",
-        "libScePlayerInvitationDialog.prx",
-        "libSceNpAuth.prx",
-        "libSceNpTrophy2.prx",
-        "libSceNpEntitlementAccess.prx",
-        "libSceUserService.prx",
-        "libSceRtc.prx",
-        "libSceSaveData.native.prx",
-        "libSceAppContent.prx",
-        "libSceHttp2.prx",
-        "libSceImeDialog.prx",
-        "libSceAudioOut.prx",
-        "libSceCommonDialog.prx",
-        "libSceWebBrowserDialog.prx",
-        "libSceAvPlayer.native.prx",
-        "libSceVoiceQoS.prx",
-        "libSceNpCppWebApi.prx",
-        "libSceAudioIn.prx",
-        "libSceNet.prx",
-        "libSceNgs2.prx",
-        "libSceAjm.native.prx",
-        "libSceSystemService.prx",
-        "libScePad.prx",
-        "libSceNpWebApi2.prx",
         "libSceAcm.prx",
-        "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
-        "libSceNpGameIntent.prx",
+        "libSceAgc.prx",
+        "libSceSystemService.prx",
         "libSceContentExport.prx",
-        "libSceErrorDialog.prx",
-        "libSceNetCtl.prx",
-        "libSceAgcDriver.prx",
-        "libSceShare.prx",
-        "libSceJson2.prx",
-        "libSceRandom.prx",
-        "libSceIme.prx",
-        "libSceSaveDataDialog.native.prx",
-        "libSceAudio3d.prx",
+        "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
+        "libSceAvPlayer.native.prx",
+        "libSceUserService.prx",
+        "libSceVideoOut.prx",
         "libSceNpUniversalDataSystem.prx",
-        "libSceNpSessionSignaling.prx"
+        "libSceNpGameIntent.prx",
+        "libSceJson2.prx",
+        "libScePlayerInvitationDialog.prx",
+        "libSceNpCppWebApi.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceCommonDialog.prx",
+        "libSceHttp2.prx",
+        "libSceNpManager.prx",
+        "libSceAudioIn.prx",
+        "libkernel.prx",
+        "libSceNgs2.prx",
+        "libSceNpEntitlementAccess.prx",
+        "libSceSaveData.native.prx",
+        "libSceIme.prx",
+        "libSceRandom.prx",
+        "libSceNpTrophy2.prx",
+        "libSceVoiceQoS.prx",
+        "libSceLibcInternal.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceNpSessionSignaling.prx",
+        "libSceAgcDriver.prx",
+        "libScePad.prx",
+        "libSceGameLiveStreaming.prx",
+        "libSceImeDialog.prx",
+        "libSceShare.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceGameUpdate.prx",
+        "libc.prx",
+        "libSceAmpr.prx",
+        "libSceRtc.prx",
+        "libSceMouse.prx",
+        "libSceAudio3d.prx",
+        "libScePlayGo.prx",
+        "libSceHttp.prx",
+        "libSceAjm.native.prx",
+        "libSceErrorDialog.prx",
+        "libSceNpWebApi2.prx",
+        "libSceSsl.prx",
+        "libSceNpCommerce.prx",
+        "libSceSysmodule.prx",
+        "libSceAppContent.prx",
+        "libSceNpAuth.prx",
+        "libSceNet.prx",
+        "libSceAudioOut.prx",
+        "libSceNetCtl.prx"
       ],
       "unavailable": [
-        "libSceLibcInternal.prx",
-        "libSceGameUpdate.prx",
-        "libScePlayerInvitationDialog.prx",
+        "libSceVideoOut.prx",
+        "libSceRtc.prx",
+        "libSceJson2.prx",
         "libSceNpCommerce.prx",
         "libSceNpTrophy2.prx",
-        "libScePad.prx",
-        "libSceSaveData.native.prx",
+        "libScePlayerInvitationDialog.prx",
+        "libSceNetCtl.prx",
         "libSceVideodec2.prx",
-        "libSceNpSessionSignaling.prx",
-        "libSceMsgDialog.native.prx",
-        "libSceNpUniversalDataSystem.prx",
-        "libSceNet.prx",
-        "libSceRtc.prx",
-        "libSceMouse.prx",
-        "libSceNpGameIntent.prx",
-        "libScePlayGo.prx",
-        "libSceAudioOut.prx",
-        "libSceSysmodule.prx",
-        "libSceVideoOut.prx",
-        "libSceContentExport.prx",
-        "libSceNpAuth.prx",
-        "libSceJson2.prx",
-        "libSceCommonDialog.prx",
-        "libSceSystemService.prx",
+        "libSceSaveDataDialog.native.prx",
         "libSceErrorDialog.prx",
         "libSceVoiceQoS.prx",
-        "libSceHttp.prx",
-        "libSceNetCtl.prx",
-        "libSceWebBrowserDialog.prx",
-        "libSceNpEntitlementAccess.prx",
-        "libSceAvPlayer.native.prx",
-        "libSceNgs2.prx",
-        "libSceAppContent.prx",
-        "libSceSaveDataDialog.native.prx",
-        "libSceShare.prx",
-        "libSceGameLiveStreaming.prx",
-        "libSceAcm.prx",
-        "libSceSsl.prx",
-        "libSceHttp2.prx",
         "libSceNpWebApi2.prx",
-        "libSceNpManager.prx",
-        "libSceAudioIn.prx",
-        "libSceAgcDriver.prx",
+        "libSceRandom.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceNpGameIntent.prx",
         "libSceUserService.prx",
         "libkernel.prx",
-        "libSceAgc.prx",
-        "libSceIme.prx",
-        "libSceImeDialog.prx",
+        "libSceSysmodule.prx",
+        "libSceSaveData.native.prx",
+        "libSceContentExport.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceGameUpdate.prx",
+        "libSceAcm.prx",
         "libSceAmpr.prx",
+        "libSceSystemService.prx",
+        "libSceGameLiveStreaming.prx",
+        "libSceAgc.prx",
+        "libSceAudio3d.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceHttp.prx",
+        "libScePlayGo.prx",
+        "libSceHttp2.prx",
+        "libSceLibcInternal.prx",
+        "libSceNpSessionSignaling.prx",
+        "libSceAgcDriver.prx",
+        "libSceNet.prx",
+        "libSceNgs2.prx",
         "libSceAjm.native.prx",
-        "libSceRandom.prx",
-        "libSceAudio3d.prx"
+        "libSceShare.prx",
+        "libSceAudioOut.prx",
+        "libSceCommonDialog.prx",
+        "libSceNpEntitlementAccess.prx",
+        "libSceIme.prx",
+        "libSceMouse.prx",
+        "libSceNpAuth.prx",
+        "libSceNpManager.prx",
+        "libScePad.prx",
+        "libSceSsl.prx",
+        "libSceAudioIn.prx",
+        "libSceImeDialog.prx",
+        "libSceAppContent.prx",
+        "libSceMsgDialog.native.prx"
       ],
       "edges": [
         {
-          "from": "libc.prx",
-          "to": "libkernel.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libc.prx",
-          "to": "libSceLibcInternal.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libc.prx",
-          "to": "libSceSysmodule.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libSceNpCppWebApi.prx",
-          "to": "libSceJson2.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libSceNpCppWebApi.prx",
-          "to": "libSceRtc.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libSceNpCppWebApi.prx",
-          "to": "libSceNpWebApi2.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libSceNpCppWebApi.prx",
-          "to": "libSceHttp.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libSceNpCppWebApi.prx",
-          "to": "libkernel.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libSceNpCppWebApi.prx",
-          "to": "libSceLibcInternal.prx",
-          "status": "missing"
-        },
-        {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceAgcDriver.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceAgc.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceRtc.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libScePad.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceNet.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceNetCtl.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceNgs2.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceAudioOut.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceAjm.native.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceSysmodule.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceVideoOut.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceUserService.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libkernel.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceSsl.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceHttp.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libScePlayGo.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceNpManager.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceAppContent.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceSaveData.native.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceSaveDataDialog.native.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceCommonDialog.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceGameLiveStreaming.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceSystemService.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceIme.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceImeDialog.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceMsgDialog.native.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceNpCommerce.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceShare.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceMouse.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceRandom.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceWebBrowserDialog.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceContentExport.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceNpGameIntent.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceAudio3d.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceVideodec2.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceAvPlayer.native.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceNpAuth.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceJson2.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceNpUniversalDataSystem.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceNpTrophy2.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceErrorDialog.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceGameUpdate.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
-          "to": "libSceVoiceQoS.prx",
-          "status": "missing"
-        },
-        {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
-          "to": "libSceHttp2.prx",
-          "status": "missing"
-        },
-        {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
-          "to": "libSceNpCppWebApi.prx",
-          "status": "loaded"
-        },
-        {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
-          "to": "libSceNpWebApi2.prx",
-          "status": "missing"
-        },
-        {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
-          "to": "libSceNpSessionSignaling.prx",
-          "status": "missing"
-        },
-        {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
-          "to": "libSceNpEntitlementAccess.prx",
-          "status": "missing"
-        },
-        {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libScePlayerInvitationDialog.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
+          "to": "libSceVoiceQoS.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
+          "to": "libSceHttp2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
+          "to": "libSceNpCppWebApi.prx",
+          "status": "loaded"
+        },
+        {
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
+          "to": "libSceNpWebApi2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
+          "to": "libSceNpSessionSignaling.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
+          "to": "libSceNpEntitlementAccess.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceAudioIn.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceAcm.prx",
           "status": "missing"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libc.prx",
           "status": "loaded"
         },
         {
-          "from": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+          "from": "Dragon.Quest.III.HD-2D.Remake-PPSA20612-USA-Game-v01.000-PS5",
           "to": "libSceAmpr.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceJson2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceRtc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceNpWebApi2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceHttp.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceSysmodule.prx",
           "status": "missing"
         }
       ]
     },
     "totals": {
       "modules": 3,
-      "resolved": 9694,
+      "resolved": 10028,
       "known": 25,
-      "stubbed": 896,
-      "exports": 45061,
+      "stubbed": 1082,
+      "exports": 45434,
       "unavailable": 52
     }
   },
   "error": null,
-  "total_exports": 45061,
+  "total_exports": 45434,
   "freshness": {
     "report_format": 1,
     "loader_fingerprint": "d245a80770d2897643c4754f10883b674208fc8fdecaad2ebd247d1990f6f5a0",
     "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
     "environment_fingerprint": "c65955db3dee9d575ca652856c86c3fc2b7297fff36bb37fcb1b9319f1ff09a9",
-    "game_fingerprint": "bd09335b6ff883ac3343a1185293a847749105e80b91c2d8bcec89fdbed4a610"
+    "game_fingerprint": "09fc81c8b1cb7dc9fefcc0625772abe72953f6116911e55117a3bc8b8bdd7ffa"
   }
 }
