@@ -139,6 +139,26 @@ fn short_fp(fp: &str) -> &str {
     fp.get(..12).unwrap_or(fp)
 }
 
+/// Scene directory names reliably embed the title id (PPSAxxxxx/CUSAxxxxx).
+fn title_id_from_name(name: &str) -> Option<String> {
+    let upper = name.to_ascii_uppercase();
+    for prefix in ["PPSA", "CUSA"] {
+        let mut start = 0;
+        while let Some(pos) = upper[start..].find(prefix) {
+            let abs = start + pos + prefix.len();
+            let digits: String = upper[abs..]
+                .chars()
+                .take_while(|c| c.is_ascii_digit())
+                .collect();
+            if digits.len() >= 5 {
+                return Some(format!("{prefix}{digits}"));
+            }
+            start = abs;
+        }
+    }
+    None
+}
+
 fn read_json_file(path: &Path) -> serde_json::Value {
     std::fs::read(path)
         .ok()
@@ -300,16 +320,40 @@ pub fn archive_game(
         .ok_or_else(|| "eboot has no parent".to_string())?;
 
     let mut params = ps5_analysis::param_json::read_param(game_dir).unwrap_or_default();
-    let title_id = params
-        .title_id
-        .clone()
-        .filter(|t| !t.is_empty())
-        .ok_or_else(|| {
-            format!(
-                "no title_id for {} (cannot key archival record)",
-                game_dir.display()
-            )
-        })?;
+    let resolved_name = eboot_dir
+        .file_name()
+        .and_then(|n| n.to_str())
+        .unwrap_or_default()
+        .to_string();
+    let title_id = match params.title_id.clone().filter(|t| !t.is_empty()) {
+        Some(t) => t,
+        None => {
+            let haystacks = [
+                resolved_name.clone(),
+                game_dir
+                    .file_name()
+                    .and_then(|n| n.to_str())
+                    .unwrap_or_default()
+                    .to_string(),
+            ];
+            let mut found = String::new();
+            for hay in &haystacks {
+                if let Some(id) = title_id_from_name(hay) {
+                    found = id;
+                    break;
+                }
+            }
+            if found.is_empty() {
+                return Err(format!(
+                    "no title_id for {} (cannot key archival record)",
+                    game_dir.display()
+                ));
+            }
+            eprintln!("warning: no param.json title_id, using {found} from directory name");
+            params.title_id = Some(found.clone());
+            found
+        }
+    };
     if params.name.is_none() {
         params.name = game_dir
             .file_name()
@@ -318,7 +362,7 @@ pub fn archive_game(
     }
     let display = params
         .compute_display_name()
-        .unwrap_or_else(|| title_id.clone());
+        .unwrap_or_else(|| resolved_name.clone());
 
     let eboot_bytes = std::fs::read(&eboot_path)
         .map_err(|e| format!("cannot read {}: {e}", eboot_path.display()))?;
@@ -531,6 +575,24 @@ pub fn cmd_archive(
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn title_id_from_scene_dir_names() {
+        assert_eq!(
+            title_id_from_name("WUCHANG.Fallen.Feathers-PPSA09519-EUR-Game(v01.01)-PS5"),
+            Some("PPSA09519".to_string())
+        );
+        assert_eq!(
+            title_id_from_name("Void.tRrLM();++.Void.Terrarium++-PPSA03061-USA-PS5"),
+            Some("PPSA03061".to_string())
+        );
+        assert_eq!(
+            title_id_from_name("PPSA02100 -  Stray"),
+            Some("PPSA02100".to_string())
+        );
+        assert_eq!(title_id_from_name("NoIdHere"), None);
+        assert_eq!(title_id_from_name("PPSA123-short"), None);
+    }
 
     #[test]
     fn registry_status_distinguishes_cases() {
