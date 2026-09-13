@@ -319,127 +319,82 @@
     "graph": {
       "nodes": [
         "libSceAudioIn.prx",
-        "libSceSaveData.native.prx",
-        "libSceMsgDialog.native.prx",
-        "libSceLibcInternal.prx",
         "libSceNpWebApi2.prx",
-        "libfmod.prx",
-        "libSceCommonDialog.prx",
+        "libSceLibcInternal.prx",
+        "libSceRtc.prx",
+        "Bugsnax PS5 Dump v2.000",
+        "libSceAudioOut.prx",
         "libSceNpTrophy2.prx",
-        "libSceJson2.prx",
-        "libSceNet.prx",
-        "libSceAgc.prx",
-        "libSceSsl.prx",
         "libSceSaveDataDialog.native.prx",
-        "libSceNpUniversalDataSystem.prx",
-        "libSceAjm.native.prx",
         "libSceNpCppWebApi.prx",
+        "libSceHttp.prx",
+        "libfmod.prx",
+        "libSceAmpr.prx",
+        "libSceAjm.native.prx",
+        "libSceAgc.prx",
+        "libfmodstudio.prx",
+        "libSceSysmodule.prx",
         "libSceUserService.prx",
         "libSceNetCtl.prx",
-        "libSceAvPlayer.native.prx",
-        "libSceGameLiveStreaming.prx",
-        "libSceAgcDriver.prx",
-        "libSceRtc.prx",
-        "libc.prx",
-        "libSceHttp.prx",
-        "libSceAmpr.prx",
-        "libSceNpGameIntent.prx",
-        "libSceAppContent.prx",
-        "libSceNpManager.prx",
-        "libkernel.prx",
-        "Bugsnax PS5 Dump v2.000",
-        "libfmodstudio.prx",
-        "libSceUlt.prx",
-        "libScePad.prx",
-        "libSceHttp2.prx",
-        "libSceAudioOut.prx",
-        "libSceSysmodule.prx",
         "libSceVideoOut.prx",
-        "libSceSystemService.prx"
+        "libSceUlt.prx",
+        "libSceAppContent.prx",
+        "libSceNpGameIntent.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceNpManager.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceSystemService.prx",
+        "libSceJson2.prx",
+        "libSceCommonDialog.prx",
+        "libSceSaveData.native.prx",
+        "libSceGameLiveStreaming.prx",
+        "libSceHttp2.prx",
+        "libSceAgcDriver.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceSsl.prx",
+        "libc.prx",
+        "libScePad.prx",
+        "libSceNet.prx",
+        "libkernel.prx"
       ],
       "unavailable": [
-        "libSceNpGameIntent.prx",
-        "libSceRtc.prx",
-        "libSceAjm.native.prx",
-        "libScePad.prx",
-        "libSceNpWebApi2.prx",
-        "libSceAmpr.prx",
-        "libSceJson2.prx",
-        "libSceNpUniversalDataSystem.prx",
+        "libSceUlt.prx",
+        "libSceAudioIn.prx",
         "libSceSysmodule.prx",
+        "libSceGameLiveStreaming.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceCommonDialog.prx",
+        "libSceAgcDriver.prx",
+        "libSceNpTrophy2.prx",
+        "libSceUserService.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceAjm.native.prx",
+        "libSceSystemService.prx",
+        "libSceAmpr.prx",
+        "libSceNpManager.prx",
+        "libSceNetCtl.prx",
+        "libSceHttp.prx",
+        "libSceAppContent.prx",
+        "libSceNet.prx",
+        "libkernel.prx",
+        "libSceHttp2.prx",
+        "libSceNpWebApi2.prx",
+        "libSceAudioOut.prx",
+        "libSceLibcInternal.prx",
+        "libSceMsgDialog.native.prx",
+        "libScePad.prx",
+        "libfmodstudio.prx",
+        "libSceRtc.prx",
+        "libSceVideoOut.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libfmod.prx",
         "libSceAgc.prx",
         "libSceSaveData.native.prx",
-        "libSceSaveDataDialog.native.prx",
-        "libfmod.prx",
-        "libSceNet.prx",
-        "libSceUserService.prx",
-        "libkernel.prx",
-        "libSceAudioIn.prx",
-        "libSceVideoOut.prx",
-        "libSceGameLiveStreaming.prx",
-        "libSceSsl.prx",
-        "libSceAudioOut.prx",
-        "libSceHttp2.prx",
-        "libSceAppContent.prx",
-        "libSceNpManager.prx",
-        "libfmodstudio.prx",
-        "libSceUlt.prx",
-        "libSceNpTrophy2.prx",
-        "libSceSystemService.prx",
-        "libSceMsgDialog.native.prx",
-        "libSceAgcDriver.prx",
-        "libSceAvPlayer.native.prx",
-        "libSceHttp.prx",
-        "libSceCommonDialog.prx",
-        "libSceNetCtl.prx",
-        "libSceLibcInternal.prx"
+        "libSceNpGameIntent.prx",
+        "libSceJson2.prx",
+        "libSceSsl.prx"
       ],
       "edges": [
-        {
-          "from": "libSceNpCppWebApi.prx",
-          "to": "libSceJson2.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libSceNpCppWebApi.prx",
-          "to": "libSceRtc.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libSceNpCppWebApi.prx",
-          "to": "libSceNpWebApi2.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libSceNpCppWebApi.prx",
-          "to": "libSceHttp.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libSceNpCppWebApi.prx",
-          "to": "libkernel.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libSceNpCppWebApi.prx",
-          "to": "libSceLibcInternal.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libc.prx",
-          "to": "libkernel.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libc.prx",
-          "to": "libSceLibcInternal.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libc.prx",
-          "to": "libSceSysmodule.prx",
-          "status": "missing"
-        },
         {
           "from": "Bugsnax PS5 Dump v2.000",
           "to": "libfmodstudio.prx",
@@ -619,6 +574,51 @@
           "from": "Bugsnax PS5 Dump v2.000",
           "to": "libSceAmpr.prx",
           "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceJson2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceRtc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceNpWebApi2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceHttp.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
         }
       ]
     },
@@ -635,9 +635,9 @@
   "total_exports": 44351,
   "freshness": {
     "report_format": 1,
-    "loader_fingerprint": "d245a80770d2897643c4754f10883b674208fc8fdecaad2ebd247d1990f6f5a0",
+    "loader_fingerprint": "37a85e37ad1df177c24ca92b5e06dd2322849bcbc949ec1461e015d7a1db1eee",
     "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
-    "environment_fingerprint": "c65955db3dee9d575ca652856c86c3fc2b7297fff36bb37fcb1b9319f1ff09a9",
-    "game_fingerprint": "4521fba85e3b5d23a49ca4937718b6fdef374152a69a0a37b0c9ee54b1a13752"
+    "environment_fingerprint": "3aaac4cd58fab0d58acdb4ea2271b30447f0e35fa900d2cd9f160d90a489df07",
+    "game_fingerprint": "32eca8a32392864eb3c8e5acd66d353dd2e3546e3675c500e58658f3197233b7"
   }
 }
