@@ -6,33 +6,33 @@
       "total_files": 449,
       "total_bytes": 7054311211,
       "by_extension": {
-        "ucas": 2,
-        "ini": 1,
-        "tmp": 1,
         "at9": 1,
-        "eboot.bin": 1,
-        "prx": 9,
         "pak": 1,
-        "dds": 4,
+        "uasset": 210,
+        "ini": 1,
+        "json": 2,
         "utoc": 2,
-        "complete": 1,
         "txt": 1,
+        "dds": 4,
+        "eboot.bin": 1,
+        "sprx": 1,
+        "complete": 1,
+        "bank": 202,
+        "tmp": 1,
         "(no_ext)": 1,
+        "ucp": 2,
         "dat": 5,
         "png": 2,
-        "bank": 202,
-        "uasset": 210,
-        "sprx": 1,
-        "json": 2,
-        "ucp": 2
+        "prx": 9,
+        "ucas": 2
       },
       "by_category": {
-        "unknown": 218,
-        "metadata": 10,
         "executable": 11,
-        "archive": 1,
+        "texture": 6,
         "audio": 203,
-        "texture": 6
+        "metadata": 10,
+        "archive": 1,
+        "unknown": 218
       },
       "artifacts": [
         {
@@ -3186,24 +3186,24 @@
       "total_files": 25,
       "total_bytes": 120959285,
       "by_extension": {
-        "dat": 5,
-        "prx": 1,
         "ucp": 2,
-        "at9": 1,
-        "dds": 4,
-        "sprx": 5,
-        "bak_20260710_185300": 2,
-        "json": 1,
         "(no_ext)": 1,
+        "eboot.bin": 1,
+        "dat": 5,
         "png": 2,
-        "eboot.bin": 1
+        "bak_20260710_185300": 2,
+        "at9": 1,
+        "sprx": 5,
+        "dds": 4,
+        "json": 1,
+        "prx": 1
       },
       "by_category": {
-        "audio": 1,
         "metadata": 8,
         "executable": 7,
-        "unknown": 3,
-        "texture": 6
+        "texture": 6,
+        "audio": 1,
+        "unknown": 3
       },
       "artifacts": [
         {
@@ -3389,27 +3389,27 @@
       "total_files": 44,
       "total_bytes": 11594033009,
       "by_extension": {
-        "prx": 15,
-        "complete": 1,
-        "mp4": 2,
-        "json": 2,
-        "txt": 1,
-        "dat": 6,
-        "pak": 1,
-        "ucas": 2,
-        "dds": 4,
-        "eboot.bin": 1,
-        "utoc": 2,
-        "ini": 1,
-        "sprx": 1,
-        "png": 2,
         "(no_ext)": 1,
-        "ucp": 2
+        "sprx": 1,
+        "ucas": 2,
+        "mp4": 2,
+        "ucp": 2,
+        "dds": 4,
+        "json": 2,
+        "utoc": 2,
+        "prx": 15,
+        "pak": 1,
+        "ini": 1,
+        "txt": 1,
+        "complete": 1,
+        "png": 2,
+        "eboot.bin": 1,
+        "dat": 6
       },
       "by_category": {
         "executable": 17,
-        "metadata": 11,
         "unknown": 9,
+        "metadata": 11,
         "texture": 6,
         "archive": 1
       },
@@ -3730,28 +3730,28 @@
       "total_files": 74,
       "total_bytes": 3467150596,
       "by_extension": {
+        "eboot.bin": 2,
+        "png": 3,
+        "ress": 6,
+        "resource": 3,
+        "dat": 7,
+        "ucp": 2,
         "config": 1,
+        "dds": 4,
         "sprx": 4,
+        "prx": 18,
         "index": 1,
         "json": 5,
-        "eboot.bin": 2,
-        "dat": 7,
-        "ress": 6,
-        "bundle": 4,
-        "resource": 3,
-        "assets": 5,
-        "png": 3,
         "(no_ext)": 7,
-        "prx": 18,
-        "xml": 2,
-        "dds": 4,
-        "ucp": 2
+        "assets": 5,
+        "bundle": 4,
+        "xml": 2
       },
       "by_category": {
-        "unknown": 27,
-        "executable": 24,
+        "texture": 7,
         "metadata": 16,
-        "texture": 7
+        "executable": 24,
+        "unknown": 27
       },
       "artifacts": [
         {
@@ -4280,47 +4280,47 @@
       "total_files": 17825,
       "total_bytes": 17269372761,
       "by_extension": {
-        "bat": 2,
-        "txt": 2,
-        "auth_info": 1,
-        "gnf": 4812,
-        "xml": 983,
-        "mtl": 3904,
-        "dat": 5,
-        "irr": 375,
+        "xcache": 473,
         "daecache": 98,
         "ucp": 2,
-        "db": 19,
-        "esbak": 6,
-        "jpg": 10,
-        "prx": 4,
-        "sprx": 1,
-        "tga": 5,
         "dds": 4,
-        "at9": 1,
-        "bmp": 1,
-        "swatch": 1,
-        "dae": 98,
-        "objcache": 4853,
+        "esbak": 6,
+        "ttf": 16,
+        "jpg": 10,
+        "mtl": 3904,
         "(no_ext)": 1,
+        "db": 19,
+        "at9": 1,
+        "auth_info": 1,
+        "objcache": 4853,
+        "bat": 2,
+        "dae": 98,
+        "swatch": 1,
+        "prx": 4,
+        "txt": 2,
+        "tga": 5,
+        "irr": 375,
+        "sprx": 1,
+        "sb": 508,
         "bank": 35,
         "eboot.bin": 1,
+        "png": 1595,
         "json": 3,
         "pssl": 6,
-        "xcache": 473,
-        "png": 1595,
-        "ttf": 16,
-        "sb": 508
+        "gnf": 4812,
+        "bmp": 1,
+        "dat": 5,
+        "xml": 983
       },
       "by_category": {
-        "executable": 6,
-        "audio": 36,
-        "font": 16,
-        "shader": 514,
-        "texture": 6427,
         "metadata": 1970,
+        "unknown": 1,
         "model": 8855,
-        "unknown": 1
+        "executable": 6,
+        "shader": 514,
+        "font": 16,
+        "texture": 6427,
+        "audio": 36
       },
       "artifacts": [
         {
@@ -129106,31 +129106,31 @@
       "total_files": 612,
       "total_bytes": 1246164518,
       "by_extension": {
-        "eboot.bin": 1,
-        "dat": 9,
-        "ucp": 2,
-        "(no_ext)": 5,
-        "config": 1,
-        "sprx": 1,
-        "prx": 7,
-        "bundle": 420,
-        "mp4": 9,
-        "chroma": 123,
-        "json": 10,
-        "dds": 4,
-        "png": 3,
         "at9": 1,
+        "dds": 4,
         "ress": 4,
+        "json": 10,
+        "mp4": 9,
         "esbak": 8,
+        "bundle": 420,
+        "dat": 9,
+        "sprx": 1,
         "assets": 3,
-        "xml": 1
+        "chroma": 123,
+        "prx": 7,
+        "xml": 1,
+        "(no_ext)": 5,
+        "png": 3,
+        "config": 1,
+        "eboot.bin": 1,
+        "ucp": 2
       },
       "by_category": {
-        "texture": 7,
-        "executable": 9,
-        "unknown": 565,
         "metadata": 30,
-        "audio": 1
+        "unknown": 565,
+        "audio": 1,
+        "executable": 9,
+        "texture": 7
       },
       "artifacts": [
         {
@@ -133425,25 +133425,25 @@
       "total_files": 22,
       "total_bytes": 2185570133,
       "by_extension": {
-        "eboot.bin": 1,
-        "dat": 5,
         "png": 3,
+        "pak": 1,
+        "prx": 1,
+        "eboot.bin": 1,
+        "complete": 1,
+        "json": 1,
+        "dat": 5,
+        "dds": 4,
+        "txt": 1,
         "(no_ext)": 1,
         "ucp": 2,
-        "pak": 1,
-        "json": 1,
-        "sprx": 1,
-        "complete": 1,
-        "txt": 1,
-        "prx": 1,
-        "dds": 4
+        "sprx": 1
       },
       "by_category": {
         "texture": 7,
-        "executable": 3,
-        "unknown": 2,
+        "metadata": 9,
         "archive": 1,
-        "metadata": 9
+        "unknown": 2,
+        "executable": 3
       },
       "artifacts": [
         {
@@ -133608,29 +133608,29 @@
       "total_files": 278,
       "total_bytes": 10982532723,
       "by_extension": {
-        "eboot.bin": 1,
-        "png": 4,
-        "txt": 1,
-        "prx": 8,
-        "complete": 1,
+        "ucp": 2,
         "pak": 1,
-        "bank": 210,
+        "dat": 5,
+        "dds": 8,
         "(no_ext)": 1,
         "sprx": 1,
-        "dds": 8,
-        "json": 2,
-        "dat": 5,
-        "ucp": 2,
+        "prx": 8,
         "ini": 1,
-        "mp4": 32
+        "eboot.bin": 1,
+        "complete": 1,
+        "png": 4,
+        "txt": 1,
+        "mp4": 32,
+        "json": 2,
+        "bank": 210
       },
       "by_category": {
-        "executable": 10,
-        "audio": 210,
-        "metadata": 10,
-        "archive": 1,
         "unknown": 35,
-        "texture": 12
+        "texture": 12,
+        "executable": 10,
+        "metadata": 10,
+        "audio": 210,
+        "archive": 1
       },
       "artifacts": [
         {
@@ -135587,31 +135587,31 @@
       "total_files": 848,
       "total_bytes": 7278056863,
       "by_extension": {
-        "txt": 60,
-        "png": 5,
-        "ucp": 2,
-        "eboot.bin": 1,
-        "bnk": 59,
-        "(no_ext)": 71,
-        "dds": 4,
-        "xml": 9,
         "json": 1,
-        "prx": 13,
-        "at9": 1,
+        "(no_ext)": 71,
         "resource": 1,
-        "sprx": 1,
-        "config": 1,
-        "ress": 47,
-        "wem": 491,
-        "dat": 7,
+        "mp4": 6,
+        "eboot.bin": 1,
         "assets": 68,
-        "mp4": 6
+        "txt": 60,
+        "wem": 491,
+        "bnk": 59,
+        "sprx": 1,
+        "png": 5,
+        "config": 1,
+        "ucp": 2,
+        "dat": 7,
+        "prx": 13,
+        "ress": 47,
+        "at9": 1,
+        "xml": 9,
+        "dds": 4
       },
       "by_category": {
         "audio": 1,
         "texture": 9,
-        "metadata": 79,
         "executable": 15,
+        "metadata": 79,
         "unknown": 744
       },
       "artifacts": [
@@ -141559,27 +141559,27 @@
       "total_files": 74,
       "total_bytes": 11270245597,
       "by_extension": {
-        "eboot.bin": 1,
-        "png": 2,
-        "ucp": 2,
-        "prx": 37,
-        "mp4": 15,
-        "json": 2,
-        "ini": 1,
-        "complete": 1,
-        "dds": 4,
         "txt": 1,
-        "(no_ext)": 1,
         "pak": 1,
+        "png": 2,
+        "dds": 4,
+        "eboot.bin": 1,
+        "ini": 1,
+        "prx": 37,
+        "json": 2,
+        "ucp": 2,
+        "complete": 1,
+        "(no_ext)": 1,
         "dat": 5,
+        "mp4": 15,
         "sprx": 1
       },
       "by_category": {
-        "texture": 6,
+        "unknown": 18,
         "metadata": 10,
-        "archive": 1,
         "executable": 39,
-        "unknown": 18
+        "archive": 1,
+        "texture": 6
       },
       "artifacts": [
         {
@@ -142108,44 +142108,44 @@
       "total_files": 7764,
       "total_bytes": 34880967380,
       "by_extension": {
-        "acf": 3,
-        "dds": 56,
-        "cmt": 8,
-        "gmt": 5,
-        "farc": 2,
+        "sprx": 2,
+        "eboot.bin": 1,
         "nfo": 1,
+        "bin": 191,
+        "png": 27,
+        "elf": 36,
+        "psb": 192,
+        "json": 4,
+        "preload": 1,
+        "farc": 2,
+        "prx": 43,
+        "chp": 1,
+        "index": 1,
+        "par": 545,
+        "ucp": 2,
+        "awb": 3441,
+        "gmt": 5,
+        "cfc": 1,
+        "cmt": 8,
         "dat": 4,
         "(no_ext)": 1,
-        "ucp": 2,
-        "json": 4,
-        "usm": 242,
-        "png": 27,
-        "eboot.bin": 1,
-        "sprx": 2,
-        "index": 1,
-        "psb": 192,
         "gmd": 4,
-        "elf": 36,
-        "prx": 43,
-        "adx": 632,
-        "acb": 3,
-        "chp": 1,
-        "preload": 1,
-        "cfc": 1,
-        "bin": 191,
-        "awb": 3441,
-        "m": 1962,
-        "par": 545,
+        "usm": 242,
+        "acf": 3,
         "art": 1,
-        "cud": 352
+        "dds": 56,
+        "cud": 352,
+        "acb": 3,
+        "m": 1962,
+        "adx": 632
       },
       "by_category": {
-        "unknown": 6849,
-        "texture": 83,
-        "model": 4,
-        "archive": 545,
+        "executable": 82,
         "metadata": 201,
-        "executable": 82
+        "model": 4,
+        "texture": 83,
+        "unknown": 6849,
+        "archive": 545
       },
       "artifacts": [
         {
@@ -196504,24 +196504,24 @@
       "total_files": 55,
       "total_bytes": 357640391,
       "by_extension": {
-        "xml": 1,
-        "(no_ext)": 2,
-        "json": 3,
+        "png": 3,
         "ucp": 2,
         "sprx": 1,
-        "dat": 7,
         "prx": 4,
-        "config": 1,
-        "png": 3,
-        "eboot.bin": 1,
         "dds": 4,
+        "dat": 7,
+        "eboot.bin": 1,
+        "config": 1,
         "unity3d": 1,
-        "resource": 25
+        "xml": 1,
+        "resource": 25,
+        "json": 3,
+        "(no_ext)": 2
       },
       "by_category": {
-        "executable": 6,
         "unknown": 29,
         "texture": 7,
+        "executable": 6,
         "metadata": 13
       },
       "artifacts": [
@@ -196918,30 +196918,30 @@
       "total_files": 138,
       "total_bytes": 18711869906,
       "by_extension": {
-        "txt": 2,
-        "dds": 8,
-        "(no_ext)": 2,
-        "at9": 2,
-        "json": 4,
-        "prx": 82,
-        "ucas": 4,
-        "png": 4,
-        "ini": 2,
-        "eboot.bin": 2,
+        "dat": 10,
+        "utoc": 4,
         "ucp": 4,
         "sprx": 2,
-        "elf": 2,
-        "dat": 10,
         "bk2": 2,
+        "at9": 2,
         "pak": 2,
-        "utoc": 4
+        "ini": 2,
+        "txt": 2,
+        "prx": 82,
+        "eboot.bin": 2,
+        "json": 4,
+        "png": 4,
+        "ucas": 4,
+        "elf": 2,
+        "(no_ext)": 2,
+        "dds": 8
       },
       "by_category": {
         "executable": 88,
         "audio": 2,
+        "texture": 12,
         "archive": 2,
         "unknown": 14,
-        "texture": 12,
         "metadata": 20
       },
       "artifacts": [
@@ -197919,26 +197919,26 @@
       "total_files": 39,
       "total_bytes": 15388968591,
       "by_extension": {
-        "dds": 12,
-        "png": 7,
-        "dat": 5,
-        "ucp": 2,
-        "at9": 1,
-        "pak": 2,
-        "sprx": 2,
-        "prx": 2,
-        "args": 1,
-        "(no_ext)": 1,
-        "eboot.bin": 2,
         "rds": 1,
-        "json": 1
+        "at9": 1,
+        "dat": 5,
+        "(no_ext)": 1,
+        "ucp": 2,
+        "pak": 2,
+        "prx": 2,
+        "eboot.bin": 2,
+        "dds": 12,
+        "sprx": 2,
+        "json": 1,
+        "png": 7,
+        "args": 1
       },
       "by_category": {
-        "metadata": 8,
-        "unknown": 3,
-        "executable": 6,
-        "archive": 2,
         "texture": 19,
+        "archive": 2,
+        "executable": 6,
+        "unknown": 3,
+        "metadata": 8,
         "audio": 1
       },
       "artifacts": [
@@ -198223,28 +198223,28 @@
       "total_files": 341,
       "total_bytes": 966506022,
       "by_extension": {
+        "ucp": 2,
+        "sprx": 1,
+        "bundle": 235,
+        "png": 3,
+        "eboot.bin": 1,
+        "ress": 1,
+        "bank": 61,
         "(no_ext)": 5,
         "dat": 9,
-        "sprx": 1,
-        "json": 5,
-        "bundle": 235,
-        "dds": 4,
-        "config": 1,
-        "png": 3,
         "assets": 3,
+        "dds": 4,
         "xml": 1,
-        "eboot.bin": 1,
-        "ucp": 2,
-        "bank": 61,
+        "json": 5,
         "prx": 9,
-        "ress": 1
+        "config": 1
       },
       "by_category": {
-        "audio": 61,
         "texture": 7,
-        "executable": 11,
         "unknown": 245,
-        "metadata": 17
+        "metadata": 17,
+        "audio": 61,
+        "executable": 11
       },
       "artifacts": [
         {
@@ -200642,30 +200642,30 @@
       "total_files": 536,
       "total_bytes": 4225947160,
       "by_extension": {
-        "dds": 4,
-        "ucp": 4,
-        "(no_ext)": 20,
-        "mp4": 5,
-        "png": 7,
-        "complete": 1,
-        "sp": 1,
-        "esbak": 4,
-        "opus": 60,
-        "m": 1,
-        "lib": 1,
-        "wav": 166,
-        "prx": 2,
-        "json": 2,
-        "t": 124,
-        "sprx": 1,
-        "s": 124,
         "eboot.bin": 1,
-        "dat": 8
+        "png": 7,
+        "lib": 1,
+        "ucp": 4,
+        "esbak": 4,
+        "json": 2,
+        "opus": 60,
+        "(no_ext)": 20,
+        "dat": 8,
+        "t": 124,
+        "dds": 4,
+        "s": 124,
+        "complete": 1,
+        "sprx": 1,
+        "mp4": 5,
+        "prx": 2,
+        "wav": 166,
+        "m": 1,
+        "sp": 1
       },
       "by_category": {
+        "unknown": 503,
         "metadata": 18,
         "executable": 4,
-        "unknown": 503,
         "texture": 11
       },
       "artifacts": [
@@ -204429,29 +204429,29 @@
       "total_files": 251,
       "total_bytes": 108202584,
       "by_extension": {
-        "ttf": 1,
-        "sprx": 1,
-        "json": 3,
         "(no_ext)": 2,
-        "esbak": 3,
-        "ini": 1,
-        "ucp": 2,
+        "dat": 5,
         "eboot.bin": 1,
-        "dds": 4,
-        "ogg": 16,
-        "frag": 110,
+        "ucp": 2,
         "png": 80,
         "vert": 20,
-        "prx": 1,
+        "sprx": 1,
+        "frag": 110,
         "js": 1,
-        "dat": 5
+        "ttf": 1,
+        "ogg": 16,
+        "esbak": 3,
+        "prx": 1,
+        "json": 3,
+        "ini": 1,
+        "dds": 4
       },
       "by_category": {
-        "font": 1,
         "texture": 84,
-        "executable": 3,
+        "unknown": 150,
         "metadata": 13,
-        "unknown": 150
+        "font": 1,
+        "executable": 3
       },
       "artifacts": [
         {
@@ -206219,31 +206219,31 @@
       "total_files": 712,
       "total_bytes": 21805859555,
       "by_extension": {
-        "ucp": 2,
-        "resource": 1,
-        "dds": 4,
-        "config": 1,
-        "ress": 45,
-        "prx": 7,
-        "(no_ext)": 83,
-        "bnk": 38,
-        "json": 4,
         "xml": 3,
-        "eboot.bin": 1,
-        "wem": 401,
-        "txt": 39,
-        "dat": 9,
+        "bnk": 38,
         "assets": 70,
-        "png": 2,
+        "prx": 7,
+        "wem": 401,
         "at9": 1,
-        "sprx": 1
+        "(no_ext)": 83,
+        "config": 1,
+        "eboot.bin": 1,
+        "txt": 39,
+        "json": 4,
+        "resource": 1,
+        "ucp": 2,
+        "sprx": 1,
+        "ress": 45,
+        "png": 2,
+        "dds": 4,
+        "dat": 9
       },
       "by_category": {
-        "metadata": 57,
+        "executable": 9,
         "texture": 6,
         "audio": 1,
-        "executable": 9,
-        "unknown": 639
+        "unknown": 639,
+        "metadata": 57
       },
       "artifacts": [
         {
@@ -211238,33 +211238,33 @@
       "total_files": 305,
       "total_bytes": 20204569640,
       "by_extension": {
-        "tps": 1,
-        "awb": 125,
-        "txt": 3,
-        "png": 2,
-        "sprx": 1,
-        "pak": 1,
-        "ini": 1,
-        "ttf": 1,
         "json": 2,
-        "eboot.bin": 1,
-        "ucp": 2,
-        "avp": 1,
-        "prx": 6,
-        "uasset": 133,
         "usm": 4,
-        "(no_ext)": 11,
-        "dds": 4,
+        "ucp": 2,
+        "uasset": 133,
         "dat": 5,
-        "complete": 1
+        "awb": 125,
+        "tps": 1,
+        "txt": 3,
+        "pak": 1,
+        "eboot.bin": 1,
+        "complete": 1,
+        "prx": 6,
+        "dds": 4,
+        "ttf": 1,
+        "avp": 1,
+        "ini": 1,
+        "(no_ext)": 11,
+        "sprx": 1,
+        "png": 2
       },
       "by_category": {
         "texture": 6,
         "archive": 1,
+        "font": 1,
         "unknown": 277,
         "executable": 8,
-        "metadata": 12,
-        "font": 1
+        "metadata": 12
       },
       "artifacts": [
         {
@@ -213410,26 +213410,26 @@
       "total_files": 34,
       "total_bytes": 7638173339,
       "by_extension": {
-        "sprx": 1,
-        "(no_ext)": 1,
-        "json": 2,
-        "ucp": 2,
-        "pak": 1,
         "txt": 1,
         "dds": 4,
         "png": 2,
-        "eboot.bin": 1,
-        "prx": 6,
+        "ucp": 2,
         "identifier": 7,
-        "ini": 1,
-        "dat": 5
+        "dat": 5,
+        "(no_ext)": 1,
+        "json": 2,
+        "eboot.bin": 1,
+        "sprx": 1,
+        "prx": 6,
+        "pak": 1,
+        "ini": 1
       },
       "by_category": {
-        "executable": 8,
-        "archive": 1,
         "texture": 6,
+        "metadata": 10,
+        "executable": 8,
         "unknown": 9,
-        "metadata": 10
+        "archive": 1
       },
       "artifacts": [
         {
@@ -213678,29 +213678,29 @@
       "total_files": 83,
       "total_bytes": 9376493266,
       "by_extension": {
-        "png": 3,
-        "ress": 10,
-        "esbak": 12,
-        "(no_ext)": 12,
-        "sprx": 1,
         "config": 1,
-        "assets": 10,
+        "(no_ext)": 12,
         "dat": 7,
-        "dds": 4,
-        "resource": 4,
-        "txt": 1,
-        "eboot.bin": 1,
-        "ucp": 2,
-        "prx": 10,
-        "json": 3,
         "mp4": 1,
-        "jpg": 1
+        "resource": 4,
+        "sprx": 1,
+        "ucp": 2,
+        "png": 3,
+        "eboot.bin": 1,
+        "ress": 10,
+        "txt": 1,
+        "dds": 4,
+        "jpg": 1,
+        "esbak": 12,
+        "json": 3,
+        "assets": 10,
+        "prx": 10
       },
       "by_category": {
-        "texture": 8,
         "executable": 12,
-        "unknown": 38,
-        "metadata": 25
+        "texture": 8,
+        "metadata": 25,
+        "unknown": 38
       },
       "artifacts": [
         {
@@ -214292,25 +214292,25 @@
       "total_files": 83,
       "total_bytes": 1509359616,
       "by_extension": {
-        "dds": 4,
-        "bin": 12,
         "prx": 2,
-        "ucp": 2,
         "at9": 44,
-        "(no_ext)": 1,
         "esbak": 4,
-        "png": 3,
+        "(no_ext)": 1,
+        "bin": 12,
         "json": 1,
-        "sprx": 1,
         "eboot.bin": 1,
-        "dat": 8
+        "ucp": 2,
+        "png": 3,
+        "dat": 8,
+        "dds": 4,
+        "sprx": 1
       },
       "by_category": {
         "executable": 4,
-        "metadata": 27,
         "unknown": 1,
         "audio": 44,
-        "texture": 7
+        "texture": 7,
+        "metadata": 27
       },
       "artifacts": [
         {
@@ -214902,29 +214902,29 @@
       "total_files": 248,
       "total_bytes": 3374882080,
       "by_extension": {
-        "png": 5,
-        "eboot.bin": 1,
-        "xml": 1,
         "assets": 24,
-        "prx": 5,
+        "xml": 1,
+        "jpg": 1,
         "json": 3,
-        "bytes": 119,
-        "index": 1,
+        "(no_ext)": 26,
+        "dds": 7,
+        "png": 5,
+        "ucp": 2,
         "resource": 2,
         "sprx": 3,
-        "ucp": 2,
-        "config": 1,
-        "dds": 7,
-        "ress": 40,
+        "index": 1,
         "dat": 7,
-        "jpg": 1,
-        "(no_ext)": 26
+        "bytes": 119,
+        "config": 1,
+        "eboot.bin": 1,
+        "prx": 5,
+        "ress": 40
       },
       "by_category": {
-        "metadata": 13,
-        "executable": 9,
         "unknown": 213,
-        "texture": 13
+        "executable": 9,
+        "texture": 13,
+        "metadata": 13
       },
       "artifacts": [
         {
@@ -216671,41 +216671,41 @@
       "total_files": 23328,
       "total_bytes": 39337005317,
       "by_extension": {
-        "sprx": 6,
-        "dat": 7,
-        "config": 1,
-        "ucp": 2,
-        "assets": 5,
-        "acb": 585,
-        "index": 1,
-        "png": 4,
-        "json": 3,
-        "at9": 1,
-        "awb": 585,
-        "acf": 1,
         "es": 22,
-        "en": 25,
-        "manifest": 11034,
-        "fr": 22,
-        "eboot.bin": 1,
-        "prx": 18,
-        "xml": 1,
-        "it": 22,
-        "usm": 19,
-        "dds": 4,
-        "gr": 22,
         "h": 3,
+        "index": 1,
+        "ucp": 2,
+        "json": 3,
         "txt": 2,
+        "png": 4,
+        "xml": 1,
+        "manifest": 11034,
+        "en": 25,
+        "at9": 1,
+        "gr": 22,
+        "ress": 3,
+        "dds": 4,
+        "assets": 5,
         "ini": 1,
+        "awb": 585,
+        "fr": 22,
+        "it": 22,
+        "dat": 7,
         "(no_ext)": 10928,
-        "ress": 3
+        "eboot.bin": 1,
+        "acb": 585,
+        "acf": 1,
+        "config": 1,
+        "usm": 19,
+        "sprx": 6,
+        "prx": 18
       },
       "by_category": {
         "audio": 1,
-        "metadata": 15,
         "unknown": 23279,
-        "texture": 8,
-        "executable": 25
+        "metadata": 15,
+        "executable": 25,
+        "texture": 8
       },
       "artifacts": [
         {
@@ -380012,29 +380012,29 @@
       "total_files": 43,
       "total_bytes": 7034110498,
       "by_extension": {
-        "txt": 1,
-        "dds": 4,
-        "png": 2,
-        "(no_ext)": 1,
-        "sprx": 1,
-        "mp4": 2,
-        "json": 2,
-        "esbak": 9,
         "ucp": 2,
-        "prx": 7,
-        "ini": 1,
-        "ucas": 2,
+        "esbak": 9,
+        "json": 2,
+        "(no_ext)": 1,
         "eboot.bin": 1,
-        "dat": 5,
+        "sprx": 1,
+        "ini": 1,
+        "utoc": 2,
+        "prx": 7,
+        "dds": 4,
+        "ucas": 2,
+        "png": 2,
         "pak": 1,
-        "utoc": 2
+        "txt": 1,
+        "dat": 5,
+        "mp4": 2
       },
       "by_category": {
-        "executable": 9,
         "archive": 1,
         "texture": 6,
         "unknown": 8,
-        "metadata": 19
+        "metadata": 19,
+        "executable": 9
       },
       "artifacts": [
         {
@@ -380346,28 +380346,28 @@
       "total_files": 43,
       "total_bytes": 15221500812,
       "by_extension": {
-        "esbak": 8,
-        "pak": 1,
-        "ucp": 2,
-        "txt": 1,
-        "sprx": 1,
         "bk2": 6,
-        "dds": 4,
-        "(no_ext)": 1,
-        "ini": 1,
-        "dat": 5,
         "json": 2,
-        "png": 2,
+        "uasset": 2,
+        "dat": 5,
         "eboot.bin": 1,
         "prx": 6,
-        "uasset": 2
+        "sprx": 1,
+        "(no_ext)": 1,
+        "png": 2,
+        "txt": 1,
+        "ini": 1,
+        "ucp": 2,
+        "pak": 1,
+        "dds": 4,
+        "esbak": 8
       },
       "by_category": {
-        "archive": 1,
-        "executable": 8,
         "metadata": 18,
-        "texture": 6,
-        "unknown": 10
+        "executable": 8,
+        "unknown": 10,
+        "archive": 1,
+        "texture": 6
       },
       "artifacts": [
         {
@@ -380679,31 +380679,31 @@
       "total_files": 21892,
       "total_bytes": 7363960767,
       "by_extension": {
-        "bank": 24,
-        "db": 1,
-        "bundle": 14633,
-        "esbak": 1,
-        "tour": 25,
-        "assets": 3,
-        "json": 26,
-        "at9": 1,
-        "config": 1,
-        "xml": 2,
-        "csv": 1,
-        "ignore": 1,
-        "sprx": 1,
-        "prx": 11,
-        "png": 2,
-        "dat": 8,
-        "dds": 4,
-        "(no_ext)": 8,
-        "ucp": 2,
-        "txt": 5,
         "bin": 2306,
         "optoctrees": 4823,
-        "eboot.bin": 1,
+        "ucp": 2,
+        "esbak": 1,
+        "ignore": 1,
+        "sprx": 1,
+        "png": 2,
+        "txt": 5,
         "elf": 1,
-        "ress": 1
+        "(no_ext)": 8,
+        "assets": 3,
+        "dat": 8,
+        "eboot.bin": 1,
+        "json": 26,
+        "db": 1,
+        "tour": 25,
+        "csv": 1,
+        "at9": 1,
+        "prx": 11,
+        "bundle": 14633,
+        "xml": 2,
+        "ress": 1,
+        "dds": 4,
+        "config": 1,
+        "bank": 24
       },
       "by_category": {
         "unknown": 19496,
@@ -533965,27 +533965,27 @@
       "total_files": 194,
       "total_bytes": 13968129513,
       "by_extension": {
-        "prx": 73,
-        "txt": 2,
-        "dds": 8,
-        "dat": 8,
-        "ini": 25,
-        "pak": 2,
-        "(no_ext)": 2,
-        "sprx": 3,
-        "eboot.bin": 3,
         "png": 6,
-        "json": 2,
-        "auth_info": 4,
+        "(no_ext)": 2,
+        "txt": 2,
         "esbak": 52,
-        "ucp": 4
+        "dat": 8,
+        "dds": 8,
+        "eboot.bin": 3,
+        "auth_info": 4,
+        "json": 2,
+        "ucp": 4,
+        "prx": 73,
+        "sprx": 3,
+        "ini": 25,
+        "pak": 2
       },
       "by_category": {
         "archive": 2,
-        "texture": 14,
         "unknown": 27,
         "executable": 79,
-        "metadata": 72
+        "metadata": 72,
+        "texture": 14
       },
       "artifacts": [
         {
@@ -535354,27 +535354,27 @@
       "total_files": 88,
       "total_bytes": 4848987635,
       "by_extension": {
-        "jpg": 1,
+        "prx": 16,
         "resource": 3,
         "dds": 4,
-        "prx": 16,
-        "dat": 9,
-        "ucp": 2,
         "eboot.bin": 1,
-        "png": 2,
+        "jpg": 1,
         "sprx": 3,
+        "assets": 12,
+        "json": 4,
+        "index": 1,
         "ress": 15,
+        "dat": 9,
         "config": 1,
         "(no_ext)": 14,
-        "assets": 12,
-        "index": 1,
-        "json": 4
+        "png": 2,
+        "ucp": 2
       },
       "by_category": {
-        "unknown": 46,
         "executable": 20,
+        "texture": 7,
         "metadata": 15,
-        "texture": 7
+        "unknown": 46
       },
       "artifacts": [
         {
@@ -535996,71 +535996,61 @@
       ]
     },
     {
-      "game": "Trek To Yomi 02.000 PPSA02629",
-      "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Trek.To.Yomi-PPSA02629-EUR-Game-v02.000-PS5\\Trek.To.Yomi-PPSA02629-EUR-Game-v02.000-PS5\\Trek To Yomi 02.000 PPSA02629",
-      "total_files": 141,
-      "total_bytes": 18267142804,
+      "game": "WUCHANG.Fallen.Feathers-PPSA09519-EUR-Game(v01.01)-PS5",
+      "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\WUCHANG.Fallen.Feathers-PPSA09519-EUR-Game(v01.01)-PS5\\WUCHANG.Fallen.Feathers-PPSA09519-EUR-Game(v01.01)-PS5",
+      "total_files": 8,
+      "total_bytes": 29725022353,
       "by_extension": {
-        "complete": 1,
+        "ttf": 1,
+        "json": 1,
+        "ini": 2,
+        "tps": 1,
         "eboot.bin": 1,
-        "dat": 5,
-        "png": 3,
-        "dds": 4,
-        "json": 6,
-        "txt": 1,
-        "prx": 8,
-        "ucp": 2,
-        "ini": 3,
-        "bank": 87,
-        "(no_ext)": 1,
-        "pak": 1,
-        "bin": 1,
-        "sprx": 1,
-        "mp4": 16
+        "esbak": 1,
+        "pak": 1
       },
       "by_category": {
-        "audio": 87,
-        "executable": 10,
-        "metadata": 15,
-        "texture": 7,
-        "archive": 1,
-        "unknown": 21
+        "font": 1,
+        "metadata": 2,
+        "unknown": 3,
+        "executable": 1,
+        "archive": 1
       },
       "artifacts": [
-        {
-          "relative_path": "PPSA02629.complete",
-          "file_name": "PPSA02629.complete",
-          "extension": "complete",
-          "size": 0,
-          "category": "Unknown"
-        },
         {
           "relative_path": "contentids.json",
           "file_name": "contentids.json",
           "extension": "json",
-          "size": 87,
+          "size": 132,
           "category": "Metadata"
         },
         {
           "relative_path": "eboot.bin",
           "file_name": "eboot.bin",
           "extension": "eboot.bin",
-          "size": 151078598,
+          "size": 153662536,
           "category": "Executable"
         },
         {
-          "relative_path": "engine/config/automation/presets/postbuild.json",
-          "file_name": "postbuild.json",
-          "extension": "json",
-          "size": 206,
+          "relative_path": "eboot.bin.esbak",
+          "file_name": "eboot.bin.esbak",
+          "extension": "esbak",
+          "size": 153403904,
           "category": "Metadata"
         },
         {
-          "relative_path": "engine/config/automation/presets/postbuildcritical.json",
-          "file_name": "postbuildcritical.json",
-          "extension": "json",
-          "size": 238,
-          "category": "Metadata"
+          "relative_path": "engine/content/slatedebug/fonts/lastresort.tps",
+          "file_name": "lastresort.tps",
+          "extension": "tps",
+          "size": 930,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "engine/content/slatedebug/fonts/lastresort.ttf",
+          "file_name": "lastresort.ttf",
+          "extension": "ttf",
+          "size": 5395052,
+          "category": "Font"
         },
         {
           "relative_path": "engine/saved/config/ps5/manifest.ini",
@@ -536070,1064 +536060,133 @@
           "category": "Unknown"
         },
         {
-          "relative_path": "prx/libfmod.prx",
-          "file_name": "libfmod.prx",
-          "extension": "prx",
-          "size": 1592304,
-          "category": "Executable"
-        },
-        {
-          "relative_path": "prx/libfmodstudio.prx",
-          "file_name": "libfmodstudio.prx",
-          "extension": "prx",
-          "size": 1524741,
-          "category": "Executable"
-        },
-        {
-          "relative_path": "ronin/config/oss/live/achievements.json",
-          "file_name": "achievements.json",
-          "extension": "json",
-          "size": 1094,
-          "category": "Metadata"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/aichatteraikodemon.bank",
-          "file_name": "aichatteraikodemon.bank",
-          "extension": "bank",
-          "size": 11911168,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/aichatterbandita.bank",
-          "file_name": "aichatterbandita.bank",
-          "extension": "bank",
-          "size": 2652160,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/aichatterbanditb.bank",
-          "file_name": "aichatterbanditb.bank",
-          "extension": "bank",
-          "size": 2313248,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/aichatterbanditc.bank",
-          "file_name": "aichatterbanditc.bank",
-          "extension": "bank",
-          "size": 2560768,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/aichatterbanditd.bank",
-          "file_name": "aichatterbanditd.bank",
-          "extension": "bank",
-          "size": 2273152,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/aichattercaster.bank",
-          "file_name": "aichattercaster.bank",
-          "extension": "bank",
-          "size": 13874624,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/aichatterghostbandita.bank",
-          "file_name": "aichatterghostbandita.bank",
-          "extension": "bank",
-          "size": 15629600,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/aichatterghostbanditb.bank",
-          "file_name": "aichatterghostbanditb.bank",
-          "extension": "bank",
-          "size": 14955808,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/aichatterghostbanditc.bank",
-          "file_name": "aichatterghostbanditc.bank",
-          "extension": "bank",
-          "size": 15447712,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/aichatterghostbanditd.bank",
-          "file_name": "aichatterghostbanditd.bank",
-          "extension": "bank",
-          "size": 15612352,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/aichatterghoula.bank",
-          "file_name": "aichatterghoula.bank",
-          "extension": "bank",
-          "size": 3156032,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/aichatterghoulb.bank",
-          "file_name": "aichatterghoulb.bank",
-          "extension": "bank",
-          "size": 2957792,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/aichatterhirokidemon.bank",
-          "file_name": "aichatterhirokidemon.bank",
-          "extension": "bank",
-          "size": 7993024,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/aichatterkageroubandit.bank",
-          "file_name": "aichatterkageroubandit.bank",
-          "extension": "bank",
-          "size": 1112864,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/aichatterkageroubanditghost.bank",
-          "file_name": "aichatterkageroubanditghost.bank",
-          "extension": "bank",
-          "size": 11215968,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/aichatterkageroudemon.bank",
-          "file_name": "aichatterkageroudemon.bank",
-          "extension": "bank",
-          "size": 10225376,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/aichatterkageroushogun.bank",
-          "file_name": "aichatterkageroushogun.bank",
-          "extension": "bank",
-          "size": 1183296,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/aichatterkageroushogunghost.bank",
-          "file_name": "aichatterkageroushogunghost.bank",
-          "extension": "bank",
-          "size": 9668576,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/aichatternpc.bank",
-          "file_name": "aichatternpc.bank",
-          "extension": "bank",
-          "size": 14813952,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/aichatterreanimator.bank",
-          "file_name": "aichatterreanimator.bank",
-          "extension": "bank",
-          "size": 7506976,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/aichattersadatame.bank",
-          "file_name": "aichattersadatame.bank",
-          "extension": "bank",
-          "size": 1653760,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/aichattersadatamegeneralghost.bank",
-          "file_name": "aichattersadatamegeneralghost.bank",
-          "extension": "bank",
-          "size": 6638944,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/aichattersamurai.bank",
-          "file_name": "aichattersamurai.bank",
-          "extension": "bank",
-          "size": 847936,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/aichattersanjurodemon.bank",
-          "file_name": "aichattersanjurodemon.bank",
-          "extension": "bank",
-          "size": 3508608,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/aichattershogungeneral.bank",
-          "file_name": "aichattershogungeneral.bank",
-          "extension": "bank",
-          "size": 1469472,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/aikodemon.bank",
-          "file_name": "aikodemon.bank",
-          "extension": "bank",
-          "size": 3946304,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/aikoghostguide.bank",
-          "file_name": "aikoghostguide.bank",
-          "extension": "bank",
-          "size": 838304,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/aikokid.bank",
-          "file_name": "aikokid.bank",
-          "extension": "bank",
-          "size": 2027616,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/ambient.bank",
-          "file_name": "ambient.bank",
-          "extension": "bank",
-          "size": 29689216,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/ambient_c01.bank",
-          "file_name": "ambient_c01.bank",
-          "extension": "bank",
-          "size": 41908736,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/ambient_c02.bank",
-          "file_name": "ambient_c02.bank",
-          "extension": "bank",
-          "size": 33416416,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/ambient_c03.bank",
-          "file_name": "ambient_c03.bank",
-          "extension": "bank",
-          "size": 20750432,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/ambient_c04.bank",
-          "file_name": "ambient_c04.bank",
-          "extension": "bank",
-          "size": 22645664,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/ambient_c05.bank",
-          "file_name": "ambient_c05.bank",
-          "extension": "bank",
-          "size": 20816960,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/ambient_c06.bank",
-          "file_name": "ambient_c06.bank",
-          "extension": "bank",
-          "size": 38874688,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/ambient_c07.bank",
-          "file_name": "ambient_c07.bank",
-          "extension": "bank",
-          "size": 19402144,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/ambient_yomi.bank",
-          "file_name": "ambient_yomi.bank",
-          "extension": "bank",
-          "size": 3736960,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/banditarcher.bank",
-          "file_name": "banditarcher.bank",
-          "extension": "bank",
-          "size": 1336672,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/banditfastattacker.bank",
-          "file_name": "banditfastattacker.bank",
-          "extension": "bank",
-          "size": 971808,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/banditheavybrute.bank",
-          "file_name": "banditheavybrute.bank",
-          "extension": "bank",
-          "size": 1271136,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/banditregular.bank",
-          "file_name": "banditregular.bank",
-          "extension": "bank",
-          "size": 3528928,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/caster.bank",
-          "file_name": "caster.bank",
-          "extension": "bank",
-          "size": 2676864,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/dialogs.bank",
-          "file_name": "dialogs.bank",
-          "extension": "bank",
-          "size": 2929152,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/dialogues_c01.bank",
-          "file_name": "dialogues_c01.bank",
-          "extension": "bank",
-          "size": 23279712,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/dialogues_c02.bank",
-          "file_name": "dialogues_c02.bank",
-          "extension": "bank",
-          "size": 13077376,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/dialogues_c03.bank",
-          "file_name": "dialogues_c03.bank",
-          "extension": "bank",
-          "size": 14293760,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/dialogues_c04.bank",
-          "file_name": "dialogues_c04.bank",
-          "extension": "bank",
-          "size": 35656192,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/dialogues_c05.bank",
-          "file_name": "dialogues_c05.bank",
-          "extension": "bank",
-          "size": 16430080,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/dialogues_c06.bank",
-          "file_name": "dialogues_c06.bank",
-          "extension": "bank",
-          "size": 17888768,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/dialogues_c07.bank",
-          "file_name": "dialogues_c07.bank",
-          "extension": "bank",
-          "size": 8124320,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/diseasedmarksman.bank",
-          "file_name": "diseasedmarksman.bank",
-          "extension": "bank",
-          "size": 1956928,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/enemygeneric.bank",
-          "file_name": "enemygeneric.bank",
-          "extension": "bank",
-          "size": 4016192,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/enemyghost.bank",
-          "file_name": "enemyghost.bank",
-          "extension": "bank",
-          "size": 6953120,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/ghoul.bank",
-          "file_name": "ghoul.bank",
-          "extension": "bank",
-          "size": 3327936,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/hirokidemon.bank",
-          "file_name": "hirokidemon.bank",
-          "extension": "bank",
-          "size": 14722144,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/hirokikid.bank",
-          "file_name": "hirokikid.bank",
-          "extension": "bank",
-          "size": 1119200,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/horserider.bank",
-          "file_name": "horserider.bank",
-          "extension": "bank",
-          "size": 597632,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/kageroubandit.bank",
-          "file_name": "kageroubandit.bank",
-          "extension": "bank",
-          "size": 1749504,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/kageroubanditghost.bank",
-          "file_name": "kageroubanditghost.bank",
-          "extension": "bank",
-          "size": 5941600,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/kageroudemon.bank",
-          "file_name": "kageroudemon.bank",
-          "extension": "bank",
-          "size": 8310304,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/kageroushogun.bank",
-          "file_name": "kageroushogun.bank",
-          "extension": "bank",
-          "size": 3397664,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/kageroushogunghost.bank",
-          "file_name": "kageroushogunghost.bank",
-          "extension": "bank",
-          "size": 6991840,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/master.bank",
-          "file_name": "master.bank",
-          "extension": "bank",
-          "size": 33800096,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/master.strings.bank",
-          "file_name": "master.strings.bank",
-          "extension": "bank",
-          "size": 265798,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/music.bank",
-          "file_name": "music.bank",
-          "extension": "bank",
-          "size": 59469888,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/music_c01.bank",
-          "file_name": "music_c01.bank",
-          "extension": "bank",
-          "size": 108562496,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/music_c02.bank",
-          "file_name": "music_c02.bank",
-          "extension": "bank",
-          "size": 116718912,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/music_c03.bank",
-          "file_name": "music_c03.bank",
-          "extension": "bank",
-          "size": 247455552,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/music_c04.bank",
-          "file_name": "music_c04.bank",
-          "extension": "bank",
-          "size": 175883872,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/music_c05.bank",
-          "file_name": "music_c05.bank",
-          "extension": "bank",
-          "size": 431087232,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/music_c06.bank",
-          "file_name": "music_c06.bank",
-          "extension": "bank",
-          "size": 284844704,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/music_c07.bank",
-          "file_name": "music_c07.bank",
-          "extension": "bank",
-          "size": 402555968,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/npc.bank",
-          "file_name": "npc.bank",
-          "extension": "bank",
-          "size": 45561856,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/reanimator.bank",
-          "file_name": "reanimator.bank",
-          "extension": "bank",
-          "size": 5671200,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/sadatamegeneral.bank",
-          "file_name": "sadatamegeneral.bank",
-          "extension": "bank",
-          "size": 2541696,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/sadatamegeneralghost.bank",
-          "file_name": "sadatamegeneralghost.bank",
-          "extension": "bank",
-          "size": 8071872,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/sanjurodemon.bank",
-          "file_name": "sanjurodemon.bank",
-          "extension": "bank",
-          "size": 3328224,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/sequences_c01.bank",
-          "file_name": "sequences_c01.bank",
-          "extension": "bank",
-          "size": 12671296,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/sequences_c02.bank",
-          "file_name": "sequences_c02.bank",
-          "extension": "bank",
-          "size": 4466880,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/sequences_c03.bank",
-          "file_name": "sequences_c03.bank",
-          "extension": "bank",
-          "size": 10926592,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/sequences_c04.bank",
-          "file_name": "sequences_c04.bank",
-          "extension": "bank",
-          "size": 6653472,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/sequences_c05.bank",
-          "file_name": "sequences_c05.bank",
-          "extension": "bank",
-          "size": 26143520,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/sequences_c06.bank",
-          "file_name": "sequences_c06.bank",
-          "extension": "bank",
-          "size": 25391168,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/sequences_c07.bank",
-          "file_name": "sequences_c07.bank",
-          "extension": "bank",
-          "size": 22644448,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/shogungeneral.bank",
-          "file_name": "shogungeneral.bank",
-          "extension": "bank",
-          "size": 2088480,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/spearman.bank",
-          "file_name": "spearman.bank",
-          "extension": "bank",
-          "size": 2257216,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/fmod/ps5/teleporter.bank",
-          "file_name": "teleporter.bank",
-          "extension": "bank",
-          "size": 4000544,
-          "category": "Audio"
-        },
-        {
-          "relative_path": "ronin/content/icons/ps5/savegameicon.png",
-          "file_name": "savegameicon.png",
-          "extension": "png",
-          "size": 226754,
-          "category": "Texture"
-        },
-        {
-          "relative_path": "ronin/content/movies/bushido_1.mp4",
-          "file_name": "bushido_1.mp4",
-          "extension": "mp4",
-          "size": 21310381,
+          "relative_path": "project_plague/Config/DCSGameConfig.ini",
+          "file_name": "DCSGameConfig.ini",
+          "extension": "ini",
+          "size": 20122,
           "category": "Unknown"
         },
         {
-          "relative_path": "ronin/content/movies/bushido_10.mp4",
-          "file_name": "bushido_10.mp4",
-          "extension": "mp4",
-          "size": 12509826,
-          "category": "Unknown"
-        },
-        {
-          "relative_path": "ronin/content/movies/bushido_11.mp4",
-          "file_name": "bushido_11.mp4",
-          "extension": "mp4",
-          "size": 17106389,
-          "category": "Unknown"
-        },
-        {
-          "relative_path": "ronin/content/movies/bushido_12.mp4",
-          "file_name": "bushido_12.mp4",
-          "extension": "mp4",
-          "size": 15908531,
-          "category": "Unknown"
-        },
-        {
-          "relative_path": "ronin/content/movies/bushido_13.mp4",
-          "file_name": "bushido_13.mp4",
-          "extension": "mp4",
-          "size": 19116755,
-          "category": "Unknown"
-        },
-        {
-          "relative_path": "ronin/content/movies/bushido_14.mp4",
-          "file_name": "bushido_14.mp4",
-          "extension": "mp4",
-          "size": 16369140,
-          "category": "Unknown"
-        },
-        {
-          "relative_path": "ronin/content/movies/bushido_1_15sek.mp4",
-          "file_name": "bushido_1_15sek.mp4",
-          "extension": "mp4",
-          "size": 43856085,
-          "category": "Unknown"
-        },
-        {
-          "relative_path": "ronin/content/movies/bushido_2.mp4",
-          "file_name": "bushido_2.mp4",
-          "extension": "mp4",
-          "size": 15394176,
-          "category": "Unknown"
-        },
-        {
-          "relative_path": "ronin/content/movies/bushido_3.mp4",
-          "file_name": "bushido_3.mp4",
-          "extension": "mp4",
-          "size": 12876171,
-          "category": "Unknown"
-        },
-        {
-          "relative_path": "ronin/content/movies/bushido_4.mp4",
-          "file_name": "bushido_4.mp4",
-          "extension": "mp4",
-          "size": 15522351,
-          "category": "Unknown"
-        },
-        {
-          "relative_path": "ronin/content/movies/bushido_5.mp4",
-          "file_name": "bushido_5.mp4",
-          "extension": "mp4",
-          "size": 21450640,
-          "category": "Unknown"
-        },
-        {
-          "relative_path": "ronin/content/movies/bushido_6.mp4",
-          "file_name": "bushido_6.mp4",
-          "extension": "mp4",
-          "size": 20168983,
-          "category": "Unknown"
-        },
-        {
-          "relative_path": "ronin/content/movies/bushido_7.mp4",
-          "file_name": "bushido_7.mp4",
-          "extension": "mp4",
-          "size": 15133769,
-          "category": "Unknown"
-        },
-        {
-          "relative_path": "ronin/content/movies/bushido_8.mp4",
-          "file_name": "bushido_8.mp4",
-          "extension": "mp4",
-          "size": 14118069,
-          "category": "Unknown"
-        },
-        {
-          "relative_path": "ronin/content/movies/bushido_9.mp4",
-          "file_name": "bushido_9.mp4",
-          "extension": "mp4",
-          "size": 17425775,
-          "category": "Unknown"
-        },
-        {
-          "relative_path": "ronin/content/movies/tty_intro.mp4",
-          "file_name": "tty_intro.mp4",
-          "extension": "mp4",
-          "size": 20568789,
-          "category": "Unknown"
-        },
-        {
-          "relative_path": "ronin/content/paks/ronin-ps5.pak",
-          "file_name": "ronin-ps5.pak",
+          "relative_path": "project_plague/content/paks/project_plague-ps5.pak",
+          "file_name": "project_plague-ps5.pak",
           "extension": "pak",
-          "size": 15097518588,
+          "size": 29412539655,
           "category": "Archive"
-        },
-        {
-          "relative_path": "ronin/intermediate/assetregistrycache/cb4f1e25nodeps.bin",
-          "file_name": "cb4f1e25nodeps.bin",
-          "extension": "bin",
-          "size": 44,
-          "category": "Metadata"
-        },
-        {
-          "relative_path": "ronin/platforms/ps5/config/oss/achievements.json",
-          "file_name": "achievements.json",
-          "extension": "json",
-          "size": 2638,
-          "category": "Metadata"
-        },
-        {
-          "relative_path": "ronin/saved/config/crashreportclient/ue4cc-ps5-00042c8908def27b43f02ae80026548b/crashreportclient.ini",
-          "file_name": "crashreportclient.ini",
-          "extension": "ini",
-          "size": 107,
-          "category": "Unknown"
-        },
-        {
-          "relative_path": "ronin/saved/config/ps5/gameusersettings.ini",
-          "file_name": "gameusersettings.ini",
-          "extension": "ini",
-          "size": 1,
-          "category": "Unknown"
-        },
-        {
-          "relative_path": "sce_module/libSceFace.prx",
-          "file_name": "libSceFace.prx",
-          "extension": "prx",
-          "size": 301564,
-          "category": "Executable"
-        },
-        {
-          "relative_path": "sce_module/libSceFaceTracker.prx",
-          "file_name": "libSceFaceTracker.prx",
-          "extension": "prx",
-          "size": 2610320,
-          "category": "Executable"
-        },
-        {
-          "relative_path": "sce_module/libSceJobManager.prx",
-          "file_name": "libSceJobManager.prx",
-          "extension": "prx",
-          "size": 68704,
-          "category": "Executable"
-        },
-        {
-          "relative_path": "sce_module/libSceNpCppWebApi.prx",
-          "file_name": "libSceNpCppWebApi.prx",
-          "extension": "prx",
-          "size": 7463200,
-          "category": "Executable"
-        },
-        {
-          "relative_path": "sce_module/libScePfs.prx",
-          "file_name": "libScePfs.prx",
-          "extension": "prx",
-          "size": 1343104,
-          "category": "Executable"
-        },
-        {
-          "relative_path": "sce_module/libc.prx",
-          "file_name": "libc.prx",
-          "extension": "prx",
-          "size": 1302840,
-          "category": "Executable"
-        },
-        {
-          "relative_path": "sce_sys/about/right.sprx",
-          "file_name": "right.sprx",
-          "extension": "sprx",
-          "size": 12448,
-          "category": "Executable"
-        },
-        {
-          "relative_path": "sce_sys/disc_info.dat",
-          "file_name": "disc_info.dat",
-          "extension": "dat",
-          "size": 6640,
-          "category": "Metadata"
-        },
-        {
-          "relative_path": "sce_sys/icon0.dds",
-          "file_name": "icon0.dds",
-          "extension": "dds",
-          "size": 262292,
-          "category": "Texture"
-        },
-        {
-          "relative_path": "sce_sys/icon0.png",
-          "file_name": "icon0.png",
-          "extension": "png",
-          "size": 233894,
-          "category": "Texture"
-        },
-        {
-          "relative_path": "sce_sys/keystone",
-          "file_name": "keystone",
-          "extension": "",
-          "size": 96,
-          "category": "Unknown"
-        },
-        {
-          "relative_path": "sce_sys/nptitle.dat",
-          "file_name": "nptitle.dat",
-          "extension": "dat",
-          "size": 160,
-          "category": "Metadata"
-        },
-        {
-          "relative_path": "sce_sys/param.json",
-          "file_name": "param.json",
-          "extension": "json",
-          "size": 1533,
-          "category": "Metadata"
-        },
-        {
-          "relative_path": "sce_sys/pfs-version.dat",
-          "file_name": "pfs-version.dat",
-          "extension": "dat",
-          "size": 10,
-          "category": "Metadata"
-        },
-        {
-          "relative_path": "sce_sys/pic0.dds",
-          "file_name": "pic0.dds",
-          "extension": "dds",
-          "size": 8294548,
-          "category": "Texture"
-        },
-        {
-          "relative_path": "sce_sys/pic0.png",
-          "file_name": "pic0.png",
-          "extension": "png",
-          "size": 7700307,
-          "category": "Texture"
-        },
-        {
-          "relative_path": "sce_sys/pic1.dds",
-          "file_name": "pic1.dds",
-          "extension": "dds",
-          "size": 8294548,
-          "category": "Texture"
-        },
-        {
-          "relative_path": "sce_sys/pic2.dds",
-          "file_name": "pic2.dds",
-          "extension": "dds",
-          "size": 8294548,
-          "category": "Texture"
-        },
-        {
-          "relative_path": "sce_sys/trophy2/npbind.dat",
-          "file_name": "npbind.dat",
-          "extension": "dat",
-          "size": 532,
-          "category": "Metadata"
-        },
-        {
-          "relative_path": "sce_sys/trophy2/trophy00.ucp",
-          "file_name": "trophy00.ucp",
-          "extension": "ucp",
-          "size": 7291408,
-          "category": "Metadata"
-        },
-        {
-          "relative_path": "sce_sys/uds/npbind.dat",
-          "file_name": "npbind.dat",
-          "extension": "dat",
-          "size": 532,
-          "category": "Metadata"
-        },
-        {
-          "relative_path": "sce_sys/uds/uds00.ucp",
-          "file_name": "uds00.ucp",
-          "extension": "ucp",
-          "size": 29872,
-          "category": "Metadata"
-        },
-        {
-          "relative_path": "ue4commandline.txt",
-          "file_name": "ue4commandline.txt",
-          "extension": "txt",
-          "size": 30,
-          "category": "Metadata"
         }
       ]
     }
   ],
   "total_games": 30,
-  "total_files": 76569,
+  "total_files": 76436,
   "by_extension": {
-    "psb": 192,
-    "tmp": 1,
-    "en": 25,
-    "mtl": 3904,
-    "xcache": 473,
-    "chp": 1,
-    "tps": 1,
-    "ogg": 16,
-    "gnf": 4812,
-    "rds": 1,
+    "uasset": 345,
+    "dat": 190,
     "config": 11,
-    "h": 3,
-    "csv": 1,
-    "pssl": 6,
-    "chroma": 123,
-    "frag": 110,
-    "(no_ext)": 11212,
-    "ignore": 1,
-    "art": 1,
-    "objcache": 4853,
-    "usm": 265,
-    "acb": 588,
-    "gmt": 5,
     "assets": 203,
-    "sb": 508,
-    "sprx": 51,
-    "t": 124,
-    "manifest": 11034,
-    "png": 1790,
-    "ress": 172,
-    "acf": 4,
-    "eboot.bin": 35,
-    "bk2": 8,
-    "es": 22,
-    "at9": 55,
-    "bundle": 15292,
-    "bak_20260710_185300": 2,
-    "resource": 39,
-    "utoc": 10,
-    "ini": 40,
-    "db": 20,
-    "preload": 1,
-    "bnk": 97,
-    "lib": 1,
-    "avp": 1,
-    "it": 22,
-    "xml": 1004,
-    "dat": 195,
-    "wem": 892,
-    "ucas": 10,
-    "gmd": 4,
-    "json": 111,
-    "bin": 2510,
-    "ttf": 18,
-    "adx": 632,
-    "args": 1,
-    "index": 5,
-    "farc": 2,
-    "tour": 25,
-    "auth_info": 5,
-    "s": 124,
-    "daecache": 98,
     "m": 1963,
-    "complete": 8,
-    "pak": 16,
-    "prx": 431,
-    "elf": 39,
-    "mp4": 88,
-    "irr": 375,
-    "cmt": 8,
-    "nfo": 1,
-    "js": 1,
-    "identifier": 7,
-    "awb": 4151,
-    "swatch": 1,
-    "ucp": 66,
+    "json": 106,
+    "opus": 60,
+    "ini": 39,
+    "dds": 191,
     "cfc": 1,
     "wav": 166,
-    "bytes": 119,
-    "dae": 98,
-    "opus": 60,
-    "bat": 2,
-    "gr": 22,
-    "esbak": 107,
-    "vert": 20,
-    "uasset": 345,
-    "sp": 1,
-    "par": 545,
-    "fr": 22,
-    "dds": 195,
-    "optoctrees": 4823,
-    "bank": 619,
-    "jpg": 13,
-    "tga": 5,
-    "txt": 125,
-    "bmp": 1,
+    "identifier": 7,
+    "elf": 39,
+    "chroma": 123,
+    "sprx": 50,
     "cud": 352,
-    "unity3d": 1
+    "index": 5,
+    "daecache": 98,
+    "t": 124,
+    "prx": 423,
+    "dae": 98,
+    "tga": 5,
+    "(no_ext)": 11211,
+    "bnk": 97,
+    "gnf": 4812,
+    "cmt": 8,
+    "txt": 124,
+    "mtl": 3904,
+    "auth_info": 5,
+    "acf": 4,
+    "ucp": 64,
+    "xcache": 473,
+    "unity3d": 1,
+    "frag": 110,
+    "esbak": 108,
+    "db": 20,
+    "at9": 55,
+    "sb": 508,
+    "bin": 2509,
+    "utoc": 10,
+    "usm": 265,
+    "lib": 1,
+    "bat": 2,
+    "png": 1787,
+    "par": 545,
+    "awb": 4151,
+    "sp": 1,
+    "ogg": 16,
+    "args": 1,
+    "ignore": 1,
+    "csv": 1,
+    "art": 1,
+    "tps": 2,
+    "chp": 1,
+    "acb": 588,
+    "swatch": 1,
+    "rds": 1,
+    "vert": 20,
+    "fr": 22,
+    "manifest": 11034,
+    "objcache": 4853,
+    "xml": 1004,
+    "bmp": 1,
+    "s": 124,
+    "preload": 1,
+    "mp4": 72,
+    "farc": 2,
+    "pak": 16,
+    "complete": 7,
+    "bank": 532,
+    "pssl": 6,
+    "es": 22,
+    "bk2": 8,
+    "jpg": 13,
+    "js": 1,
+    "gr": 22,
+    "psb": 192,
+    "resource": 39,
+    "tmp": 1,
+    "gmt": 5,
+    "optoctrees": 4823,
+    "ucas": 10,
+    "ress": 172,
+    "bundle": 15292,
+    "eboot.bin": 35,
+    "nfo": 1,
+    "adx": 632,
+    "ttf": 19,
+    "avp": 1,
+    "h": 3,
+    "irr": 375,
+    "bak_20260710_185300": 2,
+    "bytes": 119,
+    "en": 25,
+    "wem": 892,
+    "gmd": 4,
+    "it": 22,
+    "tour": 25
   },
   "by_category": {
-    "metadata": 5092,
+    "executable": 547,
+    "audio": 587,
     "shader": 514,
-    "texture": 6816,
-    "unknown": 53479,
+    "font": 19,
+    "texture": 6809,
+    "unknown": 53461,
     "model": 8859,
-    "audio": 674,
-    "archive": 561,
-    "executable": 556,
-    "font": 18
+    "metadata": 5079,
+    "archive": 561
   }
 }
