@@ -2,7 +2,7 @@
   "schema_version": 6,
   "tool": "ps5rs",
   "created_at": "2026-08-26T05:07:13Z",
-  "image_count": 31,
+  "image_count": 32,
   "module_count": 0,
   "games": [
     {
@@ -376,6 +376,18 @@
       "drm_type": "standard",
       "content_id": "EP2566-PPSA03001_00-WUGUAN0000000001",
       "creation_date": "2022-03-03 14:15:16"
+    },
+    {
+      "name": "Trek To Yomi 02.000 PPSA02629",
+      "title_id": "PPSA02629",
+      "content_version": "02.000.000",
+      "master_version": "02.00",
+      "sdk_version": "0x0400000000000000",
+      "title_name": "Trek To Yomi",
+      "display_name": "Trek To Yomi - [PPSA02629]",
+      "drm_type": "standard",
+      "content_id": "EP3643-PPSA02629_00-TREKTOYOMI000000",
+      "creation_date": "2022-07-06 10:10:31"
     }
   ]
 }

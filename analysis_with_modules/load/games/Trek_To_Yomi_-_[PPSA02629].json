@@ -1,0 +1,931 @@
+{
+  "game": "Trek To Yomi - [PPSA02629]",
+  "path": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Trek.To.Yomi-PPSA02629-EUR-Game-v02.000-PS5\\Trek.To.Yomi-PPSA02629-EUR-Game-v02.000-PS5\\Trek To Yomi 02.000 PPSA02629\\eboot.bin",
+  "load_report": {
+    "modules": [
+      {
+        "name": "libSceNpCppWebApi.prx",
+        "module_type": "Prx",
+        "load_bias": 34628173824,
+        "entry_point": null,
+        "exports_count": 45841,
+        "imports_resolved": 0,
+        "imports_known": 32,
+        "imports_stubbed": 73,
+        "relative": 759,
+        "glob_dat": 2,
+        "jump_slot": 92,
+        "abs64": 11,
+        "copy": 0,
+        "tls_relocations": 0,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 3209232,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 0,
+        "preinit_array_sz": 0,
+        "per_library": [
+          {
+            "library": "libSceHttp",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceJson2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 37
+          },
+          {
+            "library": "libSceLibcInternal",
+            "resolved": 0,
+            "known": 32,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceNpWebApi2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libSceRtc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 24
+          }
+        ]
+      },
+      {
+        "name": "libc.prx",
+        "module_type": "Prx",
+        "load_bias": 34635710464,
+        "entry_point": null,
+        "exports_count": 2569,
+        "imports_resolved": 0,
+        "imports_known": 0,
+        "imports_stubbed": 104,
+        "relative": 1789,
+        "glob_dat": 3,
+        "jump_slot": 101,
+        "abs64": 0,
+        "copy": 0,
+        "tls_relocations": 3,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 838544,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 1130080,
+        "preinit_array_sz": 8,
+        "per_library": [
+          {
+            "library": "libSceLibcInternalExt",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 100
+          }
+        ]
+      },
+      {
+        "name": "Trek To Yomi 02.000 PPSA02629",
+        "module_type": "Eboot",
+        "load_bias": 34637086720,
+        "entry_point": 112,
+        "exports_count": 0,
+        "imports_resolved": 10432,
+        "imports_known": 0,
+        "imports_stubbed": 938,
+        "relative": 819391,
+        "glob_dat": 23,
+        "jump_slot": 2074,
+        "abs64": 9273,
+        "copy": 0,
+        "tls_relocations": 0,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 90971040,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 0,
+        "preinit_array_sz": 0,
+        "per_library": [
+          {
+            "library": "libSceAcm",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 6
+          },
+          {
+            "library": "libSceAgc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 191
+          },
+          {
+            "library": "libSceAgcDriver",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 38
+          },
+          {
+            "library": "libSceAjm",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 14
+          },
+          {
+            "library": "libSceAmpr",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 60
+          },
+          {
+            "library": "libSceAppContent",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceAudioIn",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceAudioOut",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceAudioOut2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 12
+          },
+          {
+            "library": "libSceAvPlayer",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 22
+          },
+          {
+            "library": "libSceCdlgPlayerReview",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceCommonDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceErrorDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceGameLiveStreaming",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceGameUpdate",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceHttp",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 24
+          },
+          {
+            "library": "libSceHttp2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceIme",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceImeDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 6
+          },
+          {
+            "library": "libSceJson2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 23
+          },
+          {
+            "library": "libSceMouse",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceMsgDialog.native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceNet",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 20
+          },
+          {
+            "library": "libSceNetCtl",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceNgs2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 15
+          },
+          {
+            "library": "libSceNpAuth",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceNpCommerce",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceNpCppWebApi",
+            "resolved": 940,
+            "known": 0,
+            "stubbed": 0
+          },
+          {
+            "library": "libSceNpEntitlementAccess",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 6
+          },
+          {
+            "library": "libSceNpGameIntent",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceNpManager",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 11
+          },
+          {
+            "library": "libSceNpSessionSignaling",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libSceNpTrophy2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 9
+          },
+          {
+            "library": "libSceNpUniversalDataSystem",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 29
+          },
+          {
+            "library": "libSceNpWebApi2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 22
+          },
+          {
+            "library": "libScePad",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 11
+          },
+          {
+            "library": "libScePlayGo",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 11
+          },
+          {
+            "library": "libScePlayerInvitationDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libScePosix",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 67
+          },
+          {
+            "library": "libSceRandom",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceRtc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSaveDataDialog.native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceSaveData_native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 11
+          },
+          {
+            "library": "libSceShare",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceSsl",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSystemService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceUserService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceVideoOut",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libSceVoiceQoS",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 12
+          },
+          {
+            "library": "libSceWebBrowserDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libc",
+            "resolved": 9492,
+            "known": 0,
+            "stubbed": 0
+          },
+          {
+            "library": "libfmod",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 24
+          },
+          {
+            "library": "libfmodstudio",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 77
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 87
+          }
+        ]
+      }
+    ],
+    "graph": {
+      "nodes": [
+        "libSceNpTrophy2.prx",
+        "libSceHttp.prx",
+        "libSceAudioOut.prx",
+        "libkernel.prx",
+        "libSceSystemService.prx",
+        "libScePad.prx",
+        "libSceNpAuth.prx",
+        "libSceJson2.prx",
+        "libSceNpCommerce.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceNet.prx",
+        "libSceVideoOut.prx",
+        "libSceImeDialog.prx",
+        "libSceRandom.prx",
+        "libSceErrorDialog.prx",
+        "libSceMouse.prx",
+        "libSceLibcInternal.prx",
+        "libSceNpSessionSignaling.prx",
+        "libfmod.prx",
+        "libSceUserService.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceNpCppWebApi.prx",
+        "libSceCdlgPlayerReview.prx",
+        "libSceAgc.prx",
+        "libSceContentExport.prx",
+        "libfmodstudio.prx",
+        "libSceSsl.prx",
+        "libSceNetCtl.prx",
+        "libSceRtc.prx",
+        "libSceIme.prx",
+        "libSceAmpr.prx",
+        "libSceNpGameIntent.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceSysmodule.prx",
+        "libc.prx",
+        "libSceGameUpdate.prx",
+        "libSceHttp2.prx",
+        "libSceVoiceQoS.prx",
+        "libSceAcm.prx",
+        "libSceSaveData.native.prx",
+        "libSceAgcDriver.prx",
+        "libSceAjm.native.prx",
+        "libSceNpEntitlementAccess.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceNpManager.prx",
+        "libSceShare.prx",
+        "libScePlayGo.prx",
+        "libSceAudioIn.prx",
+        "libSceAppContent.prx",
+        "libSceCommonDialog.prx",
+        "libSceGameLiveStreaming.prx",
+        "libSceNgs2.prx",
+        "libScePlayerInvitationDialog.prx",
+        "Trek To Yomi 02.000 PPSA02629",
+        "libSceNpWebApi2.prx"
+      ],
+      "unavailable": [
+        "libSceShare.prx",
+        "libSceNpTrophy2.prx",
+        "libSceHttp2.prx",
+        "libSceAcm.prx",
+        "libSceUserService.prx",
+        "libSceSystemService.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceNpWebApi2.prx",
+        "libScePad.prx",
+        "libScePlayerInvitationDialog.prx",
+        "libSceNpManager.prx",
+        "libScePlayGo.prx",
+        "libSceImeDialog.prx",
+        "libkernel.prx",
+        "libSceNpAuth.prx",
+        "libSceErrorDialog.prx",
+        "libSceAmpr.prx",
+        "libSceNetCtl.prx",
+        "libSceNgs2.prx",
+        "libSceSysmodule.prx",
+        "libSceSaveData.native.prx",
+        "libSceRandom.prx",
+        "libSceAgc.prx",
+        "libSceIme.prx",
+        "libfmod.prx",
+        "libSceGameLiveStreaming.prx",
+        "libSceVideoOut.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceSsl.prx",
+        "libSceRtc.prx",
+        "libSceAjm.native.prx",
+        "libSceHttp.prx",
+        "libSceCommonDialog.prx",
+        "libSceNpCommerce.prx",
+        "libSceAudioOut.prx",
+        "libSceContentExport.prx",
+        "libSceJson2.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceGameUpdate.prx",
+        "libSceAudioIn.prx",
+        "libfmodstudio.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceNpGameIntent.prx",
+        "libSceNpSessionSignaling.prx",
+        "libSceAppContent.prx",
+        "libSceNpEntitlementAccess.prx",
+        "libSceVoiceQoS.prx",
+        "libSceAgcDriver.prx",
+        "libSceMouse.prx",
+        "libSceCdlgPlayerReview.prx",
+        "libSceNet.prx",
+        "libSceLibcInternal.prx",
+        "libSceMsgDialog.native.prx"
+      ],
+      "edges": [
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceJson2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceRtc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceNpWebApi2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceHttp.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceAgcDriver.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceAgc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceRtc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libScePad.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceNet.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceNetCtl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceNgs2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceAudioOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceAjm.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceVideoOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceUserService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceSsl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceHttp.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libScePlayGo.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceNpManager.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceAppContent.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceSaveData.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceSaveDataDialog.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceCommonDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceGameLiveStreaming.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceSystemService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceIme.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceImeDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceMsgDialog.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceNpCommerce.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceShare.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceMouse.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceRandom.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceWebBrowserDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceContentExport.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceNpGameIntent.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceAvPlayer.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceHttp2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceNpAuth.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceNpCppWebApi.prx",
+          "status": "loaded"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceNpWebApi2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceNpSessionSignaling.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceJson2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceNpUniversalDataSystem.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceNpTrophy2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceErrorDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceGameUpdate.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libScePlayerInvitationDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceCdlgPlayerReview.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceNpEntitlementAccess.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceVoiceQoS.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceAudioIn.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceAcm.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libfmod.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libfmodstudio.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libc.prx",
+          "status": "loaded"
+        },
+        {
+          "from": "Trek To Yomi 02.000 PPSA02629",
+          "to": "libSceAmpr.prx",
+          "status": "missing"
+        }
+      ]
+    },
+    "totals": {
+      "modules": 3,
+      "resolved": 10432,
+      "known": 32,
+      "stubbed": 1115,
+      "exports": 48410,
+      "unavailable": 53
+    }
+  },
+  "error": null,
+  "total_exports": 48410,
+  "freshness": {
+    "report_format": 1,
+    "loader_fingerprint": "d245a80770d2897643c4754f10883b674208fc8fdecaad2ebd247d1990f6f5a0",
+    "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
+    "environment_fingerprint": "c65955db3dee9d575ca652856c86c3fc2b7297fff36bb37fcb1b9319f1ff09a9",
+    "game_fingerprint": "8f741ba388464292534f07a3d28af0bcf23e0500468ffba6add5a759f2450e1b"
+  }
+}
