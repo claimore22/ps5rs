@@ -1,17 +1,17 @@
 {
-  "total_games": 31,
-  "successful": 31,
+  "total_games": 30,
+  "successful": 30,
   "failed": 0,
-  "total_modules": 77,
-  "total_exports": 723097,
-  "total_imports_resolved": 135239,
-  "total_imports_known": 346,
-  "total_imports_stubbed": 22648,
-  "avg_resolution_rate": 85.68693003355811,
+  "total_modules": 74,
+  "total_exports": 674687,
+  "total_imports_resolved": 124807,
+  "total_imports_known": 314,
+  "total_imports_stubbed": 21533,
+  "avg_resolution_rate": 85.31714102581587,
   "top_unavailable": [
     {
       "module": "libSceAgc.prx",
-      "game_count": 31,
+      "game_count": 30,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
@@ -42,13 +42,12 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "Trek To Yomi - [PPSA02629]"
+        "Totally Reliable Delivery Service - [PPSA28855]"
       ]
     },
     {
       "module": "libSceAgcDriver.prx",
-      "game_count": 31,
+      "game_count": 30,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
@@ -79,13 +78,12 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "Trek To Yomi - [PPSA02629]"
+        "Totally Reliable Delivery Service - [PPSA28855]"
       ]
     },
     {
       "module": "libSceAudioOut.prx",
-      "game_count": 31,
+      "game_count": 30,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
@@ -116,13 +114,12 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "Trek To Yomi - [PPSA02629]"
+        "Totally Reliable Delivery Service - [PPSA28855]"
       ]
     },
     {
       "module": "libSceCommonDialog.prx",
-      "game_count": 31,
+      "game_count": 30,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
@@ -153,13 +150,12 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "Trek To Yomi - [PPSA02629]"
+        "Totally Reliable Delivery Service - [PPSA28855]"
       ]
     },
     {
       "module": "libSceLibcInternal.prx",
-      "game_count": 31,
+      "game_count": 30,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
@@ -190,13 +186,12 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "Trek To Yomi - [PPSA02629]"
+        "Totally Reliable Delivery Service - [PPSA28855]"
       ]
     },
     {
       "module": "libScePad.prx",
-      "game_count": 31,
+      "game_count": 30,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
@@ -227,13 +222,12 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "Trek To Yomi - [PPSA02629]"
+        "Totally Reliable Delivery Service - [PPSA28855]"
       ]
     },
     {
       "module": "libSceSaveData.native.prx",
-      "game_count": 31,
+      "game_count": 30,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
@@ -264,13 +258,12 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "Trek To Yomi - [PPSA02629]"
+        "Totally Reliable Delivery Service - [PPSA28855]"
       ]
     },
     {
       "module": "libSceSysmodule.prx",
-      "game_count": 31,
+      "game_count": 30,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
@@ -301,13 +294,12 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "Trek To Yomi - [PPSA02629]"
+        "Totally Reliable Delivery Service - [PPSA28855]"
       ]
     },
     {
       "module": "libSceSystemService.prx",
-      "game_count": 31,
+      "game_count": 30,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
@@ -338,13 +330,12 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "Trek To Yomi - [PPSA02629]"
+        "Totally Reliable Delivery Service - [PPSA28855]"
       ]
     },
     {
       "module": "libSceUserService.prx",
-      "game_count": 31,
+      "game_count": 30,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
@@ -375,13 +366,12 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "Trek To Yomi - [PPSA02629]"
+        "Totally Reliable Delivery Service - [PPSA28855]"
       ]
     },
     {
       "module": "libSceVideoOut.prx",
-      "game_count": 31,
+      "game_count": 30,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
@@ -412,13 +402,12 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "Trek To Yomi - [PPSA02629]"
+        "Totally Reliable Delivery Service - [PPSA28855]"
       ]
     },
     {
       "module": "libkernel.prx",
-      "game_count": 31,
+      "game_count": 30,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
@@ -449,13 +438,12 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "Trek To Yomi - [PPSA02629]"
+        "Totally Reliable Delivery Service - [PPSA28855]"
       ]
     },
     {
       "module": "libSceRtc.prx",
-      "game_count": 29,
+      "game_count": 28,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
@@ -484,13 +472,12 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "Trek To Yomi - [PPSA02629]"
+        "Totally Reliable Delivery Service - [PPSA28855]"
       ]
     },
     {
       "module": "libSceNet.prx",
-      "game_count": 28,
+      "game_count": 27,
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
@@ -518,13 +505,12 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "Trek To Yomi - [PPSA02629]"
+        "Totally Reliable Delivery Service - [PPSA28855]"
       ]
     },
     {
       "module": "libSceNpManager.prx",
-      "game_count": 28,
+      "game_count": 27,
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
@@ -552,13 +538,12 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "Trek To Yomi - [PPSA02629]"
+        "Totally Reliable Delivery Service - [PPSA28855]"
       ]
     },
     {
       "module": "libSceAppContent.prx",
-      "game_count": 27,
+      "game_count": 26,
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
@@ -585,13 +570,12 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "Trek To Yomi - [PPSA02629]"
+        "Totally Reliable Delivery Service - [PPSA28855]"
       ]
     },
     {
       "module": "libSceAvPlayer.native.prx",
-      "game_count": 27,
+      "game_count": 26,
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
@@ -618,13 +602,12 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "Trek To Yomi - [PPSA02629]"
+        "Totally Reliable Delivery Service - [PPSA28855]"
       ]
     },
     {
       "module": "libSceHttp2.prx",
-      "game_count": 27,
+      "game_count": 26,
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
@@ -651,13 +634,12 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "Trek To Yomi - [PPSA02629]"
+        "Totally Reliable Delivery Service - [PPSA28855]"
       ]
     },
     {
       "module": "libSceMsgDialog.native.prx",
-      "game_count": 27,
+      "game_count": 26,
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
@@ -684,13 +666,12 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "Trek To Yomi - [PPSA02629]"
+        "Totally Reliable Delivery Service - [PPSA28855]"
       ]
     },
     {
       "module": "libSceNetCtl.prx",
-      "game_count": 27,
+      "game_count": 26,
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
@@ -717,8 +698,7 @@
         "Stray - [PPSA02100]",
         "Subnautica Below Zero - [PPSA02456]",
         "The Pathless - [PPSA01825]",
-        "Totally Reliable Delivery Service - [PPSA28855]",
-        "Trek To Yomi - [PPSA02629]"
+        "Totally Reliable Delivery Service - [PPSA28855]"
       ]
     }
   ],

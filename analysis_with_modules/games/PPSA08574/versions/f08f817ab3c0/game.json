@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "title_id": "PPSA08574",
+  "name": "SAND LAND - [PPSA08574]",
+  "eboot_sha256": "2b4a4fb04e7955270c89e4fe8db93f0295250e4e57307946e833cc0f2811fc8e",
+  "game_fingerprint": "f08f817ab3c0eebcb41b2ca537df7ad94b660876323e2f7029c44f76acd3b532",
+  "environment_fingerprint": "c65955db3dee9d575ca652856c86c3fc2b7297fff36bb37fcb1b9319f1ff09a9",
+  "loader_fingerprint": "d245a80770d2897643c4754f10883b674208fc8fdecaad2ebd247d1990f6f5a0",
+  "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
+  "ingest_id": "ingest_20260913055423_f08f817ab3c0",
+  "ingested_at": "2026-09-13T05:54:23Z",
+  "params": {
+    "name": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+    "title_id": "PPSA08574",
+    "content_version": "01.000.000",
+    "master_version": "01.00",
+    "sdk_version": "0x0700000000000000",
+    "title_name": "SAND LAND",
+    "display_name": "SAND LAND - [PPSA08574]",
+    "drm_type": "standard",
+    "content_id": "EP0700-PPSA08574_00-SANDLMAINGAME000",
+    "creation_date": "2024-01-09 18:26:07"
+  },
+  "load_report_file": "load_report.json"
+}
