@@ -1,0 +1,251 @@
+{
+  "game": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+  "sony": [
+    {
+      "exports": 118,
+      "file_name": "libSceAmpr.sprx",
+      "import_libs": [
+        "libSceLibcInternal",
+        "libkernel"
+      ],
+      "imports": 99,
+      "kind": "sony",
+      "module_name": "libSceAmpr",
+      "needed_files": [
+        "libSceLibcInternal.prx",
+        "libkernel.prx"
+      ],
+      "parseable": true,
+      "sha256": "8248448608f36d8c937c77bd35b9b5b037b14d781544a14a39491a9bf88bc83b"
+    },
+    {
+      "exports": 11,
+      "file_name": "libSceJobManager.prx",
+      "import_libs": [
+        "libSceAgc",
+        "libSceAgcDriver",
+        "libSceLibcInternal",
+        "libSceRazorCpu",
+        "libkernel",
+        "ulobjmgr"
+      ],
+      "imports": 135,
+      "kind": "sony",
+      "module_name": "libSceJobManager",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceLibcInternal.prx",
+        "libSceAgcDriver.prx",
+        "libSceAgc.prx",
+        "ulobjmgr.prx",
+        "libSceRazorCpu.prx"
+      ],
+      "parseable": true,
+      "sha256": "e67a25a8bd116bb7f4e56a745952c4b46d43b5b05c67f23f466f7aee8bf71a81"
+    },
+    {
+      "exports": 41786,
+      "file_name": "libSceNpCppWebApi.prx",
+      "import_libs": [
+        "libSceHttp",
+        "libSceJson2",
+        "libSceLibcInternal",
+        "libSceNpWebApi2",
+        "libSceRtc",
+        "libkernel"
+      ],
+      "imports": 93,
+      "kind": "sony",
+      "module_name": "libSceNpCppWebApi",
+      "needed_files": [
+        "libSceJson2.prx",
+        "libSceRtc.prx",
+        "libSceNpWebApi2.prx",
+        "libSceHttp.prx",
+        "libkernel.prx",
+        "libSceLibcInternal.prx"
+      ],
+      "parseable": true,
+      "sha256": "f3c000fecaa139d4746b7dd752516fd3a2566aecdf0c0d04be78ae8de4004ea3"
+    },
+    {
+      "exports": 2565,
+      "file_name": "libc.prx",
+      "import_libs": [
+        "libSceLibcInternalExt",
+        "libSceSysmodule",
+        "libkernel"
+      ],
+      "imports": 102,
+      "kind": "sony",
+      "module_name": "libc",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceLibcInternal.prx",
+        "libSceSysmodule.prx"
+      ],
+      "parseable": true,
+      "sha256": "4875d41d6e139360a28def528dd94ae8b4d8e61e5f5e40f3c69bd123126e7a74"
+    }
+  ],
+  "third_party": [],
+  "title_id": "PPSA02739",
+  "unknown": [
+    {
+      "exports": 0,
+      "file_name": "fv-pxd-ps5-retail.prx",
+      "import_libs": [
+        "libSceAgc",
+        "libSceAgcDriver",
+        "libSceAmpr",
+        "libSceMouse",
+        "libScePad",
+        "libSceRtc",
+        "libSceSysmodule",
+        "libSceSystemService",
+        "libSceUserService",
+        "libSceVideoOut",
+        "libSceZlib",
+        "libc",
+        "libkernel"
+      ],
+      "imports": 134,
+      "kind": "unknown",
+      "module_name": "fv-pxd-ps5-retail",
+      "needed_files": [
+        "libkernel.prx",
+        "libc.prx",
+        "libSceAgc.prx",
+        "libSceVideoOut.prx",
+        "libSceAgcDriver.prx",
+        "libScePad.prx",
+        "libSceUserService.prx",
+        "libSceRtc.prx",
+        "libSceMouse.prx",
+        "libSceSysmodule.prx",
+        "libSceZlib.prx",
+        "libSceSystemService.prx",
+        "libSceAmpr.prx"
+      ],
+      "parseable": true,
+      "sha256": "080ac94aa0672cfb82a77a18830e8cbde18719407577b885bf2c2ffce80b04bd"
+    },
+    {
+      "exports": 0,
+      "file_name": "mr-pxd-ps5-retail.prx",
+      "import_libs": [
+        "libSceAgc",
+        "libSceAgcDriver",
+        "libSceAmpr",
+        "libSceMouse",
+        "libScePad",
+        "libSceRtc",
+        "libSceSysmodule",
+        "libSceSystemService",
+        "libSceUserService",
+        "libSceVideoOut",
+        "libSceZlib",
+        "libc",
+        "libkernel"
+      ],
+      "imports": 133,
+      "kind": "unknown",
+      "module_name": "mr-pxd-ps5-retail",
+      "needed_files": [
+        "libkernel.prx",
+        "libc.prx",
+        "libSceAgc.prx",
+        "libSceVideoOut.prx",
+        "libSceAgcDriver.prx",
+        "libScePad.prx",
+        "libSceUserService.prx",
+        "libSceRtc.prx",
+        "libSceMouse.prx",
+        "libSceSysmodule.prx",
+        "libSceZlib.prx",
+        "libSceSystemService.prx",
+        "libSceAmpr.prx"
+      ],
+      "parseable": true,
+      "sha256": "53761aac46e6f72f4efbff6beae609919b8f2f203de2714df95c9b2b7641257c"
+    },
+    {
+      "exports": 0,
+      "file_name": "vf2-pxd-ps5-retail.prx",
+      "import_libs": [
+        "libSceAgc",
+        "libSceAgcDriver",
+        "libSceAmpr",
+        "libSceMouse",
+        "libScePad",
+        "libSceRtc",
+        "libSceSysmodule",
+        "libSceSystemService",
+        "libSceUserService",
+        "libSceVideoOut",
+        "libSceZlib",
+        "libc",
+        "libkernel"
+      ],
+      "imports": 134,
+      "kind": "unknown",
+      "module_name": "vf2-pxd-ps5-retail",
+      "needed_files": [
+        "libkernel.prx",
+        "libc.prx",
+        "libSceAgc.prx",
+        "libSceVideoOut.prx",
+        "libSceAgcDriver.prx",
+        "libScePad.prx",
+        "libSceUserService.prx",
+        "libSceRtc.prx",
+        "libSceMouse.prx",
+        "libSceSysmodule.prx",
+        "libSceZlib.prx",
+        "libSceSystemService.prx",
+        "libSceAmpr.prx"
+      ],
+      "parseable": true,
+      "sha256": "cd6f4df97d138786954a80954b7a2a5b70c4919c41f1a8a113dd53532a6de140"
+    },
+    {
+      "exports": 0,
+      "file_name": "vf5fs-pxd-ps5-retail.prx",
+      "import_libs": [
+        "libSceAgc",
+        "libSceAgcDriver",
+        "libSceAmpr",
+        "libSceMouse",
+        "libScePad",
+        "libSceRtc",
+        "libSceSysmodule",
+        "libSceSystemService",
+        "libSceUserService",
+        "libSceVideoOut",
+        "libSceZlib",
+        "libc",
+        "libkernel"
+      ],
+      "imports": 532,
+      "kind": "unknown",
+      "module_name": "vf5fs-pxd-ps5-retail",
+      "needed_files": [
+        "libkernel.prx",
+        "libc.prx",
+        "libSceAgc.prx",
+        "libSceVideoOut.prx",
+        "libSceAgcDriver.prx",
+        "libScePad.prx",
+        "libSceUserService.prx",
+        "libSceRtc.prx",
+        "libSceMouse.prx",
+        "libSceSysmodule.prx",
+        "libSceZlib.prx",
+        "libSceSystemService.prx",
+        "libSceAmpr.prx"
+      ],
+      "parseable": true,
+      "sha256": "1c7f9e39f4b42ddc82f4c0a005b11aba09ea16869ad08c44c8936a47159fe864"
+    }
+  ]
+}

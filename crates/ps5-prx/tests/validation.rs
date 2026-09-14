@@ -5,8 +5,6 @@ use std::path::Path;
 #[test]
 fn parse_sdk_archives() {
     let candidates = [
-        r"C:\Users\claimoar\Documents\SDK MANAGER 10.00\PS5 - SDK-10_00_00_40-00_00_00_0_1\sdk\target\lib",
-        r"C:\Program Files (x86)\SCE\Prospero\SDKs\10.00",
         r"C:\Users\claimoar\Documents\ROMS\PS5",
     ];
     let mut found = 0;

@@ -1,0 +1,1769 @@
+{
+  "artifacts": [
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "global-metadata.dat",
+      "relative_path": "Media/Metadata/global-metadata.dat",
+      "size": 6573428
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "Il2CppUserAssemblies.prx",
+      "relative_path": "Media/Modules/Il2CppUserAssemblies.prx",
+      "size": 37997378
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "PS5Util.prx",
+      "relative_path": "Media/Modules/PS5Util.prx",
+      "size": 7013
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "lib_burst_generated.prx",
+      "relative_path": "Media/Plugins/lib_burst_generated.prx",
+      "size": 28397
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "mscorlib.dll-resources.dat",
+      "relative_path": "Media/Resources/mscorlib.dll-resources.dat",
+      "size": 337563
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "unity default resources",
+      "relative_path": "Media/Resources/unity default resources",
+      "size": 3741176
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "unity_builtin_extra",
+      "relative_path": "Media/Resources/unity_builtin_extra",
+      "size": 879508
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "RuntimeInitializeOnLoads.json",
+      "relative_path": "Media/RuntimeInitializeOnLoads.json",
+      "size": 554
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "ScriptingAssemblies.json",
+      "relative_path": "Media/ScriptingAssemblies.json",
+      "size": 3071
+    },
+    {
+      "category": "Texture",
+      "extension": "jpg",
+      "file_name": "PS4SessionImage.jpg",
+      "relative_path": "Media/StreamingAssets/PS4SessionImage.jpg",
+      "size": 95911
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "config.bytes",
+      "relative_path": "Media/StreamingAssets/config.bytes",
+      "size": 569157
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_building.bytes",
+      "relative_path": "Media/StreamingAssets/ico_building.bytes",
+      "size": 452141
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_card.bytes",
+      "relative_path": "Media/StreamingAssets/ico_card.bytes",
+      "size": 3459664
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_dress.bytes",
+      "relative_path": "Media/StreamingAssets/ico_dress.bytes",
+      "size": 3619252
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_dress1.bytes",
+      "relative_path": "Media/StreamingAssets/ico_dress1.bytes",
+      "size": 939674
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_dress2.bytes",
+      "relative_path": "Media/StreamingAssets/ico_dress2.bytes",
+      "size": 919898
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_dress3.bytes",
+      "relative_path": "Media/StreamingAssets/ico_dress3.bytes",
+      "size": 1994597
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_dress4.bytes",
+      "relative_path": "Media/StreamingAssets/ico_dress4.bytes",
+      "size": 1864839
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_dress5.bytes",
+      "relative_path": "Media/StreamingAssets/ico_dress5.bytes",
+      "size": 1910172
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_dress6.bytes",
+      "relative_path": "Media/StreamingAssets/ico_dress6.bytes",
+      "size": 2389665
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_skill.bytes",
+      "relative_path": "Media/StreamingAssets/ico_skill.bytes",
+      "size": 1546529
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_staffd.bytes",
+      "relative_path": "Media/StreamingAssets/ico_staffd.bytes",
+      "size": 1103401
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_staffface_001.bytes",
+      "relative_path": "Media/StreamingAssets/ico_staffface_001.bytes",
+      "size": 267864
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_staffface_002.bytes",
+      "relative_path": "Media/StreamingAssets/ico_staffface_002.bytes",
+      "size": 223141
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_staffface_003.bytes",
+      "relative_path": "Media/StreamingAssets/ico_staffface_003.bytes",
+      "size": 296056
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_staffface_004.bytes",
+      "relative_path": "Media/StreamingAssets/ico_staffface_004.bytes",
+      "size": 301753
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_staffface_005.bytes",
+      "relative_path": "Media/StreamingAssets/ico_staffface_005.bytes",
+      "size": 155639
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_staffface_006.bytes",
+      "relative_path": "Media/StreamingAssets/ico_staffface_006.bytes",
+      "size": 313520
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_staffface_007.bytes",
+      "relative_path": "Media/StreamingAssets/ico_staffface_007.bytes",
+      "size": 201686
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_staffface_008.bytes",
+      "relative_path": "Media/StreamingAssets/ico_staffface_008.bytes",
+      "size": 233071
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_staffface_009.bytes",
+      "relative_path": "Media/StreamingAssets/ico_staffface_009.bytes",
+      "size": 386198
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_staffface_010.bytes",
+      "relative_path": "Media/StreamingAssets/ico_staffface_010.bytes",
+      "size": 197314
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_staffface_011.bytes",
+      "relative_path": "Media/StreamingAssets/ico_staffface_011.bytes",
+      "size": 189966
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_staffface_012.bytes",
+      "relative_path": "Media/StreamingAssets/ico_staffface_012.bytes",
+      "size": 317127
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_staffface_013.bytes",
+      "relative_path": "Media/StreamingAssets/ico_staffface_013.bytes",
+      "size": 350582
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_staffface_014.bytes",
+      "relative_path": "Media/StreamingAssets/ico_staffface_014.bytes",
+      "size": 306530
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_staffface_015.bytes",
+      "relative_path": "Media/StreamingAssets/ico_staffface_015.bytes",
+      "size": 454808
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_staffface_016.bytes",
+      "relative_path": "Media/StreamingAssets/ico_staffface_016.bytes",
+      "size": 407273
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_staffface_101_1.bytes",
+      "relative_path": "Media/StreamingAssets/ico_staffface_101_1.bytes",
+      "size": 365016
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_staffface_101_2.bytes",
+      "relative_path": "Media/StreamingAssets/ico_staffface_101_2.bytes",
+      "size": 218616
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_staffface_101_3.bytes",
+      "relative_path": "Media/StreamingAssets/ico_staffface_101_3.bytes",
+      "size": 394851
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_staffface_102_1.bytes",
+      "relative_path": "Media/StreamingAssets/ico_staffface_102_1.bytes",
+      "size": 154789
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_staffface_102_2.bytes",
+      "relative_path": "Media/StreamingAssets/ico_staffface_102_2.bytes",
+      "size": 218732
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_staffface_102_3.bytes",
+      "relative_path": "Media/StreamingAssets/ico_staffface_102_3.bytes",
+      "size": 164516
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_staffface_103_1.bytes",
+      "relative_path": "Media/StreamingAssets/ico_staffface_103_1.bytes",
+      "size": 315885
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_staffface_103_2.bytes",
+      "relative_path": "Media/StreamingAssets/ico_staffface_103_2.bytes",
+      "size": 356167
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_staffface_103_3.bytes",
+      "relative_path": "Media/StreamingAssets/ico_staffface_103_3.bytes",
+      "size": 459698
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_staffface_104_1.bytes",
+      "relative_path": "Media/StreamingAssets/ico_staffface_104_1.bytes",
+      "size": 485220
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_staffface_104_2.bytes",
+      "relative_path": "Media/StreamingAssets/ico_staffface_104_2.bytes",
+      "size": 427571
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_staffface_104_3.bytes",
+      "relative_path": "Media/StreamingAssets/ico_staffface_104_3.bytes",
+      "size": 441621
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_staffface_105_1.bytes",
+      "relative_path": "Media/StreamingAssets/ico_staffface_105_1.bytes",
+      "size": 460366
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_staffface_105_2.bytes",
+      "relative_path": "Media/StreamingAssets/ico_staffface_105_2.bytes",
+      "size": 475154
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_staffface_105_3.bytes",
+      "relative_path": "Media/StreamingAssets/ico_staffface_105_3.bytes",
+      "size": 425560
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_staffface_106_1.bytes",
+      "relative_path": "Media/StreamingAssets/ico_staffface_106_1.bytes",
+      "size": 394516
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_staffface_106_2.bytes",
+      "relative_path": "Media/StreamingAssets/ico_staffface_106_2.bytes",
+      "size": 456386
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_staffface_106_3.bytes",
+      "relative_path": "Media/StreamingAssets/ico_staffface_106_3.bytes",
+      "size": 470581
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ico_staffh.bytes",
+      "relative_path": "Media/StreamingAssets/ico_staffh.bytes",
+      "size": 274355
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "manifest.bytes",
+      "relative_path": "Media/StreamingAssets/manifest.bytes",
+      "size": 5056
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "model_base.bytes",
+      "relative_path": "Media/StreamingAssets/model_base.bytes",
+      "size": 2878035
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "model_build.bytes",
+      "relative_path": "Media/StreamingAssets/model_build.bytes",
+      "size": 31033146
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "model_build_marker.bytes",
+      "relative_path": "Media/StreamingAssets/model_build_marker.bytes",
+      "size": 78106152
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "model_dress.bytes",
+      "relative_path": "Media/StreamingAssets/model_dress.bytes",
+      "size": 294940166
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "model_gridtex.bytes",
+      "relative_path": "Media/StreamingAssets/model_gridtex.bytes",
+      "size": 15241238
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "model_minigame.bytes",
+      "relative_path": "Media/StreamingAssets/model_minigame.bytes",
+      "size": 3150591
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "model_npc.bytes",
+      "relative_path": "Media/StreamingAssets/model_npc.bytes",
+      "size": 92947000
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "sound_battle.bytes",
+      "relative_path": "Media/StreamingAssets/sound_battle.bytes",
+      "size": 8863177
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "sound_expression.bytes",
+      "relative_path": "Media/StreamingAssets/sound_expression.bytes",
+      "size": 1126870
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "sound_ui.bytes",
+      "relative_path": "Media/StreamingAssets/sound_ui.bytes",
+      "size": 124370
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_001.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_001.bytes",
+      "size": 2623580
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_002.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_002.bytes",
+      "size": 3015407
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_003.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_003.bytes",
+      "size": 2744738
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_004.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_004.bytes",
+      "size": 2665061
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_005.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_005.bytes",
+      "size": 2684065
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_006.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_006.bytes",
+      "size": 3067848
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_007.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_007.bytes",
+      "size": 2720898
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_008.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_008.bytes",
+      "size": 2207938
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_009.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_009.bytes",
+      "size": 2311068
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_010.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_010.bytes",
+      "size": 2699503
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_011.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_011.bytes",
+      "size": 1676414
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_012.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_012.bytes",
+      "size": 2629470
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_013.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_013.bytes",
+      "size": 2680876
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_014.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_014.bytes",
+      "size": 2562841
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_015.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_015.bytes",
+      "size": 2942725
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_016.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_016.bytes",
+      "size": 2085227
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_101.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_101.bytes",
+      "size": 2966623
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_102.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_102.bytes",
+      "size": 3281565
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_103.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_103.bytes",
+      "size": 2261619
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_104.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_104.bytes",
+      "size": 3313496
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_105.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_105.bytes",
+      "size": 2875644
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_106.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_106.bytes",
+      "size": 2982937
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_eg_001.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_eg_001.bytes",
+      "size": 2488908
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_eg_003.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_eg_003.bytes",
+      "size": 3106781
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_eg_004.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_eg_004.bytes",
+      "size": 2979843
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_eg_007.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_eg_007.bytes",
+      "size": 2748159
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_eg_008.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_eg_008.bytes",
+      "size": 2316141
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_eg_009.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_eg_009.bytes",
+      "size": 2492726
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_eg_012.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_eg_012.bytes",
+      "size": 2694247
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_eg_013.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_eg_013.bytes",
+      "size": 2599787
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_eg_014.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_eg_014.bytes",
+      "size": 2623663
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_eg_015.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_eg_015.bytes",
+      "size": 3124460
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_eg_016.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_eg_016.bytes",
+      "size": 2048553
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_eg_101.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_eg_101.bytes",
+      "size": 3696847
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_eg_102.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_eg_102.bytes",
+      "size": 3871946
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_eg_103.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_eg_103.bytes",
+      "size": 2545603
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_eg_104.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_eg_104.bytes",
+      "size": 3684583
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_eg_105.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_eg_105.bytes",
+      "size": 3005704
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_eg_106.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_eg_106.bytes",
+      "size": 2750488
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_eg_npc.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_eg_npc.bytes",
+      "size": 3573284
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_jp_001.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_jp_001.bytes",
+      "size": 2836294
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_jp_003.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_jp_003.bytes",
+      "size": 3329308
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_jp_004.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_jp_004.bytes",
+      "size": 3118363
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_jp_007.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_jp_007.bytes",
+      "size": 3999883
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_jp_008.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_jp_008.bytes",
+      "size": 2562722
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_jp_009.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_jp_009.bytes",
+      "size": 2534041
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_jp_012.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_jp_012.bytes",
+      "size": 2648393
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_jp_013.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_jp_013.bytes",
+      "size": 3287166
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_jp_014.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_jp_014.bytes",
+      "size": 2634863
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_jp_015.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_jp_015.bytes",
+      "size": 3890076
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_jp_016.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_jp_016.bytes",
+      "size": 2535536
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_jp_101.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_jp_101.bytes",
+      "size": 3685312
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_jp_102.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_jp_102.bytes",
+      "size": 5135460
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_jp_103.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_jp_103.bytes",
+      "size": 2845683
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_jp_104.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_jp_104.bytes",
+      "size": 3998637
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_jp_105.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_jp_105.bytes",
+      "size": 3370873
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_jp_106.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_jp_106.bytes",
+      "size": 3711449
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_jp_npc.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_jp_npc.bytes",
+      "size": 3619129
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "soundstaff_npc.bytes",
+      "relative_path": "Media/StreamingAssets/soundstaff_npc.bytes",
+      "size": 3099662
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "ui.bytes",
+      "relative_path": "Media/StreamingAssets/ui.bytes",
+      "size": 556750
+    },
+    {
+      "category": "Unknown",
+      "extension": "bytes",
+      "file_name": "version.bytes",
+      "relative_path": "Media/StreamingAssets/version.bytes",
+      "size": 3249
+    },
+    {
+      "category": "Unknown",
+      "extension": "config",
+      "file_name": "boot.config",
+      "relative_path": "Media/boot.config",
+      "size": 493
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "globalgamemanagers",
+      "relative_path": "Media/globalgamemanagers",
+      "size": 1362276
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "globalgamemanagers.assets",
+      "relative_path": "Media/globalgamemanagers.assets",
+      "size": 1290532
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "globalgamemanagers.assets.resS",
+      "relative_path": "Media/globalgamemanagers.assets.resS",
+      "size": 3125248
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level0",
+      "relative_path": "Media/level0",
+      "size": 6980
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level1",
+      "relative_path": "Media/level1",
+      "size": 94932
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level10",
+      "relative_path": "Media/level10",
+      "size": 22625172
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "level10.resS",
+      "relative_path": "Media/level10.resS",
+      "size": 22777616
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level11",
+      "relative_path": "Media/level11",
+      "size": 23461228
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "level11.resS",
+      "relative_path": "Media/level11.resS",
+      "size": 40023536
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level12",
+      "relative_path": "Media/level12",
+      "size": 16573628
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "level12.resS",
+      "relative_path": "Media/level12.resS",
+      "size": 37427472
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level13",
+      "relative_path": "Media/level13",
+      "size": 21312564
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "level13.resS",
+      "relative_path": "Media/level13.resS",
+      "size": 7767072
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level14",
+      "relative_path": "Media/level14",
+      "size": 30891588
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "level14.resS",
+      "relative_path": "Media/level14.resS",
+      "size": 20542544
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level15",
+      "relative_path": "Media/level15",
+      "size": 14599436
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "level15.resS",
+      "relative_path": "Media/level15.resS",
+      "size": 1371136
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level16",
+      "relative_path": "Media/level16",
+      "size": 13924036
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "level16.resS",
+      "relative_path": "Media/level16.resS",
+      "size": 2117888
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level17",
+      "relative_path": "Media/level17",
+      "size": 5189172
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "level17.resS",
+      "relative_path": "Media/level17.resS",
+      "size": 1323536
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level18",
+      "relative_path": "Media/level18",
+      "size": 936608
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level19",
+      "relative_path": "Media/level19",
+      "size": 1522848
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level2",
+      "relative_path": "Media/level2",
+      "size": 30057116
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "level2.resS",
+      "relative_path": "Media/level2.resS",
+      "size": 7362704
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level20",
+      "relative_path": "Media/level20",
+      "size": 1211220
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level21",
+      "relative_path": "Media/level21",
+      "size": 411280
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level3",
+      "relative_path": "Media/level3",
+      "size": 44376300
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "level3.resS",
+      "relative_path": "Media/level3.resS",
+      "size": 42709968
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level4",
+      "relative_path": "Media/level4",
+      "size": 8025396
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "level4.resS",
+      "relative_path": "Media/level4.resS",
+      "size": 126336
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level5",
+      "relative_path": "Media/level5",
+      "size": 64034820
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "level5.resS",
+      "relative_path": "Media/level5.resS",
+      "size": 28037440
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level6",
+      "relative_path": "Media/level6",
+      "size": 9261784
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "level6.resS",
+      "relative_path": "Media/level6.resS",
+      "size": 2927376
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level7",
+      "relative_path": "Media/level7",
+      "size": 32873900
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "level7.resS",
+      "relative_path": "Media/level7.resS",
+      "size": 55175536
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level8",
+      "relative_path": "Media/level8",
+      "size": 37205132
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "level8.resS",
+      "relative_path": "Media/level8.resS",
+      "size": 142768
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level9",
+      "relative_path": "Media/level9",
+      "size": 34635516
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "level9.resS",
+      "relative_path": "Media/level9.resS",
+      "size": 13979792
+    },
+    {
+      "category": "Metadata",
+      "extension": "xml",
+      "file_name": "platform_native_link.xml",
+      "relative_path": "Media/platform_native_link.xml",
+      "size": 502
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "resources.assets",
+      "relative_path": "Media/resources.assets",
+      "size": 102811816
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "resources.assets.resS",
+      "relative_path": "Media/resources.assets.resS",
+      "size": 160245312
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets0.assets",
+      "relative_path": "Media/sharedassets0.assets",
+      "size": 4586
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets0.assets.resS",
+      "relative_path": "Media/sharedassets0.assets.resS",
+      "size": 1044480
+    },
+    {
+      "category": "Unknown",
+      "extension": "resource",
+      "file_name": "sharedassets0.resource",
+      "relative_path": "Media/sharedassets0.resource",
+      "size": 302896
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets1.assets",
+      "relative_path": "Media/sharedassets1.assets",
+      "size": 6364208
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets1.assets.resS",
+      "relative_path": "Media/sharedassets1.assets.resS",
+      "size": 13555712
+    },
+    {
+      "category": "Unknown",
+      "extension": "resource",
+      "file_name": "sharedassets1.resource",
+      "relative_path": "Media/sharedassets1.resource",
+      "size": 138390466
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets10.assets",
+      "relative_path": "Media/sharedassets10.assets",
+      "size": 1280224
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets10.assets.resS",
+      "relative_path": "Media/sharedassets10.assets.resS",
+      "size": 31199552
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets11.assets",
+      "relative_path": "Media/sharedassets11.assets",
+      "size": 20068684
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets11.assets.resS",
+      "relative_path": "Media/sharedassets11.assets.resS",
+      "size": 62915888
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets12.assets",
+      "relative_path": "Media/sharedassets12.assets",
+      "size": 570616
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets12.assets.resS",
+      "relative_path": "Media/sharedassets12.assets.resS",
+      "size": 60524448
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets13.assets",
+      "relative_path": "Media/sharedassets13.assets",
+      "size": 2843136
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets13.assets.resS",
+      "relative_path": "Media/sharedassets13.assets.resS",
+      "size": 65319456
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets14.assets",
+      "relative_path": "Media/sharedassets14.assets",
+      "size": 1094456
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets14.assets.resS",
+      "relative_path": "Media/sharedassets14.assets.resS",
+      "size": 63229312
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets15.assets",
+      "relative_path": "Media/sharedassets15.assets",
+      "size": 1557448
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets15.assets.resS",
+      "relative_path": "Media/sharedassets15.assets.resS",
+      "size": 41563872
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets16.assets",
+      "relative_path": "Media/sharedassets16.assets",
+      "size": 4057216
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets16.assets.resS",
+      "relative_path": "Media/sharedassets16.assets.resS",
+      "size": 53061040
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets17.assets",
+      "relative_path": "Media/sharedassets17.assets",
+      "size": 4895512
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets17.assets.resS",
+      "relative_path": "Media/sharedassets17.assets.resS",
+      "size": 37347648
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets18.assets",
+      "relative_path": "Media/sharedassets18.assets",
+      "size": 2127936
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets18.assets.resS",
+      "relative_path": "Media/sharedassets18.assets.resS",
+      "size": 64384784
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets19.assets",
+      "relative_path": "Media/sharedassets19.assets",
+      "size": 465288
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets19.assets.resS",
+      "relative_path": "Media/sharedassets19.assets.resS",
+      "size": 119566656
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets2.assets",
+      "relative_path": "Media/sharedassets2.assets",
+      "size": 5469752
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets2.assets.resS",
+      "relative_path": "Media/sharedassets2.assets.resS",
+      "size": 89666848
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets20.assets",
+      "relative_path": "Media/sharedassets20.assets",
+      "size": 823728
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets20.assets.resS",
+      "relative_path": "Media/sharedassets20.assets.resS",
+      "size": 15692176
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets21.assets",
+      "relative_path": "Media/sharedassets21.assets",
+      "size": 1933664
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets21.assets.resS",
+      "relative_path": "Media/sharedassets21.assets.resS",
+      "size": 109047584
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets3.assets",
+      "relative_path": "Media/sharedassets3.assets",
+      "size": 4510128
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets3.assets.resS",
+      "relative_path": "Media/sharedassets3.assets.resS",
+      "size": 72780864
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets4.assets",
+      "relative_path": "Media/sharedassets4.assets",
+      "size": 403972
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets4.assets.resS",
+      "relative_path": "Media/sharedassets4.assets.resS",
+      "size": 46062304
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets5.assets",
+      "relative_path": "Media/sharedassets5.assets",
+      "size": 3411064
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets5.assets.resS",
+      "relative_path": "Media/sharedassets5.assets.resS",
+      "size": 82447632
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets6.assets",
+      "relative_path": "Media/sharedassets6.assets",
+      "size": 1652488
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets6.assets.resS",
+      "relative_path": "Media/sharedassets6.assets.resS",
+      "size": 38725552
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets7.assets",
+      "relative_path": "Media/sharedassets7.assets",
+      "size": 14811248
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets7.assets.resS",
+      "relative_path": "Media/sharedassets7.assets.resS",
+      "size": 103175872
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets8.assets",
+      "relative_path": "Media/sharedassets8.assets",
+      "size": 2881368
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets8.assets.resS",
+      "relative_path": "Media/sharedassets8.assets.resS",
+      "size": 53015280
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets9.assets",
+      "relative_path": "Media/sharedassets9.assets",
+      "size": 6358528
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets9.assets.resS",
+      "relative_path": "Media/sharedassets9.assets.resS",
+      "size": 90066400
+    },
+    {
+      "category": "Unknown",
+      "extension": "index",
+      "file_name": "ampr_emu.index",
+      "relative_path": "ampr_emu.index",
+      "size": 24120
+    },
+    {
+      "category": "Executable",
+      "extension": "eboot.bin",
+      "file_name": "eboot.bin",
+      "relative_path": "eboot.bin",
+      "size": 31868777
+    },
+    {
+      "category": "Executable",
+      "extension": "sprx",
+      "file_name": "libSceAmpr.sprx",
+      "relative_path": "fakelib/debug/libSceAmpr.sprx",
+      "size": 378998
+    },
+    {
+      "category": "Executable",
+      "extension": "sprx",
+      "file_name": "libSceAmpr.sprx",
+      "relative_path": "fakelib/libSceAmpr.sprx",
+      "size": 230742
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceNpCppWebApi.prx",
+      "relative_path": "sce_module/libSceNpCppWebApi.prx",
+      "size": 7878919
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libc.prx",
+      "relative_path": "sce_module/libc.prx",
+      "size": 1303162
+    },
+    {
+      "category": "Executable",
+      "extension": "sprx",
+      "file_name": "right.sprx",
+      "relative_path": "sce_sys/about/right.sprx",
+      "size": 12512
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "disc_info.dat",
+      "relative_path": "sce_sys/disc_info.dat",
+      "size": 6640
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "icon0.dds",
+      "relative_path": "sce_sys/icon0.dds",
+      "size": 262292
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "icon0.png",
+      "relative_path": "sce_sys/icon0.png",
+      "size": 478348
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "icon0_00.dds",
+      "relative_path": "sce_sys/icon0_00.dds",
+      "size": 262292
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "icon0_00.png",
+      "relative_path": "sce_sys/icon0_00.png",
+      "size": 475382
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "icon0_10.dds",
+      "relative_path": "sce_sys/icon0_10.dds",
+      "size": 262292
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "icon0_10.png",
+      "relative_path": "sce_sys/icon0_10.png",
+      "size": 472654
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "icon0_11.dds",
+      "relative_path": "sce_sys/icon0_11.dds",
+      "size": 262292
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "icon0_11.png",
+      "relative_path": "sce_sys/icon0_11.png",
+      "size": 472654
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "keystone",
+      "relative_path": "sce_sys/keystone",
+      "size": 96
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "nptitle.dat",
+      "relative_path": "sce_sys/nptitle.dat",
+      "size": 160
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "param.json",
+      "relative_path": "sce_sys/param.json",
+      "size": 2746
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "pfs-version.dat",
+      "relative_path": "sce_sys/pfs-version.dat",
+      "size": 10
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic0.dds",
+      "relative_path": "sce_sys/pic0.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "pic0.png",
+      "relative_path": "sce_sys/pic0.png",
+      "size": 9755437
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic1.dds",
+      "relative_path": "sce_sys/pic1.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic2.dds",
+      "relative_path": "sce_sys/pic2.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "sce_sys/trophy2/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "trophy00.ucp",
+      "relative_path": "sce_sys/trophy2/trophy00.ucp",
+      "size": 3848896
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "sce_sys/uds/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "uds00.ucp",
+      "relative_path": "sce_sys/uds/uds00.ucp",
+      "size": 21392
+    }
+  ],
+  "by_category": {
+    "executable": 9,
+    "metadata": 13,
+    "texture": 13,
+    "unknown": 213
+  },
+  "by_extension": {
+    "(no_ext)": 26,
+    "assets": 24,
+    "bytes": 119,
+    "config": 1,
+    "dat": 7,
+    "dds": 7,
+    "eboot.bin": 1,
+    "index": 1,
+    "jpg": 1,
+    "json": 3,
+    "png": 5,
+    "prx": 5,
+    "resource": 2,
+    "ress": 40,
+    "sprx": 3,
+    "ucp": 2,
+    "xml": 1
+  },
+  "game": "Richman 11 PS5 _PPSA16960_",
+  "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Richman 11 PS5 _PPSA16960_",
+  "total_bytes": 3374882080,
+  "total_files": 248
+}

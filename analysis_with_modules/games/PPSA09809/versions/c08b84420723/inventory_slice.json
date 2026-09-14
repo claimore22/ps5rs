@@ -1,0 +1,2172 @@
+{
+  "artifacts": [
+    {
+      "category": "Unknown",
+      "extension": "complete",
+      "file_name": "PPSA09809.complete",
+      "relative_path": "PPSA09809.complete",
+      "size": 0
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "contentids.json",
+      "relative_path": "contentids.json",
+      "size": 171
+    },
+    {
+      "category": "Executable",
+      "extension": "eboot.bin",
+      "file_name": "eboot.bin",
+      "relative_path": "eboot.bin",
+      "size": 157268407
+    },
+    {
+      "category": "Unknown",
+      "extension": "tps",
+      "file_name": "lastresort.tps",
+      "relative_path": "engine/content/slatedebug/fonts/lastresort.tps",
+      "size": 930
+    },
+    {
+      "category": "Font",
+      "extension": "ttf",
+      "file_name": "lastresort.ttf",
+      "relative_path": "engine/content/slatedebug/fonts/lastresort.ttf",
+      "size": 5395052
+    },
+    {
+      "category": "Unknown",
+      "extension": "ini",
+      "file_name": "manifest.ini",
+      "relative_path": "engine/saved/config/ps5/manifest.ini",
+      "size": 22
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_bgm.awb",
+      "relative_path": "majesty/content/criware/cuesheet_bgm.awb",
+      "size": 439824422
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_se_event.awb",
+      "relative_path": "majesty/content/criware/cuesheet_se_event.awb",
+      "size": 33168895
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_battlegak_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_battlegak_en.awb",
+      "size": 5979990
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_battlegak_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_battlegak_ja.awb",
+      "size": 5603998
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_battlekar_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_battlekar_en.awb",
+      "size": 4725562
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_battlekar_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_battlekar_ja.awb",
+      "size": 6096274
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_battleken_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_battleken_en.awb",
+      "size": 4827301
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_battleken_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_battleken_ja.awb",
+      "size": 5057964
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_battlekus_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_battlekus_en.awb",
+      "size": 5686275
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_battlekus_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_battlekus_ja.awb",
+      "size": 5233016
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_battlenpc_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_battlenpc_en.awb",
+      "size": 24572504
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_battlenpc_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_battlenpc_ja.awb",
+      "size": 26784509
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_battleodo_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_battleodo_en.awb",
+      "size": 4659204
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_battleodo_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_battleodo_ja.awb",
+      "size": 5742258
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_battlesho_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_battlesho_en.awb",
+      "size": 5786773
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_battlesho_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_battlesho_ja.awb",
+      "size": 5948085
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_battlesin_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_battlesin_en.awb",
+      "size": 5237637
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_battlesin_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_battlesin_ja.awb",
+      "size": 6138437
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_battletou_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_battletou_en.awb",
+      "size": 4269912
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_battletou_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_battletou_ja.awb",
+      "size": 4823786
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_common_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_common_en.awb",
+      "size": 884260
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_common_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_common_ja.awb",
+      "size": 908181
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_enemy.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_enemy.awb",
+      "size": 4312784
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_epilogue_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_epilogue_en.awb",
+      "size": 2960063
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_epilogue_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_epilogue_ja.awb",
+      "size": 3240321
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_etcgak_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_etcgak_en.awb",
+      "size": 1446515
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_etcgak_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_etcgak_ja.awb",
+      "size": 1546075
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_etckar_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_etckar_en.awb",
+      "size": 1532556
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_etckar_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_etckar_ja.awb",
+      "size": 1816937
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_etcken_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_etcken_en.awb",
+      "size": 1634966
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_etcken_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_etcken_ja.awb",
+      "size": 1687202
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_etckus_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_etckus_en.awb",
+      "size": 1984128
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_etckus_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_etckus_ja.awb",
+      "size": 1996455
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_etcodo_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_etcodo_en.awb",
+      "size": 1821876
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_etcodo_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_etcodo_ja.awb",
+      "size": 2287867
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_etcsho_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_etcsho_en.awb",
+      "size": 2609532
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_etcsho_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_etcsho_ja.awb",
+      "size": 2648231
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_etcsin_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_etcsin_en.awb",
+      "size": 2377494
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_etcsin_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_etcsin_ja.awb",
+      "size": 2269091
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_etctou_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_etctou_en.awb",
+      "size": 1493962
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_etctou_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_etctou_ja.awb",
+      "size": 1650815
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventgak010_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventgak010_en.awb",
+      "size": 21594676
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventgak010_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventgak010_ja.awb",
+      "size": 21790809
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventgak020_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventgak020_en.awb",
+      "size": 8367202
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventgak020_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventgak020_ja.awb",
+      "size": 10059129
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventgak030_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventgak030_en.awb",
+      "size": 9799986
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventgak030_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventgak030_ja.awb",
+      "size": 11069901
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventgak040_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventgak040_en.awb",
+      "size": 13480711
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventgak040_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventgak040_ja.awb",
+      "size": 14606531
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventgak050_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventgak050_en.awb",
+      "size": 13198507
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventgak050_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventgak050_ja.awb",
+      "size": 15017834
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventgaksho_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventgaksho_en.awb",
+      "size": 12156411
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventgaksho_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventgaksho_ja.awb",
+      "size": 12773533
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventkar010_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventkar010_en.awb",
+      "size": 16098059
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventkar010_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventkar010_ja.awb",
+      "size": 16511922
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventkar020_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventkar020_en.awb",
+      "size": 30925010
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventkar020_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventkar020_ja.awb",
+      "size": 32079358
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventkar030_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventkar030_en.awb",
+      "size": 21029172
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventkar030_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventkar030_ja.awb",
+      "size": 21670983
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventken010_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventken010_en.awb",
+      "size": 19117536
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventken010_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventken010_ja.awb",
+      "size": 20159861
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventken020_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventken020_en.awb",
+      "size": 18539932
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventken020_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventken020_ja.awb",
+      "size": 19595751
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventken030_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventken030_en.awb",
+      "size": 11170909
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventken030_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventken030_ja.awb",
+      "size": 11396183
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventken040_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventken040_en.awb",
+      "size": 16143832
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventken040_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventken040_ja.awb",
+      "size": 15690421
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventken050_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventken050_en.awb",
+      "size": 19628794
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventken050_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventken050_ja.awb",
+      "size": 21632785
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventkus010_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventkus010_en.awb",
+      "size": 16141939
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventkus010_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventkus010_ja.awb",
+      "size": 15230213
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventkus020_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventkus020_en.awb",
+      "size": 28687105
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventkus020_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventkus020_ja.awb",
+      "size": 26199688
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventkus030_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventkus030_en.awb",
+      "size": 18397236
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventkus030_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventkus030_ja.awb",
+      "size": 18671327
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventkus040_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventkus040_en.awb",
+      "size": 13507925
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventkus040_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventkus040_ja.awb",
+      "size": 12337869
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventkuskar_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventkuskar_en.awb",
+      "size": 9609083
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventkuskar_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventkuskar_ja.awb",
+      "size": 9648387
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventlast010_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventlast010_en.awb",
+      "size": 7712758
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventlast010_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventlast010_ja.awb",
+      "size": 8078652
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventlast020_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventlast020_en.awb",
+      "size": 11695677
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventlast020_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventlast020_ja.awb",
+      "size": 13110694
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventlast030_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventlast030_en.awb",
+      "size": 9925956
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventlast030_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventlast030_ja.awb",
+      "size": 10029915
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventodo010_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventodo010_en.awb",
+      "size": 11211739
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventodo010_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventodo010_ja.awb",
+      "size": 13214447
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventodo020_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventodo020_en.awb",
+      "size": 14623841
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventodo020_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventodo020_ja.awb",
+      "size": 16600294
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventodo030_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventodo030_en.awb",
+      "size": 9924844
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventodo030_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventodo030_ja.awb",
+      "size": 12815091
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventodo040_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventodo040_en.awb",
+      "size": 15338423
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventodo040_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventodo040_ja.awb",
+      "size": 17017809
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventodo050_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventodo050_en.awb",
+      "size": 14890434
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventodo050_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventodo050_ja.awb",
+      "size": 18599347
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventodoken_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventodoken_en.awb",
+      "size": 11332966
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventodoken_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventodoken_ja.awb",
+      "size": 11409622
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventshitou_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventshitou_en.awb",
+      "size": 9718098
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventshitou_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventshitou_ja.awb",
+      "size": 11203157
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventsho010_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventsho010_en.awb",
+      "size": 24961886
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventsho010_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventsho010_ja.awb",
+      "size": 24267849
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventsho020_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventsho020_en.awb",
+      "size": 39029343
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventsho020_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventsho020_ja.awb",
+      "size": 39315748
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventsho030_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventsho030_en.awb",
+      "size": 26228502
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventsho030_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventsho030_ja.awb",
+      "size": 24655738
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventsho040_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventsho040_en.awb",
+      "size": 21781071
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventsho040_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventsho040_ja.awb",
+      "size": 20179436
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventsin010_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventsin010_en.awb",
+      "size": 20163200
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventsin010_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventsin010_ja.awb",
+      "size": 21846721
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventsin020_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventsin020_en.awb",
+      "size": 14411373
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventsin020_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventsin020_ja.awb",
+      "size": 15481670
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventsin030_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventsin030_en.awb",
+      "size": 27722473
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventsin030_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventsin030_ja.awb",
+      "size": 29121899
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventsin040_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventsin040_en.awb",
+      "size": 12209743
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventsin040_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventsin040_ja.awb",
+      "size": 12961356
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventsub_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventsub_en.awb",
+      "size": 55202890
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventsub_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventsub_ja.awb",
+      "size": 56061493
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventtou010_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventtou010_en.awb",
+      "size": 14786722
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventtou010_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventtou010_ja.awb",
+      "size": 16239823
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventtou020_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventtou020_en.awb",
+      "size": 16433746
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventtou020_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventtou020_ja.awb",
+      "size": 16959518
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventtou030_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventtou030_en.awb",
+      "size": 17699337
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventtou030_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventtou030_ja.awb",
+      "size": 20184762
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventtou040_en.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventtou040_en.awb",
+      "size": 13380710
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "cuesheet_vo_eventtou040_ja.awb",
+      "relative_path": "majesty/content/criware/cuesheet_vo_eventtou040_ja.awb",
+      "size": 13640020
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "day_1080p_60fps.uasset",
+      "relative_path": "majesty/content/criware/titlebackgroundmovie/day_1080p_60fps.uasset",
+      "size": 9809
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "day_1080p_60fps.usm",
+      "relative_path": "majesty/content/criware/titlebackgroundmovie/day_1080p_60fps.usm",
+      "size": 588089632
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "day_720p_30fps.uasset",
+      "relative_path": "majesty/content/criware/titlebackgroundmovie/day_720p_30fps.uasset",
+      "size": 9753
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "day_720p_30fps.usm",
+      "relative_path": "majesty/content/criware/titlebackgroundmovie/day_720p_30fps.usm",
+      "size": 177059808
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "night_1080p_60fps.uasset",
+      "relative_path": "majesty/content/criware/titlebackgroundmovie/night_1080p_60fps.uasset",
+      "size": 14974
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "night_1080p_60fps.usm",
+      "relative_path": "majesty/content/criware/titlebackgroundmovie/night_1080p_60fps.usm",
+      "size": 586194688
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "night_720p_30fps.uasset",
+      "relative_path": "majesty/content/criware/titlebackgroundmovie/night_720p_30fps.uasset",
+      "size": 9767
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "night_720p_30fps.usm",
+      "relative_path": "majesty/content/criware/titlebackgroundmovie/night_720p_30fps.usm",
+      "size": 176188448
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "title_movie_day.uasset",
+      "relative_path": "majesty/content/criware/titlebackgroundmovie/title_movie_day.uasset",
+      "size": 4666
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "title_movie_day_texture.uasset",
+      "relative_path": "majesty/content/criware/titlebackgroundmovie/title_movie_day_texture.uasset",
+      "size": 4671
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "title_movie_night.uasset",
+      "relative_path": "majesty/content/criware/titlebackgroundmovie/title_movie_night.uasset",
+      "size": 4682
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "title_movie_night_texture.uasset",
+      "relative_path": "majesty/content/criware/titlebackgroundmovie/title_movie_night_texture.uasset",
+      "size": 4689
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "mapmeasurementpoint.txt",
+      "relative_path": "majesty/content/debug/performance/mapmeasurementpoint.txt",
+      "size": 123
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "svn_revision.txt",
+      "relative_path": "majesty/content/debug/performance/svn_revision.txt",
+      "size": 17
+    },
+    {
+      "category": "Archive",
+      "extension": "pak",
+      "file_name": "majesty-ps5.pak",
+      "relative_path": "majesty/content/paks/majesty-ps5.pak",
+      "size": 16286879730
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "autoplayscenario_gak",
+      "relative_path": "majesty/content/story/autoplay/autoplayscenario_gak",
+      "size": 1806
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "autoplayscenario_kar",
+      "relative_path": "majesty/content/story/autoplay/autoplayscenario_kar",
+      "size": 1806
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "autoplayscenario_ken",
+      "relative_path": "majesty/content/story/autoplay/autoplayscenario_ken",
+      "size": 1806
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "autoplayscenario_kus",
+      "relative_path": "majesty/content/story/autoplay/autoplayscenario_kus",
+      "size": 1806
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "autoplayscenario_odo",
+      "relative_path": "majesty/content/story/autoplay/autoplayscenario_odo",
+      "size": 1806
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "autoplayscenario_sho",
+      "relative_path": "majesty/content/story/autoplay/autoplayscenario_sho",
+      "size": 1806
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "autoplayscenario_sin",
+      "relative_path": "majesty/content/story/autoplay/autoplayscenario_sin",
+      "size": 1806
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "autoplayscenario_tou",
+      "relative_path": "majesty/content/story/autoplay/autoplayscenario_tou",
+      "size": 1806
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "performancecheck_all",
+      "relative_path": "majesty/content/story/autoplay/performancecheck_all",
+      "size": 322
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "performancecheck_part",
+      "relative_path": "majesty/content/story/autoplay/performancecheck_part",
+      "size": 322
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_bat_damage_break01.uasset",
+      "relative_path": "majesty/content/vibration/data/se_bat_damage_break01.uasset",
+      "size": 2475
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_bat_style_change.uasset",
+      "relative_path": "majesty/content/vibration/data/se_bat_style_change.uasset",
+      "size": 2413
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_close_gate.uasset",
+      "relative_path": "majesty/content/vibration/data/se_close_gate.uasset",
+      "size": 2416
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_encount_enm_krksea_l_a.uasset",
+      "relative_path": "majesty/content/vibration/data/se_encount_enm_krksea_l_a.uasset",
+      "size": 3618
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_anacomda.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_anacomda.uasset",
+      "size": 2432
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_bag_gosogoso.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_bag_gosogoso.uasset",
+      "size": 2475
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_bartender.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_bartender.uasset",
+      "size": 2490
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_bomb.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_bomb.uasset",
+      "size": 2443
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_bookclose.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_bookclose.uasset",
+      "size": 2382
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_bossstep_tiger1.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_bossstep_tiger1.uasset",
+      "size": 2541
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_bossstep_wolf2.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_bossstep_wolf2.uasset",
+      "size": 2564
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_bossvoice_6803.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_bossvoice_6803.uasset",
+      "size": 3384
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_bostengueagle_l_a.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_bostengueagle_l_a.uasset",
+      "size": 2468
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_bowpull.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_bowpull.uasset",
+      "size": 2428
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_bump.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_bump.uasset",
+      "size": 2416
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_chabudai.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_chabudai.uasset",
+      "size": 2378
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_chimera_dead.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_chimera_dead.uasset",
+      "size": 2502
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_chimera_howling.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_chimera_howling.uasset",
+      "size": 2460
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_chougou.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_chougou.uasset",
+      "size": 2428
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_compund3.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_compund3.uasset",
+      "size": 2459
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_damage_blow01.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_damage_blow01.uasset",
+      "size": 2371
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_damage_blow02.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_damage_blow02.uasset",
+      "size": 2452
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_damage_blow03.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_damage_blow03.uasset",
+      "size": 2425
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_damage_zangeki.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_damage_zangeki.uasset",
+      "size": 2456
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_damage_zangeki2.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_damage_zangeki2.uasset",
+      "size": 2433
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_door_dunk.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_door_dunk.uasset",
+      "size": 2382
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_door_woodcl.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_door_woodcl.uasset",
+      "size": 2444
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_door_woodcl2.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_door_woodcl2.uasset",
+      "size": 2421
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_doorclose_s.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_doorclose_s.uasset",
+      "size": 2390
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_doragon_land.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_doragon_land.uasset",
+      "size": 2421
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_doragon_land_v1.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_doragon_land_v1.uasset",
+      "size": 2406
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_doragon_shout.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_doragon_shout.uasset",
+      "size": 3039
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_doragon_wing.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_doragon_wing.uasset",
+      "size": 2448
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_doragon_wing_onshot.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_doragon_wing_onshot.uasset",
+      "size": 2476
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_down.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_down.uasset",
+      "size": 2335
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_drop_bag.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_drop_bag.uasset",
+      "size": 2378
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_encount_tiger.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_encount_tiger.uasset",
+      "size": 2533
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_encountlzddst_2.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_encountlzddst_2.uasset",
+      "size": 2861
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_encountlzddst_m_a.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_encountlzddst_m_a.uasset",
+      "size": 2522
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_encountlzddst_streo.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_encountlzddst_streo.uasset",
+      "size": 3171
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_enm_bosredeye_l_a.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_enm_bosredeye_l_a.uasset",
+      "size": 2549
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_eventboss_wolf2.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_eventboss_wolf2.uasset",
+      "size": 3000
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_ex_boss_umeki.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_ex_boss_umeki.uasset",
+      "size": 2452
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_faceslap.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_faceslap.uasset",
+      "size": 2459
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_fall_men.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_fall_men.uasset",
+      "size": 2621
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_fallcliff2.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_fallcliff2.uasset",
+      "size": 2521
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_fallclose.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_fallclose.uasset",
+      "size": 2571
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_forestbos_fx.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_forestbos_fx.uasset",
+      "size": 3062
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_grass.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_grass.uasset",
+      "size": 2528
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_hit_spear01.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_hit_spear01.uasset",
+      "size": 3220
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_hitsword_high.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_hitsword_high.uasset",
+      "size": 2452
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_ikari.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_ikari.uasset",
+      "size": 2636
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_ikari_short.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_ikari_short.uasset",
+      "size": 2660
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_intobarrel.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_intobarrel.uasset",
+      "size": 2656
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_keyopen3.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_keyopen3.uasset",
+      "size": 2486
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_knockwood.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_knockwood.uasset",
+      "size": 2463
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_kuzure.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_kuzure.uasset",
+      "size": 2505
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_lzd_move.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_lzd_move.uasset",
+      "size": 2486
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_lzd_step.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_lzd_step.uasset",
+      "size": 3316
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_lzd_step_2.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_lzd_step_2.uasset",
+      "size": 3401
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_lzd_step_3.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_lzd_step_3.uasset",
+      "size": 2571
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_lzd_yure.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_lzd_yure.uasset",
+      "size": 3343
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_lzd_yure2.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_lzd_yure2.uasset",
+      "size": 3077
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_map_door1.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_map_door1.uasset",
+      "size": 2409
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_map_door_metal.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_map_door_metal.uasset",
+      "size": 2402
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_map_treasurebox.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_map_treasurebox.uasset",
+      "size": 2433
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_money.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_money.uasset",
+      "size": 2447
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_money2.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_money2.uasset",
+      "size": 2397
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_money4.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_money4.uasset",
+      "size": 2424
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_money5.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_money5.uasset",
+      "size": 2451
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_nadare.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_nadare.uasset",
+      "size": 2451
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_offsekika.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_offsekika.uasset",
+      "size": 2436
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_oridoor_open.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_oridoor_open.uasset",
+      "size": 2475
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_pound.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_pound.uasset",
+      "size": 2663
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_pound_oneshot.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_pound_oneshot.uasset",
+      "size": 2479
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_pushbotan.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_pushbotan.uasset",
+      "size": 2409
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_put_backet.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_put_backet.uasset",
+      "size": 2386
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_put_cup.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_put_cup.uasset",
+      "size": 2374
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_putbarrel.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_putbarrel.uasset",
+      "size": 2463
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_putthings.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_putthings.uasset",
+      "size": 2436
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_rantan.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_rantan.uasset",
+      "size": 2559
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_rock_avalanch.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_rock_avalanch.uasset",
+      "size": 2533
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_rock_brake.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_rock_brake.uasset",
+      "size": 2440
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_rope_cut.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_rope_cut.uasset",
+      "size": 2378
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_runthrough_olric.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_runthrough_olric.uasset",
+      "size": 2734
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_sandrion_shout.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_sandrion_shout.uasset",
+      "size": 2456
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_seikaboss.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_seikaboss.uasset",
+      "size": 3266
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_sekika.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_sekika.uasset",
+      "size": 2451
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_senchou_sword.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_senchou_sword.uasset",
+      "size": 2560
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_shoveling2.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_shoveling2.uasset",
+      "size": 2602
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_steamexplosion.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_steamexplosion.uasset",
+      "size": 2429
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_step_big.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_step_big.uasset",
+      "size": 3289
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_step_big21.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_step_big21.uasset",
+      "size": 2386
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_step_big22.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_step_big22.uasset",
+      "size": 2386
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_step_big23.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_step_big23.uasset",
+      "size": 2386
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_step_big24.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_step_big24.uasset",
+      "size": 2386
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_step_big25.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_step_big25.uasset",
+      "size": 2386
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_step_big26.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_step_big26.uasset",
+      "size": 2413
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_step_big27.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_step_big27.uasset",
+      "size": 2386
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_step_boss2.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_step_boss2.uasset",
+      "size": 2413
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_stomachnoise.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_stomachnoise.uasset",
+      "size": 2448
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_stone_turnlock.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_stone_turnlock.uasset",
+      "size": 3502
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_stonedoor_open.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_stonedoor_open.uasset",
+      "size": 2510
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_thorns.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_thorns.uasset",
+      "size": 2478
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_trancefom.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_trancefom.uasset",
+      "size": 2679
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_udewa.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_udewa.uasset",
+      "size": 2447
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_event_whip.uasset",
+      "relative_path": "majesty/content/vibration/data/se_event_whip.uasset",
+      "size": 2362
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_map_door1.uasset",
+      "relative_path": "majesty/content/vibration/data/se_map_door1.uasset",
+      "size": 2385
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_map_door2.uasset",
+      "relative_path": "majesty/content/vibration/data/se_map_door2.uasset",
+      "size": 2412
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_menu_ability_on.uasset",
+      "relative_path": "majesty/content/vibration/data/se_menu_ability_on.uasset",
+      "size": 2409
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_menu_accesspoint.uasset",
+      "relative_path": "majesty/content/vibration/data/se_menu_accesspoint.uasset",
+      "size": 2467
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_menu_buy.uasset",
+      "relative_path": "majesty/content/vibration/data/se_menu_buy.uasset",
+      "size": 2408
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_menu_equip.uasset",
+      "relative_path": "majesty/content/vibration/data/se_menu_equip.uasset",
+      "size": 2362
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_menu_heal.uasset",
+      "relative_path": "majesty/content/vibration/data/se_menu_heal.uasset",
+      "size": 2358
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_menu_job.uasset",
+      "relative_path": "majesty/content/vibration/data/se_menu_job.uasset",
+      "size": 2354
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_open_gate.uasset",
+      "relative_path": "majesty/content/vibration/data/se_open_gate.uasset",
+      "size": 2412
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_open_irondoor.uasset",
+      "relative_path": "majesty/content/vibration/data/se_open_irondoor.uasset",
+      "size": 2428
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_open_wooddoor.uasset",
+      "relative_path": "majesty/content/vibration/data/se_open_wooddoor.uasset",
+      "size": 2401
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_open_wooddoor_little.uasset",
+      "relative_path": "majesty/content/vibration/data/se_open_wooddoor_little.uasset",
+      "size": 2429
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "se_system_timechange.uasset",
+      "relative_path": "majesty/content/vibration/data/se_system_timechange.uasset",
+      "size": 2471
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "syo.uasset",
+      "relative_path": "majesty/content/vibration/data/syo.uasset",
+      "size": 2349
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "tyu.uasset",
+      "relative_path": "majesty/content/vibration/data/tyu.uasset",
+      "size": 2349
+    },
+    {
+      "category": "Unknown",
+      "extension": "avp",
+      "file_name": "vibration.avp",
+      "relative_path": "majesty/content/vibration/data/vibration.avp",
+      "size": 103488
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "vo_bat_encount_enm_bosdeathtiger_l_a_e.uasset",
+      "relative_path": "majesty/content/vibration/data/vo_bat_encount_enm_bosdeathtiger_l_a_e.uasset",
+      "size": 2948
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "vo_bat_encount_enm_bosforestboss_l_a_e.uasset",
+      "relative_path": "majesty/content/vibration/data/vo_bat_encount_enm_bosforestboss_l_a_e.uasset",
+      "size": 3454
+    },
+    {
+      "category": "Unknown",
+      "extension": "uasset",
+      "file_name": "vo_enm_manmos_1.uasset",
+      "relative_path": "majesty/content/vibration/data/vo_enm_manmos_1.uasset",
+      "size": 2393
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceFace.prx",
+      "relative_path": "sce_module/libSceFace.prx",
+      "size": 302748
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceFaceTracker.prx",
+      "relative_path": "sce_module/libSceFaceTracker.prx",
+      "size": 2610112
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceJobManager.prx",
+      "relative_path": "sce_module/libSceJobManager.prx",
+      "size": 70928
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceNpCppWebApi.prx",
+      "relative_path": "sce_module/libSceNpCppWebApi.prx",
+      "size": 7852416
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libScePfs.prx",
+      "relative_path": "sce_module/libScePfs.prx",
+      "size": 1343136
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libc.prx",
+      "relative_path": "sce_module/libc.prx",
+      "size": 1314024
+    },
+    {
+      "category": "Executable",
+      "extension": "sprx",
+      "file_name": "right.sprx",
+      "relative_path": "sce_sys/about/right.sprx",
+      "size": 12448
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "disc_info.dat",
+      "relative_path": "sce_sys/disc_info.dat",
+      "size": 6640
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "icon0.dds",
+      "relative_path": "sce_sys/icon0.dds",
+      "size": 262292
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "icon0.png",
+      "relative_path": "sce_sys/icon0.png",
+      "size": 23148
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "keystone",
+      "relative_path": "sce_sys/keystone",
+      "size": 96
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "nptitle.dat",
+      "relative_path": "sce_sys/nptitle.dat",
+      "size": 160
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "param.json",
+      "relative_path": "sce_sys/param.json",
+      "size": 3257
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "pfs-version.dat",
+      "relative_path": "sce_sys/pfs-version.dat",
+      "size": 10
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic0.dds",
+      "relative_path": "sce_sys/pic0.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "pic0.png",
+      "relative_path": "sce_sys/pic0.png",
+      "size": 14994456
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic1.dds",
+      "relative_path": "sce_sys/pic1.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic2.dds",
+      "relative_path": "sce_sys/pic2.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "sce_sys/trophy2/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "trophy00.ucp",
+      "relative_path": "sce_sys/trophy2/trophy00.ucp",
+      "size": 12877376
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "sce_sys/uds/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "uds00.ucp",
+      "relative_path": "sce_sys/uds/uds00.ucp",
+      "size": 39456
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "ue4commandline.txt",
+      "relative_path": "ue4commandline.txt",
+      "size": 34
+    }
+  ],
+  "by_category": {
+    "archive": 1,
+    "executable": 8,
+    "font": 1,
+    "metadata": 12,
+    "texture": 6,
+    "unknown": 277
+  },
+  "by_extension": {
+    "(no_ext)": 11,
+    "avp": 1,
+    "awb": 125,
+    "complete": 1,
+    "dat": 5,
+    "dds": 4,
+    "eboot.bin": 1,
+    "ini": 1,
+    "json": 2,
+    "pak": 1,
+    "png": 2,
+    "prx": 6,
+    "sprx": 1,
+    "tps": 1,
+    "ttf": 1,
+    "txt": 3,
+    "uasset": 133,
+    "ucp": 2,
+    "usm": 4
+  },
+  "game": "Octopath.Traveler.II-PPSA09809-EUR-Game-v01.000-PS5",
+  "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Octopath.Traveler.II-PPSA09809-EUR-Game-v01.000-PS5",
+  "total_bytes": 20204569640,
+  "total_files": 305
+}

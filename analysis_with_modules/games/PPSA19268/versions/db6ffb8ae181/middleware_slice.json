@@ -1,0 +1,150 @@
+{
+  "game": "Juicy.Realm-PPSA19268-USA-Game (v01.000)-PS5",
+  "sony": [
+    {
+      "exports": 42850,
+      "file_name": "libSceNpCppWebApi.prx",
+      "import_libs": [
+        "libSceHttp",
+        "libSceJson2",
+        "libSceLibcInternal",
+        "libSceNpWebApi2",
+        "libSceRtc",
+        "libkernel"
+      ],
+      "imports": 95,
+      "kind": "sony",
+      "module_name": "libSceNpCppWebApi",
+      "needed_files": [
+        "libSceJson2.prx",
+        "libSceRtc.prx",
+        "libSceNpWebApi2.prx",
+        "libSceHttp.prx",
+        "libkernel.prx",
+        "libSceLibcInternal.prx"
+      ],
+      "parseable": true,
+      "sha256": "32ea43961a55200b449a2975e0f246d75778ea4fe39215b206d4f1a86448f213"
+    },
+    {
+      "exports": 2584,
+      "file_name": "libc.prx",
+      "import_libs": [
+        "libSceLibcInternalExt",
+        "libSceSysmodule",
+        "libkernel"
+      ],
+      "imports": 104,
+      "kind": "sony",
+      "module_name": "libc",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceLibcInternal.prx",
+        "libSceSysmodule.prx"
+      ],
+      "parseable": true,
+      "sha256": "b25b19d3ff52d1e093e1fe2b9c37869739a9e7acb8f7a3f3037dea61be0ab94f"
+    }
+  ],
+  "third_party": [
+    {
+      "description": "Unity IL2CPP user assemblies (AOT-compiled C#)",
+      "exports": 455,
+      "file_name": "Il2CppUserAssemblies.prx",
+      "import_libs": [
+        "PS5Util",
+        "libSceAppContent",
+        "libSceCommonDialog",
+        "libSceGameUpdate",
+        "libSceHttp2",
+        "libSceJson2",
+        "libSceMsgDialog.native",
+        "libSceNet",
+        "libSceNetCtl",
+        "libSceNpAuth",
+        "libSceNpCommerce",
+        "libSceNpCppWebApi",
+        "libSceNpEntitlementAccess",
+        "libSceNpGameIntent",
+        "libSceNpManager",
+        "libSceNpSessionSignaling",
+        "libSceNpTrophy2",
+        "libSceNpUniversalDataSystem",
+        "libSceNpUtility",
+        "libSceNpWebApi2",
+        "libScePlayerInvitationDialog",
+        "libScePosix",
+        "libSceRtc",
+        "libSceSaveDataDialog.native",
+        "libSceSaveData_native",
+        "libSceSsl",
+        "libSceSysmodule",
+        "libSceSystemService",
+        "libc",
+        "libkernel"
+      ],
+      "imports": 2723,
+      "kind": "thirdparty",
+      "module_name": "Il2CppUserAssemblies",
+      "needed_files": [
+        "PS5Util.prx",
+        "libc.prx",
+        "libSceNetCtl.prx",
+        "libSceNet.prx",
+        "libkernel.prx",
+        "libSceRtc.prx",
+        "libSceSystemService.prx",
+        "libSceAppContent.prx",
+        "libSceSysmodule.prx",
+        "libSceNpAuth.prx",
+        "libSceNpUtility.prx",
+        "libSceNpCommerce.prx",
+        "libSceNpCppWebApi.prx",
+        "libSceNpWebApi2.prx",
+        "libSceJson2.prx",
+        "libSceNpEntitlementAccess.prx",
+        "libSceNpManager.prx",
+        "libSceNpGameIntent.prx",
+        "libSceGameUpdate.prx",
+        "libSceMsgDialog.native.prx",
+        "libScePlayerInvitationDialog.prx",
+        "libSceNpSessionSignaling.prx",
+        "libSceNpTrophy2.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceCommonDialog.prx",
+        "libSceSsl.prx",
+        "libSceHttp2.prx",
+        "libSceSaveData.native.prx",
+        "libSceSaveDataDialog.native.prx"
+      ],
+      "parseable": true,
+      "product": "Unity IL2CPP",
+      "sha256": "47a748fc63dc3d09b2e51812ecf269da1ec86002d640177c862a774d0695dbc0",
+      "vendor": "Unity Technologies"
+    },
+    {
+      "description": "Unity PS5 player support module",
+      "exports": 7,
+      "file_name": "PS5Util.prx",
+      "import_libs": [
+        "libc",
+        "libkernel",
+        "libkernel_sync_on_address",
+        "libkernel_unity"
+      ],
+      "imports": 10,
+      "kind": "thirdparty",
+      "module_name": "PS5Util",
+      "needed_files": [
+        "libkernel.prx",
+        "libc.prx"
+      ],
+      "parseable": true,
+      "product": "Unity PS5 Platform",
+      "sha256": "f1b079a537816133ecf5b950d18848ae3e521c1dbf370c9ad54e3be8edc0a796",
+      "vendor": "Unity Technologies"
+    }
+  ],
+  "title_id": "PPSA19268",
+  "unknown": []
+}

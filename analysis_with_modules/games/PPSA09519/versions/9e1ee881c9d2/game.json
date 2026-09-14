@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "title_id": "PPSA09519",
+  "name": "WUCHANG.Fallen.Feathers-PPSA09519-EUR-Game(v01.01)-PS5",
+  "eboot_sha256": "ebe00ebad2fbb48988b8ee64065ef06f1c8ae226e6b0dbdf58ab3d6af13e67ed",
+  "game_fingerprint": "9e1ee881c9d22796bfa5d87a0e2cd300d40e74daf59fe623ecac5b6d528154cc",
+  "environment_fingerprint": "c65955db3dee9d575ca652856c86c3fc2b7297fff36bb37fcb1b9319f1ff09a9",
+  "loader_fingerprint": "d245a80770d2897643c4754f10883b674208fc8fdecaad2ebd247d1990f6f5a0",
+  "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
+  "ingest_id": "ingest_20260913033400_9e1ee881c9d2",
+  "ingested_at": "2026-09-13T03:34:00Z",
+  "params": {
+    "name": "WUCHANG.Fallen.Feathers-PPSA09519-EUR-Game(v01.01)-PS5",
+    "title_id": "PPSA09519",
+    "content_version": null,
+    "master_version": null,
+    "sdk_version": null,
+    "title_name": null,
+    "drm_type": null,
+    "content_id": null,
+    "creation_date": null
+  },
+  "load_report_file": "load_report.json"
+}

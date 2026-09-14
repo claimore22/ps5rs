@@ -1,0 +1,1141 @@
+{
+  "artifacts": [
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "contentids.json",
+      "relative_path": "contentids.json",
+      "size": 171
+    },
+    {
+      "category": "Executable",
+      "extension": "eboot.bin",
+      "file_name": "eboot.bin",
+      "relative_path": "decrypted/eboot.bin",
+      "size": 204207708
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceFace.prx",
+      "relative_path": "decrypted/sce_module/libSceFace.prx",
+      "size": 372560
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceFaceTracker.prx",
+      "relative_path": "decrypted/sce_module/libSceFaceTracker.prx",
+      "size": 2660727
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceFontGsm.prx",
+      "relative_path": "decrypted/sce_module/libSceFontGsm.prx",
+      "size": 306435
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceJobManager.prx",
+      "relative_path": "decrypted/sce_module/libSceJobManager.prx",
+      "size": 113558
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceNpCppWebApi.prx",
+      "relative_path": "decrypted/sce_module/libSceNpCppWebApi.prx",
+      "size": 7954839
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libScePfs.prx",
+      "relative_path": "decrypted/sce_module/libScePfs.prx",
+      "size": 1381095
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libc.prx",
+      "relative_path": "decrypted/sce_module/libc.prx",
+      "size": 1334282
+    },
+    {
+      "category": "Executable",
+      "extension": "sprx",
+      "file_name": "right.sprx",
+      "relative_path": "decrypted/sce_sys/about/right.sprx",
+      "size": 66704
+    },
+    {
+      "category": "Executable",
+      "extension": "eboot.bin",
+      "file_name": "eboot.bin",
+      "relative_path": "eboot.bin",
+      "size": 204572897
+    },
+    {
+      "category": "Unknown",
+      "extension": "ini",
+      "file_name": "manifest.ini",
+      "relative_path": "engine/saved/config/ps5/manifest.ini",
+      "size": 22
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "mm_hd17030_000_cut021.usm",
+      "relative_path": "sandland/content/crinonasset/movie/mm_hd17030_000_cut021.usm",
+      "size": 5346080
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "mm_hd17030_000_cut027.usm",
+      "relative_path": "sandland/content/crinonasset/movie/mm_hd17030_000_cut027.usm",
+      "size": 6840160
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "mm_hd17030_000_cut076.usm",
+      "relative_path": "sandland/content/crinonasset/movie/mm_hd17030_000_cut076.usm",
+      "size": 31932544
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "mm_hd18010_000_cut001.usm",
+      "relative_path": "sandland/content/crinonasset/movie/mm_hd18010_000_cut001.usm",
+      "size": 1612288
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "mm_hd18010_000_cut005.usm",
+      "relative_path": "sandland/content/crinonasset/movie/mm_hd18010_000_cut005.usm",
+      "size": 11543360
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "mm_hd18010_000_cut008.usm",
+      "relative_path": "sandland/content/crinonasset/movie/mm_hd18010_000_cut008.usm",
+      "size": 9248896
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "mm_hd20010_000_a.usm",
+      "relative_path": "sandland/content/crinonasset/movie/mm_hd20010_000_a.usm",
+      "size": 3838880
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "mm_hd20010_000_b.usm",
+      "relative_path": "sandland/content/crinonasset/movie/mm_hd20010_000_b.usm",
+      "size": 14280032
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "mm_hd22010_000_cut01.usm",
+      "relative_path": "sandland/content/crinonasset/movie/mm_hd22010_000_cut01.usm",
+      "size": 10085664
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "mm_hd22010_000_cut08.usm",
+      "relative_path": "sandland/content/crinonasset/movie/mm_hd22010_000_cut08.usm",
+      "size": 6238112
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "mm_hd29010_000.usm",
+      "relative_path": "sandland/content/crinonasset/movie/mm_hd29010_000.usm",
+      "size": 10024800
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "mm_hd33010_000.usm",
+      "relative_path": "sandland/content/crinonasset/movie/mm_hd33010_000.usm",
+      "size": 6768032
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "mm_hd34010_000.usm",
+      "relative_path": "sandland/content/crinonasset/movie/mm_hd34010_000.usm",
+      "size": 2949312
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "mm_hd34020_000_cut018.usm",
+      "relative_path": "sandland/content/crinonasset/movie/mm_hd34020_000_cut018.usm",
+      "size": 3850400
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "mm_hd34020_000_cut023.usm",
+      "relative_path": "sandland/content/crinonasset/movie/mm_hd34020_000_cut023.usm",
+      "size": 1842848
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "mm_hd34020_000_cut027.usm",
+      "relative_path": "sandland/content/crinonasset/movie/mm_hd34020_000_cut027.usm",
+      "size": 1736608
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "mm_hd34020_000_cut031.usm",
+      "relative_path": "sandland/content/crinonasset/movie/mm_hd34020_000_cut031.usm",
+      "size": 13386784
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "mm_hd36020_000_cut002.usm",
+      "relative_path": "sandland/content/crinonasset/movie/mm_hd36020_000_cut002.usm",
+      "size": 3941632
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "mm_hd36020_000_cut005.usm",
+      "relative_path": "sandland/content/crinonasset/movie/mm_hd36020_000_cut005.usm",
+      "size": 25058944
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "mm_hd36020_000_cut010.usm",
+      "relative_path": "sandland/content/crinonasset/movie/mm_hd36020_000_cut010.usm",
+      "size": 14706816
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "mm_hd36020_000_cut019.usm",
+      "relative_path": "sandland/content/crinonasset/movie/mm_hd36020_000_cut019.usm",
+      "size": 38400000
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "mm_hd36030_000_cut001.usm",
+      "relative_path": "sandland/content/crinonasset/movie/mm_hd36030_000_cut001.usm",
+      "size": 20134880
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "mm_hd36030_000_cut010.usm",
+      "relative_path": "sandland/content/crinonasset/movie/mm_hd36030_000_cut010.usm",
+      "size": 92035360
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "mm_hd36030_000_cut027.usm",
+      "relative_path": "sandland/content/crinonasset/movie/mm_hd36030_000_cut027.usm",
+      "size": 7784384
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "mm_hd36030_000_cut030.usm",
+      "relative_path": "sandland/content/crinonasset/movie/mm_hd36030_000_cut030.usm",
+      "size": 29101216
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "mm_hd36030_000_cut038.usm",
+      "relative_path": "sandland/content/crinonasset/movie/mm_hd36030_000_cut038.usm",
+      "size": 39215680
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "mm_hd36030_000_cut047.usm",
+      "relative_path": "sandland/content/crinonasset/movie/mm_hd36030_000_cut047.usm",
+      "size": 84786016
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "mm_hd36040_000_cut031.usm",
+      "relative_path": "sandland/content/crinonasset/movie/mm_hd36040_000_cut031.usm",
+      "size": 16262816
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "mm_hd36040_000_cut039.usm",
+      "relative_path": "sandland/content/crinonasset/movie/mm_hd36040_000_cut039.usm",
+      "size": 6099072
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "mm_hd36040_000_cut045.usm",
+      "relative_path": "sandland/content/crinonasset/movie/mm_hd36040_000_cut045.usm",
+      "size": 20399904
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "mm_hd36050_000_cut038.usm",
+      "relative_path": "sandland/content/crinonasset/movie/mm_hd36050_000_cut038.usm",
+      "size": 14665280
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "mm_hd37010_000.usm",
+      "relative_path": "sandland/content/crinonasset/movie/mm_hd37010_000.usm",
+      "size": 24494880
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "mm_hd37010_000_sanddam.usm",
+      "relative_path": "sandland/content/crinonasset/movie/mm_hd37010_000_sanddam.usm",
+      "size": 12887296
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "mm_sd24010_000_cut02.usm",
+      "relative_path": "sandland/content/crinonasset/movie/mm_sd24010_000_cut02.usm",
+      "size": 1117632
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "mm_sd24010_000_cut05.usm",
+      "relative_path": "sandland/content/crinonasset/movie/mm_sd24010_000_cut05.usm",
+      "size": 6293600
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "mm_sd27040_000.usm",
+      "relative_path": "sandland/content/crinonasset/movie/mm_sd27040_000.usm",
+      "size": 6504320
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "mm_sd27060_000.usm",
+      "relative_path": "sandland/content/crinonasset/movie/mm_sd27060_000.usm",
+      "size": 6060992
+    },
+    {
+      "category": "Unknown",
+      "extension": "usm",
+      "file_name": "mm_sub_sd00134_020.usm",
+      "relative_path": "sandland/content/crinonasset/movie/mm_sub_sd00134_020.usm",
+      "size": 34666016
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "acs_bgm_01.awb",
+      "relative_path": "sandland/content/crinonasset/sound/acs_bgm_01.awb",
+      "size": 50554674
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "acs_bgm_all.awb",
+      "relative_path": "sandland/content/crinonasset/sound/acs_bgm_all.awb",
+      "size": 387386502
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "acs_bgm_pvp.awb",
+      "relative_path": "sandland/content/crinonasset/sound/acs_bgm_pvp.awb",
+      "size": 13570584
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "acs_ch016_cs.awb",
+      "relative_path": "sandland/content/crinonasset/sound/acs_ch016_cs.awb",
+      "size": 60144
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "acs_cmn_cs_sd.awb",
+      "relative_path": "sandland/content/crinonasset/sound/acs_cmn_cs_sd.awb",
+      "size": 169862
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "acs_cs_hd.awb",
+      "relative_path": "sandland/content/crinonasset/sound/acs_cs_hd.awb",
+      "size": 324838704
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "acs_cs_sd.awb",
+      "relative_path": "sandland/content/crinonasset/sound/acs_cs_sd.awb",
+      "size": 64268222
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "acs_cs_sd_2.awb",
+      "relative_path": "sandland/content/crinonasset/sound/acs_cs_sd_2.awb",
+      "size": 12915004
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "acs_cs_sd_3.awb",
+      "relative_path": "sandland/content/crinonasset/sound/acs_cs_sd_3.awb",
+      "size": 10916508
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "acs_env.awb",
+      "relative_path": "sandland/content/crinonasset/sound/acs_env.awb",
+      "size": 23912322
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "acs_env_d000_01.awb",
+      "relative_path": "sandland/content/crinonasset/sound/acs_env_d000_01.awb",
+      "size": 1171642
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "acs_env_movingtornado.awb",
+      "relative_path": "sandland/content/crinonasset/sound/acs_env_movingtornado.awb",
+      "size": 77441
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "acs_env_point_matrials.awb",
+      "relative_path": "sandland/content/crinonasset/sound/acs_env_point_matrials.awb",
+      "size": 1932892
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "acs_env_water.awb",
+      "relative_path": "sandland/content/crinonasset/sound/acs_env_water.awb",
+      "size": 1841600
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "acs_ms001_cs.awb",
+      "relative_path": "sandland/content/crinonasset/sound/acs_ms001_cs.awb",
+      "size": 56540
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "acs_only_jukebox.awb",
+      "relative_path": "sandland/content/crinonasset/sound/acs_only_jukebox.awb",
+      "size": 100441810
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "acs_sys_cmn.awb",
+      "relative_path": "sandland/content/crinonasset/sound/acs_sys_cmn.awb",
+      "size": 193816
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "acs_v_auto.awb",
+      "relative_path": "sandland/content/crinonasset/sound/en/acs_v_auto.awb",
+      "size": 1092554
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "acs_v_msg_battle.awb",
+      "relative_path": "sandland/content/crinonasset/sound/en/acs_v_msg_battle.awb",
+      "size": 25324226
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "acs_v_msg_cs.awb",
+      "relative_path": "sandland/content/crinonasset/sound/en/acs_v_msg_cs.awb",
+      "size": 198088738
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "acs_v_msg_main.awb",
+      "relative_path": "sandland/content/crinonasset/sound/en/acs_v_msg_main.awb",
+      "size": 201368752
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "acs_v_msg_map.awb",
+      "relative_path": "sandland/content/crinonasset/sound/en/acs_v_msg_map.awb",
+      "size": 111705570
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "acs_v_msg_sub.awb",
+      "relative_path": "sandland/content/crinonasset/sound/en/acs_v_msg_sub.awb",
+      "size": 434575490
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "acs_vo_test.awb",
+      "relative_path": "sandland/content/crinonasset/sound/en/acs_vo_test.awb",
+      "size": 8708290
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "acs_v_auto.awb",
+      "relative_path": "sandland/content/crinonasset/sound/ja/acs_v_auto.awb",
+      "size": 2379018
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "acs_v_msg_battle.awb",
+      "relative_path": "sandland/content/crinonasset/sound/ja/acs_v_msg_battle.awb",
+      "size": 26451970
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "acs_v_msg_cs.awb",
+      "relative_path": "sandland/content/crinonasset/sound/ja/acs_v_msg_cs.awb",
+      "size": 210441826
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "acs_v_msg_main.awb",
+      "relative_path": "sandland/content/crinonasset/sound/ja/acs_v_msg_main.awb",
+      "size": 233132519
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "acs_v_msg_map.awb",
+      "relative_path": "sandland/content/crinonasset/sound/ja/acs_v_msg_map.awb",
+      "size": 117752354
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "acs_v_msg_sub.awb",
+      "relative_path": "sandland/content/crinonasset/sound/ja/acs_v_msg_sub.awb",
+      "size": 521946658
+    },
+    {
+      "category": "Unknown",
+      "extension": "awb",
+      "file_name": "acs_vo_test.awb",
+      "relative_path": "sandland/content/crinonasset/sound/ja/acs_vo_test.awb",
+      "size": 8708290
+    },
+    {
+      "category": "Unknown",
+      "extension": "ucas",
+      "file_name": "global.ucas",
+      "relative_path": "sandland/content/paks/global.ucas",
+      "size": 2063552
+    },
+    {
+      "category": "Unknown",
+      "extension": "utoc",
+      "file_name": "global.utoc",
+      "relative_path": "sandland/content/paks/global.utoc",
+      "size": 705
+    },
+    {
+      "category": "Archive",
+      "extension": "pak",
+      "file_name": "pakchunk0-ps5.pak",
+      "relative_path": "sandland/content/paks/pakchunk0-ps5.pak",
+      "size": 296199546
+    },
+    {
+      "category": "Unknown",
+      "extension": "ucas",
+      "file_name": "pakchunk0-ps5.ucas",
+      "relative_path": "sandland/content/paks/pakchunk0-ps5.ucas",
+      "size": 23413644272
+    },
+    {
+      "category": "Unknown",
+      "extension": "utoc",
+      "file_name": "pakchunk0-ps5.utoc",
+      "relative_path": "sandland/content/paks/pakchunk0-ps5.utoc",
+      "size": 12147637
+    },
+    {
+      "category": "Archive",
+      "extension": "pak",
+      "file_name": "pakchunk1-ps5.pak",
+      "relative_path": "sandland/content/paks/pakchunk1-ps5.pak",
+      "size": 75643847
+    },
+    {
+      "category": "Unknown",
+      "extension": "ucas",
+      "file_name": "pakchunk1-ps5.ucas",
+      "relative_path": "sandland/content/paks/pakchunk1-ps5.ucas",
+      "size": 15584392960
+    },
+    {
+      "category": "Unknown",
+      "extension": "utoc",
+      "file_name": "pakchunk1-ps5.utoc",
+      "relative_path": "sandland/content/paks/pakchunk1-ps5.utoc",
+      "size": 6162025
+    },
+    {
+      "category": "Archive",
+      "extension": "pak",
+      "file_name": "pakchunk10-ps5.pak",
+      "relative_path": "sandland/content/paks/pakchunk10-ps5.pak",
+      "size": 0
+    },
+    {
+      "category": "Unknown",
+      "extension": "ucas",
+      "file_name": "pakchunk10-ps5.ucas",
+      "relative_path": "sandland/content/paks/pakchunk10-ps5.ucas",
+      "size": 0
+    },
+    {
+      "category": "Unknown",
+      "extension": "utoc",
+      "file_name": "pakchunk10-ps5.utoc",
+      "relative_path": "sandland/content/paks/pakchunk10-ps5.utoc",
+      "size": 0
+    },
+    {
+      "category": "Archive",
+      "extension": "pak",
+      "file_name": "pakchunk11-ps5.pak",
+      "relative_path": "sandland/content/paks/pakchunk11-ps5.pak",
+      "size": 496229
+    },
+    {
+      "category": "Unknown",
+      "extension": "ucas",
+      "file_name": "pakchunk11-ps5.ucas",
+      "relative_path": "sandland/content/paks/pakchunk11-ps5.ucas",
+      "size": 18149776
+    },
+    {
+      "category": "Unknown",
+      "extension": "utoc",
+      "file_name": "pakchunk11-ps5.utoc",
+      "relative_path": "sandland/content/paks/pakchunk11-ps5.utoc",
+      "size": 117521
+    },
+    {
+      "category": "Archive",
+      "extension": "pak",
+      "file_name": "pakchunk12-ps5.pak",
+      "relative_path": "sandland/content/paks/pakchunk12-ps5.pak",
+      "size": 496229
+    },
+    {
+      "category": "Unknown",
+      "extension": "ucas",
+      "file_name": "pakchunk12-ps5.ucas",
+      "relative_path": "sandland/content/paks/pakchunk12-ps5.ucas",
+      "size": 16165168
+    },
+    {
+      "category": "Unknown",
+      "extension": "utoc",
+      "file_name": "pakchunk12-ps5.utoc",
+      "relative_path": "sandland/content/paks/pakchunk12-ps5.utoc",
+      "size": 117257
+    },
+    {
+      "category": "Archive",
+      "extension": "pak",
+      "file_name": "pakchunk13-ps5.pak",
+      "relative_path": "sandland/content/paks/pakchunk13-ps5.pak",
+      "size": 496229
+    },
+    {
+      "category": "Unknown",
+      "extension": "ucas",
+      "file_name": "pakchunk13-ps5.ucas",
+      "relative_path": "sandland/content/paks/pakchunk13-ps5.ucas",
+      "size": 17469024
+    },
+    {
+      "category": "Unknown",
+      "extension": "utoc",
+      "file_name": "pakchunk13-ps5.utoc",
+      "relative_path": "sandland/content/paks/pakchunk13-ps5.utoc",
+      "size": 117353
+    },
+    {
+      "category": "Archive",
+      "extension": "pak",
+      "file_name": "pakchunk14-ps5.pak",
+      "relative_path": "sandland/content/paks/pakchunk14-ps5.pak",
+      "size": 0
+    },
+    {
+      "category": "Unknown",
+      "extension": "ucas",
+      "file_name": "pakchunk14-ps5.ucas",
+      "relative_path": "sandland/content/paks/pakchunk14-ps5.ucas",
+      "size": 0
+    },
+    {
+      "category": "Unknown",
+      "extension": "utoc",
+      "file_name": "pakchunk14-ps5.utoc",
+      "relative_path": "sandland/content/paks/pakchunk14-ps5.utoc",
+      "size": 0
+    },
+    {
+      "category": "Archive",
+      "extension": "pak",
+      "file_name": "pakchunk15-ps5.pak",
+      "relative_path": "sandland/content/paks/pakchunk15-ps5.pak",
+      "size": 496229
+    },
+    {
+      "category": "Unknown",
+      "extension": "ucas",
+      "file_name": "pakchunk15-ps5.ucas",
+      "relative_path": "sandland/content/paks/pakchunk15-ps5.ucas",
+      "size": 19206144
+    },
+    {
+      "category": "Unknown",
+      "extension": "utoc",
+      "file_name": "pakchunk15-ps5.utoc",
+      "relative_path": "sandland/content/paks/pakchunk15-ps5.utoc",
+      "size": 117605
+    },
+    {
+      "category": "Archive",
+      "extension": "pak",
+      "file_name": "pakchunk16-ps5.pak",
+      "relative_path": "sandland/content/paks/pakchunk16-ps5.pak",
+      "size": 496229
+    },
+    {
+      "category": "Unknown",
+      "extension": "ucas",
+      "file_name": "pakchunk16-ps5.ucas",
+      "relative_path": "sandland/content/paks/pakchunk16-ps5.ucas",
+      "size": 17651360
+    },
+    {
+      "category": "Unknown",
+      "extension": "utoc",
+      "file_name": "pakchunk16-ps5.utoc",
+      "relative_path": "sandland/content/paks/pakchunk16-ps5.utoc",
+      "size": 117437
+    },
+    {
+      "category": "Archive",
+      "extension": "pak",
+      "file_name": "pakchunk17-ps5.pak",
+      "relative_path": "sandland/content/paks/pakchunk17-ps5.pak",
+      "size": 0
+    },
+    {
+      "category": "Unknown",
+      "extension": "ucas",
+      "file_name": "pakchunk17-ps5.ucas",
+      "relative_path": "sandland/content/paks/pakchunk17-ps5.ucas",
+      "size": 0
+    },
+    {
+      "category": "Unknown",
+      "extension": "utoc",
+      "file_name": "pakchunk17-ps5.utoc",
+      "relative_path": "sandland/content/paks/pakchunk17-ps5.utoc",
+      "size": 0
+    },
+    {
+      "category": "Archive",
+      "extension": "pak",
+      "file_name": "pakchunk18-ps5.pak",
+      "relative_path": "sandland/content/paks/pakchunk18-ps5.pak",
+      "size": 496229
+    },
+    {
+      "category": "Unknown",
+      "extension": "ucas",
+      "file_name": "pakchunk18-ps5.ucas",
+      "relative_path": "sandland/content/paks/pakchunk18-ps5.ucas",
+      "size": 18938688
+    },
+    {
+      "category": "Unknown",
+      "extension": "utoc",
+      "file_name": "pakchunk18-ps5.utoc",
+      "relative_path": "sandland/content/paks/pakchunk18-ps5.utoc",
+      "size": 117605
+    },
+    {
+      "category": "Archive",
+      "extension": "pak",
+      "file_name": "pakchunk19-ps5.pak",
+      "relative_path": "sandland/content/paks/pakchunk19-ps5.pak",
+      "size": 0
+    },
+    {
+      "category": "Unknown",
+      "extension": "ucas",
+      "file_name": "pakchunk19-ps5.ucas",
+      "relative_path": "sandland/content/paks/pakchunk19-ps5.ucas",
+      "size": 0
+    },
+    {
+      "category": "Unknown",
+      "extension": "utoc",
+      "file_name": "pakchunk19-ps5.utoc",
+      "relative_path": "sandland/content/paks/pakchunk19-ps5.utoc",
+      "size": 0
+    },
+    {
+      "category": "Archive",
+      "extension": "pak",
+      "file_name": "pakchunk20-ps5.pak",
+      "relative_path": "sandland/content/paks/pakchunk20-ps5.pak",
+      "size": 0
+    },
+    {
+      "category": "Unknown",
+      "extension": "ucas",
+      "file_name": "pakchunk20-ps5.ucas",
+      "relative_path": "sandland/content/paks/pakchunk20-ps5.ucas",
+      "size": 0
+    },
+    {
+      "category": "Unknown",
+      "extension": "utoc",
+      "file_name": "pakchunk20-ps5.utoc",
+      "relative_path": "sandland/content/paks/pakchunk20-ps5.utoc",
+      "size": 0
+    },
+    {
+      "category": "Archive",
+      "extension": "pak",
+      "file_name": "pakchunk21-ps5.pak",
+      "relative_path": "sandland/content/paks/pakchunk21-ps5.pak",
+      "size": 0
+    },
+    {
+      "category": "Unknown",
+      "extension": "ucas",
+      "file_name": "pakchunk21-ps5.ucas",
+      "relative_path": "sandland/content/paks/pakchunk21-ps5.ucas",
+      "size": 0
+    },
+    {
+      "category": "Unknown",
+      "extension": "utoc",
+      "file_name": "pakchunk21-ps5.utoc",
+      "relative_path": "sandland/content/paks/pakchunk21-ps5.utoc",
+      "size": 0
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceFace.prx",
+      "relative_path": "sce_module/libSceFace.prx",
+      "size": 324460
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceFaceTracker.prx",
+      "relative_path": "sce_module/libSceFaceTracker.prx",
+      "size": 2615495
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceFontGsm.prx",
+      "relative_path": "sce_module/libSceFontGsm.prx",
+      "size": 251015
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceJobManager.prx",
+      "relative_path": "sce_module/libSceJobManager.prx",
+      "size": 72118
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceNpCppWebApi.prx",
+      "relative_path": "sce_module/libSceNpCppWebApi.prx",
+      "size": 7921223
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libScePfs.prx",
+      "relative_path": "sce_module/libScePfs.prx",
+      "size": 1343471
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libc.prx",
+      "relative_path": "sce_module/libc.prx",
+      "size": 1292034
+    },
+    {
+      "category": "Executable",
+      "extension": "sprx",
+      "file_name": "right.sprx",
+      "relative_path": "sce_sys/about/right.sprx",
+      "size": 12768
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "disc_info.dat",
+      "relative_path": "sce_sys/disc_info.dat",
+      "size": 6640
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "icon0.dds",
+      "relative_path": "sce_sys/icon0.dds",
+      "size": 262292
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "icon0.png",
+      "relative_path": "sce_sys/icon0.png",
+      "size": 405853
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "icon0_00.dds",
+      "relative_path": "sce_sys/icon0_00.dds",
+      "size": 262292
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "icon0_00.png",
+      "relative_path": "sce_sys/icon0_00.png",
+      "size": 406152
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "keystone",
+      "relative_path": "sce_sys/keystone",
+      "size": 96
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "nptitle.dat",
+      "relative_path": "sce_sys/nptitle.dat",
+      "size": 160
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "param.json",
+      "relative_path": "sce_sys/param.json",
+      "size": 3107
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "pfs-version.dat",
+      "relative_path": "sce_sys/pfs-version.dat",
+      "size": 10
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic0.dds",
+      "relative_path": "sce_sys/pic0.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "pic0.png",
+      "relative_path": "sce_sys/pic0.png",
+      "size": 9777336
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic1.dds",
+      "relative_path": "sce_sys/pic1.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic1_00.dds",
+      "relative_path": "sce_sys/pic1_00.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic2.dds",
+      "relative_path": "sce_sys/pic2.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "playgo-scenario.json",
+      "relative_path": "sce_sys/playgo-scenario.json",
+      "size": 881
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "save_data.png",
+      "relative_path": "sce_sys/save_data.png",
+      "size": 266062
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "shareoverlayimage.png",
+      "relative_path": "sce_sys/shareoverlayimage.png",
+      "size": 6268
+    },
+    {
+      "category": "Audio",
+      "extension": "at9",
+      "file_name": "snd0.at9",
+      "relative_path": "sce_sys/snd0.at9",
+      "size": 457828
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "sce_sys/trophy2/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "trophy00.ucp",
+      "relative_path": "sce_sys/trophy2/trophy00.ucp",
+      "size": 7155600
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "sce_sys/uds/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "uds00.ucp",
+      "relative_path": "sce_sys/uds/uds00.ucp",
+      "size": 50448
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "ss_overlayimage.png",
+      "relative_path": "ss_overlayimage.png",
+      "size": 13544
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "ss_overlayimage_jp.png",
+      "relative_path": "ss_overlayimage_jp.png",
+      "size": 15184
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "ue4commandline.txt",
+      "relative_path": "ue4commandline.txt",
+      "size": 48
+    }
+  ],
+  "by_category": {
+    "archive": 14,
+    "audio": 1,
+    "executable": 18,
+    "metadata": 11,
+    "texture": 13,
+    "unknown": 101
+  },
+  "by_extension": {
+    "(no_ext)": 1,
+    "at9": 1,
+    "awb": 31,
+    "dat": 5,
+    "dds": 6,
+    "eboot.bin": 2,
+    "ini": 1,
+    "json": 3,
+    "pak": 14,
+    "png": 7,
+    "prx": 14,
+    "sprx": 2,
+    "txt": 1,
+    "ucas": 15,
+    "ucp": 2,
+    "usm": 38,
+    "utoc": 15
+  },
+  "game": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+  "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+  "total_bytes": 43732715553,
+  "total_files": 158
+}

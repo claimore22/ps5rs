@@ -1,0 +1,366 @@
+{
+  "game": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+  "sony": [
+    {
+      "exports": 29,
+      "file_name": "libSceFace.prx",
+      "import_libs": [
+        "libSceLibcInternal",
+        "libkernel"
+      ],
+      "imports": 20,
+      "kind": "sony",
+      "module_name": "libSceFace",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceLibcInternal.prx"
+      ],
+      "parseable": true,
+      "sha256": "32d8ffd54d41dc6b8ccac1bacd3c71527ae8b4c8e30c05cddeb0bb5e11c22372"
+    },
+    {
+      "exports": 21,
+      "file_name": "libSceFaceTracker.prx",
+      "import_libs": [
+        "libSceFace",
+        "libSceLibcInternal",
+        "libScePosix",
+        "libkernel"
+      ],
+      "imports": 27,
+      "kind": "sony",
+      "module_name": "libSceFaceTracker",
+      "needed_files": [
+        "libSceFace.prx",
+        "libkernel.prx",
+        "libSceLibcInternal.prx"
+      ],
+      "parseable": true,
+      "sha256": "8792a009c2b7ab18cb14f93f1fddc319164dccdd66d0390084286c9ab9de02b1"
+    },
+    {
+      "exports": 11,
+      "file_name": "libSceJobManager.prx",
+      "import_libs": [
+        "libSceAgc",
+        "libSceAgcDriver",
+        "libSceLibcInternal",
+        "libSceRazorCpu",
+        "libkernel",
+        "ulobjmgr"
+      ],
+      "imports": 144,
+      "kind": "sony",
+      "module_name": "libSceJobManager",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceLibcInternal.prx",
+        "libSceAgcDriver.prx",
+        "libSceAgc.prx",
+        "ulobjmgr.prx",
+        "libSceRazorCpu.prx"
+      ],
+      "parseable": true,
+      "sha256": "71b2b2c70dd03d94b615d0d7254fc61f94b385de9607c985c5d5c1180c4de7c6"
+    },
+    {
+      "exports": 41638,
+      "file_name": "libSceNpCppWebApi.prx",
+      "import_libs": [
+        "libSceHttp",
+        "libSceJson2",
+        "libSceLibcInternal",
+        "libSceNpWebApi2",
+        "libSceRtc",
+        "libkernel"
+      ],
+      "imports": 95,
+      "kind": "sony",
+      "module_name": "libSceNpCppWebApi",
+      "needed_files": [
+        "libSceJson2.prx",
+        "libSceRtc.prx",
+        "libSceNpWebApi2.prx",
+        "libSceHttp.prx",
+        "libkernel.prx",
+        "libSceLibcInternal.prx"
+      ],
+      "parseable": true,
+      "sha256": "377eecca6fae55060f725e2eb1060845df16be147c0ec073c297475de8c09c2e"
+    },
+    {
+      "exports": 9,
+      "file_name": "libScePfs.prx",
+      "import_libs": [
+        "libSceLibcInternal",
+        "libkernel"
+      ],
+      "imports": 15,
+      "kind": "sony",
+      "module_name": "libScePfs",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceLibcInternal.prx"
+      ],
+      "parseable": true,
+      "sha256": "500a1568c61a712157cc225b41d59819f49635e9deb817ec7e45a0ecd84e224f"
+    },
+    {
+      "exports": 2571,
+      "file_name": "libc.prx",
+      "import_libs": [
+        "libSceLibcInternalExt",
+        "libSceSysmodule",
+        "libkernel"
+      ],
+      "imports": 103,
+      "kind": "sony",
+      "module_name": "libc",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceLibcInternal.prx",
+        "libSceSysmodule.prx"
+      ],
+      "parseable": true,
+      "sha256": "97425bc3bd6d856cdf1eb1f5a8693470caaf5191e0d7b473962900d8d3fb7b19"
+    }
+  ],
+  "third_party": [
+    {
+      "description": "Wwise audio effect plugin",
+      "exports": 1,
+      "file_name": "AkMotion.prx",
+      "import_libs": [
+        "libSceAjm",
+        "libSceAudioOut2",
+        "libSceNet",
+        "libSceNetCtl",
+        "libScePad",
+        "libScePosix",
+        "libSceUserService",
+        "libc",
+        "libkernel"
+      ],
+      "imports": 17,
+      "kind": "thirdparty",
+      "module_name": "AkMotion",
+      "needed_files": [
+        "libSceAjm.native.prx",
+        "libSceAudioOut.prx",
+        "libSceNetCtl.prx",
+        "libSceNet.prx",
+        "libScePad.prx",
+        "libkernel.prx",
+        "libSceUserService.prx",
+        "libc.prx"
+      ],
+      "parseable": true,
+      "product": "Wwise",
+      "sha256": "66ce04d7df5c9ee60ccdd35600822e86ea8850233217fd71f97063f93182286c",
+      "vendor": "Audiokinetic"
+    },
+    {
+      "description": "Wwise audio effect plugin",
+      "exports": 1192,
+      "file_name": "AkSoundEngine.prx",
+      "import_libs": [
+        "libSceAcm",
+        "libSceAgc",
+        "libSceAgcDriver",
+        "libSceAjm",
+        "libSceAudio3d",
+        "libSceAudioOut",
+        "libSceAudioOut2",
+        "libScePad",
+        "libScePosix",
+        "libSceSysmodule",
+        "libSceUserService",
+        "libc",
+        "libkernel"
+      ],
+      "imports": 148,
+      "kind": "thirdparty",
+      "module_name": "AkSoundEngine",
+      "needed_files": [
+        "libSceAcm.prx",
+        "libSceAgc.prx",
+        "libSceAgcDriver.prx",
+        "libSceAjm.native.prx",
+        "libSceAudioOut.prx",
+        "libSceAudio3d.prx",
+        "libScePad.prx",
+        "libkernel.prx",
+        "libSceSysmodule.prx",
+        "libSceUserService.prx",
+        "libc.prx"
+      ],
+      "parseable": true,
+      "product": "Wwise",
+      "sha256": "ca8e2f70514f9d89fc0e0ba0bf9ce89a71f042e720da57069629c27a6e5d7866",
+      "vendor": "Audiokinetic"
+    },
+    {
+      "description": "Wwise audio effect plugin",
+      "exports": 2,
+      "file_name": "AkVorbisHwAccelerator.prx",
+      "import_libs": [
+        "libSceAjm",
+        "libSceAjmWVorbis",
+        "libc",
+        "libkernel"
+      ],
+      "imports": 6,
+      "kind": "thirdparty",
+      "module_name": "AkVorbisHwAccelerator",
+      "needed_files": [
+        "libSceAjm.native.prx",
+        "libkernel.prx",
+        "libc.prx"
+      ],
+      "parseable": true,
+      "product": "Wwise",
+      "sha256": "95a7e2e425472ca3c403b8b4ae3502ee8c83d4becaa7de51efd10071bd34a162",
+      "vendor": "Audiokinetic"
+    },
+    {
+      "description": "Unity IL2CPP user assemblies (AOT-compiled C#)",
+      "exports": 247,
+      "file_name": "Il2CppUserAssemblies.prx",
+      "import_libs": [
+        "AkSoundEngine",
+        "PS5Util",
+        "libSceNet",
+        "libSceNetCtl",
+        "libScePosix",
+        "libSceRtc",
+        "libSceSystemService",
+        "libc",
+        "libkernel"
+      ],
+      "imports": 265,
+      "kind": "thirdparty",
+      "module_name": "Il2CppUserAssemblies",
+      "needed_files": [
+        "AkSoundEngine.prx",
+        "PS5Util.prx",
+        "libc.prx",
+        "libSceNetCtl.prx",
+        "libSceNet.prx",
+        "libkernel.prx",
+        "libSceRtc.prx",
+        "libSceSystemService.prx"
+      ],
+      "parseable": true,
+      "product": "Unity IL2CPP",
+      "sha256": "766a5056d43fecd1a20f0c9efb85bd79679395aeee2bdeeffe5e06c20ddb43c6",
+      "vendor": "Unity Technologies"
+    },
+    {
+      "description": "Unity PS5 player support module",
+      "exports": 5,
+      "file_name": "PS5Util.prx",
+      "import_libs": [
+        "libc",
+        "libkernel",
+        "libkernel_unity"
+      ],
+      "imports": 8,
+      "kind": "thirdparty",
+      "module_name": "PS5Util",
+      "needed_files": [
+        "libkernel.prx",
+        "libc.prx"
+      ],
+      "parseable": true,
+      "product": "Unity PS5 Platform",
+      "sha256": "75bec0ac1678557d6d8c13639bf22b37f8422dcface90f9f5e5d13c86de1bd0e",
+      "vendor": "Unity Technologies"
+    },
+    {
+      "description": "Unity PSN package (com.unity.psn.ps5)",
+      "exports": 64,
+      "file_name": "PSNCommon.prx",
+      "import_libs": [
+        "libc",
+        "libkernel"
+      ],
+      "imports": 10,
+      "kind": "thirdparty",
+      "module_name": "PSNCommon",
+      "needed_files": [
+        "libkernel.prx",
+        "libc.prx"
+      ],
+      "parseable": true,
+      "product": "Unity PSN",
+      "sha256": "b1d764ac30a59742749e766e1873fff27755ceabc2c0aef0aa65da4c8cb7758c",
+      "vendor": "Unity Technologies"
+    },
+    {
+      "description": "Unity PSN package (com.unity.psn.ps5)",
+      "exports": 9,
+      "file_name": "PSNCore.prx",
+      "import_libs": [
+        "PSNCommon",
+        "libSceCdlgPlayerReview",
+        "libSceCommonDialog",
+        "libSceGameUpdate",
+        "libSceHttp2",
+        "libSceJson2",
+        "libSceMsgDialog.native",
+        "libSceNet",
+        "libSceNetCtl",
+        "libSceNpAuth",
+        "libSceNpCommerce",
+        "libSceNpCppWebApi",
+        "libSceNpEntitlementAccess",
+        "libSceNpGameIntent",
+        "libSceNpManager",
+        "libSceNpSessionSignaling",
+        "libSceNpTrophy2",
+        "libSceNpUniversalDataSystem",
+        "libSceNpWebApi2",
+        "libScePlayerInvitationDialog",
+        "libSceSsl",
+        "libSceSysmodule",
+        "libc",
+        "libkernel"
+      ],
+      "imports": 2473,
+      "kind": "thirdparty",
+      "module_name": "PSNCore",
+      "needed_files": [
+        "PSNCommon.prx",
+        "libSceSysmodule.prx",
+        "libSceNpTrophy2.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceNpManager.prx",
+        "libSceNpGameIntent.prx",
+        "libSceJson2.prx",
+        "libSceNpCppWebApi.prx",
+        "libSceNet.prx",
+        "libSceSsl.prx",
+        "libSceHttp2.prx",
+        "libSceNpWebApi2.prx",
+        "libSceCommonDialog.prx",
+        "libSceNpAuth.prx",
+        "libSceNpEntitlementAccess.prx",
+        "libSceNpCommerce.prx",
+        "libSceCdlgPlayerReview.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceNpSessionSignaling.prx",
+        "libSceNetCtl.prx",
+        "libSceGameUpdate.prx",
+        "libScePlayerInvitationDialog.prx",
+        "libkernel.prx",
+        "libc.prx"
+      ],
+      "parseable": true,
+      "product": "Unity PSN",
+      "sha256": "424e17e6609795f4ef305f12ed8c0f0a31f31bfbe2806980a17d178fa147ca48",
+      "vendor": "Unity Technologies"
+    }
+  ],
+  "title_id": "PPSA09804",
+  "unknown": []
+}

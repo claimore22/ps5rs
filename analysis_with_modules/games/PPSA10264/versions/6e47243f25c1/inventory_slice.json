@@ -1,0 +1,1001 @@
+{
+  "artifacts": [
+    {
+      "category": "Unknown",
+      "extension": "bk2",
+      "file_name": "media_bootscreendemo.bk2",
+      "relative_path": "Jusant 01.007 PPSA10264/asc/content/movies/media_bootscreendemo.bk2",
+      "size": 2752108
+    },
+    {
+      "category": "Archive",
+      "extension": "pak",
+      "file_name": "asc-ps5.pak",
+      "relative_path": "Jusant 01.007 PPSA10264/asc/content/paks/asc-ps5.pak",
+      "size": 76104577
+    },
+    {
+      "category": "Unknown",
+      "extension": "ucas",
+      "file_name": "asc-ps5.ucas",
+      "relative_path": "Jusant 01.007 PPSA10264/asc/content/paks/asc-ps5.ucas",
+      "size": 8843838720
+    },
+    {
+      "category": "Unknown",
+      "extension": "utoc",
+      "file_name": "asc-ps5.utoc",
+      "relative_path": "Jusant 01.007 PPSA10264/asc/content/paks/asc-ps5.utoc",
+      "size": 4908375
+    },
+    {
+      "category": "Unknown",
+      "extension": "ucas",
+      "file_name": "global.ucas",
+      "relative_path": "Jusant 01.007 PPSA10264/asc/content/paks/global.ucas",
+      "size": 2752816
+    },
+    {
+      "category": "Unknown",
+      "extension": "utoc",
+      "file_name": "global.utoc",
+      "relative_path": "Jusant 01.007 PPSA10264/asc/content/paks/global.utoc",
+      "size": 719
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "contentids.json",
+      "relative_path": "Jusant 01.007 PPSA10264/contentids.json",
+      "size": 175
+    },
+    {
+      "category": "Executable",
+      "extension": "eboot.bin",
+      "file_name": "eboot.bin",
+      "relative_path": "Jusant 01.007 PPSA10264/eboot.bin",
+      "size": 184058904
+    },
+    {
+      "category": "Executable",
+      "extension": "elf",
+      "file_name": "eboot.elf",
+      "relative_path": "Jusant 01.007 PPSA10264/eboot.elf",
+      "size": 183753008
+    },
+    {
+      "category": "Unknown",
+      "extension": "ini",
+      "file_name": "manifest.ini",
+      "relative_path": "Jusant 01.007 PPSA10264/engine/saved/config/ps5/manifest.ini",
+      "size": 22
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akaudioinput.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/prx/akaudioinput.prx",
+      "size": 10905
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akcompressor.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/prx/akcompressor.prx",
+      "size": 26153
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akconvolutionreverb.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/prx/akconvolutionreverb.prx",
+      "size": 94826
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akdelay.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/prx/akdelay.prx",
+      "size": 10885
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akexpander.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/prx/akexpander.prx",
+      "size": 26233
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akflanger.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/prx/akflanger.prx",
+      "size": 26793
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akgain.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/prx/akgain.prx",
+      "size": 10757
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akguitardistortion.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/prx/akguitardistortion.prx",
+      "size": 32641
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akharmonizer.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/prx/akharmonizer.prx",
+      "size": 93097
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akimpacter.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/prx/akimpacter.prx",
+      "size": 48105
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akmatrixreverb.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/prx/akmatrixreverb.prx",
+      "size": 54557
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akmotion.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/prx/akmotion.prx",
+      "size": 26135
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akparametriceq.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/prx/akparametriceq.prx",
+      "size": 18109
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akpeaklimiter.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/prx/akpeaklimiter.prx",
+      "size": 17421
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akpitchshifter.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/prx/akpitchshifter.prx",
+      "size": 23229
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akrecorder.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/prx/akrecorder.prx",
+      "size": 29769
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akreflect.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/prx/akreflect.prx",
+      "size": 55417
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akroomverb.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/prx/akroomverb.prx",
+      "size": 102873
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aksilencegenerator.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/prx/aksilencegenerator.prx",
+      "size": 8737
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aksinetone.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/prx/aksinetone.prx",
+      "size": 9913
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aksoundseedair.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/prx/aksoundseedair.prx",
+      "size": 71981
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aksoundseedgrain.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/prx/aksoundseedgrain.prx",
+      "size": 58093
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aksoundseedimpact.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/prx/aksoundseedimpact.prx",
+      "size": 16737
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akstereodelay.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/prx/akstereodelay.prx",
+      "size": 28413
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aksynthone.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/prx/aksynthone.prx",
+      "size": 33609
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aktimestretch.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/prx/aktimestretch.prx",
+      "size": 77981
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aktonegen.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/prx/aktonegen.prx",
+      "size": 30025
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aktremolo.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/prx/aktremolo.prx",
+      "size": 15993
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akvorbishwaccelerator.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/prx/akvorbishwaccelerator.prx",
+      "size": 6609
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "auro.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/prx/auro.prx",
+      "size": 3403729
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "izotope.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/prx/izotope.prx",
+      "size": 463445
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "masteringsuite.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/prx/masteringsuite.prx",
+      "size": 97164
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "mcdsp.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/prx/mcdsp.prx",
+      "size": 146165
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "sceaudio3d.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/prx/sceaudio3d.prx",
+      "size": 33591
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceFace.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/sce_module/libSceFace.prx",
+      "size": 324460
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceFaceTracker.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/sce_module/libSceFaceTracker.prx",
+      "size": 2615495
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceFontGsm.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/sce_module/libSceFontGsm.prx",
+      "size": 251015
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceJobManager.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/sce_module/libSceJobManager.prx",
+      "size": 72118
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceNpCppWebApi.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/sce_module/libSceNpCppWebApi.prx",
+      "size": 7921223
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libScePfs.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/sce_module/libScePfs.prx",
+      "size": 1343471
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libc.prx",
+      "relative_path": "Jusant 01.007 PPSA10264/sce_module/libc.prx",
+      "size": 1292034
+    },
+    {
+      "category": "Executable",
+      "extension": "sprx",
+      "file_name": "right.sprx",
+      "relative_path": "Jusant 01.007 PPSA10264/sce_sys/about/right.sprx",
+      "size": 12768
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "disc_info.dat",
+      "relative_path": "Jusant 01.007 PPSA10264/sce_sys/disc_info.dat",
+      "size": 6640
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "icon0.dds",
+      "relative_path": "Jusant 01.007 PPSA10264/sce_sys/icon0.dds",
+      "size": 262292
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "icon0.png",
+      "relative_path": "Jusant 01.007 PPSA10264/sce_sys/icon0.png",
+      "size": 300281
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "keystone",
+      "relative_path": "Jusant 01.007 PPSA10264/sce_sys/keystone",
+      "size": 96
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "nptitle.dat",
+      "relative_path": "Jusant 01.007 PPSA10264/sce_sys/nptitle.dat",
+      "size": 160
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "param.json",
+      "relative_path": "Jusant 01.007 PPSA10264/sce_sys/param.json",
+      "size": 2497
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "pfs-version.dat",
+      "relative_path": "Jusant 01.007 PPSA10264/sce_sys/pfs-version.dat",
+      "size": 10
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic0.dds",
+      "relative_path": "Jusant 01.007 PPSA10264/sce_sys/pic0.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "pic0.png",
+      "relative_path": "Jusant 01.007 PPSA10264/sce_sys/pic0.png",
+      "size": 7115786
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic1.dds",
+      "relative_path": "Jusant 01.007 PPSA10264/sce_sys/pic1.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic2.dds",
+      "relative_path": "Jusant 01.007 PPSA10264/sce_sys/pic2.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Audio",
+      "extension": "at9",
+      "file_name": "snd0.at9",
+      "relative_path": "Jusant 01.007 PPSA10264/sce_sys/snd0.at9",
+      "size": 1733544
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "Jusant 01.007 PPSA10264/sce_sys/trophy2/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "trophy00.ucp",
+      "relative_path": "Jusant 01.007 PPSA10264/sce_sys/trophy2/trophy00.ucp",
+      "size": 4386608
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "Jusant 01.007 PPSA10264/sce_sys/uds/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "uds00.ucp",
+      "relative_path": "Jusant 01.007 PPSA10264/sce_sys/uds/uds00.ucp",
+      "size": 30208
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "uecommandline.txt",
+      "relative_path": "Jusant 01.007 PPSA10264/uecommandline.txt",
+      "size": 25
+    },
+    {
+      "category": "Unknown",
+      "extension": "bk2",
+      "file_name": "media_bootscreendemo.bk2",
+      "relative_path": "asc/content/movies/media_bootscreendemo.bk2",
+      "size": 2752108
+    },
+    {
+      "category": "Archive",
+      "extension": "pak",
+      "file_name": "asc-ps5.pak",
+      "relative_path": "asc/content/paks/asc-ps5.pak",
+      "size": 76104577
+    },
+    {
+      "category": "Unknown",
+      "extension": "ucas",
+      "file_name": "asc-ps5.ucas",
+      "relative_path": "asc/content/paks/asc-ps5.ucas",
+      "size": 8843838720
+    },
+    {
+      "category": "Unknown",
+      "extension": "utoc",
+      "file_name": "asc-ps5.utoc",
+      "relative_path": "asc/content/paks/asc-ps5.utoc",
+      "size": 4908375
+    },
+    {
+      "category": "Unknown",
+      "extension": "ucas",
+      "file_name": "global.ucas",
+      "relative_path": "asc/content/paks/global.ucas",
+      "size": 2752816
+    },
+    {
+      "category": "Unknown",
+      "extension": "utoc",
+      "file_name": "global.utoc",
+      "relative_path": "asc/content/paks/global.utoc",
+      "size": 719
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "contentids.json",
+      "relative_path": "contentids.json",
+      "size": 175
+    },
+    {
+      "category": "Executable",
+      "extension": "eboot.bin",
+      "file_name": "eboot.bin",
+      "relative_path": "eboot.bin",
+      "size": 184058904
+    },
+    {
+      "category": "Executable",
+      "extension": "elf",
+      "file_name": "eboot.elf",
+      "relative_path": "eboot.elf",
+      "size": 183753008
+    },
+    {
+      "category": "Unknown",
+      "extension": "ini",
+      "file_name": "manifest.ini",
+      "relative_path": "engine/saved/config/ps5/manifest.ini",
+      "size": 22
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akaudioinput.prx",
+      "relative_path": "prx/akaudioinput.prx",
+      "size": 10905
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akcompressor.prx",
+      "relative_path": "prx/akcompressor.prx",
+      "size": 26153
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akconvolutionreverb.prx",
+      "relative_path": "prx/akconvolutionreverb.prx",
+      "size": 94826
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akdelay.prx",
+      "relative_path": "prx/akdelay.prx",
+      "size": 10885
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akexpander.prx",
+      "relative_path": "prx/akexpander.prx",
+      "size": 26233
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akflanger.prx",
+      "relative_path": "prx/akflanger.prx",
+      "size": 26793
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akgain.prx",
+      "relative_path": "prx/akgain.prx",
+      "size": 10757
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akguitardistortion.prx",
+      "relative_path": "prx/akguitardistortion.prx",
+      "size": 32641
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akharmonizer.prx",
+      "relative_path": "prx/akharmonizer.prx",
+      "size": 93097
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akimpacter.prx",
+      "relative_path": "prx/akimpacter.prx",
+      "size": 48105
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akmatrixreverb.prx",
+      "relative_path": "prx/akmatrixreverb.prx",
+      "size": 54557
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akmotion.prx",
+      "relative_path": "prx/akmotion.prx",
+      "size": 26135
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akparametriceq.prx",
+      "relative_path": "prx/akparametriceq.prx",
+      "size": 18109
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akpeaklimiter.prx",
+      "relative_path": "prx/akpeaklimiter.prx",
+      "size": 17421
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akpitchshifter.prx",
+      "relative_path": "prx/akpitchshifter.prx",
+      "size": 23229
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akrecorder.prx",
+      "relative_path": "prx/akrecorder.prx",
+      "size": 29769
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akreflect.prx",
+      "relative_path": "prx/akreflect.prx",
+      "size": 55417
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akroomverb.prx",
+      "relative_path": "prx/akroomverb.prx",
+      "size": 102873
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aksilencegenerator.prx",
+      "relative_path": "prx/aksilencegenerator.prx",
+      "size": 8737
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aksinetone.prx",
+      "relative_path": "prx/aksinetone.prx",
+      "size": 9913
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aksoundseedair.prx",
+      "relative_path": "prx/aksoundseedair.prx",
+      "size": 71981
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aksoundseedgrain.prx",
+      "relative_path": "prx/aksoundseedgrain.prx",
+      "size": 58093
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aksoundseedimpact.prx",
+      "relative_path": "prx/aksoundseedimpact.prx",
+      "size": 16737
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akstereodelay.prx",
+      "relative_path": "prx/akstereodelay.prx",
+      "size": 28413
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aksynthone.prx",
+      "relative_path": "prx/aksynthone.prx",
+      "size": 33609
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aktimestretch.prx",
+      "relative_path": "prx/aktimestretch.prx",
+      "size": 77981
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aktonegen.prx",
+      "relative_path": "prx/aktonegen.prx",
+      "size": 30025
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "aktremolo.prx",
+      "relative_path": "prx/aktremolo.prx",
+      "size": 15993
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "akvorbishwaccelerator.prx",
+      "relative_path": "prx/akvorbishwaccelerator.prx",
+      "size": 6609
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "auro.prx",
+      "relative_path": "prx/auro.prx",
+      "size": 3403729
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "izotope.prx",
+      "relative_path": "prx/izotope.prx",
+      "size": 463445
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "masteringsuite.prx",
+      "relative_path": "prx/masteringsuite.prx",
+      "size": 97164
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "mcdsp.prx",
+      "relative_path": "prx/mcdsp.prx",
+      "size": 146165
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "sceaudio3d.prx",
+      "relative_path": "prx/sceaudio3d.prx",
+      "size": 33591
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceFace.prx",
+      "relative_path": "sce_module/libSceFace.prx",
+      "size": 324460
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceFaceTracker.prx",
+      "relative_path": "sce_module/libSceFaceTracker.prx",
+      "size": 2615495
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceFontGsm.prx",
+      "relative_path": "sce_module/libSceFontGsm.prx",
+      "size": 251015
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceJobManager.prx",
+      "relative_path": "sce_module/libSceJobManager.prx",
+      "size": 72118
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceNpCppWebApi.prx",
+      "relative_path": "sce_module/libSceNpCppWebApi.prx",
+      "size": 7921223
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libScePfs.prx",
+      "relative_path": "sce_module/libScePfs.prx",
+      "size": 1343471
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libc.prx",
+      "relative_path": "sce_module/libc.prx",
+      "size": 1292034
+    },
+    {
+      "category": "Executable",
+      "extension": "sprx",
+      "file_name": "right.sprx",
+      "relative_path": "sce_sys/about/right.sprx",
+      "size": 12768
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "disc_info.dat",
+      "relative_path": "sce_sys/disc_info.dat",
+      "size": 6640
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "icon0.dds",
+      "relative_path": "sce_sys/icon0.dds",
+      "size": 262292
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "icon0.png",
+      "relative_path": "sce_sys/icon0.png",
+      "size": 300281
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "keystone",
+      "relative_path": "sce_sys/keystone",
+      "size": 96
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "nptitle.dat",
+      "relative_path": "sce_sys/nptitle.dat",
+      "size": 160
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "param.json",
+      "relative_path": "sce_sys/param.json",
+      "size": 2497
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "pfs-version.dat",
+      "relative_path": "sce_sys/pfs-version.dat",
+      "size": 10
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic0.dds",
+      "relative_path": "sce_sys/pic0.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "pic0.png",
+      "relative_path": "sce_sys/pic0.png",
+      "size": 7115786
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic1.dds",
+      "relative_path": "sce_sys/pic1.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic2.dds",
+      "relative_path": "sce_sys/pic2.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Audio",
+      "extension": "at9",
+      "file_name": "snd0.at9",
+      "relative_path": "sce_sys/snd0.at9",
+      "size": 1733544
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "sce_sys/trophy2/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "trophy00.ucp",
+      "relative_path": "sce_sys/trophy2/trophy00.ucp",
+      "size": 4386608
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "sce_sys/uds/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "uds00.ucp",
+      "relative_path": "sce_sys/uds/uds00.ucp",
+      "size": 30208
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "uecommandline.txt",
+      "relative_path": "uecommandline.txt",
+      "size": 25
+    }
+  ],
+  "by_category": {
+    "archive": 2,
+    "audio": 2,
+    "executable": 88,
+    "metadata": 20,
+    "texture": 12,
+    "unknown": 14
+  },
+  "by_extension": {
+    "(no_ext)": 2,
+    "at9": 2,
+    "bk2": 2,
+    "dat": 10,
+    "dds": 8,
+    "eboot.bin": 2,
+    "elf": 2,
+    "ini": 2,
+    "json": 4,
+    "pak": 2,
+    "png": 4,
+    "prx": 82,
+    "sprx": 2,
+    "txt": 2,
+    "ucas": 4,
+    "ucp": 4,
+    "utoc": 4
+  },
+  "game": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+  "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+  "total_bytes": 18711869906,
+  "total_files": 138
+}

@@ -1,0 +1,54 @@
+{
+  "details": [
+    {
+      "confidence": "medium",
+      "frequency": 8,
+      "games": [
+        "Blue Prince - [PPSA25009]",
+        "Cat Quest III - [PPSA15065]",
+        "Juicy Realm - [PPSA19268]",
+        "Metal Slug Tactics - [PPSA20643]",
+        "Neva - [PPSA16786]",
+        "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
+        "Richman 11 - [PPSA16960]",
+        "Totally Reliable Delivery Service - [PPSA28855]"
+      ],
+      "libraries": [
+        "PS5Util"
+      ],
+      "nid": "dZGYu5wObJs",
+      "remu_name": null
+    },
+    {
+      "confidence": "medium",
+      "frequency": 8,
+      "games": [
+        "Blue Prince - [PPSA25009]",
+        "Cat Quest III - [PPSA15065]",
+        "Juicy Realm - [PPSA19268]",
+        "Metal Slug Tactics - [PPSA20643]",
+        "Neva - [PPSA16786]",
+        "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
+        "Richman 11 - [PPSA16960]",
+        "Totally Reliable Delivery Service - [PPSA28855]"
+      ],
+      "libraries": [
+        "PS5Util"
+      ],
+      "nid": "zlqfTyrQSPk",
+      "remu_name": null
+    }
+  ],
+  "game": {
+    "error": null,
+    "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Juicy.Realm-PPSA19268-USA-Game (v01.000)-PS5\\eboot.bin",
+    "imports": 603,
+    "known": 601,
+    "name": "Juicy Realm - [PPSA19268]",
+    "unknown": 2,
+    "unknown_nids": [
+      "dZGYu5wObJs",
+      "zlqfTyrQSPk"
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "title_id": "PPSA20643",
+  "name": "Metal Slug Tactics - [PPSA20643]",
+  "eboot_sha256": "4390643f8697a97d3b5f75ad1bb630d18ea9b289cccc12a8fa9f92379c2dbd68",
+  "game_fingerprint": "522f3b60f4d1a1c7b15336f498197ccd7f9f2c470402083e5a7d22e9468097d0",
+  "environment_fingerprint": "c65955db3dee9d575ca652856c86c3fc2b7297fff36bb37fcb1b9319f1ff09a9",
+  "loader_fingerprint": "d245a80770d2897643c4754f10883b674208fc8fdecaad2ebd247d1990f6f5a0",
+  "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
+  "ingest_id": "ingest_20260912085621_522f3b60f4d1",
+  "ingested_at": "2026-09-12T08:56:21Z",
+  "params": {
+    "name": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
+    "title_id": "PPSA20643",
+    "content_version": "02.000.000",
+    "master_version": "02.00",
+    "sdk_version": "0x0900000000000000",
+    "title_name": "Metal Slug Tactics",
+    "display_name": "Metal Slug Tactics - [PPSA20643]",
+    "drm_type": "standard",
+    "content_id": "EP1470-PPSA20643_00-MSTSIEE000000000",
+    "creation_date": "2024-11-14 12:37:40"
+  },
+  "load_report_file": "load_report.json"
+}

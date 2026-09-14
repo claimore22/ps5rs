@@ -1,0 +1,157 @@
+{
+  "game": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+  "sony": [
+    {
+      "exports": 276,
+      "file_name": "libSceAmpr.sprx",
+      "import_libs": [
+        "libSceLibcInternal",
+        "libkernel"
+      ],
+      "imports": 85,
+      "kind": "sony",
+      "module_name": "libSceAmpr",
+      "needed_files": [
+        "libSceLibcInternal.prx",
+        "libkernel.prx"
+      ],
+      "parseable": true,
+      "sha256": "6f13898045bfa1089cd9797355fcb5ff462de9067223f392ce5c7d0cb556f277"
+    },
+    {
+      "exports": 24,
+      "file_name": "libScePlayGo.sprx",
+      "import_libs": [
+        "libc",
+        "libkernel"
+      ],
+      "imports": 13,
+      "kind": "sony",
+      "module_name": "libScePlayGo",
+      "needed_files": [
+        "libkernel.prx",
+        "libc.prx"
+      ],
+      "parseable": true,
+      "sha256": "35c437b7e9365e3183974ab5bfbf489ea1db12b7f711c829813ff14ce4d1790e"
+    },
+    {
+      "exports": 2925,
+      "file_name": "libc.prx",
+      "import_libs": [
+        "libSceLibcInternalExt",
+        "libSceSysmodule",
+        "libkernel"
+      ],
+      "imports": 119,
+      "kind": "sony",
+      "module_name": "libc",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceLibcInternal.prx",
+        "libSceSysmodule.prx"
+      ],
+      "parseable": true,
+      "sha256": "73d89a5cd9c3015d0384f88380b56a32bc983a94cd1c24815e6f453286019354"
+    }
+  ],
+  "third_party": [],
+  "title_id": "PPSA24478",
+  "unknown": [
+    {
+      "exports": 1,
+      "file_name": "pfx_fsr3_1_ps5.prx",
+      "import_libs": [
+        "libSceAgc",
+        "libSceAgcDriver",
+        "libSceAmpr",
+        "libSceMouse",
+        "libScePad",
+        "libScePsml",
+        "libSceRtc",
+        "libSceSysmodule",
+        "libSceSystemService",
+        "libSceUserService",
+        "libSceVideoOut",
+        "libc",
+        "libkernel"
+      ],
+      "imports": 63,
+      "kind": "unknown",
+      "module_name": "pfx_fsr3_1_ps5",
+      "needed_files": [
+        "libkernel.prx",
+        "libc.prx",
+        "libSceAgc.prx",
+        "libSceVideoOut.prx",
+        "libSceAgcDriver.prx",
+        "libSceAmpr.prx",
+        "libScePsml.prx",
+        "libScePad.prx",
+        "libSceUserService.prx",
+        "libSceRtc.prx",
+        "libSceMouse.prx",
+        "libSceSysmodule.prx",
+        "libSceSystemService.prx"
+      ],
+      "parseable": true,
+      "sha256": "b04072f65b23a587cf02022e0539d3576e02f7dbb69f33f784e994c3e9650b8b"
+    },
+    {
+      "exports": 0,
+      "file_name": "pre3-pxd-ps5-retail.prx",
+      "import_libs": [
+        "libSceAgc",
+        "libSceAgcDriver",
+        "libSceAmpr",
+        "libSceMouse",
+        "libScePad",
+        "libScePsml",
+        "libSceRtc",
+        "libSceSysmodule",
+        "libSceSystemService",
+        "libSceUserService",
+        "libSceVideoOut",
+        "libc",
+        "libkernel"
+      ],
+      "imports": 140,
+      "kind": "unknown",
+      "module_name": "pre3-pxd-ps5-retail",
+      "needed_files": [
+        "libkernel.prx",
+        "libc.prx",
+        "libSceAgc.prx",
+        "libSceVideoOut.prx",
+        "libSceAgcDriver.prx",
+        "libScePad.prx",
+        "libSceUserService.prx",
+        "libSceRtc.prx",
+        "libSceMouse.prx",
+        "libSceSysmodule.prx",
+        "libSceSystemService.prx",
+        "libScePsml.prx",
+        "libSceAmpr.prx"
+      ],
+      "parseable": true,
+      "sha256": "9e1c43818faea2b135a26dd645a6a788c406070cf7f78e3abe85e1b635ed84a0"
+    },
+    {
+      "exports": 2,
+      "file_name": "smsce_ps5.prx",
+      "import_libs": [
+        "libc",
+        "libkernel"
+      ],
+      "imports": 8,
+      "kind": "unknown",
+      "module_name": "smsce_ps5",
+      "needed_files": [
+        "libkernel.prx",
+        "libc.prx"
+      ],
+      "parseable": true,
+      "sha256": "a49386a6436b0de87e5cac63615d1bf3d2af64783c63b3bb52547c270e28357c"
+    }
+  ]
+}

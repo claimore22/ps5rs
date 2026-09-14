@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "title_id": "PPSA02100",
+  "name": "Stray - [PPSA02100]",
+  "eboot_sha256": "24e0ba7dddf1537357b7eb1c61f477bb9d585d0164b932f7828c6dbd04afc676",
+  "game_fingerprint": "7e38c165e4cd033c442925a76b30a3bb59ddefbe5856cc364514e4ce48b38e84",
+  "environment_fingerprint": "c65955db3dee9d575ca652856c86c3fc2b7297fff36bb37fcb1b9319f1ff09a9",
+  "loader_fingerprint": "d245a80770d2897643c4754f10883b674208fc8fdecaad2ebd247d1990f6f5a0",
+  "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
+  "ingest_id": "ingest_20260912085622_7e38c165e4cd",
+  "ingested_at": "2026-09-12T08:56:22Z",
+  "params": {
+    "name": "Stray-PPSA02100-USA-PS5",
+    "title_id": "PPSA02100",
+    "content_version": "01.002.000",
+    "master_version": "02.00",
+    "sdk_version": "0x0400000000000000",
+    "title_name": "Stray",
+    "display_name": "Stray - [PPSA02100]",
+    "drm_type": "standard",
+    "content_id": "UP2470-PPSA02100_00-STRAYSIEA0000000",
+    "creation_date": "2022-06-09 16:55:18"
+  },
+  "load_report_file": "load_report.json"
+}

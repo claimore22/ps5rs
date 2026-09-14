@@ -1,0 +1,944 @@
+{
+  "game": "Persona 3 Reload - [PPSA10872]",
+  "path": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5\\eboot.bin",
+  "load_report": {
+    "modules": [
+      {
+        "name": "libSceNpCppWebApi.prx",
+        "module_type": "Prx",
+        "load_bias": 34628173824,
+        "entry_point": null,
+        "exports_count": 41658,
+        "imports_resolved": 0,
+        "imports_known": 25,
+        "imports_stubbed": 73,
+        "relative": 774,
+        "glob_dat": 2,
+        "jump_slot": 92,
+        "abs64": 4,
+        "copy": 0,
+        "tls_relocations": 0,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 4036928,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 0,
+        "preinit_array_sz": 0,
+        "per_library": [
+          {
+            "library": "libSceHttp",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceJson2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 37
+          },
+          {
+            "library": "libSceLibcInternal",
+            "resolved": 0,
+            "known": 25,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceNpWebApi2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libSceRtc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 24
+          }
+        ]
+      },
+      {
+        "name": "libc.prx",
+        "module_type": "Prx",
+        "load_bias": 34636038144,
+        "entry_point": null,
+        "exports_count": 2572,
+        "imports_resolved": 0,
+        "imports_known": 0,
+        "imports_stubbed": 105,
+        "relative": 1699,
+        "glob_dat": 3,
+        "jump_slot": 102,
+        "abs64": 0,
+        "copy": 0,
+        "tls_relocations": 3,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 804832,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 1113040,
+        "preinit_array_sz": 8,
+        "per_library": [
+          {
+            "library": "libSceLibcInternalExt",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 101
+          }
+        ]
+      },
+      {
+        "name": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+        "module_type": "Eboot",
+        "load_bias": 34637414400,
+        "entry_point": 128,
+        "exports_count": 0,
+        "imports_resolved": 10066,
+        "imports_known": 0,
+        "imports_stubbed": 900,
+        "relative": 973701,
+        "glob_dat": 24,
+        "jump_slot": 2087,
+        "abs64": 8855,
+        "copy": 0,
+        "tls_relocations": 0,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 105073168,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 0,
+        "preinit_array_sz": 0,
+        "per_library": [
+          {
+            "library": "libSceAcm",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 6
+          },
+          {
+            "library": "libSceAgc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 194
+          },
+          {
+            "library": "libSceAgcDriver",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 38
+          },
+          {
+            "library": "libSceAjm",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 14
+          },
+          {
+            "library": "libSceAmpr",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 60
+          },
+          {
+            "library": "libSceAppContent",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceAudioIn",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceAudioOut",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceAudioOut2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 14
+          },
+          {
+            "library": "libSceAvPlayer",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 22
+          },
+          {
+            "library": "libSceCommonDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceCoredump",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceErrorDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceGameLiveStreaming",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceGameUpdate",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceHttp",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 24
+          },
+          {
+            "library": "libSceHttp2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceIme",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceImeDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 6
+          },
+          {
+            "library": "libSceJson2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 23
+          },
+          {
+            "library": "libSceMouse",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceMsgDialog.native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceNet",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 24
+          },
+          {
+            "library": "libSceNetCtl",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libSceNgs2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 15
+          },
+          {
+            "library": "libSceNpAuth",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceNpCommerce",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceNpCppWebApi",
+            "resolved": 960,
+            "known": 0,
+            "stubbed": 0
+          },
+          {
+            "library": "libSceNpEntitlementAccess",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceNpGameIntent",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceNpManager",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 15
+          },
+          {
+            "library": "libSceNpSessionSignaling",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libSceNpTrophy2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 9
+          },
+          {
+            "library": "libSceNpUniversalDataSystem",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 29
+          },
+          {
+            "library": "libSceNpWebApi2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 22
+          },
+          {
+            "library": "libScePad",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 12
+          },
+          {
+            "library": "libScePlayGo",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 10
+          },
+          {
+            "library": "libScePlayGoDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libScePlayerInvitationDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libScePosix",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 65
+          },
+          {
+            "library": "libSceRandom",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceRtc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceSaveDataDialog.native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceSaveData_native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 12
+          },
+          {
+            "library": "libSceShare",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceSigninDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceSsl",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSystemService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceUserService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 6
+          },
+          {
+            "library": "libSceVideoOut",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 13
+          },
+          {
+            "library": "libSceVideodec2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 9
+          },
+          {
+            "library": "libSceVoiceQoS",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 12
+          },
+          {
+            "library": "libSceWebBrowserDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libc",
+            "resolved": 9106,
+            "known": 0,
+            "stubbed": 0
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 108
+          }
+        ]
+      }
+    ],
+    "graph": {
+      "nodes": [
+        "libSceAcm.prx",
+        "libkernel.prx",
+        "libScePlayGo.prx",
+        "libSceAudio3d.prx",
+        "libSceRandom.prx",
+        "libSceImeDialog.prx",
+        "libSceNpCppWebApi.prx",
+        "libSceVideoOut.prx",
+        "libSceContentExport.prx",
+        "libSceAudioIn.prx",
+        "libSceVideodec2.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceMsgDialog.native.prx",
+        "libScePlayerInvitationDialog.prx",
+        "libSceNet.prx",
+        "libSceHttp2.prx",
+        "libSceErrorDialog.prx",
+        "libSceUserService.prx",
+        "libScePlayGoDialog.prx",
+        "libSceMouse.prx",
+        "libSceCommonDialog.prx",
+        "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+        "libSceAgc.prx",
+        "libSceNgs2.prx",
+        "libSceNpGameIntent.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceSystemService.prx",
+        "libSceSysmodule.prx",
+        "libSceNpTrophy2.prx",
+        "libSceLibcInternal.prx",
+        "libSceNpCommerce.prx",
+        "libScePad.prx",
+        "libSceSigninDialog.prx",
+        "libSceNetCtl.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceAppContent.prx",
+        "libSceShare.prx",
+        "libSceSsl.prx",
+        "libSceVoiceQoS.prx",
+        "libSceRtc.prx",
+        "libSceIme.prx",
+        "libSceGameUpdate.prx",
+        "libc.prx",
+        "libSceNpEntitlementAccess.prx",
+        "libSceAjm.native.prx",
+        "libSceSaveData.native.prx",
+        "libSceJson2.prx",
+        "libSceNpSessionSignaling.prx",
+        "libSceGameLiveStreaming.prx",
+        "libSceAudioOut.prx",
+        "libSceHttp.prx",
+        "libSceNpWebApi2.prx",
+        "libSceAmpr.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceNpManager.prx",
+        "libSceNpAuth.prx",
+        "libSceAgcDriver.prx"
+      ],
+      "unavailable": [
+        "libSceNetCtl.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceAudio3d.prx",
+        "libSceAjm.native.prx",
+        "libSceGameLiveStreaming.prx",
+        "libSceSystemService.prx",
+        "libSceImeDialog.prx",
+        "libSceSsl.prx",
+        "libSceNgs2.prx",
+        "libSceSysmodule.prx",
+        "libSceMouse.prx",
+        "libSceRandom.prx",
+        "libSceNpEntitlementAccess.prx",
+        "libSceNpAuth.prx",
+        "libSceVoiceQoS.prx",
+        "libSceShare.prx",
+        "libSceNpGameIntent.prx",
+        "libSceJson2.prx",
+        "libScePlayerInvitationDialog.prx",
+        "libSceNpSessionSignaling.prx",
+        "libSceRtc.prx",
+        "libSceNpTrophy2.prx",
+        "libScePlayGoDialog.prx",
+        "libSceGameUpdate.prx",
+        "libSceSaveData.native.prx",
+        "libSceAmpr.prx",
+        "libSceHttp.prx",
+        "libSceAgcDriver.prx",
+        "libkernel.prx",
+        "libSceHttp2.prx",
+        "libSceNpWebApi2.prx",
+        "libSceLibcInternal.prx",
+        "libSceVideoOut.prx",
+        "libSceAudioIn.prx",
+        "libSceAcm.prx",
+        "libSceIme.prx",
+        "libSceAudioOut.prx",
+        "libSceUserService.prx",
+        "libSceNpCommerce.prx",
+        "libSceSigninDialog.prx",
+        "libSceAppContent.prx",
+        "libSceErrorDialog.prx",
+        "libScePlayGo.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceCommonDialog.prx",
+        "libScePad.prx",
+        "libSceNpManager.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceAgc.prx",
+        "libSceNet.prx",
+        "libSceContentExport.prx",
+        "libSceVideodec2.prx",
+        "libSceAvPlayer.native.prx"
+      ],
+      "edges": [
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceJson2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceRtc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceNpWebApi2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceHttp.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceAgcDriver.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceAgc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceRtc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libScePad.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceNet.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceNetCtl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceNgs2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceAudioOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceAjm.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceVideoOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceUserService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceSsl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceHttp.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libScePlayGo.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceNpManager.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceAppContent.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceSaveData.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceSaveDataDialog.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceCommonDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceGameLiveStreaming.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceSystemService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceIme.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceImeDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceMsgDialog.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceNpCommerce.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceShare.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceMouse.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceRandom.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceWebBrowserDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceContentExport.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceNpGameIntent.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceAudio3d.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceVideodec2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceAvPlayer.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceNpAuth.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceJson2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceNpUniversalDataSystem.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceNpTrophy2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceErrorDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceGameUpdate.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libScePlayerInvitationDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceVoiceQoS.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceHttp2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceNpCppWebApi.prx",
+          "status": "loaded"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceNpWebApi2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceNpSessionSignaling.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceNpEntitlementAccess.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libScePlayGoDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceSigninDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceAudioIn.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceAcm.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libc.prx",
+          "status": "loaded"
+        },
+        {
+          "from": "Persona.3.Reload-PPSA10872 – USA-Game-v01.000-PS5",
+          "to": "libSceAmpr.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        }
+      ]
+    },
+    "totals": {
+      "modules": 3,
+      "resolved": 10066,
+      "known": 25,
+      "stubbed": 1078,
+      "exports": 44230,
+      "unavailable": 54
+    }
+  },
+  "error": null,
+  "total_exports": 44230,
+  "freshness": {
+    "report_format": 1,
+    "loader_fingerprint": "d245a80770d2897643c4754f10883b674208fc8fdecaad2ebd247d1990f6f5a0",
+    "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
+    "environment_fingerprint": "c65955db3dee9d575ca652856c86c3fc2b7297fff36bb37fcb1b9319f1ff09a9",
+    "game_fingerprint": "5916474e84686d10d6a60c5c46de44dffb2f221f7c66908d5342e60de85ebacb"
+  }
+}

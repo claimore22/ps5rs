@@ -1,0 +1,955 @@
+{
+  "game": "Dusk Diver 2 - [PPSA06565]",
+  "path": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Dusk.Diver.2-PPSA06565-EUR-Game-v1.000.000-PS5\\Dusk Diver 2 01.000 PPSA06565\\eboot.bin",
+  "load_report": {
+    "modules": [
+      {
+        "name": "libSceNpCppWebApi.prx",
+        "module_type": "Prx",
+        "load_bias": 34628173824,
+        "entry_point": null,
+        "exports_count": 42911,
+        "imports_resolved": 0,
+        "imports_known": 31,
+        "imports_stubbed": 73,
+        "relative": 729,
+        "glob_dat": 2,
+        "jump_slot": 91,
+        "abs64": 11,
+        "copy": 0,
+        "tls_relocations": 0,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 3005824,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 0,
+        "preinit_array_sz": 0,
+        "per_library": [
+          {
+            "library": "libSceHttp",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceJson2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 37
+          },
+          {
+            "library": "libSceLibcInternal",
+            "resolved": 0,
+            "known": 31,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceNpWebApi2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libSceRtc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 24
+          }
+        ]
+      },
+      {
+        "name": "libc.prx",
+        "module_type": "Prx",
+        "load_bias": 34635186176,
+        "entry_point": null,
+        "exports_count": 2565,
+        "imports_resolved": 0,
+        "imports_known": 0,
+        "imports_stubbed": 104,
+        "relative": 1789,
+        "glob_dat": 3,
+        "jump_slot": 101,
+        "abs64": 0,
+        "copy": 0,
+        "tls_relocations": 3,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 834976,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 1113312,
+        "preinit_array_sz": 8,
+        "per_library": [
+          {
+            "library": "libSceLibcInternalExt",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 100
+          }
+        ]
+      },
+      {
+        "name": "Dusk Diver 2 01.000 PPSA06565",
+        "module_type": "Eboot",
+        "load_bias": 34636562432,
+        "entry_point": 128,
+        "exports_count": 0,
+        "imports_resolved": 10742,
+        "imports_known": 0,
+        "imports_stubbed": 963,
+        "relative": 795153,
+        "glob_dat": 24,
+        "jump_slot": 2100,
+        "abs64": 9581,
+        "copy": 0,
+        "tls_relocations": 0,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 94410272,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 0,
+        "preinit_array_sz": 0,
+        "per_library": [
+          {
+            "library": "libSceAcm",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 6
+          },
+          {
+            "library": "libSceAgc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 188
+          },
+          {
+            "library": "libSceAgcDriver",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 34
+          },
+          {
+            "library": "libSceAjm",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 14
+          },
+          {
+            "library": "libSceAmpr",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 57
+          },
+          {
+            "library": "libSceAppContent",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceAudioIn",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceAudioOut",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceAudioOut2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 13
+          },
+          {
+            "library": "libSceAudiodec",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 6
+          },
+          {
+            "library": "libSceAvPlayer",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 22
+          },
+          {
+            "library": "libSceCdlgPlayerReview",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceCommonDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceCoredump",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceErrorDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceGameLiveStreaming",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceGameUpdate",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceHttp",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 24
+          },
+          {
+            "library": "libSceHttp2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceIme",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceImeDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 6
+          },
+          {
+            "library": "libSceJson2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 23
+          },
+          {
+            "library": "libSceMouse",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceMsgDialog.native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceNet",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 25
+          },
+          {
+            "library": "libSceNetCtl",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceNgs2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 15
+          },
+          {
+            "library": "libSceNpAuth",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceNpCommerce",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceNpCppWebApi",
+            "resolved": 942,
+            "known": 0,
+            "stubbed": 0
+          },
+          {
+            "library": "libSceNpEntitlementAccess",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceNpGameIntent",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceNpManager",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 11
+          },
+          {
+            "library": "libSceNpSessionSignaling",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libSceNpTrophy2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 9
+          },
+          {
+            "library": "libSceNpUniversalDataSystem",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 29
+          },
+          {
+            "library": "libSceNpWebApi2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 22
+          },
+          {
+            "library": "libScePad",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 12
+          },
+          {
+            "library": "libScePlayGo",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 10
+          },
+          {
+            "library": "libScePlayerInvitationDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libScePosix",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 68
+          },
+          {
+            "library": "libSceRandom",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceRtc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceSaveDataDialog.native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceSaveData_native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 11
+          },
+          {
+            "library": "libSceShare",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceSsl",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSystemService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceUserService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 6
+          },
+          {
+            "library": "libSceVideoOut",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 13
+          },
+          {
+            "library": "libSceVideodec2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 10
+          },
+          {
+            "library": "libSceVoiceQoS",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 12
+          },
+          {
+            "library": "libSceWebBrowserDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libc",
+            "resolved": 9800,
+            "known": 0,
+            "stubbed": 0
+          },
+          {
+            "library": "libfmod",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 22
+          },
+          {
+            "library": "libfmodstudio",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 71
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 90
+          }
+        ]
+      }
+    ],
+    "graph": {
+      "nodes": [
+        "libSceRandom.prx",
+        "libScePad.prx",
+        "libSceNet.prx",
+        "libSceAjm.native.prx",
+        "libSceAppContent.prx",
+        "libSceShare.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceHttp.prx",
+        "libc.prx",
+        "libSceAgc.prx",
+        "libSceMouse.prx",
+        "libSceAudioIn.prx",
+        "libSceCommonDialog.prx",
+        "libSceNetCtl.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceNgs2.prx",
+        "libSceHttp2.prx",
+        "libScePlayerInvitationDialog.prx",
+        "libSceNpSessionSignaling.prx",
+        "libSceIme.prx",
+        "libSceNpManager.prx",
+        "Dusk Diver 2 01.000 PPSA06565",
+        "libSceNpAuth.prx",
+        "libSceNpCommerce.prx",
+        "libSceCdlgPlayerReview.prx",
+        "libSceNpWebApi2.prx",
+        "libSceAmpr.prx",
+        "libSceAcm.prx",
+        "libScePlayGo.prx",
+        "libSceNpGameIntent.prx",
+        "libSceVideodec2.prx",
+        "libSceVoiceQoS.prx",
+        "libfmodstudio.prx",
+        "libSceNpEntitlementAccess.prx",
+        "libSceGameUpdate.prx",
+        "libfmod.prx",
+        "libSceSaveData.native.prx",
+        "libSceAudioOut.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceSysmodule.prx",
+        "libSceErrorDialog.prx",
+        "libSceUserService.prx",
+        "libSceJson2.prx",
+        "libSceNpCppWebApi.prx",
+        "libSceContentExport.prx",
+        "libSceGameLiveStreaming.prx",
+        "libSceLibcInternal.prx",
+        "libSceAudiodec.native.prx",
+        "libkernel.prx",
+        "libSceVideoOut.prx",
+        "libSceAgcDriver.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceRtc.prx",
+        "libSceSystemService.prx",
+        "libSceNpTrophy2.prx",
+        "libSceImeDialog.prx",
+        "libSceSsl.prx"
+      ],
+      "unavailable": [
+        "libSceGameUpdate.prx",
+        "libSceShare.prx",
+        "libScePad.prx",
+        "libkernel.prx",
+        "libSceVideodec2.prx",
+        "libSceAmpr.prx",
+        "libSceImeDialog.prx",
+        "libSceSaveData.native.prx",
+        "libSceRtc.prx",
+        "libSceUserService.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceErrorDialog.prx",
+        "libSceHttp.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceNetCtl.prx",
+        "libSceSsl.prx",
+        "libSceNpSessionSignaling.prx",
+        "libSceIme.prx",
+        "libSceNpEntitlementAccess.prx",
+        "libSceAgc.prx",
+        "libfmodstudio.prx",
+        "libSceContentExport.prx",
+        "libSceNpTrophy2.prx",
+        "libSceNet.prx",
+        "libSceAudioIn.prx",
+        "libSceAudiodec.native.prx",
+        "libSceAgcDriver.prx",
+        "libSceSystemService.prx",
+        "libSceGameLiveStreaming.prx",
+        "libSceAppContent.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceVideoOut.prx",
+        "libSceNpAuth.prx",
+        "libScePlayerInvitationDialog.prx",
+        "libSceVoiceQoS.prx",
+        "libSceAcm.prx",
+        "libSceHttp2.prx",
+        "libfmod.prx",
+        "libSceNpCommerce.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceCommonDialog.prx",
+        "libSceMouse.prx",
+        "libSceJson2.prx",
+        "libSceLibcInternal.prx",
+        "libSceNpGameIntent.prx",
+        "libSceAjm.native.prx",
+        "libSceNgs2.prx",
+        "libSceAudioOut.prx",
+        "libScePlayGo.prx",
+        "libSceNpManager.prx",
+        "libSceRandom.prx",
+        "libSceCdlgPlayerReview.prx",
+        "libSceNpWebApi2.prx",
+        "libSceSysmodule.prx"
+      ],
+      "edges": [
+        {
+          "from": "libc.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceAgcDriver.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceAgc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceRtc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libScePad.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceNet.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceNetCtl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceNgs2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceAudioOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceAjm.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceVideoOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceUserService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceSsl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceHttp.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libScePlayGo.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceNpManager.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceAppContent.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceSaveData.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceSaveDataDialog.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceCommonDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceGameLiveStreaming.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceSystemService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceIme.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceImeDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceMsgDialog.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceNpCommerce.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceShare.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceMouse.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceRandom.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceWebBrowserDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceContentExport.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceNpGameIntent.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceVideodec2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceAudiodec.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceAvPlayer.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceNpAuth.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceJson2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceNpUniversalDataSystem.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceNpTrophy2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceErrorDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceGameUpdate.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libScePlayerInvitationDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceCdlgPlayerReview.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceVoiceQoS.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceHttp2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceNpCppWebApi.prx",
+          "status": "loaded"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceNpWebApi2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceNpSessionSignaling.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceNpEntitlementAccess.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceAudioIn.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceAcm.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libfmod.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libfmodstudio.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libc.prx",
+          "status": "loaded"
+        },
+        {
+          "from": "Dusk Diver 2 01.000 PPSA06565",
+          "to": "libSceAmpr.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceJson2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceRtc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceNpWebApi2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceHttp.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        }
+      ]
+    },
+    "totals": {
+      "modules": 3,
+      "resolved": 10742,
+      "known": 31,
+      "stubbed": 1140,
+      "exports": 45476,
+      "unavailable": 55
+    }
+  },
+  "error": null
+}

@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "title_id": "PPSA22102",
+  "name": "Squirrel with a Gun - [PPSA22102]",
+  "eboot_sha256": "7ad68d87f114cab2bedbe1ff6c878be58b10ce1a87755d6ebd9fbd0f9bac3af8",
+  "game_fingerprint": "7a852910c3e85b6fb0544a7317021528fa095fcb03f418343225980b8b43514a",
+  "environment_fingerprint": "c65955db3dee9d575ca652856c86c3fc2b7297fff36bb37fcb1b9319f1ff09a9",
+  "loader_fingerprint": "d245a80770d2897643c4754f10883b674208fc8fdecaad2ebd247d1990f6f5a0",
+  "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
+  "ingest_id": "ingest_20260912085622_7a852910c3e8",
+  "ingested_at": "2026-09-12T08:56:22Z",
+  "params": {
+    "name": "Squirrel.With.A.Gun-PPSA22102-USA-Game-PS5",
+    "title_id": "PPSA22102",
+    "content_version": "01.000.000",
+    "master_version": "01.01",
+    "sdk_version": "0x0900000000000000",
+    "title_name": "Squirrel with a Gun",
+    "display_name": "Squirrel with a Gun - [PPSA22102]",
+    "drm_type": "standard",
+    "content_id": "UP2080-PPSA22102_00-SWAGP50000000000",
+    "creation_date": "2024-08-09 19:16:32"
+  },
+  "load_report_file": "load_report.json"
+}

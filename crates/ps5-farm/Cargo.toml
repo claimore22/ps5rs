@@ -1,0 +1,21 @@
+[package]
+name = "ps5-farm"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Incremental ingest orchestration: batch loading, archival records, report fingerprints"
+
+[dependencies]
+ps5-format = { path = "../ps5-format" }
+ps5-self = { path = "../ps5-self" }
+ps5-elf = { path = "../ps5-elf" }
+ps5-analysis = { path = "../ps5-analysis" }
+ps5-loader = { path = "../ps5-loader" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[build-dependencies]
+sha2 = "0.10"
+
+[lints]
+workspace = true

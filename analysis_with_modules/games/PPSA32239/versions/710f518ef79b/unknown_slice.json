@@ -1,0 +1,66 @@
+{
+  "details": [
+    {
+      "confidence": "medium",
+      "frequency": 1,
+      "games": [
+        "Mega Man Star Force Legacy Collection - [PPSA32239]"
+      ],
+      "libraries": [
+        "libSceVideoOutVrrStatus"
+      ],
+      "nid": "-q-vbO859Tw",
+      "remu_name": null
+    },
+    {
+      "confidence": "medium",
+      "frequency": 1,
+      "games": [
+        "Mega Man Star Force Legacy Collection - [PPSA32239]"
+      ],
+      "libraries": [
+        "libSceVideoOutVrrStatus"
+      ],
+      "nid": "LibwuIonIBw",
+      "remu_name": null
+    },
+    {
+      "confidence": "medium",
+      "frequency": 1,
+      "games": [
+        "Mega Man Star Force Legacy Collection - [PPSA32239]"
+      ],
+      "libraries": [
+        "libSceVideoOutVrrStatus"
+      ],
+      "nid": "gWT7X8H0bYs",
+      "remu_name": null
+    },
+    {
+      "confidence": "medium",
+      "frequency": 1,
+      "games": [
+        "Mega Man Star Force Legacy Collection - [PPSA32239]"
+      ],
+      "libraries": [
+        "libSceVideoOutVrrStatus"
+      ],
+      "nid": "kP2L8t3j-aM",
+      "remu_name": null
+    }
+  ],
+  "game": {
+    "error": null,
+    "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5\\Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5\\eboot.bin",
+    "imports": 851,
+    "known": 847,
+    "name": "Mega Man Star Force Legacy Collection - [PPSA32239]",
+    "unknown": 4,
+    "unknown_nids": [
+      "-q-vbO859Tw",
+      "LibwuIonIBw",
+      "gWT7X8H0bYs",
+      "kP2L8t3j-aM"
+    ]
+  }
+}

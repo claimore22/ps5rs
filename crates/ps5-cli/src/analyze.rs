@@ -9,10 +9,12 @@ pub(crate) fn cmd_scan(
     output: &std::path::Path,
     extra_nids: &[PathBuf],
     include_modules: bool,
+    append: bool,
 ) {
     let catalog = load_catalog(extra_nids);
     let options = ps5_analysis::ScanOptions {
         include_prx: include_modules,
+        append,
     };
 
     eprintln!("Scanning {} for game binaries...", path.display());

@@ -1,0 +1,368 @@
+{
+  "game": "Neko Rescue Tale - [PPSA13871]",
+  "path": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Neko.Rescue.Tale-PPSA13871-EUR-Game (v01.000)-PS5\\eboot.bin",
+  "load_report": {
+    "modules": [
+      {
+        "name": "libc.prx",
+        "module_type": "Prx",
+        "load_bias": 34628173824,
+        "entry_point": null,
+        "exports_count": 2571,
+        "imports_resolved": 0,
+        "imports_known": 0,
+        "imports_stubbed": 104,
+        "relative": 1721,
+        "glob_dat": 3,
+        "jump_slot": 101,
+        "abs64": 0,
+        "copy": 0,
+        "tls_relocations": 3,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 831392,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 1129600,
+        "preinit_array_sz": 8,
+        "per_library": [
+          {
+            "library": "libSceLibcInternalExt",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 100
+          }
+        ]
+      },
+      {
+        "name": "Neko.Rescue.Tale-PPSA13871-EUR-Game (v01.000)-PS5",
+        "module_type": "Eboot",
+        "load_bias": 34629550080,
+        "entry_point": 112,
+        "exports_count": 0,
+        "imports_resolved": 1691,
+        "imports_known": 0,
+        "imports_stubbed": 354,
+        "relative": 448610,
+        "glob_dat": 44,
+        "jump_slot": 502,
+        "abs64": 1499,
+        "copy": 0,
+        "tls_relocations": 0,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 8450432,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 0,
+        "preinit_array_sz": 0,
+        "per_library": [
+          {
+            "library": "libSceAgc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 192
+          },
+          {
+            "library": "libSceAgcDriver",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 38
+          },
+          {
+            "library": "libSceAudioOut",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceCommonDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceNpGameIntent",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceNpTrophy2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceNpUniversalDataSystem",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 12
+          },
+          {
+            "library": "libScePad",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 9
+          },
+          {
+            "library": "libScePosix",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceSaveDataDialog.native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 6
+          },
+          {
+            "library": "libSceSaveData_native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 11
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSystemService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceUlt",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceUserService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceVideoOut",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libc",
+            "resolved": 1691,
+            "known": 0,
+            "stubbed": 0
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 55
+          }
+        ]
+      }
+    ],
+    "graph": {
+      "nodes": [
+        "libSceIme.prx",
+        "libSceAgc.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceSystemService.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libkernel.prx",
+        "Neko.Rescue.Tale-PPSA13871-EUR-Game (v01.000)-PS5",
+        "libSceImeBackend.prx",
+        "libScePad.prx",
+        "libc.prx",
+        "libSceVideoOut.prx",
+        "libSceSaveData.native.prx",
+        "libSceImeDialog.prx",
+        "libSceCommonDialog.prx",
+        "libSceNpGameIntent.prx",
+        "libSceAgcDriver.prx",
+        "libSceAudioOut.prx",
+        "libSceSysmodule.prx",
+        "libSceUlt.prx",
+        "libSceNpTrophy2.prx",
+        "libSceLibcInternal.prx",
+        "libSceUserService.prx"
+      ],
+      "unavailable": [
+        "libSceUserService.prx",
+        "libSceVideoOut.prx",
+        "libkernel.prx",
+        "libSceUlt.prx",
+        "libSceImeDialog.prx",
+        "libSceSysmodule.prx",
+        "libSceNpTrophy2.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceIme.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceAudioOut.prx",
+        "libSceSaveData.native.prx",
+        "libSceCommonDialog.prx",
+        "libSceLibcInternal.prx",
+        "libSceAgcDriver.prx",
+        "libSceSystemService.prx",
+        "libSceNpGameIntent.prx",
+        "libSceAgc.prx",
+        "libSceImeBackend.prx",
+        "libScePad.prx"
+      ],
+      "edges": [
+        {
+          "from": "Neko.Rescue.Tale-PPSA13871-EUR-Game (v01.000)-PS5",
+          "to": "libScePad.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Neko.Rescue.Tale-PPSA13871-EUR-Game (v01.000)-PS5",
+          "to": "libSceAgc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Neko.Rescue.Tale-PPSA13871-EUR-Game (v01.000)-PS5",
+          "to": "libSceAgcDriver.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Neko.Rescue.Tale-PPSA13871-EUR-Game (v01.000)-PS5",
+          "to": "libSceVideoOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Neko.Rescue.Tale-PPSA13871-EUR-Game (v01.000)-PS5",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Neko.Rescue.Tale-PPSA13871-EUR-Game (v01.000)-PS5",
+          "to": "libSceNpUniversalDataSystem.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Neko.Rescue.Tale-PPSA13871-EUR-Game (v01.000)-PS5",
+          "to": "libSceNpTrophy2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Neko.Rescue.Tale-PPSA13871-EUR-Game (v01.000)-PS5",
+          "to": "libSceSaveData.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Neko.Rescue.Tale-PPSA13871-EUR-Game (v01.000)-PS5",
+          "to": "libSceSaveDataDialog.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Neko.Rescue.Tale-PPSA13871-EUR-Game (v01.000)-PS5",
+          "to": "libSceIme.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Neko.Rescue.Tale-PPSA13871-EUR-Game (v01.000)-PS5",
+          "to": "libSceImeBackend.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Neko.Rescue.Tale-PPSA13871-EUR-Game (v01.000)-PS5",
+          "to": "libSceImeDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Neko.Rescue.Tale-PPSA13871-EUR-Game (v01.000)-PS5",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Neko.Rescue.Tale-PPSA13871-EUR-Game (v01.000)-PS5",
+          "to": "libSceAudioOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Neko.Rescue.Tale-PPSA13871-EUR-Game (v01.000)-PS5",
+          "to": "libSceCommonDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Neko.Rescue.Tale-PPSA13871-EUR-Game (v01.000)-PS5",
+          "to": "libSceUlt.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Neko.Rescue.Tale-PPSA13871-EUR-Game (v01.000)-PS5",
+          "to": "libSceSystemService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Neko.Rescue.Tale-PPSA13871-EUR-Game (v01.000)-PS5",
+          "to": "libSceNpGameIntent.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Neko.Rescue.Tale-PPSA13871-EUR-Game (v01.000)-PS5",
+          "to": "libc.prx",
+          "status": "loaded"
+        },
+        {
+          "from": "Neko.Rescue.Tale-PPSA13871-EUR-Game (v01.000)-PS5",
+          "to": "libSceUserService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        }
+      ]
+    },
+    "totals": {
+      "modules": 2,
+      "resolved": 1691,
+      "known": 0,
+      "stubbed": 458,
+      "exports": 2571,
+      "unavailable": 20
+    }
+  },
+  "error": null
+}

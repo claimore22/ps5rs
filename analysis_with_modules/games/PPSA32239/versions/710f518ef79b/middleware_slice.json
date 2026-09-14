@@ -1,0 +1,27 @@
+{
+  "game": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+  "sony": [
+    {
+      "exports": 2949,
+      "file_name": "libc.prx",
+      "import_libs": [
+        "libSceLibcInternalExt",
+        "libSceSysmodule",
+        "libkernel"
+      ],
+      "imports": 116,
+      "kind": "sony",
+      "module_name": "libc",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceLibcInternal.prx",
+        "libSceSysmodule.prx"
+      ],
+      "parseable": true,
+      "sha256": "03f2202ca1cbd497e136bc47a91e65677b0e8d7e4ae0fe3dea67b0e8f7b609cf"
+    }
+  ],
+  "third_party": [],
+  "title_id": "PPSA32239",
+  "unknown": []
+}

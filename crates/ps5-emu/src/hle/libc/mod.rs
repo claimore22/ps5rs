@@ -59,7 +59,7 @@ impl HleModule for LibcModule {
             ("fopen", HostCall::Fopen),
             ("fclose", HostCall::Fclose),
             ("fread", HostCall::Fread),
-                        ("fread", HostCall::Fread),
+            ("fread", HostCall::Fread),
             ("fwrite", HostCall::Fwrite),
             ("fseek", HostCall::Fseek),
             ("ftell", HostCall::Ftell),

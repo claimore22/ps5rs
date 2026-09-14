@@ -1,0 +1,590 @@
+{
+  "game": "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
+  "path": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5\\eboot.bin",
+  "load_report": {
+    "modules": [
+      {
+        "name": "libc.prx",
+        "module_type": "Prx",
+        "load_bias": 34628173824,
+        "entry_point": null,
+        "exports_count": 2574,
+        "imports_resolved": 0,
+        "imports_known": 0,
+        "imports_stubbed": 105,
+        "relative": 1697,
+        "glob_dat": 3,
+        "jump_slot": 102,
+        "abs64": 0,
+        "copy": 0,
+        "tls_relocations": 3,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 811872,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 1113024,
+        "preinit_array_sz": 8,
+        "per_library": [
+          {
+            "library": "libSceLibcInternalExt",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 101
+          }
+        ]
+      },
+      {
+        "name": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+        "module_type": "Eboot",
+        "load_bias": 34629550080,
+        "entry_point": 112,
+        "exports_count": 1,
+        "imports_resolved": 1347,
+        "imports_known": 0,
+        "imports_stubbed": 458,
+        "relative": 48804,
+        "glob_dat": 4,
+        "jump_slot": 598,
+        "abs64": 1203,
+        "copy": 0,
+        "tls_relocations": 0,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 26390688,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 0,
+        "preinit_array_sz": 0,
+        "per_library": [
+          {
+            "library": "Il2cppUserAssemblies",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "PS5Util",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceAgc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 67
+          },
+          {
+            "library": "libSceAgcDriver",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 9
+          },
+          {
+            "library": "libSceAjm",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 15
+          },
+          {
+            "library": "libSceAmpr",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceAppContent",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libSceAudioIn",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceAudioOut",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceAudioOut2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 13
+          },
+          {
+            "library": "libSceAvPlayer",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 20
+          },
+          {
+            "library": "libSceCommonDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceHttp",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceHttp2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 23
+          },
+          {
+            "library": "libSceIme",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceImeDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceMouse",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceMsgDialog.native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceNet",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 21
+          },
+          {
+            "library": "libSceNetCtl",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceNpManager",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceNpWebApi2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libScePad",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 17
+          },
+          {
+            "library": "libScePosix",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 37
+          },
+          {
+            "library": "libSceRandom",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceRemoteplay",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceSaveData_native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceSsl",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 12
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSystemService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 19
+          },
+          {
+            "library": "libSceUserService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 14
+          },
+          {
+            "library": "libSceVideoOut",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 17
+          },
+          {
+            "library": "libSceWebBrowserDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libc",
+            "resolved": 1347,
+            "known": 0,
+            "stubbed": 0
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 93
+          }
+        ]
+      }
+    ],
+    "graph": {
+      "nodes": [
+        "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+        "libScePad.prx",
+        "libSceCommonDialog.prx",
+        "libSceVideoOut.prx",
+        "libkernel.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceAgcDriver.prx",
+        "libSceSysmodule.prx",
+        "libSceUserService.prx",
+        "libSceHttp.prx",
+        "libSceAppContent.prx",
+        "libSceNpWebApi2.prx",
+        "libSceAmpr.prx",
+        "Il2cppUserAssemblies.prx",
+        "libSceNpManager.prx",
+        "libSceIme.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceRazorCpu.prx",
+        "libSceAjm.native.prx",
+        "libSceLibcInternal.prx",
+        "PS5Util.prx",
+        "libSceSsl.prx",
+        "libSceSaveData.native.prx",
+        "libSceRandom.prx",
+        "libSceAudioOut.prx",
+        "libSceHttp2.prx",
+        "libSceImeDialog.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceRemoteplay.prx",
+        "libSceNetCtl.prx",
+        "libSceAudio3d.prx",
+        "libSceRtc.prx",
+        "libSceSystemService.prx",
+        "libSceAudioIn.prx",
+        "libSceMouse.prx",
+        "libSceNet.prx",
+        "libc.prx",
+        "libSceAgc.prx"
+      ],
+      "unavailable": [
+        "libSceNet.prx",
+        "libSceUserService.prx",
+        "libSceRandom.prx",
+        "libSceAmpr.prx",
+        "libSceSystemService.prx",
+        "libSceImeDialog.prx",
+        "libSceNpManager.prx",
+        "libSceNpWebApi2.prx",
+        "libSceIme.prx",
+        "libSceRemoteplay.prx",
+        "libSceSsl.prx",
+        "libSceAgc.prx",
+        "libSceSysmodule.prx",
+        "libSceRtc.prx",
+        "libSceSaveData.native.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceRazorCpu.prx",
+        "libSceAudio3d.prx",
+        "libkernel.prx",
+        "libSceAudioOut.prx",
+        "libSceNetCtl.prx",
+        "libSceMouse.prx",
+        "libScePad.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceAgcDriver.prx",
+        "libSceLibcInternal.prx",
+        "libSceAjm.native.prx",
+        "Il2cppUserAssemblies.prx",
+        "libSceVideoOut.prx",
+        "libSceAudioIn.prx",
+        "libSceHttp.prx",
+        "libSceCommonDialog.prx",
+        "PS5Util.prx",
+        "libSceAppContent.prx",
+        "libSceHttp2.prx"
+      ],
+      "edges": [
+        {
+          "from": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+          "to": "Il2cppUserAssemblies.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+          "to": "PS5Util.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+          "to": "libSceNetCtl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+          "to": "libSceNet.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+          "to": "libSceUserService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+          "to": "libSceVideoOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+          "to": "libSceAudioOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+          "to": "libSceAudioIn.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+          "to": "libScePad.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+          "to": "libSceIme.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+          "to": "libSceImeDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+          "to": "libSceRtc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+          "to": "libSceSystemService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+          "to": "libSceHttp.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+          "to": "libSceHttp2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+          "to": "libSceSsl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+          "to": "libSceSaveData.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+          "to": "libSceCommonDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+          "to": "libSceMsgDialog.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+          "to": "libSceAvPlayer.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+          "to": "libSceAppContent.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+          "to": "libSceWebBrowserDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+          "to": "libSceAudio3d.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+          "to": "libSceRemoteplay.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+          "to": "libSceNpManager.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+          "to": "libSceMouse.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+          "to": "libSceAgcDriver.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+          "to": "libSceAgc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+          "to": "libSceAjm.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+          "to": "libSceRazorCpu.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+          "to": "libSceNpWebApi2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+          "to": "libSceRandom.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+          "to": "libc.prx",
+          "status": "loaded"
+        },
+        {
+          "from": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+          "to": "libSceAmpr.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        }
+      ]
+    },
+    "totals": {
+      "modules": 2,
+      "resolved": 1347,
+      "known": 0,
+      "stubbed": 563,
+      "exports": 2575,
+      "unavailable": 36
+    }
+  },
+  "error": null,
+  "total_exports": 2575,
+  "freshness": {
+    "report_format": 1,
+    "loader_fingerprint": "37a85e37ad1df177c24ca92b5e06dd2322849bcbc949ec1461e015d7a1db1eee",
+    "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
+    "environment_fingerprint": "3aaac4cd58fab0d58acdb4ea2271b30447f0e35fa900d2cd9f160d90a489df07",
+    "game_fingerprint": "d90a4b427728c49b06efcd123d835d0b204d71de0a36c04521568dc5be43bee7"
+  }
+}

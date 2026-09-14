@@ -1,0 +1,590 @@
+{
+  "game": "Richman 11 - [PPSA16960]",
+  "path": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Richman 11 PS5 _PPSA16960_\\eboot.bin",
+  "load_report": {
+    "modules": [
+      {
+        "name": "libc.prx",
+        "module_type": "Prx",
+        "load_bias": 34628173824,
+        "entry_point": null,
+        "exports_count": 2584,
+        "imports_resolved": 0,
+        "imports_known": 0,
+        "imports_stubbed": 105,
+        "relative": 1722,
+        "glob_dat": 3,
+        "jump_slot": 102,
+        "abs64": 0,
+        "copy": 0,
+        "tls_relocations": 3,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 827296,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 1129648,
+        "preinit_array_sz": 8,
+        "per_library": [
+          {
+            "library": "libSceLibcInternalExt",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 101
+          }
+        ]
+      },
+      {
+        "name": "Richman 11 PS5 _PPSA16960_",
+        "module_type": "Eboot",
+        "load_bias": 34629550080,
+        "entry_point": 112,
+        "exports_count": 1,
+        "imports_resolved": 1284,
+        "imports_known": 0,
+        "imports_stubbed": 467,
+        "relative": 47791,
+        "glob_dat": 4,
+        "jump_slot": 597,
+        "abs64": 1150,
+        "copy": 0,
+        "tls_relocations": 0,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 25673376,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 0,
+        "preinit_array_sz": 0,
+        "per_library": [
+          {
+            "library": "Il2CppUserAssemblies",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "PS5Util",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceAgc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 67
+          },
+          {
+            "library": "libSceAgcDriver",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 9
+          },
+          {
+            "library": "libSceAjm",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 15
+          },
+          {
+            "library": "libSceAmpr",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceAppContent",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libSceAudioIn",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceAudioOut",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceAudioOut2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 13
+          },
+          {
+            "library": "libSceAvPlayer",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 23
+          },
+          {
+            "library": "libSceCommonDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceHttp",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceHttp2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 23
+          },
+          {
+            "library": "libSceIme",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceImeDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceMouse",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceMsgDialog.native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceNet",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 21
+          },
+          {
+            "library": "libSceNetCtl",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceNpManager",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceNpWebApi2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libScePad",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 17
+          },
+          {
+            "library": "libScePosix",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 42
+          },
+          {
+            "library": "libSceRandom",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceRemoteplay",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceSaveData_native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceSsl",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 11
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSystemService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 19
+          },
+          {
+            "library": "libSceUserService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 14
+          },
+          {
+            "library": "libSceVideoOut",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 17
+          },
+          {
+            "library": "libSceWebBrowserDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libc",
+            "resolved": 1284,
+            "known": 0,
+            "stubbed": 0
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 95
+          }
+        ]
+      }
+    ],
+    "graph": {
+      "nodes": [
+        "libc.prx",
+        "libSceAgcDriver.prx",
+        "libSceUserService.prx",
+        "libSceImeDialog.prx",
+        "libSceIme.prx",
+        "libkernel.prx",
+        "libSceAgc.prx",
+        "libSceRandom.prx",
+        "libSceHttp2.prx",
+        "libSceNpManager.prx",
+        "libSceRazorCpu.prx",
+        "libSceRemoteplay.prx",
+        "libSceSystemService.prx",
+        "libSceAmpr.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceAppContent.prx",
+        "libSceLibcInternal.prx",
+        "libSceHttp.prx",
+        "libSceAudio3d.prx",
+        "Richman 11 PS5 _PPSA16960_",
+        "libSceNetCtl.prx",
+        "Il2CppUserAssemblies.prx",
+        "PS5Util.prx",
+        "libSceSysmodule.prx",
+        "libSceAudioIn.prx",
+        "libSceCommonDialog.prx",
+        "libSceMouse.prx",
+        "libSceAudioOut.prx",
+        "libSceNet.prx",
+        "libSceMsgDialog.native.prx",
+        "libScePad.prx",
+        "libSceSsl.prx",
+        "libSceAjm.native.prx",
+        "libSceNpWebApi2.prx",
+        "libSceVideoOut.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceSaveData.native.prx",
+        "libSceRtc.prx"
+      ],
+      "unavailable": [
+        "libSceAppContent.prx",
+        "libSceRtc.prx",
+        "libSceNpManager.prx",
+        "libSceNpWebApi2.prx",
+        "libSceNetCtl.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceAmpr.prx",
+        "libSceRandom.prx",
+        "libSceAgcDriver.prx",
+        "libSceHttp2.prx",
+        "libSceIme.prx",
+        "libSceAgc.prx",
+        "Il2CppUserAssemblies.prx",
+        "libSceRazorCpu.prx",
+        "PS5Util.prx",
+        "libkernel.prx",
+        "libSceHttp.prx",
+        "libSceSsl.prx",
+        "libSceLibcInternal.prx",
+        "libSceAudioIn.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceCommonDialog.prx",
+        "libSceNet.prx",
+        "libSceAudioOut.prx",
+        "libSceRemoteplay.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceMouse.prx",
+        "libScePad.prx",
+        "libSceSystemService.prx",
+        "libSceSaveData.native.prx",
+        "libSceAudio3d.prx",
+        "libSceImeDialog.prx",
+        "libSceSysmodule.prx",
+        "libSceUserService.prx",
+        "libSceAjm.native.prx",
+        "libSceVideoOut.prx"
+      ],
+      "edges": [
+        {
+          "from": "libc.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "Il2CppUserAssemblies.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "PS5Util.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceNetCtl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceNet.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceUserService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceVideoOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceAudioOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceAudioIn.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libScePad.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceIme.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceImeDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceRtc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceSystemService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceHttp.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceHttp2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceSsl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceSaveData.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceCommonDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceMsgDialog.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceAvPlayer.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceAppContent.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceWebBrowserDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceAudio3d.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceRemoteplay.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceNpManager.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceMouse.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceAgcDriver.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceAgc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceAjm.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceRazorCpu.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceNpWebApi2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceRandom.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libc.prx",
+          "status": "loaded"
+        },
+        {
+          "from": "Richman 11 PS5 _PPSA16960_",
+          "to": "libSceAmpr.prx",
+          "status": "missing"
+        }
+      ]
+    },
+    "totals": {
+      "modules": 2,
+      "resolved": 1284,
+      "known": 0,
+      "stubbed": 572,
+      "exports": 2585,
+      "unavailable": 36
+    }
+  },
+  "error": null,
+  "total_exports": 2585,
+  "freshness": {
+    "report_format": 1,
+    "loader_fingerprint": "37a85e37ad1df177c24ca92b5e06dd2322849bcbc949ec1461e015d7a1db1eee",
+    "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
+    "environment_fingerprint": "3aaac4cd58fab0d58acdb4ea2271b30447f0e35fa900d2cd9f160d90a489df07",
+    "game_fingerprint": "0b22feea3d187a4c682f6d4a3bc3fb8937a7cbff14a56db55e63109922ed8187"
+  }
+}
