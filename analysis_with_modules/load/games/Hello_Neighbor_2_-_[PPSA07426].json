@@ -1,0 +1,905 @@
+{
+  "game": "Hello Neighbor 2 - [PPSA07426]",
+  "path": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5\\eboot.bin",
+  "load_report": {
+    "modules": [
+      {
+        "name": "libSceNpCppWebApi.prx",
+        "module_type": "Prx",
+        "load_bias": 34628173824,
+        "entry_point": null,
+        "exports_count": 41638,
+        "imports_resolved": 0,
+        "imports_known": 25,
+        "imports_stubbed": 73,
+        "relative": 774,
+        "glob_dat": 2,
+        "jump_slot": 92,
+        "abs64": 4,
+        "copy": 0,
+        "tls_relocations": 0,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 4060784,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 0,
+        "preinit_array_sz": 0,
+        "per_library": [
+          {
+            "library": "libSceHttp",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceJson2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 37
+          },
+          {
+            "library": "libSceLibcInternal",
+            "resolved": 0,
+            "known": 25,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceNpWebApi2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libSceRtc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 24
+          }
+        ]
+      },
+      {
+        "name": "libc.prx",
+        "module_type": "Prx",
+        "load_bias": 34636038144,
+        "entry_point": null,
+        "exports_count": 2571,
+        "imports_resolved": 0,
+        "imports_known": 0,
+        "imports_stubbed": 104,
+        "relative": 1721,
+        "glob_dat": 3,
+        "jump_slot": 101,
+        "abs64": 0,
+        "copy": 0,
+        "tls_relocations": 3,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 831392,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 1129600,
+        "preinit_array_sz": 8,
+        "per_library": [
+          {
+            "library": "libSceLibcInternalExt",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 100
+          }
+        ]
+      },
+      {
+        "name": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+        "module_type": "Eboot",
+        "load_bias": 34637414400,
+        "entry_point": 128,
+        "exports_count": 1,
+        "imports_resolved": 10768,
+        "imports_known": 0,
+        "imports_stubbed": 888,
+        "relative": 839627,
+        "glob_dat": 24,
+        "jump_slot": 2029,
+        "abs64": 9603,
+        "copy": 0,
+        "tls_relocations": 0,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 91568720,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 0,
+        "preinit_array_sz": 0,
+        "per_library": [
+          {
+            "library": "libSceAcm",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 6
+          },
+          {
+            "library": "libSceAgc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 192
+          },
+          {
+            "library": "libSceAgcDriver",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 38
+          },
+          {
+            "library": "libSceAjm",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 20
+          },
+          {
+            "library": "libSceAmpr",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 60
+          },
+          {
+            "library": "libSceAppContent",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceAudioIn",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceAudioOut",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceAudioOut2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 15
+          },
+          {
+            "library": "libSceAvPlayer",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 22
+          },
+          {
+            "library": "libSceCommonDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceCoredump",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceErrorDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceGameLiveStreaming",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceGameUpdate",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceHttp",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 24
+          },
+          {
+            "library": "libSceHttp2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceIme",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceImeDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 6
+          },
+          {
+            "library": "libSceJson2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 23
+          },
+          {
+            "library": "libSceMouse",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceMsgDialog.native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceNet",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 24
+          },
+          {
+            "library": "libSceNetCtl",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceNgs2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 15
+          },
+          {
+            "library": "libSceNpAuth",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceNpCommerce",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceNpCppWebApi",
+            "resolved": 942,
+            "known": 0,
+            "stubbed": 0
+          },
+          {
+            "library": "libSceNpEntitlementAccess",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 10
+          },
+          {
+            "library": "libSceNpGameIntent",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceNpManager",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 11
+          },
+          {
+            "library": "libSceNpSessionSignaling",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libSceNpTrophy2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 9
+          },
+          {
+            "library": "libSceNpUniversalDataSystem",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 29
+          },
+          {
+            "library": "libSceNpWebApi2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 22
+          },
+          {
+            "library": "libScePad",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 12
+          },
+          {
+            "library": "libScePlayGo",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 10
+          },
+          {
+            "library": "libScePlayerInvitationDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libScePosix",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 66
+          },
+          {
+            "library": "libSceRandom",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceRtc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceSaveDataDialog.native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceSaveData_native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 11
+          },
+          {
+            "library": "libSceShare",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceSsl",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSystemService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceUserService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceVideoOut",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 17
+          },
+          {
+            "library": "libSceVoiceQoS",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 12
+          },
+          {
+            "library": "libSceWebBrowserDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libc",
+            "resolved": 9826,
+            "known": 0,
+            "stubbed": 0
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 108
+          }
+        ]
+      }
+    ],
+    "graph": {
+      "nodes": [
+        "libSceAjm.native.prx",
+        "libSceNpManager.prx",
+        "libc.prx",
+        "libSceNpEntitlementAccess.prx",
+        "libSceUserService.prx",
+        "libSceGameLiveStreaming.prx",
+        "libSceImeDialog.prx",
+        "libScePlayerInvitationDialog.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceNpGameIntent.prx",
+        "libSceAudioOut.prx",
+        "libSceContentExport.prx",
+        "libSceNpTrophy2.prx",
+        "libSceNgs2.prx",
+        "libSceAcm.prx",
+        "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+        "libSceRtc.prx",
+        "libkernel.prx",
+        "libSceErrorDialog.prx",
+        "libSceNpAuth.prx",
+        "libSceNet.prx",
+        "libSceAgcDriver.prx",
+        "libSceNetCtl.prx",
+        "libSceHttp2.prx",
+        "libSceLibcInternal.prx",
+        "libSceNpSessionSignaling.prx",
+        "libSceSysmodule.prx",
+        "libSceAgc.prx",
+        "libSceGameUpdate.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceMouse.prx",
+        "libSceAudioIn.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceAmpr.prx",
+        "libSceNpCppWebApi.prx",
+        "libSceNpWebApi2.prx",
+        "libSceJson2.prx",
+        "libSceRandom.prx",
+        "libSceAvPlayer.native.prx",
+        "libScePad.prx",
+        "libSceIme.prx",
+        "libSceNpCommerce.prx",
+        "libSceCommonDialog.prx",
+        "libSceHttp.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceCdlgPlayerReview.prx",
+        "libSceSsl.prx",
+        "libScePlayGo.prx",
+        "libSceAppContent.prx",
+        "libSceVoiceQoS.prx",
+        "libSceVideoOut.prx",
+        "libSceSaveData.native.prx",
+        "libSceShare.prx",
+        "libSceSystemService.prx"
+      ],
+      "unavailable": [
+        "libSceGameLiveStreaming.prx",
+        "libSceIme.prx",
+        "libSceCdlgPlayerReview.prx",
+        "libkernel.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceAcm.prx",
+        "libSceGameUpdate.prx",
+        "libSceSaveData.native.prx",
+        "libScePlayerInvitationDialog.prx",
+        "libSceLibcInternal.prx",
+        "libSceAmpr.prx",
+        "libSceVideoOut.prx",
+        "libSceNpTrophy2.prx",
+        "libSceHttp2.prx",
+        "libSceMouse.prx",
+        "libSceNpGameIntent.prx",
+        "libSceShare.prx",
+        "libSceNpWebApi2.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libScePlayGo.prx",
+        "libSceAudioIn.prx",
+        "libSceAppContent.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceRandom.prx",
+        "libSceNpCommerce.prx",
+        "libSceAgc.prx",
+        "libSceVoiceQoS.prx",
+        "libSceNet.prx",
+        "libSceContentExport.prx",
+        "libSceNpEntitlementAccess.prx",
+        "libScePad.prx",
+        "libSceErrorDialog.prx",
+        "libSceUserService.prx",
+        "libSceHttp.prx",
+        "libSceNpSessionSignaling.prx",
+        "libSceNetCtl.prx",
+        "libSceSysmodule.prx",
+        "libSceAgcDriver.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceNgs2.prx",
+        "libSceRtc.prx",
+        "libSceSsl.prx",
+        "libSceNpManager.prx",
+        "libSceCommonDialog.prx",
+        "libSceImeDialog.prx",
+        "libSceAudioOut.prx",
+        "libSceSystemService.prx",
+        "libSceAjm.native.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceNpAuth.prx",
+        "libSceJson2.prx"
+      ],
+      "edges": [
+        {
+          "from": "libc.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceAgcDriver.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceAgc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceRtc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libScePad.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceNet.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceNetCtl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceNgs2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceAudioOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceAjm.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceVideoOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceUserService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceSsl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceHttp.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libScePlayGo.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceNpManager.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceAppContent.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceSaveData.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceSaveDataDialog.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceCommonDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceGameLiveStreaming.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceSystemService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceIme.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceImeDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceMsgDialog.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceNpCommerce.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceShare.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceMouse.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceRandom.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceWebBrowserDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceContentExport.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceNpGameIntent.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceAcm.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceAvPlayer.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceNpAuth.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceJson2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceNpUniversalDataSystem.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceNpTrophy2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceErrorDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceGameUpdate.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libScePlayerInvitationDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceCdlgPlayerReview.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceVoiceQoS.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceHttp2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceNpCppWebApi.prx",
+          "status": "loaded"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceNpWebApi2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceNpSessionSignaling.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceNpEntitlementAccess.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceAudioIn.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libc.prx",
+          "status": "loaded"
+        },
+        {
+          "from": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+          "to": "libSceAmpr.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceJson2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceRtc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceNpWebApi2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceHttp.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        }
+      ]
+    },
+    "totals": {
+      "modules": 3,
+      "resolved": 10768,
+      "known": 25,
+      "stubbed": 1065,
+      "exports": 44210,
+      "unavailable": 51
+    }
+  },
+  "error": null,
+  "total_exports": 44210,
+  "freshness": {
+    "report_format": 1,
+    "loader_fingerprint": "37a85e37ad1df177c24ca92b5e06dd2322849bcbc949ec1461e015d7a1db1eee",
+    "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
+    "environment_fingerprint": "3aaac4cd58fab0d58acdb4ea2271b30447f0e35fa900d2cd9f160d90a489df07",
+    "game_fingerprint": "deec974b9513fd6e10db548ea229076d0e79fbdd60649eb110b93c7405bba662"
+  }
+}

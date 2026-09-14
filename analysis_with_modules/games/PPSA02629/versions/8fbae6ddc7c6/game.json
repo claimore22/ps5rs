@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "title_id": "PPSA02629",
+  "name": "Trek To Yomi - [PPSA02629]",
+  "eboot_sha256": "1590dd9131bddc9efdd29a9ec909ac96baa693786f0e373aa260a8fdd434b963",
+  "game_fingerprint": "8fbae6ddc7c6ceacb6e1bbbaca96407732a4ac7f1b56421a332977e3de52cff2",
+  "environment_fingerprint": "c65955db3dee9d575ca652856c86c3fc2b7297fff36bb37fcb1b9319f1ff09a9",
+  "loader_fingerprint": "d245a80770d2897643c4754f10883b674208fc8fdecaad2ebd247d1990f6f5a0",
+  "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
+  "ingest_id": "ingest_20260913031139_8fbae6ddc7c6",
+  "ingested_at": "2026-09-13T03:11:39Z",
+  "params": {
+    "name": "Trek.To.Yomi-PPSA02629-EUR-Game-v02.000-PS5",
+    "title_id": "PPSA02629",
+    "content_version": "02.000.000",
+    "master_version": "02.00",
+    "sdk_version": "0x0400000000000000",
+    "title_name": "Trek To Yomi",
+    "display_name": "Trek To Yomi - [PPSA02629]",
+    "drm_type": "standard",
+    "content_id": "EP3643-PPSA02629_00-TREKTOYOMI000000",
+    "creation_date": "2022-07-06 10:10:31"
+  },
+  "load_report_file": "load_report.json"
+}

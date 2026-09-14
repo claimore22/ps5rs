@@ -1,0 +1,27 @@
+{
+  "game": "Neko.Rescue.Tale-PPSA13871-EUR-Game (v01.000)-PS5",
+  "sony": [
+    {
+      "exports": 2571,
+      "file_name": "libc.prx",
+      "import_libs": [
+        "libSceLibcInternalExt",
+        "libSceSysmodule",
+        "libkernel"
+      ],
+      "imports": 103,
+      "kind": "sony",
+      "module_name": "libc",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceLibcInternal.prx",
+        "libSceSysmodule.prx"
+      ],
+      "parseable": true,
+      "sha256": "a0a37be3159fd7ab6835705826691074a53888257bd06c373568a635da69973b"
+    }
+  ],
+  "third_party": [],
+  "title_id": "PPSA13871",
+  "unknown": []
+}

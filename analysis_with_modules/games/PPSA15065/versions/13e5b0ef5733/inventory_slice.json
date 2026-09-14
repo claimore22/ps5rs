@@ -1,0 +1,4319 @@
+{
+  "artifacts": [
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "global-metadata.dat",
+      "relative_path": "Media/Metadata/global-metadata.dat",
+      "size": 14856064
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "Il2cppUserAssemblies.prx",
+      "relative_path": "Media/Modules/Il2cppUserAssemblies.prx",
+      "size": 75788171
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "Il2cppUserAssemblies.prx.esbak",
+      "relative_path": "Media/Modules/Il2cppUserAssemblies.prx.esbak",
+      "size": 75691476
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "PS5Util.prx",
+      "relative_path": "Media/Modules/PS5Util.prx",
+      "size": 7009
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "PS5Util.prx.esbak",
+      "relative_path": "Media/Modules/PS5Util.prx.esbak",
+      "size": 68012
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "PSN.prx",
+      "relative_path": "Media/Plugins/PSN.prx",
+      "size": 483979
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "PSN.prx.esbak",
+      "relative_path": "Media/Plugins/PSN.prx.esbak",
+      "size": 528308
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "SaveData.prx",
+      "relative_path": "Media/Plugins/SaveData.prx",
+      "size": 33378
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "SaveData.prx.esbak",
+      "relative_path": "Media/Plugins/SaveData.prx.esbak",
+      "size": 83100
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "lib_burst_generated.prx",
+      "relative_path": "Media/Plugins/lib_burst_generated.prx",
+      "size": 77989
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "lib_burst_generated.prx.esbak",
+      "relative_path": "Media/Plugins/lib_burst_generated.prx.esbak",
+      "size": 123360
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "Entitas.dll-resources.dat",
+      "relative_path": "Media/Resources/Entitas.dll-resources.dat",
+      "size": 34
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "System.Data.dll-resources.dat",
+      "relative_path": "Media/Resources/System.Data.dll-resources.dat",
+      "size": 93718
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "mscorlib.dll-resources.dat",
+      "relative_path": "Media/Resources/mscorlib.dll-resources.dat",
+      "size": 337563
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "unity default resources",
+      "relative_path": "Media/Resources/unity default resources",
+      "size": 859272
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "unity_builtin_extra",
+      "relative_path": "Media/Resources/unity_builtin_extra",
+      "size": 659932
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "RuntimeInitializeOnLoads.json",
+      "relative_path": "Media/RuntimeInitializeOnLoads.json",
+      "size": 2815
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "ScriptingAssemblies.json",
+      "relative_path": "Media/ScriptingAssemblies.json",
+      "size": 4538
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "16x10_Landscape_1440.mp4",
+      "relative_path": "Media/StreamingAssets/AppleArcadeSplash/16x10_Landscape_1440.mp4",
+      "size": 522147
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "16x10_Landscape_2880.mp4",
+      "relative_path": "Media/StreamingAssets/AppleArcadeSplash/16x10_Landscape_2880.mp4",
+      "size": 1232735
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "16x9_Landscape_1920.mp4",
+      "relative_path": "Media/StreamingAssets/AppleArcadeSplash/16x9_Landscape_1920.mp4",
+      "size": 663777
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "16x9_Landscape_2560.mp4",
+      "relative_path": "Media/StreamingAssets/AppleArcadeSplash/16x9_Landscape_2560.mp4",
+      "size": 875947
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "16x9_Landscape_4096.mp4",
+      "relative_path": "Media/StreamingAssets/AppleArcadeSplash/16x9_Landscape_4096.mp4",
+      "size": 1845034
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "16x9_Landscape_5120.mp4",
+      "relative_path": "Media/StreamingAssets/AppleArcadeSplash/16x9_Landscape_5120.mp4",
+      "size": 3206981
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "19.5x9_Landscape.mp4",
+      "relative_path": "Media/StreamingAssets/AppleArcadeSplash/19.5x9_Landscape.mp4",
+      "size": 1057623
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "4.3x3_Landscape.mp4",
+      "relative_path": "Media/StreamingAssets/AppleArcadeSplash/4.3x3_Landscape.mp4",
+      "size": 1213965
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "4x3_Landscape.mp4",
+      "relative_path": "Media/StreamingAssets/AppleArcadeSplash/4x3_Landscape.mp4",
+      "size": 1281398
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Astropaw_Keyboard.chroma",
+      "relative_path": "Media/StreamingAssets/Astropaw_Keyboard.chroma",
+      "size": 2138
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "BaseLayer_ChromaLink.chroma",
+      "relative_path": "Media/StreamingAssets/BaseLayer_ChromaLink.chroma",
+      "size": 874
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "BaseLayer_Headset.chroma",
+      "relative_path": "Media/StreamingAssets/BaseLayer_Headset.chroma",
+      "size": 874
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "BaseLayer_Keyboard.chroma",
+      "relative_path": "Media/StreamingAssets/BaseLayer_Keyboard.chroma",
+      "size": 19162
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "BaseLayer_Keypad.chroma",
+      "relative_path": "Media/StreamingAssets/BaseLayer_Keypad.chroma",
+      "size": 3034
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "BaseLayer_Mouse.chroma",
+      "relative_path": "Media/StreamingAssets/BaseLayer_Mouse.chroma",
+      "size": 9226
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "BaseLayer_Mousepad.chroma",
+      "relative_path": "Media/StreamingAssets/BaseLayer_Mousepad.chroma",
+      "size": 2314
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "BlackRuins_ChromaLink.chroma",
+      "relative_path": "Media/StreamingAssets/BlackRuins_ChromaLink.chroma",
+      "size": 58
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "BlackRuins_Headset.chroma",
+      "relative_path": "Media/StreamingAssets/BlackRuins_Headset.chroma",
+      "size": 58
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "BlackRuins_Keyboard.chroma",
+      "relative_path": "Media/StreamingAssets/BlackRuins_Keyboard.chroma",
+      "size": 1074
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "BlackRuins_Keypad.chroma",
+      "relative_path": "Media/StreamingAssets/BlackRuins_Keypad.chroma",
+      "size": 178
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "BlackRuins_Mouse.chroma",
+      "relative_path": "Media/StreamingAssets/BlackRuins_Mouse.chroma",
+      "size": 522
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "BlackRuins_Mousepad.chroma",
+      "relative_path": "Media/StreamingAssets/BlackRuins_Mousepad.chroma",
+      "size": 138
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Blank_ChromaLink.chroma",
+      "relative_path": "Media/StreamingAssets/Blank_ChromaLink.chroma",
+      "size": 34
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Blank_Headset.chroma",
+      "relative_path": "Media/StreamingAssets/Blank_Headset.chroma",
+      "size": 34
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Blank_Keyboard.chroma",
+      "relative_path": "Media/StreamingAssets/Blank_Keyboard.chroma",
+      "size": 542
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Blank_Keypad.chroma",
+      "relative_path": "Media/StreamingAssets/Blank_Keypad.chroma",
+      "size": 94
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Blank_Mouse.chroma",
+      "relative_path": "Media/StreamingAssets/Blank_Mouse.chroma",
+      "size": 266
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Blank_Mousepad.chroma",
+      "relative_path": "Media/StreamingAssets/Blank_Mousepad.chroma",
+      "size": 74
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "CQ3_SaveIcon_PS5.png",
+      "relative_path": "Media/StreamingAssets/CQ3_SaveIcon_PS5.png",
+      "size": 387455
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Cattrap_Keyboard.chroma",
+      "relative_path": "Media/StreamingAssets/Cattrap_Keyboard.chroma",
+      "size": 23418
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Cave_ChromaLink.chroma",
+      "relative_path": "Media/StreamingAssets/Cave_ChromaLink.chroma",
+      "size": 58
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Cave_Headset.chroma",
+      "relative_path": "Media/StreamingAssets/Cave_Headset.chroma",
+      "size": 58
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Cave_Keyboard.chroma",
+      "relative_path": "Media/StreamingAssets/Cave_Keyboard.chroma",
+      "size": 1074
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Cave_Keypad.chroma",
+      "relative_path": "Media/StreamingAssets/Cave_Keypad.chroma",
+      "size": 178
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Cave_Mouse.chroma",
+      "relative_path": "Media/StreamingAssets/Cave_Mouse.chroma",
+      "size": 522
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Cave_Mousepad.chroma",
+      "relative_path": "Media/StreamingAssets/Cave_Mousepad.chroma",
+      "size": 138
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Celestail_Keyboard.chroma",
+      "relative_path": "Media/StreamingAssets/Celestail_Keyboard.chroma",
+      "size": 45230
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Desert_ChromaLink.chroma",
+      "relative_path": "Media/StreamingAssets/Desert_ChromaLink.chroma",
+      "size": 58
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Desert_Headset.chroma",
+      "relative_path": "Media/StreamingAssets/Desert_Headset.chroma",
+      "size": 58
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Desert_Keyboard.chroma",
+      "relative_path": "Media/StreamingAssets/Desert_Keyboard.chroma",
+      "size": 1074
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Desert_Keypad.chroma",
+      "relative_path": "Media/StreamingAssets/Desert_Keypad.chroma",
+      "size": 178
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Desert_Mouse.chroma",
+      "relative_path": "Media/StreamingAssets/Desert_Mouse.chroma",
+      "size": 522
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Desert_Mousepad.chroma",
+      "relative_path": "Media/StreamingAssets/Desert_Mousepad.chroma",
+      "size": 138
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "EpicOnlineServicesConfig.json",
+      "relative_path": "Media/StreamingAssets/EOS/EpicOnlineServicesConfig.json",
+      "size": 832
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "eos_android_config.json",
+      "relative_path": "Media/StreamingAssets/EOS/eos_android_config.json",
+      "size": 603
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "eos_ios_config.json",
+      "relative_path": "Media/StreamingAssets/EOS/eos_ios_config.json",
+      "size": 603
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "eos_linux_config.json",
+      "relative_path": "Media/StreamingAssets/EOS/eos_linux_config.json",
+      "size": 603
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "eos_macos_config.json",
+      "relative_path": "Media/StreamingAssets/EOS/eos_macos_config.json",
+      "size": 603
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "EnvironmentSnow_Keyboard.chroma",
+      "relative_path": "Media/StreamingAssets/EnvironmentSnow_Keyboard.chroma",
+      "size": 12778
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "FadeInOutGray_ChromaLink.chroma",
+      "relative_path": "Media/StreamingAssets/FadeInOutGray_ChromaLink.chroma",
+      "size": 586
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "FadeInOutGray_Headset.chroma",
+      "relative_path": "Media/StreamingAssets/FadeInOutGray_Headset.chroma",
+      "size": 586
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "FadeInOutGray_Keyboard.chroma",
+      "relative_path": "Media/StreamingAssets/FadeInOutGray_Keyboard.chroma",
+      "size": 12778
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "FadeInOutGray_Keypad.chroma",
+      "relative_path": "Media/StreamingAssets/FadeInOutGray_Keypad.chroma",
+      "size": 2026
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "FadeInOutGray_Mouse.chroma",
+      "relative_path": "Media/StreamingAssets/FadeInOutGray_Mouse.chroma",
+      "size": 6154
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "FadeInOutGray_Mousepad.chroma",
+      "relative_path": "Media/StreamingAssets/FadeInOutGray_Mousepad.chroma",
+      "size": 1546
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Fire_ChromaLink.chroma",
+      "relative_path": "Media/StreamingAssets/Fire_ChromaLink.chroma",
+      "size": 346
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Fire_Headset.chroma",
+      "relative_path": "Media/StreamingAssets/Fire_Headset.chroma",
+      "size": 346
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Fire_Keyboard.chroma",
+      "relative_path": "Media/StreamingAssets/Fire_Keyboard.chroma",
+      "size": 7458
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Fire_Keypad.chroma",
+      "relative_path": "Media/StreamingAssets/Fire_Keypad.chroma",
+      "size": 1186
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Fire_Mouse.chroma",
+      "relative_path": "Media/StreamingAssets/Fire_Mouse.chroma",
+      "size": 3594
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Fire_Mousepad.chroma",
+      "relative_path": "Media/StreamingAssets/Fire_Mousepad.chroma",
+      "size": 906
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Flamepurr_Keyboard.chroma",
+      "relative_path": "Media/StreamingAssets/Flamepurr_Keyboard.chroma",
+      "size": 4266
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "ForceWoofer_Keyboard.chroma",
+      "relative_path": "Media/StreamingAssets/ForceWoofer_Keyboard.chroma",
+      "size": 13310
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Freezepaw_Keyboard.chroma",
+      "relative_path": "Media/StreamingAssets/Freezepaw_Keyboard.chroma",
+      "size": 3202
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Furry Shield_Keyboard.chroma",
+      "relative_path": "Media/StreamingAssets/Furry Shield_Keyboard.chroma",
+      "size": 31930
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Grassland_ChromaLink.chroma",
+      "relative_path": "Media/StreamingAssets/Grassland_ChromaLink.chroma",
+      "size": 58
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Grassland_Headset.chroma",
+      "relative_path": "Media/StreamingAssets/Grassland_Headset.chroma",
+      "size": 58
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Grassland_Keyboard.chroma",
+      "relative_path": "Media/StreamingAssets/Grassland_Keyboard.chroma",
+      "size": 1074
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Grassland_Keypad.chroma",
+      "relative_path": "Media/StreamingAssets/Grassland_Keypad.chroma",
+      "size": 178
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Grassland_Mouse.chroma",
+      "relative_path": "Media/StreamingAssets/Grassland_Mouse.chroma",
+      "size": 522
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Grassland_Mousepad.chroma",
+      "relative_path": "Media/StreamingAssets/Grassland_Mousepad.chroma",
+      "size": 138
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Gravi-ruff_Keyboard.chroma",
+      "relative_path": "Media/StreamingAssets/Gravi-ruff_Keyboard.chroma",
+      "size": 25014
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Healpaw_Keyboard.chroma",
+      "relative_path": "Media/StreamingAssets/Healpaw_Keyboard.chroma",
+      "size": 29270
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "HottoDoggo_ChromaLink.chroma",
+      "relative_path": "Media/StreamingAssets/HottoDoggo_ChromaLink.chroma",
+      "size": 58
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "HottoDoggo_Headset.chroma",
+      "relative_path": "Media/StreamingAssets/HottoDoggo_Headset.chroma",
+      "size": 58
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "HottoDoggo_Keyboard.chroma",
+      "relative_path": "Media/StreamingAssets/HottoDoggo_Keyboard.chroma",
+      "size": 1074
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "HottoDoggo_Keypad.chroma",
+      "relative_path": "Media/StreamingAssets/HottoDoggo_Keypad.chroma",
+      "size": 178
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "HottoDoggo_Mouse.chroma",
+      "relative_path": "Media/StreamingAssets/HottoDoggo_Mouse.chroma",
+      "size": 522
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "HottoDoggo_Mousepad.chroma",
+      "relative_path": "Media/StreamingAssets/HottoDoggo_Mousepad.chroma",
+      "size": 138
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "KitCat_ChromaLink.chroma",
+      "relative_path": "Media/StreamingAssets/KitCat_ChromaLink.chroma",
+      "size": 58
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "KitCat_Headset.chroma",
+      "relative_path": "Media/StreamingAssets/KitCat_Headset.chroma",
+      "size": 58
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "KitCat_Keyboard.chroma",
+      "relative_path": "Media/StreamingAssets/KitCat_Keyboard.chroma",
+      "size": 1074
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "KitCat_Keypad.chroma",
+      "relative_path": "Media/StreamingAssets/KitCat_Keypad.chroma",
+      "size": 178
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "KitCat_Mouse.chroma",
+      "relative_path": "Media/StreamingAssets/KitCat_Mouse.chroma",
+      "size": 522
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "KitCat_Mousepad.chroma",
+      "relative_path": "Media/StreamingAssets/KitCat_Mousepad.chroma",
+      "size": 138
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Lightnyan_Keyboard.chroma",
+      "relative_path": "Media/StreamingAssets/Lightnyan_Keyboard.chroma",
+      "size": 2670
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "LowHealth_ChromaLink.chroma",
+      "relative_path": "Media/StreamingAssets/LowHealth_ChromaLink.chroma",
+      "size": 202
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "LowHealth_Headset.chroma",
+      "relative_path": "Media/StreamingAssets/LowHealth_Headset.chroma",
+      "size": 202
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "LowHealth_Keyboard.chroma",
+      "relative_path": "Media/StreamingAssets/LowHealth_Keyboard.chroma",
+      "size": 4266
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "LowHealth_Keypad.chroma",
+      "relative_path": "Media/StreamingAssets/LowHealth_Keypad.chroma",
+      "size": 682
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "LowHealth_Mouse.chroma",
+      "relative_path": "Media/StreamingAssets/LowHealth_Mouse.chroma",
+      "size": 2058
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "LowHealth_Mousepad.chroma",
+      "relative_path": "Media/StreamingAssets/LowHealth_Mousepad.chroma",
+      "size": 522
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Manapaw_Keyboard.chroma",
+      "relative_path": "Media/StreamingAssets/Manapaw_Keyboard.chroma",
+      "size": 15970
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Mask_Keyboard_All.chroma",
+      "relative_path": "Media/StreamingAssets/Mask_Keyboard_All.chroma",
+      "size": 542
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Mask_Keyboard_WASD.chroma",
+      "relative_path": "Media/StreamingAssets/Mask_Keyboard_WASD.chroma",
+      "size": 542
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Purrserk_Keyboard.chroma",
+      "relative_path": "Media/StreamingAssets/Purrserk_Keyboard.chroma",
+      "size": 2138
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Random_ChromaLink.chroma",
+      "relative_path": "Media/StreamingAssets/Random_ChromaLink.chroma",
+      "size": 322
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Random_Headset.chroma",
+      "relative_path": "Media/StreamingAssets/Random_Headset.chroma",
+      "size": 322
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Random_Keyboard.chroma",
+      "relative_path": "Media/StreamingAssets/Random_Keyboard.chroma",
+      "size": 7458
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Random_Keypad.chroma",
+      "relative_path": "Media/StreamingAssets/Random_Keypad.chroma",
+      "size": 1186
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Random_Mouse.chroma",
+      "relative_path": "Media/StreamingAssets/Random_Mouse.chroma",
+      "size": 3082
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Random_Mousepad.chroma",
+      "relative_path": "Media/StreamingAssets/Random_Mousepad.chroma",
+      "size": 970
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "RazerGreen_ChromaLink.chroma",
+      "relative_path": "Media/StreamingAssets/RazerGreen_ChromaLink.chroma",
+      "size": 34
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "RazerGreen_Headset.chroma",
+      "relative_path": "Media/StreamingAssets/RazerGreen_Headset.chroma",
+      "size": 34
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "RazerGreen_Keyboard.chroma",
+      "relative_path": "Media/StreamingAssets/RazerGreen_Keyboard.chroma",
+      "size": 542
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "RazerGreen_Keypad.chroma",
+      "relative_path": "Media/StreamingAssets/RazerGreen_Keypad.chroma",
+      "size": 94
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "RazerGreen_Mouse.chroma",
+      "relative_path": "Media/StreamingAssets/RazerGreen_Mouse.chroma",
+      "size": 266
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "RazerGreen_Mousepad.chroma",
+      "relative_path": "Media/StreamingAssets/RazerGreen_Mousepad.chroma",
+      "size": 74
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "RingGray_ChromaLink.chroma",
+      "relative_path": "Media/StreamingAssets/RingGray_ChromaLink.chroma",
+      "size": 586
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "RingGray_Headset.chroma",
+      "relative_path": "Media/StreamingAssets/RingGray_Headset.chroma",
+      "size": 586
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "RingGray_Keyboard.chroma",
+      "relative_path": "Media/StreamingAssets/RingGray_Keyboard.chroma",
+      "size": 12778
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "RingGray_Keypad.chroma",
+      "relative_path": "Media/StreamingAssets/RingGray_Keypad.chroma",
+      "size": 2026
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "RingGray_Mouse.chroma",
+      "relative_path": "Media/StreamingAssets/RingGray_Mouse.chroma",
+      "size": 6154
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "RingGray_Mousepad.chroma",
+      "relative_path": "Media/StreamingAssets/RingGray_Mousepad.chroma",
+      "size": 1546
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Ruins_ChromaLink.chroma",
+      "relative_path": "Media/StreamingAssets/Ruins_ChromaLink.chroma",
+      "size": 58
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Ruins_Headset.chroma",
+      "relative_path": "Media/StreamingAssets/Ruins_Headset.chroma",
+      "size": 58
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Ruins_Keyboard.chroma",
+      "relative_path": "Media/StreamingAssets/Ruins_Keyboard.chroma",
+      "size": 1074
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Ruins_Keypad.chroma",
+      "relative_path": "Media/StreamingAssets/Ruins_Keypad.chroma",
+      "size": 178
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Ruins_Mouse.chroma",
+      "relative_path": "Media/StreamingAssets/Ruins_Mouse.chroma",
+      "size": 522
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Ruins_Mousepad.chroma",
+      "relative_path": "Media/StreamingAssets/Ruins_Mousepad.chroma",
+      "size": 138
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "TitleMew_ChromaLink.chroma",
+      "relative_path": "Media/StreamingAssets/TitleMew_ChromaLink.chroma",
+      "size": 58
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "TitleMew_Headset.chroma",
+      "relative_path": "Media/StreamingAssets/TitleMew_Headset.chroma",
+      "size": 58
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "TitleMew_Keyboard.chroma",
+      "relative_path": "Media/StreamingAssets/TitleMew_Keyboard.chroma",
+      "size": 1074
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "TitleMew_Keypad.chroma",
+      "relative_path": "Media/StreamingAssets/TitleMew_Keypad.chroma",
+      "size": 178
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "TitleMew_Mouse.chroma",
+      "relative_path": "Media/StreamingAssets/TitleMew_Mouse.chroma",
+      "size": 522
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "TitleMew_Mousepad.chroma",
+      "relative_path": "Media/StreamingAssets/TitleMew_Mousepad.chroma",
+      "size": 138
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Title_ChromaLink.chroma",
+      "relative_path": "Media/StreamingAssets/Title_ChromaLink.chroma",
+      "size": 58
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Title_Headset.chroma",
+      "relative_path": "Media/StreamingAssets/Title_Headset.chroma",
+      "size": 58
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Title_Keyboard.chroma",
+      "relative_path": "Media/StreamingAssets/Title_Keyboard.chroma",
+      "size": 1074
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Title_Keypad.chroma",
+      "relative_path": "Media/StreamingAssets/Title_Keypad.chroma",
+      "size": 178
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Title_Mouse.chroma",
+      "relative_path": "Media/StreamingAssets/Title_Mouse.chroma",
+      "size": 522
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Title_Mousepad.chroma",
+      "relative_path": "Media/StreamingAssets/Title_Mousepad.chroma",
+      "size": 138
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Zero_ChromaLink.chroma",
+      "relative_path": "Media/StreamingAssets/Zero_ChromaLink.chroma",
+      "size": 58
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Zero_Headset.chroma",
+      "relative_path": "Media/StreamingAssets/Zero_Headset.chroma",
+      "size": 58
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Zero_Keyboard.chroma",
+      "relative_path": "Media/StreamingAssets/Zero_Keyboard.chroma",
+      "size": 1074
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Zero_Keypad.chroma",
+      "relative_path": "Media/StreamingAssets/Zero_Keypad.chroma",
+      "size": 178
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Zero_Mouse.chroma",
+      "relative_path": "Media/StreamingAssets/Zero_Mouse.chroma",
+      "size": 522
+    },
+    {
+      "category": "Unknown",
+      "extension": "chroma",
+      "file_name": "Zero_Mousepad.chroma",
+      "relative_path": "Media/StreamingAssets/Zero_Mousepad.chroma",
+      "size": 138
+    },
+    {
+      "category": "Metadata",
+      "extension": "xml",
+      "file_name": "link.xml",
+      "relative_path": "Media/StreamingAssets/aa/AddressablesLink/link.xml",
+      "size": 100258
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "00378b40c5682abbbdb828232e6687b5.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/00378b40c5682abbbdb828232e6687b5.bundle",
+      "size": 49056
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "005d85ab13e7578aa99d5945ff98ee26.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/005d85ab13e7578aa99d5945ff98ee26.bundle",
+      "size": 4798
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "00cf90aa4be129f704fa686f68d7a113.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/00cf90aa4be129f704fa686f68d7a113.bundle",
+      "size": 2432
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "0212ccdf1cb1900a65b4cc3c53ecf6a2.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/0212ccdf1cb1900a65b4cc3c53ecf6a2.bundle",
+      "size": 10687
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "033b5ce14200e8e8e4365145d0720d28.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/033b5ce14200e8e8e4365145d0720d28.bundle",
+      "size": 19202
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "04bbf6ae23975fedb3876201f90fb613.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/04bbf6ae23975fedb3876201f90fb613.bundle",
+      "size": 1045249
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "04d88bc5ca8b266ed6dfed7a42664a88.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/04d88bc5ca8b266ed6dfed7a42664a88.bundle",
+      "size": 8799
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "05ae897bec258ec0299aa69bd6322d56.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/05ae897bec258ec0299aa69bd6322d56.bundle",
+      "size": 4862
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "05e876128b55c5cc6d82330f8872e7d2.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/05e876128b55c5cc6d82330f8872e7d2.bundle",
+      "size": 250204
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "060b315e30f505a8d316e13f49dca132.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/060b315e30f505a8d316e13f49dca132.bundle",
+      "size": 419062
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "07313012637e5949073a17caf0d5f927.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/07313012637e5949073a17caf0d5f927.bundle",
+      "size": 44341
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "07ea38b8fc76f9464bb4c74f607963fe.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/07ea38b8fc76f9464bb4c74f607963fe.bundle",
+      "size": 1194287
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "082ad37f19b146c4b6b039bece9b6c80.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/082ad37f19b146c4b6b039bece9b6c80.bundle",
+      "size": 2341
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "084ec02cc267f909c94c4e6710b690fa.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/084ec02cc267f909c94c4e6710b690fa.bundle",
+      "size": 229059
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "085b2f0d2df91722c865464809198d50.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/085b2f0d2df91722c865464809198d50.bundle",
+      "size": 168722
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "087872ac94240528d0c2a67797662936.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/087872ac94240528d0c2a67797662936.bundle",
+      "size": 21779
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "087bbbea1720f5950e434a7694d063f9.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/087bbbea1720f5950e434a7694d063f9.bundle",
+      "size": 1743
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "0966b7eaf279d47269df5f2436c264ff.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/0966b7eaf279d47269df5f2436c264ff.bundle",
+      "size": 9924
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "09baf7919150c838b72b787163b46a7b.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/09baf7919150c838b72b787163b46a7b.bundle",
+      "size": 2749
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "0dd0d38205d2a6998a362c2ea75bc28d.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/0dd0d38205d2a6998a362c2ea75bc28d.bundle",
+      "size": 6139601
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "0dfcb64dba457e8e0f7eed4a7922b6b4.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/0dfcb64dba457e8e0f7eed4a7922b6b4.bundle",
+      "size": 2964
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "0ee7e5fcb124cf4ef8470298d877814d.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/0ee7e5fcb124cf4ef8470298d877814d.bundle",
+      "size": 2727290
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "0f22a0464a26f0beeb059b449e966da7.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/0f22a0464a26f0beeb059b449e966da7.bundle",
+      "size": 372223
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "0f59cab0d0ada0ad277bf7be04fa8df3.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/0f59cab0d0ada0ad277bf7be04fa8df3.bundle",
+      "size": 6909
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "0f61c39f05d16c4211f1fd66498c98eb.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/0f61c39f05d16c4211f1fd66498c98eb.bundle",
+      "size": 2140875
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "0f7462dcf6837b877da34db1a1134c73.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/0f7462dcf6837b877da34db1a1134c73.bundle",
+      "size": 5437
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "113232f72acd127b5ce6e295f899e4e8.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/113232f72acd127b5ce6e295f899e4e8.bundle",
+      "size": 407929
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "11497a279720fd5583e8bf115bd303d2.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/11497a279720fd5583e8bf115bd303d2.bundle",
+      "size": 738563
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "119051cd31f29fc30828051256e38e67.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/119051cd31f29fc30828051256e38e67.bundle",
+      "size": 590309
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "11a0a5e290e662263d27896bfe93e9ad.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/11a0a5e290e662263d27896bfe93e9ad.bundle",
+      "size": 1387
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "11de33af9944827808adca074bef2cfb.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/11de33af9944827808adca074bef2cfb.bundle",
+      "size": 16355193
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "1201c1aa8b2bf1305ab3294c1fb04596.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/1201c1aa8b2bf1305ab3294c1fb04596.bundle",
+      "size": 3752
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "135917723dfab601c78e425b8c5c22b1.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/135917723dfab601c78e425b8c5c22b1.bundle",
+      "size": 3671872
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "142d3f32d1518155a697c6a94afd9873.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/142d3f32d1518155a697c6a94afd9873.bundle",
+      "size": 2268
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "165ff27a302ae613e633240f6df7bf45.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/165ff27a302ae613e633240f6df7bf45.bundle",
+      "size": 5534
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "166728dfc6b543d626cbe9ba3d6a086a.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/166728dfc6b543d626cbe9ba3d6a086a.bundle",
+      "size": 4947
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "170dc6e282613402b438f55ae028504c.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/170dc6e282613402b438f55ae028504c.bundle",
+      "size": 2257213
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "173c46e88ce088d16c61ea52c51fe8fc.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/173c46e88ce088d16c61ea52c51fe8fc.bundle",
+      "size": 1556497
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "177c9db20439d7b4b8fb1a09e0635dfc.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/177c9db20439d7b4b8fb1a09e0635dfc.bundle",
+      "size": 1848593
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "179a62ec856a871d2c4e4bb6760786a5.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/179a62ec856a871d2c4e4bb6760786a5.bundle",
+      "size": 1677294
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "18bbcf8316fa6f634dc4883c46d1de3d.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/18bbcf8316fa6f634dc4883c46d1de3d.bundle",
+      "size": 130724
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "1b46206e62bdeff9691e631479d25d16.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/1b46206e62bdeff9691e631479d25d16.bundle",
+      "size": 7028
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "1b7a3e5450724329664622805ea8a1ee.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/1b7a3e5450724329664622805ea8a1ee.bundle",
+      "size": 4785
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "1c129775b03193dfdea098fe298e8356.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/1c129775b03193dfdea098fe298e8356.bundle",
+      "size": 10718658
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "1ce69ce3f73dc8b63c0f2ba565404f92.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/1ce69ce3f73dc8b63c0f2ba565404f92.bundle",
+      "size": 430053
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "1dfea8cd59b7972b8b8d135a47aa7e53.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/1dfea8cd59b7972b8b8d135a47aa7e53.bundle",
+      "size": 25351074
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "1e82f92aec10077ddb672bca7b60e091.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/1e82f92aec10077ddb672bca7b60e091.bundle",
+      "size": 3117
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "1eb50b5322828f96b666b4a335964c87.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/1eb50b5322828f96b666b4a335964c87.bundle",
+      "size": 407506
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "2129e4e275c61ffc8a8aa79558633d88.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/2129e4e275c61ffc8a8aa79558633d88.bundle",
+      "size": 4154204
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "22024abf2682cb77709859f4d2cacd16.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/22024abf2682cb77709859f4d2cacd16.bundle",
+      "size": 422796
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "243530caa85a8d828746886266b0dd8b.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/243530caa85a8d828746886266b0dd8b.bundle",
+      "size": 2050821
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "25702f3d5d5e0d599c5e74d19b27cecc.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/25702f3d5d5e0d599c5e74d19b27cecc.bundle",
+      "size": 969342
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "25de8c11680979ce0887fbaf716e1cf8.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/25de8c11680979ce0887fbaf716e1cf8.bundle",
+      "size": 2426
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "2642d30699e8e9d29db19f0260a5c95f.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/2642d30699e8e9d29db19f0260a5c95f.bundle",
+      "size": 409051
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "26775fb19aae9b80edf4ac5ababcd8d4.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/26775fb19aae9b80edf4ac5ababcd8d4.bundle",
+      "size": 773244
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "27d046784503cbc57b9c0812822bcc7d.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/27d046784503cbc57b9c0812822bcc7d.bundle",
+      "size": 3438
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "28a90a518b8ff005eb86a4fbd52e30e2.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/28a90a518b8ff005eb86a4fbd52e30e2.bundle",
+      "size": 50913
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "2903991ce441adbdc9367aa2f60ea68c.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/2903991ce441adbdc9367aa2f60ea68c.bundle",
+      "size": 82946
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "292b37652338f919187b84e1c70cfa43.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/292b37652338f919187b84e1c70cfa43.bundle",
+      "size": 1580804
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "29314e57d7b61deb14215621d91e6123.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/29314e57d7b61deb14215621d91e6123.bundle",
+      "size": 194288
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "294a4b4f346ec7ddd298e643ba158f69.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/294a4b4f346ec7ddd298e643ba158f69.bundle",
+      "size": 101093
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "29575f72533b833222b05e2a249fd31a.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/29575f72533b833222b05e2a249fd31a.bundle",
+      "size": 16908
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "29c9b5b2850fcaac28a66d38298569ac.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/29c9b5b2850fcaac28a66d38298569ac.bundle",
+      "size": 9015
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "29ce19eca3fd7003805b993337615bff.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/29ce19eca3fd7003805b993337615bff.bundle",
+      "size": 64456
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "29ec9dfa3b794ec1aca9972ef116fff4.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/29ec9dfa3b794ec1aca9972ef116fff4.bundle",
+      "size": 740297
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "2a33f5111fe2531cf8baabba341155b2.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/2a33f5111fe2531cf8baabba341155b2.bundle",
+      "size": 472993
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "2b79be131ac45f2eccf4bbadfd992561.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/2b79be131ac45f2eccf4bbadfd992561.bundle",
+      "size": 364988
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "2bcbaae0cb6d7018b7b67721f5310516.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/2bcbaae0cb6d7018b7b67721f5310516.bundle",
+      "size": 745051
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "2ca521cfa952463efbbf4330c67eed8c.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/2ca521cfa952463efbbf4330c67eed8c.bundle",
+      "size": 192523
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "2cb6650d32fb453bfbf7cdf692e7c0e1.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/2cb6650d32fb453bfbf7cdf692e7c0e1.bundle",
+      "size": 1753
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "2e5c06190e0b4d49dbdd43ba9965a99d.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/2e5c06190e0b4d49dbdd43ba9965a99d.bundle",
+      "size": 4333828
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "2e751e5ab6b498561bcdf86895f66042.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/2e751e5ab6b498561bcdf86895f66042.bundle",
+      "size": 1065741
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "2ef8fb86faa7242d37308eeb10ad9930.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/2ef8fb86faa7242d37308eeb10ad9930.bundle",
+      "size": 94728
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "2fac1cad2ccae972dd2c7c9b492c8ed4.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/2fac1cad2ccae972dd2c7c9b492c8ed4.bundle",
+      "size": 257845
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "2fcf02b3b4e62e63c6c214575a4e944a.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/2fcf02b3b4e62e63c6c214575a4e944a.bundle",
+      "size": 10910
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "30c004da0c04da920fffd6082bfde467.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/30c004da0c04da920fffd6082bfde467.bundle",
+      "size": 18717
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "31569af829e4b9aaec5ec1daedde76bf.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/31569af829e4b9aaec5ec1daedde76bf.bundle",
+      "size": 2061249
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "33609e27be67dfec51b69f8f2f167ceb.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/33609e27be67dfec51b69f8f2f167ceb.bundle",
+      "size": 2232
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "33f531bb70f6e00803084ddea8f6f6dd.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/33f531bb70f6e00803084ddea8f6f6dd.bundle",
+      "size": 8573
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "348d76a4f5e3a71ba9519951852cbf56.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/348d76a4f5e3a71ba9519951852cbf56.bundle",
+      "size": 8944
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "355610c1dd4812d860d8d3b32846710e.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/355610c1dd4812d860d8d3b32846710e.bundle",
+      "size": 142766
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "35d40d1624d8fd893dd1861d591ad07d.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/35d40d1624d8fd893dd1861d591ad07d.bundle",
+      "size": 34490
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "36025d73a5ed85bbde6f491782aa5001.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/36025d73a5ed85bbde6f491782aa5001.bundle",
+      "size": 3232213
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "360e4ff18aba417ce9887b20ba5099a7.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/360e4ff18aba417ce9887b20ba5099a7.bundle",
+      "size": 1848
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "3670508b79def1cbbea01bbbaec1d969.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/3670508b79def1cbbea01bbbaec1d969.bundle",
+      "size": 5824
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "37791c08fed72482246a5ca339bb0a66.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/37791c08fed72482246a5ca339bb0a66.bundle",
+      "size": 38727
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "37d44eb49e92b491fb7e018894abe928.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/37d44eb49e92b491fb7e018894abe928.bundle",
+      "size": 10352
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "38b831cfd83624d2dd1bfc2da081c4d9.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/38b831cfd83624d2dd1bfc2da081c4d9.bundle",
+      "size": 1879150
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "39613ad3b61bbca28a6ca8885208284a.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/39613ad3b61bbca28a6ca8885208284a.bundle",
+      "size": 13097
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "39b9ef6164750d8ebcfab38b610bad62.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/39b9ef6164750d8ebcfab38b610bad62.bundle",
+      "size": 5580
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "39cbe1d695239cd3d468490dd1f62645.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/39cbe1d695239cd3d468490dd1f62645.bundle",
+      "size": 644139
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "3a35f7e97cc85be3401d46a46ce2d2a1.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/3a35f7e97cc85be3401d46a46ce2d2a1.bundle",
+      "size": 2343
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "3a88c262b4758b1b69ec088ae5449791.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/3a88c262b4758b1b69ec088ae5449791.bundle",
+      "size": 371133
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "3b4e401f3a98864ce66f446103d716ab.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/3b4e401f3a98864ce66f446103d716ab.bundle",
+      "size": 15571
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "3b81dd1223b04897a5c09a47947cebd9.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/3b81dd1223b04897a5c09a47947cebd9.bundle",
+      "size": 3080
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "3bbc7ed43a6bd30867d47c7f8b2eda78.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/3bbc7ed43a6bd30867d47c7f8b2eda78.bundle",
+      "size": 228601
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "3c2fb0b08e2dfbfdc93172e36cb890ed.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/3c2fb0b08e2dfbfdc93172e36cb890ed.bundle",
+      "size": 5918710
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "3c580d3612ed5af5c2100713e8ecc9aa.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/3c580d3612ed5af5c2100713e8ecc9aa.bundle",
+      "size": 2141
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "3c6d97e8bbb5f53e91ec41fc3036166c.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/3c6d97e8bbb5f53e91ec41fc3036166c.bundle",
+      "size": 355958
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "3c6fcc6f34cba03a2fe8f46f9b6f419b.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/3c6fcc6f34cba03a2fe8f46f9b6f419b.bundle",
+      "size": 1457851
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "3c8704f13cb99aff408478921768bb06.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/3c8704f13cb99aff408478921768bb06.bundle",
+      "size": 39065
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "3cb52444821a8ad6cdfcf03db48ebbd2.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/3cb52444821a8ad6cdfcf03db48ebbd2.bundle",
+      "size": 33684
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "3d70d203d5be06451bb6568b3c1ba079.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/3d70d203d5be06451bb6568b3c1ba079.bundle",
+      "size": 6232040
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "3de6716bf6b852434c0119ab34801b2a.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/3de6716bf6b852434c0119ab34801b2a.bundle",
+      "size": 18578202
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "3e96de3fcd6409460f913fdc4f126471.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/3e96de3fcd6409460f913fdc4f126471.bundle",
+      "size": 19092
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "3efec73ef58003a82b6692de081e89b3.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/3efec73ef58003a82b6692de081e89b3.bundle",
+      "size": 1194263
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "41913ef507a916714cde198f18dc4571.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/41913ef507a916714cde198f18dc4571.bundle",
+      "size": 133094
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "41baf60902cc6b32a4474c1d2843fc75.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/41baf60902cc6b32a4474c1d2843fc75.bundle",
+      "size": 403565
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "420418d62ed68b30a81ba35454e60f83.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/420418d62ed68b30a81ba35454e60f83.bundle",
+      "size": 230897
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "42a6cc5d6396ab114da0cadab65682be.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/42a6cc5d6396ab114da0cadab65682be.bundle",
+      "size": 5588
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "42e3cb621d27e9abec45105b53b3ca21.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/42e3cb621d27e9abec45105b53b3ca21.bundle",
+      "size": 5842
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "433a3bfe1811e62bf73b26bdc291faaa.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/433a3bfe1811e62bf73b26bdc291faaa.bundle",
+      "size": 16156477
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "434d0ffe4a06005bd729a67c5263a447.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/434d0ffe4a06005bd729a67c5263a447.bundle",
+      "size": 526105
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "44ed5646dadae951cdeb09e99a03c7f9.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/44ed5646dadae951cdeb09e99a03c7f9.bundle",
+      "size": 2135
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "46f04118944701744e7780ad9163f6c4.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/46f04118944701744e7780ad9163f6c4.bundle",
+      "size": 3050
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "477e281819dc73677915d329cb4e9375.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/477e281819dc73677915d329cb4e9375.bundle",
+      "size": 654968
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "47ba4be6a0175e11af84a06ad48e0cd2.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/47ba4be6a0175e11af84a06ad48e0cd2.bundle",
+      "size": 1374
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "48299e18a0f02fc8c9865fcde2d91f03.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/48299e18a0f02fc8c9865fcde2d91f03.bundle",
+      "size": 1123892
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "483b7c524421800f6448d480f3d4271e.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/483b7c524421800f6448d480f3d4271e.bundle",
+      "size": 3515
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "488ecb18afcc6d7d0982dd952a77ed60.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/488ecb18afcc6d7d0982dd952a77ed60.bundle",
+      "size": 1745
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "489c1db443d32b2f0bb9351e0734ec9d.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/489c1db443d32b2f0bb9351e0734ec9d.bundle",
+      "size": 1662
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "4930ee618d6e70c8b0f6eb7613a82d4b.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/4930ee618d6e70c8b0f6eb7613a82d4b.bundle",
+      "size": 1618
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "49c81fac109124dc1ff6b70a3a66acf6.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/49c81fac109124dc1ff6b70a3a66acf6.bundle",
+      "size": 6735
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "4a8e5287e20435144b790a34cc46913f.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/4a8e5287e20435144b790a34cc46913f.bundle",
+      "size": 1905
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "4bc6380cd4eb793116b05b10f73e4c8a.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/4bc6380cd4eb793116b05b10f73e4c8a.bundle",
+      "size": 198833
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "4c249ec83c6e9db57715c9977e2fbb7e.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/4c249ec83c6e9db57715c9977e2fbb7e.bundle",
+      "size": 216087
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "4cf33ac97671cf6f8b83016ddee18791.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/4cf33ac97671cf6f8b83016ddee18791.bundle",
+      "size": 281893
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "4db1101d857f51c801d0d4485163800a.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/4db1101d857f51c801d0d4485163800a.bundle",
+      "size": 2234
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "4ed1f68ea38c9bd53279cd388f6c6a1b.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/4ed1f68ea38c9bd53279cd388f6c6a1b.bundle",
+      "size": 2606031
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "4fb316fb6718a5e7e3fd2333c2ba660d.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/4fb316fb6718a5e7e3fd2333c2ba660d.bundle",
+      "size": 36124
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "502eeedb77898e98f47df7b84f76e7d4.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/502eeedb77898e98f47df7b84f76e7d4.bundle",
+      "size": 25857
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "506db88b961bac0b0e3d4ef593d763c1.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/506db88b961bac0b0e3d4ef593d763c1.bundle",
+      "size": 177644
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "52326d60e398137acbeebd0d3a7d864e.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/52326d60e398137acbeebd0d3a7d864e.bundle",
+      "size": 6441153
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "523eac78a235d49a8a28042003583734.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/523eac78a235d49a8a28042003583734.bundle",
+      "size": 3114034
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "53728a7fe73c399440c7107bbdcd0d54.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/53728a7fe73c399440c7107bbdcd0d54.bundle",
+      "size": 47617
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "53b047421ea2a8e8a626cca723b95bdd.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/53b047421ea2a8e8a626cca723b95bdd.bundle",
+      "size": 1888720
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "549574ce2f91cf1761185c6695bad433.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/549574ce2f91cf1761185c6695bad433.bundle",
+      "size": 3477
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "55313a08ead7e40b0abe93e97d234937.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/55313a08ead7e40b0abe93e97d234937.bundle",
+      "size": 265460
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "5574d52a635c4947732b5bb8d75eb841.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/5574d52a635c4947732b5bb8d75eb841.bundle",
+      "size": 7828
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "55985b9311814b03ea3a1788b7de4743.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/55985b9311814b03ea3a1788b7de4743.bundle",
+      "size": 17223
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "561f3c186bb4acf5d54c05811e345668.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/561f3c186bb4acf5d54c05811e345668.bundle",
+      "size": 91524
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "5634aad84661d825c692131cb367a9d4.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/5634aad84661d825c692131cb367a9d4.bundle",
+      "size": 168339
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "5694cdf023f17d333e6f67fee0e60351.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/5694cdf023f17d333e6f67fee0e60351.bundle",
+      "size": 1247757
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "57f9590afdbfd4ba3e533f96b105946a.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/57f9590afdbfd4ba3e533f96b105946a.bundle",
+      "size": 3584
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "58753b555f96cea8f61e829e3077f08b.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/58753b555f96cea8f61e829e3077f08b.bundle",
+      "size": 180268
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "59f32d1d56a4d4a9b90b5d8451a66c28.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/59f32d1d56a4d4a9b90b5d8451a66c28.bundle",
+      "size": 3817255
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "5a85e25808b2a84ab3822b2811acfffa.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/5a85e25808b2a84ab3822b2811acfffa.bundle",
+      "size": 70618
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "5ac50abdda1512744e5c0ad20172d451.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/5ac50abdda1512744e5c0ad20172d451.bundle",
+      "size": 2562
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "5ae6dfcd9125f87ed43aeade10a1d1f4.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/5ae6dfcd9125f87ed43aeade10a1d1f4.bundle",
+      "size": 2607533
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "5b4200e64036281b186d69e7cae14de1.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/5b4200e64036281b186d69e7cae14de1.bundle",
+      "size": 12994
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "5b89e9ddc94431e2341a741b49223896.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/5b89e9ddc94431e2341a741b49223896.bundle",
+      "size": 266903
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "5c210879fa64e76706633de68981807c.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/5c210879fa64e76706633de68981807c.bundle",
+      "size": 1827
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "5cfa71420742ca53cc12f8ae59893b7a.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/5cfa71420742ca53cc12f8ae59893b7a.bundle",
+      "size": 2419817
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "5dd2f6e3191bf61ad1c79dfa8fd8e5c7.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/5dd2f6e3191bf61ad1c79dfa8fd8e5c7.bundle",
+      "size": 162779
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "5ec5cf09b111bb129a99a3a8e05ad322.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/5ec5cf09b111bb129a99a3a8e05ad322.bundle",
+      "size": 6318300
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "5f1e21a4fdb79398adf2dbe9e3de579e.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/5f1e21a4fdb79398adf2dbe9e3de579e.bundle",
+      "size": 2147
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "5f85d79310c85584788833f5a332f623.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/5f85d79310c85584788833f5a332f623.bundle",
+      "size": 21091369
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "5fa3e1c4c2009117f55e641d60715c5d.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/5fa3e1c4c2009117f55e641d60715c5d.bundle",
+      "size": 130995
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "5fd6664278dd884bc6e11aeed8d77eaa.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/5fd6664278dd884bc6e11aeed8d77eaa.bundle",
+      "size": 598986
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "5fe520b350a887973a7cbdfb01e86c0b.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/5fe520b350a887973a7cbdfb01e86c0b.bundle",
+      "size": 76826
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "615aa6f38dd40dde6938f8d38537682b.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/615aa6f38dd40dde6938f8d38537682b.bundle",
+      "size": 180064
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "6215e656cf1dde8347589608e39816ae.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/6215e656cf1dde8347589608e39816ae.bundle",
+      "size": 2361
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "63190ec9857a0838cc7844f89a560678.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/63190ec9857a0838cc7844f89a560678.bundle",
+      "size": 23161
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "63a974d0481ca1b860e2dceefce2e733.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/63a974d0481ca1b860e2dceefce2e733.bundle",
+      "size": 181606
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "63f6852cbe58f2d0299bdd5ab1b490d8.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/63f6852cbe58f2d0299bdd5ab1b490d8.bundle",
+      "size": 6347
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "65497d2d5ffa9320f4f25166eb9aa4fa.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/65497d2d5ffa9320f4f25166eb9aa4fa.bundle",
+      "size": 1262548
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "65aab0dcbb8adea08761aff933d406e3.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/65aab0dcbb8adea08761aff933d406e3.bundle",
+      "size": 25182
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "66d1f65161ab7450d0e45ef6c6f097fa.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/66d1f65161ab7450d0e45ef6c6f097fa.bundle",
+      "size": 7354
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "66efc1e4b4b029093f863db4afc66be8.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/66efc1e4b4b029093f863db4afc66be8.bundle",
+      "size": 178917
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "67ad786fb4d34143f5a2b6e56ec00566.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/67ad786fb4d34143f5a2b6e56ec00566.bundle",
+      "size": 166804915
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "67b460a4adc51714a87ee2e248fe1a6b.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/67b460a4adc51714a87ee2e248fe1a6b.bundle",
+      "size": 5394
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "69c620b665fdf09bd8f2b180741332bb.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/69c620b665fdf09bd8f2b180741332bb.bundle",
+      "size": 5663286
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "6a280f6cdb1cbd1576bfe4d931af5fea.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/6a280f6cdb1cbd1576bfe4d931af5fea.bundle",
+      "size": 1248903
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "6a2caf049ee8b7c3367b44e8c3b7f46f.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/6a2caf049ee8b7c3367b44e8c3b7f46f.bundle",
+      "size": 9147
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "6a33672f697d15aee5cb0a767440273e.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/6a33672f697d15aee5cb0a767440273e.bundle",
+      "size": 4785
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "6ac794c27fad63124adf49efde560cde.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/6ac794c27fad63124adf49efde560cde.bundle",
+      "size": 418121
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "6ae454c034ee538f0790ad3105ffb3ff.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/6ae454c034ee538f0790ad3105ffb3ff.bundle",
+      "size": 2848
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "6b28574e64b5d5a3c6e939147934ab8e.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/6b28574e64b5d5a3c6e939147934ab8e.bundle",
+      "size": 1794757
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "6b8f91e13336192f7faa8ea38b22948e.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/6b8f91e13336192f7faa8ea38b22948e.bundle",
+      "size": 1516845
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "6e7d8a464e79ce43748b2e5959044e40.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/6e7d8a464e79ce43748b2e5959044e40.bundle",
+      "size": 733531
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "6ef7300402c719c76ceb96a0478c0b85.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/6ef7300402c719c76ceb96a0478c0b85.bundle",
+      "size": 278596
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "6f610d05c178e9f52d4ca1342591da59.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/6f610d05c178e9f52d4ca1342591da59.bundle",
+      "size": 236194
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "6f648ffd36fcd03a24cdc12918a7a784.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/6f648ffd36fcd03a24cdc12918a7a784.bundle",
+      "size": 1459
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "6fb9a6ff74221cebafa44c5f622d836a.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/6fb9a6ff74221cebafa44c5f622d836a.bundle",
+      "size": 14306
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "7003081f8e382780391a2cc997008e94.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/7003081f8e382780391a2cc997008e94.bundle",
+      "size": 6201
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "700c09b8818c978230d70cba663aa77e.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/700c09b8818c978230d70cba663aa77e.bundle",
+      "size": 2275225
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "702b2dbeb245e6d122304b6462ed1eca.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/702b2dbeb245e6d122304b6462ed1eca.bundle",
+      "size": 106106
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "706eacaaf834e8d4d8dd8b06aad45710.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/706eacaaf834e8d4d8dd8b06aad45710.bundle",
+      "size": 221328
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "71dbf2c82a2fe77aa73c2c81c57f4bb4.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/71dbf2c82a2fe77aa73c2c81c57f4bb4.bundle",
+      "size": 97925
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "72f5756c02afdc94bd929c157ac2ed68.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/72f5756c02afdc94bd929c157ac2ed68.bundle",
+      "size": 1724
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "74404b11a4f39a3af2fc2190ebbee2ae.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/74404b11a4f39a3af2fc2190ebbee2ae.bundle",
+      "size": 948061
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "750907df579f52e83309f84546321039.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/750907df579f52e83309f84546321039.bundle",
+      "size": 5745
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "759c08ef42c9e62051ab179648414d65.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/759c08ef42c9e62051ab179648414d65.bundle",
+      "size": 366998
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "75e7434dd347d9763afbbad070bb6fb2.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/75e7434dd347d9763afbbad070bb6fb2.bundle",
+      "size": 1794
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "760881c5821eb4759b191fc87fdddb0b.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/760881c5821eb4759b191fc87fdddb0b.bundle",
+      "size": 316344
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "76b95208a0466c5d5332ecbbaaa39a0d.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/76b95208a0466c5d5332ecbbaaa39a0d.bundle",
+      "size": 2625035
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "76c450706ef5e7af2e0c203889f09167.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/76c450706ef5e7af2e0c203889f09167.bundle",
+      "size": 966241
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "7709065e4e73e07b9e7402535dad6953.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/7709065e4e73e07b9e7402535dad6953.bundle",
+      "size": 2785380
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "780383289e8312ceddfd9331ebd7cc26.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/780383289e8312ceddfd9331ebd7cc26.bundle",
+      "size": 368260
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "78fec29c6971f6ebe461849770ea077d.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/78fec29c6971f6ebe461849770ea077d.bundle",
+      "size": 2383
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "79fd3ea1d309332cc829ccf6e027b6aa.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/79fd3ea1d309332cc829ccf6e027b6aa.bundle",
+      "size": 52813
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "7aa60a405115ab19450a70b6b5ecd193.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/7aa60a405115ab19450a70b6b5ecd193.bundle",
+      "size": 1588634
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "7b1469cec9266bb84d0767e6cc876b27.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/7b1469cec9266bb84d0767e6cc876b27.bundle",
+      "size": 5073
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "7b50c1cea7bf87dd3c7dda83323f17db.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/7b50c1cea7bf87dd3c7dda83323f17db.bundle",
+      "size": 1914
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "7b73155d1d019cd6589b54fa4bdf5783.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/7b73155d1d019cd6589b54fa4bdf5783.bundle",
+      "size": 37417
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "7c668dccd47ce5181a7ce00c4b583577.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/7c668dccd47ce5181a7ce00c4b583577.bundle",
+      "size": 4811
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "7cd79db37bc1a2ebd755fa3b6a318fc8.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/7cd79db37bc1a2ebd755fa3b6a318fc8.bundle",
+      "size": 1156068
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "7da90199104bd07549683d5de759576e.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/7da90199104bd07549683d5de759576e.bundle",
+      "size": 1967253
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "7dcf7599ab8504211888764c66542c1c.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/7dcf7599ab8504211888764c66542c1c.bundle",
+      "size": 34543375
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "80446cb29e1f9aee2ee043b6c0986918.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/80446cb29e1f9aee2ee043b6c0986918.bundle",
+      "size": 107458
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "837265ad66dfd1236f00973e8bc7608a.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/837265ad66dfd1236f00973e8bc7608a.bundle",
+      "size": 2930
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "8376cd2f4d289c1717d7fbd3264c3911.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/8376cd2f4d289c1717d7fbd3264c3911.bundle",
+      "size": 1915
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "842f865558254405ae88b96bc039ee24.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/842f865558254405ae88b96bc039ee24.bundle",
+      "size": 2584
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "844cb0662017eb5d1becab09b8411759.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/844cb0662017eb5d1becab09b8411759.bundle",
+      "size": 1238770
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "84c65daccbe68b07a424d42f29167c6f.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/84c65daccbe68b07a424d42f29167c6f.bundle",
+      "size": 312549
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "86485238e9b4f1198fe8ae668225a7b4.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/86485238e9b4f1198fe8ae668225a7b4.bundle",
+      "size": 25672
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "8686046cdba718b92a1c9de1daaf7484.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/8686046cdba718b92a1c9de1daaf7484.bundle",
+      "size": 2435602
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "86cdae4c8f8c886cc0d70ae93efe1f9d.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/86cdae4c8f8c886cc0d70ae93efe1f9d.bundle",
+      "size": 4493
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "879ba9b6b1fa8753de0c73f8190fb9a3.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/879ba9b6b1fa8753de0c73f8190fb9a3.bundle",
+      "size": 1131685
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "87ef9a8e2c3e381f509e48ef0d7fc122.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/87ef9a8e2c3e381f509e48ef0d7fc122.bundle",
+      "size": 6736
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "89099d18443bf655cfe8aa78862cb345.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/89099d18443bf655cfe8aa78862cb345.bundle",
+      "size": 204676
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "897f9eb8682dc88f1ca295e29c2a4b8f.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/897f9eb8682dc88f1ca295e29c2a4b8f.bundle",
+      "size": 158760694
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "8a6670be124d31e8103c5d4a72b9b372.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/8a6670be124d31e8103c5d4a72b9b372.bundle",
+      "size": 158805
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "8a7f5826bdf4a72076fe45254a8a13b8.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/8a7f5826bdf4a72076fe45254a8a13b8.bundle",
+      "size": 2109
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "8ab2dc4827abe34bc1935ac83568aaf0.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/8ab2dc4827abe34bc1935ac83568aaf0.bundle",
+      "size": 10003
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "8b7984684547ee085bd54e92348ddc81.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/8b7984684547ee085bd54e92348ddc81.bundle",
+      "size": 1693882
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "8c17238a9cbb99a2cc0bf0078804dfa2.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/8c17238a9cbb99a2cc0bf0078804dfa2.bundle",
+      "size": 20193
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "8d025f6115afff8c61c9ff5724853c05.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/8d025f6115afff8c61c9ff5724853c05.bundle",
+      "size": 1037287
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "8dbbd34e00d12848588c9e515a05a41e.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/8dbbd34e00d12848588c9e515a05a41e.bundle",
+      "size": 3555682
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "8e03b7900db1eec6c129994b5971ea09.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/8e03b7900db1eec6c129994b5971ea09.bundle",
+      "size": 6955
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "8e092fcc02d874c8cf1abc6d473fc673.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/8e092fcc02d874c8cf1abc6d473fc673.bundle",
+      "size": 1994641
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "8e4ffffda650698e843bd7c4fb2b00e9.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/8e4ffffda650698e843bd7c4fb2b00e9.bundle",
+      "size": 2000
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "8f581988f5e68e7f5407d70ec069c97f.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/8f581988f5e68e7f5407d70ec069c97f.bundle",
+      "size": 687480
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "8f990a8801d718d8dc0df9924175b1ba.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/8f990a8801d718d8dc0df9924175b1ba.bundle",
+      "size": 11819
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "8fbe40bccb10c83d981e7d5bda5852dd.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/8fbe40bccb10c83d981e7d5bda5852dd.bundle",
+      "size": 766302
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "8fe82c12312ddd4f4c749c1f0a19701b.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/8fe82c12312ddd4f4c749c1f0a19701b.bundle",
+      "size": 16614
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "90483f0ee7c681ebbde09a82a6542e46.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/90483f0ee7c681ebbde09a82a6542e46.bundle",
+      "size": 2866
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "90aedf91c39381dd65a770262ef205fc.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/90aedf91c39381dd65a770262ef205fc.bundle",
+      "size": 1636
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "910a3dd791ef60186c26014ed6639fda.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/910a3dd791ef60186c26014ed6639fda.bundle",
+      "size": 4857908
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "9147160618866c1f090f4d40db22e2b2.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/9147160618866c1f090f4d40db22e2b2.bundle",
+      "size": 3101
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "930d195abe490c444f3fcc19dfd520ad.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/930d195abe490c444f3fcc19dfd520ad.bundle",
+      "size": 16772
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "941f5af95f24a3b51fd727de0d238252.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/941f5af95f24a3b51fd727de0d238252.bundle",
+      "size": 319576
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "964579d4f2e6c20ba0662ec671c13928.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/964579d4f2e6c20ba0662ec671c13928.bundle",
+      "size": 118514
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "976f49b2331e6bdeb6da0a93434be5ae.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/976f49b2331e6bdeb6da0a93434be5ae.bundle",
+      "size": 16279
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "980f7460911f8aa2ede03f854ddb3cf6.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/980f7460911f8aa2ede03f854ddb3cf6.bundle",
+      "size": 3233917
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "9854d49713d0e998ffcd22787fa7c8a8.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/9854d49713d0e998ffcd22787fa7c8a8.bundle",
+      "size": 13303941
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "986bb34e4b82439468fd92871bf671b7.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/986bb34e4b82439468fd92871bf671b7.bundle",
+      "size": 1162045
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "98c203e84a5976b05b90efe06e37e2f1.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/98c203e84a5976b05b90efe06e37e2f1.bundle",
+      "size": 384212
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "997cc52e90522aa180ed1f7496d6fc52.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/997cc52e90522aa180ed1f7496d6fc52.bundle",
+      "size": 4776
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "99f7b8a35290ae062af32eebf2e8a016.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/99f7b8a35290ae062af32eebf2e8a016.bundle",
+      "size": 323280
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "9a9bc964d9b0b34d837e7e7f750eef2e.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/9a9bc964d9b0b34d837e7e7f750eef2e.bundle",
+      "size": 2369318
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "9d8ff54b645478ba684f2e56cf6fa93a.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/9d8ff54b645478ba684f2e56cf6fa93a.bundle",
+      "size": 2366964
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "9db133703fd76be9c19280b18bd62279.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/9db133703fd76be9c19280b18bd62279.bundle",
+      "size": 2860639
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "9f280348c57f8214af5f261ccf6df760.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/9f280348c57f8214af5f261ccf6df760.bundle",
+      "size": 1425954
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "a2a4d985f946f96413c30107a75861d7.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/a2a4d985f946f96413c30107a75861d7.bundle",
+      "size": 149427
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "a4dc3c78435020030f263139e438ceac.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/a4dc3c78435020030f263139e438ceac.bundle",
+      "size": 11802
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "a5502b54698ea9a6eee35f2d587f0e1f.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/a5502b54698ea9a6eee35f2d587f0e1f.bundle",
+      "size": 1831510
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "a56ce07a910b781d24f78fe361cc8bd2.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/a56ce07a910b781d24f78fe361cc8bd2.bundle",
+      "size": 1585
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "a5b69adffe9aa4ba60666659ecff5dc9.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/a5b69adffe9aa4ba60666659ecff5dc9.bundle",
+      "size": 1827145
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "a6c1c1ac2d253f0e3229bcf83acbc8e0.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/a6c1c1ac2d253f0e3229bcf83acbc8e0.bundle",
+      "size": 487056
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "a767894c29f37cbc239f573b253c65f9.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/a767894c29f37cbc239f573b253c65f9.bundle",
+      "size": 1769
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "a880060d321c7fb63fa54cf5a717d224.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/a880060d321c7fb63fa54cf5a717d224.bundle",
+      "size": 9516
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "a967ead1da3d95878a7bc2709f768f50.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/a967ead1da3d95878a7bc2709f768f50.bundle",
+      "size": 5313784
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "a99760eea269403765174dab47121c90.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/a99760eea269403765174dab47121c90.bundle",
+      "size": 130342
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "a9aa427c7f753f3be6964cdcccc19350.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/a9aa427c7f753f3be6964cdcccc19350.bundle",
+      "size": 473764
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "aa89d8c06b5fed5f5d9ab4d1caa9626e.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/aa89d8c06b5fed5f5d9ab4d1caa9626e.bundle",
+      "size": 1071924
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "aa8a2d14276578f6c199451fae478e36.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/aa8a2d14276578f6c199451fae478e36.bundle",
+      "size": 26845
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "aad8499d76cc88f0d799094ab382ee60.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/aad8499d76cc88f0d799094ab382ee60.bundle",
+      "size": 5747351
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ab1146866d837e85f4b182288a032717.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ab1146866d837e85f4b182288a032717.bundle",
+      "size": 35892
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "aca165255bf8bdda0abcefd46da2baf6.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/aca165255bf8bdda0abcefd46da2baf6.bundle",
+      "size": 67232
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "acf39fafdc10f7005b7084e8cef9591c.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/acf39fafdc10f7005b7084e8cef9591c.bundle",
+      "size": 1105188
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ae1618fd6596aa3cb1a7a8f29e967994.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ae1618fd6596aa3cb1a7a8f29e967994.bundle",
+      "size": 34299
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ae34b444bdeab22d912a1a06893e2863.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ae34b444bdeab22d912a1a06893e2863.bundle",
+      "size": 4106
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "aea9b969dbee9121d01cc35afffcb7e9.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/aea9b969dbee9121d01cc35afffcb7e9.bundle",
+      "size": 33699
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "b03a4ae93fa2f2b3f67754ea04ca42d8.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/b03a4ae93fa2f2b3f67754ea04ca42d8.bundle",
+      "size": 15053
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "b04e61ecc01b23b205f031f01ff5b69e.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/b04e61ecc01b23b205f031f01ff5b69e.bundle",
+      "size": 2029
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "b0b69f92da6a9d754cf7c308b93b61f5.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/b0b69f92da6a9d754cf7c308b93b61f5.bundle",
+      "size": 365713
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "b15112f39bf61128deb2849dc0024cce.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/b15112f39bf61128deb2849dc0024cce.bundle",
+      "size": 3939
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "b209c2f29416168b33c3a468f8602b67.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/b209c2f29416168b33c3a468f8602b67.bundle",
+      "size": 2323922
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "b29d6b1ed660eab8ec1e37375b99b689.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/b29d6b1ed660eab8ec1e37375b99b689.bundle",
+      "size": 3182
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "b38283270ec6857a90b2037c937a3cc9.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/b38283270ec6857a90b2037c937a3cc9.bundle",
+      "size": 2664
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "b38a165d856ecc64a81e509c230d6adc.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/b38a165d856ecc64a81e509c230d6adc.bundle",
+      "size": 1542
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "b3a9c2decdaae575949d629dbe6eb6ec.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/b3a9c2decdaae575949d629dbe6eb6ec.bundle",
+      "size": 4836
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "b3e96a563e138f430ca532460a4962c9.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/b3e96a563e138f430ca532460a4962c9.bundle",
+      "size": 2128
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "b52a855b6d3b5e1a7b5e2520b8fb6183.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/b52a855b6d3b5e1a7b5e2520b8fb6183.bundle",
+      "size": 1468
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "b5be86938857837eeba39ae02f59f016.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/b5be86938857837eeba39ae02f59f016.bundle",
+      "size": 3221671
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "b80db17cf19ed2f50f2d2b272ee0cb0b.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/b80db17cf19ed2f50f2d2b272ee0cb0b.bundle",
+      "size": 112757
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "b98673653d3ab89fa757c1af6f07b632.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/b98673653d3ab89fa757c1af6f07b632.bundle",
+      "size": 7219
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ba063bbda3a8f5e47d81c37752341ed5.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ba063bbda3a8f5e47d81c37752341ed5.bundle",
+      "size": 3333396
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ba45d5eb84063820b4c3b329709e961b.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ba45d5eb84063820b4c3b329709e961b.bundle",
+      "size": 21762
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "bb96681569236292492b352dea9659c8.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/bb96681569236292492b352dea9659c8.bundle",
+      "size": 1840041
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "be37185f3b0bffa66e0472345f9af2e7.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/be37185f3b0bffa66e0472345f9af2e7.bundle",
+      "size": 1965
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "be65259da640acda2de9025e3a3ea8df.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/be65259da640acda2de9025e3a3ea8df.bundle",
+      "size": 448328
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "c0d61e0e62f649a399e659bfd1f7ce25.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/c0d61e0e62f649a399e659bfd1f7ce25.bundle",
+      "size": 341379
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "c173ff36cdb38cd82d93d87d18d21d2d.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/c173ff36cdb38cd82d93d87d18d21d2d.bundle",
+      "size": 14899
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "c1df33c0822147ea268f7a15fa4b6629.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/c1df33c0822147ea268f7a15fa4b6629.bundle",
+      "size": 20846
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "c270f34a78da2e86cd57e4d5fa148dc3.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/c270f34a78da2e86cd57e4d5fa148dc3.bundle",
+      "size": 71370
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "c2bd4ac238fe2cd2f7e97f8285c07b82.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/c2bd4ac238fe2cd2f7e97f8285c07b82.bundle",
+      "size": 1095
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "c2ee4aa9132b0933299360cc396f05e9.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/c2ee4aa9132b0933299360cc396f05e9.bundle",
+      "size": 4124
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "c339a6503d451d8c1e933cfa9f1c0fa2.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/c339a6503d451d8c1e933cfa9f1c0fa2.bundle",
+      "size": 1465
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "c3cb64e60081687615257dd42a0301b4.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/c3cb64e60081687615257dd42a0301b4.bundle",
+      "size": 1122665
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "c42b0e31cc87d6da167ff35b6bdf2a80.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/c42b0e31cc87d6da167ff35b6bdf2a80.bundle",
+      "size": 3390
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "c42b87aa465503b9b5ef4d5716b0b58e.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/c42b87aa465503b9b5ef4d5716b0b58e.bundle",
+      "size": 488887
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "c462bf86cf3ccc1969052c92f198558a.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/c462bf86cf3ccc1969052c92f198558a.bundle",
+      "size": 4058
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "c48b2f3c2cc764178967bf7b7ec4f87f.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/c48b2f3c2cc764178967bf7b7ec4f87f.bundle",
+      "size": 41489
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "c64b3d42f6cacccb485282c5275d6a28.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/c64b3d42f6cacccb485282c5275d6a28.bundle",
+      "size": 86291
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "c758baf3931f2918e1a1b387e0c91b68.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/c758baf3931f2918e1a1b387e0c91b68.bundle",
+      "size": 27252
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "c7fd4f3e6d6da251e402fa768943b55b.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/c7fd4f3e6d6da251e402fa768943b55b.bundle",
+      "size": 2653091
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "c92a5cbd73ea66068085f5fb8363695f.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/c92a5cbd73ea66068085f5fb8363695f.bundle",
+      "size": 1155681
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "c95904c614d6e310df0dbe2c9690e395.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/c95904c614d6e310df0dbe2c9690e395.bundle",
+      "size": 195385
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "c995caca1554b4b767c972a752c86ca8.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/c995caca1554b4b767c972a752c86ca8.bundle",
+      "size": 1146735
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ca175f7ff9972dd360bb0cee322b8be5.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ca175f7ff9972dd360bb0cee322b8be5.bundle",
+      "size": 1821
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "cb3bb3098c918997a05ade24a61fde82.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/cb3bb3098c918997a05ade24a61fde82.bundle",
+      "size": 19630
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "cbbf21322ba84856232260323622390d.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/cbbf21322ba84856232260323622390d.bundle",
+      "size": 2383961
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "cc6230d77c38ac8e877c126a9635cc5d.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/cc6230d77c38ac8e877c126a9635cc5d.bundle",
+      "size": 543918
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "cc6be84d6547943368f040ab414c9f5e.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/cc6be84d6547943368f040ab414c9f5e.bundle",
+      "size": 42142
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ce142c99c6be4aa0f91f7ddb84c5fff2.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ce142c99c6be4aa0f91f7ddb84c5fff2.bundle",
+      "size": 1305849
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ce5e82bb7dc3d015f72b3d6c164599e6.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ce5e82bb7dc3d015f72b3d6c164599e6.bundle",
+      "size": 1134848
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ced6d76871c9888b4150da29b8b89c8a.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ced6d76871c9888b4150da29b8b89c8a.bundle",
+      "size": 4107
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "d04b01adf3595c55bf9962874a22a1cc.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/d04b01adf3595c55bf9962874a22a1cc.bundle",
+      "size": 2304290
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "d2a84ea74d8f67d4425f39d79bf55570.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/d2a84ea74d8f67d4425f39d79bf55570.bundle",
+      "size": 1574598
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "d2bb51c89a86414beb1d2bde1b675ef0.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/d2bb51c89a86414beb1d2bde1b675ef0.bundle",
+      "size": 5945
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "d30dcd683ad3a992d98a7340454ee685.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/d30dcd683ad3a992d98a7340454ee685.bundle",
+      "size": 8732
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "d336ade08fc68e688f4e35b0f9e23ac1.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/d336ade08fc68e688f4e35b0f9e23ac1.bundle",
+      "size": 872204
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "d33b20ed924900a4834ccaffe31b6785.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/d33b20ed924900a4834ccaffe31b6785.bundle",
+      "size": 418571
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "d3dc5199181ea3bb71ffb43ac971bb9e.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/d3dc5199181ea3bb71ffb43ac971bb9e.bundle",
+      "size": 107246
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "d68d24eefa2492ee79a25dbd6c430fb2.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/d68d24eefa2492ee79a25dbd6c430fb2.bundle",
+      "size": 77655222
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "d6a8817c2af2b728437c3f3bb4089c52.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/d6a8817c2af2b728437c3f3bb4089c52.bundle",
+      "size": 7352
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "d6b114175d7fc5c91257ec414cf395d6.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/d6b114175d7fc5c91257ec414cf395d6.bundle",
+      "size": 57372
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "d90a48a39a7ac976a75d3aead1a2530f.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/d90a48a39a7ac976a75d3aead1a2530f.bundle",
+      "size": 31351
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "d91cff1007026cafa4248beae88fcf42.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/d91cff1007026cafa4248beae88fcf42.bundle",
+      "size": 22807267
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "d9b689438eda98612e0f89e2062e0c69.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/d9b689438eda98612e0f89e2062e0c69.bundle",
+      "size": 221556
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "da56bc9727780df7c6670a58efd4ea07.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/da56bc9727780df7c6670a58efd4ea07.bundle",
+      "size": 2128
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "da56c292b73128afea24d2fac521cd38.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/da56c292b73128afea24d2fac521cd38.bundle",
+      "size": 2054
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "dbe74bf671f5710d2a0172c8e470799f.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/dbe74bf671f5710d2a0172c8e470799f.bundle",
+      "size": 7024
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "dc128d75024448fda09dc5515b2d9735.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/dc128d75024448fda09dc5515b2d9735.bundle",
+      "size": 18001
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "dc7ed394f16b805d2f0c19ca4f0e9c35.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/dc7ed394f16b805d2f0c19ca4f0e9c35.bundle",
+      "size": 46845286
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "dc7f5c964db2b2ed423da9a785c186b6.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/dc7f5c964db2b2ed423da9a785c186b6.bundle",
+      "size": 546234
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "dca6d06cee7ee55beb6d0904adeb7184.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/dca6d06cee7ee55beb6d0904adeb7184.bundle",
+      "size": 2352664
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "dd8c5c89f6a9436d78b97154b94746d9.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/dd8c5c89f6a9436d78b97154b94746d9.bundle",
+      "size": 758836
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ddb7bd509c1e96d918d41d6246067d78.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ddb7bd509c1e96d918d41d6246067d78.bundle",
+      "size": 144865
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ddd9ca9d6642d08a3ccd174d123a9554.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ddd9ca9d6642d08a3ccd174d123a9554.bundle",
+      "size": 10095
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "de563dd5f3e849550d086d01187fa36e.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/de563dd5f3e849550d086d01187fa36e.bundle",
+      "size": 2577226
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "dead852f77a1d521ea58b2c6fbfd2dbe.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/dead852f77a1d521ea58b2c6fbfd2dbe.bundle",
+      "size": 6213
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "dfc6e300513a7ced40009928aaa7a5b3.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/dfc6e300513a7ced40009928aaa7a5b3.bundle",
+      "size": 9804
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "e0653f59aa8402bb883f89b6c99ed379.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/e0653f59aa8402bb883f89b6c99ed379.bundle",
+      "size": 231495
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "e0b179515857c981ff3647ee987ac946.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/e0b179515857c981ff3647ee987ac946.bundle",
+      "size": 4901
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "e0d0a345bc100791dddfc1a97e1e1a8a.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/e0d0a345bc100791dddfc1a97e1e1a8a.bundle",
+      "size": 3708685
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "e293b8e7460d38fd610a1438f9974ab6.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/e293b8e7460d38fd610a1438f9974ab6.bundle",
+      "size": 1859447
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "e3071ac1f134c6bbc5c4a5e5b1ce7884.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/e3071ac1f134c6bbc5c4a5e5b1ce7884.bundle",
+      "size": 9486
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "e36e470b9d8fb98f779636e78ff39b0d.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/e36e470b9d8fb98f779636e78ff39b0d.bundle",
+      "size": 758124
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "e3f600acadca6091dacfe6d8fbb92968.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/e3f600acadca6091dacfe6d8fbb92968.bundle",
+      "size": 24735
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "e4e36f9ed26cb8cc76171d4e78ada3fe.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/e4e36f9ed26cb8cc76171d4e78ada3fe.bundle",
+      "size": 40344
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "e6ffe7cbae51555268928d4294a52ac1.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/e6ffe7cbae51555268928d4294a52ac1.bundle",
+      "size": 1273084
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "e722ce8043deb9b34ceec8782044c4a3.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/e722ce8043deb9b34ceec8782044c4a3.bundle",
+      "size": 459709
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "e8888f5ee376d4b940edecfcd00fc646.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/e8888f5ee376d4b940edecfcd00fc646.bundle",
+      "size": 2882960
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "e9ab31ab78c2423f63a31dec76e7cd6a.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/e9ab31ab78c2423f63a31dec76e7cd6a.bundle",
+      "size": 18351
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "e9ccc85b5294e8cf7c29030a80cc2b84.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/e9ccc85b5294e8cf7c29030a80cc2b84.bundle",
+      "size": 2611389
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ea7949b2076e69dde382a211849f68c7.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ea7949b2076e69dde382a211849f68c7.bundle",
+      "size": 371062
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ea7a983b987a962a2db77a9670201cc7.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ea7a983b987a962a2db77a9670201cc7.bundle",
+      "size": 180571
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ecccdccb402fd2a8b338e972e17ab9ee.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ecccdccb402fd2a8b338e972e17ab9ee.bundle",
+      "size": 142409
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ecf526030b6b1b1b11649474c3c5b357.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ecf526030b6b1b1b11649474c3c5b357.bundle",
+      "size": 40083
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ecfc0430393986464fee6ac731c7f15d.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ecfc0430393986464fee6ac731c7f15d.bundle",
+      "size": 8590
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ed738c05698352c10eb1b55e44d9a48d.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ed738c05698352c10eb1b55e44d9a48d.bundle",
+      "size": 1888049
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "edc6cbe00ebb8c6869546f73681946ca.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/edc6cbe00ebb8c6869546f73681946ca.bundle",
+      "size": 2670
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ee08dfe1e62fd44733d999d404e99c6f.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ee08dfe1e62fd44733d999d404e99c6f.bundle",
+      "size": 58928
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ee26a92ba3345b41c840964c7ebbd64d.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ee26a92ba3345b41c840964c7ebbd64d.bundle",
+      "size": 2951
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "eeaf340716b5ab51e515952c8237bc6f.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/eeaf340716b5ab51e515952c8237bc6f.bundle",
+      "size": 6965796
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "eef32c821fa9a528dd8734c2519680f4.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/eef32c821fa9a528dd8734c2519680f4.bundle",
+      "size": 2545
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ef76d91dccb48a71857e768256ce6c1d.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ef76d91dccb48a71857e768256ce6c1d.bundle",
+      "size": 2448
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ef8850070b710857852f4833020b214f.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ef8850070b710857852f4833020b214f.bundle",
+      "size": 2245491
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "efc8f9e254d3e92c6c172a3dd350aec2.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/efc8f9e254d3e92c6c172a3dd350aec2.bundle",
+      "size": 77456
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "efd9a4b9959c9a09e1a26e60858f4b6a.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/efd9a4b9959c9a09e1a26e60858f4b6a.bundle",
+      "size": 199077
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "f08c91b3ee166bea24c47c627edb9803.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/f08c91b3ee166bea24c47c627edb9803.bundle",
+      "size": 88528
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "f0d51175166375f047e4401c34dcff26.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/f0d51175166375f047e4401c34dcff26.bundle",
+      "size": 28404
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "f137aa73933ad044cfc53d4375795419.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/f137aa73933ad044cfc53d4375795419.bundle",
+      "size": 4546749
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "f13ec7cf9497d05a492f6ab1d830c66d.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/f13ec7cf9497d05a492f6ab1d830c66d.bundle",
+      "size": 4216739
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "f2a21d46bd8fa116121d7af13d61e3c5.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/f2a21d46bd8fa116121d7af13d61e3c5.bundle",
+      "size": 1513
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "f30f68de8a594632e03f4bc59a3cedac.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/f30f68de8a594632e03f4bc59a3cedac.bundle",
+      "size": 12269
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "f3e95e65c095822c11f57d2a6e967450.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/f3e95e65c095822c11f57d2a6e967450.bundle",
+      "size": 88359
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "f410948244218087ce16c550e5c50521.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/f410948244218087ce16c550e5c50521.bundle",
+      "size": 8167
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "f4af3b33006da2f710f9b7551b9493c8.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/f4af3b33006da2f710f9b7551b9493c8.bundle",
+      "size": 173035
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "f4b89675d46762eb1ea8f8a5bf55ed02.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/f4b89675d46762eb1ea8f8a5bf55ed02.bundle",
+      "size": 1034859
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "f534fa6321225b60232845b97629ffcc.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/f534fa6321225b60232845b97629ffcc.bundle",
+      "size": 1385
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "f608ed653a2c281bacd885938e8469b1.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/f608ed653a2c281bacd885938e8469b1.bundle",
+      "size": 530436
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "f62b3beacbf48163a1a393e30ef43acc.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/f62b3beacbf48163a1a393e30ef43acc.bundle",
+      "size": 6077
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "f62f675862d81afd1f815ed2dbfb27ab.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/f62f675862d81afd1f815ed2dbfb27ab.bundle",
+      "size": 931530
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "f7ad2102359c3d39497272bccd2fcda2.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/f7ad2102359c3d39497272bccd2fcda2.bundle",
+      "size": 31903874
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "f82560159f5f6256bb2d43451844bb9d.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/f82560159f5f6256bb2d43451844bb9d.bundle",
+      "size": 154415
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "f88665d859c7dafaf2637a42d74886a9.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/f88665d859c7dafaf2637a42d74886a9.bundle",
+      "size": 1935465
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "f8c05654cbcd9c9d43ae640692d7e2a7.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/f8c05654cbcd9c9d43ae640692d7e2a7.bundle",
+      "size": 2017
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "f92ca5c1a129dd5a9d04691e78553cf4.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/f92ca5c1a129dd5a9d04691e78553cf4.bundle",
+      "size": 748862
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "f9f882f2dfa5a62162b99bfebd108700.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/f9f882f2dfa5a62162b99bfebd108700.bundle",
+      "size": 573817
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "f9fa861d2e57e7897afe1326f1cb3e79.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/f9fa861d2e57e7897afe1326f1cb3e79.bundle",
+      "size": 2196
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "f9ff811a9ead3074f021bb40612455a6.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/f9ff811a9ead3074f021bb40612455a6.bundle",
+      "size": 15614
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "fa23fe5fe754d1da22fdba3fe4da3bc6.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/fa23fe5fe754d1da22fdba3fe4da3bc6.bundle",
+      "size": 5897
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "fa53038ac9ebba2f382ec4fd523467c3.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/fa53038ac9ebba2f382ec4fd523467c3.bundle",
+      "size": 1400
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "fae88d36e532622290b3ac102d9b3f0c.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/fae88d36e532622290b3ac102d9b3f0c.bundle",
+      "size": 854575
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "fb725c36db89a9ffaec1f1290a6a5fc8.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/fb725c36db89a9ffaec1f1290a6a5fc8.bundle",
+      "size": 153730
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "fba82bddca4b8940fa9ad29ae8714eaa.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/fba82bddca4b8940fa9ad29ae8714eaa.bundle",
+      "size": 6403
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "fbd709c9f939db35352ccf2d91781875.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/fbd709c9f939db35352ccf2d91781875.bundle",
+      "size": 5455
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "fbe968652572917e4ff7a86f26bda91c.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/fbe968652572917e4ff7a86f26bda91c.bundle",
+      "size": 135690
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "fbf95901f026c68458bfc089a3e7c443.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/fbf95901f026c68458bfc089a3e7c443.bundle",
+      "size": 853423
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "fe76d4efa604be9e07dcf923bf28e9c1.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/fe76d4efa604be9e07dcf923bf28e9c1.bundle",
+      "size": 9685
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ff8db4dd90575413440c2ed6759d150c.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ff8db4dd90575413440c2ed6759d150c.bundle",
+      "size": 1616323
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ffc23e6e8ae8e659f4fc9a5eaa40d632.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ffc23e6e8ae8e659f4fc9a5eaa40d632.bundle",
+      "size": 6736
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-assets-shared_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-assets-shared_assets_all.bundle",
+      "size": 79755
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-locales_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-locales_assets_all.bundle",
+      "size": 2786
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-string-tables-chinese(simplified)(zh)_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-string-tables-chinese(simplified)(zh)_assets_all.bundle",
+      "size": 100649
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-string-tables-chinese(traditional)(zh-hant)_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-string-tables-chinese(traditional)(zh-hant)_assets_all.bundle",
+      "size": 100367
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-string-tables-english(en)_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-string-tables-english(en)_assets_all.bundle",
+      "size": 100509
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-string-tables-french(fr)_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-string-tables-french(fr)_assets_all.bundle",
+      "size": 108109
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-string-tables-german(de)_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-string-tables-german(de)_assets_all.bundle",
+      "size": 108192
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-string-tables-italian(it)_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-string-tables-italian(it)_assets_all.bundle",
+      "size": 103808
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-string-tables-japanese(japan)(ja-jp)_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-string-tables-japanese(japan)(ja-jp)_assets_all.bundle",
+      "size": 105601
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-string-tables-korean(ko)_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-string-tables-korean(ko)_assets_all.bundle",
+      "size": 108975
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-string-tables-portuguese(brazil)(pt-br)_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-string-tables-portuguese(brazil)(pt-br)_assets_all.bundle",
+      "size": 105442
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-string-tables-russian(ru)_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-string-tables-russian(ru)_assets_all.bundle",
+      "size": 118569
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-string-tables-spanish(es)_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-string-tables-spanish(es)_assets_all.bundle",
+      "size": 106944
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-string-tables-thai(th)_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-string-tables-thai(th)_assets_all.bundle",
+      "size": 123651
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "catalog.json",
+      "relative_path": "Media/StreamingAssets/aa/catalog.json",
+      "size": 4779444
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "settings.json",
+      "relative_path": "Media/StreamingAssets/aa/settings.json",
+      "size": 1591
+    },
+    {
+      "category": "Unknown",
+      "extension": "config",
+      "file_name": "boot.config",
+      "relative_path": "Media/boot.config",
+      "size": 571
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "globalgamemanagers",
+      "relative_path": "Media/globalgamemanagers",
+      "size": 417388
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "globalgamemanagers.assets",
+      "relative_path": "Media/globalgamemanagers.assets",
+      "size": 1853044
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "globalgamemanagers.assets.resS",
+      "relative_path": "Media/globalgamemanagers.assets.resS",
+      "size": 3133440
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level0",
+      "relative_path": "Media/level0",
+      "size": 4184
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "level0.resS",
+      "relative_path": "Media/level0.resS",
+      "size": 131232
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "resources.assets",
+      "relative_path": "Media/resources.assets",
+      "size": 1091824
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "resources.assets.resS",
+      "relative_path": "Media/resources.assets.resS",
+      "size": 11769392
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets0.assets",
+      "relative_path": "Media/sharedassets0.assets",
+      "size": 124956
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets0.assets.resS",
+      "relative_path": "Media/sharedassets0.assets.resS",
+      "size": 16777216
+    },
+    {
+      "category": "Executable",
+      "extension": "eboot.bin",
+      "file_name": "eboot.bin",
+      "relative_path": "eboot.bin",
+      "size": 32615698
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceNpCppWebApi.prx",
+      "relative_path": "sce_module/libSceNpCppWebApi.prx",
+      "size": 7878880
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "libSceNpCppWebApi.prx.esbak",
+      "relative_path": "sce_module/libSceNpCppWebApi.prx.esbak",
+      "size": 7907080
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libc.prx",
+      "relative_path": "sce_module/libc.prx",
+      "size": 1303128
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "libc.prx.esbak",
+      "relative_path": "sce_module/libc.prx.esbak",
+      "size": 1351760
+    },
+    {
+      "category": "Executable",
+      "extension": "sprx",
+      "file_name": "right.sprx",
+      "relative_path": "sce_sys/about/right.sprx",
+      "size": 12448
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "right.sprx.esbak",
+      "relative_path": "sce_sys/about/right.sprx.esbak",
+      "size": 66196
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "ext_info.dat",
+      "relative_path": "sce_sys/ext_info.dat",
+      "size": 44
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "icon0.dds",
+      "relative_path": "sce_sys/icon0.dds",
+      "size": 262292
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "icon0.png",
+      "relative_path": "sce_sys/icon0.png",
+      "size": 389611
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "keystone",
+      "relative_path": "sce_sys/keystone",
+      "size": 96
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "nptitle.dat",
+      "relative_path": "sce_sys/nptitle.dat",
+      "size": 160
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "param.json",
+      "relative_path": "sce_sys/param.json",
+      "size": 3327
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "pfs-version.dat",
+      "relative_path": "sce_sys/pfs-version.dat",
+      "size": 10
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic0.dds",
+      "relative_path": "sce_sys/pic0.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "pic0.png",
+      "relative_path": "sce_sys/pic0.png",
+      "size": 6057043
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic1.dds",
+      "relative_path": "sce_sys/pic1.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic2.dds",
+      "relative_path": "sce_sys/pic2.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Audio",
+      "extension": "at9",
+      "file_name": "snd0.at9",
+      "relative_path": "sce_sys/snd0.at9",
+      "size": 1463592
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "sce_sys/trophy2/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "trophy00.ucp",
+      "relative_path": "sce_sys/trophy2/trophy00.ucp",
+      "size": 4385456
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "sce_sys/uds/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "uds00.ucp",
+      "relative_path": "sce_sys/uds/uds00.ucp",
+      "size": 36848
+    }
+  ],
+  "by_category": {
+    "audio": 1,
+    "executable": 9,
+    "metadata": 30,
+    "texture": 7,
+    "unknown": 565
+  },
+  "by_extension": {
+    "(no_ext)": 5,
+    "assets": 3,
+    "at9": 1,
+    "bundle": 420,
+    "chroma": 123,
+    "config": 1,
+    "dat": 9,
+    "dds": 4,
+    "eboot.bin": 1,
+    "esbak": 8,
+    "json": 10,
+    "mp4": 9,
+    "png": 3,
+    "prx": 7,
+    "ress": 4,
+    "sprx": 1,
+    "ucp": 2,
+    "xml": 1
+  },
+  "game": "Cat-Quest-III-PPSA15065-app",
+  "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Cat-Quest-III-PPSA15065-app",
+  "total_bytes": 1246164518,
+  "total_files": 612
+}

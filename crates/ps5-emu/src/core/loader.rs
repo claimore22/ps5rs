@@ -1,13 +1,13 @@
 //! Loader integration: materialize guest memory, build import slots, and patch
 //! the executable modules' GOT slots with HLE stubs.
 
+use super::dispatcher::ImportSlot;
+use super::relocator::{StubRegion, patch_got_slots};
 use crate::error::EmuError;
 use crate::hle::Registry;
 use crate::imports::ImportTable;
 use crate::platform::memory::GuestMemory;
 use crate::process::Process;
-use super::dispatcher::ImportSlot;
-use super::relocator::{StubRegion, patch_got_slots};
 
 /// Guest virtual address of the runtime stack. This is the base address where the guest stack will reside in the virtual memory layout.
 pub const GUEST_STACK_VA: u64 = 0x0000_7000_0000_0000;
@@ -15,11 +15,6 @@ pub const GUEST_STACK_VA: u64 = 0x0000_7000_0000_0000;
 pub const GUEST_STACK_SIZE: u64 = 0x0010_0000;
 
 fn u64_to_nid_str(nid: u64) -> String {
-
-
-
-
-
     ps5_nid::encode_nid(nid.to_be_bytes())
 }
 
@@ -129,7 +124,7 @@ fn build_slots(
             name,
             library: binding.library.clone(),
             got_slot: binding.got_slot,
-            stubbed: !registry.contains(binding.nid)
+            stubbed: !registry.contains(binding.nid),
         });
     }
     Ok(slots)

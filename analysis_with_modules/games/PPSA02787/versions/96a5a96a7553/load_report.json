@@ -1,0 +1,420 @@
+{
+  "game": "Monster Boy and the Cursed Kingdom - [PPSA02787]",
+  "path": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Monster.Boy.and.The.Cursed.Kingdom-PPSA02787-USA-Game-v01.000.004-PS5\\PPSA02787-app0\\eboot.bin",
+  "load_report": {
+    "modules": [
+      {
+        "name": "libc.prx",
+        "module_type": "Prx",
+        "load_bias": 34628173824,
+        "entry_point": null,
+        "exports_count": 2571,
+        "imports_resolved": 0,
+        "imports_known": 0,
+        "imports_stubbed": 104,
+        "relative": 1721,
+        "glob_dat": 3,
+        "jump_slot": 101,
+        "abs64": 0,
+        "copy": 0,
+        "tls_relocations": 3,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 831392,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 1129600,
+        "preinit_array_sz": 8,
+        "per_library": [
+          {
+            "library": "libSceLibcInternalExt",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 100
+          }
+        ]
+      },
+      {
+        "name": "PPSA02787-app0",
+        "module_type": "Eboot",
+        "load_bias": 34629550080,
+        "entry_point": 112,
+        "exports_count": 0,
+        "imports_resolved": 580,
+        "imports_known": 0,
+        "imports_stubbed": 397,
+        "relative": 27282,
+        "glob_dat": 21,
+        "jump_slot": 566,
+        "abs64": 390,
+        "copy": 0,
+        "tls_relocations": 0,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 6339008,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 0,
+        "preinit_array_sz": 0,
+        "per_library": [
+          {
+            "library": "libSceAgc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 192
+          },
+          {
+            "library": "libSceAgcDriver",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 38
+          },
+          {
+            "library": "libSceAudioOut",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceAudioOut2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 10
+          },
+          {
+            "library": "libSceAvPlayer",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 12
+          },
+          {
+            "library": "libSceCommonDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceFont",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 18
+          },
+          {
+            "library": "libSceFontFt",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceNgs2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 12
+          },
+          {
+            "library": "libSceNpGameIntent",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceNpTrophy2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceNpUniversalDataSystem",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 15
+          },
+          {
+            "library": "libScePad",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libSceRtc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceSaveDataDialog.native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libSceSaveData_native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 11
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceSystemService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceUserService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceVideoOut",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 6
+          },
+          {
+            "library": "libc",
+            "resolved": 580,
+            "known": 0,
+            "stubbed": 0
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 38
+          }
+        ]
+      }
+    ],
+    "graph": {
+      "nodes": [
+        "libkernel.prx",
+        "libSceAvPlayer.native.prx",
+        "libScePad.prx",
+        "libSceLibcInternal.prx",
+        "libSceAudioOut.prx",
+        "libSceFont-module.prx",
+        "libSceNpTrophy2.prx",
+        "libSceSystemService.prx",
+        "libSceUserService.prx",
+        "libSceNpGameIntent.prx",
+        "libSceNgs2.prx",
+        "libSceCommonDialog.prx",
+        "libSceNpManager.prx",
+        "libSceAgcDriver.prx",
+        "libScePlayGo.prx",
+        "libc.prx",
+        "libSceSaveData.native.prx",
+        "PPSA02787-app0",
+        "libSceRtc.prx",
+        "libSceSysmodule.prx",
+        "libSceAgc.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceErrorDialog.prx",
+        "libSceVideoOut.prx",
+        "libSceFontFt-module.prx"
+      ],
+      "unavailable": [
+        "libSceFont-module.prx",
+        "libSceNpManager.prx",
+        "libSceRtc.prx",
+        "libSceSaveData.native.prx",
+        "libScePlayGo.prx",
+        "libSceNgs2.prx",
+        "libSceSystemService.prx",
+        "libSceCommonDialog.prx",
+        "libSceAudioOut.prx",
+        "libSceAgcDriver.prx",
+        "libkernel.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceAgc.prx",
+        "libSceFontFt-module.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceNpTrophy2.prx",
+        "libSceNpGameIntent.prx",
+        "libSceSysmodule.prx",
+        "libSceVideoOut.prx",
+        "libSceLibcInternal.prx",
+        "libSceUserService.prx",
+        "libSceErrorDialog.prx",
+        "libScePad.prx"
+      ],
+      "edges": [
+        {
+          "from": "libc.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA02787-app0",
+          "to": "libSceNpGameIntent.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA02787-app0",
+          "to": "libSceRtc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA02787-app0",
+          "to": "libSceNpTrophy2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA02787-app0",
+          "to": "libSceNpUniversalDataSystem.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA02787-app0",
+          "to": "libSceNpManager.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA02787-app0",
+          "to": "libSceAvPlayer.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA02787-app0",
+          "to": "libSceAudioOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA02787-app0",
+          "to": "libSceNgs2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA02787-app0",
+          "to": "libSceAgcDriver.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA02787-app0",
+          "to": "libSceAgc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA02787-app0",
+          "to": "libSceVideoOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA02787-app0",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA02787-app0",
+          "to": "libc.prx",
+          "status": "loaded"
+        },
+        {
+          "from": "PPSA02787-app0",
+          "to": "libSceUserService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA02787-app0",
+          "to": "libScePad.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA02787-app0",
+          "to": "libSceSystemService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA02787-app0",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA02787-app0",
+          "to": "libSceCommonDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA02787-app0",
+          "to": "libSceSaveDataDialog.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA02787-app0",
+          "to": "libSceSaveData.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA02787-app0",
+          "to": "libScePlayGo.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA02787-app0",
+          "to": "libSceErrorDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA02787-app0",
+          "to": "libSceFont-module.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA02787-app0",
+          "to": "libSceFontFt-module.prx",
+          "status": "missing"
+        }
+      ]
+    },
+    "totals": {
+      "modules": 2,
+      "resolved": 580,
+      "known": 0,
+      "stubbed": 501,
+      "exports": 2571,
+      "unavailable": 24
+    }
+  },
+  "error": null
+}

@@ -1,0 +1,5019 @@
+{
+  "artifacts": [
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "global-metadata.dat",
+      "relative_path": "Media/Metadata/global-metadata.dat",
+      "size": 13532532
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "Il2cppUserAssemblies.prx",
+      "relative_path": "Media/Modules/Il2cppUserAssemblies.prx",
+      "size": 62102359
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "PS5Util.prx",
+      "relative_path": "Media/Modules/PS5Util.prx",
+      "size": 7285
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "AkSoundEngine.prx",
+      "relative_path": "Media/Plugins/AkSoundEngine.prx",
+      "size": 3800517
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "PSN.prx",
+      "relative_path": "Media/Plugins/PSN.prx",
+      "size": 484507
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "lib_burst_generated.prx",
+      "relative_path": "Media/Plugins/lib_burst_generated.prx",
+      "size": 97937
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "System.Data.dll-resources.dat",
+      "relative_path": "Media/Resources/System.Data.dll-resources.dat",
+      "size": 93718
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "System.Drawing.dll-resources.dat",
+      "relative_path": "Media/Resources/System.Drawing.dll-resources.dat",
+      "size": 25453
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "mscorlib.dll-resources.dat",
+      "relative_path": "Media/Resources/mscorlib.dll-resources.dat",
+      "size": 337563
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "unity default resources",
+      "relative_path": "Media/Resources/unity default resources",
+      "size": 875952
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "unity_builtin_extra",
+      "relative_path": "Media/Resources/unity_builtin_extra",
+      "size": 564920
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "RuntimeInitializeOnLoads.json",
+      "relative_path": "Media/RuntimeInitializeOnLoads.json",
+      "size": 4243
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "ScriptingAssemblies.json",
+      "relative_path": "Media/ScriptingAssemblies.json",
+      "size": 4356
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "1a",
+      "relative_path": "Media/StreamingAssets/AssetBundles/1a",
+      "size": 161994970
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "1b",
+      "relative_path": "Media/StreamingAssets/AssetBundles/1b",
+      "size": 151555469
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "2a",
+      "relative_path": "Media/StreamingAssets/AssetBundles/2a",
+      "size": 287433037
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "2b",
+      "relative_path": "Media/StreamingAssets/AssetBundles/2b",
+      "size": 143357336
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "2c",
+      "relative_path": "Media/StreamingAssets/AssetBundles/2c",
+      "size": 94787607
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "2c_transitions",
+      "relative_path": "Media/StreamingAssets/AssetBundles/2c_transitions",
+      "size": 31903403
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "3a",
+      "relative_path": "Media/StreamingAssets/AssetBundles/3a",
+      "size": 153297875
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "3b",
+      "relative_path": "Media/StreamingAssets/AssetBundles/3b",
+      "size": 70165791
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "4",
+      "relative_path": "Media/StreamingAssets/AssetBundles/4",
+      "size": 156208904
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "dlc1",
+      "relative_path": "Media/StreamingAssets/AssetBundles/dlc1",
+      "size": 131379484
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "mainmenu",
+      "relative_path": "Media/StreamingAssets/AssetBundles/mainmenu",
+      "size": 13392212
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1004756643.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/1004756643.wem",
+      "size": 376725
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1007292936.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/1007292936.wem",
+      "size": 5188520
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1012500521.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/1012500521.wem",
+      "size": 2745420
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1015944725.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/1015944725.wem",
+      "size": 6093927
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1017241152.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/1017241152.wem",
+      "size": 267748
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1030348191.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/1030348191.wem",
+      "size": 3661461
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1042381015.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/1042381015.wem",
+      "size": 4025479
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "120385710.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/120385710.wem",
+      "size": 3132096
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "136783448.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/136783448.wem",
+      "size": 900238
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "140915464.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/140915464.wem",
+      "size": 1434599
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "153241041.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/153241041.wem",
+      "size": 711671
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "154800075.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/154800075.wem",
+      "size": 1657288
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "155733731.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/155733731.wem",
+      "size": 160288
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "155957530.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/155957530.wem",
+      "size": 1343643
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "158938368.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/158938368.wem",
+      "size": 1028167
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "161541312.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/161541312.wem",
+      "size": 1079800
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "167725134.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/167725134.wem",
+      "size": 1520777
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "172541586.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/172541586.wem",
+      "size": 5601450
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "180322927.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/180322927.wem",
+      "size": 355712
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "184581668.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/184581668.wem",
+      "size": 561296
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "190949361.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/190949361.wem",
+      "size": 1194017
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "203668998.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/203668998.wem",
+      "size": 20283
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "206049690.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/206049690.wem",
+      "size": 795104
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "21250119.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/21250119.wem",
+      "size": 5874860
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "227228063.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/227228063.wem",
+      "size": 5077307
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "23094873.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/23094873.wem",
+      "size": 2605653
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "232159246.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/232159246.wem",
+      "size": 5652808
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "244275162.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/244275162.wem",
+      "size": 16079
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "244984838.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/244984838.wem",
+      "size": 927621
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "24665751.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/24665751.wem",
+      "size": 1303014
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "258301032.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/258301032.wem",
+      "size": 904551
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "258617285.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/258617285.wem",
+      "size": 154616
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "262683526.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/262683526.wem",
+      "size": 1114256
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "26658566.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/26658566.wem",
+      "size": 1105731
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "267145310.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/267145310.wem",
+      "size": 1338639
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "268576830.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/268576830.wem",
+      "size": 738834
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "276378631.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/276378631.wem",
+      "size": 1206649
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "282591721.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/282591721.wem",
+      "size": 17327
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "287225009.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/287225009.wem",
+      "size": 1422125
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "292548318.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/292548318.wem",
+      "size": 1032830
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "292865690.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/292865690.wem",
+      "size": 1241906
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "295420492.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/295420492.wem",
+      "size": 396814
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "296705137.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/296705137.wem",
+      "size": 1038910
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "302910414.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/302910414.wem",
+      "size": 143413
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "323141005.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/323141005.wem",
+      "size": 706055
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "3258880.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/3258880.wem",
+      "size": 1305230
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "330495629.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/330495629.wem",
+      "size": 1052166
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "338624707.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/338624707.wem",
+      "size": 1201431
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "354936131.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/354936131.wem",
+      "size": 5153595
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "354947886.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/354947886.wem",
+      "size": 152378
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "356681973.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/356681973.wem",
+      "size": 262983
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "362289865.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/362289865.wem",
+      "size": 761285
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "365830592.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/365830592.wem",
+      "size": 2952292
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "368001620.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/368001620.wem",
+      "size": 10267892
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "36813697.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/36813697.wem",
+      "size": 2219314
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "370527590.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/370527590.wem",
+      "size": 1056697
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "374120268.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/374120268.wem",
+      "size": 1146295
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "375226605.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/375226605.wem",
+      "size": 1127857
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "376040550.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/376040550.wem",
+      "size": 1191881
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "385118437.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/385118437.wem",
+      "size": 275650
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "407890054.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/407890054.wem",
+      "size": 914906
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "412155219.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/412155219.wem",
+      "size": 3398570
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "420486913.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/420486913.wem",
+      "size": 3180118
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "443176221.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/443176221.wem",
+      "size": 5335085
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "44617625.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/44617625.wem",
+      "size": 3137079
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "482562129.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/482562129.wem",
+      "size": 903922
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "490027657.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/490027657.wem",
+      "size": 2832091
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "493085896.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/493085896.wem",
+      "size": 3556116
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "497088305.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/497088305.wem",
+      "size": 1188522
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "525083369.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/525083369.wem",
+      "size": 1687010
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "529147927.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/529147927.wem",
+      "size": 597357
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "532837588.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/532837588.wem",
+      "size": 315019
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "543641471.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/543641471.wem",
+      "size": 1123442
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "544097028.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/544097028.wem",
+      "size": 302712
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "550372655.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/550372655.wem",
+      "size": 1620942
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "582928671.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/582928671.wem",
+      "size": 3641588
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "584909230.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/584909230.wem",
+      "size": 847287
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "586683537.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/586683537.wem",
+      "size": 1341920
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "587104572.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/587104572.wem",
+      "size": 7499804
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "594787945.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/594787945.wem",
+      "size": 1089997
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "595929149.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/595929149.wem",
+      "size": 16027892
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "601907130.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/601907130.wem",
+      "size": 1193558
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "604596035.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/604596035.wem",
+      "size": 498089
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "60694248.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/60694248.wem",
+      "size": 1237315
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "623116105.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/623116105.wem",
+      "size": 150585
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "627521783.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/627521783.wem",
+      "size": 150828
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "645199635.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/645199635.wem",
+      "size": 873527
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "64753287.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/64753287.wem",
+      "size": 270718
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "675307102.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/675307102.wem",
+      "size": 791162
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "679200662.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/679200662.wem",
+      "size": 605877
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "699732896.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/699732896.wem",
+      "size": 640679
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "716129311.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/716129311.wem",
+      "size": 1290567
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "721757108.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/721757108.wem",
+      "size": 19285
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "738597388.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/738597388.wem",
+      "size": 1253609
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "741789613.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/741789613.wem",
+      "size": 263263
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "75439480.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/75439480.wem",
+      "size": 264267
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "755204612.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/755204612.wem",
+      "size": 737427
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "761608892.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/761608892.wem",
+      "size": 111861
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "779676601.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/779676601.wem",
+      "size": 1546967
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "789923577.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/789923577.wem",
+      "size": 931413
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "794622249.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/794622249.wem",
+      "size": 3428604
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "805171726.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/805171726.wem",
+      "size": 294788
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "815503222.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/815503222.wem",
+      "size": 7150148
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "818074704.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/818074704.wem",
+      "size": 1161427
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "83106535.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/83106535.wem",
+      "size": 2272260
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "834327284.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/834327284.wem",
+      "size": 5159907
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "835541387.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/835541387.wem",
+      "size": 1153853
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "836098277.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/836098277.wem",
+      "size": 3423101
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "844662867.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/844662867.wem",
+      "size": 1083662
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "849204607.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/849204607.wem",
+      "size": 566474
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "851567230.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/851567230.wem",
+      "size": 1056432
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "852521036.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/852521036.wem",
+      "size": 405276
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "855484463.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/855484463.wem",
+      "size": 599457
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "872448578.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/872448578.wem",
+      "size": 264092
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "872566761.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/872566761.wem",
+      "size": 151481
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "897076294.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/897076294.wem",
+      "size": 1056829
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "910360240.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/910360240.wem",
+      "size": 571471
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "915411047.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/915411047.wem",
+      "size": 3388614
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "926521974.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/926521974.wem",
+      "size": 461953
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "926601327.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/926601327.wem",
+      "size": 4115
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "942386819.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/942386819.wem",
+      "size": 1257507
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "952525894.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/952525894.wem",
+      "size": 1093606
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "954521373.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/954521373.wem",
+      "size": 256169
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "965873119.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/965873119.wem",
+      "size": 556607
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "970751700.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/970751700.wem",
+      "size": 3680520
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "97134113.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/97134113.wem",
+      "size": 7145748
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "973525512.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/973525512.wem",
+      "size": 6785043
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "982711294.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/982711294.wem",
+      "size": 1412444
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "993937792.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/993937792.wem",
+      "size": 5384106
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "997505601.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/997505601.wem",
+      "size": 141836
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Boss_Deer.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Boss_Deer.bnk",
+      "size": 8583549
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Boss_Deer.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Boss_Deer.txt",
+      "size": 30521
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Boss_King.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Boss_King.bnk",
+      "size": 3006835
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Boss_King.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Boss_King.txt",
+      "size": 11347
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Boss_Queen.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Boss_Queen.bnk",
+      "size": 8920251
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Boss_Queen.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Boss_Queen.txt",
+      "size": 2241
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Boss_Wolf.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Boss_Wolf.bnk",
+      "size": 6133420
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Boss_Wolf.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Boss_Wolf.txt",
+      "size": 18169
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Chapter_0.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Chapter_0.bnk",
+      "size": 6822024
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Chapter_0.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Chapter_0.txt",
+      "size": 1277
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Chapter_1a.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Chapter_1a.bnk",
+      "size": 12773460
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Chapter_1a.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Chapter_1a.txt",
+      "size": 73702
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Chapter_1b.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Chapter_1b.bnk",
+      "size": 23096735
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Chapter_1b.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Chapter_1b.txt",
+      "size": 105998
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Chapter_2a.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Chapter_2a.bnk",
+      "size": 27365671
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Chapter_2a.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Chapter_2a.txt",
+      "size": 79368
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Chapter_2b.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Chapter_2b.bnk",
+      "size": 44317641
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Chapter_2b.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Chapter_2b.txt",
+      "size": 69424
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Chapter_2c.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Chapter_2c.bnk",
+      "size": 28961484
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Chapter_2c.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Chapter_2c.txt",
+      "size": 95784
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Chapter_3a.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Chapter_3a.bnk",
+      "size": 117531695
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Chapter_3a.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Chapter_3a.txt",
+      "size": 256619
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Chapter_3b.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Chapter_3b.bnk",
+      "size": 93624658
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Chapter_3b.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Chapter_3b.txt",
+      "size": 144475
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Chapter_4.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Chapter_4.bnk",
+      "size": 56693396
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Chapter_4.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Chapter_4.txt",
+      "size": 215458
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_DLC1.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_DLC1.bnk",
+      "size": 298702691
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_DLC1.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_DLC1.txt",
+      "size": 500003
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Enemy_Bison.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Enemy_Bison.bnk",
+      "size": 1879726
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Enemy_Bison.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Enemy_Bison.txt",
+      "size": 7811
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Enemy_Boar.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Enemy_Boar.bnk",
+      "size": 3024591
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Enemy_Boar.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Enemy_Boar.txt",
+      "size": 19036
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Enemy_Boulder.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Enemy_Boulder.bnk",
+      "size": 13650911
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Enemy_Boulder.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Enemy_Boulder.txt",
+      "size": 93252
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Enemy_Crane.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Enemy_Crane.bnk",
+      "size": 777985
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Enemy_Crane.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Enemy_Crane.txt",
+      "size": 8083
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Enemy_Elite.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Enemy_Elite.bnk",
+      "size": 2850192
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Enemy_Elite.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Enemy_Elite.txt",
+      "size": 14654
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Enemy_Elite_Blind.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Enemy_Elite_Blind.bnk",
+      "size": 3208573
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Enemy_Elite_Blind.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Enemy_Elite_Blind.txt",
+      "size": 14483
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Enemy_Firefly.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Enemy_Firefly.bnk",
+      "size": 1993154
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Enemy_Firefly.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Enemy_Firefly.txt",
+      "size": 26100
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Enemy_HalfMonkey.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Enemy_HalfMonkey.bnk",
+      "size": 1335963
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Enemy_HalfMonkey.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Enemy_HalfMonkey.txt",
+      "size": 12762
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Enemy_Kamikaze.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Enemy_Kamikaze.bnk",
+      "size": 2605038
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Enemy_Kamikaze.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Enemy_Kamikaze.txt",
+      "size": 18218
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Enemy_Mantis.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Enemy_Mantis.bnk",
+      "size": 2676353
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Enemy_Mantis.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Enemy_Mantis.txt",
+      "size": 56313
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Enemy_Monkey.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Enemy_Monkey.bnk",
+      "size": 9106549
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Enemy_Monkey.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Enemy_Monkey.txt",
+      "size": 53455
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Enemy_MonkeyCorpse.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Enemy_MonkeyCorpse.bnk",
+      "size": 210633
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Enemy_MonkeyCorpse.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Enemy_MonkeyCorpse.txt",
+      "size": 5416
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Enemy_MonkeyFlower.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Enemy_MonkeyFlower.bnk",
+      "size": 981058
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Enemy_MonkeyFlower.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Enemy_MonkeyFlower.txt",
+      "size": 5682
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Enemy_Moth.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Enemy_Moth.bnk",
+      "size": 414838
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Enemy_Moth.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Enemy_Moth.txt",
+      "size": 5228
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Enemy_Parasite.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Enemy_Parasite.bnk",
+      "size": 494631
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Enemy_Parasite.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Enemy_Parasite.txt",
+      "size": 4518
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Enemy_Wings.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Enemy_Wings.bnk",
+      "size": 2848543
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Enemy_Wings.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Enemy_Wings.txt",
+      "size": 21261
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Music_Menus.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Music_Menus.bnk",
+      "size": 7592017
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Music_Menus.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Music_Menus.txt",
+      "size": 2580
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Neu_Adult.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Neu_Adult.bnk",
+      "size": 84283
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Neu_Adult.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Neu_Adult.txt",
+      "size": 2193
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Neu_Common.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Neu_Common.bnk",
+      "size": 1524930
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Neu_Common.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Neu_Common.txt",
+      "size": 23925
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Neu_Foley.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Neu_Foley.bnk",
+      "size": 4600424
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Neu_Foley.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Neu_Foley.txt",
+      "size": 72776
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Neu_Puppy.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Neu_Puppy.bnk",
+      "size": 2055962
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Neu_Puppy.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Neu_Puppy.txt",
+      "size": 15064
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Neu_Young.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Neu_Young.bnk",
+      "size": 14017225
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Neu_Young.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Neu_Young.txt",
+      "size": 75092
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_PlayGo.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_PlayGo.bnk",
+      "size": 74473326
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_PlayGo.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_PlayGo.txt",
+      "size": 529265
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "Init.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Init.bnk",
+      "size": 21584
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "Init.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Init.txt",
+      "size": 31231
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1002157956.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/1002157956.wem",
+      "size": 1435342
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1003134803.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/1003134803.wem",
+      "size": 311978
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1004756643.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/1004756643.wem",
+      "size": 1133626
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1007292936.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/1007292936.wem",
+      "size": 12508425
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1009547289.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/1009547289.wem",
+      "size": 1210230
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1012500521.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/1012500521.wem",
+      "size": 5059010
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "101566756.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/101566756.wem",
+      "size": 390316
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1017241152.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/1017241152.wem",
+      "size": 741359
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1026737277.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/1026737277.wem",
+      "size": 6082512
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1028096402.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/1028096402.wem",
+      "size": 2888583
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1030348191.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/1030348191.wem",
+      "size": 8790553
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1039200062.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/1039200062.wem",
+      "size": 2813527
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1042381015.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/1042381015.wem",
+      "size": 8573976
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "104258754.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/104258754.wem",
+      "size": 247796
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1045780386.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/1045780386.wem",
+      "size": 12673771
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1051828342.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/1051828342.wem",
+      "size": 2183732
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1060983509.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/1060983509.wem",
+      "size": 649247
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1072661988.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/1072661988.wem",
+      "size": 264128
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "111616374.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/111616374.wem",
+      "size": 933010
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "11188682.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/11188682.wem",
+      "size": 687711
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "112791998.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/112791998.wem",
+      "size": 745402
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "117310446.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/117310446.wem",
+      "size": 992731
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "123317761.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/123317761.wem",
+      "size": 2279604
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "124350105.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/124350105.wem",
+      "size": 723596
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "124803019.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/124803019.wem",
+      "size": 2228911
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "129498339.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/129498339.wem",
+      "size": 2863469
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "136783448.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/136783448.wem",
+      "size": 2485113
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "137313494.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/137313494.wem",
+      "size": 5957382
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "13770454.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/13770454.wem",
+      "size": 11499662
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "138036733.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/138036733.wem",
+      "size": 5031824
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "14088466.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/14088466.wem",
+      "size": 1089421
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "140915464.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/140915464.wem",
+      "size": 3411626
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "142184511.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/142184511.wem",
+      "size": 519162
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "142249175.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/142249175.wem",
+      "size": 747602
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "143945143.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/143945143.wem",
+      "size": 1938199
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "145231511.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/145231511.wem",
+      "size": 816722
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "146624015.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/146624015.wem",
+      "size": 136980
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1524555.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/1524555.wem",
+      "size": 12937543
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "153241041.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/153241041.wem",
+      "size": 1507237
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "154800075.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/154800075.wem",
+      "size": 3415707
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "155121330.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/155121330.wem",
+      "size": 5049848
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "155957530.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/155957530.wem",
+      "size": 2828011
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "157571747.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/157571747.wem",
+      "size": 479025
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "158938368.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/158938368.wem",
+      "size": 4166885
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "161541312.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/161541312.wem",
+      "size": 2143341
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "167725134.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/167725134.wem",
+      "size": 3335375
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "175342769.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/175342769.wem",
+      "size": 804141
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "175985416.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/175985416.wem",
+      "size": 1905133
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "177078986.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/177078986.wem",
+      "size": 1353758
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "179212963.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/179212963.wem",
+      "size": 892289
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "179597913.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/179597913.wem",
+      "size": 1845462
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "180322927.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/180322927.wem",
+      "size": 906008
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "189059370.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/189059370.wem",
+      "size": 1935335
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "189823956.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/189823956.wem",
+      "size": 433296
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "190949361.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/190949361.wem",
+      "size": 2513803
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "206049690.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/206049690.wem",
+      "size": 1691261
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "214009254.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/214009254.wem",
+      "size": 2159045
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "222441607.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/222441607.wem",
+      "size": 5380130
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "226761739.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/226761739.wem",
+      "size": 11459813
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "227228063.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/227228063.wem",
+      "size": 12048616
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "233941323.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/233941323.wem",
+      "size": 1116536
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "244984838.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/244984838.wem",
+      "size": 1960847
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "24665751.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/24665751.wem",
+      "size": 2321632
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "258301032.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/258301032.wem",
+      "size": 2021152
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "258617285.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/258617285.wem",
+      "size": 154640
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "262683526.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/262683526.wem",
+      "size": 2394531
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "263824982.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/263824982.wem",
+      "size": 2108638
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "26658566.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/26658566.wem",
+      "size": 2100460
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "267145310.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/267145310.wem",
+      "size": 4261870
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "268576830.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/268576830.wem",
+      "size": 1568159
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "269386548.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/269386548.wem",
+      "size": 8365457
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "287225009.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/287225009.wem",
+      "size": 2843624
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "288851383.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/288851383.wem",
+      "size": 1669535
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "292548318.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/292548318.wem",
+      "size": 2359646
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "292865690.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/292865690.wem",
+      "size": 2622200
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "293308437.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/293308437.wem",
+      "size": 2196224
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "295420492.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/295420492.wem",
+      "size": 873255
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "296705137.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/296705137.wem",
+      "size": 2150367
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "299042713.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/299042713.wem",
+      "size": 303904
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "300125358.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/300125358.wem",
+      "size": 7253428
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "302910414.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/302910414.wem",
+      "size": 356336
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "307737495.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/307737495.wem",
+      "size": 895626
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "314903337.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/314903337.wem",
+      "size": 1212500
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "317623911.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/317623911.wem",
+      "size": 1722670
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "323141005.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/323141005.wem",
+      "size": 1601374
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "3258880.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/3258880.wem",
+      "size": 1305254
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "329955856.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/329955856.wem",
+      "size": 5172462
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "330495629.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/330495629.wem",
+      "size": 2174531
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "330654586.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/330654586.wem",
+      "size": 2899528
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "338720949.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/338720949.wem",
+      "size": 1167514
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "341434236.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/341434236.wem",
+      "size": 8398355
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "343346030.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/343346030.wem",
+      "size": 2090317
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "348442973.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/348442973.wem",
+      "size": 875155
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "354936131.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/354936131.wem",
+      "size": 12739206
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "354947886.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/354947886.wem",
+      "size": 152402
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "356681973.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/356681973.wem",
+      "size": 263007
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "362289865.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/362289865.wem",
+      "size": 1601788
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "362726568.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/362726568.wem",
+      "size": 836272
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "365830592.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/365830592.wem",
+      "size": 6796340
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "370475058.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/370475058.wem",
+      "size": 4052358
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "370527590.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/370527590.wem",
+      "size": 2055827
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "371948042.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/371948042.wem",
+      "size": 2342601
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "374196945.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/374196945.wem",
+      "size": 4580169
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "375226605.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/375226605.wem",
+      "size": 2148693
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "378947070.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/378947070.wem",
+      "size": 4318067
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "382179731.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/382179731.wem",
+      "size": 951351
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "386838313.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/386838313.wem",
+      "size": 1038964
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "38918645.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/38918645.wem",
+      "size": 11244374
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "395253796.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/395253796.wem",
+      "size": 2653001
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "407146891.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/407146891.wem",
+      "size": 2271622
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "407890054.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/407890054.wem",
+      "size": 2229617
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "409007846.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/409007846.wem",
+      "size": 2301772
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "412155219.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/412155219.wem",
+      "size": 7944038
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "413644314.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/413644314.wem",
+      "size": 1979245
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "41754306.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/41754306.wem",
+      "size": 2083979
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "417639857.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/417639857.wem",
+      "size": 2164751
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "421609555.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/421609555.wem",
+      "size": 6047658
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "426247195.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/426247195.wem",
+      "size": 759020
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "430372586.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/430372586.wem",
+      "size": 1153383
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "438222790.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/438222790.wem",
+      "size": 1552635
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "440154789.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/440154789.wem",
+      "size": 2153445
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "440983442.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/440983442.wem",
+      "size": 104380
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "443176221.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/443176221.wem",
+      "size": 12937908
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "444111355.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/444111355.wem",
+      "size": 735027
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "452312091.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/452312091.wem",
+      "size": 1669220
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "464715669.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/464715669.wem",
+      "size": 588493
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "474431819.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/474431819.wem",
+      "size": 1733402
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "47845556.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/47845556.wem",
+      "size": 7090203
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "479065166.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/479065166.wem",
+      "size": 2272125
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "47964579.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/47964579.wem",
+      "size": 5208651
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "482562129.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/482562129.wem",
+      "size": 1755081
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "484089208.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/484089208.wem",
+      "size": 2188594
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "485205402.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/485205402.wem",
+      "size": 1317112
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "488426511.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/488426511.wem",
+      "size": 2119586
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "489823890.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/489823890.wem",
+      "size": 2243544
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "490027657.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/490027657.wem",
+      "size": 7769873
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "492706823.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/492706823.wem",
+      "size": 2160100
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "493085896.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/493085896.wem",
+      "size": 8600407
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "494100719.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/494100719.wem",
+      "size": 896135
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "495315124.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/495315124.wem",
+      "size": 2237592
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "497088305.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/497088305.wem",
+      "size": 2463995
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "503295140.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/503295140.wem",
+      "size": 2120617
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "506113252.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/506113252.wem",
+      "size": 1068009
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "507945526.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/507945526.wem",
+      "size": 1733402
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "515301226.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/515301226.wem",
+      "size": 2899528
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "519657853.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/519657853.wem",
+      "size": 10057798
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "520357873.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/520357873.wem",
+      "size": 1342164
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "529147927.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/529147927.wem",
+      "size": 1271741
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "530158910.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/530158910.wem",
+      "size": 2011831
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "532837588.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/532837588.wem",
+      "size": 802863
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "542391619.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/542391619.wem",
+      "size": 1004314
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "543641471.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/543641471.wem",
+      "size": 2093029
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "5474205.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/5474205.wem",
+      "size": 1167514
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "549126315.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/549126315.wem",
+      "size": 376750
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "550372655.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/550372655.wem",
+      "size": 3877596
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "551864146.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/551864146.wem",
+      "size": 685892
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "561228474.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/561228474.wem",
+      "size": 2698776
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "565472292.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/565472292.wem",
+      "size": 340345
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "571108123.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/571108123.wem",
+      "size": 1322044
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "574853267.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/574853267.wem",
+      "size": 1023036
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "583407922.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/583407922.wem",
+      "size": 934268
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "583531060.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/583531060.wem",
+      "size": 2850215
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "584909230.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/584909230.wem",
+      "size": 1738765
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "588949572.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/588949572.wem",
+      "size": 764049
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "589420749.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/589420749.wem",
+      "size": 1818409
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "592296577.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/592296577.wem",
+      "size": 761176
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "593034098.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/593034098.wem",
+      "size": 2100495
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "594260242.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/594260242.wem",
+      "size": 494403
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "594787945.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/594787945.wem",
+      "size": 2403173
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "598500116.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/598500116.wem",
+      "size": 2180792
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "601907130.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/601907130.wem",
+      "size": 2200935
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "604596035.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/604596035.wem",
+      "size": 957507
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "616756066.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/616756066.wem",
+      "size": 1332151
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "619065453.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/619065453.wem",
+      "size": 249261
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "623116105.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/623116105.wem",
+      "size": 325176
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "624713412.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/624713412.wem",
+      "size": 3754404
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "626784259.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/626784259.wem",
+      "size": 2921167
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "627521783.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/627521783.wem",
+      "size": 150852
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "629707231.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/629707231.wem",
+      "size": 12305925
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "632686812.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/632686812.wem",
+      "size": 1843212
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "633814807.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/633814807.wem",
+      "size": 1043454
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "639002544.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/639002544.wem",
+      "size": 1088626
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "64113724.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/64113724.wem",
+      "size": 9100033
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "645199635.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/645199635.wem",
+      "size": 1644199
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "64753287.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/64753287.wem",
+      "size": 704006
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "658521610.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/658521610.wem",
+      "size": 2229617
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "672600864.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/672600864.wem",
+      "size": 750366
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "672995334.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/672995334.wem",
+      "size": 2850215
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "675307102.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/675307102.wem",
+      "size": 1633571
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "677857605.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/677857605.wem",
+      "size": 1436041
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "679200662.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/679200662.wem",
+      "size": 1266274
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "680714738.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/680714738.wem",
+      "size": 2151466
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "68166437.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/68166437.wem",
+      "size": 514005
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "683699717.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/683699717.wem",
+      "size": 611783
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "685629868.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/685629868.wem",
+      "size": 3009270
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "699732896.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/699732896.wem",
+      "size": 1387941
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "703474677.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/703474677.wem",
+      "size": 692103
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "704153395.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/704153395.wem",
+      "size": 2111399
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "71171035.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/71171035.wem",
+      "size": 8339370
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "715165404.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/715165404.wem",
+      "size": 2611935
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "716129311.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/716129311.wem",
+      "size": 1290591
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "718224715.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/718224715.wem",
+      "size": 2784390
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "719281736.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/719281736.wem",
+      "size": 1319304
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "726636011.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/726636011.wem",
+      "size": 2228358
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "727425662.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/727425662.wem",
+      "size": 922082
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "728144237.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/728144237.wem",
+      "size": 2197757
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "734283990.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/734283990.wem",
+      "size": 2431357
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "737622676.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/737622676.wem",
+      "size": 255960
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "738597388.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/738597388.wem",
+      "size": 2389839
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "741789613.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/741789613.wem",
+      "size": 263287
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "75439480.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/75439480.wem",
+      "size": 264291
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "755204612.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/755204612.wem",
+      "size": 1634707
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "756999192.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/756999192.wem",
+      "size": 1014637
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "758798874.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/758798874.wem",
+      "size": 2273324
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "761608892.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/761608892.wem",
+      "size": 211473
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "76923840.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/76923840.wem",
+      "size": 663876
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "770844151.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/770844151.wem",
+      "size": 1077838
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "773138874.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/773138874.wem",
+      "size": 3450699
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "779676601.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/779676601.wem",
+      "size": 3285894
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "789825412.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/789825412.wem",
+      "size": 4021381
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "789923577.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/789923577.wem",
+      "size": 2064493
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "794622249.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/794622249.wem",
+      "size": 15556007
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "802134065.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/802134065.wem",
+      "size": 549834
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "802565119.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/802565119.wem",
+      "size": 8261898
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "805171726.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/805171726.wem",
+      "size": 663876
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "818074704.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/818074704.wem",
+      "size": 2143508
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "821134928.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/821134928.wem",
+      "size": 1039378
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "826453226.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/826453226.wem",
+      "size": 1081372
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "828156350.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/828156350.wem",
+      "size": 2159045
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "83106535.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/83106535.wem",
+      "size": 6114599
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "834327284.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/834327284.wem",
+      "size": 11797621
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "836098277.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/836098277.wem",
+      "size": 7571424
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "841503810.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/841503810.wem",
+      "size": 11244374
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "849204607.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/849204607.wem",
+      "size": 1267962
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "852521036.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/852521036.wem",
+      "size": 953648
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "855484463.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/855484463.wem",
+      "size": 1300784
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "856531093.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/856531093.wem",
+      "size": 1047991
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "858317075.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/858317075.wem",
+      "size": 960037
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "864995420.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/864995420.wem",
+      "size": 6047658
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "868096562.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/868096562.wem",
+      "size": 2292795
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "871912109.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/871912109.wem",
+      "size": 4212642
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "872448578.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/872448578.wem",
+      "size": 264116
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "872566761.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/872566761.wem",
+      "size": 182939
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "87397411.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/87397411.wem",
+      "size": 757879
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "875503778.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/875503778.wem",
+      "size": 5982736
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "891221441.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/891221441.wem",
+      "size": 4637239
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "894779684.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/894779684.wem",
+      "size": 1140652
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "897076294.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/897076294.wem",
+      "size": 2109901
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "899723620.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/899723620.wem",
+      "size": 7110248
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "908080576.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/908080576.wem",
+      "size": 856675
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "908881404.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/908881404.wem",
+      "size": 4126872
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "910360240.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/910360240.wem",
+      "size": 1261348
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "914722277.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/914722277.wem",
+      "size": 2384628
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "915411047.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/915411047.wem",
+      "size": 7436415
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "924842307.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/924842307.wem",
+      "size": 1630201
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "933437800.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/933437800.wem",
+      "size": 7529743
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "937581270.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/937581270.wem",
+      "size": 4586757
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "940295291.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/940295291.wem",
+      "size": 1056048
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "942386819.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/942386819.wem",
+      "size": 2526699
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "945323787.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/945323787.wem",
+      "size": 7446728
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "947780073.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/947780073.wem",
+      "size": 7542502
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "952525894.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/952525894.wem",
+      "size": 2141378
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "954521373.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/954521373.wem",
+      "size": 256193
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "959671073.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/959671073.wem",
+      "size": 275796
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "962668226.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/962668226.wem",
+      "size": 988180
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "965873119.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/965873119.wem",
+      "size": 1261635
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "97134113.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/97134113.wem",
+      "size": 15022723
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "973525512.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/973525512.wem",
+      "size": 15063740
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "982711294.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/982711294.wem",
+      "size": 2940436
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "986956522.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/986956522.wem",
+      "size": 3340954
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "997505601.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Media/997505601.wem",
+      "size": 141860
+    },
+    {
+      "category": "Metadata",
+      "extension": "xml",
+      "file_name": "PlatformInfo.xml",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/PlatformInfo.xml",
+      "size": 1498
+    },
+    {
+      "category": "Metadata",
+      "extension": "xml",
+      "file_name": "PluginInfo.xml",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/PluginInfo.xml",
+      "size": 1471
+    },
+    {
+      "category": "Metadata",
+      "extension": "xml",
+      "file_name": "SoundbanksInfo.xml",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/SoundbanksInfo.xml",
+      "size": 2992164
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "UnityServicesProjectConfiguration.json",
+      "relative_path": "Media/StreamingAssets/UnityServicesProjectConfiguration.json",
+      "size": 1320
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "build_info.txt",
+      "relative_path": "Media/StreamingAssets/build_info.txt",
+      "size": 89
+    },
+    {
+      "category": "Unknown",
+      "extension": "config",
+      "file_name": "boot.config",
+      "relative_path": "Media/boot.config",
+      "size": 634
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "globalgamemanagers",
+      "relative_path": "Media/globalgamemanagers",
+      "size": 303940
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "globalgamemanagers.assets",
+      "relative_path": "Media/globalgamemanagers.assets",
+      "size": 726864
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level0",
+      "relative_path": "Media/level0",
+      "size": 82184
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level1",
+      "relative_path": "Media/level1",
+      "size": 25212
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level10",
+      "relative_path": "Media/level10",
+      "size": 4006716
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level11",
+      "relative_path": "Media/level11",
+      "size": 5818100
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level12",
+      "relative_path": "Media/level12",
+      "size": 37496
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level13",
+      "relative_path": "Media/level13",
+      "size": 1727420
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level14",
+      "relative_path": "Media/level14",
+      "size": 1946108
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level15",
+      "relative_path": "Media/level15",
+      "size": 2855172
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level16",
+      "relative_path": "Media/level16",
+      "size": 2953280
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level17",
+      "relative_path": "Media/level17",
+      "size": 1167308
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level18",
+      "relative_path": "Media/level18",
+      "size": 178108
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level19",
+      "relative_path": "Media/level19",
+      "size": 8997964
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level2",
+      "relative_path": "Media/level2",
+      "size": 1328640
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level20",
+      "relative_path": "Media/level20",
+      "size": 15752
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level21",
+      "relative_path": "Media/level21",
+      "size": 963620
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level22",
+      "relative_path": "Media/level22",
+      "size": 828276
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level23",
+      "relative_path": "Media/level23",
+      "size": 783756
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level24",
+      "relative_path": "Media/level24",
+      "size": 468084
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level25",
+      "relative_path": "Media/level25",
+      "size": 4089980
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level26",
+      "relative_path": "Media/level26",
+      "size": 15880
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level27",
+      "relative_path": "Media/level27",
+      "size": 92228
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level28",
+      "relative_path": "Media/level28",
+      "size": 3667700
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level29",
+      "relative_path": "Media/level29",
+      "size": 6659380
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level3",
+      "relative_path": "Media/level3",
+      "size": 7776
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level30",
+      "relative_path": "Media/level30",
+      "size": 73336
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level31",
+      "relative_path": "Media/level31",
+      "size": 108252
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level32",
+      "relative_path": "Media/level32",
+      "size": 229556
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level33",
+      "relative_path": "Media/level33",
+      "size": 24128
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level34",
+      "relative_path": "Media/level34",
+      "size": 2108
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level35",
+      "relative_path": "Media/level35",
+      "size": 2140
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level36",
+      "relative_path": "Media/level36",
+      "size": 392412
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level37",
+      "relative_path": "Media/level37",
+      "size": 935596
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level38",
+      "relative_path": "Media/level38",
+      "size": 8163372
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level39",
+      "relative_path": "Media/level39",
+      "size": 1435020
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level4",
+      "relative_path": "Media/level4",
+      "size": 1128
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level40",
+      "relative_path": "Media/level40",
+      "size": 1166096
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level41",
+      "relative_path": "Media/level41",
+      "size": 1670096
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level42",
+      "relative_path": "Media/level42",
+      "size": 612908
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level43",
+      "relative_path": "Media/level43",
+      "size": 2502564
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level44",
+      "relative_path": "Media/level44",
+      "size": 14912
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level45",
+      "relative_path": "Media/level45",
+      "size": 1143072
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level46",
+      "relative_path": "Media/level46",
+      "size": 1632004
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level47",
+      "relative_path": "Media/level47",
+      "size": 3076884
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level48",
+      "relative_path": "Media/level48",
+      "size": 43288
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level49",
+      "relative_path": "Media/level49",
+      "size": 7036792
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level5",
+      "relative_path": "Media/level5",
+      "size": 8893728
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level50",
+      "relative_path": "Media/level50",
+      "size": 867492
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level51",
+      "relative_path": "Media/level51",
+      "size": 6692
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level52",
+      "relative_path": "Media/level52",
+      "size": 39488
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level53",
+      "relative_path": "Media/level53",
+      "size": 1441000
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level54",
+      "relative_path": "Media/level54",
+      "size": 1554740
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level55",
+      "relative_path": "Media/level55",
+      "size": 21693556
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level56",
+      "relative_path": "Media/level56",
+      "size": 7921588
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level57",
+      "relative_path": "Media/level57",
+      "size": 2913932
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level58",
+      "relative_path": "Media/level58",
+      "size": 68764
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level59",
+      "relative_path": "Media/level59",
+      "size": 2814920
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level6",
+      "relative_path": "Media/level6",
+      "size": 4559420
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level60",
+      "relative_path": "Media/level60",
+      "size": 1805732
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level61",
+      "relative_path": "Media/level61",
+      "size": 1576804
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level62",
+      "relative_path": "Media/level62",
+      "size": 2597392
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level63",
+      "relative_path": "Media/level63",
+      "size": 138660
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level64",
+      "relative_path": "Media/level64",
+      "size": 65824
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level65",
+      "relative_path": "Media/level65",
+      "size": 21056
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level66",
+      "relative_path": "Media/level66",
+      "size": 201612
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level67",
+      "relative_path": "Media/level67",
+      "size": 314516
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level7",
+      "relative_path": "Media/level7",
+      "size": 25276
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level8",
+      "relative_path": "Media/level8",
+      "size": 4268004
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level9",
+      "relative_path": "Media/level9",
+      "size": 3733000
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "resources.assets",
+      "relative_path": "Media/resources.assets",
+      "size": 2172184
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "resources.assets.resS",
+      "relative_path": "Media/resources.assets.resS",
+      "size": 127348736
+    },
+    {
+      "category": "Unknown",
+      "extension": "resource",
+      "file_name": "resources.resource",
+      "relative_path": "Media/resources.resource",
+      "size": 2195344694
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets0.assets",
+      "relative_path": "Media/sharedassets0.assets",
+      "size": 15209088
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets0.assets.resS",
+      "relative_path": "Media/sharedassets0.assets.resS",
+      "size": 280223744
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets1.assets",
+      "relative_path": "Media/sharedassets1.assets",
+      "size": 9120
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets1.assets.resS",
+      "relative_path": "Media/sharedassets1.assets.resS",
+      "size": 2117632
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets10.assets",
+      "relative_path": "Media/sharedassets10.assets",
+      "size": 951280
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets10.assets.resS",
+      "relative_path": "Media/sharedassets10.assets.resS",
+      "size": 28389376
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets11.assets",
+      "relative_path": "Media/sharedassets11.assets",
+      "size": 9963588
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets11.assets.resS",
+      "relative_path": "Media/sharedassets11.assets.resS",
+      "size": 950146464
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets12.assets",
+      "relative_path": "Media/sharedassets12.assets",
+      "size": 602348
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets12.assets.resS",
+      "relative_path": "Media/sharedassets12.assets.resS",
+      "size": 65536
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets13.assets",
+      "relative_path": "Media/sharedassets13.assets",
+      "size": 2148084
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets13.assets.resS",
+      "relative_path": "Media/sharedassets13.assets.resS",
+      "size": 2842624
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets14.assets",
+      "relative_path": "Media/sharedassets14.assets",
+      "size": 1116644
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets14.assets.resS",
+      "relative_path": "Media/sharedassets14.assets.resS",
+      "size": 6320128
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets15.assets",
+      "relative_path": "Media/sharedassets15.assets",
+      "size": 1138648
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets15.assets.resS",
+      "relative_path": "Media/sharedassets15.assets.resS",
+      "size": 11542528
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets16.assets",
+      "relative_path": "Media/sharedassets16.assets",
+      "size": 786048
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets16.assets.resS",
+      "relative_path": "Media/sharedassets16.assets.resS",
+      "size": 1400832
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets17.assets",
+      "relative_path": "Media/sharedassets17.assets",
+      "size": 153292
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets18.assets",
+      "relative_path": "Media/sharedassets18.assets",
+      "size": 192528
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets18.assets.resS",
+      "relative_path": "Media/sharedassets18.assets.resS",
+      "size": 3321856
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets19.assets",
+      "relative_path": "Media/sharedassets19.assets",
+      "size": 19917112
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets19.assets.resS",
+      "relative_path": "Media/sharedassets19.assets.resS",
+      "size": 763383808
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets2.assets",
+      "relative_path": "Media/sharedassets2.assets",
+      "size": 911212
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets2.assets.resS",
+      "relative_path": "Media/sharedassets2.assets.resS",
+      "size": 298849440
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets20.assets",
+      "relative_path": "Media/sharedassets20.assets",
+      "size": 158256
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets21.assets",
+      "relative_path": "Media/sharedassets21.assets",
+      "size": 2108580
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets21.assets.resS",
+      "relative_path": "Media/sharedassets21.assets.resS",
+      "size": 221184
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets22.assets",
+      "relative_path": "Media/sharedassets22.assets",
+      "size": 1102164
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets23.assets",
+      "relative_path": "Media/sharedassets23.assets",
+      "size": 241904
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets24.assets",
+      "relative_path": "Media/sharedassets24.assets",
+      "size": 56376
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets24.assets.resS",
+      "relative_path": "Media/sharedassets24.assets.resS",
+      "size": 5595136
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets25.assets",
+      "relative_path": "Media/sharedassets25.assets",
+      "size": 17904440
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets25.assets.resS",
+      "relative_path": "Media/sharedassets25.assets.resS",
+      "size": 1342349312
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets26.assets",
+      "relative_path": "Media/sharedassets26.assets",
+      "size": 1081088
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets27.assets",
+      "relative_path": "Media/sharedassets27.assets",
+      "size": 199332
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets28.assets",
+      "relative_path": "Media/sharedassets28.assets",
+      "size": 1114940
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets28.assets.resS",
+      "relative_path": "Media/sharedassets28.assets.resS",
+      "size": 6737920
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets29.assets",
+      "relative_path": "Media/sharedassets29.assets",
+      "size": 12015640
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets29.assets.resS",
+      "relative_path": "Media/sharedassets29.assets.resS",
+      "size": 1293099008
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets3.assets",
+      "relative_path": "Media/sharedassets3.assets",
+      "size": 24040
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets30.assets",
+      "relative_path": "Media/sharedassets30.assets",
+      "size": 581296
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets31.assets",
+      "relative_path": "Media/sharedassets31.assets",
+      "size": 652412
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets31.assets.resS",
+      "relative_path": "Media/sharedassets31.assets.resS",
+      "size": 89489408
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets32.assets",
+      "relative_path": "Media/sharedassets32.assets",
+      "size": 93364
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets33.assets",
+      "relative_path": "Media/sharedassets33.assets",
+      "size": 39064
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets33.assets.resS",
+      "relative_path": "Media/sharedassets33.assets.resS",
+      "size": 704512
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets34.assets",
+      "relative_path": "Media/sharedassets34.assets",
+      "size": 9697180
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets34.assets.resS",
+      "relative_path": "Media/sharedassets34.assets.resS",
+      "size": 304824320
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets35.assets",
+      "relative_path": "Media/sharedassets35.assets",
+      "size": 1484852
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets35.assets.resS",
+      "relative_path": "Media/sharedassets35.assets.resS",
+      "size": 178978816
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets36.assets",
+      "relative_path": "Media/sharedassets36.assets",
+      "size": 771900
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets37.assets",
+      "relative_path": "Media/sharedassets37.assets",
+      "size": 879236
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets37.assets.resS",
+      "relative_path": "Media/sharedassets37.assets.resS",
+      "size": 1441792
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets38.assets",
+      "relative_path": "Media/sharedassets38.assets",
+      "size": 1797028
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets38.assets.resS",
+      "relative_path": "Media/sharedassets38.assets.resS",
+      "size": 5771264
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets39.assets",
+      "relative_path": "Media/sharedassets39.assets",
+      "size": 720036
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets39.assets.resS",
+      "relative_path": "Media/sharedassets39.assets.resS",
+      "size": 688128
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets4.assets",
+      "relative_path": "Media/sharedassets4.assets",
+      "size": 277
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets40.assets",
+      "relative_path": "Media/sharedassets40.assets",
+      "size": 78020
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets41.assets",
+      "relative_path": "Media/sharedassets41.assets",
+      "size": 748072
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets41.assets.resS",
+      "relative_path": "Media/sharedassets41.assets.resS",
+      "size": 2797568
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets42.assets",
+      "relative_path": "Media/sharedassets42.assets",
+      "size": 105028
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets43.assets",
+      "relative_path": "Media/sharedassets43.assets",
+      "size": 20234916
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets43.assets.resS",
+      "relative_path": "Media/sharedassets43.assets.resS",
+      "size": 2389805920
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets44.assets",
+      "relative_path": "Media/sharedassets44.assets",
+      "size": 323588
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets45.assets",
+      "relative_path": "Media/sharedassets45.assets",
+      "size": 155240
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets46.assets",
+      "relative_path": "Media/sharedassets46.assets",
+      "size": 1094164
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets47.assets",
+      "relative_path": "Media/sharedassets47.assets",
+      "size": 18214388
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets47.assets.resS",
+      "relative_path": "Media/sharedassets47.assets.resS",
+      "size": 2161238016
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets48.assets",
+      "relative_path": "Media/sharedassets48.assets",
+      "size": 849128
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets48.assets.resS",
+      "relative_path": "Media/sharedassets48.assets.resS",
+      "size": 704512
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets49.assets",
+      "relative_path": "Media/sharedassets49.assets",
+      "size": 3716224
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets49.assets.resS",
+      "relative_path": "Media/sharedassets49.assets.resS",
+      "size": 4935264
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets5.assets",
+      "relative_path": "Media/sharedassets5.assets",
+      "size": 5460776
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets5.assets.resS",
+      "relative_path": "Media/sharedassets5.assets.resS",
+      "size": 169361408
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets50.assets",
+      "relative_path": "Media/sharedassets50.assets",
+      "size": 5415880
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets50.assets.resS",
+      "relative_path": "Media/sharedassets50.assets.resS",
+      "size": 648798208
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets51.assets",
+      "relative_path": "Media/sharedassets51.assets",
+      "size": 3348
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets52.assets",
+      "relative_path": "Media/sharedassets52.assets",
+      "size": 9624
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets52.assets.resS",
+      "relative_path": "Media/sharedassets52.assets.resS",
+      "size": 1179648
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets53.assets",
+      "relative_path": "Media/sharedassets53.assets",
+      "size": 203960
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets53.assets.resS",
+      "relative_path": "Media/sharedassets53.assets.resS",
+      "size": 4096
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets54.assets",
+      "relative_path": "Media/sharedassets54.assets",
+      "size": 111956
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets54.assets.resS",
+      "relative_path": "Media/sharedassets54.assets.resS",
+      "size": 968752
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets55.assets",
+      "relative_path": "Media/sharedassets55.assets",
+      "size": 30688944
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets55.assets.resS",
+      "relative_path": "Media/sharedassets55.assets.resS",
+      "size": 3750711296
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets56.assets",
+      "relative_path": "Media/sharedassets56.assets",
+      "size": 1602796
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets56.assets.resS",
+      "relative_path": "Media/sharedassets56.assets.resS",
+      "size": 112037888
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets57.assets",
+      "relative_path": "Media/sharedassets57.assets",
+      "size": 5880192
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets57.assets.resS",
+      "relative_path": "Media/sharedassets57.assets.resS",
+      "size": 514564096
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets58.assets",
+      "relative_path": "Media/sharedassets58.assets",
+      "size": 13364
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets59.assets",
+      "relative_path": "Media/sharedassets59.assets",
+      "size": 1310440
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets59.assets.resS",
+      "relative_path": "Media/sharedassets59.assets.resS",
+      "size": 352256
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets6.assets",
+      "relative_path": "Media/sharedassets6.assets",
+      "size": 10166832
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets6.assets.resS",
+      "relative_path": "Media/sharedassets6.assets.resS",
+      "size": 258789376
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets60.assets",
+      "relative_path": "Media/sharedassets60.assets",
+      "size": 353380
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets61.assets",
+      "relative_path": "Media/sharedassets61.assets",
+      "size": 223184
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets62.assets",
+      "relative_path": "Media/sharedassets62.assets",
+      "size": 319904
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets62.assets.resS",
+      "relative_path": "Media/sharedassets62.assets.resS",
+      "size": 352256
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets63.assets",
+      "relative_path": "Media/sharedassets63.assets",
+      "size": 262540
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets64.assets",
+      "relative_path": "Media/sharedassets64.assets",
+      "size": 10976
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets65.assets",
+      "relative_path": "Media/sharedassets65.assets",
+      "size": 3812
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets65.assets.resS",
+      "relative_path": "Media/sharedassets65.assets.resS",
+      "size": 11186176
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets66.assets",
+      "relative_path": "Media/sharedassets66.assets",
+      "size": 108612
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets66.assets.resS",
+      "relative_path": "Media/sharedassets66.assets.resS",
+      "size": 19573376
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets67.assets",
+      "relative_path": "Media/sharedassets67.assets",
+      "size": 67536
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets7.assets",
+      "relative_path": "Media/sharedassets7.assets",
+      "size": 221880
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets7.assets.resS",
+      "relative_path": "Media/sharedassets7.assets.resS",
+      "size": 2797568
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets8.assets",
+      "relative_path": "Media/sharedassets8.assets",
+      "size": 1566760
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets8.assets.resS",
+      "relative_path": "Media/sharedassets8.assets.resS",
+      "size": 77824
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets9.assets",
+      "relative_path": "Media/sharedassets9.assets",
+      "size": 544108
+    },
+    {
+      "category": "Executable",
+      "extension": "eboot.bin",
+      "file_name": "eboot.bin",
+      "relative_path": "eboot.bin",
+      "size": 34103749
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceNpCppWebApi.prx",
+      "relative_path": "sce_module/libSceNpCppWebApi.prx",
+      "size": 7865639
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libc.prx",
+      "relative_path": "sce_module/libc.prx",
+      "size": 1878130
+    },
+    {
+      "category": "Executable",
+      "extension": "sprx",
+      "file_name": "right.sprx",
+      "relative_path": "sce_sys/about/right.sprx",
+      "size": 12768
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "disc_info.dat",
+      "relative_path": "sce_sys/disc_info.dat",
+      "size": 6640
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "icon0.dds",
+      "relative_path": "sce_sys/icon0.dds",
+      "size": 262292
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "icon0.png",
+      "relative_path": "sce_sys/icon0.png",
+      "size": 314052
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "keystone",
+      "relative_path": "sce_sys/keystone",
+      "size": 96
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "nptitle.dat",
+      "relative_path": "sce_sys/nptitle.dat",
+      "size": 160
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "param.json",
+      "relative_path": "sce_sys/param.json",
+      "size": 3107
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "pfs-version.dat",
+      "relative_path": "sce_sys/pfs-version.dat",
+      "size": 10
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic0.dds",
+      "relative_path": "sce_sys/pic0.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "pic0.png",
+      "relative_path": "sce_sys/pic0.png",
+      "size": 12064271
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic1.dds",
+      "relative_path": "sce_sys/pic1.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic2.dds",
+      "relative_path": "sce_sys/pic2.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Audio",
+      "extension": "at9",
+      "file_name": "snd0.at9",
+      "relative_path": "sce_sys/snd0.at9",
+      "size": 1213096
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "sce_sys/trophy2/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "trophy00.ucp",
+      "relative_path": "sce_sys/trophy2/trophy00.ucp",
+      "size": 619520
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "sce_sys/uds/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "uds00.ucp",
+      "relative_path": "sce_sys/uds/uds00.ucp",
+      "size": 29200
+    }
+  ],
+  "by_category": {
+    "audio": 1,
+    "executable": 9,
+    "metadata": 57,
+    "texture": 6,
+    "unknown": 639
+  },
+  "by_extension": {
+    "(no_ext)": 83,
+    "assets": 70,
+    "at9": 1,
+    "bnk": 38,
+    "config": 1,
+    "dat": 9,
+    "dds": 4,
+    "eboot.bin": 1,
+    "json": 4,
+    "png": 2,
+    "prx": 7,
+    "resource": 1,
+    "ress": 45,
+    "sprx": 1,
+    "txt": 39,
+    "ucp": 2,
+    "wem": 401,
+    "xml": 3
+  },
+  "game": "Neva-PPSA16786-EUR-Game (v01.007)-PS5",
+  "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Neva-PPSA16786-EUR-Game (v01.007)-PS5",
+  "total_bytes": 21805859555,
+  "total_files": 712
+}

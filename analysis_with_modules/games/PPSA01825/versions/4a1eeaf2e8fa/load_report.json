@@ -1,0 +1,872 @@
+{
+  "game": "The Pathless - [PPSA01825]",
+  "path": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\The.Pathless-PPSA01825-USA-PS5\\The Pathless PS5 Dump v2.000\\eboot.bin",
+  "load_report": {
+    "modules": [
+      {
+        "name": "libSceNpCppWebApi.prx",
+        "module_type": "Prx",
+        "load_bias": 34628173824,
+        "entry_point": null,
+        "exports_count": 40282,
+        "imports_resolved": 0,
+        "imports_known": 19,
+        "imports_stubbed": 73,
+        "relative": 255,
+        "glob_dat": 2,
+        "jump_slot": 88,
+        "abs64": 2,
+        "copy": 0,
+        "tls_relocations": 0,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 2631632,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 0,
+        "preinit_array_sz": 0,
+        "per_library": [
+          {
+            "library": "libSceHttp",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceJson2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 37
+          },
+          {
+            "library": "libSceLibcInternal",
+            "resolved": 0,
+            "known": 19,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceNpWebApi2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libSceRtc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 24
+          }
+        ]
+      },
+      {
+        "name": "libc.prx",
+        "module_type": "Prx",
+        "load_bias": 34634465280,
+        "entry_point": null,
+        "exports_count": 2565,
+        "imports_resolved": 0,
+        "imports_known": 0,
+        "imports_stubbed": 103,
+        "relative": 1958,
+        "glob_dat": 3,
+        "jump_slot": 100,
+        "abs64": 0,
+        "copy": 0,
+        "tls_relocations": 3,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 823616,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 1114656,
+        "preinit_array_sz": 8,
+        "per_library": [
+          {
+            "library": "libSceLibcInternalExt",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 99
+          }
+        ]
+      },
+      {
+        "name": "The Pathless PS5 Dump v2.000",
+        "module_type": "Eboot",
+        "load_bias": 34635841536,
+        "entry_point": 112,
+        "exports_count": 285,
+        "imports_resolved": 7478,
+        "imports_known": 0,
+        "imports_stubbed": 787,
+        "relative": 701575,
+        "glob_dat": 22,
+        "jump_slot": 1636,
+        "abs64": 6607,
+        "copy": 0,
+        "tls_relocations": 0,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 99681264,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 0,
+        "preinit_array_sz": 0,
+        "per_library": [
+          {
+            "library": "libSceAcm",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 6
+          },
+          {
+            "library": "libSceAgc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 182
+          },
+          {
+            "library": "libSceAgcDriver",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 12
+          },
+          {
+            "library": "libSceAjm",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 19
+          },
+          {
+            "library": "libSceAmpr",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 51
+          },
+          {
+            "library": "libSceAppContent",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceAudioIn",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceAudioOut",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceAudioOut2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 14
+          },
+          {
+            "library": "libSceAvPlayer",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 22
+          },
+          {
+            "library": "libSceCommonDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceErrorDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceFiber",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceGameLiveStreaming",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceGameUpdate",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceHttp",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 24
+          },
+          {
+            "library": "libSceHttp2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceImeDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 6
+          },
+          {
+            "library": "libSceJson2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 23
+          },
+          {
+            "library": "libSceMouse",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceMsgDialog.native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceNet",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 20
+          },
+          {
+            "library": "libSceNetCtl",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceNgs2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 15
+          },
+          {
+            "library": "libSceNpAuth",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceNpCommerce",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceNpCppWebApi",
+            "resolved": 664,
+            "known": 0,
+            "stubbed": 0
+          },
+          {
+            "library": "libSceNpGameIntent",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceNpManager",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 11
+          },
+          {
+            "library": "libSceNpSessionSignaling",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libSceNpTrophy2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 9
+          },
+          {
+            "library": "libSceNpUniversalDataSystem",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 27
+          },
+          {
+            "library": "libSceNpWebApi2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 22
+          },
+          {
+            "library": "libScePad",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 11
+          },
+          {
+            "library": "libScePlayGo",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 11
+          },
+          {
+            "library": "libScePlayerInvitationDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libScePosix",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 62
+          },
+          {
+            "library": "libSceRtc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSaveDataDialog.native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceSaveData_native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 11
+          },
+          {
+            "library": "libSceShare",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceSsl",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSystemService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceUserService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceVideoOut",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libSceVoiceQoS",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 12
+          },
+          {
+            "library": "libSceWebBrowserDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libc",
+            "resolved": 6814,
+            "known": 0,
+            "stubbed": 0
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 103
+          }
+        ]
+      }
+    ],
+    "graph": {
+      "nodes": [
+        "libSceContentExport.prx",
+        "libc.prx",
+        "libSceAppContent.prx",
+        "libSceImeDialog.prx",
+        "libSceAgc.prx",
+        "The Pathless PS5 Dump v2.000",
+        "libSceMouse.prx",
+        "libSceNpAuth.prx",
+        "libSceAudioIn.prx",
+        "libSceFiber.prx",
+        "libSceNpCommerce.prx",
+        "libSceNetCtl.prx",
+        "libSceSsl.prx",
+        "libSceLibcInternal.prx",
+        "libScePad.prx",
+        "libSceAmpr.prx",
+        "libSceRtc.prx",
+        "libSceNgs2.prx",
+        "libSceSystemService.prx",
+        "libSceVoiceQoS.prx",
+        "libSceAcm.prx",
+        "libSceVideoOut.prx",
+        "libSceNpGameIntent.prx",
+        "libSceHttp.prx",
+        "libSceNpManager.prx",
+        "libSceJson2.prx",
+        "libSceNpTrophy2.prx",
+        "libSceSaveData.native.prx",
+        "libSceGameLiveStreaming.prx",
+        "libSceAvPlayer.native.prx",
+        "libScePlayGo.prx",
+        "libSceIme.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceShare.prx",
+        "libSceHttp2.prx",
+        "libSceNpWebApi2.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceRandom.prx",
+        "libSceErrorDialog.prx",
+        "libSceNpSessionSignaling.prx",
+        "libSceSysmodule.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceCommonDialog.prx",
+        "libSceAudioOut.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceGameUpdate.prx",
+        "libScePlayerInvitationDialog.prx",
+        "libkernel.prx",
+        "libSceAjm.native.prx",
+        "libSceAgcDriver.prx",
+        "libSceUserService.prx",
+        "libSceNpCppWebApi.prx",
+        "libSceNet.prx"
+      ],
+      "unavailable": [
+        "libSceSsl.prx",
+        "libSceNpManager.prx",
+        "libSceAcm.prx",
+        "libSceAppContent.prx",
+        "libSceNpAuth.prx",
+        "libSceLibcInternal.prx",
+        "libScePlayerInvitationDialog.prx",
+        "libSceUserService.prx",
+        "libSceNet.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceContentExport.prx",
+        "libSceNetCtl.prx",
+        "libSceAgc.prx",
+        "libSceAudioIn.prx",
+        "libSceAmpr.prx",
+        "libSceAgcDriver.prx",
+        "libScePlayGo.prx",
+        "libSceAjm.native.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceVideoOut.prx",
+        "libSceNpGameIntent.prx",
+        "libSceJson2.prx",
+        "libSceFiber.prx",
+        "libSceRtc.prx",
+        "libSceCommonDialog.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceRandom.prx",
+        "libSceImeDialog.prx",
+        "libkernel.prx",
+        "libSceHttp.prx",
+        "libSceIme.prx",
+        "libSceShare.prx",
+        "libSceErrorDialog.prx",
+        "libSceVoiceQoS.prx",
+        "libScePad.prx",
+        "libSceHttp2.prx",
+        "libSceSysmodule.prx",
+        "libSceGameLiveStreaming.prx",
+        "libSceNgs2.prx",
+        "libSceAudioOut.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceSystemService.prx",
+        "libSceNpCommerce.prx",
+        "libSceMouse.prx",
+        "libSceNpWebApi2.prx",
+        "libSceNpTrophy2.prx",
+        "libSceGameUpdate.prx",
+        "libSceSaveData.native.prx",
+        "libSceNpSessionSignaling.prx",
+        "libSceNpUniversalDataSystem.prx"
+      ],
+      "edges": [
+        {
+          "from": "libc.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceAgcDriver.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceAgc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceRtc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libScePad.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceNet.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceNetCtl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceNgs2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceAudioOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceAjm.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceVideoOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceUserService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceSsl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceHttp.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libScePlayGo.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceNpManager.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceAppContent.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceSaveData.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceSaveDataDialog.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceCommonDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceGameLiveStreaming.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceSystemService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceIme.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceImeDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceMsgDialog.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceNpCommerce.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceShare.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceMouse.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceRandom.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceContentExport.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceNpGameIntent.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceAcm.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceAvPlayer.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceHttp2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceNpAuth.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceNpCppWebApi.prx",
+          "status": "loaded"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceNpWebApi2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceNpSessionSignaling.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceJson2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceNpUniversalDataSystem.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceNpTrophy2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceErrorDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceWebBrowserDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceGameUpdate.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libScePlayerInvitationDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceVoiceQoS.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceAudioIn.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libc.prx",
+          "status": "loaded"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceAmpr.prx",
+          "status": "missing"
+        },
+        {
+          "from": "The Pathless PS5 Dump v2.000",
+          "to": "libSceFiber.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceJson2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceRtc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceNpWebApi2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceHttp.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        }
+      ]
+    },
+    "totals": {
+      "modules": 3,
+      "resolved": 7478,
+      "known": 19,
+      "stubbed": 963,
+      "exports": 43132,
+      "unavailable": 50
+    }
+  },
+  "error": null
+}

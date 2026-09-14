@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "title_id": "PPSA02787",
+  "name": "Monster Boy and the Cursed Kingdom - [PPSA02787]",
+  "eboot_sha256": "cff19ba5d9e7593acd8371ca8367b0f4d038642c07d593ca0deb8470adbe5a06",
+  "game_fingerprint": "96a5a96a755301afd017d7ba2173fce4ac8f6c1f5bb1fce268194f5d8ccd475c",
+  "environment_fingerprint": "c65955db3dee9d575ca652856c86c3fc2b7297fff36bb37fcb1b9319f1ff09a9",
+  "loader_fingerprint": "d245a80770d2897643c4754f10883b674208fc8fdecaad2ebd247d1990f6f5a0",
+  "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
+  "ingest_id": "ingest_20260912085621_96a5a96a7553",
+  "ingested_at": "2026-09-12T08:56:21Z",
+  "params": {
+    "name": "Monster.Boy.and.The.Cursed.Kingdom-PPSA02787-USA-Game-v01.000.004-PS5",
+    "title_id": "PPSA02787",
+    "content_version": "01.000.004",
+    "master_version": "02.00",
+    "sdk_version": "0x0500000000000000",
+    "title_name": "Monster Boy and the Cursed Kingdom",
+    "display_name": "Monster Boy and the Cursed Kingdom - [PPSA02787]",
+    "drm_type": "standard",
+    "content_id": "UP0760-PPSA02787_00-MONSTERBOYATCK00",
+    "creation_date": "2021-03-28 13:45:45"
+  },
+  "load_report_file": "load_report.json"
+}

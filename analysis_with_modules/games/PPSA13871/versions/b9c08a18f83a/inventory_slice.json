@@ -1,0 +1,1790 @@
+{
+  "artifacts": [
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "ObjectRefs.json",
+      "relative_path": "Game0/ObjectRefs.json",
+      "size": 4387
+    },
+    {
+      "category": "Unknown",
+      "extension": "js",
+      "file_name": "data.js",
+      "relative_path": "Game0/data.js",
+      "size": 1024703
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "arrow-sheet0.png",
+      "relative_path": "Game0/images/arrow-sheet0.png",
+      "size": 6680
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "autumn_entities.png",
+      "relative_path": "Game0/images/autumn_entities.png",
+      "size": 2276
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "autumnforest.png",
+      "relative_path": "Game0/images/autumnforest.png",
+      "size": 2248
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "backgounds-sheet0.png",
+      "relative_path": "Game0/images/backgounds-sheet0.png",
+      "size": 9760
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "bear-sheet0.png",
+      "relative_path": "Game0/images/bear-sheet0.png",
+      "size": 612
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "big_mountain_bg.png",
+      "relative_path": "Game0/images/big_mountain_bg.png",
+      "size": 3124
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "bird-sheet0.png",
+      "relative_path": "Game0/images/bird-sheet0.png",
+      "size": 204
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "bird-sheet1.png",
+      "relative_path": "Game0/images/bird-sheet1.png",
+      "size": 256
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "bird-sheet2.png",
+      "relative_path": "Game0/images/bird-sheet2.png",
+      "size": 188
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "bird2-sheet0.png",
+      "relative_path": "Game0/images/bird2-sheet0.png",
+      "size": 192
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "bird2-sheet1.png",
+      "relative_path": "Game0/images/bird2-sheet1.png",
+      "size": 240
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "bird2-sheet2.png",
+      "relative_path": "Game0/images/bird2-sheet2.png",
+      "size": 184
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "black_bg.png",
+      "relative_path": "Game0/images/black_bg.png",
+      "size": 60
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "board-sheet0.png",
+      "relative_path": "Game0/images/board-sheet0.png",
+      "size": 5436
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "board-sheet1.png",
+      "relative_path": "Game0/images/board-sheet1.png",
+      "size": 1060
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "bottom_leaf_piles.png",
+      "relative_path": "Game0/images/bottom_leaf_piles.png",
+      "size": 180
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "buttons-sheet0.png",
+      "relative_path": "Game0/images/buttons-sheet0.png",
+      "size": 4904
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "cam-sheet0.png",
+      "relative_path": "Game0/images/cam-sheet0.png",
+      "size": 52
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "clolisions.png",
+      "relative_path": "Game0/images/clolisions.png",
+      "size": 92
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "cloud_cover_1.png",
+      "relative_path": "Game0/images/cloud_cover_1.png",
+      "size": 588
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "cloud_cover_2.png",
+      "relative_path": "Game0/images/cloud_cover_2.png",
+      "size": 392
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "controls-sheet0.png",
+      "relative_path": "Game0/images/controls-sheet0.png",
+      "size": 244584
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "controls-sheet1.png",
+      "relative_path": "Game0/images/controls-sheet1.png",
+      "size": 236164
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "correntes-sheet0.png",
+      "relative_path": "Game0/images/correntes-sheet0.png",
+      "size": 428
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "credits-sheet0.png",
+      "relative_path": "Game0/images/credits-sheet0.png",
+      "size": 46664
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "credits-sheet1.png",
+      "relative_path": "Game0/images/credits-sheet1.png",
+      "size": 47656
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "destroy_bird2-sheet0.png",
+      "relative_path": "Game0/images/destroy_bird2-sheet0.png",
+      "size": 60
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "die-sheet0.png",
+      "relative_path": "Game0/images/die-sheet0.png",
+      "size": 60
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "direita-sheet0.png",
+      "relative_path": "Game0/images/direita-sheet0.png",
+      "size": 84
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "distant_trees.png",
+      "relative_path": "Game0/images/distant_trees.png",
+      "size": 1260
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "esquerda-sheet0.png",
+      "relative_path": "Game0/images/esquerda-sheet0.png",
+      "size": 84
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "fim-sheet0.png",
+      "relative_path": "Game0/images/fim-sheet0.png",
+      "size": 992
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "foreground_scene.png",
+      "relative_path": "Game0/images/foreground_scene.png",
+      "size": 1964
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "grassland.png",
+      "relative_path": "Game0/images/grassland.png",
+      "size": 2312
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "grassland_entities.png",
+      "relative_path": "Game0/images/grassland_entities.png",
+      "size": 2356
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "hills.png",
+      "relative_path": "Game0/images/hills.png",
+      "size": 228
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "intro_and_end-sheet0.png",
+      "relative_path": "Game0/images/intro_and_end-sheet0.png",
+      "size": 32068
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "intro_and_end-sheet1.png",
+      "relative_path": "Game0/images/intro_and_end-sheet1.png",
+      "size": 28744
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "leaf_top.png",
+      "relative_path": "Game0/images/leaf_top.png",
+      "size": 288
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "legend-sheet0.png",
+      "relative_path": "Game0/images/legend-sheet0.png",
+      "size": 57888
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "logoemp-sheet0.png",
+      "relative_path": "Game0/images/logoemp-sheet0.png",
+      "size": 62532
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "mouse-sheet0.png",
+      "relative_path": "Game0/images/mouse-sheet0.png",
+      "size": 324
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "mouse-sheet1.png",
+      "relative_path": "Game0/images/mouse-sheet1.png",
+      "size": 308
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "particula_anda.png",
+      "relative_path": "Game0/images/particula_anda.png",
+      "size": 56
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "pause-sheet0.png",
+      "relative_path": "Game0/images/pause-sheet0.png",
+      "size": 46176
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "player-sheet0.png",
+      "relative_path": "Game0/images/player-sheet0.png",
+      "size": 80
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "playeranimation-sheet0.png",
+      "relative_path": "Game0/images/playeranimation-sheet0.png",
+      "size": 2820
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "serra-sheet0.png",
+      "relative_path": "Game0/images/serra-sheet0.png",
+      "size": 2276
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "sheep-sheet0.png",
+      "relative_path": "Game0/images/sheep-sheet0.png",
+      "size": 4388
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "sheep-sheet1.png",
+      "relative_path": "Game0/images/sheep-sheet1.png",
+      "size": 4436
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "sheep-sheet2.png",
+      "relative_path": "Game0/images/sheep-sheet2.png",
+      "size": 1640
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "sky_color.png",
+      "relative_path": "Game0/images/sky_color.png",
+      "size": 60
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "slug-sheet0.png",
+      "relative_path": "Game0/images/slug-sheet0.png",
+      "size": 428
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "smaller_mountains.png",
+      "relative_path": "Game0/images/smaller_mountains.png",
+      "size": 116
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "smoke-sheet0.png",
+      "relative_path": "Game0/images/smoke-sheet0.png",
+      "size": 280
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "smoke-sheet1.png",
+      "relative_path": "Game0/images/smoke-sheet1.png",
+      "size": 348
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "smoke-sheet2.png",
+      "relative_path": "Game0/images/smoke-sheet2.png",
+      "size": 212
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "snake-sheet0.png",
+      "relative_path": "Game0/images/snake-sheet0.png",
+      "size": 584
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "snowy_foreground_area.png",
+      "relative_path": "Game0/images/snowy_foreground_area.png",
+      "size": 1992
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "spawn_bird-sheet0.png",
+      "relative_path": "Game0/images/spawn_bird-sheet0.png",
+      "size": 84
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "sprite-sheet0.png",
+      "relative_path": "Game0/images/sprite-sheet0.png",
+      "size": 540
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "sprite-sheet1.png",
+      "relative_path": "Game0/images/sprite-sheet1.png",
+      "size": 248
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "sprite2-sheet0.png",
+      "relative_path": "Game0/images/sprite2-sheet0.png",
+      "size": 2216
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "spritefont.png",
+      "relative_path": "Game0/images/spritefont.png",
+      "size": 14952
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "tilemap.png",
+      "relative_path": "Game0/images/tilemap.png",
+      "size": 1000
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "title-sheet0.png",
+      "relative_path": "Game0/images/title-sheet0.png",
+      "size": 73240
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "tree_row_bg_1.png",
+      "relative_path": "Game0/images/tree_row_bg_1.png",
+      "size": 856
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "tree_row_bg_2.png",
+      "relative_path": "Game0/images/tree_row_bg_2.png",
+      "size": 684
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "trees.png",
+      "relative_path": "Game0/images/trees.png",
+      "size": 2848
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "vazado.png",
+      "relative_path": "Game0/images/vazado.png",
+      "size": 56
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "water_frames.png",
+      "relative_path": "Game0/images/water_frames.png",
+      "size": 136
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "winter_entities.png",
+      "relative_path": "Game0/images/winter_entities.png",
+      "size": 1608
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "winterworld.png",
+      "relative_path": "Game0/images/winterworld.png",
+      "size": 1780
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "xboxbut-sheet0.png",
+      "relative_path": "Game0/images/xboxbut-sheet0.png",
+      "size": 21412
+    },
+    {
+      "category": "Unknown",
+      "extension": "ogg",
+      "file_name": "02. forest of meows.ogg",
+      "relative_path": "Game0/media/02. forest of meows.ogg",
+      "size": 807378
+    },
+    {
+      "category": "Unknown",
+      "extension": "ogg",
+      "file_name": "03. random.ogg",
+      "relative_path": "Game0/media/03. random.ogg",
+      "size": 580899
+    },
+    {
+      "category": "Unknown",
+      "extension": "ogg",
+      "file_name": "04. catnip or catnip.ogg",
+      "relative_path": "Game0/media/04. catnip or catnip.ogg",
+      "size": 549186
+    },
+    {
+      "category": "Unknown",
+      "extension": "ogg",
+      "file_name": "06. clear stage.ogg",
+      "relative_path": "Game0/media/06. clear stage.ogg",
+      "size": 344884
+    },
+    {
+      "category": "Unknown",
+      "extension": "ogg",
+      "file_name": "07. cogumelos sorridentes.ogg",
+      "relative_path": "Game0/media/07. cogumelos sorridentes.ogg",
+      "size": 321998
+    },
+    {
+      "category": "Unknown",
+      "extension": "ogg",
+      "file_name": "attack.ogg",
+      "relative_path": "Game0/media/attack.ogg",
+      "size": 7434
+    },
+    {
+      "category": "Unknown",
+      "extension": "ogg",
+      "file_name": "buttom.ogg",
+      "relative_path": "Game0/media/buttom.ogg",
+      "size": 4893
+    },
+    {
+      "category": "Unknown",
+      "extension": "ogg",
+      "file_name": "die.ogg",
+      "relative_path": "Game0/media/die.ogg",
+      "size": 8507
+    },
+    {
+      "category": "Unknown",
+      "extension": "ogg",
+      "file_name": "enemy.ogg",
+      "relative_path": "Game0/media/enemy.ogg",
+      "size": 5327
+    },
+    {
+      "category": "Unknown",
+      "extension": "ogg",
+      "file_name": "jump.ogg",
+      "relative_path": "Game0/media/jump.ogg",
+      "size": 6171
+    },
+    {
+      "category": "Unknown",
+      "extension": "ogg",
+      "file_name": "over.ogg",
+      "relative_path": "Game0/media/over.ogg",
+      "size": 24303
+    },
+    {
+      "category": "Unknown",
+      "extension": "ogg",
+      "file_name": "sfx_menu_move4.ogg",
+      "relative_path": "Game0/media/sfx_menu_move4.ogg",
+      "size": 4710
+    },
+    {
+      "category": "Unknown",
+      "extension": "ogg",
+      "file_name": "success pickup collect chime 01.ogg",
+      "relative_path": "Game0/media/success pickup collect chime 01.ogg",
+      "size": 17184
+    },
+    {
+      "category": "Unknown",
+      "extension": "ogg",
+      "file_name": "ungainly waltz.ogg",
+      "relative_path": "Game0/media/ungainly waltz.ogg",
+      "size": 571769
+    },
+    {
+      "category": "Unknown",
+      "extension": "ogg",
+      "file_name": "warp_whoosh_1.ogg",
+      "relative_path": "Game0/media/warp_whoosh_1.ogg",
+      "size": 14644
+    },
+    {
+      "category": "Unknown",
+      "extension": "ogg",
+      "file_name": "water1.ogg",
+      "relative_path": "Game0/media/water1.ogg",
+      "size": 5328
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "runtimeAnalyze.json",
+      "relative_path": "Game0/runtimeAnalyze.json",
+      "size": 35
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "borders.png",
+      "relative_path": "borders.png",
+      "size": 19774
+    },
+    {
+      "category": "Executable",
+      "extension": "eboot.bin",
+      "file_name": "eboot.bin",
+      "relative_path": "eboot.bin",
+      "size": 24984343
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "eboot.bin.esbak",
+      "relative_path": "eboot.bin.esbak",
+      "size": 24983680
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "f_splash_1.png",
+      "relative_path": "f_splash_1.png",
+      "size": 20027
+    },
+    {
+      "category": "Font",
+      "extension": "ttf",
+      "file_name": "arial_spiller.ttf",
+      "relative_path": "fonts_spiller/arial_spiller.ttf",
+      "size": 436876
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "save_data_icon.png",
+      "relative_path": "save_data_icon.png",
+      "size": 681077
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libc.prx",
+      "relative_path": "sce_module/libc.prx",
+      "size": 1314050
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "libc.prx.esbak",
+      "relative_path": "sce_module/libc.prx.esbak",
+      "size": 1351034
+    },
+    {
+      "category": "Executable",
+      "extension": "sprx",
+      "file_name": "right.sprx",
+      "relative_path": "sce_sys/about/right.sprx",
+      "size": 12512
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "right.sprx.esbak",
+      "relative_path": "sce_sys/about/right.sprx.esbak",
+      "size": 66704
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "ext_info.dat",
+      "relative_path": "sce_sys/ext_info.dat",
+      "size": 44
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "icon0.dds",
+      "relative_path": "sce_sys/icon0.dds",
+      "size": 262292
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "icon0.png",
+      "relative_path": "sce_sys/icon0.png",
+      "size": 660583
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "keystone",
+      "relative_path": "sce_sys/keystone",
+      "size": 96
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "nptitle.dat",
+      "relative_path": "sce_sys/nptitle.dat",
+      "size": 160
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "param.json",
+      "relative_path": "sce_sys/param.json",
+      "size": 2565
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "pfs-version.dat",
+      "relative_path": "sce_sys/pfs-version.dat",
+      "size": 10
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic0.dds",
+      "relative_path": "sce_sys/pic0.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "pic0.png",
+      "relative_path": "sce_sys/pic0.png",
+      "size": 19567378
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic1.dds",
+      "relative_path": "sce_sys/pic1.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic2.dds",
+      "relative_path": "sce_sys/pic2.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "sce_sys/trophy2/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "trophy00.ucp",
+      "relative_path": "sce_sys/trophy2/trophy00.ucp",
+      "size": 3281856
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "sce_sys/uds/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "uds00.ucp",
+      "relative_path": "sce_sys/uds/uds00.ucp",
+      "size": 21152
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "GenerateMipmaps.frag",
+      "relative_path": "shaders/GenerateMipmaps.frag",
+      "size": 1744
+    },
+    {
+      "category": "Unknown",
+      "extension": "vert",
+      "file_name": "GenerateMipmaps.vert",
+      "relative_path": "shaders/GenerateMipmaps.vert",
+      "size": 2192
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "SpriteMachine.AlphaDither.frag",
+      "relative_path": "shaders/SpriteMachine.AlphaDither.frag",
+      "size": 2752
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "SpriteMachine.Blur13xFast.frag",
+      "relative_path": "shaders/SpriteMachine.Blur13xFast.frag",
+      "size": 2536
+    },
+    {
+      "category": "Unknown",
+      "extension": "vert",
+      "file_name": "SpriteMachine.Blur13xFastHorz.vert",
+      "relative_path": "shaders/SpriteMachine.Blur13xFastHorz.vert",
+      "size": 3952
+    },
+    {
+      "category": "Unknown",
+      "extension": "vert",
+      "file_name": "SpriteMachine.Blur13xFastVert.vert",
+      "relative_path": "shaders/SpriteMachine.Blur13xFastVert.vert",
+      "size": 3952
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "SpriteMachine.Blur17xFast.frag",
+      "relative_path": "shaders/SpriteMachine.Blur17xFast.frag",
+      "size": 2536
+    },
+    {
+      "category": "Unknown",
+      "extension": "vert",
+      "file_name": "SpriteMachine.Blur17xFastHorz.vert",
+      "relative_path": "shaders/SpriteMachine.Blur17xFastHorz.vert",
+      "size": 3952
+    },
+    {
+      "category": "Unknown",
+      "extension": "vert",
+      "file_name": "SpriteMachine.Blur17xFastVert.vert",
+      "relative_path": "shaders/SpriteMachine.Blur17xFastVert.vert",
+      "size": 3952
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "SpriteMachine.Blur9xFast.frag",
+      "relative_path": "shaders/SpriteMachine.Blur9xFast.frag",
+      "size": 2392
+    },
+    {
+      "category": "Unknown",
+      "extension": "vert",
+      "file_name": "SpriteMachine.Blur9xFastHorz.vert",
+      "relative_path": "shaders/SpriteMachine.Blur9xFastHorz.vert",
+      "size": 3816
+    },
+    {
+      "category": "Unknown",
+      "extension": "vert",
+      "file_name": "SpriteMachine.Blur9xFastVert.vert",
+      "relative_path": "shaders/SpriteMachine.Blur9xFastVert.vert",
+      "size": 3816
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "SpriteMachine.Clear.frag",
+      "relative_path": "shaders/SpriteMachine.Clear.frag",
+      "size": 1664
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "SpriteMachine.Fast.frag",
+      "relative_path": "shaders/SpriteMachine.Fast.frag",
+      "size": 1800
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "SpriteMachine.FastPalette.frag",
+      "relative_path": "shaders/SpriteMachine.FastPalette.frag",
+      "size": 1864
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "SpriteMachine.HSLAdjust.frag",
+      "relative_path": "shaders/SpriteMachine.HSLAdjust.frag",
+      "size": 2608
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "SpriteMachine.Screen.frag",
+      "relative_path": "shaders/SpriteMachine.Screen.frag",
+      "size": 2032
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "SpriteMachine.frag",
+      "relative_path": "shaders/SpriteMachine.frag",
+      "size": 2504
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "SpriteMachine.prrcrta05.frag",
+      "relative_path": "shaders/SpriteMachine.prrcrta05.frag",
+      "size": 3464
+    },
+    {
+      "category": "Unknown",
+      "extension": "vert",
+      "file_name": "SpriteMachine.prrcrta05.vert",
+      "relative_path": "shaders/SpriteMachine.prrcrta05.vert",
+      "size": 3272
+    },
+    {
+      "category": "Unknown",
+      "extension": "vert",
+      "file_name": "SpriteMachine.vert",
+      "relative_path": "shaders/SpriteMachine.vert",
+      "size": 4728
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "alphadither.frag",
+      "relative_path": "shaders/alphadither.frag",
+      "size": 2256
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "alphathreshold.frag",
+      "relative_path": "shaders/alphathreshold.frag",
+      "size": 2216
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "blacknwhite.frag",
+      "relative_path": "shaders/blacknwhite.frag",
+      "size": 2064
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "blacknwhitemask.frag",
+      "relative_path": "shaders/blacknwhitemask.frag",
+      "size": 2480
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "blacktoalpha.frag",
+      "relative_path": "shaders/blacktoalpha.frag",
+      "size": 2048
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "blurhorizontal.frag",
+      "relative_path": "shaders/blurhorizontal.frag",
+      "size": 3016
+    },
+    {
+      "category": "Unknown",
+      "extension": "vert",
+      "file_name": "blurhorizontal.vert",
+      "relative_path": "shaders/blurhorizontal.vert",
+      "size": 3280
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "blurvertical.frag",
+      "relative_path": "shaders/blurvertical.frag",
+      "size": 3016
+    },
+    {
+      "category": "Unknown",
+      "extension": "vert",
+      "file_name": "blurvertical.vert",
+      "relative_path": "shaders/blurvertical.vert",
+      "size": 3280
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "brightness.frag",
+      "relative_path": "shaders/brightness.frag",
+      "size": 2152
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "builtin_default.frag",
+      "relative_path": "shaders/builtin_default.frag",
+      "size": 1920
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "builtin_default_nopacity.frag",
+      "relative_path": "shaders/builtin_default_nopacity.frag",
+      "size": 1808
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "builtin_earlyz.frag",
+      "relative_path": "shaders/builtin_earlyz.frag",
+      "size": 1928
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "builtin_fill.frag",
+      "relative_path": "shaders/builtin_fill.frag",
+      "size": 1728
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "bulge.frag",
+      "relative_path": "shaders/bulge.frag",
+      "size": 2208
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "bumpmapping.frag",
+      "relative_path": "shaders/bumpmapping.frag",
+      "size": 2400
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "ccrt.frag",
+      "relative_path": "shaders/ccrt.frag",
+      "size": 2944
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "color.frag",
+      "relative_path": "shaders/color.frag",
+      "size": 2392
+    },
+    {
+      "category": "Unknown",
+      "extension": "vert",
+      "file_name": "color.vert",
+      "relative_path": "shaders/color.vert",
+      "size": 2920
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "colorhalftone.frag",
+      "relative_path": "shaders/colorhalftone.frag",
+      "size": 2704
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "contrast.frag",
+      "relative_path": "shaders/contrast.frag",
+      "size": 2152
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "crosshatch.frag",
+      "relative_path": "shaders/crosshatch.frag",
+      "size": 2648
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "darken.frag",
+      "relative_path": "shaders/darken.frag",
+      "size": 2272
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "difference.frag",
+      "relative_path": "shaders/difference.frag",
+      "size": 2336
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "divide.frag",
+      "relative_path": "shaders/divide.frag",
+      "size": 2336
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "dodge.frag",
+      "relative_path": "shaders/dodge.frag",
+      "size": 2272
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "dotscreen.frag",
+      "relative_path": "shaders/dotscreen.frag",
+      "size": 2320
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "dropshadow.frag",
+      "relative_path": "shaders/dropshadow.frag",
+      "size": 2088
+    },
+    {
+      "category": "Unknown",
+      "extension": "vert",
+      "file_name": "dropshadow.vert",
+      "relative_path": "shaders/dropshadow.vert",
+      "size": 2936
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "emboss.frag",
+      "relative_path": "shaders/emboss.frag",
+      "size": 2320
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "exclusion.frag",
+      "relative_path": "shaders/exclusion.frag",
+      "size": 2032
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "exclusion_softlight.frag",
+      "relative_path": "shaders/exclusion_softlight.frag",
+      "size": 2936
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "exclusion_softlight_hsl.frag",
+      "relative_path": "shaders/exclusion_softlight_hsl.frag",
+      "size": 3128
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "exposure.frag",
+      "relative_path": "shaders/exposure.frag",
+      "size": 2032
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "fastglowbox.frag",
+      "relative_path": "shaders/fastglowbox.frag",
+      "size": 6032
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "flag.frag",
+      "relative_path": "shaders/flag.frag",
+      "size": 2192
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "force16colors.frag",
+      "relative_path": "shaders/force16colors.frag",
+      "size": 4024
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "frosted.frag",
+      "relative_path": "shaders/frosted.frag",
+      "size": 2320
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "gamma.frag",
+      "relative_path": "shaders/gamma.frag",
+      "size": 2088
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "glass.frag",
+      "relative_path": "shaders/glass.frag",
+      "size": 2440
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "glowhorizontal.frag",
+      "relative_path": "shaders/glowhorizontal.frag",
+      "size": 3016
+    },
+    {
+      "category": "Unknown",
+      "extension": "vert",
+      "file_name": "glowhorizontal.vert",
+      "relative_path": "shaders/glowhorizontal.vert",
+      "size": 3280
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "glowvertical.frag",
+      "relative_path": "shaders/glowvertical.frag",
+      "size": 3016
+    },
+    {
+      "category": "Unknown",
+      "extension": "vert",
+      "file_name": "glowvertical.vert",
+      "relative_path": "shaders/glowvertical.vert",
+      "size": 3280
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "grayscale.frag",
+      "relative_path": "shaders/grayscale.frag",
+      "size": 2088
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "grayscalemask.frag",
+      "relative_path": "shaders/grayscalemask.frag",
+      "size": 2192
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "hardlight.frag",
+      "relative_path": "shaders/hardlight.frag",
+      "size": 2512
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "hexpixellate.frag",
+      "relative_path": "shaders/hexpixellate.frag",
+      "size": 2672
+    },
+    {
+      "category": "Unknown",
+      "extension": "vert",
+      "file_name": "hexpixellate.vert",
+      "relative_path": "shaders/hexpixellate.vert",
+      "size": 3112
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "hsbadjust.frag",
+      "relative_path": "shaders/hsbadjust.frag",
+      "size": 2472
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "hsladjust.frag",
+      "relative_path": "shaders/hsladjust.frag",
+      "size": 2408
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "hsladjustmask.frag",
+      "relative_path": "shaders/hsladjustmask.frag",
+      "size": 3856
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "hueblend.frag",
+      "relative_path": "shaders/hueblend.frag",
+      "size": 3928
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "hyllian.frag",
+      "relative_path": "shaders/hyllian.frag",
+      "size": 1576
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "inverse.frag",
+      "relative_path": "shaders/inverse.frag",
+      "size": 2064
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "lens.frag",
+      "relative_path": "shaders/lens.frag",
+      "size": 2376
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "lighten.frag",
+      "relative_path": "shaders/lighten.frag",
+      "size": 2272
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "lottes.frag",
+      "relative_path": "shaders/lottes.frag",
+      "size": 9016
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "lumblend.frag",
+      "relative_path": "shaders/lumblend.frag",
+      "size": 3880
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "multiply.frag",
+      "relative_path": "shaders/multiply.frag",
+      "size": 2192
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "noise.frag",
+      "relative_path": "shaders/noise.frag",
+      "size": 2448
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "noisemask.frag",
+      "relative_path": "shaders/noisemask.frag",
+      "size": 2504
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "ntsc.frag",
+      "relative_path": "shaders/ntsc.frag",
+      "size": 1576
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "oilpainting.frag",
+      "relative_path": "shaders/oilpainting.frag",
+      "size": 4968
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "outline.frag",
+      "relative_path": "shaders/outline.frag",
+      "size": 2720
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "overlay.frag",
+      "relative_path": "shaders/overlay.frag",
+      "size": 2576
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "pixellate.frag",
+      "relative_path": "shaders/pixellate.frag",
+      "size": 2192
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "pixellatemask.frag",
+      "relative_path": "shaders/pixellatemask.frag",
+      "size": 2312
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "pixelscale.frag",
+      "relative_path": "shaders/pixelscale.frag",
+      "size": 1808
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "posterize.frag",
+      "relative_path": "shaders/posterize.frag",
+      "size": 2152
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "prrcrta05.frag",
+      "relative_path": "shaders/prrcrta05.frag",
+      "size": 3480
+    },
+    {
+      "category": "Unknown",
+      "extension": "vert",
+      "file_name": "prrcrta05.vert",
+      "relative_path": "shaders/prrcrta05.vert",
+      "size": 3128
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "pulse.frag",
+      "relative_path": "shaders/pulse.frag",
+      "size": 2384
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "radialblur.frag",
+      "relative_path": "shaders/radialblur.frag",
+      "size": 2664
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "replacecolor.frag",
+      "relative_path": "shaders/replacecolor.frag",
+      "size": 2336
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "rgfade8bit.frag",
+      "relative_path": "shaders/rgfade8bit.frag",
+      "size": 3256
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "rotoscale.frag",
+      "relative_path": "shaders/rotoscale.frag",
+      "size": 2216
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "saturation.frag",
+      "relative_path": "shaders/saturation.frag",
+      "size": 3928
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "scanlines.frag",
+      "relative_path": "shaders/scanlines.frag",
+      "size": 2192
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "screen.frag",
+      "relative_path": "shaders/screen.frag",
+      "size": 2272
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "scroll.frag",
+      "relative_path": "shaders/scroll.frag",
+      "size": 2304
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "seamless.frag",
+      "relative_path": "shaders/seamless.frag",
+      "size": 2088
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "separatechannel.frag",
+      "relative_path": "shaders/separatechannel.frag",
+      "size": 2320
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "sepia.frag",
+      "relative_path": "shaders/sepia.frag",
+      "size": 2152
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "setcolor.frag",
+      "relative_path": "shaders/setcolor.frag",
+      "size": 2032
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "sharpen.frag",
+      "relative_path": "shaders/sharpen.frag",
+      "size": 2320
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "shinkan_fog.frag",
+      "relative_path": "shaders/shinkan_fog.frag",
+      "size": 2088
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "skew.frag",
+      "relative_path": "shaders/skew.frag",
+      "size": 2088
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "softlight.frag",
+      "relative_path": "shaders/softlight.frag",
+      "size": 2872
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "sphere.frag",
+      "relative_path": "shaders/sphere.frag",
+      "size": 2384
+    },
+    {
+      "category": "Unknown",
+      "extension": "vert",
+      "file_name": "standard.vert",
+      "relative_path": "shaders/standard.vert",
+      "size": 2992
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "stretch.frag",
+      "relative_path": "shaders/stretch.frag",
+      "size": 2120
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "swirl.frag",
+      "relative_path": "shaders/swirl.frag",
+      "size": 2208
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "tint.frag",
+      "relative_path": "shaders/tint.frag",
+      "size": 2032
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "tintmask.frag",
+      "relative_path": "shaders/tintmask.frag",
+      "size": 2232
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "trim.frag",
+      "relative_path": "shaders/trim.frag",
+      "size": 2128
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "trimpx.frag",
+      "relative_path": "shaders/trimpx.frag",
+      "size": 2688
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "vhs.frag",
+      "relative_path": "shaders/vhs.frag",
+      "size": 2536
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "vibrance.frag",
+      "relative_path": "shaders/vibrance.frag",
+      "size": 2152
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "vignette.frag",
+      "relative_path": "shaders/vignette.frag",
+      "size": 2216
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "vignette_color.frag",
+      "relative_path": "shaders/vignette_color.frag",
+      "size": 2280
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "warp.frag",
+      "relative_path": "shaders/warp.frag",
+      "size": 2160
+    },
+    {
+      "category": "Unknown",
+      "extension": "vert",
+      "file_name": "warp.vert",
+      "relative_path": "shaders/warp.vert",
+      "size": 3144
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "warpmask.frag",
+      "relative_path": "shaders/warpmask.frag",
+      "size": 2440
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "warpradial.frag",
+      "relative_path": "shaders/warpradial.frag",
+      "size": 2448
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "warpripple.frag",
+      "relative_path": "shaders/warpripple.frag",
+      "size": 2136
+    },
+    {
+      "category": "Unknown",
+      "extension": "vert",
+      "file_name": "warpripple.vert",
+      "relative_path": "shaders/warpripple.vert",
+      "size": 2792
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "water.frag",
+      "relative_path": "shaders/water.frag",
+      "size": 2872
+    },
+    {
+      "category": "Unknown",
+      "extension": "frag",
+      "file_name": "waterbg.frag",
+      "relative_path": "shaders/waterbg.frag",
+      "size": 3632
+    },
+    {
+      "category": "Unknown",
+      "extension": "ini",
+      "file_name": "spisettings.ini",
+      "relative_path": "spisettings.ini",
+      "size": 402
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "splash_2.png",
+      "relative_path": "splash_2.png",
+      "size": 2249
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "~INDEX",
+      "relative_path": "~INDEX",
+      "size": 4576
+    }
+  ],
+  "by_category": {
+    "executable": 3,
+    "font": 1,
+    "metadata": 13,
+    "texture": 84,
+    "unknown": 150
+  },
+  "by_extension": {
+    "(no_ext)": 2,
+    "dat": 5,
+    "dds": 4,
+    "eboot.bin": 1,
+    "esbak": 3,
+    "frag": 110,
+    "ini": 1,
+    "js": 1,
+    "json": 3,
+    "ogg": 16,
+    "png": 80,
+    "prx": 1,
+    "sprx": 1,
+    "ttf": 1,
+    "ucp": 2,
+    "vert": 20
+  },
+  "game": "Neko.Rescue.Tale-PPSA13871-EUR-Game (v01.000)-PS5",
+  "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Neko.Rescue.Tale-PPSA13871-EUR-Game (v01.000)-PS5",
+  "total_bytes": 108202584,
+  "total_files": 251
+}

@@ -1,0 +1,212 @@
+{
+  "engine": "Unreal Engine",
+  "game": "Afterimage-PPSA14053-EUR-Game-v01.000-PS5",
+  "sony": [
+    {
+      "exports": 29,
+      "file_name": "libSceFace.prx",
+      "import_libs": [
+        "libSceLibcInternal",
+        "libkernel"
+      ],
+      "imports": 20,
+      "kind": "sony",
+      "module_name": "libSceFace",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceLibcInternal.prx"
+      ],
+      "parseable": true,
+      "sha256": "13b3cb20781b2dc46c0078664f8bf5bb9a61a00c506c87cc0763eb1b5a59dee8"
+    },
+    {
+      "exports": 21,
+      "file_name": "libSceFaceTracker.prx",
+      "import_libs": [
+        "libSceFace",
+        "libSceLibcInternal",
+        "libScePosix",
+        "libkernel"
+      ],
+      "imports": 27,
+      "kind": "sony",
+      "module_name": "libSceFaceTracker",
+      "needed_files": [
+        "libSceFace.prx",
+        "libkernel.prx",
+        "libSceLibcInternal.prx"
+      ],
+      "parseable": true,
+      "sha256": "418cd2032b32158a01e79c3ca5da270d645e6e705d92e0da3000cd29c7d7bcb2"
+    },
+    {
+      "exports": 6,
+      "file_name": "libSceFontGsm.prx",
+      "import_libs": [
+        "libSceAgc",
+        "libSceAgcDriver",
+        "libSceFont",
+        "libSceLibcInternal",
+        "libkernel"
+      ],
+      "imports": 61,
+      "kind": "sony",
+      "module_name": "libSceFontGsm",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceLibcInternal.prx",
+        "libSceFont-module.prx",
+        "libSceAgcDriver.prx",
+        "libSceAgc.prx"
+      ],
+      "parseable": true,
+      "sha256": "c27edd02b7121db760e1c378a00aa37fe137a91b0770e2bdf6ff2c7303ff5687"
+    },
+    {
+      "exports": 11,
+      "file_name": "libSceJobManager.prx",
+      "import_libs": [
+        "libSceAgc",
+        "libSceAgcDriver",
+        "libSceLibcInternal",
+        "libSceRazorCpu",
+        "libkernel",
+        "ulobjmgr"
+      ],
+      "imports": 146,
+      "kind": "sony",
+      "module_name": "libSceJobManager",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceLibcInternal.prx",
+        "libSceAgcDriver.prx",
+        "libSceAgc.prx",
+        "ulobjmgr.prx",
+        "libSceRazorCpu.prx"
+      ],
+      "parseable": true,
+      "sha256": "0c49bdff2b30e102d9ba70ed4cbc15c37122011bbdc02c28a1783aaf71c0ef86"
+    },
+    {
+      "exports": 41658,
+      "file_name": "libSceNpCppWebApi.prx",
+      "import_libs": [
+        "libSceHttp",
+        "libSceJson2",
+        "libSceLibcInternal",
+        "libSceNpWebApi2",
+        "libSceRtc",
+        "libkernel"
+      ],
+      "imports": 95,
+      "kind": "sony",
+      "module_name": "libSceNpCppWebApi",
+      "needed_files": [
+        "libSceJson2.prx",
+        "libSceRtc.prx",
+        "libSceNpWebApi2.prx",
+        "libSceHttp.prx",
+        "libkernel.prx",
+        "libSceLibcInternal.prx"
+      ],
+      "parseable": true,
+      "sha256": "b8421087d1c23d145115d42ff63a36124c3a3c62c5138479c15490ef1b5fde98"
+    },
+    {
+      "exports": 9,
+      "file_name": "libScePfs.prx",
+      "import_libs": [
+        "libSceLibcInternal",
+        "libkernel"
+      ],
+      "imports": 15,
+      "kind": "sony",
+      "module_name": "libScePfs",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceLibcInternal.prx"
+      ],
+      "parseable": true,
+      "sha256": "fbbcd77c24426454c96d18a49be2c3598d2b10a4a78605377973d9fb43440b2b"
+    },
+    {
+      "exports": 2572,
+      "file_name": "libc.prx",
+      "import_libs": [
+        "libSceLibcInternalExt",
+        "libSceSysmodule",
+        "libkernel"
+      ],
+      "imports": 104,
+      "kind": "sony",
+      "module_name": "libc",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceLibcInternal.prx",
+        "libSceSysmodule.prx"
+      ],
+      "parseable": true,
+      "sha256": "78b1902beeaa77749a8104d8c229436454272bed571a0eb0ce0ef4294a75bea7"
+    }
+  ],
+  "third_party": [
+    {
+      "description": "FMOD low-level audio engine",
+      "exports": 1094,
+      "file_name": "libfmod.prx",
+      "import_libs": [
+        "libSceAcm",
+        "libSceAjm",
+        "libSceAudioIn",
+        "libSceAudioOut2",
+        "libSceNet",
+        "libSceSysmodule",
+        "libSceUserService",
+        "libc",
+        "libkernel"
+      ],
+      "imports": 146,
+      "kind": "thirdparty",
+      "module_name": "libfmod",
+      "needed_files": [
+        "libSceAudioOut.prx",
+        "libSceAudioIn.prx",
+        "libSceAjm.native.prx",
+        "libSceNet.prx",
+        "libSceUserService.prx",
+        "libkernel.prx",
+        "libc.prx",
+        "libSceSysmodule.prx",
+        "libSceAcm.prx"
+      ],
+      "parseable": true,
+      "product": "FMOD",
+      "sha256": "26a8649ebcfd68aba2c18fa02897ef0e3dde6705794446be752a67ed0c375f86",
+      "vendor": "Firelight Technologies"
+    },
+    {
+      "description": "FMOD Studio audio engine (banks and events)",
+      "exports": 359,
+      "file_name": "libfmodstudio.prx",
+      "import_libs": [
+        "libc",
+        "libfmod",
+        "libkernel"
+      ],
+      "imports": 175,
+      "kind": "thirdparty",
+      "module_name": "libfmodstudio",
+      "needed_files": [
+        "libfmod.prx",
+        "libkernel.prx",
+        "libc.prx"
+      ],
+      "parseable": true,
+      "product": "FMOD Studio",
+      "sha256": "cd118e6da8d7073b4558d0ff64bf5ef2cf2b6bd71c1823e4519fcf17d35efa72",
+      "vendor": "Firelight Technologies"
+    }
+  ],
+  "title_id": "PPSA14053",
+  "unknown": []
+}

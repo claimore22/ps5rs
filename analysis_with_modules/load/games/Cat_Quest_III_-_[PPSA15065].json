@@ -1,0 +1,590 @@
+{
+  "game": "Cat Quest III - [PPSA15065]",
+  "path": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Cat-Quest-III-PPSA15065-app\\eboot.bin",
+  "load_report": {
+    "modules": [
+      {
+        "name": "libc.prx",
+        "module_type": "Prx",
+        "load_bias": 34628173824,
+        "entry_point": null,
+        "exports_count": 2584,
+        "imports_resolved": 0,
+        "imports_known": 0,
+        "imports_stubbed": 105,
+        "relative": 1722,
+        "glob_dat": 3,
+        "jump_slot": 102,
+        "abs64": 0,
+        "copy": 0,
+        "tls_relocations": 3,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 827296,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 1129648,
+        "preinit_array_sz": 8,
+        "per_library": [
+          {
+            "library": "libSceLibcInternalExt",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 101
+          }
+        ]
+      },
+      {
+        "name": "Cat-Quest-III-PPSA15065-app",
+        "module_type": "Eboot",
+        "load_bias": 34629550080,
+        "entry_point": 112,
+        "exports_count": 1,
+        "imports_resolved": 1344,
+        "imports_known": 0,
+        "imports_stubbed": 458,
+        "relative": 48953,
+        "glob_dat": 4,
+        "jump_slot": 598,
+        "abs64": 1200,
+        "copy": 0,
+        "tls_relocations": 0,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 26315984,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 0,
+        "preinit_array_sz": 0,
+        "per_library": [
+          {
+            "library": "Il2cppUserAssemblies",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "PS5Util",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceAgc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 67
+          },
+          {
+            "library": "libSceAgcDriver",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 9
+          },
+          {
+            "library": "libSceAjm",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 15
+          },
+          {
+            "library": "libSceAmpr",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceAppContent",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libSceAudioIn",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceAudioOut",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceAudioOut2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 13
+          },
+          {
+            "library": "libSceAvPlayer",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 20
+          },
+          {
+            "library": "libSceCommonDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceHttp",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceHttp2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 23
+          },
+          {
+            "library": "libSceIme",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceImeDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceMouse",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceMsgDialog.native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceNet",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 21
+          },
+          {
+            "library": "libSceNetCtl",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceNpManager",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceNpWebApi2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libScePad",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 17
+          },
+          {
+            "library": "libScePosix",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 37
+          },
+          {
+            "library": "libSceRandom",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceRemoteplay",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceSaveData_native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceSsl",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 12
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSystemService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 19
+          },
+          {
+            "library": "libSceUserService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 14
+          },
+          {
+            "library": "libSceVideoOut",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 17
+          },
+          {
+            "library": "libSceWebBrowserDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libc",
+            "resolved": 1344,
+            "known": 0,
+            "stubbed": 0
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 93
+          }
+        ]
+      }
+    ],
+    "graph": {
+      "nodes": [
+        "libSceRazorCpu.prx",
+        "libSceAgc.prx",
+        "libSceNpWebApi2.prx",
+        "libSceNetCtl.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceUserService.prx",
+        "libSceHttp.prx",
+        "libSceAudio3d.prx",
+        "libSceImeDialog.prx",
+        "libSceAgcDriver.prx",
+        "libSceNet.prx",
+        "libSceMouse.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceNpManager.prx",
+        "Il2cppUserAssemblies.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceIme.prx",
+        "libkernel.prx",
+        "libSceVideoOut.prx",
+        "libSceRtc.prx",
+        "libSceSystemService.prx",
+        "libSceSaveData.native.prx",
+        "libSceAudioOut.prx",
+        "libSceCommonDialog.prx",
+        "libSceLibcInternal.prx",
+        "libSceRandom.prx",
+        "libSceSysmodule.prx",
+        "libSceAppContent.prx",
+        "libSceSsl.prx",
+        "PS5Util.prx",
+        "libSceAjm.native.prx",
+        "libSceAmpr.prx",
+        "libSceRemoteplay.prx",
+        "libScePad.prx",
+        "Cat-Quest-III-PPSA15065-app",
+        "libSceAudioIn.prx",
+        "libc.prx",
+        "libSceHttp2.prx"
+      ],
+      "unavailable": [
+        "libSceUserService.prx",
+        "libSceHttp.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceNetCtl.prx",
+        "libSceNpWebApi2.prx",
+        "libSceRazorCpu.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceRtc.prx",
+        "libSceNet.prx",
+        "libSceAgcDriver.prx",
+        "libSceSystemService.prx",
+        "libSceCommonDialog.prx",
+        "libSceMouse.prx",
+        "libSceNpManager.prx",
+        "libSceIme.prx",
+        "libSceAudio3d.prx",
+        "libSceHttp2.prx",
+        "libSceAudioOut.prx",
+        "libSceAudioIn.prx",
+        "libSceImeDialog.prx",
+        "libSceVideoOut.prx",
+        "libSceRandom.prx",
+        "libSceRemoteplay.prx",
+        "libSceAppContent.prx",
+        "libSceLibcInternal.prx",
+        "libSceSsl.prx",
+        "libSceAmpr.prx",
+        "libSceSysmodule.prx",
+        "libSceAgc.prx",
+        "libSceSaveData.native.prx",
+        "libSceAjm.native.prx",
+        "libScePad.prx",
+        "Il2cppUserAssemblies.prx",
+        "libSceWebBrowserDialog.prx",
+        "PS5Util.prx",
+        "libkernel.prx"
+      ],
+      "edges": [
+        {
+          "from": "Cat-Quest-III-PPSA15065-app",
+          "to": "Il2cppUserAssemblies.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Cat-Quest-III-PPSA15065-app",
+          "to": "PS5Util.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Cat-Quest-III-PPSA15065-app",
+          "to": "libSceNetCtl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Cat-Quest-III-PPSA15065-app",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Cat-Quest-III-PPSA15065-app",
+          "to": "libSceNet.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Cat-Quest-III-PPSA15065-app",
+          "to": "libSceUserService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Cat-Quest-III-PPSA15065-app",
+          "to": "libSceVideoOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Cat-Quest-III-PPSA15065-app",
+          "to": "libSceAudioOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Cat-Quest-III-PPSA15065-app",
+          "to": "libSceAudioIn.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Cat-Quest-III-PPSA15065-app",
+          "to": "libScePad.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Cat-Quest-III-PPSA15065-app",
+          "to": "libSceIme.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Cat-Quest-III-PPSA15065-app",
+          "to": "libSceImeDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Cat-Quest-III-PPSA15065-app",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Cat-Quest-III-PPSA15065-app",
+          "to": "libSceRtc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Cat-Quest-III-PPSA15065-app",
+          "to": "libSceSystemService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Cat-Quest-III-PPSA15065-app",
+          "to": "libSceHttp.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Cat-Quest-III-PPSA15065-app",
+          "to": "libSceHttp2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Cat-Quest-III-PPSA15065-app",
+          "to": "libSceSsl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Cat-Quest-III-PPSA15065-app",
+          "to": "libSceSaveData.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Cat-Quest-III-PPSA15065-app",
+          "to": "libSceCommonDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Cat-Quest-III-PPSA15065-app",
+          "to": "libSceMsgDialog.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Cat-Quest-III-PPSA15065-app",
+          "to": "libSceAvPlayer.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Cat-Quest-III-PPSA15065-app",
+          "to": "libSceAppContent.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Cat-Quest-III-PPSA15065-app",
+          "to": "libSceWebBrowserDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Cat-Quest-III-PPSA15065-app",
+          "to": "libSceAudio3d.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Cat-Quest-III-PPSA15065-app",
+          "to": "libSceRemoteplay.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Cat-Quest-III-PPSA15065-app",
+          "to": "libSceNpManager.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Cat-Quest-III-PPSA15065-app",
+          "to": "libSceMouse.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Cat-Quest-III-PPSA15065-app",
+          "to": "libSceAgcDriver.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Cat-Quest-III-PPSA15065-app",
+          "to": "libSceAgc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Cat-Quest-III-PPSA15065-app",
+          "to": "libSceAjm.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Cat-Quest-III-PPSA15065-app",
+          "to": "libSceRazorCpu.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Cat-Quest-III-PPSA15065-app",
+          "to": "libSceNpWebApi2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Cat-Quest-III-PPSA15065-app",
+          "to": "libSceRandom.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Cat-Quest-III-PPSA15065-app",
+          "to": "libc.prx",
+          "status": "loaded"
+        },
+        {
+          "from": "Cat-Quest-III-PPSA15065-app",
+          "to": "libSceAmpr.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        }
+      ]
+    },
+    "totals": {
+      "modules": 2,
+      "resolved": 1344,
+      "known": 0,
+      "stubbed": 563,
+      "exports": 2585,
+      "unavailable": 36
+    }
+  },
+  "error": null,
+  "total_exports": 2585,
+  "freshness": {
+    "report_format": 1,
+    "loader_fingerprint": "37a85e37ad1df177c24ca92b5e06dd2322849bcbc949ec1461e015d7a1db1eee",
+    "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
+    "environment_fingerprint": "3aaac4cd58fab0d58acdb4ea2271b30447f0e35fa900d2cd9f160d90a489df07",
+    "game_fingerprint": "20f520da73d8027a722c49824a929917e735bcd76de2ab124be3dc37e5cfc5bc"
+  }
+}

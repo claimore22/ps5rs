@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "title_id": "PPSA14053",
+  "name": "Afterimage - [PPSA14053]",
+  "eboot_sha256": "16101e0a130b9067a534d574c22901c3a28a08ab74326b324cc25bf977c3b3b2",
+  "game_fingerprint": "a1e942d5312bf1f8102cf4357ba2d240d4722fc957380ec09590d3f904bb57b5",
+  "environment_fingerprint": "c65955db3dee9d575ca652856c86c3fc2b7297fff36bb37fcb1b9319f1ff09a9",
+  "loader_fingerprint": "d245a80770d2897643c4754f10883b674208fc8fdecaad2ebd247d1990f6f5a0",
+  "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
+  "ingest_id": "ingest_20260912085618_a1e942d5312b",
+  "ingested_at": "2026-09-12T08:56:18Z",
+  "params": {
+    "name": "Afterimage-PPSA14053-EUR-Game-v01.000-PS5",
+    "title_id": "PPSA14053",
+    "content_version": "01.000.000",
+    "master_version": "01.00",
+    "sdk_version": "0x0600000000000000",
+    "title_name": "Afterimage",
+    "display_name": "Afterimage - [PPSA14053]",
+    "drm_type": "standard",
+    "content_id": "EP4908-PPSA14053_00-AFTERIMAGE000000",
+    "creation_date": "2023-02-18 11:14:48"
+  },
+  "load_report_file": "load_report.json"
+}

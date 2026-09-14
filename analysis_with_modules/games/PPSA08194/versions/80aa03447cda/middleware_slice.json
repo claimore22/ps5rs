@@ -1,0 +1,368 @@
+{
+  "engine": "Unreal Engine",
+  "game": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+  "sony": [
+    {
+      "exports": 29,
+      "file_name": "libSceFace.prx",
+      "import_libs": [
+        "libSceLibcInternal",
+        "libkernel"
+      ],
+      "imports": 20,
+      "kind": "sony",
+      "module_name": "libSceFace",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceLibcInternal.prx"
+      ],
+      "parseable": true,
+      "sha256": "3949c2560ed8cadecfd9054b726b6d1dacb242918840e3b4b3db2f58680a364e"
+    },
+    {
+      "exports": 21,
+      "file_name": "libSceFaceTracker.prx",
+      "import_libs": [
+        "libSceFace",
+        "libSceLibcInternal",
+        "libScePosix",
+        "libkernel"
+      ],
+      "imports": 27,
+      "kind": "sony",
+      "module_name": "libSceFaceTracker",
+      "needed_files": [
+        "libSceFace.prx",
+        "libkernel.prx",
+        "libSceLibcInternal.prx"
+      ],
+      "parseable": true,
+      "sha256": "211c936112416fa2036509a4b37d7a2866d47fa4ae0d1eae689f0ff5141d3451"
+    },
+    {
+      "exports": 11,
+      "file_name": "libSceJobManager.prx",
+      "import_libs": [
+        "libSceAgc",
+        "libSceAgcDriver",
+        "libSceLibcInternal",
+        "libSceRazorCpu",
+        "libkernel",
+        "ulobjmgr"
+      ],
+      "imports": 144,
+      "kind": "sony",
+      "module_name": "libSceJobManager",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceLibcInternal.prx",
+        "libSceAgcDriver.prx",
+        "libSceAgc.prx",
+        "ulobjmgr.prx",
+        "libSceRazorCpu.prx"
+      ],
+      "parseable": true,
+      "sha256": "d2a1d1b08a9b26dfd98f80b4978d0f719a83b01d72d62bca95fb30ad2d44381f"
+    },
+    {
+      "exports": 41638,
+      "file_name": "libSceNpCppWebApi.prx",
+      "import_libs": [
+        "libSceHttp",
+        "libSceJson2",
+        "libSceLibcInternal",
+        "libSceNpWebApi2",
+        "libSceRtc",
+        "libkernel"
+      ],
+      "imports": 95,
+      "kind": "sony",
+      "module_name": "libSceNpCppWebApi",
+      "needed_files": [
+        "libSceJson2.prx",
+        "libSceRtc.prx",
+        "libSceNpWebApi2.prx",
+        "libSceHttp.prx",
+        "libkernel.prx",
+        "libSceLibcInternal.prx"
+      ],
+      "parseable": true,
+      "sha256": "0fb73159089f40a097ebed85e3010ae3ee0512b856635c2225bc677fc5cf9941"
+    },
+    {
+      "exports": 9,
+      "file_name": "libScePfs.prx",
+      "import_libs": [
+        "libSceLibcInternal",
+        "libkernel"
+      ],
+      "imports": 15,
+      "kind": "sony",
+      "module_name": "libScePfs",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceLibcInternal.prx"
+      ],
+      "parseable": true,
+      "sha256": "0544e7d98a144784a47f07163ce27f284ea6f35a89f22e4a2a8e39ee23dc3378"
+    },
+    {
+      "exports": 2571,
+      "file_name": "libc.prx",
+      "import_libs": [
+        "libSceLibcInternalExt",
+        "libSceSysmodule",
+        "libkernel"
+      ],
+      "imports": 103,
+      "kind": "sony",
+      "module_name": "libc",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceLibcInternal.prx",
+        "libSceSysmodule.prx"
+      ],
+      "parseable": true,
+      "sha256": "acd4b76cb31273cad24a7ea655de974bcbab620a90877ccdde6625f5a54f78d7"
+    }
+  ],
+  "third_party": [
+    {
+      "description": "Gameface development build",
+      "exports": 2,
+      "file_name": "coherentuigtdevelopment.prx",
+      "import_libs": [
+        "libSceNetCtl",
+        "libSceNetCtlAp",
+        "libScePosix",
+        "libSceSystemService",
+        "libc",
+        "libkernel"
+      ],
+      "imports": 44,
+      "kind": "thirdparty",
+      "module_name": "coherentuigtdevelopment",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceNetCtl.prx",
+        "libSceSystemService.prx",
+        "libc.prx"
+      ],
+      "parseable": true,
+      "product": "Gameface",
+      "sha256": "69cd324a0dc7dc76e922d674a4fa3dce79d80cb620853978d4a09413bfe297c3",
+      "vendor": "Coherent Labs"
+    },
+    {
+      "description": "Gameface core library",
+      "exports": 8271,
+      "file_name": "libcoherentgtcore.prx",
+      "import_libs": [
+        "libCoherentGTJS",
+        "libRenoirCore.PS5",
+        "libSceNet",
+        "libScePosix",
+        "libWTF",
+        "libc",
+        "libicuin",
+        "libkernel"
+      ],
+      "imports": 1366,
+      "kind": "thirdparty",
+      "module_name": "libcoherentgtcore",
+      "needed_files": [
+        "libCoherentGTJS.prx",
+        "libRenoirCore.PS5.prx",
+        "libWTF.prx",
+        "libicuin.prx",
+        "libkernel.prx",
+        "libSceNet.prx",
+        "libc.prx"
+      ],
+      "parseable": true,
+      "product": "Gameface",
+      "sha256": "9f2f772d5c9abb1ee612b2760ea5276ede73efb0438932a8da6c8d522368da96",
+      "vendor": "Coherent Labs"
+    },
+    {
+      "description": "Gameface JavaScript engine",
+      "exports": 2554,
+      "file_name": "libcoherentgtjs.prx",
+      "import_libs": [
+        "libScePosix",
+        "libWTF",
+        "libc",
+        "libicuin",
+        "libkernel"
+      ],
+      "imports": 326,
+      "kind": "thirdparty",
+      "module_name": "libcoherentgtjs",
+      "needed_files": [
+        "libWTF.prx",
+        "libkernel.prx",
+        "libicuin.prx",
+        "libc.prx"
+      ],
+      "parseable": true,
+      "product": "Gameface",
+      "sha256": "f69e6e2da5ee5117c7f354aa3c512ac11d7869ea0ab1561494194d90006ef87f",
+      "vendor": "Coherent Labs"
+    },
+    {
+      "description": "Gameface UI runtime",
+      "exports": 193,
+      "file_name": "libcoherentuigt.prx",
+      "import_libs": [
+        "libCoherentGTCore",
+        "libCoherentGTJS",
+        "libRenoirCore.PS5",
+        "libSceNet",
+        "libScePosix",
+        "libWTF",
+        "libc",
+        "libicuin",
+        "libkernel"
+      ],
+      "imports": 1133,
+      "kind": "thirdparty",
+      "module_name": "libcoherentuigt",
+      "needed_files": [
+        "libCoherentGTJS.prx",
+        "libRenoirCore.PS5.prx",
+        "libWTF.prx",
+        "libCoherentGTCore.prx",
+        "libicuin.prx",
+        "libSceNet.prx",
+        "libkernel.prx",
+        "libc.prx"
+      ],
+      "parseable": true,
+      "product": "Gameface",
+      "sha256": "3e491108d11a5d5c2b110a4818d5726632dadcd4d25e7c35f5d7e653b225325a",
+      "vendor": "Coherent Labs"
+    },
+    {
+      "description": "FMOD low-level audio engine",
+      "exports": 1091,
+      "file_name": "libfmod.prx",
+      "import_libs": [
+        "libSceAcm",
+        "libSceAjm",
+        "libSceAudioIn",
+        "libSceAudioOut2",
+        "libSceNet",
+        "libSceSysmodule",
+        "libSceUserService",
+        "libc",
+        "libkernel"
+      ],
+      "imports": 144,
+      "kind": "thirdparty",
+      "module_name": "libfmod",
+      "needed_files": [
+        "libSceAudioOut.prx",
+        "libSceAudioIn.prx",
+        "libSceAjm.native.prx",
+        "libSceNet.prx",
+        "libSceUserService.prx",
+        "libkernel.prx",
+        "libc.prx",
+        "libSceSysmodule.prx",
+        "libSceAcm.prx"
+      ],
+      "parseable": true,
+      "product": "FMOD",
+      "sha256": "6283f3a2ae65651dd2dda627f18f86ac240f3f88ec7eeaaf2aa5b75f2ef373a6",
+      "vendor": "Firelight Technologies"
+    },
+    {
+      "description": "FMOD Studio audio engine (banks and events)",
+      "exports": 381,
+      "file_name": "libfmodstudio.prx",
+      "import_libs": [
+        "libc",
+        "libfmod",
+        "libkernel"
+      ],
+      "imports": 178,
+      "kind": "thirdparty",
+      "module_name": "libfmodstudio",
+      "needed_files": [
+        "libfmod.prx",
+        "libkernel.prx",
+        "libc.prx"
+      ],
+      "parseable": true,
+      "product": "FMOD Studio",
+      "sha256": "d5291031b3599f1c4982dba87b096b8f6149689d3a14aa0e8aa38b7aaa2a28aa",
+      "vendor": "Firelight Technologies"
+    },
+    {
+      "description": "International Components for Unicode",
+      "exports": 6955,
+      "file_name": "libicuin.prx",
+      "import_libs": [
+        "libScePosix",
+        "libc",
+        "libkernel"
+      ],
+      "imports": 55,
+      "kind": "thirdparty",
+      "module_name": "libicuin",
+      "needed_files": [
+        "libkernel.prx",
+        "libc.prx"
+      ],
+      "parseable": true,
+      "product": "ICU",
+      "sha256": "630c83fae9869bf9ddedfa93fb9da7f17d7aa20c87a18bbc2f55f277f68f7e1f",
+      "vendor": "Unicode Consortium"
+    },
+    {
+      "description": "GPU/CPU performance capture runtime",
+      "exports": 49,
+      "file_name": "librenoircore.ps5.prx",
+      "import_libs": [
+        "libc",
+        "libkernel"
+      ],
+      "imports": 107,
+      "kind": "thirdparty",
+      "module_name": "librenoircore.ps5",
+      "needed_files": [
+        "libkernel.prx",
+        "libc.prx"
+      ],
+      "parseable": true,
+      "product": "RENOIR",
+      "sha256": "69687a778a466bfc64cad73e20424a0210f79b411458edb93613c444a38609d1",
+      "vendor": "SN Systems"
+    },
+    {
+      "description": "Unidentified third-party library",
+      "exports": 799,
+      "file_name": "libwtf.prx",
+      "import_libs": [
+        "libScePosix",
+        "libc",
+        "libicuin",
+        "libkernel"
+      ],
+      "imports": 117,
+      "kind": "thirdparty",
+      "module_name": "libwtf",
+      "needed_files": [
+        "libicuin.prx",
+        "libkernel.prx",
+        "libc.prx"
+      ],
+      "parseable": true,
+      "product": "WTF",
+      "sha256": "abedbac20933fbbd26174a383a7a54d01fc5a84cb7ad7c78c6515c8448a188e7",
+      "vendor": "Unknown"
+    }
+  ],
+  "title_id": "PPSA08194",
+  "unknown": []
+}

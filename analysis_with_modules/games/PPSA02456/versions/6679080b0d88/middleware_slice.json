@@ -1,0 +1,314 @@
+{
+  "game": "PPSA02456-app",
+  "sony": [
+    {
+      "exports": 11,
+      "file_name": "libSceJobManager.prx",
+      "import_libs": [
+        "libSceAgc",
+        "libSceAgcDriver",
+        "libSceLibcInternal",
+        "libSceRazorCpu",
+        "libkernel",
+        "ulobjmgr"
+      ],
+      "imports": 143,
+      "kind": "sony",
+      "module_name": "libSceJobManager",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceLibcInternal.prx",
+        "libSceAgcDriver.prx",
+        "libSceAgc.prx",
+        "ulobjmgr.prx",
+        "libSceRazorCpu.prx"
+      ],
+      "parseable": true,
+      "sha256": "0e9520278a270bff762b8b1e580ec5bb0ca7bbb79fcc06b789e9651b7c612613"
+    },
+    {
+      "exports": 45841,
+      "file_name": "libSceNpCppWebApi.prx",
+      "import_libs": [
+        "libSceHttp",
+        "libSceJson2",
+        "libSceLibcInternal",
+        "libSceNpWebApi2",
+        "libSceRtc",
+        "libkernel"
+      ],
+      "imports": 95,
+      "kind": "sony",
+      "module_name": "libSceNpCppWebApi",
+      "needed_files": [
+        "libSceJson2.prx",
+        "libSceRtc.prx",
+        "libSceNpWebApi2.prx",
+        "libSceHttp.prx",
+        "libkernel.prx",
+        "libSceLibcInternal.prx"
+      ],
+      "parseable": true,
+      "sha256": "50b089e460a7eaa29b9c7acda1feb94deb6e95c1d44c3043d9ed0df8b8d62408"
+    },
+    {
+      "exports": 2569,
+      "file_name": "libc.prx",
+      "import_libs": [
+        "libSceLibcInternalExt",
+        "libSceSysmodule",
+        "libkernel"
+      ],
+      "imports": 103,
+      "kind": "sony",
+      "module_name": "libc",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceLibcInternal.prx",
+        "libSceSysmodule.prx"
+      ],
+      "parseable": true,
+      "sha256": "f7e33d424a3288027852d5430ab763d4cf07afd585b2e02af4c7450dda2e0df2"
+    }
+  ],
+  "third_party": [
+    {
+      "description": "Unity IL2CPP user assemblies (AOT-compiled C#)",
+      "exports": 260,
+      "file_name": "Il2CppUserAssemblies.prx",
+      "import_libs": [
+        "PS5Util",
+        "libSceNet",
+        "libSceNetCtl",
+        "libScePosix",
+        "libSceRtc",
+        "libSceSystemService",
+        "libc",
+        "libkernel"
+      ],
+      "imports": 273,
+      "kind": "thirdparty",
+      "module_name": "Il2CppUserAssemblies",
+      "needed_files": [
+        "PS5Util.prx",
+        "libc.prx",
+        "libSceNetCtl.prx",
+        "libSceNet.prx",
+        "libkernel.prx",
+        "libSceRtc.prx",
+        "libSceSystemService.prx"
+      ],
+      "parseable": true,
+      "product": "Unity IL2CPP",
+      "sha256": "411254f29037e1205f1f7a770774ea3feea1e8e2ec55ff4ed97d3d8ab69a01cf",
+      "vendor": "Unity Technologies"
+    },
+    {
+      "description": "Unity PS5 player support module",
+      "exports": 5,
+      "file_name": "PS5Util.prx",
+      "import_libs": [
+        "libc",
+        "libkernel",
+        "libkernel_unity"
+      ],
+      "imports": 8,
+      "kind": "thirdparty",
+      "module_name": "PS5Util",
+      "needed_files": [
+        "libkernel.prx",
+        "libc.prx"
+      ],
+      "parseable": true,
+      "product": "Unity PS5 Platform",
+      "sha256": "efb0b2cec4113260eee6ed6451bc97a8db062b09aa0290e4042e4ab616ed0774",
+      "vendor": "Unity Technologies"
+    },
+    {
+      "description": "Unity PSN package (com.unity.psn.ps5)",
+      "exports": 63,
+      "file_name": "PSNCommon.prx",
+      "import_libs": [
+        "libc",
+        "libkernel"
+      ],
+      "imports": 10,
+      "kind": "thirdparty",
+      "module_name": "PSNCommon",
+      "needed_files": [
+        "libkernel.prx",
+        "libc.prx"
+      ],
+      "parseable": true,
+      "product": "Unity PSN",
+      "sha256": "38889a95af014a0efe504fe01ec013dcd24b493759e3a72ab932baa0eb06f954",
+      "vendor": "Unity Technologies"
+    },
+    {
+      "description": "Unity PSN package (com.unity.psn.ps5)",
+      "exports": 9,
+      "file_name": "PSNCore.prx",
+      "import_libs": [
+        "PSNCommon",
+        "libSceCdlgPlayerReview",
+        "libSceCommonDialog",
+        "libSceHttp2",
+        "libSceJson2",
+        "libSceMsgDialog.native",
+        "libSceNet",
+        "libSceNpAuth",
+        "libSceNpCommerce",
+        "libSceNpCppWebApi",
+        "libSceNpEntitlementAccess",
+        "libSceNpGameIntent",
+        "libSceNpManager",
+        "libSceNpSessionSignaling",
+        "libSceNpTrophy2",
+        "libSceNpUniversalDataSystem",
+        "libSceNpWebApi2",
+        "libSceSsl",
+        "libSceSysmodule",
+        "libc",
+        "libkernel"
+      ],
+      "imports": 2355,
+      "kind": "thirdparty",
+      "module_name": "PSNCore",
+      "needed_files": [
+        "PSNCommon.prx",
+        "libSceSysmodule.prx",
+        "libSceNpTrophy2.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceNpManager.prx",
+        "libSceNpGameIntent.prx",
+        "libSceJson2.prx",
+        "libSceNpCppWebApi.prx",
+        "libSceNet.prx",
+        "libSceSsl.prx",
+        "libSceHttp2.prx",
+        "libSceNpWebApi2.prx",
+        "libSceCommonDialog.prx",
+        "libSceNpAuth.prx",
+        "libSceNpEntitlementAccess.prx",
+        "libSceNpCommerce.prx",
+        "libSceCdlgPlayerReview.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceNpSessionSignaling.prx",
+        "libkernel.prx",
+        "libc.prx"
+      ],
+      "parseable": true,
+      "product": "Unity PSN",
+      "sha256": "9eb15c33e59f74b64c8556bd9cb1d29a158cfff144160e7573af0eeb9bf837e8",
+      "vendor": "Unity Technologies"
+    },
+    {
+      "description": "Unity SaveData package (com.unity.savedata.ps5)",
+      "exports": 28,
+      "file_name": "SaveData.prx",
+      "import_libs": [
+        "libSceRtc",
+        "libSceSaveDataDialog.native",
+        "libSceSaveData_native",
+        "libSceSysmodule",
+        "libSceUserService",
+        "libc",
+        "libkernel"
+      ],
+      "imports": 55,
+      "kind": "thirdparty",
+      "module_name": "SaveData",
+      "needed_files": [
+        "libSceSaveData.native.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceUserService.prx",
+        "libSceSysmodule.prx",
+        "libSceRtc.prx",
+        "libkernel.prx",
+        "libc.prx"
+      ],
+      "parseable": true,
+      "product": "Unity PS5 Save Data",
+      "sha256": "c07caaac1a43c5bcec846379b2b8781d0038b8d446ff3b3cda3431a74618ee47",
+      "vendor": "Unity Technologies"
+    },
+    {
+      "description": "Unity Burst-compiled job system code",
+      "exports": 17,
+      "file_name": "lib_burst_generated.prx",
+      "import_libs": [
+        "libc",
+        "libkernel"
+      ],
+      "imports": 5,
+      "kind": "thirdparty",
+      "module_name": "lib_burst_generated",
+      "needed_files": [
+        "libkernel.prx",
+        "libc.prx"
+      ],
+      "parseable": true,
+      "product": "Unity Burst",
+      "sha256": "f9808f4e756757e96feb6ba7602b3ca6cbb851dad0057537239de9f3a4db691c",
+      "vendor": "Unity Technologies"
+    },
+    {
+      "description": "FMOD low-level audio engine",
+      "exports": 1094,
+      "file_name": "libfmod.prx",
+      "import_libs": [
+        "libSceAcm",
+        "libSceAjm",
+        "libSceAudioIn",
+        "libSceAudioOut2",
+        "libSceNet",
+        "libSceSysmodule",
+        "libSceUserService",
+        "libc",
+        "libkernel"
+      ],
+      "imports": 145,
+      "kind": "thirdparty",
+      "module_name": "libfmod",
+      "needed_files": [
+        "libSceAudioOut.prx",
+        "libSceAudioIn.prx",
+        "libSceAjm.native.prx",
+        "libSceNet.prx",
+        "libSceUserService.prx",
+        "libkernel.prx",
+        "libc.prx",
+        "libSceSysmodule.prx",
+        "libSceAcm.prx"
+      ],
+      "parseable": true,
+      "product": "FMOD",
+      "sha256": "391ac22b548dc566fdf12b651d628c4deb4e3e08ba920a61b92700cfc8ccfc01",
+      "vendor": "Firelight Technologies"
+    },
+    {
+      "description": "FMOD Studio audio engine (banks and events)",
+      "exports": 359,
+      "file_name": "libfmodstudio.prx",
+      "import_libs": [
+        "libc",
+        "libfmod",
+        "libkernel"
+      ],
+      "imports": 175,
+      "kind": "thirdparty",
+      "module_name": "libfmodstudio",
+      "needed_files": [
+        "libfmod.prx",
+        "libkernel.prx",
+        "libc.prx"
+      ],
+      "parseable": true,
+      "product": "FMOD Studio",
+      "sha256": "561c10aeff0e8714adfb594dd2b1078cd23509361b1599b974e2a1b764d1aaa6",
+      "vendor": "Firelight Technologies"
+    }
+  ],
+  "title_id": "PPSA02456",
+  "unknown": []
+}

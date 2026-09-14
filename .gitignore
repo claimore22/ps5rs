@@ -52,3 +52,16 @@
 .idea/
 
 analysis_with_modules/images/*.json
+
+# Ingest farm: local tooling, per-run logs, feeder output (never commit)
+/tools/ingest/
+# Download worker: tooling, runs/shots/logs, browser profile (never commit)
+/tools/dl/
+
+# JDownloader download dir (renamed from ROM)
+/rhum/
+
+# Stray local blobs (never commit)
+/backup.7z
+/analysis_with_modules.7z
+/analysis/*.zip

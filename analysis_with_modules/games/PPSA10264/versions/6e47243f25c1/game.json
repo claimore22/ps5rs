@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "title_id": "PPSA10264",
+  "name": "Jusant - [PPSA10264]",
+  "eboot_sha256": "36f451ac260314fc92ae0a91e60dbd4a5ed900bbca069def80dc9e928440f15f",
+  "game_fingerprint": "6e47243f25c1b115609cb2cb3f79b0acf317c452b2aa85f9f9b607b62e5d132d",
+  "environment_fingerprint": "c65955db3dee9d575ca652856c86c3fc2b7297fff36bb37fcb1b9319f1ff09a9",
+  "loader_fingerprint": "d245a80770d2897643c4754f10883b674208fc8fdecaad2ebd247d1990f6f5a0",
+  "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
+  "ingest_id": "ingest_20260912085620_6e47243f25c1",
+  "ingested_at": "2026-09-12T08:56:20Z",
+  "params": {
+    "name": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+    "title_id": "PPSA10264",
+    "content_version": "02.000.000",
+    "master_version": "02.00",
+    "sdk_version": "0x0700000000000000",
+    "title_name": "Jusant",
+    "display_name": "Jusant - [PPSA10264]",
+    "drm_type": "standard",
+    "content_id": "EP8091-PPSA10264_00-4648066903011525",
+    "creation_date": "2024-07-04 10:53:05"
+  },
+  "load_report_file": "load_report.json"
+}

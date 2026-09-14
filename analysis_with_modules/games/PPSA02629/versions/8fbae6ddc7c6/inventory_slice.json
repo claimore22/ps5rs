@@ -1,0 +1,1028 @@
+{
+  "artifacts": [
+    {
+      "category": "Unknown",
+      "extension": "complete",
+      "file_name": "PPSA02629.complete",
+      "relative_path": "PPSA02629.complete",
+      "size": 0
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "contentids.json",
+      "relative_path": "contentids.json",
+      "size": 87
+    },
+    {
+      "category": "Executable",
+      "extension": "eboot.bin",
+      "file_name": "eboot.bin",
+      "relative_path": "eboot.bin",
+      "size": 151078598
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "postbuild.json",
+      "relative_path": "engine/config/automation/presets/postbuild.json",
+      "size": 206
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "postbuildcritical.json",
+      "relative_path": "engine/config/automation/presets/postbuildcritical.json",
+      "size": 238
+    },
+    {
+      "category": "Unknown",
+      "extension": "ini",
+      "file_name": "manifest.ini",
+      "relative_path": "engine/saved/config/ps5/manifest.ini",
+      "size": 22
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libfmod.prx",
+      "relative_path": "prx/libfmod.prx",
+      "size": 1592304
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libfmodstudio.prx",
+      "relative_path": "prx/libfmodstudio.prx",
+      "size": 1524741
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "achievements.json",
+      "relative_path": "ronin/config/oss/live/achievements.json",
+      "size": 1094
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "aichatteraikodemon.bank",
+      "relative_path": "ronin/content/fmod/ps5/aichatteraikodemon.bank",
+      "size": 11911168
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "aichatterbandita.bank",
+      "relative_path": "ronin/content/fmod/ps5/aichatterbandita.bank",
+      "size": 2652160
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "aichatterbanditb.bank",
+      "relative_path": "ronin/content/fmod/ps5/aichatterbanditb.bank",
+      "size": 2313248
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "aichatterbanditc.bank",
+      "relative_path": "ronin/content/fmod/ps5/aichatterbanditc.bank",
+      "size": 2560768
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "aichatterbanditd.bank",
+      "relative_path": "ronin/content/fmod/ps5/aichatterbanditd.bank",
+      "size": 2273152
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "aichattercaster.bank",
+      "relative_path": "ronin/content/fmod/ps5/aichattercaster.bank",
+      "size": 13874624
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "aichatterghostbandita.bank",
+      "relative_path": "ronin/content/fmod/ps5/aichatterghostbandita.bank",
+      "size": 15629600
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "aichatterghostbanditb.bank",
+      "relative_path": "ronin/content/fmod/ps5/aichatterghostbanditb.bank",
+      "size": 14955808
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "aichatterghostbanditc.bank",
+      "relative_path": "ronin/content/fmod/ps5/aichatterghostbanditc.bank",
+      "size": 15447712
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "aichatterghostbanditd.bank",
+      "relative_path": "ronin/content/fmod/ps5/aichatterghostbanditd.bank",
+      "size": 15612352
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "aichatterghoula.bank",
+      "relative_path": "ronin/content/fmod/ps5/aichatterghoula.bank",
+      "size": 3156032
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "aichatterghoulb.bank",
+      "relative_path": "ronin/content/fmod/ps5/aichatterghoulb.bank",
+      "size": 2957792
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "aichatterhirokidemon.bank",
+      "relative_path": "ronin/content/fmod/ps5/aichatterhirokidemon.bank",
+      "size": 7993024
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "aichatterkageroubandit.bank",
+      "relative_path": "ronin/content/fmod/ps5/aichatterkageroubandit.bank",
+      "size": 1112864
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "aichatterkageroubanditghost.bank",
+      "relative_path": "ronin/content/fmod/ps5/aichatterkageroubanditghost.bank",
+      "size": 11215968
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "aichatterkageroudemon.bank",
+      "relative_path": "ronin/content/fmod/ps5/aichatterkageroudemon.bank",
+      "size": 10225376
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "aichatterkageroushogun.bank",
+      "relative_path": "ronin/content/fmod/ps5/aichatterkageroushogun.bank",
+      "size": 1183296
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "aichatterkageroushogunghost.bank",
+      "relative_path": "ronin/content/fmod/ps5/aichatterkageroushogunghost.bank",
+      "size": 9668576
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "aichatternpc.bank",
+      "relative_path": "ronin/content/fmod/ps5/aichatternpc.bank",
+      "size": 14813952
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "aichatterreanimator.bank",
+      "relative_path": "ronin/content/fmod/ps5/aichatterreanimator.bank",
+      "size": 7506976
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "aichattersadatame.bank",
+      "relative_path": "ronin/content/fmod/ps5/aichattersadatame.bank",
+      "size": 1653760
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "aichattersadatamegeneralghost.bank",
+      "relative_path": "ronin/content/fmod/ps5/aichattersadatamegeneralghost.bank",
+      "size": 6638944
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "aichattersamurai.bank",
+      "relative_path": "ronin/content/fmod/ps5/aichattersamurai.bank",
+      "size": 847936
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "aichattersanjurodemon.bank",
+      "relative_path": "ronin/content/fmod/ps5/aichattersanjurodemon.bank",
+      "size": 3508608
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "aichattershogungeneral.bank",
+      "relative_path": "ronin/content/fmod/ps5/aichattershogungeneral.bank",
+      "size": 1469472
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "aikodemon.bank",
+      "relative_path": "ronin/content/fmod/ps5/aikodemon.bank",
+      "size": 3946304
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "aikoghostguide.bank",
+      "relative_path": "ronin/content/fmod/ps5/aikoghostguide.bank",
+      "size": 838304
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "aikokid.bank",
+      "relative_path": "ronin/content/fmod/ps5/aikokid.bank",
+      "size": 2027616
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "ambient.bank",
+      "relative_path": "ronin/content/fmod/ps5/ambient.bank",
+      "size": 29689216
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "ambient_c01.bank",
+      "relative_path": "ronin/content/fmod/ps5/ambient_c01.bank",
+      "size": 41908736
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "ambient_c02.bank",
+      "relative_path": "ronin/content/fmod/ps5/ambient_c02.bank",
+      "size": 33416416
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "ambient_c03.bank",
+      "relative_path": "ronin/content/fmod/ps5/ambient_c03.bank",
+      "size": 20750432
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "ambient_c04.bank",
+      "relative_path": "ronin/content/fmod/ps5/ambient_c04.bank",
+      "size": 22645664
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "ambient_c05.bank",
+      "relative_path": "ronin/content/fmod/ps5/ambient_c05.bank",
+      "size": 20816960
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "ambient_c06.bank",
+      "relative_path": "ronin/content/fmod/ps5/ambient_c06.bank",
+      "size": 38874688
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "ambient_c07.bank",
+      "relative_path": "ronin/content/fmod/ps5/ambient_c07.bank",
+      "size": 19402144
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "ambient_yomi.bank",
+      "relative_path": "ronin/content/fmod/ps5/ambient_yomi.bank",
+      "size": 3736960
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "banditarcher.bank",
+      "relative_path": "ronin/content/fmod/ps5/banditarcher.bank",
+      "size": 1336672
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "banditfastattacker.bank",
+      "relative_path": "ronin/content/fmod/ps5/banditfastattacker.bank",
+      "size": 971808
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "banditheavybrute.bank",
+      "relative_path": "ronin/content/fmod/ps5/banditheavybrute.bank",
+      "size": 1271136
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "banditregular.bank",
+      "relative_path": "ronin/content/fmod/ps5/banditregular.bank",
+      "size": 3528928
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "caster.bank",
+      "relative_path": "ronin/content/fmod/ps5/caster.bank",
+      "size": 2676864
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "dialogs.bank",
+      "relative_path": "ronin/content/fmod/ps5/dialogs.bank",
+      "size": 2929152
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "dialogues_c01.bank",
+      "relative_path": "ronin/content/fmod/ps5/dialogues_c01.bank",
+      "size": 23279712
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "dialogues_c02.bank",
+      "relative_path": "ronin/content/fmod/ps5/dialogues_c02.bank",
+      "size": 13077376
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "dialogues_c03.bank",
+      "relative_path": "ronin/content/fmod/ps5/dialogues_c03.bank",
+      "size": 14293760
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "dialogues_c04.bank",
+      "relative_path": "ronin/content/fmod/ps5/dialogues_c04.bank",
+      "size": 35656192
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "dialogues_c05.bank",
+      "relative_path": "ronin/content/fmod/ps5/dialogues_c05.bank",
+      "size": 16430080
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "dialogues_c06.bank",
+      "relative_path": "ronin/content/fmod/ps5/dialogues_c06.bank",
+      "size": 17888768
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "dialogues_c07.bank",
+      "relative_path": "ronin/content/fmod/ps5/dialogues_c07.bank",
+      "size": 8124320
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "diseasedmarksman.bank",
+      "relative_path": "ronin/content/fmod/ps5/diseasedmarksman.bank",
+      "size": 1956928
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "enemygeneric.bank",
+      "relative_path": "ronin/content/fmod/ps5/enemygeneric.bank",
+      "size": 4016192
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "enemyghost.bank",
+      "relative_path": "ronin/content/fmod/ps5/enemyghost.bank",
+      "size": 6953120
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "ghoul.bank",
+      "relative_path": "ronin/content/fmod/ps5/ghoul.bank",
+      "size": 3327936
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "hirokidemon.bank",
+      "relative_path": "ronin/content/fmod/ps5/hirokidemon.bank",
+      "size": 14722144
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "hirokikid.bank",
+      "relative_path": "ronin/content/fmod/ps5/hirokikid.bank",
+      "size": 1119200
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "horserider.bank",
+      "relative_path": "ronin/content/fmod/ps5/horserider.bank",
+      "size": 597632
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "kageroubandit.bank",
+      "relative_path": "ronin/content/fmod/ps5/kageroubandit.bank",
+      "size": 1749504
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "kageroubanditghost.bank",
+      "relative_path": "ronin/content/fmod/ps5/kageroubanditghost.bank",
+      "size": 5941600
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "kageroudemon.bank",
+      "relative_path": "ronin/content/fmod/ps5/kageroudemon.bank",
+      "size": 8310304
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "kageroushogun.bank",
+      "relative_path": "ronin/content/fmod/ps5/kageroushogun.bank",
+      "size": 3397664
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "kageroushogunghost.bank",
+      "relative_path": "ronin/content/fmod/ps5/kageroushogunghost.bank",
+      "size": 6991840
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "master.bank",
+      "relative_path": "ronin/content/fmod/ps5/master.bank",
+      "size": 33800096
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "master.strings.bank",
+      "relative_path": "ronin/content/fmod/ps5/master.strings.bank",
+      "size": 265798
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "music.bank",
+      "relative_path": "ronin/content/fmod/ps5/music.bank",
+      "size": 59469888
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "music_c01.bank",
+      "relative_path": "ronin/content/fmod/ps5/music_c01.bank",
+      "size": 108562496
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "music_c02.bank",
+      "relative_path": "ronin/content/fmod/ps5/music_c02.bank",
+      "size": 116718912
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "music_c03.bank",
+      "relative_path": "ronin/content/fmod/ps5/music_c03.bank",
+      "size": 247455552
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "music_c04.bank",
+      "relative_path": "ronin/content/fmod/ps5/music_c04.bank",
+      "size": 175883872
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "music_c05.bank",
+      "relative_path": "ronin/content/fmod/ps5/music_c05.bank",
+      "size": 431087232
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "music_c06.bank",
+      "relative_path": "ronin/content/fmod/ps5/music_c06.bank",
+      "size": 284844704
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "music_c07.bank",
+      "relative_path": "ronin/content/fmod/ps5/music_c07.bank",
+      "size": 402555968
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "npc.bank",
+      "relative_path": "ronin/content/fmod/ps5/npc.bank",
+      "size": 45561856
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "reanimator.bank",
+      "relative_path": "ronin/content/fmod/ps5/reanimator.bank",
+      "size": 5671200
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "sadatamegeneral.bank",
+      "relative_path": "ronin/content/fmod/ps5/sadatamegeneral.bank",
+      "size": 2541696
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "sadatamegeneralghost.bank",
+      "relative_path": "ronin/content/fmod/ps5/sadatamegeneralghost.bank",
+      "size": 8071872
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "sanjurodemon.bank",
+      "relative_path": "ronin/content/fmod/ps5/sanjurodemon.bank",
+      "size": 3328224
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "sequences_c01.bank",
+      "relative_path": "ronin/content/fmod/ps5/sequences_c01.bank",
+      "size": 12671296
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "sequences_c02.bank",
+      "relative_path": "ronin/content/fmod/ps5/sequences_c02.bank",
+      "size": 4466880
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "sequences_c03.bank",
+      "relative_path": "ronin/content/fmod/ps5/sequences_c03.bank",
+      "size": 10926592
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "sequences_c04.bank",
+      "relative_path": "ronin/content/fmod/ps5/sequences_c04.bank",
+      "size": 6653472
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "sequences_c05.bank",
+      "relative_path": "ronin/content/fmod/ps5/sequences_c05.bank",
+      "size": 26143520
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "sequences_c06.bank",
+      "relative_path": "ronin/content/fmod/ps5/sequences_c06.bank",
+      "size": 25391168
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "sequences_c07.bank",
+      "relative_path": "ronin/content/fmod/ps5/sequences_c07.bank",
+      "size": 22644448
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "shogungeneral.bank",
+      "relative_path": "ronin/content/fmod/ps5/shogungeneral.bank",
+      "size": 2088480
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "spearman.bank",
+      "relative_path": "ronin/content/fmod/ps5/spearman.bank",
+      "size": 2257216
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "teleporter.bank",
+      "relative_path": "ronin/content/fmod/ps5/teleporter.bank",
+      "size": 4000544
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "savegameicon.png",
+      "relative_path": "ronin/content/icons/ps5/savegameicon.png",
+      "size": 226754
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "bushido_1.mp4",
+      "relative_path": "ronin/content/movies/bushido_1.mp4",
+      "size": 21310381
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "bushido_10.mp4",
+      "relative_path": "ronin/content/movies/bushido_10.mp4",
+      "size": 12509826
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "bushido_11.mp4",
+      "relative_path": "ronin/content/movies/bushido_11.mp4",
+      "size": 17106389
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "bushido_12.mp4",
+      "relative_path": "ronin/content/movies/bushido_12.mp4",
+      "size": 15908531
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "bushido_13.mp4",
+      "relative_path": "ronin/content/movies/bushido_13.mp4",
+      "size": 19116755
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "bushido_14.mp4",
+      "relative_path": "ronin/content/movies/bushido_14.mp4",
+      "size": 16369140
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "bushido_1_15sek.mp4",
+      "relative_path": "ronin/content/movies/bushido_1_15sek.mp4",
+      "size": 43856085
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "bushido_2.mp4",
+      "relative_path": "ronin/content/movies/bushido_2.mp4",
+      "size": 15394176
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "bushido_3.mp4",
+      "relative_path": "ronin/content/movies/bushido_3.mp4",
+      "size": 12876171
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "bushido_4.mp4",
+      "relative_path": "ronin/content/movies/bushido_4.mp4",
+      "size": 15522351
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "bushido_5.mp4",
+      "relative_path": "ronin/content/movies/bushido_5.mp4",
+      "size": 21450640
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "bushido_6.mp4",
+      "relative_path": "ronin/content/movies/bushido_6.mp4",
+      "size": 20168983
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "bushido_7.mp4",
+      "relative_path": "ronin/content/movies/bushido_7.mp4",
+      "size": 15133769
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "bushido_8.mp4",
+      "relative_path": "ronin/content/movies/bushido_8.mp4",
+      "size": 14118069
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "bushido_9.mp4",
+      "relative_path": "ronin/content/movies/bushido_9.mp4",
+      "size": 17425775
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "tty_intro.mp4",
+      "relative_path": "ronin/content/movies/tty_intro.mp4",
+      "size": 20568789
+    },
+    {
+      "category": "Archive",
+      "extension": "pak",
+      "file_name": "ronin-ps5.pak",
+      "relative_path": "ronin/content/paks/ronin-ps5.pak",
+      "size": 15097518588
+    },
+    {
+      "category": "Metadata",
+      "extension": "bin",
+      "file_name": "cb4f1e25nodeps.bin",
+      "relative_path": "ronin/intermediate/assetregistrycache/cb4f1e25nodeps.bin",
+      "size": 44
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "achievements.json",
+      "relative_path": "ronin/platforms/ps5/config/oss/achievements.json",
+      "size": 2638
+    },
+    {
+      "category": "Unknown",
+      "extension": "ini",
+      "file_name": "crashreportclient.ini",
+      "relative_path": "ronin/saved/config/crashreportclient/ue4cc-ps5-00042c8908def27b43f02ae80026548b/crashreportclient.ini",
+      "size": 107
+    },
+    {
+      "category": "Unknown",
+      "extension": "ini",
+      "file_name": "crashreportclient.ini",
+      "relative_path": "ronin/saved/config/crashreportclient/ue4cc-ps5-00047e0f08df113440b48302004ced81/crashreportclient.ini",
+      "size": 107
+    },
+    {
+      "category": "Unknown",
+      "extension": "ini",
+      "file_name": "gameusersettings.ini",
+      "relative_path": "ronin/saved/config/ps5/gameusersettings.ini",
+      "size": 1
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceFace.prx",
+      "relative_path": "sce_module/libSceFace.prx",
+      "size": 301564
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceFaceTracker.prx",
+      "relative_path": "sce_module/libSceFaceTracker.prx",
+      "size": 2610320
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceJobManager.prx",
+      "relative_path": "sce_module/libSceJobManager.prx",
+      "size": 68704
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceNpCppWebApi.prx",
+      "relative_path": "sce_module/libSceNpCppWebApi.prx",
+      "size": 7463200
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libScePfs.prx",
+      "relative_path": "sce_module/libScePfs.prx",
+      "size": 1343104
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libc.prx",
+      "relative_path": "sce_module/libc.prx",
+      "size": 1302840
+    },
+    {
+      "category": "Executable",
+      "extension": "sprx",
+      "file_name": "right.sprx",
+      "relative_path": "sce_sys/about/right.sprx",
+      "size": 12448
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "disc_info.dat",
+      "relative_path": "sce_sys/disc_info.dat",
+      "size": 6640
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "icon0.dds",
+      "relative_path": "sce_sys/icon0.dds",
+      "size": 262292
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "icon0.png",
+      "relative_path": "sce_sys/icon0.png",
+      "size": 233894
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "keystone",
+      "relative_path": "sce_sys/keystone",
+      "size": 96
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "nptitle.dat",
+      "relative_path": "sce_sys/nptitle.dat",
+      "size": 160
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "param.json",
+      "relative_path": "sce_sys/param.json",
+      "size": 1533
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "pfs-version.dat",
+      "relative_path": "sce_sys/pfs-version.dat",
+      "size": 10
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic0.dds",
+      "relative_path": "sce_sys/pic0.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "pic0.png",
+      "relative_path": "sce_sys/pic0.png",
+      "size": 7700307
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic1.dds",
+      "relative_path": "sce_sys/pic1.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic2.dds",
+      "relative_path": "sce_sys/pic2.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "sce_sys/trophy2/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "trophy00.ucp",
+      "relative_path": "sce_sys/trophy2/trophy00.ucp",
+      "size": 7291408
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "sce_sys/uds/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "uds00.ucp",
+      "relative_path": "sce_sys/uds/uds00.ucp",
+      "size": 29872
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "ue4commandline.txt",
+      "relative_path": "ue4commandline.txt",
+      "size": 30
+    }
+  ],
+  "by_category": {
+    "archive": 1,
+    "audio": 87,
+    "executable": 10,
+    "metadata": 15,
+    "texture": 7,
+    "unknown": 22
+  },
+  "by_extension": {
+    "(no_ext)": 1,
+    "bank": 87,
+    "bin": 1,
+    "complete": 1,
+    "dat": 5,
+    "dds": 4,
+    "eboot.bin": 1,
+    "ini": 4,
+    "json": 6,
+    "mp4": 16,
+    "pak": 1,
+    "png": 3,
+    "prx": 8,
+    "sprx": 1,
+    "txt": 1,
+    "ucp": 2
+  },
+  "game": "Trek To Yomi 02.000 PPSA02629",
+  "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Trek.To.Yomi-PPSA02629-EUR-Game-v02.000-PS5\\Trek.To.Yomi-PPSA02629-EUR-Game-v02.000-PS5\\Trek To Yomi 02.000 PPSA02629",
+  "total_bytes": 18267142911,
+  "total_files": 142
+}

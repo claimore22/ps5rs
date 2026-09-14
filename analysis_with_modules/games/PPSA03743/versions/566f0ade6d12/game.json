@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "title_id": "PPSA03743",
+  "name": "Soul Hackers 2 - [PPSA03743]",
+  "eboot_sha256": "b0b3e83447a4ce3e759c442321751ab939af76fe33411366ff96b0948aeb4831",
+  "game_fingerprint": "566f0ade6d12b3b49c0ec23385e7729bd0df4344c8bac53475166cb449743a93",
+  "environment_fingerprint": "c65955db3dee9d575ca652856c86c3fc2b7297fff36bb37fcb1b9319f1ff09a9",
+  "loader_fingerprint": "d245a80770d2897643c4754f10883b674208fc8fdecaad2ebd247d1990f6f5a0",
+  "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
+  "ingest_id": "ingest_20260912085621_566f0ade6d12",
+  "ingested_at": "2026-09-12T08:56:21Z",
+  "params": {
+    "name": "Soul.Hackers.2-PPSA03743-USA-Game (v01.002)+DLC-PS5",
+    "title_id": "PPSA03743",
+    "content_version": "01.002.000",
+    "master_version": "01.00",
+    "sdk_version": "0x0300000000000000",
+    "title_name": "Soul Hackers 2",
+    "display_name": "Soul Hackers 2 - [PPSA03743]",
+    "drm_type": "standard",
+    "content_id": "UP0177-PPSA03743_00-SOULHACKERS20000",
+    "creation_date": "2022-10-31 22:47:52"
+  },
+  "load_report_file": "load_report.json"
+}

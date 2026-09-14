@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "title_id": "PPSA15065",
+  "name": "Cat Quest III - [PPSA15065]",
+  "eboot_sha256": "5910ab94c8b0a8087bcbb6d60098ed8e58b5d6a5f46134120bd0efe9f647bbea",
+  "game_fingerprint": "13e5b0ef5733b70cb6892291f93c63af4697012b08003a13f7dbc218eec7a254",
+  "environment_fingerprint": "c65955db3dee9d575ca652856c86c3fc2b7297fff36bb37fcb1b9319f1ff09a9",
+  "loader_fingerprint": "d245a80770d2897643c4754f10883b674208fc8fdecaad2ebd247d1990f6f5a0",
+  "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
+  "ingest_id": "ingest_20260912085619_13e5b0ef5733",
+  "ingested_at": "2026-09-12T08:56:19Z",
+  "params": {
+    "name": "Cat-Quest-III-PPSA15065-app",
+    "title_id": "PPSA15065",
+    "content_version": "01.000.001",
+    "master_version": "02.00",
+    "sdk_version": "0x0800000000000000",
+    "title_name": "Cat Quest III",
+    "display_name": "Cat Quest III - [PPSA15065]",
+    "drm_type": "standard",
+    "content_id": "UP7581-PPSA15065_00-CQ300000000PS5US",
+    "creation_date": "2024-05-21 01:47:41"
+  },
+  "load_report_file": "load_report.json"
+}

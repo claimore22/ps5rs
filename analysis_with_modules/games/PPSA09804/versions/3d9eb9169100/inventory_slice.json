@@ -1,0 +1,5972 @@
+{
+  "artifacts": [
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "global-metadata.dat",
+      "relative_path": "Media/Metadata/global-metadata.dat",
+      "size": 8902184
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "Il2CppUserAssemblies.prx",
+      "relative_path": "Media/Modules/Il2CppUserAssemblies.prx",
+      "size": 35158176
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "PS5Util.prx",
+      "relative_path": "Media/Modules/PS5Util.prx",
+      "size": 6788
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "AkMotion.prx",
+      "relative_path": "Media/Plugins/AkMotion.prx",
+      "size": 26335
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "AkSoundEngine.prx",
+      "relative_path": "Media/Plugins/AkSoundEngine.prx",
+      "size": 3808261
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "AkVorbisHwAccelerator.prx",
+      "relative_path": "Media/Plugins/AkVorbisHwAccelerator.prx",
+      "size": 6629
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "PSNCommon.prx",
+      "relative_path": "Media/Plugins/PSNCommon.prx",
+      "size": 28937
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "PSNCore.prx",
+      "relative_path": "Media/Plugins/PSNCore.prx",
+      "size": 466131
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "mscorlib.dll-resources.dat",
+      "relative_path": "Media/Resources/mscorlib.dll-resources.dat",
+      "size": 337563
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "unity default resources",
+      "relative_path": "Media/Resources/unity default resources",
+      "size": 3511612
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "unity_builtin_extra",
+      "relative_path": "Media/Resources/unity_builtin_extra",
+      "size": 690460
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1065863430.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/1065863430.wem",
+      "size": 69408
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "228602158.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/228602158.wem",
+      "size": 519831
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "230640447.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/230640447.wem",
+      "size": 105572
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "541594032.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/541594032.wem",
+      "size": 2140639
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "635962219.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/635962219.wem",
+      "size": 618292
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "822270000.wem",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/822270000.wem",
+      "size": 92531
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Level_Cave.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Level_Cave.bnk",
+      "size": 47832340
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Level_Cave.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Level_Cave.txt",
+      "size": 65589
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Level_Desert.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Level_Desert.bnk",
+      "size": 30310921
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Level_Desert.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Level_Desert.txt",
+      "size": 67181
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Level_EndGame.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Level_EndGame.bnk",
+      "size": 8815099
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Level_EndGame.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Level_EndGame.txt",
+      "size": 8765
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Level_Forest.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Level_Forest.bnk",
+      "size": 17086749
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Level_Forest.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Level_Forest.txt",
+      "size": 44400
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Level_Hub.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Level_Hub.bnk",
+      "size": 13877135
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Level_Hub.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Level_Hub.txt",
+      "size": 16715
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Level_InsideBoss.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Level_InsideBoss.bnk",
+      "size": 7279817
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Level_InsideBoss.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Level_InsideBoss.txt",
+      "size": 15729
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Level_Lighthouse.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Level_Lighthouse.bnk",
+      "size": 13876529
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Level_Lighthouse.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Level_Lighthouse.txt",
+      "size": 18140
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Level_Sky.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Level_Sky.bnk",
+      "size": 29905001
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Level_Sky.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Level_Sky.txt",
+      "size": 29277
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Level_Tower.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Level_Tower.bnk",
+      "size": 27483492
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Level_Tower.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Level_Tower.txt",
+      "size": 26564
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Music_Menus.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Music_Menus.bnk",
+      "size": 15827338
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Music_Menus.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_Music_Menus.txt",
+      "size": 3273
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_PlayGo.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_PlayGo.bnk",
+      "size": 17925823
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_PlayGo.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_PlayGo.txt",
+      "size": 170889
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_SFX_BossBird.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_SFX_BossBird.bnk",
+      "size": 2530217
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_SFX_BossBird.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/BNK_SFX_BossBird.txt",
+      "size": 18233
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "Init.bnk",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Init.bnk",
+      "size": 5316
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "Init.txt",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/Init.txt",
+      "size": 11729
+    },
+    {
+      "category": "Metadata",
+      "extension": "xml",
+      "file_name": "PluginInfo.xml",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/PluginInfo.xml",
+      "size": 1029
+    },
+    {
+      "category": "Metadata",
+      "extension": "xml",
+      "file_name": "SoundbanksInfo.xml",
+      "relative_path": "Media/StreamingAssets/Audio/GeneratedSoundBanks/PS5/SoundbanksInfo.xml",
+      "size": 584661
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "GRISSaveIcon.png",
+      "relative_path": "Media/StreamingAssets/GRISSaveIcon.png",
+      "size": 39331
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1003066586.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/1003066586.wem",
+      "size": 263312
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1004900891.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/1004900891.wem",
+      "size": 1239127
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1011667770.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/1011667770.wem",
+      "size": 216757
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1022609980.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/1022609980.wem",
+      "size": 48496
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1030425458.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/1030425458.wem",
+      "size": 91803
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1040829570.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/1040829570.wem",
+      "size": 143792
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "104376454.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/104376454.wem",
+      "size": 185410
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1048335862.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/1048335862.wem",
+      "size": 4374159
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1054373492.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/1054373492.wem",
+      "size": 1291241
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1060216097.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/1060216097.wem",
+      "size": 1465369
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1065863430.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/1065863430.wem",
+      "size": 65829
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "107773387.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/107773387.wem",
+      "size": 1720620
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "121968265.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/121968265.wem",
+      "size": 175330
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "142944701.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/142944701.wem",
+      "size": 528770
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "145709592.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/145709592.wem",
+      "size": 1971125
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "14817651.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/14817651.wem",
+      "size": 246289
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "150170128.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/150170128.wem",
+      "size": 500251
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "150528638.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/150528638.wem",
+      "size": 331957
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "155096011.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/155096011.wem",
+      "size": 178006
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "156344159.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/156344159.wem",
+      "size": 315506
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "157137273.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/157137273.wem",
+      "size": 5824506
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "191346039.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/191346039.wem",
+      "size": 150996
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "196979866.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/196979866.wem",
+      "size": 759869
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "206237323.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/206237323.wem",
+      "size": 721319
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "220936639.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/220936639.wem",
+      "size": 178150
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "2230238.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/2230238.wem",
+      "size": 282900
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "225344984.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/225344984.wem",
+      "size": 5591603
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "228602158.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/228602158.wem",
+      "size": 360171
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "230640447.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/230640447.wem",
+      "size": 91803
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "236805958.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/236805958.wem",
+      "size": 360171
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "238341631.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/238341631.wem",
+      "size": 318750
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "253925632.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/253925632.wem",
+      "size": 350012
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "254987577.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/254987577.wem",
+      "size": 1088886
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "271103720.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/271103720.wem",
+      "size": 1480791
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "275449779.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/275449779.wem",
+      "size": 1821678
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "284092820.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/284092820.wem",
+      "size": 397409
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "289780720.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/289780720.wem",
+      "size": 982689
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "290326527.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/290326527.wem",
+      "size": 1390916
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "292177591.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/292177591.wem",
+      "size": 678319
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "294340293.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/294340293.wem",
+      "size": 1180060
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "305094943.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/305094943.wem",
+      "size": 1135840
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "313428843.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/313428843.wem",
+      "size": 2417411
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "32050324.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/32050324.wem",
+      "size": 279606
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "333800810.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/333800810.wem",
+      "size": 5200650
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "345151560.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/345151560.wem",
+      "size": 187608
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "361855753.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/361855753.wem",
+      "size": 911181
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "363628505.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/363628505.wem",
+      "size": 587971
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "363654978.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/363654978.wem",
+      "size": 107648
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "36692710.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/36692710.wem",
+      "size": 422139
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "367499797.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/367499797.wem",
+      "size": 166056
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "37394440.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/37394440.wem",
+      "size": 258219
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "385213296.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/385213296.wem",
+      "size": 382067
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "386129501.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/386129501.wem",
+      "size": 806507
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "404808016.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/404808016.wem",
+      "size": 685125
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "414623393.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/414623393.wem",
+      "size": 1403871
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "420697146.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/420697146.wem",
+      "size": 401952
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "421374975.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/421374975.wem",
+      "size": 1855735
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "427471647.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/427471647.wem",
+      "size": 354283
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "433091477.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/433091477.wem",
+      "size": 320125
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "441021062.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/441021062.wem",
+      "size": 353139
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "448021239.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/448021239.wem",
+      "size": 626660
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "449004387.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/449004387.wem",
+      "size": 178378
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "453426859.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/453426859.wem",
+      "size": 198323
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "458123232.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/458123232.wem",
+      "size": 5792670
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "46007586.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/46007586.wem",
+      "size": 60558
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "462817732.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/462817732.wem",
+      "size": 5400589
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "478441394.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/478441394.wem",
+      "size": 1495795
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "479892848.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/479892848.wem",
+      "size": 315291
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "481466019.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/481466019.wem",
+      "size": 373485
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "490036655.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/490036655.wem",
+      "size": 2101516
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "490847533.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/490847533.wem",
+      "size": 2423488
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "503662359.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/503662359.wem",
+      "size": 178006
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "534004853.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/534004853.wem",
+      "size": 317057
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "540443084.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/540443084.wem",
+      "size": 2235957
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "541594032.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/541594032.wem",
+      "size": 1461543
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "544888158.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/544888158.wem",
+      "size": 150996
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "546357678.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/546357678.wem",
+      "size": 1390916
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "555177276.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/555177276.wem",
+      "size": 689500
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "565623500.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/565623500.wem",
+      "size": 602095
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "573912981.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/573912981.wem",
+      "size": 258219
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "579137289.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/579137289.wem",
+      "size": 181034
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "586662074.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/586662074.wem",
+      "size": 1712611
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "603032833.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/603032833.wem",
+      "size": 557007
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "622665844.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/622665844.wem",
+      "size": 181034
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "626233192.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/626233192.wem",
+      "size": 126762
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "62738925.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/62738925.wem",
+      "size": 360171
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "633653478.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/633653478.wem",
+      "size": 96187
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "633868999.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/633868999.wem",
+      "size": 370656
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "635962219.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/635962219.wem",
+      "size": 618877
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "640501706.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/640501706.wem",
+      "size": 439178
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "655693413.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/655693413.wem",
+      "size": 4005706
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "659907985.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/659907985.wem",
+      "size": 1600882
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "663435663.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/663435663.wem",
+      "size": 175966
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "675932867.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/675932867.wem",
+      "size": 169179
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "676242711.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/676242711.wem",
+      "size": 455295
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "68114889.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/68114889.wem",
+      "size": 3294927
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "684941058.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/684941058.wem",
+      "size": 1390916
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "691753923.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/691753923.wem",
+      "size": 1528155
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "694324789.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/694324789.wem",
+      "size": 1253622
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "695080298.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/695080298.wem",
+      "size": 702259
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "701625801.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/701625801.wem",
+      "size": 587971
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "704911074.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/704911074.wem",
+      "size": 177638
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "705293882.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/705293882.wem",
+      "size": 316311
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "720782255.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/720782255.wem",
+      "size": 360171
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "721537116.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/721537116.wem",
+      "size": 1650580
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "74026065.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/74026065.wem",
+      "size": 249418
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "747273975.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/747273975.wem",
+      "size": 208958
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "749926193.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/749926193.wem",
+      "size": 258219
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "75005098.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/75005098.wem",
+      "size": 1428378
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "750251179.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/750251179.wem",
+      "size": 342672
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "757750240.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/757750240.wem",
+      "size": 950342
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "757947207.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/757947207.wem",
+      "size": 73115
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "758465618.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/758465618.wem",
+      "size": 3314873
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "765060615.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/765060615.wem",
+      "size": 168946
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "772896097.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/772896097.wem",
+      "size": 1564658
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "794384828.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/794384828.wem",
+      "size": 105375
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "798076874.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/798076874.wem",
+      "size": 307613
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "79910075.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/79910075.wem",
+      "size": 150996
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "805314805.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/805314805.wem",
+      "size": 344009
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "813338470.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/813338470.wem",
+      "size": 3520548
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "816952351.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/816952351.wem",
+      "size": 127764
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "822270000.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/822270000.wem",
+      "size": 87748
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "831402330.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/831402330.wem",
+      "size": 1285133
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "834547568.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/834547568.wem",
+      "size": 4196135
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "838353001.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/838353001.wem",
+      "size": 307613
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "841565957.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/841565957.wem",
+      "size": 175966
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "841618509.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/841618509.wem",
+      "size": 724353
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "844181296.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/844181296.wem",
+      "size": 287101
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "867143429.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/867143429.wem",
+      "size": 1660251
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "895451403.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/895451403.wem",
+      "size": 6283431
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "900434479.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/900434479.wem",
+      "size": 901534
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "900481219.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/900481219.wem",
+      "size": 2247176
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "904909348.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/904909348.wem",
+      "size": 223190
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "906037502.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/906037502.wem",
+      "size": 65978
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "906366552.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/906366552.wem",
+      "size": 500421
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "907259646.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/907259646.wem",
+      "size": 258219
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "91772229.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/91772229.wem",
+      "size": 103476
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "934572083.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/934572083.wem",
+      "size": 805065
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "935526947.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/935526947.wem",
+      "size": 915028
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "954951021.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/954951021.wem",
+      "size": 3039355
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "966271331.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/966271331.wem",
+      "size": 701120
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "988396440.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/988396440.wem",
+      "size": 40150
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "989907425.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/989907425.wem",
+      "size": 171129
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Level_Cave.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/BNK_Level_Cave.bnk",
+      "size": 39620243
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Level_Cave.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/BNK_Level_Cave.txt",
+      "size": 61178
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Level_Desert.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/BNK_Level_Desert.bnk",
+      "size": 24562203
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Level_Desert.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/BNK_Level_Desert.txt",
+      "size": 65192
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Level_EndGame.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/BNK_Level_EndGame.bnk",
+      "size": 7381017
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Level_EndGame.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/BNK_Level_EndGame.txt",
+      "size": 8847
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Level_Forest.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/BNK_Level_Forest.bnk",
+      "size": 14450078
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Level_Forest.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/BNK_Level_Forest.txt",
+      "size": 44096
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Level_Hub.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/BNK_Level_Hub.bnk",
+      "size": 12062664
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Level_Hub.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/BNK_Level_Hub.txt",
+      "size": 16519
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Level_InsideBoss.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/BNK_Level_InsideBoss.bnk",
+      "size": 5383572
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Level_InsideBoss.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/BNK_Level_InsideBoss.txt",
+      "size": 15494
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Level_Lighthouse.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/BNK_Level_Lighthouse.bnk",
+      "size": 11620394
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Level_Lighthouse.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/BNK_Level_Lighthouse.txt",
+      "size": 17686
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Level_Sky.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/BNK_Level_Sky.bnk",
+      "size": 24015395
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Level_Sky.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/BNK_Level_Sky.txt",
+      "size": 28680
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Level_Tower.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/BNK_Level_Tower.bnk",
+      "size": 24367058
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Level_Tower.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/BNK_Level_Tower.txt",
+      "size": 26420
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Music_Menus.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/BNK_Music_Menus.bnk",
+      "size": 12216266
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Music_Menus.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/BNK_Music_Menus.txt",
+      "size": 3309
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_PlayGo.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/BNK_PlayGo.bnk",
+      "size": 10698441
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_PlayGo.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/BNK_PlayGo.txt",
+      "size": 159264
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_SFX_BossBird.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/BNK_SFX_BossBird.bnk",
+      "size": 2192399
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_SFX_BossBird.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/BNK_SFX_BossBird.txt",
+      "size": 16712
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "Init.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/Init.bnk",
+      "size": 5102
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "Init.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/Init.txt",
+      "size": 11422
+    },
+    {
+      "category": "Metadata",
+      "extension": "xml",
+      "file_name": "PluginInfo.xml",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/PluginInfo.xml",
+      "size": 1037
+    },
+    {
+      "category": "Metadata",
+      "extension": "xml",
+      "file_name": "SoundbanksInfo.xml",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/Windows/SoundbanksInfo.xml",
+      "size": 528051
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1003066586.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/1003066586.wem",
+      "size": 263312
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1004900891.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/1004900891.wem",
+      "size": 1239127
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1011667770.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/1011667770.wem",
+      "size": 216757
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1022609980.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/1022609980.wem",
+      "size": 48496
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1025507597.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/1025507597.wem",
+      "size": 1683118
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1030425458.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/1030425458.wem",
+      "size": 91803
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1040829570.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/1040829570.wem",
+      "size": 143792
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "104376454.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/104376454.wem",
+      "size": 185410
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1048335862.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/1048335862.wem",
+      "size": 4374159
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1054373492.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/1054373492.wem",
+      "size": 1291241
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1057083536.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/1057083536.wem",
+      "size": 335174
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1060216097.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/1060216097.wem",
+      "size": 1465369
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1065863430.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/1065863430.wem",
+      "size": 65829
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1069283898.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/1069283898.wem",
+      "size": 2822544
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1069993483.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/1069993483.wem",
+      "size": 270612
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "107773387.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/107773387.wem",
+      "size": 1720620
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "114000082.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/114000082.wem",
+      "size": 961475
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "121968265.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/121968265.wem",
+      "size": 175330
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "126349688.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/126349688.wem",
+      "size": 367956
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "127418203.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/127418203.wem",
+      "size": 1377635
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "128290726.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/128290726.wem",
+      "size": 1678452
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "142944701.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/142944701.wem",
+      "size": 528770
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "145709592.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/145709592.wem",
+      "size": 1971125
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "14817651.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/14817651.wem",
+      "size": 246289
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "150170128.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/150170128.wem",
+      "size": 500251
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "150528638.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/150528638.wem",
+      "size": 331957
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "155096011.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/155096011.wem",
+      "size": 178006
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "156344159.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/156344159.wem",
+      "size": 315506
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "157137273.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/157137273.wem",
+      "size": 5824506
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "170731434.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/170731434.wem",
+      "size": 185226
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "18816134.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/18816134.wem",
+      "size": 247567
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "191346039.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/191346039.wem",
+      "size": 150996
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "196979866.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/196979866.wem",
+      "size": 759869
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "200850637.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/200850637.wem",
+      "size": 358632
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "2061734.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/2061734.wem",
+      "size": 1157313
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "206237323.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/206237323.wem",
+      "size": 721319
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "21519368.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/21519368.wem",
+      "size": 5942080
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "220936639.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/220936639.wem",
+      "size": 178150
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "221482660.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/221482660.wem",
+      "size": 1672072
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "2230238.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/2230238.wem",
+      "size": 282900
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "225344984.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/225344984.wem",
+      "size": 5591603
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "228602158.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/228602158.wem",
+      "size": 360171
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "230640447.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/230640447.wem",
+      "size": 91803
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "236805958.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/236805958.wem",
+      "size": 360171
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "238341631.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/238341631.wem",
+      "size": 318750
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "251203499.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/251203499.wem",
+      "size": 395323
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "252284365.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/252284365.wem",
+      "size": 671174
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "253925632.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/253925632.wem",
+      "size": 350012
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "254987577.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/254987577.wem",
+      "size": 1088886
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "255456455.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/255456455.wem",
+      "size": 150349
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "258749238.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/258749238.wem",
+      "size": 657361
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "262127578.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/262127578.wem",
+      "size": 236367
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "265504847.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/265504847.wem",
+      "size": 265413
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "271103720.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/271103720.wem",
+      "size": 1480791
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "275449779.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/275449779.wem",
+      "size": 1821678
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "277641380.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/277641380.wem",
+      "size": 265413
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "284092820.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/284092820.wem",
+      "size": 397409
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "289780720.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/289780720.wem",
+      "size": 982689
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "290326527.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/290326527.wem",
+      "size": 1390916
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "292177591.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/292177591.wem",
+      "size": 678319
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "294340293.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/294340293.wem",
+      "size": 1180060
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "305094943.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/305094943.wem",
+      "size": 1135840
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "310444398.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/310444398.wem",
+      "size": 143135
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "313428843.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/313428843.wem",
+      "size": 2417411
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "32050324.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/32050324.wem",
+      "size": 279606
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "325531333.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/325531333.wem",
+      "size": 1193923
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "332215909.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/332215909.wem",
+      "size": 1249181
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "333800810.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/333800810.wem",
+      "size": 5200650
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "344249165.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/344249165.wem",
+      "size": 178048
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "345151560.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/345151560.wem",
+      "size": 187608
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "34947123.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/34947123.wem",
+      "size": 2260084
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "350975320.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/350975320.wem",
+      "size": 480672
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "354555141.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/354555141.wem",
+      "size": 1813971
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "361855753.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/361855753.wem",
+      "size": 911181
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "363628505.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/363628505.wem",
+      "size": 587971
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "363654978.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/363654978.wem",
+      "size": 107648
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "364371739.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/364371739.wem",
+      "size": 5644944
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "36692710.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/36692710.wem",
+      "size": 422139
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "367499797.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/367499797.wem",
+      "size": 166056
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "37394440.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/37394440.wem",
+      "size": 258219
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "385213296.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/385213296.wem",
+      "size": 382067
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "386129501.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/386129501.wem",
+      "size": 806507
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "402185741.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/402185741.wem",
+      "size": 538214
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "404808016.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/404808016.wem",
+      "size": 685125
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "414623393.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/414623393.wem",
+      "size": 1403871
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "414841576.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/414841576.wem",
+      "size": 233094
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "420697146.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/420697146.wem",
+      "size": 401952
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "421374975.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/421374975.wem",
+      "size": 1855735
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "421470154.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/421470154.wem",
+      "size": 4586544
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "427471647.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/427471647.wem",
+      "size": 354283
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "432949162.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/432949162.wem",
+      "size": 502173
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "433091477.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/433091477.wem",
+      "size": 320125
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "441021062.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/441021062.wem",
+      "size": 353139
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "448021239.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/448021239.wem",
+      "size": 626660
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "449004387.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/449004387.wem",
+      "size": 178378
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "451638565.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/451638565.wem",
+      "size": 233094
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "453426859.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/453426859.wem",
+      "size": 198323
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "455553594.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/455553594.wem",
+      "size": 615378
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "458123232.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/458123232.wem",
+      "size": 5792670
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "46007586.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/46007586.wem",
+      "size": 60558
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "462817732.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/462817732.wem",
+      "size": 5400589
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "478441394.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/478441394.wem",
+      "size": 1495795
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "479892848.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/479892848.wem",
+      "size": 315291
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "481466019.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/481466019.wem",
+      "size": 373485
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "490036655.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/490036655.wem",
+      "size": 2101516
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "490847533.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/490847533.wem",
+      "size": 2423488
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "492717936.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/492717936.wem",
+      "size": 1493021
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "503662359.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/503662359.wem",
+      "size": 178006
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "527531634.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/527531634.wem",
+      "size": 183395
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "532285221.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/532285221.wem",
+      "size": 2298880
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "534004853.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/534004853.wem",
+      "size": 317057
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "540443084.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/540443084.wem",
+      "size": 2235957
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "541594032.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/541594032.wem",
+      "size": 1461543
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "544888158.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/544888158.wem",
+      "size": 150996
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "546357678.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/546357678.wem",
+      "size": 1390916
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "555177276.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/555177276.wem",
+      "size": 689500
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "559190112.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/559190112.wem",
+      "size": 585947
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "565623500.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/565623500.wem",
+      "size": 602095
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "573912981.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/573912981.wem",
+      "size": 258219
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "574962153.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/574962153.wem",
+      "size": 779113
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "579137289.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/579137289.wem",
+      "size": 181034
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "581461412.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/581461412.wem",
+      "size": 334317
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "586662074.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/586662074.wem",
+      "size": 1712611
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "590851166.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/590851166.wem",
+      "size": 571259
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "598544023.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/598544023.wem",
+      "size": 1127018
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "603032833.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/603032833.wem",
+      "size": 557007
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "622665844.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/622665844.wem",
+      "size": 181034
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "626233192.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/626233192.wem",
+      "size": 126762
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "62738925.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/62738925.wem",
+      "size": 360171
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "633653478.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/633653478.wem",
+      "size": 96187
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "633868999.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/633868999.wem",
+      "size": 370656
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "635962219.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/635962219.wem",
+      "size": 618877
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "640501706.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/640501706.wem",
+      "size": 439178
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "649678082.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/649678082.wem",
+      "size": 679582
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "65000864.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/65000864.wem",
+      "size": 180928
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "655693413.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/655693413.wem",
+      "size": 4005706
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "659907985.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/659907985.wem",
+      "size": 1600882
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "663435663.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/663435663.wem",
+      "size": 175966
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "675575492.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/675575492.wem",
+      "size": 1191649
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "675932867.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/675932867.wem",
+      "size": 169179
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "676242711.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/676242711.wem",
+      "size": 455295
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "68114889.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/68114889.wem",
+      "size": 3294927
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "684941058.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/684941058.wem",
+      "size": 1390916
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "691753923.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/691753923.wem",
+      "size": 1528155
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "693143846.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/693143846.wem",
+      "size": 480672
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "694324789.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/694324789.wem",
+      "size": 1253622
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "695080298.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/695080298.wem",
+      "size": 702259
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "70128651.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/70128651.wem",
+      "size": 1199135
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "701625801.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/701625801.wem",
+      "size": 587971
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "704911074.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/704911074.wem",
+      "size": 177638
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "705293882.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/705293882.wem",
+      "size": 316311
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "709955111.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/709955111.wem",
+      "size": 1674702
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "720133330.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/720133330.wem",
+      "size": 142026
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "720782255.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/720782255.wem",
+      "size": 360171
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "721537116.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/721537116.wem",
+      "size": 1650580
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "74026065.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/74026065.wem",
+      "size": 249418
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "747273975.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/747273975.wem",
+      "size": 208958
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "749926193.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/749926193.wem",
+      "size": 258219
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "75005098.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/75005098.wem",
+      "size": 1428378
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "750251179.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/750251179.wem",
+      "size": 342672
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "757750240.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/757750240.wem",
+      "size": 950342
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "757947207.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/757947207.wem",
+      "size": 73115
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "758465618.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/758465618.wem",
+      "size": 3314873
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "764658554.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/764658554.wem",
+      "size": 681472
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "765060615.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/765060615.wem",
+      "size": 168946
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "772896097.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/772896097.wem",
+      "size": 1564658
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "794384828.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/794384828.wem",
+      "size": 105375
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "798076874.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/798076874.wem",
+      "size": 307613
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "79910075.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/79910075.wem",
+      "size": 150996
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "805314805.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/805314805.wem",
+      "size": 344009
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "811662893.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/811662893.wem",
+      "size": 1327437
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "812346500.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/812346500.wem",
+      "size": 1017066
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "813338470.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/813338470.wem",
+      "size": 3520548
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "816952351.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/816952351.wem",
+      "size": 127764
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "822270000.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/822270000.wem",
+      "size": 87748
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "831402330.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/831402330.wem",
+      "size": 1285133
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "834547568.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/834547568.wem",
+      "size": 4196135
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "838353001.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/838353001.wem",
+      "size": 307613
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "841565957.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/841565957.wem",
+      "size": 175966
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "841618509.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/841618509.wem",
+      "size": 724353
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "844181296.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/844181296.wem",
+      "size": 287101
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "867143429.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/867143429.wem",
+      "size": 1660251
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "895451403.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/895451403.wem",
+      "size": 6283431
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "900434479.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/900434479.wem",
+      "size": 901534
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "900481219.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/900481219.wem",
+      "size": 2247176
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "904909348.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/904909348.wem",
+      "size": 223190
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "906037502.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/906037502.wem",
+      "size": 65978
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "906366552.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/906366552.wem",
+      "size": 500421
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "907259646.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/907259646.wem",
+      "size": 258219
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "91772229.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/91772229.wem",
+      "size": 103476
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "921723360.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/921723360.wem",
+      "size": 862638
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "934572083.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/934572083.wem",
+      "size": 805065
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "935526947.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/935526947.wem",
+      "size": 915028
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "954951021.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/954951021.wem",
+      "size": 3039355
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "966271331.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/966271331.wem",
+      "size": 701120
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "971866906.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/971866906.wem",
+      "size": 1380433
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "974703105.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/974703105.wem",
+      "size": 2822544
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "988396440.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/988396440.wem",
+      "size": 40150
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "989907425.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/989907425.wem",
+      "size": 171129
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Demo.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/BNK_Demo.bnk",
+      "size": 10144083
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Demo.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/BNK_Demo.txt",
+      "size": 18587
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Level_Bridge.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/BNK_Level_Bridge.bnk",
+      "size": 6610
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Level_Bridge.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/BNK_Level_Bridge.txt",
+      "size": 920
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Level_Cave.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/BNK_Level_Cave.bnk",
+      "size": 4973761
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Level_Cave.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/BNK_Level_Cave.txt",
+      "size": 68230
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Level_Desert.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/BNK_Level_Desert.bnk",
+      "size": 6339116
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Level_Desert.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/BNK_Level_Desert.txt",
+      "size": 71371
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Level_EndGame.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/BNK_Level_EndGame.bnk",
+      "size": 3860441
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Level_EndGame.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/BNK_Level_EndGame.txt",
+      "size": 9004
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Level_Forest.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/BNK_Level_Forest.bnk",
+      "size": 2191566
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Level_Forest.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/BNK_Level_Forest.txt",
+      "size": 46301
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Level_Hub.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/BNK_Level_Hub.bnk",
+      "size": 2280810
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Level_Hub.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/BNK_Level_Hub.txt",
+      "size": 18900
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Level_InsideBoss.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/BNK_Level_InsideBoss.bnk",
+      "size": 2566900
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Level_InsideBoss.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/BNK_Level_InsideBoss.txt",
+      "size": 17548
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Level_Lighthouse.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/BNK_Level_Lighthouse.bnk",
+      "size": 2695901
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Level_Lighthouse.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/BNK_Level_Lighthouse.txt",
+      "size": 20265
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Level_Sky.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/BNK_Level_Sky.bnk",
+      "size": 2763843
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Level_Sky.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/BNK_Level_Sky.txt",
+      "size": 30694
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Level_Tower.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/BNK_Level_Tower.bnk",
+      "size": 3910583
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Level_Tower.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/BNK_Level_Tower.txt",
+      "size": 30058
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Music_Menus.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/BNK_Music_Menus.bnk",
+      "size": 5551
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Music_Menus.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/BNK_Music_Menus.txt",
+      "size": 3394
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_PlayGo.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/BNK_PlayGo.bnk",
+      "size": 9187272
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_PlayGo.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/BNK_PlayGo.txt",
+      "size": 161121
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_SFX_Black_Voids.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/BNK_SFX_Black_Voids.bnk",
+      "size": 32
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_SFX_Black_Voids.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/BNK_SFX_Black_Voids.txt",
+      "size": 0
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_SFX_BossBird.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/BNK_SFX_BossBird.bnk",
+      "size": 1159522
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_SFX_BossBird.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/BNK_SFX_BossBird.txt",
+      "size": 17633
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_SFX_BossEel.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/BNK_SFX_BossEel.bnk",
+      "size": 908226
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_SFX_BossEel.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/BNK_SFX_BossEel.txt",
+      "size": 6451
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_SFX_Fish.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/BNK_SFX_Fish.bnk",
+      "size": 638272
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_SFX_Fish.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/BNK_SFX_Fish.txt",
+      "size": 1893
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_SFX_Forest_Kodama.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/BNK_SFX_Forest_Kodama.bnk",
+      "size": 116094
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_SFX_Forest_Kodama.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/BNK_SFX_Forest_Kodama.txt",
+      "size": 8977
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_SFX_Vane.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/BNK_SFX_Vane.bnk",
+      "size": 1196
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_SFX_Vane.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/BNK_SFX_Vane.txt",
+      "size": 1490
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "Init.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/Init.bnk",
+      "size": 4881
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "Init.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/Init.txt",
+      "size": 11193
+    },
+    {
+      "category": "Metadata",
+      "extension": "xml",
+      "file_name": "PluginInfo.xml",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/PluginInfo.xml",
+      "size": 813
+    },
+    {
+      "category": "Metadata",
+      "extension": "xml",
+      "file_name": "SoundbanksInfo.xml",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxOne/SoundbanksInfo.xml",
+      "size": 589452
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1003066586.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/1003066586.wem",
+      "size": 263312
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1004900891.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/1004900891.wem",
+      "size": 1239127
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1011667770.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/1011667770.wem",
+      "size": 216757
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1022609980.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/1022609980.wem",
+      "size": 48496
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1030425458.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/1030425458.wem",
+      "size": 91803
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1040829570.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/1040829570.wem",
+      "size": 143792
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "104376454.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/104376454.wem",
+      "size": 185410
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1048335862.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/1048335862.wem",
+      "size": 4374159
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1054373492.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/1054373492.wem",
+      "size": 1291241
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1060216097.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/1060216097.wem",
+      "size": 1465369
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "1065863430.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/1065863430.wem",
+      "size": 65829
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "107773387.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/107773387.wem",
+      "size": 1720620
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "121968265.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/121968265.wem",
+      "size": 175330
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "142944701.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/142944701.wem",
+      "size": 528770
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "145709592.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/145709592.wem",
+      "size": 1971125
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "14817651.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/14817651.wem",
+      "size": 246289
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "150170128.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/150170128.wem",
+      "size": 500251
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "150528638.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/150528638.wem",
+      "size": 331957
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "155096011.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/155096011.wem",
+      "size": 178006
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "156344159.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/156344159.wem",
+      "size": 315506
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "157137273.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/157137273.wem",
+      "size": 5824506
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "191346039.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/191346039.wem",
+      "size": 150996
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "196979866.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/196979866.wem",
+      "size": 759869
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "206237323.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/206237323.wem",
+      "size": 721319
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "220936639.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/220936639.wem",
+      "size": 178150
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "2230238.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/2230238.wem",
+      "size": 282900
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "225344984.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/225344984.wem",
+      "size": 5591603
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "228602158.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/228602158.wem",
+      "size": 360171
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "230640447.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/230640447.wem",
+      "size": 91803
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "236805958.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/236805958.wem",
+      "size": 360171
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "238341631.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/238341631.wem",
+      "size": 318750
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "253925632.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/253925632.wem",
+      "size": 350012
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "254987577.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/254987577.wem",
+      "size": 1088886
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "271103720.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/271103720.wem",
+      "size": 1480791
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "275449779.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/275449779.wem",
+      "size": 1821678
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "284092820.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/284092820.wem",
+      "size": 397409
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "289780720.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/289780720.wem",
+      "size": 982689
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "290326527.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/290326527.wem",
+      "size": 1390916
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "292177591.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/292177591.wem",
+      "size": 678319
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "294340293.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/294340293.wem",
+      "size": 1180060
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "305094943.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/305094943.wem",
+      "size": 1135840
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "313428843.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/313428843.wem",
+      "size": 2417411
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "32050324.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/32050324.wem",
+      "size": 279606
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "333800810.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/333800810.wem",
+      "size": 5200650
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "345151560.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/345151560.wem",
+      "size": 187608
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "361855753.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/361855753.wem",
+      "size": 911181
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "363628505.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/363628505.wem",
+      "size": 587971
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "363654978.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/363654978.wem",
+      "size": 107648
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "36692710.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/36692710.wem",
+      "size": 422139
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "367499797.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/367499797.wem",
+      "size": 166056
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "37394440.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/37394440.wem",
+      "size": 258219
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "385213296.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/385213296.wem",
+      "size": 382067
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "386129501.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/386129501.wem",
+      "size": 806507
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "404808016.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/404808016.wem",
+      "size": 685125
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "414623393.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/414623393.wem",
+      "size": 1403871
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "420697146.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/420697146.wem",
+      "size": 401952
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "421374975.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/421374975.wem",
+      "size": 1855735
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "427471647.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/427471647.wem",
+      "size": 354283
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "433091477.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/433091477.wem",
+      "size": 320125
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "441021062.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/441021062.wem",
+      "size": 353139
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "448021239.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/448021239.wem",
+      "size": 626660
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "449004387.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/449004387.wem",
+      "size": 178378
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "453426859.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/453426859.wem",
+      "size": 198323
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "458123232.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/458123232.wem",
+      "size": 5792670
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "46007586.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/46007586.wem",
+      "size": 60558
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "462817732.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/462817732.wem",
+      "size": 5400589
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "478441394.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/478441394.wem",
+      "size": 1495795
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "479892848.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/479892848.wem",
+      "size": 315291
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "481466019.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/481466019.wem",
+      "size": 373485
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "490036655.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/490036655.wem",
+      "size": 2101516
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "490847533.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/490847533.wem",
+      "size": 2423488
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "503662359.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/503662359.wem",
+      "size": 178006
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "534004853.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/534004853.wem",
+      "size": 317057
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "540443084.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/540443084.wem",
+      "size": 2235957
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "541594032.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/541594032.wem",
+      "size": 1461543
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "544888158.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/544888158.wem",
+      "size": 150996
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "546357678.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/546357678.wem",
+      "size": 1390916
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "555177276.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/555177276.wem",
+      "size": 689500
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "565623500.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/565623500.wem",
+      "size": 602095
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "573912981.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/573912981.wem",
+      "size": 258219
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "579137289.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/579137289.wem",
+      "size": 181034
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "586662074.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/586662074.wem",
+      "size": 1712611
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "603032833.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/603032833.wem",
+      "size": 557007
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "622665844.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/622665844.wem",
+      "size": 181034
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "626233192.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/626233192.wem",
+      "size": 126762
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "62738925.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/62738925.wem",
+      "size": 360171
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "633653478.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/633653478.wem",
+      "size": 96187
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "633868999.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/633868999.wem",
+      "size": 370656
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "635962219.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/635962219.wem",
+      "size": 618877
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "640501706.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/640501706.wem",
+      "size": 439178
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "655693413.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/655693413.wem",
+      "size": 4005706
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "659907985.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/659907985.wem",
+      "size": 1600882
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "663435663.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/663435663.wem",
+      "size": 175966
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "675932867.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/675932867.wem",
+      "size": 169179
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "676242711.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/676242711.wem",
+      "size": 455295
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "68114889.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/68114889.wem",
+      "size": 3294927
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "684941058.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/684941058.wem",
+      "size": 1390916
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "691753923.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/691753923.wem",
+      "size": 1528155
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "694324789.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/694324789.wem",
+      "size": 1253622
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "695080298.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/695080298.wem",
+      "size": 702259
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "701625801.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/701625801.wem",
+      "size": 587971
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "704911074.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/704911074.wem",
+      "size": 177638
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "705293882.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/705293882.wem",
+      "size": 316311
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "720782255.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/720782255.wem",
+      "size": 360171
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "721537116.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/721537116.wem",
+      "size": 1650580
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "74026065.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/74026065.wem",
+      "size": 249418
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "747273975.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/747273975.wem",
+      "size": 208958
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "749926193.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/749926193.wem",
+      "size": 258219
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "75005098.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/75005098.wem",
+      "size": 1428378
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "750251179.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/750251179.wem",
+      "size": 342672
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "757750240.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/757750240.wem",
+      "size": 950342
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "757947207.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/757947207.wem",
+      "size": 73115
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "758465618.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/758465618.wem",
+      "size": 3314873
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "765060615.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/765060615.wem",
+      "size": 168946
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "772896097.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/772896097.wem",
+      "size": 1564658
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "794384828.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/794384828.wem",
+      "size": 105375
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "798076874.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/798076874.wem",
+      "size": 307613
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "79910075.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/79910075.wem",
+      "size": 150996
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "805314805.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/805314805.wem",
+      "size": 344009
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "813338470.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/813338470.wem",
+      "size": 3520548
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "816952351.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/816952351.wem",
+      "size": 127764
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "822270000.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/822270000.wem",
+      "size": 87748
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "831402330.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/831402330.wem",
+      "size": 1285133
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "834547568.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/834547568.wem",
+      "size": 4196135
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "838353001.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/838353001.wem",
+      "size": 307613
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "841565957.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/841565957.wem",
+      "size": 175966
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "841618509.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/841618509.wem",
+      "size": 724353
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "844181296.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/844181296.wem",
+      "size": 287101
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "867143429.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/867143429.wem",
+      "size": 1660251
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "895451403.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/895451403.wem",
+      "size": 6283431
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "900434479.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/900434479.wem",
+      "size": 901534
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "900481219.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/900481219.wem",
+      "size": 2247176
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "904909348.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/904909348.wem",
+      "size": 223190
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "906037502.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/906037502.wem",
+      "size": 65978
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "906366552.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/906366552.wem",
+      "size": 500421
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "907259646.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/907259646.wem",
+      "size": 258219
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "91772229.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/91772229.wem",
+      "size": 103476
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "934572083.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/934572083.wem",
+      "size": 805065
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "935526947.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/935526947.wem",
+      "size": 915028
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "954951021.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/954951021.wem",
+      "size": 3039355
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "966271331.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/966271331.wem",
+      "size": 701120
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "988396440.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/988396440.wem",
+      "size": 40150
+    },
+    {
+      "category": "Unknown",
+      "extension": "wem",
+      "file_name": "989907425.wem",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/989907425.wem",
+      "size": 171129
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Level_Cave.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/BNK_Level_Cave.bnk",
+      "size": 4973761
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Level_Cave.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/BNK_Level_Cave.txt",
+      "size": 68230
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Level_Desert.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/BNK_Level_Desert.bnk",
+      "size": 6339116
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Level_Desert.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/BNK_Level_Desert.txt",
+      "size": 71371
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Level_EndGame.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/BNK_Level_EndGame.bnk",
+      "size": 3860441
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Level_EndGame.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/BNK_Level_EndGame.txt",
+      "size": 9004
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Level_Forest.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/BNK_Level_Forest.bnk",
+      "size": 2191566
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Level_Forest.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/BNK_Level_Forest.txt",
+      "size": 46301
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Level_Hub.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/BNK_Level_Hub.bnk",
+      "size": 2280810
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Level_Hub.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/BNK_Level_Hub.txt",
+      "size": 18900
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Level_InsideBoss.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/BNK_Level_InsideBoss.bnk",
+      "size": 2566900
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Level_InsideBoss.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/BNK_Level_InsideBoss.txt",
+      "size": 17548
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Level_Lighthouse.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/BNK_Level_Lighthouse.bnk",
+      "size": 2695901
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Level_Lighthouse.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/BNK_Level_Lighthouse.txt",
+      "size": 20265
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Level_Sky.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/BNK_Level_Sky.bnk",
+      "size": 2763843
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Level_Sky.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/BNK_Level_Sky.txt",
+      "size": 30694
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Level_Tower.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/BNK_Level_Tower.bnk",
+      "size": 3910583
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Level_Tower.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/BNK_Level_Tower.txt",
+      "size": 30058
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_Music_Menus.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/BNK_Music_Menus.bnk",
+      "size": 5551
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_Music_Menus.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/BNK_Music_Menus.txt",
+      "size": 3394
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_PlayGo.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/BNK_PlayGo.bnk",
+      "size": 9187272
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_PlayGo.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/BNK_PlayGo.txt",
+      "size": 161121
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "BNK_SFX_BossBird.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/BNK_SFX_BossBird.bnk",
+      "size": 1159522
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "BNK_SFX_BossBird.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/BNK_SFX_BossBird.txt",
+      "size": 17633
+    },
+    {
+      "category": "Unknown",
+      "extension": "bnk",
+      "file_name": "Init.bnk",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/Init.bnk",
+      "size": 4881
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "Init.txt",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/Init.txt",
+      "size": 11193
+    },
+    {
+      "category": "Metadata",
+      "extension": "xml",
+      "file_name": "PluginInfo.xml",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/PluginInfo.xml",
+      "size": 813
+    },
+    {
+      "category": "Metadata",
+      "extension": "xml",
+      "file_name": "SoundbanksInfo.xml",
+      "relative_path": "Media/StreamingAssets/GeneratedSoundBanks/XboxSeriesX/SoundbanksInfo.xml",
+      "size": 589452
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "SaveIcon.png",
+      "relative_path": "Media/StreamingAssets/SaveIcon.png",
+      "size": 28555
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "AttractVideo.mp4",
+      "relative_path": "Media/StreamingAssets/Videos/AttractVideo.mp4",
+      "size": 9858700
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "DesertStorm_In.mp4",
+      "relative_path": "Media/StreamingAssets/Videos/DesertStorm_In.mp4",
+      "size": 4155280
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "DesertStorm_Out.mp4",
+      "relative_path": "Media/StreamingAssets/Videos/DesertStorm_Out.mp4",
+      "size": 1581196
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "IntroVideo.mp4",
+      "relative_path": "Media/StreamingAssets/Videos/IntroVideo.mp4",
+      "size": 94044498
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "OutroVideo.mp4",
+      "relative_path": "Media/StreamingAssets/Videos/OutroVideo.mp4",
+      "size": 196135566
+    },
+    {
+      "category": "Unknown",
+      "extension": "mp4",
+      "file_name": "SecretEnding.mp4",
+      "relative_path": "Media/StreamingAssets/Videos/SecretEnding.mp4",
+      "size": 79425467
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "desc.txt",
+      "relative_path": "Media/StreamingAssets/desc.txt",
+      "size": 238
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "SymbolMap",
+      "relative_path": "Media/SymbolMap",
+      "size": 559096
+    },
+    {
+      "category": "Unknown",
+      "extension": "config",
+      "file_name": "boot.config",
+      "relative_path": "Media/boot.config",
+      "size": 486
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "globalgamemanagers",
+      "relative_path": "Media/globalgamemanagers",
+      "size": 234028
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "globalgamemanagers.assets",
+      "relative_path": "Media/globalgamemanagers.assets",
+      "size": 1183784
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level0",
+      "relative_path": "Media/level0",
+      "size": 91440
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level1",
+      "relative_path": "Media/level1",
+      "size": 13792
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level10",
+      "relative_path": "Media/level10",
+      "size": 413040
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level11",
+      "relative_path": "Media/level11",
+      "size": 260404
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level12",
+      "relative_path": "Media/level12",
+      "size": 515756
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level13",
+      "relative_path": "Media/level13",
+      "size": 726752
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level14",
+      "relative_path": "Media/level14",
+      "size": 214388
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level15",
+      "relative_path": "Media/level15",
+      "size": 257280
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level16",
+      "relative_path": "Media/level16",
+      "size": 34968
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level17",
+      "relative_path": "Media/level17",
+      "size": 209060
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level18",
+      "relative_path": "Media/level18",
+      "size": 1207448
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level19",
+      "relative_path": "Media/level19",
+      "size": 1599412
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level2",
+      "relative_path": "Media/level2",
+      "size": 59276
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level20",
+      "relative_path": "Media/level20",
+      "size": 2197208
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level21",
+      "relative_path": "Media/level21",
+      "size": 57460
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level22",
+      "relative_path": "Media/level22",
+      "size": 180892
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level23",
+      "relative_path": "Media/level23",
+      "size": 563368
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level24",
+      "relative_path": "Media/level24",
+      "size": 578528
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level25",
+      "relative_path": "Media/level25",
+      "size": 871444
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level26",
+      "relative_path": "Media/level26",
+      "size": 731292
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level27",
+      "relative_path": "Media/level27",
+      "size": 543588
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level28",
+      "relative_path": "Media/level28",
+      "size": 1045940
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level29",
+      "relative_path": "Media/level29",
+      "size": 823452
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level3",
+      "relative_path": "Media/level3",
+      "size": 95204
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level30",
+      "relative_path": "Media/level30",
+      "size": 60556
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level31",
+      "relative_path": "Media/level31",
+      "size": 1125400
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level32",
+      "relative_path": "Media/level32",
+      "size": 1057116
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level33",
+      "relative_path": "Media/level33",
+      "size": 648112
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level34",
+      "relative_path": "Media/level34",
+      "size": 1206204
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level35",
+      "relative_path": "Media/level35",
+      "size": 386892
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level36",
+      "relative_path": "Media/level36",
+      "size": 504508
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level37",
+      "relative_path": "Media/level37",
+      "size": 114856
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level38",
+      "relative_path": "Media/level38",
+      "size": 141620
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level39",
+      "relative_path": "Media/level39",
+      "size": 68636
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level4",
+      "relative_path": "Media/level4",
+      "size": 32668
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level40",
+      "relative_path": "Media/level40",
+      "size": 1386048
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level41",
+      "relative_path": "Media/level41",
+      "size": 802104
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level42",
+      "relative_path": "Media/level42",
+      "size": 826500
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level43",
+      "relative_path": "Media/level43",
+      "size": 238776
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level44",
+      "relative_path": "Media/level44",
+      "size": 324992
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level45",
+      "relative_path": "Media/level45",
+      "size": 742196
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level46",
+      "relative_path": "Media/level46",
+      "size": 856300
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level47",
+      "relative_path": "Media/level47",
+      "size": 253660
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level48",
+      "relative_path": "Media/level48",
+      "size": 211184
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level49",
+      "relative_path": "Media/level49",
+      "size": 1252804
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level5",
+      "relative_path": "Media/level5",
+      "size": 1562748
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level50",
+      "relative_path": "Media/level50",
+      "size": 2245804
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "level50.resS",
+      "relative_path": "Media/level50.resS",
+      "size": 7376
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level51",
+      "relative_path": "Media/level51",
+      "size": 89780
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level52",
+      "relative_path": "Media/level52",
+      "size": 608932
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level53",
+      "relative_path": "Media/level53",
+      "size": 207544
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level54",
+      "relative_path": "Media/level54",
+      "size": 509368
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level55",
+      "relative_path": "Media/level55",
+      "size": 335468
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level56",
+      "relative_path": "Media/level56",
+      "size": 542028
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level57",
+      "relative_path": "Media/level57",
+      "size": 952960
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level58",
+      "relative_path": "Media/level58",
+      "size": 933804
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level59",
+      "relative_path": "Media/level59",
+      "size": 1269612
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level6",
+      "relative_path": "Media/level6",
+      "size": 18376
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level60",
+      "relative_path": "Media/level60",
+      "size": 1387452
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level61",
+      "relative_path": "Media/level61",
+      "size": 1257280
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level62",
+      "relative_path": "Media/level62",
+      "size": 1381284
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level63",
+      "relative_path": "Media/level63",
+      "size": 69744
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level64",
+      "relative_path": "Media/level64",
+      "size": 476140
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level65",
+      "relative_path": "Media/level65",
+      "size": 657432
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level7",
+      "relative_path": "Media/level7",
+      "size": 128664
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level8",
+      "relative_path": "Media/level8",
+      "size": 279272
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level9",
+      "relative_path": "Media/level9",
+      "size": 450548
+    },
+    {
+      "category": "Metadata",
+      "extension": "xml",
+      "file_name": "platform_native_link.xml",
+      "relative_path": "Media/platform_native_link.xml",
+      "size": 678
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "resources.assets",
+      "relative_path": "Media/resources.assets",
+      "size": 3634216
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "resources.assets.resS",
+      "relative_path": "Media/resources.assets.resS",
+      "size": 242286592
+    },
+    {
+      "category": "Unknown",
+      "extension": "resource",
+      "file_name": "resources.resource",
+      "relative_path": "Media/resources.resource",
+      "size": 278234989
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets0.assets",
+      "relative_path": "Media/sharedassets0.assets",
+      "size": 6351660
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets0.assets.resS",
+      "relative_path": "Media/sharedassets0.assets.resS",
+      "size": 596869120
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets1.assets",
+      "relative_path": "Media/sharedassets1.assets",
+      "size": 7004
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets1.assets.resS",
+      "relative_path": "Media/sharedassets1.assets.resS",
+      "size": 262144
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets10.assets",
+      "relative_path": "Media/sharedassets10.assets",
+      "size": 17808
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets11.assets",
+      "relative_path": "Media/sharedassets11.assets",
+      "size": 13824
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets11.assets.resS",
+      "relative_path": "Media/sharedassets11.assets.resS",
+      "size": 913408
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets12.assets",
+      "relative_path": "Media/sharedassets12.assets",
+      "size": 376180
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets12.assets.resS",
+      "relative_path": "Media/sharedassets12.assets.resS",
+      "size": 1449984
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets13.assets",
+      "relative_path": "Media/sharedassets13.assets",
+      "size": 1010020
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets13.assets.resS",
+      "relative_path": "Media/sharedassets13.assets.resS",
+      "size": 239681536
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets14.assets",
+      "relative_path": "Media/sharedassets14.assets",
+      "size": 133740
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets14.assets.resS",
+      "relative_path": "Media/sharedassets14.assets.resS",
+      "size": 176128
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets15.assets",
+      "relative_path": "Media/sharedassets15.assets",
+      "size": 12736
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets15.assets.resS",
+      "relative_path": "Media/sharedassets15.assets.resS",
+      "size": 32768
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets16.assets",
+      "relative_path": "Media/sharedassets16.assets",
+      "size": 522976
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets16.assets.resS",
+      "relative_path": "Media/sharedassets16.assets.resS",
+      "size": 123052032
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets17.assets",
+      "relative_path": "Media/sharedassets17.assets",
+      "size": 27904
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets17.assets.resS",
+      "relative_path": "Media/sharedassets17.assets.resS",
+      "size": 5779456
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets18.assets",
+      "relative_path": "Media/sharedassets18.assets",
+      "size": 2226248
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets18.assets.resS",
+      "relative_path": "Media/sharedassets18.assets.resS",
+      "size": 459755520
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets19.assets",
+      "relative_path": "Media/sharedassets19.assets",
+      "size": 168324
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets19.assets.resS",
+      "relative_path": "Media/sharedassets19.assets.resS",
+      "size": 5779456
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets2.assets",
+      "relative_path": "Media/sharedassets2.assets",
+      "size": 104440
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets2.assets.resS",
+      "relative_path": "Media/sharedassets2.assets.resS",
+      "size": 38641664
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets20.assets",
+      "relative_path": "Media/sharedassets20.assets",
+      "size": 2036912
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets20.assets.resS",
+      "relative_path": "Media/sharedassets20.assets.resS",
+      "size": 271777792
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets21.assets",
+      "relative_path": "Media/sharedassets21.assets",
+      "size": 968776
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets21.assets.resS",
+      "relative_path": "Media/sharedassets21.assets.resS",
+      "size": 22372352
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets22.assets",
+      "relative_path": "Media/sharedassets22.assets",
+      "size": 1124948
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets22.assets.resS",
+      "relative_path": "Media/sharedassets22.assets.resS",
+      "size": 293662720
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets23.assets",
+      "relative_path": "Media/sharedassets23.assets",
+      "size": 918356
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets23.assets.resS",
+      "relative_path": "Media/sharedassets23.assets.resS",
+      "size": 73154560
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets24.assets",
+      "relative_path": "Media/sharedassets24.assets",
+      "size": 129636
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets24.assets.resS",
+      "relative_path": "Media/sharedassets24.assets.resS",
+      "size": 25223168
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets25.assets",
+      "relative_path": "Media/sharedassets25.assets",
+      "size": 227708
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets26.assets",
+      "relative_path": "Media/sharedassets26.assets",
+      "size": 13908
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets26.assets.resS",
+      "relative_path": "Media/sharedassets26.assets.resS",
+      "size": 1409024
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets27.assets",
+      "relative_path": "Media/sharedassets27.assets",
+      "size": 39996
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets28.assets",
+      "relative_path": "Media/sharedassets28.assets",
+      "size": 294760
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets28.assets.resS",
+      "relative_path": "Media/sharedassets28.assets.resS",
+      "size": 2797568
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets29.assets",
+      "relative_path": "Media/sharedassets29.assets",
+      "size": 2229500
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets29.assets.resS",
+      "relative_path": "Media/sharedassets29.assets.resS",
+      "size": 520519680
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets3.assets",
+      "relative_path": "Media/sharedassets3.assets",
+      "size": 96616
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets3.assets.resS",
+      "relative_path": "Media/sharedassets3.assets.resS",
+      "size": 50864128
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets30.assets",
+      "relative_path": "Media/sharedassets30.assets",
+      "size": 13160
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets31.assets",
+      "relative_path": "Media/sharedassets31.assets",
+      "size": 84916
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets32.assets",
+      "relative_path": "Media/sharedassets32.assets",
+      "size": 16652
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets33.assets",
+      "relative_path": "Media/sharedassets33.assets",
+      "size": 206256
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets33.assets.resS",
+      "relative_path": "Media/sharedassets33.assets.resS",
+      "size": 57163776
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets34.assets",
+      "relative_path": "Media/sharedassets34.assets",
+      "size": 16320
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets35.assets",
+      "relative_path": "Media/sharedassets35.assets",
+      "size": 50540
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets35.assets.resS",
+      "relative_path": "Media/sharedassets35.assets.resS",
+      "size": 360448
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets36.assets",
+      "relative_path": "Media/sharedassets36.assets",
+      "size": 13769
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets37.assets",
+      "relative_path": "Media/sharedassets37.assets",
+      "size": 111524
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets37.assets.resS",
+      "relative_path": "Media/sharedassets37.assets.resS",
+      "size": 55140352
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets38.assets",
+      "relative_path": "Media/sharedassets38.assets",
+      "size": 12941
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets39.assets",
+      "relative_path": "Media/sharedassets39.assets",
+      "size": 177040
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets39.assets.resS",
+      "relative_path": "Media/sharedassets39.assets.resS",
+      "size": 352256
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets4.assets",
+      "relative_path": "Media/sharedassets4.assets",
+      "size": 5861
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets40.assets",
+      "relative_path": "Media/sharedassets40.assets",
+      "size": 1441560
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets40.assets.resS",
+      "relative_path": "Media/sharedassets40.assets.resS",
+      "size": 291385344
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets41.assets",
+      "relative_path": "Media/sharedassets41.assets",
+      "size": 1505260
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets41.assets.resS",
+      "relative_path": "Media/sharedassets41.assets.resS",
+      "size": 202104832
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets42.assets",
+      "relative_path": "Media/sharedassets42.assets",
+      "size": 30308
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets42.assets.resS",
+      "relative_path": "Media/sharedassets42.assets.resS",
+      "size": 4096
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets43.assets",
+      "relative_path": "Media/sharedassets43.assets",
+      "size": 38916
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets44.assets",
+      "relative_path": "Media/sharedassets44.assets",
+      "size": 18092
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets45.assets",
+      "relative_path": "Media/sharedassets45.assets",
+      "size": 193196
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets46.assets",
+      "relative_path": "Media/sharedassets46.assets",
+      "size": 17840
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets47.assets",
+      "relative_path": "Media/sharedassets47.assets",
+      "size": 1019832
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets47.assets.resS",
+      "relative_path": "Media/sharedassets47.assets.resS",
+      "size": 151052288
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets48.assets",
+      "relative_path": "Media/sharedassets48.assets",
+      "size": 17140
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets49.assets",
+      "relative_path": "Media/sharedassets49.assets",
+      "size": 697640
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets49.assets.resS",
+      "relative_path": "Media/sharedassets49.assets.resS",
+      "size": 157372416
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets5.assets",
+      "relative_path": "Media/sharedassets5.assets",
+      "size": 5560
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets50.assets",
+      "relative_path": "Media/sharedassets50.assets",
+      "size": 22152
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets50.assets.resS",
+      "relative_path": "Media/sharedassets50.assets.resS",
+      "size": 32768
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets51.assets",
+      "relative_path": "Media/sharedassets51.assets",
+      "size": 15656
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets51.assets.resS",
+      "relative_path": "Media/sharedassets51.assets.resS",
+      "size": 1400832
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets52.assets",
+      "relative_path": "Media/sharedassets52.assets",
+      "size": 144720
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets52.assets.resS",
+      "relative_path": "Media/sharedassets52.assets.resS",
+      "size": 44781568
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets53.assets",
+      "relative_path": "Media/sharedassets53.assets",
+      "size": 60976
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets54.assets",
+      "relative_path": "Media/sharedassets54.assets",
+      "size": 25668
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets54.assets.resS",
+      "relative_path": "Media/sharedassets54.assets.resS",
+      "size": 352256
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets55.assets",
+      "relative_path": "Media/sharedassets55.assets",
+      "size": 139476
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets55.assets.resS",
+      "relative_path": "Media/sharedassets55.assets.resS",
+      "size": 704512
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets56.assets",
+      "relative_path": "Media/sharedassets56.assets",
+      "size": 12824
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets57.assets",
+      "relative_path": "Media/sharedassets57.assets",
+      "size": 241960
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets57.assets.resS",
+      "relative_path": "Media/sharedassets57.assets.resS",
+      "size": 28672
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets58.assets",
+      "relative_path": "Media/sharedassets58.assets",
+      "size": 14804
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets59.assets",
+      "relative_path": "Media/sharedassets59.assets",
+      "size": 391064
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets59.assets.resS",
+      "relative_path": "Media/sharedassets59.assets.resS",
+      "size": 8192
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets6.assets",
+      "relative_path": "Media/sharedassets6.assets",
+      "size": 26320
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets6.assets.resS",
+      "relative_path": "Media/sharedassets6.assets.resS",
+      "size": 5947392
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets60.assets",
+      "relative_path": "Media/sharedassets60.assets",
+      "size": 12816
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets60.assets.resS",
+      "relative_path": "Media/sharedassets60.assets.resS",
+      "size": 864256
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets61.assets",
+      "relative_path": "Media/sharedassets61.assets",
+      "size": 59912
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets62.assets",
+      "relative_path": "Media/sharedassets62.assets",
+      "size": 11820
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets63.assets",
+      "relative_path": "Media/sharedassets63.assets",
+      "size": 5833024
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets63.assets.resS",
+      "relative_path": "Media/sharedassets63.assets.resS",
+      "size": 878116864
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets64.assets",
+      "relative_path": "Media/sharedassets64.assets",
+      "size": 430100
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets64.assets.resS",
+      "relative_path": "Media/sharedassets64.assets.resS",
+      "size": 34181120
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets65.assets",
+      "relative_path": "Media/sharedassets65.assets",
+      "size": 147456
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets65.assets.resS",
+      "relative_path": "Media/sharedassets65.assets.resS",
+      "size": 11186176
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets7.assets",
+      "relative_path": "Media/sharedassets7.assets",
+      "size": 589844
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets7.assets.resS",
+      "relative_path": "Media/sharedassets7.assets.resS",
+      "size": 111861760
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets8.assets",
+      "relative_path": "Media/sharedassets8.assets",
+      "size": 38612
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets8.assets.resS",
+      "relative_path": "Media/sharedassets8.assets.resS",
+      "size": 372736
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets9.assets",
+      "relative_path": "Media/sharedassets9.assets",
+      "size": 2222364
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets9.assets.resS",
+      "relative_path": "Media/sharedassets9.assets.resS",
+      "size": 396840960
+    },
+    {
+      "category": "Executable",
+      "extension": "eboot.bin",
+      "file_name": "eboot.bin",
+      "relative_path": "eboot.bin",
+      "size": 27698440
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "icon0.png",
+      "relative_path": "icon0.png",
+      "size": 371817
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceFace.prx",
+      "relative_path": "sce_module/libSceFace.prx",
+      "size": 303036
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceFaceTracker.prx",
+      "relative_path": "sce_module/libSceFaceTracker.prx",
+      "size": 2610407
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceJobManager.prx",
+      "relative_path": "sce_module/libSceJobManager.prx",
+      "size": 71222
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceNpCppWebApi.prx",
+      "relative_path": "sce_module/libSceNpCppWebApi.prx",
+      "size": 7852711
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libScePfs.prx",
+      "relative_path": "sce_module/libScePfs.prx",
+      "size": 1343423
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libc.prx",
+      "relative_path": "sce_module/libc.prx",
+      "size": 1314306
+    },
+    {
+      "category": "Executable",
+      "extension": "sprx",
+      "file_name": "right.sprx",
+      "relative_path": "sce_sys/about/right.sprx",
+      "size": 12768
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "disc_info.dat",
+      "relative_path": "sce_sys/disc_info.dat",
+      "size": 6640
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "icon0.dds",
+      "relative_path": "sce_sys/icon0.dds",
+      "size": 262292
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "icon0.png",
+      "relative_path": "sce_sys/icon0.png",
+      "size": 452798
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "keystone",
+      "relative_path": "sce_sys/keystone",
+      "size": 96
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "nptitle.dat",
+      "relative_path": "sce_sys/nptitle.dat",
+      "size": 160
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "param.json",
+      "relative_path": "sce_sys/param.json",
+      "size": 2572
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "pfs-version.dat",
+      "relative_path": "sce_sys/pfs-version.dat",
+      "size": 10
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic0.dds",
+      "relative_path": "sce_sys/pic0.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "pic0.png",
+      "relative_path": "sce_sys/pic0.png",
+      "size": 12034920
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic1.dds",
+      "relative_path": "sce_sys/pic1.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic2.dds",
+      "relative_path": "sce_sys/pic2.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Audio",
+      "extension": "at9",
+      "file_name": "snd0.at9",
+      "relative_path": "sce_sys/snd0.at9",
+      "size": 1801128
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "sce_sys/trophy2/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "trophy00.ucp",
+      "relative_path": "sce_sys/trophy2/trophy00.ucp",
+      "size": 723744
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "sce_sys/uds/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "uds00.ucp",
+      "relative_path": "sce_sys/uds/uds00.ucp",
+      "size": 22192
+    }
+  ],
+  "by_category": {
+    "audio": 1,
+    "executable": 15,
+    "metadata": 79,
+    "texture": 9,
+    "unknown": 744
+  },
+  "by_extension": {
+    "(no_ext)": 71,
+    "assets": 68,
+    "at9": 1,
+    "bnk": 59,
+    "config": 1,
+    "dat": 7,
+    "dds": 4,
+    "eboot.bin": 1,
+    "json": 1,
+    "mp4": 6,
+    "png": 5,
+    "prx": 13,
+    "resource": 1,
+    "ress": 47,
+    "sprx": 1,
+    "txt": 60,
+    "ucp": 2,
+    "wem": 491,
+    "xml": 9
+  },
+  "game": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+  "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+  "total_bytes": 7278056863,
+  "total_files": 848
+}

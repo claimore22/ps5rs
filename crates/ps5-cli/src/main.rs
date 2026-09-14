@@ -9,6 +9,7 @@ mod deps;
 mod export_scan;
 mod extract;
 mod firmware;
+mod ingest;
 mod inspect;
 mod inventory;
 mod load;
@@ -51,7 +52,8 @@ fn main() {
             output,
             nids,
             include_modules,
-        } => analyze::cmd_scan(&path, &output, &nids, include_modules),
+            append,
+        } => analyze::cmd_scan(&path, &output, &nids, include_modules, append),
         Commands::Analyze {
             nids,
             include_modules,
@@ -105,7 +107,8 @@ fn main() {
             output,
             offline_dir,
             json,
-        } => batch_load::cmd_batch_load(&path, &output, &offline_dir, json),
+            force,
+        } => batch_load::cmd_batch_load(&path, &output, &offline_dir, json, force),
         Commands::Strings {
             file,
             min_length,
@@ -173,5 +176,11 @@ fn main() {
             format,
             output,
         } => sdk::cmd_sdk(&path, format, &output),
+        Commands::Archive {
+            game,
+            dataset,
+            offline_dir,
+            mark_deleted,
+        } => ingest::cmd_archive(&game, &dataset, &offline_dir, &mark_deleted),
     }
 }

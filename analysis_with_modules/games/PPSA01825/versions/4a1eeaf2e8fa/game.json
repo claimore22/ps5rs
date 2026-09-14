@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "title_id": "PPSA01825",
+  "name": "The Pathless - [PPSA01825]",
+  "eboot_sha256": "37a3c6dbff248781267ba018cc5ca99713464d7a3b78de34103dac7ac8aa33ff",
+  "game_fingerprint": "4a1eeaf2e8fa0937b9a8af49b85b4681c6158ae856857e81470cc5bb4ce89f8a",
+  "environment_fingerprint": "c65955db3dee9d575ca652856c86c3fc2b7297fff36bb37fcb1b9319f1ff09a9",
+  "loader_fingerprint": "d245a80770d2897643c4754f10883b674208fc8fdecaad2ebd247d1990f6f5a0",
+  "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
+  "ingest_id": "ingest_20260912085622_4a1eeaf2e8fa",
+  "ingested_at": "2026-09-12T08:56:22Z",
+  "params": {
+    "name": "The.Pathless-PPSA01825-USA-PS5",
+    "title_id": "PPSA01825",
+    "content_version": "02.000.000",
+    "master_version": "01.00",
+    "sdk_version": "0x0100000000000000",
+    "title_name": "The Pathless",
+    "display_name": "The Pathless - [PPSA01825]",
+    "drm_type": "upgradable",
+    "content_id": "UP2470-PPSA01825_00-PATHLESSSIEA0000",
+    "creation_date": "2020-12-01 03:46:20"
+  },
+  "load_report_file": "load_report.json"
+}

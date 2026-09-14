@@ -46,6 +46,9 @@ pub enum Commands {
         nids: Vec<PathBuf>,
         #[arg(long)]
         include_modules: bool,
+        /// Only scan games missing from the output dataset; keep existing images
+        #[arg(long)]
+        append: bool,
     },
     Analyze {
         #[arg(long = "nids", value_hint = ValueHint::FilePath)]
@@ -134,7 +137,8 @@ pub enum Commands {
         #[arg(short, long, default_value = "system_modules")]
         output: PathBuf,
     },
-    /// Batch-load all games: run virtual loader, collect reports, aggregate stats
+    /// Batch-load all games: incremental reconcile by default (only changed
+    /// games are reloaded; pass --force to reload everything)
     BatchLoad {
         /// Games directory containing subdirectories with eboot.bin
         path: PathBuf,
@@ -147,6 +151,9 @@ pub enum Commands {
         /// Print combined JSON to stdout instead of writing files
         #[arg(long)]
         json: bool,
+        /// Reload every game even if its stored report fingerprint is fresh
+        #[arg(long)]
+        force: bool,
     },
     /// Manage NID catalog (sync from Supabase, push unknowns)
     Catalog {
@@ -221,6 +228,22 @@ pub enum Commands {
         format: OutputFormat,
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
+    },
+    /// Archive one ingested game into the dataset's per-game records and
+    /// commit the ingest registry (write -> reload -> verify; sources untouched)
+    Archive {
+        /// Game directory to archive (must contain eboot.bin)
+        #[arg(long, value_hint = ValueHint::DirPath)]
+        game: Option<PathBuf>,
+        /// Dataset root holding load/ and ingest.json
+        #[arg(long, value_hint = ValueHint::DirPath)]
+        dataset: PathBuf,
+        /// Path to offline export directory (system_modules)
+        #[arg(long = "offline-dir", default_value = "system_modules")]
+        offline_dir: PathBuf,
+        /// Mark a title's sources as deleted (only if its ingest is complete)
+        #[arg(long = "mark-deleted")]
+        mark_deleted: Option<String>,
     },
 }
 

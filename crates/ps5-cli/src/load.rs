@@ -1,7 +1,6 @@
 use std::path::{Path, PathBuf};
 
-use serde::Serialize;
-
+use ps5_farm::report::{self, EdgeInfo, GraphInfo, LoadReport, ModuleInfo, Totals};
 use ps5_loader::LibraryImportCounts;
 use ps5_loader::OfflineExportTable;
 
@@ -98,69 +97,6 @@ fn find_prx<'a>(name: &'a str, files: &'a [(String, PathBuf)]) -> Option<&'a Pat
         .iter()
         .find(|(f, _)| f.to_lowercase() == lower)
         .map(|(_, path)| path)
-}
-
-/// A serializable report for `--json` output.
-#[derive(Serialize)]
-pub(crate) struct ModuleInfo {
-    name: String,
-    module_type: String,
-    load_bias: u64,
-    entry_point: Option<u64>,
-    exports_count: usize,
-    imports_resolved: u32,
-    imports_known: u32,
-    imports_stubbed: u32,
-    relative: u32,
-    glob_dat: u32,
-    jump_slot: u32,
-    abs64: u32,
-    copy: u32,
-    tls_relocations: u32,
-    ifunc: u32,
-    unknown: u32,
-    state: String,
-    has_tls: bool,
-    init_va: u64,
-    init_array_va: u64,
-    init_array_sz: u64,
-    fini_va: u64,
-    fini_array_va: u64,
-    fini_array_sz: u64,
-    preinit_array_va: u64,
-    preinit_array_sz: u64,
-    per_library: Vec<LibraryImportCounts>,
-}
-
-#[derive(Serialize)]
-pub(crate) struct GraphInfo {
-    nodes: Vec<String>,
-    unavailable: Vec<String>,
-    edges: Vec<EdgeInfo>,
-}
-
-#[derive(Serialize)]
-pub(crate) struct EdgeInfo {
-    from: String,
-    to: String,
-    status: String,
-}
-
-#[derive(Serialize)]
-pub(crate) struct Totals {
-    pub(crate) modules: usize,
-    pub(crate) resolved: u32,
-    pub(crate) known: u32,
-    pub(crate) stubbed: u32,
-    pub(crate) exports: usize,
-    pub(crate) unavailable: usize,
-}
-
-#[derive(Serialize)]
-pub(crate) struct LoadReport {
-    pub(crate) modules: Vec<ModuleInfo>,
-    pub(crate) graph: GraphInfo,
-    pub(crate) totals: Totals,
 }
 
 /// Display the module dependency graph as ASCII.
@@ -307,97 +243,6 @@ fn print_modules(ctx: &ps5_loader::ModuleContext) {
     }
 }
 
-/// Build the serializable report.
-pub(crate) fn build_report(ctx: &ps5_loader::ModuleContext) -> LoadReport {
-    let modules: Vec<ModuleInfo> = ctx
-        .modules
-        .iter()
-        .map(|m| {
-            let type_label = match m.module_type {
-                ps5_loader::ModuleType::Eboot => "Eboot",
-                ps5_loader::ModuleType::Prx => "Prx",
-            };
-            let state_label = match m.state {
-                ps5_loader::ModuleState::Mapped => "Mapped",
-                ps5_loader::ModuleState::Relocated => "Relocated",
-                ps5_loader::ModuleState::Linked => "Linked",
-                ps5_loader::ModuleState::Initialized => "Initialized",
-            };
-            let rs = m.relocation_summary.as_ref();
-            ModuleInfo {
-                name: m.name.clone(),
-                module_type: type_label.to_string(),
-                load_bias: m.load_bias,
-                entry_point: m.entry_point,
-                exports_count: m.exports_count,
-                imports_resolved: m.imports_resolved,
-                imports_known: m.imports_known,
-                imports_stubbed: m.imports_stubbed,
-                relative: rs.map(|s| s.relative).unwrap_or(0),
-                glob_dat: rs.map(|s| s.glob_dat).unwrap_or(0),
-                jump_slot: rs.map(|s| s.jump_slot).unwrap_or(0),
-                abs64: rs.map(|s| s.abs64).unwrap_or(0),
-                copy: rs.map(|s| s.copy).unwrap_or(0),
-                tls_relocations: rs.map(|s| s.tls).unwrap_or(0),
-                ifunc: rs.map(|s| s.ifunc).unwrap_or(0),
-                unknown: rs.map(|s| s.unknown).unwrap_or(0),
-                state: state_label.to_string(),
-                has_tls: m.tls.is_some(),
-                init_va: m.init_va,
-                init_array_va: m.init_array_va,
-                init_array_sz: m.init_array_sz,
-                fini_va: m.fini_va,
-                fini_array_va: m.fini_array_va,
-                fini_array_sz: m.fini_array_sz,
-                preinit_array_va: m.preinit_array_va,
-                preinit_array_sz: m.preinit_array_sz,
-                per_library: m.per_library_imports.clone(),
-            }
-        })
-        .collect();
-
-    let nodes: Vec<String> = ctx.graph.all_modules().map(|s| s.to_string()).collect();
-    let unavailable: Vec<String> = ctx
-        .graph
-        .unavailable_modules()
-        .map(|s| s.to_string())
-        .collect();
-    let mut edges = Vec::new();
-    for node in &nodes {
-        for dep in ctx.graph.dependencies(node) {
-            let status = if ctx.graph.is_unavailable(dep) {
-                "missing"
-            } else {
-                "loaded"
-            };
-            edges.push(EdgeInfo {
-                from: node.clone(),
-                to: dep.to_string(),
-                status: status.to_string(),
-            });
-        }
-    }
-
-    let totals = Totals {
-        modules: ctx.modules.len(),
-        resolved: ctx.resolved_imports,
-        known: ctx.known_imports,
-        stubbed: ctx.stubbed_imports,
-        exports: ctx.exports.len(),
-        unavailable: unavailable.len(),
-    };
-
-    LoadReport {
-        modules,
-        graph: GraphInfo {
-            nodes,
-            unavailable,
-            edges,
-        },
-        totals,
-    }
-}
-
 pub(crate) fn cmd_load(path: &PathBuf, prx_dir: Option<PathBuf>, json: bool) {
     let data = load_file(path);
 
@@ -485,7 +330,7 @@ fn cmd_load_multi(path: &Path, data: &[u8], prx_dir: &Path, json: bool) {
     });
 
     if json {
-        let report = build_report(&ctx);
+        let report = report::build_report(&ctx);
         let json_str = serde_json::to_string_pretty(&report).unwrap_or_else(|e| {
             eprintln!("error: JSON serialization failed: {e}");
             std::process::exit(1);

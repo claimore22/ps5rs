@@ -1,0 +1,52 @@
+{
+  "game": "PPSA13356-app",
+  "sony": [
+    {
+      "exports": 41658,
+      "file_name": "libSceNpCppWebApi.prx",
+      "import_libs": [
+        "libSceHttp",
+        "libSceJson2",
+        "libSceLibcInternal",
+        "libSceNpWebApi2",
+        "libSceRtc",
+        "libkernel"
+      ],
+      "imports": 95,
+      "kind": "sony",
+      "module_name": "libSceNpCppWebApi",
+      "needed_files": [
+        "libSceJson2.prx",
+        "libSceRtc.prx",
+        "libSceNpWebApi2.prx",
+        "libSceHttp.prx",
+        "libkernel.prx",
+        "libSceLibcInternal.prx"
+      ],
+      "parseable": true,
+      "sha256": "1d829354debc8a8fb01b43af626715ac95aefe1b3bf83b6dbb4352db052d7c6f"
+    },
+    {
+      "exports": 2572,
+      "file_name": "libc.prx",
+      "import_libs": [
+        "libSceLibcInternalExt",
+        "libSceSysmodule",
+        "libkernel"
+      ],
+      "imports": 104,
+      "kind": "sony",
+      "module_name": "libc",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceLibcInternal.prx",
+        "libSceSysmodule.prx"
+      ],
+      "parseable": true,
+      "sha256": "fcc5b14b90ae0d3971beea32dce9227b06eb4eb27b03b737e28e86a563149af5"
+    }
+  ],
+  "third_party": [],
+  "title_id": "PPSA13356",
+  "unknown": []
+}

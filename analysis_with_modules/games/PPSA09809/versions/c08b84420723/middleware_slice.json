@@ -1,0 +1,132 @@
+{
+  "engine": "Unreal Engine",
+  "game": "Octopath.Traveler.II-PPSA09809-EUR-Game-v01.000-PS5",
+  "sony": [
+    {
+      "exports": 29,
+      "file_name": "libSceFace.prx",
+      "import_libs": [
+        "libSceLibcInternal",
+        "libkernel"
+      ],
+      "imports": 20,
+      "kind": "sony",
+      "module_name": "libSceFace",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceLibcInternal.prx"
+      ],
+      "parseable": true,
+      "sha256": "3175497a29c2b8f7ca4e2918804102b14528efcf61c045c814403f5296218800"
+    },
+    {
+      "exports": 21,
+      "file_name": "libSceFaceTracker.prx",
+      "import_libs": [
+        "libSceFace",
+        "libSceLibcInternal",
+        "libScePosix",
+        "libkernel"
+      ],
+      "imports": 27,
+      "kind": "sony",
+      "module_name": "libSceFaceTracker",
+      "needed_files": [
+        "libSceFace.prx",
+        "libkernel.prx",
+        "libSceLibcInternal.prx"
+      ],
+      "parseable": true,
+      "sha256": "bfe8befcff021c2fa62294656e9f2b0890bce83b19890641c1352c88be836c80"
+    },
+    {
+      "exports": 11,
+      "file_name": "libSceJobManager.prx",
+      "import_libs": [
+        "libSceAgc",
+        "libSceAgcDriver",
+        "libSceLibcInternal",
+        "libSceRazorCpu",
+        "libkernel",
+        "ulobjmgr"
+      ],
+      "imports": 144,
+      "kind": "sony",
+      "module_name": "libSceJobManager",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceLibcInternal.prx",
+        "libSceAgcDriver.prx",
+        "libSceAgc.prx",
+        "ulobjmgr.prx",
+        "libSceRazorCpu.prx"
+      ],
+      "parseable": true,
+      "sha256": "36540691429344331d0e82ed0228332f7a23f5d5e9e3f4db8dfaaca9586c88cf"
+    },
+    {
+      "exports": 41638,
+      "file_name": "libSceNpCppWebApi.prx",
+      "import_libs": [
+        "libSceHttp",
+        "libSceJson2",
+        "libSceLibcInternal",
+        "libSceNpWebApi2",
+        "libSceRtc",
+        "libkernel"
+      ],
+      "imports": 95,
+      "kind": "sony",
+      "module_name": "libSceNpCppWebApi",
+      "needed_files": [
+        "libSceJson2.prx",
+        "libSceRtc.prx",
+        "libSceNpWebApi2.prx",
+        "libSceHttp.prx",
+        "libkernel.prx",
+        "libSceLibcInternal.prx"
+      ],
+      "parseable": true,
+      "sha256": "ca5986ae8dde8f4faa5a657e7172d41a5c03869ae5af0e1c140f88716ceb66a5"
+    },
+    {
+      "exports": 9,
+      "file_name": "libScePfs.prx",
+      "import_libs": [
+        "libSceLibcInternal",
+        "libkernel"
+      ],
+      "imports": 15,
+      "kind": "sony",
+      "module_name": "libScePfs",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceLibcInternal.prx"
+      ],
+      "parseable": true,
+      "sha256": "b777f563680fa41533ebfcbeee085dcfe390c518e05523493a70419d7972aa84"
+    },
+    {
+      "exports": 2571,
+      "file_name": "libc.prx",
+      "import_libs": [
+        "libSceLibcInternalExt",
+        "libSceSysmodule",
+        "libkernel"
+      ],
+      "imports": 103,
+      "kind": "sony",
+      "module_name": "libc",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceLibcInternal.prx",
+        "libSceSysmodule.prx"
+      ],
+      "parseable": true,
+      "sha256": "7b84d88fca67a7d7058343aad945142f6d54effae4ad11507758489b3e212bae"
+    }
+  ],
+  "third_party": [],
+  "title_id": "PPSA09809",
+  "unknown": []
+}

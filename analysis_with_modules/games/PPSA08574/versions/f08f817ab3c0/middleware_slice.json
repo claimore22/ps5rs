@@ -1,0 +1,155 @@
+{
+  "engine": "Unreal Engine",
+  "game": "SAND.LAND-PPSA08574-EUR-Game-v01.000-PS5",
+  "sony": [
+    {
+      "exports": 29,
+      "file_name": "libSceFace.prx",
+      "import_libs": [
+        "libSceLibcInternal",
+        "libkernel"
+      ],
+      "imports": 20,
+      "kind": "sony",
+      "module_name": "libSceFace",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceLibcInternal.prx"
+      ],
+      "parseable": true,
+      "sha256": "488189ed4173ff5c719943c6ee9a127980babfc5f16a8c8d9c715dd5c0ccfd1b"
+    },
+    {
+      "exports": 21,
+      "file_name": "libSceFaceTracker.prx",
+      "import_libs": [
+        "libSceFace",
+        "libSceLibcInternal",
+        "libScePosix",
+        "libkernel"
+      ],
+      "imports": 27,
+      "kind": "sony",
+      "module_name": "libSceFaceTracker",
+      "needed_files": [
+        "libSceFace.prx",
+        "libkernel.prx",
+        "libSceLibcInternal.prx"
+      ],
+      "parseable": true,
+      "sha256": "80cfbaf075ecf68c00ab8648a23fb879594c7c556bea727ecbef1c755d543bf2"
+    },
+    {
+      "exports": 6,
+      "file_name": "libSceFontGsm.prx",
+      "import_libs": [
+        "libSceAgc",
+        "libSceAgcDriver",
+        "libSceFont",
+        "libSceLibcInternal",
+        "libkernel"
+      ],
+      "imports": 61,
+      "kind": "sony",
+      "module_name": "libSceFontGsm",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceLibcInternal.prx",
+        "libSceFont-module.prx",
+        "libSceAgcDriver.prx",
+        "libSceAgc.prx"
+      ],
+      "parseable": true,
+      "sha256": "5993c86e0ab2cd2eac09a94dd20675947c1938abe0a6114738bc975fe36d55f8"
+    },
+    {
+      "exports": 11,
+      "file_name": "libSceJobManager.prx",
+      "import_libs": [
+        "libSceAgc",
+        "libSceAgcDriver",
+        "libSceLibcInternal",
+        "libSceRazorCpu",
+        "libkernel",
+        "ulobjmgr"
+      ],
+      "imports": 149,
+      "kind": "sony",
+      "module_name": "libSceJobManager",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceLibcInternal.prx",
+        "libSceAgcDriver.prx",
+        "libSceAgc.prx",
+        "ulobjmgr.prx",
+        "libSceRazorCpu.prx"
+      ],
+      "parseable": true,
+      "sha256": "a96dbcd93af29fa541c3bfe63d0e6272e0e934ff6478afd1f72f79678255fb9e"
+    },
+    {
+      "exports": 42487,
+      "file_name": "libSceNpCppWebApi.prx",
+      "import_libs": [
+        "libSceHttp",
+        "libSceJson2",
+        "libSceLibcInternal",
+        "libSceNpWebApi2",
+        "libSceRtc",
+        "libkernel"
+      ],
+      "imports": 95,
+      "kind": "sony",
+      "module_name": "libSceNpCppWebApi",
+      "needed_files": [
+        "libSceJson2.prx",
+        "libSceRtc.prx",
+        "libSceNpWebApi2.prx",
+        "libSceHttp.prx",
+        "libkernel.prx",
+        "libSceLibcInternal.prx"
+      ],
+      "parseable": true,
+      "sha256": "81f420124fa6fe8342b4319982b2f21f2b57f55cf9e2e782264b6fe85d3068da"
+    },
+    {
+      "exports": 9,
+      "file_name": "libScePfs.prx",
+      "import_libs": [
+        "libSceLibcInternal",
+        "libkernel"
+      ],
+      "imports": 15,
+      "kind": "sony",
+      "module_name": "libScePfs",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceLibcInternal.prx"
+      ],
+      "parseable": true,
+      "sha256": "a89fae797ffbe0e8b762ef7fb6015dd02f13f77aa0e70fb933c874bed68c2a30"
+    },
+    {
+      "exports": 2574,
+      "file_name": "libc.prx",
+      "import_libs": [
+        "libSceLibcInternalExt",
+        "libSceSysmodule",
+        "libkernel"
+      ],
+      "imports": 104,
+      "kind": "sony",
+      "module_name": "libc",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceLibcInternal.prx",
+        "libSceSysmodule.prx"
+      ],
+      "parseable": true,
+      "sha256": "abbb974ce678d1bcc18bde94a35d88c5e2551f83ca03fcbf2870c6a62dcb35d4"
+    }
+  ],
+  "third_party": [],
+  "title_id": "PPSA08574",
+  "unknown": []
+}

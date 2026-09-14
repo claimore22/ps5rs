@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "title_id": "PPSA19268",
+  "name": "Juicy Realm - [PPSA19268]",
+  "eboot_sha256": "c1e8a335b8ad33b8645f5fa3a1b74469b7e3e0ed2e70770780a036dec2174790",
+  "game_fingerprint": "db6ffb8ae181f6e6bbe95dab0fb04fb9c2c09dc7181671ba08efe16189d52e4a",
+  "environment_fingerprint": "c65955db3dee9d575ca652856c86c3fc2b7297fff36bb37fcb1b9319f1ff09a9",
+  "loader_fingerprint": "d245a80770d2897643c4754f10883b674208fc8fdecaad2ebd247d1990f6f5a0",
+  "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
+  "ingest_id": "ingest_20260912085620_db6ffb8ae181",
+  "ingested_at": "2026-09-12T08:56:20Z",
+  "params": {
+    "name": "Juicy.Realm-PPSA19268-USA-Game (v01.000)-PS5",
+    "title_id": "PPSA19268",
+    "content_version": "01.000.000",
+    "master_version": "01.04",
+    "sdk_version": "0x0800000000000000",
+    "title_name": "Juicy Realm",
+    "display_name": "Juicy Realm - [PPSA19268]",
+    "drm_type": "standard",
+    "content_id": "UP2011-PPSA19268_00-0398696143676238",
+    "creation_date": "2024-02-20 06:22:51"
+  },
+  "load_report_file": "load_report.json"
+}

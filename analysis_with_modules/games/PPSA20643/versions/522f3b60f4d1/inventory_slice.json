@@ -1,0 +1,2419 @@
+{
+  "artifacts": [
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "global-metadata.dat",
+      "relative_path": "Media/Metadata/global-metadata.dat",
+      "size": 13404248
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "Il2cppUserAssemblies.prx",
+      "relative_path": "Media/Modules/Il2cppUserAssemblies.prx",
+      "size": 75434955
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "PS5Util.prx",
+      "relative_path": "Media/Modules/PS5Util.prx",
+      "size": 7029
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "PSN.prx",
+      "relative_path": "Media/Plugins/PSN.prx",
+      "size": 484351
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "SaveData.prx",
+      "relative_path": "Media/Plugins/SaveData.prx",
+      "size": 33110
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libfmod.prx",
+      "relative_path": "Media/Plugins/libfmod.prx",
+      "size": 1723561
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libfmodstudio.prx",
+      "relative_path": "Media/Plugins/libfmodstudio.prx",
+      "size": 1544517
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libresonanceaudio.prx",
+      "relative_path": "Media/Plugins/libresonanceaudio.prx",
+      "size": 612977
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "System.Data.dll-resources.dat",
+      "relative_path": "Media/Resources/System.Data.dll-resources.dat",
+      "size": 93718
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "System.Drawing.dll-resources.dat",
+      "relative_path": "Media/Resources/System.Drawing.dll-resources.dat",
+      "size": 25453
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "mscorlib.dll-resources.dat",
+      "relative_path": "Media/Resources/mscorlib.dll-resources.dat",
+      "size": 337563
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "unity default resources",
+      "relative_path": "Media/Resources/unity default resources",
+      "size": 875824
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "unity_builtin_extra",
+      "relative_path": "Media/Resources/unity_builtin_extra",
+      "size": 570244
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "RuntimeInitializeOnLoads.json",
+      "relative_path": "Media/RuntimeInitializeOnLoads.json",
+      "size": 1520
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "ScriptingAssemblies.json",
+      "relative_path": "Media/ScriptingAssemblies.json",
+      "size": 4419
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_ABUL.assets.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_ABUL.assets.bank",
+      "size": 2538912
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_ABUL.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_ABUL.bank",
+      "size": 40074
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_AESHI.assets.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_AESHI.assets.bank",
+      "size": 3095328
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_AESHI.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_AESHI.bank",
+      "size": 30928
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_ALICE.assets.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_ALICE.assets.bank",
+      "size": 324800
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_ALICE.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_ALICE.bank",
+      "size": 14276
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_BIGSHIE.assets.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_BIGSHIE.assets.bank",
+      "size": 3629504
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_BIGSHIE.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_BIGSHIE.bank",
+      "size": 31898
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_BIOME_CIT.assets.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_BIOME_CIT.assets.bank",
+      "size": 2487968
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_BIOME_CIT.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_BIOME_CIT.bank",
+      "size": 25340
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_BIOME_DES.assets.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_BIOME_DES.assets.bank",
+      "size": 1092288
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_BIOME_DES.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_BIOME_DES.bank",
+      "size": 16834
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_BIOME_JGL.assets.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_BIOME_JGL.assets.bank",
+      "size": 753920
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_BIOME_JGL.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_BIOME_JGL.bank",
+      "size": 10300
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_CLARK.assets.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_CLARK.assets.bank",
+      "size": 696448
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_CLARK.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_CLARK.bank",
+      "size": 25594
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_COM.assets.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_COM.assets.bank",
+      "size": 6279520
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_COM.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_COM.bank",
+      "size": 287218
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_ERI.assets.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_ERI.assets.bank",
+      "size": 955328
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_ERI.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_ERI.bank",
+      "size": 34882
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_FIO.assets.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_FIO.assets.bank",
+      "size": 744544
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_FIO.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_FIO.bank",
+      "size": 29790
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_GUI.assets.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_GUI.assets.bank",
+      "size": 1186816
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_GUI.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_GUI.bank",
+      "size": 46594
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_JUPKING.assets.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_JUPKING.assets.bank",
+      "size": 4416384
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_JUPKING.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_JUPKING.bank",
+      "size": 56678
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_LEONA.assets.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_LEONA.assets.bank",
+      "size": 888352
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_LEONA.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_LEONA.bank",
+      "size": 38204
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_MARCO.assets.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_MARCO.assets.bank",
+      "size": 500928
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_MARCO.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_MARCO.bank",
+      "size": 15192
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_METAL_SLUG.assets.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_METAL_SLUG.assets.bank",
+      "size": 462240
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_METAL_SLUG.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_METAL_SLUG.bank",
+      "size": 26008
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_MUSIC.assets.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_MUSIC.assets.bank",
+      "size": 61402432
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_MUSIC.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_MUSIC.bank",
+      "size": 52446
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_NADIA.assets.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_NADIA.assets.bank",
+      "size": 1573728
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_NADIA.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_NADIA.bank",
+      "size": 52392
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_NOSUKE.assets.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_NOSUKE.assets.bank",
+      "size": 4188864
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_NOSUKE.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_NOSUKE.bank",
+      "size": 109514
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_NPC.assets.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_NPC.assets.bank",
+      "size": 494
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_NPC.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_NPC.bank",
+      "size": 494
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_ONEIL.assets.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_ONEIL.assets.bank",
+      "size": 2600672
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_ONEIL.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_ONEIL.bank",
+      "size": 30306
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_PAQAR.assets.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_PAQAR.assets.bank",
+      "size": 1148768
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_PAQAR.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_PAQAR.bank",
+      "size": 26954
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_PLAYER.assets.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_PLAYER.assets.bank",
+      "size": 494
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_PLAYER.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_PLAYER.bank",
+      "size": 494
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_RALF.assets.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_RALF.assets.bank",
+      "size": 581920
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_RALF.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_RALF.bank",
+      "size": 29722
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_RUMI.assets.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_RUMI.assets.bank",
+      "size": 494
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_RUMI.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_RUMI.bank",
+      "size": 494
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_SLUGNOID.assets.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_SLUGNOID.assets.bank",
+      "size": 691136
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_SLUGNOID.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_SLUGNOID.bank",
+      "size": 52744
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_TARMA.assets.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_TARMA.assets.bank",
+      "size": 450592
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_TARMA.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_TARMA.bank",
+      "size": 19646
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_TM.assets.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_TM.assets.bank",
+      "size": 17577280
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_TM.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_TM.bank",
+      "size": 812320
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_TREVOR.assets.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_TREVOR.assets.bank",
+      "size": 627840
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "MST_BNK_TREVOR.bank",
+      "relative_path": "Media/StreamingAssets/MST_BNK_TREVOR.bank",
+      "size": 22018
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "Master.assets.bank",
+      "relative_path": "Media/StreamingAssets/Master.assets.bank",
+      "size": 494
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "Master.bank",
+      "relative_path": "Media/StreamingAssets/Master.bank",
+      "size": 47644
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "Master.strings.bank",
+      "relative_path": "Media/StreamingAssets/Master.strings.bank",
+      "size": 43354
+    },
+    {
+      "category": "Metadata",
+      "extension": "xml",
+      "file_name": "link.xml",
+      "relative_path": "Media/StreamingAssets/aa/AddressablesLink/link.xml",
+      "size": 388821
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "abilities_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/abilities_assets_all.bundle",
+      "size": 149721
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ai_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ai_assets_all.bundle",
+      "size": 21958
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "alert_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/alert_assets_all.bundle",
+      "size": 45098
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "audio_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/audio_assets_all.bundle",
+      "size": 75732
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "biomes-common-skybox_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/biomes-common-skybox_assets_all.bundle",
+      "size": 12407
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "biomes-desert-skybox_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/biomes-desert-skybox_assets_all.bundle",
+      "size": 304694
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "biomes-desert_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/biomes-desert_assets_all.bundle",
+      "size": 7685213
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "biomes-desertnight-skybox_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/biomes-desertnight-skybox_assets_all.bundle",
+      "size": 73413
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "biomes-desertnight_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/biomes-desertnight_assets_all.bundle",
+      "size": 384418
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "biomes-dock-skybox_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/biomes-dock-skybox_assets_all.bundle",
+      "size": 72514
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "biomes-dock_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/biomes-dock_assets_all.bundle",
+      "size": 1517944
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "biomes-jungle-skybox_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/biomes-jungle-skybox_assets_all.bundle",
+      "size": 64136
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "biomes-jungle_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/biomes-jungle_assets_all.bundle",
+      "size": 7296992
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "biomes-jupiterking-skybox_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/biomes-jupiterking-skybox_assets_all.bundle",
+      "size": 167832
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "biomes-jupiterking_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/biomes-jupiterking_assets_all.bundle",
+      "size": 575098
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "biomes-mordenlair_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/biomes-mordenlair_assets_all.bundle",
+      "size": 1297412
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "biomes-town-skybox_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/biomes-town-skybox_assets_all.bundle",
+      "size": 125307
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "biomes-town_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/biomes-town_assets_all.bundle",
+      "size": 2197109
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "biomes_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/biomes_assets_all.bundle",
+      "size": 287346
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "bosses-abulabbas_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/bosses-abulabbas_assets_all.bundle",
+      "size": 1730887
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "bosses-aeshinero_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/bosses-aeshinero_assets_all.bundle",
+      "size": 12139500
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "bosses-allenoneil_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/bosses-allenoneil_assets_all.bundle",
+      "size": 1653402
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "bosses-bigshiee_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/bosses-bigshiee_assets_all.bundle",
+      "size": 15791559
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "bosses-common_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/bosses-common_assets_all.bundle",
+      "size": 114892
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "bosses-convoy_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/bosses-convoy_assets_all.bundle",
+      "size": 222053
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "bosses-dragonnosuke_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/bosses-dragonnosuke_assets_all.bundle",
+      "size": 15454692
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "bosses-jupiterking_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/bosses-jupiterking_assets_all.bundle",
+      "size": 44239089
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "bosses-mayatotem_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/bosses-mayatotem_assets_all.bundle",
+      "size": 4992
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "bosses-paqar_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/bosses-paqar_assets_all.bundle",
+      "size": 2611219
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "bosses-truck_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/bosses-truck_assets_all.bundle",
+      "size": 2831
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "campaigns_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/campaigns_assets_all.bundle",
+      "size": 24765
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "campaignselection_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/campaignselection_assets_all.bundle",
+      "size": 1406250
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characteristics_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characteristics_assets_all.bundle",
+      "size": 18678
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-afterimage_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-afterimage_assets_all.bundle",
+      "size": 3652
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-alice_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-alice_assets_all.bundle",
+      "size": 267257
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-arabianberseker_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-arabianberseker_assets_all.bundle",
+      "size": 3677353
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-arabiansoldier_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-arabiansoldier_assets_all.bundle",
+      "size": 3131293
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-bazookasoldier_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-bazookasoldier_assets_all.bundle",
+      "size": 3120240
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-bradleytank_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-bradleytank_assets_all.bundle",
+      "size": 2555322
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-cadet_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-cadet_assets_all.bundle",
+      "size": 173417
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-campfire_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-campfire_assets_all.bundle",
+      "size": 237494
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-clark_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-clark_assets_all.bundle",
+      "size": 5146984
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-common_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-common_assets_all.bundle",
+      "size": 5723
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-deadexplorer_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-deadexplorer_assets_all.bundle",
+      "size": 92473
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-dicokka_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-dicokka_assets_all.bundle",
+      "size": 2587695
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-dogmummy_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-dogmummy_assets_all.bundle",
+      "size": 2170577
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-eri_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-eri_assets_all.bundle",
+      "size": 6138962
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-explosivedecoy_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-explosivedecoy_assets_all.bundle",
+      "size": 3597
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-fanatic_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-fanatic_assets_all.bundle",
+      "size": 2090348
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-fio_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-fio_assets_all.bundle",
+      "size": 5697808
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-funnysoldiers_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-funnysoldiers_assets_all.bundle",
+      "size": 149415
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-fx-common_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-fx-common_assets_all.bundle",
+      "size": 152914
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-fxmummy-common_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-fxmummy-common_assets_all.bundle",
+      "size": 310060
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-gatlingsoldier_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-gatlingsoldier_assets_all.bundle",
+      "size": 6243218
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-grenadesoldier_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-grenadesoldier_assets_all.bundle",
+      "size": 4598780
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-gunbot_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-gunbot_assets_all.bundle",
+      "size": 3849
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-handgunmummy_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-handgunmummy_assets_all.bundle",
+      "size": 220997
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-ironlizard_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-ironlizard_assets_all.bundle",
+      "size": 3876
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-leona_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-leona_assets_all.bundle",
+      "size": 5748714
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-marco_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-marco_assets_all.bundle",
+      "size": 5887956
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-margaret_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-margaret_assets_all.bundle",
+      "size": 3132
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-metalslug_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-metalslug_assets_all.bundle",
+      "size": 1423516
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-metalslugalice_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-metalslugalice_assets_all.bundle",
+      "size": 1638184
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-metalslugempty_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-metalslugempty_assets_all.bundle",
+      "size": 826111
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-minelayersoldier_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-minelayersoldier_assets_all.bundle",
+      "size": 3675293
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-miner_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-miner_assets_all.bundle",
+      "size": 1414503
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-morden_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-morden_assets_all.bundle",
+      "size": 3134
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-mortarsoldier_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-mortarsoldier_assets_all.bundle",
+      "size": 3624122
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-mummy_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-mummy_assets_all.bundle",
+      "size": 2316866
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-mummysarcophagus_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-mummysarcophagus_assets_all.bundle",
+      "size": 1254020
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-mutatedsoldier_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-mutatedsoldier_assets_all.bundle",
+      "size": 1492418
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-nadia_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-nadia_assets_all.bundle",
+      "size": 11035021
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-nativeaxe_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-nativeaxe_assets_all.bundle",
+      "size": 2189441
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-nativespear_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-nativespear_assets_all.bundle",
+      "size": 2492450
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-nativetorch_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-nativetorch_assets_all.bundle",
+      "size": 2294719
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-outhouse_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-outhouse_assets_all.bundle",
+      "size": 129773
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-prisoner_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-prisoner_assets_all.bundle",
+      "size": 55649
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-ralf_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-ralf_assets_all.bundle",
+      "size": 5615065
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-rebelsupporter_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-rebelsupporter_assets_all.bundle",
+      "size": 1163300
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-rifleman_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-rifleman_assets_all.bundle",
+      "size": 2723543
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-rumi_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-rumi_assets_all.bundle",
+      "size": 845538
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-sarubia_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-sarubia_assets_all.bundle",
+      "size": 194077
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-sarubiatank_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-sarubiatank_assets_all.bundle",
+      "size": 3696924
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-scout_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-scout_assets_all.bundle",
+      "size": 2622967
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-shieldsoldier_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-shieldsoldier_assets_all.bundle",
+      "size": 3447285
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-slugnoid_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-slugnoid_assets_all.bundle",
+      "size": 10169703
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-sunbathe_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-sunbathe_assets_all.bundle",
+      "size": 117674
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-tarma_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-tarma_assets_all.bundle",
+      "size": 6105434
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-tower_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-tower_assets_all.bundle",
+      "size": 1275946
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-trevor_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-trevor_assets_all.bundle",
+      "size": 5306442
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-tubepost_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-tubepost_assets_all.bundle",
+      "size": 61741
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters-weapons_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters-weapons_assets_all.bundle",
+      "size": 7778821
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "characters_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/characters_assets_all.bundle",
+      "size": 2291740
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "controls_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/controls_assets_all.bundle",
+      "size": 159517
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "demo_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/demo_assets_all.bundle",
+      "size": 149122
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "fe923581a5de8076160bef40a44ab474_unitybuiltinshaders.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/fe923581a5de8076160bef40a44ab474_unitybuiltinshaders.bundle",
+      "size": 149883
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "flow_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/flow_assets_all.bundle",
+      "size": 235761
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "fonts_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/fonts_assets_all.bundle",
+      "size": 51214692
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "fx_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/fx_assets_all.bundle",
+      "size": 8433981
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "introductions_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/introductions_assets_all.bundle",
+      "size": 1766256
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "isotestguilaume_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/isotestguilaume_assets_all.bundle",
+      "size": 209715
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "levelbuilding_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/levelbuilding_assets_all.bundle",
+      "size": 14267677
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-asset-tables-chinese(simplified)(zh-cn)_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-asset-tables-chinese(simplified)(zh-cn)_assets_all.bundle",
+      "size": 2684
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-asset-tables-chinese(traditional)(zh-tw)_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-asset-tables-chinese(traditional)(zh-tw)_assets_all.bundle",
+      "size": 2688
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-asset-tables-english(unitedstates)(en-us)_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-asset-tables-english(unitedstates)(en-us)_assets_all.bundle",
+      "size": 2684
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-asset-tables-french(france)(fr-fr)_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-asset-tables-french(france)(fr-fr)_assets_all.bundle",
+      "size": 2689
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-asset-tables-french(placeholder)(fr-dev)_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-asset-tables-french(placeholder)(fr-dev)_assets_all.bundle",
+      "size": 2684
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-asset-tables-german(germany)(de-de)_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-asset-tables-german(germany)(de-de)_assets_all.bundle",
+      "size": 2684
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-asset-tables-japanese(japan)(ja-jp)_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-asset-tables-japanese(japan)(ja-jp)_assets_all.bundle",
+      "size": 2688
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-asset-tables-korean(southkorea)(ko-kr)_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-asset-tables-korean(southkorea)(ko-kr)_assets_all.bundle",
+      "size": 2689
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-asset-tables-portuguese(brazil)(pt-br)_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-asset-tables-portuguese(brazil)(pt-br)_assets_all.bundle",
+      "size": 2689
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-asset-tables-spanish(spain)(es-es)_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-asset-tables-spanish(spain)(es-es)_assets_all.bundle",
+      "size": 2689
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-assets-chinese(simplified)(zh-cn)_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-assets-chinese(simplified)(zh-cn)_assets_all.bundle",
+      "size": 2197
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-assets-chinese(traditional)(zh-tw)_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-assets-chinese(traditional)(zh-tw)_assets_all.bundle",
+      "size": 2198
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-assets-japanese(japan)(ja-jp)_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-assets-japanese(japan)(ja-jp)_assets_all.bundle",
+      "size": 2180
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-assets-korean(southkorea)(ko-kr)_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-assets-korean(southkorea)(ko-kr)_assets_all.bundle",
+      "size": 2165
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-assets-shared_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-assets-shared_assets_all.bundle",
+      "size": 163539
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-locales_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-locales_assets_all.bundle",
+      "size": 5478
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-string-tables-chinese(simplified)(zh-cn)_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-string-tables-chinese(simplified)(zh-cn)_assets_all.bundle",
+      "size": 155771
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-string-tables-chinese(traditional)(zh-tw)_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-string-tables-chinese(traditional)(zh-tw)_assets_all.bundle",
+      "size": 156237
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-string-tables-english(unitedstates)(en-us)_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-string-tables-english(unitedstates)(en-us)_assets_all.bundle",
+      "size": 165770
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-string-tables-french(france)(fr-fr)_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-string-tables-french(france)(fr-fr)_assets_all.bundle",
+      "size": 175885
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-string-tables-french(placeholder)(fr-dev)_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-string-tables-french(placeholder)(fr-dev)_assets_all.bundle",
+      "size": 217244
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-string-tables-german(germany)(de-de)_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-string-tables-german(germany)(de-de)_assets_all.bundle",
+      "size": 167272
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-string-tables-japanese(japan)(ja-jp)_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-string-tables-japanese(japan)(ja-jp)_assets_all.bundle",
+      "size": 162205
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-string-tables-korean(southkorea)(ko-kr)_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-string-tables-korean(southkorea)(ko-kr)_assets_all.bundle",
+      "size": 159603
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-string-tables-portuguese(brazil)(pt-br)_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-string-tables-portuguese(brazil)(pt-br)_assets_all.bundle",
+      "size": 158126
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization-string-tables-spanish(spain)(es-es)_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization-string-tables-spanish(spain)(es-es)_assets_all.bundle",
+      "size": 156363
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "localization_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/localization_assets_all.bundle",
+      "size": 22334
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "mainmenu_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/mainmenu_assets_all.bundle",
+      "size": 1511938
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "missions_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/missions_assets_all.bundle",
+      "size": 224885
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "options_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/options_assets_all.bundle",
+      "size": 606039
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "outposts_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/outposts_assets_all.bundle",
+      "size": 8801098
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "playerrun_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/playerrun_assets_all.bundle",
+      "size": 25989427
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "reinforcement_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/reinforcement_assets_all.bundle",
+      "size": 2639
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "rendering_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/rendering_assets_all.bundle",
+      "size": 1002420
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "scenes-armory_scenes_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/scenes-armory_scenes_all.bundle",
+      "size": 1520663
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "scenes-barracks_scenes_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/scenes-barracks_scenes_all.bundle",
+      "size": 716519
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "scenes-credits_scenes_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/scenes-credits_scenes_all.bundle",
+      "size": 132769
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "scenes-endrun_scenes_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/scenes-endrun_scenes_all.bundle",
+      "size": 267855
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "scenes-gameflow_scenes_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/scenes-gameflow_scenes_all.bundle",
+      "size": 94083
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "scenes-mainmenu_scenes_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/scenes-mainmenu_scenes_all.bundle",
+      "size": 302444
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "scenes-missionresult_scenes_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/scenes-missionresult_scenes_all.bundle",
+      "size": 23432
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "scenes-outpost_scenes_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/scenes-outpost_scenes_all.bundle",
+      "size": 1650352
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "scenes-strategicmap_scenes_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/scenes-strategicmap_scenes_all.bundle",
+      "size": 1886188
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "scenes-tacticmap_scenes_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/scenes-tacticmap_scenes_all.bundle",
+      "size": 1102809
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "scenes-teamselection_scenes_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/scenes-teamselection_scenes_all.bundle",
+      "size": 606604
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "scenes-tutorialintroduction_scenes_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/scenes-tutorialintroduction_scenes_all.bundle",
+      "size": 1190594
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "scenes-wayselection_scenes_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/scenes-wayselection_scenes_all.bundle",
+      "size": 212610
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "specialactions_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/specialactions_assets_all.bundle",
+      "size": 6540696
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "splashscreen_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/splashscreen_assets_all.bundle",
+      "size": 178832
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "steam_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/steam_assets_all.bundle",
+      "size": 6999
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "strategicmap_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/strategicmap_assets_all.bundle",
+      "size": 12014968
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "tacticmap_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/tacticmap_assets_all.bundle",
+      "size": 6778576
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "teamselection_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/teamselection_assets_all.bundle",
+      "size": 23018100
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "tools_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/tools_assets_all.bundle",
+      "size": 4010689
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "tutorials_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/tutorials_assets_all.bundle",
+      "size": 3170932
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_animated_adrenalinea_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_animated_adrenalinea_assets_all.bundle",
+      "size": 11073
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_animated_ammo_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_animated_ammo_assets_all.bundle",
+      "size": 146771
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_animated_coins_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_animated_coins_assets_all.bundle",
+      "size": 546613
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_animated_demo_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_animated_demo_assets_all.bundle",
+      "size": 721800
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_animated_frametuto_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_animated_frametuto_assets_all.bundle",
+      "size": 10232
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_animated_levelup_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_animated_levelup_assets_all.bundle",
+      "size": 129172
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_animated_objective_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_animated_objective_assets_all.bundle",
+      "size": 26446
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_animated_others_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_animated_others_assets_all.bundle",
+      "size": 200796
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_animated_ravitaillement_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_animated_ravitaillement_assets_all.bundle",
+      "size": 73951
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_animated_roomtimer_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_animated_roomtimer_assets_all.bundle",
+      "size": 66526
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_animated_selectionzone_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_animated_selectionzone_assets_all.bundle",
+      "size": 80944
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_animated_skills_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_animated_skills_assets_all.bundle",
+      "size": 12949
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_animated_statuses_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_animated_statuses_assets_all.bundle",
+      "size": 38122
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_assets_all.bundle",
+      "size": 2943954
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_backgrounds_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_backgrounds_assets_all.bundle",
+      "size": 292376
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_barracks_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_barracks_assets_all.bundle",
+      "size": 79072
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_boss_aa_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_boss_aa_assets_all.bundle",
+      "size": 1583184
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_boss_an_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_boss_an_assets_all.bundle",
+      "size": 2863199
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_boss_bs_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_boss_bs_assets_all.bundle",
+      "size": 2103558
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_boss_dn_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_boss_dn_assets_all.bundle",
+      "size": 2442047
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_boss_icons_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_boss_icons_assets_all.bundle",
+      "size": 25747
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_boss_jk_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_boss_jk_assets_all.bundle",
+      "size": 2691966
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_boss_on_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_boss_on_assets_all.bundle",
+      "size": 2421616
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_boss_paqar_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_boss_paqar_assets_all.bundle",
+      "size": 1233439
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_characters_alice_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_characters_alice_assets_all.bundle",
+      "size": 1011859
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_characters_clark_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_characters_clark_assets_all.bundle",
+      "size": 3716015
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_characters_common_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_characters_common_assets_all.bundle",
+      "size": 1548895
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_characters_endscreen_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_characters_endscreen_assets_all.bundle",
+      "size": 30790
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_characters_ennemies_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_characters_ennemies_assets_all.bundle",
+      "size": 2308758
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_characters_eri_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_characters_eri_assets_all.bundle",
+      "size": 3588726
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_characters_fio_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_characters_fio_assets_all.bundle",
+      "size": 3807423
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_characters_gunbot_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_characters_gunbot_assets_all.bundle",
+      "size": 997378
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_characters_icons_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_characters_icons_assets_all.bundle",
+      "size": 24231
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_characters_ironlizard_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_characters_ironlizard_assets_all.bundle",
+      "size": 1232835
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_characters_leona_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_characters_leona_assets_all.bundle",
+      "size": 4834674
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_characters_marco_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_characters_marco_assets_all.bundle",
+      "size": 4424205
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_characters_margaret_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_characters_margaret_assets_all.bundle",
+      "size": 604770
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_characters_nadia_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_characters_nadia_assets_all.bundle",
+      "size": 3860585
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_characters_ralf_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_characters_ralf_assets_all.bundle",
+      "size": 3724770
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_characters_rumi_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_characters_rumi_assets_all.bundle",
+      "size": 494278
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_characters_tarma_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_characters_tarma_assets_all.bundle",
+      "size": 4231340
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_characters_trevor_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_characters_trevor_assets_all.bundle",
+      "size": 4237472
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_composition_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_composition_assets_all.bundle",
+      "size": 74536
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_endscreen_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_endscreen_assets_all.bundle",
+      "size": 562944
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_epilogues_clark_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_epilogues_clark_assets_all.bundle",
+      "size": 8719555
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_epilogues_eri_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_epilogues_eri_assets_all.bundle",
+      "size": 8868015
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_epilogues_fio_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_epilogues_fio_assets_all.bundle",
+      "size": 7794404
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_epilogues_leona_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_epilogues_leona_assets_all.bundle",
+      "size": 9219445
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_epilogues_marco_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_epilogues_marco_assets_all.bundle",
+      "size": 10702800
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_epilogues_nadia_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_epilogues_nadia_assets_all.bundle",
+      "size": 8881125
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_epilogues_ralf_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_epilogues_ralf_assets_all.bundle",
+      "size": 10763059
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_epilogues_tarma_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_epilogues_tarma_assets_all.bundle",
+      "size": 10491697
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_epilogues_trevor_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_epilogues_trevor_assets_all.bundle",
+      "size": 8481270
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_general_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_general_assets_all.bundle",
+      "size": 1328789
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_icons_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_icons_assets_all.bundle",
+      "size": 642252
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_inputicons_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_inputicons_assets_all.bundle",
+      "size": 1164674
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_interactive_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_interactive_assets_all.bundle",
+      "size": 30563
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_intro_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_intro_assets_all.bundle",
+      "size": 31073731
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_loading_saving_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_loading_saving_assets_all.bundle",
+      "size": 40360
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_lockedregion_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_lockedregion_assets_all.bundle",
+      "size": 745442
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_map_city_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_map_city_assets_all.bundle",
+      "size": 513800
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_map_common_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_map_common_assets_all.bundle",
+      "size": 1099988
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_map_dragonnosuke_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_map_dragonnosuke_assets_all.bundle",
+      "size": 229866
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_map_icons_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_map_icons_assets_all.bundle",
+      "size": 56709
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_map_jungle_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_map_jungle_assets_all.bundle",
+      "size": 644311
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_map_ruins_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_map_ruins_assets_all.bundle",
+      "size": 680716
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_map_town_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_map_town_assets_all.bundle",
+      "size": 522286
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_map_tuto_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_map_tuto_assets_all.bundle",
+      "size": 34787
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_mod_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_mod_assets_all.bundle",
+      "size": 67253
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_readwrite_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_readwrite_assets_all.bundle",
+      "size": 5532
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_regionselection_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_regionselection_assets_all.bundle",
+      "size": 1371630
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_temporary_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_temporary_assets_all.bundle",
+      "size": 374990
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_timescale_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_timescale_assets_all.bundle",
+      "size": 6947
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "ui_weapon_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/ui_weapon_assets_all.bundle",
+      "size": 1983609
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "vehicles_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/vehicles_assets_all.bundle",
+      "size": 10644
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "wayselection_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/wayselection_assets_all.bundle",
+      "size": 546616
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "weaponmods_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/weaponmods_assets_all.bundle",
+      "size": 40086
+    },
+    {
+      "category": "Unknown",
+      "extension": "bundle",
+      "file_name": "weapons_assets_all.bundle",
+      "relative_path": "Media/StreamingAssets/aa/PS5/weapons_assets_all.bundle",
+      "size": 144148
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "catalog.json",
+      "relative_path": "Media/StreamingAssets/aa/catalog.json",
+      "size": 6772889
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "settings.json",
+      "relative_path": "Media/StreamingAssets/aa/settings.json",
+      "size": 1591
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "save_data.png",
+      "relative_path": "Media/StreamingAssets/save_data.png",
+      "size": 13865
+    },
+    {
+      "category": "Unknown",
+      "extension": "config",
+      "file_name": "boot.config",
+      "relative_path": "Media/boot.config",
+      "size": 549
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "globalgamemanagers",
+      "relative_path": "Media/globalgamemanagers",
+      "size": 247924
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "globalgamemanagers.assets",
+      "relative_path": "Media/globalgamemanagers.assets",
+      "size": 677012
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "level0",
+      "relative_path": "Media/level0",
+      "size": 10376
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "resources.assets",
+      "relative_path": "Media/resources.assets",
+      "size": 28536
+    },
+    {
+      "category": "Unknown",
+      "extension": "assets",
+      "file_name": "sharedassets0.assets",
+      "relative_path": "Media/sharedassets0.assets",
+      "size": 42992
+    },
+    {
+      "category": "Unknown",
+      "extension": "ress",
+      "file_name": "sharedassets0.assets.resS",
+      "relative_path": "Media/sharedassets0.assets.resS",
+      "size": 17301504
+    },
+    {
+      "category": "Executable",
+      "extension": "eboot.bin",
+      "file_name": "eboot.bin",
+      "relative_path": "eboot.bin",
+      "size": 34136725
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceNpCppWebApi.prx",
+      "relative_path": "sce_module/libSceNpCppWebApi.prx",
+      "size": 7865383
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libc.prx",
+      "relative_path": "sce_module/libc.prx",
+      "size": 1877874
+    },
+    {
+      "category": "Executable",
+      "extension": "sprx",
+      "file_name": "right.sprx",
+      "relative_path": "sce_sys/about/right.sprx",
+      "size": 12512
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "disc_info.dat",
+      "relative_path": "sce_sys/disc_info.dat",
+      "size": 6640
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "icon0.dds",
+      "relative_path": "sce_sys/icon0.dds",
+      "size": 262292
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "icon0.png",
+      "relative_path": "sce_sys/icon0.png",
+      "size": 12592
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "keystone",
+      "relative_path": "sce_sys/keystone",
+      "size": 96
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "nptitle.dat",
+      "relative_path": "sce_sys/nptitle.dat",
+      "size": 160
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "param.json",
+      "relative_path": "sce_sys/param.json",
+      "size": 2643
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "pfs-version.dat",
+      "relative_path": "sce_sys/pfs-version.dat",
+      "size": 10
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic0.dds",
+      "relative_path": "sce_sys/pic0.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "pic0.png",
+      "relative_path": "sce_sys/pic0.png",
+      "size": 10295169
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic1.dds",
+      "relative_path": "sce_sys/pic1.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic2.dds",
+      "relative_path": "sce_sys/pic2.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "sce_sys/trophy2/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "trophy00.ucp",
+      "relative_path": "sce_sys/trophy2/trophy00.ucp",
+      "size": 672432
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "sce_sys/uds/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "uds00.ucp",
+      "relative_path": "sce_sys/uds/uds00.ucp",
+      "size": 38384
+    }
+  ],
+  "by_category": {
+    "audio": 61,
+    "executable": 11,
+    "metadata": 17,
+    "texture": 7,
+    "unknown": 245
+  },
+  "by_extension": {
+    "(no_ext)": 5,
+    "assets": 3,
+    "bank": 61,
+    "bundle": 235,
+    "config": 1,
+    "dat": 9,
+    "dds": 4,
+    "eboot.bin": 1,
+    "json": 5,
+    "png": 3,
+    "prx": 9,
+    "ress": 1,
+    "sprx": 1,
+    "ucp": 2,
+    "xml": 1
+  },
+  "game": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
+  "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5\\Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
+  "total_bytes": 966506022,
+  "total_files": 341
+}

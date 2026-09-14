@@ -1,0 +1,80 @@
+{
+  "artifacts": [
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "contentids.json",
+      "relative_path": "contentids.json",
+      "size": 132
+    },
+    {
+      "category": "Executable",
+      "extension": "eboot.bin",
+      "file_name": "eboot.bin",
+      "relative_path": "eboot.bin",
+      "size": 153662536
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "eboot.bin.esbak",
+      "relative_path": "eboot.bin.esbak",
+      "size": 153403904
+    },
+    {
+      "category": "Unknown",
+      "extension": "tps",
+      "file_name": "lastresort.tps",
+      "relative_path": "engine/content/slatedebug/fonts/lastresort.tps",
+      "size": 930
+    },
+    {
+      "category": "Font",
+      "extension": "ttf",
+      "file_name": "lastresort.ttf",
+      "relative_path": "engine/content/slatedebug/fonts/lastresort.ttf",
+      "size": 5395052
+    },
+    {
+      "category": "Unknown",
+      "extension": "ini",
+      "file_name": "manifest.ini",
+      "relative_path": "engine/saved/config/ps5/manifest.ini",
+      "size": 22
+    },
+    {
+      "category": "Unknown",
+      "extension": "ini",
+      "file_name": "DCSGameConfig.ini",
+      "relative_path": "project_plague/Config/DCSGameConfig.ini",
+      "size": 20122
+    },
+    {
+      "category": "Archive",
+      "extension": "pak",
+      "file_name": "project_plague-ps5.pak",
+      "relative_path": "project_plague/content/paks/project_plague-ps5.pak",
+      "size": 29412539655
+    }
+  ],
+  "by_category": {
+    "archive": 1,
+    "executable": 1,
+    "font": 1,
+    "metadata": 2,
+    "unknown": 3
+  },
+  "by_extension": {
+    "eboot.bin": 1,
+    "esbak": 1,
+    "ini": 2,
+    "json": 1,
+    "pak": 1,
+    "tps": 1,
+    "ttf": 1
+  },
+  "game": "WUCHANG.Fallen.Feathers-PPSA09519-EUR-Game(v01.01)-PS5",
+  "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\WUCHANG.Fallen.Feathers-PPSA09519-EUR-Game(v01.01)-PS5\\WUCHANG.Fallen.Feathers-PPSA09519-EUR-Game(v01.01)-PS5",
+  "total_bytes": 29725022353,
+  "total_files": 8
+}

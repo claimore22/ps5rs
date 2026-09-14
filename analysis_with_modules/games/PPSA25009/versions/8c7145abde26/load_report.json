@@ -1,0 +1,576 @@
+{
+  "game": "Blue Prince - [PPSA25009]",
+  "path": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5\\eboot.bin",
+  "load_report": {
+    "modules": [
+      {
+        "name": "libc.prx",
+        "module_type": "Prx",
+        "load_bias": 34628173824,
+        "entry_point": null,
+        "exports_count": 2925,
+        "imports_resolved": 0,
+        "imports_known": 0,
+        "imports_stubbed": 120,
+        "relative": 2905,
+        "glob_dat": 3,
+        "jump_slot": 117,
+        "abs64": 0,
+        "copy": 0,
+        "tls_relocations": 3,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 1133744,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 1648664,
+        "preinit_array_sz": 8,
+        "per_library": [
+          {
+            "library": "libSceLibcInternalExt",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 116
+          }
+        ]
+      },
+      {
+        "name": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+        "module_type": "Eboot",
+        "load_bias": 34630139904,
+        "entry_point": 112,
+        "exports_count": 0,
+        "imports_resolved": 1283,
+        "imports_known": 0,
+        "imports_stubbed": 475,
+        "relative": 48470,
+        "glob_dat": 4,
+        "jump_slot": 604,
+        "abs64": 1150,
+        "copy": 0,
+        "tls_relocations": 0,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 25582416,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 0,
+        "preinit_array_sz": 0,
+        "per_library": [
+          {
+            "library": "Il2CppUserAssemblies",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "PS5Util",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceAgc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 68
+          },
+          {
+            "library": "libSceAgcDriver",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 9
+          },
+          {
+            "library": "libSceAjm",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 15
+          },
+          {
+            "library": "libSceAmpr",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceAppContent",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libSceAudioIn",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceAudioOut",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceAudioOut2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 13
+          },
+          {
+            "library": "libSceAvPlayer",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 23
+          },
+          {
+            "library": "libSceCommonDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceHttp",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceHttp2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 26
+          },
+          {
+            "library": "libSceIme",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceImeDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceMouse",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceMsgDialog.native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceNet",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 21
+          },
+          {
+            "library": "libSceNetCtl",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceNpManager",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceNpWebApi2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 11
+          },
+          {
+            "library": "libScePad",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 18
+          },
+          {
+            "library": "libScePosix",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 42
+          },
+          {
+            "library": "libSceRemoteplay",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceSaveData_native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceSsl",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 11
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSystemService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 19
+          },
+          {
+            "library": "libSceUserService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 14
+          },
+          {
+            "library": "libSceVideoOut",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 17
+          },
+          {
+            "library": "libSceWebBrowserDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libc",
+            "resolved": 1283,
+            "known": 0,
+            "stubbed": 0
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 96
+          }
+        ]
+      }
+    ],
+    "graph": {
+      "nodes": [
+        "libSceAppContent.prx",
+        "libSceSystemService.prx",
+        "libSceSsl.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceRandom.prx",
+        "libSceAudioIn.prx",
+        "libScePad.prx",
+        "libSceNetCtl.prx",
+        "libSceVideoOut.prx",
+        "libSceIme.prx",
+        "PS5Util.prx",
+        "libSceAudioOut.prx",
+        "libSceRtc.prx",
+        "libSceHttp.prx",
+        "libSceSaveData.native.prx",
+        "libSceCommonDialog.prx",
+        "libSceRemoteplay.prx",
+        "libSceMouse.prx",
+        "Il2CppUserAssemblies.prx",
+        "libSceAgc.prx",
+        "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+        "libSceAjm.native.prx",
+        "libSceNpWebApi2.prx",
+        "libkernel.prx",
+        "libSceLibcInternal.prx",
+        "libSceAmpr.prx",
+        "libSceImeDialog.prx",
+        "libSceAgcDriver.prx",
+        "libSceAudio3d.prx",
+        "libSceUserService.prx",
+        "libSceHttp2.prx",
+        "libSceNpManager.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceAvPlayer.native.prx",
+        "libc.prx",
+        "libSceRazorCpu.prx",
+        "libSceNet.prx",
+        "libSceSysmodule.prx"
+      ],
+      "unavailable": [
+        "libSceLibcInternal.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceImeDialog.prx",
+        "libSceSysmodule.prx",
+        "libkernel.prx",
+        "libScePad.prx",
+        "libSceNpWebApi2.prx",
+        "libSceRtc.prx",
+        "libSceNpManager.prx",
+        "libSceNet.prx",
+        "libSceVideoOut.prx",
+        "libSceAudio3d.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceIme.prx",
+        "libSceAppContent.prx",
+        "libSceRazorCpu.prx",
+        "libSceAudioIn.prx",
+        "libSceHttp.prx",
+        "Il2CppUserAssemblies.prx",
+        "libSceRemoteplay.prx",
+        "libSceCommonDialog.prx",
+        "libSceUserService.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceSaveData.native.prx",
+        "libSceAudioOut.prx",
+        "libSceSystemService.prx",
+        "libSceAgcDriver.prx",
+        "libSceAjm.native.prx",
+        "libSceAgc.prx",
+        "libSceAmpr.prx",
+        "PS5Util.prx",
+        "libSceSsl.prx",
+        "libSceRandom.prx",
+        "libSceHttp2.prx",
+        "libSceMouse.prx",
+        "libSceNetCtl.prx"
+      ],
+      "edges": [
+        {
+          "from": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+          "to": "Il2CppUserAssemblies.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+          "to": "PS5Util.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+          "to": "libSceNetCtl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+          "to": "libSceNet.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+          "to": "libSceUserService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+          "to": "libSceVideoOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+          "to": "libSceAudioOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+          "to": "libSceAudioIn.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+          "to": "libScePad.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+          "to": "libSceIme.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+          "to": "libSceImeDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+          "to": "libSceRtc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+          "to": "libSceSystemService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+          "to": "libSceHttp.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+          "to": "libSceHttp2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+          "to": "libSceSsl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+          "to": "libSceSaveData.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+          "to": "libSceCommonDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+          "to": "libSceMsgDialog.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+          "to": "libSceAvPlayer.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+          "to": "libSceAppContent.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+          "to": "libSceWebBrowserDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+          "to": "libSceAudio3d.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+          "to": "libSceRemoteplay.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+          "to": "libSceNpManager.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+          "to": "libSceMouse.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+          "to": "libSceAgcDriver.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+          "to": "libSceAgc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+          "to": "libSceAjm.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+          "to": "libSceRazorCpu.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+          "to": "libSceNpWebApi2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+          "to": "libSceRandom.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+          "to": "libc.prx",
+          "status": "loaded"
+        },
+        {
+          "from": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+          "to": "libSceAmpr.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        }
+      ]
+    },
+    "totals": {
+      "modules": 2,
+      "resolved": 1283,
+      "known": 0,
+      "stubbed": 595,
+      "exports": 2925,
+      "unavailable": 36
+    }
+  },
+  "error": null
+}

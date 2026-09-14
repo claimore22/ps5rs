@@ -1,0 +1,110 @@
+{
+  "game": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
+  "sony": [
+    {
+      "exports": 256,
+      "file_name": "libSceAgc.sprx",
+      "import_libs": [
+        "libSceAgcDriver",
+        "libSceLibcInternal",
+        "libSceRegMgr",
+        "libSceSysmodule",
+        "libkernel"
+      ],
+      "imports": 89,
+      "kind": "sony",
+      "module_name": "libSceAgc",
+      "needed_files": [
+        "libSceAgcDriver.prx",
+        "libSceSysmodule.prx",
+        "libSceRegMgr.prx",
+        "libkernel.prx",
+        "libSceLibcInternal.prx",
+        "libSceShaderTranscode_minimal.prx"
+      ],
+      "parseable": true,
+      "sha256": "f1a1b28d7be1a1ebefda9bba37de10c722e083746124965714213492ee19a719"
+    },
+    {
+      "exports": 169,
+      "file_name": "libSceAgcDriver.sprx",
+      "import_libs": [
+        "libSceDbgThreadSanitizer_for_agc_driver",
+        "libSceLibcInternal",
+        "libSceRegMgr",
+        "libSceSysmodule",
+        "libSceVideoOut",
+        "libkernel"
+      ],
+      "imports": 53,
+      "kind": "sony",
+      "module_name": "libSceAgcDriver",
+      "needed_files": [
+        "libSceVideoOut.prx",
+        "libSceSysmodule.prx",
+        "libSceRegMgr.prx",
+        "libSceDbgThreadSanitizer.prx",
+        "libkernel.prx",
+        "libSceLibcInternal.prx"
+      ],
+      "parseable": true,
+      "sha256": "061b5be787ad336dbb5eb69c3c51fdcc1a095655d21fd8645ffcb0178b0ec094"
+    },
+    {
+      "exports": 118,
+      "file_name": "libSceAmpr.sprx",
+      "import_libs": [
+        "libSceLibcInternal",
+        "libkernel"
+      ],
+      "imports": 99,
+      "kind": "sony",
+      "module_name": "libSceAmpr",
+      "needed_files": [
+        "libSceLibcInternal.prx",
+        "libkernel.prx"
+      ],
+      "parseable": true,
+      "sha256": "8248448608f36d8c937c77bd35b9b5b037b14d781544a14a39491a9bf88bc83b"
+    },
+    {
+      "exports": 24,
+      "file_name": "libScePlayGo.sprx",
+      "import_libs": [
+        "libSceLibcInternal",
+        "libkernel"
+      ],
+      "imports": 8,
+      "kind": "sony",
+      "module_name": "libScePlayGo",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceLibcInternal.prx"
+      ],
+      "parseable": true,
+      "sha256": "a0f20f40107713523ba1a3a0281fb7c4e238b2b5d3fda9354119352d9393d2f0"
+    },
+    {
+      "exports": 2925,
+      "file_name": "libc.prx",
+      "import_libs": [
+        "libSceLibcInternalExt",
+        "libSceSysmodule",
+        "libkernel"
+      ],
+      "imports": 119,
+      "kind": "sony",
+      "module_name": "libc",
+      "needed_files": [
+        "libkernel.prx",
+        "libSceLibcInternal.prx",
+        "libSceSysmodule.prx"
+      ],
+      "parseable": true,
+      "sha256": "679343919a0dbabed81c79d94344ed1fb847b5822de3f7692fca99bda3795e5d"
+    }
+  ],
+  "third_party": [],
+  "title_id": "PPSA22520",
+  "unknown": []
+}
