@@ -33,7 +33,12 @@ pub fn collect(root: &Path, catalog: &Catalog, options: &CollectorOptions) -> An
     }
 }
 
-fn find_binaries(game_dir: &Path, options: &CollectorOptions) -> Vec<PathBuf> {
+pub fn find_binaries(game_dir: &Path, options: &CollectorOptions) -> Vec<PathBuf> {
+    // Public wrapper needed by scanner.rs
+    find_binaries_inner(game_dir, options)
+}
+
+fn find_binaries_inner(game_dir: &Path, options: &CollectorOptions) -> Vec<PathBuf> {
     let mut result = Vec::new();
 
     fn walk(dir: &Path, result: &mut Vec<PathBuf>, depth: usize) {
@@ -72,7 +77,13 @@ fn find_binaries(game_dir: &Path, options: &CollectorOptions) -> Vec<PathBuf> {
     }
 }
 
-fn analyze_binary(path: &Path, catalog: &Catalog, game_dir: &Path) -> Option<GameAnalysis> {
+pub fn analyze_binary(path: &Path, catalog: &Catalog, game_dir: &Path) -> Option<GameAnalysis> {
+    // Public wrapper needed by scanner.rs
+    analyze_binary_inner(path, catalog, game_dir)
+}
+
+fn analyze_binary_inner(path: &Path, catalog: &Catalog, game_dir: &Path) -> Option<GameAnalysis> {
+    // (original implementation moved here)
     let data = std::fs::read(path).ok()?;
     let sha256 = ps5_format::sha256_hex(&data);
     let file_size = data.len() as u64;

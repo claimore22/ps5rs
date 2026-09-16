@@ -1,0 +1,852 @@
+{
+  "game": "Mega Man Star Force Legacy Collection - [PPSA32239]",
+  "path": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5\\Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5\\eboot.bin",
+  "load_report": {
+    "modules": [
+      {
+        "name": "libc.prx",
+        "module_type": "Prx",
+        "load_bias": 34628173824,
+        "entry_point": null,
+        "exports_count": 2949,
+        "imports_resolved": 0,
+        "imports_known": 0,
+        "imports_stubbed": 117,
+        "relative": 2882,
+        "glob_dat": 3,
+        "jump_slot": 114,
+        "abs64": 0,
+        "copy": 0,
+        "tls_relocations": 3,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 1141696,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 1648456,
+        "preinit_array_sz": 8,
+        "per_library": [
+          {
+            "library": "libSceLibcInternalExt",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 6
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 110
+          }
+        ]
+      },
+      {
+        "name": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+        "module_type": "Eboot",
+        "load_bias": 34630139904,
+        "entry_point": 128,
+        "exports_count": 0,
+        "imports_resolved": 1080,
+        "imports_known": 0,
+        "imports_stubbed": 673,
+        "relative": 314162,
+        "glob_dat": 20,
+        "jump_slot": 829,
+        "abs64": 904,
+        "copy": 0,
+        "tls_relocations": 0,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 178635440,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 200029376,
+        "preinit_array_sz": 0,
+        "per_library": [
+          {
+            "library": "libSceAcm",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceAgc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 54
+          },
+          {
+            "library": "libSceAgcDriver",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 12
+          },
+          {
+            "library": "libSceAjm",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 18
+          },
+          {
+            "library": "libSceAmpr",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 11
+          },
+          {
+            "library": "libSceAppContent",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceAudioOut2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 20
+          },
+          {
+            "library": "libSceAvPlayer",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 17
+          },
+          {
+            "library": "libSceCommonDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceContentExport",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceConvertKeycode",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceErrorDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceGameLiveStreaming",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceGameUpdate",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceHttp2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 22
+          },
+          {
+            "library": "libSceIme",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 9
+          },
+          {
+            "library": "libSceImeDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 6
+          },
+          {
+            "library": "libSceJson2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 58
+          },
+          {
+            "library": "libSceMouse",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceMsgDialog.native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libSceNet",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 29
+          },
+          {
+            "library": "libSceNetCtl",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceNpAuth",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceNpCommerce",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 10
+          },
+          {
+            "library": "libSceNpEntitlementAccess",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 14
+          },
+          {
+            "library": "libSceNpGameIntent",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceNpManager",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 16
+          },
+          {
+            "library": "libSceNpSessionSignaling",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 10
+          },
+          {
+            "library": "libSceNpTrophy2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 6
+          },
+          {
+            "library": "libSceNpUniversalDataSystem",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 32
+          },
+          {
+            "library": "libSceNpWebApi2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 24
+          },
+          {
+            "library": "libScePad",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 22
+          },
+          {
+            "library": "libScePlayGo",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 9
+          },
+          {
+            "library": "libScePlayerInvitationDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libScePosix",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libScePsml",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 9
+          },
+          {
+            "library": "libSceRazorCpu",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceRtc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceSaveDataDialog.native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceSaveData_native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 17
+          },
+          {
+            "library": "libSceShare",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 9
+          },
+          {
+            "library": "libSceSharePlay",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceSigninDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceSsl",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 9
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceSystemGesture",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 9
+          },
+          {
+            "library": "libSceSystemService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 14
+          },
+          {
+            "library": "libSceUserService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceVideoOut",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 17
+          },
+          {
+            "library": "libSceVideoOutVrrStatus",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceWebBrowserDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 6
+          },
+          {
+            "library": "libc",
+            "resolved": 1080,
+            "known": 0,
+            "stubbed": 0
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 88
+          }
+        ]
+      }
+    ],
+    "graph": {
+      "nodes": [
+        "libSceAudioIn.prx",
+        "libSceAudioOut.prx",
+        "libSceNet.prx",
+        "libSceSharePlay.prx",
+        "libSceVoice.prx",
+        "libScePlayerInvitationDialog.prx",
+        "libSceNetCtl.prx",
+        "libScePlayGo.prx",
+        "libSceNpManager.prx",
+        "libSceIme.prx",
+        "libSceConvertKeycode.prx",
+        "libSceNpTrophy2.prx",
+        "libSceNpEntitlementAccess.prx",
+        "libSceSigninDialog.prx",
+        "libSceContentExport.prx",
+        "libSceGameLiveStreaming.prx",
+        "libSceAcm.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceMouse.prx",
+        "libSceNpCommerce.prx",
+        "libSceNpAuth.prx",
+        "libScePad.prx",
+        "libSceAgc.prx",
+        "libSceImeDialog.prx",
+        "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+        "libSceAudiodec.native.prx",
+        "libSceAjm.native.prx",
+        "libSceRazorCpu.prx",
+        "libSceAudio3d.prx",
+        "libSceFiber.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceRemoteplay.prx",
+        "libSceSystemService.prx",
+        "libSceErrorDialog.prx",
+        "libSceHttp2.prx",
+        "libc.prx",
+        "libSceLibcInternal.prx",
+        "libSceNpUtility.prx",
+        "libSceSsl.prx",
+        "libSceNpSessionSignaling.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceSystemGesture.prx",
+        "libkernel.prx",
+        "libSceCommonDialog.prx",
+        "libSceAppContent.prx",
+        "libSceJson2.prx",
+        "libSceNpWebApi2.prx",
+        "libSceNpGameIntent.prx",
+        "libSceAgcDriver.prx",
+        "libSceGameUpdate.prx",
+        "libSceShare.prx",
+        "libSceRtc.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceVideoOut.prx",
+        "libSceUserService.prx",
+        "libSceMsgDialog.native.prx",
+        "libScePsml_debug.prx",
+        "libSceSaveData.native.prx",
+        "libSceSysmodule.prx",
+        "libSceAmpr.prx"
+      ],
+      "unavailable": [
+        "libScePad.prx",
+        "libSceGameLiveStreaming.prx",
+        "libSceUserService.prx",
+        "libSceNpSessionSignaling.prx",
+        "libSceConvertKeycode.prx",
+        "libSceGameUpdate.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceAudio3d.prx",
+        "libSceSharePlay.prx",
+        "libSceAjm.native.prx",
+        "libSceNetCtl.prx",
+        "libScePlayerInvitationDialog.prx",
+        "libSceLibcInternal.prx",
+        "libSceAudioIn.prx",
+        "libSceAppContent.prx",
+        "libSceMouse.prx",
+        "libSceIme.prx",
+        "libSceSaveData.native.prx",
+        "libSceAgc.prx",
+        "libSceRemoteplay.prx",
+        "libSceContentExport.prx",
+        "libScePlayGo.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceNpUtility.prx",
+        "libSceNpCommerce.prx",
+        "libSceJson2.prx",
+        "libSceCommonDialog.prx",
+        "libSceNet.prx",
+        "libSceHttp2.prx",
+        "libSceImeDialog.prx",
+        "libSceAcm.prx",
+        "libSceAudiodec.native.prx",
+        "libSceSsl.prx",
+        "libSceNpWebApi2.prx",
+        "libSceSigninDialog.prx",
+        "libSceRtc.prx",
+        "libSceSystemGesture.prx",
+        "libSceShare.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceSystemService.prx",
+        "libSceNpAuth.prx",
+        "libScePsml_debug.prx",
+        "libSceNpGameIntent.prx",
+        "libSceVoice.prx",
+        "libSceNpTrophy2.prx",
+        "libSceNpManager.prx",
+        "libSceNpEntitlementAccess.prx",
+        "libSceRazorCpu.prx",
+        "libSceAgcDriver.prx",
+        "libSceErrorDialog.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceAmpr.prx",
+        "libSceAudioOut.prx",
+        "libSceFiber.prx",
+        "libSceVideoOut.prx",
+        "libkernel.prx",
+        "libSceSysmodule.prx"
+      ],
+      "edges": [
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceUserService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libScePad.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceSystemGesture.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceAudioOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceAcm.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceAudioIn.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceAudiodec.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceNet.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceNetCtl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceVideoOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceAjm.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceImeDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceShare.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libc.prx",
+          "status": "loaded"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceSaveData.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceCommonDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceSaveDataDialog.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceGameLiveStreaming.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceRtc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceRemoteplay.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceSharePlay.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceSystemService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libScePlayerInvitationDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceWebBrowserDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceMsgDialog.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceErrorDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceAppContent.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceIme.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceMouse.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceAvPlayer.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceVoice.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceJson2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceSsl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceHttp2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceNpWebApi2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceNpManager.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceNpAuth.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceNpSessionSignaling.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceNpUtility.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceNpCommerce.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceSigninDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceContentExport.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libScePlayGo.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceNpTrophy2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceGameUpdate.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceRazorCpu.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceConvertKeycode.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceAudio3d.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceNpGameIntent.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceNpUniversalDataSystem.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceNpEntitlementAccess.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceFiber.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceAgc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceAgcDriver.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libScePsml_debug.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+          "to": "libSceAmpr.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        }
+      ]
+    },
+    "totals": {
+      "modules": 2,
+      "resolved": 1080,
+      "known": 0,
+      "stubbed": 790,
+      "exports": 2949,
+      "unavailable": 58
+    }
+  },
+  "error": null,
+  "total_exports": 2949,
+  "freshness": {
+    "report_format": 1,
+    "loader_fingerprint": "37a85e37ad1df177c24ca92b5e06dd2322849bcbc949ec1461e015d7a1db1eee",
+    "offline_fingerprint": "5895a666f11fc3d4f8653863cefecd6975364404e1323106d77b0e555b25f42f",
+    "environment_fingerprint": "1627010419f8400b08ba46c8736a2fa3f2888e862aa73d8dc4307fbd9a4b01d6",
+    "game_fingerprint": "36c7fc756fdf3da5fa814f02a7cbdea86478b960029b6e7717cb73a400d553c7"
+  }
+}

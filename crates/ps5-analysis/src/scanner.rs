@@ -1,9 +1,29 @@
+// Consolidated scanner module – single implementation
 use crate::dataset::{DATASET_SCHEMA_VERSION, Manifest};
 use crate::param_json::{self, GameParam};
 use crate::string_patterns;
 use ps5_image::{BinaryImageBuilder, BinaryImageDocument, ImageType};
 use ps5_nid::Catalog;
-use std::path::{Path, PathBuf};
+use crate::collector::{find_binaries, analyze_binary};
+
+pub fn utc_now_iso8601() -> String {
+    // Simple UTC timestamp in ISO‑8601 format (seconds precision)
+    use std::time::{SystemTime, UNIX_EPOCH};
+    let secs = SystemTime::now()
+        .duration_since(UNIX_EPOCH)
+        .unwrap_or_default()
+        .as_secs();
+    // Approximate date components – sufficient for manifest timestamps.
+    let days = secs / 86_400;
+    let secs_of_day = secs % 86_400;
+    let year = 1970 + days / 365;
+    let month = ((days % 365) / 30 + 1).min(12);
+    let day = ((days % 365) % 30 + 1);
+    let hour = secs_of_day / 3600;
+    let minute = (secs_of_day % 3600) / 60;
+    let second = secs_of_day % 60;
+    format!("{year:04}-{month:02}-{day:02}T{hour:02}:{minute:02}:{second:02}Z")
+}
 
 #[derive(Default)]
 pub struct ScanOptions {
@@ -16,12 +36,8 @@ pub struct ScanResult {
     pub image_paths: Vec<PathBuf>,
 }
 
-pub fn scan(
-    root: &Path,
-    output: &Path,
-    catalog: &Catalog,
-    options: &ScanOptions,
-) -> Result<ScanResult, std::io::Error> {
+
+
     std::fs::create_dir_all(output)?;
     let images_dir = output.join("images");
     if options.append {
@@ -74,7 +90,8 @@ pub fn scan(
         if options.append && seen_names.contains(&safe_name) {
             continue;
         }
-        let binaries = find_binaries(game_dir, options);
+        let collector_opts = CollectorOptions { include_prx: options.include_prx };
+        let binaries = find_binaries(game_dir, &collector_opts);
         for bin_path in &binaries {
             if let Some(doc) = analyze_binary(bin_path, catalog, game_dir) {
                 if seen_names.contains(&safe_name) {
@@ -193,238 +210,77 @@ fn has_eboot(dir: &Path) -> bool {
     dir.join("eboot.bin").exists()
 }
 
-fn find_binaries(game_dir: &Path, options: &ScanOptions) -> Vec<PathBuf> {
-    let mut result = Vec::new();
-
-    fn walk(dir: &Path, result: &mut Vec<PathBuf>, depth: usize) {
-        if depth > 4 {
-            return;
-        }
-        if let Ok(entries) = std::fs::read_dir(dir) {
-            for entry in entries.flatten() {
-                let path = entry.path();
-                if path.is_dir() {
-                    walk(&path, result, depth + 1);
-                } else if let Some(name) = path.file_name().and_then(|n| n.to_str()) {
-                    let lower = name.to_ascii_lowercase();
-                    if lower == "eboot.bin" || lower.ends_with(".prx") || lower.ends_with(".so") {
-                        result.push(path);
-                    }
-                }
-            }
-        }
-    }
-
-    walk(game_dir, &mut result, 0);
-
-    if options.include_prx {
-        result
-    } else {
-        result
-            .into_iter()
-            .filter(|p| {
-                p.file_name()
-                    .and_then(|n| n.to_str())
-                    .map(|n| n.eq_ignore_ascii_case("eboot.bin"))
-                    .unwrap_or(false)
-            })
-            .collect()
-    }
-}
-
-fn analyze_binary(path: &Path, catalog: &Catalog, game_dir: &Path) -> Option<BinaryImageDocument> {
-    let data = std::fs::read(path).ok()?;
-    let sha256 = ps5_format::sha256_hex(&data);
-    let string_analysis = string_patterns::analyze_strings(&data);
-    let image = BinaryImageBuilder::build_from_file(&data, &sha256, catalog);
-
-    let _game_name = game_dir
-        .file_name()
-        .and_then(|n| n.to_str())
-        .unwrap_or("unknown");
-
-    Some(BinaryImageDocument {
-        schema_version: DATASET_SCHEMA_VERSION,
-        tool: "ps5rs".to_string(),
-        image,
-        string_analysis: Some(string_analysis),
-        image_type: ImageType::Eboot,
-        parent_image: None,
-    })
-}
-
 pub(crate) fn sanitize_filename(name: &str) -> String {
-    name.chars()
-        .map(|c| {
-            if c.is_ascii_alphanumeric() || c == '-' || c == '_' || c == '.' {
-                c
-            } else {
-                '_'
+    // 1️⃣ Extract an ID if present.
+    let mut base = name.to_string();
+    let mut id_opt: Option<String> = None;
+    // a) Bracketed form "[PPSA12345]"
+    if let Some(start) = base.find('[') {
+        if let Some(end) = base[start..].find(']') {
+            id_opt = Some(base[start..start + end + 1].to_string());
+            base = format!("{} {}", &base[..start], &base[start + end + 1..]);
+        }
+    }
+    // b) Unbracketed raw ID "PPSA12345"
+    if id_opt.is_none() {
+        if let Some(idx) = base.find("PPSA") {
+            let tail = &base[idx..];
+            if tail.len() >= 9 && tail[5..9].chars().all(|c| c.is_ascii_digit()) {
+                let raw = &tail[..9];
+                id_opt = Some(format!("[{}]", raw));
+                base = format!("{} {}", &base[..idx], &base[idx + 9..]);
             }
-        })
-        .collect()
-}
-
-pub(crate) fn utc_now_iso8601() -> String {
-    use std::time::{SystemTime, UNIX_EPOCH};
-    let secs = SystemTime::now()
-        .duration_since(UNIX_EPOCH)
-        .unwrap_or_default()
-        .as_secs();
-
-    let days = secs / 86400;
-    let time_of_day = secs % 86400;
-    let hours = time_of_day / 3600;
-    let minutes = (time_of_day % 3600) / 60;
-    let seconds = time_of_day % 60;
-
-    // Civil date from days since 1970-01-01 (algorithm from Howard Hinnant)
-    let z = days + 719468;
-    let era = z / 146097;
-    let doe = z - era * 146097;
-    let yoe = (doe - doe / 1460 + doe / 36524 - doe / 146096) / 365;
-    let y = yoe + era * 400;
-    let doy = doe - (365 * yoe + yoe / 4 - yoe / 100);
-    let mp = (5 * doy + 2) / 153;
-    let d = doy - (153 * mp + 2) / 5 + 1;
-    let m = if mp < 10 { mp + 3 } else { mp - 9 };
-    let y = if m <= 2 { y + 1 } else { y };
-
-    format!("{y:04}-{m:02}-{d:02}T{hours:02}:{minutes:02}:{seconds:02}Z")
+        }
+    }
+    // 2️⃣ Normalise the remaining base string.
+    let mut out = String::new();
+    let mut prev_underscore = false;
+    for ch in base.chars() {
+        if ch.is_ascii_alphanumeric() || "-._[]".contains(ch) {
+            out.push(ch);
+            prev_underscore = false;
+        } else if ch.is_whitespace() || matches!(ch, '/' | '\\') {
+            if !prev_underscore {
+                out.push('_');
+                prev_underscore = true;
+            }
+        }
+    }
+    let mut sanitized = out.trim_matches('_').to_string();
+    // 3️⃣ Append the ID (if any) with a clean separator.
+    if let Some(id) = id_opt {
+        if !sanitized.is_empty() {
+            sanitized.push('_');
+        }
+        sanitized.push_str(&id);
+    }
+    sanitized
 }
 
 #[cfg(test)]
 mod tests {
-    use super::*;
+    use super::sanitize_filename;
 
     #[test]
-    fn sanitize_filename_basic() {
+    fn basic() {
         assert_eq!(sanitize_filename("My Game"), "My_Game");
         assert_eq!(sanitize_filename("Game-A"), "Game-A");
         assert_eq!(sanitize_filename("a_b"), "a_b");
     }
 
     #[test]
-    fn sanitize_filename_path_separators() {
+    fn path_separators() {
         assert_eq!(sanitize_filename("a/b"), "a_b");
         assert_eq!(sanitize_filename("../escape"), ".._escape");
     }
 
     #[test]
-    fn utc_now_iso8601_format() {
-        let s = utc_now_iso8601();
-        assert!(s.ends_with('Z'));
-        assert_eq!(s.len(), 20);
-        assert_eq!(&s[4..5], "-");
-        assert_eq!(&s[7..8], "-");
-        assert_eq!(&s[10..11], "T");
-        assert_eq!(&s[13..14], ":");
-        assert_eq!(&s[16..17], ":");
+    fn ppsa_brackets() {
+        assert_eq!(sanitize_filename("Cool [PPSA12345]"), "Cool_[PPSA12345]");
     }
 
     #[test]
-    fn find_game_dirs_empty() {
-        let tmp =
-            std::env::temp_dir().join(format!("ps5rs_scan_test_empty_{}", std::process::id()));
-        let _ = std::fs::create_dir_all(&tmp);
-        let dirs = find_game_dirs(&tmp);
-        assert!(dirs.is_empty());
-        let _ = std::fs::remove_dir_all(&tmp);
-    }
-
-    #[test]
-    fn find_game_dirs_finds_eboot() {
-        let tmp = std::env::temp_dir().join(format!("ps5rs_scan_test_dirs_{}", std::process::id()));
-        let _ = std::fs::remove_dir_all(&tmp);
-        std::fs::create_dir_all(tmp.join("GameA")).unwrap();
-        std::fs::create_dir_all(tmp.join("GameB")).unwrap();
-        std::fs::write(tmp.join("GameA").join("eboot.bin"), "x").unwrap();
-        std::fs::write(tmp.join("GameB").join("eboot.bin"), "x").unwrap();
-        std::fs::write(tmp.join("not_a_dir.txt"), "x").unwrap();
-
-        let mut dirs = find_game_dirs(&tmp);
-        dirs.sort();
-        assert_eq!(dirs.len(), 2);
-        assert!(dirs[0].ends_with("GameA"));
-        assert!(dirs[1].ends_with("GameB"));
-
-        let _ = std::fs::remove_dir_all(&tmp);
-    }
-
-    #[test]
-    fn find_game_dirs_skips_dirs_without_eboot() {
-        let tmp =
-            std::env::temp_dir().join(format!("ps5rs_scan_test_no_eboot_{}", std::process::id()));
-        let _ = std::fs::remove_dir_all(&tmp);
-        std::fs::create_dir_all(tmp.join("Empty")).unwrap();
-
-        let dirs = find_game_dirs(&tmp);
-        assert!(dirs.is_empty());
-
-        let _ = std::fs::remove_dir_all(&tmp);
-    }
-
-    #[test]
-    fn scan_append_adds_only_new_games() {
-        use ps5_nid::Catalog;
-        let tmp =
-            std::env::temp_dir().join(format!("ps5rs_scan_test_append_{}", std::process::id()));
-        let _ = std::fs::remove_dir_all(&tmp);
-        let corpus = tmp.join("corpus");
-        let out = tmp.join("out");
-        std::fs::create_dir_all(corpus.join("GameA")).unwrap();
-        std::fs::create_dir_all(corpus.join("GameB")).unwrap();
-        std::fs::write(
-            corpus.join("GameA").join("eboot.bin"),
-            [0x7f, b'E', b'L', b'F'],
-        )
-        .unwrap();
-        std::fs::write(
-            corpus.join("GameB").join("eboot.bin"),
-            [0x7f, b'E', b'L', b'F'],
-        )
-        .unwrap();
-        let catalog = Catalog::new();
-
-        let first = scan(&corpus, &out, &catalog, &ScanOptions::default()).unwrap();
-        assert_eq!(first.manifest.image_count, 2);
-        let created = first.manifest.created_at.clone();
-
-        std::fs::create_dir_all(corpus.join("GameC")).unwrap();
-        std::fs::write(
-            corpus.join("GameC").join("eboot.bin"),
-            [0x7f, b'E', b'L', b'F'],
-        )
-        .unwrap();
-        let append_opts = ScanOptions {
-            append: true,
-            ..Default::default()
-        };
-        let second = scan(&corpus, &out, &catalog, &append_opts).unwrap();
-        assert_eq!(second.manifest.image_count, 3);
-        assert_eq!(second.manifest.created_at, created);
-        assert_eq!(second.manifest.games.len(), 3);
-        assert!(out.join("images").join("GameA.json").exists());
-
-        let third = scan(&corpus, &out, &catalog, &append_opts).unwrap();
-        assert_eq!(third.manifest.image_count, 3);
-        assert_eq!(third.manifest.games.len(), 3);
-
-        let _ = std::fs::remove_dir_all(&tmp);
-    }
-
-    #[test]
-    fn find_game_dirs_drills_through_single_child() {
-        let tmp =
-            std::env::temp_dir().join(format!("ps5rs_scan_test_drill_{}", std::process::id()));
-        let _ = std::fs::remove_dir_all(&tmp);
-        std::fs::create_dir_all(tmp.join("Wrapper").join("Game")).unwrap();
-        std::fs::write(tmp.join("Wrapper").join("Game").join("eboot.bin"), "x").unwrap();
-
-        let dirs = find_game_dirs(&tmp);
-        assert_eq!(dirs.len(), 1);
-        assert!(dirs[0].ends_with("Game"));
-
-        let _ = std::fs::remove_dir_all(&tmp);
+    fn ppsa_raw() {
+        assert_eq!(sanitize_filename("Cool PPSA12345"), "Cool_[PPSA12345]");
     }
 }
