@@ -1,4 +1,4 @@
-# ps5rs
+**Development workflow**: the `gui` branch is used for UI experimentation. All stable changes are merged into `master`. After merging, the `gui` branch is deleted and a fresh `dev` branch is created from `master` for the next round of work.
 
 ![Elfspector](screenshots/elfspector_s.png)
 
