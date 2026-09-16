@@ -1,0 +1,630 @@
+{
+  "game": "Raiden III x MIKADO MANIAX - [PPSA13356]",
+  "path": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Raiden.III.x.MIKADO.MANIAX-PPSA13356-USA-Game-v01.01-PS5\\PPSA13356-app\\eboot.bin",
+  "load_report": {
+    "modules": [
+      {
+        "name": "libSceNpCppWebApi.prx",
+        "module_type": "Prx",
+        "load_bias": 34628173824,
+        "entry_point": null,
+        "exports_count": 41658,
+        "imports_resolved": 0,
+        "imports_known": 0,
+        "imports_stubbed": 98,
+        "relative": 774,
+        "glob_dat": 2,
+        "jump_slot": 92,
+        "abs64": 4,
+        "copy": 0,
+        "tls_relocations": 0,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 4036928,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 0,
+        "preinit_array_sz": 0,
+        "per_library": [
+          {
+            "library": "libSceHttp",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceJson2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 37
+          },
+          {
+            "library": "libSceLibcInternal",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 26
+          },
+          {
+            "library": "libSceNpWebApi2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libSceRtc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 24
+          }
+        ]
+      },
+      {
+        "name": "libc.prx",
+        "module_type": "Prx",
+        "load_bias": 34636038144,
+        "entry_point": null,
+        "exports_count": 2572,
+        "imports_resolved": 0,
+        "imports_known": 0,
+        "imports_stubbed": 105,
+        "relative": 1699,
+        "glob_dat": 3,
+        "jump_slot": 102,
+        "abs64": 0,
+        "copy": 0,
+        "tls_relocations": 3,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 804832,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 1113040,
+        "preinit_array_sz": 8,
+        "per_library": [
+          {
+            "library": "libSceLibcInternalExt",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 101
+          }
+        ]
+      },
+      {
+        "name": "PPSA13356-app",
+        "module_type": "Eboot",
+        "load_bias": 34637414400,
+        "entry_point": 112,
+        "exports_count": 0,
+        "imports_resolved": 264,
+        "imports_known": 0,
+        "imports_stubbed": 421,
+        "relative": 18788,
+        "glob_dat": 2,
+        "jump_slot": 681,
+        "abs64": 2,
+        "copy": 0,
+        "tls_relocations": 0,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 1785840,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 0,
+        "preinit_array_sz": 0,
+        "per_library": [
+          {
+            "library": "libSceAgc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 194
+          },
+          {
+            "library": "libSceAgcDriver",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 38
+          },
+          {
+            "library": "libSceAudioOut",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceAvPlayer",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 14
+          },
+          {
+            "library": "libSceCommonDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceFont",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 17
+          },
+          {
+            "library": "libSceFontFt",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceHttp2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceJson2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceMsgDialog.native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceNet",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceNetCtl",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceNgs2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 14
+          },
+          {
+            "library": "libSceNpCppWebApi",
+            "resolved": 188,
+            "known": 0,
+            "stubbed": 0
+          },
+          {
+            "library": "libSceNpGameIntent",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceNpManager",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceNpTrophy2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceNpUniversalDataSystem",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 13
+          },
+          {
+            "library": "libSceNpWebApi2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libScePad",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 6
+          },
+          {
+            "library": "libScePosix",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceSaveDataDialog.native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceSaveData_native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 9
+          },
+          {
+            "library": "libSceSigninDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceSsl",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceSystemService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceUserService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 6
+          },
+          {
+            "library": "libSceVideoOut",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libc",
+            "resolved": 76,
+            "known": 0,
+            "stubbed": 0
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 47
+          }
+        ]
+      }
+    ],
+    "graph": {
+      "nodes": [
+        "libSceNet.prx",
+        "libSceNpTrophy2.prx",
+        "libScePad.prx",
+        "libSceNgs2.prx",
+        "libkernel.prx",
+        "libSceSigninDialog.prx",
+        "libSceHttp2.prx",
+        "libSceRtc.prx",
+        "libSceSsl.prx",
+        "libSceNpCppWebApi.prx",
+        "libSceLibcInternal.prx",
+        "libc.prx",
+        "libSceVideoOut.prx",
+        "PPSA13356-app",
+        "libSceAgcDriver.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceSysmodule.prx",
+        "libSceNetCtl.prx",
+        "libSceCommonDialog.prx",
+        "libSceSaveData.native.prx",
+        "libSceNpGameIntent.prx",
+        "libSceJson2.prx",
+        "libSceFontFt-module.prx",
+        "libSceFont-module.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceHttp.prx",
+        "libSceNpManager.prx",
+        "libSceAgc.prx",
+        "libSceAudioOut.prx",
+        "libSceUserService.prx",
+        "libSceSystemService.prx",
+        "libSceNpUtility.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceNpWebApi2.prx"
+      ],
+      "unavailable": [
+        "libSceNgs2.prx",
+        "libSceJson2.prx",
+        "libSceCommonDialog.prx",
+        "libSceRtc.prx",
+        "libSceSysmodule.prx",
+        "libSceAgc.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceFontFt-module.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceNet.prx",
+        "libSceNpManager.prx",
+        "libSceNetCtl.prx",
+        "libSceSigninDialog.prx",
+        "libScePad.prx",
+        "libSceNpTrophy2.prx",
+        "libSceVideoOut.prx",
+        "libSceAudioOut.prx",
+        "libSceLibcInternal.prx",
+        "libSceAgcDriver.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceNpUtility.prx",
+        "libSceSaveData.native.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceSsl.prx",
+        "libSceNpWebApi2.prx",
+        "libSceHttp.prx",
+        "libSceUserService.prx",
+        "libSceNpGameIntent.prx",
+        "libkernel.prx",
+        "libSceSystemService.prx",
+        "libSceFont-module.prx",
+        "libSceHttp2.prx"
+      ],
+      "edges": [
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceJson2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceRtc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceNpWebApi2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceHttp.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA13356-app",
+          "to": "libSceAgcDriver.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA13356-app",
+          "to": "libSceAgc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA13356-app",
+          "to": "libSceAudioOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA13356-app",
+          "to": "libSceAvPlayer.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA13356-app",
+          "to": "libSceCommonDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA13356-app",
+          "to": "libSceFont-module.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA13356-app",
+          "to": "libSceFontFt-module.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA13356-app",
+          "to": "libSceMsgDialog.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA13356-app",
+          "to": "libSceNet.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA13356-app",
+          "to": "libSceNetCtl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA13356-app",
+          "to": "libSceNgs2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA13356-app",
+          "to": "libSceNpManager.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA13356-app",
+          "to": "libSceNpTrophy2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA13356-app",
+          "to": "libSceNpUniversalDataSystem.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA13356-app",
+          "to": "libSceNpUtility.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA13356-app",
+          "to": "libScePad.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA13356-app",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA13356-app",
+          "to": "libSceSaveData.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA13356-app",
+          "to": "libSceSigninDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA13356-app",
+          "to": "libSceSaveDataDialog.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA13356-app",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA13356-app",
+          "to": "libSceSystemService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA13356-app",
+          "to": "libSceUserService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA13356-app",
+          "to": "libSceVideoOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA13356-app",
+          "to": "libSceHttp2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA13356-app",
+          "to": "libSceSsl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA13356-app",
+          "to": "libSceJson2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA13356-app",
+          "to": "libSceNpWebApi2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA13356-app",
+          "to": "libSceNpCppWebApi.prx",
+          "status": "loaded"
+        },
+        {
+          "from": "PPSA13356-app",
+          "to": "libSceNpGameIntent.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA13356-app",
+          "to": "libc.prx",
+          "status": "loaded"
+        }
+      ]
+    },
+    "totals": {
+      "modules": 3,
+      "resolved": 264,
+      "known": 0,
+      "stubbed": 624,
+      "exports": 44230,
+      "unavailable": 32
+    }
+  },
+  "error": null,
+  "total_exports": 44230,
+  "freshness": {
+    "report_format": 1,
+    "loader_fingerprint": "37a85e37ad1df177c24ca92b5e06dd2322849bcbc949ec1461e015d7a1db1eee",
+    "offline_fingerprint": "5895a666f11fc3d4f8653863cefecd6975364404e1323106d77b0e555b25f42f",
+    "environment_fingerprint": "1627010419f8400b08ba46c8736a2fa3f2888e862aa73d8dc4307fbd9a4b01d6",
+    "game_fingerprint": "0107847bd6c7049b745ae2b2ea57c57fb7cd14d15e3115914554b95e65398f52"
+  }
+}

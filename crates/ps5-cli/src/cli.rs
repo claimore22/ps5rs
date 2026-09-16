@@ -10,6 +10,7 @@ pub struct Cli {
 
 #[derive(Subcommand)]
 pub enum Commands {
+    /// Inspect a PS5 binary; optionally output JSON and write to a file
     Inspect {
         file: PathBuf,
         #[arg(long)]
@@ -26,18 +27,23 @@ pub enum Commands {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
+    /// Show segment table of a PS5 binary
     Segments {
         file: PathBuf,
     },
+    /// Show dynamic table of a PS5 binary
     Dynamic {
         file: PathBuf,
     },
+    /// List symbols from a PS5 binary
     Symbols {
         file: PathBuf,
     },
+    /// Resolve and display NID information for a given name
     Nid {
         name: String,
     },
+/// Scan a directory of games and generate a dataset of binary images
     Scan {
         path: PathBuf,
         #[arg(short, long, value_hint = ValueHint::DirPath)]
@@ -50,6 +56,7 @@ pub enum Commands {
         #[arg(long)]
         append: bool,
     },
+    /// Analyze a dataset with various sub‑commands (stats, heatmap, etc.)
     Analyze {
         #[arg(long = "nids", value_hint = ValueHint::FilePath)]
         nids: Vec<PathBuf>,
@@ -58,11 +65,13 @@ pub enum Commands {
         #[command(subcommand)]
         command: AnalyzeCommand,
     },
+/// Extract a file from an archive to a given output path
     Extract {
         file: PathBuf,
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
+    /// Batch extract files from a directory of archives
     BatchExtract {
         path: PathBuf,
         #[arg(short, long, value_hint = ValueHint::DirPath)]
@@ -72,10 +81,12 @@ pub enum Commands {
         #[arg(long)]
         include_modules: bool,
     },
+    /// Validate various aspects (binary, dataset, external corpus) via sub‑commands
     Validate {
         #[command(subcommand)]
         command: ValidateCommand,
     },
+    /// Generate a static HTML dashboard from a dataset
     Dashboard {
         path: PathBuf,
         #[arg(short, long, value_hint = ValueHint::DirPath, default_value = "analysis/dashboard")]
@@ -83,6 +94,7 @@ pub enum Commands {
         #[arg(long = "games", value_hint = ValueHint::DirPath)]
         games: Option<PathBuf>,
     },
+    /// Export unknown NIDs, grouped by a chosen criterion
     ExportUnknown {
         path: PathBuf,
         #[arg(long, default_value = "frequency")]
@@ -90,6 +102,7 @@ pub enum Commands {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
+    /// Find printable strings in a binary with optional detection
     Strings {
         file: PathBuf,
         #[arg(short = 'n', long, default_value_t = 4)]
@@ -102,6 +115,7 @@ pub enum Commands {
         output: Option<PathBuf>,
     },
     /// List exports from a PS5 binary
+    /// List exported symbols from a PS5 binary with optional search
     Exports {
         file: PathBuf,
         #[arg(long)]
@@ -112,6 +126,7 @@ pub enum Commands {
         output: Option<PathBuf>,
     },
     /// Load a PS5 binary into the virtual memory model
+/// Load a PS5 binary into the virtual memory model for inspection
     Load {
         file: PathBuf,
         #[arg(long, value_hint = ValueHint::DirPath)]
@@ -120,6 +135,7 @@ pub enum Commands {
         json: bool,
     },
     /// Run a PS5 eboot in the host emulator and print the execution report
+    /// Run a PS5 eboot in the host emulator and report execution details
     Run {
         file: PathBuf,
         /// Directory containing PRX modules (default: `file parent/sce_module`)
@@ -130,6 +146,7 @@ pub enum Commands {
         json: bool,
     },
     /// Batch-scan ELF/PRX files and produce offline export files for the loader
+    /// Batch‑scan ELF/PRX files, producing offline export files for the loader
     ExportScan {
         /// Directory containing ELF/PRX/SELF files to scan
         path: PathBuf,
@@ -139,6 +156,7 @@ pub enum Commands {
     },
     /// Batch-load all games: incremental reconcile by default (only changed
     /// games are reloaded; pass --force to reload everything)
+    /// Batch‑load all games; incremental by default, with optional force reload
     BatchLoad {
         /// Games directory containing subdirectories with eboot.bin
         path: PathBuf,
@@ -156,11 +174,13 @@ pub enum Commands {
         force: bool,
     },
     /// Manage NID catalog (sync from Supabase, push unknowns)
+    /// Manage NID catalog (sync, push unknowns, import stubs)
     Catalog {
         #[command(subcommand)]
         command: CatalogCommand,
     },
     /// Find NIDs imported by a games corpus that are missing from the catalog
+    /// Find NIDs imported by a game's corpus that are missing from the catalog
     UnknownNids {
         /// Games directory containing subdirectories with eboot.bin
         path: PathBuf,
@@ -175,6 +195,7 @@ pub enum Commands {
         output: Option<PathBuf>,
     },
     /// Detect third-party middleware libraries in game /prx folders
+    /// Detect third‑party middleware libraries in game /prx folders
     Middleware {
         /// Games directory containing subdirectories with eboot.bin
         path: PathBuf,
@@ -185,6 +206,7 @@ pub enum Commands {
         output: Option<PathBuf>,
     },
     /// Show module dependency graph (uses ps5-deps)
+    /// Show module dependency graph (uses ps5‑deps)
     Deps {
         /// Games directory or single binary path
         path: PathBuf,
@@ -194,6 +216,7 @@ pub enum Commands {
         output: Option<PathBuf>,
     },
     /// Inventory bare game content — all file types, relative paths, cross-artifact linkage
+    /// Inventory bare game content — all file types, relative paths, cross‑artifact linkage
     Inventory {
         /// Games directory (or single game dir)
         path: PathBuf,
@@ -202,6 +225,7 @@ pub enum Commands {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
+    /// List shader artifacts (pssl/sb/ags) with stage, hash, size
     /// List shader artifacts (pssl/sb/ags) with stage, hash, size
     Shader {
         /// Games directory or shader file
@@ -212,6 +236,7 @@ pub enum Commands {
         output: Option<PathBuf>,
     },
     /// Show firmware export tables and compatibility
+    /// Show firmware export tables and compatibility information
     Firmware {
         /// Path to system_modules dir or game dir
         path: PathBuf,
@@ -220,6 +245,7 @@ pub enum Commands {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
+    /// Show SDK metadata (libraries, functions, versions)
     /// Show SDK metadata (libraries, functions, versions)
     Sdk {
         /// Path to stubs dir, nids.csv, or game dir
@@ -231,6 +257,7 @@ pub enum Commands {
     },
     /// Archive one ingested game into the dataset's per-game records and
     /// commit the ingest registry (write -> reload -> verify; sources untouched)
+    /// Archive one ingested game into the dataset's per‑game records and commit the ingest registry
     Archive {
         /// Game directory to archive (must contain eboot.bin)
         #[arg(long, value_hint = ValueHint::DirPath)]

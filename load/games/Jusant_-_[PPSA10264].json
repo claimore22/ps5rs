@@ -1,0 +1,885 @@
+{
+  "game": "Jusant - [PPSA10264]",
+  "path": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Jusant-PPSA10264-EUR-Game-v01.007-PS5\\eboot.bin",
+  "load_report": {
+    "modules": [
+      {
+        "name": "libSceNpCppWebApi.prx",
+        "module_type": "Prx",
+        "load_bias": 34628173824,
+        "entry_point": null,
+        "exports_count": 42487,
+        "imports_resolved": 0,
+        "imports_known": 0,
+        "imports_stubbed": 98,
+        "relative": 792,
+        "glob_dat": 2,
+        "jump_slot": 92,
+        "abs64": 4,
+        "copy": 0,
+        "tls_relocations": 0,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 4100880,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 0,
+        "preinit_array_sz": 0,
+        "per_library": [
+          {
+            "library": "libSceHttp",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceJson2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 37
+          },
+          {
+            "library": "libSceLibcInternal",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 26
+          },
+          {
+            "library": "libSceNpWebApi2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libSceRtc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 24
+          }
+        ]
+      },
+      {
+        "name": "libc.prx",
+        "module_type": "Prx",
+        "load_bias": 34636169216,
+        "entry_point": null,
+        "exports_count": 2574,
+        "imports_resolved": 0,
+        "imports_known": 0,
+        "imports_stubbed": 105,
+        "relative": 1697,
+        "glob_dat": 3,
+        "jump_slot": 102,
+        "abs64": 0,
+        "copy": 0,
+        "tls_relocations": 3,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 811872,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 1113024,
+        "preinit_array_sz": 8,
+        "per_library": [
+          {
+            "library": "libSceLibcInternalExt",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 101
+          }
+        ]
+      },
+      {
+        "name": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+        "module_type": "Eboot",
+        "load_bias": 34637545472,
+        "entry_point": 128,
+        "exports_count": 1,
+        "imports_resolved": 3364,
+        "imports_known": 0,
+        "imports_stubbed": 629,
+        "relative": 1107416,
+        "glob_dat": 15,
+        "jump_slot": 1746,
+        "abs64": 2232,
+        "copy": 0,
+        "tls_relocations": 0,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 119137392,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 0,
+        "preinit_array_sz": 0,
+        "per_library": [
+          {
+            "library": "libSceAcm",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 6
+          },
+          {
+            "library": "libSceAgc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 65
+          },
+          {
+            "library": "libSceAgcDriver",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 6
+          },
+          {
+            "library": "libSceAjm",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 19
+          },
+          {
+            "library": "libSceAmpr",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 13
+          },
+          {
+            "library": "libSceAppContent",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 6
+          },
+          {
+            "library": "libSceAudioIn",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceAudioOut",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceAudioOut2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 15
+          },
+          {
+            "library": "libSceAvPlayer",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 21
+          },
+          {
+            "library": "libSceCommonDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceCoredump",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceErrorDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceGameLiveStreaming",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceGameUpdate",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceHttp",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 24
+          },
+          {
+            "library": "libSceHttp2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceIme",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceImeDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 6
+          },
+          {
+            "library": "libSceJson2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 23
+          },
+          {
+            "library": "libSceMouse",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceMsgDialog.native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceNet",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 25
+          },
+          {
+            "library": "libSceNetCtl",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceNpAuth",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceNpCommerce",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceNpCppWebApi",
+            "resolved": 943,
+            "known": 0,
+            "stubbed": 0
+          },
+          {
+            "library": "libSceNpEntitlementAccess",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceNpGameIntent",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceNpManager",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 11
+          },
+          {
+            "library": "libSceNpSessionSignaling",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libSceNpTrophy2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 9
+          },
+          {
+            "library": "libSceNpUniversalDataSystem",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 28
+          },
+          {
+            "library": "libSceNpWebApi2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 23
+          },
+          {
+            "library": "libScePad",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 12
+          },
+          {
+            "library": "libScePlayGo",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 11
+          },
+          {
+            "library": "libScePlayerInvitationDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libScePosix",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 45
+          },
+          {
+            "library": "libSceRandom",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceRtc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceSaveDataDialog.native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceSaveData_native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 11
+          },
+          {
+            "library": "libSceShare",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceSsl",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSystemService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libSceUserService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 6
+          },
+          {
+            "library": "libSceVideoOut",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 19
+          },
+          {
+            "library": "libSceVoiceQoS",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 12
+          },
+          {
+            "library": "libSceWebBrowserDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libc",
+            "resolved": 2421,
+            "known": 0,
+            "stubbed": 0
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 92
+          }
+        ]
+      }
+    ],
+    "graph": {
+      "nodes": [
+        "libSceNetCtl.prx",
+        "libSceNpManager.prx",
+        "libSceShare.prx",
+        "libSceNpCommerce.prx",
+        "libSceNpWebApi2.prx",
+        "libSceLibcInternal.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceJson2.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libScePad.prx",
+        "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+        "libSceMouse.prx",
+        "libSceIme.prx",
+        "libSceSsl.prx",
+        "libSceSystemService.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceAjm.native.prx",
+        "libSceNpAuth.prx",
+        "libSceNpEntitlementAccess.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceNpTrophy2.prx",
+        "libSceGameUpdate.prx",
+        "libSceCommonDialog.prx",
+        "libScePlayerInvitationDialog.prx",
+        "libSceAmpr.prx",
+        "libSceAcm.prx",
+        "libSceHttp2.prx",
+        "libSceRtc.prx",
+        "libSceSysmodule.prx",
+        "libSceHttp.prx",
+        "libSceImeDialog.prx",
+        "libSceAudioOut.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceAppContent.prx",
+        "libSceVoiceQoS.prx",
+        "libSceNet.prx",
+        "libSceNpGameIntent.prx",
+        "libSceVideoOut.prx",
+        "libSceSaveData.native.prx",
+        "libSceUserService.prx",
+        "libSceContentExport.prx",
+        "libSceNpCppWebApi.prx",
+        "libSceAgc.prx",
+        "libSceNpSessionSignaling.prx",
+        "libSceAudioIn.prx",
+        "libSceErrorDialog.prx",
+        "libc.prx",
+        "libkernel.prx",
+        "libSceAgcDriver.prx",
+        "libScePlayGo.prx",
+        "libSceRandom.prx",
+        "libSceGameLiveStreaming.prx"
+      ],
+      "unavailable": [
+        "libSceRtc.prx",
+        "libSceAgcDriver.prx",
+        "libSceNpTrophy2.prx",
+        "libkernel.prx",
+        "libSceContentExport.prx",
+        "libSceSsl.prx",
+        "libSceVideoOut.prx",
+        "libSceSaveData.native.prx",
+        "libSceAppContent.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceNpCommerce.prx",
+        "libSceAgc.prx",
+        "libSceNpSessionSignaling.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceIme.prx",
+        "libSceNpWebApi2.prx",
+        "libSceNpEntitlementAccess.prx",
+        "libSceLibcInternal.prx",
+        "libSceGameUpdate.prx",
+        "libSceUserService.prx",
+        "libSceNet.prx",
+        "libScePlayerInvitationDialog.prx",
+        "libSceAmpr.prx",
+        "libSceNpAuth.prx",
+        "libScePad.prx",
+        "libSceShare.prx",
+        "libSceAjm.native.prx",
+        "libSceRandom.prx",
+        "libSceErrorDialog.prx",
+        "libSceAudioOut.prx",
+        "libSceNpGameIntent.prx",
+        "libSceSystemService.prx",
+        "libSceMouse.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceAudioIn.prx",
+        "libSceCommonDialog.prx",
+        "libSceNpManager.prx",
+        "libSceHttp2.prx",
+        "libSceAcm.prx",
+        "libSceSysmodule.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceGameLiveStreaming.prx",
+        "libSceImeDialog.prx",
+        "libSceVoiceQoS.prx",
+        "libSceNetCtl.prx",
+        "libSceHttp.prx",
+        "libSceJson2.prx",
+        "libScePlayGo.prx",
+        "libSceWebBrowserDialog.prx"
+      ],
+      "edges": [
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libScePad.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceNet.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceNetCtl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceAudioOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceAjm.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceVideoOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceUserService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceSsl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceHttp.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libScePlayGo.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceNpManager.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceAppContent.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceSaveData.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceSaveDataDialog.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceCommonDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceGameLiveStreaming.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceSystemService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceIme.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceImeDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceMsgDialog.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceNpCommerce.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceMouse.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceRandom.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceWebBrowserDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceAgcDriver.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceAgc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceRtc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceShare.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceContentExport.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceNpGameIntent.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceAcm.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceVoiceQoS.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceNpAuth.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceErrorDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceJson2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceHttp2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceNpCppWebApi.prx",
+          "status": "loaded"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceNpWebApi2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceNpSessionSignaling.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceNpEntitlementAccess.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceAvPlayer.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceNpUniversalDataSystem.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceNpTrophy2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceGameUpdate.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libScePlayerInvitationDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceAudioIn.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libc.prx",
+          "status": "loaded"
+        },
+        {
+          "from": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+          "to": "libSceAmpr.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceJson2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceRtc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceNpWebApi2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceHttp.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        }
+      ]
+    },
+    "totals": {
+      "modules": 3,
+      "resolved": 3364,
+      "known": 0,
+      "stubbed": 832,
+      "exports": 45062,
+      "unavailable": 49
+    }
+  },
+  "error": null,
+  "total_exports": 45062,
+  "freshness": {
+    "report_format": 1,
+    "loader_fingerprint": "37a85e37ad1df177c24ca92b5e06dd2322849bcbc949ec1461e015d7a1db1eee",
+    "offline_fingerprint": "5895a666f11fc3d4f8653863cefecd6975364404e1323106d77b0e555b25f42f",
+    "environment_fingerprint": "1627010419f8400b08ba46c8736a2fa3f2888e862aa73d8dc4307fbd9a4b01d6",
+    "game_fingerprint": "deff784cf1808b7be9e821c4fc912ac2144cc2a33f5d4bb8ae3e8d220a12e755"
+  }
+}

@@ -1,6 +1,7 @@
 [workspace]
 resolver = "3"
 members = [
+    "crates/import-game",
     "crates/ps5-farm",
     "crates/ps5-format",
     "crates/ps5-self",

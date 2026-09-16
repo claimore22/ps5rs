@@ -1,0 +1,584 @@
+{
+  "game": "Dolphin Spirit - Ocean Mission - [PPSA13711]",
+  "path": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Dolphin Spirit Ocean Mission [PPSA13711]\\decrypted\\eboot.bin",
+  "load_report": {
+    "modules": [
+      {
+        "name": "libc.prx",
+        "module_type": "Prx",
+        "load_bias": 34628173824,
+        "entry_point": null,
+        "exports_count": 2574,
+        "imports_resolved": 0,
+        "imports_known": 0,
+        "imports_stubbed": 105,
+        "relative": 1697,
+        "glob_dat": 3,
+        "jump_slot": 102,
+        "abs64": 0,
+        "copy": 0,
+        "tls_relocations": 3,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 811872,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 1113024,
+        "preinit_array_sz": 8,
+        "per_library": [
+          {
+            "library": "libSceLibcInternalExt",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 101
+          }
+        ]
+      },
+      {
+        "name": "decrypted",
+        "module_type": "Eboot",
+        "load_bias": 34629550080,
+        "entry_point": 112,
+        "exports_count": 1,
+        "imports_resolved": 1289,
+        "imports_known": 0,
+        "imports_stubbed": 466,
+        "relative": 47551,
+        "glob_dat": 4,
+        "jump_slot": 599,
+        "abs64": 1152,
+        "copy": 0,
+        "tls_relocations": 0,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 25935280,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 0,
+        "preinit_array_sz": 0,
+        "per_library": [
+          {
+            "library": "Il2CppUserAssemblies",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceAgc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 67
+          },
+          {
+            "library": "libSceAgcDriver",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 9
+          },
+          {
+            "library": "libSceAjm",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 15
+          },
+          {
+            "library": "libSceAmpr",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceAppContent",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libSceAudioIn",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceAudioOut",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceAudioOut2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 13
+          },
+          {
+            "library": "libSceAvPlayer",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 23
+          },
+          {
+            "library": "libSceCommonDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceHttp",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceHttp2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 23
+          },
+          {
+            "library": "libSceIme",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceImeDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceMouse",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceMsgDialog.native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceNet",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 21
+          },
+          {
+            "library": "libSceNetCtl",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceNpManager",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceNpWebApi2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libScePad",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 17
+          },
+          {
+            "library": "libScePosix",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 42
+          },
+          {
+            "library": "libSceRandom",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceRemoteplay",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceSaveData_native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceSsl",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 11
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSystemService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 19
+          },
+          {
+            "library": "libSceUserService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 14
+          },
+          {
+            "library": "libSceVideoOut",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 17
+          },
+          {
+            "library": "libSceWebBrowserDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libc",
+            "resolved": 1289,
+            "known": 0,
+            "stubbed": 0
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 96
+          }
+        ]
+      }
+    ],
+    "graph": {
+      "nodes": [
+        "libSceSystemService.prx",
+        "libSceVideoOut.prx",
+        "libSceIme.prx",
+        "libSceRtc.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceAgcDriver.prx",
+        "decrypted",
+        "libSceNetCtl.prx",
+        "libSceAppContent.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceMouse.prx",
+        "libc.prx",
+        "libSceSysmodule.prx",
+        "libSceCommonDialog.prx",
+        "Il2CppUserAssemblies.prx",
+        "libScePad.prx",
+        "libSceAudio3d.prx",
+        "libSceRemoteplay.prx",
+        "libkernel.prx",
+        "libSceHttp2.prx",
+        "libSceAjm.native.prx",
+        "libSceAgc.prx",
+        "PS5Util.prx",
+        "libSceImeDialog.prx",
+        "libSceHttp.prx",
+        "libSceLibcInternal.prx",
+        "libSceRazorCpu.prx",
+        "libSceNpWebApi2.prx",
+        "libSceNet.prx",
+        "libSceSaveData.native.prx",
+        "libSceAudioIn.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceUserService.prx",
+        "libSceAmpr.prx",
+        "libSceNpManager.prx",
+        "libSceAudioOut.prx",
+        "libSceSsl.prx",
+        "libSceRandom.prx"
+      ],
+      "unavailable": [
+        "libSceWebBrowserDialog.prx",
+        "libSceSsl.prx",
+        "libSceCommonDialog.prx",
+        "libSceAgcDriver.prx",
+        "Il2CppUserAssemblies.prx",
+        "libSceAudioOut.prx",
+        "libSceSaveData.native.prx",
+        "libSceRemoteplay.prx",
+        "libSceAjm.native.prx",
+        "libSceNet.prx",
+        "libSceSystemService.prx",
+        "libSceMouse.prx",
+        "libSceImeDialog.prx",
+        "PS5Util.prx",
+        "libSceIme.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceNetCtl.prx",
+        "libSceVideoOut.prx",
+        "libSceRazorCpu.prx",
+        "libSceRandom.prx",
+        "libScePad.prx",
+        "libSceLibcInternal.prx",
+        "libSceHttp.prx",
+        "libSceRtc.prx",
+        "libSceNpWebApi2.prx",
+        "libkernel.prx",
+        "libSceNpManager.prx",
+        "libSceSysmodule.prx",
+        "libSceUserService.prx",
+        "libSceAgc.prx",
+        "libSceHttp2.prx",
+        "libSceAmpr.prx",
+        "libSceAppContent.prx",
+        "libSceAudioIn.prx",
+        "libSceAudio3d.prx",
+        "libSceMsgDialog.native.prx"
+      ],
+      "edges": [
+        {
+          "from": "decrypted",
+          "to": "Il2CppUserAssemblies.prx",
+          "status": "missing"
+        },
+        {
+          "from": "decrypted",
+          "to": "PS5Util.prx",
+          "status": "missing"
+        },
+        {
+          "from": "decrypted",
+          "to": "libSceNetCtl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "decrypted",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
+        {
+          "from": "decrypted",
+          "to": "libSceNet.prx",
+          "status": "missing"
+        },
+        {
+          "from": "decrypted",
+          "to": "libSceUserService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "decrypted",
+          "to": "libSceVideoOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "decrypted",
+          "to": "libSceAudioOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "decrypted",
+          "to": "libSceAudioIn.prx",
+          "status": "missing"
+        },
+        {
+          "from": "decrypted",
+          "to": "libScePad.prx",
+          "status": "missing"
+        },
+        {
+          "from": "decrypted",
+          "to": "libSceIme.prx",
+          "status": "missing"
+        },
+        {
+          "from": "decrypted",
+          "to": "libSceImeDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "decrypted",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "decrypted",
+          "to": "libSceRtc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "decrypted",
+          "to": "libSceSystemService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "decrypted",
+          "to": "libSceHttp.prx",
+          "status": "missing"
+        },
+        {
+          "from": "decrypted",
+          "to": "libSceHttp2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "decrypted",
+          "to": "libSceSsl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "decrypted",
+          "to": "libSceSaveData.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "decrypted",
+          "to": "libSceCommonDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "decrypted",
+          "to": "libSceMsgDialog.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "decrypted",
+          "to": "libSceAvPlayer.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "decrypted",
+          "to": "libSceAppContent.prx",
+          "status": "missing"
+        },
+        {
+          "from": "decrypted",
+          "to": "libSceWebBrowserDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "decrypted",
+          "to": "libSceAudio3d.prx",
+          "status": "missing"
+        },
+        {
+          "from": "decrypted",
+          "to": "libSceRemoteplay.prx",
+          "status": "missing"
+        },
+        {
+          "from": "decrypted",
+          "to": "libSceNpManager.prx",
+          "status": "missing"
+        },
+        {
+          "from": "decrypted",
+          "to": "libSceMouse.prx",
+          "status": "missing"
+        },
+        {
+          "from": "decrypted",
+          "to": "libSceAgcDriver.prx",
+          "status": "missing"
+        },
+        {
+          "from": "decrypted",
+          "to": "libSceAgc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "decrypted",
+          "to": "libSceAjm.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "decrypted",
+          "to": "libSceRazorCpu.prx",
+          "status": "missing"
+        },
+        {
+          "from": "decrypted",
+          "to": "libSceNpWebApi2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "decrypted",
+          "to": "libSceRandom.prx",
+          "status": "missing"
+        },
+        {
+          "from": "decrypted",
+          "to": "libc.prx",
+          "status": "loaded"
+        },
+        {
+          "from": "decrypted",
+          "to": "libSceAmpr.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        }
+      ]
+    },
+    "totals": {
+      "modules": 2,
+      "resolved": 1289,
+      "known": 0,
+      "stubbed": 571,
+      "exports": 2575,
+      "unavailable": 36
+    }
+  },
+  "error": null,
+  "total_exports": 2575,
+  "freshness": {
+    "report_format": 1,
+    "loader_fingerprint": "1ffad9aea1b5aea696f6dc6e7583450f9a0e7cbdec866a5f8f5f1a5c5beab611",
+    "offline_fingerprint": "2091ecc259aee180d6046c607636a6147ce6800836720000a275192c491a527b",
+    "environment_fingerprint": "aa4557efadfd802c3d50556622d7c5cb0b3f0972bc7719edd5f87082dd0b2939",
+    "game_fingerprint": "62b7dc854e869f4e31a9559af5fe7130715443affa7db128ddaf786eceb0e045"
+  }
+}

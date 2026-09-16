@@ -1,0 +1,837 @@
+{
+  "game": "Judgment - [PPSA02739]",
+  "path": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Judgment-PPSA02739-USA-Game (v01.001)-PS5\\eboot.bin",
+  "load_report": {
+    "modules": [
+      {
+        "name": "libc.prx",
+        "module_type": "Prx",
+        "load_bias": 34628173824,
+        "entry_point": null,
+        "exports_count": 2565,
+        "imports_resolved": 0,
+        "imports_known": 0,
+        "imports_stubbed": 103,
+        "relative": 1790,
+        "glob_dat": 3,
+        "jump_slot": 100,
+        "abs64": 0,
+        "copy": 0,
+        "tls_relocations": 3,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 819216,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 1113312,
+        "preinit_array_sz": 8,
+        "per_library": [
+          {
+            "library": "libSceLibcInternalExt",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 99
+          }
+        ]
+      },
+      {
+        "name": "libSceNpCppWebApi.prx",
+        "module_type": "Prx",
+        "load_bias": 34629550080,
+        "entry_point": null,
+        "exports_count": 41786,
+        "imports_resolved": 26,
+        "imports_known": 0,
+        "imports_stubbed": 73,
+        "relative": 589,
+        "glob_dat": 2,
+        "jump_slot": 90,
+        "abs64": 7,
+        "copy": 0,
+        "tls_relocations": 0,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 2863904,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 0,
+        "preinit_array_sz": 0,
+        "per_library": [
+          {
+            "library": "libSceHttp",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceJson2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 37
+          },
+          {
+            "library": "libSceLibcInternal",
+            "resolved": 26,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceNpWebApi2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libSceRtc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 24
+          }
+        ]
+      },
+      {
+        "name": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+        "module_type": "Eboot",
+        "load_bias": 34636300288,
+        "entry_point": 112,
+        "exports_count": 0,
+        "imports_resolved": 519,
+        "imports_known": 0,
+        "imports_stubbed": 369,
+        "relative": 84689,
+        "glob_dat": 3,
+        "jump_slot": 542,
+        "abs64": 343,
+        "copy": 0,
+        "tls_relocations": 0,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 21366944,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 0,
+        "preinit_array_sz": 0,
+        "per_library": [
+          {
+            "library": "libSceAgc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 51
+          },
+          {
+            "library": "libSceAgcDriver",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceAmpr",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 24
+          },
+          {
+            "library": "libSceAppContent",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceAudioOut2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 14
+          },
+          {
+            "library": "libSceCommonDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceContentDelete",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceContentExport",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceCoredump",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceErrorDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceGameLiveStreaming",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceHttp2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceImeDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceJpegDec",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceJpegEnc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceJson2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libSceMsgDialog.native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceNet",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceNetCtl",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceNpCommerce",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceNpCppWebApi",
+            "resolved": 79,
+            "known": 0,
+            "stubbed": 0
+          },
+          {
+            "library": "libSceNpEntitlementAccess",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceNpGameIntent",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceNpManager",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 6
+          },
+          {
+            "library": "libSceNpTrophy2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceNpUniversalDataSystem",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 14
+          },
+          {
+            "library": "libSceNpWebApi2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libScePad",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 10
+          },
+          {
+            "library": "libScePlayGo",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 14
+          },
+          {
+            "library": "libScePngDec",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libScePngEnc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceRemoteplay",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceRtc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceSaveDataDialog.native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libSceSaveData_native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 12
+          },
+          {
+            "library": "libSceShare",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceSharePlay",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceSigninDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceSsl",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceSystemService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 6
+          },
+          {
+            "library": "libSceUserService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libSceVideoOut",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libSceVideodec2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 9
+          },
+          {
+            "library": "libc",
+            "resolved": 440,
+            "known": 0,
+            "stubbed": 0
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 73
+          }
+        ]
+      }
+    ],
+    "graph": {
+      "nodes": [
+        "libSceNpCppWebApi.prx",
+        "libSceNpWebApi2.prx",
+        "libSceImeDialog.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceNpCommerce.prx",
+        "libScePngEnc.prx",
+        "libSceGameLiveStreaming.prx",
+        "libSceContentExport.prx",
+        "libSceErrorDialog.prx",
+        "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+        "libkernel.prx",
+        "libSceSystemService.prx",
+        "libSceJpegEnc.prx",
+        "libSceNpEntitlementAccess.prx",
+        "libSceNpGameIntent.prx",
+        "libSceLibcInternal.prx",
+        "libSceSysmodule.prx",
+        "libSceNet.prx",
+        "libc.prx",
+        "libScePngDec.prx",
+        "libSceJson2.prx",
+        "libSceUserService.prx",
+        "libSceMouse.prx",
+        "libSceAgcDriver.prx",
+        "libSceAgc.prx",
+        "libSceRemoteplay.prx",
+        "libSceSaveData.native.prx",
+        "libSceHttp.prx",
+        "libSceVideoOut.prx",
+        "libSceSigninDialog.prx",
+        "libSceNpManager.prx",
+        "libSceSharePlay.prx",
+        "libSceShare.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceAudioOut.prx",
+        "libSceContentDelete.prx",
+        "libSceHttp2.prx",
+        "libSceVideodec2.prx",
+        "libSceAppContent.prx",
+        "libScePlayGo.prx",
+        "libSceCommonDialog.prx",
+        "libSceRtc.prx",
+        "libSceAmpr.prx",
+        "libSceSsl.prx",
+        "libScePad.prx",
+        "libSceNetCtl.prx",
+        "libSceJpegDec.prx",
+        "libSceZlib.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceNpTrophy2.prx"
+      ],
+      "unavailable": [
+        "libSceErrorDialog.prx",
+        "libScePad.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceShare.prx",
+        "libSceNet.prx",
+        "libSceAgc.prx",
+        "libSceRemoteplay.prx",
+        "libkernel.prx",
+        "libSceJpegDec.prx",
+        "libSceNpGameIntent.prx",
+        "libSceAmpr.prx",
+        "libScePlayGo.prx",
+        "libSceVideodec2.prx",
+        "libSceCommonDialog.prx",
+        "libSceNpTrophy2.prx",
+        "libSceNpEntitlementAccess.prx",
+        "libSceNetCtl.prx",
+        "libSceSystemService.prx",
+        "libSceSysmodule.prx",
+        "libSceAudioOut.prx",
+        "libSceSharePlay.prx",
+        "libSceJson2.prx",
+        "libScePngDec.prx",
+        "libSceRtc.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libScePngEnc.prx",
+        "libSceVideoOut.prx",
+        "libSceImeDialog.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceContentDelete.prx",
+        "libSceNpWebApi2.prx",
+        "libSceMouse.prx",
+        "libSceSsl.prx",
+        "libSceUserService.prx",
+        "libSceZlib.prx",
+        "libSceNpCommerce.prx",
+        "libSceNpManager.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceSaveData.native.prx",
+        "libSceSigninDialog.prx",
+        "libSceAgcDriver.prx",
+        "libSceAppContent.prx",
+        "libSceJpegEnc.prx",
+        "libSceContentExport.prx",
+        "libSceLibcInternal.prx",
+        "libSceHttp.prx",
+        "libSceGameLiveStreaming.prx",
+        "libSceHttp2.prx"
+      ],
+      "edges": [
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceJson2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceRtc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceNpWebApi2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceHttp.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libc.prx",
+          "status": "loaded"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceAgc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceVideoOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceAgcDriver.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceAudioOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceNet.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceNetCtl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceVideodec2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceNpUniversalDataSystem.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceSystemService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceRemoteplay.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceShare.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceCommonDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceNpTrophy2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceMsgDialog.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceImeDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceErrorDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceNpEntitlementAccess.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceAppContent.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceSaveData.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceSaveDataDialog.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceWebBrowserDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceNpCommerce.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceNpManager.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceContentExport.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceContentDelete.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libScePngEnc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libScePngDec.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceJpegEnc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceJpegDec.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libScePlayGo.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceSigninDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceGameLiveStreaming.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceSharePlay.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceNpWebApi2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceHttp2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceSsl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceJson2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceNpCppWebApi.prx",
+          "status": "loaded"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceNpGameIntent.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libScePad.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceUserService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceRtc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceMouse.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceZlib.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+          "to": "libSceAmpr.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        }
+      ]
+    },
+    "totals": {
+      "modules": 3,
+      "resolved": 545,
+      "known": 0,
+      "stubbed": 545,
+      "exports": 44351,
+      "unavailable": 48
+    }
+  },
+  "error": null,
+  "total_exports": 44351,
+  "freshness": {
+    "report_format": 1,
+    "loader_fingerprint": "37a85e37ad1df177c24ca92b5e06dd2322849bcbc949ec1461e015d7a1db1eee",
+    "offline_fingerprint": "5895a666f11fc3d4f8653863cefecd6975364404e1323106d77b0e555b25f42f",
+    "environment_fingerprint": "1627010419f8400b08ba46c8736a2fa3f2888e862aa73d8dc4307fbd9a4b01d6",
+    "game_fingerprint": "1a8a4601112d6c835aa7acb4024c13df5ab516b9c43ba56bb97c5c1a80079963"
+  }
+}
