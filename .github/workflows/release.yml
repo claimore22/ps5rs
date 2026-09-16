@@ -38,8 +38,13 @@ jobs:
         shell: bash
         run: |
           mkdir -p dist
-          cp target/${{ matrix.target }}/release/ps5rs${{ matrix.ext }} dist/ps5rs-${{ matrix.asset_suffix }} 2>/dev/null || cp target/${{ matrix.target }}/release/ps5-cli${{ matrix.ext }} dist/ps5rs-${{ matrix.asset_suffix }}
-          cp target/${{ matrix.target }}/release/import-game${{ matrix.ext }} dist/import-game-${{ matrix.asset_suffix }}
+          VER="${{ github.ref_name }}"
+          if [ -f target/${{ matrix.target }}/release/ps5rs${{ matrix.ext }} ]; then
+            cp target/${{ matrix.target }}/release/ps5rs${{ matrix.ext }} "dist/ps5rs-${VER}-${{ matrix.asset_suffix }}"
+          else
+            cp target/${{ matrix.target }}/release/ps5-cli${{ matrix.ext }} "dist/ps5rs-${VER}-${{ matrix.asset_suffix }}"
+          fi
+          cp target/${{ matrix.target }}/release/import-game${{ matrix.ext }} "dist/import-game-${VER}-${{ matrix.asset_suffix }}"
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
