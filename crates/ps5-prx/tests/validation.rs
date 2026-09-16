@@ -4,9 +4,7 @@ use std::path::Path;
 
 #[test]
 fn parse_sdk_archives() {
-    let candidates = [
-        r"C:\Users\claimoar\Documents\ROMS\PS5",
-    ];
+    let candidates = [r"C:\Users\claimoar\Documents\ROMS\PS5"];
     let mut found = 0;
     for base in candidates.iter().filter(|p| Path::new(p).exists()) {
         if let Ok(entries) = std::fs::read_dir(base) {

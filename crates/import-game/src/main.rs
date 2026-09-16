@@ -1,8 +1,7 @@
-use eframe::{egui, NativeOptions};
+use eframe::{NativeOptions, egui};
 use rfd::FileDialog;
 use std::path::PathBuf;
 use std::sync::mpsc;
-
 
 fn main() -> eframe::Result<()> {
     let mut options = NativeOptions::default();

@@ -4,6 +4,32 @@ All notable changes to ps5rs will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [0.6.0] - 2026-09-16
+
+### Added
+- **Import Game GUI** (`import-game`): light-theme desktop app — pick Game folder,
+  Dataset root (`analysis_with_modules`) and Offline exports (`system_modules`), click
+  **Import** to run `ps5rs scan <game> --output analysis_with_modules --append`.
+  Ships as `import-game.exe` (Windows) and `import-game` (Linux) in this release
+- **`ps5-farm` crate**: batch-load/archive orchestration moved out of `ps5-cli`
+  (incremental reconciliation with fingerprints, per-game slices, ingest registry
+  with verify-before-delete)
+- **`scan --append` mode** for incremental ingest (skips games already in the dataset)
+- **Archival ingest boundary**: registry-tracked ingest with result lines on stdout for scripting
+- **CLI help**: every `ps5rs` command and `analyze` subcommand now has a description
+- **Data submission guide** (`DATA_SUBMISSION.md`): documents Option A (import-game GUI)
+  and Option B (manual JSON) flows; new games arrive via pull request
+
+### Changed
+- Workspace version bumped to 0.6.0
+- `gui` branch is never deleted; stable work merges to `master`, fresh `dev` branches
+  cut from `master`
+
+### Fixed
+- `ps5-analysis::scanner` missing `Path`/`PathBuf`/`CollectorOptions` imports and
+  duplicate collector imports that broke `cargo build -p ps5-cli`
+- NID value computation fix plus catalog growth (`moar nids`)
+
 ## [0.5.0] - 2026-09-09
 
 ### Added

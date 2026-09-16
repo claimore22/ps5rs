@@ -1,10 +1,12 @@
 // Consolidated scanner module – single implementation
+use std::path::{Path, PathBuf};
+
+use crate::collector::{CollectorOptions, analyze_binary, find_binaries};
 use crate::dataset::{DATASET_SCHEMA_VERSION, Manifest};
 use crate::param_json::{self, GameParam};
 use crate::string_patterns;
 use ps5_image::{BinaryImageBuilder, BinaryImageDocument, ImageType};
 use ps5_nid::Catalog;
-use crate::collector::{find_binaries, analyze_binary};
 
 pub fn utc_now_iso8601() -> String {
     // Simple UTC timestamp in ISO‑8601 format (seconds precision)
@@ -36,9 +38,12 @@ pub struct ScanResult {
     pub image_paths: Vec<PathBuf>,
 }
 
-
-
-    std::fs::create_dir_all(output)?;
+pub fn scan(
+    root: &Path,
+    output: &Path,
+    catalog: &Catalog,
+    options: &ScanOptions,
+) -> Result<ScanResult, std::io::Error> {
     let images_dir = output.join("images");
     if options.append {
         std::fs::create_dir_all(&images_dir)?;
@@ -90,7 +95,9 @@ pub struct ScanResult {
         if options.append && seen_names.contains(&safe_name) {
             continue;
         }
-        let collector_opts = CollectorOptions { include_prx: options.include_prx };
+        let collector_opts = CollectorOptions {
+            include_prx: options.include_prx,
+        };
         let binaries = find_binaries(game_dir, &collector_opts);
         for bin_path in &binaries {
             if let Some(doc) = analyze_binary(bin_path, catalog, game_dir) {

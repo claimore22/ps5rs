@@ -11,7 +11,25 @@ git clone https://github.com/your‑username/ps5rs.git
 cd ps5rs
 ```
 
-## 2. Add the JSON files
+## 2. Add the JSON files — pick one method
+
+### Option A — Recommended: use `import-game` (Windows `.exe` / Linux binary)
+
+Yes — you can submit with the GUI instead of hand-writing JSON:
+
+1. Download `import-game.exe` (Windows) or `import-game` (Linux) from the
+   [releases page](https://github.com/claimore22/ps5rs/releases) (v0.6.0+ ships both).
+2. Run it, then fill in the three fields:
+   - **Game folder** – directory containing the game's `eboot.bin`.
+   - **Dataset root** – usually `analysis_with_modules` in your checkout.
+   - **Offline exports** – directory with `.exports.json` files (`system_modules`).
+3. Click **Import**. It runs `ps5rs scan <game> --output analysis_with_modules --append`
+   and writes the per-game JSON (`load/games/<Title>_[PPSAxxxxx].json` plus the
+   versioned `analysis_with_modules/games/...` slices) with the bracketed PPSA ID.
+4. Continue at step 3 (Validate locally) below — then commit and open a PR.
+
+### Option B — Manual JSON
+
 * **Where to put them**
   * For a *single‑game* dataset add the file under `load/games/` with the naming pattern:
     ```

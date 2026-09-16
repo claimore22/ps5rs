@@ -18,6 +18,7 @@ pub enum Commands {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
+    /// List imports from a PS5 binary; optionally output JSON and write to a file
     Imports {
         file: PathBuf,
         #[arg(long)]
@@ -28,22 +29,14 @@ pub enum Commands {
         output: Option<PathBuf>,
     },
     /// Show segment table of a PS5 binary
-    Segments {
-        file: PathBuf,
-    },
+    Segments { file: PathBuf },
     /// Show dynamic table of a PS5 binary
-    Dynamic {
-        file: PathBuf,
-    },
+    Dynamic { file: PathBuf },
     /// List symbols from a PS5 binary
-    Symbols {
-        file: PathBuf,
-    },
+    Symbols { file: PathBuf },
     /// Resolve and display NID information for a given name
-    Nid {
-        name: String,
-    },
-/// Scan a directory of games and generate a dataset of binary images
+    Nid { name: String },
+    /// Scan a directory of games and generate a dataset of binary images
     Scan {
         path: PathBuf,
         #[arg(short, long, value_hint = ValueHint::DirPath)]
@@ -65,7 +58,7 @@ pub enum Commands {
         #[command(subcommand)]
         command: AnalyzeCommand,
     },
-/// Extract a file from an archive to a given output path
+    /// Extract a file from an archive to a given output path
     Extract {
         file: PathBuf,
         #[arg(short, long, value_hint = ValueHint::FilePath)]
@@ -114,7 +107,6 @@ pub enum Commands {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
-    /// List exports from a PS5 binary
     /// List exported symbols from a PS5 binary with optional search
     Exports {
         file: PathBuf,
@@ -125,8 +117,7 @@ pub enum Commands {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
-    /// Load a PS5 binary into the virtual memory model
-/// Load a PS5 binary into the virtual memory model for inspection
+    /// Load a PS5 binary into the virtual memory model for inspection
     Load {
         file: PathBuf,
         #[arg(long, value_hint = ValueHint::DirPath)]
@@ -134,7 +125,6 @@ pub enum Commands {
         #[arg(long)]
         json: bool,
     },
-    /// Run a PS5 eboot in the host emulator and print the execution report
     /// Run a PS5 eboot in the host emulator and report execution details
     Run {
         file: PathBuf,
@@ -145,8 +135,7 @@ pub enum Commands {
         #[arg(long)]
         json: bool,
     },
-    /// Batch-scan ELF/PRX files and produce offline export files for the loader
-    /// Batch‑scan ELF/PRX files, producing offline export files for the loader
+    /// Batch-scan ELF/PRX files, producing offline export files for the loader
     ExportScan {
         /// Directory containing ELF/PRX/SELF files to scan
         path: PathBuf,
@@ -154,9 +143,7 @@ pub enum Commands {
         #[arg(short, long, default_value = "system_modules")]
         output: PathBuf,
     },
-    /// Batch-load all games: incremental reconcile by default (only changed
-    /// games are reloaded; pass --force to reload everything)
-    /// Batch‑load all games; incremental by default, with optional force reload
+    /// Batch-load all games; incremental by default, with optional force reload
     BatchLoad {
         /// Games directory containing subdirectories with eboot.bin
         path: PathBuf,
@@ -173,13 +160,11 @@ pub enum Commands {
         #[arg(long)]
         force: bool,
     },
-    /// Manage NID catalog (sync from Supabase, push unknowns)
     /// Manage NID catalog (sync, push unknowns, import stubs)
     Catalog {
         #[command(subcommand)]
         command: CatalogCommand,
     },
-    /// Find NIDs imported by a games corpus that are missing from the catalog
     /// Find NIDs imported by a game's corpus that are missing from the catalog
     UnknownNids {
         /// Games directory containing subdirectories with eboot.bin
@@ -195,7 +180,6 @@ pub enum Commands {
         output: Option<PathBuf>,
     },
     /// Detect third-party middleware libraries in game /prx folders
-    /// Detect third‑party middleware libraries in game /prx folders
     Middleware {
         /// Games directory containing subdirectories with eboot.bin
         path: PathBuf,
@@ -206,7 +190,6 @@ pub enum Commands {
         output: Option<PathBuf>,
     },
     /// Show module dependency graph (uses ps5-deps)
-    /// Show module dependency graph (uses ps5‑deps)
     Deps {
         /// Games directory or single binary path
         path: PathBuf,
@@ -216,7 +199,6 @@ pub enum Commands {
         output: Option<PathBuf>,
     },
     /// Inventory bare game content — all file types, relative paths, cross-artifact linkage
-    /// Inventory bare game content — all file types, relative paths, cross‑artifact linkage
     Inventory {
         /// Games directory (or single game dir)
         path: PathBuf,
@@ -226,7 +208,6 @@ pub enum Commands {
         output: Option<PathBuf>,
     },
     /// List shader artifacts (pssl/sb/ags) with stage, hash, size
-    /// List shader artifacts (pssl/sb/ags) with stage, hash, size
     Shader {
         /// Games directory or shader file
         path: PathBuf,
@@ -235,7 +216,6 @@ pub enum Commands {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
-    /// Show firmware export tables and compatibility
     /// Show firmware export tables and compatibility information
     Firmware {
         /// Path to system_modules dir or game dir
@@ -246,7 +226,6 @@ pub enum Commands {
         output: Option<PathBuf>,
     },
     /// Show SDK metadata (libraries, functions, versions)
-    /// Show SDK metadata (libraries, functions, versions)
     Sdk {
         /// Path to stubs dir, nids.csv, or game dir
         path: PathBuf,
@@ -255,9 +234,7 @@ pub enum Commands {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
-    /// Archive one ingested game into the dataset's per-game records and
-    /// commit the ingest registry (write -> reload -> verify; sources untouched)
-    /// Archive one ingested game into the dataset's per‑game records and commit the ingest registry
+    /// Archive one ingested game into the dataset's per-game records and commit the ingest registry
     Archive {
         /// Game directory to archive (must contain eboot.bin)
         #[arg(long, value_hint = ValueHint::DirPath)]
@@ -344,6 +321,7 @@ pub enum ValidateCommand {
 
 #[derive(Subcommand)]
 pub enum AnalyzeCommand {
+    /// Show dataset statistics (games, imports, resolution rate)
     Stats {
         path: PathBuf,
         #[arg(long, value_enum, default_value = "terminal")]
@@ -351,6 +329,7 @@ pub enum AnalyzeCommand {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
+    /// Show library x game heatmap
     Heatmap {
         path: PathBuf,
         #[arg(long, value_enum, default_value = "terminal")]
@@ -358,6 +337,7 @@ pub enum AnalyzeCommand {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
+    /// Show NID frequency ranking across games
     Frequency {
         path: PathBuf,
         #[arg(long, value_enum, default_value = "terminal")]
@@ -365,6 +345,7 @@ pub enum AnalyzeCommand {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
+    /// List unresolved NIDs per game
     Unresolved {
         path: PathBuf,
         #[arg(long, value_enum, default_value = "terminal")]
@@ -372,6 +353,7 @@ pub enum AnalyzeCommand {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
+    /// Show module dependency graph for a dataset
     Graph {
         path: PathBuf,
         #[arg(long)]
@@ -381,6 +363,7 @@ pub enum AnalyzeCommand {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
+    /// Show import inventory: which libraries are used by how many games
     Imports {
         path: PathBuf,
         #[arg(long, value_enum, default_value = "terminal")]
@@ -388,6 +371,7 @@ pub enum AnalyzeCommand {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
+    /// List unknown NIDs aggregated across the dataset
     Unknown {
         path: PathBuf,
         #[arg(long, value_enum, default_value = "terminal")]
@@ -395,11 +379,13 @@ pub enum AnalyzeCommand {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
+    /// Collect binaries into a dataset without running reports
     Collect {
         path: PathBuf,
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
+    /// Show library versions across games
     LibraryVersions {
         path: PathBuf,
         #[arg(long, value_enum, default_value = "terminal")]
@@ -407,6 +393,7 @@ pub enum AnalyzeCommand {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
+    /// Detect engines (Unity/Unreal/Godot/native) with confidence scores
     Engines {
         path: PathBuf,
         #[arg(long, value_enum, default_value = "terminal")]
