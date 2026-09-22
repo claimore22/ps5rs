@@ -3,8 +3,30 @@ use rfd::FileDialog;
 use std::path::PathBuf;
 use std::sync::mpsc;
 
+fn ps5rs_command() -> std::process::Command {
+    if let Ok(exe) = std::env::current_exe() {
+        if let Some(dir) = exe.parent() {
+            #[cfg(windows)]
+            let name = "ps5rs.exe";
+            #[cfg(not(windows))]
+            let name = "ps5rs";
+            let cand = dir.join(name);
+            if cand.is_file() {
+                return std::process::Command::new(cand);
+            }
+        }
+    }
+    let mut probe = std::process::Command::new("ps5rs");
+    probe.arg("--version");
+    if probe.output().map(|o| o.status.success()).unwrap_or(false) {
+        return std::process::Command::new("ps5rs");
+    }
+    let mut fallback = std::process::Command::new("cargo");
+    fallback.args(["run", "--release", "-p", "ps5-cli", "--"]);
+    fallback
+}
 fn main() -> eframe::Result<()> {
-    let mut options = NativeOptions::default();
+    let options = NativeOptions::default();
     // Force a light theme via egui visuals (set later in UI)
 
     eframe::run_native(
@@ -108,21 +130,24 @@ impl eframe::App for App {
                     ) {
                             let game = game.clone();
                             let dataset = dataset.clone();
-                            let offline = offline.clone();
-// Run the scan command to generate a BinaryImageDocument for the dashboard
-                         let scan_out = std::process::Command::new("cargo")
-                             .args(&[
-                                 "run",
-                                 "-p",
-                                 "ps5-cli",
-                                 "--",
-                                 "scan",
-                              game.to_string_lossy().as_ref(),
-                                 "--output",
-                                 "analysis_with_modules",
-                                 "--append",
-                             ])
-                             .output();
+                            let _offline = offline.clone();
+// Scan the picked folder's parent so the game directory itself is
+// discovered (scan roots never match their own eboot.bin). `--append`
+// keeps every already-ingested game untouched.
+                            let scan_root = game
+                                .parent()
+                                .map(|p| p.to_path_buf())
+                                .unwrap_or_else(|| game.clone());
+                            let mut cmd = ps5rs_command();
+                            let scan_out = cmd
+                                .args([
+                                    "scan",
+                                    scan_root.to_string_lossy().as_ref(),
+                                    "--output",
+                                    dataset.to_string_lossy().as_ref(),
+                                    "--append",
+                                ])
+                                .output();
                          match scan_out {
                              Ok(res) => {
                                  // Print command output for debugging
