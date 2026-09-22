@@ -199,8 +199,18 @@ pub struct HeatmapData {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct NidStats {
     pub top_nids: Vec<TopNid>,
+    pub top_unknown_nids: Vec<UnknownNidEntry>,
     pub resolved_count: usize,
     pub unknown_count: usize,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct UnknownNidEntry {
+    pub nid_hash: String,
+    pub count: usize,
+    pub game_count: usize,
+    pub games: Vec<String>,
+    pub libraries: Vec<String>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -1180,13 +1190,31 @@ fn compute_nid_stats(ds: &AnalysisDataset) -> NidStats {
     let mut nid_counts: HashMap<String, (String, usize)> = HashMap::new();
     let mut resolved_total = 0usize;
     let mut unknown_total = 0usize;
+    let mut unknown: HashMap<
+        String,
+        (
+            usize,
+            std::collections::HashSet<String>,
+            std::collections::HashSet<String>,
+        ),
+    > = HashMap::new();
 
-    for (_, doc) in &ds.images {
+    for (name, doc) in &ds.images {
         for imp in &doc.image.imports {
             if imp.resolved_name.is_some() {
                 resolved_total += 1;
             } else {
                 unknown_total += 1;
+                let entry = unknown.entry(imp.nid_hash.clone()).or_insert_with(|| {
+                    (
+                        0,
+                        std::collections::HashSet::new(),
+                        std::collections::HashSet::new(),
+                    )
+                });
+                entry.0 += 1;
+                entry.1.insert(ds.display_name_for(name).to_string());
+                entry.2.insert(imp.library_name.clone());
             }
             let entry = nid_counts
                 .entry(imp.nid_hash.clone())
@@ -1208,8 +1236,32 @@ fn compute_nid_stats(ds: &AnalysisDataset) -> NidStats {
     top_nids.sort_by_key(|b| std::cmp::Reverse(b.count));
     top_nids.truncate(25);
 
+    let mut top_unknown_nids: Vec<UnknownNidEntry> = unknown
+        .into_iter()
+        .map(|(hash, (count, games, libraries))| {
+            let mut games: Vec<String> = games.into_iter().collect();
+            games.sort();
+            let mut libraries: Vec<String> = libraries.into_iter().collect();
+            libraries.sort();
+            UnknownNidEntry {
+                nid_hash: hash,
+                count,
+                game_count: games.len(),
+                games,
+                libraries,
+            }
+        })
+        .collect();
+    top_unknown_nids.sort_by(|a, b| {
+        b.count
+            .cmp(&a.count)
+            .then_with(|| a.nid_hash.cmp(&b.nid_hash))
+    });
+    top_unknown_nids.truncate(10);
+
     NidStats {
         top_nids,
+        top_unknown_nids,
         resolved_count: resolved_total,
         unknown_count: unknown_total,
     }
@@ -2002,6 +2054,60 @@ mod tests {
     }
 
     #[test]
+    fn compute_nid_stats_top_unknown() {
+        let ds = make_dataset(vec![
+            (
+                "game1",
+                make_doc(
+                    &"a".repeat(64),
+                    vec![
+                        make_imp("u1", None, "libA"),
+                        make_imp("u1", None, "libA"),
+                        make_imp("k1", Some("f1"), "libA"),
+                    ],
+                    vec![],
+                ),
+            ),
+            (
+                "game2",
+                make_doc(
+                    &"b".repeat(64),
+                    vec![make_imp("u1", None, "libB"), make_imp("u2", None, "libB")],
+                    vec![],
+                ),
+            ),
+        ]);
+        let stats = compute_nid_stats(&ds);
+        assert_eq!(stats.resolved_count, 1);
+        assert_eq!(stats.unknown_count, 4);
+        assert_eq!(stats.top_unknown_nids.len(), 2);
+        assert_eq!(stats.top_unknown_nids[0].nid_hash, "u1");
+        assert_eq!(stats.top_unknown_nids[0].count, 3);
+        assert_eq!(stats.top_unknown_nids[0].game_count, 2);
+        assert_eq!(
+            stats.top_unknown_nids[0].games,
+            vec!["game1".to_string(), "game2".to_string()]
+        );
+        assert_eq!(
+            stats.top_unknown_nids[0].libraries,
+            vec!["libA".to_string(), "libB".to_string()]
+        );
+        assert_eq!(stats.top_unknown_nids[1].nid_hash, "u2");
+        assert_eq!(stats.top_unknown_nids[1].count, 1);
+    }
+
+    #[test]
+    fn compute_nid_stats_top_unknown_truncates_to_ten() {
+        let mut imports = Vec::new();
+        for i in 0..12u32 {
+            imports.push(make_imp(&format!("u{i:02}"), None, "libA"));
+        }
+        let ds = make_dataset(vec![("game1", make_doc(&"a".repeat(64), imports, vec![]))]);
+        let stats = compute_nid_stats(&ds);
+        assert_eq!(stats.top_unknown_nids.len(), 10);
+    }
+
+    #[test]
     fn compute_segments_load_only() {
         let ds = make_dataset(vec![(
             "game1",
@@ -2287,6 +2393,7 @@ mod tests {
             heatmap: HeatmapData::default(),
             nid_stats: NidStats {
                 top_nids: vec![],
+                top_unknown_nids: vec![],
                 resolved_count: 0,
                 unknown_count: 0,
             },
@@ -2417,6 +2524,7 @@ mod tests {
             heatmap: HeatmapData::default(),
             nid_stats: NidStats {
                 top_nids: vec![],
+                top_unknown_nids: vec![],
                 resolved_count: 0,
                 unknown_count: 0,
             },

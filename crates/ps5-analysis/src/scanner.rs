@@ -1,9 +1,10 @@
 // Consolidated scanner module – single implementation
 use std::path::{Path, PathBuf};
 
-use crate::collector::{CollectorOptions, analyze_binary, find_binaries};
+use crate::collector::{CollectorOptions, find_binaries};
 use crate::dataset::{DATASET_SCHEMA_VERSION, Manifest};
 use crate::param_json::{self, GameParam};
+use ps5_image::{BINARY_IMAGE_VERSION, BinaryImageBuilder, BinaryImageDocument, ImageType};
 use ps5_nid::Catalog;
 
 pub fn utc_now_iso8601() -> String {
@@ -98,23 +99,28 @@ pub fn scan(
         };
         let binaries = find_binaries(game_dir, &collector_opts);
         for bin_path in &binaries {
-            if let Some(doc) = analyze_binary(bin_path, catalog, game_dir) {
-                if seen_names.contains(&safe_name) {
-                    continue;
-                }
-                seen_names.insert(safe_name.clone());
-                let json_path = output.join("images").join(format!("{safe_name}.json"));
-                let json = serde_json::to_string_pretty(&doc)?;
-                std::fs::write(&json_path, format!("{json}\n"))?;
-                image_paths.push(json_path);
-
-                let param = param_json::read_param(game_dir).unwrap_or_default();
-                let mut param = param;
-                if param.name.is_none() {
-                    param.name = Some(game_name.to_string());
-                }
-                game_params.push(param);
+            if seen_names.contains(&safe_name) {
+                continue;
             }
+            let data = match std::fs::read(bin_path) {
+                Ok(data) => data,
+                Err(_) => continue,
+            };
+            let sha256 = ps5_format::sha256_hex(&data);
+            let image = BinaryImageBuilder::build_from_file(&data, &sha256, catalog);
+            let doc = assemble_image_document(image, &data, image_type_for(bin_path));
+            seen_names.insert(safe_name.clone());
+            let json_path = output.join("images").join(format!("{safe_name}.json"));
+            let json = serde_json::to_string_pretty(&doc)?;
+            std::fs::write(&json_path, format!("{json}\n"))?;
+            image_paths.push(json_path);
+
+            let param = param_json::read_param(game_dir).unwrap_or_default();
+            let mut param = param;
+            if param.name.is_none() {
+                param.name = Some(game_name.to_string());
+            }
+            game_params.push(param);
         }
     }
 
@@ -215,6 +221,38 @@ fn has_eboot(dir: &Path) -> bool {
     dir.join("eboot.bin").exists()
 }
 
+/// Classify an image by its file extension for the document wrapper.
+fn image_type_for(path: &Path) -> ImageType {
+    match path
+        .extension()
+        .and_then(|e| e.to_str())
+        .map(|e| e.to_ascii_lowercase())
+        .as_deref()
+    {
+        Some("prx") => ImageType::Prx,
+        Some("sprx") => ImageType::Sprx,
+        _ => ImageType::Eboot,
+    }
+}
+
+/// Assemble the full `BinaryImageDocument` written per scanned binary:
+/// parsed image plus string fingerprints. Stamps the image interchange
+/// version so the file round-trips through `ps5_image::json::import_json`.
+pub(crate) fn assemble_image_document(
+    image: ps5_image::BinaryImage,
+    data: &[u8],
+    image_type: ImageType,
+) -> BinaryImageDocument {
+    BinaryImageDocument {
+        schema_version: BINARY_IMAGE_VERSION,
+        tool: "ps5rs".to_string(),
+        image,
+        string_analysis: Some(crate::string_patterns::analyze_strings(data)),
+        image_type,
+        parent_image: None,
+    }
+}
+
 pub(crate) fn sanitize_filename(name: &str) -> String {
     // 1️⃣ Extract an ID if present.
     let mut base = name.to_string();
@@ -292,7 +330,8 @@ pub(crate) fn sanitize_filename(name: &str) -> String {
 
 #[cfg(test)]
 mod tests {
-    use super::sanitize_filename;
+    use super::{assemble_image_document, image_type_for, sanitize_filename};
+    use ps5_image::{BINARY_IMAGE_VERSION, BinaryImage, BinaryMetadata, ImageType, Platform};
 
     #[test]
     fn basic() {
@@ -328,5 +367,71 @@ mod tests {
     #[test]
     fn non_ppsa_bracket_falls_back_to_first_pair() {
         assert_eq!(sanitize_filename("Cool [Demo]"), "Cool_[Demo]");
+    }
+
+    fn minimal_image(sha256: &str) -> BinaryImage {
+        BinaryImage {
+            sha256: sha256.to_string(),
+            platform: Platform::Ps5,
+            is_self: true,
+            file_size: 2048,
+            entry_point: 0x80000000,
+            metadata: BinaryMetadata::default(),
+            segments: vec![],
+            imports: vec![],
+            exports: vec![],
+            relocations: vec![],
+            tls: None,
+            init_va: 0,
+            init_array_va: 0,
+            init_array_sz: 0,
+            fini_va: 0,
+            fini_array_va: 0,
+            fini_array_sz: 0,
+            preinit_array_va: 0,
+            preinit_array_sz: 0,
+            import_libs: std::collections::HashMap::new(),
+            needed_files: vec![],
+            dynamic_entries: vec![],
+            version_defs: vec![],
+            lib_versions: vec![],
+        }
+    }
+
+    #[test]
+    fn assemble_document_stamps_version_and_type() {
+        let doc = assemble_image_document(
+            minimal_image(&"ab".repeat(32)),
+            b"UnityEngine\x00puts\x00",
+            ImageType::Eboot,
+        );
+        assert_eq!(doc.schema_version, BINARY_IMAGE_VERSION);
+        assert_eq!(doc.tool, "ps5rs");
+        assert!(matches!(doc.image_type, ImageType::Eboot));
+        assert!(doc.parent_image.is_none());
+        assert_eq!(doc.image.sha256, "ab".repeat(32));
+        let strings = doc.string_analysis.expect("string fingerprints attached");
+        assert!(strings.sce_libraries.is_empty());
+    }
+
+    #[test]
+    fn image_type_for_extension() {
+        use std::path::Path;
+        assert!(matches!(
+            image_type_for(Path::new("eboot.bin")),
+            ImageType::Eboot
+        ));
+        assert!(matches!(
+            image_type_for(Path::new("libc.prx")),
+            ImageType::Prx
+        ));
+        assert!(matches!(
+            image_type_for(Path::new("mod.sprx")),
+            ImageType::Sprx
+        ));
+        assert!(matches!(
+            image_type_for(Path::new("LIBC.PRX")),
+            ImageType::Prx
+        ));
     }
 }

@@ -6,9 +6,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+- **Top 10 Unknown NIDs panel** in the dashboard NIDs section: unresolved imports
+  ranked by occurrence, with per-NID game count, game list and libraries —
+  stub-implementation candidates at a glance (`NidStats::top_unknown_nids`)
+
+### Changed
+- **`scan` emits full `BinaryImageDocument` images again** (segments, exports,
+  relocations, lib versions, TLS, string fingerprints, `image_type` by
+  extension) instead of the reduced `GameAnalysis` shape, stamped with
+  `BINARY_IMAGE_VERSION` so files round-trip through `ps5_image::json`
+
 ### Fixed
 - **Mixed-format datasets**: `AnalysisDataset::open` now accepts both `images/` formats —
-  current `GameAnalysis` files (written by `scan`, tried first) and legacy
+  current `BinaryImageDocument` files (written by `scan`, tried first) and legacy
   `BinaryImageDocument` files. `GameAnalysis` is converted in-memory (full import
   table, libs, needed files, TLS flag); when the same title ID exists in both
   formats the converted document wins and the stale legacy duplicate is dropped.

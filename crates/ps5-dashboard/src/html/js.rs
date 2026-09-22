@@ -513,8 +513,12 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') $('#detailPa
     return `<div class="hbar"><div class="hbar-label" title="${n.nid_hash} &rarr; ${label}"><code style="font-size:0.7rem;color:#8b949e;margin-right:6px">${n.nid_hash}</code>${trunc(label,24)}</div><div class="hbar-track"><div class="hbar-fill fill-blue" style="width:${w}%"></div></div><div class="hbar-count">${fmt(n.count)}</div></div>`;
   }).join('');
 
-  const groups = D.library_nid_breakdown;
-  $('#libNidBreakdown').innerHTML = groups.map((g, i) => {
+  const unkTop = ns.top_unknown_nids || [];
+  $('#unknownNidTop').innerHTML = unkTop.length === 0
+    ? '<p style="color:#8b949e;font-size:0.82rem">All NIDs resolved.</p>'
+    : `<div class="table-wrap"><table class="detail-table"><thead><tr><th>NID Hash</th><th>Count</th><th>Games</th><th>Libraries</th></tr></thead><tbody>${unkTop.map(n => `<tr><td style="font-family:monospace;font-size:0.72rem">${n.nid_hash}</td><td>${fmt(n.count)}</td><td>${n.game_count} &mdash; ${n.games.slice(0, 5).join(', ')}${n.games.length > 5 ? ', …' : ''}</td><td style="color:#8b949e">${n.libraries.join(', ')}</td></tr>`).join('')}</tbody></table></div>`;
+
+  const groups = D.library_nid_breakdown;  $('#libNidBreakdown').innerHTML = groups.map((g, i) => {
       const nidRows = g.top_nids.map(n => {
       const label = n.resolved_name || n.nid_hash;
       const mc = g.top_nids[0].count;

@@ -1,7 +1,7 @@
 use crate::model::GameAnalysis;
 use ps5_image::{
-    BinaryImage, BinaryImageDocument, BinaryMetadata, ImageType, ImportEntry, SymbolBinding,
-    SymbolType, SymbolVisibility, TlsInfo,
+    BINARY_IMAGE_VERSION, BinaryImage, BinaryImageDocument, BinaryMetadata, ImageType, ImportEntry,
+    SymbolBinding, SymbolType, SymbolVisibility, TlsInfo,
 };
 use serde::{Deserialize, Serialize};
 use std::collections::{HashMap, HashSet};
@@ -81,10 +81,12 @@ fn collect_json_files(
             collect_json_files(base_dir, &path, images)?;
         } else if path.extension().and_then(|e| e.to_str()) == Some("json") {
             let data = std::fs::read_to_string(&path)?;
-            // New interchange format first (`GameAnalysis`, written by current
-            // `scan`); legacy `BinaryImageDocument` second. The two shapes are
-            // disjoint (neither has all of the other's required fields), so a
-            // file parses as at most one of them.
+            // `GameAnalysis` files (intermediate scanner) first for
+            // back-compat; current `BinaryImageDocument` files second. The two
+            // shapes are disjoint (neither has all of the other's required
+            // fields), so a file parses as at most one of them. Converted
+            // documents take priority over stale duplicates (see
+            // `dedupe_images`).
             let (doc, is_new) = if let Ok(game) = serde_json::from_str::<GameAnalysis>(&data) {
                 (game_analysis_to_doc(&game), true)
             } else {
@@ -171,7 +173,7 @@ pub(crate) fn game_analysis_to_doc(game: &GameAnalysis) -> BinaryImageDocument {
         .map(|lib| (lib.id, lib.name.clone()))
         .collect();
     BinaryImageDocument {
-        schema_version: DATASET_SCHEMA_VERSION,
+        schema_version: BINARY_IMAGE_VERSION,
         tool: "ps5rs".to_string(),
         image_type: ImageType::Eboot,
         parent_image: None,
@@ -690,7 +692,7 @@ mod tests {
         assert_eq!(ds.images.len(), 1);
         let (key, doc) = &ds.images[0];
         assert_eq!(key, "Cool-_-v1_[PPSA12345]");
-        assert_eq!(doc.schema_version, DATASET_SCHEMA_VERSION);
+        assert_eq!(doc.schema_version, BINARY_IMAGE_VERSION);
         assert_eq!(doc.image.sha256, "cc".repeat(32));
         assert_eq!(doc.image.platform, ps5_image::Platform::Ps5);
         assert_eq!(doc.image.imports.len(), 2);
