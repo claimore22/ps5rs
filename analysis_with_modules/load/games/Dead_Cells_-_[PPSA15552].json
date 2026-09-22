@@ -222,56 +222,71 @@
     ],
     "graph": {
       "nodes": [
-        "libSceNpEntitlementAccess.prx",
-        "libSceAppContent.prx",
-        "libSceNpTrophy2.prx",
         "libSceCommonDialog.prx",
+        "libkernel.prx",
+        "libSceNpTrophy2.prx",
+        "libSceLibcInternal.prx",
+        "libSceNet.prx",
+        "libSceAgcDriver.prx",
+        "libc.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceSaveData.native.prx",
+        "libSceAppContent.prx",
+        "libSceUserService.prx",
+        "libSceAudioOut.prx",
+        "libSceSysmodule.prx",
+        "libSceNgs2.prx",
+        "libSceNpGameIntent.prx",
+        "libSceJpegDec.prx",
         "libSceAgc.prx",
         "Dead.Cells-PPSA15552-USA-Game-v01.005-PS5",
-        "libSceNpCommerce.prx",
-        "libSceNpUniversalDataSystem.prx",
-        "libSceSaveData.native.prx",
-        "libSceSaveDataDialog.native.prx",
-        "libSceNet.prx",
         "libSceSystemService.prx",
-        "libkernel.prx",
-        "libSceSysmodule.prx",
-        "libSceUserService.prx",
-        "libSceNpGameIntent.prx",
-        "libc.prx",
-        "libSceAgcDriver.prx",
-        "libSceJpegDec.prx",
-        "libSceNgs2.prx",
         "libSceVideoOut.prx",
-        "libSceLibcInternal.prx",
-        "libSceAudioOut.prx",
-        "libScePad.prx"
+        "libSceNpEntitlementAccess.prx",
+        "libSceNpCommerce.prx",
+        "libScePad.prx",
+        "libSceSaveDataDialog.native.prx"
       ],
       "unavailable": [
-        "libSceUserService.prx",
-        "libSceAppContent.prx",
-        "libSceSaveData.native.prx",
         "libSceNpCommerce.prx",
+        "libSceNet.prx",
+        "libSceSystemService.prx",
         "libSceLibcInternal.prx",
-        "libSceAgc.prx",
+        "libSceNpGameIntent.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceUserService.prx",
+        "libSceJpegDec.prx",
+        "libSceCommonDialog.prx",
         "libSceNpUniversalDataSystem.prx",
         "libkernel.prx",
-        "libSceAgcDriver.prx",
-        "libSceSystemService.prx",
-        "libSceNet.prx",
-        "libSceJpegDec.prx",
-        "libSceNpTrophy2.prx",
-        "libSceSaveDataDialog.native.prx",
-        "libScePad.prx",
-        "libSceNgs2.prx",
-        "libSceNpGameIntent.prx",
-        "libSceCommonDialog.prx",
+        "libSceSaveData.native.prx",
         "libSceNpEntitlementAccess.prx",
+        "libSceNpTrophy2.prx",
+        "libSceAgc.prx",
+        "libSceAudioOut.prx",
         "libSceVideoOut.prx",
-        "libSceSysmodule.prx",
-        "libSceAudioOut.prx"
+        "libSceNgs2.prx",
+        "libSceAppContent.prx",
+        "libSceAgcDriver.prx",
+        "libScePad.prx",
+        "libSceSysmodule.prx"
       ],
       "edges": [
+        {
+          "from": "libc.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
         {
           "from": "Dead.Cells-PPSA15552-USA-Game-v01.005-PS5",
           "to": "libSceNpEntitlementAccess.prx",
@@ -381,21 +396,6 @@
           "from": "Dead.Cells-PPSA15552-USA-Game-v01.005-PS5",
           "to": "libc.prx",
           "status": "loaded"
-        },
-        {
-          "from": "libc.prx",
-          "to": "libkernel.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libc.prx",
-          "to": "libSceLibcInternal.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libc.prx",
-          "to": "libSceSysmodule.prx",
-          "status": "missing"
         }
       ]
     },
@@ -412,9 +412,9 @@
   "total_exports": 2574,
   "freshness": {
     "report_format": 1,
-    "loader_fingerprint": "37a85e37ad1df177c24ca92b5e06dd2322849bcbc949ec1461e015d7a1db1eee",
+    "loader_fingerprint": "fc478775a40bc52ba94d034eb6191bac0618e25283bda3650bbfd1d0629a127c",
     "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
-    "environment_fingerprint": "3aaac4cd58fab0d58acdb4ea2271b30447f0e35fa900d2cd9f160d90a489df07",
-    "game_fingerprint": "20c20f820dd68b4fd544f1f91efece02f25cac820ce6c0e00ac6a038ec2fe7ff"
+    "environment_fingerprint": "d3b9ffc479afbfe3716b56a71d30b6fd9604adba3c44edc2cd389c958d4abe68",
+    "game_fingerprint": "c55bd42d6feef2231709f4e593e9d33eea6c6d8418c81ad5967cb2f7bd1ca0b6"
   }
 }

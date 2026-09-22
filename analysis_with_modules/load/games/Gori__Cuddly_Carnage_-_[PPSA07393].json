@@ -1,6 +1,6 @@
 {
-  "game": "Stray - [PPSA02100]",
-  "path": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Stray-PPSA02100-USA-PS5\\PPSA02100 -  Stray\\eboot.bin",
+  "game": "Gori: Cuddly Carnage - [PPSA07393]",
+  "path": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5\\eboot.bin",
   "load_report": {
     "modules": [
       {
@@ -8,14 +8,14 @@
         "module_type": "Prx",
         "load_bias": 34628173824,
         "entry_point": null,
-        "exports_count": 45841,
+        "exports_count": 41658,
         "imports_resolved": 0,
-        "imports_known": 32,
+        "imports_known": 25,
         "imports_stubbed": 73,
-        "relative": 759,
+        "relative": 774,
         "glob_dat": 2,
         "jump_slot": 92,
-        "abs64": 11,
+        "abs64": 4,
         "copy": 0,
         "tls_relocations": 0,
         "ifunc": 0,
@@ -25,7 +25,7 @@
         "init_va": 16,
         "init_array_va": 0,
         "init_array_sz": 0,
-        "fini_va": 3209232,
+        "fini_va": 4036928,
         "fini_array_va": 0,
         "fini_array_sz": 0,
         "preinit_array_va": 0,
@@ -46,7 +46,7 @@
           {
             "library": "libSceLibcInternal",
             "resolved": 0,
-            "known": 32,
+            "known": 25,
             "stubbed": 1
           },
           {
@@ -72,15 +72,15 @@
       {
         "name": "libc.prx",
         "module_type": "Prx",
-        "load_bias": 34635710464,
+        "load_bias": 34636038144,
         "entry_point": null,
-        "exports_count": 2569,
+        "exports_count": 2572,
         "imports_resolved": 0,
         "imports_known": 0,
-        "imports_stubbed": 104,
-        "relative": 1789,
+        "imports_stubbed": 105,
+        "relative": 1699,
         "glob_dat": 3,
-        "jump_slot": 101,
+        "jump_slot": 102,
         "abs64": 0,
         "copy": 0,
         "tls_relocations": 3,
@@ -91,10 +91,10 @@
         "init_va": 16,
         "init_array_va": 0,
         "init_array_sz": 0,
-        "fini_va": 838544,
+        "fini_va": 804832,
         "fini_array_va": 0,
         "fini_array_sz": 0,
-        "preinit_array_va": 1130080,
+        "preinit_array_va": 1113040,
         "preinit_array_sz": 8,
         "per_library": [
           {
@@ -113,23 +113,23 @@
             "library": "libkernel",
             "resolved": 0,
             "known": 0,
-            "stubbed": 100
+            "stubbed": 101
           }
         ]
       },
       {
-        "name": "PPSA02100 -  Stray",
+        "name": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
         "module_type": "Eboot",
-        "load_bias": 34637086720,
+        "load_bias": 34637414400,
         "entry_point": 128,
         "exports_count": 0,
-        "imports_resolved": 10431,
+        "imports_resolved": 7211,
         "imports_known": 0,
-        "imports_stubbed": 868,
-        "relative": 759943,
-        "glob_dat": 25,
-        "jump_slot": 2010,
-        "abs64": 9264,
+        "imports_stubbed": 679,
+        "relative": 846800,
+        "glob_dat": 18,
+        "jump_slot": 1789,
+        "abs64": 6083,
         "copy": 0,
         "tls_relocations": 0,
         "ifunc": 0,
@@ -139,7 +139,7 @@
         "init_va": 16,
         "init_array_va": 0,
         "init_array_sz": 0,
-        "fini_va": 92455936,
+        "fini_va": 69817008,
         "fini_array_va": 0,
         "fini_array_sz": 0,
         "preinit_array_va": 0,
@@ -155,13 +155,13 @@
             "library": "libSceAgc",
             "resolved": 0,
             "known": 0,
-            "stubbed": 191
+            "stubbed": 64
           },
           {
             "library": "libSceAgcDriver",
             "resolved": 0,
             "known": 0,
-            "stubbed": 38
+            "stubbed": 6
           },
           {
             "library": "libSceAjm",
@@ -173,7 +173,7 @@
             "library": "libSceAmpr",
             "resolved": 0,
             "known": 0,
-            "stubbed": 60
+            "stubbed": 13
           },
           {
             "library": "libSceAppContent",
@@ -197,19 +197,7 @@
             "library": "libSceAudioOut2",
             "resolved": 0,
             "known": 0,
-            "stubbed": 14
-          },
-          {
-            "library": "libSceAvPlayer",
-            "resolved": 0,
-            "known": 0,
-            "stubbed": 22
-          },
-          {
-            "library": "libSceCdlgPlayerReview",
-            "resolved": 0,
-            "known": 0,
-            "stubbed": 7
+            "stubbed": 13
           },
           {
             "library": "libSceCommonDialog",
@@ -257,7 +245,7 @@
             "library": "libSceIme",
             "resolved": 0,
             "known": 0,
-            "stubbed": 5
+            "stubbed": 3
           },
           {
             "library": "libSceImeDialog",
@@ -287,19 +275,13 @@
             "library": "libSceNet",
             "resolved": 0,
             "known": 0,
-            "stubbed": 24
+            "stubbed": 25
           },
           {
             "library": "libSceNetCtl",
             "resolved": 0,
             "known": 0,
             "stubbed": 7
-          },
-          {
-            "library": "libSceNgs2",
-            "resolved": 0,
-            "known": 0,
-            "stubbed": 15
           },
           {
             "library": "libSceNpAuth",
@@ -315,7 +297,7 @@
           },
           {
             "library": "libSceNpCppWebApi",
-            "resolved": 942,
+            "resolved": 943,
             "known": 0,
             "stubbed": 0
           },
@@ -353,25 +335,25 @@
             "library": "libSceNpUniversalDataSystem",
             "resolved": 0,
             "known": 0,
-            "stubbed": 29
+            "stubbed": 28
           },
           {
             "library": "libSceNpWebApi2",
             "resolved": 0,
             "known": 0,
-            "stubbed": 22
+            "stubbed": 23
           },
           {
             "library": "libScePad",
             "resolved": 0,
             "known": 0,
-            "stubbed": 12
+            "stubbed": 13
           },
           {
             "library": "libScePlayGo",
             "resolved": 0,
             "known": 0,
-            "stubbed": 10
+            "stubbed": 11
           },
           {
             "library": "libScePlayerInvitationDialog",
@@ -383,7 +365,7 @@
             "library": "libScePosix",
             "resolved": 0,
             "known": 0,
-            "stubbed": 65
+            "stubbed": 42
           },
           {
             "library": "libSceRandom",
@@ -431,19 +413,19 @@
             "library": "libSceSystemService",
             "resolved": 0,
             "known": 0,
-            "stubbed": 7
+            "stubbed": 8
           },
           {
             "library": "libSceUserService",
             "resolved": 0,
             "known": 0,
-            "stubbed": 6
+            "stubbed": 5
           },
           {
             "library": "libSceVideoOut",
             "resolved": 0,
             "known": 0,
-            "stubbed": 13
+            "stubbed": 19
           },
           {
             "library": "libSceVoiceQoS",
@@ -459,453 +441,458 @@
           },
           {
             "library": "libc",
-            "resolved": 9489,
+            "resolved": 6268,
             "known": 0,
             "stubbed": 0
+          },
+          {
+            "library": "libfmod",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 31
+          },
+          {
+            "library": "libfmodstudio",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 74
           },
           {
             "library": "libkernel",
             "resolved": 0,
             "known": 0,
-            "stubbed": 99
+            "stubbed": 72
           }
         ]
       }
     ],
     "graph": {
       "nodes": [
-        "libSceRtc.prx",
-        "libSceImeDialog.prx",
-        "libc.prx",
-        "libSceMouse.prx",
-        "libSceJson2.prx",
-        "libSceNetCtl.prx",
-        "libSceNpSessionSignaling.prx",
-        "libSceSystemService.prx",
-        "libSceAppContent.prx",
-        "libSceVoiceQoS.prx",
-        "libSceNpManager.prx",
         "libSceLibcInternal.prx",
-        "libSceNpAuth.prx",
-        "libSceErrorDialog.prx",
-        "libSceAgc.prx",
-        "libSceAjm.native.prx",
-        "libSceNet.prx",
-        "libSceNgs2.prx",
-        "libSceVideoOut.prx",
-        "libSceSsl.prx",
-        "libSceHttp.prx",
-        "libSceSaveData.native.prx",
-        "libSceNpGameIntent.prx",
-        "libSceNpCommerce.prx",
-        "libSceAvPlayer.native.prx",
-        "libSceRandom.prx",
-        "libSceNpUniversalDataSystem.prx",
-        "libScePlayGo.prx",
-        "libSceNpCppWebApi.prx",
-        "libSceHttp2.prx",
-        "libSceGameUpdate.prx",
-        "libSceSysmodule.prx",
-        "libSceSaveDataDialog.native.prx",
-        "libSceUserService.prx",
-        "libSceCommonDialog.prx",
-        "libSceWebBrowserDialog.prx",
-        "libSceIme.prx",
-        "libSceGameLiveStreaming.prx",
-        "libSceAudioOut.prx",
-        "libkernel.prx",
-        "libSceMsgDialog.native.prx",
-        "libScePlayerInvitationDialog.prx",
-        "libSceCdlgPlayerReview.prx",
-        "libSceAgcDriver.prx",
-        "libScePad.prx",
-        "libSceShare.prx",
-        "libSceNpWebApi2.prx",
-        "PPSA02100 -  Stray",
-        "libSceContentExport.prx",
-        "libSceNpEntitlementAccess.prx",
         "libSceAudioIn.prx",
         "libSceAcm.prx",
+        "libScePad.prx",
+        "libSceNpManager.prx",
+        "libSceGameLiveStreaming.prx",
+        "libSceUserService.prx",
+        "libSceAgcDriver.prx",
+        "libSceMsgDialog.native.prx",
+        "libkernel.prx",
+        "libSceGameUpdate.prx",
+        "libSceNet.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceRandom.prx",
+        "libSceVideoOut.prx",
+        "libSceErrorDialog.prx",
+        "libfmod.prx",
+        "libSceShare.prx",
+        "libSceHttp2.prx",
+        "libScePlayGo.prx",
+        "libSceContentExport.prx",
+        "libSceNetCtl.prx",
+        "libSceAudioOut.prx",
+        "libSceHttp.prx",
+        "libSceSaveData.native.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libScePlayerInvitationDialog.prx",
+        "libSceSsl.prx",
+        "libSceSystemService.prx",
+        "libSceRtc.prx",
+        "libSceNpTrophy2.prx",
+        "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
+        "libfmodstudio.prx",
+        "libSceAppContent.prx",
+        "libSceNpGameIntent.prx",
+        "libSceNpSessionSignaling.prx",
+        "libSceNpAuth.prx",
+        "libSceJson2.prx",
+        "libSceNpEntitlementAccess.prx",
+        "libSceCommonDialog.prx",
+        "libSceImeDialog.prx",
+        "libSceMouse.prx",
+        "libSceVoiceQoS.prx",
+        "libc.prx",
+        "libSceNpWebApi2.prx",
+        "libSceWebBrowserDialog.prx",
         "libSceAmpr.prx",
-        "libSceNpTrophy2.prx"
+        "libSceIme.prx",
+        "libSceNpCommerce.prx",
+        "libSceAgc.prx",
+        "libSceAjm.native.prx",
+        "libSceSysmodule.prx",
+        "libSceNpCppWebApi.prx"
       ],
       "unavailable": [
-        "libSceVoiceQoS.prx",
-        "libSceNpAuth.prx",
-        "libSceAudioIn.prx",
-        "libSceCdlgPlayerReview.prx",
-        "libSceNpSessionSignaling.prx",
-        "libSceAgc.prx",
-        "libSceNpCommerce.prx",
-        "libSceSysmodule.prx",
-        "libSceMsgDialog.native.prx",
-        "libSceRandom.prx",
-        "libSceNpGameIntent.prx",
-        "libSceLibcInternal.prx",
-        "libSceSystemService.prx",
-        "libSceNpUniversalDataSystem.prx",
-        "libSceGameUpdate.prx",
-        "libSceShare.prx",
-        "libSceHttp.prx",
-        "libSceAppContent.prx",
-        "libScePad.prx",
-        "libSceContentExport.prx",
-        "libSceNpEntitlementAccess.prx",
-        "libSceAmpr.prx",
-        "libSceHttp2.prx",
-        "libSceNet.prx",
-        "libSceNpWebApi2.prx",
-        "libSceWebBrowserDialog.prx",
-        "libSceAcm.prx",
-        "libSceErrorDialog.prx",
-        "libSceUserService.prx",
-        "libSceAgcDriver.prx",
-        "libSceAjm.native.prx",
-        "libSceSaveDataDialog.native.prx",
-        "libScePlayerInvitationDialog.prx",
-        "libSceSaveData.native.prx",
-        "libSceNgs2.prx",
-        "libSceMouse.prx",
-        "libkernel.prx",
-        "libSceJson2.prx",
-        "libSceCommonDialog.prx",
-        "libScePlayGo.prx",
-        "libSceVideoOut.prx",
-        "libSceRtc.prx",
-        "libSceNetCtl.prx",
-        "libSceImeDialog.prx",
-        "libSceSsl.prx",
         "libSceNpManager.prx",
-        "libSceGameLiveStreaming.prx",
+        "libfmodstudio.prx",
+        "libSceRtc.prx",
+        "libSceAppContent.prx",
+        "libSceNetCtl.prx",
+        "libSceAjm.native.prx",
+        "libkernel.prx",
+        "libSceAgc.prx",
         "libSceNpTrophy2.prx",
+        "libSceGameUpdate.prx",
+        "libSceVoiceQoS.prx",
+        "libSceNet.prx",
+        "libSceAcm.prx",
+        "libfmod.prx",
+        "libSceUserService.prx",
+        "libSceAmpr.prx",
+        "libSceLibcInternal.prx",
+        "libSceErrorDialog.prx",
+        "libSceHttp.prx",
+        "libSceJson2.prx",
+        "libScePlayGo.prx",
+        "libSceMouse.prx",
+        "libScePad.prx",
+        "libSceNpWebApi2.prx",
+        "libSceContentExport.prx",
+        "libSceSysmodule.prx",
+        "libSceCommonDialog.prx",
+        "libSceShare.prx",
+        "libSceHttp2.prx",
         "libSceAudioOut.prx",
-        "libSceAvPlayer.native.prx",
-        "libSceIme.prx"
+        "libSceNpEntitlementAccess.prx",
+        "libSceAudioIn.prx",
+        "libSceSystemService.prx",
+        "libSceSsl.prx",
+        "libSceGameLiveStreaming.prx",
+        "libSceIme.prx",
+        "libSceImeDialog.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceNpGameIntent.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceRandom.prx",
+        "libSceNpAuth.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceVideoOut.prx",
+        "libSceNpSessionSignaling.prx",
+        "libSceSaveData.native.prx",
+        "libSceAgcDriver.prx",
+        "libScePlayerInvitationDialog.prx",
+        "libSceNpCommerce.prx"
       ],
       "edges": [
         {
-          "from": "libc.prx",
-          "to": "libkernel.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libc.prx",
-          "to": "libSceLibcInternal.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libc.prx",
-          "to": "libSceSysmodule.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libSceNpCppWebApi.prx",
-          "to": "libSceJson2.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libSceNpCppWebApi.prx",
-          "to": "libSceRtc.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libSceNpCppWebApi.prx",
-          "to": "libSceNpWebApi2.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libSceNpCppWebApi.prx",
-          "to": "libSceHttp.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libSceNpCppWebApi.prx",
-          "to": "libkernel.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libSceNpCppWebApi.prx",
-          "to": "libSceLibcInternal.prx",
-          "status": "missing"
-        },
-        {
-          "from": "PPSA02100 -  Stray",
-          "to": "libSceAgcDriver.prx",
-          "status": "missing"
-        },
-        {
-          "from": "PPSA02100 -  Stray",
-          "to": "libSceAgc.prx",
-          "status": "missing"
-        },
-        {
-          "from": "PPSA02100 -  Stray",
-          "to": "libSceRtc.prx",
-          "status": "missing"
-        },
-        {
-          "from": "PPSA02100 -  Stray",
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
           "to": "libScePad.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
           "to": "libSceNet.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
           "to": "libSceNetCtl.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
-          "to": "libSceNgs2.prx",
-          "status": "missing"
-        },
-        {
-          "from": "PPSA02100 -  Stray",
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
           "to": "libSceAudioOut.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
           "to": "libSceAjm.native.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
           "to": "libSceSysmodule.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
           "to": "libSceVideoOut.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
           "to": "libSceUserService.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
           "to": "libkernel.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
           "to": "libSceSsl.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
           "to": "libSceHttp.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
           "to": "libScePlayGo.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
           "to": "libSceNpManager.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
           "to": "libSceAppContent.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
           "to": "libSceSaveData.native.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
           "to": "libSceSaveDataDialog.native.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
           "to": "libSceCommonDialog.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
           "to": "libSceGameLiveStreaming.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
           "to": "libSceSystemService.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
           "to": "libSceIme.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
           "to": "libSceImeDialog.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
           "to": "libSceMsgDialog.native.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
           "to": "libSceNpCommerce.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
-          "to": "libSceShare.prx",
-          "status": "missing"
-        },
-        {
-          "from": "PPSA02100 -  Stray",
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
           "to": "libSceMouse.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
           "to": "libSceRandom.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
           "to": "libSceWebBrowserDialog.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
+          "to": "libSceAgcDriver.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
+          "to": "libSceAgc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
+          "to": "libSceRtc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
+          "to": "libSceShare.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
           "to": "libSceContentExport.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
           "to": "libSceNpGameIntent.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
-          "to": "libSceAvPlayer.native.prx",
-          "status": "missing"
-        },
-        {
-          "from": "PPSA02100 -  Stray",
-          "to": "libSceNpAuth.prx",
-          "status": "missing"
-        },
-        {
-          "from": "PPSA02100 -  Stray",
-          "to": "libSceJson2.prx",
-          "status": "missing"
-        },
-        {
-          "from": "PPSA02100 -  Stray",
-          "to": "libSceNpUniversalDataSystem.prx",
-          "status": "missing"
-        },
-        {
-          "from": "PPSA02100 -  Stray",
-          "to": "libSceNpTrophy2.prx",
-          "status": "missing"
-        },
-        {
-          "from": "PPSA02100 -  Stray",
-          "to": "libSceErrorDialog.prx",
-          "status": "missing"
-        },
-        {
-          "from": "PPSA02100 -  Stray",
-          "to": "libSceGameUpdate.prx",
-          "status": "missing"
-        },
-        {
-          "from": "PPSA02100 -  Stray",
-          "to": "libScePlayerInvitationDialog.prx",
-          "status": "missing"
-        },
-        {
-          "from": "PPSA02100 -  Stray",
-          "to": "libSceCdlgPlayerReview.prx",
-          "status": "missing"
-        },
-        {
-          "from": "PPSA02100 -  Stray",
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
           "to": "libSceVoiceQoS.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
+          "to": "libSceNpAuth.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
+          "to": "libSceErrorDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
+          "to": "libSceJson2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
           "to": "libSceHttp2.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
           "to": "libSceNpCppWebApi.prx",
           "status": "loaded"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
           "to": "libSceNpWebApi2.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
           "to": "libSceNpSessionSignaling.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
           "to": "libSceNpEntitlementAccess.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
+          "to": "libSceNpUniversalDataSystem.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
+          "to": "libSceNpTrophy2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
+          "to": "libSceGameUpdate.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
+          "to": "libScePlayerInvitationDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
           "to": "libSceAudioIn.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
           "to": "libSceAcm.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
+          "to": "libfmod.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
+          "to": "libfmodstudio.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
           "to": "libc.prx",
           "status": "loaded"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
           "to": "libSceAmpr.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceJson2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceRtc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceNpWebApi2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceHttp.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libSceNpCppWebApi.prx",
+          "to": "libSceLibcInternal.prx",
           "status": "missing"
         }
       ]
     },
     "totals": {
       "modules": 3,
-      "resolved": 10431,
-      "known": 32,
-      "stubbed": 1045,
-      "exports": 48410,
-      "unavailable": 51
+      "resolved": 7211,
+      "known": 25,
+      "stubbed": 857,
+      "exports": 44230,
+      "unavailable": 50
     }
   },
   "error": null,
-  "total_exports": 48410,
+  "total_exports": 44230,
   "freshness": {
     "report_format": 1,
     "loader_fingerprint": "fc478775a40bc52ba94d034eb6191bac0618e25283bda3650bbfd1d0629a127c",
     "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
     "environment_fingerprint": "d3b9ffc479afbfe3716b56a71d30b6fd9604adba3c44edc2cd389c958d4abe68",
-    "game_fingerprint": "10258a29bcab5bf281e11b4994b5822cf710f6f8da645480b16174814b876436"
+    "game_fingerprint": "687f62397a256af83b0119987439e623b6e21400aa8fd7dd8e6cabd557e97b20"
   }
 }

@@ -192,52 +192,67 @@
     ],
     "graph": {
       "nodes": [
-        "libSceSaveDataDialog.native.prx",
-        "libScePad.prx",
-        "libSceAgc.prx",
-        "libSceUserService.prx",
-        "libSceUlt.prx",
-        "libSceNpTrophy2.prx",
-        "libSceAudioOut.prx",
-        "libkernel.prx",
-        "libSceSaveData.native.prx",
-        "libSceCommonDialog.prx",
-        "libSceSystemService.prx",
-        "libSceNpGameIntent.prx",
-        "libSceLibcInternal.prx",
-        "libSceVideoOut.prx",
-        "Neko.Rescue.Tale-PPSA13871-EUR-Game (v01.000)-PS5",
-        "libc.prx",
-        "libSceSysmodule.prx",
-        "libSceNpUniversalDataSystem.prx",
-        "libSceImeBackend.prx",
         "libSceImeDialog.prx",
+        "libSceCommonDialog.prx",
+        "libSceVideoOut.prx",
+        "libSceIme.prx",
+        "libSceSystemService.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceLibcInternal.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceSaveData.native.prx",
+        "libScePad.prx",
+        "libSceSysmodule.prx",
+        "libSceAudioOut.prx",
+        "libSceNpTrophy2.prx",
+        "libSceAgc.prx",
+        "libSceImeBackend.prx",
+        "libSceUlt.prx",
+        "libSceNpGameIntent.prx",
+        "libSceUserService.prx",
         "libSceAgcDriver.prx",
-        "libSceIme.prx"
+        "libkernel.prx",
+        "libc.prx",
+        "Neko.Rescue.Tale-PPSA13871-EUR-Game (v01.000)-PS5"
       ],
       "unavailable": [
+        "libSceNpGameIntent.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceAudioOut.prx",
+        "libSceImeBackend.prx",
         "libSceVideoOut.prx",
-        "libSceNpUniversalDataSystem.prx",
+        "libSceImeDialog.prx",
         "libSceLibcInternal.prx",
         "libSceUserService.prx",
-        "libSceAgc.prx",
-        "libSceImeBackend.prx",
-        "libSceUlt.prx",
-        "libSceSystemService.prx",
-        "libSceAgcDriver.prx",
-        "libSceSysmodule.prx",
-        "libSceSaveDataDialog.native.prx",
-        "libSceNpGameIntent.prx",
-        "libScePad.prx",
-        "libSceAudioOut.prx",
-        "libSceSaveData.native.prx",
-        "libSceIme.prx",
-        "libSceImeDialog.prx",
-        "libkernel.prx",
         "libSceCommonDialog.prx",
-        "libSceNpTrophy2.prx"
+        "libSceNpTrophy2.prx",
+        "libSceAgcDriver.prx",
+        "libScePad.prx",
+        "libSceIme.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceSysmodule.prx",
+        "libSceSaveData.native.prx",
+        "libSceUlt.prx",
+        "libkernel.prx",
+        "libSceAgc.prx",
+        "libSceSystemService.prx"
       ],
       "edges": [
+        {
+          "from": "libc.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
         {
           "from": "Neko.Rescue.Tale-PPSA13871-EUR-Game (v01.000)-PS5",
           "to": "libScePad.prx",
@@ -337,21 +352,6 @@
           "from": "Neko.Rescue.Tale-PPSA13871-EUR-Game (v01.000)-PS5",
           "to": "libSceUserService.prx",
           "status": "missing"
-        },
-        {
-          "from": "libc.prx",
-          "to": "libkernel.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libc.prx",
-          "to": "libSceLibcInternal.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libc.prx",
-          "to": "libSceSysmodule.prx",
-          "status": "missing"
         }
       ]
     },
@@ -368,9 +368,9 @@
   "total_exports": 2571,
   "freshness": {
     "report_format": 1,
-    "loader_fingerprint": "37a85e37ad1df177c24ca92b5e06dd2322849bcbc949ec1461e015d7a1db1eee",
+    "loader_fingerprint": "fc478775a40bc52ba94d034eb6191bac0618e25283bda3650bbfd1d0629a127c",
     "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
-    "environment_fingerprint": "3aaac4cd58fab0d58acdb4ea2271b30447f0e35fa900d2cd9f160d90a489df07",
-    "game_fingerprint": "d2d8836d406adc1c3aa0035fa8b9d96f589183a432bb09b532223a54413bff08"
+    "environment_fingerprint": "d3b9ffc479afbfe3716b56a71d30b6fd9604adba3c44edc2cd389c958d4abe68",
+    "game_fingerprint": "fdb61ad0cb06552ee67352a89789f90e0906f4d5867bc97b34cb983b49965078"
   }
 }

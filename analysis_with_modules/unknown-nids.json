@@ -2,15 +2,15 @@
   "schema_version": 1,
   "tool": "ps5rs",
   "games_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5",
-  "generated_at": "2026-09-13T05:59:24Z",
+  "generated_at": "2026-09-22T04:53:55Z",
   "summary": {
-    "games_found": 33,
-    "games_parsed": 30,
-    "games_failed": 3,
-    "imports_total": 31475,
-    "known_total": 31047,
-    "unknown_total": 428,
-    "unique_unknown_nids": 183
+    "games_found": 34,
+    "games_parsed": 32,
+    "games_failed": 2,
+    "imports_total": 34213,
+    "known_total": 33676,
+    "unknown_total": 537,
+    "unique_unknown_nids": 189
   },
   "games": [
     {
@@ -392,6 +392,15 @@
       "error": null
     },
     {
+      "name": "Dolphin Spirit - Ocean Mission - [PPSA13711]",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Dolphin Spirit Ocean Mission [PPSA13711]\\eboot.bin",
+      "imports": 605,
+      "known": 605,
+      "unknown": 0,
+      "unknown_nids": [],
+      "error": null
+    },
+    {
       "name": "Dusk Diver 2 - [PPSA06565]",
       "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Dusk.Diver.2-PPSA06565-EUR-Game-v1.000.000-PS5\\Dusk Diver 2 01.000 PPSA06565\\eboot.bin",
       "imports": 2129,
@@ -505,6 +514,121 @@
       "error": null
     },
     {
+      "name": "Gori: Cuddly Carnage - [PPSA07393]",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5\\eboot.bin",
+      "imports": 1813,
+      "known": 1708,
+      "unknown": 105,
+      "unknown_nids": [
+        "+8m0hqMZsqw",
+        "+V2QcIcvWpw",
+        "-7VafNNns2A",
+        "-HTS6hB300E",
+        "0+HgFkajHnk",
+        "2QOSvz5hvAg",
+        "2Rb+xdt8XkU",
+        "3loRRCoqXfU",
+        "4AQlc0jE9PQ",
+        "527zZ46M9IM",
+        "5QDnyU+SPxs",
+        "5Y5pSdsEdMg",
+        "65WU0PMnF24",
+        "6nWYF1yMOl4",
+        "7hd4bRJuLMg",
+        "7oCR8gES6yo",
+        "8ABCdDIqXJs",
+        "8N9h2itN+Y4",
+        "A1mb1i8hsRw",
+        "AdR01fo-WaM",
+        "BgCoL-FZz0Y",
+        "Cm2cmtCv8cA",
+        "DlcM6wdwWJc",
+        "DsFsPD0MWNc",
+        "ERN4ES-D2x8",
+        "EZMhRCBn3dU",
+        "GqL992msUmo",
+        "H+G1XQRDyWk",
+        "H8AN0zYsJ-M",
+        "J-Oi-ac1EcU",
+        "JfoCWM1F50Q",
+        "Ka06Z1LiRps",
+        "L51FfEMZa4o",
+        "LG53EJZJDnA",
+        "LILXByiyFiQ",
+        "MPBXfoxd+eo",
+        "Ma4ynrNRJGw",
+        "MjQ5oH6b620",
+        "N+wyls17Mjo",
+        "NDMQ5Z8QdWQ",
+        "OBfS6KLrjYA",
+        "Ou4LHokCK2k",
+        "PoA8NrRlUrw",
+        "QOW4WYUMJK0",
+        "RcRmUkp-AOo",
+        "SCvUImM+5zk",
+        "SPoYGtEslGY",
+        "TK8-OMvveV8",
+        "TLzwr4Uy37g",
+        "VS1Vg5yOLH0",
+        "VdQjbIsdhXQ",
+        "Vyo4sShcggs",
+        "WAU72lnwYic",
+        "WP51b8simn8",
+        "Y36Y21dnKtc",
+        "ZlyXxXkCaq8",
+        "Znihhm7e23Y",
+        "aLwhiAtjRsE",
+        "alleMuKEWr8",
+        "amVp+qf6SDk",
+        "b949925VwHM",
+        "bBL9LOkN-Ng",
+        "c4nJ9NGNhcA",
+        "cITO9UF6qbs",
+        "cIv243UhfFs",
+        "cju7jJ-abPQ",
+        "d-I6Z20jeYo",
+        "dc1rk+VZdyo",
+        "f3SCKie2gZM",
+        "fEcGNRe4laE",
+        "fbAVXdyBuso",
+        "gQZX69t9i9s",
+        "giT9raPeA9Y",
+        "iILsKSo5Syg",
+        "ihNVT4djxtM",
+        "iujfeL+h0RI",
+        "k57C+tslpho",
+        "kFNJPXQw-zM",
+        "khSBLJTsUxE",
+        "kuUyampLEsU",
+        "m9eVVk2C6So",
+        "mHhZZyzhOvw",
+        "nhBPjhZ+VWs",
+        "o2hcK6F8Ih4",
+        "omDBr+dcDVc",
+        "qDkZUgzj3Cs",
+        "s1UHlyHU3rI",
+        "tG17NFv2mZ8",
+        "tPFAXasYRR4",
+        "uoDN52qMEyQ",
+        "urqRW0vsBa4",
+        "vgT4A7VrTtE",
+        "vhKuvcKcUPc",
+        "w8y7S3banO4",
+        "wJM7jKtToIs",
+        "xFZxMognttU",
+        "xaNK0ZTH3QA",
+        "y2ybsIQ073A",
+        "y6Uo7jDXvhA",
+        "yYh3lwMFxd8",
+        "yjRnMhiv-KQ",
+        "zE+zCB1FUOs",
+        "zKjgSnqVqf4",
+        "zVxbiRlxmRk",
+        "zdsupMypfMU"
+      ],
+      "error": null
+    },
+    {
       "name": "Hello Neighbor 2 - [PPSA07426]",
       "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5\\eboot.bin",
       "imports": 2058,
@@ -553,15 +677,6 @@
       "unknown": 0,
       "unknown_nids": [],
       "error": "no eboot.bin found"
-    },
-    {
-      "name": "Like a Dragon: Pirate Yakuza in Hawaii - [PPSA24478]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5\\eboot.bin",
-      "imports": 487,
-      "known": 487,
-      "unknown": 0,
-      "unknown_nids": [],
-      "error": null
     },
     {
       "name": "Mega Man Star Force Legacy Collection - [PPSA32239]",
@@ -646,13 +761,18 @@
       "error": null
     },
     {
-      "name": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-      "file": "",
-      "imports": 0,
-      "known": 0,
-      "unknown": 0,
-      "unknown_nids": [],
-      "error": "no eboot.bin found"
+      "name": "PRAGMATA - [PPSA02530]",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5\\eboot.bin",
+      "imports": 807,
+      "known": 803,
+      "unknown": 4,
+      "unknown_nids": [
+        "-q-vbO859Tw",
+        "LibwuIonIBw",
+        "gWT7X8H0bYs",
+        "kP2L8t3j-aM"
+      ],
+      "error": null
     },
     {
       "name": "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
@@ -751,7 +871,7 @@
       "error": null
     },
     {
-      "name": "[SuperPSX]-RESIDENT.EVIL.requiem.[PPSA31246]-[01.200.000]-PS5-DUPLEX",
+      "name": "devlog",
       "file": "",
       "imports": 0,
       "known": 0,
@@ -823,7 +943,7 @@
     },
     {
       "nid": "+V2QcIcvWpw",
-      "frequency": 4,
+      "frequency": 5,
       "libraries": [
         "libfmodstudio"
       ],
@@ -831,14 +951,15 @@
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
         "Bugsnax - [PPSA01502]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "0+HgFkajHnk",
-      "frequency": 4,
+      "frequency": 5,
       "libraries": [
         "libfmodstudio"
       ],
@@ -846,14 +967,15 @@
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
         "Bugsnax - [PPSA01502]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "2QOSvz5hvAg",
-      "frequency": 4,
+      "frequency": 5,
       "libraries": [
         "libfmodstudio"
       ],
@@ -861,14 +983,15 @@
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
         "Bugsnax - [PPSA01502]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "2Rb+xdt8XkU",
-      "frequency": 4,
+      "frequency": 5,
       "libraries": [
         "libfmodstudio"
       ],
@@ -876,14 +999,15 @@
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
         "Bugsnax - [PPSA01502]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "527zZ46M9IM",
-      "frequency": 4,
+      "frequency": 5,
       "libraries": [
         "libfmodstudio"
       ],
@@ -891,14 +1015,15 @@
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
         "Bugsnax - [PPSA01502]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "5QDnyU+SPxs",
-      "frequency": 4,
+      "frequency": 5,
       "libraries": [
         "libfmodstudio"
       ],
@@ -906,14 +1031,15 @@
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
         "Bugsnax - [PPSA01502]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "7hd4bRJuLMg",
-      "frequency": 4,
+      "frequency": 5,
       "libraries": [
         "libfmodstudio"
       ],
@@ -921,14 +1047,15 @@
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
         "Bugsnax - [PPSA01502]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "GqL992msUmo",
-      "frequency": 4,
+      "frequency": 5,
       "libraries": [
         "libfmodstudio"
       ],
@@ -936,14 +1063,15 @@
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
         "Bugsnax - [PPSA01502]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "H+G1XQRDyWk",
-      "frequency": 4,
+      "frequency": 5,
       "libraries": [
         "libfmodstudio"
       ],
@@ -951,14 +1079,15 @@
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
         "Bugsnax - [PPSA01502]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "JfoCWM1F50Q",
-      "frequency": 4,
+      "frequency": 5,
       "libraries": [
         "libfmodstudio"
       ],
@@ -966,14 +1095,15 @@
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
         "Bugsnax - [PPSA01502]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "Ka06Z1LiRps",
-      "frequency": 4,
+      "frequency": 5,
       "libraries": [
         "libfmodstudio"
       ],
@@ -981,14 +1111,15 @@
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
         "Bugsnax - [PPSA01502]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "L51FfEMZa4o",
-      "frequency": 4,
+      "frequency": 5,
       "libraries": [
         "libfmodstudio"
       ],
@@ -996,14 +1127,15 @@
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
         "Bugsnax - [PPSA01502]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "LILXByiyFiQ",
-      "frequency": 4,
+      "frequency": 5,
       "libraries": [
         "libfmodstudio"
       ],
@@ -1011,14 +1143,15 @@
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
         "Bugsnax - [PPSA01502]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "MjQ5oH6b620",
-      "frequency": 4,
+      "frequency": 5,
       "libraries": [
         "libfmodstudio"
       ],
@@ -1026,14 +1159,15 @@
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
         "Bugsnax - [PPSA01502]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "SPoYGtEslGY",
-      "frequency": 4,
+      "frequency": 5,
       "libraries": [
         "libfmodstudio"
       ],
@@ -1041,14 +1175,15 @@
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
         "Bugsnax - [PPSA01502]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "VdQjbIsdhXQ",
-      "frequency": 4,
+      "frequency": 5,
       "libraries": [
         "libfmodstudio"
       ],
@@ -1056,14 +1191,15 @@
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
         "Bugsnax - [PPSA01502]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "WP51b8simn8",
-      "frequency": 4,
+      "frequency": 5,
       "libraries": [
         "libfmodstudio"
       ],
@@ -1071,14 +1207,15 @@
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
         "Bugsnax - [PPSA01502]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "ZlyXxXkCaq8",
-      "frequency": 4,
+      "frequency": 5,
       "libraries": [
         "libfmodstudio"
       ],
@@ -1086,14 +1223,15 @@
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
         "Bugsnax - [PPSA01502]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "alleMuKEWr8",
-      "frequency": 4,
+      "frequency": 5,
       "libraries": [
         "libfmodstudio"
       ],
@@ -1101,14 +1239,15 @@
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
         "Bugsnax - [PPSA01502]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "b949925VwHM",
-      "frequency": 4,
+      "frequency": 5,
       "libraries": [
         "libfmodstudio"
       ],
@@ -1116,14 +1255,15 @@
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
         "Bugsnax - [PPSA01502]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "bBL9LOkN-Ng",
-      "frequency": 4,
+      "frequency": 5,
       "libraries": [
         "libfmodstudio"
       ],
@@ -1131,14 +1271,15 @@
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
         "Bugsnax - [PPSA01502]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "c4nJ9NGNhcA",
-      "frequency": 4,
+      "frequency": 5,
       "libraries": [
         "libfmodstudio"
       ],
@@ -1146,14 +1287,15 @@
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
         "Bugsnax - [PPSA01502]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "cju7jJ-abPQ",
-      "frequency": 4,
+      "frequency": 5,
       "libraries": [
         "libfmodstudio"
       ],
@@ -1161,14 +1303,15 @@
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
         "Bugsnax - [PPSA01502]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "fEcGNRe4laE",
-      "frequency": 4,
+      "frequency": 5,
       "libraries": [
         "libfmodstudio"
       ],
@@ -1176,14 +1319,15 @@
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
         "Bugsnax - [PPSA01502]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "iILsKSo5Syg",
-      "frequency": 4,
+      "frequency": 5,
       "libraries": [
         "libfmodstudio"
       ],
@@ -1191,14 +1335,15 @@
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
         "Bugsnax - [PPSA01502]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "k57C+tslpho",
-      "frequency": 4,
+      "frequency": 5,
       "libraries": [
         "libfmodstudio"
       ],
@@ -1206,14 +1351,15 @@
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
         "Bugsnax - [PPSA01502]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "kFNJPXQw-zM",
-      "frequency": 4,
+      "frequency": 5,
       "libraries": [
         "libfmodstudio"
       ],
@@ -1221,14 +1367,15 @@
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
         "Bugsnax - [PPSA01502]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "kuUyampLEsU",
-      "frequency": 4,
+      "frequency": 5,
       "libraries": [
         "libfmodstudio"
       ],
@@ -1236,14 +1383,15 @@
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
         "Bugsnax - [PPSA01502]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "nhBPjhZ+VWs",
-      "frequency": 4,
+      "frequency": 5,
       "libraries": [
         "libfmodstudio"
       ],
@@ -1251,14 +1399,15 @@
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
         "Bugsnax - [PPSA01502]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "qDkZUgzj3Cs",
-      "frequency": 4,
+      "frequency": 5,
       "libraries": [
         "libfmod"
       ],
@@ -1266,14 +1415,15 @@
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
         "Bugsnax - [PPSA01502]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "tG17NFv2mZ8",
-      "frequency": 4,
+      "frequency": 5,
       "libraries": [
         "libfmodstudio"
       ],
@@ -1281,14 +1431,15 @@
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
         "Bugsnax - [PPSA01502]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "urqRW0vsBa4",
-      "frequency": 4,
+      "frequency": 5,
       "libraries": [
         "libfmodstudio"
       ],
@@ -1296,14 +1447,15 @@
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
         "Bugsnax - [PPSA01502]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "vhKuvcKcUPc",
-      "frequency": 4,
+      "frequency": 5,
       "libraries": [
         "libfmodstudio"
       ],
@@ -1311,14 +1463,15 @@
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
         "Bugsnax - [PPSA01502]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "xaNK0ZTH3QA",
-      "frequency": 4,
+      "frequency": 5,
       "libraries": [
         "libfmod"
       ],
@@ -1326,14 +1479,15 @@
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
         "Bugsnax - [PPSA01502]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "yjRnMhiv-KQ",
-      "frequency": 4,
+      "frequency": 5,
       "libraries": [
         "libfmodstudio"
       ],
@@ -1341,497 +1495,803 @@
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
         "Bugsnax - [PPSA01502]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "+8m0hqMZsqw",
-      "frequency": 3,
+      "frequency": 4,
       "libraries": [
         "libfmodstudio"
       ],
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "-7VafNNns2A",
-      "frequency": 3,
+      "frequency": 4,
       "libraries": [
         "libfmodstudio"
       ],
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "-HTS6hB300E",
-      "frequency": 3,
+      "frequency": 4,
       "libraries": [
         "libfmodstudio"
       ],
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "3loRRCoqXfU",
-      "frequency": 3,
+      "frequency": 4,
       "libraries": [
         "libfmodstudio"
       ],
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "4AQlc0jE9PQ",
-      "frequency": 3,
+      "frequency": 4,
       "libraries": [
         "libfmodstudio"
       ],
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "5Y5pSdsEdMg",
-      "frequency": 3,
+      "frequency": 4,
       "libraries": [
         "libfmodstudio"
       ],
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "6nWYF1yMOl4",
-      "frequency": 3,
+      "frequency": 4,
       "libraries": [
         "libfmodstudio"
       ],
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "8ABCdDIqXJs",
-      "frequency": 3,
+      "frequency": 4,
       "libraries": [
         "libfmod"
       ],
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "8N9h2itN+Y4",
-      "frequency": 3,
+      "frequency": 4,
       "libraries": [
         "libfmod"
       ],
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "A1mb1i8hsRw",
-      "frequency": 3,
+      "frequency": 4,
       "libraries": [
         "libfmod"
       ],
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "AdR01fo-WaM",
-      "frequency": 3,
+      "frequency": 4,
       "libraries": [
         "libfmodstudio"
       ],
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "BgCoL-FZz0Y",
-      "frequency": 3,
+      "frequency": 4,
       "libraries": [
         "libfmod"
       ],
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "DlcM6wdwWJc",
-      "frequency": 3,
+      "frequency": 4,
       "libraries": [
         "libfmodstudio"
       ],
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "DsFsPD0MWNc",
-      "frequency": 3,
+      "frequency": 4,
       "libraries": [
         "libfmodstudio"
       ],
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "ERN4ES-D2x8",
-      "frequency": 3,
+      "frequency": 4,
       "libraries": [
         "libfmodstudio"
       ],
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "EZMhRCBn3dU",
-      "frequency": 3,
+      "frequency": 4,
       "libraries": [
         "libfmodstudio"
       ],
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "H8AN0zYsJ-M",
-      "frequency": 3,
+      "frequency": 4,
       "libraries": [
         "libfmodstudio"
       ],
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "J-Oi-ac1EcU",
-      "frequency": 3,
+      "frequency": 4,
       "libraries": [
         "libfmodstudio"
       ],
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "LG53EJZJDnA",
-      "frequency": 3,
+      "frequency": 4,
       "libraries": [
         "libfmodstudio"
       ],
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "MPBXfoxd+eo",
-      "frequency": 3,
+      "frequency": 4,
       "libraries": [
         "libfmod"
       ],
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "Ma4ynrNRJGw",
-      "frequency": 3,
+      "frequency": 4,
       "libraries": [
         "libfmodstudio"
       ],
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "N+wyls17Mjo",
-      "frequency": 3,
+      "frequency": 4,
       "libraries": [
         "libfmodstudio"
       ],
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "NDMQ5Z8QdWQ",
-      "frequency": 3,
+      "frequency": 4,
       "libraries": [
         "libfmod"
       ],
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "OBfS6KLrjYA",
-      "frequency": 3,
+      "frequency": 4,
       "libraries": [
         "libfmod"
       ],
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "PoA8NrRlUrw",
-      "frequency": 3,
+      "frequency": 4,
       "libraries": [
         "libfmod"
       ],
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "RcRmUkp-AOo",
-      "frequency": 3,
+      "frequency": 4,
       "libraries": [
         "libfmod"
       ],
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "SCvUImM+5zk",
-      "frequency": 3,
+      "frequency": 4,
       "libraries": [
         "libfmodstudio"
       ],
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "TK8-OMvveV8",
-      "frequency": 3,
+      "frequency": 4,
       "libraries": [
         "libfmod"
       ],
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "VS1Vg5yOLH0",
-      "frequency": 3,
+      "frequency": 4,
       "libraries": [
         "libfmod"
       ],
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "Vyo4sShcggs",
-      "frequency": 3,
+      "frequency": 4,
       "libraries": [
         "libfmodstudio"
       ],
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "Y36Y21dnKtc",
-      "frequency": 3,
+      "frequency": 4,
       "libraries": [
         "libfmodstudio"
       ],
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "amVp+qf6SDk",
-      "frequency": 3,
+      "frequency": 4,
       "libraries": [
         "libfmodstudio"
       ],
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "cITO9UF6qbs",
-      "frequency": 3,
+      "frequency": 4,
       "libraries": [
         "libfmodstudio"
       ],
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "cIv243UhfFs",
-      "frequency": 3,
+      "frequency": 4,
       "libraries": [
         "libfmodstudio"
       ],
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
     },
     {
       "nid": "d-I6Z20jeYo",
-      "frequency": 3,
+      "frequency": 4,
       "libraries": [
         "libfmodstudio"
       ],
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "dc1rk+VZdyo",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "f3SCKie2gZM",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "giT9raPeA9Y",
+      "frequency": 4,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "iujfeL+h0RI",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "khSBLJTsUxE",
+      "frequency": 4,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "mHhZZyzhOvw",
+      "frequency": 4,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "o2hcK6F8Ih4",
+      "frequency": 4,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "omDBr+dcDVc",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "s1UHlyHU3rI",
+      "frequency": 4,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "tPFAXasYRR4",
+      "frequency": 4,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "vgT4A7VrTtE",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "wJM7jKtToIs",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "y6Uo7jDXvhA",
+      "frequency": 4,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "yYh3lwMFxd8",
+      "frequency": 4,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "zE+zCB1FUOs",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "zKjgSnqVqf4",
+      "frequency": 4,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "zVxbiRlxmRk",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "zdsupMypfMU",
+      "frequency": 4,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Afterimage - [PPSA14053]",
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Dusk Diver 2 - [PPSA06565]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
@@ -1851,253 +2311,29 @@
       "confidence": "medium"
     },
     {
-      "nid": "dc1rk+VZdyo",
+      "nid": "xFZxMognttU",
+      "frequency": 3,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Bugsnax - [PPSA01502]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "y2ybsIQ073A",
       "frequency": 3,
       "libraries": [
         "libfmodstudio"
       ],
       "games": [
         "Afterimage - [PPSA14053]",
-        "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
-      ],
-      "remu_name": null,
-      "confidence": "medium"
-    },
-    {
-      "nid": "f3SCKie2gZM",
-      "frequency": 3,
-      "libraries": [
-        "libfmodstudio"
-      ],
-      "games": [
-        "Afterimage - [PPSA14053]",
-        "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
-      ],
-      "remu_name": null,
-      "confidence": "medium"
-    },
-    {
-      "nid": "giT9raPeA9Y",
-      "frequency": 3,
-      "libraries": [
-        "libfmod"
-      ],
-      "games": [
-        "Afterimage - [PPSA14053]",
-        "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
-      ],
-      "remu_name": null,
-      "confidence": "medium"
-    },
-    {
-      "nid": "iujfeL+h0RI",
-      "frequency": 3,
-      "libraries": [
-        "libfmodstudio"
-      ],
-      "games": [
-        "Afterimage - [PPSA14053]",
-        "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
-      ],
-      "remu_name": null,
-      "confidence": "medium"
-    },
-    {
-      "nid": "khSBLJTsUxE",
-      "frequency": 3,
-      "libraries": [
-        "libfmod"
-      ],
-      "games": [
-        "Afterimage - [PPSA14053]",
-        "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
-      ],
-      "remu_name": null,
-      "confidence": "medium"
-    },
-    {
-      "nid": "mHhZZyzhOvw",
-      "frequency": 3,
-      "libraries": [
-        "libfmod"
-      ],
-      "games": [
-        "Afterimage - [PPSA14053]",
-        "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
-      ],
-      "remu_name": null,
-      "confidence": "medium"
-    },
-    {
-      "nid": "o2hcK6F8Ih4",
-      "frequency": 3,
-      "libraries": [
-        "libfmod"
-      ],
-      "games": [
-        "Afterimage - [PPSA14053]",
-        "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
-      ],
-      "remu_name": null,
-      "confidence": "medium"
-    },
-    {
-      "nid": "omDBr+dcDVc",
-      "frequency": 3,
-      "libraries": [
-        "libfmodstudio"
-      ],
-      "games": [
-        "Afterimage - [PPSA14053]",
-        "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
-      ],
-      "remu_name": null,
-      "confidence": "medium"
-    },
-    {
-      "nid": "s1UHlyHU3rI",
-      "frequency": 3,
-      "libraries": [
-        "libfmod"
-      ],
-      "games": [
-        "Afterimage - [PPSA14053]",
-        "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
-      ],
-      "remu_name": null,
-      "confidence": "medium"
-    },
-    {
-      "nid": "tPFAXasYRR4",
-      "frequency": 3,
-      "libraries": [
-        "libfmod"
-      ],
-      "games": [
-        "Afterimage - [PPSA14053]",
-        "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
-      ],
-      "remu_name": null,
-      "confidence": "medium"
-    },
-    {
-      "nid": "vgT4A7VrTtE",
-      "frequency": 3,
-      "libraries": [
-        "libfmodstudio"
-      ],
-      "games": [
-        "Afterimage - [PPSA14053]",
-        "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
-      ],
-      "remu_name": null,
-      "confidence": "medium"
-    },
-    {
-      "nid": "wJM7jKtToIs",
-      "frequency": 3,
-      "libraries": [
-        "libfmodstudio"
-      ],
-      "games": [
-        "Afterimage - [PPSA14053]",
-        "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
-      ],
-      "remu_name": null,
-      "confidence": "medium"
-    },
-    {
-      "nid": "y6Uo7jDXvhA",
-      "frequency": 3,
-      "libraries": [
-        "libfmod"
-      ],
-      "games": [
-        "Afterimage - [PPSA14053]",
-        "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
-      ],
-      "remu_name": null,
-      "confidence": "medium"
-    },
-    {
-      "nid": "yYh3lwMFxd8",
-      "frequency": 3,
-      "libraries": [
-        "libfmod"
-      ],
-      "games": [
-        "Afterimage - [PPSA14053]",
-        "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
-      ],
-      "remu_name": null,
-      "confidence": "medium"
-    },
-    {
-      "nid": "zE+zCB1FUOs",
-      "frequency": 3,
-      "libraries": [
-        "libfmodstudio"
-      ],
-      "games": [
-        "Afterimage - [PPSA14053]",
-        "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
-      ],
-      "remu_name": null,
-      "confidence": "medium"
-    },
-    {
-      "nid": "zKjgSnqVqf4",
-      "frequency": 3,
-      "libraries": [
-        "libfmod"
-      ],
-      "games": [
-        "Afterimage - [PPSA14053]",
-        "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
-      ],
-      "remu_name": null,
-      "confidence": "medium"
-    },
-    {
-      "nid": "zVxbiRlxmRk",
-      "frequency": 3,
-      "libraries": [
-        "libfmodstudio"
-      ],
-      "games": [
-        "Afterimage - [PPSA14053]",
-        "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
-      ],
-      "remu_name": null,
-      "confidence": "medium"
-    },
-    {
-      "nid": "zdsupMypfMU",
-      "frequency": 3,
-      "libraries": [
-        "libfmodstudio"
-      ],
-      "games": [
-        "Afterimage - [PPSA14053]",
-        "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Dusk Diver 2 - [PPSA06565]"
+        "Bugsnax - [PPSA01502]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
@@ -2116,6 +2352,32 @@
       "confidence": "medium"
     },
     {
+      "nid": "-q-vbO859Tw",
+      "frequency": 2,
+      "libraries": [
+        "libSceVideoOutVrrStatus"
+      ],
+      "games": [
+        "Mega Man Star Force Legacy Collection - [PPSA32239]",
+        "PRAGMATA - [PPSA02530]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "65WU0PMnF24",
+      "frequency": 2,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Bugsnax - [PPSA01502]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
       "nid": "6NIqae6zQt4",
       "frequency": 2,
       "libraries": [
@@ -2124,6 +2386,19 @@
       "games": [
         "Afterimage - [PPSA14053]",
         "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "Cm2cmtCv8cA",
+      "frequency": 2,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
@@ -2142,6 +2417,19 @@
       "confidence": "medium"
     },
     {
+      "nid": "LibwuIonIBw",
+      "frequency": 2,
+      "libraries": [
+        "libSceVideoOutVrrStatus"
+      ],
+      "games": [
+        "Mega Man Star Force Legacy Collection - [PPSA32239]",
+        "PRAGMATA - [PPSA02530]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
       "nid": "NC7NmKVz61g",
       "frequency": 2,
       "libraries": [
@@ -2150,6 +2438,97 @@
       "games": [
         "Afterimage - [PPSA14053]",
         "Dusk Diver 2 - [PPSA06565]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "Ou4LHokCK2k",
+      "frequency": 2,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Bugsnax - [PPSA01502]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "QOW4WYUMJK0",
+      "frequency": 2,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Bugsnax - [PPSA01502]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "TLzwr4Uy37g",
+      "frequency": 2,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Bugsnax - [PPSA01502]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "aLwhiAtjRsE",
+      "frequency": 2,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Bugsnax - [PPSA01502]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "gWT7X8H0bYs",
+      "frequency": 2,
+      "libraries": [
+        "libSceVideoOutVrrStatus"
+      ],
+      "games": [
+        "Mega Man Star Force Legacy Collection - [PPSA32239]",
+        "PRAGMATA - [PPSA02530]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "ihNVT4djxtM",
+      "frequency": 2,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Bugsnax - [PPSA01502]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "kP2L8t3j-aM",
+      "frequency": 2,
+      "libraries": [
+        "libSceVideoOutVrrStatus"
+      ],
+      "games": [
+        "Mega Man Star Force Legacy Collection - [PPSA32239]",
+        "PRAGMATA - [PPSA02530]"
       ],
       "remu_name": null,
       "confidence": "medium"
@@ -2168,27 +2547,27 @@
       "confidence": "medium"
     },
     {
-      "nid": "xFZxMognttU",
+      "nid": "uoDN52qMEyQ",
+      "frequency": 2,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Bugsnax - [PPSA01502]",
+        "Gori: Cuddly Carnage - [PPSA07393]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "w8y7S3banO4",
       "frequency": 2,
       "libraries": [
         "libfmodstudio"
       ],
       "games": [
         "Asterigos: Curse of the Stars - [PPSA08194]",
-        "Bugsnax - [PPSA01502]"
-      ],
-      "remu_name": null,
-      "confidence": "medium"
-    },
-    {
-      "nid": "y2ybsIQ073A",
-      "frequency": 2,
-      "libraries": [
-        "libfmodstudio"
-      ],
-      "games": [
-        "Afterimage - [PPSA14053]",
-        "Bugsnax - [PPSA01502]"
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
@@ -2250,18 +2629,6 @@
       ],
       "games": [
         "Asterigos: Curse of the Stars - [PPSA08194]"
-      ],
-      "remu_name": null,
-      "confidence": "medium"
-    },
-    {
-      "nid": "-q-vbO859Tw",
-      "frequency": 1,
-      "libraries": [
-        "libSceVideoOutVrrStatus"
-      ],
-      "games": [
-        "Mega Man Star Force Legacy Collection - [PPSA32239]"
       ],
       "remu_name": null,
       "confidence": "medium"
@@ -2375,18 +2742,6 @@
       "confidence": "medium"
     },
     {
-      "nid": "65WU0PMnF24",
-      "frequency": 1,
-      "libraries": [
-        "libfmod"
-      ],
-      "games": [
-        "Bugsnax - [PPSA01502]"
-      ],
-      "remu_name": null,
-      "confidence": "medium"
-    },
-    {
       "nid": "6E6MUTGjxhI",
       "frequency": 1,
       "libraries": [
@@ -2418,6 +2773,18 @@
       ],
       "games": [
         "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "7oCR8gES6yo",
+      "frequency": 1,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
@@ -2543,18 +2910,6 @@
       "confidence": "medium"
     },
     {
-      "nid": "Cm2cmtCv8cA",
-      "frequency": 1,
-      "libraries": [
-        "libfmodstudio"
-      ],
-      "games": [
-        "Asterigos: Curse of the Stars - [PPSA08194]"
-      ],
-      "remu_name": null,
-      "confidence": "medium"
-    },
-    {
       "nid": "D79MT0gui+4",
       "frequency": 1,
       "libraries": [
@@ -2651,18 +3006,6 @@
       "confidence": "medium"
     },
     {
-      "nid": "LibwuIonIBw",
-      "frequency": 1,
-      "libraries": [
-        "libSceVideoOutVrrStatus"
-      ],
-      "games": [
-        "Mega Man Star Force Legacy Collection - [PPSA32239]"
-      ],
-      "remu_name": null,
-      "confidence": "medium"
-    },
-    {
       "nid": "LoHhsrH0C5c",
       "frequency": 1,
       "libraries": [
@@ -2711,30 +3054,6 @@
       "confidence": "medium"
     },
     {
-      "nid": "Ou4LHokCK2k",
-      "frequency": 1,
-      "libraries": [
-        "libfmod"
-      ],
-      "games": [
-        "Bugsnax - [PPSA01502]"
-      ],
-      "remu_name": null,
-      "confidence": "medium"
-    },
-    {
-      "nid": "QOW4WYUMJK0",
-      "frequency": 1,
-      "libraries": [
-        "libfmodstudio"
-      ],
-      "games": [
-        "Bugsnax - [PPSA01502]"
-      ],
-      "remu_name": null,
-      "confidence": "medium"
-    },
-    {
       "nid": "R6X5MxO-U50",
       "frequency": 1,
       "libraries": [
@@ -2771,7 +3090,7 @@
       "confidence": "medium"
     },
     {
-      "nid": "TLzwr4Uy37g",
+      "nid": "UFG9YEjxcgk",
       "frequency": 1,
       "libraries": [
         "libfmod"
@@ -2783,13 +3102,13 @@
       "confidence": "medium"
     },
     {
-      "nid": "UFG9YEjxcgk",
+      "nid": "WAU72lnwYic",
       "frequency": 1,
       "libraries": [
         "libfmod"
       ],
       "games": [
-        "Bugsnax - [PPSA01502]"
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
@@ -2867,6 +3186,18 @@
       "confidence": "medium"
     },
     {
+      "nid": "Znihhm7e23Y",
+      "frequency": 1,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Gori: Cuddly Carnage - [PPSA07393]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
       "nid": "ZvvJG-s1yKo",
       "frequency": 1,
       "libraries": [
@@ -2874,18 +3205,6 @@
       ],
       "games": [
         "Asterigos: Curse of the Stars - [PPSA08194]"
-      ],
-      "remu_name": null,
-      "confidence": "medium"
-    },
-    {
-      "nid": "aLwhiAtjRsE",
-      "frequency": 1,
-      "libraries": [
-        "libfmod"
-      ],
-      "games": [
-        "Bugsnax - [PPSA01502]"
       ],
       "remu_name": null,
       "confidence": "medium"
@@ -2975,13 +3294,25 @@
       "confidence": "medium"
     },
     {
-      "nid": "gWT7X8H0bYs",
+      "nid": "fbAVXdyBuso",
       "frequency": 1,
       "libraries": [
-        "libSceVideoOutVrrStatus"
+        "libfmodstudio"
       ],
       "games": [
-        "Mega Man Star Force Legacy Collection - [PPSA32239]"
+        "Gori: Cuddly Carnage - [PPSA07393]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "gQZX69t9i9s",
+      "frequency": 1,
+      "libraries": [
+        "libfmodstudio"
+      ],
+      "games": [
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
@@ -2994,18 +3325,6 @@
       ],
       "games": [
         "Asterigos: Curse of the Stars - [PPSA08194]"
-      ],
-      "remu_name": null,
-      "confidence": "medium"
-    },
-    {
-      "nid": "ihNVT4djxtM",
-      "frequency": 1,
-      "libraries": [
-        "libfmod"
-      ],
-      "games": [
-        "Bugsnax - [PPSA01502]"
       ],
       "remu_name": null,
       "confidence": "medium"
@@ -3035,18 +3354,6 @@
       "confidence": "medium"
     },
     {
-      "nid": "kP2L8t3j-aM",
-      "frequency": 1,
-      "libraries": [
-        "libSceVideoOutVrrStatus"
-      ],
-      "games": [
-        "Mega Man Star Force Legacy Collection - [PPSA32239]"
-      ],
-      "remu_name": null,
-      "confidence": "medium"
-    },
-    {
       "nid": "l3CBbF47D4o",
       "frequency": 1,
       "libraries": [
@@ -3066,6 +3373,18 @@
       ],
       "games": [
         "Asterigos: Curse of the Stars - [PPSA08194]"
+      ],
+      "remu_name": null,
+      "confidence": "medium"
+    },
+    {
+      "nid": "m9eVVk2C6So",
+      "frequency": 1,
+      "libraries": [
+        "libfmod"
+      ],
+      "games": [
+        "Gori: Cuddly Carnage - [PPSA07393]"
       ],
       "remu_name": null,
       "confidence": "medium"
@@ -3131,18 +3450,6 @@
       "confidence": "medium"
     },
     {
-      "nid": "uoDN52qMEyQ",
-      "frequency": 1,
-      "libraries": [
-        "libfmod"
-      ],
-      "games": [
-        "Bugsnax - [PPSA01502]"
-      ],
-      "remu_name": null,
-      "confidence": "medium"
-    },
-    {
       "nid": "vVupb6lqml0",
       "frequency": 1,
       "libraries": [
@@ -3159,18 +3466,6 @@
       "frequency": 1,
       "libraries": [
         "libCoherentUIGT"
-      ],
-      "games": [
-        "Asterigos: Curse of the Stars - [PPSA08194]"
-      ],
-      "remu_name": null,
-      "confidence": "medium"
-    },
-    {
-      "nid": "w8y7S3banO4",
-      "frequency": 1,
-      "libraries": [
-        "libfmodstudio"
       ],
       "games": [
         "Asterigos: Curse of the Stars - [PPSA08194]"
@@ -3226,11 +3521,11 @@
     },
     {
       "library": "libfmod",
-      "unknown_count": 39
+      "unknown_count": 42
     },
     {
       "library": "libfmodstudio",
-      "unknown_count": 91
+      "unknown_count": 94
     }
   ],
   "remu_comparison": null,

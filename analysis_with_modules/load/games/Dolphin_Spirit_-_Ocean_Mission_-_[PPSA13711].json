@@ -1,6 +1,6 @@
 {
   "game": "Dolphin Spirit - Ocean Mission - [PPSA13711]",
-  "path": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Dolphin Spirit Ocean Mission [PPSA13711]\\decrypted\\eboot.bin",
+  "path": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Dolphin Spirit Ocean Mission [PPSA13711]\\eboot.bin",
   "load_report": {
     "modules": [
       {
@@ -52,7 +52,7 @@
         ]
       },
       {
-        "name": "decrypted",
+        "name": "Dolphin Spirit Ocean Mission [PPSA13711]",
         "module_type": "Eboot",
         "load_bias": 34629550080,
         "entry_point": 112,
@@ -288,264 +288,84 @@
     ],
     "graph": {
       "nodes": [
-        "libSceSystemService.prx",
         "libSceVideoOut.prx",
-        "libSceIme.prx",
-        "libSceRtc.prx",
-        "libSceAvPlayer.native.prx",
-        "libSceAgcDriver.prx",
-        "decrypted",
-        "libSceNetCtl.prx",
-        "libSceAppContent.prx",
-        "libSceWebBrowserDialog.prx",
-        "libSceMouse.prx",
-        "libc.prx",
-        "libSceSysmodule.prx",
-        "libSceCommonDialog.prx",
-        "Il2CppUserAssemblies.prx",
-        "libScePad.prx",
-        "libSceAudio3d.prx",
-        "libSceRemoteplay.prx",
-        "libkernel.prx",
-        "libSceHttp2.prx",
-        "libSceAjm.native.prx",
-        "libSceAgc.prx",
-        "PS5Util.prx",
-        "libSceImeDialog.prx",
-        "libSceHttp.prx",
-        "libSceLibcInternal.prx",
-        "libSceRazorCpu.prx",
-        "libSceNpWebApi2.prx",
-        "libSceNet.prx",
-        "libSceSaveData.native.prx",
-        "libSceAudioIn.prx",
-        "libSceMsgDialog.native.prx",
-        "libSceUserService.prx",
-        "libSceAmpr.prx",
-        "libSceNpManager.prx",
         "libSceAudioOut.prx",
+        "libSceHttp.prx",
+        "PS5Util.prx",
+        "libSceNpWebApi2.prx",
+        "libSceAmpr.prx",
+        "libSceUserService.prx",
+        "libSceAgc.prx",
+        "libSceSysmodule.prx",
+        "libSceAudio3d.prx",
+        "libSceLibcInternal.prx",
+        "libSceCommonDialog.prx",
+        "libSceRemoteplay.prx",
+        "libSceIme.prx",
         "libSceSsl.prx",
-        "libSceRandom.prx"
+        "Il2CppUserAssemblies.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceAgcDriver.prx",
+        "libSceSystemService.prx",
+        "libc.prx",
+        "libSceRandom.prx",
+        "libSceAudioIn.prx",
+        "libSceImeDialog.prx",
+        "libSceHttp2.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceNpManager.prx",
+        "libSceAjm.native.prx",
+        "libSceSaveData.native.prx",
+        "libSceRazorCpu.prx",
+        "libScePad.prx",
+        "libSceAppContent.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceRtc.prx",
+        "Dolphin Spirit Ocean Mission [PPSA13711]",
+        "libkernel.prx",
+        "libSceMouse.prx",
+        "libSceNetCtl.prx",
+        "libSceNet.prx"
       ],
       "unavailable": [
-        "libSceWebBrowserDialog.prx",
-        "libSceSsl.prx",
-        "libSceCommonDialog.prx",
-        "libSceAgcDriver.prx",
-        "Il2CppUserAssemblies.prx",
-        "libSceAudioOut.prx",
-        "libSceSaveData.native.prx",
-        "libSceRemoteplay.prx",
-        "libSceAjm.native.prx",
-        "libSceNet.prx",
-        "libSceSystemService.prx",
-        "libSceMouse.prx",
-        "libSceImeDialog.prx",
-        "PS5Util.prx",
         "libSceIme.prx",
-        "libSceAvPlayer.native.prx",
-        "libSceNetCtl.prx",
-        "libSceVideoOut.prx",
-        "libSceRazorCpu.prx",
-        "libSceRandom.prx",
-        "libScePad.prx",
-        "libSceLibcInternal.prx",
-        "libSceHttp.prx",
-        "libSceRtc.prx",
-        "libSceNpWebApi2.prx",
-        "libkernel.prx",
-        "libSceNpManager.prx",
-        "libSceSysmodule.prx",
-        "libSceUserService.prx",
-        "libSceAgc.prx",
-        "libSceHttp2.prx",
-        "libSceAmpr.prx",
         "libSceAppContent.prx",
-        "libSceAudioIn.prx",
+        "libSceRandom.prx",
+        "libSceLibcInternal.prx",
+        "libSceUserService.prx",
+        "libSceSysmodule.prx",
+        "libSceSystemService.prx",
+        "libSceSsl.prx",
+        "libSceAgcDriver.prx",
+        "libSceAjm.native.prx",
         "libSceAudio3d.prx",
-        "libSceMsgDialog.native.prx"
+        "libSceAmpr.prx",
+        "libSceAudioIn.prx",
+        "libSceCommonDialog.prx",
+        "PS5Util.prx",
+        "libSceSaveData.native.prx",
+        "libScePad.prx",
+        "libSceRtc.prx",
+        "libSceAudioOut.prx",
+        "libSceNetCtl.prx",
+        "libSceNpManager.prx",
+        "libSceRemoteplay.prx",
+        "libSceMouse.prx",
+        "libSceNet.prx",
+        "libSceRazorCpu.prx",
+        "libSceHttp2.prx",
+        "libSceImeDialog.prx",
+        "libSceHttp.prx",
+        "libkernel.prx",
+        "libSceAgc.prx",
+        "libSceVideoOut.prx",
+        "libSceNpWebApi2.prx",
+        "Il2CppUserAssemblies.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceAvPlayer.native.prx"
       ],
       "edges": [
-        {
-          "from": "decrypted",
-          "to": "Il2CppUserAssemblies.prx",
-          "status": "missing"
-        },
-        {
-          "from": "decrypted",
-          "to": "PS5Util.prx",
-          "status": "missing"
-        },
-        {
-          "from": "decrypted",
-          "to": "libSceNetCtl.prx",
-          "status": "missing"
-        },
-        {
-          "from": "decrypted",
-          "to": "libSceSysmodule.prx",
-          "status": "missing"
-        },
-        {
-          "from": "decrypted",
-          "to": "libSceNet.prx",
-          "status": "missing"
-        },
-        {
-          "from": "decrypted",
-          "to": "libSceUserService.prx",
-          "status": "missing"
-        },
-        {
-          "from": "decrypted",
-          "to": "libSceVideoOut.prx",
-          "status": "missing"
-        },
-        {
-          "from": "decrypted",
-          "to": "libSceAudioOut.prx",
-          "status": "missing"
-        },
-        {
-          "from": "decrypted",
-          "to": "libSceAudioIn.prx",
-          "status": "missing"
-        },
-        {
-          "from": "decrypted",
-          "to": "libScePad.prx",
-          "status": "missing"
-        },
-        {
-          "from": "decrypted",
-          "to": "libSceIme.prx",
-          "status": "missing"
-        },
-        {
-          "from": "decrypted",
-          "to": "libSceImeDialog.prx",
-          "status": "missing"
-        },
-        {
-          "from": "decrypted",
-          "to": "libkernel.prx",
-          "status": "missing"
-        },
-        {
-          "from": "decrypted",
-          "to": "libSceRtc.prx",
-          "status": "missing"
-        },
-        {
-          "from": "decrypted",
-          "to": "libSceSystemService.prx",
-          "status": "missing"
-        },
-        {
-          "from": "decrypted",
-          "to": "libSceHttp.prx",
-          "status": "missing"
-        },
-        {
-          "from": "decrypted",
-          "to": "libSceHttp2.prx",
-          "status": "missing"
-        },
-        {
-          "from": "decrypted",
-          "to": "libSceSsl.prx",
-          "status": "missing"
-        },
-        {
-          "from": "decrypted",
-          "to": "libSceSaveData.native.prx",
-          "status": "missing"
-        },
-        {
-          "from": "decrypted",
-          "to": "libSceCommonDialog.prx",
-          "status": "missing"
-        },
-        {
-          "from": "decrypted",
-          "to": "libSceMsgDialog.native.prx",
-          "status": "missing"
-        },
-        {
-          "from": "decrypted",
-          "to": "libSceAvPlayer.native.prx",
-          "status": "missing"
-        },
-        {
-          "from": "decrypted",
-          "to": "libSceAppContent.prx",
-          "status": "missing"
-        },
-        {
-          "from": "decrypted",
-          "to": "libSceWebBrowserDialog.prx",
-          "status": "missing"
-        },
-        {
-          "from": "decrypted",
-          "to": "libSceAudio3d.prx",
-          "status": "missing"
-        },
-        {
-          "from": "decrypted",
-          "to": "libSceRemoteplay.prx",
-          "status": "missing"
-        },
-        {
-          "from": "decrypted",
-          "to": "libSceNpManager.prx",
-          "status": "missing"
-        },
-        {
-          "from": "decrypted",
-          "to": "libSceMouse.prx",
-          "status": "missing"
-        },
-        {
-          "from": "decrypted",
-          "to": "libSceAgcDriver.prx",
-          "status": "missing"
-        },
-        {
-          "from": "decrypted",
-          "to": "libSceAgc.prx",
-          "status": "missing"
-        },
-        {
-          "from": "decrypted",
-          "to": "libSceAjm.native.prx",
-          "status": "missing"
-        },
-        {
-          "from": "decrypted",
-          "to": "libSceRazorCpu.prx",
-          "status": "missing"
-        },
-        {
-          "from": "decrypted",
-          "to": "libSceNpWebApi2.prx",
-          "status": "missing"
-        },
-        {
-          "from": "decrypted",
-          "to": "libSceRandom.prx",
-          "status": "missing"
-        },
-        {
-          "from": "decrypted",
-          "to": "libc.prx",
-          "status": "loaded"
-        },
-        {
-          "from": "decrypted",
-          "to": "libSceAmpr.prx",
-          "status": "missing"
-        },
         {
           "from": "libc.prx",
           "to": "libkernel.prx",
@@ -559,6 +379,186 @@
         {
           "from": "libc.prx",
           "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dolphin Spirit Ocean Mission [PPSA13711]",
+          "to": "Il2CppUserAssemblies.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dolphin Spirit Ocean Mission [PPSA13711]",
+          "to": "PS5Util.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dolphin Spirit Ocean Mission [PPSA13711]",
+          "to": "libSceNetCtl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dolphin Spirit Ocean Mission [PPSA13711]",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dolphin Spirit Ocean Mission [PPSA13711]",
+          "to": "libSceNet.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dolphin Spirit Ocean Mission [PPSA13711]",
+          "to": "libSceUserService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dolphin Spirit Ocean Mission [PPSA13711]",
+          "to": "libSceVideoOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dolphin Spirit Ocean Mission [PPSA13711]",
+          "to": "libSceAudioOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dolphin Spirit Ocean Mission [PPSA13711]",
+          "to": "libSceAudioIn.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dolphin Spirit Ocean Mission [PPSA13711]",
+          "to": "libScePad.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dolphin Spirit Ocean Mission [PPSA13711]",
+          "to": "libSceIme.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dolphin Spirit Ocean Mission [PPSA13711]",
+          "to": "libSceImeDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dolphin Spirit Ocean Mission [PPSA13711]",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dolphin Spirit Ocean Mission [PPSA13711]",
+          "to": "libSceRtc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dolphin Spirit Ocean Mission [PPSA13711]",
+          "to": "libSceSystemService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dolphin Spirit Ocean Mission [PPSA13711]",
+          "to": "libSceHttp.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dolphin Spirit Ocean Mission [PPSA13711]",
+          "to": "libSceHttp2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dolphin Spirit Ocean Mission [PPSA13711]",
+          "to": "libSceSsl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dolphin Spirit Ocean Mission [PPSA13711]",
+          "to": "libSceSaveData.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dolphin Spirit Ocean Mission [PPSA13711]",
+          "to": "libSceCommonDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dolphin Spirit Ocean Mission [PPSA13711]",
+          "to": "libSceMsgDialog.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dolphin Spirit Ocean Mission [PPSA13711]",
+          "to": "libSceAvPlayer.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dolphin Spirit Ocean Mission [PPSA13711]",
+          "to": "libSceAppContent.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dolphin Spirit Ocean Mission [PPSA13711]",
+          "to": "libSceWebBrowserDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dolphin Spirit Ocean Mission [PPSA13711]",
+          "to": "libSceAudio3d.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dolphin Spirit Ocean Mission [PPSA13711]",
+          "to": "libSceRemoteplay.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dolphin Spirit Ocean Mission [PPSA13711]",
+          "to": "libSceNpManager.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dolphin Spirit Ocean Mission [PPSA13711]",
+          "to": "libSceMouse.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dolphin Spirit Ocean Mission [PPSA13711]",
+          "to": "libSceAgcDriver.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dolphin Spirit Ocean Mission [PPSA13711]",
+          "to": "libSceAgc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dolphin Spirit Ocean Mission [PPSA13711]",
+          "to": "libSceAjm.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dolphin Spirit Ocean Mission [PPSA13711]",
+          "to": "libSceRazorCpu.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dolphin Spirit Ocean Mission [PPSA13711]",
+          "to": "libSceNpWebApi2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dolphin Spirit Ocean Mission [PPSA13711]",
+          "to": "libSceRandom.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Dolphin Spirit Ocean Mission [PPSA13711]",
+          "to": "libc.prx",
+          "status": "loaded"
+        },
+        {
+          "from": "Dolphin Spirit Ocean Mission [PPSA13711]",
+          "to": "libSceAmpr.prx",
           "status": "missing"
         }
       ]
@@ -576,9 +576,9 @@
   "total_exports": 2575,
   "freshness": {
     "report_format": 1,
-    "loader_fingerprint": "1ffad9aea1b5aea696f6dc6e7583450f9a0e7cbdec866a5f8f5f1a5c5beab611",
-    "offline_fingerprint": "2091ecc259aee180d6046c607636a6147ce6800836720000a275192c491a527b",
-    "environment_fingerprint": "aa4557efadfd802c3d50556622d7c5cb0b3f0972bc7719edd5f87082dd0b2939",
-    "game_fingerprint": "62b7dc854e869f4e31a9559af5fe7130715443affa7db128ddaf786eceb0e045"
+    "loader_fingerprint": "fc478775a40bc52ba94d034eb6191bac0618e25283bda3650bbfd1d0629a127c",
+    "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
+    "environment_fingerprint": "d3b9ffc479afbfe3716b56a71d30b6fd9604adba3c44edc2cd389c958d4abe68",
+    "game_fingerprint": "d23dfa7f147f88458a0f75d050dfb85bc34a27306e3eb878b388926576fad5fa"
   }
 }

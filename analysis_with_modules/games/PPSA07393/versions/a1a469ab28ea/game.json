@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "title_id": "PPSA07393",
+  "name": "Gori: Cuddly Carnage - [PPSA07393]",
+  "eboot_sha256": "77c831dbe163b616410b995b730cf3e1f3018634bc9e0c21aafa3861b838d61c",
+  "game_fingerprint": "a1a469ab28eae6bb7b49716401e0563161d526f68e46ba22c4f2ef5d3514ef1c",
+  "environment_fingerprint": "d3b9ffc479afbfe3716b56a71d30b6fd9604adba3c44edc2cd389c958d4abe68",
+  "loader_fingerprint": "fc478775a40bc52ba94d034eb6191bac0618e25283bda3650bbfd1d0629a127c",
+  "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
+  "ingest_id": "ingest_20260922043931_a1a469ab28ea",
+  "ingested_at": "2026-09-22T04:39:31Z",
+  "params": {
+    "name": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
+    "title_id": "PPSA07393",
+    "content_version": "01.000.000",
+    "master_version": "01.01",
+    "sdk_version": "0x0600000000000000",
+    "title_name": "Gori: Cuddly Carnage",
+    "display_name": "Gori: Cuddly Carnage - [PPSA07393]",
+    "drm_type": "standard",
+    "content_id": "UP4382-PPSA07393_00-GORICUDDLYCARNAG",
+    "creation_date": "2024-04-19 12:21:42"
+  },
+  "load_report_file": "load_report.json"
+}
