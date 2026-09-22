@@ -2,37 +2,37 @@
   "games": [
     {
       "game": "Afterimage-PPSA14053-EUR-Game-v01.000-PS5",
-      "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Afterimage-PPSA14053-EUR-Game-v01.000-PS5",
+      "game_dir": "Afterimage-PPSA14053-EUR-Game-v01.000-PS5",
       "total_files": 449,
       "total_bytes": 7054311211,
       "by_extension": {
-        "bank": 202,
+        "pak": 1,
         "dat": 5,
-        "png": 2,
-        "txt": 1,
         "at9": 1,
-        "uasset": 210,
-        "json": 2,
-        "dds": 4,
-        "utoc": 2,
-        "complete": 1,
-        "prx": 9,
-        "tmp": 1,
         "sprx": 1,
         "eboot.bin": 1,
-        "ini": 1,
+        "complete": 1,
         "ucp": 2,
-        "pak": 1,
         "(no_ext)": 1,
-        "ucas": 2
+        "json": 2,
+        "txt": 1,
+        "tmp": 1,
+        "bank": 202,
+        "utoc": 2,
+        "ucas": 2,
+        "prx": 9,
+        "uasset": 210,
+        "ini": 1,
+        "dds": 4,
+        "png": 2
       },
       "by_category": {
-        "unknown": 218,
-        "metadata": 10,
-        "texture": 6,
         "archive": 1,
         "executable": 11,
-        "audio": 203
+        "audio": 203,
+        "unknown": 218,
+        "texture": 6,
+        "metadata": 10
       },
       "artifacts": [
         {
@@ -3181,29 +3181,29 @@
       ]
     },
     {
-      "game": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
-      "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Animal Well PS5 _PPSA22520_\\[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
+      "game": "Animal Well PS5 _PPSA22520",
+      "game_dir": "Animal Well PS5 _PPSA22520",
       "total_files": 25,
       "total_bytes": 120959285,
       "by_extension": {
         "png": 2,
-        "at9": 1,
         "dat": 5,
-        "eboot.bin": 1,
         "json": 1,
+        "ucp": 2,
+        "sprx": 5,
         "prx": 1,
+        "(no_ext)": 1,
+        "eboot.bin": 1,
         "bak_20260710_185300": 2,
         "dds": 4,
-        "ucp": 2,
-        "(no_ext)": 1,
-        "sprx": 5
+        "at9": 1
       },
       "by_category": {
+        "unknown": 3,
+        "texture": 6,
         "executable": 7,
         "audio": 1,
-        "metadata": 8,
-        "unknown": 3,
-        "texture": 6
+        "metadata": 8
       },
       "artifacts": [
         {
@@ -3385,33 +3385,33 @@
     },
     {
       "game": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
-      "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
+      "game_dir": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5",
       "total_files": 44,
       "total_bytes": 11594033009,
       "by_extension": {
-        "ucp": 2,
-        "dds": 4,
-        "eboot.bin": 1,
-        "dat": 6,
-        "utoc": 2,
-        "json": 2,
-        "(no_ext)": 1,
-        "ini": 1,
-        "png": 2,
-        "mp4": 2,
-        "ucas": 2,
         "complete": 1,
         "txt": 1,
+        "png": 2,
         "sprx": 1,
+        "eboot.bin": 1,
         "prx": 15,
-        "pak": 1
+        "utoc": 2,
+        "ini": 1,
+        "ucp": 2,
+        "pak": 1,
+        "ucas": 2,
+        "json": 2,
+        "dds": 4,
+        "(no_ext)": 1,
+        "mp4": 2,
+        "dat": 6
       },
       "by_category": {
-        "archive": 1,
-        "unknown": 9,
+        "metadata": 11,
         "executable": 17,
-        "texture": 6,
-        "metadata": 11
+        "unknown": 9,
+        "archive": 1,
+        "texture": 6
       },
       "artifacts": [
         {
@@ -3725,33 +3725,1541 @@
       ]
     },
     {
+      "game": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+      "game_dir": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+      "total_files": 210,
+      "total_bytes": 7058670927,
+      "by_extension": {
+        "txt": 39,
+        "prx": 10,
+        "ds_store": 1,
+        "json": 9,
+        "eboot.bin": 1,
+        "dds": 4,
+        "ucp": 2,
+        "ress": 26,
+        "h": 6,
+        "cpp": 1,
+        "manifest": 1,
+        "sprx": 3,
+        "config": 1,
+        "info": 1,
+        "bundle": 4,
+        "resource": 9,
+        "assets": 24,
+        "(no_ext)": 27,
+        "xml": 2,
+        "jpg": 1,
+        "dat": 34,
+        "png": 4
+      },
+      "by_category": {
+        "unknown": 101,
+        "metadata": 86,
+        "executable": 14,
+        "texture": 9
+      },
+      "artifacts": [
+        {
+          "relative_path": "Media/Metadata/global-metadata.dat",
+          "file_name": "global-metadata.dat",
+          "extension": "dat",
+          "size": 15399784,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/Modules/Il2CppUserAssemblies.prx",
+          "file_name": "Il2CppUserAssemblies.prx",
+          "extension": "prx",
+          "size": 56996807,
+          "category": "Executable"
+        },
+        {
+          "relative_path": "Media/Modules/PS5Util.prx",
+          "file_name": "PS5Util.prx",
+          "extension": "prx",
+          "size": 7265,
+          "category": "Executable"
+        },
+        {
+          "relative_path": "Media/Plugins/NativePluginPS5Example.prx",
+          "file_name": "NativePluginPS5Example.prx",
+          "extension": "prx",
+          "size": 8654,
+          "category": "Executable"
+        },
+        {
+          "relative_path": "Media/Plugins/PSN.prx",
+          "file_name": "PSN.prx",
+          "extension": "prx",
+          "size": 482503,
+          "category": "Executable"
+        },
+        {
+          "relative_path": "Media/Resources/System.Data.dll-resources.dat",
+          "file_name": "System.Data.dll-resources.dat",
+          "extension": "dat",
+          "size": 93718,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/Resources/mscorlib.dll-resources.dat",
+          "file_name": "mscorlib.dll-resources.dat",
+          "extension": "dat",
+          "size": 337563,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/Resources/unity default resources",
+          "file_name": "unity default resources",
+          "extension": "",
+          "size": 3741176,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/Resources/unity_builtin_extra",
+          "file_name": "unity_builtin_extra",
+          "extension": "",
+          "size": 715980,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/RuntimeInitializeOnLoads.json",
+          "file_name": "RuntimeInitializeOnLoads.json",
+          "extension": "json",
+          "size": 3131,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/ScriptingAssemblies.json",
+          "file_name": "ScriptingAssemblies.json",
+          "extension": "json",
+          "size": 3565,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/SourcePlugins/IPluginSceAppParams.h",
+          "file_name": "IPluginSceAppParams.h",
+          "extension": "h",
+          "size": 838,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/SourcePlugins/IPluginSceNpParams.h",
+          "file_name": "IPluginSceNpParams.h",
+          "extension": "h",
+          "size": 1368,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/SourcePlugins/IPluginUnity.h",
+          "file_name": "IPluginUnity.h",
+          "extension": "h",
+          "size": 833,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/SourcePlugins/PrxPluginInterface.h",
+          "file_name": "PrxPluginInterface.h",
+          "extension": "h",
+          "size": 2411,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/SourcePlugins/UnityEventQueue.h",
+          "file_name": "UnityEventQueue.h",
+          "extension": "h",
+          "size": 13661,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/SourcePlugins/UnityPrxPlugin.cpp",
+          "file_name": "UnityPrxPlugin.cpp",
+          "extension": "cpp",
+          "size": 1126,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/SourcePlugins/UnityPrxPlugin.h",
+          "file_name": "UnityPrxPlugin.h",
+          "extension": "h",
+          "size": 2139,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/.DS_Store",
+          "file_name": ".DS_Store",
+          "extension": "ds_store",
+          "size": 10244,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/AlexanderAnimData.dat",
+          "file_name": "AlexanderAnimData.dat",
+          "extension": "dat",
+          "size": 29656432,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/AlexanderAttackData.txt",
+          "file_name": "AlexanderAttackData.txt",
+          "extension": "txt",
+          "size": 820,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/AlexanderSpecialCommands.txt",
+          "file_name": "AlexanderSpecialCommands.txt",
+          "extension": "txt",
+          "size": 236,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/AntonioAnimData.dat",
+          "file_name": "AntonioAnimData.dat",
+          "extension": "dat",
+          "size": 15962908,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/AntonioSpecialCommands.txt",
+          "file_name": "AntonioSpecialCommands.txt",
+          "extension": "txt",
+          "size": 262,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/BillingMode.json",
+          "file_name": "BillingMode.json",
+          "extension": "json",
+          "size": 29,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/ControlsSaveData.dat",
+          "file_name": "ControlsSaveData.dat",
+          "extension": "dat",
+          "size": 45,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/DevilMateoAnimData.dat",
+          "file_name": "DevilMateoAnimData.dat",
+          "extension": "dat",
+          "size": 1230191,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/ErlikAnimData.dat",
+          "file_name": "ErlikAnimData.dat",
+          "extension": "dat",
+          "size": 13608188,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/ErlikAttackData.txt",
+          "file_name": "ErlikAttackData.txt",
+          "extension": "txt",
+          "size": 820,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/ErlikSpecialCommands.txt",
+          "file_name": "ErlikSpecialCommands.txt",
+          "extension": "txt",
+          "size": 348,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/GraffiAnimData.dat",
+          "file_name": "GraffiAnimData.dat",
+          "extension": "dat",
+          "size": 17514908,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/GraffiAttackData.txt",
+          "file_name": "GraffiAttackData.txt",
+          "extension": "txt",
+          "size": 820,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/GraffiSpecialCommands.txt",
+          "file_name": "GraffiSpecialCommands.txt",
+          "extension": "txt",
+          "size": 416,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/GraffyAttackData.txt",
+          "file_name": "GraffyAttackData.txt",
+          "extension": "txt",
+          "size": 820,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/HanaAnimData.dat",
+          "file_name": "HanaAnimData.dat",
+          "extension": "dat",
+          "size": 26778410,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/HanaAttackData.txt",
+          "file_name": "HanaAttackData.txt",
+          "extension": "txt",
+          "size": 820,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/HanaSpecialCommands.txt",
+          "file_name": "HanaSpecialCommands.txt",
+          "extension": "txt",
+          "size": 331,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/JakeAnimData.dat",
+          "file_name": "JakeAnimData.dat",
+          "extension": "dat",
+          "size": 20522210,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/JakeAttackData.txt",
+          "file_name": "JakeAttackData.txt",
+          "extension": "txt",
+          "size": 820,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/JakeAttackData_old.txt",
+          "file_name": "JakeAttackData_old.txt",
+          "extension": "txt",
+          "size": 800,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/JakeSpecialCommands.txt",
+          "file_name": "JakeSpecialCommands.txt",
+          "extension": "txt",
+          "size": 289,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/LeiLongAnimData.dat",
+          "file_name": "LeiLongAnimData.dat",
+          "extension": "dat",
+          "size": 16910611,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/LeiLongAttackData.txt",
+          "file_name": "LeiLongAttackData.txt",
+          "extension": "txt",
+          "size": 820,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/LeiLongSpecialCommands.txt",
+          "file_name": "LeiLongSpecialCommands.txt",
+          "extension": "txt",
+          "size": 289,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/MJAnimData.dat",
+          "file_name": "MJAnimData.dat",
+          "extension": "dat",
+          "size": 14757534,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/MJAttackData.txt",
+          "file_name": "MJAttackData.txt",
+          "extension": "txt",
+          "size": 820,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/MJSpecialCommands.txt",
+          "file_name": "MJSpecialCommands.txt",
+          "extension": "txt",
+          "size": 343,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/MagnusAnimData.dat",
+          "file_name": "MagnusAnimData.dat",
+          "extension": "dat",
+          "size": 17721001,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/MagnusAttackData.txt",
+          "file_name": "MagnusAttackData.txt",
+          "extension": "txt",
+          "size": 820,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/MagnusSpecialCommands.txt",
+          "file_name": "MagnusSpecialCommands.txt",
+          "extension": "txt",
+          "size": 352,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/MateoAnimData.dat",
+          "file_name": "MateoAnimData.dat",
+          "extension": "dat",
+          "size": 19182620,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/MateoAttackData.txt",
+          "file_name": "MateoAttackData.txt",
+          "extension": "txt",
+          "size": 820,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/MateoSpecialCommands.txt",
+          "file_name": "MateoSpecialCommands.txt",
+          "extension": "txt",
+          "size": 527,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/MochizukiAnimData.dat",
+          "file_name": "MochizukiAnimData.dat",
+          "extension": "dat",
+          "size": 15026536,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/MochizukiAttackData.txt",
+          "file_name": "MochizukiAttackData.txt",
+          "extension": "txt",
+          "size": 820,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/MochizukiSpecialCommands.txt",
+          "file_name": "MochizukiSpecialCommands.txt",
+          "extension": "txt",
+          "size": 332,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/MonsterAnimData.dat",
+          "file_name": "MonsterAnimData.dat",
+          "extension": "dat",
+          "size": 4562917,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/MonsterAttackData.txt",
+          "file_name": "MonsterAttackData.txt",
+          "extension": "txt",
+          "size": 820,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/MonsterSpecialCommands.txt",
+          "file_name": "MonsterSpecialCommands.txt",
+          "extension": "txt",
+          "size": 206,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/NagiAnimData.dat",
+          "file_name": "NagiAnimData.dat",
+          "extension": "dat",
+          "size": 16008719,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/NagiAttackData.txt",
+          "file_name": "NagiAttackData.txt",
+          "extension": "txt",
+          "size": 820,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/NagiSpecialCommands.txt",
+          "file_name": "NagiSpecialCommands.txt",
+          "extension": "txt",
+          "size": 316,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/OroAnimData.dat",
+          "file_name": "OroAnimData.dat",
+          "extension": "dat",
+          "size": 17176460,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/OroAttackData.txt",
+          "file_name": "OroAttackData.txt",
+          "extension": "txt",
+          "size": 820,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/OroSpecialCommands.txt",
+          "file_name": "OroSpecialCommands.txt",
+          "extension": "txt",
+          "size": 466,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/PS4SessionImage.jpg",
+          "file_name": "PS4SessionImage.jpg",
+          "extension": "jpg",
+          "size": 49063,
+          "category": "Texture"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/PinkAnimData.dat",
+          "file_name": "PinkAnimData.dat",
+          "extension": "dat",
+          "size": 16236199,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/PinkAttackData.txt",
+          "file_name": "PinkAttackData.txt",
+          "extension": "txt",
+          "size": 820,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/PinkSpecialCommands.txt",
+          "file_name": "PinkSpecialCommands.txt",
+          "extension": "txt",
+          "size": 434,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/RyoheiAnimData.dat",
+          "file_name": "RyoheiAnimData.dat",
+          "extension": "dat",
+          "size": 17255228,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/RyoheiAttackData.txt",
+          "file_name": "RyoheiAttackData.txt",
+          "extension": "txt",
+          "size": 820,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/RyoheiSpecialCommands.txt",
+          "file_name": "RyoheiSpecialCommands.txt",
+          "extension": "txt",
+          "size": 469,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/RyuAttackData.txt",
+          "file_name": "RyuAttackData.txt",
+          "extension": "txt",
+          "size": 1625,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/RyuSpecialCommands.txt",
+          "file_name": "RyuSpecialCommands.txt",
+          "extension": "txt",
+          "size": 377,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/SaveData.dat",
+          "file_name": "SaveData.dat",
+          "extension": "dat",
+          "size": 236,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/ShinsukeAnimData.dat",
+          "file_name": "ShinsukeAnimData.dat",
+          "extension": "dat",
+          "size": 15871737,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/ShinsukeAttackData.txt",
+          "file_name": "ShinsukeAttackData.txt",
+          "extension": "txt",
+          "size": 820,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/ShinsukeSpecialCommands.txt",
+          "file_name": "ShinsukeSpecialCommands.txt",
+          "extension": "txt",
+          "size": 406,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/StreamingAssets",
+          "file_name": "StreamingAssets",
+          "extension": "",
+          "size": 4432,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/StreamingAssets.manifest",
+          "file_name": "StreamingAssets.manifest",
+          "extension": "manifest",
+          "size": 164,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/UnityServicesProjectConfiguration.json",
+          "file_name": "UnityServicesProjectConfiguration.json",
+          "extension": "json",
+          "size": 1487,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/ZeroAnimData.dat",
+          "file_name": "ZeroAnimData.dat",
+          "extension": "dat",
+          "size": 15674104,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/ZeroAttackData.txt",
+          "file_name": "ZeroAttackData.txt",
+          "extension": "txt",
+          "size": 820,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/ZeroSpecialCommands.txt",
+          "file_name": "ZeroSpecialCommands.txt",
+          "extension": "txt",
+          "size": 296,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/aa/AddressablesLink/link.xml",
+          "file_name": "link.xml",
+          "extension": "xml",
+          "size": 15375,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/aa/PS5/a57a67589e7a8acd5350952af6d7f4dd_unitybuiltinshaders_8c046b712cf435de38c581d21392f91d.bundle",
+          "file_name": "a57a67589e7a8acd5350952af6d7f4dd_unitybuiltinshaders_8c046b712cf435de38c581d21392f91d.bundle",
+          "extension": "bundle",
+          "size": 806928,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/aa/PS5/defaultlocalgroup_assets_all_404d890bcf7887af734eaa1d3fc18066.bundle",
+          "file_name": "defaultlocalgroup_assets_all_404d890bcf7887af734eaa1d3fc18066.bundle",
+          "extension": "bundle",
+          "size": 2973536432,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/aa/PS5/duplicateassetisolation_assets_all_120d0062a81fb839d604b6d5e0d0788b.bundle",
+          "file_name": "duplicateassetisolation_assets_all_120d0062a81fb839d604b6d5e0d0788b.bundle",
+          "extension": "bundle",
+          "size": 1490646064,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/aa/PS5/sync_anims_assets_all_cae2de73b36eb03363b1928c205fb45a.bundle",
+          "file_name": "sync_anims_assets_all_cae2de73b36eb03363b1928c205fb45a.bundle",
+          "extension": "bundle",
+          "size": 108692000,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/aa/catalog.json",
+          "file_name": "catalog.json",
+          "extension": "json",
+          "size": 192446,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/aa/settings.json",
+          "file_name": "settings.json",
+          "extension": "json",
+          "size": 845,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/StreamingAssets/config.dat",
+          "file_name": "config.dat",
+          "extension": "dat",
+          "size": 51,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/boot.config",
+          "file_name": "boot.config",
+          "extension": "config",
+          "size": 427,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/globalgamemanagers",
+          "file_name": "globalgamemanagers",
+          "extension": "",
+          "size": 540732,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/globalgamemanagers.assets",
+          "file_name": "globalgamemanagers.assets",
+          "extension": "assets",
+          "size": 287724,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/globalgamemanagers.assets.resS",
+          "file_name": "globalgamemanagers.assets.resS",
+          "extension": "ress",
+          "size": 8355840,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/level0",
+          "file_name": "level0",
+          "extension": "",
+          "size": 7676,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/level0.resS",
+          "file_name": "level0.resS",
+          "extension": "ress",
+          "size": 131232,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/level1",
+          "file_name": "level1",
+          "extension": "",
+          "size": 8272,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/level10",
+          "file_name": "level10",
+          "extension": "",
+          "size": 13272,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/level11",
+          "file_name": "level11",
+          "extension": "",
+          "size": 6968,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/level12",
+          "file_name": "level12",
+          "extension": "",
+          "size": 7920,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/level13",
+          "file_name": "level13",
+          "extension": "",
+          "size": 12396,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/level14",
+          "file_name": "level14",
+          "extension": "",
+          "size": 28308,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/level15",
+          "file_name": "level15",
+          "extension": "",
+          "size": 6664,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/level16",
+          "file_name": "level16",
+          "extension": "",
+          "size": 105724,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/level17",
+          "file_name": "level17",
+          "extension": "",
+          "size": 123112,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/level17.resS",
+          "file_name": "level17.resS",
+          "extension": "ress",
+          "size": 131232,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/level18",
+          "file_name": "level18",
+          "extension": "",
+          "size": 55172,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/level18.resS",
+          "file_name": "level18.resS",
+          "extension": "ress",
+          "size": 131232,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/level19",
+          "file_name": "level19",
+          "extension": "",
+          "size": 47204,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/level19.resS",
+          "file_name": "level19.resS",
+          "extension": "ress",
+          "size": 131232,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/level2",
+          "file_name": "level2",
+          "extension": "",
+          "size": 79452,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/level2.resS",
+          "file_name": "level2.resS",
+          "extension": "ress",
+          "size": 131232,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/level20",
+          "file_name": "level20",
+          "extension": "",
+          "size": 7964,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/level21",
+          "file_name": "level21",
+          "extension": "",
+          "size": 70884,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/level21.resS",
+          "file_name": "level21.resS",
+          "extension": "ress",
+          "size": 131232,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/level3",
+          "file_name": "level3",
+          "extension": "",
+          "size": 77100,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/level3.resS",
+          "file_name": "level3.resS",
+          "extension": "ress",
+          "size": 131232,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/level4",
+          "file_name": "level4",
+          "extension": "",
+          "size": 239440,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/level5",
+          "file_name": "level5",
+          "extension": "",
+          "size": 20872,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/level6",
+          "file_name": "level6",
+          "extension": "",
+          "size": 11484,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/level7",
+          "file_name": "level7",
+          "extension": "",
+          "size": 16048,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/level8",
+          "file_name": "level8",
+          "extension": "",
+          "size": 17844,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/level9",
+          "file_name": "level9",
+          "extension": "",
+          "size": 11744,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/platform_native_link.xml",
+          "file_name": "platform_native_link.xml",
+          "extension": "xml",
+          "size": 502,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "Media/resources.assets",
+          "file_name": "resources.assets",
+          "extension": "assets",
+          "size": 175130436,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/resources.assets.resS",
+          "file_name": "resources.assets.resS",
+          "extension": "ress",
+          "size": 818539696,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/resources.resource",
+          "file_name": "resources.resource",
+          "extension": "resource",
+          "size": 400239232,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets0.assets",
+          "file_name": "sharedassets0.assets",
+          "extension": "assets",
+          "size": 19306,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets0.resource",
+          "file_name": "sharedassets0.resource",
+          "extension": "resource",
+          "size": 10958947,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets1.assets",
+          "file_name": "sharedassets1.assets",
+          "extension": "assets",
+          "size": 31504,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets10.assets",
+          "file_name": "sharedassets10.assets",
+          "extension": "assets",
+          "size": 130004,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets10.assets.resS",
+          "file_name": "sharedassets10.assets.resS",
+          "extension": "ress",
+          "size": 40239104,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets11.assets",
+          "file_name": "sharedassets11.assets",
+          "extension": "assets",
+          "size": 25560,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets11.assets.resS",
+          "file_name": "sharedassets11.assets.resS",
+          "extension": "ress",
+          "size": 10702848,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets12.assets",
+          "file_name": "sharedassets12.assets",
+          "extension": "assets",
+          "size": 95252,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets12.assets.resS",
+          "file_name": "sharedassets12.assets.resS",
+          "extension": "ress",
+          "size": 39346176,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets13.assets",
+          "file_name": "sharedassets13.assets",
+          "extension": "assets",
+          "size": 63540,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets13.assets.resS",
+          "file_name": "sharedassets13.assets.resS",
+          "extension": "ress",
+          "size": 58646528,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets14.assets",
+          "file_name": "sharedassets14.assets",
+          "extension": "assets",
+          "size": 65740,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets14.assets.resS",
+          "file_name": "sharedassets14.assets.resS",
+          "extension": "ress",
+          "size": 55603200,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets15.assets",
+          "file_name": "sharedassets15.assets",
+          "extension": "assets",
+          "size": 36640,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets15.assets.resS",
+          "file_name": "sharedassets15.assets.resS",
+          "extension": "ress",
+          "size": 327680,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets16.assets",
+          "file_name": "sharedassets16.assets",
+          "extension": "assets",
+          "size": 21036,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets16.assets.resS",
+          "file_name": "sharedassets16.assets.resS",
+          "extension": "ress",
+          "size": 294912,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets16.resource",
+          "file_name": "sharedassets16.resource",
+          "extension": "resource",
+          "size": 22584960,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets17.assets",
+          "file_name": "sharedassets17.assets",
+          "extension": "assets",
+          "size": 42752,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets17.assets.resS",
+          "file_name": "sharedassets17.assets.resS",
+          "extension": "ress",
+          "size": 3018752,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets17.resource",
+          "file_name": "sharedassets17.resource",
+          "extension": "resource",
+          "size": 184480,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets18.assets",
+          "file_name": "sharedassets18.assets",
+          "extension": "assets",
+          "size": 6464,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets18.assets.resS",
+          "file_name": "sharedassets18.assets.resS",
+          "extension": "ress",
+          "size": 143360,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets18.resource",
+          "file_name": "sharedassets18.resource",
+          "extension": "resource",
+          "size": 826112,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets19.assets",
+          "file_name": "sharedassets19.assets",
+          "extension": "assets",
+          "size": 5276,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets2.assets",
+          "file_name": "sharedassets2.assets",
+          "extension": "assets",
+          "size": 41216,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets2.assets.resS",
+          "file_name": "sharedassets2.assets.resS",
+          "extension": "ress",
+          "size": 929792,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets2.resource",
+          "file_name": "sharedassets2.resource",
+          "extension": "resource",
+          "size": 3385280,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets20.assets",
+          "file_name": "sharedassets20.assets",
+          "extension": "assets",
+          "size": 4734,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets20.resource",
+          "file_name": "sharedassets20.resource",
+          "extension": "resource",
+          "size": 8931932,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets21.assets",
+          "file_name": "sharedassets21.assets",
+          "extension": "assets",
+          "size": 22060,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets21.assets.resS",
+          "file_name": "sharedassets21.assets.resS",
+          "extension": "ress",
+          "size": 77070336,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets21.resource",
+          "file_name": "sharedassets21.resource",
+          "extension": "resource",
+          "size": 696800,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets3.assets",
+          "file_name": "sharedassets3.assets",
+          "extension": "assets",
+          "size": 20180,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets3.assets.resS",
+          "file_name": "sharedassets3.assets.resS",
+          "extension": "ress",
+          "size": 147456,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets3.resource",
+          "file_name": "sharedassets3.resource",
+          "extension": "resource",
+          "size": 944512,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets4.assets",
+          "file_name": "sharedassets4.assets",
+          "extension": "assets",
+          "size": 10769,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets5.assets",
+          "file_name": "sharedassets5.assets",
+          "extension": "assets",
+          "size": 187292,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets5.assets.resS",
+          "file_name": "sharedassets5.assets.resS",
+          "extension": "ress",
+          "size": 34307616,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets6.assets",
+          "file_name": "sharedassets6.assets",
+          "extension": "assets",
+          "size": 84392,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets6.assets.resS",
+          "file_name": "sharedassets6.assets.resS",
+          "extension": "ress",
+          "size": 75300864,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets7.assets",
+          "file_name": "sharedassets7.assets",
+          "extension": "assets",
+          "size": 168632,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets7.assets.resS",
+          "file_name": "sharedassets7.assets.resS",
+          "extension": "ress",
+          "size": 49872896,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets8.assets",
+          "file_name": "sharedassets8.assets",
+          "extension": "assets",
+          "size": 196132,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets8.assets.resS",
+          "file_name": "sharedassets8.assets.resS",
+          "extension": "ress",
+          "size": 46739456,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets9.assets",
+          "file_name": "sharedassets9.assets",
+          "extension": "assets",
+          "size": 88252,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "Media/sharedassets9.assets.resS",
+          "file_name": "sharedassets9.assets.resS",
+          "extension": "ress",
+          "size": 48254976,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "eboot.bin",
+          "file_name": "eboot.bin",
+          "extension": "eboot.bin",
+          "size": 31869969,
+          "category": "Executable"
+        },
+        {
+          "relative_path": "fakelib/libSceAmpr.sprx",
+          "file_name": "libSceAmpr.sprx",
+          "extension": "sprx",
+          "size": 218678,
+          "category": "Executable"
+        },
+        {
+          "relative_path": "fakelib/libScePlayGo.sprx",
+          "file_name": "libScePlayGo.sprx",
+          "extension": "sprx",
+          "size": 17741,
+          "category": "Executable"
+        },
+        {
+          "relative_path": "sce_module/libSceFace.prx",
+          "file_name": "libSceFace.prx",
+          "extension": "prx",
+          "size": 324268,
+          "category": "Executable"
+        },
+        {
+          "relative_path": "sce_module/libSceFaceTracker.prx",
+          "file_name": "libSceFaceTracker.prx",
+          "extension": "prx",
+          "size": 2614887,
+          "category": "Executable"
+        },
+        {
+          "relative_path": "sce_module/libSceJobManager.prx",
+          "file_name": "libSceJobManager.prx",
+          "extension": "prx",
+          "size": 72278,
+          "category": "Executable"
+        },
+        {
+          "relative_path": "sce_module/libSceNpCppWebApi.prx",
+          "file_name": "libSceNpCppWebApi.prx",
+          "extension": "prx",
+          "size": 7879175,
+          "category": "Executable"
+        },
+        {
+          "relative_path": "sce_module/libScePfs.prx",
+          "file_name": "libScePfs.prx",
+          "extension": "prx",
+          "size": 1341711,
+          "category": "Executable"
+        },
+        {
+          "relative_path": "sce_module/libc.prx",
+          "file_name": "libc.prx",
+          "extension": "prx",
+          "size": 1303410,
+          "category": "Executable"
+        },
+        {
+          "relative_path": "sce_sys/about/right.sprx",
+          "file_name": "right.sprx",
+          "extension": "sprx",
+          "size": 12768,
+          "category": "Executable"
+        },
+        {
+          "relative_path": "sce_sys/ext_info.dat",
+          "file_name": "ext_info.dat",
+          "extension": "dat",
+          "size": 44,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "sce_sys/icon0.dds",
+          "file_name": "icon0.dds",
+          "extension": "dds",
+          "size": 262292,
+          "category": "Texture"
+        },
+        {
+          "relative_path": "sce_sys/icon0.png",
+          "file_name": "icon0.png",
+          "extension": "png",
+          "size": 399395,
+          "category": "Texture"
+        },
+        {
+          "relative_path": "sce_sys/keystone",
+          "file_name": "keystone",
+          "extension": "",
+          "size": 96,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "sce_sys/license.dat",
+          "file_name": "license.dat",
+          "extension": "dat",
+          "size": 1024,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "sce_sys/license.info",
+          "file_name": "license.info",
+          "extension": "info",
+          "size": 512,
+          "category": "Unknown"
+        },
+        {
+          "relative_path": "sce_sys/nptitle.dat",
+          "file_name": "nptitle.dat",
+          "extension": "dat",
+          "size": 160,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "sce_sys/origin-param.json",
+          "file_name": "origin-param.json",
+          "extension": "json",
+          "size": 6404472,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "sce_sys/param.json",
+          "file_name": "param.json",
+          "extension": "json",
+          "size": 1686,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "sce_sys/pfs-version.dat",
+          "file_name": "pfs-version.dat",
+          "extension": "dat",
+          "size": 10,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "sce_sys/pic0.dds",
+          "file_name": "pic0.dds",
+          "extension": "dds",
+          "size": 8294548,
+          "category": "Texture"
+        },
+        {
+          "relative_path": "sce_sys/pic0.png",
+          "file_name": "pic0.png",
+          "extension": "png",
+          "size": 5943728,
+          "category": "Texture"
+        },
+        {
+          "relative_path": "sce_sys/pic1.dds",
+          "file_name": "pic1.dds",
+          "extension": "dds",
+          "size": 8294548,
+          "category": "Texture"
+        },
+        {
+          "relative_path": "sce_sys/pic1.png",
+          "file_name": "pic1.png",
+          "extension": "png",
+          "size": 5943728,
+          "category": "Texture"
+        },
+        {
+          "relative_path": "sce_sys/pic2.dds",
+          "file_name": "pic2.dds",
+          "extension": "dds",
+          "size": 8294548,
+          "category": "Texture"
+        },
+        {
+          "relative_path": "sce_sys/pic2.png",
+          "file_name": "pic2.png",
+          "extension": "png",
+          "size": 532,
+          "category": "Texture"
+        },
+        {
+          "relative_path": "sce_sys/playgo-chunk.dat",
+          "file_name": "playgo-chunk.dat",
+          "extension": "dat",
+          "size": 416,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "sce_sys/playgo-ficm.dat",
+          "file_name": "playgo-ficm.dat",
+          "extension": "dat",
+          "size": 1686,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "sce_sys/playgo-hash-table.dat",
+          "file_name": "playgo-hash-table.dat",
+          "extension": "dat",
+          "size": 11824,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "sce_sys/target-param.json",
+          "file_name": "target-param.json",
+          "extension": "json",
+          "size": 8294548,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "sce_sys/trophy2/npbind.dat",
+          "file_name": "npbind.dat",
+          "extension": "dat",
+          "size": 532,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "sce_sys/trophy2/trophy00.ucp",
+          "file_name": "trophy00.ucp",
+          "extension": "ucp",
+          "size": 1589760,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "sce_sys/uds/npbind.dat",
+          "file_name": "npbind.dat",
+          "extension": "dat",
+          "size": 532,
+          "category": "Metadata"
+        },
+        {
+          "relative_path": "sce_sys/uds/uds00.ucp",
+          "file_name": "uds00.ucp",
+          "extension": "ucp",
+          "size": 11824,
+          "category": "Metadata"
+        }
+      ]
+    },
+    {
       "game": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
-      "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
+      "game_dir": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
       "total_files": 74,
       "total_bytes": 3467150596,
       "by_extension": {
-        "eboot.bin": 2,
-        "prx": 18,
-        "png": 3,
-        "ucp": 2,
-        "(no_ext)": 7,
-        "ress": 6,
-        "dds": 4,
-        "index": 1,
-        "bundle": 4,
         "json": 5,
+        "index": 1,
+        "xml": 2,
+        "(no_ext)": 7,
+        "resource": 3,
+        "dds": 4,
+        "prx": 18,
+        "ress": 6,
+        "dat": 7,
+        "ucp": 2,
+        "png": 3,
         "config": 1,
         "assets": 5,
-        "resource": 3,
-        "xml": 2,
-        "dat": 7,
+        "bundle": 4,
+        "eboot.bin": 2,
         "sprx": 4
       },
       "by_category": {
-        "texture": 7,
         "executable": 24,
-        "unknown": 27,
-        "metadata": 16
+        "texture": 7,
+        "metadata": 16,
+        "unknown": 27
       },
       "artifacts": [
         {
@@ -4275,52 +5783,52 @@
       ]
     },
     {
-      "game": "Bugsnax PS5 Dump v2.000",
-      "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Bugsnax-PPSA01502-USA-PS5\\Bugsnax PS5 Dump v2.000",
+      "game": "Bugsnax-PPSA01502-USA-PS5",
+      "game_dir": "Bugsnax-PPSA01502-USA-PS5",
       "total_files": 17825,
       "total_bytes": 17269372761,
       "by_extension": {
-        "bank": 35,
-        "swatch": 1,
-        "mtl": 3904,
-        "gnf": 4812,
-        "dat": 5,
-        "xml": 983,
+        "txt": 2,
         "sprx": 1,
-        "jpg": 10,
-        "at9": 1,
-        "json": 3,
-        "png": 1595,
         "bat": 2,
-        "xcache": 473,
-        "daecache": 98,
-        "esbak": 6,
-        "db": 19,
-        "ucp": 2,
-        "pssl": 6,
-        "bmp": 1,
+        "xml": 983,
         "dds": 4,
-        "ttf": 16,
         "sb": 508,
+        "daecache": 98,
+        "bank": 35,
+        "db": 19,
         "objcache": 4853,
+        "png": 1595,
+        "prx": 4,
         "tga": 5,
+        "ucp": 2,
+        "eboot.bin": 1,
+        "irr": 375,
+        "esbak": 6,
         "dae": 98,
         "auth_info": 1,
-        "prx": 4,
-        "irr": 375,
-        "eboot.bin": 1,
+        "xcache": 473,
+        "jpg": 10,
         "(no_ext)": 1,
-        "txt": 2
+        "mtl": 3904,
+        "swatch": 1,
+        "at9": 1,
+        "gnf": 4812,
+        "bmp": 1,
+        "json": 3,
+        "dat": 5,
+        "ttf": 16,
+        "pssl": 6
       },
       "by_category": {
+        "model": 8855,
         "texture": 6427,
-        "shader": 514,
+        "unknown": 1,
         "metadata": 1970,
         "audio": 36,
+        "font": 16,
         "executable": 6,
-        "unknown": 1,
-        "model": 8855,
-        "font": 16
+        "shader": 514
       },
       "artifacts": [
         {
@@ -129102,35 +130610,35 @@
     },
     {
       "game": "Cat-Quest-III-PPSA15065-app",
-      "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Cat-Quest-III-PPSA15065-app",
+      "game_dir": "Cat-Quest-III-PPSA15065-app",
       "total_files": 612,
       "total_bytes": 1246164518,
       "by_extension": {
+        "(no_ext)": 5,
+        "at9": 1,
+        "ress": 4,
+        "json": 10,
+        "esbak": 8,
+        "eboot.bin": 1,
+        "mp4": 9,
+        "png": 3,
+        "config": 1,
+        "dat": 9,
+        "dds": 4,
+        "ucp": 2,
+        "sprx": 1,
+        "prx": 7,
+        "chroma": 123,
         "bundle": 420,
         "xml": 1,
-        "prx": 7,
-        "json": 10,
-        "dat": 9,
-        "sprx": 1,
-        "esbak": 8,
-        "at9": 1,
-        "eboot.bin": 1,
-        "dds": 4,
-        "assets": 3,
-        "ucp": 2,
-        "ress": 4,
-        "config": 1,
-        "png": 3,
-        "(no_ext)": 5,
-        "chroma": 123,
-        "mp4": 9
+        "assets": 3
       },
       "by_category": {
         "executable": 9,
         "unknown": 565,
         "audio": 1,
-        "metadata": 30,
-        "texture": 7
+        "texture": 7,
+        "metadata": 30
       },
       "artifacts": [
         {
@@ -133421,29 +134929,29 @@
     },
     {
       "game": "Dead.Cells-PPSA15552-USA-Game-v01.005-PS5",
-      "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Dead.Cells-PPSA15552-USA-Game-v01.005-PS5",
+      "game_dir": "Dead.Cells-PPSA15552-USA-Game-v01.005-PS5",
       "total_files": 22,
       "total_bytes": 2185570133,
       "by_extension": {
+        "complete": 1,
+        "(no_ext)": 1,
         "ucp": 2,
-        "png": 3,
         "dat": 5,
+        "txt": 1,
         "dds": 4,
         "json": 1,
         "pak": 1,
-        "(no_ext)": 1,
-        "sprx": 1,
-        "complete": 1,
-        "prx": 1,
+        "png": 3,
         "eboot.bin": 1,
-        "txt": 1
+        "sprx": 1,
+        "prx": 1
       },
       "by_category": {
+        "archive": 1,
         "texture": 7,
-        "executable": 3,
-        "metadata": 9,
         "unknown": 2,
-        "archive": 1
+        "executable": 3,
+        "metadata": 9
       },
       "artifacts": [
         {
@@ -133604,36 +135112,36 @@
     },
     {
       "game": "Dolphin Spirit Ocean Mission [PPSA13711]",
-      "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Dolphin Spirit Ocean Mission [PPSA13711]",
+      "game_dir": "Dolphin Spirit Ocean Mission [PPSA13711]",
       "total_files": 163,
       "total_bytes": 833915689,
       "by_extension": {
+        "(no_ext)": 6,
         "mp4": 2,
-        "eboot.bin": 2,
-        "config": 1,
+        "json": 5,
         "png": 4,
-        "dat": 3,
-        "ucp": 2,
-        "at9": 1,
-        "dds": 4,
-        "assets": 4,
+        "cpp": 1,
         "resource": 1,
         "bundle": 92,
-        "cpp": 1,
-        "json": 5,
+        "at9": 1,
+        "dat": 3,
+        "eboot.bin": 2,
+        "index": 1,
         "prx": 24,
-        "sprx": 3,
-        "ress": 5,
-        "(no_ext)": 6,
+        "config": 1,
+        "ucp": 2,
+        "dds": 4,
+        "assets": 4,
         "xml": 2,
-        "index": 1
+        "ress": 5,
+        "sprx": 3
       },
       "by_category": {
-        "audio": 1,
-        "texture": 8,
         "unknown": 113,
         "executable": 29,
-        "metadata": 12
+        "metadata": 12,
+        "audio": 1,
+        "texture": 8
       },
       "artifacts": [
         {
@@ -134781,33 +136289,33 @@
     },
     {
       "game": "Dusk Diver 2 01.000 PPSA06565",
-      "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Dusk.Diver.2-PPSA06565-EUR-Game-v1.000.000-PS5\\Dusk Diver 2 01.000 PPSA06565",
+      "game_dir": "Dusk.Diver.2-PPSA06565-EUR-Game-v1.000.000-PS5/Dusk Diver 2 01.000 PPSA06565",
       "total_files": 278,
       "total_bytes": 10982532723,
       "by_extension": {
+        "json": 2,
+        "ini": 1,
         "sprx": 1,
-        "txt": 1,
         "eboot.bin": 1,
-        "dat": 5,
+        "complete": 1,
+        "txt": 1,
         "png": 4,
-        "(no_ext)": 1,
+        "ucp": 2,
+        "mp4": 32,
+        "prx": 8,
+        "pak": 1,
         "dds": 8,
         "bank": 210,
-        "mp4": 32,
-        "ini": 1,
-        "json": 2,
-        "complete": 1,
-        "ucp": 2,
-        "prx": 8,
-        "pak": 1
+        "(no_ext)": 1,
+        "dat": 5
       },
       "by_category": {
-        "executable": 10,
         "texture": 12,
-        "metadata": 10,
-        "audio": 210,
         "archive": 1,
-        "unknown": 35
+        "unknown": 35,
+        "executable": 10,
+        "audio": 210,
+        "metadata": 10
       },
       "artifacts": [
         {
@@ -136760,36 +138268,36 @@
     },
     {
       "game": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
-      "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
+      "game_dir": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5",
       "total_files": 848,
       "total_bytes": 7278056863,
       "by_extension": {
-        "(no_ext)": 71,
-        "prx": 13,
-        "assets": 68,
-        "resource": 1,
-        "ress": 47,
-        "bnk": 59,
-        "dds": 4,
-        "eboot.bin": 1,
-        "xml": 9,
         "dat": 7,
-        "at9": 1,
-        "png": 5,
-        "json": 1,
-        "sprx": 1,
-        "ucp": 2,
-        "config": 1,
         "txt": 60,
+        "ress": 47,
+        "sprx": 1,
+        "bnk": 59,
+        "json": 1,
+        "ucp": 2,
+        "png": 5,
+        "resource": 1,
+        "xml": 9,
+        "(no_ext)": 71,
+        "eboot.bin": 1,
+        "dds": 4,
+        "assets": 68,
+        "at9": 1,
+        "wem": 491,
+        "prx": 13,
         "mp4": 6,
-        "wem": 491
+        "config": 1
       },
       "by_category": {
-        "texture": 9,
-        "executable": 15,
         "audio": 1,
+        "metadata": 79,
         "unknown": 744,
-        "metadata": 79
+        "executable": 15,
+        "texture": 9
       },
       "artifacts": [
         {
@@ -142732,34 +144240,34 @@
     },
     {
       "game": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
-      "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
+      "game_dir": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
       "total_files": 50,
       "total_bytes": 25204722830,
       "by_extension": {
-        "dat": 5,
-        "ucp": 2,
-        "esbak": 11,
         "sprx": 1,
-        "ini": 1,
-        "prx": 9,
+        "pak": 1,
         "bank": 5,
-        "json": 2,
-        "eboot.bin": 1,
-        "(no_ext)": 1,
-        "ucas": 2,
-        "dds": 4,
         "utoc": 2,
+        "dat": 5,
+        "prx": 9,
+        "dds": 4,
         "png": 2,
         "txt": 1,
-        "pak": 1
+        "(no_ext)": 1,
+        "ucas": 2,
+        "json": 2,
+        "ini": 1,
+        "ucp": 2,
+        "esbak": 11,
+        "eboot.bin": 1
       },
       "by_category": {
         "archive": 1,
-        "texture": 6,
         "executable": 11,
+        "unknown": 6,
+        "texture": 6,
         "metadata": 21,
-        "audio": 5,
-        "unknown": 6
+        "audio": 5
       },
       "artifacts": [
         {
@@ -143116,31 +144624,31 @@
     },
     {
       "game": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
-      "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
+      "game_dir": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5",
       "total_files": 74,
       "total_bytes": 11270245597,
       "by_extension": {
-        "ucp": 2,
-        "pak": 1,
-        "complete": 1,
         "json": 2,
-        "(no_ext)": 1,
-        "mp4": 15,
         "txt": 1,
         "sprx": 1,
+        "pak": 1,
         "png": 2,
+        "(no_ext)": 1,
+        "dat": 5,
+        "ini": 1,
+        "ucp": 2,
+        "mp4": 15,
         "prx": 37,
         "dds": 4,
-        "ini": 1,
-        "eboot.bin": 1,
-        "dat": 5
+        "complete": 1,
+        "eboot.bin": 1
       },
       "by_category": {
-        "archive": 1,
         "executable": 39,
-        "unknown": 18,
         "metadata": 10,
-        "texture": 6
+        "unknown": 18,
+        "texture": 6,
+        "archive": 1
       },
       "artifacts": [
         {
@@ -143665,48 +145173,48 @@
     },
     {
       "game": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
-      "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Judgment-PPSA02739-USA-Game (v01.001)-PS5",
+      "game_dir": "Judgment-PPSA02739-USA-Game (v01.001)-PS5",
       "total_files": 7764,
       "total_bytes": 34880967380,
       "by_extension": {
-        "par": 545,
-        "dds": 56,
-        "prx": 43,
-        "farc": 2,
-        "json": 4,
-        "cud": 352,
-        "awb": 3441,
-        "adx": 632,
-        "m": 1962,
-        "dat": 4,
-        "sprx": 2,
-        "ucp": 2,
-        "art": 1,
-        "chp": 1,
-        "eboot.bin": 1,
         "gmd": 4,
-        "cfc": 1,
-        "preload": 1,
-        "acf": 3,
+        "dat": 4,
+        "json": 4,
+        "sprx": 2,
         "psb": 192,
-        "acb": 3,
-        "png": 27,
-        "bin": 191,
-        "cmt": 8,
-        "usm": 242,
-        "(no_ext)": 1,
-        "nfo": 1,
         "elf": 36,
+        "par": 545,
+        "m": 1962,
+        "png": 27,
+        "farc": 2,
+        "nfo": 1,
+        "prx": 43,
+        "(no_ext)": 1,
+        "bin": 191,
+        "cfc": 1,
+        "chp": 1,
+        "gmt": 5,
+        "preload": 1,
+        "ucp": 2,
+        "acb": 3,
+        "cud": 352,
+        "dds": 56,
+        "eboot.bin": 1,
+        "awb": 3441,
         "index": 1,
-        "gmt": 5
+        "cmt": 8,
+        "art": 1,
+        "acf": 3,
+        "usm": 242,
+        "adx": 632
       },
       "by_category": {
-        "texture": 83,
         "unknown": 6849,
-        "archive": 545,
         "metadata": 201,
-        "executable": 82,
-        "model": 4
+        "texture": 83,
+        "archive": 545,
+        "model": 4,
+        "executable": 82
       },
       "artifacts": [
         {
@@ -198061,28 +199569,28 @@
     },
     {
       "game": "Juicy.Realm-PPSA19268-USA-Game (v01.000)-PS5",
-      "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Juicy.Realm-PPSA19268-USA-Game (v01.000)-PS5",
+      "game_dir": "Juicy.Realm-PPSA19268-USA-Game (v01.000)-PS5",
       "total_files": 55,
       "total_bytes": 357640391,
       "by_extension": {
-        "dds": 4,
-        "resource": 25,
-        "(no_ext)": 2,
-        "png": 3,
-        "config": 1,
-        "ucp": 2,
         "dat": 7,
-        "sprx": 1,
-        "prx": 4,
+        "dds": 4,
+        "png": 3,
         "unity3d": 1,
-        "json": 3,
+        "sprx": 1,
+        "xml": 1,
         "eboot.bin": 1,
-        "xml": 1
+        "ucp": 2,
+        "config": 1,
+        "(no_ext)": 2,
+        "json": 3,
+        "prx": 4,
+        "resource": 25
       },
       "by_category": {
-        "texture": 7,
         "unknown": 29,
         "executable": 6,
+        "texture": 7,
         "metadata": 13
       },
       "artifacts": [
@@ -198475,35 +199983,35 @@
     },
     {
       "game": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
-      "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Jusant-PPSA10264-EUR-Game-v01.007-PS5",
+      "game_dir": "Jusant-PPSA10264-EUR-Game-v01.007-PS5",
       "total_files": 138,
       "total_bytes": 18711869906,
       "by_extension": {
-        "txt": 2,
-        "ucp": 4,
-        "sprx": 2,
-        "pak": 2,
-        "dat": 10,
-        "json": 4,
-        "(no_ext)": 2,
-        "ucas": 4,
-        "at9": 2,
-        "prx": 82,
-        "ini": 2,
-        "png": 4,
         "bk2": 2,
-        "dds": 8,
+        "at9": 2,
+        "png": 4,
+        "json": 4,
+        "txt": 2,
         "eboot.bin": 2,
+        "sprx": 2,
         "utoc": 4,
-        "elf": 2
+        "dat": 10,
+        "dds": 8,
+        "ucas": 4,
+        "pak": 2,
+        "prx": 82,
+        "(no_ext)": 2,
+        "elf": 2,
+        "ucp": 4,
+        "ini": 2
       },
       "by_category": {
         "texture": 12,
         "executable": 88,
-        "audio": 2,
         "metadata": 20,
         "unknown": 14,
-        "archive": 2
+        "archive": 2,
+        "audio": 2
       },
       "artifacts": [
         {
@@ -199476,31 +200984,31 @@
     },
     {
       "game": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
-      "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5\\Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
+      "game_dir": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5/Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5",
       "total_files": 39,
       "total_bytes": 15388968591,
       "by_extension": {
-        "args": 1,
-        "dat": 5,
-        "pak": 2,
-        "png": 7,
-        "prx": 2,
-        "(no_ext)": 1,
-        "json": 1,
-        "at9": 1,
-        "dds": 12,
-        "rds": 1,
-        "eboot.bin": 2,
         "sprx": 2,
-        "ucp": 2
+        "prx": 2,
+        "pak": 2,
+        "ucp": 2,
+        "json": 1,
+        "png": 7,
+        "args": 1,
+        "dds": 12,
+        "eboot.bin": 2,
+        "rds": 1,
+        "dat": 5,
+        "(no_ext)": 1,
+        "at9": 1
       },
       "by_category": {
+        "archive": 2,
         "executable": 6,
+        "metadata": 8,
         "audio": 1,
         "texture": 19,
-        "archive": 2,
-        "unknown": 3,
-        "metadata": 8
+        "unknown": 3
       },
       "artifacts": [
         {
@@ -199780,32 +201288,32 @@
     },
     {
       "game": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
-      "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5\\Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
+      "game_dir": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5/Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5",
       "total_files": 341,
       "total_bytes": 966506022,
       "by_extension": {
-        "dat": 9,
-        "png": 3,
-        "(no_ext)": 5,
-        "ress": 1,
-        "bundle": 235,
-        "config": 1,
-        "xml": 1,
-        "json": 5,
-        "sprx": 1,
-        "bank": 61,
         "eboot.bin": 1,
-        "dds": 4,
         "assets": 3,
+        "sprx": 1,
+        "ress": 1,
+        "config": 1,
+        "dat": 9,
+        "json": 5,
+        "prx": 9,
         "ucp": 2,
-        "prx": 9
+        "bank": 61,
+        "bundle": 235,
+        "xml": 1,
+        "dds": 4,
+        "png": 3,
+        "(no_ext)": 5
       },
       "by_category": {
+        "audio": 61,
         "metadata": 17,
-        "executable": 11,
         "texture": 7,
         "unknown": 245,
-        "audio": 61
+        "executable": 11
       },
       "artifacts": [
         {
@@ -202199,35 +203707,35 @@
     },
     {
       "game": "PPSA02787-app0",
-      "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Monster.Boy.and.The.Cursed.Kingdom-PPSA02787-USA-Game-v01.000.004-PS5\\PPSA02787-app0",
+      "game_dir": "Monster.Boy.and.The.Cursed.Kingdom-PPSA02787-USA-Game-v01.000.004-PS5/PPSA02787-app0",
       "total_files": 536,
       "total_bytes": 4225947160,
       "by_extension": {
-        "complete": 1,
-        "ucp": 4,
-        "json": 2,
-        "eboot.bin": 1,
         "(no_ext)": 20,
-        "mp4": 5,
-        "t": 124,
-        "png": 7,
         "dds": 4,
         "esbak": 4,
         "opus": 60,
-        "dat": 8,
-        "wav": 166,
-        "lib": 1,
-        "sprx": 1,
+        "m": 1,
         "prx": 2,
+        "dat": 8,
         "s": 124,
+        "sprx": 1,
+        "mp4": 5,
+        "wav": 166,
+        "ucp": 4,
+        "t": 124,
+        "json": 2,
+        "complete": 1,
+        "png": 7,
         "sp": 1,
-        "m": 1
+        "lib": 1,
+        "eboot.bin": 1
       },
       "by_category": {
-        "executable": 4,
-        "texture": 11,
         "unknown": 503,
-        "metadata": 18
+        "texture": 11,
+        "metadata": 18,
+        "executable": 4
       },
       "artifacts": [
         {
@@ -205986,33 +207494,33 @@
     },
     {
       "game": "Neko.Rescue.Tale-PPSA13871-EUR-Game (v01.000)-PS5",
-      "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Neko.Rescue.Tale-PPSA13871-EUR-Game (v01.000)-PS5",
+      "game_dir": "Neko.Rescue.Tale-PPSA13871-EUR-Game (v01.000)-PS5",
       "total_files": 251,
       "total_bytes": 108202584,
       "by_extension": {
-        "esbak": 3,
-        "eboot.bin": 1,
-        "frag": 110,
-        "json": 3,
-        "dat": 5,
-        "ucp": 2,
-        "ini": 1,
-        "vert": 20,
-        "sprx": 1,
-        "prx": 1,
-        "js": 1,
         "png": 80,
-        "(no_ext)": 2,
-        "dds": 4,
+        "ogg": 16,
+        "js": 1,
+        "frag": 110,
+        "esbak": 3,
         "ttf": 1,
-        "ogg": 16
+        "eboot.bin": 1,
+        "prx": 1,
+        "ucp": 2,
+        "dat": 5,
+        "ini": 1,
+        "sprx": 1,
+        "(no_ext)": 2,
+        "vert": 20,
+        "json": 3,
+        "dds": 4
       },
       "by_category": {
-        "metadata": 13,
         "texture": 84,
-        "font": 1,
+        "executable": 3,
+        "metadata": 13,
         "unknown": 150,
-        "executable": 3
+        "font": 1
       },
       "artifacts": [
         {
@@ -207776,35 +209284,35 @@
     },
     {
       "game": "Neva-PPSA16786-EUR-Game (v01.007)-PS5",
-      "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Neva-PPSA16786-EUR-Game (v01.007)-PS5",
+      "game_dir": "Neva-PPSA16786-EUR-Game (v01.007)-PS5",
       "total_files": 712,
       "total_bytes": 21805859555,
       "by_extension": {
-        "resource": 1,
-        "ress": 45,
-        "txt": 39,
         "prx": 7,
-        "ucp": 2,
-        "sprx": 1,
-        "xml": 3,
-        "wem": 401,
-        "json": 4,
+        "assets": 70,
+        "at9": 1,
+        "dat": 9,
         "bnk": 38,
         "config": 1,
-        "assets": 70,
-        "dat": 9,
-        "dds": 4,
+        "xml": 3,
+        "txt": 39,
+        "ress": 45,
+        "png": 2,
         "(no_ext)": 83,
-        "at9": 1,
-        "eboot.bin": 1,
-        "png": 2
+        "dds": 4,
+        "resource": 1,
+        "json": 4,
+        "ucp": 2,
+        "sprx": 1,
+        "wem": 401,
+        "eboot.bin": 1
       },
       "by_category": {
-        "executable": 9,
-        "texture": 6,
         "unknown": 639,
         "audio": 1,
-        "metadata": 57
+        "executable": 9,
+        "metadata": 57,
+        "texture": 6
       },
       "artifacts": [
         {
@@ -212795,37 +214303,37 @@
     },
     {
       "game": "Octopath.Traveler.II-PPSA09809-EUR-Game-v01.000-PS5",
-      "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Octopath.Traveler.II-PPSA09809-EUR-Game-v01.000-PS5",
+      "game_dir": "Octopath.Traveler.II-PPSA09809-EUR-Game-v01.000-PS5",
       "total_files": 305,
       "total_bytes": 20204569640,
       "by_extension": {
-        "sprx": 1,
-        "avp": 1,
-        "tps": 1,
+        "png": 2,
         "(no_ext)": 11,
         "pak": 1,
-        "complete": 1,
-        "eboot.bin": 1,
-        "prx": 6,
-        "dds": 4,
-        "png": 2,
-        "uasset": 133,
-        "awb": 125,
         "txt": 3,
-        "ucp": 2,
+        "avp": 1,
         "json": 2,
+        "dds": 4,
+        "ucp": 2,
+        "tps": 1,
         "ttf": 1,
         "dat": 5,
+        "sprx": 1,
+        "awb": 125,
+        "eboot.bin": 1,
+        "complete": 1,
+        "uasset": 133,
+        "ini": 1,
         "usm": 4,
-        "ini": 1
+        "prx": 6
       },
       "by_category": {
-        "executable": 8,
-        "metadata": 12,
-        "texture": 6,
-        "archive": 1,
+        "unknown": 277,
         "font": 1,
-        "unknown": 277
+        "metadata": 12,
+        "executable": 8,
+        "texture": 6,
+        "archive": 1
       },
       "artifacts": [
         {
@@ -214967,30 +216475,30 @@
     },
     {
       "game": "PPSA07653-app0",
-      "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Oxide.Room.104-PPSA07653-EUR-Game-v1.000.000-PS5\\PPSA07653-app0",
+      "game_dir": "Oxide.Room.104-PPSA07653-EUR-Game-v1.000.000-PS5/PPSA07653-app0",
       "total_files": 34,
       "total_bytes": 7638173339,
       "by_extension": {
-        "png": 2,
-        "ucp": 2,
-        "eboot.bin": 1,
-        "identifier": 7,
-        "(no_ext)": 1,
-        "dds": 4,
-        "pak": 1,
-        "ini": 1,
-        "txt": 1,
-        "prx": 6,
         "json": 2,
+        "ini": 1,
+        "png": 2,
+        "txt": 1,
+        "eboot.bin": 1,
+        "prx": 6,
+        "(no_ext)": 1,
         "sprx": 1,
-        "dat": 5
+        "dat": 5,
+        "pak": 1,
+        "dds": 4,
+        "ucp": 2,
+        "identifier": 7
       },
       "by_category": {
-        "executable": 8,
-        "texture": 6,
-        "unknown": 9,
         "metadata": 10,
-        "archive": 1
+        "archive": 1,
+        "executable": 8,
+        "unknown": 9,
+        "texture": 6
       },
       "artifacts": [
         {
@@ -215234,32 +216742,32 @@
       ]
     },
     {
-      "game": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-      "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5\\[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+      "game": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+      "game_dir": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
       "total_files": 29,
       "total_bytes": 89928438571,
       "by_extension": {
         "png": 5,
-        "eboot.bin": 1,
-        "rds": 1,
-        "prx": 1,
-        "dds": 4,
         "(no_ext)": 1,
-        "ucp": 2,
+        "eboot.bin": 1,
         "at9": 1,
-        "dat": 4,
+        "ucp": 2,
+        "rds": 1,
         "json": 1,
         "sprx": 1,
+        "dat": 4,
+        "prx": 1,
+        "args": 1,
         "pak": 6,
-        "args": 1
+        "dds": 4
       },
       "by_category": {
-        "unknown": 3,
-        "archive": 6,
         "audio": 1,
         "metadata": 7,
         "executable": 3,
-        "texture": 9
+        "texture": 9,
+        "unknown": 3,
+        "archive": 6
       },
       "artifacts": [
         {
@@ -215469,33 +216977,33 @@
     },
     {
       "game": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
-      "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
+      "game_dir": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5",
       "total_files": 83,
       "total_bytes": 9376493266,
       "by_extension": {
-        "dds": 4,
-        "prx": 10,
-        "assets": 10,
-        "eboot.bin": 1,
-        "dat": 7,
-        "resource": 4,
         "sprx": 1,
         "esbak": 12,
         "ucp": 2,
-        "mp4": 1,
-        "png": 3,
-        "(no_ext)": 12,
-        "config": 1,
         "json": 3,
+        "(no_ext)": 12,
+        "prx": 10,
+        "resource": 4,
+        "mp4": 1,
+        "config": 1,
+        "eboot.bin": 1,
+        "png": 3,
         "ress": 10,
+        "dat": 7,
+        "txt": 1,
+        "dds": 4,
         "jpg": 1,
-        "txt": 1
+        "assets": 10
       },
       "by_category": {
-        "unknown": 38,
+        "metadata": 25,
         "executable": 12,
-        "texture": 8,
-        "metadata": 25
+        "unknown": 38,
+        "texture": 8
       },
       "artifacts": [
         {
@@ -216083,29 +217591,29 @@
     },
     {
       "game": "PPSA13356-app",
-      "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Raiden.III.x.MIKADO.MANIAX-PPSA13356-USA-Game-v01.01-PS5\\PPSA13356-app",
+      "game_dir": "Raiden.III.x.MIKADO.MANIAX-PPSA13356-USA-Game-v01.01-PS5/PPSA13356-app",
       "total_files": 83,
       "total_bytes": 1509359616,
       "by_extension": {
-        "esbak": 4,
-        "prx": 2,
-        "at9": 44,
         "json": 1,
-        "(no_ext)": 1,
-        "dds": 4,
-        "eboot.bin": 1,
-        "sprx": 1,
-        "bin": 12,
-        "dat": 8,
         "png": 3,
-        "ucp": 2
+        "sprx": 1,
+        "at9": 44,
+        "(no_ext)": 1,
+        "prx": 2,
+        "esbak": 4,
+        "dat": 8,
+        "ucp": 2,
+        "bin": 12,
+        "dds": 4,
+        "eboot.bin": 1
       },
       "by_category": {
-        "metadata": 27,
-        "executable": 4,
-        "texture": 7,
         "unknown": 1,
-        "audio": 44
+        "texture": 7,
+        "audio": 44,
+        "executable": 4,
+        "metadata": 27
       },
       "artifacts": [
         {
@@ -216692,34 +218200,34 @@
       ]
     },
     {
-      "game": "Richman 11 PS5 _PPSA16960_",
-      "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Richman 11 PS5 _PPSA16960_",
+      "game": "Richman 11 PS5 _PPSA16960",
+      "game_dir": "Richman 11 PS5 _PPSA16960",
       "total_files": 248,
       "total_bytes": 3374882080,
       "by_extension": {
-        "assets": 24,
-        "config": 1,
-        "resource": 2,
-        "json": 3,
-        "png": 5,
         "ucp": 2,
-        "jpg": 1,
-        "eboot.bin": 1,
+        "config": 1,
+        "assets": 24,
+        "resource": 2,
+        "png": 5,
         "dds": 7,
         "sprx": 3,
-        "index": 1,
-        "ress": 40,
         "dat": 7,
         "xml": 1,
-        "bytes": 119,
         "(no_ext)": 26,
-        "prx": 5
+        "index": 1,
+        "ress": 40,
+        "json": 3,
+        "jpg": 1,
+        "prx": 5,
+        "bytes": 119,
+        "eboot.bin": 1
       },
       "by_category": {
-        "texture": 13,
-        "unknown": 213,
         "metadata": 13,
-        "executable": 9
+        "executable": 9,
+        "unknown": 213,
+        "texture": 13
       },
       "artifacts": [
         {
@@ -218462,45 +219970,45 @@
     },
     {
       "game": "Soul.Hackers.2-PPSA03743-USA-Game (v01.002)+DLC-PS5",
-      "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Soul.Hackers.2-PPSA03743-USA-Game (v01.002)+DLC-PS5",
+      "game_dir": "Soul.Hackers.2-PPSA03743-USA-Game (v01.002)+DLC-PS5",
       "total_files": 23328,
       "total_bytes": 39337005317,
       "by_extension": {
-        "ini": 1,
-        "prx": 18,
-        "dds": 4,
-        "sprx": 6,
-        "awb": 585,
-        "fr": 22,
-        "es": 22,
-        "png": 4,
-        "txt": 2,
-        "it": 22,
-        "h": 3,
-        "en": 25,
-        "ress": 3,
-        "index": 1,
-        "xml": 1,
         "eboot.bin": 1,
-        "at9": 1,
-        "ucp": 2,
-        "acb": 585,
-        "json": 3,
-        "assets": 5,
-        "acf": 1,
-        "manifest": 11034,
+        "dds": 4,
+        "h": 3,
+        "it": 22,
+        "prx": 18,
+        "config": 1,
         "gr": 22,
-        "dat": 7,
+        "acf": 1,
+        "assets": 5,
         "usm": 19,
+        "index": 1,
+        "sprx": 6,
+        "at9": 1,
+        "es": 22,
         "(no_ext)": 10928,
-        "config": 1
+        "ini": 1,
+        "dat": 7,
+        "png": 4,
+        "json": 3,
+        "ress": 3,
+        "ucp": 2,
+        "awb": 585,
+        "manifest": 11034,
+        "txt": 2,
+        "xml": 1,
+        "acb": 585,
+        "fr": 22,
+        "en": 25
       },
       "by_category": {
-        "metadata": 15,
         "texture": 8,
-        "unknown": 23279,
         "executable": 25,
-        "audio": 1
+        "unknown": 23279,
+        "audio": 1,
+        "metadata": 15
       },
       "artifacts": [
         {
@@ -381803,32 +383311,32 @@
     },
     {
       "game": "PPSA22102-app",
-      "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Squirrel.With.A.Gun-PPSA22102-USA-Game-PS5\\PPSA22102-app",
+      "game_dir": "Squirrel.With.A.Gun-PPSA22102-USA-Game-PS5/PPSA22102-app",
       "total_files": 43,
       "total_bytes": 7034110498,
       "by_extension": {
+        "txt": 1,
         "sprx": 1,
         "utoc": 2,
-        "esbak": 9,
-        "png": 2,
-        "eboot.bin": 1,
+        "mp4": 2,
         "prx": 7,
-        "txt": 1,
-        "pak": 1,
+        "json": 2,
         "dat": 5,
         "dds": 4,
-        "mp4": 2,
-        "json": 2,
-        "ucp": 2,
+        "png": 2,
+        "esbak": 9,
         "ini": 1,
         "ucas": 2,
-        "(no_ext)": 1
+        "ucp": 2,
+        "(no_ext)": 1,
+        "pak": 1,
+        "eboot.bin": 1
       },
       "by_category": {
-        "unknown": 8,
-        "texture": 6,
         "metadata": 19,
         "executable": 9,
+        "texture": 6,
+        "unknown": 8,
         "archive": 1
       },
       "artifacts": [
@@ -382136,33 +383644,33 @@
       ]
     },
     {
-      "game": "PPSA02100 -  Stray",
-      "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Stray-PPSA02100-USA-PS5\\PPSA02100 -  Stray",
+      "game": "PPSA02100 Stray",
+      "game_dir": "Stray-PPSA02100-USA-PS5/PPSA02100 Stray",
       "total_files": 43,
       "total_bytes": 15221500812,
       "by_extension": {
         "esbak": 8,
-        "(no_ext)": 1,
-        "prx": 6,
-        "ucp": 2,
-        "uasset": 2,
-        "bk2": 6,
-        "eboot.bin": 1,
-        "sprx": 1,
         "txt": 1,
+        "eboot.bin": 1,
         "dat": 5,
-        "png": 2,
         "dds": 4,
-        "pak": 1,
+        "sprx": 1,
+        "uasset": 2,
+        "ini": 1,
+        "png": 2,
+        "ucp": 2,
         "json": 2,
-        "ini": 1
+        "bk2": 6,
+        "prx": 6,
+        "pak": 1,
+        "(no_ext)": 1
       },
       "by_category": {
-        "executable": 8,
-        "texture": 6,
-        "metadata": 18,
+        "unknown": 10,
         "archive": 1,
-        "unknown": 10
+        "metadata": 18,
+        "texture": 6,
+        "executable": 8
       },
       "artifacts": [
         {
@@ -382470,41 +383978,41 @@
     },
     {
       "game": "PPSA02456-app",
-      "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Subnautica.Below.Zero-PPSA02456-USA-Game-v01.021.397-PS5\\PPSA02456-app",
+      "game_dir": "Subnautica.Below.Zero-PPSA02456-USA-Game-v01.021.397-PS5/PPSA02456-app",
       "total_files": 21892,
       "total_bytes": 7363960767,
       "by_extension": {
         "bank": 24,
+        "esbak": 1,
+        "sprx": 1,
+        "config": 1,
+        "bundle": 14633,
+        "txt": 5,
+        "tour": 25,
+        "csv": 1,
+        "prx": 11,
+        "dds": 4,
+        "bin": 2306,
         "db": 1,
+        "at9": 1,
+        "assets": 3,
+        "optoctrees": 4823,
+        "eboot.bin": 1,
+        "elf": 1,
         "dat": 8,
+        "json": 26,
         "ucp": 2,
         "(no_ext)": 8,
         "png": 2,
-        "assets": 3,
-        "bin": 2306,
-        "bundle": 14633,
-        "config": 1,
-        "esbak": 1,
-        "elf": 1,
-        "sprx": 1,
-        "json": 26,
-        "ress": 1,
-        "at9": 1,
-        "optoctrees": 4823,
-        "tour": 25,
-        "prx": 11,
-        "xml": 2,
         "ignore": 1,
-        "eboot.bin": 1,
-        "dds": 4,
-        "csv": 1,
-        "txt": 5
+        "xml": 2,
+        "ress": 1
       },
       "by_category": {
-        "metadata": 2351,
         "audio": 25,
-        "executable": 14,
         "unknown": 19496,
+        "metadata": 2351,
+        "executable": 14,
         "texture": 6
       },
       "artifacts": [
@@ -535755,29 +537263,29 @@
       ]
     },
     {
-      "game": "The Pathless PS5 Dump v2.000",
-      "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\The.Pathless-PPSA01825-USA-PS5\\The Pathless PS5 Dump v2.000",
+      "game": "The.Pathless-PPSA01825-USA-PS5",
+      "game_dir": "The.Pathless-PPSA01825-USA-PS5",
       "total_files": 195,
       "total_bytes": 13968129620,
       "by_extension": {
-        "png": 6,
-        "json": 2,
-        "txt": 2,
-        "ini": 26,
-        "pak": 2,
-        "dds": 8,
         "dat": 8,
+        "(no_ext)": 2,
         "auth_info": 4,
         "ucp": 4,
-        "esbak": 52,
-        "sprx": 3,
-        "(no_ext)": 2,
         "prx": 73,
+        "ini": 26,
+        "pak": 2,
+        "sprx": 3,
+        "esbak": 52,
+        "txt": 2,
+        "dds": 8,
+        "png": 6,
+        "json": 2,
         "eboot.bin": 3
       },
       "by_category": {
-        "metadata": 72,
         "executable": 79,
+        "metadata": 72,
         "texture": 14,
         "unknown": 28,
         "archive": 2
@@ -537152,31 +538660,31 @@
     },
     {
       "game": "Totally.Reliable.Delivery.Service-PPSA28855-EUR-Game (v01.001)-PS5",
-      "game_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Totally.Reliable.Delivery.Service-PPSA28855-EUR-Game (v01.001)-PS5\\Totally.Reliable.Delivery.Service-PPSA28855-EUR-Game (v01.001)-PS5",
+      "game_dir": "Totally.Reliable.Delivery.Service-PPSA28855-EUR-Game (v01.001)-PS5/Totally.Reliable.Delivery.Service-PPSA28855-EUR-Game (v01.001)-PS5",
       "total_files": 88,
       "total_bytes": 4848987635,
       "by_extension": {
-        "config": 1,
+        "index": 1,
+        "eboot.bin": 1,
+        "dds": 4,
+        "resource": 3,
+        "dat": 9,
+        "prx": 16,
         "assets": 12,
         "png": 2,
+        "config": 1,
         "jpg": 1,
-        "(no_ext)": 14,
-        "dat": 9,
-        "eboot.bin": 1,
-        "sprx": 3,
-        "ress": 15,
-        "ucp": 2,
-        "resource": 3,
-        "prx": 16,
         "json": 4,
-        "dds": 4,
-        "index": 1
+        "ress": 15,
+        "(no_ext)": 14,
+        "ucp": 2,
+        "sprx": 3
       },
       "by_category": {
-        "texture": 7,
+        "metadata": 15,
         "executable": 20,
-        "unknown": 46,
-        "metadata": 15
+        "texture": 7,
+        "unknown": 46
       },
       "artifacts": [
         {
@@ -537798,118 +539306,120 @@
       ]
     }
   ],
-  "total_games": 32,
-  "total_files": 76671,
+  "total_games": 33,
+  "total_files": 76881,
   "by_extension": {
-    "pssl": 6,
-    "resource": 40,
-    "irr": 375,
-    "assets": 207,
-    "esbak": 118,
-    "txt": 125,
-    "gmd": 4,
-    "mp4": 74,
+    "unity3d": 1,
+    "prx": 467,
     "sb": 508,
-    "s": 124,
-    "sp": 1,
-    "eboot.bin": 38,
-    "vert": 20,
+    "chroma": 123,
+    "ds_store": 1,
+    "bytes": 119,
+    "nfo": 1,
+    "cmt": 8,
+    "identifier": 7,
+    "es": 22,
+    "bin": 2509,
     "preload": 1,
+    "pssl": 6,
+    "wav": 166,
+    "mtl": 3904,
+    "sp": 1,
+    "sprx": 58,
+    "assets": 231,
+    "utoc": 12,
+    "tga": 5,
+    "eboot.bin": 39,
+    "daecache": 98,
+    "par": 545,
+    "swatch": 1,
+    "ogg": 16,
+    "dat": 236,
+    "pak": 22,
+    "png": 1802,
+    "jpg": 14,
+    "ttf": 18,
+    "json": 122,
+    "gnf": 4812,
+    "mp4": 74,
+    "acb": 588,
+    "js": 1,
+    "avp": 1,
+    "en": 25,
+    "dds": 207,
+    "irr": 375,
+    "wem": 892,
+    "ucp": 72,
+    "bank": 537,
+    "txt": 164,
+    "ress": 203,
+    "manifest": 11035,
+    "resource": 49,
+    "gmd": 4,
+    "psb": 192,
+    "cfc": 1,
+    "t": 124,
+    "chp": 1,
+    "ucas": 12,
+    "complete": 7,
+    "bundle": 15388,
+    "gr": 22,
+    "bnk": 97,
+    "s": 124,
+    "awb": 4151,
+    "h": 9,
+    "adx": 632,
+    "m": 1963,
+    "optoctrees": 4823,
+    "ignore": 1,
+    "ini": 39,
+    "(no_ext)": 11246,
+    "uasset": 345,
+    "esbak": 118,
+    "xcache": 473,
+    "art": 1,
+    "fr": 22,
+    "vert": 20,
+    "bat": 2,
+    "index": 6,
+    "cud": 352,
+    "frag": 110,
+    "cpp": 2,
+    "csv": 1,
+    "usm": 265,
+    "auth_info": 5,
+    "bk2": 8,
+    "lib": 1,
+    "elf": 39,
+    "args": 2,
+    "config": 13,
+    "acf": 4,
+    "dae": 98,
+    "opus": 60,
+    "tour": 25,
+    "objcache": 4853,
+    "info": 1,
+    "gmt": 5,
+    "bak_20260710_185300": 2,
+    "tmp": 1,
+    "rds": 2,
+    "it": 22,
     "db": 20,
     "bmp": 1,
-    "bak_20260710_185300": 2,
-    "chp": 1,
-    "ucp": 70,
-    "par": 545,
-    "js": 1,
-    "awb": 4151,
-    "m": 1963,
-    "bytes": 119,
-    "it": 22,
-    "gr": 22,
-    "prx": 457,
-    "frag": 110,
-    "optoctrees": 4823,
-    "h": 3,
-    "uasset": 345,
-    "objcache": 4853,
-    "es": 22,
-    "json": 113,
-    "swatch": 1,
-    "t": 124,
-    "config": 12,
-    "tmp": 1,
-    "wem": 892,
-    "jpg": 13,
-    "en": 25,
-    "acf": 4,
-    "chroma": 123,
-    "ini": 39,
-    "dat": 202,
-    "tps": 1,
-    "manifest": 11034,
-    "tour": 25,
-    "args": 2,
-    "(no_ext)": 11219,
-    "ress": 177,
-    "psb": 192,
-    "opus": 60,
-    "pak": 22,
-    "fr": 22,
-    "bundle": 15384,
-    "xcache": 473,
-    "dae": 98,
-    "adx": 632,
-    "ogg": 16,
-    "daecache": 98,
-    "farc": 2,
-    "unity3d": 1,
-    "xml": 1006,
-    "bin": 2509,
-    "rds": 2,
-    "usm": 265,
-    "avp": 1,
     "at9": 57,
-    "tga": 5,
-    "csv": 1,
-    "bnk": 97,
-    "index": 6,
-    "cpp": 1,
-    "ucas": 12,
-    "cud": 352,
-    "art": 1,
-    "nfo": 1,
-    "bank": 537,
-    "cmt": 8,
-    "utoc": 12,
-    "ttf": 18,
-    "elf": 39,
-    "gmt": 5,
-    "bat": 2,
-    "auth_info": 5,
-    "cfc": 1,
-    "acb": 588,
-    "mtl": 3904,
-    "bk2": 8,
-    "complete": 7,
-    "lib": 1,
-    "identifier": 7,
-    "gnf": 4812,
-    "ignore": 1,
-    "png": 1798,
-    "wav": 166,
-    "sprx": 55,
-    "dds": 203
+    "xml": 1008,
+    "farc": 2,
+    "tps": 1
   },
   "by_category": {
-    "texture": 6832,
-    "executable": 589,
-    "audio": 594,
     "archive": 567,
-    "unknown": 53581,
-    "metadata": 5117,
-    "shader": 514,
+    "executable": 603,
+    "unknown": 53682,
     "model": 8859,
-    "font": 18
+    "metadata": 5203,
+    "font": 18,
+    "shader": 514,
+    "audio": 594,
+    "texture": 6841
   }
 }

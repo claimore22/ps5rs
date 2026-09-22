@@ -1,1 +1,384 @@
-null
+{
+  "artifacts": [
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "contentids.json",
+      "relative_path": "contentids.json",
+      "size": 89
+    },
+    {
+      "category": "Executable",
+      "extension": "eboot.bin",
+      "file_name": "eboot.bin",
+      "relative_path": "eboot.bin",
+      "size": 118916748
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "eboot.bin.esbak",
+      "relative_path": "eboot.bin.esbak",
+      "size": 118730292
+    },
+    {
+      "category": "Unknown",
+      "extension": "ini",
+      "file_name": "manifest.ini",
+      "relative_path": "engine/saved/config/ps5/manifest.ini",
+      "size": 22
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "dialoguebank_eng.bank",
+      "relative_path": "goricuddlycarnage/content/fmod/ps5/dialoguebank_eng.bank",
+      "size": 264928640
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "dialoguebank_ger.bank",
+      "relative_path": "goricuddlycarnage/content/fmod/ps5/dialoguebank_ger.bank",
+      "size": 269012224
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "master.bank",
+      "relative_path": "goricuddlycarnage/content/fmod/ps5/master.bank",
+      "size": 50260
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "master.strings.bank",
+      "relative_path": "goricuddlycarnage/content/fmod/ps5/master.strings.bank",
+      "size": 57624
+    },
+    {
+      "category": "Audio",
+      "extension": "bank",
+      "file_name": "thebank.bank",
+      "relative_path": "goricuddlycarnage/content/fmod/ps5/thebank.bank",
+      "size": 306297632
+    },
+    {
+      "category": "Unknown",
+      "extension": "ucas",
+      "file_name": "global.ucas",
+      "relative_path": "goricuddlycarnage/content/paks/global.ucas",
+      "size": 1917488
+    },
+    {
+      "category": "Unknown",
+      "extension": "utoc",
+      "file_name": "global.utoc",
+      "relative_path": "goricuddlycarnage/content/paks/global.utoc",
+      "size": 563
+    },
+    {
+      "category": "Archive",
+      "extension": "pak",
+      "file_name": "goricuddlycarnage-ps5.pak",
+      "relative_path": "goricuddlycarnage/content/paks/goricuddlycarnage-ps5.pak",
+      "size": 132945607
+    },
+    {
+      "category": "Unknown",
+      "extension": "ucas",
+      "file_name": "goricuddlycarnage-ps5.ucas",
+      "relative_path": "goricuddlycarnage/content/paks/goricuddlycarnage-ps5.ucas",
+      "size": 23905151648
+    },
+    {
+      "category": "Unknown",
+      "extension": "utoc",
+      "file_name": "goricuddlycarnage-ps5.utoc",
+      "relative_path": "goricuddlycarnage/content/paks/goricuddlycarnage-ps5.utoc",
+      "size": 7249819
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libfmod.prx",
+      "relative_path": "prx/libfmod.prx",
+      "size": 1686413
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "libfmod.prx.esbak",
+      "relative_path": "prx/libfmod.prx.esbak",
+      "size": 1719160
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libfmodstudio.prx",
+      "relative_path": "prx/libfmodstudio.prx",
+      "size": 1544661
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "libfmodstudio.prx.esbak",
+      "relative_path": "prx/libfmodstudio.prx.esbak",
+      "size": 1569760
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceFace.prx",
+      "relative_path": "sce_module/libSceFace.prx",
+      "size": 325628
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "libSceFace.prx.esbak",
+      "relative_path": "sce_module/libSceFace.prx.esbak",
+      "size": 372560
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceFaceTracker.prx",
+      "relative_path": "sce_module/libSceFaceTracker.prx",
+      "size": 2612103
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "libSceFaceTracker.prx.esbak",
+      "relative_path": "sce_module/libSceFaceTracker.prx.esbak",
+      "size": 2660727
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceFontGsm.prx",
+      "relative_path": "sce_module/libSceFontGsm.prx",
+      "size": 252423
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "libSceFontGsm.prx.esbak",
+      "relative_path": "sce_module/libSceFontGsm.prx.esbak",
+      "size": 306451
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceJobManager.prx",
+      "relative_path": "sce_module/libSceJobManager.prx",
+      "size": 71654
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "libSceJobManager.prx.esbak",
+      "relative_path": "sce_module/libSceJobManager.prx.esbak",
+      "size": 113334
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libSceNpCppWebApi.prx",
+      "relative_path": "sce_module/libSceNpCppWebApi.prx",
+      "size": 7834919
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "libSceNpCppWebApi.prx.esbak",
+      "relative_path": "sce_module/libSceNpCppWebApi.prx.esbak",
+      "size": 7864967
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libScePfs.prx",
+      "relative_path": "sce_module/libScePfs.prx",
+      "size": 1343295
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "libScePfs.prx.esbak",
+      "relative_path": "sce_module/libScePfs.prx.esbak",
+      "size": 1381095
+    },
+    {
+      "category": "Executable",
+      "extension": "prx",
+      "file_name": "libc.prx",
+      "relative_path": "sce_module/libc.prx",
+      "size": 1285266
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "libc.prx.esbak",
+      "relative_path": "sce_module/libc.prx.esbak",
+      "size": 1334234
+    },
+    {
+      "category": "Executable",
+      "extension": "sprx",
+      "file_name": "right.sprx",
+      "relative_path": "sce_sys/about/right.sprx",
+      "size": 12512
+    },
+    {
+      "category": "Metadata",
+      "extension": "esbak",
+      "file_name": "right.sprx.esbak",
+      "relative_path": "sce_sys/about/right.sprx.esbak",
+      "size": 66704
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "disc_info.dat",
+      "relative_path": "sce_sys/disc_info.dat",
+      "size": 6640
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "icon0.dds",
+      "relative_path": "sce_sys/icon0.dds",
+      "size": 262292
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "icon0.png",
+      "relative_path": "sce_sys/icon0.png",
+      "size": 481568
+    },
+    {
+      "category": "Unknown",
+      "extension": "",
+      "file_name": "keystone",
+      "relative_path": "sce_sys/keystone",
+      "size": 96
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "nptitle.dat",
+      "relative_path": "sce_sys/nptitle.dat",
+      "size": 160
+    },
+    {
+      "category": "Metadata",
+      "extension": "json",
+      "file_name": "param.json",
+      "relative_path": "sce_sys/param.json",
+      "size": 2488
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "pfs-version.dat",
+      "relative_path": "sce_sys/pfs-version.dat",
+      "size": 10
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic0.dds",
+      "relative_path": "sce_sys/pic0.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "png",
+      "file_name": "pic0.png",
+      "relative_path": "sce_sys/pic0.png",
+      "size": 12161013
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic1.dds",
+      "relative_path": "sce_sys/pic1.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Texture",
+      "extension": "dds",
+      "file_name": "pic2.dds",
+      "relative_path": "sce_sys/pic2.dds",
+      "size": 8294548
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "sce_sys/trophy2/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "trophy00.ucp",
+      "relative_path": "sce_sys/trophy2/trophy00.ucp",
+      "size": 7268176
+    },
+    {
+      "category": "Metadata",
+      "extension": "dat",
+      "file_name": "npbind.dat",
+      "relative_path": "sce_sys/uds/npbind.dat",
+      "size": 532
+    },
+    {
+      "category": "Metadata",
+      "extension": "ucp",
+      "file_name": "uds00.ucp",
+      "relative_path": "sce_sys/uds/uds00.ucp",
+      "size": 39104
+    },
+    {
+      "category": "Metadata",
+      "extension": "txt",
+      "file_name": "uecommandline.txt",
+      "relative_path": "uecommandline.txt",
+      "size": 53
+    }
+  ],
+  "by_category": {
+    "archive": 1,
+    "audio": 5,
+    "executable": 11,
+    "metadata": 21,
+    "texture": 6,
+    "unknown": 6
+  },
+  "by_extension": {
+    "(no_ext)": 1,
+    "bank": 5,
+    "dat": 5,
+    "dds": 4,
+    "eboot.bin": 1,
+    "esbak": 11,
+    "ini": 1,
+    "json": 2,
+    "pak": 1,
+    "png": 2,
+    "prx": 9,
+    "sprx": 1,
+    "txt": 1,
+    "ucas": 2,
+    "ucp": 2,
+    "utoc": 2
+  },
+  "game": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
+  "game_dir": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5",
+  "total_bytes": 25204722830,
+  "total_files": 50
+}

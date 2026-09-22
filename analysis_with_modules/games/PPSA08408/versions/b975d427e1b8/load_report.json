@@ -1,0 +1,590 @@
+{
+  "game": "Blazing Strike - [PPSA08408]",
+  "path": "Blazing.Strike-PPSA08408-USA-Game (v01.100)/eboot.bin",
+  "load_report": {
+    "modules": [
+      {
+        "name": "libc.prx",
+        "module_type": "Prx",
+        "load_bias": 34628173824,
+        "entry_point": null,
+        "exports_count": 2584,
+        "imports_resolved": 0,
+        "imports_known": 0,
+        "imports_stubbed": 105,
+        "relative": 1722,
+        "glob_dat": 3,
+        "jump_slot": 102,
+        "abs64": 0,
+        "copy": 0,
+        "tls_relocations": 3,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 827296,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 1129648,
+        "preinit_array_sz": 8,
+        "per_library": [
+          {
+            "library": "libSceLibcInternalExt",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 101
+          }
+        ]
+      },
+      {
+        "name": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+        "module_type": "Eboot",
+        "load_bias": 34629550080,
+        "entry_point": 112,
+        "exports_count": 1,
+        "imports_resolved": 1284,
+        "imports_known": 0,
+        "imports_stubbed": 467,
+        "relative": 47790,
+        "glob_dat": 4,
+        "jump_slot": 597,
+        "abs64": 1150,
+        "copy": 0,
+        "tls_relocations": 0,
+        "ifunc": 0,
+        "unknown": 0,
+        "state": "Initialized",
+        "has_tls": true,
+        "init_va": 16,
+        "init_array_va": 0,
+        "init_array_sz": 0,
+        "fini_va": 25674160,
+        "fini_array_va": 0,
+        "fini_array_sz": 0,
+        "preinit_array_va": 0,
+        "preinit_array_sz": 0,
+        "per_library": [
+          {
+            "library": "Il2CppUserAssemblies",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "PS5Util",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceAgc",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 67
+          },
+          {
+            "library": "libSceAgcDriver",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 9
+          },
+          {
+            "library": "libSceAjm",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 15
+          },
+          {
+            "library": "libSceAmpr",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceAppContent",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libSceAudioIn",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceAudioOut",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 7
+          },
+          {
+            "library": "libSceAudioOut2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 13
+          },
+          {
+            "library": "libSceAvPlayer",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 23
+          },
+          {
+            "library": "libSceCommonDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceHttp",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceHttp2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 23
+          },
+          {
+            "library": "libSceIme",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceImeDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceMouse",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceMsgDialog.native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceNet",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 21
+          },
+          {
+            "library": "libSceNetCtl",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceNpManager",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libSceNpWebApi2",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 8
+          },
+          {
+            "library": "libScePad",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 17
+          },
+          {
+            "library": "libScePosix",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 42
+          },
+          {
+            "library": "libSceRandom",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 1
+          },
+          {
+            "library": "libSceRemoteplay",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 2
+          },
+          {
+            "library": "libSceSaveData_native",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 5
+          },
+          {
+            "library": "libSceSsl",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 11
+          },
+          {
+            "library": "libSceSysmodule",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 3
+          },
+          {
+            "library": "libSceSystemService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 19
+          },
+          {
+            "library": "libSceUserService",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 14
+          },
+          {
+            "library": "libSceVideoOut",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 17
+          },
+          {
+            "library": "libSceWebBrowserDialog",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 4
+          },
+          {
+            "library": "libc",
+            "resolved": 1284,
+            "known": 0,
+            "stubbed": 0
+          },
+          {
+            "library": "libkernel",
+            "resolved": 0,
+            "known": 0,
+            "stubbed": 95
+          }
+        ]
+      }
+    ],
+    "graph": {
+      "nodes": [
+        "libSceAvPlayer.native.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceImeDialog.prx",
+        "libSceHttp2.prx",
+        "libSceAudioOut.prx",
+        "libSceRtc.prx",
+        "libSceSystemService.prx",
+        "libScePad.prx",
+        "libSceSysmodule.prx",
+        "libSceHttp.prx",
+        "libSceAppContent.prx",
+        "libkernel.prx",
+        "libSceIme.prx",
+        "libSceNet.prx",
+        "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+        "libSceMsgDialog.native.prx",
+        "libSceAudio3d.prx",
+        "libSceRemoteplay.prx",
+        "libSceNpManager.prx",
+        "libSceAgcDriver.prx",
+        "libc.prx",
+        "libSceAgc.prx",
+        "libSceLibcInternal.prx",
+        "libSceAmpr.prx",
+        "libSceAudioIn.prx",
+        "libSceRandom.prx",
+        "libSceMouse.prx",
+        "libSceSaveData.native.prx",
+        "libSceUserService.prx",
+        "libSceCommonDialog.prx",
+        "Il2CppUserAssemblies.prx",
+        "PS5Util.prx",
+        "libSceRazorCpu.prx",
+        "libSceVideoOut.prx",
+        "libSceNetCtl.prx",
+        "libSceAjm.native.prx",
+        "libSceNpWebApi2.prx",
+        "libSceSsl.prx"
+      ],
+      "unavailable": [
+        "libSceIme.prx",
+        "libSceRtc.prx",
+        "libSceRemoteplay.prx",
+        "libSceRazorCpu.prx",
+        "libSceAgc.prx",
+        "libSceAjm.native.prx",
+        "libSceAmpr.prx",
+        "libSceNet.prx",
+        "libSceNetCtl.prx",
+        "libSceAudio3d.prx",
+        "libSceAudioOut.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceHttp.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceNpWebApi2.prx",
+        "libSceAudioIn.prx",
+        "libSceVideoOut.prx",
+        "libSceAgcDriver.prx",
+        "Il2CppUserAssemblies.prx",
+        "libSceSaveData.native.prx",
+        "libSceNpManager.prx",
+        "libSceSysmodule.prx",
+        "libSceMouse.prx",
+        "libSceMsgDialog.native.prx",
+        "libkernel.prx",
+        "libSceUserService.prx",
+        "libSceRandom.prx",
+        "libSceImeDialog.prx",
+        "libSceSystemService.prx",
+        "PS5Util.prx",
+        "libScePad.prx",
+        "libSceLibcInternal.prx",
+        "libSceAppContent.prx",
+        "libSceHttp2.prx",
+        "libSceSsl.prx",
+        "libSceCommonDialog.prx"
+      ],
+      "edges": [
+        {
+          "from": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+          "to": "Il2CppUserAssemblies.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+          "to": "PS5Util.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+          "to": "libSceNetCtl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+          "to": "libSceNet.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+          "to": "libSceUserService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+          "to": "libSceVideoOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+          "to": "libSceAudioOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+          "to": "libSceAudioIn.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+          "to": "libScePad.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+          "to": "libSceIme.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+          "to": "libSceImeDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+          "to": "libSceRtc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+          "to": "libSceSystemService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+          "to": "libSceHttp.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+          "to": "libSceHttp2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+          "to": "libSceSsl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+          "to": "libSceSaveData.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+          "to": "libSceCommonDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+          "to": "libSceMsgDialog.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+          "to": "libSceAvPlayer.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+          "to": "libSceAppContent.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+          "to": "libSceWebBrowserDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+          "to": "libSceAudio3d.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+          "to": "libSceRemoteplay.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+          "to": "libSceNpManager.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+          "to": "libSceMouse.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+          "to": "libSceAgcDriver.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+          "to": "libSceAgc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+          "to": "libSceAjm.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+          "to": "libSceRazorCpu.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+          "to": "libSceNpWebApi2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+          "to": "libSceRandom.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+          "to": "libc.prx",
+          "status": "loaded"
+        },
+        {
+          "from": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+          "to": "libSceAmpr.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        }
+      ]
+    },
+    "totals": {
+      "modules": 2,
+      "resolved": 1284,
+      "known": 0,
+      "stubbed": 572,
+      "exports": 2585,
+      "unavailable": 36
+    }
+  },
+  "error": null,
+  "total_exports": 2585,
+  "freshness": {
+    "report_format": 1,
+    "loader_fingerprint": "fc478775a40bc52ba94d034eb6191bac0618e25283bda3650bbfd1d0629a127c",
+    "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
+    "environment_fingerprint": "d3b9ffc479afbfe3716b56a71d30b6fd9604adba3c44edc2cd389c958d4abe68",
+    "game_fingerprint": "ae1fc5bf52ddcdd3f8deb6d6e3fed89c0cee0ba5016922393604bb57be55e736"
+  }
+}

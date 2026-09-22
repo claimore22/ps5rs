@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "title_id": "PPSA22520",
+  "name": "ANIMAL WELL - [PPSA22520]",
+  "eboot_sha256": "f47f00463f9b3b3e5e0b5e8ccd0318fc944e2eb649009fa4530a351aa5beb0d4",
+  "game_fingerprint": "2954c88e6b66e1077d85533325d594a7bf8a0de9e85768d865455c8a4d126ee7",
+  "environment_fingerprint": "d3b9ffc479afbfe3716b56a71d30b6fd9604adba3c44edc2cd389c958d4abe68",
+  "loader_fingerprint": "fc478775a40bc52ba94d034eb6191bac0618e25283bda3650bbfd1d0629a127c",
+  "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
+  "ingest_id": "ingest_20260922063625_2954c88e6b66",
+  "ingested_at": "2026-09-22T06:36:25Z",
+  "params": {
+    "name": "Animal Well PS5 _PPSA22520_",
+    "title_id": "PPSA22520",
+    "content_version": "01.000.011",
+    "master_version": "02.00",
+    "sdk_version": "0x1000000000000000",
+    "title_name": "ANIMAL WELL",
+    "display_name": "ANIMAL WELL - [PPSA22520]",
+    "drm_type": "standard",
+    "content_id": "JP8399-PPSA22520_00-0036675864053061",
+    "creation_date": "2025-11-03 23:27:52"
+  },
+  "load_report_file": "load_report.json"
+}

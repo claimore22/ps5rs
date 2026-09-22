@@ -1,6 +1,6 @@
 {
   "game": "Dead Cells - [PPSA15552]",
-  "path": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Dead.Cells-PPSA15552-USA-Game-v01.005-PS5\\eboot.bin",
+  "path": "Dead.Cells-PPSA15552-USA-Game-v01.005-PS5/eboot.bin",
   "load_report": {
     "modules": [
       {
@@ -222,71 +222,56 @@
     ],
     "graph": {
       "nodes": [
-        "libSceCommonDialog.prx",
         "libkernel.prx",
         "libSceNpTrophy2.prx",
-        "libSceLibcInternal.prx",
-        "libSceNet.prx",
-        "libSceAgcDriver.prx",
-        "libc.prx",
-        "libSceNpUniversalDataSystem.prx",
+        "libSceSystemService.prx",
+        "libSceNpEntitlementAccess.prx",
+        "libScePad.prx",
         "libSceSaveData.native.prx",
-        "libSceAppContent.prx",
+        "libSceJpegDec.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceLibcInternal.prx",
+        "libSceNgs2.prx",
+        "Dead.Cells-PPSA15552-USA-Game-v01.005-PS5",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceCommonDialog.prx",
+        "libc.prx",
+        "libSceNpCommerce.prx",
         "libSceUserService.prx",
+        "libSceAgcDriver.prx",
+        "libSceVideoOut.prx",
+        "libSceNet.prx",
+        "libSceAgc.prx",
         "libSceAudioOut.prx",
         "libSceSysmodule.prx",
-        "libSceNgs2.prx",
         "libSceNpGameIntent.prx",
-        "libSceJpegDec.prx",
-        "libSceAgc.prx",
-        "Dead.Cells-PPSA15552-USA-Game-v01.005-PS5",
-        "libSceSystemService.prx",
-        "libSceVideoOut.prx",
-        "libSceNpEntitlementAccess.prx",
-        "libSceNpCommerce.prx",
-        "libScePad.prx",
-        "libSceSaveDataDialog.native.prx"
+        "libSceAppContent.prx"
       ],
       "unavailable": [
-        "libSceNpCommerce.prx",
-        "libSceNet.prx",
-        "libSceSystemService.prx",
-        "libSceLibcInternal.prx",
-        "libSceNpGameIntent.prx",
-        "libSceSaveDataDialog.native.prx",
-        "libSceUserService.prx",
-        "libSceJpegDec.prx",
         "libSceCommonDialog.prx",
-        "libSceNpUniversalDataSystem.prx",
-        "libkernel.prx",
-        "libSceSaveData.native.prx",
-        "libSceNpEntitlementAccess.prx",
         "libSceNpTrophy2.prx",
-        "libSceAgc.prx",
+        "libSceSaveDataDialog.native.prx",
         "libSceAudioOut.prx",
-        "libSceVideoOut.prx",
-        "libSceNgs2.prx",
         "libSceAppContent.prx",
+        "libSceSaveData.native.prx",
+        "libSceVideoOut.prx",
+        "libSceNet.prx",
+        "libSceSysmodule.prx",
+        "libSceNpGameIntent.prx",
+        "libSceNpCommerce.prx",
+        "libSceSystemService.prx",
+        "libSceJpegDec.prx",
+        "libkernel.prx",
+        "libSceNpEntitlementAccess.prx",
         "libSceAgcDriver.prx",
+        "libSceLibcInternal.prx",
+        "libSceNpUniversalDataSystem.prx",
         "libScePad.prx",
-        "libSceSysmodule.prx"
+        "libSceNgs2.prx",
+        "libSceUserService.prx",
+        "libSceAgc.prx"
       ],
       "edges": [
-        {
-          "from": "libc.prx",
-          "to": "libkernel.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libc.prx",
-          "to": "libSceLibcInternal.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libc.prx",
-          "to": "libSceSysmodule.prx",
-          "status": "missing"
-        },
         {
           "from": "Dead.Cells-PPSA15552-USA-Game-v01.005-PS5",
           "to": "libSceNpEntitlementAccess.prx",
@@ -396,6 +381,21 @@
           "from": "Dead.Cells-PPSA15552-USA-Game-v01.005-PS5",
           "to": "libc.prx",
           "status": "loaded"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
         }
       ]
     },

@@ -1,6 +1,6 @@
 {
   "game": "PRAGMATA - [PPSA02530]",
-  "path": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5\\[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5\\eboot.bin",
+  "path": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5/eboot.bin",
   "load_report": {
     "modules": [
       {
@@ -52,7 +52,7 @@
         ]
       },
       {
-        "name": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+        "name": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
         "module_type": "Eboot",
         "load_bias": 34630139904,
         "entry_point": 88131536,
@@ -402,128 +402,418 @@
     ],
     "graph": {
       "nodes": [
-        "libSceSystemService.prx",
-        "libSceHttp2.prx",
+        "libSceFiber.prx",
         "libSceNpWebApi2.prx",
-        "libSceNpUtility.prx",
-        "libSceSaveDataDialog.native.prx",
-        "libSceJson2.prx",
-        "libScePlayGo.prx",
-        "libSceLibcInternal.prx",
-        "libSceSsl.prx",
-        "libSceAvPlayer.native.prx",
-        "libc.prx",
-        "libSceNpCommerce.prx",
-        "libSceSharePlay.prx",
-        "libSceSystemGesture.prx",
-        "libSceNpTrophy2.prx",
-        "libSceAudio3d.prx",
-        "libSceAgc.prx",
-        "libScePlayerInvitationDialog.prx",
-        "libSceNetCtl.prx",
-        "libScePsml_debug.prx",
-        "libSceConvertKeycode.prx",
-        "libSceIme.prx",
-        "libSceAudioIn.prx",
-        "libSceNpAuth.prx",
+        "libSceSaveData.native.prx",
+        "libSceNpSessionSignaling.prx",
         "libSceMsgDialog.native.prx",
-        "libSceNpGameIntent.prx",
-        "libSceAjm.native.prx",
-        "libSceContentExport.prx",
+        "libSceRemoteplay.prx",
+        "libSceAudiodec.native.prx",
+        "libSceVideoOut.prx",
+        "libSceCommonDialog.prx",
+        "libSceGameLiveStreaming.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libScePsml_debug.prx",
+        "libSceAmpr.prx",
+        "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+        "libkernel.prx",
+        "libSceSystemService.prx",
+        "libSceSystemGesture.prx",
+        "libSceNpEntitlementAccess.prx",
+        "libSceAudioIn.prx",
+        "libSceImeDialog.prx",
+        "libSceHttp2.prx",
+        "libScePlayerInvitationDialog.prx",
+        "libSceRtc.prx",
+        "libSceNpUtility.prx",
+        "libSceAvPlayer.native.prx",
         "libSceShare.prx",
         "libSceWebBrowserDialog.prx",
-        "libSceNpEntitlementAccess.prx",
-        "libSceNpSessionSignaling.prx",
-        "libSceVideoOut.prx",
-        "libSceImeDialog.prx",
-        "libSceFiber.prx",
-        "libScePad.prx",
-        "libSceAmpr.prx",
-        "libSceAudioOut.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceIme.prx",
         "libSceMouse.prx",
         "libSceRazorCpu.prx",
+        "libSceAudio3d.prx",
+        "libSceAjm.native.prx",
+        "libSceNpAuth.prx",
+        "libSceNpGameIntent.prx",
         "libSceSigninDialog.prx",
-        "libSceSysmodule.prx",
-        "libSceRtc.prx",
-        "libSceGameUpdate.prx",
-        "libSceRemoteplay.prx",
-        "libSceVoice.prx",
-        "libSceNpUniversalDataSystem.prx",
-        "libSceCommonDialog.prx",
-        "libSceAgcDriver.prx",
-        "libSceNpManager.prx",
-        "libkernel.prx",
-        "libSceAcm.prx",
-        "libSceNet.prx",
-        "libSceSaveData.native.prx",
+        "libSceConvertKeycode.prx",
+        "libSceSharePlay.prx",
+        "libSceJson2.prx",
+        "libSceSsl.prx",
         "libSceErrorDialog.prx",
-        "libSceAudiodec.native.prx",
-        "libSceGameLiveStreaming.prx",
-        "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+        "libSceAudioOut.prx",
+        "libSceNpManager.prx",
+        "libSceGameUpdate.prx",
+        "libSceAcm.prx",
+        "libc.prx",
         "libSceAppContent.prx",
-        "libSceUserService.prx"
+        "libScePad.prx",
+        "libScePlayGo.prx",
+        "libSceNpCommerce.prx",
+        "libSceUserService.prx",
+        "libSceLibcInternal.prx",
+        "libSceContentExport.prx",
+        "libSceVoice.prx",
+        "libSceNetCtl.prx",
+        "libSceAgc.prx",
+        "libSceAgcDriver.prx",
+        "libSceNet.prx",
+        "libSceSysmodule.prx",
+        "libSceNpTrophy2.prx"
       ],
       "unavailable": [
+        "libSceAppContent.prx",
+        "libSceAudioOut.prx",
+        "libSceShare.prx",
+        "libSceNpEntitlementAccess.prx",
+        "libSceNpCommerce.prx",
+        "libSceSaveData.native.prx",
+        "libSceAudioIn.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceImeDialog.prx",
+        "libSceHttp2.prx",
+        "libSceNpAuth.prx",
+        "libSceVideoOut.prx",
+        "libSceNpTrophy2.prx",
+        "libScePsml_debug.prx",
+        "libSceGameUpdate.prx",
+        "libSceAgc.prx",
+        "libSceRemoteplay.prx",
+        "libScePad.prx",
+        "libSceSystemService.prx",
+        "libSceRazorCpu.prx",
+        "libSceErrorDialog.prx",
+        "libSceAmpr.prx",
+        "libSceUserService.prx",
+        "libScePlayGo.prx",
+        "libSceNpManager.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceSystemGesture.prx",
         "libSceAvPlayer.native.prx",
         "libSceCommonDialog.prx",
-        "libSceAcm.prx",
         "libSceIme.prx",
-        "libSceConvertKeycode.prx",
-        "libSceNpManager.prx",
+        "libSceSharePlay.prx",
+        "libSceNpSessionSignaling.prx",
+        "libSceNpWebApi2.prx",
+        "libSceAgcDriver.prx",
+        "libSceJson2.prx",
+        "libSceSsl.prx",
+        "libSceAcm.prx",
         "libSceGameLiveStreaming.prx",
-        "libSceAudioOut.prx",
+        "libSceLibcInternal.prx",
+        "libSceRtc.prx",
+        "libSceMouse.prx",
+        "libSceAudiodec.native.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceConvertKeycode.prx",
+        "libSceNet.prx",
+        "libSceNetCtl.prx",
+        "libSceAjm.native.prx",
         "libSceFiber.prx",
         "libSceAudio3d.prx",
-        "libSceAudiodec.native.prx",
-        "libSceErrorDialog.prx",
-        "libSceShare.prx",
-        "libSceMsgDialog.native.prx",
-        "libSceNpWebApi2.prx",
-        "libSceSharePlay.prx",
-        "libSceWebBrowserDialog.prx",
-        "libSceAgcDriver.prx",
-        "libSceHttp2.prx",
-        "libSceImeDialog.prx",
-        "libSceNpSessionSignaling.prx",
-        "libSceRtc.prx",
-        "libSceVideoOut.prx",
-        "libSceNpAuth.prx",
-        "libSceSystemGesture.prx",
-        "libSceSystemService.prx",
-        "libSceAmpr.prx",
-        "libSceGameUpdate.prx",
-        "libSceNetCtl.prx",
-        "libSceSaveDataDialog.native.prx",
         "libkernel.prx",
-        "libSceJson2.prx",
-        "libSceMouse.prx",
-        "libSceNet.prx",
-        "libSceNpCommerce.prx",
-        "libSceLibcInternal.prx",
-        "libSceSsl.prx",
-        "libSceRazorCpu.prx",
-        "libSceAppContent.prx",
-        "libScePlayerInvitationDialog.prx",
-        "libSceAgc.prx",
-        "libSceSaveData.native.prx",
-        "libSceSigninDialog.prx",
-        "libSceVoice.prx",
-        "libSceAudioIn.prx",
-        "libSceNpUtility.prx",
         "libSceSysmodule.prx",
-        "libSceRemoteplay.prx",
-        "libScePsml_debug.prx",
-        "libSceUserService.prx",
+        "libScePlayerInvitationDialog.prx",
+        "libSceVoice.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceNpUtility.prx",
+        "libSceSigninDialog.prx",
         "libSceContentExport.prx",
-        "libSceNpTrophy2.prx",
-        "libSceNpGameIntent.prx",
-        "libSceNpEntitlementAccess.prx",
-        "libScePad.prx",
-        "libScePlayGo.prx",
-        "libSceAjm.native.prx",
-        "libSceNpUniversalDataSystem.prx"
+        "libSceNpGameIntent.prx"
       ],
       "edges": [
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceUserService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libScePad.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceSystemGesture.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceAudioOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceAcm.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceAudioIn.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceAudiodec.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceNet.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceNetCtl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceVideoOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceAjm.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceImeDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceShare.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libc.prx",
+          "status": "loaded"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceSaveData.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceCommonDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceSaveDataDialog.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceGameLiveStreaming.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceRtc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceRemoteplay.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceSharePlay.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceSystemService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libScePlayerInvitationDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceWebBrowserDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceMsgDialog.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceErrorDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceAppContent.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceIme.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceMouse.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceAvPlayer.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceVoice.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceJson2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceSsl.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceHttp2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceNpWebApi2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceNpManager.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceNpAuth.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceNpSessionSignaling.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceNpUtility.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceNpCommerce.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceSigninDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceContentExport.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libScePlayGo.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceNpTrophy2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceGameUpdate.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceRazorCpu.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceConvertKeycode.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceAudio3d.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceNpGameIntent.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceNpUniversalDataSystem.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceNpEntitlementAccess.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceFiber.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceAgc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceAgcDriver.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libScePsml_debug.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
+          "to": "libSceAmpr.prx",
+          "status": "missing"
+        },
         {
           "from": "libc.prx",
           "to": "libkernel.prx",
@@ -537,296 +827,6 @@
         {
           "from": "libc.prx",
           "to": "libSceSysmodule.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceUserService.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libScePad.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceSystemGesture.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libkernel.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceSysmodule.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceAudioOut.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceAcm.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceAudioIn.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceAudiodec.native.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceNet.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceNetCtl.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceVideoOut.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceAjm.native.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceImeDialog.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceShare.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libc.prx",
-          "status": "loaded"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceSaveData.native.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceCommonDialog.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceSaveDataDialog.native.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceGameLiveStreaming.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceRtc.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceRemoteplay.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceSharePlay.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceSystemService.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libScePlayerInvitationDialog.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceWebBrowserDialog.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceMsgDialog.native.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceErrorDialog.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceAppContent.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceIme.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceMouse.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceAvPlayer.native.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceVoice.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceJson2.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceSsl.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceHttp2.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceNpWebApi2.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceNpManager.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceNpAuth.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceNpSessionSignaling.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceNpUtility.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceNpCommerce.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceSigninDialog.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceContentExport.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libScePlayGo.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceNpTrophy2.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceGameUpdate.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceRazorCpu.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceConvertKeycode.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceAudio3d.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceNpGameIntent.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceNpUniversalDataSystem.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceNpEntitlementAccess.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceFiber.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceAgc.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceAgcDriver.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libScePsml_debug.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5",
-          "to": "libSceAmpr.prx",
           "status": "missing"
         }
       ]

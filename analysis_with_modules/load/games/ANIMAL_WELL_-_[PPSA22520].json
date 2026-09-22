@@ -1,6 +1,6 @@
 {
   "game": "ANIMAL WELL - [PPSA22520]",
-  "path": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Animal Well PS5 _PPSA22520_\\[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5\\eboot.bin",
+  "path": "Animal Well PS5 _PPSA22520_/eboot.bin",
   "load_report": {
     "modules": [
       {
@@ -52,7 +52,7 @@
         ]
       },
       {
-        "name": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
+        "name": "Animal Well PS5 _PPSA22520",
         "module_type": "Eboot",
         "load_bias": 34630139904,
         "entry_point": 112,
@@ -186,131 +186,46 @@
     ],
     "graph": {
       "nodes": [
-        "libSceSystemService.prx",
-        "libSceLibcInternal.prx",
-        "libSceNpGameIntent.prx",
-        "libSceAgc.prx",
-        "libSceNpUniversalDataSystem.prx",
-        "libSceAudioOut.prx",
-        "libSceSaveData.native.prx",
-        "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
-        "libSceRtc.prx",
-        "libSceSysmodule.prx",
-        "libSceAgcDriver.prx",
         "libSceNgs2.prx",
-        "libSceVideoOut.prx",
-        "libScePad.prx",
-        "libSceCommonDialog.prx",
+        "libc.prx",
+        "libSceAgc.prx",
         "libSceUserService.prx",
         "libSceSaveDataDialog.native.prx",
-        "libc.prx",
-        "libkernel.prx"
+        "libSceNpGameIntent.prx",
+        "libSceCommonDialog.prx",
+        "Animal Well PS5 _PPSA22520",
+        "libSceSysmodule.prx",
+        "libScePad.prx",
+        "libSceAudioOut.prx",
+        "libSceSaveData.native.prx",
+        "libSceVideoOut.prx",
+        "libSceRtc.prx",
+        "libSceSystemService.prx",
+        "libSceLibcInternal.prx",
+        "libSceAgcDriver.prx",
+        "libkernel.prx",
+        "libSceNpUniversalDataSystem.prx"
       ],
       "unavailable": [
-        "libSceNpUniversalDataSystem.prx",
-        "libSceUserService.prx",
-        "libSceLibcInternal.prx",
-        "libSceNpGameIntent.prx",
-        "libSceCommonDialog.prx",
-        "libSceAudioOut.prx",
-        "libSceAgc.prx",
-        "libSceVideoOut.prx",
-        "libSceRtc.prx",
-        "libSceAgcDriver.prx",
-        "libSceSystemService.prx",
-        "libkernel.prx",
-        "libSceSaveData.native.prx",
         "libSceSaveDataDialog.native.prx",
+        "libSceLibcInternal.prx",
+        "libSceAgc.prx",
+        "libSceCommonDialog.prx",
+        "libSceSystemService.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceSaveData.native.prx",
+        "libSceUserService.prx",
+        "libSceAgcDriver.prx",
+        "libkernel.prx",
+        "libScePad.prx",
+        "libSceVideoOut.prx",
+        "libSceAudioOut.prx",
         "libSceNgs2.prx",
+        "libSceRtc.prx",
         "libSceSysmodule.prx",
-        "libScePad.prx"
+        "libSceNpGameIntent.prx"
       ],
       "edges": [
-        {
-          "from": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
-          "to": "libSceAgcDriver.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
-          "to": "libSceAgc.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
-          "to": "libkernel.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
-          "to": "libc.prx",
-          "status": "loaded"
-        },
-        {
-          "from": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
-          "to": "libSceUserService.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
-          "to": "libSceNpUniversalDataSystem.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
-          "to": "libSceNgs2.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
-          "to": "libSceAudioOut.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
-          "to": "libSceSysmodule.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
-          "to": "libSceSystemService.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
-          "to": "libSceVideoOut.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
-          "to": "libSceNpGameIntent.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
-          "to": "libScePad.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
-          "to": "libSceSaveData.native.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
-          "to": "libSceCommonDialog.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
-          "to": "libSceSaveDataDialog.native.prx",
-          "status": "missing"
-        },
-        {
-          "from": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
-          "to": "libSceRtc.prx",
-          "status": "missing"
-        },
         {
           "from": "libc.prx",
           "to": "libkernel.prx",
@@ -324,6 +239,91 @@
         {
           "from": "libc.prx",
           "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Animal Well PS5 _PPSA22520",
+          "to": "libSceAgcDriver.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Animal Well PS5 _PPSA22520",
+          "to": "libSceAgc.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Animal Well PS5 _PPSA22520",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Animal Well PS5 _PPSA22520",
+          "to": "libc.prx",
+          "status": "loaded"
+        },
+        {
+          "from": "Animal Well PS5 _PPSA22520",
+          "to": "libSceUserService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Animal Well PS5 _PPSA22520",
+          "to": "libSceNpUniversalDataSystem.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Animal Well PS5 _PPSA22520",
+          "to": "libSceNgs2.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Animal Well PS5 _PPSA22520",
+          "to": "libSceAudioOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Animal Well PS5 _PPSA22520",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Animal Well PS5 _PPSA22520",
+          "to": "libSceSystemService.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Animal Well PS5 _PPSA22520",
+          "to": "libSceVideoOut.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Animal Well PS5 _PPSA22520",
+          "to": "libSceNpGameIntent.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Animal Well PS5 _PPSA22520",
+          "to": "libScePad.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Animal Well PS5 _PPSA22520",
+          "to": "libSceSaveData.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Animal Well PS5 _PPSA22520",
+          "to": "libSceCommonDialog.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Animal Well PS5 _PPSA22520",
+          "to": "libSceSaveDataDialog.native.prx",
+          "status": "missing"
+        },
+        {
+          "from": "Animal Well PS5 _PPSA22520",
+          "to": "libSceRtc.prx",
           "status": "missing"
         }
       ]

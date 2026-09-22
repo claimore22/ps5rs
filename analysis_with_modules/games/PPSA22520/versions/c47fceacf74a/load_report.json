@@ -1,6 +1,6 @@
 {
   "game": "ANIMAL WELL - [PPSA22520]",
-  "path": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Animal Well PS5 _PPSA22520_\\[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5\\eboot.bin",
+  "path": "Animal Well PS5 _PPSA22520_\\Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5\\eboot.bin",
   "load_report": {
     "modules": [
       {
@@ -52,7 +52,7 @@
         ]
       },
       {
-        "name": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
+        "name": "Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
         "module_type": "Eboot",
         "load_bias": 34630139904,
         "entry_point": 112,
@@ -200,7 +200,7 @@
         "libc.prx",
         "libSceSystemService.prx",
         "libSceVideoOut.prx",
-        "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
+        "Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
         "libSceNpUniversalDataSystem.prx",
         "libSceNgs2.prx",
         "libSceSysmodule.prx",
@@ -242,87 +242,87 @@
           "status": "missing"
         },
         {
-          "from": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
+          "from": "Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
           "to": "libSceAgcDriver.prx",
           "status": "missing"
         },
         {
-          "from": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
+          "from": "Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
           "to": "libSceAgc.prx",
           "status": "missing"
         },
         {
-          "from": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
+          "from": "Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
           "to": "libkernel.prx",
           "status": "missing"
         },
         {
-          "from": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
+          "from": "Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
           "to": "libc.prx",
           "status": "loaded"
         },
         {
-          "from": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
+          "from": "Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
           "to": "libSceUserService.prx",
           "status": "missing"
         },
         {
-          "from": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
+          "from": "Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
           "to": "libSceNpUniversalDataSystem.prx",
           "status": "missing"
         },
         {
-          "from": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
+          "from": "Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
           "to": "libSceNgs2.prx",
           "status": "missing"
         },
         {
-          "from": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
+          "from": "Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
           "to": "libSceAudioOut.prx",
           "status": "missing"
         },
         {
-          "from": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
+          "from": "Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
           "to": "libSceSysmodule.prx",
           "status": "missing"
         },
         {
-          "from": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
+          "from": "Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
           "to": "libSceSystemService.prx",
           "status": "missing"
         },
         {
-          "from": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
+          "from": "Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
           "to": "libSceVideoOut.prx",
           "status": "missing"
         },
         {
-          "from": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
+          "from": "Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
           "to": "libSceNpGameIntent.prx",
           "status": "missing"
         },
         {
-          "from": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
+          "from": "Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
           "to": "libScePad.prx",
           "status": "missing"
         },
         {
-          "from": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
+          "from": "Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
           "to": "libSceSaveData.native.prx",
           "status": "missing"
         },
         {
-          "from": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
+          "from": "Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
           "to": "libSceCommonDialog.prx",
           "status": "missing"
         },
         {
-          "from": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
+          "from": "Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
           "to": "libSceSaveDataDialog.native.prx",
           "status": "missing"
         },
         {
-          "from": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
+          "from": "Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
           "to": "libSceRtc.prx",
           "status": "missing"
         }

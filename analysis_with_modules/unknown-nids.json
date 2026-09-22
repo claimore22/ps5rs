@@ -2,14 +2,14 @@
   "schema_version": 1,
   "tool": "ps5rs",
   "games_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5",
-  "generated_at": "2026-09-22T04:53:55Z",
+  "generated_at": "2026-09-22T06:44:32Z",
   "summary": {
-    "games_found": 34,
-    "games_parsed": 32,
+    "games_found": 35,
+    "games_parsed": 33,
     "games_failed": 2,
-    "imports_total": 34213,
-    "known_total": 33676,
-    "unknown_total": 537,
+    "imports_total": 34816,
+    "known_total": 34277,
+    "unknown_total": 539,
     "unique_unknown_nids": 189
   },
   "games": [
@@ -118,7 +118,7 @@
     },
     {
       "name": "ANIMAL WELL - [PPSA22520]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Animal Well PS5 _PPSA22520_\\[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5\\eboot.bin",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Animal Well PS5 _PPSA22520_\\eboot.bin",
       "imports": 408,
       "known": 408,
       "unknown": 0,
@@ -282,6 +282,18 @@
       "error": null
     },
     {
+      "name": "Blazing Strike - [PPSA08408]",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Blazing.Strike-PPSA08408-USA-Game (v01.100)\\eboot.bin",
+      "imports": 603,
+      "known": 601,
+      "unknown": 2,
+      "unknown_nids": [
+        "dZGYu5wObJs",
+        "zlqfTyrQSPk"
+      ],
+      "error": null
+    },
+    {
       "name": "Blue Prince - [PPSA25009]",
       "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5\\eboot.bin",
       "imports": 610,
@@ -295,7 +307,7 @@
     },
     {
       "name": "Bugsnax - [PPSA01502]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Bugsnax-PPSA01502-USA-PS5\\Bugsnax PS5 Dump v2.000\\eboot.bin",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Bugsnax-PPSA01502-USA-PS5\\eboot.bin",
       "imports": 612,
       "known": 545,
       "unknown": 67,
@@ -849,7 +861,7 @@
     },
     {
       "name": "The Pathless - [PPSA01825]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\The.Pathless-PPSA01825-USA-PS5\\The Pathless PS5 Dump v2.000\\eboot.bin",
+      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\The.Pathless-PPSA01825-USA-PS5\\eboot.bin",
       "imports": 1665,
       "known": 1664,
       "unknown": 1,
@@ -905,11 +917,12 @@
     },
     {
       "nid": "dZGYu5wObJs",
-      "frequency": 8,
+      "frequency": 9,
       "libraries": [
         "PS5Util"
       ],
       "games": [
+        "Blazing Strike - [PPSA08408]",
         "Blue Prince - [PPSA25009]",
         "Cat Quest III - [PPSA15065]",
         "Juicy Realm - [PPSA19268]",
@@ -924,11 +937,12 @@
     },
     {
       "nid": "zlqfTyrQSPk",
-      "frequency": 8,
+      "frequency": 9,
       "libraries": [
         "PS5Util"
       ],
       "games": [
+        "Blazing Strike - [PPSA08408]",
         "Blue Prince - [PPSA25009]",
         "Cat Quest III - [PPSA15065]",
         "Juicy Realm - [PPSA19268]",

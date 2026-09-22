@@ -1,6 +1,6 @@
 {
   "game": "Stray - [PPSA02100]",
-  "path": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Stray-PPSA02100-USA-PS5\\PPSA02100 -  Stray\\eboot.bin",
+  "path": "Stray-PPSA02100-USA-PS5/PPSA02100 Stray/eboot.bin",
   "load_report": {
     "modules": [
       {
@@ -118,7 +118,7 @@
         ]
       },
       {
-        "name": "PPSA02100 -  Stray",
+        "name": "PPSA02100 Stray",
         "module_type": "Eboot",
         "load_bias": 34637086720,
         "entry_point": 128,
@@ -475,129 +475,114 @@
     "graph": {
       "nodes": [
         "libSceRtc.prx",
-        "libSceImeDialog.prx",
-        "libc.prx",
-        "libSceMouse.prx",
-        "libSceJson2.prx",
-        "libSceNetCtl.prx",
+        "libSceContentExport.prx",
+        "libSceSaveData.native.prx",
+        "libSceShare.prx",
+        "libSceGameUpdate.prx",
+        "libkernel.prx",
+        "libSceNpCppWebApi.prx",
+        "libSceNet.prx",
         "libSceNpSessionSignaling.prx",
         "libSceSystemService.prx",
-        "libSceAppContent.prx",
-        "libSceVoiceQoS.prx",
-        "libSceNpManager.prx",
-        "libSceLibcInternal.prx",
-        "libSceNpAuth.prx",
-        "libSceErrorDialog.prx",
-        "libSceAgc.prx",
-        "libSceAjm.native.prx",
-        "libSceNet.prx",
-        "libSceNgs2.prx",
+        "libSceSaveDataDialog.native.prx",
         "libSceVideoOut.prx",
+        "libSceAudioIn.prx",
+        "libSceErrorDialog.prx",
+        "libSceUserService.prx",
+        "libSceNpTrophy2.prx",
+        "libSceIme.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceAcm.prx",
+        "libc.prx",
+        "libSceAgcDriver.prx",
+        "libSceSysmodule.prx",
+        "libSceLibcInternal.prx",
+        "libSceVoiceQoS.prx",
+        "libSceAmpr.prx",
+        "libScePlayerInvitationDialog.prx",
+        "libSceNgs2.prx",
+        "libSceAgc.prx",
+        "libSceImeDialog.prx",
+        "libSceAudioOut.prx",
+        "libSceAjm.native.prx",
         "libSceSsl.prx",
-        "libSceHttp.prx",
-        "libSceSaveData.native.prx",
-        "libSceNpGameIntent.prx",
+        "libSceNetCtl.prx",
+        "libScePlayGo.prx",
+        "libSceNpManager.prx",
+        "libSceCommonDialog.prx",
+        "libSceGameLiveStreaming.prx",
+        "libScePad.prx",
+        "libSceMsgDialog.native.prx",
         "libSceNpCommerce.prx",
         "libSceAvPlayer.native.prx",
-        "libSceRandom.prx",
         "libSceNpUniversalDataSystem.prx",
-        "libScePlayGo.prx",
-        "libSceNpCppWebApi.prx",
-        "libSceHttp2.prx",
-        "libSceGameUpdate.prx",
-        "libSceSysmodule.prx",
-        "libSceSaveDataDialog.native.prx",
-        "libSceUserService.prx",
-        "libSceCommonDialog.prx",
-        "libSceWebBrowserDialog.prx",
-        "libSceIme.prx",
-        "libSceGameLiveStreaming.prx",
-        "libSceAudioOut.prx",
-        "libkernel.prx",
-        "libSceMsgDialog.native.prx",
-        "libScePlayerInvitationDialog.prx",
+        "libSceMouse.prx",
         "libSceCdlgPlayerReview.prx",
-        "libSceAgcDriver.prx",
-        "libScePad.prx",
-        "libSceShare.prx",
+        "libSceNpAuth.prx",
+        "libSceRandom.prx",
+        "libSceHttp2.prx",
+        "libSceAppContent.prx",
+        "PPSA02100 Stray",
+        "libSceHttp.prx",
+        "libSceJson2.prx",
+        "libSceNpGameIntent.prx",
         "libSceNpWebApi2.prx",
-        "PPSA02100 -  Stray",
-        "libSceContentExport.prx",
-        "libSceNpEntitlementAccess.prx",
-        "libSceAudioIn.prx",
-        "libSceAcm.prx",
-        "libSceAmpr.prx",
-        "libSceNpTrophy2.prx"
+        "libSceNpEntitlementAccess.prx"
       ],
       "unavailable": [
-        "libSceVoiceQoS.prx",
-        "libSceNpAuth.prx",
-        "libSceAudioIn.prx",
-        "libSceCdlgPlayerReview.prx",
-        "libSceNpSessionSignaling.prx",
-        "libSceAgc.prx",
-        "libSceNpCommerce.prx",
-        "libSceSysmodule.prx",
-        "libSceMsgDialog.native.prx",
-        "libSceRandom.prx",
-        "libSceNpGameIntent.prx",
-        "libSceLibcInternal.prx",
-        "libSceSystemService.prx",
-        "libSceNpUniversalDataSystem.prx",
-        "libSceGameUpdate.prx",
-        "libSceShare.prx",
+        "libSceNetCtl.prx",
         "libSceHttp.prx",
         "libSceAppContent.prx",
+        "libSceNpTrophy2.prx",
+        "libSceHttp2.prx",
+        "libSceLibcInternal.prx",
+        "libSceAudioIn.prx",
+        "libSceIme.prx",
+        "libSceAudioOut.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceUserService.prx",
+        "libSceVideoOut.prx",
+        "libSceVoiceQoS.prx",
+        "libSceAmpr.prx",
+        "libSceRandom.prx",
+        "libSceAgcDriver.prx",
+        "libSceGameUpdate.prx",
+        "libSceNet.prx",
+        "libScePlayGo.prx",
+        "libSceNpManager.prx",
+        "libSceNpCommerce.prx",
+        "libSceSystemService.prx",
+        "libSceNpAuth.prx",
+        "libSceRtc.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceCdlgPlayerReview.prx",
+        "libSceSsl.prx",
+        "libSceSaveDataDialog.native.prx",
         "libScePad.prx",
+        "libSceNpSessionSignaling.prx",
+        "libSceNpGameIntent.prx",
+        "libSceCommonDialog.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceGameLiveStreaming.prx",
         "libSceContentExport.prx",
         "libSceNpEntitlementAccess.prx",
-        "libSceAmpr.prx",
-        "libSceHttp2.prx",
-        "libSceNet.prx",
-        "libSceNpWebApi2.prx",
-        "libSceWebBrowserDialog.prx",
-        "libSceAcm.prx",
-        "libSceErrorDialog.prx",
-        "libSceUserService.prx",
-        "libSceAgcDriver.prx",
         "libSceAjm.native.prx",
-        "libSceSaveDataDialog.native.prx",
-        "libScePlayerInvitationDialog.prx",
-        "libSceSaveData.native.prx",
+        "libSceShare.prx",
+        "libSceAgc.prx",
         "libSceNgs2.prx",
         "libSceMouse.prx",
+        "libSceImeDialog.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceErrorDialog.prx",
+        "libScePlayerInvitationDialog.prx",
+        "libSceAcm.prx",
+        "libSceSysmodule.prx",
+        "libSceSaveData.native.prx",
         "libkernel.prx",
         "libSceJson2.prx",
-        "libSceCommonDialog.prx",
-        "libScePlayGo.prx",
-        "libSceVideoOut.prx",
-        "libSceRtc.prx",
-        "libSceNetCtl.prx",
-        "libSceImeDialog.prx",
-        "libSceSsl.prx",
-        "libSceNpManager.prx",
-        "libSceGameLiveStreaming.prx",
-        "libSceNpTrophy2.prx",
-        "libSceAudioOut.prx",
-        "libSceAvPlayer.native.prx",
-        "libSceIme.prx"
+        "libSceNpWebApi2.prx"
       ],
       "edges": [
-        {
-          "from": "libc.prx",
-          "to": "libkernel.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libc.prx",
-          "to": "libSceLibcInternal.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libc.prx",
-          "to": "libSceSysmodule.prx",
-          "status": "missing"
-        },
         {
           "from": "libSceNpCppWebApi.prx",
           "to": "libSceJson2.prx",
@@ -629,262 +614,277 @@
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "libc.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
+        {
+          "from": "PPSA02100 Stray",
           "to": "libSceAgcDriver.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceAgc.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceRtc.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libScePad.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceNet.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceNetCtl.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceNgs2.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceAudioOut.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceAjm.native.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceSysmodule.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceVideoOut.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceUserService.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libkernel.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceSsl.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceHttp.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libScePlayGo.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceNpManager.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceAppContent.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceSaveData.native.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceSaveDataDialog.native.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceCommonDialog.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceGameLiveStreaming.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceSystemService.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceIme.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceImeDialog.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceMsgDialog.native.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceNpCommerce.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceShare.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceMouse.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceRandom.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceWebBrowserDialog.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceContentExport.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceNpGameIntent.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceAvPlayer.native.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceNpAuth.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceJson2.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceNpUniversalDataSystem.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceNpTrophy2.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceErrorDialog.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceGameUpdate.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libScePlayerInvitationDialog.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceCdlgPlayerReview.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceVoiceQoS.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceHttp2.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceNpCppWebApi.prx",
           "status": "loaded"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceNpWebApi2.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceNpSessionSignaling.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceNpEntitlementAccess.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceAudioIn.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceAcm.prx",
           "status": "missing"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libc.prx",
           "status": "loaded"
         },
         {
-          "from": "PPSA02100 -  Stray",
+          "from": "PPSA02100 Stray",
           "to": "libSceAmpr.prx",
           "status": "missing"
         }

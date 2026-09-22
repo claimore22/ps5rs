@@ -1,6 +1,6 @@
 {
   "game": "The Pathless - [PPSA01825]",
-  "path": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\The.Pathless-PPSA01825-USA-PS5\\The Pathless PS5 Dump v2.000\\eboot.bin",
+  "path": "The.Pathless-PPSA01825-USA-PS5/eboot.bin",
   "load_report": {
     "modules": [
       {
@@ -118,7 +118,7 @@
         ]
       },
       {
-        "name": "The Pathless PS5 Dump v2.000",
+        "name": "The.Pathless-PPSA01825-USA-PS5",
         "module_type": "Eboot",
         "load_bias": 34635841536,
         "entry_point": 112,
@@ -450,365 +450,365 @@
     ],
     "graph": {
       "nodes": [
-        "libSceNet.prx",
+        "libScePlayGo.prx",
+        "libSceGameLiveStreaming.prx",
+        "libSceUserService.prx",
+        "libSceNpSessionSignaling.prx",
+        "libSceNgs2.prx",
+        "libSceSystemService.prx",
         "libSceNetCtl.prx",
-        "libSceSaveData.native.prx",
-        "The Pathless PS5 Dump v2.000",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceVideoOut.prx",
+        "libSceNpTrophy2.prx",
+        "libSceFiber.prx",
+        "libSceIme.prx",
         "libSceSaveDataDialog.native.prx",
         "libSceMsgDialog.native.prx",
+        "The.Pathless-PPSA01825-USA-PS5",
+        "libSceRtc.prx",
+        "libSceAjm.native.prx",
+        "libSceAudioOut.prx",
+        "libSceSsl.prx",
         "libSceMouse.prx",
+        "libSceAcm.prx",
+        "libSceNet.prx",
+        "libSceNpAuth.prx",
         "libSceJson2.prx",
+        "libSceGameUpdate.prx",
+        "libSceWebBrowserDialog.prx",
+        "libSceShare.prx",
         "libScePlayerInvitationDialog.prx",
-        "libSceUserService.prx",
         "libSceAudioIn.prx",
-        "libScePlayGo.prx",
-        "libSceNgs2.prx",
+        "libSceContentExport.prx",
+        "libSceImeDialog.prx",
+        "libSceNpCppWebApi.prx",
+        "libSceErrorDialog.prx",
+        "libc.prx",
+        "libSceAmpr.prx",
+        "libSceVoiceQoS.prx",
+        "libSceNpManager.prx",
+        "libSceNpWebApi2.prx",
+        "libSceLibcInternal.prx",
+        "libSceSaveData.native.prx",
+        "libSceRandom.prx",
+        "libSceCommonDialog.prx",
+        "libScePad.prx",
+        "libSceSysmodule.prx",
         "libkernel.prx",
+        "libSceAgcDriver.prx",
+        "libSceAgc.prx",
         "libSceHttp.prx",
         "libSceNpGameIntent.prx",
-        "libSceAcm.prx",
-        "libSceLibcInternal.prx",
-        "libSceContentExport.prx",
-        "libSceSsl.prx",
-        "libSceCommonDialog.prx",
-        "libSceNpAuth.prx",
-        "libSceImeDialog.prx",
-        "libSceShare.prx",
-        "libSceWebBrowserDialog.prx",
-        "libSceAmpr.prx",
-        "libSceSystemService.prx",
-        "libSceAudioOut.prx",
-        "libSceAjm.native.prx",
-        "libSceNpManager.prx",
-        "libSceRtc.prx",
-        "libSceVideoOut.prx",
-        "libSceRandom.prx",
-        "libSceVoiceQoS.prx",
-        "libScePad.prx",
-        "libSceFiber.prx",
-        "libSceAppContent.prx",
-        "libSceNpCommerce.prx",
         "libSceHttp2.prx",
-        "libSceNpCppWebApi.prx",
-        "libSceAvPlayer.native.prx",
-        "libSceSysmodule.prx",
-        "libSceNpSessionSignaling.prx",
-        "libSceAgc.prx",
-        "libSceNpWebApi2.prx",
-        "libSceNpTrophy2.prx",
-        "libSceErrorDialog.prx",
-        "libSceNpUniversalDataSystem.prx",
-        "libSceGameUpdate.prx",
-        "libSceIme.prx",
-        "libSceGameLiveStreaming.prx",
-        "libSceAgcDriver.prx",
-        "libc.prx"
+        "libSceNpCommerce.prx",
+        "libSceAppContent.prx"
       ],
       "unavailable": [
-        "libSceVideoOut.prx",
-        "libSceAgcDriver.prx",
-        "libSceAppContent.prx",
-        "libSceJson2.prx",
-        "libSceNpSessionSignaling.prx",
-        "libSceNpManager.prx",
-        "libScePlayGo.prx",
-        "libSceAjm.native.prx",
-        "libSceContentExport.prx",
-        "libSceAvPlayer.native.prx",
-        "libSceHttp.prx",
-        "libSceMsgDialog.native.prx",
-        "libSceAudioOut.prx",
-        "libSceShare.prx",
-        "libSceRandom.prx",
-        "libSceMouse.prx",
+        "libSceAcm.prx",
         "libSceWebBrowserDialog.prx",
-        "libSceAudioIn.prx",
-        "libSceUserService.prx",
-        "libSceHttp2.prx",
         "libSceIme.prx",
-        "libSceNet.prx",
-        "libSceSaveData.native.prx",
-        "libSceSysmodule.prx",
+        "libSceSystemService.prx",
+        "libSceAgcDriver.prx",
         "libSceNpGameIntent.prx",
-        "libScePad.prx",
-        "libSceNetCtl.prx",
-        "libSceNpAuth.prx",
-        "libSceErrorDialog.prx",
-        "libSceFiber.prx",
+        "libSceGameUpdate.prx",
         "libScePlayerInvitationDialog.prx",
-        "libSceImeDialog.prx",
+        "libkernel.prx",
+        "libSceNetCtl.prx",
         "libSceLibcInternal.prx",
+        "libSceVoiceQoS.prx",
+        "libSceAudioIn.prx",
+        "libSceAmpr.prx",
+        "libSceFiber.prx",
+        "libSceJson2.prx",
+        "libSceAjm.native.prx",
+        "libSceSaveData.native.prx",
+        "libSceAppContent.prx",
+        "libSceRtc.prx",
+        "libSceSysmodule.prx",
+        "libSceAgc.prx",
+        "libSceAudioOut.prx",
+        "libSceHttp2.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceNpCommerce.prx",
+        "libSceCommonDialog.prx",
+        "libSceVideoOut.prx",
+        "libSceNet.prx",
+        "libSceNpManager.prx",
+        "libSceNpAuth.prx",
+        "libSceRandom.prx",
         "libSceNpWebApi2.prx",
+        "libSceNpSessionSignaling.prx",
+        "libSceUserService.prx",
+        "libSceHttp.prx",
+        "libSceContentExport.prx",
+        "libSceMsgDialog.native.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libScePad.prx",
         "libSceSsl.prx",
         "libSceGameLiveStreaming.prx",
-        "libSceSystemService.prx",
-        "libSceGameUpdate.prx",
-        "libSceNgs2.prx",
-        "libSceSaveDataDialog.native.prx",
-        "libSceCommonDialog.prx",
-        "libSceAgc.prx",
-        "libSceRtc.prx",
-        "libkernel.prx",
-        "libSceNpCommerce.prx",
-        "libSceAcm.prx",
-        "libSceNpUniversalDataSystem.prx",
+        "libSceAvPlayer.native.prx",
         "libSceNpTrophy2.prx",
-        "libSceVoiceQoS.prx",
-        "libSceAmpr.prx"
+        "libSceShare.prx",
+        "libSceMouse.prx",
+        "libSceErrorDialog.prx",
+        "libScePlayGo.prx",
+        "libSceNgs2.prx",
+        "libSceImeDialog.prx"
       ],
       "edges": [
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceAgcDriver.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceAgc.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceRtc.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libScePad.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceNet.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceNetCtl.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceNgs2.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceAudioOut.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceAjm.native.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceSysmodule.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceVideoOut.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceUserService.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libkernel.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceSsl.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceHttp.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libScePlayGo.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceNpManager.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceAppContent.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceSaveData.native.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceSaveDataDialog.native.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceCommonDialog.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceGameLiveStreaming.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceSystemService.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceIme.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceImeDialog.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceMsgDialog.native.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceNpCommerce.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceShare.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceMouse.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceRandom.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceContentExport.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceNpGameIntent.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceAcm.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceAvPlayer.native.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceHttp2.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceNpAuth.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceNpCppWebApi.prx",
           "status": "loaded"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceNpWebApi2.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceNpSessionSignaling.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceJson2.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceNpUniversalDataSystem.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceNpTrophy2.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceErrorDialog.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceWebBrowserDialog.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceGameUpdate.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libScePlayerInvitationDialog.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceVoiceQoS.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceAudioIn.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libc.prx",
           "status": "loaded"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceAmpr.prx",
           "status": "missing"
         },
         {
-          "from": "The Pathless PS5 Dump v2.000",
+          "from": "The.Pathless-PPSA01825-USA-PS5",
           "to": "libSceFiber.prx",
           "status": "missing"
         },

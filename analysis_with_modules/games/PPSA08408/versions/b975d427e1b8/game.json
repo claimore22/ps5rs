@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "title_id": "PPSA08408",
+  "name": "Blazing Strike - [PPSA08408]",
+  "eboot_sha256": "5bec385373c57b352f181718ef17b1d4ca0b4b53529776532a734c8490bcf3fb",
+  "game_fingerprint": "b975d427e1b88cc2d5d931f31ae7a30f9231bb377b393704b1a80d094565ba3e",
+  "environment_fingerprint": "d3b9ffc479afbfe3716b56a71d30b6fd9604adba3c44edc2cd389c958d4abe68",
+  "loader_fingerprint": "fc478775a40bc52ba94d034eb6191bac0618e25283bda3650bbfd1d0629a127c",
+  "offline_fingerprint": "a14cdcecc5e29bcc4140d8f7bad27022200b5fbfc93258569108f4a3cdd09fd7",
+  "ingest_id": "ingest_20260922063625_b975d427e1b8",
+  "ingested_at": "2026-09-22T06:36:25Z",
+  "params": {
+    "name": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+    "title_id": "PPSA08408",
+    "content_version": "01.100.000",
+    "master_version": "01.09",
+    "sdk_version": "0x0800000000000000",
+    "title_name": "Blazing Strike",
+    "display_name": "Blazing Strike - [PPSA08408]",
+    "drm_type": "standard",
+    "content_id": "UP1024-PPSA08408_00-BLAZINGSTRIKEPS5",
+    "creation_date": "2025-05-31 01:10:49"
+  },
+  "load_report_file": "load_report.json"
+}

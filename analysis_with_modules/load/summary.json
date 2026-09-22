@@ -1,21 +1,22 @@
 {
-  "total_games": 32,
-  "successful": 32,
+  "total_games": 33,
+  "successful": 33,
   "failed": 0,
-  "total_modules": 78,
-  "total_exports": 679380,
-  "total_imports_resolved": 124623,
+  "total_modules": 80,
+  "total_exports": 681965,
+  "total_imports_resolved": 125907,
   "total_imports_known": 314,
-  "total_imports_stubbed": 22826,
-  "avg_resolution_rate": 84.55228981544771,
+  "total_imports_stubbed": 23398,
+  "avg_resolution_rate": 84.36161182737486,
   "top_unavailable": [
     {
       "module": "libSceAgc.prx",
-      "game_count": 32,
+      "game_count": 33,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Blazing Strike - [PPSA08408]",
         "Blue Prince - [PPSA25009]",
         "Bugsnax - [PPSA01502]",
         "Cat Quest III - [PPSA15065]",
@@ -49,11 +50,12 @@
     },
     {
       "module": "libSceAgcDriver.prx",
-      "game_count": 32,
+      "game_count": 33,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Blazing Strike - [PPSA08408]",
         "Blue Prince - [PPSA25009]",
         "Bugsnax - [PPSA01502]",
         "Cat Quest III - [PPSA15065]",
@@ -87,11 +89,12 @@
     },
     {
       "module": "libSceAudioOut.prx",
-      "game_count": 32,
+      "game_count": 33,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Blazing Strike - [PPSA08408]",
         "Blue Prince - [PPSA25009]",
         "Bugsnax - [PPSA01502]",
         "Cat Quest III - [PPSA15065]",
@@ -125,11 +128,12 @@
     },
     {
       "module": "libSceCommonDialog.prx",
-      "game_count": 32,
+      "game_count": 33,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Blazing Strike - [PPSA08408]",
         "Blue Prince - [PPSA25009]",
         "Bugsnax - [PPSA01502]",
         "Cat Quest III - [PPSA15065]",
@@ -163,11 +167,12 @@
     },
     {
       "module": "libSceLibcInternal.prx",
-      "game_count": 32,
+      "game_count": 33,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Blazing Strike - [PPSA08408]",
         "Blue Prince - [PPSA25009]",
         "Bugsnax - [PPSA01502]",
         "Cat Quest III - [PPSA15065]",
@@ -201,11 +206,12 @@
     },
     {
       "module": "libScePad.prx",
-      "game_count": 32,
+      "game_count": 33,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Blazing Strike - [PPSA08408]",
         "Blue Prince - [PPSA25009]",
         "Bugsnax - [PPSA01502]",
         "Cat Quest III - [PPSA15065]",
@@ -239,11 +245,12 @@
     },
     {
       "module": "libSceSaveData.native.prx",
-      "game_count": 32,
+      "game_count": 33,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Blazing Strike - [PPSA08408]",
         "Blue Prince - [PPSA25009]",
         "Bugsnax - [PPSA01502]",
         "Cat Quest III - [PPSA15065]",
@@ -277,11 +284,12 @@
     },
     {
       "module": "libSceSysmodule.prx",
-      "game_count": 32,
+      "game_count": 33,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Blazing Strike - [PPSA08408]",
         "Blue Prince - [PPSA25009]",
         "Bugsnax - [PPSA01502]",
         "Cat Quest III - [PPSA15065]",
@@ -315,11 +323,12 @@
     },
     {
       "module": "libSceSystemService.prx",
-      "game_count": 32,
+      "game_count": 33,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Blazing Strike - [PPSA08408]",
         "Blue Prince - [PPSA25009]",
         "Bugsnax - [PPSA01502]",
         "Cat Quest III - [PPSA15065]",
@@ -353,11 +362,12 @@
     },
     {
       "module": "libSceUserService.prx",
-      "game_count": 32,
+      "game_count": 33,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Blazing Strike - [PPSA08408]",
         "Blue Prince - [PPSA25009]",
         "Bugsnax - [PPSA01502]",
         "Cat Quest III - [PPSA15065]",
@@ -391,11 +401,12 @@
     },
     {
       "module": "libSceVideoOut.prx",
-      "game_count": 32,
+      "game_count": 33,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Blazing Strike - [PPSA08408]",
         "Blue Prince - [PPSA25009]",
         "Bugsnax - [PPSA01502]",
         "Cat Quest III - [PPSA15065]",
@@ -429,11 +440,12 @@
     },
     {
       "module": "libkernel.prx",
-      "game_count": 32,
+      "game_count": 33,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Blazing Strike - [PPSA08408]",
         "Blue Prince - [PPSA25009]",
         "Bugsnax - [PPSA01502]",
         "Cat Quest III - [PPSA15065]",
@@ -467,11 +479,12 @@
     },
     {
       "module": "libSceRtc.prx",
-      "game_count": 30,
+      "game_count": 31,
       "games": [
         "Afterimage - [PPSA14053]",
         "ANIMAL WELL - [PPSA22520]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Blazing Strike - [PPSA08408]",
         "Blue Prince - [PPSA25009]",
         "Bugsnax - [PPSA01502]",
         "Cat Quest III - [PPSA15065]",
@@ -503,10 +516,11 @@
     },
     {
       "module": "libSceNet.prx",
-      "game_count": 29,
+      "game_count": 30,
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Blazing Strike - [PPSA08408]",
         "Blue Prince - [PPSA25009]",
         "Bugsnax - [PPSA01502]",
         "Cat Quest III - [PPSA15065]",
@@ -538,10 +552,11 @@
     },
     {
       "module": "libSceNpManager.prx",
-      "game_count": 29,
+      "game_count": 30,
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Blazing Strike - [PPSA08408]",
         "Blue Prince - [PPSA25009]",
         "Bugsnax - [PPSA01502]",
         "Cat Quest III - [PPSA15065]",
@@ -573,10 +588,11 @@
     },
     {
       "module": "libSceAppContent.prx",
-      "game_count": 28,
+      "game_count": 29,
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Blazing Strike - [PPSA08408]",
         "Blue Prince - [PPSA25009]",
         "Bugsnax - [PPSA01502]",
         "Cat Quest III - [PPSA15065]",
@@ -607,10 +623,11 @@
     },
     {
       "module": "libSceHttp2.prx",
-      "game_count": 28,
+      "game_count": 29,
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Blazing Strike - [PPSA08408]",
         "Blue Prince - [PPSA25009]",
         "Bugsnax - [PPSA01502]",
         "Cat Quest III - [PPSA15065]",
@@ -641,10 +658,11 @@
     },
     {
       "module": "libSceMsgDialog.native.prx",
-      "game_count": 28,
+      "game_count": 29,
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Blazing Strike - [PPSA08408]",
         "Blue Prince - [PPSA25009]",
         "Bugsnax - [PPSA01502]",
         "Cat Quest III - [PPSA15065]",
@@ -675,10 +693,11 @@
     },
     {
       "module": "libSceNetCtl.prx",
-      "game_count": 28,
+      "game_count": 29,
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Blazing Strike - [PPSA08408]",
         "Blue Prince - [PPSA25009]",
         "Bugsnax - [PPSA01502]",
         "Cat Quest III - [PPSA15065]",
@@ -709,10 +728,11 @@
     },
     {
       "module": "libSceNpWebApi2.prx",
-      "game_count": 28,
+      "game_count": 29,
       "games": [
         "Afterimage - [PPSA14053]",
         "Asterigos: Curse of the Stars - [PPSA08194]",
+        "Blazing Strike - [PPSA08408]",
         "Blue Prince - [PPSA25009]",
         "Bugsnax - [PPSA01502]",
         "Cat Quest III - [PPSA15065]",
@@ -792,13 +812,13 @@
       "rate": 31.68264110756124
     },
     {
-      "game": "Juicy Realm - [PPSA19268]",
+      "game": "Blazing Strike - [PPSA08408]",
       "stubbed": 572,
       "total": 1856,
       "rate": 30.81896551724138
     },
     {
-      "game": "Richman 11 - [PPSA16960]",
+      "game": "Juicy Realm - [PPSA19268]",
       "stubbed": 572,
       "total": 1856,
       "rate": 30.81896551724138

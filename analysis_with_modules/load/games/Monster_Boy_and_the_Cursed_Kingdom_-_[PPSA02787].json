@@ -1,6 +1,6 @@
 {
   "game": "Monster Boy and the Cursed Kingdom - [PPSA02787]",
-  "path": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Monster.Boy.and.The.Cursed.Kingdom-PPSA02787-USA-Game-v01.000.004-PS5\\PPSA02787-app0\\eboot.bin",
+  "path": "Monster.Boy.and.The.Cursed.Kingdom-PPSA02787-USA-Game-v01.000.004-PS5/PPSA02787-app0/eboot.bin",
   "load_report": {
     "modules": [
       {
@@ -216,60 +216,75 @@
     ],
     "graph": {
       "nodes": [
+        "libSceSaveData.native.prx",
         "libSceNpManager.prx",
-        "libkernel.prx",
-        "libSceSaveDataDialog.native.prx",
         "libSceNpGameIntent.prx",
+        "libc.prx",
+        "libSceCommonDialog.prx",
+        "libSceFont-module.prx",
         "libSceNpUniversalDataSystem.prx",
-        "libSceNpTrophy2.prx",
+        "libSceRtc.prx",
+        "libSceVideoOut.prx",
+        "libSceSysmodule.prx",
+        "libkernel.prx",
+        "libSceErrorDialog.prx",
+        "libSceAvPlayer.native.prx",
         "PPSA02787-app0",
-        "libSceAudioOut.prx",
+        "libSceLibcInternal.prx",
+        "libSceAgcDriver.prx",
+        "libSceAgc.prx",
         "libSceUserService.prx",
         "libScePad.prx",
-        "libSceCommonDialog.prx",
-        "libSceAgcDriver.prx",
-        "libSceAvPlayer.native.prx",
-        "libSceVideoOut.prx",
-        "libSceSaveData.native.prx",
-        "libSceErrorDialog.prx",
-        "libSceFontFt-module.prx",
-        "libSceAgc.prx",
-        "libc.prx",
-        "libScePlayGo.prx",
-        "libSceFont-module.prx",
-        "libSceRtc.prx",
         "libSceSystemService.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceNpTrophy2.prx",
+        "libSceAudioOut.prx",
+        "libScePlayGo.prx",
         "libSceNgs2.prx",
-        "libSceSysmodule.prx",
-        "libSceLibcInternal.prx"
+        "libSceFontFt-module.prx"
       ],
       "unavailable": [
-        "libSceNpManager.prx",
-        "libSceLibcInternal.prx",
-        "libSceAvPlayer.native.prx",
-        "libSceCommonDialog.prx",
-        "libSceVideoOut.prx",
-        "libSceSystemService.prx",
-        "libSceUserService.prx",
-        "libSceAudioOut.prx",
-        "libSceAgc.prx",
-        "libSceSaveDataDialog.native.prx",
-        "libScePlayGo.prx",
         "libkernel.prx",
-        "libScePad.prx",
-        "libSceErrorDialog.prx",
-        "libSceFontFt-module.prx",
-        "libSceRtc.prx",
         "libSceNgs2.prx",
         "libSceSaveData.native.prx",
-        "libSceNpGameIntent.prx",
-        "libSceNpTrophy2.prx",
-        "libSceNpUniversalDataSystem.prx",
-        "libSceAgcDriver.prx",
+        "libSceErrorDialog.prx",
         "libSceSysmodule.prx",
-        "libSceFont-module.prx"
+        "libSceNpGameIntent.prx",
+        "libSceAudioOut.prx",
+        "libSceAvPlayer.native.prx",
+        "libSceUserService.prx",
+        "libSceAgc.prx",
+        "libSceNpTrophy2.prx",
+        "libScePad.prx",
+        "libSceSystemService.prx",
+        "libSceVideoOut.prx",
+        "libSceLibcInternal.prx",
+        "libSceCommonDialog.prx",
+        "libScePlayGo.prx",
+        "libSceSaveDataDialog.native.prx",
+        "libSceAgcDriver.prx",
+        "libSceNpUniversalDataSystem.prx",
+        "libSceFont-module.prx",
+        "libSceRtc.prx",
+        "libSceFontFt-module.prx",
+        "libSceNpManager.prx"
       ],
       "edges": [
+        {
+          "from": "libc.prx",
+          "to": "libkernel.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceLibcInternal.prx",
+          "status": "missing"
+        },
+        {
+          "from": "libc.prx",
+          "to": "libSceSysmodule.prx",
+          "status": "missing"
+        },
         {
           "from": "PPSA02787-app0",
           "to": "libSceNpGameIntent.prx",
@@ -388,21 +403,6 @@
         {
           "from": "PPSA02787-app0",
           "to": "libSceFontFt-module.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libc.prx",
-          "to": "libkernel.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libc.prx",
-          "to": "libSceLibcInternal.prx",
-          "status": "missing"
-        },
-        {
-          "from": "libc.prx",
-          "to": "libSceSysmodule.prx",
           "status": "missing"
         }
       ]

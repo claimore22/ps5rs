@@ -1,8 +1,8 @@
 {
   "schema_version": 6,
   "tool": "ps5rs",
-  "created_at": "2026-10-09T05:31:43Z",
-  "image_count": 32,
+  "created_at": "2026-10-09T06:42:26Z",
+  "image_count": 33,
   "module_count": 0,
   "games": [
     {
@@ -18,7 +18,7 @@
       "creation_date": "2023-02-18 11:14:48"
     },
     {
-      "name": "[SuperPSX]-Animal.Well-PPSA22520-JPN-Game (v01.000.011)-PS5",
+      "name": "Animal Well PS5 _PPSA22520",
       "title_id": "PPSA22520",
       "content_version": "01.000.011",
       "master_version": "02.00",
@@ -42,6 +42,18 @@
       "creation_date": "2022-11-22 15:25:37"
     },
     {
+      "name": "Blazing.Strike-PPSA08408-USA-Game (v01.100)",
+      "title_id": "PPSA08408",
+      "content_version": "01.100.000",
+      "master_version": "01.09",
+      "sdk_version": "0x0800000000000000",
+      "title_name": "Blazing Strike",
+      "display_name": "Blazing Strike - [PPSA08408]",
+      "drm_type": "standard",
+      "content_id": "UP1024-PPSA08408_00-BLAZINGSTRIKEPS5",
+      "creation_date": "2025-05-31 01:10:49"
+    },
+    {
       "name": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5",
       "title_id": "PPSA25009",
       "content_version": "01.008.000",
@@ -54,7 +66,7 @@
       "creation_date": "2025-05-26 13:38:48"
     },
     {
-      "name": "Bugsnax PS5 Dump v2.000",
+      "name": "Bugsnax-PPSA01502-USA-PS5",
       "title_id": "PPSA01502",
       "content_version": "02.000.000",
       "master_version": "02.00",
@@ -114,7 +126,7 @@
       "creation_date": "2022-06-06 09:49:08"
     },
     {
-      "name": "GRIS-PPSA09804 Ã¢â‚¬â€œ EUR-Game (v01.001)-PS5",
+      "name": "GRIS-PPSA09804 â€“ EUR-Game (v01.001)-PS5",
       "title_id": "PPSA09804",
       "content_version": "01.001.000",
       "master_version": "01.00",
@@ -306,7 +318,7 @@
       "creation_date": "2021-12-23 04:27:00"
     },
     {
-      "name": "Richman 11 PS5 _PPSA16960_",
+      "name": "Richman 11 PS5 _PPSA16960",
       "title_id": "PPSA16960",
       "content_version": "01.000.000",
       "master_version": "01.01",
@@ -342,7 +354,7 @@
       "creation_date": "2024-08-09 19:16:32"
     },
     {
-      "name": "PPSA02100 -  Stray",
+      "name": "PPSA02100 Stray",
       "title_id": "PPSA02100",
       "content_version": "01.002.000",
       "master_version": "02.00",
@@ -366,7 +378,7 @@
       "creation_date": "2022-09-28 20:51:18"
     },
     {
-      "name": "The Pathless PS5 Dump v2.000",
+      "name": "The.Pathless-PPSA01825-USA-PS5",
       "title_id": "PPSA01825",
       "content_version": "02.000.000",
       "master_version": "01.00",
@@ -426,7 +438,18 @@
       "creation_date": "2022-07-06 10:10:31"
     },
     {
-      "name": "Persona.3.Reload-PPSA10872 Î“Ã‡Ã´ USA-Game-v01.000-PS5",
+      "name": "WUCHANG.Fallen.Feathers-PPSA09519-EUR-Game(v01.01)-PS5",
+      "title_id": null,
+      "content_version": null,
+      "master_version": null,
+      "sdk_version": null,
+      "title_name": null,
+      "drm_type": null,
+      "content_id": null,
+      "creation_date": null
+    },
+    {
+      "name": "Persona.3.Reload-PPSA10872 ΓÇô USA-Game-v01.000-PS5",
       "title_id": "PPSA10872",
       "content_version": "01.000.000",
       "master_version": "01.01",
@@ -460,17 +483,6 @@
       "drm_type": "standard",
       "content_id": "JP0177-PPSA24478_00-MAINGAME00000000",
       "creation_date": "2025-04-08 09:00:24"
-    },
-    {
-      "name": "WUCHANG.Fallen.Feathers-PPSA09519-EUR-Game(v01.01)-PS5",
-      "title_id": null,
-      "content_version": null,
-      "master_version": null,
-      "sdk_version": null,
-      "title_name": null,
-      "drm_type": null,
-      "content_id": null,
-      "creation_date": null
     }
   ]
 }

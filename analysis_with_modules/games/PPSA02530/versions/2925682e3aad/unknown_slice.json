@@ -1,1 +1,70 @@
-null
+{
+  "details": [
+    {
+      "confidence": "medium",
+      "frequency": 2,
+      "games": [
+        "Mega Man Star Force Legacy Collection - [PPSA32239]",
+        "PRAGMATA - [PPSA02530]"
+      ],
+      "libraries": [
+        "libSceVideoOutVrrStatus"
+      ],
+      "nid": "-q-vbO859Tw",
+      "remu_name": null
+    },
+    {
+      "confidence": "medium",
+      "frequency": 2,
+      "games": [
+        "Mega Man Star Force Legacy Collection - [PPSA32239]",
+        "PRAGMATA - [PPSA02530]"
+      ],
+      "libraries": [
+        "libSceVideoOutVrrStatus"
+      ],
+      "nid": "LibwuIonIBw",
+      "remu_name": null
+    },
+    {
+      "confidence": "medium",
+      "frequency": 2,
+      "games": [
+        "Mega Man Star Force Legacy Collection - [PPSA32239]",
+        "PRAGMATA - [PPSA02530]"
+      ],
+      "libraries": [
+        "libSceVideoOutVrrStatus"
+      ],
+      "nid": "gWT7X8H0bYs",
+      "remu_name": null
+    },
+    {
+      "confidence": "medium",
+      "frequency": 2,
+      "games": [
+        "Mega Man Star Force Legacy Collection - [PPSA32239]",
+        "PRAGMATA - [PPSA02530]"
+      ],
+      "libraries": [
+        "libSceVideoOutVrrStatus"
+      ],
+      "nid": "kP2L8t3j-aM",
+      "remu_name": null
+    }
+  ],
+  "game": {
+    "error": null,
+    "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5\\eboot.bin",
+    "imports": 807,
+    "known": 803,
+    "name": "PRAGMATA - [PPSA02530]",
+    "unknown": 4,
+    "unknown_nids": [
+      "-q-vbO859Tw",
+      "LibwuIonIBw",
+      "gWT7X8H0bYs",
+      "kP2L8t3j-aM"
+    ]
+  }
+}
