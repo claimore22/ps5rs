@@ -221,15 +221,42 @@ pub(crate) fn sanitize_filename(name: &str) -> String {
     // 1️⃣ Extract an ID if present.
     let mut base = name.to_string();
     let mut id_opt: Option<String> = None;
-    // a) Bracketed form "[PPSA12345]"
-    if let Some(start) = base.find('[') {
-        if let Some(end) = base[start..].find(']') {
-            id_opt = Some(base[start..start + end + 1].to_string());
-            base = format!("{} {}", &base[..start], &base[start + end + 1..]);
+    // a) ID extraction precedence: "[PPSA12345]" bracket > raw "PPSA12345" >
+    // any other bracket pair (legacy fallback). A non-PPSA bracket (e.g.
+    // "[SuperPSX]") never shadows a real title ID.
+    let mut first_bracket: Option<(usize, usize)> = None;
+    let mut ppsa_bracket: Option<(usize, usize)> = None;
+    let mut search_from = 0;
+    while let Some(rel) = base[search_from..].find('[') {
+        let start = search_from + rel;
+        match base[start..].find(']') {
+            Some(rel_end) => {
+                let end = start + rel_end;
+                let inner = &base[start + 1..end];
+                if inner.len() == 9
+                    && inner.starts_with("PPSA")
+                    && inner[4..].chars().all(|c| c.is_ascii_digit())
+                {
+                    ppsa_bracket = Some((start, end));
+                    break;
+                }
+                if first_bracket.is_none() {
+                    first_bracket = Some((start, end));
+                }
+                search_from = end + 1;
+            }
+            None => break,
         }
     }
-    // b) Unbracketed raw ID "PPSA12345"
-    if id_opt.is_none() {
+    if let Some((start, end)) = ppsa_bracket {
+        id_opt = Some(base[start..end + 1].to_string());
+        base = format!("{} {}", &base[..start], &base[end + 1..]);
+    } else {
+        let other = first_bracket.map(|(s, e)| base[s..e + 1].to_string());
+        if let Some((start, end)) = first_bracket {
+            base = format!("{} {}", &base[..start], &base[end + 1..]);
+        }
+        // b) Unbracketed raw ID "PPSA12345"
         if let Some(idx) = base.find("PPSA") {
             let tail = &base[idx..];
             if tail.len() >= 9 && tail[5..9].chars().all(|c| c.is_ascii_digit()) {
@@ -237,6 +264,9 @@ pub(crate) fn sanitize_filename(name: &str) -> String {
                 id_opt = Some(format!("[{}]", raw));
                 base = format!("{} {}", &base[..idx], &base[idx + 9..]);
             }
+        }
+        if id_opt.is_none() {
+            id_opt = other;
         }
     }
     // 2️⃣ Normalise the remaining base string.
@@ -289,5 +319,18 @@ mod tests {
     #[test]
     fn ppsa_raw() {
         assert_eq!(sanitize_filename("Cool PPSA12345"), "Cool_[PPSA12345]");
+    }
+
+    #[test]
+    fn ppsa_bracket_preferred_over_other_tags() {
+        assert_eq!(
+            sanitize_filename("[SuperPSX]-PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5"),
+            "-PRAGMATA-_-USA-Game_v01.2000-PS5_[PPSA02530]"
+        );
+    }
+
+    #[test]
+    fn non_ppsa_bracket_falls_back_to_first_pair() {
+        assert_eq!(sanitize_filename("Cool [Demo]"), "Cool_[Demo]");
     }
 }
