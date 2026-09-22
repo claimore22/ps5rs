@@ -13,8 +13,6 @@ pub fn init_env() -> Result<u64, EmuError> {
     Ok(0)
 }
 
-use std::sync::Once;
-
 /// Stub implementation for `qsort`. It does **not** perform a real sort –
 /// it simply returns 0 (success) so execution can continue.
 pub fn qsort(_host: &mut dyn Host, _args: &[u64]) -> Result<u64, EmuError> {
@@ -60,7 +58,7 @@ pub fn setjmp(_host: &mut dyn Host, _args: &[u64]) -> Result<u64, EmuError> {
 }
 
 /// Memory allocation stub. Allocates a buffer via the host and returns its address.
-pub fn malloc(host: &mut dyn Host, args: &[u64]) -> Result<u64, EmuError> {
+pub fn malloc(_host: &mut dyn Host, args: &[u64]) -> Result<u64, EmuError> {
     let size = args.first().copied().unwrap_or(0) as usize;
     if size == 0 {
         return Ok(0);

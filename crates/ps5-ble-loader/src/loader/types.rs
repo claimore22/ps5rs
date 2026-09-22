@@ -4,10 +4,6 @@
 
 const PAGE_SIZE: u64 = 0x1000;
 
-fn page_down(value: u64) -> u64 {
-    value & !(PAGE_SIZE - 1)
-}
-
 pub(super) fn page_up(value: u64) -> u64 {
     (value + PAGE_SIZE - 1) & !(PAGE_SIZE - 1)
 }

@@ -67,7 +67,6 @@ impl HleModule for AgcDriverModule {
                 });
                 Ok(0)
             }
-            _ => Err(EmuError::NoHandler("libSceAgcDriver".to_string())),
         }
     }
 }

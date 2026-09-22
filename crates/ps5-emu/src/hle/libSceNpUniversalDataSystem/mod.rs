@@ -27,23 +27,21 @@ impl HleModule for NpUniversalDataSystemModule {
         &mut self,
         _ctx: &mut HleContext,
         _host: &mut dyn Host,
-        call: HostCall,
+        _call: HostCall,
         _args: &[u64],
     ) -> Result<u64, EmuError> {
-        match call {
-            // HostCall::SceNpUniversalDataSystemDestroyEvent => {
-            //     static WARN: std::sync::Once = std::sync::Once::new();
-            //     WARN.call_once(|| {
-            //         eprintln!("WARNING: sceNpUniversalDataSystemDestroyEvent stub called – not a real implementation");
-            //         tracing::warn!(
-            //             "sceNpUniversalDataSystemDestroyEvent stub called – not a real implementation"
-            //         );
-            //     });
-            //     Ok(0)
-            // }
-            _ => Err(EmuError::NoHandler(
-                "libSceNpUniversalDataSystem".to_string(),
-            )),
-        }
+        // HostCall::SceNpUniversalDataSystemDestroyEvent => {
+        //     static WARN: std::sync::Once = std::sync::Once::new();
+        //     WARN.call_once(|| {
+        //         eprintln!("WARNING: sceNpUniversalDataSystemDestroyEvent stub called – not a real implementation");
+        //         tracing::warn!(
+        //             "sceNpUniversalDataSystemDestroyEvent stub called – not a real implementation"
+        //         );
+        //     });
+        //     Ok(0)
+        // }
+        Err(EmuError::NoHandler(
+            "libSceNpUniversalDataSystem".to_string(),
+        ))
     }
 }

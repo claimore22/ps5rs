@@ -16,9 +16,9 @@ pub enum MemoryProtection {
     READ,
     WRITE,
     EXECUTE,
-    READ_WRITE,
-    READ_EXECUTE,
-    READ_WRITE_EXECUTE,
+    ReadWrite,
+    ReadExecute,
+    ReadWriteExecute,
 }
 
 #[derive(Debug, Clone)]
@@ -29,6 +29,7 @@ pub struct MemoryRegion {
     pub name: String,
 }
 
+#[derive(Default)]
 pub struct MemoryManager;
 
 impl MemoryManager {

@@ -386,7 +386,7 @@ pub fn archive_game(
             let entry = registry.games.get(&title_id).cloned().unwrap();
             let record_dir = dataset.join(&entry.record_path);
             snapshot_slices(
-                &dataset,
+                dataset,
                 &record_dir,
                 &title_id,
                 &display,
@@ -450,7 +450,7 @@ pub fn archive_game(
         .map_err(|e| format!("cannot copy load report: {e}"))?;
 
     snapshot_slices(
-        &dataset,
+        dataset,
         &record_dir,
         &title_id,
         &display,

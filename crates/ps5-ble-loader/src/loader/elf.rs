@@ -10,7 +10,7 @@ use std::fs;
 use crate::error::{BleError, BleResult};
 use ps5_memory_safe::{MemoryManager, MemoryProtection};
 
-use super::loader::{
+use super::types::{
     DynamicSymbol, ElfSection, ElfSymbol, LoadedElf, ProgramHeader, RelocationEntry, page_up,
 };
 
@@ -352,7 +352,7 @@ impl ElfLoader {
             None,
             page_up(prog_end),
             0x1000,
-            MemoryProtection::READ_WRITE,
+            MemoryProtection::ReadWrite,
             "module",
         )?;
         log::info!(target: crate::log_targets::MODULE,
@@ -498,7 +498,7 @@ impl ElfLoader {
             });
         }
 
-        self.load_program_headers(&elf, elf_data, base_address, memory, reserve)?;
+        self.load_program_headers(elf, elf_data, base_address, memory, reserve)?;
 
         Ok(LoadedElf {
             entry_point,
@@ -588,7 +588,7 @@ impl ElfLoader {
                 continue;
             }
             // Simplified protection: grant read/write/execute to all PT_LOAD segments
-            let final_prot = MemoryProtection::READ_WRITE_EXECUTE;
+            let final_prot = MemoryProtection::ReadWriteExecute;
             memory.protect(base_address + vaddr, *memsz, final_prot)?;
         }
         Ok(())

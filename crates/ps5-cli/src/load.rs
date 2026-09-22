@@ -1,7 +1,6 @@
 use std::path::{Path, PathBuf};
 
-use ps5_farm::report::{self, EdgeInfo, GraphInfo, LoadReport, ModuleInfo, Totals};
-use ps5_loader::LibraryImportCounts;
+use ps5_farm::report::{self, GraphInfo, LoadReport, ModuleInfo, Totals};
 use ps5_loader::OfflineExportTable;
 
 use crate::util::load_file;

@@ -24,19 +24,17 @@ impl HleModule for AudioOutModule {
         &mut self,
         _ctx: &mut HleContext,
         _host: &mut dyn Host,
-        call: HostCall,
+        _call: HostCall,
         _args: &[u64],
     ) -> Result<u64, EmuError> {
-        match call {
-            // HostCall::SceAudioOutOutput => {
-            //     static WARN: std::sync::Once = std::sync::Once::new();
-            //     WARN.call_once(|| {
-            //         eprintln!("WARNING: sceAudioOutOutput stub called – not a real implementation");
-            //         tracing::warn!("sceAudioOutOutput stub called – not a real implementation");
-            //     });
-            //     Ok(0)
-            // }
-            _ => Err(EmuError::NoHandler("libSceAudioOut".to_string())),
-        }
+        // HostCall::SceAudioOutOutput => {
+        //     static WARN: std::sync::Once = std::sync::Once::new();
+        //     WARN.call_once(|| {
+        //         eprintln!("WARNING: sceAudioOutOutput stub called – not a real implementation");
+        //         tracing::warn!("sceAudioOutOutput stub called – not a real implementation");
+        //     });
+        //     Ok(0)
+        // }
+        Err(EmuError::NoHandler("libSceAudioOut".to_string()))
     }
 }

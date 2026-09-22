@@ -183,10 +183,12 @@ fn purge_stale_reports(
             .and_then(|n| n.to_str())
             .unwrap_or_default()
             .to_string();
-        if is_json && !expected.contains(&name) && !registered.contains(&name) {
-            if std::fs::remove_file(&path).is_ok() {
-                eprintln!("PURGED stale report {name}");
-            }
+        if is_json
+            && !expected.contains(&name)
+            && !registered.contains(&name)
+            && std::fs::remove_file(&path).is_ok()
+        {
+            eprintln!("PURGED stale report {name}");
         }
     }
 }

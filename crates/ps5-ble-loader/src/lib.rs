@@ -3,11 +3,10 @@
 pub mod error;
 pub mod loader;
 pub mod log_targets;
-use loader::{ElfLoader, LoadedElf};
 
 #[cfg(test)]
 mod tests {
-    use super::*;
+    use crate::loader::{ElfLoader, LoadedElf};
     use ps5_memory_safe::MemoryManager;
 
     #[test]

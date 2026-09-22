@@ -1,19 +1,18 @@
 use eframe::{NativeOptions, egui};
 use rfd::FileDialog;
 use std::path::PathBuf;
-use std::sync::mpsc;
 
 fn ps5rs_command() -> std::process::Command {
-    if let Ok(exe) = std::env::current_exe() {
-        if let Some(dir) = exe.parent() {
-            #[cfg(windows)]
-            let name = "ps5rs.exe";
-            #[cfg(not(windows))]
-            let name = "ps5rs";
-            let cand = dir.join(name);
-            if cand.is_file() {
-                return std::process::Command::new(cand);
-            }
+    if let Ok(exe) = std::env::current_exe()
+        && let Some(dir) = exe.parent()
+    {
+        #[cfg(windows)]
+        let name = "ps5rs.exe";
+        #[cfg(not(windows))]
+        let name = "ps5rs";
+        let cand = dir.join(name);
+        if cand.is_file() {
+            return std::process::Command::new(cand);
         }
     }
     let mut probe = std::process::Command::new("ps5rs");
@@ -41,8 +40,6 @@ struct App {
     dataset_path: Option<PathBuf>,
     offline_dir: Option<PathBuf>,
     status: String,
-    importing: bool,
-    progress_rx: Option<mpsc::Receiver<String>>,
 }
 
 impl Default for App {
@@ -52,8 +49,6 @@ impl Default for App {
             dataset_path: Some(PathBuf::from("analysis_with_modules")),
             offline_dir: Some(PathBuf::from("analysis_with_modules")),
             status: String::new(),
-            importing: false,
-            progress_rx: None,
         }
     }
 }
@@ -83,30 +78,30 @@ impl eframe::App for App {
                     .show(ui, |ui| {
                         // Game folder (must contain eboot.bin)
                         ui.label("Game folder");
-                        if ui.button("Browse…").clicked() {
-                            if let Some(path) = FileDialog::new().pick_folder() {
-                                self.game_path = Some(path);
-                            }
+                        if ui.button("Browse…").clicked()
+                            && let Some(path) = FileDialog::new().pick_folder()
+                        {
+                            self.game_path = Some(path);
                         }
                         ui.label(self.game_path.as_ref().map(|p| p.display().to_string()).unwrap_or_else(|| "<none>".to_owned()));
                         ui.end_row();
 
                         // Dataset root (analysis/dataset)
                         ui.label("Dataset root");
-                        if ui.button("Browse…").clicked() {
-                            if let Some(path) = FileDialog::new().pick_folder() {
-                                self.dataset_path = Some(path);
-                            }
+                        if ui.button("Browse…").clicked()
+                            && let Some(path) = FileDialog::new().pick_folder()
+                        {
+                            self.dataset_path = Some(path);
                         }
                         ui.label(self.dataset_path.as_ref().map(|p| p.display().to_string()).unwrap_or_else(|| "<none>".to_owned()));
                         ui.end_row();
 
                         // Offline exports directory (system_modules)
                         ui.label("Offline exports");
-                        if ui.button("Browse…").clicked() {
-                            if let Some(path) = FileDialog::new().pick_folder() {
-                                self.offline_dir = Some(path);
-                            }
+                        if ui.button("Browse…").clicked()
+                            && let Some(path) = FileDialog::new().pick_folder()
+                        {
+                            self.offline_dir = Some(path);
                         }
                         ui.label(self.offline_dir.as_ref().map(|p| p.display().to_string()).unwrap_or_else(|| "<none>".to_owned()));
 

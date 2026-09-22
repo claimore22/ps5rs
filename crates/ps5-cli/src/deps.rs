@@ -17,11 +17,11 @@ pub(crate) fn cmd_deps(path: &Path, format: OutputFormat, output: &Option<std::p
             .unwrap_or("unknown");
         g.add_node(name, &[]);
         // Try to parse as ELF and extract needed files (best-effort)
-        if let Ok(data) = std::fs::read(path) {
-            if let Ok(img) = ps5_self::SelfImage::parse(&data) {
-                for needed in &img.elf.needed_files {
-                    g.add_edge(name, needed);
-                }
+        if let Ok(data) = std::fs::read(path)
+            && let Ok(img) = ps5_self::SelfImage::parse(&data)
+        {
+            for needed in &img.elf.needed_files {
+                g.add_edge(name, needed);
             }
         }
         g
@@ -46,10 +46,9 @@ pub(crate) fn cmd_deps(path: &Path, format: OutputFormat, output: &Option<std::p
                         if let Ok(prx_entries) = std::fs::read_dir(p.join("sce_module")) {
                             for prx in prx_entries.flatten() {
                                 if let Some(fname) = prx.path().file_name().and_then(|n| n.to_str())
+                                    && fname.ends_with(".prx")
                                 {
-                                    if fname.ends_with(".prx") {
-                                        g.add_edge(&name, fname);
-                                    }
+                                    g.add_edge(&name, fname);
                                 }
                             }
                         }
