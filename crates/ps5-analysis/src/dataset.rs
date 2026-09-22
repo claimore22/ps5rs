@@ -1,6 +1,10 @@
-use ps5_image::BinaryImageDocument;
+use crate::model::GameAnalysis;
+use ps5_image::{
+    BinaryImage, BinaryImageDocument, BinaryMetadata, ImageType, ImportEntry, SymbolBinding,
+    SymbolType, SymbolVisibility, TlsInfo,
+};
 use serde::{Deserialize, Serialize};
-use std::collections::HashMap;
+use std::collections::{HashMap, HashSet};
 use std::path::Path;
 
 pub const DATASET_SCHEMA_VERSION: u32 = 6;
@@ -68,7 +72,7 @@ impl From<serde_json::Error> for DatasetError {
 fn collect_json_files(
     base_dir: &Path,
     dir: &Path,
-    images: &mut Vec<(String, BinaryImageDocument)>,
+    images: &mut Vec<(String, BinaryImageDocument, bool)>,
 ) -> Result<(), DatasetError> {
     for entry in std::fs::read_dir(dir)? {
         let entry = entry?;
@@ -77,7 +81,15 @@ fn collect_json_files(
             collect_json_files(base_dir, &path, images)?;
         } else if path.extension().and_then(|e| e.to_str()) == Some("json") {
             let data = std::fs::read_to_string(&path)?;
-            let doc: BinaryImageDocument = serde_json::from_str(&data)?;
+            // New interchange format first (`GameAnalysis`, written by current
+            // `scan`); legacy `BinaryImageDocument` second. The two shapes are
+            // disjoint (neither has all of the other's required fields), so a
+            // file parses as at most one of them.
+            let (doc, is_new) = if let Ok(game) = serde_json::from_str::<GameAnalysis>(&data) {
+                (game_analysis_to_doc(&game), true)
+            } else {
+                (serde_json::from_str::<BinaryImageDocument>(&data)?, false)
+            };
             let rel = path.strip_prefix(base_dir).unwrap_or(&path);
             let key = if doc.parent_image.is_some() {
                 // module: use {game_dir}/{file_stem}
@@ -110,10 +122,130 @@ fn collect_json_files(
                         .to_string()
                 }
             };
-            images.push((key, doc));
+            images.push((key, doc, is_new));
         }
     }
     Ok(())
+}
+
+/// Convert the current `scan` output (`GameAnalysis`) into the stable
+/// `BinaryImageDocument` shape consumed by reports and the dashboard.
+///
+/// The mapping is faithful for everything `GameAnalysis` carries (identity,
+/// entry point, full import table with NID resolution, library index,
+/// needed files). What it cannot carry is synthesized as empty: segments,
+/// exports, relocations, lib versions. The TLS flag survives as a
+/// zero-filled `TlsInfo` — converted documents are in-memory only, never
+/// written back to disk, and every consumer reads just the boolean.
+pub(crate) fn game_analysis_to_doc(game: &GameAnalysis) -> BinaryImageDocument {
+    let platform = match game.platform {
+        crate::model::Platform::Ps4 => ps5_image::Platform::Ps4,
+        crate::model::Platform::Ps5 => ps5_image::Platform::Ps5,
+        crate::model::Platform::RawElf => ps5_image::Platform::RawElf,
+        crate::model::Platform::Unknown => ps5_image::Platform::Unknown,
+    };
+    let imports = game
+        .imports
+        .iter()
+        .map(|imp| ImportEntry {
+            nid_hash: imp.nid_hash.clone(),
+            resolved_name: if imp.resolved_name == "?" {
+                None
+            } else {
+                Some(imp.resolved_name.clone())
+            },
+            library_id: imp.library_id,
+            library_name: imp.library_name.clone(),
+            value: 0,
+            size: 0,
+            shndx: 0,
+            binding: SymbolBinding::Global,
+            sym_type: SymbolType::Func,
+            visibility: SymbolVisibility::Default,
+            ordinal: 0,
+        })
+        .collect();
+    let import_libs = game
+        .import_libs
+        .iter()
+        .map(|lib| (lib.id, lib.name.clone()))
+        .collect();
+    BinaryImageDocument {
+        schema_version: DATASET_SCHEMA_VERSION,
+        tool: "ps5rs".to_string(),
+        image_type: ImageType::Eboot,
+        parent_image: None,
+        string_analysis: None,
+        image: BinaryImage {
+            sha256: game.sha256.clone(),
+            platform,
+            is_self: game.is_self,
+            file_size: game.file_size,
+            entry_point: game.entry_point,
+            metadata: BinaryMetadata::default(),
+            segments: vec![],
+            imports,
+            exports: vec![],
+            relocations: vec![],
+            tls: game.has_tls.then_some(TlsInfo {
+                vaddr: 0,
+                filesz: 0,
+                memsz: 0,
+                align: 0,
+            }),
+            init_va: 0,
+            init_array_va: 0,
+            init_array_sz: 0,
+            fini_va: 0,
+            fini_array_va: 0,
+            fini_array_sz: 0,
+            preinit_array_va: 0,
+            preinit_array_sz: 0,
+            import_libs,
+            needed_files: game.needed_files.clone(),
+            dynamic_entries: vec![],
+            version_defs: vec![],
+            lib_versions: vec![],
+        },
+    }
+}
+
+/// Extract a `PPSA12345` title ID from arbitrary text (case-insensitive).
+fn extract_title_id(text: &str) -> Option<String> {
+    let upper = text.to_ascii_uppercase();
+    let bytes = upper.as_bytes();
+    let mut i = 0;
+    while i + 9 <= bytes.len() {
+        if &bytes[i..i + 4] == b"PPSA" && bytes[i + 4..i + 9].iter().all(|c| c.is_ascii_digit()) {
+            return Some(upper[i..i + 9].to_string());
+        }
+        i += 1;
+    }
+    None
+}
+
+/// Drop stale legacy duplicates: when the same title ID exists both as a
+/// new-format (converted) document and as legacy `BinaryImageDocument`
+/// file(s) under a different stem, the converted one wins. Module images
+/// (`parent_image` set) and files without an ID never participate.
+fn dedupe_images(images: &mut Vec<(String, BinaryImageDocument, bool)>) {
+    let new_ids: HashSet<String> = images
+        .iter()
+        .filter(|(_, _, is_new)| *is_new)
+        .filter_map(|(key, _, _)| extract_title_id(key))
+        .collect();
+    if new_ids.is_empty() {
+        return;
+    }
+    images.retain(|(key, doc, is_new)| {
+        if *is_new || doc.parent_image.is_some() {
+            return true;
+        }
+        match extract_title_id(key) {
+            Some(id) => !new_ids.contains(&id),
+            None => true,
+        }
+    });
 }
 
 // ---------------------------------------------------------------------------
@@ -154,8 +286,11 @@ impl AnalysisDataset {
             return Err(DatasetError::MissingImagesDir);
         }
 
-        let mut images = Vec::new();
+        let mut images: Vec<(String, BinaryImageDocument, bool)> = Vec::new();
         collect_json_files(&images_dir, &images_dir, &mut images)?;
+        dedupe_images(&mut images);
+        let mut images: Vec<(String, BinaryImageDocument)> =
+            images.into_iter().map(|(key, doc, _)| (key, doc)).collect();
         images.sort_by(|a, b| a.0.cmp(&b.0));
 
         let mut display_names = HashMap::new();
@@ -523,5 +658,118 @@ mod tests {
         assert_eq!(back.schema_version, 1);
         assert_eq!(back.image_count, 42);
         assert_eq!(back.created_at, "2026-07-25T12:00:00Z");
+    }
+
+    fn write_game_analysis_json(root: &Path, stem: &str, game: &crate::model::GameAnalysis) {
+        let json = serde_json::to_string_pretty(game).unwrap();
+        std::fs::write(root.join("images").join(format!("{stem}.json")), json).unwrap();
+    }
+
+    #[test]
+    fn open_new_format_only_maps_fields() {
+        let root = tempdir_for_test("new_format");
+        make_dataset_dir(&root, &[]);
+        let mut game = crate::model::make_game(
+            "Cool",
+            vec![
+                crate::model::make_import("aaa", "funcA", 7, "libA"),
+                crate::model::make_import("bbb", "?", 9, "libB"),
+            ],
+        );
+        game.sha256 = "cc".repeat(32);
+        game.display_name = Some("Cool - [PPSA12345]".to_string());
+        game.import_libs = vec![crate::model::LibInfo {
+            id: 7,
+            name: "libA".to_string(),
+        }];
+        game.needed_files = vec!["libA.prx".to_string()];
+        game.has_tls = true;
+        write_game_analysis_json(&root, "Cool-_-v1_[PPSA12345]", &game);
+
+        let ds = AnalysisDataset::open(&root).unwrap();
+        assert_eq!(ds.images.len(), 1);
+        let (key, doc) = &ds.images[0];
+        assert_eq!(key, "Cool-_-v1_[PPSA12345]");
+        assert_eq!(doc.schema_version, DATASET_SCHEMA_VERSION);
+        assert_eq!(doc.image.sha256, "cc".repeat(32));
+        assert_eq!(doc.image.platform, ps5_image::Platform::Ps5);
+        assert_eq!(doc.image.imports.len(), 2);
+        assert_eq!(doc.image.imports[0].resolved_name.as_deref(), Some("funcA"));
+        assert_eq!(doc.image.imports[1].resolved_name, None);
+        assert_eq!(
+            doc.image.import_libs.get(&7).map(String::as_str),
+            Some("libA")
+        );
+        assert_eq!(doc.image.needed_files, vec!["libA.prx".to_string()]);
+        assert!(doc.image.tls.is_some());
+
+        let _ = std::fs::remove_dir_all(&root);
+    }
+
+    #[test]
+    fn open_mixed_format_new_format_wins() {
+        let root = tempdir_for_test("mixed_format");
+        let legacy = make_image_doc(
+            &"aa".repeat(32),
+            vec![ImportEntry {
+                nid_hash: "old-nid".into(),
+                resolved_name: Some("oldFunc".into()),
+                library_id: 1,
+                library_name: "libOld".into(),
+                value: 0,
+                size: 0,
+                shndx: 0,
+                binding: ps5_image::SymbolBinding::Global,
+                sym_type: ps5_image::SymbolType::Func,
+                visibility: ps5_image::SymbolVisibility::Default,
+                ordinal: 0,
+            }],
+        );
+        make_dataset_dir(&root, &[("Cool-Game-PPSA12345-v1_[TAG]", legacy)]);
+        let game = crate::model::make_game(
+            "Cool",
+            vec![crate::model::make_import("new-nid", "newFunc", 2, "libNew")],
+        );
+        write_game_analysis_json(&root, "Cool-Game-_-v1_[PPSA12345]", &game);
+
+        let ds = AnalysisDataset::open(&root).unwrap();
+        assert_eq!(ds.images.len(), 1);
+        assert_eq!(ds.images[0].0, "Cool-Game-_-v1_[PPSA12345]");
+        assert_eq!(ds.images[0].1.image.imports.len(), 1);
+        assert_eq!(ds.images[0].1.image.imports[0].nid_hash, "new-nid");
+
+        let _ = std::fs::remove_dir_all(&root);
+    }
+
+    #[test]
+    fn open_mixed_format_keeps_unmatched_legacy() {
+        let root = tempdir_for_test("mixed_keep");
+        let legacy = make_image_doc(&"aa".repeat(32), vec![]);
+        make_dataset_dir(&root, &[("Some-Game-PPSA99999-v1", legacy)]);
+        let game = crate::model::make_game("Cool", vec![]);
+        write_game_analysis_json(&root, "Cool-_-v1_[PPSA12345]", &game);
+
+        let ds = AnalysisDataset::open(&root).unwrap();
+        assert_eq!(ds.images.len(), 2);
+
+        let _ = std::fs::remove_dir_all(&root);
+    }
+
+    #[test]
+    fn extract_title_id_cases() {
+        assert_eq!(
+            extract_title_id("Cool-_-v1_[PPSA12345]"),
+            Some("PPSA12345".to_string())
+        );
+        assert_eq!(
+            extract_title_id("Cool-PPSA12345-v1"),
+            Some("PPSA12345".to_string())
+        );
+        assert_eq!(
+            extract_title_id("cool-ppsa12345"),
+            Some("PPSA12345".to_string())
+        );
+        assert_eq!(extract_title_id("NoIdHere"), None);
+        assert_eq!(extract_title_id("PPSA123"), None);
     }
 }

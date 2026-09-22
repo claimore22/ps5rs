@@ -4,6 +4,20 @@ All notable changes to ps5rs will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [Unreleased]
+
+### Fixed
+- **Mixed-format datasets**: `AnalysisDataset::open` now accepts both `images/` formats —
+  current `GameAnalysis` files (written by `scan`, tried first) and legacy
+  `BinaryImageDocument` files. `GameAnalysis` is converted in-memory (full import
+  table, libs, needed files, TLS flag); when the same title ID exists in both
+  formats the converted document wins and the stale legacy duplicate is dropped.
+  Module images and ID-less files are never deduped. This un-breaks `dashboard`,
+  `analyze`, `validate dataset` and `export-unknown` against `analysis_with_modules`
+- **PPSA shadowing in scan names**: `sanitize_filename` prefers a `[PPSA12345]`
+  bracket (then a raw `PPSA12345`) over unrelated tags like `[SuperPSX]`, so
+  image files always end with the bracketed title ID
+
 ## [0.6.0] - 2026-09-16
 
 ### Added

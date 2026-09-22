@@ -4,8 +4,6 @@ use std::path::{Path, PathBuf};
 use crate::collector::{CollectorOptions, analyze_binary, find_binaries};
 use crate::dataset::{DATASET_SCHEMA_VERSION, Manifest};
 use crate::param_json::{self, GameParam};
-use crate::string_patterns;
-use ps5_image::{BinaryImageBuilder, BinaryImageDocument, ImageType};
 use ps5_nid::Catalog;
 
 pub fn utc_now_iso8601() -> String {
@@ -20,7 +18,7 @@ pub fn utc_now_iso8601() -> String {
     let secs_of_day = secs % 86_400;
     let year = 1970 + days / 365;
     let month = ((days % 365) / 30 + 1).min(12);
-    let day = ((days % 365) % 30 + 1);
+    let day = (days % 365) % 30 + 1;
     let hour = secs_of_day / 3600;
     let minute = (secs_of_day % 3600) / 60;
     let second = secs_of_day % 60;
@@ -276,11 +274,9 @@ pub(crate) fn sanitize_filename(name: &str) -> String {
         if ch.is_ascii_alphanumeric() || "-._[]".contains(ch) {
             out.push(ch);
             prev_underscore = false;
-        } else if ch.is_whitespace() || matches!(ch, '/' | '\\') {
-            if !prev_underscore {
-                out.push('_');
-                prev_underscore = true;
-            }
+        } else if (ch.is_whitespace() || matches!(ch, '/' | '\\')) && !prev_underscore {
+            out.push('_');
+            prev_underscore = true;
         }
     }
     let mut sanitized = out.trim_matches('_').to_string();
