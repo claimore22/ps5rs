@@ -152,11 +152,12 @@ fn try_unitypy_scan(path: &Path) -> Option<UnityAssetCounts> {
 }
 
 pub fn inventory_unity_game(game_dir: &Path) -> Option<UnityGameReport> {
-    let game = game_dir
-        .file_name()
-        .and_then(|n| n.to_str())
-        .unwrap_or("unknown")
-        .to_string();
+    let game = crate::names::scrub_scene_tags(
+        game_dir
+            .file_name()
+            .and_then(|n| n.to_str())
+            .unwrap_or("unknown"),
+    );
     let mut total = UnityAssetCounts::default();
     let mut unity_files = 0usize;
     let mut stack = vec![game_dir.to_path_buf()];

@@ -74,9 +74,11 @@ fn find_game_dirs(root: &Path) -> Vec<PathBuf> {
 }
 
 fn sanitize_name(dir: &Path) -> String {
-    dir.file_name()
-        .map(|s| s.to_string_lossy().to_string())
-        .unwrap_or_default()
+    ps5_analysis::scrub_scene_tags(
+        &dir.file_name()
+            .map(|s| s.to_string_lossy().to_string())
+            .unwrap_or_default(),
+    )
 }
 
 fn game_display_name(dir: &Path) -> String {
@@ -300,7 +302,7 @@ pub fn run_batch_load(
                 eprintln!("FAILED (read: {e})");
                 reports.push(GameLoadReport {
                     game: display,
-                    path: eboot_path.to_string_lossy().to_string(),
+                    path: ps5_analysis::relative_display_path(&eboot_path, games_dir),
                     load_report: None,
                     error: Some(format!("read failed: {e}")),
                     total_exports: 0,
@@ -317,7 +319,7 @@ pub fn run_batch_load(
                 eprintln!("FAILED ({e})");
                 reports.push(GameLoadReport {
                     game: display,
-                    path: eboot_path.to_string_lossy().to_string(),
+                    path: ps5_analysis::relative_display_path(&eboot_path, games_dir),
                     load_report: None,
                     error: Some(e),
                     total_exports: 0,
@@ -336,7 +338,7 @@ pub fn run_batch_load(
             if !report_path.exists() {
                 eprintln!("RELOADED (no report)");
             } else {
-                let eboot_display = eboot_path.to_string_lossy().to_string();
+                let eboot_display = ps5_analysis::relative_display_path(&eboot_path, games_dir);
                 match try_reuse(
                     &games_out,
                     &report_name,
@@ -387,7 +389,7 @@ pub fn run_batch_load(
                 eprintln!("FAILED (load: {e})");
                 reports.push(GameLoadReport {
                     game: display,
-                    path: eboot_path.to_string_lossy().to_string(),
+                    path: ps5_analysis::relative_display_path(&eboot_path, games_dir),
                     load_report: None,
                     error: Some(format!("load failed: {e}")),
                     total_exports: 0,
@@ -427,7 +429,7 @@ pub fn run_batch_load(
 
         reports.push(GameLoadReport {
             game: display,
-            path: eboot_path.to_string_lossy().to_string(),
+            path: ps5_analysis::relative_display_path(&eboot_path, games_dir),
             load_report: Some(report),
             error: None,
             total_exports: ctx.exports.len(),

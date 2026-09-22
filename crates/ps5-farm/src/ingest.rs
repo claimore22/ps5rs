@@ -204,6 +204,13 @@ fn slice_inventory(data: &serde_json::Value, dir_name: &str, game_dir: &Path) ->
                     norm == abs_hint
                         || norm.starts_with(&format!("{abs_hint}/"))
                         || norm.contains(&format!("/{dir_name}/"))
+                        // Relativized records (game_dir stored relative to the
+                        // corpus root): match on the trailing subpath or on
+                        // the top-level dump directory.
+                        || norm == dir_name
+                        || norm.starts_with(&format!("{dir_name}/"))
+                        || abs_hint.ends_with(norm.as_str())
+                        || abs_hint.ends_with(&format!("/{norm}"))
                 })
         })
         .unwrap_or(serde_json::Value::Null)
@@ -327,7 +334,7 @@ pub fn archive_game(
         .to_string();
     let display = params
         .compute_display_name()
-        .unwrap_or_else(|| resolved_name.clone());
+        .unwrap_or_else(|| ps5_analysis::scrub_scene_tags(&resolved_name));
     let title_id = match params.title_id.clone().filter(|t| !t.is_empty()) {
         Some(t) => t,
         None => {
@@ -656,6 +663,19 @@ mod tests {
             serde_json::json!(7)
         );
         assert!(slice_inventory(&inv, "Nobody", Path::new("C:/corpus/Nobody")).is_null());
+
+        // Relativized records (game_dir stored relative to the corpus root).
+        let rel = serde_json::json!({"games": [
+            {"game": "Inner", "game_dir": "GameB/Inner", "total_files": 9},
+        ]});
+        assert_eq!(
+            slice_inventory(&rel, "GameB", Path::new("C:/corpus/GameB"))["total_files"],
+            serde_json::json!(9)
+        );
+        assert_eq!(
+            slice_inventory(&rel, "GameB/Inner", Path::new("C:/corpus/GameB/Inner"))["total_files"],
+            serde_json::json!(9)
+        );
 
         let sh = serde_json::json!([
             {"path": "GameA/a.pssl"},

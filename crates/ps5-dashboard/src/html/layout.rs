@@ -28,6 +28,12 @@ pub const TABS: &[TabSpec] = &[
         render: tabs::games::render,
     },
     TabSpec {
+        id: "archived",
+        label: "Archived",
+        button_attrs: "",
+        render: tabs::archived::render,
+    },
+    TabSpec {
         id: "engines",
         label: "Engines",
         button_attrs: "",

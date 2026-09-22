@@ -31,6 +31,10 @@ pub const PAGES: &[DashboardPage] = &[
         tab: "games",
     },
     DashboardPage {
+        file: "archived.html",
+        tab: "archived",
+    },
+    DashboardPage {
         file: "engines.html",
         tab: "engines",
     },

@@ -60,6 +60,14 @@ pub(crate) fn cmd_dashboard(
     eprintln!("Computing dashboard data from {} games...", ds.images.len());
     let mut data = ps5_dashboard::data::compute(&ds);
 
+    data.archived_games = ps5_dashboard::data::compute_archived(&ds, path);
+    if !data.archived_games.is_empty() {
+        eprintln!(
+            "  Archived titles (ROM absent): {}",
+            data.archived_games.len()
+        );
+    }
+
     let loader_dir = path.join("load");
     if loader_dir.is_dir() {
         eprintln!("Loading loader data from {}...", loader_dir.display());

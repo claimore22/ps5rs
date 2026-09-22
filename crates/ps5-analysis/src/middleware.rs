@@ -59,11 +59,12 @@ pub fn build_middleware_report(root: &Path, catalog: &Catalog) -> MiddlewareRepo
     let mut unknown_modules = 0;
 
     for game_dir in find_game_dirs(root) {
-        let game = game_dir
-            .file_name()
-            .and_then(|n| n.to_str())
-            .unwrap_or("unknown")
-            .to_string();
+        let game = crate::names::scrub_scene_tags(
+            game_dir
+                .file_name()
+                .and_then(|n| n.to_str())
+                .unwrap_or("unknown"),
+        );
         let title_id = title_id_from_name(&game);
         let engine = detect_engine(&game_dir);
 

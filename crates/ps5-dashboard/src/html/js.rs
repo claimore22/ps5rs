@@ -214,6 +214,27 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') $('#detailPa
   renderGames();
 })();
 
+// --- ARCHIVED ---
+(function() {
+  const list = D.archived_games || [];
+  const el = document.getElementById('archivedGames');
+  if (!el) return;
+  if (list.length === 0) {
+    el.innerHTML = '<p style="color:#8b949e;font-size:0.82rem">No archived titles — every ingested game has its ROM present.</p>';
+    return;
+  }
+  el.innerHTML = `<div class="table-wrap"><table class="detail-table"><thead><tr><th>Title</th><th>Version</th><th>Ingested</th><th>Imports</th><th>Known</th><th>Unknown</th><th>Modules</th><th>Unknown NIDs</th></tr></thead><tbody>${list.map(g => `<tr>
+      <td title="${g.title_id}">${trunc(g.title_name || g.name,36)}</td>
+      <td style="color:#8b949e">${g.content_version || '-'}</td>
+      <td style="color:#8b949e">${(g.ingested_at || '').slice(0,10)}</td>
+      <td>${fmt(g.imports)}</td>
+      <td class="pct pct-high">${fmt(g.known)}</td>
+      <td class="pct ${g.unknown>0?'pct-low':'pct-high'}">${fmt(g.unknown)}</td>
+      <td>${fmt(g.modules)}</td>
+      <td style="font-family:monospace;font-size:0.72rem" title="${g.unknown_nids.map(u => u.nid + ' (' + u.libraries.join(', ') + ')').join('\n')}">${g.unknown_nids.length > 0 ? g.unknown_nids.slice(0,4).map(u => u.nid).join(', ') + (g.unknown_nids.length > 4 ? ', …' : '') : '-'}</td>
+    </tr>`).join('')}</tbody></table></div>`;
+})();
+
 // --- ENGINES ---
 (function() {
   const hints = D.engine_hints || [];

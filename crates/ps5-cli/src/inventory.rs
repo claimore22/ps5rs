@@ -1,6 +1,6 @@
 use std::path::Path;
 
-use ps5_analysis::artifacts::{inventory_corpus, inventory_game};
+use ps5_analysis::artifacts::{finalize_inventory_display, inventory_corpus, inventory_game};
 
 use crate::cli::OutputFormat;
 use crate::util::write_to_output_or_stdout;
@@ -13,7 +13,8 @@ pub(crate) fn cmd_inventory(
     let report = if path.is_file() {
         // single file not meaningful for inventory; treat parent as game dir
         let dir = path.parent().unwrap_or(path);
-        let game = inventory_game(dir);
+        let mut game = inventory_game(dir);
+        finalize_inventory_display(&mut game, dir.parent().unwrap_or(dir));
         ps5_analysis::artifacts::ArtifactReport {
             games: vec![game],
             total_games: 1,
@@ -22,7 +23,8 @@ pub(crate) fn cmd_inventory(
             by_category: std::collections::HashMap::new(),
         }
     } else if path.join("eboot.bin").exists() {
-        let game = inventory_game(path);
+        let mut game = inventory_game(path);
+        finalize_inventory_display(&mut game, path.parent().unwrap_or(path));
         ps5_analysis::artifacts::ArtifactReport {
             games: vec![game.clone()],
             total_games: 1,

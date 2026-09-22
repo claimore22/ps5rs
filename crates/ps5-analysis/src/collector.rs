@@ -117,11 +117,12 @@ fn analyze_binary_inner(path: &Path, catalog: &Catalog, game_dir: &Path) -> Opti
         })
         .collect();
 
-    let game_name = game_dir
-        .file_name()
-        .and_then(|n| n.to_str())
-        .unwrap_or("unknown")
-        .to_string();
+    let game_name = crate::names::scrub_scene_tags(
+        game_dir
+            .file_name()
+            .and_then(|n| n.to_str())
+            .unwrap_or("unknown"),
+    );
 
     let display_name = crate::param_json::read_param(game_dir).and_then(|p| p.display_name);
 

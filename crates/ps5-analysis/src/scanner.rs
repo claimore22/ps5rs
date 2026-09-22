@@ -118,7 +118,7 @@ pub fn scan(
             let param = param_json::read_param(game_dir).unwrap_or_default();
             let mut param = param;
             if param.name.is_none() {
-                param.name = Some(game_name.to_string());
+                param.name = Some(crate::names::scrub_scene_tags(game_name));
             }
             game_params.push(param);
         }
@@ -131,20 +131,22 @@ pub fn scan(
         && let Ok(existing) = serde_json::from_slice::<Vec<ps5_schema::ShaderRecord>>(&data)
     {
         for record in &existing {
-            shadered_games.insert(record.game.clone());
+            shadered_games.insert(crate::names::scrub_scene_tags(&record.game));
         }
         shaders = existing;
     }
     for game_dir in &game_dirs {
-        let name = game_dir
-            .file_name()
-            .and_then(|n| n.to_str())
-            .unwrap_or("unknown");
-        if options.append && shadered_games.contains(name) {
+        let name = crate::names::scrub_scene_tags(
+            game_dir
+                .file_name()
+                .and_then(|n| n.to_str())
+                .unwrap_or("unknown"),
+        );
+        if options.append && shadered_games.contains(&name) {
             continue;
         }
         shaders.extend(crate::shader_inventory::inventory_shaders_for_game(
-            game_dir, name,
+            game_dir, &name,
         ));
     }
     if !shaders.is_empty() {

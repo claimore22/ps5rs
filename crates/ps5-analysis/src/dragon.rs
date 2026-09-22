@@ -40,11 +40,12 @@ pub fn is_dragon_file(path: &Path) -> bool {
 }
 
 pub fn inventory_dragon_game(game_dir: &Path) -> Option<DragonGameReport> {
-    let game = game_dir
-        .file_name()
-        .and_then(|n| n.to_str())
-        .unwrap_or("unknown")
-        .to_string();
+    let game = crate::names::scrub_scene_tags(
+        game_dir
+            .file_name()
+            .and_then(|n| n.to_str())
+            .unwrap_or("unknown"),
+    );
     let mut counts = DragonCounts::default();
     let mut stack = vec![game_dir.to_path_buf()];
     let mut found = false;

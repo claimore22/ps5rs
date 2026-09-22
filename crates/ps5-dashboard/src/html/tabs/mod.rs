@@ -1,5 +1,6 @@
 //! Per-tab HTML fragments. Layout wraps these in `.tab-content` panes.
 
+pub mod archived;
 pub mod artifacts;
 pub mod engines;
 pub mod firmware;

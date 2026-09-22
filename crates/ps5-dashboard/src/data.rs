@@ -49,12 +49,36 @@ pub struct DashboardData {
     pub firmware_checks: Vec<FirmwareGameCheck>,
     #[serde(default, skip_serializing_if = "Vec::is_empty")]
     pub shaders: Vec<ps5_schema::ShaderRecord>,
+    /// Ingested titles whose ROM is not present: last-known state from the
+    /// durable per-game records under `games/`, never live-loaded.
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub archived_games: Vec<ArchivedGameEntry>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct FirmwareGameCheck {
     pub game: String,
     pub checks: Vec<FirmwareLibCheck>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct ArchivedGameEntry {
+    pub title_id: String,
+    pub name: String,
+    pub title_name: Option<String>,
+    pub content_version: Option<String>,
+    pub ingested_at: String,
+    pub imports: usize,
+    pub known: usize,
+    pub unknown: usize,
+    pub modules: usize,
+    pub unknown_nids: Vec<ArchivedUnknown>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct ArchivedUnknown {
+    pub nid: String,
+    pub libraries: Vec<String>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -909,6 +933,8 @@ pub fn compute(ds: &AnalysisDataset) -> DashboardData {
         artifacts: None,
         firmware_checks: Vec::new(),
         shaders: Vec::new(),
+        // Filled by the CLI, which knows the dataset root.
+        archived_games: Vec::new(),
     }
 }
 
@@ -926,6 +952,147 @@ fn compute_firmware_summary(_ds: &AnalysisDataset) -> FirmwareSummary {
         total_libraries: 0,
         by_version: HashMap::new(),
     }
+}
+
+/// Titles ingested into `games/` whose ROM is absent from the live images:
+/// last-known state from the durable per-game records. Sorted by title ID.
+pub fn compute_archived(ds: &AnalysisDataset, dataset_root: &Path) -> Vec<ArchivedGameEntry> {
+    use std::collections::HashSet;
+    let live: HashSet<String> = ds
+        .images
+        .iter()
+        .filter_map(|(key, _)| ps5_analysis::extract_title_id(key))
+        .collect();
+
+    let mut out = Vec::new();
+    let games_dir = dataset_root.join("games");
+    let Ok(titles) = std::fs::read_dir(&games_dir) else {
+        return out;
+    };
+    for title in titles.flatten() {
+        let title_id = title.file_name().to_string_lossy().to_string();
+        if live.contains(&title_id) {
+            continue;
+        }
+        // Latest ingested version wins (ISO-8601 stamps sort lexicographically).
+        let mut best: Option<(String, std::path::PathBuf)> = None;
+        let versions_dir = title.path().join("versions");
+        let Ok(versions) = std::fs::read_dir(&versions_dir) else {
+            continue;
+        };
+        for version in versions.flatten() {
+            let game_path = version.path().join("game.json");
+            let Ok(data) = std::fs::read_to_string(&game_path) else {
+                continue;
+            };
+            let Ok(doc) = serde_json::from_str::<serde_json::Value>(&data) else {
+                continue;
+            };
+            let stamped = doc
+                .get("ingested_at")
+                .and_then(|v| v.as_str())
+                .unwrap_or("")
+                .to_string();
+            if best.as_ref().is_none_or(|(at, _)| stamped > *at) {
+                best = Some((stamped, version.path()));
+            }
+        }
+        let Some((_, record_dir)) = best else {
+            continue;
+        };
+        let game = read_json_file(&record_dir.join("game.json"));
+        let unknown_slice = read_json_file(&record_dir.join("unknown_slice.json"));
+        let load_report = read_json_file(&record_dir.join("load_report.json"));
+        let stats = unknown_slice.get("game").filter(|g| !g.is_null());
+        let details = unknown_slice
+            .get("details")
+            .and_then(|d| d.as_array())
+            .cloned()
+            .unwrap_or_default();
+        let mut unknowns: Vec<ArchivedUnknown> = stats
+            .as_ref()
+            .and_then(|g| g.get("unknown_nids"))
+            .and_then(|n| n.as_array())
+            .cloned()
+            .unwrap_or_default()
+            .into_iter()
+            .filter_map(|n| n.as_str().map(str::to_string))
+            .map(|nid| {
+                let mut libraries: Vec<String> = details
+                    .iter()
+                    .filter(|d| d.get("nid").and_then(|n| n.as_str()) == Some(nid.as_str()))
+                    .flat_map(|d| {
+                        d.get("libraries")
+                            .and_then(|l| l.as_array())
+                            .cloned()
+                            .unwrap_or_default()
+                    })
+                    .filter_map(|l| l.as_str().map(str::to_string))
+                    .collect();
+                libraries.sort();
+                libraries.dedup();
+                ArchivedUnknown { nid, libraries }
+            })
+            .collect();
+        unknowns.sort_by(|a, b| a.nid.cmp(&b.nid));
+        let modules = load_report
+            .get("load_report")
+            .and_then(|r| r.get("modules"))
+            .and_then(|m| m.as_array())
+            .map(|m| m.len())
+            .unwrap_or(0);
+        out.push(ArchivedGameEntry {
+            title_id: game
+                .get("title_id")
+                .and_then(|v| v.as_str())
+                .unwrap_or(&title_id)
+                .to_string(),
+            name: game
+                .get("name")
+                .and_then(|v| v.as_str())
+                .unwrap_or(&title_id)
+                .to_string(),
+            title_name: game
+                .pointer("/params/title_name")
+                .and_then(|v| v.as_str())
+                .map(str::to_string),
+            content_version: game
+                .pointer("/params/content_version")
+                .and_then(|v| v.as_str())
+                .map(str::to_string),
+            ingested_at: game
+                .get("ingested_at")
+                .and_then(|v| v.as_str())
+                .unwrap_or("")
+                .to_string(),
+            imports: stats
+                .as_ref()
+                .and_then(|g| g.get("imports"))
+                .and_then(|v| v.as_u64())
+                .unwrap_or(0) as usize,
+            known: stats
+                .as_ref()
+                .and_then(|g| g.get("known"))
+                .and_then(|v| v.as_u64())
+                .unwrap_or(0) as usize,
+            unknown: stats
+                .as_ref()
+                .and_then(|g| g.get("unknown"))
+                .and_then(|v| v.as_u64())
+                .unwrap_or(0) as usize,
+            modules,
+            unknown_nids: unknowns,
+        });
+    }
+    out.sort_by(|a, b| a.title_id.cmp(&b.title_id));
+    out
+}
+
+fn read_json_file(path: &Path) -> serde_json::Value {
+    std::fs::read_to_string(path)
+        .ok()
+        .and_then(|data| serde_json::from_str(&data).ok())
+        .unwrap_or(serde_json::Value::Null)
 }
 
 fn middleware_module_row(module: &ps5_analysis::MiddlewareModule) -> MiddlewareModuleRow {
@@ -2416,6 +2583,7 @@ mod tests {
             artifacts: None,
             firmware_checks: Vec::new(),
             shaders: Vec::new(),
+            archived_games: Vec::new(),
         };
 
         data.inject_middleware(&report);
@@ -2547,11 +2715,95 @@ mod tests {
             artifacts: None,
             firmware_checks: Vec::new(),
             shaders: Vec::new(),
+            archived_games: Vec::new(),
         };
         data.inject_artifacts(report);
         assert_eq!(data.overview.total_artifacts, 10);
         assert_eq!(data.overview.shader_files, 5);
         assert_eq!(data.shader_summary.total_shaders, 5);
         assert!(data.artifacts.is_some());
+    }
+
+    fn write_archived_fixture(root: &std::path::Path, title: &str, version: &str) {
+        let dir = root
+            .join("games")
+            .join(title)
+            .join("versions")
+            .join(version);
+        std::fs::create_dir_all(&dir).unwrap();
+        std::fs::write(
+            dir.join("game.json"),
+            serde_json::json!({
+                "schema": 1,
+                "title_id": title,
+                "name": format!("{title} Game"),
+                "ingested_at": "2026-09-13T05:32:11Z",
+                "params": {"title_name": format!("{title} Title"), "content_version": "01.00"},
+            })
+            .to_string(),
+        )
+        .unwrap();
+        std::fs::write(
+            dir.join("unknown_slice.json"),
+            serde_json::json!({
+                "game": {"imports": 10, "known": 8, "unknown": 2, "unknown_nids": ["aaa", "bbb"]},
+                "details": [
+                    {"nid": "aaa", "libraries": ["libX"]},
+                    {"nid": "bbb", "libraries": ["libY", "libX"]},
+                ],
+            })
+            .to_string(),
+        )
+        .unwrap();
+        std::fs::write(
+            dir.join("load_report.json"),
+            serde_json::json!({"game": "x", "load_report": {"modules": [{}, {}, {}]}}).to_string(),
+        )
+        .unwrap();
+    }
+
+    #[test]
+    fn compute_archived_skips_live_titles() {
+        let ds = make_dataset(vec![(
+            "Live-Game_[PPSA00001]",
+            make_doc(&"a".repeat(64), vec![], vec![]),
+        )]);
+        let root = std::env::temp_dir().join(format!("ps5rs_archived_{}", std::process::id()));
+        let _ = std::fs::remove_dir_all(&root);
+        write_archived_fixture(&root, "PPSA00001", "v1");
+        write_archived_fixture(&root, "PPSA00002", "v1");
+
+        let archived = compute_archived(&ds, &root);
+        assert_eq!(archived.len(), 1);
+        let entry = &archived[0];
+        assert_eq!(entry.title_id, "PPSA00002");
+        assert_eq!(entry.name, "PPSA00002 Game");
+        assert_eq!(entry.title_name.as_deref(), Some("PPSA00002 Title"));
+        assert_eq!(entry.content_version.as_deref(), Some("01.00"));
+        assert_eq!(entry.ingested_at, "2026-09-13T05:32:11Z");
+        assert_eq!(entry.imports, 10);
+        assert_eq!(entry.known, 8);
+        assert_eq!(entry.unknown, 2);
+        assert_eq!(entry.modules, 3);
+        assert_eq!(entry.unknown_nids.len(), 2);
+        assert_eq!(entry.unknown_nids[0].nid, "aaa");
+        assert_eq!(entry.unknown_nids[0].libraries, vec!["libX".to_string()]);
+        assert_eq!(
+            entry.unknown_nids[1].libraries,
+            vec!["libX".to_string(), "libY".to_string()]
+        );
+
+        let _ = std::fs::remove_dir_all(&root);
+    }
+
+    #[test]
+    fn compute_archived_empty_without_games_dir() {
+        let ds = make_dataset(vec![]);
+        let root =
+            std::env::temp_dir().join(format!("ps5rs_archived_empty_{}", std::process::id()));
+        let _ = std::fs::remove_dir_all(&root);
+        std::fs::create_dir_all(&root).unwrap();
+        assert!(compute_archived(&ds, &root).is_empty());
+        let _ = std::fs::remove_dir_all(&root);
     }
 }

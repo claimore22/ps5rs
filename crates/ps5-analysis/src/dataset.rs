@@ -213,7 +213,7 @@ pub(crate) fn game_analysis_to_doc(game: &GameAnalysis) -> BinaryImageDocument {
 }
 
 /// Extract a `PPSA12345` title ID from arbitrary text (case-insensitive).
-fn extract_title_id(text: &str) -> Option<String> {
+pub fn extract_title_id(text: &str) -> Option<String> {
     let upper = text.to_ascii_uppercase();
     let bytes = upper.as_bytes();
     let mut i = 0;

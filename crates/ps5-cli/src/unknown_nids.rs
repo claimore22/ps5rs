@@ -208,10 +208,12 @@ fn display_name(game_dir: &Path) -> String {
     if let Some(name) = param.and_then(|p| p.compute_display_name()) {
         return name;
     }
-    game_dir
-        .file_name()
-        .map(|s| s.to_string_lossy().to_string())
-        .unwrap_or_default()
+    ps5_analysis::scrub_scene_tags(
+        &game_dir
+            .file_name()
+            .map(|s| s.to_string_lossy().to_string())
+            .unwrap_or_default(),
+    )
 }
 
 fn record_unknown(agg: &mut BTreeMap<String, Acc>, nid: &str, library: Option<&str>, game: &str) {
@@ -379,7 +381,7 @@ pub(crate) fn cmd_unknown_nids(
                 eprintln!("FAILED (read: {e})");
                 games.push(GameReport {
                     name: display,
-                    file: eboot.to_string_lossy().to_string(),
+                    file: ps5_analysis::relative_display_path(&eboot, games_dir),
                     imports: 0,
                     known: 0,
                     unknown: 0,

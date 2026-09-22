@@ -82,11 +82,12 @@ fn classify_ext(ext: &str) -> ArtifactCategory {
 }
 
 pub fn inventory_game(game_dir: &Path) -> GameArtifacts {
-    let game = game_dir
-        .file_name()
-        .and_then(|n| n.to_str())
-        .unwrap_or("unknown")
-        .to_string();
+    let game = crate::names::scrub_scene_tags(
+        game_dir
+            .file_name()
+            .and_then(|n| n.to_str())
+            .unwrap_or("unknown"),
+    );
     let mut artifacts = Vec::new();
     let mut by_extension: HashMap<String, usize> = HashMap::new();
     let mut by_category: HashMap<String, usize> = HashMap::new();
@@ -209,9 +210,18 @@ pub fn inventory_game(game_dir: &Path) -> GameArtifacts {
     }
 }
 
+/// Normalize display fields after collection: scrub scene tags from the
+/// game name and record the game directory relative to the scanned corpus
+/// root so shared datasets stay machine-independent.
+pub fn finalize_inventory_display(inv: &mut GameArtifacts, root: &Path) {
+    inv.game = crate::names::scrub_scene_tags(&inv.game);
+    inv.game_dir = crate::names::relative_display_path(Path::new(&inv.game_dir), root);
+}
+
 pub fn inventory_corpus(root: &Path) -> ArtifactReport {
     if root.join("eboot.bin").exists() {
-        let inv = inventory_game(root);
+        let mut inv = inventory_game(root);
+        finalize_inventory_display(&mut inv, root);
         return ArtifactReport {
             games: vec![inv.clone()],
             total_games: 1,
@@ -227,7 +237,8 @@ pub fn inventory_corpus(root: &Path) -> ArtifactReport {
 
     let game_dirs = crate::scanner::find_game_dirs_for_artifacts(root);
     for game_dir in game_dirs {
-        let inv = inventory_game(&game_dir);
+        let mut inv = inventory_game(&game_dir);
+        finalize_inventory_display(&mut inv, root);
         total_files += inv.total_files;
         for (k, v) in &inv.by_extension {
             *by_extension.entry(k.clone()).or_insert(0) += v;
