@@ -41,25 +41,6 @@ pub(crate) fn sanitize_path_arg(s: &str) -> Result<std::path::PathBuf, std::conv
     Ok(std::path::PathBuf::from(trimmed))
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn sanitize_removes_trailing_backslash() {
-        let input = "C:\\Games\\PS5\\";
-        let expected = std::path::PathBuf::from("C:\\Games\\PS5");
-        assert_eq!(sanitize_path_arg(input).unwrap(), expected);
-    }
-
-    #[test]
-    fn sanitize_keeps_path_without_trailing() {
-        let input = "C:\\Games\\PS5";
-        let expected = std::path::PathBuf::from("C:\\Games\\PS5");
-        assert_eq!(sanitize_path_arg(input).unwrap(), expected);
-    }
-}
-
 pub(crate) fn is_dataset_dir(path: &std::path::Path) -> bool {
     path.join("manifest.json").exists() && path.join("images").is_dir()
 }
@@ -165,5 +146,24 @@ pub(crate) fn load_dataset_or_collect(
             include_prx: include_modules,
         };
         ps5_analysis::collect(path, catalog, &options)
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn sanitize_removes_trailing_backslash() {
+        let input = "C:\\Games\\PS5\\";
+        let expected = std::path::PathBuf::from("C:\\Games\\PS5");
+        assert_eq!(sanitize_path_arg(input).unwrap(), expected);
+    }
+
+    #[test]
+    fn sanitize_keeps_path_without_trailing() {
+        let input = "C:\\Games\\PS5";
+        let expected = std::path::PathBuf::from("C:\\Games\\PS5");
+        assert_eq!(sanitize_path_arg(input).unwrap(), expected);
     }
 }
