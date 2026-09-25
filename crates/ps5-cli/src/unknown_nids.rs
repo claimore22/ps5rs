@@ -285,6 +285,32 @@ fn run_remu_imports(remu: &Path, eboot: &Path) -> Option<String> {
     }
 }
 
+/// Render an eboot path for the report relative to the scanned corpus
+/// root, so reports stay portable (no machine-specific absolute prefixes).
+fn report_file_for(eboot: &Path, games_dir: &Path) -> String {
+    ps5_analysis::relative_display_path(eboot, games_dir)
+}
+
+/// Render the corpus root for the report without leaking machine-specific
+/// absolute prefixes (e.g. `C:\Users\...`). Relative inputs pass through
+/// unchanged; absolute paths under the working directory become relative;
+/// anything else falls back to the bare folder name.
+fn display_root_for(games_dir: &Path) -> String {
+    if !games_dir.is_absolute() {
+        return games_dir.to_string_lossy().to_string();
+    }
+    if let Ok(cwd) = std::env::current_dir()
+        && let Ok(rel) = games_dir.strip_prefix(&cwd)
+        && !rel.as_os_str().is_empty()
+    {
+        return rel.to_string_lossy().to_string();
+    }
+    games_dir
+        .file_name()
+        .map(|n| n.to_string_lossy().to_string())
+        .unwrap_or_default()
+}
+
 fn build_entries(
     agg: BTreeMap<String, Acc>,
     games_scanned: usize,
@@ -452,7 +478,7 @@ pub(crate) fn cmd_unknown_nids(
 
         games.push(GameReport {
             name: display,
-            file: eboot.to_string_lossy().to_string(),
+            file: report_file_for(&eboot, games_dir),
             imports: image.imports.len(),
             known,
             unknown,
@@ -512,7 +538,7 @@ pub(crate) fn cmd_unknown_nids(
     let report = UnknownNidsReport {
         schema_version: SCHEMA_VERSION,
         tool: "ps5rs",
-        games_dir: games_dir.to_string_lossy().to_string(),
+        games_dir: display_root_for(games_dir),
         generated_at: iso8601_now(),
         summary: Summary {
             games_found: games_scanned,
@@ -623,6 +649,48 @@ fn print_report(report: &UnknownNidsReport) {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn display_root_for_keeps_relative_inputs() {
+        assert_eq!(display_root_for(Path::new("../ROMS/PS5")), "../ROMS/PS5");
+    }
+
+    #[test]
+    fn display_root_for_relativizes_paths_under_cwd() {
+        let cwd = std::env::current_dir().unwrap();
+        let under = cwd.join("ROMS").join("PS5");
+        assert_eq!(
+            display_root_for(&under),
+            Path::new("ROMS").join("PS5").to_string_lossy().to_string()
+        );
+    }
+
+    #[test]
+    fn display_root_for_falls_back_to_folder_name() {
+        let fs_root = std::env::current_dir()
+            .unwrap()
+            .ancestors()
+            .last()
+            .unwrap()
+            .to_path_buf();
+        let outside = fs_root.join("definitely_not_the_cwd_PS5");
+        assert!(outside.is_absolute());
+        let shown = display_root_for(&outside);
+        assert_eq!(shown, "definitely_not_the_cwd_PS5");
+        assert!(!shown.contains("claimoar"));
+    }
+
+    #[test]
+    fn report_file_for_stays_within_corpus() {
+        let root = Path::new("/roms/PS5");
+        let eboot = Path::new("/roms/PS5/SomeGame-PPSA12345-USA-Game-PS5/eboot.bin");
+        let file = report_file_for(eboot, root);
+        assert!(
+            !file.contains("roms"),
+            "report must not leak the corpus prefix"
+        );
+        assert!(file.contains("PPSA12345"));
+    }
 
     #[test]
     fn parse_remu_output_extracts_resolved_names() {

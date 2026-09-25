@@ -25,6 +25,41 @@ pub(crate) fn write_to_output_or_stdout(
     }
 }
 
+/// Trim a trailing Windows (`\`) or Unix (`/`) separator from a path string.
+/// Returns a `PathBuf` without the final separator, unless the path is a single
+/// root component (e.g. `C:\` or `/`). This function is used as a custom Clap
+/// value parser for directory arguments such as the `scan` command.
+pub(crate) fn sanitize_path_arg(s: &str) -> Result<std::path::PathBuf, std::convert::Infallible> {
+    // Remove a single trailing slash or backslash if present and the path has more
+    // than one component. This avoids treating a trailing separator as a separate
+    // argument when the user writes something like "C:\\Games\\".
+    let trimmed = if s.len() > 1 && (s.ends_with('/') || s.ends_with('\\')) {
+        &s[..s.len() - 1]
+    } else {
+        s
+    };
+    Ok(std::path::PathBuf::from(trimmed))
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn sanitize_removes_trailing_backslash() {
+        let input = "C:\\Games\\PS5\\";
+        let expected = std::path::PathBuf::from("C:\\Games\\PS5");
+        assert_eq!(sanitize_path_arg(input).unwrap(), expected);
+    }
+
+    #[test]
+    fn sanitize_keeps_path_without_trailing() {
+        let input = "C:\\Games\\PS5";
+        let expected = std::path::PathBuf::from("C:\\Games\\PS5");
+        assert_eq!(sanitize_path_arg(input).unwrap(), expected);
+    }
+}
+
 pub(crate) fn is_dataset_dir(path: &std::path::Path) -> bool {
     path.join("manifest.json").exists() && path.join("images").is_dir()
 }

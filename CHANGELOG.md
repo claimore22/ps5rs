@@ -6,7 +6,27 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.6.5] - 2026-09-25
+
 ### Added
+- **Scan progress traces**: `scan` prints `Found N game(s)`, per-game
+  `[i/n] … OK (size, imports)` / `SKIPPED (already scanned)` lines and a
+  shader-inventory phase, plus the resolved dataset directory at startup
+- **Single-game scan and batch-load**: passing a game directory directly
+  (instead of a corpus root) scans/loads just that title
+- **Repeatable `dashboard --games`**: one `--games` flag per corpus; middleware
+  reports merge by title ID (`merge_middleware_reports`, later scans win)
+- **Portable reports**: unknown-NIDs per-game files and the corpus root are
+  stored corpus-relative; no machine-specific absolute paths are emitted
+
+### Changed
+- **Registry-aware scan retention**: rescans (even without `--append`) keep
+  images for ingested titles whose sources were deleted, mirroring
+  `batch-load` report retention; present sources are still rescanned fresh
+- **Manifest consistency**: entries deduped by title ID, missing `param.json`
+  IDs fall back to the directory name, `image_count` always matches `images/`
+- README documents the incremental/archive workflow, the multi-corpus
+  dashboard, and the `images/` (live) vs `games/` (archive) dataset split
 - **Top 10 Unknown NIDs panel** in the dashboard NIDs section: unresolved imports
   ranked by occurrence, with per-NID game count, game list and libraries —
   stub-implementation candidates at a glance (`NidStats::top_unknown_nids`)

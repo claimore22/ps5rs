@@ -24,7 +24,7 @@ pub use dataset::{
 };
 pub use middleware::{
     GameMiddlewareReport, MiddlewareModule, MiddlewareReport, ModuleKind, build_middleware_report,
-    classify_stem,
+    classify_stem, merge_middleware_reports,
 };
 pub use model::*;
 pub use names::{relative_display_path, scrub_scene_tags};

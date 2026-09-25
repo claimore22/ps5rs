@@ -103,13 +103,7 @@ mod tests {
     use crate::imports::STUB_REGION_BASE;
 
     fn test_nid(s: &str) -> u64 {
-        const B64: &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-";
-        let mut val: u64 = 0;
-        for &c in s.as_bytes() {
-            let idx = B64.iter().position(|&b| b == c).unwrap();
-            val = val.wrapping_mul(64).wrapping_add(idx as u64);
-        }
-        val
+        ps5_nid::nid_to_u64(s).expect("invalid nid")
     }
 
     fn make_request(nid: Option<u64>, name: Option<&str>) -> ImportRequest {

@@ -119,6 +119,48 @@ pub fn build_middleware_report(root: &Path, catalog: &Catalog) -> MiddlewareRepo
     }
 }
 
+/// Merge per-corpus reports into one, e.g. when a dashboard spans several
+/// game directories or a corpus is appended one directory at a time.
+/// Games are keyed by title ID (falling back to the game name); on
+/// collision the later report wins. Totals are recomputed from the merged
+/// games so replaced entries are never double-counted.
+pub fn merge_middleware_reports<I>(reports: I) -> MiddlewareReport
+where
+    I: IntoIterator<Item = MiddlewareReport>,
+{
+    let mut by_key: std::collections::HashMap<String, GameMiddlewareReport> =
+        std::collections::HashMap::new();
+    for report in reports {
+        for game in report.games {
+            let key = game
+                .title_id
+                .clone()
+                .map(|t| t.to_ascii_uppercase())
+                .unwrap_or_else(|| game.game.clone());
+            by_key.insert(key, game);
+        }
+    }
+    let mut games: Vec<GameMiddlewareReport> = by_key.into_values().collect();
+    games.sort_by(|a, b| a.game.cmp(&b.game));
+    let mut total_prx = 0;
+    let mut third_party_modules = 0;
+    let mut sony_modules = 0;
+    let mut unknown_modules = 0;
+    for game in &games {
+        third_party_modules += game.third_party.len();
+        sony_modules += game.sony.len();
+        unknown_modules += game.unknown.len();
+        total_prx += game.third_party.len() + game.sony.len() + game.unknown.len();
+    }
+    MiddlewareReport {
+        games,
+        total_prx,
+        third_party_modules,
+        sony_modules,
+        unknown_modules,
+    }
+}
+
 fn find_game_dirs(root: &Path) -> Vec<PathBuf> {
     let mut dirs = Vec::new();
     resolve_game_dir(root, &mut dirs);
@@ -634,5 +676,103 @@ mod tests {
         assert_eq!(report.games[0].third_party.len(), 2);
 
         let _ = std::fs::remove_dir_all(&root);
+    }
+
+    fn merge_game(
+        game: &str,
+        title_id: Option<&str>,
+        third_party: usize,
+        sony: usize,
+    ) -> GameMiddlewareReport {
+        let module = |i: usize| MiddlewareModule {
+            file_name: format!("mod{i}.prx"),
+            module_name: format!("mod{i}"),
+            kind: ModuleKind::ThirdParty,
+            sha256: None,
+            vendor: None,
+            product: None,
+            description: None,
+            parseable: true,
+            imports: 1,
+            exports: 1,
+            import_libs: vec![],
+            needed_files: vec![],
+        };
+        GameMiddlewareReport {
+            game: game.to_string(),
+            title_id: title_id.map(str::to_string),
+            engine: None,
+            third_party: (0..third_party).map(module).collect(),
+            sony: (0..sony)
+                .map(|i| MiddlewareModule {
+                    kind: ModuleKind::Sony,
+                    ..module(i)
+                })
+                .collect(),
+            unknown: vec![],
+        }
+    }
+
+    fn merge_report(games: Vec<GameMiddlewareReport>) -> MiddlewareReport {
+        MiddlewareReport {
+            games,
+            total_prx: 0,
+            third_party_modules: 0,
+            sony_modules: 0,
+            unknown_modules: 0,
+        }
+    }
+
+    #[test]
+    fn merge_combines_disjoint_reports_and_recomputes_totals() {
+        let merged = merge_middleware_reports(vec![
+            merge_report(vec![merge_game("B-PPSA00002-PS5", Some("PPSA00002"), 2, 1)]),
+            merge_report(vec![merge_game("A-PPSA00001-PS5", Some("PPSA00001"), 1, 0)]),
+        ]);
+        assert_eq!(merged.games.len(), 2);
+        assert_eq!(merged.games[0].game, "A-PPSA00001-PS5");
+        assert_eq!(merged.total_prx, 4);
+        assert_eq!(merged.third_party_modules, 3);
+        assert_eq!(merged.sony_modules, 1);
+        assert_eq!(merged.unknown_modules, 0);
+    }
+
+    #[test]
+    fn merge_replaces_same_title_id_instead_of_doubling() {
+        let merged = merge_middleware_reports(vec![
+            merge_report(vec![merge_game(
+                "Old-PPSA00001-PS5",
+                Some("PPSA00001"),
+                1,
+                0,
+            )]),
+            merge_report(vec![merge_game(
+                "New-PPSA00001-PS5",
+                Some("ppsa00001"),
+                3,
+                0,
+            )]),
+        ]);
+        assert_eq!(merged.games.len(), 1);
+        assert_eq!(merged.games[0].game, "New-PPSA00001-PS5");
+        assert_eq!(merged.total_prx, 3);
+        assert_eq!(merged.third_party_modules, 3);
+    }
+
+    #[test]
+    fn merge_keys_untitled_games_by_name() {
+        let merged = merge_middleware_reports(vec![
+            merge_report(vec![merge_game("Nameless", None, 1, 0)]),
+            merge_report(vec![merge_game("Nameless", None, 2, 0)]),
+        ]);
+        assert_eq!(merged.games.len(), 1);
+        assert_eq!(merged.total_prx, 2);
+    }
+
+    #[test]
+    fn merge_empty_input_yields_empty_report() {
+        let merged = merge_middleware_reports(vec![]);
+        assert!(merged.games.is_empty());
+        assert_eq!(merged.total_prx, 0);
     }
 }

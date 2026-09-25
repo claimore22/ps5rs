@@ -920,7 +920,7 @@
   ],
   "game": {
     "error": null,
-    "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Bugsnax-PPSA01502-USA-PS5\\Bugsnax PS5 Dump v2.000\\eboot.bin",
+    "file": "Bugsnax-PPSA01502-USA-PS5\\Bugsnax PS5 Dump v2.000\\eboot.bin",
     "imports": 612,
     "known": 545,
     "name": "Bugsnax - [PPSA01502]",

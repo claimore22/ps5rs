@@ -57,6 +57,11 @@ fn resolve_game_dir(dir: &Path, result: &mut Vec<PathBuf>) {
 }
 
 fn find_game_dirs(root: &Path) -> Vec<PathBuf> {
+    // Accept a single game directory directly: if the root itself holds an
+    // eboot, it *is* the game (e.g. `batch-load <corpus/Game>` for just one).
+    if has_eboot(root) {
+        return vec![root.to_path_buf()];
+    }
     let mut games = Vec::new();
     let Ok(entries) = std::fs::read_dir(root) else {
         eprintln!("error: cannot read games directory: {}", root.display());
@@ -702,6 +707,31 @@ mod tests {
         assert!(!dir.join("Stale.json").exists());
         assert!(dir.join("Archived.json").exists());
         assert!(dir.join("notes.txt").exists());
+        let _ = std::fs::remove_dir_all(&dir);
+    }
+
+    #[test]
+    fn find_game_dirs_accepts_single_game_dir() {
+        let dir = test_dir("single_dir");
+        let game = dir.join("SoloGame-PPSA99999-USA-Game-PS5");
+        std::fs::create_dir_all(&game).unwrap();
+        std::fs::write(game.join("eboot.bin"), b"fake").unwrap();
+        assert_eq!(find_game_dirs(&game), vec![game]);
+        let _ = std::fs::remove_dir_all(&dir);
+    }
+
+    #[test]
+    fn find_game_dirs_corpus_root_unchanged() {
+        let dir = test_dir("corpus_root");
+        for name in [
+            "GameA-PPSA10001-USA-Game-PS5",
+            "GameB-PPSA10002-USA-Game-PS5",
+        ] {
+            let game = dir.join(name);
+            std::fs::create_dir_all(&game).unwrap();
+            std::fs::write(game.join("eboot.bin"), b"fake").unwrap();
+        }
+        assert_eq!(find_game_dirs(&dir).len(), 2);
         let _ = std::fs::remove_dir_all(&dir);
     }
 

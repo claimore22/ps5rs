@@ -37,6 +37,29 @@ pub struct ScanResult {
     pub image_paths: Vec<PathBuf>,
 }
 
+/// Title IDs with durable per-game records (`games/` + `ingest.json`).
+/// Images belonging to these titles are retained across rescans even when
+/// their source directory is gone (mirrors `ps5-farm` report retention).
+fn registered_title_ids(output: &Path) -> std::collections::HashSet<String> {
+    let mut out = std::collections::HashSet::new();
+    let Ok(data) = std::fs::read(output.join("ingest.json")) else {
+        return out;
+    };
+    let Ok(value) = serde_json::from_slice::<serde_json::Value>(&data) else {
+        return out;
+    };
+    if let Some(games) = value.get("games").and_then(|g| g.as_object()) {
+        for key in games.keys() {
+            out.insert(key.to_ascii_uppercase());
+        }
+    }
+    out
+}
+
+fn image_stem_title_id(stem: &str) -> Option<String> {
+    crate::dataset::extract_title_id(stem)
+}
+
 pub fn scan(
     root: &Path,
     output: &Path,
@@ -44,26 +67,50 @@ pub fn scan(
     options: &ScanOptions,
 ) -> Result<ScanResult, std::io::Error> {
     let images_dir = output.join("images");
+    let retained = registered_title_ids(output);
+    let game_dirs = find_game_dirs(root);
+    eprintln!("Found {} game(s) in {}", game_dirs.len(), root.display());
+    let current_titles: std::collections::HashSet<String> = game_dirs
+        .iter()
+        .filter_map(|d| d.file_name().and_then(|n| n.to_str()))
+        .filter_map(crate::dataset::extract_title_id)
+        .collect();
     if options.append {
         std::fs::create_dir_all(&images_dir)?;
-    } else {
-        if images_dir.exists() {
-            for entry in std::fs::read_dir(&images_dir)
-                .into_iter()
-                .flatten()
-                .flatten()
-            {
-                if entry.path().extension().is_some_and(|e| e == "json") {
-                    let _ = std::fs::remove_file(entry.path());
-                }
+    } else if images_dir.exists() {
+        for entry in std::fs::read_dir(&images_dir)
+            .into_iter()
+            .flatten()
+            .flatten()
+        {
+            let path = entry.path();
+            if !path.extension().is_some_and(|e| e == "json") {
+                continue;
             }
+            let stem = path
+                .file_stem()
+                .and_then(|s| s.to_str())
+                .unwrap_or_default();
+            // Keep archived images only when their source is absent: a
+            // present source is rescanned fresh so fingerprints stay current.
+            if image_stem_title_id(stem)
+                .is_some_and(|id| retained.contains(&id) && !current_titles.contains(&id))
+            {
+                continue;
+            }
+            let _ = std::fs::remove_file(&path);
         }
+        std::fs::create_dir_all(&images_dir)?;
+    } else {
         std::fs::create_dir_all(&images_dir)?;
     }
 
     let mut image_paths = Vec::new();
     let mut seen_names: std::collections::HashSet<String> = std::collections::HashSet::new();
-    let mut game_params: Vec<GameParam> = Vec::new();
+    let mut seen_titles: std::collections::HashSet<String> = std::collections::HashSet::new();
+    let mut params_by_title: std::collections::HashMap<String, GameParam> =
+        std::collections::HashMap::new();
+    let mut untitled_params: Vec<GameParam> = Vec::new();
     let mut created_at: Option<String> = None;
     if options.append {
         if let Ok(entries) = std::fs::read_dir(&images_dir) {
@@ -80,32 +127,87 @@ pub fn scan(
             && let Ok(manifest) = serde_json::from_str::<Manifest>(&data)
         {
             created_at = Some(manifest.created_at);
-            game_params = manifest.games;
+            for param in manifest.games {
+                match param.title_id.clone() {
+                    Some(id) => {
+                        params_by_title
+                            .entry(id.to_ascii_uppercase())
+                            .or_insert(param);
+                    }
+                    None => untitled_params.push(param),
+                }
+            }
+        }
+    } else {
+        if let Ok(entries) = std::fs::read_dir(&images_dir) {
+            for entry in entries.flatten() {
+                let path = entry.path();
+                if path.extension().is_some_and(|e| e == "json")
+                    && let Some(stem) = path.file_stem().and_then(|s| s.to_str())
+                {
+                    seen_names.insert(stem.to_string());
+                    if let Some(id) = image_stem_title_id(stem) {
+                        seen_titles.insert(id);
+                    }
+                }
+            }
+        }
+        if let Ok(data) = std::fs::read_to_string(output.join("manifest.json"))
+            && let Ok(manifest) = serde_json::from_str::<Manifest>(&data)
+        {
+            created_at = Some(manifest.created_at);
+            for param in manifest.games {
+                if let Some(id) = param.title_id.clone()
+                    && retained.contains(&id.to_ascii_uppercase())
+                    && seen_titles.contains(&id.to_ascii_uppercase())
+                {
+                    params_by_title
+                        .entry(id.to_ascii_uppercase())
+                        .or_insert(param);
+                }
+            }
         }
     }
 
-    let game_dirs = find_game_dirs(root);
-    for game_dir in &game_dirs {
+    for (idx, game_dir) in game_dirs.iter().enumerate() {
         let game_name = game_dir
             .file_name()
             .and_then(|n| n.to_str())
             .unwrap_or("unknown");
         let safe_name = sanitize_filename(game_name);
-        if options.append && seen_names.contains(&safe_name) {
+        if seen_names.contains(&safe_name) {
+            eprintln!(
+                "[{}/{}] {game_name} ... SKIPPED (already scanned)",
+                idx + 1,
+                game_dirs.len()
+            );
             continue;
         }
         let collector_opts = CollectorOptions {
             include_prx: options.include_prx,
         };
         let binaries = find_binaries(game_dir, &collector_opts);
+        if binaries.is_empty() {
+            eprintln!(
+                "[{}/{}] {game_name} ... SKIPPED (no binaries)",
+                idx + 1,
+                game_dirs.len()
+            );
+            continue;
+        }
+        eprint!("[{}/{}] {game_name} ... ", idx + 1, game_dirs.len());
         for bin_path in &binaries {
             if seen_names.contains(&safe_name) {
                 continue;
             }
             let data = match std::fs::read(bin_path) {
                 Ok(data) => data,
-                Err(_) => continue,
+                Err(e) => {
+                    eprintln!("FAILED (read: {e})");
+                    continue;
+                }
             };
+            let size_mb = data.len() as f64 / 1_048_576.0;
             let sha256 = ps5_format::sha256_hex(&data);
             let image = BinaryImageBuilder::build_from_file(&data, &sha256, catalog);
             let doc = assemble_image_document(image, &data, image_type_for(bin_path));
@@ -114,13 +216,32 @@ pub fn scan(
             let json = serde_json::to_string_pretty(&doc)?;
             std::fs::write(&json_path, format!("{json}\n"))?;
             image_paths.push(json_path);
+            eprintln!(
+                "OK ({:.1} MB, {} imports)",
+                size_mb,
+                doc.image.imports.len()
+            );
 
             let param = param_json::read_param(game_dir).unwrap_or_default();
             let mut param = param;
             if param.name.is_none() {
                 param.name = Some(crate::names::scrub_scene_tags(game_name));
             }
-            game_params.push(param);
+            if param.title_id.as_ref().is_none_or(|t| t.trim().is_empty())
+                && let Some(id) = crate::dataset::extract_title_id(game_name)
+            {
+                param.title_id = Some(id.clone());
+                param.display_name = param
+                    .compute_display_name()
+                    .or_else(|| param.name.clone().map(|n| format!("{n} - [{id}]")));
+            }
+            match param.title_id.clone() {
+                Some(id) => {
+                    params_by_title.insert(id.to_ascii_uppercase(), param);
+                    seen_titles.insert(id.to_ascii_uppercase());
+                }
+                None => untitled_params.push(param),
+            }
         }
     }
 
@@ -135,19 +256,30 @@ pub fn scan(
         }
         shaders = existing;
     }
-    for game_dir in &game_dirs {
-        let name = crate::names::scrub_scene_tags(
-            game_dir
-                .file_name()
-                .and_then(|n| n.to_str())
-                .unwrap_or("unknown"),
-        );
-        if options.append && shadered_games.contains(&name) {
-            continue;
-        }
+    let pending_shaders: Vec<(&PathBuf, String)> = game_dirs
+        .iter()
+        .map(|game_dir| {
+            let name = crate::names::scrub_scene_tags(
+                game_dir
+                    .file_name()
+                    .and_then(|n| n.to_str())
+                    .unwrap_or("unknown"),
+            );
+            (game_dir, name)
+        })
+        .filter(|(_, name)| !(options.append && shadered_games.contains(name)))
+        .collect();
+    eprintln!(
+        "Inventorying shaders for {} game(s)...",
+        pending_shaders.len()
+    );
+    for (game_dir, name) in &pending_shaders {
+        eprint!("  {name} ... ");
+        let before = shaders.len();
         shaders.extend(crate::shader_inventory::inventory_shaders_for_game(
-            game_dir, &name,
+            game_dir, name,
         ));
+        eprintln!("OK ({} records)", shaders.len() - before);
     }
     if !shaders.is_empty() {
         let shaders_json = serde_json::to_string_pretty(&shaders)?;
@@ -162,6 +294,13 @@ pub fn scan(
                 .count()
         })
         .unwrap_or(image_paths.len());
+    let mut game_params: Vec<GameParam> = params_by_title.into_values().collect();
+    game_params.sort_by(|a, b| {
+        a.title_id
+            .cmp(&b.title_id)
+            .then_with(|| a.name.cmp(&b.name))
+    });
+    game_params.extend(untitled_params);
     let manifest = Manifest {
         schema_version: DATASET_SCHEMA_VERSION,
         tool: "ps5rs".to_string(),
@@ -188,6 +327,11 @@ pub(crate) fn find_game_dirs_for_artifacts(root: &Path) -> Vec<PathBuf> {
 }
 
 fn find_game_dirs_inner(root: &Path) -> Vec<PathBuf> {
+    // Accept a single game directory directly: if the root itself holds an
+    // eboot, it *is* the game (e.g. `scan <corpus/Game>` to add just one).
+    if has_eboot(root) {
+        return vec![root.to_path_buf()];
+    }
     let mut dirs = Vec::new();
     if let Ok(entries) = std::fs::read_dir(root) {
         for entry in entries.flatten() {
@@ -371,6 +515,28 @@ mod tests {
         assert_eq!(sanitize_filename("Cool [Demo]"), "Cool_[Demo]");
     }
 
+    #[test]
+    fn find_game_dirs_accepts_single_game_dir() {
+        let tmp = scan_test_root("single_dir");
+        let game = tmp.join("SoloGame-PPSA99999-USA-Game-PS5");
+        write_fake_eboot(&game);
+        let found = super::find_game_dirs_inner(&game);
+        assert_eq!(found, vec![game]);
+        let _ = std::fs::remove_dir_all(&tmp);
+    }
+
+    #[test]
+    fn find_game_dirs_corpus_root_unchanged() {
+        let tmp = scan_test_root("corpus_root");
+        let corpus = tmp.join("corpus");
+        write_fake_eboot(&corpus.join("GameA-PPSA10001-USA-Game-PS5"));
+        write_fake_eboot(&corpus.join("GameB-PPSA10002-USA-Game-PS5"));
+        let mut found = super::find_game_dirs_inner(&corpus);
+        found.sort();
+        assert_eq!(found.len(), 2);
+        let _ = std::fs::remove_dir_all(&tmp);
+    }
+
     fn minimal_image(sha256: &str) -> BinaryImage {
         BinaryImage {
             sha256: sha256.to_string(),
@@ -435,5 +601,174 @@ mod tests {
             image_type_for(Path::new("LIBC.PRX")),
             ImageType::Prx
         ));
+    }
+
+    fn scan_test_root(label: &str) -> std::path::PathBuf {
+        let dir =
+            std::env::temp_dir().join(format!("ps5rs_scan_test_{label}_{}", std::process::id()));
+        let _ = std::fs::remove_dir_all(&dir);
+        std::fs::create_dir_all(&dir).unwrap();
+        dir
+    }
+
+    fn write_fake_eboot(game_dir: &std::path::Path) {
+        std::fs::create_dir_all(game_dir).unwrap();
+        std::fs::write(game_dir.join("eboot.bin"), b"fake-elf-bytes").unwrap();
+    }
+
+    fn write_manifest(dataset: &std::path::Path, games: Vec<crate::param_json::GameParam>) {
+        let manifest = crate::dataset::Manifest {
+            schema_version: crate::dataset::DATASET_SCHEMA_VERSION,
+            tool: "ps5rs".to_string(),
+            created_at: "2026-01-01T00:00:00Z".to_string(),
+            image_count: games.len(),
+            module_count: 0,
+            games,
+        };
+        let json = serde_json::to_string_pretty(&manifest).unwrap();
+        std::fs::write(dataset.join("manifest.json"), json).unwrap();
+    }
+
+    fn param_with_title(title_id: &str, name: &str) -> crate::param_json::GameParam {
+        crate::param_json::GameParam {
+            name: Some(name.to_string()),
+            title_id: Some(title_id.to_string()),
+            ..Default::default()
+        }
+    }
+
+    #[test]
+    fn registered_images_survive_non_append_rescan() {
+        let tmp = scan_test_root("retain");
+        let corpus = tmp.join("corpus");
+        let dataset = tmp.join("dataset");
+        std::fs::create_dir_all(dataset.join("images")).unwrap();
+        write_fake_eboot(&corpus.join("LiveGame-PPSA33333-USA-Game-PS5"));
+
+        std::fs::write(
+            dataset.join("images").join("Kept_[PPSA11111].json"),
+            b"{\"kept\":true}",
+        )
+        .unwrap();
+        std::fs::write(
+            dataset.join("images").join("Dropped_[PPSA22222].json"),
+            b"{\"dropped\":true}",
+        )
+        .unwrap();
+        std::fs::write(
+            dataset.join("ingest.json"),
+            serde_json::json!({
+                "schema": 1,
+                "games": {
+                    "PPSA11111": {
+                        "name": "Kept", "eboot_sha256": "a", "game_fingerprint": "b",
+                        "ingest_id": "x", "status": "complete", "ingested_at": "t",
+                        "source_deleted": true, "record_path": "r", "report_file": "f",
+                        "corpus_dir": "c"
+                    }
+                }
+            })
+            .to_string(),
+        )
+        .unwrap();
+        write_manifest(
+            &dataset,
+            vec![
+                param_with_title("PPSA11111", "Kept"),
+                param_with_title("PPSA22222", "Dropped"),
+            ],
+        );
+
+        let catalog = ps5_nid::Catalog::new();
+        let options = super::ScanOptions {
+            include_prx: false,
+            append: false,
+        };
+        let result = super::scan(&corpus, &dataset, &catalog, &options).unwrap();
+
+        assert!(
+            dataset
+                .join("images")
+                .join("Kept_[PPSA11111].json")
+                .exists(),
+            "registered image must be retained"
+        );
+        assert!(
+            !dataset
+                .join("images")
+                .join("Dropped_[PPSA22222].json")
+                .exists(),
+            "unregistered image must be cleaned"
+        );
+        assert_eq!(result.manifest.image_count, 2);
+        assert_eq!(result.manifest.games.len(), 2);
+        let ids: Vec<_> = result
+            .manifest
+            .games
+            .iter()
+            .filter_map(|g| g.title_id.clone())
+            .collect();
+        assert!(ids.contains(&"PPSA11111".to_string()));
+        assert!(ids.contains(&"PPSA33333".to_string()));
+        assert!(!ids.contains(&"PPSA22222".to_string()));
+        let _ = std::fs::remove_dir_all(&tmp);
+    }
+
+    #[test]
+    fn title_id_falls_back_to_directory_name() {
+        let tmp = scan_test_root("title_fallback");
+        let corpus = tmp.join("corpus");
+        let dataset = tmp.join("dataset");
+        write_fake_eboot(&corpus.join("WUCHANG.Fallen.Feathers-PPSA09519-EUR-Game(v01.01)-PS5"));
+
+        let catalog = ps5_nid::Catalog::new();
+        let options = super::ScanOptions {
+            include_prx: false,
+            append: false,
+        };
+        let result = super::scan(&corpus, &dataset, &catalog, &options).unwrap();
+
+        assert_eq!(result.manifest.games.len(), 1);
+        assert_eq!(
+            result.manifest.games[0].title_id.as_deref(),
+            Some("PPSA09519")
+        );
+        let _ = std::fs::remove_dir_all(&tmp);
+    }
+
+    #[test]
+    fn manifest_has_no_duplicate_titles_after_append() {
+        let tmp = scan_test_root("dedup");
+        let corpus = tmp.join("corpus");
+        let dataset = tmp.join("dataset");
+        write_fake_eboot(&corpus.join("GameA-PPSA10001-USA-Game-PS5"));
+        write_fake_eboot(&corpus.join("GameB-PPSA10002-USA-Game-PS5"));
+
+        let catalog = ps5_nid::Catalog::new();
+        let first = super::ScanOptions {
+            include_prx: false,
+            append: false,
+        };
+        super::scan(&corpus, &dataset, &catalog, &first).unwrap();
+        let again = super::ScanOptions {
+            include_prx: false,
+            append: true,
+        };
+        let result = super::scan(&corpus, &dataset, &catalog, &again).unwrap();
+
+        let mut ids: Vec<_> = result
+            .manifest
+            .games
+            .iter()
+            .filter_map(|g| g.title_id.clone())
+            .collect();
+        ids.sort();
+        let mut deduped = ids.clone();
+        deduped.sort();
+        deduped.dedup();
+        assert_eq!(ids, deduped, "manifest must not duplicate title IDs");
+        assert_eq!(result.manifest.image_count, 2);
+        assert_eq!(result.manifest.games.len(), 2);
+        let _ = std::fs::remove_dir_all(&tmp);
     }
 }

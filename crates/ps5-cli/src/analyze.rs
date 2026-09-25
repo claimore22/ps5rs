@@ -17,6 +17,16 @@ pub(crate) fn cmd_scan(
         append,
     };
 
+    // Show the resolved dataset location so a relative --output is never
+    // mistaken for another dataset (it resolves against the working dir).
+    let dataset_dir = if output.is_absolute() {
+        output.to_path_buf()
+    } else {
+        std::env::current_dir()
+            .map(|cwd| cwd.join(output))
+            .unwrap_or_else(|_| output.to_path_buf())
+    };
+    eprintln!("Dataset: {}", dataset_dir.display());
     eprintln!("Scanning {} for game binaries...", path.display());
     let result = ps5_analysis::scan(path, output, &catalog, &options).unwrap_or_else(|e| {
         eprintln!("error: {e}");

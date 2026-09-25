@@ -38,6 +38,7 @@ pub enum Commands {
     Nid { name: String },
     /// Scan a directory of games and generate a dataset of binary images
     Scan {
+        #[arg(value_parser = crate::util::sanitize_path_arg, value_hint = ValueHint::DirPath)]
         path: PathBuf,
         #[arg(short, long, value_hint = ValueHint::DirPath)]
         output: PathBuf,
@@ -84,8 +85,10 @@ pub enum Commands {
         path: PathBuf,
         #[arg(short, long, value_hint = ValueHint::DirPath, default_value = "analysis/dashboard")]
         output: PathBuf,
+        /// Game directories to inventory for middleware (repeatable for
+        /// several corpora; reports merge, later scans win on title ID)
         #[arg(long = "games", value_hint = ValueHint::DirPath)]
-        games: Option<PathBuf>,
+        games: Vec<PathBuf>,
     },
     /// Export unknown NIDs, grouped by a chosen criterion
     ExportUnknown {

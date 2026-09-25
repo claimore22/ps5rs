@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "tool": "ps5rs",
-  "root": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5",
+  "root": "Documents\\ROMS\\PS5",
   "generated_at": "1787863726",
   "status": "PASS",
   "files_discovered": {

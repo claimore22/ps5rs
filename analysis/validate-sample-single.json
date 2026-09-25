@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "tool": "ps5rs",
-  "root": "C:\\Users\\claimoar\\Documents\\SDK MANAGER 10.00\\Samples\\sdk\\target\\samples\\sample_code\\audio_video\\api_acm\\convreverb",
+  "root": "Documents\\SDK MANAGER 10.00\\Samples\\sdk\\target\\samples\\sample_code\\audio_video\\api_acm\\convreverb",
   "generated_at": "1787858743",
   "status": "PASS",
   "files_discovered": {

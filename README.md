@@ -33,6 +33,7 @@ The PS5 uses an x86-64 AMD Zen 2 CPU, which means CPU instruction compatibility 
 | `ps5-tests` | Deterministic, self-authored ELF fixture generator + manifest of expected guest behavior (regression suite input) |
 | `ps5-dashboard` | Static HTML dashboard generator (self-contained, no CDN dependencies) |
 | `ps5-cli` | Command-line interface |
+| `ps5-farm` | Batch-load/ingest engine: incremental loader reports, game archival (`games/` + `ingest.json`), fingerprint-based freshness |
 | `ps5-prx` | PRX module intelligence: `PrxModule` with metadata/dependencies/imports/exports/versions |
 | `ps5-schema` | Stable JSON schemas (`SCHEMA_VERSION`) for `BinaryImage`/`GameRecord`/`NidRecord` |
 | `ps5-abi` | ABI metadata: `AbiType`/`FunctionSignature`/`StructLayout` with 50 seed signatures |
@@ -65,6 +66,12 @@ ps5rs scan ./games --output analysis/
 # 1b. Scan eboot.bin + sce_module/*.prx modules
 ps5rs scan ./games --output analysis/ --include-modules
 
+# 1c. Rescan later without losing existing images (incremental)
+ps5rs scan ./games --output analysis/ --append
+
+# 1d. Scan a single game directory (adds just that title)
+ps5rs scan ./games/SomeGame-PPSA12345-PS5 --output analysis/ --append
+
 # 2. Extract clean ELFs from SELF containers
 ps5rs batch-extract ./games --output analysis/
 
@@ -79,8 +86,8 @@ ps5rs analyze engines analysis/
 # 5. Generate interactive dashboard
 ps5rs dashboard analysis/
 
-# 5b. Include third-party middleware detection (scans the games folder)
-ps5rs dashboard analysis/ --games ./games
+# 5b. Include third-party middleware detection (repeat --games per corpus; merged)
+ps5rs dashboard analysis/ --games ./games --games ./more-games
 
 # 6. Boot a binary in the host-side emulator
 ps5rs run path/to/eboot.elf
@@ -103,21 +110,38 @@ ps5rs scan ./games --output analysis/ --include-modules
 
 # Load external NID catalogs for higher resolution
 ps5rs scan ./games --output analysis/ --nids extra_nids.csv
+
+# Rescan incrementally: keeps existing images, adds new titles only
+ps5rs scan ./games --output analysis/ --append
+
+# Scan one game directory directly (a corpus root also works)
+ps5rs scan ./games/SomeGame-PPSA12345-PS5 --output analysis/ --append
 ```
 
-Each game's `eboot.bin` is parsed into a `BinaryImage` and serialized as an individual JSON file. When module scanning is enabled, PRX/SPRX files from `sce_module/` are stored as individual `BinaryImage` documents linked back to their parent game.
-
-Each binary component is analyzed independently — eboot, PRX modules, and extracted SELF images each retain their own imports, NIDs, strings, library versions, and detection evidence.
+Each game's `eboot.bin` is parsed into a `BinaryImage` and serialized as an individual JSON file under `images/`. Scan prints per-game progress (`[i/n] … OK (size, imports)`, `SKIPPED (already scanned)`) plus a shader-inventory phase, and always prints the resolved dataset directory first — `--output` is a dataset folder resolved against your working directory, so prefer absolute paths or run from the repo root to avoid writing to an unintended location.
 
 ```
 analysis/
-  manifest.json       # schema v6: tool, timestamp, image count, module count, game metadata
+  manifest.json       # schema v6: tool, timestamp, image count, game metadata (one entry per image)
   images/
-    GameTitle/
-      eboot.json            # eboot.bin analysis
-      libScePad.prx.json    # PRX module analysis
-      libSceVideoOut.prx.json
+    SomeGame-_[PPSA12345].json   # BinaryImageDocument per game (flat layout)
+  shaders.json        # shader/resource inventory across scanned games
 ```
+
+## Dataset layout and the durable archive
+
+A dataset distinguishes **live scan output** from **durable history**:
+
+```
+analysis_with_modules/
+  images/             # live scan cache: one JSON per game currently scannable
+  manifest.json       # describes images/ exactly (image_count == games entries)
+  load/games/         # per-game loader reports; retained for ingested titles
+  games/PPSA12345/    # archival records (game.json, load_report.json, slices)
+  ingest.json         # registry of archived titles incl. source_deleted flags
+```
+
+Workflow: `batch-load` a corpus, then `archive --game <dir>` each title into `games/`; once archived, `archive --mark-deleted <title-id>` records that the source was removed. Later rescans (even without `--append`) retain images and reports for registered titles — mirroring `batch-load`'s stale-report retention — while `manifest.json` always matches `images/` one-to-one (entries deduped by title ID, missing `param.json` IDs fall back to the directory name). The dashboard's **Archived** tab surfaces ingested titles whose ROM is absent from the live images.
 
 ### Extract clean ELFs from SELF containers
 
@@ -209,6 +233,14 @@ ps5rs middleware ./games --format json -o middleware.json
 ```
 
 The built-in fingerprint catalog covers audio engines (FMOD, Wwise, Resonance Audio, Auro-3D, iZotope, McDSP, CRIWARE), UI frameworks (Coherent Gameface, WebKit), Unity runtime modules (IL2CPP, Burst, PS5 platform, PSN, Save Data), and networking SDKs (Epic Online Services), among others.
+
+For the dashboard's middleware tab across several corpora, repeat `--games` (reports merge by title ID, later scans win — a game present in two corpora is counted once):
+
+```sh
+ps5rs dashboard analysis/ --games ./games --games ./more-games
+```
+
+All report paths are stored corpus-relative (never absolute), so datasets stay portable across machines.
 
 ### Community NID Catalog
 
@@ -411,7 +443,7 @@ Total: 280  →  UE4 (confidence: 100%)
 
 ## NID Database
 
-The CLI ships with an embedded NID catalog (`data/nids.csv`) containing ~154K hash-to-name mappings. The catalog uses merge semantics — loading multiple files combines entries rather than overwriting. A community-maintained Supabase catalog provides additional coverage; see [Community NID Catalog](#community-nid-catalog).
+The CLI ships with an embedded NID catalog (`data/nids.csv`) containing ~195K hash-to-name mappings. The catalog uses merge semantics — loading multiple files combines entries rather than overwriting. A community-maintained Supabase catalog provides additional coverage; see [Community NID Catalog](#community-nid-catalog).
 
 ```sh
 # Load additional community NID files
@@ -476,7 +508,7 @@ Compatibility runtime
 
 ## Test Suite
 
-525+ tests across 11 crates covering ELF parsing, SELF extraction, NID hashing/caching, BinaryImage IR, string fingerprinting, engine detection, analysis reports, dataset operations, batch extraction, dashboard generation, PRX module scanning, PS5 ELF/PRX loading with relocation and import resolution, and end-to-end guest execution against self-authored ELF fixtures (exit codes, import traces, guest-string reads).
+700+ tests across 26 crates covering ELF parsing, SELF extraction, NID hashing/caching, BinaryImage IR, string fingerprinting, engine detection, analysis reports, dataset operations (scan retention, manifest consistency, middleware merging), batch extraction, dashboard generation, PRX module scanning, PS5 ELF/PRX loading with relocation and import resolution, and end-to-end guest execution against self-authored ELF fixtures (exit codes, import traces, guest-string reads).
 
 ## Loader / Relocation Engine
 

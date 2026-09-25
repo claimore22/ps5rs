@@ -5735,5 +5735,43 @@
     "debug_info": "unity_files:41",
     "status": "heuristic",
     "confidence": 40
+  },
+  {
+    "name": "ASTRO.BOT-PPSA21564-USA-Game-v01.007.000-PS5_unity_Material",
+    "stage": "unknown",
+    "game": "ASTRO.BOT-PPSA21564-USA-Game-v01.007.000-PS5",
+    "format": "unity",
+    "size": 0,
+    "resources": [
+      "Material:3247"
+    ],
+    "debug_info": "unity_files:1108",
+    "status": "heuristic",
+    "confidence": 40
+  },
+  {
+    "name": "ASTRO.BOT-PPSA21564-USA-Game-v01.007.000-PS5_unity_Mesh",
+    "stage": "unknown",
+    "game": "ASTRO.BOT-PPSA21564-USA-Game-v01.007.000-PS5",
+    "format": "unity",
+    "size": 0,
+    "resources": [
+      "Mesh:681"
+    ],
+    "debug_info": "unity_files:1108",
+    "status": "heuristic",
+    "confidence": 40
+  },
+  {
+    "name": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5_dragon_gmd",
+    "stage": "unknown",
+    "game": "Like.A.Dragon.Pirate.Yakuza.in.Hawaii-PPSA24478-JPN-Game (v01.014)-PS5",
+    "format": "gmd",
+    "size": 0,
+    "resources": [
+      "gmd:4"
+    ],
+    "status": "heuristic",
+    "confidence": 30
   }
 ]

@@ -47,11 +47,7 @@ pub(crate) fn cmd_validate(path: &std::path::Path, output: &Option<PathBuf>) {
     });
 }
 
-pub(crate) fn cmd_dashboard(
-    path: &std::path::Path,
-    output: &PathBuf,
-    games: Option<&std::path::Path>,
-) {
+pub(crate) fn cmd_dashboard(path: &std::path::Path, output: &PathBuf, games: &[PathBuf]) {
     let ds = ps5_analysis::AnalysisDataset::open(path).unwrap_or_else(|e| {
         eprintln!("error: failed to load dataset from {}: {e}", path.display());
         std::process::exit(1);
@@ -74,10 +70,19 @@ pub(crate) fn cmd_dashboard(
         data.inject_loader_data(&loader_dir);
     }
 
-    if let Some(games_root) = games {
-        eprintln!("Scanning {} for middleware...", games_root.display());
+    if !games.is_empty() {
         let catalog = load_catalog(&[]);
-        let report = ps5_analysis::build_middleware_report(games_root, &catalog);
+        let mut reports = Vec::with_capacity(games.len());
+        for (idx, games_root) in games.iter().enumerate() {
+            eprintln!(
+                "Scanning middleware [{}/{}] {}...",
+                idx + 1,
+                games.len(),
+                games_root.display()
+            );
+            reports.push(ps5_analysis::build_middleware_report(games_root, &catalog));
+        }
+        let report = ps5_analysis::merge_middleware_reports(reports);
         data.inject_middleware(&report);
         eprintln!(
             "  Middleware: {} games, {} modules ({} third-party, {} Sony, {} unknown)",

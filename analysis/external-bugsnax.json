@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "tool": "ps5rs",
-  "root": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Bugsnax-PPSA01502-USA-PS5\\Bugsnax PS5 Dump v2.000",
+  "root": "Bugsnax-PPSA01502-USA-PS5\\Bugsnax PS5 Dump v2.000",
   "generated_at": "1787858096",
   "status": "PASS",
   "files_discovered": {

@@ -79,7 +79,7 @@ fn main() {
             path,
             output,
             games,
-        } => dataset::cmd_dashboard(&path, &output, games.as_deref()),
+        } => dataset::cmd_dashboard(&path, &output, &games),
         Commands::ExportUnknown {
             path,
             group_by,

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "tool": "ps5rs",
-  "games_dir": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5",
+  "games_dir": "PS5",
   "generated_at": "2026-09-22T06:44:32Z",
   "summary": {
     "games_found": 35,
@@ -15,7 +15,7 @@
   "games": [
     {
       "name": "Afterimage - [PPSA14053]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Afterimage-PPSA14053-EUR-Game-v01.000-PS5\\eboot.bin",
+      "file": "Afterimage-PPSA14053-EUR-Game-v01.000-PS5\\eboot.bin",
       "imports": 2144,
       "known": 2051,
       "unknown": 93,
@@ -118,7 +118,7 @@
     },
     {
       "name": "ANIMAL WELL - [PPSA22520]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Animal Well PS5 _PPSA22520_\\eboot.bin",
+      "file": "Animal Well PS5 _PPSA22520_\\eboot.bin",
       "imports": 408,
       "known": 408,
       "unknown": 0,
@@ -127,7 +127,7 @@
     },
     {
       "name": "Asterigos: Curse of the Stars - [PPSA08194]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5\\eboot.bin",
+      "file": "Asterigos.Curse.of.The.Stars-PPSA08194-EUR-Game-v1.004.001-PS5\\eboot.bin",
       "imports": 2165,
       "known": 2019,
       "unknown": 146,
@@ -283,7 +283,7 @@
     },
     {
       "name": "Blazing Strike - [PPSA08408]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Blazing.Strike-PPSA08408-USA-Game (v01.100)\\eboot.bin",
+      "file": "Blazing.Strike-PPSA08408-USA-Game (v01.100)\\eboot.bin",
       "imports": 603,
       "known": 601,
       "unknown": 2,
@@ -295,7 +295,7 @@
     },
     {
       "name": "Blue Prince - [PPSA25009]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5\\eboot.bin",
+      "file": "Blue.Prince-PPSA25009-EUR-Game-(v01.008) [APR-EMU]-PS5\\eboot.bin",
       "imports": 610,
       "known": 608,
       "unknown": 2,
@@ -307,7 +307,7 @@
     },
     {
       "name": "Bugsnax - [PPSA01502]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Bugsnax-PPSA01502-USA-PS5\\eboot.bin",
+      "file": "Bugsnax-PPSA01502-USA-PS5\\eboot.bin",
       "imports": 612,
       "known": 545,
       "unknown": 67,
@@ -384,7 +384,7 @@
     },
     {
       "name": "Cat Quest III - [PPSA15065]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Cat-Quest-III-PPSA15065-app\\eboot.bin",
+      "file": "Cat-Quest-III-PPSA15065-app\\eboot.bin",
       "imports": 604,
       "known": 602,
       "unknown": 2,
@@ -396,7 +396,7 @@
     },
     {
       "name": "Dead Cells - [PPSA15552]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Dead.Cells-PPSA15552-USA-Game-v01.005-PS5\\eboot.bin",
+      "file": "Dead.Cells-PPSA15552-USA-Game-v01.005-PS5\\eboot.bin",
       "imports": 310,
       "known": 310,
       "unknown": 0,
@@ -405,7 +405,7 @@
     },
     {
       "name": "Dolphin Spirit - Ocean Mission - [PPSA13711]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Dolphin Spirit Ocean Mission [PPSA13711]\\eboot.bin",
+      "file": "Dolphin Spirit Ocean Mission [PPSA13711]\\eboot.bin",
       "imports": 605,
       "known": 605,
       "unknown": 0,
@@ -414,7 +414,7 @@
     },
     {
       "name": "Dusk Diver 2 - [PPSA06565]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Dusk.Diver.2-PPSA06565-EUR-Game-v1.000.000-PS5\\Dusk Diver 2 01.000 PPSA06565\\eboot.bin",
+      "file": "Dusk.Diver.2-PPSA06565-EUR-Game-v1.000.000-PS5\\Dusk Diver 2 01.000 PPSA06565\\eboot.bin",
       "imports": 2129,
       "known": 2035,
       "unknown": 94,
@@ -518,7 +518,7 @@
     },
     {
       "name": "GRIS - [PPSA09804]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\GRIS-PPSA09804 – EUR-Game (v01.001)-PS5\\eboot.bin",
+      "file": "GRIS-PPSA09804 – EUR-Game (v01.001)-PS5\\eboot.bin",
       "imports": 584,
       "known": 584,
       "unknown": 0,
@@ -527,7 +527,7 @@
     },
     {
       "name": "Gori: Cuddly Carnage - [PPSA07393]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5\\eboot.bin",
+      "file": "Gori.Cuddly.Carnage-PPSA07393-USA-Game-(v01.000)-PS5\\eboot.bin",
       "imports": 1813,
       "known": 1708,
       "unknown": 105,
@@ -642,7 +642,7 @@
     },
     {
       "name": "Hello Neighbor 2 - [PPSA07426]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5\\eboot.bin",
+      "file": "Hello.Neighbor.2-PPSA07426-EUR-Game-v01.000-PS5\\eboot.bin",
       "imports": 2058,
       "known": 2057,
       "unknown": 1,
@@ -653,7 +653,7 @@
     },
     {
       "name": "Judgment - [PPSA02739]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Judgment-PPSA02739-USA-Game (v01.001)-PS5\\eboot.bin",
+      "file": "Judgment-PPSA02739-USA-Game (v01.001)-PS5\\eboot.bin",
       "imports": 548,
       "known": 548,
       "unknown": 0,
@@ -662,7 +662,7 @@
     },
     {
       "name": "Juicy Realm - [PPSA19268]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Juicy.Realm-PPSA19268-USA-Game (v01.000)-PS5\\eboot.bin",
+      "file": "Juicy.Realm-PPSA19268-USA-Game (v01.000)-PS5\\eboot.bin",
       "imports": 603,
       "known": 601,
       "unknown": 2,
@@ -674,7 +674,7 @@
     },
     {
       "name": "Jusant - [PPSA10264]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Jusant-PPSA10264-EUR-Game-v01.007-PS5\\eboot.bin",
+      "file": "Jusant-PPSA10264-EUR-Game-v01.007-PS5\\eboot.bin",
       "imports": 1767,
       "known": 1767,
       "unknown": 0,
@@ -692,7 +692,7 @@
     },
     {
       "name": "Mega Man Star Force Legacy Collection - [PPSA32239]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5\\Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5\\eboot.bin",
+      "file": "Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5\\Mega.Man.Star.Force.Legacy.Collection-PPSA32239-JPN-Game (v01.001)-PS5\\eboot.bin",
       "imports": 851,
       "known": 847,
       "unknown": 4,
@@ -706,7 +706,7 @@
     },
     {
       "name": "Metal Slug Tactics - [PPSA20643]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5\\Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5\\eboot.bin",
+      "file": "Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5\\Metal.Slug.Tactics-PPSA20643-EUR-Game (v02.000)-PS5\\eboot.bin",
       "imports": 606,
       "known": 604,
       "unknown": 2,
@@ -718,7 +718,7 @@
     },
     {
       "name": "Monster Boy and the Cursed Kingdom - [PPSA02787]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Monster.Boy.and.The.Cursed.Kingdom-PPSA02787-USA-Game-v01.000.004-PS5\\PPSA02787-app0\\eboot.bin",
+      "file": "Monster.Boy.and.The.Cursed.Kingdom-PPSA02787-USA-Game-v01.000.004-PS5\\PPSA02787-app0\\eboot.bin",
       "imports": 596,
       "known": 595,
       "unknown": 1,
@@ -729,7 +729,7 @@
     },
     {
       "name": "Neko Rescue Tale - [PPSA13871]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Neko.Rescue.Tale-PPSA13871-EUR-Game (v01.000)-PS5\\eboot.bin",
+      "file": "Neko.Rescue.Tale-PPSA13871-EUR-Game (v01.000)-PS5\\eboot.bin",
       "imports": 554,
       "known": 553,
       "unknown": 1,
@@ -740,7 +740,7 @@
     },
     {
       "name": "Neva - [PPSA16786]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Neva-PPSA16786-EUR-Game (v01.007)-PS5\\eboot.bin",
+      "file": "Neva-PPSA16786-EUR-Game (v01.007)-PS5\\eboot.bin",
       "imports": 610,
       "known": 608,
       "unknown": 2,
@@ -752,7 +752,7 @@
     },
     {
       "name": "OCTOPATH TRAVELER II - [PPSA09809]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Octopath.Traveler.II-PPSA09809-EUR-Game-v01.000-PS5\\eboot.bin",
+      "file": "Octopath.Traveler.II-PPSA09809-EUR-Game-v01.000-PS5\\eboot.bin",
       "imports": 2050,
       "known": 2049,
       "unknown": 1,
@@ -763,7 +763,7 @@
     },
     {
       "name": "Oxide Room 104 - [PPSA07653]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Oxide.Room.104-PPSA07653-EUR-Game-v1.000.000-PS5\\PPSA07653-app0\\eboot.bin",
+      "file": "Oxide.Room.104-PPSA07653-EUR-Game-v1.000.000-PS5\\PPSA07653-app0\\eboot.bin",
       "imports": 2022,
       "known": 2021,
       "unknown": 1,
@@ -774,7 +774,7 @@
     },
     {
       "name": "PRAGMATA - [PPSA02530]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5\\eboot.bin",
+      "file": "PRAGMATA-PPSA02530-USA-Game (v01.2000)-PS5\\eboot.bin",
       "imports": 807,
       "known": 803,
       "unknown": 4,
@@ -788,7 +788,7 @@
     },
     {
       "name": "Plumbers Don't Wear Ties: Definitive Edition - [PPSA17949]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5\\eboot.bin",
+      "file": "Plumbers_DWT_PPSA17949-EUR-Game-v01.00-PS5\\eboot.bin",
       "imports": 604,
       "known": 602,
       "unknown": 2,
@@ -800,7 +800,7 @@
     },
     {
       "name": "Raiden III x MIKADO MANIAX - [PPSA13356]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Raiden.III.x.MIKADO.MANIAX-PPSA13356-USA-Game-v01.01-PS5\\PPSA13356-app\\eboot.bin",
+      "file": "Raiden.III.x.MIKADO.MANIAX-PPSA13356-USA-Game-v01.01-PS5\\PPSA13356-app\\eboot.bin",
       "imports": 684,
       "known": 683,
       "unknown": 1,
@@ -811,7 +811,7 @@
     },
     {
       "name": "Richman 11 - [PPSA16960]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Richman 11 PS5 _PPSA16960_\\eboot.bin",
+      "file": "Richman 11 PS5 _PPSA16960_\\eboot.bin",
       "imports": 603,
       "known": 601,
       "unknown": 2,
@@ -823,7 +823,7 @@
     },
     {
       "name": "Soul Hackers 2 - [PPSA03743]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Soul.Hackers.2-PPSA03743-USA-Game (v01.002)+DLC-PS5\\eboot.bin",
+      "file": "Soul.Hackers.2-PPSA03743-USA-Game (v01.002)+DLC-PS5\\eboot.bin",
       "imports": 594,
       "known": 594,
       "unknown": 0,
@@ -832,7 +832,7 @@
     },
     {
       "name": "Squirrel with a Gun - [PPSA22102]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Squirrel.With.A.Gun-PPSA22102-USA-Game-PS5\\PPSA22102-app\\eboot.bin",
+      "file": "Squirrel.With.A.Gun-PPSA22102-USA-Game-PS5\\PPSA22102-app\\eboot.bin",
       "imports": 1774,
       "known": 1774,
       "unknown": 0,
@@ -841,7 +841,7 @@
     },
     {
       "name": "Stray - [PPSA02100]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Stray-PPSA02100-USA-PS5\\PPSA02100 -  Stray\\eboot.bin",
+      "file": "Stray-PPSA02100-USA-PS5\\PPSA02100 -  Stray\\eboot.bin",
       "imports": 2040,
       "known": 2039,
       "unknown": 1,
@@ -852,7 +852,7 @@
     },
     {
       "name": "Subnautica Below Zero - [PPSA02456]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Subnautica.Below.Zero-PPSA02456-USA-Game-v01.021.397-PS5\\PPSA02456-app\\eboot.bin",
+      "file": "Subnautica.Below.Zero-PPSA02456-USA-Game-v01.021.397-PS5\\PPSA02456-app\\eboot.bin",
       "imports": 581,
       "known": 581,
       "unknown": 0,
@@ -861,7 +861,7 @@
     },
     {
       "name": "The Pathless - [PPSA01825]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\The.Pathless-PPSA01825-USA-PS5\\eboot.bin",
+      "file": "The.Pathless-PPSA01825-USA-PS5\\eboot.bin",
       "imports": 1665,
       "known": 1664,
       "unknown": 1,
@@ -872,7 +872,7 @@
     },
     {
       "name": "Totally Reliable Delivery Service - [PPSA28855]",
-      "file": "C:\\Users\\claimoar\\Documents\\ROMS\\PS5\\Totally.Reliable.Delivery.Service-PPSA28855-EUR-Game (v01.001)-PS5\\Totally.Reliable.Delivery.Service-PPSA28855-EUR-Game (v01.001)-PS5\\eboot.bin",
+      "file": "Totally.Reliable.Delivery.Service-PPSA28855-EUR-Game (v01.001)-PS5\\Totally.Reliable.Delivery.Service-PPSA28855-EUR-Game (v01.001)-PS5\\eboot.bin",
       "imports": 612,
       "known": 610,
       "unknown": 2,
