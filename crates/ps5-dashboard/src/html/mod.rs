@@ -1,10 +1,10 @@
 //! HTML dashboard generator.
 //!
 //! Split by concern:
-//! - [`layout`] — document shell, tab bar, page assembly
+//! - `layout` — document shell, tab bar, page assembly
 //! - [`tabs`] — one module per tab’s markup
-//! - [`style`] — CSS
-//! - [`js`] — client script (receives `const D = <json>`)
+//! - `style` — CSS
+//! - `js` — client script (receives `const D = <json>`)
 
 use crate::data::DashboardData;
 

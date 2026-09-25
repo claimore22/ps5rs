@@ -1,4 +1,4 @@
-default := check
+set windows-shell := ["powershell.exe", "-NoLogo", "-Command"]
 
 # Run the full check suite (fmt + clippy + tests)
 check:
