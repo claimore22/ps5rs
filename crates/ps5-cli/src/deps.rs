@@ -42,13 +42,17 @@ pub(crate) fn cmd_deps(path: &Path, format: OutputFormat, output: &Option<std::p
                             .unwrap_or("game")
                             .to_string();
                         g.add_node(&name, &[]);
-                        // Add dummy edges for demonstration (scan prx)
-                        if let Ok(prx_entries) = std::fs::read_dir(p.join("sce_module")) {
-                            for prx in prx_entries.flatten() {
-                                if let Some(fname) = prx.path().file_name().and_then(|n| n.to_str())
-                                    && fname.ends_with(".prx")
-                                {
-                                    g.add_edge(&name, fname);
+                        // Add dummy edges for demonstration (scan prx);
+                        // same provider dirs as `load`/`run`.
+                        for dir in crate::util::prx_candidate_dirs(&p.join("eboot.bin")) {
+                            if let Ok(prx_entries) = std::fs::read_dir(dir) {
+                                for prx in prx_entries.flatten() {
+                                    if let Some(fname) =
+                                        prx.path().file_name().and_then(|n| n.to_str())
+                                        && fname.ends_with(".prx")
+                                    {
+                                        g.add_edge(&name, fname);
+                                    }
                                 }
                             }
                         }
