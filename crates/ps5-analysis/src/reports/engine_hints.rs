@@ -109,15 +109,7 @@ fn analyze_engine(name: &str, doc: &ps5_image::BinaryImageDocument) -> EngineHin
     let mut studio_engines: Vec<String> = Vec::new();
     let mut studio_detection: Option<ps5_image::Detection> = None;
     if let Some(det) = ps5_signatures::engine::detect_engine(&signals)
-        && ![
-            "Native",
-            "SCE",
-            "Unreal Engine 4",
-            "Unreal Engine 5",
-            "Unity",
-            "Godot",
-        ]
-        .contains(&det.value.as_str())
+        && !["Native", "SCE"].contains(&det.value.as_str())
         && det.confidence >= 10
     {
         studio_engines.push(det.value.clone());
@@ -243,10 +235,14 @@ fn analyze_engine(name: &str, doc: &ps5_image::BinaryImageDocument) -> EngineHin
 fn has_ue4commandline(game_name: &str) -> bool {
     use std::sync::OnceLock;
     static CACHE: OnceLock<std::collections::HashSet<String>> = OnceLock::new();
-    let set = CACHE.get_or_init(|| {
-        let mut s = std::collections::HashSet::new();
-        let roms = std::path::Path::new(r"C:\Users\claimoar\Documents\ROMS\PS5");
-        let mut stack = vec![roms.to_path_buf()];
+let set = CACHE.get_or_init(|| {
+    let mut s = std::collections::HashSet::new();
+    let base_paths = [
+        std::path::Path::new(r"C:\Users\claimoar\Documents\ROMS\PS5"),
+        std::path::Path::new(r"D:\roms"),
+    ];
+    for base in base_paths.iter() {
+        let mut stack = vec![base.to_path_buf()];
         let mut depth = 0;
         while let Some(dir) = stack.pop() {
             if depth > 4 {
@@ -282,8 +278,9 @@ fn has_ue4commandline(game_name: &str) -> bool {
             }
             depth += 1;
         }
-        s
-    });
+    }
+    s
+});
     let sanitized = crate::scanner::sanitize_filename(game_name);
     set.contains(&sanitized)
         || set.contains(&game_name.to_string())

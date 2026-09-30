@@ -123,6 +123,8 @@ pub enum Commands {
     /// Load a PS5 binary into the virtual memory model for inspection
     Load {
         file: PathBuf,
+        /// Extra directory containing PRX modules (searched before the
+        /// auto-detected `sce_module/`, `Media/Modules/`, `prx/`)
         #[arg(long, value_hint = ValueHint::DirPath)]
         prx_dir: Option<PathBuf>,
         #[arg(long)]
@@ -131,7 +133,8 @@ pub enum Commands {
     /// Run a PS5 eboot in the host emulator and report execution details
     Run {
         file: PathBuf,
-        /// Directory containing PRX modules (default: `file parent/sce_module`)
+        /// Extra directory containing PRX modules (searched before the
+        /// auto-detected `sce_module/`, `Media/Modules/`, `prx/`)
         #[arg(long, value_hint = ValueHint::DirPath)]
         prx_dir: Option<PathBuf>,
         /// Emit the execution report as JSON

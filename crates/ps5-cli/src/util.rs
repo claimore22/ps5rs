@@ -1,5 +1,21 @@
 use std::io::Write;
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
+
+/// Candidate dirs for on-demand PRX loads, in search order:
+/// `sce_module/`, then Unity-layout `Media/Modules/` (Il2Cpp game
+/// assemblies ship there, not beside the eboot), then legacy `prx/`.
+/// Only existing dirs are returned, so absent layouts change nothing.
+pub(crate) fn prx_candidate_dirs(file: &Path) -> Vec<PathBuf> {
+    let parent = file.parent().unwrap_or(Path::new("."));
+    [
+        parent.join("sce_module"),
+        parent.join("Media").join("Modules"),
+        parent.join("prx"),
+    ]
+    .into_iter()
+    .filter(|d| d.is_dir())
+    .collect()
+}
 
 pub(crate) fn load_file(path: &PathBuf) -> Vec<u8> {
     std::fs::read(path).unwrap_or_else(|e| {
@@ -165,5 +181,30 @@ mod tests {
         let input = "C:\\Games\\PS5";
         let expected = std::path::PathBuf::from("C:\\Games\\PS5");
         assert_eq!(sanitize_path_arg(input).unwrap(), expected);
+    }
+
+    #[test]
+    fn prx_candidate_dirs_prefers_sce_module_then_unity_layout() {
+        let root = std::env::temp_dir().join(format!(
+            "ps5rs-prx-{}-{}",
+            std::process::id(),
+            std::time::SystemTime::now()
+                .duration_since(std::time::UNIX_EPOCH)
+                .unwrap()
+                .as_nanos()
+        ));
+        std::fs::create_dir_all(root.join("sce_module")).unwrap();
+        std::fs::create_dir_all(root.join("Media").join("Modules")).unwrap();
+        assert_eq!(
+            prx_candidate_dirs(&root.join("eboot.bin")),
+            vec![root.join("sce_module"), root.join("Media").join("Modules")]
+        );
+        // Absent layouts are skipped, never synthesized.
+        std::fs::remove_dir_all(root.join("Media")).unwrap();
+        assert_eq!(
+            prx_candidate_dirs(&root.join("eboot.bin")),
+            vec![root.join("sce_module")]
+        );
+        std::fs::remove_dir_all(&root).ok();
     }
 }

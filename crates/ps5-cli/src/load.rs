@@ -245,23 +245,20 @@ fn print_modules(ctx: &ps5_loader::ModuleContext) {
 pub(crate) fn cmd_load(path: &PathBuf, prx_dir: Option<PathBuf>, json: bool) {
     let data = load_file(path);
 
-    let dir = prx_dir.or_else(|| {
-        let default = path.parent().map(|p| p.join("sce_module"));
-        match default {
-            Some(ref d) if d.is_dir() => Some(d.clone()),
-            _ => None,
-        }
-    });
+    let mut dirs: Vec<PathBuf> = prx_dir.into_iter().collect();
+    dirs.extend(crate::util::prx_candidate_dirs(path));
 
-    if let Some(ref dir) = dir {
-        cmd_load_multi(path, &data, dir, json);
-    } else {
+    if dirs.is_empty() {
         cmd_load_single(path, &data, json);
+    } else {
+        cmd_load_multi(path, &data, &dirs, json);
     }
 }
 
-/// Multi-module mode: load eboot + PRXs from `--prx-dir`.
-fn cmd_load_multi(path: &Path, data: &[u8], prx_dir: &Path, json: bool) {
+/// Multi-module mode: load eboot + PRXs from `--prx-dir` first, then
+/// every auto-detected provider dir (`find_prx` keeps first-match
+/// priority).
+fn cmd_load_multi(path: &Path, data: &[u8], prx_dirs: &[PathBuf], json: bool) {
     let container = container_name(data);
     let elf_bytes = get_elf_bytes(data);
 
@@ -278,12 +275,12 @@ fn cmd_load_multi(path: &Path, data: &[u8], prx_dir: &Path, json: bool) {
     );
     println!();
 
-    let prx_files = scan_prx_dir(prx_dir);
-    println!(
-        "PRX directory: {} ({} files)",
-        prx_dir.display(),
-        prx_files.len()
-    );
+    let mut prx_files = Vec::new();
+    for dir in prx_dirs {
+        let files = scan_prx_dir(dir);
+        println!("PRX directory: {} ({} files)", dir.display(), files.len());
+        prx_files.extend(files);
+    }
     println!();
 
     let file_name = path

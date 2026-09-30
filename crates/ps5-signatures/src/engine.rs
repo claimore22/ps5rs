@@ -78,10 +78,141 @@ pub const UNITY: EngineFingerprint = EngineFingerprint {
 
 pub const GODOT: EngineFingerprint = EngineFingerprint {
     name: "Godot",
-    patterns: &[("Godot Engine", 10), ("GDNative", 8)],
+    patterns: &[
+        ("project.godot", 100),
+        (".godot", 60),
+        ("Godot Engine", 100),
+        ("GDNative", 60),
+    ],
 };
 
-pub const ALL: &[EngineFingerprint] = &[UNREAL4, UNREAL5, UNITY, GODOT];
+pub const RE_ENGINE: EngineFingerprint = EngineFingerprint {
+    name: "RE Engine",
+    patterns: &[
+        ("RE Engine", 100),
+        (".pak", 25),
+    ],
+};
+pub const FROSTBITE: EngineFingerprint = EngineFingerprint {
+    name: "Frostbite",
+    patterns: &[
+        ("Frostbite", 100),
+        (".toc", 50),
+    ],
+};
+pub const DECIMA: EngineFingerprint = EngineFingerprint {
+    name: "Decima",
+    patterns: &[
+        ("Decima", 100),
+        (".core", 50),
+    ],
+};
+pub const DRAGON_ENGINE: EngineFingerprint = EngineFingerprint {
+    name: "Dragon Engine",
+    patterns: &[
+        ("Dragon Engine", 100),
+        (".par", 50),
+    ],
+};
+pub const REDEngine: EngineFingerprint = EngineFingerprint {
+    name: "REDEngine",
+    patterns: &[
+        ("REDEngine", 100),
+        (".archive", 50),
+    ],
+};
+pub const CREATION_ENGINE_2: EngineFingerprint = EngineFingerprint {
+    name: "Creation Engine 2",
+    patterns: &[
+        ("Creation Engine 2", 100),
+        (".ba2", 60),
+    ],
+};
+pub const RAGE_ENGINE: EngineFingerprint = EngineFingerprint {
+    name: "RAGE Engine",
+    patterns: &[
+        ("RAGE Engine", 100),
+        (".rpf", 100),
+    ],
+};
+pub const CRYENGINE: EngineFingerprint = EngineFingerprint {
+    name: "CryEngine",
+    patterns: &[
+        ("CryEngine", 100),
+        (".cgf", 50),
+    ],
+};
+pub const SOURCE_ENGINE: EngineFingerprint = EngineFingerprint {
+    name: "Source Engine",
+    patterns: &[
+        ("Source Engine", 100),
+        (".vpk", 100),
+    ],
+};
+pub const LITHTECH: EngineFingerprint = EngineFingerprint {
+    name: "LithTech",
+    patterns: &[
+        ("LithTech", 100),
+        (".rez", 100),
+    ],
+};
+pub const HAVOK_VISION_ENGINE: EngineFingerprint = EngineFingerprint {
+    name: "Havok Vision Engine",
+    patterns: &[
+        ("Havok Vision Engine", 100),
+        (".vmesh", 90)
+    ],
+};
+pub const GAMEBRYO: EngineFingerprint = EngineFingerprint {
+    name: "Gamebryo",
+    patterns: &[
+        ("Gamebryo", 100),
+        (".nif", 100)
+    ],
+};
+pub const SNOWDROP: EngineFingerprint = EngineFingerprint {
+    name: "Snowdrop",
+    patterns: &[
+        ("Snowdrop", 100),
+        (".forge", 100)
+    ],
+};
+pub const ANVILNEXT: EngineFingerprint = EngineFingerprint {
+    name: "AnvilNext",
+    patterns: &[
+        ("AnvilNext", 100),
+    ],
+};
+pub const ID_TECH: EngineFingerprint = EngineFingerprint {
+    name: "id Tech",
+    patterns: &[
+        ("id Tech", 100),
+        (".pk3", 100),
+        (".pk4", 100),
+    ],
+};
+
+pub const ALL: &[EngineFingerprint] = &[
+    UNREAL4,
+    UNREAL5,
+    UNITY,
+    GODOT,
+    RE_ENGINE,
+    FROSTBITE,
+    DECIMA,
+    DRAGON_ENGINE,
+    REDEngine,
+    CREATION_ENGINE_2,
+    RAGE_ENGINE,
+    CRYENGINE,
+    SOURCE_ENGINE,
+    LITHTECH,
+    HAVOK_VISION_ENGINE,
+    GAMEBRYO,
+    SNOWDROP,
+    ANVILNEXT,
+    ID_TECH,
+];
 
 pub fn detect_engine(strings: &[String]) -> Option<Detection> {
     let mut best: Option<Detection> = None;
@@ -275,10 +406,37 @@ mod tests {
                 .any(|d| d.value.contains("HK_Project_Delivery"))
         );
     }
-
     #[test]
     fn detect_custom_forks_empty() {
         let strings = vec!["hello world".to_string()];
         assert!(detect_custom_forks(&strings).is_empty());
     }
+
+    #[test]
+    fn detect_engine_new_engines() {
+        let engines = [
+            "RE Engine",
+            "Frostbite",
+            "Decima",
+            "Dragon Engine",
+            "REDEngine",
+            "Creation Engine 2",
+            "RAGE Engine",
+            "CryEngine",
+            "Source Engine",
+            "LithTech",
+            "Havok Vision Engine",
+            "Gamebryo",
+            "Snowdrop",
+            "AnvilNext",
+            "id Tech",
+        ];
+        for name in engines.iter() {
+            let strings = vec![name.to_string()];
+            let det = detect_engine(&strings).expect("should detect engine");
+            assert_eq!(det.value, *name);
+            assert_eq!(det.confidence, 100);
+        }
+    }
 }
+
