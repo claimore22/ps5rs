@@ -235,52 +235,53 @@ fn analyze_engine(name: &str, doc: &ps5_image::BinaryImageDocument) -> EngineHin
 fn has_ue4commandline(game_name: &str) -> bool {
     use std::sync::OnceLock;
     static CACHE: OnceLock<std::collections::HashSet<String>> = OnceLock::new();
-let set = CACHE.get_or_init(|| {
-    let mut s = std::collections::HashSet::new();
-    let base_paths = [
-        std::path::Path::new(r"C:\Users\claimoar\Documents\ROMS\PS5"),
-        std::path::Path::new(r"D:\roms"),
-    ];
-    for base in base_paths.iter() {
-        let mut stack = vec![base.to_path_buf()];
-        let mut depth = 0;
-        while let Some(dir) = stack.pop() {
-            if depth > 4 {
-                continue;
-            }
-            if let Ok(entries) = std::fs::read_dir(&dir) {
-                for entry in entries.flatten() {
-                    let path = entry.path();
-                    if path.is_file()
-                        && path.file_name().and_then(|n| n.to_str()) == Some("ue4commandline.txt")
-                    {
-                        if let Some(parent) = path
-                            .parent()
-                            .and_then(|p| p.file_name())
-                            .and_then(|n| n.to_str())
+    let set = CACHE.get_or_init(|| {
+        let mut s = std::collections::HashSet::new();
+        let base_paths = [
+            std::path::Path::new(r"C:\Users\claimoar\Documents\ROMS\PS5"),
+            std::path::Path::new(r"D:\roms"),
+        ];
+        for base in base_paths.iter() {
+            let mut stack = vec![base.to_path_buf()];
+            let mut depth = 0;
+            while let Some(dir) = stack.pop() {
+                if depth > 4 {
+                    continue;
+                }
+                if let Ok(entries) = std::fs::read_dir(&dir) {
+                    for entry in entries.flatten() {
+                        let path = entry.path();
+                        if path.is_file()
+                            && path.file_name().and_then(|n| n.to_str())
+                                == Some("ue4commandline.txt")
                         {
-                            s.insert(crate::scanner::sanitize_filename(parent));
-                            s.insert(parent.to_string());
+                            if let Some(parent) = path
+                                .parent()
+                                .and_then(|p| p.file_name())
+                                .and_then(|n| n.to_str())
+                            {
+                                s.insert(crate::scanner::sanitize_filename(parent));
+                                s.insert(parent.to_string());
+                            }
+                            if let Some(grand) = path
+                                .parent()
+                                .and_then(|p| p.parent())
+                                .and_then(|p| p.file_name())
+                                .and_then(|n| n.to_str())
+                            {
+                                s.insert(crate::scanner::sanitize_filename(grand));
+                                s.insert(grand.to_string());
+                            }
+                        } else if path.is_dir() {
+                            stack.push(path);
                         }
-                        if let Some(grand) = path
-                            .parent()
-                            .and_then(|p| p.parent())
-                            .and_then(|p| p.file_name())
-                            .and_then(|n| n.to_str())
-                        {
-                            s.insert(crate::scanner::sanitize_filename(grand));
-                            s.insert(grand.to_string());
-                        }
-                    } else if path.is_dir() {
-                        stack.push(path);
                     }
                 }
+                depth += 1;
             }
-            depth += 1;
         }
-    }
-    s
-});
+        s
+    });
     let sanitized = crate::scanner::sanitize_filename(game_name);
     set.contains(&sanitized)
         || set.contains(&game_name.to_string())

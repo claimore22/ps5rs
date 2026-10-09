@@ -88,108 +88,63 @@ pub const GODOT: EngineFingerprint = EngineFingerprint {
 
 pub const RE_ENGINE: EngineFingerprint = EngineFingerprint {
     name: "RE Engine",
-    patterns: &[
-        ("RE Engine", 100),
-        (".pak", 25),
-    ],
+    patterns: &[("RE Engine", 100), (".pak", 25)],
 };
 pub const FROSTBITE: EngineFingerprint = EngineFingerprint {
     name: "Frostbite",
-    patterns: &[
-        ("Frostbite", 100),
-        (".toc", 50),
-    ],
+    patterns: &[("Frostbite", 100), (".toc", 50)],
 };
 pub const DECIMA: EngineFingerprint = EngineFingerprint {
     name: "Decima",
-    patterns: &[
-        ("Decima", 100),
-        (".core", 50),
-    ],
+    patterns: &[("Decima", 100), (".core", 50)],
 };
 pub const DRAGON_ENGINE: EngineFingerprint = EngineFingerprint {
     name: "Dragon Engine",
-    patterns: &[
-        ("Dragon Engine", 100),
-        (".par", 50),
-    ],
+    patterns: &[("Dragon Engine", 100), (".par", 50)],
 };
-pub const REDEngine: EngineFingerprint = EngineFingerprint {
+pub const REDENGINE: EngineFingerprint = EngineFingerprint {
     name: "REDEngine",
-    patterns: &[
-        ("REDEngine", 100),
-        (".archive", 50),
-    ],
+    patterns: &[("REDEngine", 100), (".archive", 50)],
 };
 pub const CREATION_ENGINE_2: EngineFingerprint = EngineFingerprint {
     name: "Creation Engine 2",
-    patterns: &[
-        ("Creation Engine 2", 100),
-        (".ba2", 60),
-    ],
+    patterns: &[("Creation Engine 2", 100), (".ba2", 60)],
 };
 pub const RAGE_ENGINE: EngineFingerprint = EngineFingerprint {
     name: "RAGE Engine",
-    patterns: &[
-        ("RAGE Engine", 100),
-        (".rpf", 100),
-    ],
+    patterns: &[("RAGE Engine", 100), (".rpf", 100)],
 };
 pub const CRYENGINE: EngineFingerprint = EngineFingerprint {
     name: "CryEngine",
-    patterns: &[
-        ("CryEngine", 100),
-        (".cgf", 50),
-    ],
+    patterns: &[("CryEngine", 100), (".cgf", 50)],
 };
 pub const SOURCE_ENGINE: EngineFingerprint = EngineFingerprint {
     name: "Source Engine",
-    patterns: &[
-        ("Source Engine", 100),
-        (".vpk", 100),
-    ],
+    patterns: &[("Source Engine", 100), (".vpk", 100)],
 };
 pub const LITHTECH: EngineFingerprint = EngineFingerprint {
     name: "LithTech",
-    patterns: &[
-        ("LithTech", 100),
-        (".rez", 100),
-    ],
+    patterns: &[("LithTech", 100), (".rez", 100)],
 };
 pub const HAVOK_VISION_ENGINE: EngineFingerprint = EngineFingerprint {
     name: "Havok Vision Engine",
-    patterns: &[
-        ("Havok Vision Engine", 100),
-        (".vmesh", 90)
-    ],
+    patterns: &[("Havok Vision Engine", 100), (".vmesh", 90)],
 };
 pub const GAMEBRYO: EngineFingerprint = EngineFingerprint {
     name: "Gamebryo",
-    patterns: &[
-        ("Gamebryo", 100),
-        (".nif", 100)
-    ],
+    patterns: &[("Gamebryo", 100), (".nif", 100)],
 };
 pub const SNOWDROP: EngineFingerprint = EngineFingerprint {
     name: "Snowdrop",
-    patterns: &[
-        ("Snowdrop", 100),
-        (".forge", 100)
-    ],
+    patterns: &[("Snowdrop", 100), (".forge", 100)],
 };
 pub const ANVILNEXT: EngineFingerprint = EngineFingerprint {
     name: "AnvilNext",
-    patterns: &[
-        ("AnvilNext", 100),
-    ],
+    patterns: &[("AnvilNext", 100)],
 };
 pub const ID_TECH: EngineFingerprint = EngineFingerprint {
     name: "id Tech",
-    patterns: &[
-        ("id Tech", 100),
-        (".pk3", 100),
-        (".pk4", 100),
-    ],
+    patterns: &[("id Tech", 100), (".pk3", 100), (".pk4", 100)],
 };
 
 pub const ALL: &[EngineFingerprint] = &[
@@ -201,7 +156,7 @@ pub const ALL: &[EngineFingerprint] = &[
     FROSTBITE,
     DECIMA,
     DRAGON_ENGINE,
-    REDEngine,
+    REDENGINE,
     CREATION_ENGINE_2,
     RAGE_ENGINE,
     CRYENGINE,
@@ -439,4 +394,3 @@ mod tests {
         }
     }
 }
-
