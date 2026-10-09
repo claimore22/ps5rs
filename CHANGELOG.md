@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.6.6] - 2026-10-09
+
+### Changed
+- **Workspace version bumped to 0.6.6**
+
+### Fixed
+- **`REDEngine` → `REDENGINE` constant naming** in `ps5-signatures`: renamed the `EngineFingerprint` constant to follow Rust's `UPPER_CASE` convention for constants (clippy `non_upper_case_globals`)
+
+### Added
+- **`ps5-prx` media module support** (from `prx-media-modules` branch): authoritative module model with TLS/init arrays for PRX/SPRX analysis
+
 ## [0.6.5] - 2026-09-25
 
 ### Added
