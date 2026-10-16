@@ -27,6 +27,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - **`tools/Build-Dashboard.ps1`**: scan-to-dashboard pipeline
   (`scan --include-modules` → `dashboard --games`)
 - **Audit reports**: `docs/fprx-nids-audit.md`, `docs/fsce-nids-audit.md`
+- **`--anyps5-layout`** on `extract` and `batch-extract`: produce AnyPS5
+  relinker-ready `source/` (SELF-unwrapped ELFs) and `app0/` (faithful copy)
+  directory trees per game
 
 ### Changed
 - **Workspace version bumped to 0.7.0**
