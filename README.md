@@ -321,6 +321,40 @@ ps5rs nid sceKernelLoadStartModule
 # -> 4ZjF4RQH3k8
 ```
 
+### Correlate PRX NIDs with ASCII strings
+
+Recursively scan `.prx`/`.sprx` files for strict NID-shaped strings
+(`11×[A-Za-z0-9+/-]#U#U`), extract the printable-ASCII inventory with
+heuristic categories, and emit candidate NID↔string associations with byte
+offsets. ASCII proximity is a lead, never proof — ELF import tables and the
+NID catalog remain the authority.
+
+```sh
+# Full correlation report (default: <folder>/fprx-nids.csv)
+ps5rs fprx-nids ./games
+
+# Only NIDs missing from the catalog (built-in data/nids.csv + --nids extras)
+ps5rs fprx-nids ./games --unknown-only -o unknowns.csv
+
+# Also scan eboot.bin files, tune the nearby window and candidate cap
+ps5rs fprx-nids ./games --include-eboot --nearby-bytes 4096 --max-candidates-per-nid 25
+
+# Also dump the full string inventory
+ps5rs fprx-nids ./games --strings-output strings.csv
+```
+
+### Discover SCE symbols and compute their NIDs
+
+Scan `.prx`/`.sprx` files for `[sS]ce`-prefixed symbol tokens, compute each
+NID with the verified workspace algorithm (SHA-1 + salt, cross-checked
+against AnyPS5's `NidCompute`), and write one row per occurrence — never
+deduplicated, never written to `data/nids.csv`.
+
+```sh
+ps5rs fsce-nids ./games
+ps5rs fsce-nids ./games --include-eboot -o sce.csv
+```
+
 ## Binary Dependency Intelligence
 
 ps5rs does not treat a game as a single executable. A PS5 title is analyzed as a collection:
