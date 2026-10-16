@@ -1,0 +1,2518 @@
+{
+  "module": "libfmodstudio.prx",
+  "exports": [
+    {
+      "nid": "Hh2wT63cPf4",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086860",
+      "size": 5
+    },
+    {
+      "nid": "tRn8cafkP-E",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086870",
+      "size": 23
+    },
+    {
+      "nid": "LSgXufG16X4",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086890",
+      "size": 14
+    },
+    {
+      "nid": "n1VcQ0HkFQs",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000868a0",
+      "size": 5
+    },
+    {
+      "nid": "ntZaLfVHw7k",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000868b0",
+      "size": 5
+    },
+    {
+      "nid": "spIdAywqSDE",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000868c0",
+      "size": 5
+    },
+    {
+      "nid": "Rp8kTIExlds",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000868d0",
+      "size": 5
+    },
+    {
+      "nid": "NDXFL8vNsPs",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000868e0",
+      "size": 5
+    },
+    {
+      "nid": "1GaAjv5-PQ4",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000868f0",
+      "size": 5
+    },
+    {
+      "nid": "ioiSYMjFkFU",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086900",
+      "size": 5
+    },
+    {
+      "nid": "K3PVvF0p2+c",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086910",
+      "size": 5
+    },
+    {
+      "nid": "+gK3Cf9dYig",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086920",
+      "size": 5
+    },
+    {
+      "nid": "bAAC6GOP410",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086930",
+      "size": 5
+    },
+    {
+      "nid": "9eGSKiqFhzc",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086940",
+      "size": 5
+    },
+    {
+      "nid": "-c66ut53dZk",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086950",
+      "size": 5
+    },
+    {
+      "nid": "AugAnef4+QE",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086960",
+      "size": 5
+    },
+    {
+      "nid": "6okvOJiYBqQ",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086970",
+      "size": 5
+    },
+    {
+      "nid": "yWGNCCtJfkw",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086980",
+      "size": 5
+    },
+    {
+      "nid": "5Fi6VDqnKKE",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086990",
+      "size": 5
+    },
+    {
+      "nid": "YXksO-fkoJM",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000869a0",
+      "size": 5
+    },
+    {
+      "nid": "fOMMlsn8iwI",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000869b0",
+      "size": 5
+    },
+    {
+      "nid": "arVUVLb9j24",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000869c0",
+      "size": 5
+    },
+    {
+      "nid": "9gYZ7bYnrFY",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000869d0",
+      "size": 5
+    },
+    {
+      "nid": "3PMHJocBYMU",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000869e0",
+      "size": 5
+    },
+    {
+      "nid": "sKZJ8se9aR4",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000869f0",
+      "size": 5
+    },
+    {
+      "nid": "5OTQQNkWs8A",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086a00",
+      "size": 5
+    },
+    {
+      "nid": "JUThib7DM38",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086a10",
+      "size": 14
+    },
+    {
+      "nid": "c37ZcNs92O8",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086a20",
+      "size": 16
+    },
+    {
+      "nid": "RNfwVn2Wc7E",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086a30",
+      "size": 5
+    },
+    {
+      "nid": "xxtOCicte88",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086a40",
+      "size": 14
+    },
+    {
+      "nid": "zzeam2LT5SY",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086a50",
+      "size": 5
+    },
+    {
+      "nid": "WQrLYG6bgZE",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086a60",
+      "size": 5
+    },
+    {
+      "nid": "6TtlKrb9swI",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086a70",
+      "size": 5
+    },
+    {
+      "nid": "YvqGHvzHUY4",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086a80",
+      "size": 5
+    },
+    {
+      "nid": "p+PVgkmVPIw",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086a90",
+      "size": 5
+    },
+    {
+      "nid": "8Pwv58Heak0",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086aa0",
+      "size": 5
+    },
+    {
+      "nid": "uyp5FHVdpoM",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086ab0",
+      "size": 5
+    },
+    {
+      "nid": "VQqcq7qzGuU",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086ac0",
+      "size": 5
+    },
+    {
+      "nid": "Hn8BEi3gl4w",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086ad0",
+      "size": 5
+    },
+    {
+      "nid": "aCR0eUQMpJE",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086ae0",
+      "size": 5
+    },
+    {
+      "nid": "TzyBgMTN88g",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086af0",
+      "size": 5
+    },
+    {
+      "nid": "8SvGQFKuOUM",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086b00",
+      "size": 5
+    },
+    {
+      "nid": "PGMFbnqgZaU",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086b10",
+      "size": 5
+    },
+    {
+      "nid": "tgY2dmzghCM",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086b20",
+      "size": 5
+    },
+    {
+      "nid": "dGPZvtdzVqU",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086b30",
+      "size": 5
+    },
+    {
+      "nid": "DgCPOMYIfO4",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086b40",
+      "size": 5
+    },
+    {
+      "nid": "dy58pG69UQA",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086b50",
+      "size": 5
+    },
+    {
+      "nid": "hsoKLIKhMuY",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086b60",
+      "size": 5
+    },
+    {
+      "nid": "nNVyYLzu+Ic",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086b70",
+      "size": 5
+    },
+    {
+      "nid": "srMxbpfwyyk",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086b80",
+      "size": 5
+    },
+    {
+      "nid": "R4JuMBixxFU",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086b90",
+      "size": 5
+    },
+    {
+      "nid": "eKXLGFvdOSs",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086ba0",
+      "size": 5
+    },
+    {
+      "nid": "wyGHPVGJQ9M",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086bb0",
+      "size": 5
+    },
+    {
+      "nid": "CWo3-CPhpOg",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086bc0",
+      "size": 5
+    },
+    {
+      "nid": "G56N7VxboZg",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086bd0",
+      "size": 5
+    },
+    {
+      "nid": "kiIv-AdMc08",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086be0",
+      "size": 14
+    },
+    {
+      "nid": "0sIp2hLofLo",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086bf0",
+      "size": 5
+    },
+    {
+      "nid": "mqTWFTjNG5c",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086c00",
+      "size": 5
+    },
+    {
+      "nid": "KEEMGJX52yE",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086c10",
+      "size": 5
+    },
+    {
+      "nid": "veZyXYtxjV4",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086c20",
+      "size": 5
+    },
+    {
+      "nid": "w3nJ6epVS6o",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086c30",
+      "size": 5
+    },
+    {
+      "nid": "6KWFzexIOgc",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086c40",
+      "size": 5
+    },
+    {
+      "nid": "bd2-UcCZ-fY",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086c50",
+      "size": 5
+    },
+    {
+      "nid": "huA4eS4VhPI",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086c60",
+      "size": 5
+    },
+    {
+      "nid": "ee1yM4xjOag",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086c70",
+      "size": 5
+    },
+    {
+      "nid": "A2tzQ3nzHPU",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086c80",
+      "size": 5
+    },
+    {
+      "nid": "NF58NfcQuF4",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086c90",
+      "size": 5
+    },
+    {
+      "nid": "-YCZbUImQS0",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086ca0",
+      "size": 5
+    },
+    {
+      "nid": "a6ZO+4-sC-8",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086cb0",
+      "size": 5
+    },
+    {
+      "nid": "PHht8ReWEFI",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086cc0",
+      "size": 84
+    },
+    {
+      "nid": "ggQPMXTzCBQ",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086d20",
+      "size": 84
+    },
+    {
+      "nid": "ju7E3IoaYOo",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086d80",
+      "size": 84
+    },
+    {
+      "nid": "s7AhdfRYjYM",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086de0",
+      "size": 84
+    },
+    {
+      "nid": "cS-gBMKTris",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086e40",
+      "size": 84
+    },
+    {
+      "nid": "fqpPrShTEVE",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086ea0",
+      "size": 84
+    },
+    {
+      "nid": "yn7uxWYBu4M",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086f00",
+      "size": 5
+    },
+    {
+      "nid": "ai4U6cF45Vs",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086f10",
+      "size": 5
+    },
+    {
+      "nid": "3Oqk3nLGj8Y",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086f20",
+      "size": 5
+    },
+    {
+      "nid": "miKxcfjA2eI",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086f30",
+      "size": 5
+    },
+    {
+      "nid": "tqqkYuzrKZE",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086f40",
+      "size": 5
+    },
+    {
+      "nid": "Dv1wvYPE+Fg",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086f50",
+      "size": 5
+    },
+    {
+      "nid": "lyRqvmay7mQ",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086f60",
+      "size": 5
+    },
+    {
+      "nid": "tzNSSdGrMd0",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086f70",
+      "size": 5
+    },
+    {
+      "nid": "eMzmt-0NEZQ",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086f80",
+      "size": 5
+    },
+    {
+      "nid": "TcK3Jk0yS5M",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086f90",
+      "size": 5
+    },
+    {
+      "nid": "o9RjVbipAkU",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086fa0",
+      "size": 14
+    },
+    {
+      "nid": "NDoMF31t97E",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086fb0",
+      "size": 5
+    },
+    {
+      "nid": "f-b0q9Do7AI",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086fc0",
+      "size": 5
+    },
+    {
+      "nid": "2YOKrF7H9Jw",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086fd0",
+      "size": 5
+    },
+    {
+      "nid": "V-EK9X2+Gl8",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086fe0",
+      "size": 5
+    },
+    {
+      "nid": "u39dUQn+DU8",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000086ff0",
+      "size": 5
+    },
+    {
+      "nid": "IoXw48b2pPg",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087000",
+      "size": 5
+    },
+    {
+      "nid": "22GCqdXCAZs",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087010",
+      "size": 5
+    },
+    {
+      "nid": "li2dsa5AsZA",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087020",
+      "size": 5
+    },
+    {
+      "nid": "AdOXq4IMV4o",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087030",
+      "size": 5
+    },
+    {
+      "nid": "24h+puQwdE8",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087040",
+      "size": 5
+    },
+    {
+      "nid": "b5Fy9nGoqfU",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087050",
+      "size": 5
+    },
+    {
+      "nid": "K8T7TvsQI7I",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087060",
+      "size": 5
+    },
+    {
+      "nid": "P-4W90H1opQ",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087070",
+      "size": 5
+    },
+    {
+      "nid": "jHJVaBasKzw",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087080",
+      "size": 84
+    },
+    {
+      "nid": "rgNkesoi0OY",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000870e0",
+      "size": 14
+    },
+    {
+      "nid": "tOpobUqyPNk",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000870f0",
+      "size": 5
+    },
+    {
+      "nid": "xsYyUG1dKAY",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087100",
+      "size": 5
+    },
+    {
+      "nid": "A-E0n2H1JCI",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087110",
+      "size": 5
+    },
+    {
+      "nid": "bXAFK506bB4",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087120",
+      "size": 5
+    },
+    {
+      "nid": "M1ubplWXxd8",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087130",
+      "size": 5
+    },
+    {
+      "nid": "GATCdQDun74",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087140",
+      "size": 5
+    },
+    {
+      "nid": "Yqyva8Xq9zs",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087150",
+      "size": 5
+    },
+    {
+      "nid": "7XDuD--e4+Y",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087160",
+      "size": 84
+    },
+    {
+      "nid": "gYvIIlYaxW4",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000871c0",
+      "size": 5
+    },
+    {
+      "nid": "fJsRNTwA6eE",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000871d0",
+      "size": 14
+    },
+    {
+      "nid": "xcZXIGw-QiU",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000871e0",
+      "size": 5
+    },
+    {
+      "nid": "SzGY2Smg63Y",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000871f0",
+      "size": 14
+    },
+    {
+      "nid": "ivcV2VAtxSs",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087200",
+      "size": 16
+    },
+    {
+      "nid": "PnkvaxvULQA",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087210",
+      "size": 5
+    },
+    {
+      "nid": "QbA0PZrtaHI",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087220",
+      "size": 5
+    },
+    {
+      "nid": "19huAhf-Uoc",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087230",
+      "size": 5
+    },
+    {
+      "nid": "QoPi1ZzikgA",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087240",
+      "size": 5
+    },
+    {
+      "nid": "+4T23y1MSDk",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087250",
+      "size": 5
+    },
+    {
+      "nid": "oufTeRicjKY",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087260",
+      "size": 5
+    },
+    {
+      "nid": "utXxyDg7vrg",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087270",
+      "size": 14
+    },
+    {
+      "nid": "f+OAyWcC-GU",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087280",
+      "size": 5
+    },
+    {
+      "nid": "2NdaPeR+gvA",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087290",
+      "size": 5
+    },
+    {
+      "nid": "Swt03JoTwNI",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000872a0",
+      "size": 5
+    },
+    {
+      "nid": "aPYJfKVcGIM",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000872b0",
+      "size": 5
+    },
+    {
+      "nid": "B-UDv-IVego",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000872c0",
+      "size": 84
+    },
+    {
+      "nid": "D3me1c0dMCA",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087320",
+      "size": 14
+    },
+    {
+      "nid": "4RajpipeshU",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087330",
+      "size": 84
+    },
+    {
+      "nid": "LZZqyU74zVk",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087390",
+      "size": 14
+    },
+    {
+      "nid": "famd1+foT7U",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000873a0",
+      "size": 5
+    },
+    {
+      "nid": "7kectl-jEt0",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000873b0",
+      "size": 5
+    },
+    {
+      "nid": "8rK-sHqkfQc",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000873c0",
+      "size": 5
+    },
+    {
+      "nid": "LnuUwdlWQCQ",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000873d0",
+      "size": 5
+    },
+    {
+      "nid": "CHul4ADQctI",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000873e0",
+      "size": 5
+    },
+    {
+      "nid": "5mg7y9hsftY",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000873f0",
+      "size": 5
+    },
+    {
+      "nid": "m4qSTzt3E88",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087400",
+      "size": 14
+    },
+    {
+      "nid": "++jT5JpVre8",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087410",
+      "size": 5
+    },
+    {
+      "nid": "8sJYwCZzevM",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087420",
+      "size": 5
+    },
+    {
+      "nid": "8BU24MuDtWM",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087430",
+      "size": 5
+    },
+    {
+      "nid": "xd6DzmLfR40",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087440",
+      "size": 5
+    },
+    {
+      "nid": "tlPZp5rDDOc",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087450",
+      "size": 14
+    },
+    {
+      "nid": "L1Uk0nrMYmI",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087460",
+      "size": 5
+    },
+    {
+      "nid": "SzDMXeNdNts",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087470",
+      "size": 5
+    },
+    {
+      "nid": "BKBPAk6frd8",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087480",
+      "size": 5
+    },
+    {
+      "nid": "FTsFyC5D-CM",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087490",
+      "size": 5
+    },
+    {
+      "nid": "NNgDbioYMnE",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000874a0",
+      "size": 5
+    },
+    {
+      "nid": "v3nJR7VIPCc",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000874b0",
+      "size": 5
+    },
+    {
+      "nid": "1dL3CLRB9t4",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000874c0",
+      "size": 5
+    },
+    {
+      "nid": "NITziaWd++s",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000874d0",
+      "size": 5
+    },
+    {
+      "nid": "PU2fML6Lgbs",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000874e0",
+      "size": 5
+    },
+    {
+      "nid": "tc7s1tpqWqA",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000874f0",
+      "size": 5
+    },
+    {
+      "nid": "iM2x6RJddT4",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087500",
+      "size": 5
+    },
+    {
+      "nid": "zq4JxTjPaw8",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087510",
+      "size": 5
+    },
+    {
+      "nid": "xj1UHtJArdM",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087520",
+      "size": 5
+    },
+    {
+      "nid": "gqwWR+v17NQ",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087530",
+      "size": 5
+    },
+    {
+      "nid": "crQyqMVHDzc",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087540",
+      "size": 5
+    },
+    {
+      "nid": "dBejnKWHKL4",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087550",
+      "size": 5
+    },
+    {
+      "nid": "KaM10UXJzD8",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087560",
+      "size": 5
+    },
+    {
+      "nid": "O8G4-JW9F+E",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087570",
+      "size": 14
+    },
+    {
+      "nid": "W0V-wosc9IA",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087580",
+      "size": 5
+    },
+    {
+      "nid": "wrNuTebcDtM",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087590",
+      "size": 5
+    },
+    {
+      "nid": "-CKPxxpqMkM",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000875a0",
+      "size": 5
+    },
+    {
+      "nid": "P6rKubmodqM",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000875b0",
+      "size": 5
+    },
+    {
+      "nid": "DzJOet7pDJE",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000875c0",
+      "size": 5
+    },
+    {
+      "nid": "f22+l8RWOZk",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000875d0",
+      "size": 5
+    },
+    {
+      "nid": "qVAES58o-PU",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000875e0",
+      "size": 5
+    },
+    {
+      "nid": "33OFkrgNQrM",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000875f0",
+      "size": 5
+    },
+    {
+      "nid": "6ao6MIPXVu0",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087600",
+      "size": 5
+    },
+    {
+      "nid": "VL4e0fWZ+0Q",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087610",
+      "size": 5
+    },
+    {
+      "nid": "XrZGkDSHCTk",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087620",
+      "size": 5
+    },
+    {
+      "nid": "wl6D3x4MZLU",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087630",
+      "size": 84
+    },
+    {
+      "nid": "hPDCUkgMhHQ",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087690",
+      "size": 14
+    },
+    {
+      "nid": "4xOhAFnYVN8",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000876a0",
+      "size": 5
+    },
+    {
+      "nid": "Es7PjTQGQLk",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000876b0",
+      "size": 5
+    },
+    {
+      "nid": "sG854lkJd68",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000876c0",
+      "size": 5
+    },
+    {
+      "nid": "pxT4pFNH+x8",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000876d0",
+      "size": 5
+    },
+    {
+      "nid": "q+mHqeR4tGs",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000876e0",
+      "size": 5
+    },
+    {
+      "nid": "51wAT2jBZLM",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000876f0",
+      "size": 5
+    },
+    {
+      "nid": "2Kk+4pYIQLI",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087700",
+      "size": 5
+    },
+    {
+      "nid": "z9SjRy0thPU",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000087710",
+      "size": 5
+    },
+    {
+      "nid": "MjQ5oH6b620",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008a640",
+      "size": 417
+    },
+    {
+      "nid": "1N4sq4EA6GU",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000089b60",
+      "size": 60
+    },
+    {
+      "nid": "DlcM6wdwWJc",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000089d20",
+      "size": 187
+    },
+    {
+      "nid": "BTQKHumIXmw",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000089de0",
+      "size": 209
+    },
+    {
+      "nid": "iILsKSo5Syg",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000089ec0",
+      "size": 451
+    },
+    {
+      "nid": "cju7jJ-abPQ",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008a090",
+      "size": 294
+    },
+    {
+      "nid": "ERN4ES-D2x8",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008a270",
+      "size": 128
+    },
+    {
+      "nid": "qpxa4b3tmjs",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008a400",
+      "size": 364
+    },
+    {
+      "nid": "H+G1XQRDyWk",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008a1c0",
+      "size": 175
+    },
+    {
+      "nid": "tJYh5v7R0U8",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008a7f0",
+      "size": 554
+    },
+    {
+      "nid": "Iu30aNG-BaY",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008aa20",
+      "size": 128
+    },
+    {
+      "nid": "fTeTFfqY8Gc",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008ab50",
+      "size": 760
+    },
+    {
+      "nid": "7hd4bRJuLMg",
+      "name": "fmodstudio_real_getCoreSystem",
+      "library": "libfmodstudio",
+      "address": "0x000000000008a570",
+      "size": 205
+    },
+    {
+      "nid": "6E6MUTGjxhI",
+      "name": "fmodstudio_real_getEvent",
+      "library": "libfmodstudio",
+      "address": "0x000000000008c110",
+      "size": 676
+    },
+    {
+      "nid": "y2ybsIQ073A",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008c3c0",
+      "size": 676
+    },
+    {
+      "nid": "Bu8uFP7ME2k",
+      "name": "fmodstudio_real_getVCA",
+      "library": "libfmodstudio",
+      "address": "0x000000000008c670",
+      "size": 676
+    },
+    {
+      "nid": "7oCR8gES6yo",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008c920",
+      "size": 676
+    },
+    {
+      "nid": "d-I6Z20jeYo",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008cbd0",
+      "size": 498
+    },
+    {
+      "nid": "vgT4A7VrTtE",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008cdd0",
+      "size": 498
+    },
+    {
+      "nid": "5Y5pSdsEdMg",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008cfd0",
+      "size": 498
+    },
+    {
+      "nid": "dc1rk+VZdyo",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008d1d0",
+      "size": 498
+    },
+    {
+      "nid": "DsFsPD0MWNc",
+      "name": "fmodstudio_real_getSoundInfo",
+      "library": "libfmodstudio",
+      "address": "0x000000000008d3d0",
+      "size": 458
+    },
+    {
+      "nid": "g-RQFSeJTdY",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008d5a0",
+      "size": 630
+    },
+    {
+      "nid": "VAbTshRlOOQ",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008d820",
+      "size": 662
+    },
+    {
+      "nid": "BICmvQ9Dm-0",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008dac0",
+      "size": 588
+    },
+    {
+      "nid": "naS9fcuugz8",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008dd10",
+      "size": 461
+    },
+    {
+      "nid": "-v8SAZQRlTg",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008dee0",
+      "size": 653
+    },
+    {
+      "nid": "AdR01fo-WaM",
+      "name": "fmodstudio_real_sysGetParam",
+      "library": "libfmodstudio",
+      "address": "0x000000000008e170",
+      "size": 530
+    },
+    {
+      "nid": "-HTS6hB300E",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008e390",
+      "size": 538
+    },
+    {
+      "nid": "5nNiCaWeiII",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008e5b0",
+      "size": 393
+    },
+    {
+      "nid": "Y36Y21dnKtc",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008e740",
+      "size": 566
+    },
+    {
+      "nid": "bcgpmrrW2NA",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008ae50",
+      "size": 270
+    },
+    {
+      "nid": "J-Oi-ac1EcU",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008af60",
+      "size": 333
+    },
+    {
+      "nid": "uQc3Jo2YZag",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008b0b0",
+      "size": 565
+    },
+    {
+      "nid": "4AQlc0jE9PQ",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008b2f0",
+      "size": 600
+    },
+    {
+      "nid": "V+eJCuB02IU",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008b550",
+      "size": 385
+    },
+    {
+      "nid": "XUVEAZusrVo",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008b6e0",
+      "size": 439
+    },
+    {
+      "nid": "L51FfEMZa4o",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008b8a0",
+      "size": 650
+    },
+    {
+      "nid": "X5j6Mr8a2Pk",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008bb30",
+      "size": 774
+    },
+    {
+      "nid": "V6p5ELSm-ok",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008be40",
+      "size": 717
+    },
+    {
+      "nid": "3shmeqDFJJ0",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008ec90",
+      "size": 445
+    },
+    {
+      "nid": "5OhMkCtr8JY",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008ee50",
+      "size": 406
+    },
+    {
+      "nid": "MeAlrYg75Z0",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008eff0",
+      "size": 130
+    },
+    {
+      "nid": "LILXByiyFiQ",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008f150",
+      "size": 418
+    },
+    {
+      "nid": "5QDnyU+SPxs",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008f300",
+      "size": 979
+    },
+    {
+      "nid": "SKbpZwczzRc",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008f6e0",
+      "size": 398
+    },
+    {
+      "nid": "q6bohwXbx0g",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008f870",
+      "size": 948
+    },
+    {
+      "nid": "NC7NmKVz61g",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008e980",
+      "size": 233
+    },
+    {
+      "nid": "Zi1n4MvZ3-0",
+      "name": "fmodstudio_real_getBufferUsage",
+      "library": "libfmodstudio",
+      "address": "0x000000000008ea70",
+      "size": 292
+    },
+    {
+      "nid": "7yhSuutyI-g",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008eba0",
+      "size": 228
+    },
+    {
+      "nid": "oSbGcvX-+ZI",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008fc30",
+      "size": 284
+    },
+    {
+      "nid": "CkMvtp8+3wY",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008fe10",
+      "size": 209
+    },
+    {
+      "nid": "3wsumcEIE6s",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008fef0",
+      "size": 170
+    },
+    {
+      "nid": "M929qrJEig0",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008fd50",
+      "size": 187
+    },
+    {
+      "nid": "uWXqw4LeM5Q",
+      "name": "fmodstudio_real_edIsValid",
+      "library": "libfmodstudio",
+      "address": "0x0000000000089ba0",
+      "size": 60
+    },
+    {
+      "nid": "g8aYXq8kbGo",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000008ffa0",
+      "size": 309
+    },
+    {
+      "nid": "+So6CdPGoWw",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000900e0",
+      "size": 540
+    },
+    {
+      "nid": "cIv243UhfFs",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000090300",
+      "size": 306
+    },
+    {
+      "nid": "Ma4ynrNRJGw",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000090440",
+      "size": 1094
+    },
+    {
+      "nid": "zdsupMypfMU",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000090890",
+      "size": 1650
+    },
+    {
+      "nid": "KiYIwIQWotg",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000090f10",
+      "size": 1205
+    },
+    {
+      "nid": "j2tWhrml6vQ",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000913d0",
+      "size": 153
+    },
+    {
+      "nid": "nUAnu9FIGLU",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000091470",
+      "size": 230
+    },
+    {
+      "nid": "7xFcNsBzggY",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000091560",
+      "size": 230
+    },
+    {
+      "nid": "VdQjbIsdhXQ",
+      "name": "fmodstudio_real_edGetLength",
+      "library": "libfmodstudio",
+      "address": "0x0000000000091650",
+      "size": 153
+    },
+    {
+      "nid": "jmgE7cBODLg",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000916f0",
+      "size": 153
+    },
+    {
+      "nid": "Lq1Q7TqB1vw",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000091790",
+      "size": 153
+    },
+    {
+      "nid": "HRx63os66m0",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000091830",
+      "size": 153
+    },
+    {
+      "nid": "d-LUgXfEpR8",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000918d0",
+      "size": 153
+    },
+    {
+      "nid": "alleMuKEWr8",
+      "name": "fmodstudio_real_isOneshot",
+      "library": "libfmodstudio",
+      "address": "0x0000000000091970",
+      "size": 153
+    },
+    {
+      "nid": "zE+zCB1FUOs",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000091a10",
+      "size": 153
+    },
+    {
+      "nid": "nhBPjhZ+VWs",
+      "name": "fmodstudio_real_is3D",
+      "library": "libfmodstudio",
+      "address": "0x0000000000091ab0",
+      "size": 153
+    },
+    {
+      "nid": "cNDtBax6L58",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000091b50",
+      "size": 305
+    },
+    {
+      "nid": "e1narD7sOL0",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000091c90",
+      "size": 153
+    },
+    {
+      "nid": "+V2QcIcvWpw",
+      "name": "fmodstudio_real_createInstance",
+      "library": "libfmodstudio",
+      "address": "0x0000000000091d30",
+      "size": 385
+    },
+    {
+      "nid": "omDBr+dcDVc",
+      "name": "fmodstudio_real_getInstanceCount",
+      "library": "libfmodstudio",
+      "address": "0x0000000000091ec0",
+      "size": 431
+    },
+    {
+      "nid": "amVp+qf6SDk",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000092070",
+      "size": 984
+    },
+    {
+      "nid": "JfoCWM1F50Q",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000092450",
+      "size": 308
+    },
+    {
+      "nid": "yjRnMhiv-KQ",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000092590",
+      "size": 308
+    },
+    {
+      "nid": "--f9RJwAh1A",
+      "name": "fmodstudio_real_edSampleState",
+      "library": "libfmodstudio",
+      "address": "0x00000000000926d0",
+      "size": 376
+    },
+    {
+      "nid": "vVupb6lqml0",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000092850",
+      "size": 308
+    },
+    {
+      "nid": "oS4hwPS27ag",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000092990",
+      "size": 381
+    },
+    {
+      "nid": "KspIKe6PCg8",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000092b10",
+      "size": 311
+    },
+    {
+      "nid": "qdzathqMh9Q",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000092c50",
+      "size": 286
+    },
+    {
+      "nid": "3loRRCoqXfU",
+      "name": "fmodstudio_real_ei_isValid",
+      "library": "libfmodstudio",
+      "address": "0x0000000000089c20",
+      "size": 60
+    },
+    {
+      "nid": "dHVtNkoIoa4",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000947a0",
+      "size": 385
+    },
+    {
+      "nid": "T11Rlk4THVg",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000094930",
+      "size": 428
+    },
+    {
+      "nid": "urqRW0vsBa4",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000094ae0",
+      "size": 352
+    },
+    {
+      "nid": "Eo74laKhmOc",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000094c40",
+      "size": 428
+    },
+    {
+      "nid": "EZMhRCBn3dU",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000094df0",
+      "size": 352
+    },
+    {
+      "nid": "O7OJDCfuJeM",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000094f50",
+      "size": 337
+    },
+    {
+      "nid": "kFNJPXQw-zM",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000950b0",
+      "size": 369
+    },
+    {
+      "nid": "t-sbUuW3FWo",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000095230",
+      "size": 313
+    },
+    {
+      "nid": "+3rpOMKoHvE",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000095370",
+      "size": 351
+    },
+    {
+      "nid": "iujfeL+h0RI",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000954d0",
+      "size": 421
+    },
+    {
+      "nid": "N+wyls17Mjo",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000095680",
+      "size": 443
+    },
+    {
+      "nid": "J5LwfYsaTIo",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000095840",
+      "size": 421
+    },
+    {
+      "nid": "sr6PwyItLY4",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000959f0",
+      "size": 443
+    },
+    {
+      "nid": "yNPSb1Gx4LE",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000095bb0",
+      "size": 310
+    },
+    {
+      "nid": "b949925VwHM",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000095cf0",
+      "size": 334
+    },
+    {
+      "nid": "2Rb+xdt8XkU",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000096e30",
+      "size": 308
+    },
+    {
+      "nid": "c4nJ9NGNhcA",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000096f70",
+      "size": 337
+    },
+    {
+      "nid": "WP51b8simn8",
+      "name": "fmodstudio_real_getTimeline",
+      "library": "libfmodstudio",
+      "address": "0x00000000000970d0",
+      "size": 348
+    },
+    {
+      "nid": "vhKuvcKcUPc",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000097230",
+      "size": 337
+    },
+    {
+      "nid": "2QOSvz5hvAg",
+      "name": "fmodstudio_real_getPlaybackState",
+      "library": "libfmodstudio",
+      "address": "0x0000000000097390",
+      "size": 312
+    },
+    {
+      "nid": "xFZxMognttU",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000096cb0",
+      "size": 376
+    },
+    {
+      "nid": "kuUyampLEsU",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000974d0",
+      "size": 308
+    },
+    {
+      "nid": "CSdwECvoCzI",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000097610",
+      "size": 328
+    },
+    {
+      "nid": "ZlyXxXkCaq8",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000962a0",
+      "size": 570
+    },
+    {
+      "nid": "SPoYGtEslGY",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000964e0",
+      "size": 548
+    },
+    {
+      "nid": "YemJWcQ8k2o",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000095e40",
+      "size": 625
+    },
+    {
+      "nid": "cITO9UF6qbs",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000960c0",
+      "size": 468
+    },
+    {
+      "nid": "lxP8z5kpvmc",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000096710",
+      "size": 663
+    },
+    {
+      "nid": "6NIqae6zQt4",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000969b0",
+      "size": 308
+    },
+    {
+      "nid": "LG53EJZJDnA",
+      "name": "fmodstudio_real_eiSetCallback",
+      "library": "libfmodstudio",
+      "address": "0x00000000000979c0",
+      "size": 381
+    },
+    {
+      "nid": "-7VafNNns2A",
+      "name": "fmodstudio_real_ei_getUserData",
+      "library": "libfmodstudio",
+      "address": "0x0000000000097880",
+      "size": 311
+    },
+    {
+      "nid": "wJM7jKtToIs",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000097760",
+      "size": 286
+    },
+    {
+      "nid": "zJpsXUI2MP8",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000096af0",
+      "size": 442
+    },
+    {
+      "nid": "caF7Uh1E5Dw",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000097b40",
+      "size": 330
+    },
+    {
+      "nid": "bwgh4f2P3bo",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000089c60",
+      "size": 60
+    },
+    {
+      "nid": "imWpTxfbsDI",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000092d70",
+      "size": 309
+    },
+    {
+      "nid": "HccLYOWCuVM",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000092eb0",
+      "size": 540
+    },
+    {
+      "nid": "RmRxmDnkZ9s",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000093730",
+      "size": 417
+    },
+    {
+      "nid": "GqL992msUmo",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000935d0",
+      "size": 352
+    },
+    {
+      "nid": "NRwTfmQiOHk",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000093220",
+      "size": 304
+    },
+    {
+      "nid": "fEcGNRe4laE",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000930d0",
+      "size": 334
+    },
+    {
+      "nid": "AVFqe8FKGfg",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000934a0",
+      "size": 304
+    },
+    {
+      "nid": "527zZ46M9IM",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000093350",
+      "size": 334
+    },
+    {
+      "nid": "0+HgFkajHnk",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000938e0",
+      "size": 337
+    },
+    {
+      "nid": "+8m0hqMZsqw",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000093a40",
+      "size": 308
+    },
+    {
+      "nid": "lHo6VzyVnEs",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000093b80",
+      "size": 308
+    },
+    {
+      "nid": "QOW4WYUMJK0",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000093cc0",
+      "size": 376
+    },
+    {
+      "nid": "AXJA4AA5A8g",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000093e40",
+      "size": 431
+    },
+    {
+      "nid": "JgtPnxCt-Ps",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000093ff0",
+      "size": 319
+    },
+    {
+      "nid": "OkEcA5h07og",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000089ca0",
+      "size": 60
+    },
+    {
+      "nid": "sgUnR+KKOTA",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000094130",
+      "size": 309
+    },
+    {
+      "nid": "slOS23E6B7Q",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000094270",
+      "size": 540
+    },
+    {
+      "nid": "L7dxMcJ-2Gc",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000945f0",
+      "size": 417
+    },
+    {
+      "nid": "k57C+tslpho",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000094490",
+      "size": 352
+    },
+    {
+      "nid": "fbAVXdyBuso",
+      "name": "fmodstudio_real_bankIsValid",
+      "library": "libfmodstudio",
+      "address": "0x0000000000089be0",
+      "size": 60
+    },
+    {
+      "nid": "dm96P2AbYn8",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000097fb0",
+      "size": 322
+    },
+    {
+      "nid": "lJkT6n0jtOA",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000098100",
+      "size": 562
+    },
+    {
+      "nid": "SCvUImM+5zk",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000098760",
+      "size": 128
+    },
+    {
+      "nid": "H8AN0zYsJ-M",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000988b0",
+      "size": 308
+    },
+    {
+      "nid": "f3SCKie2gZM",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000989f0",
+      "size": 308
+    },
+    {
+      "nid": "6nWYF1yMOl4",
+      "name": "fmodstudio_real_bankLoading",
+      "library": "libfmodstudio",
+      "address": "0x0000000000097e10",
+      "size": 411
+    },
+    {
+      "nid": "Vyo4sShcggs",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000097c90",
+      "size": 376
+    },
+    {
+      "nid": "LttotQc+PqI",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000098340",
+      "size": 325
+    },
+    {
+      "nid": "3Rdd56t9lv0",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000098490",
+      "size": 719
+    },
+    {
+      "nid": "zVxbiRlxmRk",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000098b30",
+      "size": 432
+    },
+    {
+      "nid": "bBL9LOkN-Ng",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000098ce0",
+      "size": 1189
+    },
+    {
+      "nid": "Ka06Z1LiRps",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000099190",
+      "size": 568
+    },
+    {
+      "nid": "tG17NFv2mZ8",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000993d0",
+      "size": 1534
+    },
+    {
+      "nid": "AL0is-99m+E",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x00000000000999d0",
+      "size": 432
+    },
+    {
+      "nid": "DyOYrMD5wm8",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000099b80",
+      "size": 1174
+    },
+    {
+      "nid": "ncHObxr0NeY",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000009a020",
+      "size": 300
+    },
+    {
+      "nid": "jakK3kUxHJk",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000009a150",
+      "size": 275
+    },
+    {
+      "nid": "Mf7zQzuiuCg",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x0000000000089ce0",
+      "size": 60
+    },
+    {
+      "nid": "CrMo1y7Vu5c",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000009a270",
+      "size": 291
+    },
+    {
+      "nid": "O2YjFLz-kB8",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000009a3a0",
+      "size": 295
+    },
+    {
+      "nid": "uFVBzhttX9s",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000009a4d0",
+      "size": 291
+    },
+    {
+      "nid": "hglSelpcxFU",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000009a600",
+      "size": 398
+    },
+    {
+      "nid": "jN5qjAPGGRs",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000009a790",
+      "size": 481
+    },
+    {
+      "nid": "bW-JfdEoOTY",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000009a980",
+      "size": 405
+    },
+    {
+      "nid": "OC3BSHUe7jg",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000009ab20",
+      "size": 277
+    },
+    {
+      "nid": "8YbI2Yj2zSY",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000009ac40",
+      "size": 249
+    },
+    {
+      "nid": "hYG5CN+YUgs",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000009ad40",
+      "size": 262
+    },
+    {
+      "nid": "c0aBql2F3DI",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000009ae50",
+      "size": 292
+    },
+    {
+      "nid": "huaZ2stE6I4",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000009af80",
+      "size": 277
+    },
+    {
+      "nid": "spIxUJTmkks",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000009b0a0",
+      "size": 290
+    },
+    {
+      "nid": "VKvaAWKqj8g",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000009b1d0",
+      "size": 269
+    },
+    {
+      "nid": "4x1xD3u3KaA",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000009b2e0",
+      "size": 299
+    },
+    {
+      "nid": "z3JmnLtloBQ",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000009b410",
+      "size": 410
+    },
+    {
+      "nid": "mUe5SlGTYn0",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000009b5b0",
+      "size": 279
+    },
+    {
+      "nid": "CPkxYg8gFuU",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000009b6d0",
+      "size": 271
+    },
+    {
+      "nid": "EAGgJCsBUPc",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000009b7e0",
+      "size": 271
+    },
+    {
+      "nid": "-OvLQde11H4",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000009b8f0",
+      "size": 271
+    },
+    {
+      "nid": "NOVnqbOkGtI",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000009ba00",
+      "size": 295
+    },
+    {
+      "nid": "nhtWI25gfiI",
+      "name": "?",
+      "library": "libfmodstudio",
+      "address": "0x000000000009bb30",
+      "size": 270
+    }
+  ]
+}
