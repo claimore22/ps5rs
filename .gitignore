@@ -76,3 +76,4 @@ analysis_with_modules/images/*.json
 /tools/fmod_fapi_scan.py
 /tools/fmod_strings_match.py
 /tools/private/
+/analysis/ast-eboot-imports.json

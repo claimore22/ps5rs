@@ -1,6 +1,6 @@
 [CmdletBinding()]
 param(
-    [string[]]$GamesDir = @("C:\Users\claimoar\Documents\ROMS\PS5"),
+    [string[]]$GamesDir = @("PUT YOUR GAMES FOLDER HERE"),
     [string]$OutputDir = "C:\Users\claimoar\Documents\Rust\ps5rs\analysis",
     [switch]$SkipBuild,
     [switch]$SkipMiddleware,

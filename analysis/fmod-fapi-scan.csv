@@ -1,0 +1,1114 @@
+nid,symbol,file,line_number,line
+ZTe1H1JWG0U,FMOD_OS_Time_GetUs,api\core\examples\common.cpp,16,FMOD_RESULT F_API FMOD_OS_Time_GetUs(unsigned int *us);
+FD+fSumRc8M,FMOD_OS_Debug_Output,api\core\examples\common.cpp,17,"FMOD_RESULT F_API FMOD_OS_Debug_Output(const char *format, ...);"
+QRfQbsTMfyU,FMOD_OS_File_Open,api\core\examples\common.cpp,18,"FMOD_RESULT F_API FMOD_OS_File_Open(const char *name, int mode, unsigned int *filesize, FMOD_OS_FILE **handle);"
+gpH75blLHDE,FMOD_OS_File_Close,api\core\examples\common.cpp,19,FMOD_RESULT F_API FMOD_OS_File_Close(FMOD_OS_FILE *handle);
+-4oteQ2NTMM,FMOD_OS_File_Read,api\core\examples\common.cpp,20,"FMOD_RESULT F_API FMOD_OS_File_Read(FMOD_OS_FILE *handle, void *buf, unsigned int count, unsigned int *read);"
+6FdfcTKQgvo,FMOD_OS_File_Write,api\core\examples\common.cpp,21,"FMOD_RESULT F_API FMOD_OS_File_Write(FMOD_OS_FILE *handle, const void *buffer, unsigned int bytesToWrite, bool flush);"
+uGG0InzPmrQ,FMOD_OS_File_Seek,api\core\examples\common.cpp,22,"FMOD_RESULT F_API FMOD_OS_File_Seek(FMOD_OS_FILE *handle, unsigned int offset);"
+4CiEnaJzZBE,FMOD_OS_Time_Sleep,api\core\examples\common.cpp,23,FMOD_RESULT F_API FMOD_OS_Time_Sleep(unsigned int ms);
+caROgLeX3K8,FMOD_OS_CriticalSection_Create,api\core\examples\common.cpp,24,"FMOD_RESULT F_API FMOD_OS_CriticalSection_Create(FMOD_OS_CRITICALSECTION **crit, bool memorycrit);"
+eob6lch6Jc0,FMOD_OS_CriticalSection_Free,api\core\examples\common.cpp,25,"FMOD_RESULT F_API FMOD_OS_CriticalSection_Free(FMOD_OS_CRITICALSECTION *crit, bool memorycrit);"
+csFSCmnOOUk,FMOD_OS_CriticalSection_Enter,api\core\examples\common.cpp,26,FMOD_RESULT F_API FMOD_OS_CriticalSection_Enter(FMOD_OS_CRITICALSECTION *crit);
+sPL3Dj4C6N0,FMOD_OS_CriticalSection_Leave,api\core\examples\common.cpp,27,FMOD_RESULT F_API FMOD_OS_CriticalSection_Leave(FMOD_OS_CRITICALSECTION *crit);
+wbg5GfFRI-Q,FMOD_OS_CriticalSection_TryEnter,api\core\examples\common.cpp,28,"FMOD_RESULT F_API FMOD_OS_CriticalSection_TryEnter(FMOD_OS_CRITICALSECTION *crit, bool *entered);"
+5ZIxtclvZ4I,FMOD_OS_CriticalSection_IsLocked,api\core\examples\common.cpp,29,"FMOD_RESULT F_API FMOD_OS_CriticalSection_IsLocked(FMOD_OS_CRITICALSECTION *crit, bool *locked);"
+PXtBi7QEzRM,FMOD_OS_Thread_Create,api\core\examples\common.cpp,30,"FMOD_RESULT F_API FMOD_OS_Thread_Create(const char *name, void (*callback)(void *param), void *param, FMOD_THREAD_AFFINITY affinity, FMOD_THREAD_PRIORITY priority, FMOD_THREAD_STACK_SIZE stacksize, void **handle);"
+uqiUHUmbpEg,FMOD_OS_Thread_Destroy,api\core\examples\common.cpp,31,FMOD_RESULT F_API FMOD_OS_Thread_Destroy(void *handle);
+zKjgSnqVqf4,FMOD_Memory_Initialize,api\core\inc\fmod.h,25,"FMOD_RESULT F_API FMOD_Memory_Initialize           (void *poolmem, int poollen, FMOD_MEMORY_ALLOC_CALLBACK useralloc, FMOD_MEMORY_REALLOC_CALLBACK userrealloc, FMOD_MEMORY_FREE_CALLBACK userfree, FMOD_MEMORY_TYPE memtypeflags);"
+xaNK0ZTH3QA,FMOD_Memory_GetStats,api\core\inc\fmod.h,26,"FMOD_RESULT F_API FMOD_Memory_GetStats             (int *currentalloced, int *maxalloced, FMOD_BOOL blocking);"
+BgCoL-FZz0Y,FMOD_Debug_Initialize,api\core\inc\fmod.h,27,"FMOD_RESULT F_API FMOD_Debug_Initialize            (FMOD_DEBUG_FLAGS flags, FMOD_DEBUG_MODE mode, FMOD_DEBUG_CALLBACK callback, const char *filename);"
+LFKR5biQwHY,FMOD_File_SetDiskBusy,api\core\inc\fmod.h,28,FMOD_RESULT F_API FMOD_File_SetDiskBusy            (int busy);
+j5OCX00-stk,FMOD_File_GetDiskBusy,api\core\inc\fmod.h,29,FMOD_RESULT F_API FMOD_File_GetDiskBusy            (int *busy);
+tPFAXasYRR4,FMOD_Thread_SetAttributes,api\core\inc\fmod.h,30,"FMOD_RESULT F_API FMOD_Thread_SetAttributes        (FMOD_THREAD_TYPE type, FMOD_THREAD_AFFINITY affinity, FMOD_THREAD_PRIORITY priority, FMOD_THREAD_STACK_SIZE stacksize);"
+Wpcs1+qFGVU,FMOD_System_Create,api\core\inc\fmod.h,35,"FMOD_RESULT F_API FMOD_System_Create               (FMOD_SYSTEM **system, unsigned int headerversion);"
+IbJ3P256HUI,FMOD_System_Release,api\core\inc\fmod.h,36,FMOD_RESULT F_API FMOD_System_Release              (FMOD_SYSTEM *system);
+Gf2DNnVguis,FMOD_System_SetOutput,api\core\inc\fmod.h,43,"FMOD_RESULT F_API FMOD_System_SetOutput                 (FMOD_SYSTEM *system, FMOD_OUTPUTTYPE output);"
+nhqnOc2wpoI,FMOD_System_GetOutput,api\core\inc\fmod.h,44,"FMOD_RESULT F_API FMOD_System_GetOutput                 (FMOD_SYSTEM *system, FMOD_OUTPUTTYPE *output);"
+oISwia3wz28,FMOD_System_GetNumDrivers,api\core\inc\fmod.h,45,"FMOD_RESULT F_API FMOD_System_GetNumDrivers             (FMOD_SYSTEM *system, int *numdrivers);"
+Z0apQhcJcKI,FMOD_System_GetDriverInfo,api\core\inc\fmod.h,46,"FMOD_RESULT F_API FMOD_System_GetDriverInfo             (FMOD_SYSTEM *system, int id, char *name, int namelen, FMOD_GUID *guid, int *systemrate, FMOD_SPEAKERMODE *speakermode, int *speakermodechannels);"
+dQvkosvnvLs,FMOD_System_SetDriver,api\core\inc\fmod.h,47,"FMOD_RESULT F_API FMOD_System_SetDriver                 (FMOD_SYSTEM *system, int driver);"
+KOmpEBE3kFY,FMOD_System_GetDriver,api\core\inc\fmod.h,48,"FMOD_RESULT F_API FMOD_System_GetDriver                 (FMOD_SYSTEM *system, int *driver);"
+12whKSIP9tc,FMOD_System_SetSoftwareChannels,api\core\inc\fmod.h,49,"FMOD_RESULT F_API FMOD_System_SetSoftwareChannels       (FMOD_SYSTEM *system, int numsoftwarechannels);"
+8YEckOx7ve8,FMOD_System_GetSoftwareChannels,api\core\inc\fmod.h,50,"FMOD_RESULT F_API FMOD_System_GetSoftwareChannels       (FMOD_SYSTEM *system, int *numsoftwarechannels);"
+KJlap6-7iyM,FMOD_System_SetSoftwareFormat,api\core\inc\fmod.h,51,"FMOD_RESULT F_API FMOD_System_SetSoftwareFormat         (FMOD_SYSTEM *system, int samplerate, FMOD_SPEAKERMODE speakermode, int numrawspeakers);"
+9e9wJ9o-0jo,FMOD_System_GetSoftwareFormat,api\core\inc\fmod.h,52,"FMOD_RESULT F_API FMOD_System_GetSoftwareFormat         (FMOD_SYSTEM *system, int *samplerate, FMOD_SPEAKERMODE *speakermode, int *numrawspeakers);"
+vyQS7aUU8so,FMOD_System_SetDSPBufferSize,api\core\inc\fmod.h,53,"FMOD_RESULT F_API FMOD_System_SetDSPBufferSize          (FMOD_SYSTEM *system, unsigned int bufferlength, int numbuffers);"
+wCVKLqvcEGk,FMOD_System_GetDSPBufferSize,api\core\inc\fmod.h,54,"FMOD_RESULT F_API FMOD_System_GetDSPBufferSize          (FMOD_SYSTEM *system, unsigned int *bufferlength, int *numbuffers);"
+J0EpSLei4FM,FMOD_System_SetFileSystem,api\core\inc\fmod.h,55,"FMOD_RESULT F_API FMOD_System_SetFileSystem             (FMOD_SYSTEM *system, FMOD_FILE_OPEN_CALLBACK useropen, FMOD_FILE_CLOSE_CALLBACK userclose, FMOD_FILE_READ_CALLBACK userread, FMOD_FILE_SEEK_CALLBACK userseek, FMOD_FILE_ASYNCREAD_CALLBACK userasyncread, FMOD_FILE_ASYNCCANCEL_CALLBACK userasynccancel, int blockalign);"
+u+yqWh6sFtQ,FMOD_System_AttachFileSystem,api\core\inc\fmod.h,56,"FMOD_RESULT F_API FMOD_System_AttachFileSystem          (FMOD_SYSTEM *system, FMOD_FILE_OPEN_CALLBACK useropen, FMOD_FILE_CLOSE_CALLBACK userclose, FMOD_FILE_READ_CALLBACK userread, FMOD_FILE_SEEK_CALLBACK userseek);"
+LHXStqFWqBE,FMOD_System_SetAdvancedSettings,api\core\inc\fmod.h,57,"FMOD_RESULT F_API FMOD_System_SetAdvancedSettings       (FMOD_SYSTEM *system, FMOD_ADVANCEDSETTINGS *settings);"
+MSR7FqjLwHE,FMOD_System_GetAdvancedSettings,api\core\inc\fmod.h,58,"FMOD_RESULT F_API FMOD_System_GetAdvancedSettings       (FMOD_SYSTEM *system, FMOD_ADVANCEDSETTINGS *settings);"
+PWoGfaERJDY,FMOD_System_SetCallback,api\core\inc\fmod.h,59,"FMOD_RESULT F_API FMOD_System_SetCallback               (FMOD_SYSTEM *system, FMOD_SYSTEM_CALLBACK callback, FMOD_SYSTEM_CALLBACK_TYPE callbackmask);"
+6rVSAFA8faY,FMOD_System_SetPluginPath,api\core\inc\fmod.h,62,"FMOD_RESULT F_API FMOD_System_SetPluginPath             (FMOD_SYSTEM *system, const char *path);"
+M9QN9C-HCoE,FMOD_System_LoadPlugin,api\core\inc\fmod.h,63,"FMOD_RESULT F_API FMOD_System_LoadPlugin                (FMOD_SYSTEM *system, const char *filename, unsigned int *handle, unsigned int priority);"
+KEx0R2WEzOg,FMOD_System_UnloadPlugin,api\core\inc\fmod.h,64,"FMOD_RESULT F_API FMOD_System_UnloadPlugin              (FMOD_SYSTEM *system, unsigned int handle);"
+l7FrucNjAic,FMOD_System_GetNumNestedPlugins,api\core\inc\fmod.h,65,"FMOD_RESULT F_API FMOD_System_GetNumNestedPlugins       (FMOD_SYSTEM *system, unsigned int handle, int *count);"
+ydV7yHfgpno,FMOD_System_GetNestedPlugin,api\core\inc\fmod.h,66,"FMOD_RESULT F_API FMOD_System_GetNestedPlugin           (FMOD_SYSTEM *system, unsigned int handle, int index, unsigned int *nestedhandle);"
+wQwd1XA0KhU,FMOD_System_GetNumPlugins,api\core\inc\fmod.h,67,"FMOD_RESULT F_API FMOD_System_GetNumPlugins             (FMOD_SYSTEM *system, FMOD_PLUGINTYPE plugintype, int *numplugins);"
+QmqTdkEFb-0,FMOD_System_GetPluginHandle,api\core\inc\fmod.h,68,"FMOD_RESULT F_API FMOD_System_GetPluginHandle           (FMOD_SYSTEM *system, FMOD_PLUGINTYPE plugintype, int index, unsigned int *handle);"
+bm8nmXdGJvo,FMOD_System_GetPluginInfo,api\core\inc\fmod.h,69,"FMOD_RESULT F_API FMOD_System_GetPluginInfo             (FMOD_SYSTEM *system, unsigned int handle, FMOD_PLUGINTYPE *plugintype, char *name, int namelen, unsigned int *version);"
+aZpxLd2G9ic,FMOD_System_SetOutputByPlugin,api\core\inc\fmod.h,70,"FMOD_RESULT F_API FMOD_System_SetOutputByPlugin         (FMOD_SYSTEM *system, unsigned int handle);"
+aAEiH-2iXdE,FMOD_System_GetOutputByPlugin,api\core\inc\fmod.h,71,"FMOD_RESULT F_API FMOD_System_GetOutputByPlugin         (FMOD_SYSTEM *system, unsigned int *handle);"
+7toHTF5B+GE,FMOD_System_CreateDSPByPlugin,api\core\inc\fmod.h,72,"FMOD_RESULT F_API FMOD_System_CreateDSPByPlugin         (FMOD_SYSTEM *system, unsigned int handle, FMOD_DSP **dsp);"
+YyGKBSCPeW4,FMOD_System_GetDSPInfoByPlugin,api\core\inc\fmod.h,73,"FMOD_RESULT F_API FMOD_System_GetDSPInfoByPlugin        (FMOD_SYSTEM *system, unsigned int handle, const FMOD_DSP_DESCRIPTION **description);"
+8YNWK8qg5lU,FMOD_System_RegisterCodec,api\core\inc\fmod.h,74,"FMOD_RESULT F_API FMOD_System_RegisterCodec             (FMOD_SYSTEM *system, FMOD_CODEC_DESCRIPTION *description, unsigned int *handle, unsigned int priority);"
+bGhWliyos10,FMOD_System_RegisterDSP,api\core\inc\fmod.h,75,"FMOD_RESULT F_API FMOD_System_RegisterDSP               (FMOD_SYSTEM *system, const FMOD_DSP_DESCRIPTION *description, unsigned int *handle);"
+N3Mgc+4NKMk,FMOD_System_RegisterOutput,api\core\inc\fmod.h,76,"FMOD_RESULT F_API FMOD_System_RegisterOutput            (FMOD_SYSTEM *system, const FMOD_OUTPUT_DESCRIPTION *description, unsigned int *handle);"
+PFMA+O5px5s,FMOD_System_Init,api\core\inc\fmod.h,79,"FMOD_RESULT F_API FMOD_System_Init                      (FMOD_SYSTEM *system, int maxchannels, FMOD_INITFLAGS flags, void *extradriverdata);"
+2ixYkQDcikY,FMOD_System_Close,api\core\inc\fmod.h,80,FMOD_RESULT F_API FMOD_System_Close                     (FMOD_SYSTEM *system);
+xONakomDU9c,FMOD_System_Update,api\core\inc\fmod.h,83,FMOD_RESULT F_API FMOD_System_Update                    (FMOD_SYSTEM *system);
+T6nT+gfNd68,FMOD_System_SetSpeakerPosition,api\core\inc\fmod.h,84,"FMOD_RESULT F_API FMOD_System_SetSpeakerPosition        (FMOD_SYSTEM *system, FMOD_SPEAKER speaker, float x, float y, FMOD_BOOL active);"
+vWJrmYGm6Z8,FMOD_System_GetSpeakerPosition,api\core\inc\fmod.h,85,"FMOD_RESULT F_API FMOD_System_GetSpeakerPosition        (FMOD_SYSTEM *system, FMOD_SPEAKER speaker, float *x, float *y, FMOD_BOOL *active);"
+BIK-SJBKCNg,FMOD_System_SetStreamBufferSize,api\core\inc\fmod.h,86,"FMOD_RESULT F_API FMOD_System_SetStreamBufferSize       (FMOD_SYSTEM *system, unsigned int filebuffersize, FMOD_TIMEUNIT filebuffersizetype);"
+9o5X2dlBFCo,FMOD_System_GetStreamBufferSize,api\core\inc\fmod.h,87,"FMOD_RESULT F_API FMOD_System_GetStreamBufferSize       (FMOD_SYSTEM *system, unsigned int *filebuffersize, FMOD_TIMEUNIT *filebuffersizetype);"
+4AwgRiooTOk,FMOD_System_Set3DSettings,api\core\inc\fmod.h,88,"FMOD_RESULT F_API FMOD_System_Set3DSettings             (FMOD_SYSTEM *system, float dopplerscale, float distancefactor, float rolloffscale);"
+M7Hemqnkdoo,FMOD_System_Get3DSettings,api\core\inc\fmod.h,89,"FMOD_RESULT F_API FMOD_System_Get3DSettings             (FMOD_SYSTEM *system, float *dopplerscale, float *distancefactor, float *rolloffscale);"
+GRoSBh5vNgM,FMOD_System_Set3DNumListeners,api\core\inc\fmod.h,90,"FMOD_RESULT F_API FMOD_System_Set3DNumListeners         (FMOD_SYSTEM *system, int numlisteners);"
+k84yzOQr2RY,FMOD_System_Get3DNumListeners,api\core\inc\fmod.h,91,"FMOD_RESULT F_API FMOD_System_Get3DNumListeners         (FMOD_SYSTEM *system, int *numlisteners);"
+5VWYuzPwbkA,FMOD_System_Set3DListenerAttributes,api\core\inc\fmod.h,92,"FMOD_RESULT F_API FMOD_System_Set3DListenerAttributes   (FMOD_SYSTEM *system, int listener, const FMOD_VECTOR *pos, const FMOD_VECTOR *vel, const FMOD_VECTOR *forward, const FMOD_VECTOR *up);"
+CcJl5V0uQ+A,FMOD_System_Get3DListenerAttributes,api\core\inc\fmod.h,93,"FMOD_RESULT F_API FMOD_System_Get3DListenerAttributes   (FMOD_SYSTEM *system, int listener, FMOD_VECTOR *pos, FMOD_VECTOR *vel, FMOD_VECTOR *forward, FMOD_VECTOR *up);"
+yteGLD2r0ic,FMOD_System_Set3DRolloffCallback,api\core\inc\fmod.h,94,"FMOD_RESULT F_API FMOD_System_Set3DRolloffCallback      (FMOD_SYSTEM *system, FMOD_3D_ROLLOFF_CALLBACK callback);"
+Lke3nNn9sEQ,FMOD_System_MixerSuspend,api\core\inc\fmod.h,95,FMOD_RESULT F_API FMOD_System_MixerSuspend              (FMOD_SYSTEM *system);
+36Z29JIvXy4,FMOD_System_MixerResume,api\core\inc\fmod.h,96,FMOD_RESULT F_API FMOD_System_MixerResume               (FMOD_SYSTEM *system);
+fpahxuejl+8,FMOD_System_GetDefaultMixMatrix,api\core\inc\fmod.h,97,"FMOD_RESULT F_API FMOD_System_GetDefaultMixMatrix       (FMOD_SYSTEM *system, FMOD_SPEAKERMODE sourcespeakermode, FMOD_SPEAKERMODE targetspeakermode, float *matrix, int matrixhop);"
+8uYIXBWy-xA,FMOD_System_GetSpeakerModeChannels,api\core\inc\fmod.h,98,"FMOD_RESULT F_API FMOD_System_GetSpeakerModeChannels    (FMOD_SYSTEM *system, FMOD_SPEAKERMODE mode, int *channels);"
+Jr6Vs3yth3s,FMOD_System_GetVersion,api\core\inc\fmod.h,101,"FMOD_RESULT F_API FMOD_System_GetVersion                (FMOD_SYSTEM *system, unsigned int *version);"
+ajXPlRKQ7QE,FMOD_System_GetOutputHandle,api\core\inc\fmod.h,102,"FMOD_RESULT F_API FMOD_System_GetOutputHandle           (FMOD_SYSTEM *system, void **handle);"
+oFl7SSO9-VY,FMOD_System_GetChannelsPlaying,api\core\inc\fmod.h,103,"FMOD_RESULT F_API FMOD_System_GetChannelsPlaying        (FMOD_SYSTEM *system, int *channels, int *realchannels);"
+5mQu-kdIGPg,FMOD_System_GetCPUUsage,api\core\inc\fmod.h,104,"FMOD_RESULT F_API FMOD_System_GetCPUUsage               (FMOD_SYSTEM *system, FMOD_CPU_USAGE *usage);"
+hgVZrRK+tq0,FMOD_System_GetFileUsage,api\core\inc\fmod.h,105,"FMOD_RESULT F_API FMOD_System_GetFileUsage              (FMOD_SYSTEM *system, long long *sampleBytesRead, long long *streamBytesRead, long long *otherBytesRead);"
+ZdDy6gGYy58,FMOD_System_CreateSound,api\core\inc\fmod.h,108,"FMOD_RESULT F_API FMOD_System_CreateSound               (FMOD_SYSTEM *system, const char *name_or_data, FMOD_MODE mode, FMOD_CREATESOUNDEXINFO *exinfo, FMOD_SOUND **sound);"
+0e7uHuiZWLE,FMOD_System_CreateStream,api\core\inc\fmod.h,109,"FMOD_RESULT F_API FMOD_System_CreateStream              (FMOD_SYSTEM *system, const char *name_or_data, FMOD_MODE mode, FMOD_CREATESOUNDEXINFO *exinfo, FMOD_SOUND **sound);"
+aT6RESJ-DfI,FMOD_System_CreateDSP,api\core\inc\fmod.h,110,"FMOD_RESULT F_API FMOD_System_CreateDSP                 (FMOD_SYSTEM *system, const FMOD_DSP_DESCRIPTION *description, FMOD_DSP **dsp);"
+-AkdjButMCE,FMOD_System_CreateDSPByType,api\core\inc\fmod.h,111,"FMOD_RESULT F_API FMOD_System_CreateDSPByType           (FMOD_SYSTEM *system, FMOD_DSP_TYPE type, FMOD_DSP **dsp);"
+mRCnaqfSEQo,FMOD_System_CreateChannelGroup,api\core\inc\fmod.h,112,"FMOD_RESULT F_API FMOD_System_CreateChannelGroup        (FMOD_SYSTEM *system, const char *name, FMOD_CHANNELGROUP **channelgroup);"
+sqfiliE3EQI,FMOD_System_CreateSoundGroup,api\core\inc\fmod.h,113,"FMOD_RESULT F_API FMOD_System_CreateSoundGroup          (FMOD_SYSTEM *system, const char *name, FMOD_SOUNDGROUP **soundgroup);"
+Cgx9JmgiiWQ,FMOD_System_CreateReverb3D,api\core\inc\fmod.h,114,"FMOD_RESULT F_API FMOD_System_CreateReverb3D            (FMOD_SYSTEM *system, FMOD_REVERB3D **reverb);"
+k8KuFgP13TU,FMOD_System_PlaySound,api\core\inc\fmod.h,115,"FMOD_RESULT F_API FMOD_System_PlaySound                 (FMOD_SYSTEM *system, FMOD_SOUND *sound, FMOD_CHANNELGROUP *channelgroup, FMOD_BOOL paused, FMOD_CHANNEL **channel);"
+BgWSHV1ztTE,FMOD_System_PlayDSP,api\core\inc\fmod.h,116,"FMOD_RESULT F_API FMOD_System_PlayDSP                   (FMOD_SYSTEM *system, FMOD_DSP *dsp, FMOD_CHANNELGROUP *channelgroup, FMOD_BOOL paused, FMOD_CHANNEL **channel);"
+o3Cb-+DnC7I,FMOD_System_GetChannel,api\core\inc\fmod.h,117,"FMOD_RESULT F_API FMOD_System_GetChannel                (FMOD_SYSTEM *system, int channelid, FMOD_CHANNEL **channel);"
+M219ayIVUOs,FMOD_System_GetDSPInfoByType,api\core\inc\fmod.h,118,"FMOD_RESULT F_API FMOD_System_GetDSPInfoByType          (FMOD_SYSTEM *system, FMOD_DSP_TYPE type, const FMOD_DSP_DESCRIPTION **description);"
+HqwkIOP2o0A,FMOD_System_GetMasterChannelGroup,api\core\inc\fmod.h,119,"FMOD_RESULT F_API FMOD_System_GetMasterChannelGroup     (FMOD_SYSTEM *system, FMOD_CHANNELGROUP **channelgroup);"
+r8pDCniFQlA,FMOD_System_GetMasterSoundGroup,api\core\inc\fmod.h,120,"FMOD_RESULT F_API FMOD_System_GetMasterSoundGroup       (FMOD_SYSTEM *system, FMOD_SOUNDGROUP **soundgroup);"
+Eq0TA7amPkE,FMOD_System_AttachChannelGroupToPort,api\core\inc\fmod.h,123,"FMOD_RESULT F_API FMOD_System_AttachChannelGroupToPort  (FMOD_SYSTEM *system, FMOD_PORT_TYPE portType, FMOD_PORT_INDEX portIndex, FMOD_CHANNELGROUP *channelgroup, FMOD_BOOL passThru);"
+6eWhsve1BY4,FMOD_System_DetachChannelGroupFromPort,api\core\inc\fmod.h,124,"FMOD_RESULT F_API FMOD_System_DetachChannelGroupFromPort(FMOD_SYSTEM *system, FMOD_CHANNELGROUP *channelgroup);"
+DdWuRmoXrzk,FMOD_System_SetReverbProperties,api\core\inc\fmod.h,127,"FMOD_RESULT F_API FMOD_System_SetReverbProperties       (FMOD_SYSTEM *system, int instance, const FMOD_REVERB_PROPERTIES *prop);"
+7fguUFbOsHk,FMOD_System_GetReverbProperties,api\core\inc\fmod.h,128,"FMOD_RESULT F_API FMOD_System_GetReverbProperties       (FMOD_SYSTEM *system, int instance, FMOD_REVERB_PROPERTIES *prop);"
+9jcSo6sPfg0,FMOD_System_LockDSP,api\core\inc\fmod.h,131,FMOD_RESULT F_API FMOD_System_LockDSP                   (FMOD_SYSTEM *system);
+o0vI02jyH3o,FMOD_System_UnlockDSP,api\core\inc\fmod.h,132,FMOD_RESULT F_API FMOD_System_UnlockDSP                 (FMOD_SYSTEM *system);
+ENnQqngS+3Q,FMOD_System_GetRecordNumDrivers,api\core\inc\fmod.h,135,"FMOD_RESULT F_API FMOD_System_GetRecordNumDrivers       (FMOD_SYSTEM *system, int *numdrivers, int *numconnected);"
+-HYj8rCFopE,FMOD_System_GetRecordDriverInfo,api\core\inc\fmod.h,136,"FMOD_RESULT F_API FMOD_System_GetRecordDriverInfo       (FMOD_SYSTEM *system, int id, char *name, int namelen, FMOD_GUID *guid, int *systemrate, FMOD_SPEAKERMODE *speakermode, int *speakermodechannels, FMOD_DRIVER_STATE *state);"
+ZzBl8WjiVfs,FMOD_System_GetRecordPosition,api\core\inc\fmod.h,137,"FMOD_RESULT F_API FMOD_System_GetRecordPosition         (FMOD_SYSTEM *system, int id, unsigned int *position);"
+j4Uuqrj2KOs,FMOD_System_RecordStart,api\core\inc\fmod.h,138,"FMOD_RESULT F_API FMOD_System_RecordStart               (FMOD_SYSTEM *system, int id, FMOD_SOUND *sound, FMOD_BOOL loop);"
+7TKLQi4PWtE,FMOD_System_RecordStop,api\core\inc\fmod.h,139,"FMOD_RESULT F_API FMOD_System_RecordStop                (FMOD_SYSTEM *system, int id);"
+TnSOPOnXt8w,FMOD_System_IsRecording,api\core\inc\fmod.h,140,"FMOD_RESULT F_API FMOD_System_IsRecording               (FMOD_SYSTEM *system, int id, FMOD_BOOL *recording);"
+86+BdgIbHPs,FMOD_System_CreateGeometry,api\core\inc\fmod.h,143,"FMOD_RESULT F_API FMOD_System_CreateGeometry            (FMOD_SYSTEM *system, int maxpolygons, int maxvertices, FMOD_GEOMETRY **geometry);"
+CQoLME+YHX4,FMOD_System_SetGeometrySettings,api\core\inc\fmod.h,144,"FMOD_RESULT F_API FMOD_System_SetGeometrySettings       (FMOD_SYSTEM *system, float maxworldsize);"
+PcpWgsZe4mI,FMOD_System_GetGeometrySettings,api\core\inc\fmod.h,145,"FMOD_RESULT F_API FMOD_System_GetGeometrySettings       (FMOD_SYSTEM *system, float *maxworldsize);"
+PpLQJeVLLeM,FMOD_System_LoadGeometry,api\core\inc\fmod.h,146,"FMOD_RESULT F_API FMOD_System_LoadGeometry              (FMOD_SYSTEM *system, const void *data, int datasize, FMOD_GEOMETRY **geometry);"
+IRN94szwRH0,FMOD_System_GetGeometryOcclusion,api\core\inc\fmod.h,147,"FMOD_RESULT F_API FMOD_System_GetGeometryOcclusion      (FMOD_SYSTEM *system, const FMOD_VECTOR *listener, const FMOD_VECTOR *source, float *direct, float *reverb);"
+pfxLcuEaqpQ,FMOD_System_SetNetworkProxy,api\core\inc\fmod.h,150,"FMOD_RESULT F_API FMOD_System_SetNetworkProxy           (FMOD_SYSTEM *system, const char *proxy);"
+1kVWv69cEfw,FMOD_System_GetNetworkProxy,api\core\inc\fmod.h,151,"FMOD_RESULT F_API FMOD_System_GetNetworkProxy           (FMOD_SYSTEM *system, char *proxy, int proxylen);"
+3iyOvOGpY2U,FMOD_System_SetNetworkTimeout,api\core\inc\fmod.h,152,"FMOD_RESULT F_API FMOD_System_SetNetworkTimeout         (FMOD_SYSTEM *system, int timeout);"
+uP51y51WipU,FMOD_System_GetNetworkTimeout,api\core\inc\fmod.h,153,"FMOD_RESULT F_API FMOD_System_GetNetworkTimeout         (FMOD_SYSTEM *system, int *timeout);"
+a2MxJjz7XiY,FMOD_System_SetUserData,api\core\inc\fmod.h,156,"FMOD_RESULT F_API FMOD_System_SetUserData               (FMOD_SYSTEM *system, void *userdata);"
+8ZuhoewcMA4,FMOD_System_GetUserData,api\core\inc\fmod.h,157,"FMOD_RESULT F_API FMOD_System_GetUserData               (FMOD_SYSTEM *system, void **userdata);"
+3vC4IimHj4M,FMOD_Sound_Release,api\core\inc\fmod.h,162,FMOD_RESULT F_API FMOD_Sound_Release                    (FMOD_SOUND *sound);
+k6Fb0IDnFG4,FMOD_Sound_GetSystemObject,api\core\inc\fmod.h,163,"FMOD_RESULT F_API FMOD_Sound_GetSystemObject            (FMOD_SOUND *sound, FMOD_SYSTEM **system);"
+xFFsSUE9jio,FMOD_Sound_Lock,api\core\inc\fmod.h,169,"FMOD_RESULT F_API FMOD_Sound_Lock                       (FMOD_SOUND *sound, unsigned int offset, unsigned int length, void **ptr1, void **ptr2, unsigned int *len1, unsigned int *len2);"
+Y92FB5XuQIU,FMOD_Sound_Unlock,api\core\inc\fmod.h,170,"FMOD_RESULT F_API FMOD_Sound_Unlock                     (FMOD_SOUND *sound, void *ptr1, void *ptr2, unsigned int len1, unsigned int len2);"
+DacIOn+76Hk,FMOD_Sound_SetDefaults,api\core\inc\fmod.h,171,"FMOD_RESULT F_API FMOD_Sound_SetDefaults                (FMOD_SOUND *sound, float frequency, int priority);"
+M2c0AFZCEiI,FMOD_Sound_GetDefaults,api\core\inc\fmod.h,172,"FMOD_RESULT F_API FMOD_Sound_GetDefaults                (FMOD_SOUND *sound, float *frequency, int *priority);"
+uf+-+De0gTE,FMOD_Sound_Set3DMinMaxDistance,api\core\inc\fmod.h,173,"FMOD_RESULT F_API FMOD_Sound_Set3DMinMaxDistance        (FMOD_SOUND *sound, float min, float max);"
+N8Tw3nD80dw,FMOD_Sound_Get3DMinMaxDistance,api\core\inc\fmod.h,174,"FMOD_RESULT F_API FMOD_Sound_Get3DMinMaxDistance        (FMOD_SOUND *sound, float *min, float *max);"
+tVF04ZW7iLo,FMOD_Sound_Set3DConeSettings,api\core\inc\fmod.h,175,"FMOD_RESULT F_API FMOD_Sound_Set3DConeSettings          (FMOD_SOUND *sound, float insideconeangle, float outsideconeangle, float outsidevolume);"
+2SN-0ik2GSs,FMOD_Sound_Get3DConeSettings,api\core\inc\fmod.h,176,"FMOD_RESULT F_API FMOD_Sound_Get3DConeSettings          (FMOD_SOUND *sound, float *insideconeangle, float *outsideconeangle, float *outsidevolume);"
+j7RTzk5zrfU,FMOD_Sound_Set3DCustomRolloff,api\core\inc\fmod.h,177,"FMOD_RESULT F_API FMOD_Sound_Set3DCustomRolloff         (FMOD_SOUND *sound, FMOD_VECTOR *points, int numpoints);"
+Nm0Sgq-6lhQ,FMOD_Sound_Get3DCustomRolloff,api\core\inc\fmod.h,178,"FMOD_RESULT F_API FMOD_Sound_Get3DCustomRolloff         (FMOD_SOUND *sound, FMOD_VECTOR **points, int *numpoints);"
+nJAIfTetQF0,FMOD_Sound_GetSubSound,api\core\inc\fmod.h,179,"FMOD_RESULT F_API FMOD_Sound_GetSubSound                (FMOD_SOUND *sound, int index, FMOD_SOUND **subsound);"
+Z5iyny2qZkQ,FMOD_Sound_GetSubSoundParent,api\core\inc\fmod.h,180,"FMOD_RESULT F_API FMOD_Sound_GetSubSoundParent          (FMOD_SOUND *sound, FMOD_SOUND **parentsound);"
+yCXKeZo7XTw,FMOD_Sound_GetName,api\core\inc\fmod.h,181,"FMOD_RESULT F_API FMOD_Sound_GetName                    (FMOD_SOUND *sound, char *name, int namelen);"
+ZyfXIFLqooA,FMOD_Sound_GetLength,api\core\inc\fmod.h,182,"FMOD_RESULT F_API FMOD_Sound_GetLength                  (FMOD_SOUND *sound, unsigned int *length, FMOD_TIMEUNIT lengthtype);"
+ktGZoiNxUxk,FMOD_Sound_GetFormat,api\core\inc\fmod.h,183,"FMOD_RESULT F_API FMOD_Sound_GetFormat                  (FMOD_SOUND *sound, FMOD_SOUND_TYPE *type, FMOD_SOUND_FORMAT *format, int *channels, int *bits);"
+g-Vp7-JOQeA,FMOD_Sound_GetNumSubSounds,api\core\inc\fmod.h,184,"FMOD_RESULT F_API FMOD_Sound_GetNumSubSounds            (FMOD_SOUND *sound, int *numsubsounds);"
+JQfyAdU5LnQ,FMOD_Sound_GetNumTags,api\core\inc\fmod.h,185,"FMOD_RESULT F_API FMOD_Sound_GetNumTags                 (FMOD_SOUND *sound, int *numtags, int *numtagsupdated);"
+OI09fYzwylg,FMOD_Sound_GetTag,api\core\inc\fmod.h,186,"FMOD_RESULT F_API FMOD_Sound_GetTag                     (FMOD_SOUND *sound, const char *name, int index, FMOD_TAG *tag);"
+4hErXWMvAhY,FMOD_Sound_GetOpenState,api\core\inc\fmod.h,187,"FMOD_RESULT F_API FMOD_Sound_GetOpenState               (FMOD_SOUND *sound, FMOD_OPENSTATE *openstate, unsigned int *percentbuffered, FMOD_BOOL *starving, FMOD_BOOL *diskbusy);"
+pqE2lANooCY,FMOD_Sound_ReadData,api\core\inc\fmod.h,188,"FMOD_RESULT F_API FMOD_Sound_ReadData                   (FMOD_SOUND *sound, void *buffer, unsigned int length, unsigned int *read);"
+Q0Ub3F3Kny8,FMOD_Sound_SeekData,api\core\inc\fmod.h,189,"FMOD_RESULT F_API FMOD_Sound_SeekData                   (FMOD_SOUND *sound, unsigned int pcm);"
+bLz1tyAVYBc,FMOD_Sound_SetSoundGroup,api\core\inc\fmod.h,191,"FMOD_RESULT F_API FMOD_Sound_SetSoundGroup              (FMOD_SOUND *sound, FMOD_SOUNDGROUP *soundgroup);"
+WivB5Vu6xYs,FMOD_Sound_GetSoundGroup,api\core\inc\fmod.h,192,"FMOD_RESULT F_API FMOD_Sound_GetSoundGroup              (FMOD_SOUND *sound, FMOD_SOUNDGROUP **soundgroup);"
+v-dXfRcnD4Y,FMOD_Sound_GetNumSyncPoints,api\core\inc\fmod.h,198,"FMOD_RESULT F_API FMOD_Sound_GetNumSyncPoints           (FMOD_SOUND *sound, int *numsyncpoints);"
+wyf6tSkq-Mw,FMOD_Sound_GetSyncPoint,api\core\inc\fmod.h,199,"FMOD_RESULT F_API FMOD_Sound_GetSyncPoint               (FMOD_SOUND *sound, int index, FMOD_SYNCPOINT **point);"
+yuF617ogUow,FMOD_Sound_GetSyncPointInfo,api\core\inc\fmod.h,200,"FMOD_RESULT F_API FMOD_Sound_GetSyncPointInfo           (FMOD_SOUND *sound, FMOD_SYNCPOINT *point, char *name, int namelen, unsigned int *offset, FMOD_TIMEUNIT offsettype);"
+poER7X+lOF8,FMOD_Sound_AddSyncPoint,api\core\inc\fmod.h,201,"FMOD_RESULT F_API FMOD_Sound_AddSyncPoint               (FMOD_SOUND *sound, unsigned int offset, FMOD_TIMEUNIT offsettype, const char *name, FMOD_SYNCPOINT **point);"
+fMhv5cVqt5A,FMOD_Sound_DeleteSyncPoint,api\core\inc\fmod.h,202,"FMOD_RESULT F_API FMOD_Sound_DeleteSyncPoint            (FMOD_SOUND *sound, FMOD_SYNCPOINT *point);"
+naUOxSCPqzU,FMOD_Sound_SetMode,api\core\inc\fmod.h,208,"FMOD_RESULT F_API FMOD_Sound_SetMode                    (FMOD_SOUND *sound, FMOD_MODE mode);"
+LWaYmP55UZk,FMOD_Sound_GetMode,api\core\inc\fmod.h,209,"FMOD_RESULT F_API FMOD_Sound_GetMode                    (FMOD_SOUND *sound, FMOD_MODE *mode);"
+WeEkXLkqUyQ,FMOD_Sound_SetLoopCount,api\core\inc\fmod.h,210,"FMOD_RESULT F_API FMOD_Sound_SetLoopCount               (FMOD_SOUND *sound, int loopcount);"
+J5e0DUujCg4,FMOD_Sound_GetLoopCount,api\core\inc\fmod.h,211,"FMOD_RESULT F_API FMOD_Sound_GetLoopCount               (FMOD_SOUND *sound, int *loopcount);"
++4z8GWpqwV8,FMOD_Sound_SetLoopPoints,api\core\inc\fmod.h,212,"FMOD_RESULT F_API FMOD_Sound_SetLoopPoints              (FMOD_SOUND *sound, unsigned int loopstart, FMOD_TIMEUNIT loopstarttype, unsigned int loopend, FMOD_TIMEUNIT loopendtype);"
+xEc1ukAZE6k,FMOD_Sound_GetLoopPoints,api\core\inc\fmod.h,213,"FMOD_RESULT F_API FMOD_Sound_GetLoopPoints              (FMOD_SOUND *sound, unsigned int *loopstart, FMOD_TIMEUNIT loopstarttype, unsigned int *loopend, FMOD_TIMEUNIT loopendtype);"
+ufaO+khJiY4,FMOD_Sound_GetMusicNumChannels,api\core\inc\fmod.h,219,"FMOD_RESULT F_API FMOD_Sound_GetMusicNumChannels        (FMOD_SOUND *sound, int *numchannels);"
+ps8nQ842GQc,FMOD_Sound_SetMusicChannelVolume,api\core\inc\fmod.h,220,"FMOD_RESULT F_API FMOD_Sound_SetMusicChannelVolume      (FMOD_SOUND *sound, int channel, float volume);"
+7riDJBO-wLQ,FMOD_Sound_GetMusicChannelVolume,api\core\inc\fmod.h,221,"FMOD_RESULT F_API FMOD_Sound_GetMusicChannelVolume      (FMOD_SOUND *sound, int channel, float *volume);"
+l-NSjwfMS4k,FMOD_Sound_SetMusicSpeed,api\core\inc\fmod.h,222,"FMOD_RESULT F_API FMOD_Sound_SetMusicSpeed              (FMOD_SOUND *sound, float speed);"
+9C-vMm4WQ5k,FMOD_Sound_GetMusicSpeed,api\core\inc\fmod.h,223,"FMOD_RESULT F_API FMOD_Sound_GetMusicSpeed              (FMOD_SOUND *sound, float *speed);"
+Qotbnv2GwFQ,FMOD_Sound_SetUserData,api\core\inc\fmod.h,229,"FMOD_RESULT F_API FMOD_Sound_SetUserData                (FMOD_SOUND *sound, void *userdata);"
+5YDm3xsXdVE,FMOD_Sound_GetUserData,api\core\inc\fmod.h,230,"FMOD_RESULT F_API FMOD_Sound_GetUserData                (FMOD_SOUND *sound, void **userdata);"
+pDhc52sBG7k,FMOD_Channel_GetSystemObject,api\core\inc\fmod.h,236,"FMOD_RESULT F_API FMOD_Channel_GetSystemObject          (FMOD_CHANNEL *channel, FMOD_SYSTEM **system);"
+0hrqBTpJZNY,FMOD_Channel_Stop,api\core\inc\fmod.h,242,FMOD_RESULT F_API FMOD_Channel_Stop                     (FMOD_CHANNEL *channel);
+WoUd6KKryUk,FMOD_Channel_SetPaused,api\core\inc\fmod.h,243,"FMOD_RESULT F_API FMOD_Channel_SetPaused                (FMOD_CHANNEL *channel, FMOD_BOOL paused);"
+FJCmudHl5oE,FMOD_Channel_GetPaused,api\core\inc\fmod.h,244,"FMOD_RESULT F_API FMOD_Channel_GetPaused                (FMOD_CHANNEL *channel, FMOD_BOOL *paused);"
+9FVr+vCQ5Hs,FMOD_Channel_SetVolume,api\core\inc\fmod.h,245,"FMOD_RESULT F_API FMOD_Channel_SetVolume                (FMOD_CHANNEL *channel, float volume);"
+QUbEyqog8j4,FMOD_Channel_GetVolume,api\core\inc\fmod.h,246,"FMOD_RESULT F_API FMOD_Channel_GetVolume                (FMOD_CHANNEL *channel, float *volume);"
+xpu2Qt7nhu0,FMOD_Channel_SetVolumeRamp,api\core\inc\fmod.h,247,"FMOD_RESULT F_API FMOD_Channel_SetVolumeRamp            (FMOD_CHANNEL *channel, FMOD_BOOL ramp);"
+GByetcxvBSw,FMOD_Channel_GetVolumeRamp,api\core\inc\fmod.h,248,"FMOD_RESULT F_API FMOD_Channel_GetVolumeRamp            (FMOD_CHANNEL *channel, FMOD_BOOL *ramp);"
+t+5LZtiyyxc,FMOD_Channel_GetAudibility,api\core\inc\fmod.h,249,"FMOD_RESULT F_API FMOD_Channel_GetAudibility            (FMOD_CHANNEL *channel, float *audibility);"
+b0hAMrivQZ4,FMOD_Channel_SetPitch,api\core\inc\fmod.h,250,"FMOD_RESULT F_API FMOD_Channel_SetPitch                 (FMOD_CHANNEL *channel, float pitch);"
+MALY705JaCY,FMOD_Channel_GetPitch,api\core\inc\fmod.h,251,"FMOD_RESULT F_API FMOD_Channel_GetPitch                 (FMOD_CHANNEL *channel, float *pitch);"
+EStDZg4CAi4,FMOD_Channel_SetMute,api\core\inc\fmod.h,252,"FMOD_RESULT F_API FMOD_Channel_SetMute                  (FMOD_CHANNEL *channel, FMOD_BOOL mute);"
+XE052WJ+y1Y,FMOD_Channel_GetMute,api\core\inc\fmod.h,253,"FMOD_RESULT F_API FMOD_Channel_GetMute                  (FMOD_CHANNEL *channel, FMOD_BOOL *mute);"
+OjI+tWcTMpI,FMOD_Channel_SetReverbProperties,api\core\inc\fmod.h,254,"FMOD_RESULT F_API FMOD_Channel_SetReverbProperties      (FMOD_CHANNEL *channel, int instance, float wet);"
+8BQy-oQDy7Q,FMOD_Channel_GetReverbProperties,api\core\inc\fmod.h,255,"FMOD_RESULT F_API FMOD_Channel_GetReverbProperties      (FMOD_CHANNEL *channel, int instance, float *wet);"
+thiQ0MFP1Ao,FMOD_Channel_SetLowPassGain,api\core\inc\fmod.h,256,"FMOD_RESULT F_API FMOD_Channel_SetLowPassGain           (FMOD_CHANNEL *channel, float gain);"
+Ju4UvNJZJJM,FMOD_Channel_GetLowPassGain,api\core\inc\fmod.h,257,"FMOD_RESULT F_API FMOD_Channel_GetLowPassGain           (FMOD_CHANNEL *channel, float *gain);"
+Rxx9C+E4j8Y,FMOD_Channel_SetMode,api\core\inc\fmod.h,258,"FMOD_RESULT F_API FMOD_Channel_SetMode                  (FMOD_CHANNEL *channel, FMOD_MODE mode);"
+fIgpL-ofwCU,FMOD_Channel_GetMode,api\core\inc\fmod.h,259,"FMOD_RESULT F_API FMOD_Channel_GetMode                  (FMOD_CHANNEL *channel, FMOD_MODE *mode);"
+v0H7eK2qhMk,FMOD_Channel_SetCallback,api\core\inc\fmod.h,260,"FMOD_RESULT F_API FMOD_Channel_SetCallback              (FMOD_CHANNEL *channel, FMOD_CHANNELCONTROL_CALLBACK callback);"
+IK0H-eivfPI,FMOD_Channel_IsPlaying,api\core\inc\fmod.h,261,"FMOD_RESULT F_API FMOD_Channel_IsPlaying                (FMOD_CHANNEL *channel, FMOD_BOOL *isplaying);"
+YbZ5Yiflgnc,FMOD_Channel_SetPan,api\core\inc\fmod.h,267,"FMOD_RESULT F_API FMOD_Channel_SetPan                   (FMOD_CHANNEL *channel, float pan);"
+8hu4fueEwYA,FMOD_Channel_SetMixLevelsOutput,api\core\inc\fmod.h,268,"FMOD_RESULT F_API FMOD_Channel_SetMixLevelsOutput       (FMOD_CHANNEL *channel, float frontleft, float frontright, float center, float lfe, float surroundleft, float surroundright, float backleft, float backright);"
+FIOwweRhp1Y,FMOD_Channel_SetMixLevelsInput,api\core\inc\fmod.h,269,"FMOD_RESULT F_API FMOD_Channel_SetMixLevelsInput        (FMOD_CHANNEL *channel, float *levels, int numlevels);"
+l6gE5LDJX24,FMOD_Channel_SetMixMatrix,api\core\inc\fmod.h,270,"FMOD_RESULT F_API FMOD_Channel_SetMixMatrix             (FMOD_CHANNEL *channel, float *matrix, int outchannels, int inchannels, int inchannel_hop);"
+oOaO1jxQ7Yk,FMOD_Channel_GetMixMatrix,api\core\inc\fmod.h,271,"FMOD_RESULT F_API FMOD_Channel_GetMixMatrix             (FMOD_CHANNEL *channel, float *matrix, int *outchannels, int *inchannels, int inchannel_hop);"
+cuSA2x0Jx8I,FMOD_Channel_GetDSPClock,api\core\inc\fmod.h,277,"FMOD_RESULT F_API FMOD_Channel_GetDSPClock              (FMOD_CHANNEL *channel, unsigned long long *dspclock, unsigned long long *parentclock);"
+f0Mjdekixxc,FMOD_Channel_SetDelay,api\core\inc\fmod.h,278,"FMOD_RESULT F_API FMOD_Channel_SetDelay                 (FMOD_CHANNEL *channel, unsigned long long dspclock_start, unsigned long long dspclock_end, FMOD_BOOL stopchannels);"
+q6xUzPbO7XE,FMOD_Channel_GetDelay,api\core\inc\fmod.h,279,"FMOD_RESULT F_API FMOD_Channel_GetDelay                 (FMOD_CHANNEL *channel, unsigned long long *dspclock_start, unsigned long long *dspclock_end, FMOD_BOOL *stopchannels);"
+mqBy7wm2LCw,FMOD_Channel_AddFadePoint,api\core\inc\fmod.h,280,"FMOD_RESULT F_API FMOD_Channel_AddFadePoint             (FMOD_CHANNEL *channel, unsigned long long dspclock, float volume);"
+8IEBQk8he9I,FMOD_Channel_SetFadePointRamp,api\core\inc\fmod.h,281,"FMOD_RESULT F_API FMOD_Channel_SetFadePointRamp         (FMOD_CHANNEL *channel, unsigned long long dspclock, float volume);"
+zp0qCUOE4ZU,FMOD_Channel_RemoveFadePoints,api\core\inc\fmod.h,282,"FMOD_RESULT F_API FMOD_Channel_RemoveFadePoints         (FMOD_CHANNEL *channel, unsigned long long dspclock_start, unsigned long long dspclock_end);"
+xcZBRoaoixg,FMOD_Channel_GetFadePoints,api\core\inc\fmod.h,283,"FMOD_RESULT F_API FMOD_Channel_GetFadePoints            (FMOD_CHANNEL *channel, unsigned int *numpoints, unsigned long long *point_dspclock, float *point_volume);"
+0-l9dqWn77E,FMOD_Channel_GetDSP,api\core\inc\fmod.h,289,"FMOD_RESULT F_API FMOD_Channel_GetDSP                   (FMOD_CHANNEL *channel, int index, FMOD_DSP **dsp);"
+OO1YzGfX7Go,FMOD_Channel_AddDSP,api\core\inc\fmod.h,290,"FMOD_RESULT F_API FMOD_Channel_AddDSP                   (FMOD_CHANNEL *channel, int index, FMOD_DSP *dsp);"
+sOm5qQNI8UA,FMOD_Channel_RemoveDSP,api\core\inc\fmod.h,291,"FMOD_RESULT F_API FMOD_Channel_RemoveDSP                (FMOD_CHANNEL *channel, FMOD_DSP *dsp);"
+Be3h27PlERI,FMOD_Channel_GetNumDSPs,api\core\inc\fmod.h,292,"FMOD_RESULT F_API FMOD_Channel_GetNumDSPs               (FMOD_CHANNEL *channel, int *numdsps);"
+3PQH3S0cTzM,FMOD_Channel_SetDSPIndex,api\core\inc\fmod.h,293,"FMOD_RESULT F_API FMOD_Channel_SetDSPIndex              (FMOD_CHANNEL *channel, FMOD_DSP *dsp, int index);"
+50-oBc8nrak,FMOD_Channel_GetDSPIndex,api\core\inc\fmod.h,294,"FMOD_RESULT F_API FMOD_Channel_GetDSPIndex              (FMOD_CHANNEL *channel, FMOD_DSP *dsp, int *index);"
+4rtccDnTIJg,FMOD_Channel_Set3DAttributes,api\core\inc\fmod.h,300,"FMOD_RESULT F_API FMOD_Channel_Set3DAttributes          (FMOD_CHANNEL *channel, const FMOD_VECTOR *pos, const FMOD_VECTOR *vel);"
+ilTAdHm5694,FMOD_Channel_Get3DAttributes,api\core\inc\fmod.h,301,"FMOD_RESULT F_API FMOD_Channel_Get3DAttributes          (FMOD_CHANNEL *channel, FMOD_VECTOR *pos, FMOD_VECTOR *vel);"
+fSLw1ioLq+A,FMOD_Channel_Set3DMinMaxDistance,api\core\inc\fmod.h,302,"FMOD_RESULT F_API FMOD_Channel_Set3DMinMaxDistance      (FMOD_CHANNEL *channel, float mindistance, float maxdistance);"
+8IeCmisRHv4,FMOD_Channel_Get3DMinMaxDistance,api\core\inc\fmod.h,303,"FMOD_RESULT F_API FMOD_Channel_Get3DMinMaxDistance      (FMOD_CHANNEL *channel, float *mindistance, float *maxdistance);"
+hRuhFX0S8S8,FMOD_Channel_Set3DConeSettings,api\core\inc\fmod.h,304,"FMOD_RESULT F_API FMOD_Channel_Set3DConeSettings        (FMOD_CHANNEL *channel, float insideconeangle, float outsideconeangle, float outsidevolume);"
+BNRKZHj5pCk,FMOD_Channel_Get3DConeSettings,api\core\inc\fmod.h,305,"FMOD_RESULT F_API FMOD_Channel_Get3DConeSettings        (FMOD_CHANNEL *channel, float *insideconeangle, float *outsideconeangle, float *outsidevolume);"
+Ne80eLbPZlo,FMOD_Channel_Set3DConeOrientation,api\core\inc\fmod.h,306,"FMOD_RESULT F_API FMOD_Channel_Set3DConeOrientation     (FMOD_CHANNEL *channel, FMOD_VECTOR *orientation);"
+7GqAnISSdkY,FMOD_Channel_Get3DConeOrientation,api\core\inc\fmod.h,307,"FMOD_RESULT F_API FMOD_Channel_Get3DConeOrientation     (FMOD_CHANNEL *channel, FMOD_VECTOR *orientation);"
+SLv0pEsbpM4,FMOD_Channel_Set3DCustomRolloff,api\core\inc\fmod.h,308,"FMOD_RESULT F_API FMOD_Channel_Set3DCustomRolloff       (FMOD_CHANNEL *channel, FMOD_VECTOR *points, int numpoints);"
+5wao0hdCSsk,FMOD_Channel_Get3DCustomRolloff,api\core\inc\fmod.h,309,"FMOD_RESULT F_API FMOD_Channel_Get3DCustomRolloff       (FMOD_CHANNEL *channel, FMOD_VECTOR **points, int *numpoints);"
+WFfzpCWTKWY,FMOD_Channel_Set3DOcclusion,api\core\inc\fmod.h,310,"FMOD_RESULT F_API FMOD_Channel_Set3DOcclusion           (FMOD_CHANNEL *channel, float directocclusion, float reverbocclusion);"
+VkRwl3ERGpI,FMOD_Channel_Get3DOcclusion,api\core\inc\fmod.h,311,"FMOD_RESULT F_API FMOD_Channel_Get3DOcclusion           (FMOD_CHANNEL *channel, float *directocclusion, float *reverbocclusion);"
+a1-LcbZZAkY,FMOD_Channel_Set3DSpread,api\core\inc\fmod.h,312,"FMOD_RESULT F_API FMOD_Channel_Set3DSpread              (FMOD_CHANNEL *channel, float angle);"
+s6oSLBx2PT8,FMOD_Channel_Get3DSpread,api\core\inc\fmod.h,313,"FMOD_RESULT F_API FMOD_Channel_Get3DSpread              (FMOD_CHANNEL *channel, float *angle);"
+xBOJvmVHJGQ,FMOD_Channel_Set3DLevel,api\core\inc\fmod.h,314,"FMOD_RESULT F_API FMOD_Channel_Set3DLevel               (FMOD_CHANNEL *channel, float level);"
+8YhT1d-94kY,FMOD_Channel_Get3DLevel,api\core\inc\fmod.h,315,"FMOD_RESULT F_API FMOD_Channel_Get3DLevel               (FMOD_CHANNEL *channel, float *level);"
+XUj2gU2VYQ8,FMOD_Channel_Set3DDopplerLevel,api\core\inc\fmod.h,316,"FMOD_RESULT F_API FMOD_Channel_Set3DDopplerLevel        (FMOD_CHANNEL *channel, float level);"
+6900tMILZZ4,FMOD_Channel_Get3DDopplerLevel,api\core\inc\fmod.h,317,"FMOD_RESULT F_API FMOD_Channel_Get3DDopplerLevel        (FMOD_CHANNEL *channel, float *level);"
+fmEIkSdq030,FMOD_Channel_Set3DDistanceFilter,api\core\inc\fmod.h,318,"FMOD_RESULT F_API FMOD_Channel_Set3DDistanceFilter      (FMOD_CHANNEL *channel, FMOD_BOOL custom, float customLevel, float centerFreq);"
+e3vut6XA6eQ,FMOD_Channel_Get3DDistanceFilter,api\core\inc\fmod.h,319,"FMOD_RESULT F_API FMOD_Channel_Get3DDistanceFilter      (FMOD_CHANNEL *channel, FMOD_BOOL *custom, float *customLevel, float *centerFreq);"
+4nmGOb4J6VM,FMOD_Channel_SetUserData,api\core\inc\fmod.h,325,"FMOD_RESULT F_API FMOD_Channel_SetUserData              (FMOD_CHANNEL *channel, void *userdata);"
+V8ymy7OuxBU,FMOD_Channel_GetUserData,api\core\inc\fmod.h,326,"FMOD_RESULT F_API FMOD_Channel_GetUserData              (FMOD_CHANNEL *channel, void **userdata);"
+G24FUk8BRLo,FMOD_Channel_SetFrequency,api\core\inc\fmod.h,332,"FMOD_RESULT F_API FMOD_Channel_SetFrequency             (FMOD_CHANNEL *channel, float frequency);"
+QMp3mp054ZI,FMOD_Channel_GetFrequency,api\core\inc\fmod.h,333,"FMOD_RESULT F_API FMOD_Channel_GetFrequency             (FMOD_CHANNEL *channel, float *frequency);"
+a-dZWuKv2vo,FMOD_Channel_SetPriority,api\core\inc\fmod.h,334,"FMOD_RESULT F_API FMOD_Channel_SetPriority              (FMOD_CHANNEL *channel, int priority);"
+8ZORrtN0W8Q,FMOD_Channel_GetPriority,api\core\inc\fmod.h,335,"FMOD_RESULT F_API FMOD_Channel_GetPriority              (FMOD_CHANNEL *channel, int *priority);"
+D2wc2QmHI1A,FMOD_Channel_SetPosition,api\core\inc\fmod.h,336,"FMOD_RESULT F_API FMOD_Channel_SetPosition              (FMOD_CHANNEL *channel, unsigned int position, FMOD_TIMEUNIT postype);"
+F2VIy2lq12c,FMOD_Channel_GetPosition,api\core\inc\fmod.h,337,"FMOD_RESULT F_API FMOD_Channel_GetPosition              (FMOD_CHANNEL *channel, unsigned int *position, FMOD_TIMEUNIT postype);"
+c-ye+Q4KG-o,FMOD_Channel_SetChannelGroup,api\core\inc\fmod.h,338,"FMOD_RESULT F_API FMOD_Channel_SetChannelGroup          (FMOD_CHANNEL *channel, FMOD_CHANNELGROUP *channelgroup);"
+AyvJU-iDKBE,FMOD_Channel_GetChannelGroup,api\core\inc\fmod.h,339,"FMOD_RESULT F_API FMOD_Channel_GetChannelGroup          (FMOD_CHANNEL *channel, FMOD_CHANNELGROUP **channelgroup);"
+wYxXw1g2bdE,FMOD_Channel_SetLoopCount,api\core\inc\fmod.h,340,"FMOD_RESULT F_API FMOD_Channel_SetLoopCount             (FMOD_CHANNEL *channel, int loopcount);"
+5-rpgsigOxM,FMOD_Channel_GetLoopCount,api\core\inc\fmod.h,341,"FMOD_RESULT F_API FMOD_Channel_GetLoopCount             (FMOD_CHANNEL *channel, int *loopcount);"
+S1fFxnEKguk,FMOD_Channel_SetLoopPoints,api\core\inc\fmod.h,342,"FMOD_RESULT F_API FMOD_Channel_SetLoopPoints            (FMOD_CHANNEL *channel, unsigned int loopstart, FMOD_TIMEUNIT loopstarttype, unsigned int loopend, FMOD_TIMEUNIT loopendtype);"
+Qgk3PHIi2Ao,FMOD_Channel_GetLoopPoints,api\core\inc\fmod.h,343,"FMOD_RESULT F_API FMOD_Channel_GetLoopPoints            (FMOD_CHANNEL *channel, unsigned int *loopstart, FMOD_TIMEUNIT loopstarttype, unsigned int *loopend, FMOD_TIMEUNIT loopendtype);"
+Ef62P0GAN+M,FMOD_Channel_IsVirtual,api\core\inc\fmod.h,349,"FMOD_RESULT F_API FMOD_Channel_IsVirtual                (FMOD_CHANNEL *channel, FMOD_BOOL *isvirtual);"
+-p1epGaubM4,FMOD_Channel_GetCurrentSound,api\core\inc\fmod.h,350,"FMOD_RESULT F_API FMOD_Channel_GetCurrentSound          (FMOD_CHANNEL *channel, FMOD_SOUND **sound);"
+j9fadvk+7xw,FMOD_Channel_GetIndex,api\core\inc\fmod.h,351,"FMOD_RESULT F_API FMOD_Channel_GetIndex                 (FMOD_CHANNEL *channel, int *index);"
+9kHxdjyR+WM,FMOD_ChannelGroup_GetSystemObject,api\core\inc\fmod.h,357,"FMOD_RESULT F_API FMOD_ChannelGroup_GetSystemObject     (FMOD_CHANNELGROUP *channelgroup, FMOD_SYSTEM **system);"
+amQrKgp4f6Y,FMOD_ChannelGroup_Stop,api\core\inc\fmod.h,363,FMOD_RESULT F_API FMOD_ChannelGroup_Stop                (FMOD_CHANNELGROUP *channelgroup);
+YVAdamW1dFk,FMOD_ChannelGroup_SetPaused,api\core\inc\fmod.h,364,"FMOD_RESULT F_API FMOD_ChannelGroup_SetPaused           (FMOD_CHANNELGROUP *channelgroup, FMOD_BOOL paused);"
+2jdQNlSoYn8,FMOD_ChannelGroup_GetPaused,api\core\inc\fmod.h,365,"FMOD_RESULT F_API FMOD_ChannelGroup_GetPaused           (FMOD_CHANNELGROUP *channelgroup, FMOD_BOOL *paused);"
+Tdk-N2s092g,FMOD_ChannelGroup_SetVolume,api\core\inc\fmod.h,366,"FMOD_RESULT F_API FMOD_ChannelGroup_SetVolume           (FMOD_CHANNELGROUP *channelgroup, float volume);"
+kJDAn7eV8Vs,FMOD_ChannelGroup_GetVolume,api\core\inc\fmod.h,367,"FMOD_RESULT F_API FMOD_ChannelGroup_GetVolume           (FMOD_CHANNELGROUP *channelgroup, float *volume);"
+x19kSKbTiD8,FMOD_ChannelGroup_SetVolumeRamp,api\core\inc\fmod.h,368,"FMOD_RESULT F_API FMOD_ChannelGroup_SetVolumeRamp       (FMOD_CHANNELGROUP *channelgroup, FMOD_BOOL ramp);"
++3U3y4CCBVk,FMOD_ChannelGroup_GetVolumeRamp,api\core\inc\fmod.h,369,"FMOD_RESULT F_API FMOD_ChannelGroup_GetVolumeRamp       (FMOD_CHANNELGROUP *channelgroup, FMOD_BOOL *ramp);"
+XJgD+5dhf0I,FMOD_ChannelGroup_GetAudibility,api\core\inc\fmod.h,370,"FMOD_RESULT F_API FMOD_ChannelGroup_GetAudibility       (FMOD_CHANNELGROUP *channelgroup, float *audibility);"
+v9oYKcXZ1VA,FMOD_ChannelGroup_SetPitch,api\core\inc\fmod.h,371,"FMOD_RESULT F_API FMOD_ChannelGroup_SetPitch            (FMOD_CHANNELGROUP *channelgroup, float pitch);"
+YBNKAzDo--I,FMOD_ChannelGroup_GetPitch,api\core\inc\fmod.h,372,"FMOD_RESULT F_API FMOD_ChannelGroup_GetPitch            (FMOD_CHANNELGROUP *channelgroup, float *pitch);"
+mVimumT-hS8,FMOD_ChannelGroup_SetMute,api\core\inc\fmod.h,373,"FMOD_RESULT F_API FMOD_ChannelGroup_SetMute             (FMOD_CHANNELGROUP *channelgroup, FMOD_BOOL mute);"
+-3IkjuHCivg,FMOD_ChannelGroup_GetMute,api\core\inc\fmod.h,374,"FMOD_RESULT F_API FMOD_ChannelGroup_GetMute             (FMOD_CHANNELGROUP *channelgroup, FMOD_BOOL *mute);"
+MvHlAEHmFwg,FMOD_ChannelGroup_SetReverbProperties,api\core\inc\fmod.h,375,"FMOD_RESULT F_API FMOD_ChannelGroup_SetReverbProperties (FMOD_CHANNELGROUP *channelgroup, int instance, float wet);"
+d6nLUY3WPfg,FMOD_ChannelGroup_GetReverbProperties,api\core\inc\fmod.h,376,"FMOD_RESULT F_API FMOD_ChannelGroup_GetReverbProperties (FMOD_CHANNELGROUP *channelgroup, int instance, float *wet);"
+KOxKuwcp-F0,FMOD_ChannelGroup_SetLowPassGain,api\core\inc\fmod.h,377,"FMOD_RESULT F_API FMOD_ChannelGroup_SetLowPassGain      (FMOD_CHANNELGROUP *channelgroup, float gain);"
+imcInbdtKzM,FMOD_ChannelGroup_GetLowPassGain,api\core\inc\fmod.h,378,"FMOD_RESULT F_API FMOD_ChannelGroup_GetLowPassGain      (FMOD_CHANNELGROUP *channelgroup, float *gain);"
+V5K3GBsAWQs,FMOD_ChannelGroup_SetMode,api\core\inc\fmod.h,379,"FMOD_RESULT F_API FMOD_ChannelGroup_SetMode             (FMOD_CHANNELGROUP *channelgroup, FMOD_MODE mode);"
+6jpWCSX+GsE,FMOD_ChannelGroup_GetMode,api\core\inc\fmod.h,380,"FMOD_RESULT F_API FMOD_ChannelGroup_GetMode             (FMOD_CHANNELGROUP *channelgroup, FMOD_MODE *mode);"
+LoOvaf2a2M4,FMOD_ChannelGroup_SetCallback,api\core\inc\fmod.h,381,"FMOD_RESULT F_API FMOD_ChannelGroup_SetCallback         (FMOD_CHANNELGROUP *channelgroup, FMOD_CHANNELCONTROL_CALLBACK callback);"
+jaFYjm5yoDs,FMOD_ChannelGroup_IsPlaying,api\core\inc\fmod.h,382,"FMOD_RESULT F_API FMOD_ChannelGroup_IsPlaying           (FMOD_CHANNELGROUP *channelgroup, FMOD_BOOL *isplaying);"
++blfD0T-pKc,FMOD_ChannelGroup_SetPan,api\core\inc\fmod.h,388,"FMOD_RESULT F_API FMOD_ChannelGroup_SetPan              (FMOD_CHANNELGROUP *channelgroup, float pan);"
+zCB-0jw1Ugc,FMOD_ChannelGroup_SetMixLevelsOutput,api\core\inc\fmod.h,389,"FMOD_RESULT F_API FMOD_ChannelGroup_SetMixLevelsOutput  (FMOD_CHANNELGROUP *channelgroup, float frontleft, float frontright, float center, float lfe, float surroundleft, float surroundright, float backleft, float backright);"
+9i5UKoAfUhA,FMOD_ChannelGroup_SetMixLevelsInput,api\core\inc\fmod.h,390,"FMOD_RESULT F_API FMOD_ChannelGroup_SetMixLevelsInput   (FMOD_CHANNELGROUP *channelgroup, float *levels, int numlevels);"
+1yhRPH38gaQ,FMOD_ChannelGroup_SetMixMatrix,api\core\inc\fmod.h,391,"FMOD_RESULT F_API FMOD_ChannelGroup_SetMixMatrix        (FMOD_CHANNELGROUP *channelgroup, float *matrix, int outchannels, int inchannels, int inchannel_hop);"
+blA+JO-ULyc,FMOD_ChannelGroup_GetMixMatrix,api\core\inc\fmod.h,392,"FMOD_RESULT F_API FMOD_ChannelGroup_GetMixMatrix        (FMOD_CHANNELGROUP *channelgroup, float *matrix, int *outchannels, int *inchannels, int inchannel_hop);"
+uVEOM8aWwfc,FMOD_ChannelGroup_GetDSPClock,api\core\inc\fmod.h,398,"FMOD_RESULT F_API FMOD_ChannelGroup_GetDSPClock         (FMOD_CHANNELGROUP *channelgroup, unsigned long long *dspclock, unsigned long long *parentclock);"
+k9CJaW5gBMw,FMOD_ChannelGroup_SetDelay,api\core\inc\fmod.h,399,"FMOD_RESULT F_API FMOD_ChannelGroup_SetDelay            (FMOD_CHANNELGROUP *channelgroup, unsigned long long dspclock_start, unsigned long long dspclock_end, FMOD_BOOL stopchannels);"
+SwJOlPezT8U,FMOD_ChannelGroup_GetDelay,api\core\inc\fmod.h,400,"FMOD_RESULT F_API FMOD_ChannelGroup_GetDelay            (FMOD_CHANNELGROUP *channelgroup, unsigned long long *dspclock_start, unsigned long long *dspclock_end, FMOD_BOOL *stopchannels);"
+NfMfI3kNVRY,FMOD_ChannelGroup_AddFadePoint,api\core\inc\fmod.h,401,"FMOD_RESULT F_API FMOD_ChannelGroup_AddFadePoint        (FMOD_CHANNELGROUP *channelgroup, unsigned long long dspclock, float volume);"
+5o9mWjsdD3I,FMOD_ChannelGroup_SetFadePointRamp,api\core\inc\fmod.h,402,"FMOD_RESULT F_API FMOD_ChannelGroup_SetFadePointRamp    (FMOD_CHANNELGROUP *channelgroup, unsigned long long dspclock, float volume);"
+sNsWbv9xJnM,FMOD_ChannelGroup_RemoveFadePoints,api\core\inc\fmod.h,403,"FMOD_RESULT F_API FMOD_ChannelGroup_RemoveFadePoints    (FMOD_CHANNELGROUP *channelgroup, unsigned long long dspclock_start, unsigned long long dspclock_end);"
+Hll9XMfVrrE,FMOD_ChannelGroup_GetFadePoints,api\core\inc\fmod.h,404,"FMOD_RESULT F_API FMOD_ChannelGroup_GetFadePoints       (FMOD_CHANNELGROUP *channelgroup, unsigned int *numpoints, unsigned long long *point_dspclock, float *point_volume);"
+Q72XsTLt4pE,FMOD_ChannelGroup_GetDSP,api\core\inc\fmod.h,410,"FMOD_RESULT F_API FMOD_ChannelGroup_GetDSP              (FMOD_CHANNELGROUP *channelgroup, int index, FMOD_DSP **dsp);"
+MMGbh8zu6d0,FMOD_ChannelGroup_AddDSP,api\core\inc\fmod.h,411,"FMOD_RESULT F_API FMOD_ChannelGroup_AddDSP              (FMOD_CHANNELGROUP *channelgroup, int index, FMOD_DSP *dsp);"
+239M1a45X4Q,FMOD_ChannelGroup_RemoveDSP,api\core\inc\fmod.h,412,"FMOD_RESULT F_API FMOD_ChannelGroup_RemoveDSP           (FMOD_CHANNELGROUP *channelgroup, FMOD_DSP *dsp);"
+ftGfp3FO3Jg,FMOD_ChannelGroup_GetNumDSPs,api\core\inc\fmod.h,413,"FMOD_RESULT F_API FMOD_ChannelGroup_GetNumDSPs          (FMOD_CHANNELGROUP *channelgroup, int *numdsps);"
+2hmOVIHNqrg,FMOD_ChannelGroup_SetDSPIndex,api\core\inc\fmod.h,414,"FMOD_RESULT F_API FMOD_ChannelGroup_SetDSPIndex         (FMOD_CHANNELGROUP *channelgroup, FMOD_DSP *dsp, int index);"
+DChaJbfscvo,FMOD_ChannelGroup_GetDSPIndex,api\core\inc\fmod.h,415,"FMOD_RESULT F_API FMOD_ChannelGroup_GetDSPIndex         (FMOD_CHANNELGROUP *channelgroup, FMOD_DSP *dsp, int *index);"
+UOq03OKW-4Q,FMOD_ChannelGroup_Set3DAttributes,api\core\inc\fmod.h,421,"FMOD_RESULT F_API FMOD_ChannelGroup_Set3DAttributes     (FMOD_CHANNELGROUP *channelgroup, const FMOD_VECTOR *pos, const FMOD_VECTOR *vel);"
+GhQDRutKRi4,FMOD_ChannelGroup_Get3DAttributes,api\core\inc\fmod.h,422,"FMOD_RESULT F_API FMOD_ChannelGroup_Get3DAttributes     (FMOD_CHANNELGROUP *channelgroup, FMOD_VECTOR *pos, FMOD_VECTOR *vel);"
+SEI9qaRGRA4,FMOD_ChannelGroup_Set3DMinMaxDistance,api\core\inc\fmod.h,423,"FMOD_RESULT F_API FMOD_ChannelGroup_Set3DMinMaxDistance (FMOD_CHANNELGROUP *channelgroup, float mindistance, float maxdistance);"
+le1ZjlrQ-X0,FMOD_ChannelGroup_Get3DMinMaxDistance,api\core\inc\fmod.h,424,"FMOD_RESULT F_API FMOD_ChannelGroup_Get3DMinMaxDistance (FMOD_CHANNELGROUP *channelgroup, float *mindistance, float *maxdistance);"
+8x+N9LwStzQ,FMOD_ChannelGroup_Set3DConeSettings,api\core\inc\fmod.h,425,"FMOD_RESULT F_API FMOD_ChannelGroup_Set3DConeSettings   (FMOD_CHANNELGROUP *channelgroup, float insideconeangle, float outsideconeangle, float outsidevolume);"
+xtI1yqczBxk,FMOD_ChannelGroup_Get3DConeSettings,api\core\inc\fmod.h,426,"FMOD_RESULT F_API FMOD_ChannelGroup_Get3DConeSettings   (FMOD_CHANNELGROUP *channelgroup, float *insideconeangle, float *outsideconeangle, float *outsidevolume);"
+-uI3ycN5Oj0,FMOD_ChannelGroup_Set3DConeOrientation,api\core\inc\fmod.h,427,"FMOD_RESULT F_API FMOD_ChannelGroup_Set3DConeOrientation(FMOD_CHANNELGROUP *channelgroup, FMOD_VECTOR *orientation);"
+m7bNQ+JezJk,FMOD_ChannelGroup_Get3DConeOrientation,api\core\inc\fmod.h,428,"FMOD_RESULT F_API FMOD_ChannelGroup_Get3DConeOrientation(FMOD_CHANNELGROUP *channelgroup, FMOD_VECTOR *orientation);"
+tCfk6atMbMk,FMOD_ChannelGroup_Set3DCustomRolloff,api\core\inc\fmod.h,429,"FMOD_RESULT F_API FMOD_ChannelGroup_Set3DCustomRolloff  (FMOD_CHANNELGROUP *channelgroup, FMOD_VECTOR *points, int numpoints);"
+CQyzN0gcJ34,FMOD_ChannelGroup_Get3DCustomRolloff,api\core\inc\fmod.h,430,"FMOD_RESULT F_API FMOD_ChannelGroup_Get3DCustomRolloff  (FMOD_CHANNELGROUP *channelgroup, FMOD_VECTOR **points, int *numpoints);"
+hnvkVdzinyk,FMOD_ChannelGroup_Set3DOcclusion,api\core\inc\fmod.h,431,"FMOD_RESULT F_API FMOD_ChannelGroup_Set3DOcclusion      (FMOD_CHANNELGROUP *channelgroup, float directocclusion, float reverbocclusion);"
+Qpp9eRP+gO0,FMOD_ChannelGroup_Get3DOcclusion,api\core\inc\fmod.h,432,"FMOD_RESULT F_API FMOD_ChannelGroup_Get3DOcclusion      (FMOD_CHANNELGROUP *channelgroup, float *directocclusion, float *reverbocclusion);"
++PWYFFzSLmU,FMOD_ChannelGroup_Set3DSpread,api\core\inc\fmod.h,433,"FMOD_RESULT F_API FMOD_ChannelGroup_Set3DSpread         (FMOD_CHANNELGROUP *channelgroup, float angle);"
+huH7j0ER0+8,FMOD_ChannelGroup_Get3DSpread,api\core\inc\fmod.h,434,"FMOD_RESULT F_API FMOD_ChannelGroup_Get3DSpread         (FMOD_CHANNELGROUP *channelgroup, float *angle);"
+TOjRAgvoFPg,FMOD_ChannelGroup_Set3DLevel,api\core\inc\fmod.h,435,"FMOD_RESULT F_API FMOD_ChannelGroup_Set3DLevel          (FMOD_CHANNELGROUP *channelgroup, float level);"
+H1YSwBXdNA8,FMOD_ChannelGroup_Get3DLevel,api\core\inc\fmod.h,436,"FMOD_RESULT F_API FMOD_ChannelGroup_Get3DLevel          (FMOD_CHANNELGROUP *channelgroup, float *level);"
+7DllmGsUbiw,FMOD_ChannelGroup_Set3DDopplerLevel,api\core\inc\fmod.h,437,"FMOD_RESULT F_API FMOD_ChannelGroup_Set3DDopplerLevel   (FMOD_CHANNELGROUP *channelgroup, float level);"
+2uVD67c5Me8,FMOD_ChannelGroup_Get3DDopplerLevel,api\core\inc\fmod.h,438,"FMOD_RESULT F_API FMOD_ChannelGroup_Get3DDopplerLevel   (FMOD_CHANNELGROUP *channelgroup, float *level);"
+y62oLuPM0Pk,FMOD_ChannelGroup_Set3DDistanceFilter,api\core\inc\fmod.h,439,"FMOD_RESULT F_API FMOD_ChannelGroup_Set3DDistanceFilter (FMOD_CHANNELGROUP *channelgroup, FMOD_BOOL custom, float customLevel, float centerFreq);"
+bMcqd8ln6ls,FMOD_ChannelGroup_Get3DDistanceFilter,api\core\inc\fmod.h,440,"FMOD_RESULT F_API FMOD_ChannelGroup_Get3DDistanceFilter (FMOD_CHANNELGROUP *channelgroup, FMOD_BOOL *custom, float *customLevel, float *centerFreq);"
+YOA08oAXaeQ,FMOD_ChannelGroup_SetUserData,api\core\inc\fmod.h,446,"FMOD_RESULT F_API FMOD_ChannelGroup_SetUserData         (FMOD_CHANNELGROUP *channelgroup, void *userdata);"
+8OZjtiMHmSE,FMOD_ChannelGroup_GetUserData,api\core\inc\fmod.h,447,"FMOD_RESULT F_API FMOD_ChannelGroup_GetUserData         (FMOD_CHANNELGROUP *channelgroup, void **userdata);"
+NHsJ3X7UjyY,FMOD_ChannelGroup_Release,api\core\inc\fmod.h,449,FMOD_RESULT F_API FMOD_ChannelGroup_Release             (FMOD_CHANNELGROUP *channelgroup);
+VYYKTrGvJhA,FMOD_ChannelGroup_AddGroup,api\core\inc\fmod.h,455,"FMOD_RESULT F_API FMOD_ChannelGroup_AddGroup            (FMOD_CHANNELGROUP *channelgroup, FMOD_CHANNELGROUP *group, FMOD_BOOL propagatedspclock, FMOD_DSPCONNECTION **connection);"
+pyBYSQAZT-M,FMOD_ChannelGroup_GetNumGroups,api\core\inc\fmod.h,456,"FMOD_RESULT F_API FMOD_ChannelGroup_GetNumGroups        (FMOD_CHANNELGROUP *channelgroup, int *numgroups);"
+9JjbIxwUx50,FMOD_ChannelGroup_GetGroup,api\core\inc\fmod.h,457,"FMOD_RESULT F_API FMOD_ChannelGroup_GetGroup            (FMOD_CHANNELGROUP *channelgroup, int index, FMOD_CHANNELGROUP **group);"
+BFyqGPCqNcs,FMOD_ChannelGroup_GetParentGroup,api\core\inc\fmod.h,458,"FMOD_RESULT F_API FMOD_ChannelGroup_GetParentGroup      (FMOD_CHANNELGROUP *channelgroup, FMOD_CHANNELGROUP **group);"
+1IQQMX9JTzc,FMOD_ChannelGroup_GetName,api\core\inc\fmod.h,464,"FMOD_RESULT F_API FMOD_ChannelGroup_GetName             (FMOD_CHANNELGROUP *channelgroup, char *name, int namelen);"
+3BIlwkYXAYI,FMOD_ChannelGroup_GetNumChannels,api\core\inc\fmod.h,465,"FMOD_RESULT F_API FMOD_ChannelGroup_GetNumChannels      (FMOD_CHANNELGROUP *channelgroup, int *numchannels);"
+SJU6-TOi4TQ,FMOD_ChannelGroup_GetChannel,api\core\inc\fmod.h,466,"FMOD_RESULT F_API FMOD_ChannelGroup_GetChannel          (FMOD_CHANNELGROUP *channelgroup, int index, FMOD_CHANNEL **channel);"
+XRDSR89k59k,FMOD_SoundGroup_Release,api\core\inc\fmod.h,472,FMOD_RESULT F_API FMOD_SoundGroup_Release               (FMOD_SOUNDGROUP *soundgroup);
+syyHFmGJndY,FMOD_SoundGroup_GetSystemObject,api\core\inc\fmod.h,473,"FMOD_RESULT F_API FMOD_SoundGroup_GetSystemObject       (FMOD_SOUNDGROUP *soundgroup, FMOD_SYSTEM **system);"
+uMhUikLjnHs,FMOD_SoundGroup_SetMaxAudible,api\core\inc\fmod.h,479,"FMOD_RESULT F_API FMOD_SoundGroup_SetMaxAudible         (FMOD_SOUNDGROUP *soundgroup, int maxaudible);"
+mqGp73TIhKA,FMOD_SoundGroup_GetMaxAudible,api\core\inc\fmod.h,480,"FMOD_RESULT F_API FMOD_SoundGroup_GetMaxAudible         (FMOD_SOUNDGROUP *soundgroup, int *maxaudible);"
+w7Bqxn22KM4,FMOD_SoundGroup_SetMaxAudibleBehavior,api\core\inc\fmod.h,481,"FMOD_RESULT F_API FMOD_SoundGroup_SetMaxAudibleBehavior (FMOD_SOUNDGROUP *soundgroup, FMOD_SOUNDGROUP_BEHAVIOR behavior);"
+YYld8Ngu5Fs,FMOD_SoundGroup_GetMaxAudibleBehavior,api\core\inc\fmod.h,482,"FMOD_RESULT F_API FMOD_SoundGroup_GetMaxAudibleBehavior (FMOD_SOUNDGROUP *soundgroup, FMOD_SOUNDGROUP_BEHAVIOR *behavior);"
+jfHIbqmRw0I,FMOD_SoundGroup_SetMuteFadeSpeed,api\core\inc\fmod.h,483,"FMOD_RESULT F_API FMOD_SoundGroup_SetMuteFadeSpeed      (FMOD_SOUNDGROUP *soundgroup, float speed);"
+3ORsKjqzxGs,FMOD_SoundGroup_GetMuteFadeSpeed,api\core\inc\fmod.h,484,"FMOD_RESULT F_API FMOD_SoundGroup_GetMuteFadeSpeed      (FMOD_SOUNDGROUP *soundgroup, float *speed);"
+16DEsABzoEU,FMOD_SoundGroup_SetVolume,api\core\inc\fmod.h,485,"FMOD_RESULT F_API FMOD_SoundGroup_SetVolume             (FMOD_SOUNDGROUP *soundgroup, float volume);"
+KQnHbDO+VZg,FMOD_SoundGroup_GetVolume,api\core\inc\fmod.h,486,"FMOD_RESULT F_API FMOD_SoundGroup_GetVolume             (FMOD_SOUNDGROUP *soundgroup, float *volume);"
+iJWRxl8hs14,FMOD_SoundGroup_Stop,api\core\inc\fmod.h,487,FMOD_RESULT F_API FMOD_SoundGroup_Stop                  (FMOD_SOUNDGROUP *soundgroup);
+-d6AM7Oi4IA,FMOD_SoundGroup_GetName,api\core\inc\fmod.h,493,"FMOD_RESULT F_API FMOD_SoundGroup_GetName               (FMOD_SOUNDGROUP *soundgroup, char *name, int namelen);"
+WF6AAkSRrDg,FMOD_SoundGroup_GetNumSounds,api\core\inc\fmod.h,494,"FMOD_RESULT F_API FMOD_SoundGroup_GetNumSounds          (FMOD_SOUNDGROUP *soundgroup, int *numsounds);"
+DBa1h0+j+ho,FMOD_SoundGroup_GetSound,api\core\inc\fmod.h,495,"FMOD_RESULT F_API FMOD_SoundGroup_GetSound              (FMOD_SOUNDGROUP *soundgroup, int index, FMOD_SOUND **sound);"
+raIZ8yeQn7A,FMOD_SoundGroup_GetNumPlaying,api\core\inc\fmod.h,496,"FMOD_RESULT F_API FMOD_SoundGroup_GetNumPlaying         (FMOD_SOUNDGROUP *soundgroup, int *numplaying);"
+EzHl5otbZ8E,FMOD_SoundGroup_SetUserData,api\core\inc\fmod.h,502,"FMOD_RESULT F_API FMOD_SoundGroup_SetUserData           (FMOD_SOUNDGROUP *soundgroup, void *userdata);"
+45C5saUJgyQ,FMOD_SoundGroup_GetUserData,api\core\inc\fmod.h,503,"FMOD_RESULT F_API FMOD_SoundGroup_GetUserData           (FMOD_SOUNDGROUP *soundgroup, void **userdata);"
+rV-kEByxkqM,FMOD_DSP_Release,api\core\inc\fmod.h,509,FMOD_RESULT F_API FMOD_DSP_Release                      (FMOD_DSP *dsp);
+NvKs91kUWWI,FMOD_DSP_GetSystemObject,api\core\inc\fmod.h,510,"FMOD_RESULT F_API FMOD_DSP_GetSystemObject              (FMOD_DSP *dsp, FMOD_SYSTEM **system);"
+KIwun7FAUFE,FMOD_DSP_AddInput,api\core\inc\fmod.h,516,"FMOD_RESULT F_API FMOD_DSP_AddInput                     (FMOD_DSP *dsp, FMOD_DSP *input, FMOD_DSPCONNECTION **connection, FMOD_DSPCONNECTION_TYPE type);"
+pkfoMSuDHNA,FMOD_DSP_DisconnectFrom,api\core\inc\fmod.h,517,"FMOD_RESULT F_API FMOD_DSP_DisconnectFrom               (FMOD_DSP *dsp, FMOD_DSP *target, FMOD_DSPCONNECTION *connection);"
+FhHS7X4y8UU,FMOD_DSP_DisconnectAll,api\core\inc\fmod.h,518,"FMOD_RESULT F_API FMOD_DSP_DisconnectAll                (FMOD_DSP *dsp, FMOD_BOOL inputs, FMOD_BOOL outputs);"
+JSeOWasq-BY,FMOD_DSP_GetNumInputs,api\core\inc\fmod.h,519,"FMOD_RESULT F_API FMOD_DSP_GetNumInputs                 (FMOD_DSP *dsp, int *numinputs);"
+zXshW6-Jsjc,FMOD_DSP_GetNumOutputs,api\core\inc\fmod.h,520,"FMOD_RESULT F_API FMOD_DSP_GetNumOutputs                (FMOD_DSP *dsp, int *numoutputs);"
+ep1F78W3br8,FMOD_DSP_GetInput,api\core\inc\fmod.h,521,"FMOD_RESULT F_API FMOD_DSP_GetInput                     (FMOD_DSP *dsp, int index, FMOD_DSP **input, FMOD_DSPCONNECTION **inputconnection);"
+vf5cPY9WJrw,FMOD_DSP_GetOutput,api\core\inc\fmod.h,522,"FMOD_RESULT F_API FMOD_DSP_GetOutput                    (FMOD_DSP *dsp, int index, FMOD_DSP **output, FMOD_DSPCONNECTION **outputconnection);"
+Y2BEIG8xAIQ,FMOD_DSP_SetActive,api\core\inc\fmod.h,528,"FMOD_RESULT F_API FMOD_DSP_SetActive                    (FMOD_DSP *dsp, FMOD_BOOL active);"
+uRj4h3p8Mek,FMOD_DSP_GetActive,api\core\inc\fmod.h,529,"FMOD_RESULT F_API FMOD_DSP_GetActive                    (FMOD_DSP *dsp, FMOD_BOOL *active);"
+rUdxCbOq2Ns,FMOD_DSP_SetBypass,api\core\inc\fmod.h,530,"FMOD_RESULT F_API FMOD_DSP_SetBypass                    (FMOD_DSP *dsp, FMOD_BOOL bypass);"
+uzYAsrGHlaQ,FMOD_DSP_GetBypass,api\core\inc\fmod.h,531,"FMOD_RESULT F_API FMOD_DSP_GetBypass                    (FMOD_DSP *dsp, FMOD_BOOL *bypass);"
+nt55mgPKWZg,FMOD_DSP_SetWetDryMix,api\core\inc\fmod.h,532,"FMOD_RESULT F_API FMOD_DSP_SetWetDryMix                 (FMOD_DSP *dsp, float prewet, float postwet, float dry);"
+fKumVybM2fw,FMOD_DSP_GetWetDryMix,api\core\inc\fmod.h,533,"FMOD_RESULT F_API FMOD_DSP_GetWetDryMix                 (FMOD_DSP *dsp, float *prewet, float *postwet, float *dry);"
+p8mnlYJ9OMs,FMOD_DSP_SetChannelFormat,api\core\inc\fmod.h,534,"FMOD_RESULT F_API FMOD_DSP_SetChannelFormat             (FMOD_DSP *dsp, FMOD_CHANNELMASK channelmask, int numchannels, FMOD_SPEAKERMODE source_speakermode);"
+I-3LSc9WWZ0,FMOD_DSP_GetChannelFormat,api\core\inc\fmod.h,535,"FMOD_RESULT F_API FMOD_DSP_GetChannelFormat             (FMOD_DSP *dsp, FMOD_CHANNELMASK *channelmask, int *numchannels, FMOD_SPEAKERMODE *source_speakermode);"
+ibBlHD8c5e8,FMOD_DSP_GetOutputChannelFormat,api\core\inc\fmod.h,536,"FMOD_RESULT F_API FMOD_DSP_GetOutputChannelFormat       (FMOD_DSP *dsp, FMOD_CHANNELMASK inmask, int inchannels, FMOD_SPEAKERMODE inspeakermode, FMOD_CHANNELMASK *outmask, int *outchannels, FMOD_SPEAKERMODE *outspeakermode);"
+8sRWNjNR8yA,FMOD_DSP_Reset,api\core\inc\fmod.h,537,FMOD_RESULT F_API FMOD_DSP_Reset                        (FMOD_DSP *dsp);
+hitLwN9oCgk,FMOD_DSP_SetCallback,api\core\inc\fmod.h,538,"FMOD_RESULT F_API FMOD_DSP_SetCallback                  (FMOD_DSP *dsp, FMOD_DSP_CALLBACK callback);"
+uHkLnwUf6iw,FMOD_DSP_SetParameterFloat,api\core\inc\fmod.h,544,"FMOD_RESULT F_API FMOD_DSP_SetParameterFloat            (FMOD_DSP *dsp, int index, float value);"
+KDvqy6aIU3Q,FMOD_DSP_SetParameterInt,api\core\inc\fmod.h,545,"FMOD_RESULT F_API FMOD_DSP_SetParameterInt              (FMOD_DSP *dsp, int index, int value);"
+mw9ptoJLbdg,FMOD_DSP_SetParameterBool,api\core\inc\fmod.h,546,"FMOD_RESULT F_API FMOD_DSP_SetParameterBool             (FMOD_DSP *dsp, int index, FMOD_BOOL value);"
+7ttB5+56r20,FMOD_DSP_SetParameterData,api\core\inc\fmod.h,547,"FMOD_RESULT F_API FMOD_DSP_SetParameterData             (FMOD_DSP *dsp, int index, void *data, unsigned int length);"
+UWwYoyq7rmo,FMOD_DSP_GetParameterFloat,api\core\inc\fmod.h,548,"FMOD_RESULT F_API FMOD_DSP_GetParameterFloat            (FMOD_DSP *dsp, int index, float *value, char *valuestr, int valuestrlen);"
+8kmTfs+oe5A,FMOD_DSP_GetParameterInt,api\core\inc\fmod.h,549,"FMOD_RESULT F_API FMOD_DSP_GetParameterInt              (FMOD_DSP *dsp, int index, int *value, char *valuestr, int valuestrlen);"
+UDlt570JnOU,FMOD_DSP_GetParameterBool,api\core\inc\fmod.h,550,"FMOD_RESULT F_API FMOD_DSP_GetParameterBool             (FMOD_DSP *dsp, int index, FMOD_BOOL *value, char *valuestr, int valuestrlen);"
+ifscZHsFbxY,FMOD_DSP_GetParameterData,api\core\inc\fmod.h,551,"FMOD_RESULT F_API FMOD_DSP_GetParameterData             (FMOD_DSP *dsp, int index, void **data, unsigned int *length, char *valuestr, int valuestrlen);"
+u7vkCpEF9lc,FMOD_DSP_GetNumParameters,api\core\inc\fmod.h,552,"FMOD_RESULT F_API FMOD_DSP_GetNumParameters             (FMOD_DSP *dsp, int *numparams);"
+QYhDV81pu-I,FMOD_DSP_GetParameterInfo,api\core\inc\fmod.h,553,"FMOD_RESULT F_API FMOD_DSP_GetParameterInfo             (FMOD_DSP *dsp, int index, FMOD_DSP_PARAMETER_DESC **desc);"
+KCUHEsghreY,FMOD_DSP_GetDataParameterIndex,api\core\inc\fmod.h,554,"FMOD_RESULT F_API FMOD_DSP_GetDataParameterIndex        (FMOD_DSP *dsp, int datatype, int *index);"
+U8w9CiXyCfs,FMOD_DSP_ShowConfigDialog,api\core\inc\fmod.h,555,"FMOD_RESULT F_API FMOD_DSP_ShowConfigDialog             (FMOD_DSP *dsp, void *hwnd, FMOD_BOOL show);"
+w1hk7HB0ak4,FMOD_DSP_GetInfo,api\core\inc\fmod.h,561,"FMOD_RESULT F_API FMOD_DSP_GetInfo                      (FMOD_DSP *dsp, char *name, unsigned int *version, int *channels, int *configwidth, int *configheight);"
+awPHtB2VVqs,FMOD_DSP_GetType,api\core\inc\fmod.h,562,"FMOD_RESULT F_API FMOD_DSP_GetType                      (FMOD_DSP *dsp, FMOD_DSP_TYPE *type);"
+IgNiL02TqtU,FMOD_DSP_GetIdle,api\core\inc\fmod.h,563,"FMOD_RESULT F_API FMOD_DSP_GetIdle                      (FMOD_DSP *dsp, FMOD_BOOL *idle);"
+1kGJyrObPGQ,FMOD_DSP_SetUserData,api\core\inc\fmod.h,569,"FMOD_RESULT F_API FMOD_DSP_SetUserData                  (FMOD_DSP *dsp, void *userdata);"
+c5YrdcCzjgI,FMOD_DSP_GetUserData,api\core\inc\fmod.h,570,"FMOD_RESULT F_API FMOD_DSP_GetUserData                  (FMOD_DSP *dsp, void **userdata);"
+ZrhzDQQ5-KE,FMOD_DSP_SetMeteringEnabled,api\core\inc\fmod.h,576,"FMOD_RESULT F_API FMOD_DSP_SetMeteringEnabled           (FMOD_DSP *dsp, FMOD_BOOL inputEnabled, FMOD_BOOL outputEnabled);"
+aBXfZ5USV4E,FMOD_DSP_GetMeteringEnabled,api\core\inc\fmod.h,577,"FMOD_RESULT F_API FMOD_DSP_GetMeteringEnabled           (FMOD_DSP *dsp, FMOD_BOOL *inputEnabled, FMOD_BOOL *outputEnabled);"
+BBUT7ra74V4,FMOD_DSP_GetMeteringInfo,api\core\inc\fmod.h,578,"FMOD_RESULT F_API FMOD_DSP_GetMeteringInfo              (FMOD_DSP *dsp, FMOD_DSP_METERING_INFO *inputInfo, FMOD_DSP_METERING_INFO *outputInfo);"
+EDEX+p8rB0g,FMOD_DSP_GetCPUUsage,api\core\inc\fmod.h,579,"FMOD_RESULT F_API FMOD_DSP_GetCPUUsage                  (FMOD_DSP *dsp, unsigned int *exclusive, unsigned int *inclusive);"
+cj-9lWE0D34,FMOD_DSPConnection_GetInput,api\core\inc\fmod.h,585,"FMOD_RESULT F_API FMOD_DSPConnection_GetInput           (FMOD_DSPCONNECTION *dspconnection, FMOD_DSP **input);"
+D7JArrIjE0M,FMOD_DSPConnection_GetOutput,api\core\inc\fmod.h,586,"FMOD_RESULT F_API FMOD_DSPConnection_GetOutput          (FMOD_DSPCONNECTION *dspconnection, FMOD_DSP **output);"
+ArSPZnqwkbE,FMOD_DSPConnection_SetMix,api\core\inc\fmod.h,587,"FMOD_RESULT F_API FMOD_DSPConnection_SetMix             (FMOD_DSPCONNECTION *dspconnection, float volume);"
+ZYWdAAGdT5U,FMOD_DSPConnection_GetMix,api\core\inc\fmod.h,588,"FMOD_RESULT F_API FMOD_DSPConnection_GetMix             (FMOD_DSPCONNECTION *dspconnection, float *volume);"
+BM8sMBXzgCg,FMOD_DSPConnection_SetMixMatrix,api\core\inc\fmod.h,589,"FMOD_RESULT F_API FMOD_DSPConnection_SetMixMatrix       (FMOD_DSPCONNECTION *dspconnection, float *matrix, int outchannels, int inchannels, int inchannel_hop);"
+4xIRXm10+1I,FMOD_DSPConnection_GetMixMatrix,api\core\inc\fmod.h,590,"FMOD_RESULT F_API FMOD_DSPConnection_GetMixMatrix       (FMOD_DSPCONNECTION *dspconnection, float *matrix, int *outchannels, int *inchannels, int inchannel_hop);"
+AykX-q6UlWw,FMOD_DSPConnection_GetType,api\core\inc\fmod.h,591,"FMOD_RESULT F_API FMOD_DSPConnection_GetType            (FMOD_DSPCONNECTION *dspconnection, FMOD_DSPCONNECTION_TYPE *type);"
+CIDMRFyRSbk,FMOD_DSPConnection_SetUserData,api\core\inc\fmod.h,597,"FMOD_RESULT F_API FMOD_DSPConnection_SetUserData        (FMOD_DSPCONNECTION *dspconnection, void *userdata);"
+jEjGCcSKTQg,FMOD_DSPConnection_GetUserData,api\core\inc\fmod.h,598,"FMOD_RESULT F_API FMOD_DSPConnection_GetUserData        (FMOD_DSPCONNECTION *dspconnection, void **userdata);"
+CG+6iJ6SK4Q,FMOD_Geometry_Release,api\core\inc\fmod.h,604,FMOD_RESULT F_API FMOD_Geometry_Release                 (FMOD_GEOMETRY *geometry);
+gkzq8qpkR0g,FMOD_Geometry_AddPolygon,api\core\inc\fmod.h,610,"FMOD_RESULT F_API FMOD_Geometry_AddPolygon              (FMOD_GEOMETRY *geometry, float directocclusion, float reverbocclusion, FMOD_BOOL doublesided, int numvertices, const FMOD_VECTOR *vertices, int *polygonindex);"
+W4yxjXmiTZ4,FMOD_Geometry_GetNumPolygons,api\core\inc\fmod.h,611,"FMOD_RESULT F_API FMOD_Geometry_GetNumPolygons          (FMOD_GEOMETRY *geometry, int *numpolygons);"
+vm66Wb0MEzA,FMOD_Geometry_GetMaxPolygons,api\core\inc\fmod.h,612,"FMOD_RESULT F_API FMOD_Geometry_GetMaxPolygons          (FMOD_GEOMETRY *geometry, int *maxpolygons, int *maxvertices);"
+XI4oOC7CQ6Q,FMOD_Geometry_GetPolygonNumVertices,api\core\inc\fmod.h,613,"FMOD_RESULT F_API FMOD_Geometry_GetPolygonNumVertices   (FMOD_GEOMETRY *geometry, int index, int *numvertices);"
++PTS7NjiVg8,FMOD_Geometry_SetPolygonVertex,api\core\inc\fmod.h,614,"FMOD_RESULT F_API FMOD_Geometry_SetPolygonVertex        (FMOD_GEOMETRY *geometry, int index, int vertexindex, const FMOD_VECTOR *vertex);"
+W5dYEEK-OpE,FMOD_Geometry_GetPolygonVertex,api\core\inc\fmod.h,615,"FMOD_RESULT F_API FMOD_Geometry_GetPolygonVertex        (FMOD_GEOMETRY *geometry, int index, int vertexindex, FMOD_VECTOR *vertex);"
+5pCP+5SeANM,FMOD_Geometry_SetPolygonAttributes,api\core\inc\fmod.h,616,"FMOD_RESULT F_API FMOD_Geometry_SetPolygonAttributes    (FMOD_GEOMETRY *geometry, int index, float directocclusion, float reverbocclusion, FMOD_BOOL doublesided);"
+V4JRa209dcg,FMOD_Geometry_GetPolygonAttributes,api\core\inc\fmod.h,617,"FMOD_RESULT F_API FMOD_Geometry_GetPolygonAttributes    (FMOD_GEOMETRY *geometry, int index, float *directocclusion, float *reverbocclusion, FMOD_BOOL *doublesided);"
+3Rqwe2iGrN0,FMOD_Geometry_SetActive,api\core\inc\fmod.h,623,"FMOD_RESULT F_API FMOD_Geometry_SetActive               (FMOD_GEOMETRY *geometry, FMOD_BOOL active);"
+JmT9i4Lr9Uc,FMOD_Geometry_GetActive,api\core\inc\fmod.h,624,"FMOD_RESULT F_API FMOD_Geometry_GetActive               (FMOD_GEOMETRY *geometry, FMOD_BOOL *active);"
+Kt9SmjGAoOE,FMOD_Geometry_SetRotation,api\core\inc\fmod.h,625,"FMOD_RESULT F_API FMOD_Geometry_SetRotation             (FMOD_GEOMETRY *geometry, const FMOD_VECTOR *forward, const FMOD_VECTOR *up);"
+vfw4O7iiX9I,FMOD_Geometry_GetRotation,api\core\inc\fmod.h,626,"FMOD_RESULT F_API FMOD_Geometry_GetRotation             (FMOD_GEOMETRY *geometry, FMOD_VECTOR *forward, FMOD_VECTOR *up);"
+E2PGgOIZdp4,FMOD_Geometry_SetPosition,api\core\inc\fmod.h,627,"FMOD_RESULT F_API FMOD_Geometry_SetPosition             (FMOD_GEOMETRY *geometry, const FMOD_VECTOR *position);"
+miEPrU7BMRs,FMOD_Geometry_GetPosition,api\core\inc\fmod.h,628,"FMOD_RESULT F_API FMOD_Geometry_GetPosition             (FMOD_GEOMETRY *geometry, FMOD_VECTOR *position);"
+xTfdn6DbihQ,FMOD_Geometry_SetScale,api\core\inc\fmod.h,629,"FMOD_RESULT F_API FMOD_Geometry_SetScale                (FMOD_GEOMETRY *geometry, const FMOD_VECTOR *scale);"
+IXgL92HG9lo,FMOD_Geometry_GetScale,api\core\inc\fmod.h,630,"FMOD_RESULT F_API FMOD_Geometry_GetScale                (FMOD_GEOMETRY *geometry, FMOD_VECTOR *scale);"
+BE+e0agzkNE,FMOD_Geometry_Save,api\core\inc\fmod.h,631,"FMOD_RESULT F_API FMOD_Geometry_Save                    (FMOD_GEOMETRY *geometry, void *data, int *datasize);"
+L-S-tKxgboU,FMOD_Geometry_SetUserData,api\core\inc\fmod.h,637,"FMOD_RESULT F_API FMOD_Geometry_SetUserData             (FMOD_GEOMETRY *geometry, void *userdata);"
+pZDPDUI2UN8,FMOD_Geometry_GetUserData,api\core\inc\fmod.h,638,"FMOD_RESULT F_API FMOD_Geometry_GetUserData             (FMOD_GEOMETRY *geometry, void **userdata);"
+lm2aXErpf6g,FMOD_Reverb3D_Release,api\core\inc\fmod.h,644,FMOD_RESULT F_API FMOD_Reverb3D_Release                 (FMOD_REVERB3D *reverb3d);
+63fXlKbjvYQ,FMOD_Reverb3D_Set3DAttributes,api\core\inc\fmod.h,650,"FMOD_RESULT F_API FMOD_Reverb3D_Set3DAttributes         (FMOD_REVERB3D *reverb3d, const FMOD_VECTOR *position, float mindistance, float maxdistance);"
+jCeiknRhz8M,FMOD_Reverb3D_Get3DAttributes,api\core\inc\fmod.h,651,"FMOD_RESULT F_API FMOD_Reverb3D_Get3DAttributes         (FMOD_REVERB3D *reverb3d, FMOD_VECTOR *position, float *mindistance, float *maxdistance);"
+CgL9VC5MRWQ,FMOD_Reverb3D_SetProperties,api\core\inc\fmod.h,652,"FMOD_RESULT F_API FMOD_Reverb3D_SetProperties           (FMOD_REVERB3D *reverb3d, const FMOD_REVERB_PROPERTIES *properties);"
+hsuCQofI5pc,FMOD_Reverb3D_GetProperties,api\core\inc\fmod.h,653,"FMOD_RESULT F_API FMOD_Reverb3D_GetProperties           (FMOD_REVERB3D *reverb3d, FMOD_REVERB_PROPERTIES *properties);"
+oGjsc3R6Ab8,FMOD_Reverb3D_SetActive,api\core\inc\fmod.h,654,"FMOD_RESULT F_API FMOD_Reverb3D_SetActive               (FMOD_REVERB3D *reverb3d, FMOD_BOOL active);"
+fNeInQMx8Yg,FMOD_Reverb3D_GetActive,api\core\inc\fmod.h,655,"FMOD_RESULT F_API FMOD_Reverb3D_GetActive               (FMOD_REVERB3D *reverb3d, FMOD_BOOL *active);"
+LqX1W3Ft6rw,FMOD_Reverb3D_SetUserData,api\core\inc\fmod.h,661,"FMOD_RESULT F_API FMOD_Reverb3D_SetUserData             (FMOD_REVERB3D *reverb3d, void *userdata);"
+v-STvn+VAxE,FMOD_Reverb3D_GetUserData,api\core\inc\fmod.h,662,"FMOD_RESULT F_API FMOD_Reverb3D_GetUserData             (FMOD_REVERB3D *reverb3d, void **userdata);"
+r43u8ojbKNM,release,api\core\inc\fmod.hpp,61,FMOD_RESULT F_API release                 ();
+-TRduybMR0c,setOutput,api\core\inc\fmod.hpp,64,FMOD_RESULT F_API setOutput               (FMOD_OUTPUTTYPE output);
+pl2e--ee7nY,getOutput,api\core\inc\fmod.hpp,65,FMOD_RESULT F_API getOutput               (FMOD_OUTPUTTYPE *output);
+YdyIPetaJ1o,getNumDrivers,api\core\inc\fmod.hpp,66,FMOD_RESULT F_API getNumDrivers           (int *numdrivers);
+5dN0gOc3LxI,getDriverInfo,api\core\inc\fmod.hpp,67,"FMOD_RESULT F_API getDriverInfo           (int id, char *name, int namelen, FMOD_GUID *guid, int *systemrate, FMOD_SPEAKERMODE *speakermode, int *speakermodechannels);"
+U9gNwBPgnUs,setDriver,api\core\inc\fmod.hpp,68,FMOD_RESULT F_API setDriver               (int driver);
+sG8DVDuYYFQ,getDriver,api\core\inc\fmod.hpp,69,FMOD_RESULT F_API getDriver               (int *driver);
+khX5PN35BPI,setSoftwareChannels,api\core\inc\fmod.hpp,70,FMOD_RESULT F_API setSoftwareChannels     (int numsoftwarechannels);
+o4Y0zE3bJ+Y,getSoftwareChannels,api\core\inc\fmod.hpp,71,FMOD_RESULT F_API getSoftwareChannels     (int *numsoftwarechannels);
+ZPwhtfS14QI,setSoftwareFormat,api\core\inc\fmod.hpp,72,"FMOD_RESULT F_API setSoftwareFormat       (int samplerate, FMOD_SPEAKERMODE speakermode, int numrawspeakers);"
+5MLr1xhtO+s,getSoftwareFormat,api\core\inc\fmod.hpp,73,"FMOD_RESULT F_API getSoftwareFormat       (int *samplerate, FMOD_SPEAKERMODE *speakermode, int *numrawspeakers);"
+dSY5XE6k89I,setDSPBufferSize,api\core\inc\fmod.hpp,74,"FMOD_RESULT F_API setDSPBufferSize        (unsigned int bufferlength, int numbuffers);"
+aTJ+fGab97U,getDSPBufferSize,api\core\inc\fmod.hpp,75,"FMOD_RESULT F_API getDSPBufferSize        (unsigned int *bufferlength, int *numbuffers);"
+SQDaMlTosiY,setFileSystem,api\core\inc\fmod.hpp,76,"FMOD_RESULT F_API setFileSystem           (FMOD_FILE_OPEN_CALLBACK useropen, FMOD_FILE_CLOSE_CALLBACK userclose, FMOD_FILE_READ_CALLBACK userread, FMOD_FILE_SEEK_CALLBACK userseek, FMOD_FILE_ASYNCREAD_CALLBACK userasyncread, FMOD_FILE_ASYNCCANCEL_CALLBACK userasynccancel, int blockalign);"
+J1A1Ut7aPgc,attachFileSystem,api\core\inc\fmod.hpp,77,"FMOD_RESULT F_API attachFileSystem        (FMOD_FILE_OPEN_CALLBACK useropen, FMOD_FILE_CLOSE_CALLBACK userclose, FMOD_FILE_READ_CALLBACK userread, FMOD_FILE_SEEK_CALLBACK userseek);"
+DFqbspSIrog,setAdvancedSettings,api\core\inc\fmod.hpp,78,FMOD_RESULT F_API setAdvancedSettings     (FMOD_ADVANCEDSETTINGS *settings);
+t0RoBt4UGpw,getAdvancedSettings,api\core\inc\fmod.hpp,79,FMOD_RESULT F_API getAdvancedSettings     (FMOD_ADVANCEDSETTINGS *settings);
+trCfnGWCmN8,setCallback,api\core\inc\fmod.hpp,80,"FMOD_RESULT F_API setCallback             (FMOD_SYSTEM_CALLBACK callback, FMOD_SYSTEM_CALLBACK_TYPE callbackmask = FMOD_SYSTEM_CALLBACK_ALL);"
+UeCsvf1Yc00,setPluginPath,api\core\inc\fmod.hpp,83,FMOD_RESULT F_API setPluginPath           (const char *path);
+44c8fuTlVYc,loadPlugin,api\core\inc\fmod.hpp,84,"FMOD_RESULT F_API loadPlugin              (const char *filename, unsigned int *handle, unsigned int priority = 0);"
+UwKZu81-UVE,unloadPlugin,api\core\inc\fmod.hpp,85,FMOD_RESULT F_API unloadPlugin            (unsigned int handle);
+HUQvfw3SxTc,getNumNestedPlugins,api\core\inc\fmod.hpp,86,"FMOD_RESULT F_API getNumNestedPlugins     (unsigned int handle, int *count);"
+-orOKL2F1Fw,getNestedPlugin,api\core\inc\fmod.hpp,87,"FMOD_RESULT F_API getNestedPlugin         (unsigned int handle, int index, unsigned int *nestedhandle);"
+3kGdAEBDraI,getNumPlugins,api\core\inc\fmod.hpp,88,"FMOD_RESULT F_API getNumPlugins           (FMOD_PLUGINTYPE plugintype, int *numplugins);"
+mht5vtS8dRA,getPluginHandle,api\core\inc\fmod.hpp,89,"FMOD_RESULT F_API getPluginHandle         (FMOD_PLUGINTYPE plugintype, int index, unsigned int *handle);"
+uJ2DcAaUb4A,getPluginInfo,api\core\inc\fmod.hpp,90,"FMOD_RESULT F_API getPluginInfo           (unsigned int handle, FMOD_PLUGINTYPE *plugintype, char *name, int namelen, unsigned int *version);"
+AuANzqyncH8,setOutputByPlugin,api\core\inc\fmod.hpp,91,FMOD_RESULT F_API setOutputByPlugin       (unsigned int handle);
+swb031xM1tU,getOutputByPlugin,api\core\inc\fmod.hpp,92,FMOD_RESULT F_API getOutputByPlugin       (unsigned int *handle);
+MVCUvoufki0,createDSPByPlugin,api\core\inc\fmod.hpp,93,"FMOD_RESULT F_API createDSPByPlugin       (unsigned int handle, DSP **dsp);"
+2dekpfz49dw,getDSPInfoByPlugin,api\core\inc\fmod.hpp,94,"FMOD_RESULT F_API getDSPInfoByPlugin      (unsigned int handle, const FMOD_DSP_DESCRIPTION **description);"
+7qIsRdyPWlI,registerCodec,api\core\inc\fmod.hpp,95,"FMOD_RESULT F_API registerCodec           (FMOD_CODEC_DESCRIPTION *description, unsigned int *handle, unsigned int priority = 0);"
+H-URUanNK8Y,registerDSP,api\core\inc\fmod.hpp,96,"FMOD_RESULT F_API registerDSP             (const FMOD_DSP_DESCRIPTION *description, unsigned int *handle);"
+QMptVdudczg,registerOutput,api\core\inc\fmod.hpp,97,"FMOD_RESULT F_API registerOutput          (const FMOD_OUTPUT_DESCRIPTION *description, unsigned int *handle);"
+w2Li78Xv134,init,api\core\inc\fmod.hpp,100,"FMOD_RESULT F_API init                    (int maxchannels, FMOD_INITFLAGS flags, void *extradriverdata);"
+bY-PO6JhzhQ,close,api\core\inc\fmod.hpp,101,FMOD_RESULT F_API close                   ();
+R4zmtqRrc1s,update,api\core\inc\fmod.hpp,104,FMOD_RESULT F_API update                  ();        /* IMPORTANT! CALL THIS ONCE PER FRAME! */
++l2l+gFnM-I,setSpeakerPosition,api\core\inc\fmod.hpp,106,"FMOD_RESULT F_API setSpeakerPosition      (FMOD_SPEAKER speaker, float x, float y, bool active);"
+5hq2IBjsPPU,getSpeakerPosition,api\core\inc\fmod.hpp,107,"FMOD_RESULT F_API getSpeakerPosition      (FMOD_SPEAKER speaker, float *x, float *y, bool *active);"
+5BcUkVeN4qw,setStreamBufferSize,api\core\inc\fmod.hpp,108,"FMOD_RESULT F_API setStreamBufferSize     (unsigned int filebuffersize, FMOD_TIMEUNIT filebuffersizetype);"
+SKMgoHuJ4HI,getStreamBufferSize,api\core\inc\fmod.hpp,109,"FMOD_RESULT F_API getStreamBufferSize     (unsigned int *filebuffersize, FMOD_TIMEUNIT *filebuffersizetype);"
+icu1pr0bFTw,set3DSettings,api\core\inc\fmod.hpp,110,"FMOD_RESULT F_API set3DSettings           (float dopplerscale, float distancefactor, float rolloffscale);"
+wY7ETEC3xzQ,get3DSettings,api\core\inc\fmod.hpp,111,"FMOD_RESULT F_API get3DSettings           (float *dopplerscale, float *distancefactor, float *rolloffscale);"
+xk0580ZLF24,set3DNumListeners,api\core\inc\fmod.hpp,112,FMOD_RESULT F_API set3DNumListeners       (int numlisteners);
+Il8hVJRjie4,get3DNumListeners,api\core\inc\fmod.hpp,113,FMOD_RESULT F_API get3DNumListeners       (int *numlisteners);
+SfDd39EwZUo,set3DListenerAttributes,api\core\inc\fmod.hpp,114,"FMOD_RESULT F_API set3DListenerAttributes (int listener, const FMOD_VECTOR *pos, const FMOD_VECTOR *vel, const FMOD_VECTOR *forward, const FMOD_VECTOR *up);"
+I9TNsyjuJio,get3DListenerAttributes,api\core\inc\fmod.hpp,115,"FMOD_RESULT F_API get3DListenerAttributes (int listener, FMOD_VECTOR *pos, FMOD_VECTOR *vel, FMOD_VECTOR *forward, FMOD_VECTOR *up);"
+FNnUvVfK3g4,set3DRolloffCallback,api\core\inc\fmod.hpp,116,FMOD_RESULT F_API set3DRolloffCallback    (FMOD_3D_ROLLOFF_CALLBACK callback);
+bGJMCneb1oY,mixerSuspend,api\core\inc\fmod.hpp,117,FMOD_RESULT F_API mixerSuspend            ();
+OtO0r-REifY,mixerResume,api\core\inc\fmod.hpp,118,FMOD_RESULT F_API mixerResume             ();
+FogzDrZeGEY,getDefaultMixMatrix,api\core\inc\fmod.hpp,119,"FMOD_RESULT F_API getDefaultMixMatrix     (FMOD_SPEAKERMODE sourcespeakermode, FMOD_SPEAKERMODE targetspeakermode, float *matrix, int matrixhop);"
+XctaITzpQ8I,getSpeakerModeChannels,api\core\inc\fmod.hpp,120,"FMOD_RESULT F_API getSpeakerModeChannels  (FMOD_SPEAKERMODE mode, int *channels);"
+VZ9nhuHXJWc,getVersion,api\core\inc\fmod.hpp,123,FMOD_RESULT F_API getVersion              (unsigned int *version);
+3bUAHbxVvtI,getOutputHandle,api\core\inc\fmod.hpp,124,FMOD_RESULT F_API getOutputHandle         (void **handle);
+5Z-lchvs5jI,getChannelsPlaying,api\core\inc\fmod.hpp,125,"FMOD_RESULT F_API getChannelsPlaying      (int *channels, int *realchannels = 0);"
+Dh1-XyiVCLk,getCPUUsage,api\core\inc\fmod.hpp,126,FMOD_RESULT F_API getCPUUsage             (FMOD_CPU_USAGE *usage);
+IU7KmuiamOU,getFileUsage,api\core\inc\fmod.hpp,127,"FMOD_RESULT F_API getFileUsage            (long long *sampleBytesRead, long long *streamBytesRead, long long *otherBytesRead);"
+j-uZtzlMr2c,createSound,api\core\inc\fmod.hpp,130,"FMOD_RESULT F_API createSound             (const char *name_or_data, FMOD_MODE mode, FMOD_CREATESOUNDEXINFO *exinfo, Sound **sound);"
+IBlaqAlerW8,createStream,api\core\inc\fmod.hpp,131,"FMOD_RESULT F_API createStream            (const char *name_or_data, FMOD_MODE mode, FMOD_CREATESOUNDEXINFO *exinfo, Sound **sound);"
+Ogm+v75LPWo,createDSP,api\core\inc\fmod.hpp,132,"FMOD_RESULT F_API createDSP               (const FMOD_DSP_DESCRIPTION *description, DSP **dsp);"
+HhV0j5txMwA,createDSPByType,api\core\inc\fmod.hpp,133,"FMOD_RESULT F_API createDSPByType         (FMOD_DSP_TYPE type, DSP **dsp);"
+OtBQJDmw2j0,createChannelGroup,api\core\inc\fmod.hpp,134,"FMOD_RESULT F_API createChannelGroup      (const char *name, ChannelGroup **channelgroup);"
+Mhfr7U6-gOY,createSoundGroup,api\core\inc\fmod.hpp,135,"FMOD_RESULT F_API createSoundGroup        (const char *name, SoundGroup **soundgroup);"
+U6ZQxuNcTs0,createReverb3D,api\core\inc\fmod.hpp,136,FMOD_RESULT F_API createReverb3D          (Reverb3D **reverb);
+UFDmrQWwIvA,playSound,api\core\inc\fmod.hpp,138,"FMOD_RESULT F_API playSound               (Sound *sound, ChannelGroup *channelgroup, bool paused, Channel **channel);"
+zEY2VHs0Yu4,playDSP,api\core\inc\fmod.hpp,139,"FMOD_RESULT F_API playDSP                 (DSP *dsp, ChannelGroup *channelgroup, bool paused, Channel **channel);"
+pQt8i67yVU8,getChannel,api\core\inc\fmod.hpp,140,"FMOD_RESULT F_API getChannel              (int channelid, Channel **channel);"
+2ifQ9gPAml0,getDSPInfoByType,api\core\inc\fmod.hpp,141,"FMOD_RESULT F_API getDSPInfoByType        (FMOD_DSP_TYPE type, const FMOD_DSP_DESCRIPTION **description);"
+ksZYeQmWVBU,getMasterChannelGroup,api\core\inc\fmod.hpp,142,FMOD_RESULT F_API getMasterChannelGroup   (ChannelGroup **channelgroup);
+2oYDQowNjFY,getMasterSoundGroup,api\core\inc\fmod.hpp,143,FMOD_RESULT F_API getMasterSoundGroup     (SoundGroup **soundgroup);
+0oAY4+uoewY,attachChannelGroupToPort,api\core\inc\fmod.hpp,146,"FMOD_RESULT F_API attachChannelGroupToPort   (FMOD_PORT_TYPE portType, FMOD_PORT_INDEX portIndex, ChannelGroup *channelgroup, bool passThru = false);"
+HDU3dQw2W9U,detachChannelGroupFromPort,api\core\inc\fmod.hpp,147,FMOD_RESULT F_API detachChannelGroupFromPort (ChannelGroup *channelgroup);
+BcrcJCueptU,setReverbProperties,api\core\inc\fmod.hpp,150,"FMOD_RESULT F_API setReverbProperties     (int instance, const FMOD_REVERB_PROPERTIES *prop);"
+Tr0VikJD4FA,getReverbProperties,api\core\inc\fmod.hpp,151,"FMOD_RESULT F_API getReverbProperties     (int instance, FMOD_REVERB_PROPERTIES *prop);"
+XmouzFuZYjw,lockDSP,api\core\inc\fmod.hpp,154,FMOD_RESULT F_API lockDSP                 ();
+awkgKrpNTH8,unlockDSP,api\core\inc\fmod.hpp,155,FMOD_RESULT F_API unlockDSP               ();
+GIFxeFbUW7k,getRecordNumDrivers,api\core\inc\fmod.hpp,158,"FMOD_RESULT F_API getRecordNumDrivers     (int *numdrivers, int *numconnected);"
+TtCMbv3VwtU,getRecordDriverInfo,api\core\inc\fmod.hpp,159,"FMOD_RESULT F_API getRecordDriverInfo     (int id, char *name, int namelen, FMOD_GUID *guid, int *systemrate, FMOD_SPEAKERMODE *speakermode, int *speakermodechannels, FMOD_DRIVER_STATE *state);"
+2KA8X3XBefc,getRecordPosition,api\core\inc\fmod.hpp,160,"FMOD_RESULT F_API getRecordPosition       (int id, unsigned int *position);"
+WAtdNnTKILw,recordStart,api\core\inc\fmod.hpp,161,"FMOD_RESULT F_API recordStart             (int id, Sound *sound, bool loop);"
+RQPpNggwGY8,recordStop,api\core\inc\fmod.hpp,162,FMOD_RESULT F_API recordStop              (int id);
+7Lf4JixlGyY,isRecording,api\core\inc\fmod.hpp,163,"FMOD_RESULT F_API isRecording             (int id, bool *recording);"
+zmLlbx7HSto,createGeometry,api\core\inc\fmod.hpp,166,"FMOD_RESULT F_API createGeometry          (int maxpolygons, int maxvertices, Geometry **geometry);"
++fiMmwhFFIY,setGeometrySettings,api\core\inc\fmod.hpp,167,FMOD_RESULT F_API setGeometrySettings     (float maxworldsize);
++NtVKe2-4Qo,getGeometrySettings,api\core\inc\fmod.hpp,168,FMOD_RESULT F_API getGeometrySettings     (float *maxworldsize);
+X0swVWxjpN0,loadGeometry,api\core\inc\fmod.hpp,169,"FMOD_RESULT F_API loadGeometry            (const void *data, int datasize, Geometry **geometry);"
+XIjj9OBJ5Qk,getGeometryOcclusion,api\core\inc\fmod.hpp,170,"FMOD_RESULT F_API getGeometryOcclusion    (const FMOD_VECTOR *listener, const FMOD_VECTOR *source, float *direct, float *reverb);"
++3YO5WO5+tE,setNetworkProxy,api\core\inc\fmod.hpp,173,FMOD_RESULT F_API setNetworkProxy         (const char *proxy);
+lHTyOFTQYX8,getNetworkProxy,api\core\inc\fmod.hpp,174,"FMOD_RESULT F_API getNetworkProxy         (char *proxy, int proxylen);"
++VW+b85YV5U,setNetworkTimeout,api\core\inc\fmod.hpp,175,FMOD_RESULT F_API setNetworkTimeout       (int timeout);
+lzQFqIUr6LQ,getNetworkTimeout,api\core\inc\fmod.hpp,176,FMOD_RESULT F_API getNetworkTimeout       (int *timeout);
+YPDffhyf--U,setUserData,api\core\inc\fmod.hpp,179,FMOD_RESULT F_API setUserData             (void *userdata);
+cl7ImpM9ZFQ,getUserData,api\core\inc\fmod.hpp,180,FMOD_RESULT F_API getUserData             (void **userdata);
+r43u8ojbKNM,release,api\core\inc\fmod.hpp,196,FMOD_RESULT F_API release                ();
+OMyolnlGi2M,getSystemObject,api\core\inc\fmod.hpp,197,FMOD_RESULT F_API getSystemObject        (System **system);
+dLz-xwtyCJ4,lock,api\core\inc\fmod.hpp,200,"FMOD_RESULT F_API lock                   (unsigned int offset, unsigned int length, void **ptr1, void **ptr2, unsigned int *len1, unsigned int *len2);"
+-wkVDvrdGis,unlock,api\core\inc\fmod.hpp,201,"FMOD_RESULT F_API unlock                 (void *ptr1, void *ptr2, unsigned int len1, unsigned int len2);"
+pA6kiA353Rk,setDefaults,api\core\inc\fmod.hpp,202,"FMOD_RESULT F_API setDefaults            (float frequency, int priority);"
+7Roj8B+xaaY,getDefaults,api\core\inc\fmod.hpp,203,"FMOD_RESULT F_API getDefaults            (float *frequency, int *priority);"
+F2Cmdky0Mls,set3DMinMaxDistance,api\core\inc\fmod.hpp,204,"FMOD_RESULT F_API set3DMinMaxDistance    (float min, float max);"
+mES33Ndkzxo,get3DMinMaxDistance,api\core\inc\fmod.hpp,205,"FMOD_RESULT F_API get3DMinMaxDistance    (float *min, float *max);"
+wkt9thA6W7U,set3DConeSettings,api\core\inc\fmod.hpp,206,"FMOD_RESULT F_API set3DConeSettings      (float insideconeangle, float outsideconeangle, float outsidevolume);"
+6b9jjBDlm3w,get3DConeSettings,api\core\inc\fmod.hpp,207,"FMOD_RESULT F_API get3DConeSettings      (float *insideconeangle, float *outsideconeangle, float *outsidevolume);"
+D4qApNcoAvg,set3DCustomRolloff,api\core\inc\fmod.hpp,208,"FMOD_RESULT F_API set3DCustomRolloff     (FMOD_VECTOR *points, int numpoints);"
+ikE713DOgmI,get3DCustomRolloff,api\core\inc\fmod.hpp,209,"FMOD_RESULT F_API get3DCustomRolloff     (FMOD_VECTOR **points, int *numpoints);"
+Mv5B0Ywr01g,getSubSound,api\core\inc\fmod.hpp,210,"FMOD_RESULT F_API getSubSound            (int index, Sound **subsound);"
+Fi2Q6agtn58,getSubSoundParent,api\core\inc\fmod.hpp,211,FMOD_RESULT F_API getSubSoundParent      (Sound **parentsound);
+p9jlrcz2QOo,getName,api\core\inc\fmod.hpp,212,"FMOD_RESULT F_API getName                (char *name, int namelen);"
+8Q5nWIkw7Sg,getLength,api\core\inc\fmod.hpp,213,"FMOD_RESULT F_API getLength              (unsigned int *length, FMOD_TIMEUNIT lengthtype);"
+6tJ1W84JQf8,getFormat,api\core\inc\fmod.hpp,214,"FMOD_RESULT F_API getFormat              (FMOD_SOUND_TYPE *type, FMOD_SOUND_FORMAT *format, int *channels, int *bits);"
+KgJM0y-HytI,getNumSubSounds,api\core\inc\fmod.hpp,215,FMOD_RESULT F_API getNumSubSounds        (int *numsubsounds);
+FKNEcGNVlh4,getNumTags,api\core\inc\fmod.hpp,216,"FMOD_RESULT F_API getNumTags             (int *numtags, int *numtagsupdated);"
+Pqwrh9SI8fE,getTag,api\core\inc\fmod.hpp,217,"FMOD_RESULT F_API getTag                 (const char *name, int index, FMOD_TAG *tag);"
+vSVKiklBFCA,getOpenState,api\core\inc\fmod.hpp,218,"FMOD_RESULT F_API getOpenState           (FMOD_OPENSTATE *openstate, unsigned int *percentbuffered, bool *starving, bool *diskbusy);"
+-mdCUN1C3po,readData,api\core\inc\fmod.hpp,219,"FMOD_RESULT F_API readData               (void *buffer, unsigned int length, unsigned int *read);"
+zo+KMf50LN4,seekData,api\core\inc\fmod.hpp,220,FMOD_RESULT F_API seekData               (unsigned int pcm);
+dpxJtNTTLFg,setSoundGroup,api\core\inc\fmod.hpp,222,FMOD_RESULT F_API setSoundGroup          (SoundGroup *soundgroup);
+JwhuW5PHAqw,getSoundGroup,api\core\inc\fmod.hpp,223,FMOD_RESULT F_API getSoundGroup          (SoundGroup **soundgroup);
+snStWaeK45s,getNumSyncPoints,api\core\inc\fmod.hpp,226,FMOD_RESULT F_API getNumSyncPoints       (int *numsyncpoints);
+VNFdp7I-NS0,getSyncPoint,api\core\inc\fmod.hpp,227,"FMOD_RESULT F_API getSyncPoint           (int index, FMOD_SYNCPOINT **point);"
+zRpb-hxGA0o,getSyncPointInfo,api\core\inc\fmod.hpp,228,"FMOD_RESULT F_API getSyncPointInfo       (FMOD_SYNCPOINT *point, char *name, int namelen, unsigned int *offset, FMOD_TIMEUNIT offsettype);"
+5ubF9tAKONQ,addSyncPoint,api\core\inc\fmod.hpp,229,"FMOD_RESULT F_API addSyncPoint           (unsigned int offset, FMOD_TIMEUNIT offsettype, const char *name, FMOD_SYNCPOINT **point);"
+jmCEH8C+XvM,deleteSyncPoint,api\core\inc\fmod.hpp,230,FMOD_RESULT F_API deleteSyncPoint        (FMOD_SYNCPOINT *point);
+Bn4BfOpFulg,setMode,api\core\inc\fmod.hpp,233,FMOD_RESULT F_API setMode                (FMOD_MODE mode);
+4sEjG5wKhvw,getMode,api\core\inc\fmod.hpp,234,FMOD_RESULT F_API getMode                (FMOD_MODE *mode);
+DfL29vS9mLE,setLoopCount,api\core\inc\fmod.hpp,235,FMOD_RESULT F_API setLoopCount           (int loopcount);
+gKnL5ggbGqM,getLoopCount,api\core\inc\fmod.hpp,236,FMOD_RESULT F_API getLoopCount           (int *loopcount);
+l2dX9SycP-Y,setLoopPoints,api\core\inc\fmod.hpp,237,"FMOD_RESULT F_API setLoopPoints          (unsigned int loopstart, FMOD_TIMEUNIT loopstarttype, unsigned int loopend, FMOD_TIMEUNIT loopendtype);"
+Ge1jGVJg4rA,getLoopPoints,api\core\inc\fmod.hpp,238,"FMOD_RESULT F_API getLoopPoints          (unsigned int *loopstart, FMOD_TIMEUNIT loopstarttype, unsigned int *loopend, FMOD_TIMEUNIT loopendtype);"
+MQfdP8yPw+U,getMusicNumChannels,api\core\inc\fmod.hpp,241,FMOD_RESULT F_API getMusicNumChannels    (int *numchannels);
+uhZEctIk6Xk,setMusicChannelVolume,api\core\inc\fmod.hpp,242,"FMOD_RESULT F_API setMusicChannelVolume  (int channel, float volume);"
+V6uVIqhjGAA,getMusicChannelVolume,api\core\inc\fmod.hpp,243,"FMOD_RESULT F_API getMusicChannelVolume  (int channel, float *volume);"
+uZL0z6KKI30,setMusicSpeed,api\core\inc\fmod.hpp,244,FMOD_RESULT F_API setMusicSpeed          (float speed);
+whYIx1gYRXU,getMusicSpeed,api\core\inc\fmod.hpp,245,FMOD_RESULT F_API getMusicSpeed          (float *speed);
+YPDffhyf--U,setUserData,api\core\inc\fmod.hpp,248,FMOD_RESULT F_API setUserData            (void *userdata);
+cl7ImpM9ZFQ,getUserData,api\core\inc\fmod.hpp,249,FMOD_RESULT F_API getUserData            (void **userdata);
+OMyolnlGi2M,getSystemObject,api\core\inc\fmod.hpp,266,FMOD_RESULT F_API getSystemObject        (System **system);
+t3uunkdnOio,stop,api\core\inc\fmod.hpp,269,FMOD_RESULT F_API stop                   ();
+9z6UxLXivYQ,setPaused,api\core\inc\fmod.hpp,270,FMOD_RESULT F_API setPaused              (bool paused);
+f5W4DHXTH4M,getPaused,api\core\inc\fmod.hpp,271,FMOD_RESULT F_API getPaused              (bool *paused);
+iZVZmVfyls0,setVolume,api\core\inc\fmod.hpp,272,FMOD_RESULT F_API setVolume              (float volume);
+5T2irinisfo,getVolume,api\core\inc\fmod.hpp,273,FMOD_RESULT F_API getVolume              (float *volume);
+QcRBE3WNVR8,setVolumeRamp,api\core\inc\fmod.hpp,274,FMOD_RESULT F_API setVolumeRamp          (bool ramp);
+J9zTNSmgPL0,getVolumeRamp,api\core\inc\fmod.hpp,275,FMOD_RESULT F_API getVolumeRamp          (bool *ramp);
+ic2ko5zQfeU,getAudibility,api\core\inc\fmod.hpp,276,FMOD_RESULT F_API getAudibility          (float *audibility);
+kbcykZVx3KQ,setPitch,api\core\inc\fmod.hpp,277,FMOD_RESULT F_API setPitch               (float pitch);
+Cj5DRXds-Tg,getPitch,api\core\inc\fmod.hpp,278,FMOD_RESULT F_API getPitch               (float *pitch);
+FoeboZzHQAs,setMute,api\core\inc\fmod.hpp,279,FMOD_RESULT F_API setMute                (bool mute);
+uNjinnHvjtM,getMute,api\core\inc\fmod.hpp,280,FMOD_RESULT F_API getMute                (bool *mute);
+BcrcJCueptU,setReverbProperties,api\core\inc\fmod.hpp,281,"FMOD_RESULT F_API setReverbProperties    (int instance, float wet);"
+Tr0VikJD4FA,getReverbProperties,api\core\inc\fmod.hpp,282,"FMOD_RESULT F_API getReverbProperties    (int instance, float *wet);"
+7FFyMfmZJMU,setLowPassGain,api\core\inc\fmod.hpp,283,FMOD_RESULT F_API setLowPassGain         (float gain);
+a5zxYPoW+yk,getLowPassGain,api\core\inc\fmod.hpp,284,FMOD_RESULT F_API getLowPassGain         (float *gain);
+Bn4BfOpFulg,setMode,api\core\inc\fmod.hpp,285,FMOD_RESULT F_API setMode                (FMOD_MODE mode);
+4sEjG5wKhvw,getMode,api\core\inc\fmod.hpp,286,FMOD_RESULT F_API getMode                (FMOD_MODE *mode);
+trCfnGWCmN8,setCallback,api\core\inc\fmod.hpp,287,FMOD_RESULT F_API setCallback            (FMOD_CHANNELCONTROL_CALLBACK callback);
+TIoj0m3s7Qs,isPlaying,api\core\inc\fmod.hpp,288,FMOD_RESULT F_API isPlaying              (bool *isplaying);
+bVswZ-GGo+M,setPan,api\core\inc\fmod.hpp,292,FMOD_RESULT F_API setPan                 (float pan);
+XUmcKvneMXI,setMixLevelsOutput,api\core\inc\fmod.hpp,293,"FMOD_RESULT F_API setMixLevelsOutput     (float frontleft, float frontright, float center, float lfe, float surroundleft, float surroundright, float backleft, float backright);"
+lNr1iA1qdAM,setMixLevelsInput,api\core\inc\fmod.hpp,294,"FMOD_RESULT F_API setMixLevelsInput      (float *levels, int numlevels);"
+apVtwMcko68,setMixMatrix,api\core\inc\fmod.hpp,295,"FMOD_RESULT F_API setMixMatrix           (float *matrix, int outchannels, int inchannels, int inchannel_hop = 0);"
+EULBVaz6Wbk,getMixMatrix,api\core\inc\fmod.hpp,296,"FMOD_RESULT F_API getMixMatrix           (float *matrix, int *outchannels, int *inchannels, int inchannel_hop = 0);"
+VEqkyowcmCw,getDSPClock,api\core\inc\fmod.hpp,299,"FMOD_RESULT F_API getDSPClock            (unsigned long long *dspclock, unsigned long long *parentclock);"
+iTzMQp40N2o,setDelay,api\core\inc\fmod.hpp,300,"FMOD_RESULT F_API setDelay               (unsigned long long dspclock_start, unsigned long long dspclock_end, bool stopchannels = true);"
+awetwSAMu4o,getDelay,api\core\inc\fmod.hpp,301,"FMOD_RESULT F_API getDelay               (unsigned long long *dspclock_start, unsigned long long *dspclock_end, bool *stopchannels = 0);"
+MaX33Qso9w4,addFadePoint,api\core\inc\fmod.hpp,302,"FMOD_RESULT F_API addFadePoint           (unsigned long long dspclock, float volume);"
+4VLgZsqvGlU,setFadePointRamp,api\core\inc\fmod.hpp,303,"FMOD_RESULT F_API setFadePointRamp       (unsigned long long dspclock, float volume);"
+LEUHkQTF8hk,removeFadePoints,api\core\inc\fmod.hpp,304,"FMOD_RESULT F_API removeFadePoints       (unsigned long long dspclock_start, unsigned long long dspclock_end);"
+Fy4DMNypalw,getFadePoints,api\core\inc\fmod.hpp,305,"FMOD_RESULT F_API getFadePoints          (unsigned int *numpoints, unsigned long long *point_dspclock, float *point_volume);"
+5yflk5uFh+k,getDSP,api\core\inc\fmod.hpp,308,"FMOD_RESULT F_API getDSP                 (int index, DSP **dsp);"
+0Yzw4FeWgOc,addDSP,api\core\inc\fmod.hpp,309,"FMOD_RESULT F_API addDSP                 (int index, DSP *dsp);"
+qyVAq5-Hlyc,removeDSP,api\core\inc\fmod.hpp,310,FMOD_RESULT F_API removeDSP              (DSP *dsp);
+18ee6F+B4ew,getNumDSPs,api\core\inc\fmod.hpp,311,FMOD_RESULT F_API getNumDSPs             (int *numdsps);
+5NIpNhFgkXA,setDSPIndex,api\core\inc\fmod.hpp,312,"FMOD_RESULT F_API setDSPIndex            (DSP *dsp, int index);"
+bcIGGtv99l8,getDSPIndex,api\core\inc\fmod.hpp,313,"FMOD_RESULT F_API getDSPIndex            (DSP *dsp, int *index);"
+KON9YeDj0nU,set3DAttributes,api\core\inc\fmod.hpp,316,"FMOD_RESULT F_API set3DAttributes        (const FMOD_VECTOR *pos, const FMOD_VECTOR *vel);"
+SvWfHb28rS0,get3DAttributes,api\core\inc\fmod.hpp,317,"FMOD_RESULT F_API get3DAttributes        (FMOD_VECTOR *pos, FMOD_VECTOR *vel);"
+F2Cmdky0Mls,set3DMinMaxDistance,api\core\inc\fmod.hpp,318,"FMOD_RESULT F_API set3DMinMaxDistance    (float mindistance, float maxdistance);"
+mES33Ndkzxo,get3DMinMaxDistance,api\core\inc\fmod.hpp,319,"FMOD_RESULT F_API get3DMinMaxDistance    (float *mindistance, float *maxdistance);"
+wkt9thA6W7U,set3DConeSettings,api\core\inc\fmod.hpp,320,"FMOD_RESULT F_API set3DConeSettings      (float insideconeangle, float outsideconeangle, float outsidevolume);"
+6b9jjBDlm3w,get3DConeSettings,api\core\inc\fmod.hpp,321,"FMOD_RESULT F_API get3DConeSettings      (float *insideconeangle, float *outsideconeangle, float *outsidevolume);"
+fzsdjiB6JUo,set3DConeOrientation,api\core\inc\fmod.hpp,322,FMOD_RESULT F_API set3DConeOrientation   (FMOD_VECTOR *orientation);
+8gf4aor9rb0,get3DConeOrientation,api\core\inc\fmod.hpp,323,FMOD_RESULT F_API get3DConeOrientation   (FMOD_VECTOR *orientation);
+D4qApNcoAvg,set3DCustomRolloff,api\core\inc\fmod.hpp,324,"FMOD_RESULT F_API set3DCustomRolloff     (FMOD_VECTOR *points, int numpoints);"
+ikE713DOgmI,get3DCustomRolloff,api\core\inc\fmod.hpp,325,"FMOD_RESULT F_API get3DCustomRolloff     (FMOD_VECTOR **points, int *numpoints);"
+sSK6aX1B8Hk,set3DOcclusion,api\core\inc\fmod.hpp,326,"FMOD_RESULT F_API set3DOcclusion         (float directocclusion, float reverbocclusion);"
+2sA2WFe7Dvw,get3DOcclusion,api\core\inc\fmod.hpp,327,"FMOD_RESULT F_API get3DOcclusion         (float *directocclusion, float *reverbocclusion);"
+16EaH8uV0QM,set3DSpread,api\core\inc\fmod.hpp,328,FMOD_RESULT F_API set3DSpread            (float angle);
+I+FFdtGlDvg,get3DSpread,api\core\inc\fmod.hpp,329,FMOD_RESULT F_API get3DSpread            (float *angle);
+YmZkCyG7v8g,set3DLevel,api\core\inc\fmod.hpp,330,FMOD_RESULT F_API set3DLevel             (float level);
+HI9rG694gTo,get3DLevel,api\core\inc\fmod.hpp,331,FMOD_RESULT F_API get3DLevel             (float *level);
+k5Ospw+wWTk,set3DDopplerLevel,api\core\inc\fmod.hpp,332,FMOD_RESULT F_API set3DDopplerLevel      (float level);
+0nsJd0rSmp0,get3DDopplerLevel,api\core\inc\fmod.hpp,333,FMOD_RESULT F_API get3DDopplerLevel      (float *level);
+-XQoGrLU-NU,set3DDistanceFilter,api\core\inc\fmod.hpp,334,"FMOD_RESULT F_API set3DDistanceFilter    (bool custom, float customLevel, float centerFreq);"
+x4Lig22P+5I,get3DDistanceFilter,api\core\inc\fmod.hpp,335,"FMOD_RESULT F_API get3DDistanceFilter    (bool *custom, float *customLevel, float *centerFreq);"
+YPDffhyf--U,setUserData,api\core\inc\fmod.hpp,338,FMOD_RESULT F_API setUserData            (void *userdata);
+cl7ImpM9ZFQ,getUserData,api\core\inc\fmod.hpp,339,FMOD_RESULT F_API getUserData            (void **userdata);
+qDX2aJradRM,setFrequency,api\core\inc\fmod.hpp,356,FMOD_RESULT F_API setFrequency           (float frequency);
+kjaBaMikcCs,getFrequency,api\core\inc\fmod.hpp,357,FMOD_RESULT F_API getFrequency           (float *frequency);
+YTydE8gcVxQ,setPriority,api\core\inc\fmod.hpp,358,FMOD_RESULT F_API setPriority            (int priority);
+iTIXxE1ufJ0,getPriority,api\core\inc\fmod.hpp,359,FMOD_RESULT F_API getPriority            (int *priority);
+r6A-JgV+h5s,setPosition,api\core\inc\fmod.hpp,360,"FMOD_RESULT F_API setPosition            (unsigned int position, FMOD_TIMEUNIT postype);"
+YPtCejJ6HOg,getPosition,api\core\inc\fmod.hpp,361,"FMOD_RESULT F_API getPosition            (unsigned int *position, FMOD_TIMEUNIT postype);"
+N2tU4+eAPek,setChannelGroup,api\core\inc\fmod.hpp,362,FMOD_RESULT F_API setChannelGroup        (ChannelGroup *channelgroup);
+nVCaXVxkeiY,getChannelGroup,api\core\inc\fmod.hpp,363,FMOD_RESULT F_API getChannelGroup        (ChannelGroup **channelgroup);
+DfL29vS9mLE,setLoopCount,api\core\inc\fmod.hpp,364,FMOD_RESULT F_API setLoopCount           (int loopcount);
+gKnL5ggbGqM,getLoopCount,api\core\inc\fmod.hpp,365,FMOD_RESULT F_API getLoopCount           (int *loopcount);
+l2dX9SycP-Y,setLoopPoints,api\core\inc\fmod.hpp,366,"FMOD_RESULT F_API setLoopPoints          (unsigned int loopstart, FMOD_TIMEUNIT loopstarttype, unsigned int loopend, FMOD_TIMEUNIT loopendtype);"
+Ge1jGVJg4rA,getLoopPoints,api\core\inc\fmod.hpp,367,"FMOD_RESULT F_API getLoopPoints          (unsigned int *loopstart, FMOD_TIMEUNIT loopstarttype, unsigned int *loopend, FMOD_TIMEUNIT loopendtype);"
+SKRetw7cYHc,isVirtual,api\core\inc\fmod.hpp,370,FMOD_RESULT F_API isVirtual              (bool *isvirtual);
+Eg3ZLzaA8Js,getCurrentSound,api\core\inc\fmod.hpp,371,FMOD_RESULT F_API getCurrentSound        (Sound **sound);
+1yATXJlx4yc,getIndex,api\core\inc\fmod.hpp,372,FMOD_RESULT F_API getIndex               (int *index);
+r43u8ojbKNM,release,api\core\inc\fmod.hpp,388,FMOD_RESULT F_API release                 ();
+3r5LM5YEsL4,addGroup,api\core\inc\fmod.hpp,391,"FMOD_RESULT F_API addGroup                (ChannelGroup *group, bool propagatedspclock = true, DSPConnection **connection = 0);"
+YTuj-IoV2jk,getNumGroups,api\core\inc\fmod.hpp,392,FMOD_RESULT F_API getNumGroups            (int *numgroups);
+oqsIcYGOWKk,getGroup,api\core\inc\fmod.hpp,393,"FMOD_RESULT F_API getGroup                (int index, ChannelGroup **group);"
+11VJCGlbanA,getParentGroup,api\core\inc\fmod.hpp,394,FMOD_RESULT F_API getParentGroup          (ChannelGroup **group);
+p9jlrcz2QOo,getName,api\core\inc\fmod.hpp,397,"FMOD_RESULT F_API getName                 (char *name, int namelen);"
+y+jwJh05EAE,getNumChannels,api\core\inc\fmod.hpp,398,FMOD_RESULT F_API getNumChannels          (int *numchannels);
+pQt8i67yVU8,getChannel,api\core\inc\fmod.hpp,399,"FMOD_RESULT F_API getChannel              (int index, Channel **channel);"
+r43u8ojbKNM,release,api\core\inc\fmod.hpp,415,FMOD_RESULT F_API release                ();
+OMyolnlGi2M,getSystemObject,api\core\inc\fmod.hpp,416,FMOD_RESULT F_API getSystemObject        (System **system);
++XPvcwAEE60,setMaxAudible,api\core\inc\fmod.hpp,419,FMOD_RESULT F_API setMaxAudible          (int maxaudible);
+A9uphJjiKGo,getMaxAudible,api\core\inc\fmod.hpp,420,FMOD_RESULT F_API getMaxAudible          (int *maxaudible);
+IvfBhmAM2LM,setMaxAudibleBehavior,api\core\inc\fmod.hpp,421,FMOD_RESULT F_API setMaxAudibleBehavior  (FMOD_SOUNDGROUP_BEHAVIOR behavior);
+dT+cjHd-C-M,getMaxAudibleBehavior,api\core\inc\fmod.hpp,422,FMOD_RESULT F_API getMaxAudibleBehavior  (FMOD_SOUNDGROUP_BEHAVIOR *behavior);
+iuZQmixhlBM,setMuteFadeSpeed,api\core\inc\fmod.hpp,423,FMOD_RESULT F_API setMuteFadeSpeed       (float speed);
+Q+pstqj64UQ,getMuteFadeSpeed,api\core\inc\fmod.hpp,424,FMOD_RESULT F_API getMuteFadeSpeed       (float *speed);
+iZVZmVfyls0,setVolume,api\core\inc\fmod.hpp,425,FMOD_RESULT F_API setVolume              (float volume);
+5T2irinisfo,getVolume,api\core\inc\fmod.hpp,426,FMOD_RESULT F_API getVolume              (float *volume);
+t3uunkdnOio,stop,api\core\inc\fmod.hpp,427,FMOD_RESULT F_API stop                   ();
+p9jlrcz2QOo,getName,api\core\inc\fmod.hpp,430,"FMOD_RESULT F_API getName                (char *name, int namelen);"
+b+xkjvHsqhM,getNumSounds,api\core\inc\fmod.hpp,431,FMOD_RESULT F_API getNumSounds           (int *numsounds);
+pMDoBleOgis,getSound,api\core\inc\fmod.hpp,432,"FMOD_RESULT F_API getSound               (int index, Sound **sound);"
+fEwZyVsb-1E,getNumPlaying,api\core\inc\fmod.hpp,433,FMOD_RESULT F_API getNumPlaying          (int *numplaying);
+YPDffhyf--U,setUserData,api\core\inc\fmod.hpp,436,FMOD_RESULT F_API setUserData            (void *userdata);
+cl7ImpM9ZFQ,getUserData,api\core\inc\fmod.hpp,437,FMOD_RESULT F_API getUserData            (void **userdata);
+r43u8ojbKNM,release,api\core\inc\fmod.hpp,453,FMOD_RESULT F_API release                ();
+OMyolnlGi2M,getSystemObject,api\core\inc\fmod.hpp,454,FMOD_RESULT F_API getSystemObject        (System **system);
+clZ7YXfrk+c,addInput,api\core\inc\fmod.hpp,457,"FMOD_RESULT F_API addInput               (DSP *input, DSPConnection **connection = 0, FMOD_DSPCONNECTION_TYPE type = FMOD_DSPCONNECTION_TYPE_STANDARD);"
+3SDaoqs9+cc,disconnectFrom,api\core\inc\fmod.hpp,458,"FMOD_RESULT F_API disconnectFrom         (DSP *target, DSPConnection *connection = 0);"
+B6Mswc0YM3o,disconnectAll,api\core\inc\fmod.hpp,459,"FMOD_RESULT F_API disconnectAll          (bool inputs, bool outputs);"
+WqGDocXfJOo,getNumInputs,api\core\inc\fmod.hpp,460,FMOD_RESULT F_API getNumInputs           (int *numinputs);
+75WRh-hdjsQ,getNumOutputs,api\core\inc\fmod.hpp,461,FMOD_RESULT F_API getNumOutputs          (int *numoutputs);
+m42PAt02rGI,getInput,api\core\inc\fmod.hpp,462,"FMOD_RESULT F_API getInput               (int index, DSP **input, DSPConnection **inputconnection);"
+pl2e--ee7nY,getOutput,api\core\inc\fmod.hpp,463,"FMOD_RESULT F_API getOutput              (int index, DSP **output, DSPConnection **outputconnection);"
+lSCpKUz3TfE,setActive,api\core\inc\fmod.hpp,466,FMOD_RESULT F_API setActive              (bool active);
+8BzuIrG9vMs,getActive,api\core\inc\fmod.hpp,467,FMOD_RESULT F_API getActive              (bool *active);
+R4WEa16aDLo,setBypass,api\core\inc\fmod.hpp,468,FMOD_RESULT F_API setBypass              (bool bypass);
+8+IgwKk7fgg,getBypass,api\core\inc\fmod.hpp,469,FMOD_RESULT F_API getBypass              (bool *bypass);
+g1trJuP5XK8,setWetDryMix,api\core\inc\fmod.hpp,470,"FMOD_RESULT F_API setWetDryMix           (float prewet, float postwet, float dry);"
+TAZlx6lWXRA,getWetDryMix,api\core\inc\fmod.hpp,471,"FMOD_RESULT F_API getWetDryMix           (float *prewet, float *postwet, float *dry);"
+3dDSRw1M9wA,setChannelFormat,api\core\inc\fmod.hpp,472,"FMOD_RESULT F_API setChannelFormat       (FMOD_CHANNELMASK channelmask, int numchannels, FMOD_SPEAKERMODE source_speakermode);"
+X+ym6ZoEmSs,getChannelFormat,api\core\inc\fmod.hpp,473,"FMOD_RESULT F_API getChannelFormat       (FMOD_CHANNELMASK *channelmask, int *numchannels, FMOD_SPEAKERMODE *source_speakermode);"
+6buwaNdYtIc,getOutputChannelFormat,api\core\inc\fmod.hpp,474,"FMOD_RESULT F_API getOutputChannelFormat (FMOD_CHANNELMASK inmask, int inchannels, FMOD_SPEAKERMODE inspeakermode, FMOD_CHANNELMASK *outmask, int *outchannels, FMOD_SPEAKERMODE *outspeakermode);"
+s3fmTOIhMbg,reset,api\core\inc\fmod.hpp,475,FMOD_RESULT F_API reset                  ();
+trCfnGWCmN8,setCallback,api\core\inc\fmod.hpp,476,FMOD_RESULT F_API setCallback            (FMOD_DSP_CALLBACK callback);
+WtVqNeSr2fE,setParameterFloat,api\core\inc\fmod.hpp,479,"FMOD_RESULT F_API setParameterFloat      (int index, float value);"
+c2T6koFxKM4,setParameterInt,api\core\inc\fmod.hpp,480,"FMOD_RESULT F_API setParameterInt        (int index, int value);"
+ZJCjxDrcyoM,setParameterBool,api\core\inc\fmod.hpp,481,"FMOD_RESULT F_API setParameterBool       (int index, bool value);"
+Twx3FFEkwSw,setParameterData,api\core\inc\fmod.hpp,482,"FMOD_RESULT F_API setParameterData       (int index, void *data, unsigned int length);"
+HS7ty0qzCqs,getParameterFloat,api\core\inc\fmod.hpp,483,"FMOD_RESULT F_API getParameterFloat      (int index, float *value, char *valuestr, int valuestrlen);"
+WGBWgedLq2w,getParameterInt,api\core\inc\fmod.hpp,484,"FMOD_RESULT F_API getParameterInt        (int index, int *value, char *valuestr, int valuestrlen);"
+kfERzIn3bRk,getParameterBool,api\core\inc\fmod.hpp,485,"FMOD_RESULT F_API getParameterBool       (int index, bool *value, char *valuestr, int valuestrlen);"
+vHdJw7ep2ks,getParameterData,api\core\inc\fmod.hpp,486,"FMOD_RESULT F_API getParameterData       (int index, void **data, unsigned int *length, char *valuestr, int valuestrlen);"
+yb8TdB4NSXA,getNumParameters,api\core\inc\fmod.hpp,487,FMOD_RESULT F_API getNumParameters       (int *numparams);
+K901FNuKYeg,getParameterInfo,api\core\inc\fmod.hpp,488,"FMOD_RESULT F_API getParameterInfo       (int index, FMOD_DSP_PARAMETER_DESC **desc);"
+3bOD3Es-PxI,getDataParameterIndex,api\core\inc\fmod.hpp,489,"FMOD_RESULT F_API getDataParameterIndex  (int datatype, int *index);"
+Rew4tpSiL+A,showConfigDialog,api\core\inc\fmod.hpp,490,"FMOD_RESULT F_API showConfigDialog       (void *hwnd, bool show);"
+1M6d6kFef6w,getInfo,api\core\inc\fmod.hpp,493,"FMOD_RESULT F_API getInfo                (char *name, unsigned int *version, int *channels, int *configwidth, int *configheight);"
+CHyqjuZt78s,getType,api\core\inc\fmod.hpp,494,FMOD_RESULT F_API getType                (FMOD_DSP_TYPE *type);
+2z3-hfpN9Cs,getIdle,api\core\inc\fmod.hpp,495,FMOD_RESULT F_API getIdle                (bool *idle);
+YPDffhyf--U,setUserData,api\core\inc\fmod.hpp,498,FMOD_RESULT F_API setUserData            (void *userdata);
+cl7ImpM9ZFQ,getUserData,api\core\inc\fmod.hpp,499,FMOD_RESULT F_API getUserData            (void **userdata);
+x+N0Hsu8kSE,setMeteringEnabled,api\core\inc\fmod.hpp,502,"FMOD_RESULT F_API setMeteringEnabled     (bool inputEnabled, bool outputEnabled);"
+NdodjWgVRjM,getMeteringEnabled,api\core\inc\fmod.hpp,503,"FMOD_RESULT F_API getMeteringEnabled     (bool *inputEnabled, bool *outputEnabled);"
+T2zYqGRoKD4,getMeteringInfo,api\core\inc\fmod.hpp,504,"FMOD_RESULT F_API getMeteringInfo        (FMOD_DSP_METERING_INFO *inputInfo, FMOD_DSP_METERING_INFO *outputInfo);"
+Dh1-XyiVCLk,getCPUUsage,api\core\inc\fmod.hpp,505,"FMOD_RESULT F_API getCPUUsage            (unsigned int *exclusive, unsigned int *inclusive);"
+m42PAt02rGI,getInput,api\core\inc\fmod.hpp,522,FMOD_RESULT F_API getInput              (DSP **input);
+pl2e--ee7nY,getOutput,api\core\inc\fmod.hpp,523,FMOD_RESULT F_API getOutput             (DSP **output);
+q72gDQyFzeI,setMix,api\core\inc\fmod.hpp,524,FMOD_RESULT F_API setMix                (float volume);
+Y4GTIqG-lIQ,getMix,api\core\inc\fmod.hpp,525,FMOD_RESULT F_API getMix                (float *volume);
+apVtwMcko68,setMixMatrix,api\core\inc\fmod.hpp,526,"FMOD_RESULT F_API setMixMatrix          (float *matrix, int outchannels, int inchannels, int inchannel_hop = 0);"
+EULBVaz6Wbk,getMixMatrix,api\core\inc\fmod.hpp,527,"FMOD_RESULT F_API getMixMatrix          (float *matrix, int *outchannels, int *inchannels, int inchannel_hop = 0);"
+CHyqjuZt78s,getType,api\core\inc\fmod.hpp,528,FMOD_RESULT F_API getType               (FMOD_DSPCONNECTION_TYPE *type);
+YPDffhyf--U,setUserData,api\core\inc\fmod.hpp,531,FMOD_RESULT F_API setUserData           (void *userdata);
+cl7ImpM9ZFQ,getUserData,api\core\inc\fmod.hpp,532,FMOD_RESULT F_API getUserData           (void **userdata);
+r43u8ojbKNM,release,api\core\inc\fmod.hpp,549,FMOD_RESULT F_API release                ();
+8winvDqWoJg,addPolygon,api\core\inc\fmod.hpp,552,"FMOD_RESULT F_API addPolygon             (float directocclusion, float reverbocclusion, bool doublesided, int numvertices, const FMOD_VECTOR *vertices, int *polygonindex);"
+myjN2j6TPCE,getNumPolygons,api\core\inc\fmod.hpp,553,FMOD_RESULT F_API getNumPolygons         (int *numpolygons);
+IK1lR33FJa8,getMaxPolygons,api\core\inc\fmod.hpp,554,"FMOD_RESULT F_API getMaxPolygons         (int *maxpolygons, int *maxvertices);"
+2XAIX70GZEY,getPolygonNumVertices,api\core\inc\fmod.hpp,555,"FMOD_RESULT F_API getPolygonNumVertices  (int index, int *numvertices);"
+DX1SwwNZ6OY,setPolygonVertex,api\core\inc\fmod.hpp,556,"FMOD_RESULT F_API setPolygonVertex       (int index, int vertexindex, const FMOD_VECTOR *vertex);"
+2hLJKGwsG0c,getPolygonVertex,api\core\inc\fmod.hpp,557,"FMOD_RESULT F_API getPolygonVertex       (int index, int vertexindex, FMOD_VECTOR *vertex);"
+BhV3ZPzkITs,setPolygonAttributes,api\core\inc\fmod.hpp,558,"FMOD_RESULT F_API setPolygonAttributes   (int index, float directocclusion, float reverbocclusion, bool doublesided);"
+XngeG5NYgv8,getPolygonAttributes,api\core\inc\fmod.hpp,559,"FMOD_RESULT F_API getPolygonAttributes   (int index, float *directocclusion, float *reverbocclusion, bool *doublesided);"
+lSCpKUz3TfE,setActive,api\core\inc\fmod.hpp,562,FMOD_RESULT F_API setActive              (bool active);
+8BzuIrG9vMs,getActive,api\core\inc\fmod.hpp,563,FMOD_RESULT F_API getActive              (bool *active);
+RiEXNSqLpeo,setRotation,api\core\inc\fmod.hpp,564,"FMOD_RESULT F_API setRotation            (const FMOD_VECTOR *forward, const FMOD_VECTOR *up);"
+3cKF+ACIeRs,getRotation,api\core\inc\fmod.hpp,565,"FMOD_RESULT F_API getRotation            (FMOD_VECTOR *forward, FMOD_VECTOR *up);"
+r6A-JgV+h5s,setPosition,api\core\inc\fmod.hpp,566,FMOD_RESULT F_API setPosition            (const FMOD_VECTOR *position);
+YPtCejJ6HOg,getPosition,api\core\inc\fmod.hpp,567,FMOD_RESULT F_API getPosition            (FMOD_VECTOR *position);
+Ke-G2TtVd+c,setScale,api\core\inc\fmod.hpp,568,FMOD_RESULT F_API setScale               (const FMOD_VECTOR *scale);
+JztLWHDvtWE,getScale,api\core\inc\fmod.hpp,569,FMOD_RESULT F_API getScale               (FMOD_VECTOR *scale);
+JiOiKaMv4Eg,save,api\core\inc\fmod.hpp,570,"FMOD_RESULT F_API save                   (void *data, int *datasize);"
+YPDffhyf--U,setUserData,api\core\inc\fmod.hpp,573,FMOD_RESULT F_API setUserData            (void *userdata);
+cl7ImpM9ZFQ,getUserData,api\core\inc\fmod.hpp,574,FMOD_RESULT F_API getUserData            (void **userdata);
+r43u8ojbKNM,release,api\core\inc\fmod.hpp,591,FMOD_RESULT F_API release                ();
+KON9YeDj0nU,set3DAttributes,api\core\inc\fmod.hpp,594,"FMOD_RESULT F_API set3DAttributes        (const FMOD_VECTOR *position, float mindistance, float maxdistance);"
+SvWfHb28rS0,get3DAttributes,api\core\inc\fmod.hpp,595,"FMOD_RESULT F_API get3DAttributes        (FMOD_VECTOR *position, float *mindistance,float *maxdistance);"
+libJHvPzpu8,setProperties,api\core\inc\fmod.hpp,596,FMOD_RESULT F_API setProperties          (const FMOD_REVERB_PROPERTIES *properties);
+JxPLZzRtfro,getProperties,api\core\inc\fmod.hpp,597,FMOD_RESULT F_API getProperties          (FMOD_REVERB_PROPERTIES *properties);
+lSCpKUz3TfE,setActive,api\core\inc\fmod.hpp,598,FMOD_RESULT F_API setActive              (bool active);
+8BzuIrG9vMs,getActive,api\core\inc\fmod.hpp,599,FMOD_RESULT F_API getActive              (bool *active);
+YPDffhyf--U,setUserData,api\core\inc\fmod.hpp,602,FMOD_RESULT F_API setUserData            (void *userdata);
+cl7ImpM9ZFQ,getUserData,api\core\inc\fmod.hpp,603,FMOD_RESULT F_API getUserData            (void **userdata);
+g8Yb7TSPw-Y,F_EXPORT,api\core\inc\fmod_common.h,31,#define F_API F_EXPORT F_CALL
+KKNWzxETvGc,F_CALL,api\core\inc\fmod_common.h,33,#define F_API F_CALL
+ZTe1H1JWG0U,FMOD_OS_Time_GetUs,api\studio\examples\common.cpp,16,FMOD_RESULT F_API FMOD_OS_Time_GetUs(unsigned int *us);
+FD+fSumRc8M,FMOD_OS_Debug_Output,api\studio\examples\common.cpp,17,"FMOD_RESULT F_API FMOD_OS_Debug_Output(const char *format, ...);"
+QRfQbsTMfyU,FMOD_OS_File_Open,api\studio\examples\common.cpp,18,"FMOD_RESULT F_API FMOD_OS_File_Open(const char *name, int mode, unsigned int *filesize, FMOD_OS_FILE **handle);"
+gpH75blLHDE,FMOD_OS_File_Close,api\studio\examples\common.cpp,19,FMOD_RESULT F_API FMOD_OS_File_Close(FMOD_OS_FILE *handle);
+-4oteQ2NTMM,FMOD_OS_File_Read,api\studio\examples\common.cpp,20,"FMOD_RESULT F_API FMOD_OS_File_Read(FMOD_OS_FILE *handle, void *buf, unsigned int count, unsigned int *read);"
+6FdfcTKQgvo,FMOD_OS_File_Write,api\studio\examples\common.cpp,21,"FMOD_RESULT F_API FMOD_OS_File_Write(FMOD_OS_FILE *handle, const void *buffer, unsigned int bytesToWrite, bool flush);"
+uGG0InzPmrQ,FMOD_OS_File_Seek,api\studio\examples\common.cpp,22,"FMOD_RESULT F_API FMOD_OS_File_Seek(FMOD_OS_FILE *handle, unsigned int offset);"
+4CiEnaJzZBE,FMOD_OS_Time_Sleep,api\studio\examples\common.cpp,23,FMOD_RESULT F_API FMOD_OS_Time_Sleep(unsigned int ms);
+caROgLeX3K8,FMOD_OS_CriticalSection_Create,api\studio\examples\common.cpp,24,"FMOD_RESULT F_API FMOD_OS_CriticalSection_Create(FMOD_OS_CRITICALSECTION **crit, bool memorycrit);"
+eob6lch6Jc0,FMOD_OS_CriticalSection_Free,api\studio\examples\common.cpp,25,"FMOD_RESULT F_API FMOD_OS_CriticalSection_Free(FMOD_OS_CRITICALSECTION *crit, bool memorycrit);"
+csFSCmnOOUk,FMOD_OS_CriticalSection_Enter,api\studio\examples\common.cpp,26,FMOD_RESULT F_API FMOD_OS_CriticalSection_Enter(FMOD_OS_CRITICALSECTION *crit);
+sPL3Dj4C6N0,FMOD_OS_CriticalSection_Leave,api\studio\examples\common.cpp,27,FMOD_RESULT F_API FMOD_OS_CriticalSection_Leave(FMOD_OS_CRITICALSECTION *crit);
+wbg5GfFRI-Q,FMOD_OS_CriticalSection_TryEnter,api\studio\examples\common.cpp,28,"FMOD_RESULT F_API FMOD_OS_CriticalSection_TryEnter(FMOD_OS_CRITICALSECTION *crit, bool *entered);"
+5ZIxtclvZ4I,FMOD_OS_CriticalSection_IsLocked,api\studio\examples\common.cpp,29,"FMOD_RESULT F_API FMOD_OS_CriticalSection_IsLocked(FMOD_OS_CRITICALSECTION *crit, bool *locked);"
+PXtBi7QEzRM,FMOD_OS_Thread_Create,api\studio\examples\common.cpp,30,"FMOD_RESULT F_API FMOD_OS_Thread_Create(const char *name, void (*callback)(void *param), void *param, FMOD_THREAD_AFFINITY affinity, FMOD_THREAD_PRIORITY priority, FMOD_THREAD_STACK_SIZE stacksize, void **handle);"
+uqiUHUmbpEg,FMOD_OS_Thread_Destroy,api\studio\examples\common.cpp,31,FMOD_RESULT F_API FMOD_OS_Thread_Destroy(void *handle);
+Hh2wT63cPf4,FMOD_Studio_ParseID,api\studio\inc\fmod_studio.h,24,"FMOD_RESULT F_API FMOD_Studio_ParseID(const char *idstring, FMOD_GUID *id);"
+tRn8cafkP-E,FMOD_Studio_System_Create,api\studio\inc\fmod_studio.h,25,"FMOD_RESULT F_API FMOD_Studio_System_Create(FMOD_STUDIO_SYSTEM **system, unsigned int headerversion);"
+LSgXufG16X4,FMOD_Studio_System_IsValid,api\studio\inc\fmod_studio.h,30,FMOD_BOOL   F_API FMOD_Studio_System_IsValid(FMOD_STUDIO_SYSTEM *system);
+n1VcQ0HkFQs,FMOD_Studio_System_SetAdvancedSettings,api\studio\inc\fmod_studio.h,31,"FMOD_RESULT F_API FMOD_Studio_System_SetAdvancedSettings(FMOD_STUDIO_SYSTEM *system, FMOD_STUDIO_ADVANCEDSETTINGS *settings);"
+ntZaLfVHw7k,FMOD_Studio_System_GetAdvancedSettings,api\studio\inc\fmod_studio.h,32,"FMOD_RESULT F_API FMOD_Studio_System_GetAdvancedSettings(FMOD_STUDIO_SYSTEM *system, FMOD_STUDIO_ADVANCEDSETTINGS *settings);"
+spIdAywqSDE,FMOD_Studio_System_Initialize,api\studio\inc\fmod_studio.h,33,"FMOD_RESULT F_API FMOD_Studio_System_Initialize(FMOD_STUDIO_SYSTEM *system, int maxchannels, FMOD_STUDIO_INITFLAGS studioflags, FMOD_INITFLAGS flags, void *extradriverdata);"
+Rp8kTIExlds,FMOD_Studio_System_Release,api\studio\inc\fmod_studio.h,34,FMOD_RESULT F_API FMOD_Studio_System_Release(FMOD_STUDIO_SYSTEM *system);
+ioiSYMjFkFU,FMOD_Studio_System_Update,api\studio\inc\fmod_studio.h,35,FMOD_RESULT F_API FMOD_Studio_System_Update(FMOD_STUDIO_SYSTEM *system);
+9eGSKiqFhzc,FMOD_Studio_System_GetCoreSystem,api\studio\inc\fmod_studio.h,36,"FMOD_RESULT F_API FMOD_Studio_System_GetCoreSystem(FMOD_STUDIO_SYSTEM *system, FMOD_SYSTEM **coresystem);"
+-c66ut53dZk,FMOD_Studio_System_GetEvent,api\studio\inc\fmod_studio.h,37,"FMOD_RESULT F_API FMOD_Studio_System_GetEvent(FMOD_STUDIO_SYSTEM *system, const char *pathOrID, FMOD_STUDIO_EVENTDESCRIPTION **event);"
+AugAnef4+QE,FMOD_Studio_System_GetBus,api\studio\inc\fmod_studio.h,38,"FMOD_RESULT F_API FMOD_Studio_System_GetBus(FMOD_STUDIO_SYSTEM *system, const char *pathOrID, FMOD_STUDIO_BUS **bus);"
+6okvOJiYBqQ,FMOD_Studio_System_GetVCA,api\studio\inc\fmod_studio.h,39,"FMOD_RESULT F_API FMOD_Studio_System_GetVCA(FMOD_STUDIO_SYSTEM *system, const char *pathOrID, FMOD_STUDIO_VCA **vca);"
+yWGNCCtJfkw,FMOD_Studio_System_GetBank,api\studio\inc\fmod_studio.h,40,"FMOD_RESULT F_API FMOD_Studio_System_GetBank(FMOD_STUDIO_SYSTEM *system, const char *pathOrID, FMOD_STUDIO_BANK **bank);"
+5Fi6VDqnKKE,FMOD_Studio_System_GetEventByID,api\studio\inc\fmod_studio.h,41,"FMOD_RESULT F_API FMOD_Studio_System_GetEventByID(FMOD_STUDIO_SYSTEM *system, const FMOD_GUID *id, FMOD_STUDIO_EVENTDESCRIPTION **event);"
+YXksO-fkoJM,FMOD_Studio_System_GetBusByID,api\studio\inc\fmod_studio.h,42,"FMOD_RESULT F_API FMOD_Studio_System_GetBusByID(FMOD_STUDIO_SYSTEM *system, const FMOD_GUID *id, FMOD_STUDIO_BUS **bus);"
+fOMMlsn8iwI,FMOD_Studio_System_GetVCAByID,api\studio\inc\fmod_studio.h,43,"FMOD_RESULT F_API FMOD_Studio_System_GetVCAByID(FMOD_STUDIO_SYSTEM *system, const FMOD_GUID *id, FMOD_STUDIO_VCA **vca);"
+arVUVLb9j24,FMOD_Studio_System_GetBankByID,api\studio\inc\fmod_studio.h,44,"FMOD_RESULT F_API FMOD_Studio_System_GetBankByID(FMOD_STUDIO_SYSTEM *system, const FMOD_GUID *id, FMOD_STUDIO_BANK **bank);"
+9gYZ7bYnrFY,FMOD_Studio_System_GetSoundInfo,api\studio\inc\fmod_studio.h,45,"FMOD_RESULT F_API FMOD_Studio_System_GetSoundInfo(FMOD_STUDIO_SYSTEM *system, const char *key, FMOD_STUDIO_SOUND_INFO *info);"
+3PMHJocBYMU,FMOD_Studio_System_GetParameterDescriptionByName,api\studio\inc\fmod_studio.h,46,"FMOD_RESULT F_API FMOD_Studio_System_GetParameterDescriptionByName(FMOD_STUDIO_SYSTEM *system, const char *name, FMOD_STUDIO_PARAMETER_DESCRIPTION *parameter);"
+sKZJ8se9aR4,FMOD_Studio_System_GetParameterDescriptionByID,api\studio\inc\fmod_studio.h,47,"FMOD_RESULT F_API FMOD_Studio_System_GetParameterDescriptionByID(FMOD_STUDIO_SYSTEM *system, FMOD_STUDIO_PARAMETER_ID id, FMOD_STUDIO_PARAMETER_DESCRIPTION *parameter);"
+PPd8K5X15-8,FMOD_Studio_System_GetParameterLabelByName,api\studio\inc\fmod_studio.h,48,"FMOD_RESULT F_API FMOD_Studio_System_GetParameterLabelByName(FMOD_STUDIO_SYSTEM *system, const char *name, int labelindex, char *label, int size, int *retrieved);"
+pPXbNHHFMf4,FMOD_Studio_System_GetParameterLabelByID,api\studio\inc\fmod_studio.h,49,"FMOD_RESULT F_API FMOD_Studio_System_GetParameterLabelByID(FMOD_STUDIO_SYSTEM *system, FMOD_STUDIO_PARAMETER_ID id, int labelindex, char *label, int size, int *retrieved);"
+5OTQQNkWs8A,FMOD_Studio_System_GetParameterByID,api\studio\inc\fmod_studio.h,50,"FMOD_RESULT F_API FMOD_Studio_System_GetParameterByID(FMOD_STUDIO_SYSTEM *system, FMOD_STUDIO_PARAMETER_ID id, float *value, float *finalvalue);"
+JUThib7DM38,FMOD_Studio_System_SetParameterByID,api\studio\inc\fmod_studio.h,51,"FMOD_RESULT F_API FMOD_Studio_System_SetParameterByID(FMOD_STUDIO_SYSTEM *system, FMOD_STUDIO_PARAMETER_ID id, float value, FMOD_BOOL ignoreseekspeed);"
+kdJyGKzUkDE,FMOD_Studio_System_SetParameterByIDWithLabel,api\studio\inc\fmod_studio.h,52,"FMOD_RESULT F_API FMOD_Studio_System_SetParameterByIDWithLabel(FMOD_STUDIO_SYSTEM *system, FMOD_STUDIO_PARAMETER_ID id, const char *label, FMOD_BOOL ignoreseekspeed);"
+c37ZcNs92O8,FMOD_Studio_System_SetParametersByIDs,api\studio\inc\fmod_studio.h,53,"FMOD_RESULT F_API FMOD_Studio_System_SetParametersByIDs(FMOD_STUDIO_SYSTEM *system, const FMOD_STUDIO_PARAMETER_ID *ids, float *values, int count, FMOD_BOOL ignoreseekspeed);"
+RNfwVn2Wc7E,FMOD_Studio_System_GetParameterByName,api\studio\inc\fmod_studio.h,54,"FMOD_RESULT F_API FMOD_Studio_System_GetParameterByName(FMOD_STUDIO_SYSTEM *system, const char *name, float *value, float *finalvalue);"
+xxtOCicte88,FMOD_Studio_System_SetParameterByName,api\studio\inc\fmod_studio.h,55,"FMOD_RESULT F_API FMOD_Studio_System_SetParameterByName(FMOD_STUDIO_SYSTEM *system, const char *name, float value, FMOD_BOOL ignoreseekspeed);"
+fQaKhzI1YAw,FMOD_Studio_System_SetParameterByNameWithLabel,api\studio\inc\fmod_studio.h,56,"FMOD_RESULT F_API FMOD_Studio_System_SetParameterByNameWithLabel(FMOD_STUDIO_SYSTEM *system, const char *name, const char *label, FMOD_BOOL ignoreseekspeed);"
+zzeam2LT5SY,FMOD_Studio_System_LookupID,api\studio\inc\fmod_studio.h,57,"FMOD_RESULT F_API FMOD_Studio_System_LookupID(FMOD_STUDIO_SYSTEM *system, const char *path, FMOD_GUID *id);"
+WQrLYG6bgZE,FMOD_Studio_System_LookupPath,api\studio\inc\fmod_studio.h,58,"FMOD_RESULT F_API FMOD_Studio_System_LookupPath(FMOD_STUDIO_SYSTEM *system, const FMOD_GUID *id, char *path, int size, int *retrieved);"
+6TtlKrb9swI,FMOD_Studio_System_GetNumListeners,api\studio\inc\fmod_studio.h,59,"FMOD_RESULT F_API FMOD_Studio_System_GetNumListeners(FMOD_STUDIO_SYSTEM *system, int *numlisteners);"
+YvqGHvzHUY4,FMOD_Studio_System_SetNumListeners,api\studio\inc\fmod_studio.h,60,"FMOD_RESULT F_API FMOD_Studio_System_SetNumListeners(FMOD_STUDIO_SYSTEM *system, int numlisteners);"
+p+PVgkmVPIw,FMOD_Studio_System_GetListenerAttributes,api\studio\inc\fmod_studio.h,61,"FMOD_RESULT F_API FMOD_Studio_System_GetListenerAttributes(FMOD_STUDIO_SYSTEM *system, int index, FMOD_3D_ATTRIBUTES *attributes, FMOD_VECTOR *attenuationposition);"
+8Pwv58Heak0,FMOD_Studio_System_SetListenerAttributes,api\studio\inc\fmod_studio.h,62,"FMOD_RESULT F_API FMOD_Studio_System_SetListenerAttributes(FMOD_STUDIO_SYSTEM *system, int index, const FMOD_3D_ATTRIBUTES *attributes, const FMOD_VECTOR *attenuationposition);"
+uyp5FHVdpoM,FMOD_Studio_System_GetListenerWeight,api\studio\inc\fmod_studio.h,63,"FMOD_RESULT F_API FMOD_Studio_System_GetListenerWeight(FMOD_STUDIO_SYSTEM *system, int index, float *weight);"
+VQqcq7qzGuU,FMOD_Studio_System_SetListenerWeight,api\studio\inc\fmod_studio.h,64,"FMOD_RESULT F_API FMOD_Studio_System_SetListenerWeight(FMOD_STUDIO_SYSTEM *system, int index, float weight);"
+Hn8BEi3gl4w,FMOD_Studio_System_LoadBankFile,api\studio\inc\fmod_studio.h,65,"FMOD_RESULT F_API FMOD_Studio_System_LoadBankFile(FMOD_STUDIO_SYSTEM *system, const char *filename, FMOD_STUDIO_LOAD_BANK_FLAGS flags, FMOD_STUDIO_BANK **bank);"
+aCR0eUQMpJE,FMOD_Studio_System_LoadBankMemory,api\studio\inc\fmod_studio.h,66,"FMOD_RESULT F_API FMOD_Studio_System_LoadBankMemory(FMOD_STUDIO_SYSTEM *system, const char *buffer, int length, FMOD_STUDIO_LOAD_MEMORY_MODE mode, FMOD_STUDIO_LOAD_BANK_FLAGS flags, FMOD_STUDIO_BANK **bank);"
+TzyBgMTN88g,FMOD_Studio_System_LoadBankCustom,api\studio\inc\fmod_studio.h,67,"FMOD_RESULT F_API FMOD_Studio_System_LoadBankCustom(FMOD_STUDIO_SYSTEM *system, const FMOD_STUDIO_BANK_INFO *info, FMOD_STUDIO_LOAD_BANK_FLAGS flags, FMOD_STUDIO_BANK **bank);"
+8SvGQFKuOUM,FMOD_Studio_System_RegisterPlugin,api\studio\inc\fmod_studio.h,68,"FMOD_RESULT F_API FMOD_Studio_System_RegisterPlugin(FMOD_STUDIO_SYSTEM *system, const FMOD_DSP_DESCRIPTION *description);"
+PGMFbnqgZaU,FMOD_Studio_System_UnregisterPlugin,api\studio\inc\fmod_studio.h,69,"FMOD_RESULT F_API FMOD_Studio_System_UnregisterPlugin(FMOD_STUDIO_SYSTEM *system, const char *name);"
+tgY2dmzghCM,FMOD_Studio_System_UnloadAll,api\studio\inc\fmod_studio.h,70,FMOD_RESULT F_API FMOD_Studio_System_UnloadAll(FMOD_STUDIO_SYSTEM *system);
+NDXFL8vNsPs,FMOD_Studio_System_FlushCommands,api\studio\inc\fmod_studio.h,71,FMOD_RESULT F_API FMOD_Studio_System_FlushCommands(FMOD_STUDIO_SYSTEM *system);
+1GaAjv5-PQ4,FMOD_Studio_System_FlushSampleLoading,api\studio\inc\fmod_studio.h,72,FMOD_RESULT F_API FMOD_Studio_System_FlushSampleLoading(FMOD_STUDIO_SYSTEM *system);
+K3PVvF0p2+c,FMOD_Studio_System_StartCommandCapture,api\studio\inc\fmod_studio.h,73,"FMOD_RESULT F_API FMOD_Studio_System_StartCommandCapture(FMOD_STUDIO_SYSTEM *system, const char *filename, FMOD_STUDIO_COMMANDCAPTURE_FLAGS flags);"
++gK3Cf9dYig,FMOD_Studio_System_StopCommandCapture,api\studio\inc\fmod_studio.h,74,FMOD_RESULT F_API FMOD_Studio_System_StopCommandCapture(FMOD_STUDIO_SYSTEM *system);
+bAAC6GOP410,FMOD_Studio_System_LoadCommandReplay,api\studio\inc\fmod_studio.h,75,"FMOD_RESULT F_API FMOD_Studio_System_LoadCommandReplay(FMOD_STUDIO_SYSTEM *system, const char *filename, FMOD_STUDIO_COMMANDREPLAY_FLAGS flags, FMOD_STUDIO_COMMANDREPLAY **replay);"
+dGPZvtdzVqU,FMOD_Studio_System_GetBankCount,api\studio\inc\fmod_studio.h,76,"FMOD_RESULT F_API FMOD_Studio_System_GetBankCount(FMOD_STUDIO_SYSTEM *system, int *count);"
+DgCPOMYIfO4,FMOD_Studio_System_GetBankList,api\studio\inc\fmod_studio.h,77,"FMOD_RESULT F_API FMOD_Studio_System_GetBankList(FMOD_STUDIO_SYSTEM *system, FMOD_STUDIO_BANK **array, int capacity, int *count);"
+dy58pG69UQA,FMOD_Studio_System_GetParameterDescriptionCount,api\studio\inc\fmod_studio.h,78,"FMOD_RESULT F_API FMOD_Studio_System_GetParameterDescriptionCount(FMOD_STUDIO_SYSTEM *system, int *count);"
+hsoKLIKhMuY,FMOD_Studio_System_GetParameterDescriptionList,api\studio\inc\fmod_studio.h,79,"FMOD_RESULT F_API FMOD_Studio_System_GetParameterDescriptionList(FMOD_STUDIO_SYSTEM *system, FMOD_STUDIO_PARAMETER_DESCRIPTION *array, int capacity, int *count);"
+nNVyYLzu+Ic,FMOD_Studio_System_GetCPUUsage,api\studio\inc\fmod_studio.h,80,"FMOD_RESULT F_API FMOD_Studio_System_GetCPUUsage(FMOD_STUDIO_SYSTEM *system, FMOD_STUDIO_CPU_USAGE *usage, FMOD_CPU_USAGE *usage_core);"
+srMxbpfwyyk,FMOD_Studio_System_GetBufferUsage,api\studio\inc\fmod_studio.h,81,"FMOD_RESULT F_API FMOD_Studio_System_GetBufferUsage(FMOD_STUDIO_SYSTEM *system, FMOD_STUDIO_BUFFER_USAGE *usage);"
+R4JuMBixxFU,FMOD_Studio_System_ResetBufferUsage,api\studio\inc\fmod_studio.h,82,FMOD_RESULT F_API FMOD_Studio_System_ResetBufferUsage(FMOD_STUDIO_SYSTEM *system);
+eKXLGFvdOSs,FMOD_Studio_System_SetCallback,api\studio\inc\fmod_studio.h,83,"FMOD_RESULT F_API FMOD_Studio_System_SetCallback(FMOD_STUDIO_SYSTEM *system, FMOD_STUDIO_SYSTEM_CALLBACK callback, FMOD_STUDIO_SYSTEM_CALLBACK_TYPE callbackmask);"
+G56N7VxboZg,FMOD_Studio_System_SetUserData,api\studio\inc\fmod_studio.h,84,"FMOD_RESULT F_API FMOD_Studio_System_SetUserData(FMOD_STUDIO_SYSTEM *system, void *userdata);"
+wyGHPVGJQ9M,FMOD_Studio_System_GetUserData,api\studio\inc\fmod_studio.h,85,"FMOD_RESULT F_API FMOD_Studio_System_GetUserData(FMOD_STUDIO_SYSTEM *system, void **userdata);"
+CWo3-CPhpOg,FMOD_Studio_System_GetMemoryUsage,api\studio\inc\fmod_studio.h,86,"FMOD_RESULT F_API FMOD_Studio_System_GetMemoryUsage(FMOD_STUDIO_SYSTEM *system, FMOD_STUDIO_MEMORY_USAGE *memoryusage);"
+kiIv-AdMc08,FMOD_Studio_EventDescription_IsValid,api\studio\inc\fmod_studio.h,91,FMOD_BOOL   F_API FMOD_Studio_EventDescription_IsValid(FMOD_STUDIO_EVENTDESCRIPTION *eventdescription);
+0sIp2hLofLo,FMOD_Studio_EventDescription_GetID,api\studio\inc\fmod_studio.h,92,"FMOD_RESULT F_API FMOD_Studio_EventDescription_GetID(FMOD_STUDIO_EVENTDESCRIPTION *eventdescription, FMOD_GUID *id);"
+mqTWFTjNG5c,FMOD_Studio_EventDescription_GetPath,api\studio\inc\fmod_studio.h,93,"FMOD_RESULT F_API FMOD_Studio_EventDescription_GetPath(FMOD_STUDIO_EVENTDESCRIPTION *eventdescription, char *path, int size, int *retrieved);"
+KEEMGJX52yE,FMOD_Studio_EventDescription_GetParameterDescriptionCount,api\studio\inc\fmod_studio.h,94,"FMOD_RESULT F_API FMOD_Studio_EventDescription_GetParameterDescriptionCount(FMOD_STUDIO_EVENTDESCRIPTION *eventdescription, int *count);"
+veZyXYtxjV4,FMOD_Studio_EventDescription_GetParameterDescriptionByIndex,api\studio\inc\fmod_studio.h,95,"FMOD_RESULT F_API FMOD_Studio_EventDescription_GetParameterDescriptionByIndex(FMOD_STUDIO_EVENTDESCRIPTION *eventdescription, int index, FMOD_STUDIO_PARAMETER_DESCRIPTION *parameter);"
+w3nJ6epVS6o,FMOD_Studio_EventDescription_GetParameterDescriptionByName,api\studio\inc\fmod_studio.h,96,"FMOD_RESULT F_API FMOD_Studio_EventDescription_GetParameterDescriptionByName(FMOD_STUDIO_EVENTDESCRIPTION *eventdescription, const char *name, FMOD_STUDIO_PARAMETER_DESCRIPTION *parameter);"
+6KWFzexIOgc,FMOD_Studio_EventDescription_GetParameterDescriptionByID,api\studio\inc\fmod_studio.h,97,"FMOD_RESULT F_API FMOD_Studio_EventDescription_GetParameterDescriptionByID(FMOD_STUDIO_EVENTDESCRIPTION *eventdescription, FMOD_STUDIO_PARAMETER_ID id, FMOD_STUDIO_PARAMETER_DESCRIPTION *parameter);"
+IyOCcQ30yx0,FMOD_Studio_EventDescription_GetParameterLabelByIndex,api\studio\inc\fmod_studio.h,98,"FMOD_RESULT F_API FMOD_Studio_EventDescription_GetParameterLabelByIndex(FMOD_STUDIO_EVENTDESCRIPTION *eventdescription, int index, int labelindex, char *label, int size, int *retrieved);"
+N6O-s4UNRCg,FMOD_Studio_EventDescription_GetParameterLabelByName,api\studio\inc\fmod_studio.h,99,"FMOD_RESULT F_API FMOD_Studio_EventDescription_GetParameterLabelByName(FMOD_STUDIO_EVENTDESCRIPTION *eventdescription, const char *name, int labelindex, char *label, int size, int *retrieved);"
+PE1qtZbyrsU,FMOD_Studio_EventDescription_GetParameterLabelByID,api\studio\inc\fmod_studio.h,100,"FMOD_RESULT F_API FMOD_Studio_EventDescription_GetParameterLabelByID(FMOD_STUDIO_EVENTDESCRIPTION *eventdescription, FMOD_STUDIO_PARAMETER_ID id, int labelindex, char *label, int size, int *retrieved);"
+bd2-UcCZ-fY,FMOD_Studio_EventDescription_GetUserPropertyCount,api\studio\inc\fmod_studio.h,101,"FMOD_RESULT F_API FMOD_Studio_EventDescription_GetUserPropertyCount(FMOD_STUDIO_EVENTDESCRIPTION *eventdescription, int *count);"
+huA4eS4VhPI,FMOD_Studio_EventDescription_GetUserPropertyByIndex,api\studio\inc\fmod_studio.h,102,"FMOD_RESULT F_API FMOD_Studio_EventDescription_GetUserPropertyByIndex(FMOD_STUDIO_EVENTDESCRIPTION *eventdescription, int index, FMOD_STUDIO_USER_PROPERTY *property);"
+ee1yM4xjOag,FMOD_Studio_EventDescription_GetUserProperty,api\studio\inc\fmod_studio.h,103,"FMOD_RESULT F_API FMOD_Studio_EventDescription_GetUserProperty(FMOD_STUDIO_EVENTDESCRIPTION *eventdescription, const char *name, FMOD_STUDIO_USER_PROPERTY *property);"
+A2tzQ3nzHPU,FMOD_Studio_EventDescription_GetLength,api\studio\inc\fmod_studio.h,104,"FMOD_RESULT F_API FMOD_Studio_EventDescription_GetLength(FMOD_STUDIO_EVENTDESCRIPTION *eventdescription, int *length);"
+Pn5eRup7hkE,FMOD_Studio_EventDescription_GetMinMaxDistance,api\studio\inc\fmod_studio.h,105,"FMOD_RESULT F_API FMOD_Studio_EventDescription_GetMinMaxDistance(FMOD_STUDIO_EVENTDESCRIPTION *eventdescription, float *min, float *max);"
+a6ZO+4-sC-8,FMOD_Studio_EventDescription_GetSoundSize,api\studio\inc\fmod_studio.h,106,"FMOD_RESULT F_API FMOD_Studio_EventDescription_GetSoundSize(FMOD_STUDIO_EVENTDESCRIPTION *eventdescription, float *size);"
+PHht8ReWEFI,FMOD_Studio_EventDescription_IsSnapshot,api\studio\inc\fmod_studio.h,107,"FMOD_RESULT F_API FMOD_Studio_EventDescription_IsSnapshot(FMOD_STUDIO_EVENTDESCRIPTION *eventdescription, FMOD_BOOL *snapshot);"
+ggQPMXTzCBQ,FMOD_Studio_EventDescription_IsOneshot,api\studio\inc\fmod_studio.h,108,"FMOD_RESULT F_API FMOD_Studio_EventDescription_IsOneshot(FMOD_STUDIO_EVENTDESCRIPTION *eventdescription, FMOD_BOOL *oneshot);"
+ju7E3IoaYOo,FMOD_Studio_EventDescription_IsStream,api\studio\inc\fmod_studio.h,109,"FMOD_RESULT F_API FMOD_Studio_EventDescription_IsStream(FMOD_STUDIO_EVENTDESCRIPTION *eventdescription, FMOD_BOOL *isStream);"
+s7AhdfRYjYM,FMOD_Studio_EventDescription_Is3D,api\studio\inc\fmod_studio.h,110,"FMOD_RESULT F_API FMOD_Studio_EventDescription_Is3D(FMOD_STUDIO_EVENTDESCRIPTION *eventdescription, FMOD_BOOL *is3D);"
+cS-gBMKTris,FMOD_Studio_EventDescription_IsDopplerEnabled,api\studio\inc\fmod_studio.h,111,"FMOD_RESULT F_API FMOD_Studio_EventDescription_IsDopplerEnabled(FMOD_STUDIO_EVENTDESCRIPTION *eventdescription, FMOD_BOOL *doppler);"
+FW7LBSXNQm0,FMOD_Studio_EventDescription_HasSustainPoint,api\studio\inc\fmod_studio.h,112,"FMOD_RESULT F_API FMOD_Studio_EventDescription_HasSustainPoint(FMOD_STUDIO_EVENTDESCRIPTION *eventdescription, FMOD_BOOL *sustainPoint);"
+yn7uxWYBu4M,FMOD_Studio_EventDescription_CreateInstance,api\studio\inc\fmod_studio.h,113,"FMOD_RESULT F_API FMOD_Studio_EventDescription_CreateInstance(FMOD_STUDIO_EVENTDESCRIPTION *eventdescription, FMOD_STUDIO_EVENTINSTANCE **instance);"
+ai4U6cF45Vs,FMOD_Studio_EventDescription_GetInstanceCount,api\studio\inc\fmod_studio.h,114,"FMOD_RESULT F_API FMOD_Studio_EventDescription_GetInstanceCount(FMOD_STUDIO_EVENTDESCRIPTION *eventdescription, int *count);"
+3Oqk3nLGj8Y,FMOD_Studio_EventDescription_GetInstanceList,api\studio\inc\fmod_studio.h,115,"FMOD_RESULT F_API FMOD_Studio_EventDescription_GetInstanceList(FMOD_STUDIO_EVENTDESCRIPTION *eventdescription, FMOD_STUDIO_EVENTINSTANCE **array, int capacity, int *count);"
+miKxcfjA2eI,FMOD_Studio_EventDescription_LoadSampleData,api\studio\inc\fmod_studio.h,116,FMOD_RESULT F_API FMOD_Studio_EventDescription_LoadSampleData(FMOD_STUDIO_EVENTDESCRIPTION *eventdescription);
+tqqkYuzrKZE,FMOD_Studio_EventDescription_UnloadSampleData,api\studio\inc\fmod_studio.h,117,FMOD_RESULT F_API FMOD_Studio_EventDescription_UnloadSampleData(FMOD_STUDIO_EVENTDESCRIPTION *eventdescription);
+Dv1wvYPE+Fg,FMOD_Studio_EventDescription_GetSampleLoadingState,api\studio\inc\fmod_studio.h,118,"FMOD_RESULT F_API FMOD_Studio_EventDescription_GetSampleLoadingState(FMOD_STUDIO_EVENTDESCRIPTION *eventdescription, FMOD_STUDIO_LOADING_STATE *state);"
+lyRqvmay7mQ,FMOD_Studio_EventDescription_ReleaseAllInstances,api\studio\inc\fmod_studio.h,119,FMOD_RESULT F_API FMOD_Studio_EventDescription_ReleaseAllInstances(FMOD_STUDIO_EVENTDESCRIPTION *eventdescription);
+tzNSSdGrMd0,FMOD_Studio_EventDescription_SetCallback,api\studio\inc\fmod_studio.h,120,"FMOD_RESULT F_API FMOD_Studio_EventDescription_SetCallback(FMOD_STUDIO_EVENTDESCRIPTION *eventdescription, FMOD_STUDIO_EVENT_CALLBACK callback, FMOD_STUDIO_EVENT_CALLBACK_TYPE callbackmask);"
+eMzmt-0NEZQ,FMOD_Studio_EventDescription_GetUserData,api\studio\inc\fmod_studio.h,121,"FMOD_RESULT F_API FMOD_Studio_EventDescription_GetUserData(FMOD_STUDIO_EVENTDESCRIPTION *eventdescription, void **userdata);"
+TcK3Jk0yS5M,FMOD_Studio_EventDescription_SetUserData,api\studio\inc\fmod_studio.h,122,"FMOD_RESULT F_API FMOD_Studio_EventDescription_SetUserData(FMOD_STUDIO_EVENTDESCRIPTION *eventdescription, void *userdata);"
+o9RjVbipAkU,FMOD_Studio_EventInstance_IsValid,api\studio\inc\fmod_studio.h,127,FMOD_BOOL   F_API FMOD_Studio_EventInstance_IsValid(FMOD_STUDIO_EVENTINSTANCE *eventinstance);
+NDoMF31t97E,FMOD_Studio_EventInstance_GetDescription,api\studio\inc\fmod_studio.h,128,"FMOD_RESULT F_API FMOD_Studio_EventInstance_GetDescription(FMOD_STUDIO_EVENTINSTANCE *eventinstance, FMOD_STUDIO_EVENTDESCRIPTION **description);"
+f-b0q9Do7AI,FMOD_Studio_EventInstance_GetVolume,api\studio\inc\fmod_studio.h,129,"FMOD_RESULT F_API FMOD_Studio_EventInstance_GetVolume(FMOD_STUDIO_EVENTINSTANCE *eventinstance, float *volume, float *finalvolume);"
+2YOKrF7H9Jw,FMOD_Studio_EventInstance_SetVolume,api\studio\inc\fmod_studio.h,130,"FMOD_RESULT F_API FMOD_Studio_EventInstance_SetVolume(FMOD_STUDIO_EVENTINSTANCE *eventinstance, float volume);"
+V-EK9X2+Gl8,FMOD_Studio_EventInstance_GetPitch,api\studio\inc\fmod_studio.h,131,"FMOD_RESULT F_API FMOD_Studio_EventInstance_GetPitch(FMOD_STUDIO_EVENTINSTANCE *eventinstance, float *pitch, float *finalpitch);"
+u39dUQn+DU8,FMOD_Studio_EventInstance_SetPitch,api\studio\inc\fmod_studio.h,132,"FMOD_RESULT F_API FMOD_Studio_EventInstance_SetPitch(FMOD_STUDIO_EVENTINSTANCE *eventinstance, float pitch);"
+IoXw48b2pPg,FMOD_Studio_EventInstance_Get3DAttributes,api\studio\inc\fmod_studio.h,133,"FMOD_RESULT F_API FMOD_Studio_EventInstance_Get3DAttributes(FMOD_STUDIO_EVENTINSTANCE *eventinstance, FMOD_3D_ATTRIBUTES *attributes);"
+22GCqdXCAZs,FMOD_Studio_EventInstance_Set3DAttributes,api\studio\inc\fmod_studio.h,134,"FMOD_RESULT F_API FMOD_Studio_EventInstance_Set3DAttributes(FMOD_STUDIO_EVENTINSTANCE *eventinstance, FMOD_3D_ATTRIBUTES *attributes);"
+li2dsa5AsZA,FMOD_Studio_EventInstance_GetListenerMask,api\studio\inc\fmod_studio.h,135,"FMOD_RESULT F_API FMOD_Studio_EventInstance_GetListenerMask(FMOD_STUDIO_EVENTINSTANCE *eventinstance, unsigned int *mask);"
+AdOXq4IMV4o,FMOD_Studio_EventInstance_SetListenerMask,api\studio\inc\fmod_studio.h,136,"FMOD_RESULT F_API FMOD_Studio_EventInstance_SetListenerMask(FMOD_STUDIO_EVENTINSTANCE *eventinstance, unsigned int mask);"
+24h+puQwdE8,FMOD_Studio_EventInstance_GetProperty,api\studio\inc\fmod_studio.h,137,"FMOD_RESULT F_API FMOD_Studio_EventInstance_GetProperty(FMOD_STUDIO_EVENTINSTANCE *eventinstance, FMOD_STUDIO_EVENT_PROPERTY index, float *value);"
+b5Fy9nGoqfU,FMOD_Studio_EventInstance_SetProperty,api\studio\inc\fmod_studio.h,138,"FMOD_RESULT F_API FMOD_Studio_EventInstance_SetProperty(FMOD_STUDIO_EVENTINSTANCE *eventinstance, FMOD_STUDIO_EVENT_PROPERTY index, float value);"
+K8T7TvsQI7I,FMOD_Studio_EventInstance_GetReverbLevel,api\studio\inc\fmod_studio.h,139,"FMOD_RESULT F_API FMOD_Studio_EventInstance_GetReverbLevel(FMOD_STUDIO_EVENTINSTANCE *eventinstance, int index, float *level);"
+P-4W90H1opQ,FMOD_Studio_EventInstance_SetReverbLevel,api\studio\inc\fmod_studio.h,140,"FMOD_RESULT F_API FMOD_Studio_EventInstance_SetReverbLevel(FMOD_STUDIO_EVENTINSTANCE *eventinstance, int index, float level);"
+jHJVaBasKzw,FMOD_Studio_EventInstance_GetPaused,api\studio\inc\fmod_studio.h,141,"FMOD_RESULT F_API FMOD_Studio_EventInstance_GetPaused(FMOD_STUDIO_EVENTINSTANCE *eventinstance, FMOD_BOOL *paused);"
+rgNkesoi0OY,FMOD_Studio_EventInstance_SetPaused,api\studio\inc\fmod_studio.h,142,"FMOD_RESULT F_API FMOD_Studio_EventInstance_SetPaused(FMOD_STUDIO_EVENTINSTANCE *eventinstance, FMOD_BOOL paused);"
+tOpobUqyPNk,FMOD_Studio_EventInstance_Start,api\studio\inc\fmod_studio.h,143,FMOD_RESULT F_API FMOD_Studio_EventInstance_Start(FMOD_STUDIO_EVENTINSTANCE *eventinstance);
+xsYyUG1dKAY,FMOD_Studio_EventInstance_Stop,api\studio\inc\fmod_studio.h,144,"FMOD_RESULT F_API FMOD_Studio_EventInstance_Stop(FMOD_STUDIO_EVENTINSTANCE *eventinstance, FMOD_STUDIO_STOP_MODE mode);"
+A-E0n2H1JCI,FMOD_Studio_EventInstance_GetTimelinePosition,api\studio\inc\fmod_studio.h,145,"FMOD_RESULT F_API FMOD_Studio_EventInstance_GetTimelinePosition(FMOD_STUDIO_EVENTINSTANCE *eventinstance, int *position);"
+bXAFK506bB4,FMOD_Studio_EventInstance_SetTimelinePosition,api\studio\inc\fmod_studio.h,146,"FMOD_RESULT F_API FMOD_Studio_EventInstance_SetTimelinePosition(FMOD_STUDIO_EVENTINSTANCE *eventinstance, int position);"
+M1ubplWXxd8,FMOD_Studio_EventInstance_GetPlaybackState,api\studio\inc\fmod_studio.h,147,"FMOD_RESULT F_API FMOD_Studio_EventInstance_GetPlaybackState(FMOD_STUDIO_EVENTINSTANCE *eventinstance, FMOD_STUDIO_PLAYBACK_STATE *state);"
+GATCdQDun74,FMOD_Studio_EventInstance_GetChannelGroup,api\studio\inc\fmod_studio.h,148,"FMOD_RESULT F_API FMOD_Studio_EventInstance_GetChannelGroup(FMOD_STUDIO_EVENTINSTANCE *eventinstance, FMOD_CHANNELGROUP **group);"
+rBws6CUf46U,FMOD_Studio_EventInstance_GetMinMaxDistance,api\studio\inc\fmod_studio.h,149,"FMOD_RESULT F_API FMOD_Studio_EventInstance_GetMinMaxDistance(FMOD_STUDIO_EVENTINSTANCE *eventinstance, float *min, float *max);"
+Yqyva8Xq9zs,FMOD_Studio_EventInstance_Release,api\studio\inc\fmod_studio.h,150,FMOD_RESULT F_API FMOD_Studio_EventInstance_Release(FMOD_STUDIO_EVENTINSTANCE *eventinstance);
+7XDuD--e4+Y,FMOD_Studio_EventInstance_IsVirtual,api\studio\inc\fmod_studio.h,151,"FMOD_RESULT F_API FMOD_Studio_EventInstance_IsVirtual(FMOD_STUDIO_EVENTINSTANCE *eventinstance, FMOD_BOOL *virtualstate);"
+gYvIIlYaxW4,FMOD_Studio_EventInstance_GetParameterByName,api\studio\inc\fmod_studio.h,152,"FMOD_RESULT F_API FMOD_Studio_EventInstance_GetParameterByName(FMOD_STUDIO_EVENTINSTANCE *eventinstance, const char *name, float *value, float *finalvalue);"
+fJsRNTwA6eE,FMOD_Studio_EventInstance_SetParameterByName,api\studio\inc\fmod_studio.h,153,"FMOD_RESULT F_API FMOD_Studio_EventInstance_SetParameterByName(FMOD_STUDIO_EVENTINSTANCE *eventinstance, const char *name, float value, FMOD_BOOL ignoreseekspeed);"
+b2jfhXjffLc,FMOD_Studio_EventInstance_SetParameterByNameWithLabel,api\studio\inc\fmod_studio.h,154,"FMOD_RESULT F_API FMOD_Studio_EventInstance_SetParameterByNameWithLabel(FMOD_STUDIO_EVENTINSTANCE *eventinstance, const char *name, const char *label, FMOD_BOOL ignoreseekspeed);"
+xcZXIGw-QiU,FMOD_Studio_EventInstance_GetParameterByID,api\studio\inc\fmod_studio.h,155,"FMOD_RESULT F_API FMOD_Studio_EventInstance_GetParameterByID(FMOD_STUDIO_EVENTINSTANCE *eventinstance, FMOD_STUDIO_PARAMETER_ID id, float *value, float *finalvalue);"
+SzGY2Smg63Y,FMOD_Studio_EventInstance_SetParameterByID,api\studio\inc\fmod_studio.h,156,"FMOD_RESULT F_API FMOD_Studio_EventInstance_SetParameterByID(FMOD_STUDIO_EVENTINSTANCE *eventinstance, FMOD_STUDIO_PARAMETER_ID id, float value, FMOD_BOOL ignoreseekspeed);"
+mD+0qykwnTI,FMOD_Studio_EventInstance_SetParameterByIDWithLabel,api\studio\inc\fmod_studio.h,157,"FMOD_RESULT F_API FMOD_Studio_EventInstance_SetParameterByIDWithLabel(FMOD_STUDIO_EVENTINSTANCE *eventinstance, FMOD_STUDIO_PARAMETER_ID id, const char *label, FMOD_BOOL ignoreseekspeed);"
+ivcV2VAtxSs,FMOD_Studio_EventInstance_SetParametersByIDs,api\studio\inc\fmod_studio.h,158,"FMOD_RESULT F_API FMOD_Studio_EventInstance_SetParametersByIDs(FMOD_STUDIO_EVENTINSTANCE *eventinstance, const FMOD_STUDIO_PARAMETER_ID *ids, float *values, int count, FMOD_BOOL ignoreseekspeed);"
+PjRKqeomnt8,FMOD_Studio_EventInstance_KeyOff,api\studio\inc\fmod_studio.h,159,FMOD_RESULT F_API FMOD_Studio_EventInstance_KeyOff(FMOD_STUDIO_EVENTINSTANCE *eventinstance);
+QbA0PZrtaHI,FMOD_Studio_EventInstance_SetCallback,api\studio\inc\fmod_studio.h,160,"FMOD_RESULT F_API FMOD_Studio_EventInstance_SetCallback(FMOD_STUDIO_EVENTINSTANCE *eventinstance, FMOD_STUDIO_EVENT_CALLBACK callback, FMOD_STUDIO_EVENT_CALLBACK_TYPE callbackmask);"
+19huAhf-Uoc,FMOD_Studio_EventInstance_GetUserData,api\studio\inc\fmod_studio.h,161,"FMOD_RESULT F_API FMOD_Studio_EventInstance_GetUserData(FMOD_STUDIO_EVENTINSTANCE *eventinstance, void **userdata);"
+QoPi1ZzikgA,FMOD_Studio_EventInstance_SetUserData,api\studio\inc\fmod_studio.h,162,"FMOD_RESULT F_API FMOD_Studio_EventInstance_SetUserData(FMOD_STUDIO_EVENTINSTANCE *eventinstance, void *userdata);"
++4T23y1MSDk,FMOD_Studio_EventInstance_GetCPUUsage,api\studio\inc\fmod_studio.h,163,"FMOD_RESULT F_API FMOD_Studio_EventInstance_GetCPUUsage(FMOD_STUDIO_EVENTINSTANCE *eventinstance, unsigned int *exclusive, unsigned int *inclusive);"
+oufTeRicjKY,FMOD_Studio_EventInstance_GetMemoryUsage,api\studio\inc\fmod_studio.h,164,"FMOD_RESULT F_API FMOD_Studio_EventInstance_GetMemoryUsage(FMOD_STUDIO_EVENTINSTANCE *eventinstance, FMOD_STUDIO_MEMORY_USAGE *memoryusage);"
+utXxyDg7vrg,FMOD_Studio_Bus_IsValid,api\studio\inc\fmod_studio.h,169,FMOD_BOOL   F_API FMOD_Studio_Bus_IsValid(FMOD_STUDIO_BUS *bus);
+f+OAyWcC-GU,FMOD_Studio_Bus_GetID,api\studio\inc\fmod_studio.h,170,"FMOD_RESULT F_API FMOD_Studio_Bus_GetID(FMOD_STUDIO_BUS *bus, FMOD_GUID *id);"
+2NdaPeR+gvA,FMOD_Studio_Bus_GetPath,api\studio\inc\fmod_studio.h,171,"FMOD_RESULT F_API FMOD_Studio_Bus_GetPath(FMOD_STUDIO_BUS *bus, char *path, int size, int *retrieved);"
+Swt03JoTwNI,FMOD_Studio_Bus_GetVolume,api\studio\inc\fmod_studio.h,172,"FMOD_RESULT F_API FMOD_Studio_Bus_GetVolume(FMOD_STUDIO_BUS *bus, float *volume, float *finalvolume);"
+aPYJfKVcGIM,FMOD_Studio_Bus_SetVolume,api\studio\inc\fmod_studio.h,173,"FMOD_RESULT F_API FMOD_Studio_Bus_SetVolume(FMOD_STUDIO_BUS *bus, float volume);"
+B-UDv-IVego,FMOD_Studio_Bus_GetPaused,api\studio\inc\fmod_studio.h,174,"FMOD_RESULT F_API FMOD_Studio_Bus_GetPaused(FMOD_STUDIO_BUS *bus, FMOD_BOOL *paused);"
+D3me1c0dMCA,FMOD_Studio_Bus_SetPaused,api\studio\inc\fmod_studio.h,175,"FMOD_RESULT F_API FMOD_Studio_Bus_SetPaused(FMOD_STUDIO_BUS *bus, FMOD_BOOL paused);"
+4RajpipeshU,FMOD_Studio_Bus_GetMute,api\studio\inc\fmod_studio.h,176,"FMOD_RESULT F_API FMOD_Studio_Bus_GetMute(FMOD_STUDIO_BUS *bus, FMOD_BOOL *mute);"
+LZZqyU74zVk,FMOD_Studio_Bus_SetMute,api\studio\inc\fmod_studio.h,177,"FMOD_RESULT F_API FMOD_Studio_Bus_SetMute(FMOD_STUDIO_BUS *bus, FMOD_BOOL mute);"
+famd1+foT7U,FMOD_Studio_Bus_StopAllEvents,api\studio\inc\fmod_studio.h,178,"FMOD_RESULT F_API FMOD_Studio_Bus_StopAllEvents(FMOD_STUDIO_BUS *bus, FMOD_STUDIO_STOP_MODE mode);"
+nhELKPDFuEc,FMOD_Studio_Bus_GetPortIndex,api\studio\inc\fmod_studio.h,179,"FMOD_RESULT F_API FMOD_Studio_Bus_GetPortIndex(FMOD_STUDIO_BUS *bus, FMOD_PORT_INDEX *index);"
+0uCHklx6THc,FMOD_Studio_Bus_SetPortIndex,api\studio\inc\fmod_studio.h,180,"FMOD_RESULT F_API FMOD_Studio_Bus_SetPortIndex(FMOD_STUDIO_BUS *bus, FMOD_PORT_INDEX index);"
+7kectl-jEt0,FMOD_Studio_Bus_LockChannelGroup,api\studio\inc\fmod_studio.h,181,FMOD_RESULT F_API FMOD_Studio_Bus_LockChannelGroup(FMOD_STUDIO_BUS *bus);
+8rK-sHqkfQc,FMOD_Studio_Bus_UnlockChannelGroup,api\studio\inc\fmod_studio.h,182,FMOD_RESULT F_API FMOD_Studio_Bus_UnlockChannelGroup(FMOD_STUDIO_BUS *bus);
+LnuUwdlWQCQ,FMOD_Studio_Bus_GetChannelGroup,api\studio\inc\fmod_studio.h,183,"FMOD_RESULT F_API FMOD_Studio_Bus_GetChannelGroup(FMOD_STUDIO_BUS *bus, FMOD_CHANNELGROUP **group);"
+CHul4ADQctI,FMOD_Studio_Bus_GetCPUUsage,api\studio\inc\fmod_studio.h,184,"FMOD_RESULT F_API FMOD_Studio_Bus_GetCPUUsage(FMOD_STUDIO_BUS *bus, unsigned int *exclusive, unsigned int *inclusive);"
+5mg7y9hsftY,FMOD_Studio_Bus_GetMemoryUsage,api\studio\inc\fmod_studio.h,185,"FMOD_RESULT F_API FMOD_Studio_Bus_GetMemoryUsage(FMOD_STUDIO_BUS *bus, FMOD_STUDIO_MEMORY_USAGE *memoryusage);"
+m4qSTzt3E88,FMOD_Studio_VCA_IsValid,api\studio\inc\fmod_studio.h,190,FMOD_BOOL   F_API FMOD_Studio_VCA_IsValid(FMOD_STUDIO_VCA *vca);
+++jT5JpVre8,FMOD_Studio_VCA_GetID,api\studio\inc\fmod_studio.h,191,"FMOD_RESULT F_API FMOD_Studio_VCA_GetID(FMOD_STUDIO_VCA *vca, FMOD_GUID *id);"
+8sJYwCZzevM,FMOD_Studio_VCA_GetPath,api\studio\inc\fmod_studio.h,192,"FMOD_RESULT F_API FMOD_Studio_VCA_GetPath(FMOD_STUDIO_VCA *vca, char *path, int size, int *retrieved);"
+8BU24MuDtWM,FMOD_Studio_VCA_GetVolume,api\studio\inc\fmod_studio.h,193,"FMOD_RESULT F_API FMOD_Studio_VCA_GetVolume(FMOD_STUDIO_VCA *vca, float *volume, float *finalvolume);"
+xd6DzmLfR40,FMOD_Studio_VCA_SetVolume,api\studio\inc\fmod_studio.h,194,"FMOD_RESULT F_API FMOD_Studio_VCA_SetVolume(FMOD_STUDIO_VCA *vca, float volume);"
+tlPZp5rDDOc,FMOD_Studio_Bank_IsValid,api\studio\inc\fmod_studio.h,199,FMOD_BOOL   F_API FMOD_Studio_Bank_IsValid(FMOD_STUDIO_BANK *bank);
+L1Uk0nrMYmI,FMOD_Studio_Bank_GetID,api\studio\inc\fmod_studio.h,200,"FMOD_RESULT F_API FMOD_Studio_Bank_GetID(FMOD_STUDIO_BANK *bank, FMOD_GUID *id);"
+SzDMXeNdNts,FMOD_Studio_Bank_GetPath,api\studio\inc\fmod_studio.h,201,"FMOD_RESULT F_API FMOD_Studio_Bank_GetPath(FMOD_STUDIO_BANK *bank, char *path, int size, int *retrieved);"
+BKBPAk6frd8,FMOD_Studio_Bank_Unload,api\studio\inc\fmod_studio.h,202,FMOD_RESULT F_API FMOD_Studio_Bank_Unload(FMOD_STUDIO_BANK *bank);
+FTsFyC5D-CM,FMOD_Studio_Bank_LoadSampleData,api\studio\inc\fmod_studio.h,203,FMOD_RESULT F_API FMOD_Studio_Bank_LoadSampleData(FMOD_STUDIO_BANK *bank);
+NNgDbioYMnE,FMOD_Studio_Bank_UnloadSampleData,api\studio\inc\fmod_studio.h,204,FMOD_RESULT F_API FMOD_Studio_Bank_UnloadSampleData(FMOD_STUDIO_BANK *bank);
+v3nJR7VIPCc,FMOD_Studio_Bank_GetLoadingState,api\studio\inc\fmod_studio.h,205,"FMOD_RESULT F_API FMOD_Studio_Bank_GetLoadingState(FMOD_STUDIO_BANK *bank, FMOD_STUDIO_LOADING_STATE *state);"
+1dL3CLRB9t4,FMOD_Studio_Bank_GetSampleLoadingState,api\studio\inc\fmod_studio.h,206,"FMOD_RESULT F_API FMOD_Studio_Bank_GetSampleLoadingState(FMOD_STUDIO_BANK *bank, FMOD_STUDIO_LOADING_STATE *state);"
+NITziaWd++s,FMOD_Studio_Bank_GetStringCount,api\studio\inc\fmod_studio.h,207,"FMOD_RESULT F_API FMOD_Studio_Bank_GetStringCount(FMOD_STUDIO_BANK *bank, int *count);"
+PU2fML6Lgbs,FMOD_Studio_Bank_GetStringInfo,api\studio\inc\fmod_studio.h,208,"FMOD_RESULT F_API FMOD_Studio_Bank_GetStringInfo(FMOD_STUDIO_BANK *bank, int index, FMOD_GUID *id, char *path, int size, int *retrieved);"
+tc7s1tpqWqA,FMOD_Studio_Bank_GetEventCount,api\studio\inc\fmod_studio.h,209,"FMOD_RESULT F_API FMOD_Studio_Bank_GetEventCount(FMOD_STUDIO_BANK *bank, int *count);"
+iM2x6RJddT4,FMOD_Studio_Bank_GetEventList,api\studio\inc\fmod_studio.h,210,"FMOD_RESULT F_API FMOD_Studio_Bank_GetEventList(FMOD_STUDIO_BANK *bank, FMOD_STUDIO_EVENTDESCRIPTION **array, int capacity, int *count);"
+zq4JxTjPaw8,FMOD_Studio_Bank_GetBusCount,api\studio\inc\fmod_studio.h,211,"FMOD_RESULT F_API FMOD_Studio_Bank_GetBusCount(FMOD_STUDIO_BANK *bank, int *count);"
+xj1UHtJArdM,FMOD_Studio_Bank_GetBusList,api\studio\inc\fmod_studio.h,212,"FMOD_RESULT F_API FMOD_Studio_Bank_GetBusList(FMOD_STUDIO_BANK *bank, FMOD_STUDIO_BUS **array, int capacity, int *count);"
+gqwWR+v17NQ,FMOD_Studio_Bank_GetVCACount,api\studio\inc\fmod_studio.h,213,"FMOD_RESULT F_API FMOD_Studio_Bank_GetVCACount(FMOD_STUDIO_BANK *bank, int *count);"
+crQyqMVHDzc,FMOD_Studio_Bank_GetVCAList,api\studio\inc\fmod_studio.h,214,"FMOD_RESULT F_API FMOD_Studio_Bank_GetVCAList(FMOD_STUDIO_BANK *bank, FMOD_STUDIO_VCA **array, int capacity, int *count);"
+dBejnKWHKL4,FMOD_Studio_Bank_GetUserData,api\studio\inc\fmod_studio.h,215,"FMOD_RESULT F_API FMOD_Studio_Bank_GetUserData(FMOD_STUDIO_BANK *bank, void **userdata);"
+KaM10UXJzD8,FMOD_Studio_Bank_SetUserData,api\studio\inc\fmod_studio.h,216,"FMOD_RESULT F_API FMOD_Studio_Bank_SetUserData(FMOD_STUDIO_BANK *bank, void *userdata);"
+O8G4-JW9F+E,FMOD_Studio_CommandReplay_IsValid,api\studio\inc\fmod_studio.h,221,FMOD_BOOL   F_API FMOD_Studio_CommandReplay_IsValid(FMOD_STUDIO_COMMANDREPLAY *replay);
+W0V-wosc9IA,FMOD_Studio_CommandReplay_GetSystem,api\studio\inc\fmod_studio.h,222,"FMOD_RESULT F_API FMOD_Studio_CommandReplay_GetSystem(FMOD_STUDIO_COMMANDREPLAY *replay, FMOD_STUDIO_SYSTEM **system);"
+wrNuTebcDtM,FMOD_Studio_CommandReplay_GetLength,api\studio\inc\fmod_studio.h,223,"FMOD_RESULT F_API FMOD_Studio_CommandReplay_GetLength(FMOD_STUDIO_COMMANDREPLAY *replay, float *length);"
+-CKPxxpqMkM,FMOD_Studio_CommandReplay_GetCommandCount,api\studio\inc\fmod_studio.h,224,"FMOD_RESULT F_API FMOD_Studio_CommandReplay_GetCommandCount(FMOD_STUDIO_COMMANDREPLAY *replay, int *count);"
+P6rKubmodqM,FMOD_Studio_CommandReplay_GetCommandInfo,api\studio\inc\fmod_studio.h,225,"FMOD_RESULT F_API FMOD_Studio_CommandReplay_GetCommandInfo(FMOD_STUDIO_COMMANDREPLAY *replay, int commandindex, FMOD_STUDIO_COMMAND_INFO *info);"
+DzJOet7pDJE,FMOD_Studio_CommandReplay_GetCommandString,api\studio\inc\fmod_studio.h,226,"FMOD_RESULT F_API FMOD_Studio_CommandReplay_GetCommandString(FMOD_STUDIO_COMMANDREPLAY *replay, int commandindex, char *buffer, int length);"
+f22+l8RWOZk,FMOD_Studio_CommandReplay_GetCommandAtTime,api\studio\inc\fmod_studio.h,227,"FMOD_RESULT F_API FMOD_Studio_CommandReplay_GetCommandAtTime(FMOD_STUDIO_COMMANDREPLAY *replay, float time, int *commandindex);"
+qVAES58o-PU,FMOD_Studio_CommandReplay_SetBankPath,api\studio\inc\fmod_studio.h,228,"FMOD_RESULT F_API FMOD_Studio_CommandReplay_SetBankPath(FMOD_STUDIO_COMMANDREPLAY *replay, const char *bankPath);"
+33OFkrgNQrM,FMOD_Studio_CommandReplay_Start,api\studio\inc\fmod_studio.h,229,FMOD_RESULT F_API FMOD_Studio_CommandReplay_Start(FMOD_STUDIO_COMMANDREPLAY *replay);
+6ao6MIPXVu0,FMOD_Studio_CommandReplay_Stop,api\studio\inc\fmod_studio.h,230,FMOD_RESULT F_API FMOD_Studio_CommandReplay_Stop(FMOD_STUDIO_COMMANDREPLAY *replay);
+VL4e0fWZ+0Q,FMOD_Studio_CommandReplay_SeekToTime,api\studio\inc\fmod_studio.h,231,"FMOD_RESULT F_API FMOD_Studio_CommandReplay_SeekToTime(FMOD_STUDIO_COMMANDREPLAY *replay, float time);"
+XrZGkDSHCTk,FMOD_Studio_CommandReplay_SeekToCommand,api\studio\inc\fmod_studio.h,232,"FMOD_RESULT F_API FMOD_Studio_CommandReplay_SeekToCommand(FMOD_STUDIO_COMMANDREPLAY *replay, int commandindex);"
+wl6D3x4MZLU,FMOD_Studio_CommandReplay_GetPaused,api\studio\inc\fmod_studio.h,233,"FMOD_RESULT F_API FMOD_Studio_CommandReplay_GetPaused(FMOD_STUDIO_COMMANDREPLAY *replay, FMOD_BOOL *paused);"
+hPDCUkgMhHQ,FMOD_Studio_CommandReplay_SetPaused,api\studio\inc\fmod_studio.h,234,"FMOD_RESULT F_API FMOD_Studio_CommandReplay_SetPaused(FMOD_STUDIO_COMMANDREPLAY *replay, FMOD_BOOL paused);"
+4xOhAFnYVN8,FMOD_Studio_CommandReplay_GetPlaybackState,api\studio\inc\fmod_studio.h,235,"FMOD_RESULT F_API FMOD_Studio_CommandReplay_GetPlaybackState(FMOD_STUDIO_COMMANDREPLAY *replay, FMOD_STUDIO_PLAYBACK_STATE *state);"
+Es7PjTQGQLk,FMOD_Studio_CommandReplay_GetCurrentCommand,api\studio\inc\fmod_studio.h,236,"FMOD_RESULT F_API FMOD_Studio_CommandReplay_GetCurrentCommand(FMOD_STUDIO_COMMANDREPLAY *replay, int *commandindex, float *currenttime);"
+sG854lkJd68,FMOD_Studio_CommandReplay_Release,api\studio\inc\fmod_studio.h,237,FMOD_RESULT F_API FMOD_Studio_CommandReplay_Release(FMOD_STUDIO_COMMANDREPLAY *replay);
+pxT4pFNH+x8,FMOD_Studio_CommandReplay_SetFrameCallback,api\studio\inc\fmod_studio.h,238,"FMOD_RESULT F_API FMOD_Studio_CommandReplay_SetFrameCallback(FMOD_STUDIO_COMMANDREPLAY *replay, FMOD_STUDIO_COMMANDREPLAY_FRAME_CALLBACK callback);"
+q+mHqeR4tGs,FMOD_Studio_CommandReplay_SetLoadBankCallback,api\studio\inc\fmod_studio.h,239,"FMOD_RESULT F_API FMOD_Studio_CommandReplay_SetLoadBankCallback(FMOD_STUDIO_COMMANDREPLAY *replay, FMOD_STUDIO_COMMANDREPLAY_LOAD_BANK_CALLBACK callback);"
+51wAT2jBZLM,FMOD_Studio_CommandReplay_SetCreateInstanceCallback,api\studio\inc\fmod_studio.h,240,"FMOD_RESULT F_API FMOD_Studio_CommandReplay_SetCreateInstanceCallback(FMOD_STUDIO_COMMANDREPLAY *replay, FMOD_STUDIO_COMMANDREPLAY_CREATE_INSTANCE_CALLBACK callback);"
+2Kk+4pYIQLI,FMOD_Studio_CommandReplay_GetUserData,api\studio\inc\fmod_studio.h,241,"FMOD_RESULT F_API FMOD_Studio_CommandReplay_GetUserData(FMOD_STUDIO_COMMANDREPLAY *replay, void **userdata);"
+z9SjRy0thPU,FMOD_Studio_CommandReplay_SetUserData,api\studio\inc\fmod_studio.h,242,"FMOD_RESULT F_API FMOD_Studio_CommandReplay_SetUserData(FMOD_STUDIO_COMMANDREPLAY *replay, void *userdata);"
+6+jxadAmgDI,create,api\studio\inc\fmod_studio.hpp,44,"static FMOD_RESULT F_API create(System **system, unsigned int headerversion = FMOD_VERSION);"
+DFqbspSIrog,setAdvancedSettings,api\studio\inc\fmod_studio.hpp,45,FMOD_RESULT F_API setAdvancedSettings(FMOD_STUDIO_ADVANCEDSETTINGS *settings);
+t0RoBt4UGpw,getAdvancedSettings,api\studio\inc\fmod_studio.hpp,46,FMOD_RESULT F_API getAdvancedSettings(FMOD_STUDIO_ADVANCEDSETTINGS *settings);
+G4si+I8VpnA,initialize,api\studio\inc\fmod_studio.hpp,47,"FMOD_RESULT F_API initialize(int maxchannels, FMOD_STUDIO_INITFLAGS studioflags, FMOD_INITFLAGS flags, void *extradriverdata);"
+r43u8ojbKNM,release,api\studio\inc\fmod_studio.hpp,48,FMOD_RESULT F_API release();
+YwHAYo7Wq1I,isValid,api\studio\inc\fmod_studio.hpp,51,bool F_API isValid() const;
+R4zmtqRrc1s,update,api\studio\inc\fmod_studio.hpp,54,FMOD_RESULT F_API update();
+mlyIQZOU5Fo,flushCommands,api\studio\inc\fmod_studio.hpp,55,FMOD_RESULT F_API flushCommands();
+MewekxFqf6o,flushSampleLoading,api\studio\inc\fmod_studio.hpp,56,FMOD_RESULT F_API flushSampleLoading();
+shRSzHEJcdg,getCoreSystem,api\studio\inc\fmod_studio.hpp,59,FMOD_RESULT F_API getCoreSystem(FMOD::System **system) const;
+56JxcxMO-fE,getEvent,api\studio\inc\fmod_studio.hpp,62,"FMOD_RESULT F_API getEvent(const char *path, EventDescription **event) const;"
+W-Vau5X4cjQ,getBus,api\studio\inc\fmod_studio.hpp,63,"FMOD_RESULT F_API getBus(const char *path, Bus **bus) const;"
+7F03Ldsik4U,getVCA,api\studio\inc\fmod_studio.hpp,64,"FMOD_RESULT F_API getVCA(const char *path, VCA **vca) const;"
+qDI-BNH5Nco,getBank,api\studio\inc\fmod_studio.hpp,65,"FMOD_RESULT F_API getBank(const char *path, Bank **bank) const;"
+e4tmhqinKMY,getEventByID,api\studio\inc\fmod_studio.hpp,66,"FMOD_RESULT F_API getEventByID(const FMOD_GUID *id, EventDescription **event) const;"
+yviCwm4rLtw,getBusByID,api\studio\inc\fmod_studio.hpp,67,"FMOD_RESULT F_API getBusByID(const FMOD_GUID *id, Bus **bus) const;"
+65bjp5QgvIo,getVCAByID,api\studio\inc\fmod_studio.hpp,68,"FMOD_RESULT F_API getVCAByID(const FMOD_GUID *id, VCA **vca) const;"
+X-D48ZYt4OY,getBankByID,api\studio\inc\fmod_studio.hpp,69,"FMOD_RESULT F_API getBankByID(const FMOD_GUID *id, Bank **bank) const;"
+RkVVfIgoby8,getSoundInfo,api\studio\inc\fmod_studio.hpp,70,"FMOD_RESULT F_API getSoundInfo(const char *key, FMOD_STUDIO_SOUND_INFO *info) const;"
+32zCOeZybS4,getParameterDescriptionByName,api\studio\inc\fmod_studio.hpp,71,"FMOD_RESULT F_API getParameterDescriptionByName(const char *name, FMOD_STUDIO_PARAMETER_DESCRIPTION *parameter) const;"
+fED4M-rCdV0,getParameterDescriptionByID,api\studio\inc\fmod_studio.hpp,72,"FMOD_RESULT F_API getParameterDescriptionByID(FMOD_STUDIO_PARAMETER_ID id, FMOD_STUDIO_PARAMETER_DESCRIPTION *parameter) const;"
+REgAmQtpSqM,getParameterLabelByName,api\studio\inc\fmod_studio.hpp,73,"FMOD_RESULT F_API getParameterLabelByName(const char *name, int labelindex, char *label, int size, int *retrieved) const;"
+le34j8yKOT8,getParameterLabelByID,api\studio\inc\fmod_studio.hpp,74,"FMOD_RESULT F_API getParameterLabelByID(FMOD_STUDIO_PARAMETER_ID id, int labelindex, char *label, int size, int *retrieved) const;"
+wy0lk24fjtI,getParameterByID,api\studio\inc\fmod_studio.hpp,77,"FMOD_RESULT F_API getParameterByID(FMOD_STUDIO_PARAMETER_ID id, float *value, float *finalvalue = 0) const;"
+PKaXKFFWO8Y,setParameterByID,api\studio\inc\fmod_studio.hpp,78,"FMOD_RESULT F_API setParameterByID(FMOD_STUDIO_PARAMETER_ID id, float value, bool ignoreseekspeed = false);"
+vCXgeoMqAKo,setParameterByIDWithLabel,api\studio\inc\fmod_studio.hpp,79,"FMOD_RESULT F_API setParameterByIDWithLabel(FMOD_STUDIO_PARAMETER_ID id, const char *label, bool ignoreseekspeed = false);"
+HnFnlETE1vs,setParametersByIDs,api\studio\inc\fmod_studio.hpp,80,"FMOD_RESULT F_API setParametersByIDs(const FMOD_STUDIO_PARAMETER_ID *ids, float *values, int count, bool ignoreseekspeed = false);"
+Und4iMoTof4,getParameterByName,api\studio\inc\fmod_studio.hpp,81,"FMOD_RESULT F_API getParameterByName(const char *name, float *value, float *finalvalue = 0) const;"
+CwaZJcvhbpA,setParameterByName,api\studio\inc\fmod_studio.hpp,82,"FMOD_RESULT F_API setParameterByName(const char *name, float value, bool ignoreseekspeed = false);"
+5ClPDl+h+rw,setParameterByNameWithLabel,api\studio\inc\fmod_studio.hpp,83,"FMOD_RESULT F_API setParameterByNameWithLabel(const char *name, const char *label, bool ignoreseekspeed = false);"
+rSl-iaTELVo,lookupID,api\studio\inc\fmod_studio.hpp,86,"FMOD_RESULT F_API lookupID(const char *path, FMOD_GUID *id) const;"
+nO0x72Kj52Q,lookupPath,api\studio\inc\fmod_studio.hpp,87,"FMOD_RESULT F_API lookupPath(const FMOD_GUID *id, char *path, int size, int *retrieved) const;"
+LYkFl3h+kds,getNumListeners,api\studio\inc\fmod_studio.hpp,90,FMOD_RESULT F_API getNumListeners(int *numlisteners);
+4mSSaJ-JvfA,setNumListeners,api\studio\inc\fmod_studio.hpp,91,FMOD_RESULT F_API setNumListeners(int numlisteners);
+74Cu-vt+ej4,getListenerAttributes,api\studio\inc\fmod_studio.hpp,92,"FMOD_RESULT F_API getListenerAttributes(int listener, FMOD_3D_ATTRIBUTES *attributes, FMOD_VECTOR *attenuationposition = 0) const;"
+czfzw4A4Ug4,setListenerAttributes,api\studio\inc\fmod_studio.hpp,93,"FMOD_RESULT F_API setListenerAttributes(int listener, const FMOD_3D_ATTRIBUTES *attributes, const FMOD_VECTOR *attenuationposition = 0);"
+Zlgf80HUlag,getListenerWeight,api\studio\inc\fmod_studio.hpp,94,"FMOD_RESULT F_API getListenerWeight(int listener, float *weight);"
+OcAa36Wiuc0,setListenerWeight,api\studio\inc\fmod_studio.hpp,95,"FMOD_RESULT F_API setListenerWeight(int listener, float weight);"
+fFPBRn3cog8,loadBankFile,api\studio\inc\fmod_studio.hpp,98,"FMOD_RESULT F_API loadBankFile(const char *filename, FMOD_STUDIO_LOAD_BANK_FLAGS flags, Bank **bank);"
+vH6P4PvLN3U,loadBankMemory,api\studio\inc\fmod_studio.hpp,99,"FMOD_RESULT F_API loadBankMemory(const char *buffer, int length, FMOD_STUDIO_LOAD_MEMORY_MODE mode, FMOD_STUDIO_LOAD_BANK_FLAGS flags, Bank **bank);"
+75Jda9Elzks,loadBankCustom,api\studio\inc\fmod_studio.hpp,100,"FMOD_RESULT F_API loadBankCustom(const FMOD_STUDIO_BANK_INFO *info, FMOD_STUDIO_LOAD_BANK_FLAGS flags, Bank **bank);"
+EfwkOrEJpAE,unloadAll,api\studio\inc\fmod_studio.hpp,101,FMOD_RESULT F_API unloadAll();
+JfzVQMJdIm8,getBufferUsage,api\studio\inc\fmod_studio.hpp,104,FMOD_RESULT F_API getBufferUsage(FMOD_STUDIO_BUFFER_USAGE *usage) const;
+2cORBSLTJaY,resetBufferUsage,api\studio\inc\fmod_studio.hpp,105,FMOD_RESULT F_API resetBufferUsage();
+ZbNXnRuw2n0,registerPlugin,api\studio\inc\fmod_studio.hpp,106,FMOD_RESULT F_API registerPlugin(const FMOD_DSP_DESCRIPTION *description);
+mwrVUIPKKPY,unregisterPlugin,api\studio\inc\fmod_studio.hpp,107,FMOD_RESULT F_API unregisterPlugin(const char *name);
+4GB+60LIiok,getBankCount,api\studio\inc\fmod_studio.hpp,110,FMOD_RESULT F_API getBankCount(int *count) const;
+XOJ+vmJL-sQ,getBankList,api\studio\inc\fmod_studio.hpp,111,"FMOD_RESULT F_API getBankList(Bank **array, int capacity, int *count) const;"
+Wz9aI0UY0TU,getParameterDescriptionCount,api\studio\inc\fmod_studio.hpp,112,FMOD_RESULT F_API getParameterDescriptionCount(int *count) const;
+Wlup1aqLsiM,getParameterDescriptionList,api\studio\inc\fmod_studio.hpp,113,"FMOD_RESULT F_API getParameterDescriptionList(FMOD_STUDIO_PARAMETER_DESCRIPTION *array, int capacity, int *count) const;"
+yIEaTOFdJDs,startCommandCapture,api\studio\inc\fmod_studio.hpp,116,"FMOD_RESULT F_API startCommandCapture(const char *filename, FMOD_STUDIO_COMMANDCAPTURE_FLAGS flags);"
+X1TTwIOgk6Q,stopCommandCapture,api\studio\inc\fmod_studio.hpp,117,FMOD_RESULT F_API stopCommandCapture();
+rOgOw--6zPs,loadCommandReplay,api\studio\inc\fmod_studio.hpp,118,"FMOD_RESULT F_API loadCommandReplay(const char *filename, FMOD_STUDIO_COMMANDREPLAY_FLAGS flags, CommandReplay **replay);"
+trCfnGWCmN8,setCallback,api\studio\inc\fmod_studio.hpp,121,"FMOD_RESULT F_API setCallback(FMOD_STUDIO_SYSTEM_CALLBACK callback, FMOD_STUDIO_SYSTEM_CALLBACK_TYPE callbackmask = FMOD_STUDIO_SYSTEM_CALLBACK_ALL);"
+cl7ImpM9ZFQ,getUserData,api\studio\inc\fmod_studio.hpp,122,FMOD_RESULT F_API getUserData(void **userdata) const;
+YPDffhyf--U,setUserData,api\studio\inc\fmod_studio.hpp,123,FMOD_RESULT F_API setUserData(void *userdata);
+Dh1-XyiVCLk,getCPUUsage,api\studio\inc\fmod_studio.hpp,126,"FMOD_RESULT F_API getCPUUsage(FMOD_STUDIO_CPU_USAGE *usage, FMOD_CPU_USAGE *usage_core) const;"
+mG03UCepqHA,getMemoryUsage,api\studio\inc\fmod_studio.hpp,127,FMOD_RESULT F_API getMemoryUsage(FMOD_STUDIO_MEMORY_USAGE *memoryusage) const;
+YwHAYo7Wq1I,isValid,api\studio\inc\fmod_studio.hpp,139,bool F_API isValid() const;
+Ic61+Rs9wrw,getID,api\studio\inc\fmod_studio.hpp,142,FMOD_RESULT F_API getID(FMOD_GUID *id) const;
+a7iFY1MNNbk,getPath,api\studio\inc\fmod_studio.hpp,143,"FMOD_RESULT F_API getPath(char *path, int size, int *retrieved) const;"
+Wz9aI0UY0TU,getParameterDescriptionCount,api\studio\inc\fmod_studio.hpp,144,FMOD_RESULT F_API getParameterDescriptionCount(int *count) const;
+1A0LJDrO-xg,getParameterDescriptionByIndex,api\studio\inc\fmod_studio.hpp,145,"FMOD_RESULT F_API getParameterDescriptionByIndex(int index, FMOD_STUDIO_PARAMETER_DESCRIPTION *parameter) const;"
+32zCOeZybS4,getParameterDescriptionByName,api\studio\inc\fmod_studio.hpp,146,"FMOD_RESULT F_API getParameterDescriptionByName(const char *name, FMOD_STUDIO_PARAMETER_DESCRIPTION *parameter) const;"
+fED4M-rCdV0,getParameterDescriptionByID,api\studio\inc\fmod_studio.hpp,147,"FMOD_RESULT F_API getParameterDescriptionByID(FMOD_STUDIO_PARAMETER_ID id, FMOD_STUDIO_PARAMETER_DESCRIPTION *parameter) const;"
+F8bewsqEmKY,getParameterLabelByIndex,api\studio\inc\fmod_studio.hpp,148,"FMOD_RESULT F_API getParameterLabelByIndex(int index, int labelindex, char *label, int size, int *retrieved) const;"
+REgAmQtpSqM,getParameterLabelByName,api\studio\inc\fmod_studio.hpp,149,"FMOD_RESULT F_API getParameterLabelByName(const char *name, int labelindex, char *label, int size, int *retrieved) const;"
+le34j8yKOT8,getParameterLabelByID,api\studio\inc\fmod_studio.hpp,150,"FMOD_RESULT F_API getParameterLabelByID(FMOD_STUDIO_PARAMETER_ID id, int labelindex, char *label, int size, int *retrieved) const;"
+beyNCf-WJBM,getUserPropertyCount,api\studio\inc\fmod_studio.hpp,151,FMOD_RESULT F_API getUserPropertyCount(int *count) const;
+dnjtcLev1i4,getUserPropertyByIndex,api\studio\inc\fmod_studio.hpp,152,"FMOD_RESULT F_API getUserPropertyByIndex(int index, FMOD_STUDIO_USER_PROPERTY *property) const;"
+cHko71TqQMA,getUserProperty,api\studio\inc\fmod_studio.hpp,153,"FMOD_RESULT F_API getUserProperty(const char *name, FMOD_STUDIO_USER_PROPERTY *property) const;"
+8Q5nWIkw7Sg,getLength,api\studio\inc\fmod_studio.hpp,154,FMOD_RESULT F_API getLength(int *length) const;
+Ykpl9fI3b-I,getMinMaxDistance,api\studio\inc\fmod_studio.hpp,155,"FMOD_RESULT F_API getMinMaxDistance(float *min, float *max) const;"
+T2NLp+-sjA8,getSoundSize,api\studio\inc\fmod_studio.hpp,156,FMOD_RESULT F_API getSoundSize(float *size) const;
+852iYkp0vgA,isSnapshot,api\studio\inc\fmod_studio.hpp,158,FMOD_RESULT F_API isSnapshot(bool *snapshot) const;
+40GI+f3Z3GE,isOneshot,api\studio\inc\fmod_studio.hpp,159,FMOD_RESULT F_API isOneshot(bool *oneshot) const;
+aaWdselBAgE,isStream,api\studio\inc\fmod_studio.hpp,160,FMOD_RESULT F_API isStream(bool *isStream) const;
+GtmWcaJGrnU,is3D,api\studio\inc\fmod_studio.hpp,161,FMOD_RESULT F_API is3D(bool *is3d) const;
+RoCxt7s1K+g,isDopplerEnabled,api\studio\inc\fmod_studio.hpp,162,FMOD_RESULT F_API isDopplerEnabled(bool *doppler) const;
+HRkDAK0pa+k,hasSustainPoint,api\studio\inc\fmod_studio.hpp,163,FMOD_RESULT F_API hasSustainPoint(bool *sustainPoint) const;
+StLjhhITXJc,createInstance,api\studio\inc\fmod_studio.hpp,166,FMOD_RESULT F_API createInstance(EventInstance **instance) const;
+x3pN22i8ZJY,getInstanceCount,api\studio\inc\fmod_studio.hpp,167,FMOD_RESULT F_API getInstanceCount(int *count) const;
+BLl2I1qkEFc,getInstanceList,api\studio\inc\fmod_studio.hpp,168,"FMOD_RESULT F_API getInstanceList(EventInstance **array, int capacity, int *count) const;"
+fZ3Q0r3ceMo,loadSampleData,api\studio\inc\fmod_studio.hpp,171,FMOD_RESULT F_API loadSampleData();
+Hl0f+b49v4w,unloadSampleData,api\studio\inc\fmod_studio.hpp,172,FMOD_RESULT F_API unloadSampleData();
+-lZM1GCY4y0,getSampleLoadingState,api\studio\inc\fmod_studio.hpp,173,FMOD_RESULT F_API getSampleLoadingState(FMOD_STUDIO_LOADING_STATE *state) const;
+cYo-IBrm2PY,releaseAllInstances,api\studio\inc\fmod_studio.hpp,176,FMOD_RESULT F_API releaseAllInstances();
+trCfnGWCmN8,setCallback,api\studio\inc\fmod_studio.hpp,179,"FMOD_RESULT F_API setCallback(FMOD_STUDIO_EVENT_CALLBACK callback, FMOD_STUDIO_EVENT_CALLBACK_TYPE callbackmask = FMOD_STUDIO_EVENT_CALLBACK_ALL);"
+cl7ImpM9ZFQ,getUserData,api\studio\inc\fmod_studio.hpp,180,FMOD_RESULT F_API getUserData(void **userdata) const;
+YPDffhyf--U,setUserData,api\studio\inc\fmod_studio.hpp,181,FMOD_RESULT F_API setUserData(void *userdata);
+YwHAYo7Wq1I,isValid,api\studio\inc\fmod_studio.hpp,193,bool F_API isValid() const;
+a3qLRVDSmo4,getDescription,api\studio\inc\fmod_studio.hpp,196,FMOD_RESULT F_API getDescription(EventDescription **description) const;
+5T2irinisfo,getVolume,api\studio\inc\fmod_studio.hpp,199,"FMOD_RESULT F_API getVolume(float *volume, float *finalvolume = 0) const;"
+iZVZmVfyls0,setVolume,api\studio\inc\fmod_studio.hpp,200,FMOD_RESULT F_API setVolume(float volume);
+Cj5DRXds-Tg,getPitch,api\studio\inc\fmod_studio.hpp,202,"FMOD_RESULT F_API getPitch(float *pitch, float *finalpitch = 0) const;"
+kbcykZVx3KQ,setPitch,api\studio\inc\fmod_studio.hpp,203,FMOD_RESULT F_API setPitch(float pitch);
+SvWfHb28rS0,get3DAttributes,api\studio\inc\fmod_studio.hpp,205,FMOD_RESULT F_API get3DAttributes(FMOD_3D_ATTRIBUTES *attributes) const;
+KON9YeDj0nU,set3DAttributes,api\studio\inc\fmod_studio.hpp,206,FMOD_RESULT F_API set3DAttributes(const FMOD_3D_ATTRIBUTES *attributes);
+HOAqf4JqIXE,getListenerMask,api\studio\inc\fmod_studio.hpp,208,FMOD_RESULT F_API getListenerMask(unsigned int *mask) const;
+utSfuA6t9No,setListenerMask,api\studio\inc\fmod_studio.hpp,209,FMOD_RESULT F_API setListenerMask(unsigned int mask);
++raXe7vMg1k,getProperty,api\studio\inc\fmod_studio.hpp,211,"FMOD_RESULT F_API getProperty(FMOD_STUDIO_EVENT_PROPERTY index, float *value) const;"
+tGyzBcypokU,setProperty,api\studio\inc\fmod_studio.hpp,212,"FMOD_RESULT F_API setProperty(FMOD_STUDIO_EVENT_PROPERTY index, float value);"
+6D3J0wK5imU,getReverbLevel,api\studio\inc\fmod_studio.hpp,214,"FMOD_RESULT F_API getReverbLevel(int index, float *level) const;"
+Q+xunm-ZMdU,setReverbLevel,api\studio\inc\fmod_studio.hpp,215,"FMOD_RESULT F_API setReverbLevel(int index, float level);"
+f5W4DHXTH4M,getPaused,api\studio\inc\fmod_studio.hpp,217,FMOD_RESULT F_API getPaused(bool *paused) const;
+9z6UxLXivYQ,setPaused,api\studio\inc\fmod_studio.hpp,218,FMOD_RESULT F_API setPaused(bool paused);
+3PuTmmzh1d8,start,api\studio\inc\fmod_studio.hpp,220,FMOD_RESULT F_API start();
+t3uunkdnOio,stop,api\studio\inc\fmod_studio.hpp,221,FMOD_RESULT F_API stop(FMOD_STUDIO_STOP_MODE mode);
+4q229BQHxco,getTimelinePosition,api\studio\inc\fmod_studio.hpp,223,FMOD_RESULT F_API getTimelinePosition(int *position) const;
+rKVqlbNJMc0,setTimelinePosition,api\studio\inc\fmod_studio.hpp,224,FMOD_RESULT F_API setTimelinePosition(int position);
+sNmQH8rvDnw,getPlaybackState,api\studio\inc\fmod_studio.hpp,226,FMOD_RESULT F_API getPlaybackState(FMOD_STUDIO_PLAYBACK_STATE *state) const;
+nVCaXVxkeiY,getChannelGroup,api\studio\inc\fmod_studio.hpp,228,FMOD_RESULT F_API getChannelGroup(ChannelGroup **group) const;
+Ykpl9fI3b-I,getMinMaxDistance,api\studio\inc\fmod_studio.hpp,230,"FMOD_RESULT F_API getMinMaxDistance(float *min, float *max) const;"
+r43u8ojbKNM,release,api\studio\inc\fmod_studio.hpp,232,FMOD_RESULT F_API release();
+SKRetw7cYHc,isVirtual,api\studio\inc\fmod_studio.hpp,234,FMOD_RESULT F_API isVirtual(bool *virtualstate) const;
+wy0lk24fjtI,getParameterByID,api\studio\inc\fmod_studio.hpp,236,"FMOD_RESULT F_API getParameterByID(FMOD_STUDIO_PARAMETER_ID id, float *value, float *finalvalue = 0) const;"
+PKaXKFFWO8Y,setParameterByID,api\studio\inc\fmod_studio.hpp,237,"FMOD_RESULT F_API setParameterByID(FMOD_STUDIO_PARAMETER_ID id, float value, bool ignoreseekspeed = false);"
+vCXgeoMqAKo,setParameterByIDWithLabel,api\studio\inc\fmod_studio.hpp,238,"FMOD_RESULT F_API setParameterByIDWithLabel(FMOD_STUDIO_PARAMETER_ID id, const char* label, bool ignoreseekspeed = false);"
+HnFnlETE1vs,setParametersByIDs,api\studio\inc\fmod_studio.hpp,239,"FMOD_RESULT F_API setParametersByIDs(const FMOD_STUDIO_PARAMETER_ID *ids, float *values, int count, bool ignoreseekspeed = false);"
+Und4iMoTof4,getParameterByName,api\studio\inc\fmod_studio.hpp,241,"FMOD_RESULT F_API getParameterByName(const char *name, float *value, float *finalvalue = 0) const;"
+CwaZJcvhbpA,setParameterByName,api\studio\inc\fmod_studio.hpp,242,"FMOD_RESULT F_API setParameterByName(const char *name, float value, bool ignoreseekspeed = false);"
+5ClPDl+h+rw,setParameterByNameWithLabel,api\studio\inc\fmod_studio.hpp,243,"FMOD_RESULT F_API setParameterByNameWithLabel(const char *name, const char* label, bool ignoreseekspeed = false);"
+BHrmVQ5hBGo,keyOff,api\studio\inc\fmod_studio.hpp,245,FMOD_RESULT F_API keyOff();
+Dh1-XyiVCLk,getCPUUsage,api\studio\inc\fmod_studio.hpp,248,"FMOD_RESULT F_API getCPUUsage(unsigned int *exclusive, unsigned int *inclusive) const;"
+mG03UCepqHA,getMemoryUsage,api\studio\inc\fmod_studio.hpp,249,FMOD_RESULT F_API getMemoryUsage(FMOD_STUDIO_MEMORY_USAGE *memoryusage) const;
+trCfnGWCmN8,setCallback,api\studio\inc\fmod_studio.hpp,252,"FMOD_RESULT F_API setCallback(FMOD_STUDIO_EVENT_CALLBACK callback, FMOD_STUDIO_EVENT_CALLBACK_TYPE callbackmask = FMOD_STUDIO_EVENT_CALLBACK_ALL);"
+cl7ImpM9ZFQ,getUserData,api\studio\inc\fmod_studio.hpp,253,FMOD_RESULT F_API getUserData(void **userdata) const;
+YPDffhyf--U,setUserData,api\studio\inc\fmod_studio.hpp,254,FMOD_RESULT F_API setUserData(void *userdata);
+YwHAYo7Wq1I,isValid,api\studio\inc\fmod_studio.hpp,266,bool F_API isValid() const;
+Ic61+Rs9wrw,getID,api\studio\inc\fmod_studio.hpp,269,FMOD_RESULT F_API getID(FMOD_GUID *id) const;
+a7iFY1MNNbk,getPath,api\studio\inc\fmod_studio.hpp,270,"FMOD_RESULT F_API getPath(char *path, int size, int *retrieved) const;"
+5T2irinisfo,getVolume,api\studio\inc\fmod_studio.hpp,273,"FMOD_RESULT F_API getVolume(float *volume, float *finalvolume = 0) const;"
+iZVZmVfyls0,setVolume,api\studio\inc\fmod_studio.hpp,274,FMOD_RESULT F_API setVolume(float volume);
+f5W4DHXTH4M,getPaused,api\studio\inc\fmod_studio.hpp,276,FMOD_RESULT F_API getPaused(bool *paused) const;
+9z6UxLXivYQ,setPaused,api\studio\inc\fmod_studio.hpp,277,FMOD_RESULT F_API setPaused(bool paused);
+uNjinnHvjtM,getMute,api\studio\inc\fmod_studio.hpp,279,FMOD_RESULT F_API getMute(bool *mute) const;
+FoeboZzHQAs,setMute,api\studio\inc\fmod_studio.hpp,280,FMOD_RESULT F_API setMute(bool mute);
+a-6xS5brCP8,stopAllEvents,api\studio\inc\fmod_studio.hpp,282,FMOD_RESULT F_API stopAllEvents(FMOD_STUDIO_STOP_MODE mode);
+n1aWh5UXgwE,getPortIndex,api\studio\inc\fmod_studio.hpp,285,FMOD_RESULT F_API getPortIndex(FMOD_PORT_INDEX *index) const;
+09sYZIvZxBM,setPortIndex,api\studio\inc\fmod_studio.hpp,286,FMOD_RESULT F_API setPortIndex(FMOD_PORT_INDEX index);
+AupPKm+oMIY,lockChannelGroup,api\studio\inc\fmod_studio.hpp,289,FMOD_RESULT F_API lockChannelGroup();
+tfuKk0tajww,unlockChannelGroup,api\studio\inc\fmod_studio.hpp,290,FMOD_RESULT F_API unlockChannelGroup();
+nVCaXVxkeiY,getChannelGroup,api\studio\inc\fmod_studio.hpp,291,FMOD_RESULT F_API getChannelGroup(FMOD::ChannelGroup **group) const;
+Dh1-XyiVCLk,getCPUUsage,api\studio\inc\fmod_studio.hpp,294,"FMOD_RESULT F_API getCPUUsage(unsigned int *exclusive, unsigned int *inclusive) const;"
+mG03UCepqHA,getMemoryUsage,api\studio\inc\fmod_studio.hpp,295,FMOD_RESULT F_API getMemoryUsage(FMOD_STUDIO_MEMORY_USAGE *memoryusage) const;
+YwHAYo7Wq1I,isValid,api\studio\inc\fmod_studio.hpp,307,bool F_API isValid() const;
+Ic61+Rs9wrw,getID,api\studio\inc\fmod_studio.hpp,310,FMOD_RESULT F_API getID(FMOD_GUID *id) const;
+a7iFY1MNNbk,getPath,api\studio\inc\fmod_studio.hpp,311,"FMOD_RESULT F_API getPath(char *path, int size, int *retrieved) const;"
+5T2irinisfo,getVolume,api\studio\inc\fmod_studio.hpp,314,"FMOD_RESULT F_API getVolume(float *volume, float *finalvolume = 0) const;"
+iZVZmVfyls0,setVolume,api\studio\inc\fmod_studio.hpp,315,FMOD_RESULT F_API setVolume(float volume);
+YwHAYo7Wq1I,isValid,api\studio\inc\fmod_studio.hpp,327,bool F_API isValid() const;
+Ic61+Rs9wrw,getID,api\studio\inc\fmod_studio.hpp,330,FMOD_RESULT F_API getID(FMOD_GUID *id) const;
+a7iFY1MNNbk,getPath,api\studio\inc\fmod_studio.hpp,331,"FMOD_RESULT F_API getPath(char *path, int size, int *retrieved) const;"
+UvKn8+9mWyk,unload,api\studio\inc\fmod_studio.hpp,334,FMOD_RESULT F_API unload();
+fZ3Q0r3ceMo,loadSampleData,api\studio\inc\fmod_studio.hpp,335,FMOD_RESULT F_API loadSampleData();
+Hl0f+b49v4w,unloadSampleData,api\studio\inc\fmod_studio.hpp,336,FMOD_RESULT F_API unloadSampleData();
+fcp5or6g9CU,getLoadingState,api\studio\inc\fmod_studio.hpp,338,FMOD_RESULT F_API getLoadingState(FMOD_STUDIO_LOADING_STATE *state) const;
+-lZM1GCY4y0,getSampleLoadingState,api\studio\inc\fmod_studio.hpp,339,FMOD_RESULT F_API getSampleLoadingState(FMOD_STUDIO_LOADING_STATE *state) const;
+BkiPnqlHBws,getStringCount,api\studio\inc\fmod_studio.hpp,342,FMOD_RESULT F_API getStringCount(int *count) const;
+TEQ+nIP2qlw,getStringInfo,api\studio\inc\fmod_studio.hpp,343,"FMOD_RESULT F_API getStringInfo(int index, FMOD_GUID *id, char *path, int size, int *retrieved) const;"
+MspTvoy-rrg,getEventCount,api\studio\inc\fmod_studio.hpp,344,FMOD_RESULT F_API getEventCount(int *count) const;
+CDIv9eOLg8U,getEventList,api\studio\inc\fmod_studio.hpp,345,"FMOD_RESULT F_API getEventList(EventDescription **array, int capacity, int *count) const;"
+TNMh8wh9slo,getBusCount,api\studio\inc\fmod_studio.hpp,346,FMOD_RESULT F_API getBusCount(int *count) const;
+Y75DZl2Dvc4,getBusList,api\studio\inc\fmod_studio.hpp,347,"FMOD_RESULT F_API getBusList(Bus **array, int capacity, int *count) const;"
+CGhUsr+1vXM,getVCACount,api\studio\inc\fmod_studio.hpp,348,FMOD_RESULT F_API getVCACount(int *count) const;
+RYsJUVCNcD8,getVCAList,api\studio\inc\fmod_studio.hpp,349,"FMOD_RESULT F_API getVCAList(VCA **array, int capacity, int *count) const;"
+cl7ImpM9ZFQ,getUserData,api\studio\inc\fmod_studio.hpp,351,FMOD_RESULT F_API getUserData(void **userdata) const;
+YPDffhyf--U,setUserData,api\studio\inc\fmod_studio.hpp,352,FMOD_RESULT F_API setUserData(void *userdata);
+YwHAYo7Wq1I,isValid,api\studio\inc\fmod_studio.hpp,364,bool F_API isValid() const;
+gMc6YW45v1c,getSystem,api\studio\inc\fmod_studio.hpp,367,FMOD_RESULT F_API getSystem(System **system) const;
+8Q5nWIkw7Sg,getLength,api\studio\inc\fmod_studio.hpp,368,FMOD_RESULT F_API getLength(float *length) const;
+WNylcaypAV4,getCommandCount,api\studio\inc\fmod_studio.hpp,370,FMOD_RESULT F_API getCommandCount(int *count) const;
+OgpxnuB532E,getCommandInfo,api\studio\inc\fmod_studio.hpp,371,"FMOD_RESULT F_API getCommandInfo(int commandindex, FMOD_STUDIO_COMMAND_INFO *info) const;"
+EvYKmlsc5bk,getCommandString,api\studio\inc\fmod_studio.hpp,372,"FMOD_RESULT F_API getCommandString(int commandindex, char *buffer, int length) const;"
+yF5Ey-3Ini4,getCommandAtTime,api\studio\inc\fmod_studio.hpp,373,"FMOD_RESULT F_API getCommandAtTime(float time, int *commandindex) const;"
+fcSzAyZryRo,setBankPath,api\studio\inc\fmod_studio.hpp,376,FMOD_RESULT F_API setBankPath(const char *bankPath);
+3PuTmmzh1d8,start,api\studio\inc\fmod_studio.hpp,377,FMOD_RESULT F_API start();
+t3uunkdnOio,stop,api\studio\inc\fmod_studio.hpp,378,FMOD_RESULT F_API stop();
+29u3vRuqUfg,seekToTime,api\studio\inc\fmod_studio.hpp,379,FMOD_RESULT F_API seekToTime(float time);
+9E8ZnEQbGMU,seekToCommand,api\studio\inc\fmod_studio.hpp,380,FMOD_RESULT F_API seekToCommand(int commandindex);
+f5W4DHXTH4M,getPaused,api\studio\inc\fmod_studio.hpp,381,FMOD_RESULT F_API getPaused(bool *paused) const;
+9z6UxLXivYQ,setPaused,api\studio\inc\fmod_studio.hpp,382,FMOD_RESULT F_API setPaused(bool paused);
+sNmQH8rvDnw,getPlaybackState,api\studio\inc\fmod_studio.hpp,383,FMOD_RESULT F_API getPlaybackState(FMOD_STUDIO_PLAYBACK_STATE *state) const;
+e9VicxsZLHU,getCurrentCommand,api\studio\inc\fmod_studio.hpp,384,"FMOD_RESULT F_API getCurrentCommand(int *commandindex, float *currenttime) const;"
+r43u8ojbKNM,release,api\studio\inc\fmod_studio.hpp,387,FMOD_RESULT F_API release();
+IFFC5mFSnTs,setFrameCallback,api\studio\inc\fmod_studio.hpp,390,FMOD_RESULT F_API setFrameCallback(FMOD_STUDIO_COMMANDREPLAY_FRAME_CALLBACK callback);
+6qz9yeVz2xU,setLoadBankCallback,api\studio\inc\fmod_studio.hpp,391,FMOD_RESULT F_API setLoadBankCallback(FMOD_STUDIO_COMMANDREPLAY_LOAD_BANK_CALLBACK callback);
+RsGc7V83aJg,setCreateInstanceCallback,api\studio\inc\fmod_studio.hpp,392,FMOD_RESULT F_API setCreateInstanceCallback(FMOD_STUDIO_COMMANDREPLAY_CREATE_INSTANCE_CALLBACK callback);
+cl7ImpM9ZFQ,getUserData,api\studio\inc\fmod_studio.hpp,394,FMOD_RESULT F_API getUserData(void **userdata) const;
+YPDffhyf--U,setUserData,api\studio\inc\fmod_studio.hpp,395,FMOD_RESULT F_API setUserData(void *userdata);
