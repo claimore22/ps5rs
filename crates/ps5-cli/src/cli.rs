@@ -260,7 +260,7 @@ pub enum Commands {
         /// Folder searched recursively for .prx / .sprx files
         #[arg(value_hint = ValueHint::DirPath)]
         path: PathBuf,
-        /// Primary CSV report path (default: <path>/fprx-nids.csv)
+        /// Primary CSV report path (default: `<path>/fprx-nids.csv`)
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
         /// Byte-distance threshold for nearby candidates
@@ -291,7 +291,7 @@ pub enum Commands {
         /// Folder searched recursively for .prx / .sprx files
         #[arg(value_hint = ValueHint::DirPath)]
         path: PathBuf,
-        /// Consolidated CSV report path (default: <path>/fsce-nids.csv,
+        /// Consolidated CSV report path (default: `<path>/fsce-nids.csv`,
         /// never a file named nids.csv)
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
