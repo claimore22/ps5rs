@@ -31,7 +31,11 @@ pub(crate) fn cmd_inspect(path: &PathBuf, json: bool, output: &Option<PathBuf>) 
     println!("SELF: {}", image.is_self);
     println!("SHA-256: {}", &image.sha256[..16]);
     println!("Entry point: {:#x}", image.entry_point);
-    println!("ELF type: {:#x}", image.metadata.elf_type);
+    println!(
+        "ELF type: {:#x} ({})",
+        image.metadata.elf_type,
+        ps5_elf::ElfHeader::type_name(image.metadata.elf_type)
+    );
     println!("ELF flags: {:#x}", image.metadata.elf_flags);
     println!(
         "OS/ABI: {} ({:#x})",
@@ -88,6 +92,12 @@ pub(crate) fn cmd_inspect(path: &PathBuf, json: bool, output: &Option<PathBuf>) 
         for lv in &image.lib_versions {
             println!("  {:<36} {}", lv.name, lv.version_string);
         }
+    }
+    if let Some(ref sdk) = image.sdk_version {
+        println!("Built for: {sdk}");
+    }
+    if image.is_self {
+        print_self_ext_info(&data);
     }
 
     if !image.imports.is_empty() {
@@ -163,6 +173,7 @@ struct ExportsReport {
 struct ExportRow {
     nid: String,
     name: String,
+    library: String,
     address: String,
     size: u64,
 }
@@ -202,6 +213,7 @@ pub(crate) fn cmd_exports(
             ExportRow {
                 nid: export_nid(&name, &e.nid_hash),
                 name,
+                library: e.library_name.clone(),
                 address: format!("{:#018x}", e.vaddr),
                 size: e.size,
             }
@@ -210,7 +222,11 @@ pub(crate) fn cmd_exports(
 
     if let Some(query) = search {
         let q = query.to_lowercase();
-        rows.retain(|r| r.nid.to_lowercase().contains(&q) || r.name.to_lowercase().contains(&q));
+        rows.retain(|r| {
+            r.nid.to_lowercase().contains(&q)
+                || r.name.to_lowercase().contains(&q)
+                || r.library.to_lowercase().contains(&q)
+        });
     }
 
     if json {
@@ -230,10 +246,16 @@ pub(crate) fn cmd_exports(
         println!("  No exports found");
         return;
     }
-    println!("{:<20} {:<50} {:<20} Size", "NID", "Name", "Address");
-    println!("{}", "-".repeat(110));
+    println!(
+        "{:<20} {:<50} {:<20} {:<16} Size",
+        "NID", "Name", "Address", "Library"
+    );
+    println!("{}", "-".repeat(126));
     for r in &rows {
-        println!("{:<20} {:<50} {:<20} {}", r.nid, r.name, r.address, r.size);
+        println!(
+            "{:<20} {:<50} {:<20} {:<16} {}",
+            r.nid, r.name, r.address, r.library, r.size
+        );
     }
 }
 
@@ -304,19 +326,29 @@ pub(crate) fn cmd_dynamic(path: &PathBuf) {
             1 => "DT_NEEDED",
             2 => "DT_PLTRELSZ",
             3 => "DT_PLTGOT",
+            4 => "DT_HASH",
             5 => "DT_STRTAB",
             6 => "DT_SYMTAB",
             7 => "DT_RELA",
             8 => "DT_RELASZ",
+            9 => "DT_RELAENT",
             0xa => "DT_STRSZ",
             0xb => "DT_SYMENT",
             0xc => "DT_INIT",
             0xd => "DT_FINI",
+            0xe => "DT_SONAME",
+            0x11 => "DT_REL",
+            0x12 => "DT_RELSZ",
+            0x13 => "DT_RELENT",
+            0x14 => "DT_PLTREL",
             0x17 => "DT_JMPREL",
             0x19 => "DT_INIT_ARRAY",
             0x1a => "DT_FINI_ARRAY",
             0x1b => "DT_INIT_ARRAYSZ",
             0x1c => "DT_FINI_ARRAYSZ",
+            0x20 => "DT_PREINIT_ARRAY",
+            0x21 => "DT_PREINIT_ARRAYSZ",
+            0x61000013 => "DT_SCE_EXPORT_LIB",
             0x61000029 => "DT_SCE_JMPREL",
             0x6100002D => "DT_SCE_PLTRELSZ",
             0x6100002F => "DT_SCE_RELA",
@@ -325,17 +357,41 @@ pub(crate) fn cmd_dynamic(path: &PathBuf) {
             0x61000037 => "DT_SCE_STRSZ",
             0x61000039 => "DT_SCE_SYMTAB",
             0x6100003F => "DT_SCE_SYMTABSZ",
+            0x61000043 => "DT_SCE_MODULE_INFO",
             0x61000045 => "DT_SCE_NEEDED_MOD",
+            0x61000047 => "DT_SCE_EXPORT_LIB",
             0x61000049 => "DT_SCE_NEEDED_LIB",
+            0x6ffffff9 => "DT_RELACOUNT",
             _ => "?",
         };
-        println!("{:<24} {:<20} {:#x}", tag_name, entry.d_tag, entry.d_val);
+        let resolved = match entry.d_tag {
+            1 | 0xe => {
+                let name = img.elf.resolve_string(entry.d_val & 0xffffffff);
+                if name.is_empty() {
+                    String::new()
+                } else {
+                    format!(" \"{name}\"")
+                }
+            }
+            _ => String::new(),
+        };
+        println!(
+            "{:<24} {:<20} {:#x}{}",
+            tag_name, entry.d_tag, entry.d_val, resolved
+        );
     }
 
     if !img.elf.import_libs.is_empty() {
         println!("\nImport libraries:");
         for (id, name) in &img.elf.import_libs {
             println!("  [{id}] {name}");
+        }
+    }
+
+    if !img.elf.needed_files.is_empty() {
+        println!("\nNeeded files:");
+        for name in &img.elf.needed_files {
+            println!("  {name}");
         }
     }
 }
@@ -391,4 +447,27 @@ pub(crate) fn cmd_symbols(path: &PathBuf) {
 pub(crate) fn cmd_nid(name: &str) {
     let nid = ps5_nid::hash(name);
     println!("{name} -> {nid}");
+}
+
+#[allow(clippy::print_literal)]
+fn print_self_ext_info(data: &[u8]) {
+    let Ok(self_img) = ps5_self::SelfImage::parse(data) else {
+        return;
+    };
+    let Some(ext) = &self_img.ext_info else {
+        return;
+    };
+    println!("\nExtended info:");
+    println!("  Authority: {:#x}", ext.authority_id);
+    println!("  Program type: {:#x}", ext.program_type);
+    println!("  App version: {:#x}", ext.app_version);
+    println!("  Firmware version: {:#x}", ext.firmware_version);
+    println!("  Digest: {}", ext.digest_hex());
+    match self_img.check_integrity() {
+        Some(true) => println!("  Integrity: ok (digest matches the embedded ELF)"),
+        Some(false) => println!(
+            "  Integrity: mismatch (extraction cannot always reproduce the exact wrapped bytes)"
+        ),
+        None => {}
+    }
 }

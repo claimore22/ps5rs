@@ -106,6 +106,19 @@ impl ElfHeader {
             _ => "Unknown",
         }
     }
+
+    pub fn type_name(e_type: u16) -> &'static str {
+        match e_type {
+            ET_EXEC => "Executable",
+            ET_DYN => "Shared object",
+            ET_SCE_EXEC => "Module executable",
+            ET_SCE_RELEXEC => "Module relocatable executable",
+            ET_SCE_STUBLIB => "Module stub library",
+            ET_SCE_DYNEXEC => "Dynamic executable",
+            ET_SCE_DYNAMIC => "Dynamic module",
+            _ => "Unknown",
+        }
+    }
 }
 
 #[cfg(test)]
@@ -159,6 +172,19 @@ mod tests {
         let data = build_header_bytes(0xFF, 0, 1, ET_SCE_DYNEXEC);
         let h = ElfHeader::parse(&data, 0).unwrap();
         assert_eq!(h.osabi_name(), "Unknown");
+    }
+
+    #[test]
+    fn type_name_sce_types() {
+        assert_eq!(ElfHeader::type_name(ET_SCE_DYNEXEC), "Dynamic executable");
+        assert_eq!(ElfHeader::type_name(ET_SCE_DYNAMIC), "Dynamic module");
+        assert_eq!(ElfHeader::type_name(ET_SCE_EXEC), "Module executable");
+        assert_eq!(
+            ElfHeader::type_name(ET_SCE_RELEXEC),
+            "Module relocatable executable"
+        );
+        assert_eq!(ElfHeader::type_name(ET_SCE_STUBLIB), "Module stub library");
+        assert_eq!(ElfHeader::type_name(0x1234), "Unknown");
     }
 
     #[test]

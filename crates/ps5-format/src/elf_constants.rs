@@ -19,6 +19,9 @@ pub const ELFOSABI_OPENBSD: u8 = 12;
 
 pub const ET_EXEC: u16 = 2;
 pub const ET_DYN: u16 = 3;
+pub const ET_SCE_EXEC: u16 = 0xfe00;
+pub const ET_SCE_RELEXEC: u16 = 0xfe04;
+pub const ET_SCE_STUBLIB: u16 = 0xfe0c;
 pub const ET_SCE_DYNEXEC: u16 = 0xfe10;
 pub const ET_SCE_DYNAMIC: u16 = 0xfe18;
 
@@ -27,14 +30,19 @@ pub const EM_X86_64: u16 = 0x3e;
 pub const PT_NULL: u32 = 0;
 pub const PT_LOAD: u32 = 1;
 pub const PT_DYNAMIC: u32 = 2;
+pub const PT_INTERP: u32 = 3;
+pub const PT_NOTE: u32 = 4;
+pub const PT_PHDR: u32 = 6;
 pub const PT_TLS: u32 = 7;
 pub const PT_GNU_EH_FRAME: u32 = 0x6474e550;
 pub const PT_GNU_RELRO: u32 = 0x6474e552;
 
 pub const PT_SCE_DYNLIBDATA: u32 = 0x61000000;
 pub const PT_SCE_PROCPARAM: u32 = 0x61000001;
-pub const PT_SCE_COMMENT: u32 = 0x61000002;
+pub const PT_SCE_MODULEPARAM: u32 = 0x61000002;
 pub const PT_SCE_LIBVERSION: u32 = 0x61000003;
+pub const PT_SCE_COMMENT: u32 = 0x6FFFFF00;
+pub const PT_SCE_VERSION: u32 = 0x6FFFFF01;
 pub const PT_SCE_RELRO: u32 = 0x61000010;
 pub const PT_SCE_RELA: u32 = 0x60000000;
 

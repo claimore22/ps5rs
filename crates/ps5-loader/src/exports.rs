@@ -206,6 +206,11 @@ mod tests {
             soname: None,
             import_libs: std::collections::HashMap::new(),
             needed_files: vec![],
+            export_libs: std::collections::HashMap::new(),
+            export_lib_versions: std::collections::HashMap::new(),
+            module_name: None,
+            module_version: 0,
+            sdk_version: 0,
             lib_versions: vec![],
             rela_count: 0,
         }

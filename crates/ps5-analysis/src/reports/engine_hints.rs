@@ -370,6 +370,7 @@ mod tests {
             dynamic_entries: vec![],
             version_defs: vec![],
             lib_versions: vec![],
+            sdk_version: None,
         };
 
         (

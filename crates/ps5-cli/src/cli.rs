@@ -64,6 +64,11 @@ pub enum Commands {
         file: PathBuf,
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
+        /// Build an AnyPS5 relinker layout (`source/` + `app0/`) instead of
+        /// extracting one file; a directory is the game root, an eboot.bin
+        /// file selects its parent directory
+        #[arg(long = "anyps5-layout")]
+        anyps5_layout: bool,
     },
     /// Batch extract files from a directory of archives
     BatchExtract {
@@ -74,6 +79,10 @@ pub enum Commands {
         nids: Vec<PathBuf>,
         #[arg(long)]
         include_modules: bool,
+        /// Build per-game AnyPS5 relinker layouts (`source/` + `app0/`)
+        /// instead of flat ELF extraction
+        #[arg(long = "anyps5-layout")]
+        anyps5_layout: bool,
     },
     /// Validate various aspects (binary, dataset, external corpus) via sub‑commands
     Validate {

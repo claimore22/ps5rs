@@ -1,3 +1,4 @@
+pub mod anyps5;
 pub mod artifacts;
 pub mod batch_extract;
 pub mod collector;
@@ -15,6 +16,10 @@ pub mod shader_inventory;
 pub mod string_patterns;
 pub mod unity;
 
+pub use anyps5::{
+    BatchGameLayout, BatchLayoutReport, ConvertedModule, GameLayoutManifest, GameLayoutReport,
+    LayoutFailure, layout_game, layout_games,
+};
 pub use batch_extract::{
     BatchExtractOptions, BatchExtractResult, ExtractionEntry, ExtractionManifest, batch_extract,
 };

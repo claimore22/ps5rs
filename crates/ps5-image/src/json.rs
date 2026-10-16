@@ -139,6 +139,7 @@ mod tests {
             dynamic_entries: Vec::new(),
             version_defs: Vec::new(),
             lib_versions: Vec::new(),
+            sdk_version: None,
         }
     }
 
@@ -235,6 +236,7 @@ mod tests {
             dynamic_entries: Vec::new(),
             version_defs: Vec::new(),
             lib_versions: Vec::new(),
+            sdk_version: None,
         };
         let mut buf = Vec::new();
         export_json(&img, &mut buf).unwrap();
@@ -271,6 +273,7 @@ mod tests {
             dynamic_entries: Vec::new(),
             version_defs: Vec::new(),
             lib_versions: Vec::new(),
+            sdk_version: None,
         };
         let mut buf = Vec::new();
         export_json(&img, &mut buf).unwrap();
@@ -340,6 +343,7 @@ mod tests {
             dynamic_entries: Vec::new(),
             version_defs: Vec::new(),
             lib_versions: Vec::new(),
+            sdk_version: None,
         };
         let mut buf = Vec::new();
         export_json(&img, &mut buf).unwrap();
@@ -385,6 +389,7 @@ mod tests {
             dynamic_entries: Vec::new(),
             version_defs: Vec::new(),
             lib_versions: Vec::new(),
+            sdk_version: None,
         };
         let mut buf = Vec::new();
         export_json(&img, &mut buf).unwrap();

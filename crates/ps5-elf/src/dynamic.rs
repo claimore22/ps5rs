@@ -78,6 +78,54 @@ pub fn parse_soname(entries: &[DynEntry], strtab: &[u8]) -> Option<String> {
     None
 }
 
+pub fn parse_export_libs(
+    entries: &[DynEntry],
+    strtab: &[u8],
+) -> std::collections::HashMap<u16, String> {
+    let mut libs = std::collections::HashMap::new();
+    for entry in entries {
+        if entry.d_tag == ps5_format::self_constants::DT_SCE_EXPORT_LIB
+            || entry.d_tag == ps5_format::self_constants::DT_SCE_EXPORT_LIB_LEGACY
+        {
+            let name_off = (entry.d_val & 0xffffffff) as usize;
+            let id = ((entry.d_val >> 48) & 0xffff) as u16;
+            let name = read_cstr(strtab, name_off);
+            if !name.is_empty() {
+                libs.insert(id, name);
+            }
+        }
+    }
+    libs
+}
+
+pub fn parse_export_lib_versions(entries: &[DynEntry]) -> std::collections::HashMap<u16, u16> {
+    let mut versions = std::collections::HashMap::new();
+    for entry in entries {
+        if entry.d_tag == ps5_format::self_constants::DT_SCE_EXPORT_LIB
+            || entry.d_tag == ps5_format::self_constants::DT_SCE_EXPORT_LIB_LEGACY
+        {
+            let id = ((entry.d_val >> 48) & 0xffff) as u16;
+            let version = ((entry.d_val >> 32) & 0xffff) as u16;
+            versions.insert(id, version);
+        }
+    }
+    versions
+}
+
+pub fn parse_module_info(entries: &[DynEntry], strtab: &[u8]) -> Option<(String, u16)> {
+    for entry in entries {
+        if entry.d_tag == ps5_format::self_constants::DT_SCE_MODULE_INFO {
+            let name_off = (entry.d_val & 0xffffffff) as usize;
+            let version = ((entry.d_val >> 32) & 0xffff) as u16;
+            let name = read_cstr(strtab, name_off);
+            if !name.is_empty() {
+                return Some((name, version));
+            }
+        }
+    }
+    None
+}
+
 fn read_cstr(data: &[u8], offset: usize) -> String {
     if offset >= data.len() {
         return String::new();

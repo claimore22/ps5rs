@@ -20,7 +20,7 @@ const gameDisplay = (x,n=32) => trunc(gameLabel(x), n);
   if (!d) return;
   const segsHtml = d.segments.map(s => `<tr><td>${s.index}</td><td>${s.seg_type}</td><td>${s.vaddr}</td><td>${(s.filesz/1048576).toFixed(2)} MB</td><td>${s.flags}</td></tr>`).join('');
   const libsHtml = d.import_summary.slice(0, 15).map(l => `<tr><td>${l.library}</td><td>${fmt(l.count)}</td></tr>`).join('');
-  const importsHtml = d.imports.slice(0, 200).map(i => `<tr><td style="font-family:monospace;font-size:0.72rem">${i.nid_hash}</td><td>${i.resolved_name||'<span style="color:#f85149">unknown</span>'}</td><td style="color:#8b949e">${i.library_name}</td></tr>`).join('');
+  const importsHtml = d.imports.slice(0, 200).map(i => `<tr><td style="font-family:monospace;font-size:0.72rem">${i.nid_hash}</td><td>${i.resolved_name||'<span style="color:#f85149">unknown</span>'}</td><td style="color:#8b949e">${i.library_name}</td><td style="font-variant-numeric:tabular-nums">${i.size||''}</td><td style="color:#8b949e">${i.binding||''}</td><td style="color:#8b949e">${i.sym_type||''}</td></tr>`).join('');
   const unresolvedHtml = d.unresolved_nids.slice(0, 100).map(i => `<tr><td style="font-family:monospace;font-size:0.72rem">${i.nid_hash}</td><td style="color:#8b949e">${i.library_name}</td></tr>`).join('');
 
   const engineHtml = `
@@ -66,15 +66,19 @@ const gameDisplay = (x,n=32) => trunc(gameLabel(x), n);
       <div class="k">ABI Version</div><div class="v">${d.abi_version}</div>
       <div class="k">ELF Version</div><div class="v">${d.elf_version}</div>
       <div class="k">Build ID</div><div class="v" style="font-family:monospace;font-size:0.72rem">${d.build_id||'N/A'}</div>
+      ${d.sdk_version ? `<div class="k">SDK Version</div><div class="v">Built for ${d.sdk_version}</div>` : ''}
       <div class="k">Relocations</div><div class="v">${fmt(d.relocations)}</div>
       <div class="k">TLS</div><div class="v">${d.has_tls?'Yes':'No'}</div>
     </div></div>
     <div class="detail-section"><h3>Segments (${d.segments.length})</h3>
       <div class="table-wrap"><table class="detail-table"><thead><tr><th>#</th><th>Type</th><th>VAddr</th><th>Size</th><th>Flags</th></tr></thead><tbody>${segsHtml}</tbody></table></div></div>
     <div class="detail-section"><h3>Libraries (${d.import_summary.length})</h3>
-      <div class="table-wrap"><table class="detail-table"><thead><tr><th>Library</th><th>Imports</th></tr></thead><tbody>${libsHtml}</tbody></table></div></div>
+      <div class="table-wrap"><table class="detail-table"><thead><tr><th>Library</th><th>Imports</th></tr></thead><tbody>${libsHtml}</tbody></table></div>
+      ${(d.export_summary||[]).length ? `<h3 style="margin-top:12px">Exports by library</h3><div class="table-wrap"><table class="detail-table"><thead><tr><th>Library</th><th>Exports</th></tr></thead><tbody>${d.export_summary.map(l => `<tr><td>${l.library}</td><td>${fmt(l.count)}</td></tr>`).join('')}</tbody></table></div>` : ''}
+      ${(d.module_sdk_versions||[]).length ? `<h3 style="margin-top:12px">On-disk modules</h3><div class="table-wrap"><table class="detail-table"><thead><tr><th>Module</th><th>Built for</th></tr></thead><tbody>${d.module_sdk_versions.map(m => `<tr><td style="font-family:monospace">${m.name}</td><td>${m.sdk_version}</td></tr>`).join('')}</tbody></table></div>` : ''}
+    </div>
     <div class="detail-section"><h3>Imports (${d.imports.length})</h3>
-      <div class="table-wrap"><table class="detail-table"><thead><tr><th>NID Hash</th><th>Resolved Name</th><th>Library</th></tr></thead><tbody>${importsHtml}</tbody></table></div></div>
+      <div class="table-wrap"><table class="detail-table"><thead><tr><th>NID Hash</th><th>Resolved Name</th><th>Library</th><th>Size</th><th>Bind</th><th>Type</th></tr></thead><tbody>${importsHtml}</tbody></table></div></div>
     ${d.unresolved_nids.length > 0 ? `<div class="detail-section"><h3>Unknown NIDs (${d.unresolved_nids.length})</h3><div class="table-wrap"><table class="detail-table"><thead><tr><th>NID Hash</th><th>Library</th></tr></thead><tbody>${unresolvedHtml}</tbody></table></div></div>` : ''}
   `);
 }
@@ -138,7 +142,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') $('#detailPa
 
 // --- GAMES ---
 (function() {
-  let allRows = D.games.map(g => [g.name, g.engine||'', g.engine_confidence, g.library_count, g.sce_library_count, g.unknown_nid_count, g.file_size_mb, g.title_name||'', g.platform, g.is_self]);
+  let allRows = D.games.map(g => [g.name, g.engine||'', g.engine_confidence, g.library_count, g.sce_library_count, g.unknown_nid_count, g.file_size_mb, g.sdk_version||'', g.title_name||'', g.platform, g.is_self]);
   let filteredRows = [...allRows];
 
   const platforms = [...new Set(D.games.map(g=>g.platform))].sort();
@@ -153,11 +157,11 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') $('#detailPa
     const fs = $('#filterSelf').value;
     const fu = $('#filterHasUnknown').value;
     filteredRows = allRows.filter(r => {
-      if (q && !r[0].toLowerCase().includes(q) && !r[7].toLowerCase().includes(q)) return false;
-      if (fp && r[8] !== fp) return false;
+      if (q && !r[0].toLowerCase().includes(q) && !r[8].toLowerCase().includes(q)) return false;
+      if (fp && r[9] !== fp) return false;
       if (fe && r[1] !== fe) return false;
-      if (fs === 'self' && !r[9]) return false;
-      if (fs === 'elf' && r[9]) return false;
+      if (fs === 'self' && !r[10]) return false;
+      if (fs === 'elf' && r[10]) return false;
       if (fu === 'yes' && r[5] === 0) return false;
       if (fu === 'no' && r[5] > 0) return false;
       return true;
@@ -174,13 +178,14 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') $('#detailPa
 
   function renderGames() {
     $('#gamesBody').innerHTML = filteredRows.map(r => `<tr class="clickable" data-game="${r[0]}">
-      <td title="${r[7]}">${trunc(r[7] || r[0],32)}</td>
+      <td title="${r[8]}">${trunc(r[8] || r[0],32)}</td>
       <td>${r[1]?`<span class="pill pill-eng">${r[1]}</span>`:'-'}</td>
       <td>${confPill(r[2])}</td>
       <td>${r[3]}</td>
       <td>${r[4]}</td>
       <td class="pct ${r[5]>0?'pct-low':'pct-high'}">${r[5]}</td>
       <td>${r[6].toFixed(1)}</td>
+      <td>${r[7]||'-'}</td>
     </tr>`).join('');
 
     $$('#gamesBody tr.clickable').forEach(tr => tr.addEventListener('click', () => {
@@ -859,8 +864,9 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') $('#detailPa
         <td>${x.product || '-'}</td>
         <td>${x.description || '-'}</td>
         <td>${fmt(x.imports)}</td>
+        <td>${x.sdk_version || '-'}</td>
       </tr>`).join('')
-      : '<tr><td colspan="5" style="text-align:center;color:#8b949e">No PRX modules detected.</td></tr>';
+      : '<tr><td colspan="6" style="text-align:center;color:#8b949e">No PRX modules detected.</td></tr>';
   }
 
   sel.addEventListener('change', () => renderGame(parseInt(sel.value || '0', 10)));

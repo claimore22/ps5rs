@@ -37,6 +37,8 @@ pub struct PrxModule {
     pub exports: Vec<ExportEntry>,
     pub versions: Vec<LibVersion>,
     #[serde(default)]
+    pub sdk_version: u32,
+    #[serde(default)]
     pub tls: Option<ps5_elf::TlsInfo>,
     #[serde(default)]
     pub init_va: u64,
@@ -78,6 +80,7 @@ impl PrxModule {
         let imports = extract_imports(elf, catalog);
         let exports = extract_exports(elf, catalog);
         let versions = extract_versions(elf);
+        let sdk_version = elf.sdk_version;
         Ok(Self {
             name: name.to_string(),
             module_type,
@@ -86,6 +89,7 @@ impl PrxModule {
             imports,
             exports,
             versions,
+            sdk_version,
             tls: elf.tls.clone(),
             init_va: elf.init_va,
             init_array_va: elf.init_array_va,

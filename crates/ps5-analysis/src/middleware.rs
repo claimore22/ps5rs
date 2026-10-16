@@ -28,6 +28,8 @@ pub struct MiddlewareModule {
     pub import_libs: Vec<String>,
     #[serde(default, skip_serializing_if = "Vec::is_empty")]
     pub needed_files: Vec<String>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub sdk_version: Option<String>,
 }
 
 #[derive(Debug, Clone, Serialize)]
@@ -257,6 +259,7 @@ fn analyze_module(path: &Path, catalog: &Catalog) -> MiddlewareModule {
     let mut import_libs = Vec::new();
     let mut needed_files = Vec::new();
     let mut module_sha256 = None;
+    let mut sdk_version = None;
 
     if let Ok(data) = std::fs::read(path) {
         let sha256 = ps5_format::sha256_hex(&data);
@@ -272,6 +275,7 @@ fn analyze_module(path: &Path, catalog: &Catalog) -> MiddlewareModule {
         import_libs = libs.into_iter().collect();
         needed_files = image.needed_files.iter().take(40).cloned().collect();
         module_sha256 = Some(sha256);
+        sdk_version = image.sdk_version.clone();
     }
 
     MiddlewareModule {
@@ -287,6 +291,7 @@ fn analyze_module(path: &Path, catalog: &Catalog) -> MiddlewareModule {
         exports,
         import_libs,
         needed_files,
+        sdk_version,
     }
 }
 
@@ -697,6 +702,7 @@ mod tests {
             exports: 1,
             import_libs: vec![],
             needed_files: vec![],
+            sdk_version: None,
         };
         GameMiddlewareReport {
             game: game.to_string(),

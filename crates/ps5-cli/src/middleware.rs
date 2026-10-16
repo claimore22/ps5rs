@@ -131,6 +131,7 @@ mod tests {
                     exports: 1091,
                     import_libs: vec!["libkernel".to_string()],
                     needed_files: vec![],
+                    sdk_version: Some("02.00".to_string()),
                 }],
                 sony: vec![MiddlewareModule {
                     file_name: "libSceFace.prx".to_string(),
@@ -145,6 +146,7 @@ mod tests {
                     exports: 30,
                     import_libs: vec![],
                     needed_files: vec![],
+                    sdk_version: None,
                 }],
                 unknown: vec![MiddlewareModule {
                     file_name: "mystery.prx".to_string(),
@@ -159,6 +161,7 @@ mod tests {
                     exports: 0,
                     import_libs: vec![],
                     needed_files: vec![],
+                    sdk_version: None,
                 }],
             }],
             total_prx: 3,

@@ -31,6 +31,7 @@ impl BinaryImageBuilder {
                 dynamic_entries: Vec::new(),
                 version_defs: Vec::new(),
                 lib_versions: Vec::new(),
+                sdk_version: None,
             },
         }
     }
@@ -192,6 +193,7 @@ impl BinaryImageBuilder {
             dynamic_entries,
             version_defs,
             lib_versions,
+            sdk_version: img.elf.sdk_version_string(),
         }
     }
 
@@ -233,7 +235,7 @@ impl BinaryImageBuilder {
     fn build_exports(elf: &ps5_elf::ElfImage, catalog: &ps5_nid::Catalog) -> Vec<ExportEntry> {
         elf.symbols
             .iter()
-            .filter(|s| !s.is_import && s.st_value != 0)
+            .filter(|s| s.is_export_candidate())
             .map(|sym| {
                 let resolved = if sym.resolved_name.contains('#') {
                     let nid = sym.resolved_name.split('#').next().unwrap_or("");
@@ -243,6 +245,13 @@ impl BinaryImageBuilder {
                 } else {
                     Some(sym.resolved_name.clone())
                 };
+                let lib_id = ps5_nid::lib_id_from_nid(&sym.resolved_name).unwrap_or(0);
+                let library_name = elf
+                    .export_libs
+                    .get(&lib_id)
+                    .cloned()
+                    .or_else(|| elf.soname.clone())
+                    .unwrap_or_else(|| "unknown".to_string());
                 ExportEntry {
                     nid_hash: if sym.resolved_name.contains('#') {
                         sym.resolved_name
@@ -254,6 +263,7 @@ impl BinaryImageBuilder {
                         String::new()
                     },
                     resolved_name: resolved,
+                    library_name,
                     vaddr: sym.st_value,
                     size: sym.st_size,
                 }

@@ -122,6 +122,8 @@ pub struct GameRow {
     pub sce_library_count: usize,
     pub unknown_nid_count: usize,
     pub file_size_mb: f64,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub sdk_version: Option<String>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -165,6 +167,12 @@ pub struct GameDetail {
     pub detected_versions: Vec<String>,
     #[serde(default, skip_serializing_if = "Vec::is_empty")]
     pub lib_versions: Vec<LibVersionEntry>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub export_summary: Vec<LibImportCount>,
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub module_sdk_versions: Vec<ModuleSdkVersion>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub sdk_version: Option<String>,
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub load_state: Option<String>,
     #[serde(default, skip_serializing_if = "Option::is_none")]
@@ -198,6 +206,20 @@ pub struct ImportDetail {
     pub nid_hash: String,
     pub resolved_name: Option<String>,
     pub library_name: String,
+    #[serde(default)]
+    pub size: u64,
+    #[serde(default = "default_symbol_binding")]
+    pub binding: ps5_image::SymbolBinding,
+    #[serde(default = "default_symbol_type")]
+    pub sym_type: ps5_image::SymbolType,
+}
+
+fn default_symbol_binding() -> ps5_image::SymbolBinding {
+    ps5_image::SymbolBinding::Global
+}
+
+fn default_symbol_type() -> ps5_image::SymbolType {
+    ps5_image::SymbolType::Func
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -210,6 +232,12 @@ pub struct UnresolvedNid {
 pub struct LibImportCount {
     pub library: String,
     pub count: usize,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct ModuleSdkVersion {
+    pub name: String,
+    pub sdk_version: String,
 }
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
@@ -513,6 +541,8 @@ pub struct MiddlewareModuleRow {
     pub description: Option<String>,
     pub imports: usize,
     pub parseable: bool,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub sdk_version: Option<String>,
 }
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
@@ -531,6 +561,41 @@ pub struct FirmwareSummary {
 
 impl DashboardData {
     pub fn inject_middleware(&mut self, report: &ps5_analysis::MiddlewareReport) {
+        for game in &report.games {
+            let mut modules: Vec<ModuleSdkVersion> = game
+                .third_party
+                .iter()
+                .chain(game.sony.iter())
+                .chain(game.unknown.iter())
+                .filter_map(|m| {
+                    m.sdk_version.clone().map(|sdk_version| ModuleSdkVersion {
+                        name: m.module_name.clone(),
+                        sdk_version,
+                    })
+                })
+                .collect();
+            if modules.is_empty() {
+                continue;
+            }
+            modules.sort_by(|a, b| a.name.cmp(&b.name));
+            let game_id = game
+                .title_id
+                .clone()
+                .unwrap_or_default()
+                .to_ascii_uppercase();
+            for detail in &mut self.game_details {
+                let detail_id = ps5_analysis::extract_title_id(&detail.name).unwrap_or_default();
+                let matches = if !game_id.is_empty() && !detail_id.is_empty() {
+                    detail_id == game_id
+                } else {
+                    detail.name == game.game
+                };
+                if matches {
+                    detail.module_sdk_versions = modules.clone();
+                    break;
+                }
+            }
+        }
         let mut module_counts: HashMap<(String, String), usize> = HashMap::new();
         let mut games_with_third_party = 0;
 
@@ -1103,6 +1168,7 @@ fn middleware_module_row(module: &ps5_analysis::MiddlewareModule) -> MiddlewareM
         description: module.description.clone(),
         imports: module.imports,
         parseable: module.parseable,
+        sdk_version: module.sdk_version.clone(),
     }
 }
 
@@ -1188,6 +1254,7 @@ fn compute_games(ds: &AnalysisDataset, engine_hints: &[DashboardEngineHint]) -> 
                 sce_library_count: hint.map(|h| h.sce_libraries.len()).unwrap_or(0),
                 unknown_nid_count,
                 file_size_mb: img.file_size as f64 / (1024.0 * 1024.0),
+                sdk_version: img.sdk_version.clone(),
             }
         })
         .collect()
@@ -1241,6 +1308,9 @@ fn compute_game_details(
                     nid_hash: imp.nid_hash.clone(),
                     resolved_name: imp.resolved_name.clone(),
                     library_name: imp.library_name.clone(),
+                    size: imp.size,
+                    binding: imp.binding,
+                    sym_type: imp.sym_type,
                 })
                 .collect();
 
@@ -1263,6 +1333,16 @@ fn compute_game_details(
                 .map(|(library, count)| LibImportCount { library, count })
                 .collect();
             import_summary.sort_by_key(|b| std::cmp::Reverse(b.count));
+
+            let mut export_counts: HashMap<String, usize> = HashMap::new();
+            for exp in &img.exports {
+                *export_counts.entry(exp.library_name.clone()).or_insert(0) += 1;
+            }
+            let mut export_summary: Vec<LibImportCount> = export_counts
+                .into_iter()
+                .map(|(library, count)| LibImportCount { library, count })
+                .collect();
+            export_summary.sort_by_key(|b| std::cmp::Reverse(b.count));
 
             let meta = &img.metadata;
             GameDetail {
@@ -1296,6 +1376,9 @@ fn compute_game_details(
                 sdk_hints,
                 detected_versions,
                 lib_versions: doc.image.lib_versions.clone(),
+                export_summary,
+                module_sdk_versions: Vec::new(),
+                sdk_version: doc.image.sdk_version.clone(),
                 load_state: None,
                 imports_resolved: None,
                 imports_known: None,
@@ -2124,6 +2207,7 @@ mod tests {
                 dynamic_entries: vec![],
                 version_defs: vec![],
                 lib_versions: vec![],
+                sdk_version: None,
             },
         }
     }
@@ -2479,6 +2563,14 @@ mod tests {
     }
 
     #[test]
+    fn title_id_match_for_middleware_join() {
+        assert_eq!(
+            ps5_analysis::extract_title_id("G1-_-PS5_[PPSA12345]"),
+            Some("PPSA12345".to_string())
+        );
+    }
+
+    #[test]
     fn inject_middleware_merges_report() {
         use ps5_analysis::{GameMiddlewareReport, MiddlewareModule, MiddlewareReport};
 
@@ -2496,6 +2588,7 @@ mod tests {
                 exports: 0,
                 import_libs: vec![],
                 needed_files: vec![],
+                sdk_version: None,
             }
         };
 
@@ -2636,6 +2729,173 @@ mod tests {
         assert!(json.contains(r#""third_party":[]"#), "{json}");
         assert!(json.contains(r#""sony":[]"#), "{json}");
         assert!(json.contains(r#""unknown":[]"#), "{json}");
+    }
+
+    fn make_detail_for_middleware_join(name: &str) -> GameDetail {
+        GameDetail {
+            name: name.to_string(),
+            title_name: None,
+            platform: "PS5".to_string(),
+            is_self: true,
+            file_size_mb: 1.0,
+            sha256: "aa".to_string(),
+            entry_point: "0x0".to_string(),
+            elf_type: 0xfe10,
+            osabi: 9,
+            abi_version: 2,
+            elf_version: 1,
+            build_id: None,
+            segments: vec![],
+            imports: vec![],
+            unresolved_nids: vec![],
+            import_summary: vec![],
+            relocations: 0,
+            has_tls: false,
+            engine: String::new(),
+            engine_score: 0,
+            engine_confidence: 0,
+            engine_evidence: vec![],
+            sce_libraries: vec![],
+            third_party_libs: vec![],
+            custom_forks: vec![],
+            build_system: None,
+            source_depot: None,
+            sdk_hints: vec![],
+            detected_versions: vec![],
+            lib_versions: vec![],
+            export_summary: vec![],
+            module_sdk_versions: vec![],
+            sdk_version: None,
+            load_state: None,
+            imports_resolved: None,
+            imports_known: None,
+            imports_stubbed: None,
+            loader_tls: None,
+            init_array_count: None,
+            fini_array_count: None,
+            unavailable_modules: vec![],
+        }
+    }
+
+    fn make_dashboard_with_details(details: Vec<GameDetail>) -> DashboardData {
+        DashboardData {
+            meta: DashboardMeta {
+                generated_at: "".into(),
+                game_count: 0,
+                tool_version: "test".into(),
+            },
+            overview: Overview {
+                total_games: 0,
+                elf_valid: 0,
+                total_imports: 0,
+                unique_nids: 0,
+                unique_libs: 0,
+                resolution_rate: 0.0,
+                avg_imports_per_game: 0.0,
+                total_artifacts: 0,
+                shader_files: 0,
+            },
+            games: vec![],
+            game_details: details,
+            heatmap: HeatmapData::default(),
+            nid_stats: NidStats {
+                top_nids: vec![],
+                top_unknown_nids: vec![],
+                resolved_count: 0,
+                unknown_count: 0,
+            },
+            segments: vec![],
+            library_priority: vec![],
+            library_details: vec![],
+            library_nid_breakdown: vec![],
+            statistics: None,
+            engine_hints: vec![],
+            engine_summary: vec![],
+            library_versions: vec![],
+            sce_library_stats: vec![],
+            sce_heatmap: HeatmapData::default(),
+            sce_library_versions: vec![],
+            loader_summary: None,
+            middleware: None,
+            upgrade_plan_complete: true,
+            shader_summary: ShaderSummary::default(),
+            firmware_summary: FirmwareSummary::default(),
+            artifacts: None,
+            firmware_checks: vec![],
+            shaders: vec![],
+            archived_games: vec![],
+        }
+    }
+
+    fn make_sdk_module(file: &str, sdk: Option<&str>) -> ps5_analysis::MiddlewareModule {
+        ps5_analysis::MiddlewareModule {
+            file_name: format!("{file}.prx"),
+            module_name: file.to_string(),
+            kind: ps5_analysis::ModuleKind::Sony,
+            sha256: None,
+            vendor: None,
+            product: None,
+            description: None,
+            parseable: true,
+            imports: 0,
+            exports: 0,
+            import_libs: vec![],
+            needed_files: vec![],
+            sdk_version: sdk.map(str::to_string),
+        }
+    }
+
+    #[test]
+    fn inject_middleware_attaches_module_sdk_by_title_id() {
+        use ps5_analysis::{GameMiddlewareReport, MiddlewareReport};
+        let mut data = make_dashboard_with_details(vec![make_detail_for_middleware_join(
+            "G1-_-PS5_[PPSA12345]",
+        )]);
+        let report = MiddlewareReport {
+            games: vec![GameMiddlewareReport {
+                game: "G1-PPSA12345-PS5".to_string(),
+                title_id: Some("PPSA12345".to_string()),
+                engine: None,
+                third_party: vec![],
+                sony: vec![make_sdk_module("libc", Some("02.00"))],
+                unknown: vec![],
+            }],
+            total_prx: 1,
+            third_party_modules: 0,
+            sony_modules: 1,
+            unknown_modules: 0,
+        };
+        data.inject_middleware(&report);
+        assert_eq!(data.game_details[0].module_sdk_versions.len(), 1);
+        assert_eq!(data.game_details[0].module_sdk_versions[0].name, "libc");
+        assert_eq!(
+            data.game_details[0].module_sdk_versions[0].sdk_version,
+            "02.00"
+        );
+    }
+
+    #[test]
+    fn inject_middleware_skips_modules_without_sdk() {
+        use ps5_analysis::{GameMiddlewareReport, MiddlewareReport};
+        let mut data = make_dashboard_with_details(vec![make_detail_for_middleware_join(
+            "G1-_-PS5_[PPSA12345]",
+        )]);
+        let report = MiddlewareReport {
+            games: vec![GameMiddlewareReport {
+                game: "G1-PPSA12345-PS5".to_string(),
+                title_id: Some("PPSA12345".to_string()),
+                engine: None,
+                third_party: vec![],
+                sony: vec![make_sdk_module("libc", None)],
+                unknown: vec![],
+            }],
+            total_prx: 1,
+            third_party_modules: 0,
+            sony_modules: 1,
+            unknown_modules: 0,
+        };
+        data.inject_middleware(&report);
+        assert!(data.game_details[0].module_sdk_versions.is_empty());
     }
 
     #[test]

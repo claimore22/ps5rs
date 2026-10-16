@@ -61,13 +61,18 @@ fn main() {
             include_modules,
             command,
         } => analyze::cmd_analyze(command, &nids, include_modules),
-        Commands::Extract { file, output } => extract::cmd_extract(&file, &output),
+        Commands::Extract {
+            file,
+            output,
+            anyps5_layout,
+        } => extract::cmd_extract(&file, &output, anyps5_layout),
         Commands::BatchExtract {
             path,
             output,
             nids,
             include_modules,
-        } => extract::cmd_batch_extract(&path, &output, &nids, include_modules),
+            anyps5_layout,
+        } => extract::cmd_batch_extract(&path, &output, &nids, include_modules, anyps5_layout),
         Commands::Validate { command } => match command {
             ValidateCommand::Binary { file, json, output } => {
                 validate::cmd_validate_binary(&file, json, &output)

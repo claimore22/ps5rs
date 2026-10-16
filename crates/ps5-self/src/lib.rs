@@ -85,12 +85,32 @@ pub struct SelfHeader {
 }
 
 #[derive(Debug, Clone)]
+pub struct SelfExtInfo {
+    pub authority_id: u64,
+    pub program_type: u64,
+    pub app_version: u64,
+    pub firmware_version: u64,
+    pub digest: [u8; 32],
+}
+
+impl SelfExtInfo {
+    pub fn digest_hex(&self) -> String {
+        let mut s = String::with_capacity(64);
+        for b in self.digest {
+            s.push_str(&format!("{b:02x}"));
+        }
+        s
+    }
+}
+
+#[derive(Debug, Clone)]
 pub struct SelfImage<'a> {
     pub data: &'a [u8],
     pub platform: SelfPlatform,
     pub self_header: SelfHeader,
     pub segments: Vec<SelfSegmentEntry>,
     pub elf: ps5_elf::ElfImage<'a>,
+    pub ext_info: Option<SelfExtInfo>,
 }
 
 impl<'a> SelfImage<'a> {
@@ -163,6 +183,7 @@ impl<'a> SelfImage<'a> {
             None
         };
         let elf = ps5_elf::ElfImage::parse(elf_slice, offsets_ref)?;
+        let ext_info = parse_ext_info(data, elf_base, &elf);
 
         Ok(Self {
             data,
@@ -170,6 +191,7 @@ impl<'a> SelfImage<'a> {
             self_header,
             segments,
             elf,
+            ext_info,
         })
     }
 
@@ -195,6 +217,7 @@ impl<'a> SelfImage<'a> {
             self_header: fake_header,
             segments: Vec::new(),
             elf,
+            ext_info: None,
         })
     }
 
@@ -202,7 +225,40 @@ impl<'a> SelfImage<'a> {
         self.platform == SelfPlatform::Ps4 || self.platform == SelfPlatform::Ps5
     }
 
+    /// SHA-256 of the extracted ELF compared against the stored extended-info
+    /// digest. A mismatch does not always mean damage: a container only
+    /// stores selected segments, so extraction cannot always reproduce the
+    /// exact bytes that were wrapped.
+    pub fn check_integrity(&self) -> Option<bool> {
+        let ext = self.ext_info.as_ref()?;
+        let extracted = crate::extract::extract_elf(self.data).ok()?;
+        Some(ps5_format::sha256_hex(&extracted.elf) == ext.digest_hex())
+    }
+
     pub fn data_segments(&self) -> Vec<&SelfSegmentEntry> {
         self.segments.iter().filter(|s| s.is_data()).collect()
     }
+}
+
+fn parse_ext_info(data: &[u8], elf_base: usize, elf: &ps5_elf::ElfImage) -> Option<SelfExtInfo> {
+    let elf_len = 64usize.checked_add(elf.header.phnum as usize * elf.header.phentsize as usize)?;
+    let ext_start = elf_base.checked_add(elf_len)?;
+    let ext_start = ext_start.checked_next_multiple_of(0x10)?;
+    let ext_end = ext_start.checked_add(0x40)?;
+    if ext_end > data.len() {
+        return None;
+    }
+    let header_size = read_u16(data, 12) as usize;
+    if ext_end > header_size {
+        return None;
+    }
+    let mut digest = [0u8; 32];
+    digest.copy_from_slice(&data[ext_start + 0x20..ext_start + 0x40]);
+    Some(SelfExtInfo {
+        authority_id: read_u64(data, ext_start),
+        program_type: read_u64(data, ext_start + 8),
+        app_version: read_u64(data, ext_start + 16),
+        firmware_version: read_u64(data, ext_start + 24),
+        digest,
+    })
 }

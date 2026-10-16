@@ -300,3 +300,53 @@ fn segment_parse_truncated() {
     let seg_bytes = vec![0u8; 10];
     assert!(SelfSegmentEntry::parse(&seg_bytes, 0).is_err());
 }
+
+// === Extended info ===
+
+#[test]
+fn parse_ext_info() {
+    let load_data = vec![0xCC; 0x100];
+    let elf_headers = build_elf_bytes(
+        0x1000,
+        &[(PT_LOAD, PF_R | PF_X, 0x1000, 0x1000, 0x100, 0x100)],
+        &[],
+    );
+    let elf_headers = &elf_headers[..64 + 56];
+    let elf_base = 64usize;
+    let ext_start = (elf_base + elf_headers.len()).next_multiple_of(0x10);
+    let data_off = 0x1000usize;
+
+    let mut file = vec![0u8; elf_base + data_off + load_data.len()];
+    let file_len = file.len() as u64;
+    file[0..4].copy_from_slice(&SELF_MAGIC_PS5.to_be_bytes());
+    file[4] = 0;
+    file[5] = 1;
+    file[6] = 1;
+    file[7] = 0;
+    wu32_at(&mut file, 8, 0x101);
+    wu16_at(&mut file, 12, (ext_start + 0x40) as u16);
+    wu16_at(&mut file, 14, 0);
+    wu64_at(&mut file, 16, file_len);
+    wu16_at(&mut file, 24, 1);
+    wu16_at(&mut file, 26, 0);
+    wu32_at(&mut file, 28, 0);
+    wu64_at(&mut file, 32, 0u64 << 20 | SELF_SEGMENT_FLAG_DATA);
+    wu64_at(&mut file, 40, (elf_base + data_off) as u64);
+    wu64_at(&mut file, 48, 0x100);
+    wu64_at(&mut file, 56, 0x100);
+    file[elf_base..elf_base + elf_headers.len()].copy_from_slice(elf_headers);
+    wu64_at(&mut file, ext_start, 0x3100000000000002);
+    wu64_at(&mut file, ext_start + 8, 1);
+    wu64_at(&mut file, ext_start + 16, 0);
+    wu64_at(&mut file, ext_start + 24, 0);
+    file[ext_start + 0x20..ext_start + 0x40].fill(0xAB);
+    file[elf_base + data_off..elf_base + data_off + load_data.len()].copy_from_slice(&load_data);
+
+    let img = SelfImage::parse(&file).unwrap();
+    assert!(img.is_self());
+    let ext = img.ext_info.as_ref().expect("extended info");
+    assert_eq!(ext.authority_id, 0x3100000000000002);
+    assert_eq!(ext.program_type, 1);
+    assert_eq!(ext.digest_hex(), "ab".repeat(32),);
+    assert_eq!(img.check_integrity(), Some(false));
+}
