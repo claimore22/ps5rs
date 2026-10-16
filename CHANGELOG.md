@@ -27,9 +27,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - **`tools/Build-Dashboard.ps1`**: scan-to-dashboard pipeline
   (`scan --include-modules` → `dashboard --games`)
 - **Audit reports**: `docs/fprx-nids-audit.md`, `docs/fsce-nids-audit.md`
-- **`fmod_fapi_scan.py` / `fmod_strings_match.py`**: Python scripts to scan
-  FMOD SDK headers and binaries for `F_API` declarations and ASCII strings,
-  hashing them with the verified PS5 NID algorithm
 
 ### Changed
 - **Workspace version bumped to 0.7.0**
