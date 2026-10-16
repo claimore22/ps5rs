@@ -65,3 +65,9 @@ analysis_with_modules/images/*.json
 /backup.7z
 /analysis_with_modules.7z
 /analysis/*.zip
+
+# fprx/fsce-nids reports and datasets (regenerable, large)
+# never commit: fprx-full.csv alone is ~1GB
+/analysis/dataset/
+/analysis/fprx-*.csv
+/analysis/fsce-*.csv

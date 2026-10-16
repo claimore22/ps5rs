@@ -120,6 +120,26 @@ pub enum Commands {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
+    /// Compare export surfaces of two modules (added, removed, moved)
+    Diff {
+        a: PathBuf,
+        b: PathBuf,
+        #[arg(long)]
+        json: bool,
+        #[arg(short, long, value_hint = ValueHint::FilePath)]
+        output: Option<PathBuf>,
+    },
+    /// Dump a module's export identifiers and addresses as JSON or text
+    Offsets {
+        file: PathBuf,
+        /// Firmware label recorded in the report
+        #[arg(long)]
+        firmware: Option<String>,
+        #[arg(long)]
+        text: bool,
+        #[arg(short, long, value_hint = ValueHint::FilePath)]
+        output: Option<PathBuf>,
+    },
     /// Load a PS5 binary into the virtual memory model for inspection
     Load {
         file: PathBuf,
@@ -254,6 +274,50 @@ pub enum Commands {
         /// Mark a title's sources as deleted (only if its ingest is complete)
         #[arg(long = "mark-deleted")]
         mark_deleted: Option<String>,
+    },
+    /// Scan a folder tree for .prx/.sprx files and correlate NID strings with ASCII strings
+    FprxNids {
+        /// Folder searched recursively for .prx / .sprx files
+        #[arg(value_hint = ValueHint::DirPath)]
+        path: PathBuf,
+        /// Primary CSV report path (default: <path>/fprx-nids.csv)
+        #[arg(short, long, value_hint = ValueHint::FilePath)]
+        output: Option<PathBuf>,
+        /// Byte-distance threshold for nearby candidates
+        #[arg(long = "nearby-bytes", default_value_t = 4096)]
+        nearby_bytes: u64,
+        /// Minimum printable ASCII run length kept in the string inventory
+        #[arg(long = "min-string-length", default_value_t = 4)]
+        min_string_length: usize,
+        /// Maximum nearby candidates emitted per NID (nearest first)
+        #[arg(long = "max-candidates-per-nid", default_value_t = 25)]
+        max_candidates_per_nid: usize,
+        /// Extra NID catalog files for known-mapping resolution
+        #[arg(long = "nids", value_hint = ValueHint::FilePath)]
+        nids: Vec<PathBuf>,
+        /// Also write the full ASCII string inventory to this CSV
+        #[arg(long = "strings-output", value_hint = ValueHint::FilePath)]
+        strings_output: Option<PathBuf>,
+        /// Only emit NIDs missing from the catalog (built-in data/nids.csv
+        /// plus any --nids extras)
+        #[arg(long = "unknown-only")]
+        unknown_only: bool,
+        /// Also scan eboot.bin files (in addition to .prx/.sprx)
+        #[arg(long = "include-eboot")]
+        include_eboot: bool,
+    },
+    /// Scan .prx/.sprx files for sce-prefixed symbols and compute their NIDs
+    FsceNids {
+        /// Folder searched recursively for .prx / .sprx files
+        #[arg(value_hint = ValueHint::DirPath)]
+        path: PathBuf,
+        /// Consolidated CSV report path (default: <path>/fsce-nids.csv,
+        /// never a file named nids.csv)
+        #[arg(short, long, value_hint = ValueHint::FilePath)]
+        output: Option<PathBuf>,
+        /// Also scan eboot.bin files (in addition to .prx/.sprx)
+        #[arg(long = "include-eboot")]
+        include_eboot: bool,
     },
 }
 

@@ -6,9 +6,12 @@ mod catalog;
 mod cli;
 mod dataset;
 mod deps;
+mod diff;
 mod export_scan;
 mod extract;
 mod firmware;
+mod fprx_nids;
+mod fsce_nids;
 mod ingest;
 mod inspect;
 mod inventory;
@@ -91,6 +94,13 @@ fn main() {
             search,
             output,
         } => inspect::cmd_exports(&file, json, &search, &output),
+        Commands::Diff { a, b, json, output } => diff::cmd_diff(&a, &b, json, &output),
+        Commands::Offsets {
+            file,
+            firmware,
+            text,
+            output,
+        } => diff::cmd_offsets(&file, &firmware, text, &output),
         Commands::Load {
             file,
             prx_dir,
@@ -176,6 +186,32 @@ fn main() {
             format,
             output,
         } => sdk::cmd_sdk(&path, format, &output),
+        Commands::FprxNids {
+            path,
+            output,
+            nearby_bytes,
+            min_string_length,
+            max_candidates_per_nid,
+            nids,
+            strings_output,
+            unknown_only,
+            include_eboot,
+        } => fprx_nids::cmd_fprx_nids(
+            &path,
+            &output,
+            nearby_bytes,
+            min_string_length,
+            max_candidates_per_nid,
+            &nids,
+            &strings_output,
+            unknown_only,
+            include_eboot,
+        ),
+        Commands::FsceNids {
+            path,
+            output,
+            include_eboot,
+        } => fsce_nids::cmd_fsce_nids(&path, &output, include_eboot),
         Commands::Archive {
             game,
             dataset,
