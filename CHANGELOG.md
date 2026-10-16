@@ -6,6 +6,31 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.7.0] - 2026-10-16
+
+### Added
+- **`fprx-nids` NID/ASCII correlation command**: recursive `.prx`/`.sprx`
+  scan for strict 15-byte NID strings, printable-ASCII inventory with
+  heuristic categories (`cpp_method`, `sce_kernel_api_candidate`,
+  `fmod_api_candidate`, …), and windowed correlation rows
+  (`nearby/same-file/unmatched/known_mapping`) with byte offsets;
+  `--unknown-only` keeps just catalog-missing NIDs, `--include-eboot`
+  adds `eboot.bin`, plus `--nearby-bytes`, `--min-string-length`,
+  `--max-candidates-per-nid`, `--strings-output`
+- **`fsce-nids` SCE symbol discovery**: `[sS]ce`-prefixed token scan with
+  glue-boundary rules, NIDs via the verified `ps5-nid` algorithm
+  (AnyPS5 `NidCompute` cross-checked), one row per occurrence with no
+  dedup, explicit refusal to write any `nids.csv` path
+- **573 verified FMOD mappings** (`analysis/fmod-nids.csv`, `data/nids.csv`
+  schema): 191 Studio + 382 Core SDK functions hashed 1:1 against
+  `libfmodstudio.prx`/`libfmod.prx` exports across two game builds
+- **`tools/Build-Dashboard.ps1`**: scan-to-dashboard pipeline
+  (`scan --include-modules` → `dashboard --games`)
+- **Audit reports**: `docs/fprx-nids-audit.md`, `docs/fsce-nids-audit.md`
+
+### Changed
+- **Workspace version bumped to 0.7.0**
+
 ## [0.6.6] - 2026-10-09
 
 ### Changed
