@@ -71,3 +71,7 @@ analysis_with_modules/images/*.json
 /analysis/dataset/
 /analysis/fprx-*.csv
 /analysis/fsce-*.csv
+
+# Local analysis scripts (regenerable, not part of the workspace)
+/tools/fmod_fapi_scan.py
+/tools/fmod_strings_match.py
