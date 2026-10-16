@@ -30,9 +30,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - **`fmod_fapi_scan.py` / `fmod_strings_match.py`**: Python scripts to scan
   FMOD SDK headers and binaries for `F_API` declarations and ASCII strings,
   hashing them with the verified PS5 NID algorithm
-- **`--anyps5-layout`** on `extract` and `batch-extract`: produce AnyPS5
-  relinker-ready `source/` (SELF-unwrapped ELFs) and `app0/` (faithful copy)
-  directory trees per game
 
 ### Changed
 - **Workspace version bumped to 0.7.0**
