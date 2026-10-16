@@ -78,7 +78,7 @@ pub fn validate_dataset(ds: &AnalysisDataset, extracted_dir: Option<&Path>) -> V
                     s.seg_type,
                     ps5_image::SegmentType::SCE_Dynlibdata
                         | ps5_image::SegmentType::SCE_Procparam
-                        | ps5_image::SegmentType::SCE_Comment
+                        | ps5_image::SegmentType::SCE_Moduleparam
                         | ps5_image::SegmentType::SCE_Libversion
                         | ps5_image::SegmentType::SCE_Relro
                         | ps5_image::SegmentType::SCE_Rela
@@ -235,6 +235,7 @@ mod tests {
             dynamic_entries: vec![],
             version_defs: vec![],
             lib_versions,
+            sdk_version: None,
         };
 
         let doc = BinaryImageDocument {

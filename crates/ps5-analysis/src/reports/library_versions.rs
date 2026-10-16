@@ -97,6 +97,7 @@ mod tests {
             dynamic_entries: vec![],
             version_defs: vec![],
             lib_versions,
+            sdk_version: None,
         };
         (
             name.to_string(),

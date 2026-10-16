@@ -17,6 +17,7 @@ pub fn render() -> &'static str {
 <th data-col="4">SCE Libs <span class="arrow">&#9650;</span></th>
 <th data-col="5">Unknown NIDs <span class="arrow">&#9650;</span></th>
 <th data-col="6">Size MB <span class="arrow">&#9650;</span></th>
+<th data-col="7">SDK <span class="arrow">&#9650;</span></th>
 </tr></thead>
 <tbody id="gamesBody"></tbody>
 </table></div>"##

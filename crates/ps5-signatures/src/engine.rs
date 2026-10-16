@@ -12,7 +12,7 @@ impl EngineFingerprint {
 
         for &(pattern, weight) in self.patterns {
             for s in strings {
-                if s.contains(pattern) {
+                if clean_match(s, pattern) {
                     evidence.push(s.clone());
                     total += weight as u32;
                     break;
@@ -28,6 +28,30 @@ impl EngineFingerprint {
 
         (total, confidence, evidence)
     }
+}
+
+/// Patterns that must not continue into a longer identifier, so a common
+/// word like `DecimalValue` never counts as the `Decima` engine.
+const BOUNDED_PATTERNS: &[&str] = &["Decima"];
+
+/// Filename markers that identify an engine on their own, checked before
+/// scoring so no other engine's score or tie-break can override them.
+const DECISIVE_PATTERNS: &[(&str, &str)] = &[("ue4commandline.txt", "Unreal Engine 4")];
+
+fn clean_match(haystack: &str, pattern: &str) -> bool {
+    if !BOUNDED_PATTERNS.contains(&pattern) {
+        return haystack.contains(pattern);
+    }
+    haystack
+        .match_indices(pattern)
+        .any(|(pos, _)| !continues_into_identifier(haystack, pos + pattern.len()))
+}
+
+fn continues_into_identifier(s: &str, end: usize) -> bool {
+    s[end..]
+        .chars()
+        .next()
+        .is_some_and(|c| c.is_ascii_alphanumeric() || c == '_')
 }
 
 pub const UNREAL4: EngineFingerprint = EngineFingerprint {
@@ -170,6 +194,10 @@ pub const ALL: &[EngineFingerprint] = &[
 ];
 
 pub fn detect_engine(strings: &[String]) -> Option<Detection> {
+    if let Some(hit) = decisive_hit(strings) {
+        return Some(hit);
+    }
+
     let mut best: Option<Detection> = None;
 
     for fp in ALL {
@@ -209,6 +237,27 @@ pub fn detect_engine(strings: &[String]) -> Option<Detection> {
     }
 
     best
+}
+
+fn decisive_hit(strings: &[String]) -> Option<Detection> {
+    for &(marker, engine) in DECISIVE_PATTERNS {
+        let mut evidence = Vec::new();
+        for s in strings {
+            if s.to_lowercase().contains(marker) {
+                evidence.push(s.clone());
+            }
+        }
+        if !evidence.is_empty() {
+            evidence.truncate(10);
+            return Some(Detection {
+                value: engine.to_string(),
+                score: 100,
+                confidence: 100,
+                evidence,
+            });
+        }
+    }
+    None
 }
 
 pub fn detect_custom_forks(strings: &[String]) -> Vec<Detection> {
@@ -365,6 +414,70 @@ mod tests {
     fn detect_custom_forks_empty() {
         let strings = vec!["hello world".to_string()];
         assert!(detect_custom_forks(&strings).is_empty());
+    }
+
+    #[test]
+    fn decima_ignores_decimal_value() {
+        let strings = vec!["DecimalValue".to_string(), "GetDecimalType".to_string()];
+        let (score, confidence, evidence) = DECIMA.score(&strings);
+        assert_eq!(confidence, 0);
+        assert_eq!(score, 0);
+        assert!(evidence.is_empty());
+        assert!(detect_engine(&strings).is_none());
+    }
+
+    #[test]
+    fn decima_ignores_longer_identifiers() {
+        for s in ["DecimateMesh", "Decimeter", "myDecimal"] {
+            let strings = vec![s.to_string()];
+            let (_, confidence, _) = DECIMA.score(&strings);
+            assert_eq!(confidence, 0, "{s} must not count as Decima");
+        }
+    }
+
+    #[test]
+    fn decima_still_matches_standalone() {
+        for s in ["Decima", "Decima Engine", "Engine:Decima;v2", "xDecima"] {
+            let strings = vec![s.to_string()];
+            let (_, confidence, evidence) = DECIMA.score(&strings);
+            assert_eq!(confidence, 100, "{s} must still count as Decima");
+            assert_eq!(evidence.len(), 1);
+        }
+        let det = detect_engine(&["Decima".to_string()]).expect("should detect Decima");
+        assert_eq!(det.value, "Decima");
+    }
+
+    #[test]
+    fn decima_recovers_after_decimal_noise() {
+        let strings = vec!["DecimalValue".to_string(), "Decima".to_string()];
+        let det = detect_engine(&strings).expect("should detect Decima");
+        assert_eq!(det.value, "Decima");
+        assert_eq!(det.evidence, vec!["Decima".to_string()]);
+    }
+
+    #[test]
+    fn ue4commandline_forces_ue4_despite_tie() {
+        let strings = vec!["UE4CommandLine.txt".to_string(), "Godot Engine".to_string()];
+        let det = detect_engine(&strings).expect("should detect an engine");
+        assert_eq!(det.value, "Unreal Engine 4");
+        assert_eq!(det.confidence, 100);
+    }
+
+    #[test]
+    fn ue4commandline_matches_case_insensitively() {
+        let strings = vec!["ue4commandline.txt".to_string()];
+        let det = detect_engine(&strings).expect("should detect UE4");
+        assert_eq!(det.value, "Unreal Engine 4");
+    }
+
+    #[test]
+    fn ue4commandline_beats_later_engine() {
+        let strings = vec![
+            "UnrealEngine5Runtime".to_string(),
+            "Game/UE4CommandLine.txt".to_string(),
+        ];
+        let det = detect_engine(&strings).expect("should detect an engine");
+        assert_eq!(det.value, "Unreal Engine 4");
     }
 
     #[test]

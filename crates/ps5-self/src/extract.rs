@@ -1,6 +1,7 @@
 use crate::SelfImage;
 use ps5_format::elf_constants::*;
 use ps5_format::error::{ParseError, Result};
+use std::io::Read;
 
 pub struct ExtractResult {
     pub elf: Vec<u8>,
@@ -37,14 +38,30 @@ pub fn extract_elf(data: &[u8]) -> Result<ExtractResult> {
 
     let phdr_count = img.elf.program_headers.len();
 
-    let mut phdr_file_offsets = vec![0u64; phdr_count];
+    #[derive(Clone, Copy)]
+    struct MappedSeg {
+        src: u64,
+        size: u64,
+        compressed: bool,
+    }
+    let mut seg_map: Vec<Option<MappedSeg>> = vec![None; phdr_count];
     for seg in &img.segments {
         if !seg.is_data() {
             continue;
         }
+        if seg.is_encrypted() && seg.file_size > 0 {
+            return Err(ParseError::Custom(
+                "container stores encrypted segment data; a signed retail module cannot be read without its key"
+                    .into(),
+            ));
+        }
         let idx = seg.phdr_index() as usize;
         if idx < phdr_count {
-            phdr_file_offsets[idx] = seg.file_offset.saturating_sub(elf_base as u64);
+            seg_map[idx] = Some(MappedSeg {
+                src: seg.file_offset.saturating_sub(elf_base as u64),
+                size: seg.file_size,
+                compressed: seg.is_compressed(),
+            });
         }
     }
 
@@ -67,13 +84,6 @@ pub fn extract_elf(data: &[u8]) -> Result<ExtractResult> {
     let copy_len = 64.min(elf_slice.len());
     output[0..copy_len].copy_from_slice(&elf_slice[..copy_len]);
 
-    // Patch: zero out section header table references. The SELF-embedded ELF's
-    // e_shoff/e_shnum/e_shstrndx point to a section header table that does not
-    // exist in the SELF file, so the extracted standalone ELF has no sections.
-    output[40..48].copy_from_slice(&0u64.to_le_bytes());
-    output[60..62].copy_from_slice(&0u16.to_le_bytes());
-    output[62..64].copy_from_slice(&0u16.to_le_bytes());
-
     let phoff = img.elf.header.e_phoff as usize;
     let phdr_table_size = phdr_count * img.elf.header.phentsize as usize;
     if phoff + phdr_table_size <= elf_slice.len() && phoff + phdr_table_size <= output.len() {
@@ -82,22 +92,66 @@ pub fn extract_elf(data: &[u8]) -> Result<ExtractResult> {
     }
 
     for (i, ph) in img.elf.program_headers.iter().enumerate() {
-        // Only copy PT_LOAD segments. Non-LOAD segments (DYNAMIC, TLS, NOTE,
-        // GNU_RELRO, GNU_EH_FRAME, SCE_*) describe regions that live within
-        // LOAD segments and must not be independently copied from SELF segment
-        // tables. Without this guard, phdr_file_offsets[i]==0 for non-LOAD
-        // segments caused ELF header bytes to overwrite correct data.
-        if ph.p_type != PT_LOAD || ph.p_filesz == 0 {
+        if ph.p_filesz == 0 {
             continue;
         }
-
-        let src_offset = phdr_file_offsets[i] as usize;
-        let dst_offset = ph.p_offset as usize;
+        let Some(mapped) = &seg_map[i] else {
+            continue;
+        };
+        let dst = ph.p_offset as usize;
         let size = ph.p_filesz as usize;
+        if dst.checked_add(size).is_none_or(|end| end > output.len()) {
+            continue;
+        }
+        if mapped.compressed {
+            let src = mapped.src as usize;
+            let stored_len = mapped.size as usize;
+            let Some(stored_end) = src.checked_add(stored_len) else {
+                continue;
+            };
+            if stored_end > elf_slice.len() {
+                return Err(ParseError::Custom(
+                    "compressed container segment overruns the file".into(),
+                ));
+            }
+            let payload = inflate_segment(&elf_slice[src..stored_end], size)?;
+            output[dst..dst + size].copy_from_slice(&payload);
+        } else {
+            let src = mapped.src as usize;
+            if src
+                .checked_add(size)
+                .is_some_and(|end| end <= elf_slice.len())
+            {
+                output[dst..dst + size].copy_from_slice(&elf_slice[src..src + size]);
+            }
+        }
+    }
 
-        if src_offset + size <= elf_slice.len() && dst_offset + size <= output.len() {
-            output[dst_offset..dst_offset + size]
-                .copy_from_slice(&elf_slice[src_offset..src_offset + size]);
+    // Version records live past the last stored segment rather than in a
+    // segment of their own; put them back where the program header places
+    // them so the rebuilt module keeps its full tail.
+    for ph in &img.elf.program_headers {
+        if ph.p_type != PT_SCE_VERSION || ph.p_filesz == 0 {
+            continue;
+        }
+        let tail_src = img
+            .segments
+            .iter()
+            .map(|s| s.file_offset.saturating_add(s.file_size))
+            .max()
+            .unwrap_or(0);
+        if tail_src == 0 {
+            continue;
+        }
+        let len = ph.p_filesz as usize;
+        let dst = ph.p_offset as usize;
+        if (tail_src as usize)
+            .checked_add(len)
+            .is_some_and(|end| end <= data.len())
+            && dst.checked_add(len).is_some_and(|end| end <= output.len())
+        {
+            output[dst..dst + len]
+                .copy_from_slice(&data[tail_src as usize..tail_src as usize + len]);
         }
     }
 
@@ -110,6 +164,29 @@ pub fn extract_elf(data: &[u8]) -> Result<ExtractResult> {
         encrypted_segments,
         compressed_segments,
     })
+}
+
+fn inflate_segment(stored: &[u8], expected: usize) -> Result<Vec<u8>> {
+    if expected == 0 {
+        return Ok(Vec::new());
+    }
+    for wrapped in [true, false] {
+        let mut decoder: Box<dyn std::io::Read> = if wrapped {
+            Box::new(flate2::read::ZlibDecoder::new(stored))
+        } else {
+            Box::new(flate2::read::DeflateDecoder::new(stored))
+        };
+        let mut out = vec![0u8; expected];
+        if decoder.read_exact(&mut out).is_ok() {
+            let mut extra = [0u8; 1];
+            if decoder.read(&mut extra).unwrap_or(1) == 0 {
+                return Ok(out);
+            }
+        }
+    }
+    Err(ParseError::Custom(
+        "compressed container segment did not inflate to its recorded size".into(),
+    ))
 }
 
 #[cfg(test)]
@@ -306,7 +383,7 @@ mod tests {
     }
 
     #[test]
-    fn self_encrypted_segment_counted() {
+    fn self_encrypted_segment_refused() {
         let load_data = vec![0xAA; 0x100];
         let dynamic = build_dynamic_entries(&[(DT_STRTAB, 0x1200), (DT_STRSZ, 0x10)]);
         let mut elf_payload = Vec::new();
@@ -330,11 +407,8 @@ mod tests {
         )];
 
         let self_data = build_self(SELF_MAGIC_PS5, &segments, &elf);
-        let result = extract_elf(&self_data).unwrap();
-
-        assert!(result.was_self);
-        assert_eq!(result.encrypted_segments, 1);
-        assert_eq!(result.compressed_segments, 0);
+        let result = extract_elf(&self_data);
+        assert!(result.is_err());
     }
 
     #[test]
@@ -495,5 +569,93 @@ mod tests {
         let needed = parsed.dynamic_entries.iter().find(|e| e.d_tag == DT_NEEDED);
         assert!(needed.is_some());
         assert_eq!(needed.unwrap().d_val, 1);
+    }
+
+    #[test]
+    fn self_non_load_mapped_segment_copied() {
+        let note_data = vec![0x5A; 0x40];
+        let elf = build_elf(
+            0x1000,
+            &[
+                (PT_LOAD, PF_R | PF_X, 0x1000, 0x1000, 0x40, 0x40),
+                (PT_NOTE, PF_R, 0x1040, 0x1040, 0x40, 0x40),
+            ],
+            &[vec![0xCC; 0x40], note_data.clone()].concat(),
+        );
+
+        let elf_base: u64 = (32 + 2 * 32) as u64;
+        let segments = vec![
+            (
+                0u64 << 20 | SELF_SEGMENT_FLAG_DATA,
+                elf_base + 0x1000,
+                0x40,
+                0x40,
+            ),
+            (
+                1u64 << 20 | SELF_SEGMENT_FLAG_DATA,
+                elf_base + 0x1040,
+                0x40,
+                0x40,
+            ),
+        ];
+
+        let self_data = build_self(SELF_MAGIC_PS5, &segments, &elf);
+        let result = extract_elf(&self_data).unwrap();
+        assert!(result.was_self);
+        assert_eq!(&result.elf[0x1040..0x1080], note_data.as_slice());
+    }
+
+    #[test]
+    fn self_compressed_segment_inflated() {
+        use flate2::Compression;
+        use flate2::write::ZlibEncoder;
+        use std::io::Write;
+        let plain = vec![0xAB; 0x200];
+        let mut encoder = ZlibEncoder::new(Vec::new(), Compression::default());
+        encoder.write_all(&plain).unwrap();
+        let compressed = encoder.finish().unwrap();
+
+        let mut load_data = vec![0u8; 0x1000];
+        load_data[0..compressed.len()].copy_from_slice(&compressed);
+        let elf = build_elf(
+            0x1000,
+            &[(PT_LOAD, PF_R | PF_X, 0x1000, 0x1000, 0x200, 0x200)],
+            &load_data,
+        );
+
+        let elf_base: u64 = (32 + 1 * 32) as u64;
+        let segments = vec![(
+            0u64 << 20 | SELF_SEGMENT_FLAG_DATA | SELF_SEGMENT_FLAG_COMPRESSED,
+            elf_base + 0x1000,
+            compressed.len() as u64,
+            0x200,
+        )];
+
+        let self_data = build_self(SELF_MAGIC_PS5, &segments, &elf);
+        let result = extract_elf(&self_data).unwrap();
+        assert!(result.was_self);
+        assert_eq!(result.compressed_segments, 1);
+        assert_eq!(&result.elf[0x1000..0x1200], plain.as_slice());
+    }
+
+    #[test]
+    fn self_header_fields_preserved() {
+        let elf = build_elf(
+            0x1000,
+            &[(PT_LOAD, PF_R | PF_X, 0x1000, 0x1000, 0x100, 0x100)],
+            &vec![0xAA; 0x100],
+        );
+
+        let elf_base: u64 = (32 + 1 * 32) as u64;
+        let segments = vec![(
+            0u64 << 20 | SELF_SEGMENT_FLAG_DATA,
+            elf_base + 0x1000,
+            0x100,
+            0x100,
+        )];
+
+        let self_data = build_self(SELF_MAGIC_PS5, &segments, &elf);
+        let result = extract_elf(&self_data).unwrap();
+        assert_eq!(&result.elf[0..64], &elf[0..64]);
     }
 }

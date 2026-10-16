@@ -207,7 +207,10 @@ pub enum SegmentType {
     GNU_Relro,
     SCE_Dynlibdata,
     SCE_Procparam,
-    SCE_Comment,
+    #[serde(alias = "sce_comment")]
+    SCE_Moduleparam,
+    SCE_TextComment,
+    SCE_VersionInfo,
     SCE_Libversion,
     SCE_Relro,
     SCE_Rela,
@@ -231,8 +234,10 @@ impl SegmentType {
             0x6474e552 => Self::GNU_Relro,
             0x61000000 => Self::SCE_Dynlibdata,
             0x61000001 => Self::SCE_Procparam,
-            0x61000002 => Self::SCE_Comment,
+            0x61000002 => Self::SCE_Moduleparam,
             0x61000003 => Self::SCE_Libversion,
+            0x6FFFFF00 => Self::SCE_TextComment,
+            0x6FFFFF01 => Self::SCE_VersionInfo,
             0x61000010 => Self::SCE_Relro,
             0x60000000 => Self::SCE_Rela,
             other => Self::Other(other),
@@ -252,8 +257,10 @@ impl SegmentType {
             Self::GNU_Relro => 0x6474e552,
             Self::SCE_Dynlibdata => 0x61000000,
             Self::SCE_Procparam => 0x61000001,
-            Self::SCE_Comment => 0x61000002,
+            Self::SCE_Moduleparam => 0x61000002,
             Self::SCE_Libversion => 0x61000003,
+            Self::SCE_TextComment => 0x6FFFFF00,
+            Self::SCE_VersionInfo => 0x6FFFFF01,
             Self::SCE_Relro => 0x61000010,
             Self::SCE_Rela => 0x60000000,
             Self::Other(v) => v,
@@ -582,14 +589,21 @@ impl DynamicEntry {
             1 => Some("DT_NEEDED"),
             2 => Some("DT_PLTRELSZ"),
             3 => Some("DT_PLTGOT"),
+            4 => Some("DT_HASH"),
             5 => Some("DT_STRTAB"),
             6 => Some("DT_SYMTAB"),
             7 => Some("DT_RELA"),
             8 => Some("DT_RELASZ"),
+            9 => Some("DT_RELAENT"),
             0xa => Some("DT_STRSZ"),
             0xb => Some("DT_SYMENT"),
             0xc => Some("DT_INIT"),
             0xd => Some("DT_FINI"),
+            0xe => Some("DT_SONAME"),
+            0x11 => Some("DT_REL"),
+            0x12 => Some("DT_RELSZ"),
+            0x13 => Some("DT_RELENT"),
+            0x14 => Some("DT_PLTREL"),
             0x17 => Some("DT_JMPREL"),
             0x19 => Some("DT_INIT_ARRAY"),
             0x1a => Some("DT_FINI_ARRAY"),
@@ -607,6 +621,10 @@ impl DynamicEntry {
             0x6100003f => Some("DT_SCE_SYMTABSZ"),
             0x61000045 => Some("DT_SCE_NEEDED_MOD"),
             0x61000049 => Some("DT_SCE_NEEDED_LIB"),
+            0x61000047 => Some("DT_SCE_EXPORT_LIB"),
+            0x61000013 => Some("DT_SCE_EXPORT_LIB"),
+            0x61000043 => Some("DT_SCE_MODULE_INFO"),
+            0x6ffffff9 => Some("DT_RELACOUNT"),
             0x6fffffff0 => Some("DT_VERSYM"),
             0x6fffffffe => Some("DT_VERNEED"),
             0x6fffffff => Some("DT_VERNEEDNUM"),
@@ -836,6 +854,8 @@ fn is_default_metadata(m: &BinaryMetadata) -> bool {
 pub struct ExportEntry {
     pub nid_hash: String,
     pub resolved_name: Option<String>,
+    #[serde(default)]
+    pub library_name: String,
     #[serde(with = "hex")]
     pub vaddr: u64,
     pub size: u64,
@@ -933,6 +953,8 @@ pub struct BinaryImage {
     pub version_defs: Vec<VersionDef>,
     #[serde(default, skip_serializing_if = "Vec::is_empty")]
     pub lib_versions: Vec<LibVersionEntry>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub sdk_version: Option<String>,
 }
 
 // ---------------------------------------------------------------------------
@@ -1370,6 +1392,7 @@ mod tests {
             dynamic_entries: vec![],
             version_defs: vec![],
             lib_versions: vec![],
+            sdk_version: None,
         };
         let json = serde_json::to_string(&img).unwrap();
         assert!(!json.contains("metadata"));

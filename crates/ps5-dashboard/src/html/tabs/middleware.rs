@@ -14,6 +14,7 @@ pub fn render() -> &'static str {
 <th>Product</th>
 <th>Description</th>
 <th>Imports</th>
+<th>SDK</th>
 </tr></thead>
 <tbody id="middlewareGameBody"></tbody>
 </table></div>

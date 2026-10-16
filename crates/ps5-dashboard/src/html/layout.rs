@@ -276,6 +276,12 @@ fn render_game_detail_html(game: &crate::data::GameDetail, data: &DashboardData)
         game.entry_point
     ));
     out.push_str(&format!(r#"<div class="k">Build ID</div><div class="v" style="font-family:monospace;font-size:0.72rem">{}</div>"#, game.build_id.clone().unwrap_or_else(|| "N/A".to_string())));
+    if let Some(sdk) = &game.sdk_version {
+        out.push_str(&format!(
+            r#"<div class="k">SDK Version</div><div class="v">Built for {}</div>"#,
+            sdk
+        ));
+    }
     out.push_str(&format!(
         r#"<div class="k">ELF Type</div><div class="v">0x{:x}</div>"#,
         game.elf_type
@@ -332,7 +338,28 @@ fn render_game_detail_html(game: &crate::data::GameDetail, data: &DashboardData)
             lib.library, lib.count
         ));
     }
-    out.push_str("</tbody></table></div></div>");
+    out.push_str("</tbody></table></div>");
+    if !game.export_summary.is_empty() {
+        out.push_str(r#"<h3 style="margin-top:12px">Exports by library</h3><div class="table-wrap"><table class="detail-table"><thead><tr><th>Library</th><th>Exports</th></tr></thead><tbody>"#);
+        for lib in &game.export_summary {
+            out.push_str(&format!(
+                r#"<tr><td>{}</td><td>{}</td></tr>"#,
+                lib.library, lib.count
+            ));
+        }
+        out.push_str("</tbody></table></div>");
+    }
+    if !game.module_sdk_versions.is_empty() {
+        out.push_str(r#"<h3 style="margin-top:12px">On-disk modules</h3><div class="table-wrap"><table class="detail-table"><thead><tr><th>Module</th><th>Built for</th></tr></thead><tbody>"#);
+        for module in &game.module_sdk_versions {
+            out.push_str(&format!(
+                r#"<tr><td style="font-family:monospace">{}</td><td>{}</td></tr>"#,
+                module.name, module.sdk_version
+            ));
+        }
+        out.push_str("</tbody></table></div>");
+    }
+    out.push_str("</div>");
     let shader_count = data.shaders.iter().filter(|s| s.game == game.name).count();
     if shader_count > 0 {
         out.push_str(&format!(r#"<div class="section"><h2>Shaders ({} records)</h2><p style="color:#8b949e;font-size:0.82rem">From ShaderArchive/GlobalShaderCache/sb and Unity assets</p><div class="table-wrap"><table class="detail-table"><thead><tr><th>Stage</th><th>Format</th><th>Size</th></tr></thead><tbody>"#, shader_count));

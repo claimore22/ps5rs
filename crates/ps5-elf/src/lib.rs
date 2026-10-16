@@ -52,6 +52,11 @@ pub struct ElfImage<'a> {
     pub soname: Option<String>,
     pub import_libs: std::collections::HashMap<u16, String>,
     pub needed_files: Vec<String>,
+    pub export_libs: std::collections::HashMap<u16, String>,
+    pub export_lib_versions: std::collections::HashMap<u16, u16>,
+    pub module_name: Option<String>,
+    pub module_version: u16,
+    pub sdk_version: u32,
     pub lib_versions: Vec<LibVersionEntry>,
     pub rela_count: u64,
 }
@@ -234,6 +239,24 @@ impl<'a> ElfImage<'a> {
         } else {
             Vec::new()
         };
+        let (export_libs, export_lib_versions, module_name, module_version) =
+            if (strtab_offset as usize) < data.len() {
+                let strtab = &data[strtab_offset as usize..];
+                let libs = dynamic::parse_export_libs(&dyn_entries, strtab);
+                let versions = dynamic::parse_export_lib_versions(&dyn_entries);
+                let (name, version) =
+                    dynamic::parse_module_info(&dyn_entries, strtab).unwrap_or((String::new(), 0));
+                let module_name = if name.is_empty() { None } else { Some(name) };
+                (libs, versions, module_name, version)
+            } else {
+                (
+                    std::collections::HashMap::new(),
+                    std::collections::HashMap::new(),
+                    None,
+                    0,
+                )
+            };
+        let sdk_version = parse_sdk_version(data, &program_headers, phdr_file_offsets);
 
         let lib_versions = if let Some(ref lv_ph) = libversion_phdr {
             let lv_offset =
@@ -273,6 +296,11 @@ impl<'a> ElfImage<'a> {
             soname,
             import_libs,
             needed_files,
+            export_libs,
+            export_lib_versions,
+            module_name,
+            module_version,
+            sdk_version,
             lib_versions,
             rela_count,
         })
@@ -287,6 +315,65 @@ impl<'a> ElfImage<'a> {
         let end = slice.iter().position(|&b| b == 0).unwrap_or(slice.len());
         std::str::from_utf8(&slice[..end]).unwrap_or("")
     }
+
+    pub fn sdk_version_string(&self) -> Option<String> {
+        if self.sdk_version == 0 {
+            None
+        } else {
+            Some(format_sdk_version(self.sdk_version))
+        }
+    }
+}
+
+pub fn format_sdk_version(v: u32) -> String {
+    if v == 0 {
+        return String::new();
+    }
+    format!("{:02X}.{:02X}", (v >> 24) & 0xFF, (v >> 16) & 0xFF)
+}
+
+fn parse_sdk_version(
+    data: &[u8],
+    program_headers: &[ProgramHeader],
+    phdr_file_offsets: Option<&[u64]>,
+) -> u32 {
+    use ps5_format::elf_constants::{PT_SCE_MODULEPARAM, PT_SCE_PROCPARAM};
+    let mut param: Option<&ProgramHeader> = None;
+    for ph in program_headers {
+        if ph.p_type == PT_SCE_MODULEPARAM {
+            param = Some(ph);
+            break;
+        }
+    }
+    if param.is_none() {
+        for ph in program_headers {
+            if ph.p_type == PT_SCE_PROCPARAM {
+                param = Some(ph);
+                break;
+            }
+        }
+    }
+    let ph = match param {
+        Some(ph) => ph,
+        None => return 0,
+    };
+    if ph.p_filesz < 0x18 {
+        return 0;
+    }
+    let off = ElfImage::vaddr_to_offset(program_headers, phdr_file_offsets, ph.p_vaddr) as usize;
+    let end = match off.checked_add(0x18) {
+        Some(end) if end <= data.len() => end,
+        _ => return 0,
+    };
+    let _ = end;
+    let magic = read_u32(data, off + 8);
+    if magic != 0x3C13F4BF && magic != 0x4942524F {
+        return 0;
+    }
+    if read_u32(data, off + 12) < 2 {
+        return 0;
+    }
+    read_u32(data, off + 20)
 }
 
 fn read_u16(data: &[u8], offset: usize) -> u16 {
@@ -488,6 +575,101 @@ mod tests {
         buf.extend_from_slice(&r_info.to_le_bytes());
         buf.extend_from_slice(&(r_addend as u64).to_le_bytes());
         buf
+    }
+
+    #[test]
+    fn format_sdk_version_strings() {
+        assert_eq!(format_sdk_version(0x02000009), "02.00");
+        assert_eq!(format_sdk_version(0x07000038), "07.00");
+        assert_eq!(format_sdk_version(0), "");
+    }
+
+    #[test]
+    fn parse_export_libs_and_module_info() {
+        use crate::dynamic::parse_module_info;
+        use crate::dynamic::{DynEntry, parse_export_lib_versions, parse_export_libs};
+        let strtab = build_strtab(&[b"libc", b"libc_setjmp", b"mylib"]);
+        let entries = vec![
+            DynEntry {
+                d_tag: 0x61000047,
+                d_val: 1 | (1u64 << 32) | (3u64 << 48),
+            },
+            DynEntry {
+                d_tag: 0x61000047,
+                d_val: 6 | (1u64 << 32) | (7u64 << 48),
+            },
+            DynEntry {
+                d_tag: 0x61000043,
+                d_val: 18 | (0x0101u64 << 32),
+            },
+        ];
+        let libs = parse_export_libs(&entries, &strtab);
+        assert_eq!(libs.get(&3).map(String::as_str), Some("libc"));
+        assert_eq!(libs.get(&7).map(String::as_str), Some("libc_setjmp"));
+        let versions = parse_export_lib_versions(&entries);
+        assert_eq!(versions.get(&3), Some(&1));
+        let (name, version) = parse_module_info(&entries, &strtab).unwrap();
+        assert_eq!(name, "mylib");
+        assert_eq!(version, 0x0101);
+    }
+
+    #[test]
+    fn parse_export_lib_legacy_tag() {
+        use crate::dynamic::{DynEntry, parse_export_libs};
+        let strtab = build_strtab(&[b"oldlib"]);
+        let entries = vec![DynEntry {
+            d_tag: 0x61000013,
+            d_val: 1 | (2u64 << 32) | (9u64 << 48),
+        }];
+        let libs = parse_export_libs(&entries, &strtab);
+        assert_eq!(libs.get(&9).map(String::as_str), Some("oldlib"));
+    }
+
+    #[test]
+    fn parse_sdk_version_from_moduleparam() {
+        let mut file = vec![0u8; 0x1100];
+        file[0..4].copy_from_slice(&ELF_MAGIC);
+        file[EI_CLASS] = ELFCLASS64;
+        file[EI_DATA] = ELFDATA2LSB;
+        file[EI_VERSION] = 1;
+        let write_u16 = |data: &mut [u8], off: usize, v: u16| {
+            data[off..off + 2].copy_from_slice(&v.to_le_bytes());
+        };
+        let write_u32 = |data: &mut [u8], off: usize, v: u32| {
+            data[off..off + 4].copy_from_slice(&v.to_le_bytes());
+        };
+        let write_u64 = |data: &mut [u8], off: usize, v: u64| {
+            data[off..off + 8].copy_from_slice(&v.to_le_bytes());
+        };
+        write_u16(&mut file, 16, ET_SCE_DYNAMIC);
+        write_u16(&mut file, 18, EM_X86_64);
+        write_u64(&mut file, 24, 0x2000);
+        write_u64(&mut file, 32, 64);
+        write_u16(&mut file, 52, 64);
+        write_u16(&mut file, 54, 56);
+        write_u16(&mut file, 56, 2);
+        write_u32(&mut file, 64, PT_LOAD);
+        write_u32(&mut file, 68, PF_R | PF_W);
+        write_u64(&mut file, 72, 0x1000);
+        write_u64(&mut file, 80, 0x2000);
+        write_u64(&mut file, 96, 0x100);
+        write_u64(&mut file, 104, 0x100);
+        write_u64(&mut file, 112, 0x1000);
+        write_u32(&mut file, 120, PT_SCE_MODULEPARAM);
+        write_u32(&mut file, 124, PF_R);
+        write_u64(&mut file, 128, 0x1000);
+        write_u64(&mut file, 136, 0x2000);
+        write_u64(&mut file, 152, 0x20);
+        write_u64(&mut file, 160, 0x20);
+        write_u64(&mut file, 168, 8);
+        write_u64(&mut file, 0x1000, 32);
+        write_u32(&mut file, 0x1008, 0x3C13F4BF);
+        write_u32(&mut file, 0x100C, 3);
+        write_u32(&mut file, 0x1010, 0x08050001);
+        write_u32(&mut file, 0x1014, 0x02000009);
+        let img = ElfImage::parse(&file, None).unwrap();
+        assert_eq!(img.sdk_version, 0x02000009);
+        assert_eq!(img.sdk_version_string().as_deref(), Some("02.00"));
     }
 
     #[test]

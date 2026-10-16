@@ -6,7 +6,6 @@ mod catalog;
 mod cli;
 mod dataset;
 mod deps;
-mod diff;
 mod export_scan;
 mod extract;
 mod firmware;
@@ -62,13 +61,18 @@ fn main() {
             include_modules,
             command,
         } => analyze::cmd_analyze(command, &nids, include_modules),
-        Commands::Extract { file, output } => extract::cmd_extract(&file, &output),
+        Commands::Extract {
+            file,
+            output,
+            anyps5_layout,
+        } => extract::cmd_extract(&file, &output, anyps5_layout),
         Commands::BatchExtract {
             path,
             output,
             nids,
             include_modules,
-        } => extract::cmd_batch_extract(&path, &output, &nids, include_modules),
+            anyps5_layout,
+        } => extract::cmd_batch_extract(&path, &output, &nids, include_modules, anyps5_layout),
         Commands::Validate { command } => match command {
             ValidateCommand::Binary { file, json, output } => {
                 validate::cmd_validate_binary(&file, json, &output)
@@ -94,13 +98,6 @@ fn main() {
             search,
             output,
         } => inspect::cmd_exports(&file, json, &search, &output),
-        Commands::Diff { a, b, json, output } => diff::cmd_diff(&a, &b, json, &output),
-        Commands::Offsets {
-            file,
-            firmware,
-            text,
-            output,
-        } => diff::cmd_offsets(&file, &firmware, text, &output),
         Commands::Load {
             file,
             prx_dir,
