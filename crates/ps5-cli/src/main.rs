@@ -6,7 +6,6 @@ mod catalog;
 mod cli;
 mod dataset;
 mod deps;
-mod diff;
 mod export_scan;
 mod extract;
 mod firmware;
@@ -94,13 +93,6 @@ fn main() {
             search,
             output,
         } => inspect::cmd_exports(&file, json, &search, &output),
-        Commands::Diff { a, b, json, output } => diff::cmd_diff(&a, &b, json, &output),
-        Commands::Offsets {
-            file,
-            firmware,
-            text,
-            output,
-        } => diff::cmd_offsets(&file, &firmware, text, &output),
         Commands::Load {
             file,
             prx_dir,

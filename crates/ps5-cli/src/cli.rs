@@ -120,26 +120,6 @@ pub enum Commands {
         #[arg(short, long, value_hint = ValueHint::FilePath)]
         output: Option<PathBuf>,
     },
-    /// Compare export surfaces of two modules (added, removed, moved)
-    Diff {
-        a: PathBuf,
-        b: PathBuf,
-        #[arg(long)]
-        json: bool,
-        #[arg(short, long, value_hint = ValueHint::FilePath)]
-        output: Option<PathBuf>,
-    },
-    /// Dump a module's export identifiers and addresses as JSON or text
-    Offsets {
-        file: PathBuf,
-        /// Firmware label recorded in the report
-        #[arg(long)]
-        firmware: Option<String>,
-        #[arg(long)]
-        text: bool,
-        #[arg(short, long, value_hint = ValueHint::FilePath)]
-        output: Option<PathBuf>,
-    },
     /// Load a PS5 binary into the virtual memory model for inspection
     Load {
         file: PathBuf,
