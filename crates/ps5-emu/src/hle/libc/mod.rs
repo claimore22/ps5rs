@@ -26,6 +26,11 @@ impl HleModule for LibcModule {
         &[
             ("_init_env", HostCall::InitEnv),
             ("atexit", HostCall::Atexit),
+            ("__cxa_atexit", HostCall::CxaAtexit),
+            ("__cxa_guard_acquire", HostCall::CxaGuardAcquire),
+            ("__cxa_guard_release", HostCall::CxaGuardRelease),
+            ("_Znwm", HostCall::CppOperatorNew),
+            ("_Mbtowcx", HostCall::Mbtowcx),
             ("catchReturnFromMain", HostCall::CatchReturnFromMain),
             ("exit", HostCall::Exit),
             ("Need_sceLibc", HostCall::NeedSceLibc),
@@ -82,13 +87,17 @@ impl HleModule for LibcModule {
     ) -> Result<u64, EmuError> {
         match call {
             HostCall::InitEnv | HostCall::NeedSceLibc => calls::init_env(),
-            HostCall::Atexit => {
+            HostCall::Atexit | HostCall::CxaAtexit => {
                 if ctx.libc.atexit_handlers >= ATEXIT_LIMIT {
                     return Err(EmuError::NoHandler("atexit handler limit".to_string()));
                 }
                 ctx.libc.atexit_handlers += 1;
                 Ok(0)
             }
+            HostCall::Mbtowcx => calls::mbtowcx(host, args),
+            HostCall::CxaGuardAcquire => calls::cxa_guard_acquire(host, args),
+            HostCall::CxaGuardRelease => calls::cxa_guard_release(host, args),
+            HostCall::CppOperatorNew => calls::cpp_operator_new(host, args),
             HostCall::Exit => calls::exit(args),
             HostCall::CatchReturnFromMain => calls::catch_return_from_main(args),
             HostCall::Puts => calls::puts(host, args),

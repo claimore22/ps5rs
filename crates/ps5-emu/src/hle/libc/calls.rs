@@ -313,6 +313,131 @@ pub fn fprintf(host: &mut dyn Host, args: &[u64]) -> Result<u64, EmuError> {
     Ok(message.chars().count() as u64)
 }
 
+/// `_Mbtowcx(dst, src, count, state) -> int`: convert one multibyte sequence.
+pub fn mbtowcx(host: &mut dyn Host, args: &[u64]) -> Result<u64, EmuError> {
+    let dst = args.first().copied().unwrap_or(0);
+    let src = args.get(1).copied().unwrap_or(0);
+    let count = args.get(2).copied().unwrap_or(0) as usize;
+    let state_ptr = args.get(3).copied().unwrap_or(0);
+
+    if src == 0 {
+        if state_ptr != 0 {
+            let _ = host.write(state_ptr, &[0u8; 8]);
+        }
+        return Ok(0);
+    }
+    if count == 0 {
+        return Ok((-2i64) as u64);
+    }
+
+    let read_len = count.min(4);
+    let bytes = match host.read_bytes(src, read_len) {
+        Ok(bytes) => bytes,
+        Err(_) => return Ok((-1i64) as u64),
+    };
+    if bytes.is_empty() {
+        return Ok((-2i64) as u64);
+    }
+    if bytes[0] == 0 {
+        if dst != 0 {
+            let _ = host.write(dst, &0u16.to_le_bytes());
+        }
+        if state_ptr != 0 {
+            let _ = host.write(state_ptr, &[0u8; 8]);
+        }
+        return Ok(0);
+    }
+
+    let (seq_len, codepoint) = match bytes[0] {
+        0x00..=0x7F => (1usize, bytes[0] as u32),
+        0xC2..=0xDF => {
+            if count < 2 || bytes.len() < 2 {
+                return Ok((-2i64) as u64);
+            }
+            let b1 = bytes[1];
+            if b1 & 0xC0 != 0x80 {
+                return Ok((-1i64) as u64);
+            }
+            (2, ((bytes[0] & 0x1F) as u32) << 6 | (b1 & 0x3F) as u32)
+        }
+        0xE0..=0xEF => {
+            if count < 3 || bytes.len() < 3 {
+                return Ok((-2i64) as u64);
+            }
+            let b1 = bytes[1];
+            let b2 = bytes[2];
+            if b1 & 0xC0 != 0x80 || b2 & 0xC0 != 0x80 {
+                return Ok((-1i64) as u64);
+            }
+            let cp =
+                ((bytes[0] & 0x0F) as u32) << 12 | ((b1 & 0x3F) as u32) << 6 | (b2 & 0x3F) as u32;
+            if cp < 0x800 || (0xD800..=0xDFFF).contains(&cp) {
+                return Ok((-1i64) as u64);
+            }
+            (3, cp)
+        }
+        0xF0..=0xF4 => {
+            if count < 4 || bytes.len() < 4 {
+                return Ok((-2i64) as u64);
+            }
+            let b1 = bytes[1];
+            let b2 = bytes[2];
+            let b3 = bytes[3];
+            if b1 & 0xC0 != 0x80 || b2 & 0xC0 != 0x80 || b3 & 0xC0 != 0x80 {
+                return Ok((-1i64) as u64);
+            }
+            let cp = ((bytes[0] & 0x07) as u32) << 18
+                | ((b1 & 0x3F) as u32) << 12
+                | ((b2 & 0x3F) as u32) << 6
+                | (b3 & 0x3F) as u32;
+            if !(0x10000..=0x10FFFF).contains(&cp) {
+                return Ok((-1i64) as u64);
+            }
+            (4, cp)
+        }
+        _ => return Ok((-1i64) as u64),
+    };
+
+    if codepoint > 0xFFFF {
+        return Ok((-1i64) as u64);
+    }
+    if dst != 0 {
+        let _ = host.write(dst, &(codepoint as u16).to_le_bytes());
+    }
+    if state_ptr != 0 {
+        let _ = host.write(state_ptr, &[0u8; 8]);
+    }
+    Ok(seq_len as u64)
+}
+
+/// `__cxa_guard_release(guard)`: mark the guard as initialized.
+pub fn cxa_guard_release(host: &mut dyn Host, args: &[u64]) -> Result<u64, EmuError> {
+    let guard = args.first().copied().unwrap_or(0);
+    if guard != 0 {
+        let _ = host.write(guard, &[1u8]);
+    }
+    Ok(0)
+}
+
+/// `__cxa_guard_acquire(guard) -> int`: return 1 if initialization is needed.
+pub fn cxa_guard_acquire(host: &mut dyn Host, args: &[u64]) -> Result<u64, EmuError> {
+    let guard = args.first().copied().unwrap_or(0);
+    if guard == 0 {
+        return Ok(1);
+    }
+    let bytes = host.read_bytes(guard, 1).unwrap_or_default();
+    if bytes.first().copied().unwrap_or(0) != 0 {
+        return Ok(0);
+    }
+    let _ = host.write(guard, &[1u8]);
+    Ok(1)
+}
+
+/// `_Znwm(size) -> ptr`: C++ `operator new`.
+pub fn cpp_operator_new(host: &mut dyn Host, args: &[u64]) -> Result<u64, EmuError> {
+    malloc(host, args)
+}
+
 /// `rand() -> int`: next value of the deterministic guest PRNG.
 pub fn rand(state: &mut LibcState) -> u64 {
     let value = next_rand(&mut state.rand_state);

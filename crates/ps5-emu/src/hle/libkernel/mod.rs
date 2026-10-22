@@ -44,6 +44,8 @@ impl HleModule for KernelModule {
             ("sceKernelGetTscFrequency", HostCall::KernelGetTscFrequency),
             ("sceKernelIsTrinityMode", HostCall::KernelIsTrinityMode),
             ("sceKernelGetCurrentCpu", HostCall::KernelGetCurrentCpu),
+            ("scePthreadMutexInit", HostCall::PthreadMutexInit),
+            ("scePthreadCondInit", HostCall::PthreadCondInit),
         ]
     }
 
@@ -63,6 +65,7 @@ impl HleModule for KernelModule {
                 });
                 Ok(0)
             }
+            HostCall::PthreadMutexInit | HostCall::PthreadCondInit => Ok(0),
             _ => {
                 static WARN: std::sync::Once = std::sync::Once::new();
                 WARN.call_once(|| {
